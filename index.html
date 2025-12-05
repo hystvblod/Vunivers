@@ -9,31 +9,30 @@
 <body class="vr-body">
   <div class="vr-overlay"></div>
 
-  <!-- Barre latérale gauche : Profil -->
   <header class="vr-header">
     <div class="vr-top-actions">
       <button class="vr-icon-button" data-view-target="profile">
         <div class="vr-icon-image vr-icon-profile"></div>
-        <span class="vr-icon-label" data-i18n="ui.profile"></span>
       </button>
       <button class="vr-icon-button" data-view-target="settings">
         <div class="vr-icon-image vr-icon-settings"></div>
-        <span class="vr-icon-label" data-i18n="ui.settings"></span>
       </button>
       <button class="vr-icon-button" data-view-target="shop">
         <div class="vr-icon-image vr-icon-shop"></div>
-        <span class="vr-icon-label" data-i18n="ui.shop"></span>
       </button>
     </div>
   </header>
-
 
   <main class="vr-main">
     <!-- Vue : Accueil / choix d'univers -->
     <section id="view-home" class="vr-view vr-view-active">
       <section class="vr-intro">
-        <h1 class="vr-main-title" data-i18n="ui.subtitle"></h1>
-        <p class="vr-main-text" data-i18n="ui.subtitle_desc"></p>
+        <img
+          src="assets/img/ui/logo_vrealms.webp"
+          alt="VRealms"
+          class="vr-main-logo"
+          draggable="false"
+        />
       </section>
 
       <section class="vr-universes">
@@ -44,8 +43,17 @@
           <button class="vr-card" data-universe="hell_king">
             <div class="vr-card-bg vr-card-bg-hell"></div>
             <div class="vr-card-content">
-              <h3 class="vr-card-title" data-i18n="universe.hell_king.title"></h3>
-              <p class="vr-card-text" data-i18n="universe.hell_king.desc"></p>
+              <div class="vr-card-header-line">
+                <h3 class="vr-card-title" data-i18n="universe.hell_king.title"></h3>
+                <button
+                  type="button"
+                  class="vr-info-btn"
+                  data-i18n-tip="universe.hell_king.desc"
+                  data-tip="Dirige les légions démoniaques, gère l’afflux d’âmes damnées et maintiens l’équilibre entre chaos et ordre cosmique."
+                >
+                  ?
+                </button>
+              </div>
             </div>
           </button>
 
@@ -53,8 +61,17 @@
           <button class="vr-card" data-universe="heaven_king">
             <div class="vr-card-bg vr-card-bg-heaven"></div>
             <div class="vr-card-content">
-              <h3 class="vr-card-title" data-i18n="universe.heaven_king.title"></h3>
-              <p class="vr-card-text" data-i18n="universe.heaven_king.desc"></p>
+              <div class="vr-card-header-line">
+                <h3 class="vr-card-title" data-i18n="universe.heaven_king.title"></h3>
+                <button
+                  type="button"
+                  class="vr-info-btn"
+                  data-i18n-tip="universe.heaven_king.desc"
+                  data-tip="Arbitre les prières, contient le fanatisme et décide jusqu’où le Ciel doit intervenir dans le monde des mortels."
+                >
+                  ?
+                </button>
+              </div>
             </div>
           </button>
 
@@ -62,8 +79,17 @@
           <button class="vr-card" data-universe="medieval_king">
             <div class="vr-card-bg vr-card-bg-medieval"></div>
             <div class="vr-card-content">
-              <h3 class="vr-card-title" data-i18n="universe.medieval_king.title"></h3>
-              <p class="vr-card-text" data-i18n="universe.medieval_king.desc"></p>
+              <div class="vr-card-header-line">
+                <h3 class="vr-card-title" data-i18n="universe.medieval_king.title"></h3>
+                <button
+                  type="button"
+                  class="vr-info-btn"
+                  data-i18n-tip="universe.medieval_king.desc"
+                  data-tip="Églises, armée, peuple, trésor : chaque décision te rapproche de la prospérité… ou de la révolte."
+                >
+                  ?
+                </button>
+              </div>
             </div>
           </button>
 
@@ -71,8 +97,17 @@
           <button class="vr-card" data-universe="western_president">
             <div class="vr-card-bg vr-card-bg-western"></div>
             <div class="vr-card-content">
-              <h3 class="vr-card-title" data-i18n="universe.western_president.title"></h3>
-              <p class="vr-card-text" data-i18n="universe.western_president.desc"></p>
+              <div class="vr-card-header-line">
+                <h3 class="vr-card-title" data-i18n="universe.western_president.title"></h3>
+                <button
+                  type="button"
+                  class="vr-info-btn"
+                  data-i18n-tip="universe.western_president.desc"
+                  data-tip="Opinion publique, économie, diplomatie et crises médiatiques : une signature peut tout faire basculer."
+                >
+                  ?
+                </button>
+              </div>
             </div>
           </button>
 
@@ -80,8 +115,17 @@
           <button class="vr-card" data-universe="mega_corp_ceo">
             <div class="vr-card-bg vr-card-bg-corp"></div>
             <div class="vr-card-content">
-              <h3 class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></h3>
-              <p class="vr-card-text" data-i18n="universe.mega_corp_ceo.desc"></p>
+              <div class="vr-card-header-line">
+                <h3 class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></h3>
+                <button
+                  type="button"
+                  class="vr-info-btn"
+                  data-i18n-tip="universe.mega_corp_ceo.desc"
+                  data-tip="Investisseurs, employés, régulateurs et image de marque. Ta moindre décision peut faire exploser la valorisation… ou tout crasher."
+                >
+                  ?
+                </button>
+              </div>
             </div>
           </button>
 
@@ -89,8 +133,17 @@
           <button class="vr-card" data-universe="new_world_explorer">
             <div class="vr-card-bg vr-card-bg-explorer"></div>
             <div class="vr-card-content">
-              <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
-              <p class="vr-card-text" data-i18n="universe.new_world_explorer.desc"></p>
+              <div class="vr-card-header-line">
+                <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
+                <button
+                  type="button"
+                  class="vr-info-btn"
+                  data-i18n-tip="universe.new_world_explorer.desc"
+                  data-tip="Négocier avec les peuples locaux, convertir, exploiter ou protéger : ta conquête écrira l’histoire."
+                >
+                  ?
+                </button>
+              </div>
             </div>
           </button>
 
@@ -98,8 +151,17 @@
           <button class="vr-card" data-universe="vampire_lord">
             <div class="vr-card-bg vr-card-bg-vampire"></div>
             <div class="vr-card-content">
-              <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
-              <p class="vr-card-text" data-i18n="universe.vampire_lord.desc"></p>
+              <div class="vr-card-header-line">
+                <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
+                <button
+                  type="button"
+                  class="vr-info-btn"
+                  data-i18n-tip="universe.vampire_lord.desc"
+                  data-tip="Entre soif de sang, discrétion et luttes de clan, chaque nuit peut être la dernière… ou le début d’une nouvelle dynastie."
+                >
+                  ?
+                </button>
+              </div>
             </div>
           </button>
 
@@ -115,45 +177,59 @@
       </section>
     </section>
 
-    <!-- Vue : Jeu (placeholder pour l'instant) -->
+    <!-- Vue : Jeu -->
     <section id="view-game" class="vr-view">
-      <div class="vr-game-header">
-        <h2 class="vr-section-title" data-i18n="game.title"></h2>
-        <p class="vr-main-text" data-i18n="game.subtitle"></p>
-      </div>
+      <div class="vr-game-layout">
+        <!-- Jauges -->
+        <div class="vr-gauges">
+          <div class="vr-gauge-row">
+            <span class="vr-gauge-label" id="gauge-1-label"></span>
+            <div class="vr-gauge-bar">
+              <div class="vr-gauge-fill" id="gauge-1"></div>
+              <div class="vr-gauge-preview" id="gauge-1-preview"></div>
+            </div>
+          </div>
 
-      <!-- Jauges -->
-      <div class="vr-gauges-row">
-        <div class="vr-gauge" data-gauge-id="g1">
-          <span class="vr-gauge-label"></span>
-          <div class="vr-gauge-frame">
-            <div class="vr-gauge-fill"></div>
+          <div class="vr-gauge-row">
+            <span class="vr-gauge-label" id="gauge-2-label"></span>
+            <div class="vr-gauge-bar">
+              <div class="vr-gauge-fill" id="gauge-2"></div>
+              <div class="vr-gauge-preview" id="gauge-2-preview"></div>
+            </div>
           </div>
-        </div>
-        <div class="vr-gauge" data-gauge-id="g2">
-          <span class="vr-gauge-label"></span>
-          <div class="vr-gauge-frame">
-            <div class="vr-gauge-fill"></div>
-          </div>
-        </div>
-        <div class="vr-gauge" data-gauge-id="g3">
-          <span class="vr-gauge-label"></span>
-          <div class="vr-gauge-frame">
-            <div class="vr-gauge-fill"></div>
-          </div>
-        </div>
-        <div class="vr-gauge" data-gauge-id="g4">
-          <span class="vr-gauge-label"></span>
-          <div class="vr-gauge-frame">
-            <div class="vr-gauge-fill"></div>
-          </div>
-        </div>
-        <div id="vr-meta-bar">
-  <span id="meta-king-name">—</span>
-  <span id="meta-years">0 ans</span>
-  <span id="meta-coins">0 VCoins</span>
-</div>
 
+          <div class="vr-gauge-row">
+            <span class="vr-gauge-label" id="gauge-3-label"></span>
+            <div class="vr-gauge-bar">
+              <div class="vr-gauge-fill" id="gauge-3"></div>
+              <div class="vr-gauge-preview" id="gauge-3-preview"></div>
+            </div>
+          </div>
+
+          <div class="vr-gauge-row">
+            <span class="vr-gauge-label" id="gauge-4-label"></span>
+            <div class="vr-gauge-bar">
+              <div class="vr-gauge-fill" id="gauge-4"></div>
+              <div class="vr-gauge-preview" id="gauge-4-preview"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Méta (règne, années, VCoins) -->
+        <div class="vr-meta">
+          <div class="vr-meta-line">
+            <span class="vr-meta-label" data-i18n="meta.current_king"></span>
+            <span class="vr-meta-value" id="meta-king-name">—</span>
+          </div>
+          <div class="vr-meta-line">
+            <span class="vr-meta-label" data-i18n="meta.years"></span>
+            <span class="vr-meta-value" id="meta-years">0</span>
+          </div>
+          <div class="vr-meta-line">
+            <span class="vr-meta-label">VCoins</span>
+            <span class="vr-meta-value" id="meta-coins">0</span>
+          </div>
+        </div>
       </div>
 
       <!-- Carte événement -->
@@ -178,7 +254,23 @@
     <section id="view-profile" class="vr-view">
       <h2 class="vr-section-title" data-i18n="profile.title"></h2>
       <p class="vr-main-text" data-i18n="profile.subtitle"></p>
-      <!-- On remplira plus tard avec userData.js -->
+
+      <div class="vr-profile-grid">
+        <div class="vr-profile-card">
+          <h3 class="vr-card-title" data-i18n="profile.vcoins"></h3>
+          <p class="vr-main-text"><span id="profile-vcoins">0</span> VCoins</p>
+        </div>
+
+        <div class="vr-profile-card">
+          <h3 class="vr-card-title" data-i18n="profile.best_reign"></h3>
+          <p class="vr-main-text"><span id="profile-best-reign">0</span> ans</p>
+        </div>
+
+        <div class="vr-profile-card">
+          <h3 class="vr-card-title" data-i18n="profile.total_runs"></h3>
+          <p class="vr-main-text"><span id="profile-total-runs">0</span></p>
+        </div>
+      </div>
     </section>
 
     <!-- Vue : Boutique -->
@@ -200,14 +292,53 @@
     <span class="vr-footer-text" data-i18n="ui.footer"></span>
   </footer>
 
- <script src="js/userData.js"></script>
-<script src="js/ads.js"></script>
-<script src="js/purchases.js"></script>
-<script src="js/shop.js"></script>
-<script src="js/i18n.js"></script>
-<script src="js/game.js"></script>
-</body>
-</html>
+  <div id="vr-tooltip" class="vr-tooltip"></div>
 
+  <script>
+    (function () {
+      const tooltip = document.getElementById("vr-tooltip");
+      if (!tooltip) return;
+
+      function hideTooltip() {
+        tooltip.classList.remove("vr-tooltip-visible");
+        tooltip.style.display = "none";
+      }
+
+      document.querySelectorAll(".vr-info-btn").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          e.stopPropagation();
+
+          let text = btn.getAttribute("data-tip") || "";
+          const key = btn.getAttribute("data-i18n-tip");
+
+          if (window.i18nGet && key) {
+            const t = window.i18nGet(key);
+            if (t) text = t;
+          }
+
+          const rect = btn.getBoundingClientRect();
+          const scrollY = window.scrollY || window.pageYOffset;
+          const scrollX = window.scrollX || window.pageXOffset;
+
+          tooltip.textContent = text;
+          tooltip.style.display = "block";
+          tooltip.style.top = rect.bottom + 8 + scrollY + "px";
+          tooltip.style.left = rect.left + rect.width / 2 + scrollX + "px";
+          tooltip.classList.add("vr-tooltip-visible");
+        });
+      });
+
+      document.addEventListener("click", hideTooltip);
+      window.addEventListener("scroll", hideTooltip);
+      window.addEventListener("resize", hideTooltip);
+    })();
+  </script>
+
+  <script src="js/userData.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/purchases.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/game.js"></script>
 </body>
 </html>
