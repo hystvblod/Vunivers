@@ -778,3 +778,33 @@ body.vr-body {
 }
 
 /* etc. pour chaque univers */
+
+
+
+/* Mode plein écran pour le jeu */
+#view-game {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* On supprime tout le cadre gris autour du jeu */
+.vr-main,
+.vr-game-layout,
+.vr-card-play-area {
+  max-width: none !important;
+  width: 100% !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
