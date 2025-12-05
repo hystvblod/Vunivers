@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>VRealms - Partie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="vr-body">
+  <div class="vr-overlay"></div>
+
+  <main class="vr-main">
+    <section id="view-game" class="vr-view vr-view-active">
+      <div class="vr-game-header">
+        <h2 class="vr-section-title" data-i18n="game.title"></h2>
+        <p class="vr-main-text" data-i18n="game.subtitle"></p>
+      </div>
+
+      <div class="vr-gauges-row">
+        <div class="vr-gauge" data-gauge-id="g1">
+          <span class="vr-gauge-label"></span>
+          <div class="vr-gauge-frame">
+            <div class="vr-gauge-fill"></div>
+          </div>
+        </div>
+        <div class="vr-gauge" data-gauge-id="g2">
+          <span class="vr-gauge-label"></span>
+          <div class="vr-gauge-frame">
+            <div class="vr-gauge-fill"></div>
+          </div>
+        </div>
+        <div class="vr-gauge" data-gauge-id="g3">
+          <span class="vr-gauge-label"></span>
+          <div class="vr-gauge-frame">
+            <div class="vr-gauge-fill"></div>
+          </div>
+        </div>
+        <div class="vr-gauge" data-gauge-id="g4">
+          <span class="vr-gauge-label"></span>
+          <div class="vr-gauge-frame">
+            <div class="vr-gauge-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vr-card-container">
+        <div class="vr-card-main" id="vr-card-main">
+          <h3 class="vr-card-title" id="card-title"></h3>
+          <p class="vr-card-text" id="card-text"></p>
+
+          <div class="vr-card-choices">
+            <button class="vr-choice-button" data-choice="A">
+              <span class="vr-choice-label" id="choice-A"></span>
+            </button>
+            <button class="vr-choice-button" data-choice="B">
+              <span class="vr-choice-label" id="choice-B"></span>
+            </button>
+            <button class="vr-choice-button" data-choice="C">
+              <span class="vr-choice-label" id="choice-C"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="vr-meta-bar">
+        <span id="meta-king-name"></span>
+        <span id="meta-years"></span>
+        <span id="meta-coins"></span>
+      </div>
+
+      <div class="vr-ending-overlay" id="vr-ending-overlay">
+        <div class="vr-ending-card">
+          <h3 class="vr-ending-title" id="ending-title"></h3>
+          <p class="vr-ending-text" id="ending-text"></p>
+          <button id="ending-restart-btn" class="vr-choice-button">
+            <span data-i18n="game.restart"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/userData.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/purchases.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>VRealms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="vr-body">
+  <div class="vr-overlay"></div>
+
+  <!-- Barre latérale gauche : Profil -->
+  <nav class="vr-side-nav vr-side-nav-left">
+    <button class="vr-icon-button" data-view-target="profile">
+      <div class="vr-icon-image vr-icon-profile"></div>
+      <span class="vr-icon-label" data-i18n="ui.profile"></span>
+    </button>
+  </nav>
+
+  <!-- Barre latérale droite : Paramètres + Boutique -->
+  <nav class="vr-side-nav vr-side-nav-right">
+    <button class="vr-icon-button" data-view-target="settings">
+      <div class="vr-icon-image vr-icon-settings"></div>
+      <span class="vr-icon-label" data-i18n="ui.settings"></span>
+    </button>
+    <button class="vr-icon-button" data-view-target="shop">
+      <div class="vr-icon-image vr-icon-shop"></div>
+      <span class="vr-icon-label" data-i18n="ui.shop"></span>
+    </button>
+  </nav>
+
+  <header class="vr-header">
+    <div class="vr-logo" data-view-target="home">
+      <span class="vr-logo-mark">V</span>
+      <span class="vr-logo-text" data-i18n="app.title"></span>
+    </div>
+
+    <div class="vr-lang-selector">
+      <label for="lang-select" class="vr-label" data-i18n="ui.language"></label>
+      <select id="lang-select" class="vr-select">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="vr-main">
+    <!-- Vue : Accueil / choix d'univers -->
+    <section id="view-home" class="vr-view vr-view-active">
+      <section class="vr-intro">
+        <h1 class="vr-main-title" data-i18n="ui.subtitle"></h1>
+        <p class="vr-main-text" data-i18n="ui.subtitle_desc"></p>
+      </section>
+
+      <section class="vr-universes">
+        <h2 class="vr-section-title" data-i18n="ui.choose_universe"></h2>
+
+        <div class="vr-universe-grid">
+          <!-- Roi des Enfers -->
+          <button class="vr-card" data-universe="hell_king">
+            <div class="vr-card-bg vr-card-bg-hell"></div>
+            <div class="vr-card-content">
+              <h3 class="vr-card-title" data-i18n="universe.hell_king.title"></h3>
+              <p class="vr-card-text" data-i18n="universe.hell_king.desc"></p>
+            </div>
+          </button>
+
+          <!-- Paradis -->
+          <button class="vr-card" data-universe="heaven_king">
+            <div class="vr-card-bg vr-card-bg-heaven"></div>
+            <div class="vr-card-content">
+              <h3 class="vr-card-title" data-i18n="universe.heaven_king.title"></h3>
+              <p class="vr-card-text" data-i18n="universe.heaven_king.desc"></p>
+            </div>
+          </button>
+
+          <!-- Roi médiéval -->
+          <button class="vr-card" data-universe="medieval_king">
+            <div class="vr-card-bg vr-card-bg-medieval"></div>
+            <div class="vr-card-content">
+              <h3 class="vr-card-title" data-i18n="universe.medieval_king.title"></h3>
+              <p class="vr-card-text" data-i18n="universe.medieval_king.desc"></p>
+            </div>
+          </button>
+
+          <!-- Président puissance occidentale -->
+          <button class="vr-card" data-universe="western_president">
+            <div class="vr-card-bg vr-card-bg-western"></div>
+            <div class="vr-card-content">
+              <h3 class="vr-card-title" data-i18n="universe.western_president.title"></h3>
+              <p class="vr-card-text" data-i18n="universe.western_president.desc"></p>
+            </div>
+          </button>
+
+          <!-- CEO méga-entreprise -->
+          <button class="vr-card" data-universe="mega_corp_ceo">
+            <div class="vr-card-bg vr-card-bg-corp"></div>
+            <div class="vr-card-content">
+              <h3 class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></h3>
+              <p class="vr-card-text" data-i18n="universe.mega_corp_ceo.desc"></p>
+            </div>
+          </button>
+
+          <!-- Explorateur du Nouveau Monde -->
+          <button class="vr-card" data-universe="new_world_explorer">
+            <div class="vr-card-bg vr-card-bg-explorer"></div>
+            <div class="vr-card-content">
+              <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
+              <p class="vr-card-text" data-i18n="universe.new_world_explorer.desc"></p>
+            </div>
+          </button>
+
+          <!-- Chef vampire -->
+          <button class="vr-card" data-universe="vampire_lord">
+            <div class="vr-card-bg vr-card-bg-vampire"></div>
+            <div class="vr-card-content">
+              <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
+              <p class="vr-card-text" data-i18n="universe.vampire_lord.desc"></p>
+            </div>
+          </button>
+
+          <!-- Univers futur verrouillé -->
+          <button class="vr-card vr-card-disabled" disabled>
+            <div class="vr-card-bg vr-card-bg-locked"></div>
+            <div class="vr-card-content">
+              <h3 class="vr-card-title" data-i18n="universe.locked.title"></h3>
+              <p class="vr-card-text" data-i18n="universe.locked.desc"></p>
+            </div>
+          </button>
+        </div>
+      </section>
+    </section>
+
+    <!-- Vue : Jeu (placeholder pour l'instant) -->
+    <section id="view-game" class="vr-view">
+      <div class="vr-game-header">
+        <h2 class="vr-section-title" data-i18n="game.title"></h2>
+        <p class="vr-main-text" data-i18n="game.subtitle"></p>
+      </div>
+
+      <!-- Jauges -->
+      <div class="vr-gauges-row">
+        <div class="vr-gauge" data-gauge-id="g1">
+          <span class="vr-gauge-label"></span>
+          <div class="vr-gauge-frame">
+            <div class="vr-gauge-fill"></div>
+          </div>
+        </div>
+        <div class="vr-gauge" data-gauge-id="g2">
+          <span class="vr-gauge-label"></span>
+          <div class="vr-gauge-frame">
+            <div class="vr-gauge-fill"></div>
+          </div>
+        </div>
+        <div class="vr-gauge" data-gauge-id="g3">
+          <span class="vr-gauge-label"></span>
+          <div class="vr-gauge-frame">
+            <div class="vr-gauge-fill"></div>
+          </div>
+        </div>
+        <div class="vr-gauge" data-gauge-id="g4">
+          <span class="vr-gauge-label"></span>
+          <div class="vr-gauge-frame">
+            <div class="vr-gauge-fill"></div>
+          </div>
+        </div>
+        <div id="vr-meta-bar">
+  <span id="meta-king-name">—</span>
+  <span id="meta-years">0 ans</span>
+  <span id="meta-coins">0 VCoins</span>
+</div>
+
+      </div>
+
+      <!-- Carte événement -->
+      <div class="vr-card-play-area">
+        <div class="vr-event-card">
+          <div class="vr-event-bg"></div>
+          <div class="vr-event-content">
+            <h3 class="vr-event-title" id="event-title"></h3>
+            <p class="vr-event-text" id="event-body"></p>
+
+            <div class="vr-event-choices">
+              <button class="vr-event-choice" data-choice="A" id="choice-A"></button>
+              <button class="vr-event-choice" data-choice="B" id="choice-B"></button>
+              <button class="vr-event-choice" data-choice="C" id="choice-C"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vue : Profil -->
+    <section id="view-profile" class="vr-view">
+      <h2 class="vr-section-title" data-i18n="profile.title"></h2>
+      <p class="vr-main-text" data-i18n="profile.subtitle"></p>
+      <!-- On remplira plus tard avec userData.js -->
+    </section>
+
+    <!-- Vue : Boutique -->
+    <section id="view-shop" class="vr-view">
+      <h2 class="vr-section-title" data-i18n="shop.title"></h2>
+      <p class="vr-main-text" data-i18n="shop.subtitle"></p>
+      <!-- On remplira avec shop.js (cartes, cosmétique, etc.) -->
+    </section>
+
+    <!-- Vue : Paramètres -->
+    <section id="view-settings" class="vr-view">
+      <h2 class="vr-section-title" data-i18n="settings.title"></h2>
+      <p class="vr-main-text" data-i18n="settings.subtitle"></p>
+      <!-- plus tard : son, langue, reset, cloud sync, etc. -->
+    </section>
+  </main>
+
+  <footer class="vr-footer">
+    <span class="vr-footer-text" data-i18n="ui.footer"></span>
+  </footer>
+
+ <script src="js/userData.js"></script>
+<script src="js/ads.js"></script>
+<script src="js/purchases.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
+
+</body>
+</html>
