@@ -675,3 +675,106 @@ body.vr-body {
 .vr-icon-shop {
   background-image: url("../assets/img/ui/btn_shop.webp");
 }
+/* Base pour l'écran de jeu */
+#view-game {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Voile sombre générique */
+#view-game::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Le contenu passe au-dessus du voile */
+#view-game .vr-game-layout,
+#view-game .vr-card-play-area {
+  position: relative;
+  z-index: 1;
+}
+/* Enfers */
+#view-game.vr-bg-hell_king {
+  background-image: url("../assets/img/backgrounds/hell_king_bg.webp");
+}
+
+/* Paradis */
+#view-game.vr-bg-heaven_king {
+  background-image: url("../assets/img/backgrounds/heaven_king_bg.webp");
+}
+
+/* Médiéval */
+#view-game.vr-bg-medieval_king {
+  background-image: url("../assets/img/backgrounds/medieval_king_bg.webp");
+}
+
+/* Président occidental */
+#view-game.vr-bg-western_president {
+  background-image: url("../assets/img/backgrounds/western_president_bg.webp");
+}
+
+/* Mega-corp */
+#view-game.vr-bg-mega_corp_ceo {
+  background-image: url("../assets/img/backgrounds/mega_corp_ceo_bg.webp");
+}
+
+/* Explorateur */
+#view-game.vr-bg-new_world_explorer {
+  background-image: url("../assets/img/backgrounds/new_world_explorer_bg.webp");
+}
+
+/* Vampire */
+#view-game.vr-bg-vampire_lord {
+  background-image: url("../assets/img/backgrounds/vampire_lord_bg.webp");
+}
+/* On enlève les vieux blocs de couleur */
+.vr-game-layout,
+.vr-card-play-area,
+.vr-event-card {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+/* Base cartouche carte */
+.vr-event-card {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 18px 20px;
+}
+
+/* Base boutons de choix sur cartouche */
+.vr-event-choice {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+/* Enfers */
+#view-game.vr-bg-hell_king .vr-event-card {
+  background-image: url("../assets/img/ui/hell_card.webp");
+}
+#view-game.vr-bg-hell_king .vr-event-choice {
+  background-image: url("../assets/img/ui/hell_choice.webp");
+}
+
+/* Paradis */
+#view-game.vr-bg-heaven_king .vr-event-card {
+  background-image: url("../assets/img/ui/heaven_card.webp");
+}
+#view-game.vr-bg-heaven_king .vr-event-choice {
+  background-image: url("../assets/img/ui/heaven_choice.webp");
+}
+
+/* etc. pour chaque univers */
