@@ -233,22 +233,29 @@
       </div>
 
       <!-- Carte événement -->
+    
       <div class="vr-card-play-area">
-        <div class="vr-event-card">
+        <div class="vr-event-card vr-card-main" id="vr-card-main">
           <div class="vr-event-bg"></div>
           <div class="vr-event-content">
-            <h3 class="vr-event-title" id="event-title"></h3>
-            <p class="vr-event-text" id="event-body"></p>
+            <h3 class="vr-event-title vr-card-title" id="card-title"></h3>
+            <p  class="vr-event-text  vr-card-text" id="card-text"></p>
 
-            <div class="vr-event-choices">
-              <button class="vr-event-choice" data-choice="A" id="choice-A"></button>
-              <button class="vr-event-choice" data-choice="B" id="choice-B"></button>
-              <button class="vr-event-choice" data-choice="C" id="choice-C"></button>
+            <div class="vr-event-choices vr-card-choices">
+              <button class="vr-event-choice vr-choice-button" data-choice="A">
+                <span class="vr-choice-label" id="choice-A"></span>
+              </button>
+              <button class="vr-event-choice vr-choice-button" data-choice="B">
+                <span class="vr-choice-label" id="choice-B"></span>
+              </button>
+              <button class="vr-event-choice vr-choice-button" data-choice="C">
+                <span class="vr-choice-label" id="choice-C"></span>
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </section>
+
 
     <!-- Vue : Profil -->
     <section id="view-profile" class="vr-view">

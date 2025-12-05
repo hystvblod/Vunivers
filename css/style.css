@@ -638,6 +638,9 @@ body.vr-body {
   cursor: pointer;
   padding: 0;
 }
+#vr-card-main {
+  touch-action: none; /* pour que le drag horizontal marche bien au doigt */
+}
 
 /* Tooltip global */
 .vr-tooltip {
