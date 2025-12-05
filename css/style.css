@@ -153,13 +153,7 @@ body.vr-body {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
 }
 
-.vr-icon-image {
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  background-size: cover;
-  background-position: center;
-}
+
 
 .vr-icon-label {
   font-size: 12px;
@@ -590,14 +584,15 @@ body.vr-body {
   cursor: pointer;
 }
 
+/* Icônes du header (profil / réglages / boutique) */
 .vr-icon-image {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  background-size: cover;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
   background-position: center;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+  background-repeat: no-repeat;
 }
+
 
 /* On masque l'ancien logo / texte si encore présent */
 .vr-logo,
@@ -664,4 +659,16 @@ body.vr-body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.vr-icon-profile {
+  background-image: url("../assets/img/ui/btn_profile.webp");
+}
+
+.vr-icon-settings {
+  background-image: url("../assets/img/ui/btn_settings.webp");
+}
+
+.vr-icon-shop {
+  background-image: url("../assets/img/ui/btn_shop.webp");
 }
