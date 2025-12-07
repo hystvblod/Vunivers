@@ -340,9 +340,8 @@ body.vr-body {
   z-index: 0;
 }
 
-/* contenus par-dessus le voile */
-#view-game .vr-game-layout,
-#view-game .vr-card-play-area {
+/* Tous les blocs du jeu passent au-dessus du voile */
+#view-game > * {
   position: relative;
   z-index: 1;
 }
@@ -377,22 +376,20 @@ body.vr-body {
   background-image: url("../assets/img/backgrounds/vampire_lord_bg.webp");
 }
 
-/* ===== Bloc JEU : jauges + méta ===== */
+/* ===== Bloc JEU : header, jauges, méta ===== */
 
-.vr-game-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 16px;
+.vr-game-header {
+  margin-bottom: 10px;
 }
 
-.vr-gauges {
+.vr-gauges-row {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
-.vr-gauge-row {
+.vr-gauge {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -403,7 +400,7 @@ body.vr-body {
   min-width: 72px;
 }
 
-.vr-gauge-bar {
+.vr-gauge-frame {
   position: relative;
   flex: 1;
   height: 10px;
@@ -438,68 +435,49 @@ body.vr-body {
 
 /* Meta (roi, années, VCoins) */
 
-.vr-meta {
+.vr-meta-bar {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  justify-content: flex-end;
+  gap: 10px;
   font-size: 13px;
-}
-
-.vr-meta-line {
-  display: flex;
-  justify-content: space-between;
-}
-
-.vr-meta-label {
-  color: var(--vr-text-muted);
-}
-
-.vr-meta-value {
-  font-weight: 600;
+  margin-top: 4px;
+  margin-bottom: 6px;
 }
 
 /* ===== Carte événement + texte scénario ===== */
 
-.vr-card-play-area {
+.vr-card-container {
   display: flex;
   justify-content: center;
   margin-top: 8px;
-  background: transparent;
 }
 
-/* Carte principale (cadre webp) */
-.vr-event-card {
+/* Carte principale = webp transparent, texte collé dessus */
+.vr-card-main {
   position: relative;
   max-width: 380px;
   width: 100%;
   margin: 0 auto 18px auto;
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
 
-  /* webp transparent, rien derrière → on voit le fond de l'univers */
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
 
   padding: 18px 20px;
+  border: none;
+  box-shadow: none;
 }
 
-.vr-event-content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: transparent;
+.vr-card-main.vr-card-dragging {
+  transition: none;
 }
 
-.vr-event-title {
-  margin: 0;
+.vr-card-title {
+  margin: 0 0 6px;
   font-size: 18px;
 }
 
-.vr-event-text {
+.vr-card-text {
   margin: 0;
   font-size: 14px;
   color: var(--vr-text-muted);
@@ -508,51 +486,51 @@ body.vr-body {
 /* ==== Cartes webp par univers ==== */
 
 /* Enfers */
-#view-game.vr-bg-hell_king .vr-event-card {
+#view-game.vr-bg-hell_king .vr-card-main {
   background-image: url("../assets/img/ui/hell_card.webp");
 }
 
 /* Paradis */
-#view-game.vr-bg-heaven_king .vr-event-card {
+#view-game.vr-bg-heaven_king .vr-card-main {
   background-image: url("../assets/img/ui/heaven_card.webp");
 }
 
 /* Médiéval */
-#view-game.vr-bg-medieval_king .vr-event-card {
+#view-game.vr-bg-medieval_king .vr-card-main {
   background-image: url("../assets/img/ui/medieval_card.webp");
 }
 
 /* Président occidental */
-#view-game.vr-bg-western_president .vr-event-card {
+#view-game.vr-bg-western_president .vr-card-main {
   background-image: url("../assets/img/ui/western_card.webp");
 }
 
 /* Mega-corp */
-#view-game.vr-bg-mega_corp_ceo .vr-event-card {
+#view-game.vr-bg-mega_corp_ceo .vr-card-main {
   background-image: url("../assets/img/ui/corp_card.webp");
 }
 
 /* Explorateur */
-#view-game.vr-bg-new_world_explorer .vr-event-card {
+#view-game.vr-bg-new_world_explorer .vr-card-main {
   background-image: url("../assets/img/ui/explorer_card.webp");
 }
 
 /* Vampire */
-#view-game.vr-bg-vampire_lord .vr-event-card {
+#view-game.vr-bg-vampire_lord .vr-card-main {
   background-image: url("../assets/img/ui/vampire_card.webp");
 }
 
 /* ===== Choix (3 cartouches webp séparées) ===== */
 
-.vr-event-choices {
+.vr-card-choices {
   display: flex;
   flex-direction: column;
   gap: 14px;        /* espace entre les 3 choix */
   margin-top: 14px; /* espace entre texte et choix */
 }
 
-/* Base bouton */
-.vr-event-choice {
+/* Base bouton = image webp entière, sans cadre autour */
+.vr-choice-button {
   position: relative;
   display: flex;
   align-items: center;
@@ -587,38 +565,76 @@ body.vr-body {
 /* Webp des choix par univers */
 
 /* Enfers */
-#view-game.vr-bg-hell_king .vr-event-choice {
+#view-game.vr-bg-hell_king .vr-choice-button {
   background-image: url("../assets/img/ui/hell_choice.webp");
 }
 
 /* Paradis */
-#view-game.vr-bg-heaven_king .vr-event-choice {
+#view-game.vr-bg-heaven_king .vr-choice-button {
   background-image: url("../assets/img/ui/heaven_choice.webp");
 }
 
 /* Médiéval */
-#view-game.vr-bg-medieval_king .vr-event-choice {
+#view-game.vr-bg-medieval_king .vr-choice-button {
   background-image: url("../assets/img/ui/medieval_choice.webp");
 }
 
 /* Président occidental */
-#view-game.vr-bg-western_president .vr-event-choice {
+#view-game.vr-bg-western_president .vr-choice-button {
   background-image: url("../assets/img/ui/western_choice.webp");
 }
 
 /* Mega-corp */
-#view-game.vr-bg-mega_corp_ceo .vr-event-choice {
+#view-game.vr-bg-mega_corp_ceo .vr-choice-button {
   background-image: url("../assets/img/ui/corp_choice.webp");
 }
 
 /* Explorateur */
-#view-game.vr-bg-new_world_explorer .vr-event-choice {
+#view-game.vr-bg-new_world_explorer .vr-choice-button {
   background-image: url("../assets/img/ui/explorer_choice.webp");
 }
 
 /* Vampire */
-#view-game.vr-bg-vampire_lord .vr-event-choice {
+#view-game.vr-bg-vampire_lord .vr-choice-button {
   background-image: url("../assets/img/ui/vampire_choice.webp");
+}
+
+/* ===== Écran de fin ===== */
+
+.vr-ending-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.vr-ending-overlay.vr-ending-visible {
+  display: flex;
+}
+
+.vr-ending-card {
+  max-width: 360px;
+  width: 100%;
+  padding: 20px 18px;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.98);
+  border: 1px solid rgba(209, 213, 219, 0.5);
+  box-shadow: var(--vr-shadow-soft);
+  text-align: left;
+}
+
+.vr-ending-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.vr-ending-text {
+  margin: 0 0 14px;
+  font-size: 14px;
+  color: var(--vr-text-muted);
 }
 
 /* ===== Profil / Shop / Settings (vues secondaires) ===== */
@@ -655,18 +671,5 @@ body.vr-body {
 @media (min-width: 768px) {
   .vr-main {
     padding: 16px 24px 32px;
-  }
-
-  .vr-game-layout {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .vr-gauges {
-    flex: 2;
-  }
-
-  .vr-meta {
-    flex: 1;
   }
 }
