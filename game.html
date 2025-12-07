@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="vr-body vr-body-game">
+<body class="vr-body">
   <div class="vr-overlay"></div>
 
   <main class="vr-main">
@@ -65,103 +65,16 @@
       <div class="vr-meta-bar">
         <span id="meta-king-name"></span>
         <span id="meta-years"></span>
-        <span id="meta-vcoins"></span>
+        <span id="meta-coins"></span>
       </div>
 
-      <div class="vr-bottom-bar">
-        <button class="vr-bottom-btn" id="btn-profile">
-          <img
-            src="assets/img/ui/btn_profile.webp"
-            alt=""
-            class="vr-bottom-btn-icon"
-          />
-        </button>
-        <button class="vr-bottom-btn" id="btn-settings">
-          <img
-            src="assets/img/ui/btn_settings.webp"
-            alt=""
-            class="vr-bottom-btn-icon"
-          />
-        </button>
-        <button class="vr-bottom-btn" id="btn-shop">
-          <img
-            src="assets/img/ui/btn_shop.webp"
-            alt=""
-            class="vr-bottom-btn-icon"
-          />
-        </button>
-      </div>
-    </section>
-
-    <section id="view-profile" class="vr-view">
-      <header class="vr-subheader">
-        <button class="vr-back-btn" data-target="view-game">&larr;</button>
-        <h2 class="vr-section-title" data-i18n="profile.title"></h2>
-      </header>
-
-      <div class="vr-profile-layout">
-        <div class="vr-profile-card">
-          <h3 class="vr-card-title" data-i18n="profile.infos.title"></h3>
-          <p class="vr-card-text">
-            <span data-i18n="profile.infos.king"></span>
-            <span id="profile-king-name"></span>
-          </p>
-          <p class="vr-card-text">
-            <span data-i18n="profile.infos.reign"></span>
-            <span id="profile-king-years"></span>
-          </p>
-          <p class="vr-card-text">
-            <span data-i18n="profile.infos.vcoins"></span>
-            <span id="profile-vcoins"></span>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="view-settings" class="vr-view">
-      <header class="vr-subheader">
-        <button class="vr-back-btn" data-target="view-game">&larr;</button>
-        <h2 class="vr-section-title" data-i18n="settings.title"></h2>
-      </header>
-
-      <div class="vr-settings-layout">
-        <div class="vr-card">
-          <h3 class="vr-card-title" data-i18n="settings.language.title"></h3>
-          <p class="vr-card-text" data-i18n="settings.language.subtitle"></p>
-          <div class="vr-language-row">
-            <button class="vr-chip" data-lang="fr">FR</button>
-            <button class="vr-chip" data-lang="en">EN</button>
-          </div>
-        </div>
-
-        <div class="vr-card">
-          <h3 class="vr-card-title" data-i18n="settings.sounds.title"></h3>
-          <p class="vr-card-text" data-i18n="settings.sounds.subtitle"></p>
-          <label class="vr-switch">
-            <input type="checkbox" id="toggle-sound" checked />
-            <span class="vr-switch-slider"></span>
-          </label>
-        </div>
-      </div>
-    </section>
-
-    <section id="view-shop" class="vr-view">
-      <header class="vr-subheader">
-        <button class="vr-back-btn" data-target="view-game">&larr;</button>
-        <h2 class="vr-section-title" data-i18n="shop.title"></h2>
-      </header>
-
-      <div class="vr-shop-layout">
-        <div class="vr-card">
-          <h3 class="vr-card-title" data-i18n="shop.packs.title"></h3>
-          <p class="vr-card-text" data-i18n="shop.packs.subtitle"></p>
-          <div class="vr-shop-grid" id="shop-packs"></div>
-        </div>
-
-        <div class="vr-card">
-          <h3 class="vr-card-title" data-i18n="shop.boosters.title"></h3>
-          <p class="vr-card-text" data-i18n="shop.boosters.subtitle"></p>
-          <div class="vr-shop-grid" id="shop-boosters"></div>
+      <div class="vr-ending-overlay" id="vr-ending-overlay">
+        <div class="vr-ending-card">
+          <h3 class="vr-ending-title" id="ending-title"></h3>
+          <p class="vr-ending-text" id="ending-text"></p>
+          <button id="ending-restart-btn" class="vr-choice-button">
+            <span data-i18n="game.restart"></span>
+          </button>
         </div>
       </div>
     </section>
