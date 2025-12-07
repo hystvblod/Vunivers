@@ -3,7 +3,8 @@
 
 :root {
   --vr-bg: radial-gradient(circle at top, #1f2937 0, #020617 70%);
-  --vr-overlay: linear-gradient(to bottom right,
+  --vr-overlay: linear-gradient(
+    to bottom right,
     rgba(148, 27, 27, 0.22),
     rgba(15, 118, 110, 0.18)
   );
@@ -25,11 +26,11 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 
-body.vr-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+.vr-body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   background: var(--vr-bg);
   color: var(--vr-text-main);
   min-height: 100vh;
@@ -45,6 +46,9 @@ body.vr-body {
   background: var(--vr-overlay);
   pointer-events: none;
   z-index: 0;
+}
+.vr-body-game .vr-overlay {
+  display: none;
 }
 
 /* Layout principal */
@@ -62,104 +66,95 @@ body.vr-body {
 
 .vr-header {
   position: relative;
-  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px 8px;
-  max-width: 1120px;
-  margin: 0 auto;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.85);
 }
 
 .vr-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  cursor: pointer;
-}
-
-.vr-logo-mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle at 30% 20%, #fed7aa, #f97316);
-  color: #0b1120;
-  font-weight: 900;
-  font-size: 18px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
-}
-
-.vr-logo-text {
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-/* Langue */
-
-.vr-lang-selector {
-  display: flex;
-  align-items: center;
   gap: 8px;
 }
 
-.vr-label {
-  font-size: 13px;
-  color: var(--vr-text-muted);
-}
-
-.vr-select {
-  background: rgba(15, 23, 42, 0.95);
+.vr-logo-icon {
+  width: 22px;
+  height: 22px;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.6);
-  color: var(--vr-text-main);
-  padding: 6px 10px;
+  border: 1px solid rgba(248, 250, 252, 0.45);
+  background: radial-gradient(circle at 30% 20%, #facc15, #b45309 60%, #1f2937);
+  box-shadow: 0 0 14px rgba(251, 191, 36, 0.7);
+}
+
+.vr-logo-text {
   font-size: 13px;
-  outline: none;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-/* Side nav boutons bas */
-
-.vr-side-nav {
-  position: fixed;
-  bottom: 16px;
-  z-index: 2;
-}
-
-.vr-side-nav-left {
-  left: 16px;
-}
-
-.vr-side-nav-right {
-  right: 16px;
-  display: flex;
-  gap: 10px;
-}
-
-.vr-icon-button {
-  border: none;
-  background: rgba(15, 23, 42, 0.98);
-  border-radius: 999px;
-  padding: 6px 14px 6px 8px;
+.vr-header-right {
   display: flex;
   align-items: center;
   gap: 6px;
-  cursor: pointer;
-  border: 1px solid rgba(148, 163, 184, 0.6);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
-}
-
-
-
-.vr-icon-label {
   font-size: 12px;
 }
 
-/* Main views */
+/* VCoins pill */
+
+.vr-coins-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(248, 250, 252, 0.3);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.9);
+}
+
+.vr-coins-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 20%, #facc15, #b45309 60%, #1f2937);
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.8);
+}
+
+.vr-coins-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.9;
+}
+
+.vr-coins-value {
+  font-weight: 700;
+}
+
+/* Bouton header */
+
+.vr-header-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.65);
+  background: radial-gradient(circle at 30% 20%, #e5e7eb, #6b7280 55%, #020617);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.95);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Sections */
 
 .vr-view {
   display: none;
@@ -169,262 +164,120 @@ body.vr-body {
   display: block;
 }
 
-/* Home */
+/* Titres généraux */
 
-.vr-intro {
-  margin-top: 8px;
-  margin-bottom: 16px;
-  max-width: 640px;
-}
-
-.vr-main-title {
-  font-size: 26px;
-  margin: 0 0 6px;
+.vr-section-title {
+  margin: 0 0 3px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.9;
 }
 
 .vr-main-text {
   margin: 0;
-  font-size: 14px;
+  font-size: 12px;
   color: var(--vr-text-muted);
 }
 
-.vr-section-title {
-  font-size: 18px;
-  margin: 12px 0 10px;
+/* ==== GAME VIEW ==== */
+
+.vr-game-header {
+  margin-bottom: 10px;
 }
 
-.vr-universes {
-  margin-top: 4px;
-}
+/* Gauge row */
 
-.vr-universe-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* Cartes univers */
-
-.vr-card {
-  position: relative;
-  border-radius: var(--vr-radius-xl);
-  overflow: hidden;
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid var(--vr-card-border);
-  padding: 10px 14px;
-  text-align: left;
-  display: block;
-  width: 100%;
-  cursor: pointer;
-  box-shadow: var(--vr-shadow-soft);
-}
-
-.vr-card-disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.vr-card-bg {
-  position: absolute;
-  inset: 0;
-  opacity: 0.32;
-  background-size: cover;
-  background-position: center;
-  pointer-events: none;
-}
-
-.vr-card-content {
-  position: relative;
-  z-index: 1;
-}
-
-.vr-card-title {
-  margin: 0 0 3px;
-  font-size: 16px;
-}
-
-.vr-card-text {
-  margin: 0;
-  font-size: 13px;
-  color: var(--vr-text-muted);
-}
-
-/* Exemple de backgrounds univers (à adapter à tes webp) */
-
-.vr-card-bg-hell {
-  background-image: linear-gradient(135deg, #450a0a, #7f1d1d);
-}
-
-.vr-card-bg-heaven {
-  background-image: linear-gradient(135deg, #93c5fd, #e5e7eb);
-}
-
-.vr-card-bg-medieval {
-  background-image: linear-gradient(135deg, #4b5563, #1f2937);
-}
-
-.vr-card-bg-western {
-  background-image: linear-gradient(135deg, #78350f, #1f2937);
-}
-
-.vr-card-bg-corp {
-  background-image: linear-gradient(135deg, #0f172a, #111827);
-}
-
-.vr-card-bg-explorer {
-  background-image: linear-gradient(135deg, #065f46, #111827);
-}
-
-.vr-card-bg-vampire {
-  background-image: linear-gradient(135deg, #111827, #4b0219);
-}
-
-.vr-card-bg-locked {
-  background-image: linear-gradient(135deg, #4b5563, #020617);
-}
-
-/* Game view */
-
-.vr-game-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.vr-gauges {
+.vr-gauges-row {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  margin-bottom: 10px;
 }
 
-.vr-gauge-row {
+.vr-gauge {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  font-size: 11px;
 }
 
 .vr-gauge-label {
-  font-size: 12px;
-  min-width: 72px;
+  width: 38px;
+  opacity: 0.7;
 }
 
-.vr-gauge-bar {
-  position: relative;
+.vr-gauge-frame {
   flex: 1;
-  height: 10px;
+  height: 9px;
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.6);
   overflow: hidden;
-  border: 1px solid rgba(148, 163, 184, 0.5);
+  position: relative;
 }
 
 .vr-gauge-fill {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+  inset: 0;
   width: 50%;
-  border-radius: 999px;
-  background: linear-gradient(to right, #22c55e, #fbbf24, #ef4444);
+  background: linear-gradient(
+    to right,
+    #4ade80 0,
+    #facc15 40%,
+    #f97316 70%,
+    #ef4444 100%
+  );
 }
 
-/* Preview des jauges quand on maintient un choix (fantôme) */
+/* Preview overlay (choix) */
+
 .vr-gauge-preview {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+  inset: 0;
   width: 0%;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+/* Meta bar */
+
+.vr-meta-bar {
+  margin-top: 10px;
+  padding: 6px 10px;
   border-radius: 999px;
-  background: linear-gradient(to right, #22c55e, #fbbf24, #ef4444);
-  opacity: 0.35;
-  pointer-events: none;
-}
-
-/* Meta */
-
-.vr-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 13px;
-}
-
-.vr-meta-line {
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  font-size: 11px;
   display: flex;
   justify-content: space-between;
+  gap: 6px;
 }
 
-.vr-meta-label {
-  color: var(--vr-text-muted);
-}
+/* Bottom bar */
 
-.vr-meta-value {
-  font-weight: 600;
-}
-
-/* Carte événement */
-
-.vr-card-play-area {
+.vr-bottom-bar {
+  margin-top: 12px;
   display: flex;
   justify-content: center;
-  margin-top: 8px;
+  gap: 14px;
 }
 
-.vr-event-card {
-  position: relative;
-  border-radius: 24px;
-  background: rgba(15, 23, 42, 0.96);
+.vr-bottom-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
   border: 1px solid rgba(148, 163, 184, 0.6);
-  box-shadow: var(--vr-shadow-soft);
-  max-width: 520px;
-  width: 100%;
-  min-height: 220px;
-  overflow: hidden;
-}
-
-.vr-event-bg {
-  position: absolute;
-  inset: 0;
-  opacity: 0.20;
-  background: radial-gradient(circle at top, rgba(248, 250, 252, 0.24), transparent 55%);
-  pointer-events: none;
-}
-
-.vr-event-content {
-  position: relative;
-  z-index: 1;
-  padding: 20px 18px 14px;
-}
-
-.vr-event-title {
-  margin: 0 0 6px;
-  font-size: 18px;
-}
-
-.vr-event-text {
-  margin: 0 0 14px;
-  font-size: 14px;
-  color: var(--vr-text-muted);
-}
-
-/* Choix */
-
-.vr-event-choices {
+  background: radial-gradient(circle at 30% 20%, #e5e7eb, #4b5563 65%, #020617);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.9);
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
-.vr-event-choice {
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.65);
-  background: rgba(15, 23, 42, 0.95);
-  padding: 8px 12px;
-  text-align: left;
-  font-size: 14px;
-  cursor: pointer;
+.vr-bottom-btn-icon {
+  width: 22px;
+  height: 22px;
 }
 
 /* Game bg par univers */
@@ -432,11 +285,13 @@ body.vr-body {
 #view-game {
   position: relative;
   border-radius: 24px;
-  padding: 10px 14px 18px;
-  background: rgba(15, 23, 42, 0.92);
-  border: 1px solid rgba(148, 163, 184, 0.6);
-  box-shadow: var(--vr-shadow-soft);
+  padding: 10px 14px 24px;
+  background: transparent; /* on laisse l'image de fond visible */
+  border: none;
+  box-shadow: none;
   overflow: hidden;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 /* Pseudo-fond qui prend toute la view-game */
@@ -447,8 +302,76 @@ body.vr-body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.45;          /* transparence du fond */
+  opacity: 0.45; /* transparence du fond */
   z-index: -1;
+}
+/* Carte d'événement + choix dans la vue de jeu */
+
+#view-game .vr-card-container {
+  margin-top: 18px;
+  padding: 0 10px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#view-game .vr-card-main {
+  position: relative;
+  max-width: 520px;
+  width: 100%;
+  padding: 22px 18px 18px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: rgba(15, 23, 36, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.85);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#view-game .vr-card-title {
+  margin: 0;
+  font-size: 18px;
+}
+
+#view-game .vr-card-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--vr-text-main);
+}
+
+/* Zone des choix */
+
+#view-game .vr-card-choices {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#view-game .vr-choice-button {
+  position: relative;
+  width: 100%;
+  min-height: 44px;
+  border: none;
+  border-radius: 16px;
+  padding: 9px 16px;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #fbbf24, #d97706);
+  display: flex;
+  align-items: center;
+  text-align: left;
+  color: #111827;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#view-game .vr-choice-button .vr-choice-label {
+  flex: 1;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Chaque univers change juste l'image du pseudo-fond */
@@ -469,180 +392,156 @@ body.vr-body {
   background-image: url("../assets/img/backgrounds/western_president_bg.webp");
 }
 
-#view-game.vr-bg-mega_corp_ceo::before {
-  background-image: url("../assets/img/backgrounds/mega_corp_ceo_bg.webp");
-}
+/* Cartes / cards génériques (index, shop, etc.) */
 
-#view-game.vr-bg-new_world_explorer::before {
-  background-image: url("../assets/img/backgrounds/new_world_explorer_bg.webp");
-}
-
-#view-game.vr-bg-vampire_lord::before {
-  background-image: url("../assets/img/backgrounds/vampire_lord_bg.webp");
-}
-
-/* Profile, Shop, Settings */
-
-.vr-profile-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.vr-profile-card {
+.vr-card {
   border-radius: var(--vr-radius-xl);
-  background: rgba(15, 23, 42, 0.96);
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  padding: 10px 14px;
+  background: var(--vr-card-bg);
+  border: 1px solid var(--vr-card-border);
+  padding: 14px 14px 12px;
   box-shadow: var(--vr-shadow-soft);
 }
 
-/* Footer */
-
-.vr-footer {
-  position: relative;
-  z-index: 1;
-  padding: 10px 16px 16px;
-  text-align: center;
-  font-size: 11px;
-  color: var(--vr-text-muted);
-}
-
-/* Icônes (webp de ton projet) */
-
-.vr-icon-profile {
-  background-image: url("../assets/img/ui/icon_profile.webp");
-}
-
-.vr-icon-settings {
-  background-image: url("../assets/img/ui/icon_settings.webp");
-}
-
-.vr-icon-shop {
-  background-image: url("../assets/img/ui/icon_shop.webp");
-}
-
-/* Media queries simples */
-
-@media (min-width: 768px) {
-  .vr-main {
-    padding: 16px 24px 32px;
-  }
-
-  .vr-game-layout {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .vr-gauges {
-    flex: 2;
-  }
-
-  .vr-meta {
-    flex: 1;
-  }
-}
-
-/* ==== OVERRIDES VREALMS HOME UI (fond plus clair, header icônes, logo, ? info) ==== */
-
-/* Fond plus clair beige + nuit */
-:root {
-  --vr-bg: radial-gradient(circle at top, #f6e7cf 0, #0b1120 70%);
-  --vr-overlay: linear-gradient(
-    to bottom right,
-    rgba(255, 255, 255, 0.10),
-    rgba(15, 23, 42, 0.85)
-  );
-  --vr-card-bg: rgba(15, 23, 42, 0.92);
-  --vr-card-border: rgba(209, 213, 219, 0.55);
-  --vr-text-main: #f9fafb;
-  --vr-text-muted: #d1d5db;
-}
-
-/* Header en haut avec icônes seules */
-.vr-header {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  padding: 12px 24px 4px;
-  max-width: 1120px;
-  margin: 0 auto;
-}
-
-.vr-top-actions {
-  display: flex;
-  gap: 16px;
-}
-
-/* Boutons : seulement l'icône, pas de pilule */
-.vr-icon-button {
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-}
-
-/* Icônes du header (profil / réglages / boutique) */
-.vr-icon-image {
-  width: 32px;
-  height: 32px;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-
-/* On masque l'ancien logo / texte si encore présent */
-.vr-logo,
-.vr-side-nav {
-  display: none !important;
-}
-
-/* Intro = logo centré */
-.vr-intro {
-  margin-top: 8px;
-  margin-bottom: 16px;
-  display: flex;
-  justify-content: center;
-}
-
-.vr-main-logo {
-  height: 72px;
-  max-width: 240px;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.45));
-}
-
-/* Ligne titre + bouton ? dans les cartes univers */
 .vr-card-header-line {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
-.vr-info-btn {
-  width: 22px;
-  height: 22px;
-  border-radius: 999px;
-  border: 1px solid rgba(209, 213, 219, 0.7);
-  background: rgba(15, 23, 42, 0.98);
-  color: #f9fafb;
+.vr-card-title {
+  margin: 0 0 3px;
+  font-size: 16px;
+}
+
+.vr-card-text {
+  margin: 0;
   font-size: 13px;
-  font-weight: 700;
-  display: inline-flex;
+  color: var(--vr-text-muted);
+}
+
+.vr-card-play-area {
+  margin-top: 8px;
+}
+
+/* Chips / tags */
+
+.vr-chip {
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 11px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(15, 23, 42, 0.92);
+  cursor: pointer;
+}
+
+/* Profile view */
+
+.vr-subheader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.vr-back-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.98);
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  padding: 0;
 }
-#vr-card-main {
-  touch-action: none; /* pour que le drag horizontal marche bien au doigt */
+
+.vr-profile-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vr-profile-card {
+  border-radius: var(--vr-radius-xl);
+  background: rgba(15, 23, 42, 0.98);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  padding: 14px;
+  box-shadow: var(--vr-shadow-soft);
+}
+
+/* Settings */
+
+.vr-settings-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vr-language-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+/* Switch */
+
+.vr-switch {
+  position: relative;
+  display: inline-flex;
+  width: 40px;
+  height: 22px;
+}
+
+.vr-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.vr-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+}
+
+.vr-switch-slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  top: 2px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 20%, #facc15, #b45309 60%, #111827);
+  transition: transform 0.2s ease;
+}
+
+.vr-switch input:checked + .vr-switch-slider::before {
+  transform: translateX(16px);
+}
+
+/* Shop */
+
+.vr-shop-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vr-shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
 }
 
 /* Tooltip global */
+
 .vr-tooltip {
   position: fixed;
   transform: translateX(-50%);
@@ -650,161 +549,27 @@ body.vr-body {
   padding: 10px 12px;
   border-radius: 12px;
   background: rgba(15, 23, 42, 0.98);
-  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  box-shadow: var(--vr-shadow-soft);
   font-size: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  display: none;
+  color: var(--vr-text-main);
   z-index: 50;
 }
-/* Fond de l'écran de jeu Hell King */
-#view-game {
-  background-image: url("../assets/img/backgrounds/hell_king_bg.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+
+/* Divers */
+
+#vr-card-main {
+  touch-action: none; /* pour que le drag horizontal marche bien au doigt */
 }
 
-.vr-icon-profile {
-  background-image: url("../assets/img/ui/btn_profile.webp");
-}
+/* Responsive */
 
-.vr-icon-settings {
-  background-image: url("../assets/img/ui/btn_settings.webp");
-}
+@media (min-width: 640px) {
+  .vr-gauges-row {
+    flex-direction: row;
+  }
 
-.vr-icon-shop {
-  background-image: url("../assets/img/ui/btn_shop.webp");
-}
-/* Base pour l'écran de jeu */
-#view-game {
-  position: relative;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-
-/* Voile sombre générique */
-#view-game::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Le contenu passe au-dessus du voile */
-#view-game .vr-game-layout,
-#view-game .vr-card-play-area {
-  position: relative;
-  z-index: 1;
-}
-/* Enfers */
-#view-game.vr-bg-hell_king {
-  background-image: url("../assets/img/backgrounds/hell_king_bg.webp");
-}
-
-/* Paradis */
-#view-game.vr-bg-heaven_king {
-  background-image: url("../assets/img/backgrounds/heaven_king_bg.webp");
-}
-
-/* Médiéval */
-#view-game.vr-bg-medieval_king {
-  background-image: url("../assets/img/backgrounds/medieval_king_bg.webp");
-}
-
-/* Président occidental */
-#view-game.vr-bg-western_president {
-  background-image: url("../assets/img/backgrounds/western_president_bg.webp");
-}
-
-/* Mega-corp */
-#view-game.vr-bg-mega_corp_ceo {
-  background-image: url("../assets/img/backgrounds/mega_corp_ceo_bg.webp");
-}
-
-/* Explorateur */
-#view-game.vr-bg-new_world_explorer {
-  background-image: url("../assets/img/backgrounds/new_world_explorer_bg.webp");
-}
-
-/* Vampire */
-#view-game.vr-bg-vampire_lord {
-  background-image: url("../assets/img/backgrounds/vampire_lord_bg.webp");
-}
-/* On enlève les vieux blocs de couleur */
-.vr-game-layout,
-.vr-card-play-area,
-.vr-event-card {
-  background: transparent;
-  box-shadow: none;
-  border: none;
-}
-
-/* Base cartouche carte */
-.vr-event-card {
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 18px 20px;
-}
-
-/* Base boutons de choix sur cartouche */
-.vr-event-choice {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border: none;
-  color: #fff;
-}
-/* Enfers */
-#view-game.vr-bg-hell_king .vr-event-card {
-  background-image: url("../assets/img/ui/hell_card.webp");
-}
-#view-game.vr-bg-hell_king .vr-event-choice {
-  background-image: url("../assets/img/ui/hell_choice.webp");
-}
-
-/* Paradis */
-#view-game.vr-bg-heaven_king .vr-event-card {
-  background-image: url("../assets/img/ui/heaven_card.webp");
-}
-#view-game.vr-bg-heaven_king .vr-event-choice {
-  background-image: url("../assets/img/ui/heaven_choice.webp");
-}
-
-/* etc. pour chaque univers */
-
-
-
-/* Mode plein écran pour le jeu */
-#view-game {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-
-  overflow: hidden;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* On supprime tout le cadre gris autour du jeu */
-.vr-main,
-.vr-game-layout,
-.vr-card-play-area {
-  max-width: none !important;
-  width: 100% !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  .vr-gauge-label {
+    width: 52px;
+  }
 }
