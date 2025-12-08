@@ -6,7 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="vr-body">
+<body class="vr-body vr-body-game">
+/* Mode plein écran pour la page de jeu (game.html) */
+body.vr-body-game {
+  background: #000;            /* plus de gros fond gris dégueu */
+}
+
+body.vr-body-game .vr-overlay {
+  display: none;               /* on enlève le voile radial gris/beige */
+}
+
+body.vr-body-game .vr-main {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;                  /* le fond Enfer colle bien aux bords */
+}
+
+body.vr-body-game #view-game {
+  min-height: 100vh;
+  padding: 12px 12px 16px 12px; /* on garde ton petit padding interne */
+}
+
   <div class="vr-overlay"></div>
 
   <main class="vr-main">
