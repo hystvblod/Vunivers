@@ -6,98 +6,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body class="vr-body vr-body-game">
-/* Mode plein écran pour la page de jeu (game.html) */
-body.vr-body-game {
-  background: #000;            /* plus de gros fond gris dégueu */
-}
 
-body.vr-body-game .vr-overlay {
-  display: none;               /* on enlève le voile radial gris/beige */
-}
+  <!-- IMPORTANT : plus de CSS en texte ici. Tout est dans style.css -->
 
-body.vr-body-game .vr-main {
-  max-width: none;
-  width: 100%;
-  margin: 0;
-  padding: 0;                  /* le fond Enfer colle bien aux bords */
-}
+  <!-- Header icônes (profil / paramètres / shop) au-dessus du fond -->
+  <header class="vr-header vr-header-game" aria-label="Top actions">
+    <div class="vr-top-actions">
+      <button class="vr-icon-button" type="button" id="btn-profile" aria-label="Profile">
+        <span class="vr-icon-image vr-icon-profile"></span>
+      </button>
+      <button class="vr-icon-button" type="button" id="btn-settings" aria-label="Settings">
+        <span class="vr-icon-image vr-icon-settings"></span>
+      </button>
+      <button class="vr-icon-button" type="button" id="btn-shop" aria-label="Shop">
+        <span class="vr-icon-image vr-icon-shop"></span>
+      </button>
+    </div>
+  </header>
 
-body.vr-body-game #view-game {
-  min-height: 100vh;
-  padding: 12px 12px 16px 12px; /* on garde ton petit padding interne */
-}
-
+  <!-- overlay global désactivé en mode game via CSS -->
   <div class="vr-overlay"></div>
 
   <main class="vr-main">
     <section id="view-game" class="vr-view vr-view-active">
+
       <div class="vr-game-header">
         <h2 class="vr-section-title" data-i18n="game.title"></h2>
         <p class="vr-main-text" data-i18n="game.subtitle"></p>
       </div>
 
+      <!-- 4 jauges séparées -->
       <div class="vr-gauges-row">
         <div class="vr-gauge" data-gauge-id="g1">
           <span class="vr-gauge-label"></span>
           <div class="vr-gauge-frame">
+            <div class="vr-gauge-preview"></div>
             <div class="vr-gauge-fill"></div>
           </div>
         </div>
+
         <div class="vr-gauge" data-gauge-id="g2">
           <span class="vr-gauge-label"></span>
           <div class="vr-gauge-frame">
+            <div class="vr-gauge-preview"></div>
             <div class="vr-gauge-fill"></div>
           </div>
         </div>
+
         <div class="vr-gauge" data-gauge-id="g3">
           <span class="vr-gauge-label"></span>
           <div class="vr-gauge-frame">
+            <div class="vr-gauge-preview"></div>
             <div class="vr-gauge-fill"></div>
           </div>
         </div>
+
         <div class="vr-gauge" data-gauge-id="g4">
           <span class="vr-gauge-label"></span>
           <div class="vr-gauge-frame">
+            <div class="vr-gauge-preview"></div>
             <div class="vr-gauge-fill"></div>
           </div>
         </div>
       </div>
 
+      <!-- Carte scénario compacte + choix séparés EN DESSOUS -->
       <div class="vr-card-container">
-        <div class="vr-card-main" id="vr-card-main">
-          <h3 class="vr-card-title" id="card-title"></h3>
-          <p class="vr-card-text" id="card-text"></p>
+        <div class="vr-card-stack">
 
-          <div class="vr-card-choices">
-            <button class="vr-choice-button" data-choice="A">
+          <!-- CARTE SCÉNARIO -->
+          <div class="vr-card-main vr-card-main-compact" id="vr-card-main">
+            <h3 class="vr-card-title" id="card-title"></h3>
+            <p class="vr-card-text" id="card-text"></p>
+          </div>
+
+          <!-- CHOIX (3 webp) EN BAS -->
+          <div class="vr-card-choices vr-card-choices-bottom">
+            <button class="vr-choice-button" data-choice="A" type="button">
               <span class="vr-choice-label" id="choice-A"></span>
             </button>
-            <button class="vr-choice-button" data-choice="B">
+            <button class="vr-choice-button" data-choice="B" type="button">
               <span class="vr-choice-label" id="choice-B"></span>
             </button>
-            <button class="vr-choice-button" data-choice="C">
+            <button class="vr-choice-button" data-choice="C" type="button">
               <span class="vr-choice-label" id="choice-C"></span>
             </button>
           </div>
+
         </div>
       </div>
 
+      <!-- Meta -->
       <div class="vr-meta-bar">
         <span id="meta-king-name"></span>
         <span id="meta-years"></span>
         <span id="meta-coins"></span>
       </div>
 
+      <!-- Fin -->
       <div class="vr-ending-overlay" id="vr-ending-overlay">
         <div class="vr-ending-card">
           <h3 class="vr-ending-title" id="ending-title"></h3>
           <p class="vr-ending-text" id="ending-text"></p>
-          <button id="ending-restart-btn" class="vr-choice-button">
+
+          <button id="ending-restart-btn" class="vr-choice-button" type="button">
             <span data-i18n="game.restart"></span>
           </button>
         </div>
       </div>
+
     </section>
   </main>
 
