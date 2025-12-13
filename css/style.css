@@ -382,43 +382,27 @@ body.vr-body {
   margin-bottom: 10px;
 }
 
-/* ======= B) JAUGES SÉPARÉES (REMPLACEMENT) ======= */
-
 .vr-gauges-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2x2 sur mobile */
-  gap: 10px;
-  margin: 10px auto 14px;
-  max-width: 520px;
-}
-
-@media (min-width: 768px) {
-  .vr-gauges-row {
-    grid-template-columns: repeat(4, 1fr); /* 4 en ligne desktop */
-    max-width: 980px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
 .vr-gauge {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 10px 10px;
-  border-radius: 14px;
-  background: rgba(10, 15, 25, 0.35);
-  border: 1px solid rgba(148, 163, 184, 0.28);
-  backdrop-filter: blur(6px);
+  align-items: center;
+  gap: 8px;
 }
 
 .vr-gauge-label {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.92);
-  min-width: 0;
+  min-width: 72px;
 }
 
 .vr-gauge-frame {
   position: relative;
-  width: 100%;
+  flex: 1;
   height: 10px;
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.9);
@@ -690,25 +674,65 @@ body.vr-body {
   }
 }
 
+/* ==========================================================
+   AJOUTS DEMANDÉS (A/B/C) — SANS SUPPRIMER L’ACCUEIL
+   ========================================================== */
+
 /* ===========================
-   C) AJOUT : CLASSES POUR CARTE COMPACTE (si HTML les utilise)
+   B) JAUGES SÉPARÉES (2x2 mobile / 4 desktop)
    =========================== */
 
-.vr-card-stack {
+body.vr-body-game .vr-gauges-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2x2 sur mobile */
+  gap: 10px;
+  margin: 10px auto 14px;
+  max-width: 520px;
+}
+
+@media (min-width: 768px) {
+  body.vr-body-game .vr-gauges-row {
+    grid-template-columns: repeat(4, 1fr); /* 4 en ligne desktop */
+    max-width: 980px;
+  }
+}
+
+body.vr-body-game .vr-gauge {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 10px;
+  border-radius: 14px;
+  background: rgba(10, 15, 25, 0.35);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  backdrop-filter: blur(6px);
+}
+
+body.vr-body-game .vr-gauge-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.92);
+  min-width: 0;
+}
+
+/* ===========================
+   C) CARTE COMPACTE + CHOIX EN BAS
+   =========================== */
+
+body.vr-body-game .vr-card-stack {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.vr-card-main-compact {
+body.vr-body-game .vr-card-main-compact {
   max-width: 360px;     /* réduit le “gros bloc” */
   width: 100%;
   padding: 16px 18px;   /* compact */
   margin: 0 auto;
 }
 
-.vr-card-choices-bottom {
+body.vr-body-game .vr-card-choices-bottom {
   width: 100%;
   margin-top: 10px;
   padding-bottom: 6px;
@@ -736,7 +760,7 @@ body.vr-body-game .vr-main {
 }
 
 /* Header icônes au-dessus du fond */
-body.vr-body-game .vr-header {
+body.vr-body-game .vr-header-game {
   position: fixed;
   top: 10px;
   left: 0;
@@ -744,11 +768,9 @@ body.vr-body-game .vr-header {
   z-index: 20;
   padding: 10px 18px;
   pointer-events: none; /* seul le bloc actions clique */
-  max-width: none;
-  margin: 0;
 }
 
-body.vr-body-game .vr-header .vr-top-actions {
+body.vr-body-game .vr-header-game .vr-top-actions {
   pointer-events: auto;
   display: flex;
   gap: 14px;
@@ -769,9 +791,4 @@ body.vr-body-game #view-game {
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-}
-
-/* Option conseillé : enlève le voile sombre du jeu (sinon ça “grise”) */
-body.vr-body-game #view-game::before {
-  display: none;
 }
