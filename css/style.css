@@ -382,27 +382,43 @@ body.vr-body {
   margin-bottom: 10px;
 }
 
+/* ======= B) JAUGES SÉPARÉES (REMPLACEMENT) ======= */
+
 .vr-gauges-row {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2x2 sur mobile */
+  gap: 10px;
+  margin: 10px auto 14px;
+  max-width: 520px;
+}
+
+@media (min-width: 768px) {
+  .vr-gauges-row {
+    grid-template-columns: repeat(4, 1fr); /* 4 en ligne desktop */
+    max-width: 980px;
+  }
 }
 
 .vr-gauge {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 10px;
+  border-radius: 14px;
+  background: rgba(10, 15, 25, 0.35);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  backdrop-filter: blur(6px);
 }
 
 .vr-gauge-label {
   font-size: 12px;
-  min-width: 72px;
+  color: rgba(255, 255, 255, 0.92);
+  min-width: 0;
 }
 
 .vr-gauge-frame {
   position: relative;
-  flex: 1;
+  width: 100%;
   height: 10px;
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.9);
@@ -672,4 +688,90 @@ body.vr-body {
   .vr-main {
     padding: 16px 24px 32px;
   }
+}
+
+/* ===========================
+   C) AJOUT : CLASSES POUR CARTE COMPACTE (si HTML les utilise)
+   =========================== */
+
+.vr-card-stack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vr-card-main-compact {
+  max-width: 360px;     /* réduit le “gros bloc” */
+  width: 100%;
+  padding: 16px 18px;   /* compact */
+  margin: 0 auto;
+}
+
+.vr-card-choices-bottom {
+  width: 100%;
+  margin-top: 10px;
+  padding-bottom: 6px;
+}
+
+/* ===========================
+   A) MODE JEU PLEIN ÉCRAN (OVERRIDES)
+   =========================== */
+
+body.vr-body-game {
+  background: #000;
+  overflow: hidden;
+}
+
+/* On enlève le voile global sur game */
+body.vr-body-game .vr-overlay {
+  display: none;
+}
+
+body.vr-body-game .vr-main {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header icônes au-dessus du fond */
+body.vr-body-game .vr-header {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  padding: 10px 18px;
+  pointer-events: none; /* seul le bloc actions clique */
+  max-width: none;
+  margin: 0;
+}
+
+body.vr-body-game .vr-header .vr-top-actions {
+  pointer-events: auto;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+/* Vue jeu = le fond prend TOUT l’écran */
+body.vr-body-game #view-game {
+  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 72px 14px 18px; /* top = place pour les icônes */
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Option conseillé : enlève le voile sombre du jeu (sinon ça “grise”) */
+body.vr-body-game #view-game::before {
+  display: none;
 }
