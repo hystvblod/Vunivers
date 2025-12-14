@@ -1,5 +1,6 @@
 // VRealms - userData.js
 // Gestion simple de l'état utilisateur (localStorage)
+// + langue (local) + hooks "DB" prêts (Supabase plus tard)
 
 (function () {
   const VUserDataKey = "vrealms_user_data";
@@ -8,9 +9,7 @@
     load() {
       try {
         const raw = localStorage.getItem(VUserDataKey);
-        if (!raw) {
-          return this._default();
-        }
+        if (!raw) return this._default();
         const parsed = JSON.parse(raw);
         return { ...this._default(), ...parsed };
       } catch (e) {
@@ -27,18 +26,30 @@
       }
     },
 
-    // Structure de base : VCoins + univers + jetons
+    getLang() {
+      const u = this.load();
+      return (u.lang || "fr").toString();
+    },
+
+    setLang(lang) {
+      const l = (lang || "fr").toString().trim().toLowerCase() || "fr";
+      const u = this.load();
+      this.save({ ...u, lang: l });
+      return l;
+    },
+
     _default() {
       return {
-        vcoins: 0,           // monnaie principale
-        premium: false,      // plus tard : version premium ou pas
-        unlockedUniverses: ["hell_king"], // univers débloqués
+        lang: "fr",          // ✅ langue sauvegardée en local
+
+        vcoins: 0,
+        premium: false,
+        unlockedUniverses: ["hell_king"],
         items: {
-          // jetons utilisables en jeu
-          revive: 0,        // relance après la mort
-          gaugeSet50: 0,    // remettre une jauge exactement à 50 %
-          gaugePlus20: 0,   // augmenter une jauge de +20 %
-          gaugeMinus20: 0   // diminuer une jauge de -20 %
+          revive: 0,
+          gaugeSet50: 0,
+          gaugePlus20: 0,
+          gaugeMinus20: 0
         },
         stats: {
           totalRuns: 0,
@@ -48,6 +59,21 @@
     }
   };
 
-  // rendu global
+  // --------- PREPA "DB" (Supabase plus tard) ----------
+  // Tu brancheras ça quand tu auras Supabase + un userId :
+  // - loadLang(): récupérer la langue depuis la DB
+  // - saveLang(lang): sauvegarder la langue en DB
+  //
+  // Par défaut: no-op (ça ne casse rien).
+  window.VRRemoteStore = window.VRRemoteStore || {
+    async loadLang() {
+      return null;
+    },
+    async saveLang(_lang) {
+      return;
+    }
+  };
+  // ----------------------------------------------------
+
   window.VUserData = VUserData;
 })();
