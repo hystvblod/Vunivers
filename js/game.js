@@ -2,8 +2,6 @@
 // Charge la config d'univers + le deck (par univers) + les textes des cartes (par univers + langue).
 
 (function () {
-  "use strict";
-
   const CONFIG_PATH = "data/universes";
   const DECKS_PATH = "data/decks";
   const CARDS_I18N_PATH = "data/i18n";
@@ -36,11 +34,10 @@
     },
 
     async _loadDeck(universeId) {
-      const url = `${DECKS_PATH}/${universeId}.json`;
-      const res = await fetch(url, { cache: "no-cache" });
+      const res = await fetch(`${DECKS_PATH}/${universeId}.json`, { cache: "no-cache" });
       if (!res.ok) {
         throw new Error(
-          `[VREventsLoader] Impossible de charger le deck: ${url}`
+          `[VREventsLoader] Impossible de charger le deck: ${DECKS_PATH}/${universeId}.json`
         );
       }
 
@@ -60,11 +57,12 @@
     },
 
     async _loadCardTexts(universeId, lang) {
-      const url = `${CARDS_I18N_PATH}/cards_${universeId}_${lang}.json`;
-      const res = await fetch(url, { cache: "no-cache" });
+      const res = await fetch(`${CARDS_I18N_PATH}/cards_${universeId}_${lang}.json`, {
+        cache: "no-cache"
+      });
       if (!res.ok) {
         throw new Error(
-          `[VREventsLoader] Impossible de charger ${url}`
+          `[VREventsLoader] Impossible de charger cards_${universeId}_${lang}.json`
         );
       }
       return res.json();
@@ -79,8 +77,6 @@
 // Fait le lien moteur ↔ interface (jauges, carte, choix + preview + swipe).
 
 (function () {
-  "use strict";
-
   const DRAG_THRESHOLD = 60;
 
   const VRUIBinding = {
@@ -101,8 +97,8 @@
 
     init(universeConfig, lang, cardTextsDict) {
       this.universeConfig = universeConfig;
-      this.lang = lang || "fr";
-      this.cardTextsDict = cardTextsDict || {};
+      this.lang = lang;
+      this.cardTextsDict = cardTextsDict;
 
       this._setupGaugeLabels();
       this._ensureGaugePreviewBars();
@@ -349,8 +345,6 @@
 
 // VRealms - engine/state.js
 (function () {
-  "use strict";
-
   const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
 
   const VRState = {
@@ -409,8 +403,6 @@
 
 // VRealms - engine/endings.js (dans game.js)
 (function () {
-  "use strict";
-
   const ENDINGS_BASE_PATH = "data/i18n";
   const cache = new Map(); // key = universeId__lang
 
@@ -471,8 +463,6 @@
 
 // VRealms - engine/engine-core.js
 (function () {
-  "use strict";
-
   const RECENT_MEMORY_SIZE = 4;
   const BASE_COINS_PER_CARD = 5;
   const STREAK_STEP = 10;
@@ -626,7 +616,7 @@ window.VRGame = {
     if (universeId) document.body.dataset.universe = universeId;
     else delete document.body.dataset.universe;
 
-    // legacy classes (optionnel)
+    // legacy classes (on garde)
     viewGame.classList.remove(
       "vr-bg-hell_king","vr-bg-heaven_king","vr-bg-medieval_king",
       "vr-bg-western_president","vr-bg-mega_corp_ceo","vr-bg-new_world_explorer","vr-bg-vampire_lord"
