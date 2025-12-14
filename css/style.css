@@ -744,119 +744,93 @@ body.vr-body-game #view-game::before {
 }
 
 /* ===========================
-   2) 4 JAUGES SÉPARÉES
+   2) 4 JAUGES SÉPARÉES (SANS "CARTES" GRISES)
    =========================== */
 
-body.vr-body-game .vr-gauges-row {
+body.vr-body-game .vr-gauges-row{
   width: 100%;
-  max-width: 520px;
+  max-width: 980px;
   margin: 0 auto 10px;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 
-@media (min-width: 768px) {
-  body.vr-body-game .vr-gauges-row {
-    max-width: 980px;
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-body.vr-body-game .vr-gauge {
+body.vr-body-game .vr-gauge{
   display: flex;
   flex-direction: column;
   gap: 6px;
 
-  padding: 10px;
-  border-radius: 14px;
-  background: rgba(10, 15, 25, 0.35);
-  border: 1px solid rgba(148, 163, 184, 0.28);
-  backdrop-filter: blur(6px);
+  /* ✅ enlève les carrés gris */
+  padding: 0;
+  background: transparent;
+  border: none;
+  backdrop-filter: none;
 }
 
-body.vr-body-game .vr-gauge .vr-gauge-label {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.92);
+body.vr-body-game .vr-gauge .vr-gauge-label{
+  font-size: 11px;
+  color: rgba(255,255,255,0.92);
   min-width: 0;
 }
 
-body.vr-body-game .vr-gauge .vr-gauge-frame {
+body.vr-body-game .vr-gauge .vr-gauge-frame{
   height: 12px;
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.45);
-}
+  border-radius: 999px;
 
-body.vr-body-game .vr-gauge .vr-gauge-fill,
-body.vr-body-game .vr-gauge .vr-gauge-preview {
-  background: linear-gradient(to right, #22c55e, #fbbf24, #ef4444);
-}
-
-body.vr-body-game .vr-gauge .vr-gauge-preview {
-  opacity: 0.35;
+  /* ✅ juste une “barre”, pas un bloc */
+  background: rgba(0,0,0,0.18);
+  border: 1px solid rgba(255,255,255,0.22);
+  overflow: hidden;
 }
 
 /* ===========================
-   3) CARTE SCÉNARIO + CHOIX
+   3) CARTE SCÉNARIO + CHOIX (PLUS PETIT + TEXTE “COLLÉ”)
    =========================== */
 
-body.vr-body-game .vr-card-container {
-  width: 100%;
-  margin-top: auto;
-  padding-bottom: 6px;
-  display: flex;
-  justify-content: center;
-}
+body.vr-body-game .vr-card-main-compact{
+  width: min(330px, 92vw);
+  max-width: 330px;
 
-body.vr-body-game .vr-card-stack {
-  width: 100%;
-  max-width: 380px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-body.vr-body-game .vr-card-main-compact {
-  max-width: 360px;
-  width: 100%;
-  margin: 0 auto 6px auto;
+  /* ✅ rétrécit le “carré” */
   padding: 14px 16px;
-  border: none;
-  box-shadow: none;
+  margin: 0 auto 8px auto;
+
+  /* garde l’image webp propre */
   background-color: transparent;
 }
 
-body.vr-body-game .vr-card-main-compact .vr-card-title {
+body.vr-body-game .vr-card-main-compact .vr-card-title{
   margin: 0 0 6px;
   font-size: 16px;
 }
 
-body.vr-body-game .vr-card-main-compact .vr-card-text {
+body.vr-body-game .vr-card-main-compact .vr-card-text{
   margin: 0;
   font-size: 13.5px;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255,255,255,0.82);
 }
 
-body.vr-body-game .vr-card-choices-bottom {
-  width: 100%;
-  margin-top: 10px;
-  gap: 12px;
-}
+/* ✅ choix: hauteur fixe + texte en bas */
+body.vr-body-game .vr-choice-button{
+  width: min(330px, 92vw);
+  max-width: 330px;
 
-body.vr-body-game .vr-choice-button {
+  height: 74px;
+  min-height: 74px;
+
+  padding: 10px 18px 12px;
   align-items: flex-end;
-  padding: 10px 18px 14px;
-  min-height: 58px;
+
   background-size: 100% 100%;
 }
 
-body.vr-body-game .vr-choice-label {
+body.vr-body-game .vr-choice-label{
   text-align: left;
-  font-size: 0.9rem;
-  line-height: 1.25;
+  font-size: 0.95rem;
+  line-height: 1.2;
 }
-
 /* ===========================
    META BAR
    =========================== */
