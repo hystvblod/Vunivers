@@ -683,48 +683,31 @@ window.VRGame = {
   }
 };
 
-// ===== Navigation & initialisation (SPA + page jeu seule) =====
+
+// ===== Navigation & initialisation (SANS SPA, pages séparées) =====
 
 (function () {
-  // Change de vue en SPA
-function setView(viewId) {
-  document.querySelectorAll(".vr-view").forEach((v) =>
-    v.classList.remove("vr-view-active")
-  );
-  const viewEl = document.getElementById(`view-${viewId}`);
-  if (viewEl) {
-    viewEl.classList.add("vr-view-active");
+  // 1) Boutons header (profil/settings/shop) => navigation page par page
+  function bindHeaderButtons() {
+    const btnProfile = document.getElementById("btn-profile");
+    const btnSettings = document.getElementById("btn-settings");
+    const btnShop = document.getElementById("btn-shop");
+
+    // Tu peux changer les noms de pages si besoin
+    if (btnProfile) btnProfile.addEventListener("click", () => (window.location.href = "profile.html"));
+    if (btnSettings) btnSettings.addEventListener("click", () => (window.location.href = "settings.html"));
+    if (btnShop) btnShop.addEventListener("click", () => (window.location.href = "shop.html"));
   }
 
-  // Mode plein écran uniquement sur la vue jeu (index.html)
-  // => active les règles CSS body.vr-body-game (fond 100% + pas de "gris")
-  document.body.classList.toggle("vr-body-game", viewId === "game");
-}
-
-
-  // Setup nav boutons latéraux (profil / settings / shop)
-  function setupSideNav() {
-    document.querySelectorAll("[data-view-target]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-view-target");
-        if (!target) return;
-        setView(target);
-      });
-    });
-
-    // Logo renvoie à la home
-    const logo = document.querySelector(".vr-logo");
-    if (logo) {
-      logo.addEventListener("click", () => setView("home"));
-    }
-  }
-
-  // Gestion des cartes d'univers (SPA)
-  function setupUniverseCards() {
+  // 2) Sur index.html : clic univers => stocke + redirige vers game.html
+  function setupUniverseCards_NoSPA() {
     const cards = document.querySelectorAll(".vr-card[data-universe]");
+    if (!cards.length) return;
+
     cards.forEach((card) => {
       card.addEventListener("click", () => {
         if (card.disabled) return;
+
         const universeId = card.getAttribute("data-universe");
         if (!universeId) return;
 
@@ -735,21 +718,31 @@ function setView(viewId) {
           localStorage.setItem("vrealms_universe", universeId);
         }
 
-        // Mode SPA : on bascule sur la vue jeu
-        const hasHomeView = !!document.getElementById("view-home");
-        if (hasHomeView) {
-          setView("game");
-        }
-
-        // Laisse le moteur initialiser la run
-        if (
-          window.VRGame &&
-          typeof window.VRGame.onUniverseSelected === "function"
-        ) {
-          window.VRGame.onUniverseSelected(universeId);
-        }
+        // ✅ plus de SPA : on va sur la page de jeu
+        window.location.href = "game.html";
       });
     });
+  }
+
+  // 3) Sur game.html : on démarre directement le jeu avec l’univers stocké
+  async function initGamePageIfPresent() {
+    const hasGameView = !!document.getElementById("view-game");
+    if (!hasGameView) return;
+
+    // force le mode game (au cas où)
+    document.body.classList.add("vr-body-game");
+
+    let universeId = "hell_king";
+    if (window.VR_STORAGE_KEYS) {
+      universeId =
+        localStorage.getItem(window.VR_STORAGE_KEYS.universe) || "hell_king";
+    } else {
+      universeId = localStorage.getItem("vrealms_universe") || "hell_king";
+    }
+
+    if (window.VRGame && typeof window.VRGame.onUniverseSelected === "function") {
+      window.VRGame.onUniverseSelected(universeId);
+    }
   }
 
   async function initApp() {
@@ -762,31 +755,9 @@ function setView(viewId) {
       console.error("[VRealms] Erreur init i18n:", e);
     }
 
-    const hasHomeView = !!document.getElementById("view-home");
-    const hasGameView = !!document.getElementById("view-game");
-
-    if (hasHomeView) {
-      // Mode SPA (index.html)
-      setupSideNav();
-      setupUniverseCards();
-      setView("home");
-    } else if (hasGameView) {
-      // Page jeu seule (game.html)
-      let universeId = "hell_king";
-      if (window.VR_STORAGE_KEYS) {
-        universeId =
-          localStorage.getItem(window.VR_STORAGE_KEYS.universe) || "hell_king";
-      } else {
-        universeId = localStorage.getItem("vrealms_universe") || "hell_king";
-      }
-
-      if (
-        window.VRGame &&
-        typeof window.VRGame.onUniverseSelected === "function"
-      ) {
-        window.VRGame.onUniverseSelected(universeId);
-      }
-    }
+    bindHeaderButtons();
+    setupUniverseCards_NoSPA();
+    initGamePageIfPresent();
   }
 
   document.addEventListener("DOMContentLoaded", initApp);
