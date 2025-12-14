@@ -687,15 +687,20 @@ window.VRGame = {
 
 (function () {
   // Change de vue en SPA
-  function setView(viewId) {
-    document.querySelectorAll(".vr-view").forEach((v) =>
-      v.classList.remove("vr-view-active")
-    );
-    const viewEl = document.getElementById(`view-${viewId}`);
-    if (viewEl) {
-      viewEl.classList.add("vr-view-active");
-    }
+function setView(viewId) {
+  document.querySelectorAll(".vr-view").forEach((v) =>
+    v.classList.remove("vr-view-active")
+  );
+  const viewEl = document.getElementById(`view-${viewId}`);
+  if (viewEl) {
+    viewEl.classList.add("vr-view-active");
   }
+
+  // Mode plein écran uniquement sur la vue jeu (index.html)
+  // => active les règles CSS body.vr-body-game (fond 100% + pas de "gris")
+  document.body.classList.toggle("vr-body-game", viewId === "game");
+}
+
 
   // Setup nav boutons latéraux (profil / settings / shop)
   function setupSideNav() {
