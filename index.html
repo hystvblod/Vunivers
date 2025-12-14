@@ -59,7 +59,7 @@
       margin-top: 6px !important;
     }
 
-    /* ===== Cartouches : plus grandes + fond webp 50% + texte au-dessus ===== */
+    /* ===== Cartouches : plus grandes + fond webp + texte au-dessus ===== */
     .vr-universe-grid{
       display: grid !important;
       grid-template-columns: 1fr !important;
@@ -78,22 +78,22 @@
       outline: 0 !important;
     }
 
-    /* Fond webp */
+    /* Fond webp (✅ +10% moins transparent) */
     .vr-card-bg{
       position: absolute !important;
       inset: 0 !important;
       background-size: cover !important;
       background-position: center !important;
-      opacity: .5 !important; /* ✅ 50% */
+      opacity: .60 !important; /* ✅ 50% -> 60% */
       z-index: 0 !important;
     }
 
-    /* voile pour lisibilité */
+    /* voile pour lisibilité (✅ un peu moins sombre) */
     .vr-card::after{
       content: "" !important;
       position: absolute !important;
       inset: 0 !important;
-      background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.62)) !important;
+      background: linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.50)) !important;
       pointer-events: none !important;
       z-index: 1 !important;
     }
@@ -122,10 +122,10 @@
       font-size: 16px !important;
       letter-spacing: .2px !important;
       line-height: 1.1 !important;
-      text-shadow: 0 2px 10px rgba(0,0,0,.85) !important;
+      text-shadow: 0 2px 10px rgba(0,0,0,.75) !important;
     }
 
-    /* ✅ ? DANS la cartouche : quasi transparent (plus de rond blanc) */
+    /* ? quasi transparent */
     .vr-info-btn{
       width: 40px !important;
       height: 40px !important;
@@ -146,7 +146,7 @@
     .vr-info-btn:hover{ background: rgba(255,255,255,.14) !important; }
     .vr-info-btn:active{ transform: scale(.96) !important; }
 
-    /* ✅ Enlève l'effet "bandeau" de la carte disabled */
+    /* Enlève l'effet "bandeau" de la carte disabled */
     .vr-card.vr-card-disabled,
     .vr-card[disabled]{
       opacity: .55 !important;
@@ -155,8 +155,6 @@
       box-shadow: none !important;
       filter: none !important;
     }
-    /* ⚠️ On ne coupe pas ::after sinon on perd le voile sur toutes les cartes.
-       On coupe juste l'ombre / effets potentiels. */
     .vr-card.vr-card-disabled::before{
       box-shadow: none !important;
     }
@@ -191,7 +189,6 @@
   </header>
 
   <main class="vr-main">
-    <!-- Vue : Accueil / choix d'univers -->
     <section id="view-home" class="vr-view vr-view-active">
       <section class="vr-intro">
         <img
@@ -206,16 +203,12 @@
         <h2 class="vr-section-title" data-i18n="ui.choose_universe"></h2>
 
         <div class="vr-universe-grid">
-          <!-- Roi des Enfers -->
           <button class="vr-card" data-universe="hell_king" type="button">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/hell_king.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.hell_king.title"></h3>
-                <span
-                  class="vr-info-btn"
-                  role="button"
-                  tabindex="0"
+                <span class="vr-info-btn" role="button" tabindex="0"
                   data-i18n-tip="universe.hell_king.desc"
                   data-tip="Dirige les légions démoniaques, gère l’afflux d’âmes damnées et maintiens l’équilibre entre chaos et ordre cosmique."
                 >?</span>
@@ -223,16 +216,12 @@
             </div>
           </button>
 
-          <!-- Paradis -->
           <button class="vr-card" data-universe="heaven_king" type="button">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/heaven_king.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.heaven_king.title"></h3>
-                <span
-                  class="vr-info-btn"
-                  role="button"
-                  tabindex="0"
+                <span class="vr-info-btn" role="button" tabindex="0"
                   data-i18n-tip="universe.heaven_king.desc"
                   data-tip="Arbitre les prières, contiens le fanatisme et décide jusqu’où le Ciel doit intervenir dans le monde des mortels."
                 >?</span>
@@ -240,16 +229,12 @@
             </div>
           </button>
 
-          <!-- Roi médiéval -->
           <button class="vr-card" data-universe="medieval_king" type="button">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/medieval_king.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.medieval_king.title"></h3>
-                <span
-                  class="vr-info-btn"
-                  role="button"
-                  tabindex="0"
+                <span class="vr-info-btn" role="button" tabindex="0"
                   data-i18n-tip="universe.medieval_king.desc"
                   data-tip="Église, armée, peuple, trésor : chaque décision rapproche ton royaume de la prospérité… ou de la révolte."
                 >?</span>
@@ -257,16 +242,12 @@
             </div>
           </button>
 
-          <!-- Président puissance occidentale -->
           <button class="vr-card" data-universe="western_president" type="button">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/western_president.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.western_president.title"></h3>
-                <span
-                  class="vr-info-btn"
-                  role="button"
-                  tabindex="0"
+                <span class="vr-info-btn" role="button" tabindex="0"
                   data-i18n-tip="universe.western_president.desc"
                   data-tip="Opinion publique, économie, diplomatie et crises médiatiques. Une signature peut tout faire basculer."
                 >?</span>
@@ -274,16 +255,12 @@
             </div>
           </button>
 
-          <!-- CEO méga-entreprise -->
           <button class="vr-card" data-universe="mega_corp_ceo" type="button">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/mega_corp_ceo.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></h3>
-                <span
-                  class="vr-info-btn"
-                  role="button"
-                  tabindex="0"
+                <span class="vr-info-btn" role="button" tabindex="0"
                   data-i18n-tip="universe.mega_corp_ceo.desc"
                   data-tip="Investisseurs, employés, régulateurs et image de marque. Pousse la valorisation au sommet sans tout faire exploser."
                 >?</span>
@@ -291,16 +268,12 @@
             </div>
           </button>
 
-          <!-- Explorateur du Nouveau Monde -->
           <button class="vr-card" data-universe="new_world_explorer" type="button">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/new_world_explorer.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
-                <span
-                  class="vr-info-btn"
-                  role="button"
-                  tabindex="0"
+                <span class="vr-info-btn" role="button" tabindex="0"
                   data-i18n-tip="universe.new_world_explorer.desc"
                   data-tip="Conquiers, convertis et négocie avec les royaumes locaux tout en rendant des comptes à ta couronne."
                 >?</span>
@@ -308,16 +281,12 @@
             </div>
           </button>
 
-          <!-- Seigneur vampire -->
           <button class="vr-card" data-universe="vampire_lord" type="button">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/vampire_lord.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
-                <span
-                  class="vr-info-btn"
-                  role="button"
-                  tabindex="0"
+                <span class="vr-info-btn" role="button" tabindex="0"
                   data-i18n-tip="universe.vampire_lord.desc"
                   data-tip="Étends ton influence dans l’ombre. Trop de sang attire les chasseurs, trop de prudence affaiblit ton clan."
                 >?</span>
@@ -325,19 +294,12 @@
             </div>
           </button>
 
-          <!-- Univers futur verrouillé -->
           <button class="vr-card vr-card-disabled" disabled type="button">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/locked.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.locked.title"></h3>
-                <span
-                  class="vr-info-btn"
-                  role="button"
-                  tabindex="-1"
-                  aria-hidden="true"
-                  data-i18n-tip="universe.locked.desc"
-                >?</span>
+                <span class="vr-info-btn" role="button" tabindex="-1" aria-hidden="true" data-i18n-tip="universe.locked.desc">?</span>
               </div>
             </div>
           </button>
@@ -346,7 +308,6 @@
       </section>
     </section>
 
-    <!-- (Tes autres vues peuvent rester inchangées si tu les utilises ailleurs) -->
     <section id="view-game" class="vr-view"></section>
     <section id="view-profile" class="vr-view"></section>
     <section id="view-shop" class="vr-view"></section>
@@ -360,7 +321,6 @@
   <div id="vr-tooltip" class="vr-tooltip"></div>
 
   <script>
-    // Helpers i18n : supporte VRI18n.t (nouveau) + i18nGet (ancien)
     function _t(key) {
       try {
         if (window.VRI18n && typeof window.VRI18n.t === "function") return window.VRI18n.t(key) || "";
@@ -369,7 +329,6 @@
       return "";
     }
 
-    // 1) Tooltip sur "?"
     (function () {
       const tooltip = document.getElementById("vr-tooltip");
       if (!tooltip) return;
@@ -399,7 +358,7 @@
       document.querySelectorAll(".vr-info-btn").forEach((el) => {
         el.addEventListener("click", function (e) {
           e.preventDefault();
-          e.stopPropagation(); // ✅ ne lance pas la cartouche
+          e.stopPropagation();
           showTooltip(el);
         });
 
@@ -417,7 +376,6 @@
       window.addEventListener("resize", hideTooltip);
     })();
 
-    // 2) Cliquer sur une cartouche => set univers + go game.html
     (function () {
       function launchUniverse(universeId) {
         if (!universeId) return;
@@ -426,8 +384,7 @@
       }
 
       document.querySelectorAll(".vr-card[data-universe]").forEach((card) => {
-        card.addEventListener("click", (e) => {
-          // si clic sur ?, c’est stoppé plus haut
+        card.addEventListener("click", () => {
           const id = card.getAttribute("data-universe");
           launchUniverse(id);
         });
