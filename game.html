@@ -2,99 +2,118 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>VRealms</title>
+  <title>VRealms - Partie</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="vr-body vr-body-game">
-  <div class="vr-overlay"></div>
 
+<body class="vr-body vr-body-game">
+
+  <!-- IMPORTANT : plus de CSS en texte ici. Tout est dans style.css -->
+
+  <!-- Header icônes (profil / paramètres / shop) au-dessus du fond -->
   <header class="vr-header vr-header-game" aria-label="Top actions">
     <div class="vr-top-actions">
-      <button class="vr-icon-button" data-view-target="profile">
+      <button class="vr-icon-button" type="button" id="btn-profile" aria-label="Profile">
         <span class="vr-icon-image vr-icon-profile"></span>
       </button>
-      <button class="vr-icon-button" data-view-target="settings">
+      <button class="vr-icon-button" type="button" id="btn-settings" aria-label="Settings">
         <span class="vr-icon-image vr-icon-settings"></span>
       </button>
-      <button class="vr-icon-button" data-view-target="shop">
+      <button class="vr-icon-button" type="button" id="btn-shop" aria-label="Shop">
         <span class="vr-icon-image vr-icon-shop"></span>
       </button>
     </div>
   </header>
 
+  <!-- overlay global désactivé en mode game via CSS -->
+  <div class="vr-overlay"></div>
+
   <main class="vr-main">
     <section id="view-game" class="vr-view vr-view-active">
-      <div class="vr-game-layout">
-        <div class="vr-gauges">
-          <div class="vr-gauge-row">
-            <span class="vr-gauge-label" id="gauge-1-label"></span>
-            <div class="vr-gauge-bar">
-              <div class="vr-gauge-fill" id="gauge-1"></div>
-              <div class="vr-gauge-preview" id="gauge-1-preview"></div>
-            </div>
-          </div>
 
-          <div class="vr-gauge-row">
-            <span class="vr-gauge-label" id="gauge-2-label"></span>
-            <div class="vr-gauge-bar">
-              <div class="vr-gauge-fill" id="gauge-2"></div>
-              <div class="vr-gauge-preview" id="gauge-2-preview"></div>
-            </div>
-          </div>
+      <div class="vr-game-header">
+        <h2 class="vr-section-title" data-i18n="game.title"></h2>
+        <p class="vr-main-text" data-i18n="game.subtitle"></p>
+      </div>
 
-          <div class="vr-gauge-row">
-            <span class="vr-gauge-label" id="gauge-3-label"></span>
-            <div class="vr-gauge-bar">
-              <div class="vr-gauge-fill" id="gauge-3"></div>
-              <div class="vr-gauge-preview" id="gauge-3-preview"></div>
-            </div>
-          </div>
-
-          <div class="vr-gauge-row">
-            <span class="vr-gauge-label" id="gauge-4-label"></span>
-            <div class="vr-gauge-bar">
-              <div class="vr-gauge-fill" id="gauge-4"></div>
-              <div class="vr-gauge-preview" id="gauge-4-preview"></div>
-            </div>
+      <!-- 4 jauges séparées -->
+      <div class="vr-gauges-row">
+        <div class="vr-gauge" data-gauge-id="g1">
+          <span class="vr-gauge-label"></span>
+          <div class="vr-gauge-frame">
+            <div class="vr-gauge-preview"></div>
+            <div class="vr-gauge-fill"></div>
           </div>
         </div>
 
-        <div class="vr-meta">
-          <div class="vr-meta-line">
-            <span class="vr-meta-label" data-i18n="meta.current_king"></span>
-            <span class="vr-meta-value" id="meta-king-name">—</span>
+        <div class="vr-gauge" data-gauge-id="g2">
+          <span class="vr-gauge-label"></span>
+          <div class="vr-gauge-frame">
+            <div class="vr-gauge-preview"></div>
+            <div class="vr-gauge-fill"></div>
           </div>
-          <div class="vr-meta-line">
-            <span class="vr-meta-label" data-i18n="meta.years"></span>
-            <span class="vr-meta-value" id="meta-years">0</span>
+        </div>
+
+        <div class="vr-gauge" data-gauge-id="g3">
+          <span class="vr-gauge-label"></span>
+          <div class="vr-gauge-frame">
+            <div class="vr-gauge-preview"></div>
+            <div class="vr-gauge-fill"></div>
           </div>
-          <div class="vr-meta-line">
-            <span class="vr-meta-label">VCoins</span>
-            <span class="vr-meta-value" id="meta-coins">0</span>
+        </div>
+
+        <div class="vr-gauge" data-gauge-id="g4">
+          <span class="vr-gauge-label"></span>
+          <div class="vr-gauge-frame">
+            <div class="vr-gauge-preview"></div>
+            <div class="vr-gauge-fill"></div>
           </div>
         </div>
       </div>
 
-      <div class="vr-card-play-area">
-        <div class="vr-event-card vr-card-main" id="vr-card-main">
-          <div class="vr-event-bg"></div>
-          <div class="vr-event-content">
-            <h3 class="vr-event-title vr-card-title" id="card-title"></h3>
-            <p class="vr-event-text vr-card-text" id="card-text"></p>
+      <!-- Carte scénario compacte + choix séparés EN DESSOUS -->
+      <div class="vr-card-container">
+        <div class="vr-card-stack">
 
-            <div class="vr-event-choices vr-card-choices">
-              <button class="vr-event-choice vr-choice-button" data-choice="A">
-                <span class="vr-choice-label" id="choice-A"></span>
-              </button>
-              <button class="vr-event-choice vr-choice-button" data-choice="B">
-                <span class="vr-choice-label" id="choice-B"></span>
-              </button>
-              <button class="vr-event-choice vr-choice-button" data-choice="C">
-                <span class="vr-choice-label" id="choice-C"></span>
-              </button>
-            </div>
+          <!-- CARTE SCÉNARIO -->
+          <div class="vr-card-main vr-card-main-compact" id="vr-card-main">
+            <h3 class="vr-card-title" id="card-title"></h3>
+            <p class="vr-card-text" id="card-text"></p>
           </div>
+
+          <!-- CHOIX (3 webp) EN BAS -->
+          <div class="vr-card-choices vr-card-choices-bottom">
+            <button class="vr-choice-button" data-choice="A" type="button">
+              <span class="vr-choice-label" id="choice-A"></span>
+            </button>
+            <button class="vr-choice-button" data-choice="B" type="button">
+              <span class="vr-choice-label" id="choice-B"></span>
+            </button>
+            <button class="vr-choice-button" data-choice="C" type="button">
+              <span class="vr-choice-label" id="choice-C"></span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Meta -->
+      <div class="vr-meta-bar">
+        <span id="meta-king-name"></span>
+        <span id="meta-years"></span>
+        <span id="meta-coins"></span>
+      </div>
+
+      <!-- Fin -->
+      <div class="vr-ending-overlay" id="vr-ending-overlay">
+        <div class="vr-ending-card">
+          <h3 class="vr-ending-title" id="ending-title"></h3>
+          <p class="vr-ending-text" id="ending-text"></p>
+
+          <button id="ending-restart-btn" class="vr-choice-button" type="button">
+            <span data-i18n="game.restart"></span>
+          </button>
         </div>
       </div>
 
