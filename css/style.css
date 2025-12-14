@@ -902,3 +902,11 @@ body.vr-body-game .vr-meta-value {
   color: rgba(255,255,255,0.95);
   font-weight: 700;
 }
+body.vr-body-game .vr-main {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden;
+}
