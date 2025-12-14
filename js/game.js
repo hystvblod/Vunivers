@@ -1,16 +1,16 @@
 // VRealms - engine/events-loader.js
-// Charge la config d'univers + les cartes + les textes.
+// Charge la config d'univers + le deck (par univers) + les textes des cartes (par univers + langue).
 
 (function () {
   const CONFIG_PATH = "data/universes";
-  const DECK_PATH = "data/deck_base.json";
+  const DECKS_PATH = "data/decks";
   const CARDS_I18N_PATH = "data/i18n";
 
   const VREventsLoader = {
     async loadUniverseData(universeId, lang) {
       const configPromise = this._loadConfig(universeId);
       const deckPromise = this._loadDeck(universeId);
-      const textsPromise = this._loadTexts(lang);
+      const textsPromise = this._loadCardTexts(universeId, lang);
 
       const [config, deck, cardTexts] = await Promise.all([
         configPromise,
@@ -34,28 +34,35 @@
     },
 
     async _loadDeck(universeId) {
-      const res = await fetch(DECK_PATH, { cache: "no-cache" });
+      const res = await fetch(`${DECKS_PATH}/${universeId}.json`, { cache: "no-cache" });
       if (!res.ok) {
-        throw new Error("[VREventsLoader] Impossible de charger deck_base.json");
-      }
-      const deckJson = await res.json();
-      if (!deckJson || deckJson.universe !== universeId) {
-        console.warn(
-          "[VREventsLoader] Avertissement : universe du deck != universeId",
-          deckJson?.universe,
-          universeId
+        throw new Error(
+          `[VREventsLoader] Impossible de charger le deck: ${DECKS_PATH}/${universeId}.json`
         );
       }
-      return deckJson.cards || [];
+
+      const deckJson = await res.json();
+
+      // Supporte 2 formats :
+      // 1) { "cards": [ ... ] }
+      // 2) [ ... ] (array direct)
+      const cards = Array.isArray(deckJson) ? deckJson : (deckJson?.cards || null);
+
+      if (!Array.isArray(cards)) {
+        throw new Error(
+          `[VREventsLoader] Deck invalide pour ${universeId} (attendu array ou {cards:[]}).`
+        );
+      }
+      return cards;
     },
 
-    async _loadTexts(lang) {
-      const res = await fetch(`${CARDS_I18N_PATH}/cards_${lang}.json`, {
+    async _loadCardTexts(universeId, lang) {
+      const res = await fetch(`${CARDS_I18N_PATH}/cards_${universeId}_${lang}.json`, {
         cache: "no-cache"
       });
       if (!res.ok) {
         throw new Error(
-          `[VREventsLoader] Impossible de charger cards_${lang}.json`
+          `[VREventsLoader] Impossible de charger cards_${universeId}_${lang}.json`
         );
       }
       return res.json();
@@ -109,7 +116,14 @@
         const cfg = gaugesCfg[idx];
 
         if (!cfg) return;
-        if (labelEl) labelEl.textContent = cfg.label || cfg.id;
+
+        // ✅ label par langue si dispo
+        const label =
+          cfg?.[`label_${this.lang}`] ||
+          cfg?.label ||
+          cfg?.id;
+
+        if (labelEl) labelEl.textContent = label || "—";
         if (fillEl) fillEl.dataset.gaugeId = cfg.id;
       });
     },
@@ -387,17 +401,29 @@
 })();
 
 
-// VRealms - engine/endings.js
+// VRealms - engine/endings.js (dans game.js)
 (function () {
-  const ENDINGS_I18N_PATH = "data/i18n/endings_fr.json";
-  let endingsData = null;
+  const ENDINGS_BASE_PATH = "data/i18n";
+  const cache = new Map(); // key = universeId__lang
 
-  async function loadEndings() {
-    if (endingsData) return endingsData;
-    const res = await fetch(ENDINGS_I18N_PATH, { cache: "no-cache" });
-    if (!res.ok) { endingsData = {}; return endingsData; }
-    endingsData = await res.json();
-    return endingsData;
+  async function loadEndings(universeId, lang) {
+    const key = `${universeId}__${lang}`;
+    if (cache.has(key)) return cache.get(key);
+
+    const url = `${ENDINGS_BASE_PATH}/endings_${universeId}_${lang}.json`;
+    const res = await fetch(url, { cache: "no-cache" });
+
+    // Si le fichier n'existe pas, on ne crash pas : on met endings vides.
+    if (!res.ok) {
+      const empty = {};
+      cache.set(key, empty);
+      return empty;
+    }
+
+    const data = await res.json();
+    const safe = data && typeof data === "object" ? data : {};
+    cache.set(key, safe);
+    return safe;
   }
 
   async function showEnding(universeConfig, lastDeath) {
@@ -407,10 +433,17 @@
 
     if (!overlay || !titleEl || !textEl) return;
 
-    const data = await loadEndings();
-    const universeEndings = data[universeConfig.id] || {};
-    const key = lastDeath?.gaugeId ? `${lastDeath.gaugeId}_${lastDeath.direction}` : "default";
-    const ending = universeEndings[key] || universeEndings["default"];
+    const universeId =
+      universeConfig?.id || localStorage.getItem("vrealms_universe") || "hell_king";
+    const lang = localStorage.getItem("vrealms_lang") || "fr";
+
+    const endings = await loadEndings(universeId, lang);
+
+    const key = lastDeath?.gaugeId
+      ? `${lastDeath.gaugeId}_${lastDeath.direction}`
+      : "default";
+
+    const ending = endings[key] || endings["default"];
 
     titleEl.textContent = ending?.title || "Fin du règne";
     textEl.textContent = ending?.text || "Votre règne s'achève ici.";
@@ -458,7 +491,8 @@
       this.universeId = universeId;
       this.lang = lang || "fr";
 
-      const { config, deck, cardTexts } = await window.VREventsLoader.loadUniverseData(universeId, this.lang);
+      const { config, deck, cardTexts } =
+        await window.VREventsLoader.loadUniverseData(universeId, this.lang);
 
       this.universeConfig = config;
       this.deck = deck || [];
@@ -608,6 +642,7 @@ window.VRGame = {
     window.VUserData.save(user);
   }
 };
+
 
 // ===== Init page jeu seule (game.html) =====
 (function () {
