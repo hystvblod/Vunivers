@@ -9,9 +9,6 @@
 
 <body class="vr-body vr-body-game">
 
-  <!-- IMPORTANT : plus de CSS en texte ici. Tout est dans style.css -->
-
-  <!-- Header icônes (profil / paramètres / shop) au-dessus du fond -->
   <header class="vr-header vr-header-game" aria-label="Top actions">
     <div class="vr-top-actions">
       <button class="vr-icon-button" type="button" id="btn-profile" aria-label="Profile">
@@ -26,7 +23,6 @@
     </div>
   </header>
 
-  <!-- overlay global désactivé en mode game via CSS -->
   <div class="vr-overlay"></div>
 
   <main class="vr-main">
@@ -37,7 +33,6 @@
         <p class="vr-main-text" data-i18n="game.subtitle"></p>
       </div>
 
-      <!-- 4 jauges séparées -->
       <div class="vr-gauges-row">
         <div class="vr-gauge" data-gauge-id="g1">
           <span class="vr-gauge-label"></span>
@@ -72,17 +67,14 @@
         </div>
       </div>
 
-      <!-- Carte scénario compacte + choix séparés EN DESSOUS -->
       <div class="vr-card-container">
         <div class="vr-card-stack">
 
-          <!-- CARTE SCÉNARIO -->
           <div class="vr-card-main vr-card-main-compact" id="vr-card-main">
             <h3 class="vr-card-title" id="card-title"></h3>
             <p class="vr-card-text" id="card-text"></p>
           </div>
 
-          <!-- CHOIX (3 webp) EN BAS -->
           <div class="vr-card-choices vr-card-choices-bottom">
             <button class="vr-choice-button" data-choice="A" type="button">
               <span class="vr-choice-label" id="choice-A"></span>
@@ -98,14 +90,12 @@
         </div>
       </div>
 
-      <!-- Meta -->
       <div class="vr-meta-bar">
         <span id="meta-king-name"></span>
         <span id="meta-years"></span>
         <span id="meta-coins"></span>
       </div>
 
-      <!-- Fin -->
       <div class="vr-ending-overlay" id="vr-ending-overlay">
         <div class="vr-ending-card">
           <h3 class="vr-ending-title" id="ending-title"></h3>
@@ -125,6 +115,8 @@
   <script src="js/purchases.js"></script>
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
+
+  <!-- IMPORTANT : ton moteur/engine -->
   <script src="js/game.js"></script>
 </body>
 </html>

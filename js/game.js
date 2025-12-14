@@ -18,11 +18,7 @@
         textsPromise
       ]);
 
-      return {
-        config,
-        deck,
-        cardTexts
-      };
+      return { config, deck, cardTexts };
     },
 
     async _loadConfig(universeId) {
@@ -54,7 +50,6 @@
     },
 
     async _loadTexts(lang) {
-      // cards_fr.json, cards_en.json, etc.
       const res = await fetch(`${CARDS_I18N_PATH}/cards_${lang}.json`, {
         cache: "no-cache"
       });
@@ -75,7 +70,7 @@
 // Fait le lien moteur ↔ interface (jauges, carte, choix + preview + swipe).
 
 (function () {
-  const DRAG_THRESHOLD = 60; // px pour valider un choix
+  const DRAG_THRESHOLD = 60;
 
   const VRUIBinding = {
     updateMeta(kingName, years, coins) {
@@ -114,12 +109,8 @@
         const cfg = gaugesCfg[idx];
 
         if (!cfg) return;
-        if (labelEl) {
-          labelEl.textContent = cfg.label || cfg.id;
-        }
-        if (fillEl) {
-          fillEl.dataset.gaugeId = cfg.id;
-        }
+        if (labelEl) labelEl.textContent = cfg.label || cfg.id;
+        if (fillEl) fillEl.dataset.gaugeId = cfg.id;
       });
     },
 
@@ -141,29 +132,21 @@
       const fillEls = document.querySelectorAll(".vr-gauge-fill");
 
       fillEls.forEach((fillEl, idx) => {
-        const gaugeId =
-          fillEl.dataset.gaugeId || gaugesCfg[idx]?.id || null;
+        const gaugeId = fillEl.dataset.gaugeId || gaugesCfg[idx]?.id || null;
         if (!gaugeId) return;
-        const val =
-          window.VRState.getGaugeValue(gaugeId) ?? gaugesCfg[idx]?.start ?? 50;
+        const val = window.VRState.getGaugeValue(gaugeId) ?? gaugesCfg[idx]?.start ?? 50;
         fillEl.style.width = `${val}%`;
       });
 
-      // reset preview
       const previewEls = document.querySelectorAll(".vr-gauge-preview");
-      previewEls.forEach((previewEl) => {
-        previewEl.style.width = "0%";
-      });
+      previewEls.forEach((previewEl) => (previewEl.style.width = "0%"));
     },
 
     showCard(cardLogic) {
       this.currentCardLogic = cardLogic;
       const texts = this.cardTextsDict?.[cardLogic.id];
       if (!texts) {
-        console.error(
-          "[VRUIBinding] Textes introuvables pour la carte",
-          cardLogic.id
-        );
+        console.error("[VRUIBinding] Textes introuvables pour la carte", cardLogic.id);
         return;
       }
 
@@ -190,17 +173,75 @@
     },
 
     _setupChoiceButtons() {
-      const buttons = document.querySelectorAll(".vr-choice-button");
+      // ✅ Seulement les 3 choix (A/B/C), pas le bouton "restart"
+      const buttons = Array.from(
+        document.querySelectorAll(".vr-choice-button[data-choice]")
+      );
+
       buttons.forEach((btn) => {
+        // Tap = valide
         btn.addEventListener("click", () => {
           const choiceId = btn.getAttribute("data-choice");
           if (!choiceId) return;
           if (!this.currentCardLogic) return;
           window.VREngine.applyChoice(this.currentCardLogic, choiceId);
         });
+
+        // ✅ Swipe sur la cartouche = valide aussi le choix
+        this._setupChoiceSwipe(btn);
       });
 
+      // On garde aussi le swipe sur la carte scénario (A à gauche / C à droite)
       this._setupCardDrag();
+    },
+
+    _setupChoiceSwipe(btn) {
+      const TH = 50;
+      let startX = 0;
+      let currentX = 0;
+      let dragging = false;
+
+      const getX = (e) => e.clientX || e.touches?.[0]?.clientX || 0;
+
+      const onDown = (e) => {
+        if (!this.currentCardLogic) return;
+        dragging = true;
+        startX = getX(e);
+        currentX = startX;
+
+        try { btn.setPointerCapture?.(e.pointerId); } catch (_) {}
+        btn.classList.add("vr-choice-dragging");
+      };
+
+      const onMove = (e) => {
+        if (!dragging) return;
+        currentX = getX(e);
+        const delta = currentX - startX;
+        btn.style.transform = `translateX(${delta}px)`;
+      };
+
+      const onUp = () => {
+        if (!dragging) return;
+        dragging = false;
+
+        const delta = currentX - startX;
+        btn.classList.remove("vr-choice-dragging");
+        btn.style.transform = "";
+
+        if (Math.abs(delta) >= TH && this.currentCardLogic) {
+          const choiceId = btn.getAttribute("data-choice");
+          if (choiceId) window.VREngine.applyChoice(this.currentCardLogic, choiceId);
+        }
+      };
+
+      btn.addEventListener("pointerdown", onDown);
+      btn.addEventListener("pointermove", onMove);
+      btn.addEventListener("pointerup", onUp);
+      btn.addEventListener("pointercancel", onUp);
+
+      btn.addEventListener("touchstart", (e) => onDown(e));
+      btn.addEventListener("touchmove", (e) => onMove(e));
+      btn.addEventListener("touchend", onUp);
     },
 
     _setupCardDrag() {
@@ -259,12 +300,8 @@
       card.addEventListener("pointercancel", onPointerUp);
       card.addEventListener("pointerleave", onPointerUp);
 
-      card.addEventListener("touchstart", (e) => {
-        onPointerDown(e.touches[0]);
-      });
-      card.addEventListener("touchmove", (e) => {
-        onPointerMove(e.touches[0]);
-      });
+      card.addEventListener("touchstart", (e) => onPointerDown(e.touches[0]));
+      card.addEventListener("touchmove", (e) => onPointerMove(e.touches[0]));
       card.addEventListener("touchend", onPointerUp);
     },
 
@@ -279,11 +316,8 @@
 
         let delta = 0;
         if (dragChoice && this.currentCardLogic?.choices?.[dragChoice]) {
-          const d =
-            this.currentCardLogic.choices[dragChoice].gaugeDelta?.[gaugeId];
-          if (typeof d === "number") {
-            delta = d;
-          }
+          const d = this.currentCardLogic.choices[dragChoice].gaugeDelta?.[gaugeId];
+          if (typeof d === "number") delta = d;
         }
         const previewVal = Math.max(0, Math.min(100, baseVal + delta));
         previewEl.style.width = `${previewVal}%`;
@@ -296,15 +330,13 @@
 
 
 // VRealms - engine/state.js
-// Gère l'état de la partie : jauges, univers, vie/mort.
-
 (function () {
   const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
 
   const VRState = {
     universeId: null,
-    gauges: {},     // ex: { souls: 50, legions: 50, order: 50, surface: 50 }
-    gaugeOrder: [], // ex: ["souls", "legions", "order", "surface"]
+    gauges: {},
+    gaugeOrder: [],
     alive: false,
     lastDeath: null,
     reignYears: 0,
@@ -325,13 +357,8 @@
       });
     },
 
-    isAlive() {
-      return this.alive;
-    },
-
-    getGaugeValue(id) {
-      return this.gauges[id];
-    },
+    isAlive() { return this.alive; },
+    getGaugeValue(id) { return this.gauges[id]; },
 
     applyDeltas(deltaMap) {
       if (!this.alive) return;
@@ -342,43 +369,18 @@
         this.gauges[gaugeId] = next;
       });
 
-      // Vérifie la mort ET enregistre la cause
       this.lastDeath = null;
       for (const gaugeId of Object.keys(this.gauges)) {
         const v = this.gauges[gaugeId];
-        if (v <= 0) {
-          this.alive = false;
-          this.lastDeath = { gaugeId, direction: "down" };
-          break;
-        }
-        if (v >= 100) {
-          this.alive = false;
-          this.lastDeath = { gaugeId, direction: "up" };
-          break;
-        }
+        if (v <= 0) { this.alive = false; this.lastDeath = { gaugeId, direction: "down" }; break; }
+        if (v >= 100) { this.alive = false; this.lastDeath = { gaugeId, direction: "up" }; break; }
       }
     },
 
-    tickYear() {
-      if (!this.alive) return;
-      this.reignYears += 1;
-    },
-
-    getReignYears() {
-      return this.reignYears;
-    },
-
-    getCardsPlayed() {
-      return this.cardsPlayed;
-    },
-
-    incrementCardsPlayed() {
-      this.cardsPlayed += 1;
-    },
-
-    getLastDeath() {
-      return this.lastDeath;
-    }
+    tickYear() { if (this.alive) this.reignYears += 1; },
+    getReignYears() { return this.reignYears; },
+    incrementCardsPlayed() { this.cardsPlayed += 1; },
+    getLastDeath() { return this.lastDeath; }
   };
 
   window.VRState = VRState;
@@ -386,21 +388,14 @@
 
 
 // VRealms - engine/endings.js
-// Affiche une fin en fonction de la jauge qui a explosé (0 ou 100).
-
 (function () {
   const ENDINGS_I18N_PATH = "data/i18n/endings_fr.json";
-
   let endingsData = null;
 
   async function loadEndings() {
     if (endingsData) return endingsData;
     const res = await fetch(ENDINGS_I18N_PATH, { cache: "no-cache" });
-    if (!res.ok) {
-      console.warn("[VREndings] Impossible de charger endings_fr.json");
-      endingsData = {};
-      return endingsData;
-    }
+    if (!res.ok) { endingsData = {}; return endingsData; }
     endingsData = await res.json();
     return endingsData;
   }
@@ -410,26 +405,15 @@
     const titleEl = document.getElementById("ending-title");
     const textEl = document.getElementById("ending-text");
 
-    if (!overlay || !titleEl || !textEl) {
-      console.error("[VREndings] Éléments de fin manquants dans le DOM");
-      return;
-    }
+    if (!overlay || !titleEl || !textEl) return;
 
     const data = await loadEndings();
     const universeEndings = data[universeConfig.id] || {};
-    const key = lastDeath?.gaugeId
-      ? `${lastDeath.gaugeId}_${lastDeath.direction}`
-      : "default";
+    const key = lastDeath?.gaugeId ? `${lastDeath.gaugeId}_${lastDeath.direction}` : "default";
     const ending = universeEndings[key] || universeEndings["default"];
 
-    if (!ending) {
-      titleEl.textContent = "Fin du règne";
-      textEl.textContent =
-        "Votre règne s'achève ici. Les légendes se chargeront de raconter le reste.";
-    } else {
-      titleEl.textContent = ending.title || "Fin du règne";
-      textEl.textContent = ending.text || "";
-    }
+    titleEl.textContent = ending?.title || "Fin du règne";
+    textEl.textContent = ending?.text || "Votre règne s'achève ici.";
 
     overlay.classList.add("vr-ending-visible");
   }
@@ -440,37 +424,21 @@
     overlay.classList.remove("vr-ending-visible");
   }
 
-  window.VREndings = {
-    showEnding,
-    hideEnding
-  };
+  window.VREndings = { showEnding, hideEnding };
 })();
 
 
 // VRealms - engine/engine-core.js
-// Moteur : init univers, tirer des cartes, appliquer les choix, gérer roi/temps/VCoins.
-
 (function () {
-  const RECENT_MEMORY_SIZE = 4; // éviter de revoir 4 cartes de suite
+  const RECENT_MEMORY_SIZE = 4;
   const BASE_COINS_PER_CARD = 5;
-  const STREAK_STEP = 10;       // bonus tous les 10 choix d'affilée
+  const STREAK_STEP = 10;
   const STREAK_BONUS = 25;
 
-  // Dynasties pour l'univers Roi des Enfers
-  const HELL_KING_DYNASTIES = [
-    "Lucifer",
-    "Belzebuth",
-    "Lilith",
-    "Asmodée",
-    "Mammon",
-    "Baal",
-    "Astaroth",
-    "Abaddon"
-  ];
+  const HELL_KING_DYNASTIES = ["Lucifer","Belzebuth","Lilith","Asmodée","Mammon","Baal","Astaroth","Abaddon"];
 
   function getDynastyName(reignIndex) {
-    const baseName =
-      HELL_KING_DYNASTIES[reignIndex % HELL_KING_DYNASTIES.length];
+    const baseName = HELL_KING_DYNASTIES[reignIndex % HELL_KING_DYNASTIES.length];
     const number = Math.floor(reignIndex / HELL_KING_DYNASTIES.length) + 1;
     return `${baseName} ${number}`;
   }
@@ -490,8 +458,7 @@
       this.universeId = universeId;
       this.lang = lang || "fr";
 
-      const { config, deck, cardTexts } =
-        await window.VREventsLoader.loadUniverseData(universeId, this.lang);
+      const { config, deck, cardTexts } = await window.VREventsLoader.loadUniverseData(universeId, this.lang);
 
       this.universeConfig = config;
       this.deck = deck || [];
@@ -522,27 +489,17 @@
     },
 
     _nextCard() {
-      if (!window.VRState.isAlive()) {
-        this._handleDeath();
-        return;
-      }
+      if (!window.VRState.isAlive()) return;
 
-      const candidates = this.deck.filter(
-        (c) => !this.recentCards.includes(c.id)
-      );
+      const candidates = this.deck.filter((c) => !this.recentCards.includes(c.id));
+      let card = candidates[Math.floor(Math.random() * candidates.length)];
 
-      let card =
-        candidates[Math.floor(Math.random() * candidates.length)];
       if (!card) {
         const cardIds = this.deck.map((c) => c.id);
         const randomId = cardIds[Math.floor(Math.random() * cardIds.length)];
         card = this.deck.find((c) => c.id === randomId);
       }
-
-      if (!card) {
-        console.error("[VREngine] Aucune carte disponible.");
-        return;
-      }
+      if (!card) return;
 
       this.currentCardLogic = card;
       this._rememberCard(card.id);
@@ -552,54 +509,38 @@
 
     _rememberCard(cardId) {
       this.recentCards.push(cardId);
-      if (this.recentCards.length > RECENT_MEMORY_SIZE) {
-        this.recentCards.shift();
-      }
+      if (this.recentCards.length > RECENT_MEMORY_SIZE) this.recentCards.shift();
     },
 
     applyChoice(cardLogic, choiceId) {
-      if (!cardLogic || !cardLogic.choices || !cardLogic.choices[choiceId]) {
-        console.error("[VREngine] Choix invalide:", cardLogic, choiceId);
-        return;
-      }
+      if (!cardLogic || !cardLogic.choices || !cardLogic.choices[choiceId]) return;
 
       const choiceData = cardLogic.choices[choiceId];
-
       const deltas = choiceData.gaugeDelta || {};
       window.VRState.applyDeltas(deltas);
 
       this.coinsStreak += 1;
       const user = window.VUserData.load();
       user.vcoins += BASE_COINS_PER_CARD;
-      if (this.coinsStreak > 0 && this.coinsStreak % STREAK_STEP === 0) {
-        user.vcoins += STREAK_BONUS;
-      }
+      if (this.coinsStreak > 0 && this.coinsStreak % STREAK_STEP === 0) user.vcoins += STREAK_BONUS;
       window.VUserData.save(user);
 
       window.VRGame?.onCardResolved?.();
-
       window.VRState.tickYear();
 
       const years = window.VRState.getReignYears();
       const kingName = getDynastyName(this.reignIndex - 1);
       const userAfter = window.VUserData.load();
-      const coinsAfter = userAfter.vcoins;
-      window.VRUIBinding.updateMeta(kingName, years, coinsAfter);
+      window.VRUIBinding.updateMeta(kingName, years, userAfter.vcoins);
       window.VRUIBinding.updateGauges();
 
-      if (!window.VRState.isAlive()) {
-        this._handleDeath();
-      } else {
-        this._nextCard();
-      }
+      if (!window.VRState.isAlive()) this._handleDeath();
+      else this._nextCard();
     },
 
     async _handleDeath() {
       const lastDeath = window.VRState.getLastDeath();
-      const user = window.VUserData.load();
-
       window.VRGame?.onRunEnded?.();
-
       await window.VREndings.showEnding(this.universeConfig, lastDeath);
 
       const btn = document.getElementById("ending-restart-btn");
@@ -609,7 +550,6 @@
           this._startNewReign();
         };
       }
-
       this.coinsStreak = 0;
     }
   };
@@ -619,55 +559,42 @@
 
 
 // VRealms - game.js
-// Relie l'univers choisi au moteur et gère les hooks VCoins.
-
 window.VRGame = {
   currentUniverse: null,
-  session: {
-    reignLength: 0
-  },
+  session: { reignLength: 0 },
 
   async onUniverseSelected(universeId) {
     this.currentUniverse = universeId;
     this.session.reignLength = 0;
 
-    // Applique le fond d'univers (CSS)
     this.applyUniverseBackground(universeId);
 
     const lang = localStorage.getItem("vrealms_lang") || "fr";
-
-    try {
-      await window.VREngine.init(universeId, lang);
-    } catch (e) {
-      console.error("[VRGame] Erreur init moteur:", e);
-    }
+    try { await window.VREngine.init(universeId, lang); }
+    catch (e) { console.error("[VRGame] Erreur init moteur:", e); }
   },
 
   applyUniverseBackground(universeId) {
     const viewGame = document.getElementById("view-game");
     if (!viewGame) return;
 
-    viewGame.classList.remove(
-      "vr-bg-hell_king",
-      "vr-bg-heaven_king",
-      "vr-bg-medieval_king",
-      "vr-bg-western_president",
-      "vr-bg-mega_corp_ceo",
-      "vr-bg-new_world_explorer",
-      "vr-bg-vampire_lord"
-    );
+    // ✅ pour CSS variables univers
+    if (universeId) document.body.dataset.universe = universeId;
+    else delete document.body.dataset.universe;
 
-    if (universeId) {
-      viewGame.classList.add(`vr-bg-${universeId}`);
-    }
+    // legacy classes (on garde)
+    viewGame.classList.remove(
+      "vr-bg-hell_king","vr-bg-heaven_king","vr-bg-medieval_king",
+      "vr-bg-western_president","vr-bg-mega_corp_ceo","vr-bg-new_world_explorer","vr-bg-vampire_lord"
+    );
+    if (universeId) viewGame.classList.add(`vr-bg-${universeId}`);
   },
 
   onCardResolved() {
     this.session.reignLength += 1;
     const user = window.VUserData.load();
-    user.vcoins += 1; // 1 VCoin par choix
+    user.vcoins += 1;
     window.VUserData.save(user);
-    console.log("[VRGame] Carte résolue, VCoins =", user.vcoins);
   },
 
   onRunEnded() {
@@ -679,81 +606,12 @@ window.VRGame = {
       user.stats.bestReignLength = this.session.reignLength;
     }
     window.VUserData.save(user);
-    console.log("[VRGame] Fin de run - bonus VCoins:", bonus, "total =", user.vcoins);
   }
 };
 
-// ===== Navigation & initialisation (SPA + page jeu seule) =====
-
+// ===== Init page jeu seule (game.html) =====
 (function () {
-  // Change de vue en SPA
-function setView(viewId) {
-  document.querySelectorAll(".vr-view").forEach((v) =>
-    v.classList.remove("vr-view-active")
-  );
-  const viewEl = document.getElementById(`view-${viewId}`);
-  if (viewEl) {
-    viewEl.classList.add("vr-view-active");
-  }
-
-  // Mode plein écran uniquement sur la vue jeu (index.html)
-  // => active les règles CSS body.vr-body-game (fond 100% + pas de "gris")
-  document.body.classList.toggle("vr-body-game", viewId === "game");
-}
-
-
-  // Setup nav boutons latéraux (profil / settings / shop)
-  function setupSideNav() {
-    document.querySelectorAll("[data-view-target]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-view-target");
-        if (!target) return;
-        setView(target);
-      });
-    });
-
-    // Logo renvoie à la home
-    const logo = document.querySelector(".vr-logo");
-    if (logo) {
-      logo.addEventListener("click", () => setView("home"));
-    }
-  }
-
-  // Gestion des cartes d'univers (SPA)
-  function setupUniverseCards() {
-    const cards = document.querySelectorAll(".vr-card[data-universe]");
-    cards.forEach((card) => {
-      card.addEventListener("click", () => {
-        if (card.disabled) return;
-        const universeId = card.getAttribute("data-universe");
-        if (!universeId) return;
-
-        // Sauvegarde l'univers
-        if (window.VR_STORAGE_KEYS) {
-          localStorage.setItem(window.VR_STORAGE_KEYS.universe, universeId);
-        } else {
-          localStorage.setItem("vrealms_universe", universeId);
-        }
-
-        // Mode SPA : on bascule sur la vue jeu
-        const hasHomeView = !!document.getElementById("view-home");
-        if (hasHomeView) {
-          setView("game");
-        }
-
-        // Laisse le moteur initialiser la run
-        if (
-          window.VRGame &&
-          typeof window.VRGame.onUniverseSelected === "function"
-        ) {
-          window.VRGame.onUniverseSelected(universeId);
-        }
-      });
-    });
-  }
-
   async function initApp() {
-    // i18n : charge le dictionnaire et applique les textes
     try {
       if (window.VRI18n && typeof window.VRI18n.initI18n === "function") {
         await window.VRI18n.initI18n();
@@ -762,30 +620,12 @@ function setView(viewId) {
       console.error("[VRealms] Erreur init i18n:", e);
     }
 
-    const hasHomeView = !!document.getElementById("view-home");
     const hasGameView = !!document.getElementById("view-game");
+    if (!hasGameView) return;
 
-    if (hasHomeView) {
-      // Mode SPA (index.html)
-      setupSideNav();
-      setupUniverseCards();
-      setView("home");
-    } else if (hasGameView) {
-      // Page jeu seule (game.html)
-      let universeId = "hell_king";
-      if (window.VR_STORAGE_KEYS) {
-        universeId =
-          localStorage.getItem(window.VR_STORAGE_KEYS.universe) || "hell_king";
-      } else {
-        universeId = localStorage.getItem("vrealms_universe") || "hell_king";
-      }
-
-      if (
-        window.VRGame &&
-        typeof window.VRGame.onUniverseSelected === "function"
-      ) {
-        window.VRGame.onUniverseSelected(universeId);
-      }
+    const universeId = localStorage.getItem("vrealms_universe") || "hell_king";
+    if (window.VRGame && typeof window.VRGame.onUniverseSelected === "function") {
+      window.VRGame.onUniverseSelected(universeId);
     }
   }
 
