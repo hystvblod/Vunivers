@@ -1,34 +1,79 @@
 (function () {
   "use strict";
 
-  // i18n runtime state
-  let _vrCurrentLang = "fr";
-  let _vrCurrentDict = {};
+  // === CONFIG ===
+  const BASE_PATH = "data/i18n"; // ✅ ton chemin réel
+  const DEFAULT_LANG = "fr";
+  const STORAGE_KEY = "vr_lang";
 
-  const VR_DEFAULT_LANG = "fr";
-  const VR_STORAGE_KEYS = { LANG: "vr_lang" };
+  // Bundles optionnels (on charge ce qui existe, sinon on ignore)
+  // ui_* = textes UI (index, menus)
+  // cards_* = textes des cartes
+  // endings_* = fins
+  // cards_paradis_* = cartes paradis (si utilisé)
+  const BUNDLES = ["ui", "cards", "endings", "cards_paradis"];
 
-  function normalizeLang(lang) {
-    const l = (lang || "").toString().trim().toLowerCase();
-    return l || VR_DEFAULT_LANG;
+  let _lang = DEFAULT_LANG;
+  let _dict = {};
+
+  function normalizeLang(raw) {
+    const s = String(raw || "").trim().toLowerCase();
+    if (!s) return DEFAULT_LANG;
+    // "fr-FR" -> "fr"
+    if (s.includes("-")) return s.split("-")[0];
+    return s;
   }
 
-  function getI18nPaths() {
-    const forced = (window.VR_I18N_PATH && String(window.VR_I18N_PATH).trim()) || "";
-    const paths = [];
-    if (forced) paths.push(forced);
-
-    // Fallbacks (marche si tes JSON sont dans data/i18n OU i18n)
-    paths.push("data/i18n", "i18n");
-
-    // unique
-    return [...new Set(paths.filter(Boolean))];
+  function deepMerge(target, source) {
+    if (!source || typeof source !== "object") return target;
+    for (const k of Object.keys(source)) {
+      const sv = source[k];
+      const tv = target[k];
+      if (sv && typeof sv === "object" && !Array.isArray(sv)) {
+        target[k] = deepMerge(tv && typeof tv === "object" ? tv : {}, sv);
+      } else {
+        target[k] = sv;
+      }
+    }
+    return target;
   }
 
-  async function loadJSON(path) {
-    const res = await fetch(path, { cache: "no-cache" });
-    if (!res.ok) throw new Error(`i18n fetch failed: ${path} (${res.status})`);
-    return await res.json();
+  async function fetchJson(url) {
+    const res = await fetch(url, { cache: "no-cache" });
+    if (!res.ok) throw new Error(`i18n fetch failed: ${url} (${res.status})`);
+    return res.json();
+  }
+
+  async function tryLoadBundle(bundle, lang) {
+    const url = `${BASE_PATH}/${bundle}_${lang}.json`; // ✅ ui_fr.json etc
+    try {
+      return await fetchJson(url);
+    } catch (e) {
+      // 404 = normal si tu n'as pas encore ce bundle pour cette langue
+      return null;
+    }
+  }
+
+  async function loadAllBundles(lang) {
+    const l = normalizeLang(lang);
+
+    // 1) on tente la langue demandée
+    const out = {};
+    for (const b of BUNDLES) {
+      const j = await tryLoadBundle(b, l);
+      if (j) deepMerge(out, j);
+    }
+
+    // 2) fallback : si rien n'a chargé, on tente la langue par défaut
+    if (Object.keys(out).length === 0 && l !== DEFAULT_LANG) {
+      for (const b of BUNDLES) {
+        const j = await tryLoadBundle(b, DEFAULT_LANG);
+        if (j) deepMerge(out, j);
+      }
+      return { dict: out, lang: DEFAULT_LANG };
+    }
+
+    return { dict: out, lang: l };
   }
 
   function resolveKey(obj, key) {
@@ -43,28 +88,24 @@
   }
 
   function applyTranslations(dict) {
-    // texte simple
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
       const val = resolveKey(dict, key);
       if (typeof val === "string") el.textContent = val;
     });
 
-    // placeholders
     document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
       const key = el.getAttribute("data-i18n-placeholder");
       const val = resolveKey(dict, key);
       if (typeof val === "string") el.setAttribute("placeholder", val);
     });
 
-    // title (tooltips)
     document.querySelectorAll("[data-i18n-title]").forEach((el) => {
       const key = el.getAttribute("data-i18n-title");
       const val = resolveKey(dict, key);
       if (typeof val === "string") el.setAttribute("title", val);
     });
 
-    // aria-label (accessibilité)
     document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
       const key = el.getAttribute("data-i18n-aria");
       const val = resolveKey(dict, key);
@@ -72,53 +113,31 @@
     });
   }
 
-  async function loadLocale(lang) {
-    const l = normalizeLang(lang);
-    const paths = getI18nPaths();
-
-    let lastErr = null;
-    for (const base of paths) {
-      const url = `${base}/${l}.json`;
-      try {
-        return await loadJSON(url);
-      } catch (e) {
-        lastErr = e;
-      }
-    }
-
-    console.warn("[VRI18n] Aucun JSON trouvé pour", l, "dans", paths, lastErr);
-    return {};
-  }
-
-  function getLocalLang() {
-    // 1) userData.lang si dispo
+  function getSavedLang() {
+    // 1) userData si dispo
     try {
-      if (window.VUserData && typeof window.VUserData.load === "function") {
+      if (window.VUserData?.load) {
         const u = window.VUserData.load();
         if (u && u.lang) return normalizeLang(u.lang);
       }
     } catch (_) {}
 
-    // 2) localStorage vr_lang
+    // 2) localStorage
     try {
-      const fromLS = localStorage.getItem(VR_STORAGE_KEYS.LANG);
-      if (fromLS) return normalizeLang(fromLS);
+      const ls = localStorage.getItem(STORAGE_KEY);
+      if (ls) return normalizeLang(ls);
     } catch (_) {}
 
-    return VR_DEFAULT_LANG;
+    return DEFAULT_LANG;
   }
 
-  function setLocalLang(lang) {
+  function saveLangLocal(lang) {
     const l = normalizeLang(lang);
 
-    // localStorage
-    try {
-      localStorage.setItem(VR_STORAGE_KEYS.LANG, l);
-    } catch (_) {}
+    try { localStorage.setItem(STORAGE_KEY, l); } catch (_) {}
 
-    // userData.lang
     try {
-      if (window.VUserData && typeof window.VUserData.load === "function" && typeof window.VUserData.save === "function") {
+      if (window.VUserData?.load && window.VUserData?.save) {
         const u = window.VUserData.load();
         window.VUserData.save({ ...u, lang: l });
       }
@@ -127,69 +146,50 @@
     return l;
   }
 
-  async function saveLangRemoteIfAvailable(lang) {
-    const l = normalizeLang(lang);
+  async function initI18n() {
+    const wanted = getSavedLang();
+    const { dict, lang } = await loadAllBundles(wanted);
+
+    _lang = lang || wanted || DEFAULT_LANG;
+    _dict = dict || {};
+
+    applyTranslations(_dict);
+    document.documentElement.lang = _lang;
+
+    return _lang;
+  }
+
+  async function setLang(lang) {
+    const l = saveLangLocal(lang);
+    const { dict, lang: resolvedLang } = await loadAllBundles(l);
+
+    _lang = resolvedLang || l;
+    _dict = dict || {};
+
+    applyTranslations(_dict);
+    document.documentElement.lang = _lang;
+
+    // hook DB (plus tard Supabase)
     try {
-      if (window.VRRemoteStore && typeof window.VRRemoteStore.saveLang === "function") {
-        await window.VRRemoteStore.saveLang(l);
-      }
+      if (window.VRRemoteStore?.saveLang) await window.VRRemoteStore.saveLang(_lang);
     } catch (e) {
       console.warn("[VRI18n] saveLang remote failed", e);
     }
-  }
 
-  async function initI18n() {
-    const lang = getLocalLang();
-    const translations = await loadLocale(lang);
-
-    _vrCurrentLang = normalizeLang(lang);
-    _vrCurrentDict = translations || {};
-
-    applyTranslations(_vrCurrentDict);
-    document.documentElement.lang = _vrCurrentLang;
-  }
-
-  async function setLang(lang, options = {}) {
-    const l = setLocalLang(lang);
-    const translations = await loadLocale(l);
-
-    _vrCurrentLang = l;
-    _vrCurrentDict = translations || {};
-
-    applyTranslations(_vrCurrentDict);
-    document.documentElement.lang = _vrCurrentLang;
-
-    if (options.persistRemote) {
-      await saveLangRemoteIfAvailable(_vrCurrentLang);
-    }
-    return _vrCurrentLang;
+    return _lang;
   }
 
   window.VRI18n = {
-    // public API
     initI18n,
     setLang,
-    getLang() {
-      return _vrCurrentLang;
-    },
-    t(key) {
-      if (!key) return "";
-      const v = resolveKey(_vrCurrentDict || {}, key);
+    getLang: () => _lang,
+    t: (key) => {
+      const v = resolveKey(_dict, key);
       return typeof v === "string" ? v : "";
-    },
-
-    // exposed helpers (debug)
-    applyTranslations,
-    resolveKey,
-    getI18nPaths,
-    VR_DEFAULT_LANG,
-    VR_STORAGE_KEYS
+    }
   };
 
-  // Backward compatible alias (used by older scripts)
-  window.i18nGet = (key) => window.VRI18n.t(key);
-
-  // auto-init
+  // auto init
   function boot() {
     initI18n().catch(console.warn);
   }
