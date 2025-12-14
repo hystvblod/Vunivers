@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>VRealms - Profil</title>
+  <title>VRealms - Boutique</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -25,29 +25,17 @@
   <div class="vr-overlay"></div>
 
   <main class="vr-main">
-    <section id="view-profile" class="vr-view vr-view-active">
-      <h2 class="vr-section-title" data-i18n="profile.title"></h2>
+    <section id="view-shop" class="vr-view vr-view-active">
+      <h2 class="vr-section-title" data-i18n="shop.title"></h2>
       <div class="vr-profile-grid">
         <div class="vr-profile-card">
-          <p><strong data-i18n="profile.vcoins"></strong> : <span id="profile-vcoins">—</span></p>
-          <p><strong data-i18n="profile.bestReign"></strong> : <span id="profile-best-reign">—</span></p>
-          <p><strong data-i18n="profile.totalRuns"></strong> : <span id="profile-total-runs">—</span></p>
+          <p data-i18n="shop.soon"></p>
         </div>
       </div>
     </section>
   </main>
 
-  <script src="js/userData.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/game.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const user = window.VUserData?.load?.();
-      if (!user) return;
-      document.getElementById("profile-vcoins").textContent = user.vcoins ?? 0;
-      document.getElementById("profile-best-reign").textContent = user.stats?.bestReignLength ?? 0;
-      document.getElementById("profile-total-runs").textContent = user.stats?.totalRuns ?? 0;
-    });
-  </script>
 </body>
 </html>
