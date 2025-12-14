@@ -382,7 +382,7 @@ body.vr-body {
   margin-bottom: 10px;
 }
 
-/* (Ancien) styles jauges - conservés pour fallback */
+/* styles jauges (base) */
 .vr-gauges-row {
   display: flex;
   flex-direction: column;
@@ -421,7 +421,7 @@ body.vr-body {
   background: linear-gradient(to right, #22c55e, #fbbf24, #ef4444);
 }
 
-/* Preview "fantôme" quand on maintient un choix */
+/* Preview "fantôme" */
 .vr-gauge-preview {
   position: absolute;
   top: 0;
@@ -434,7 +434,7 @@ body.vr-body {
   pointer-events: none;
 }
 
-/* Meta (ancien) */
+/* Meta */
 .vr-meta-bar {
   display: flex;
   justify-content: flex-end;
@@ -525,11 +525,10 @@ body.vr-body {
 .vr-card-choices {
   display: flex;
   flex-direction: column;
-  gap: 14px;        /* espace entre les 3 choix */
-  margin-top: 14px; /* espace entre texte et choix */
+  gap: 14px;
+  margin-top: 14px;
 }
 
-/* Base bouton = image webp entière, sans cadre autour */
 .vr-choice-button {
   position: relative;
   display: flex;
@@ -654,7 +653,7 @@ body.vr-body {
   box-shadow: var(--vr-shadow-soft);
 }
 
-/* ===== Footer (caché pour ne plus gêner) ===== */
+/* ===== Footer (caché) ===== */
 
 .vr-footer {
   display: none;
@@ -675,14 +674,13 @@ body.vr-body {
 }
 
 /* ==========================================================
-   FIX GAME (TES 3 DEMANDES) — EN SE BASANT SUR TON HTML
+   FIX GAME (MODE "game.html") — PLEIN ÉCRAN + JAUGES 4 + CARTE/CHOIX
+   NOTE : cette section est faite pour le HTML "game.html"
+   (vr-gauges-row / vr-gauge / vr-card-main / vr-card-choices-bottom)
    ========================================================== */
 
 /* ===========================
    1) MODE JEU PLEIN ÉCRAN
-   - supprime le "gris" (max-width/margins)
-   - fond = tout l'écran
-   - icônes au-dessus
    =========================== */
 
 body.vr-body-game {
@@ -690,18 +688,16 @@ body.vr-body-game {
   overflow: hidden;
 }
 
-/* on enlève le voile global en game */
 body.vr-body-game .vr-overlay {
   display: none;
 }
 
-/* le header devient overlay au-dessus du fond */
 body.vr-body-game .vr-header {
   position: fixed;
   top: 10px;
   left: 0;
   right: 0;
-  z-index: 40;
+  z-index: 50;
   padding: 10px 18px;
   max-width: none;
   margin: 0;
@@ -714,15 +710,15 @@ body.vr-body-game .vr-top-actions {
   gap: 14px;
 }
 
-/* le main ne doit plus être "centré" (sinon bandes/gris) */
 body.vr-body-game .vr-main {
-  max-width: none;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden;
 }
 
-/* la vue game occupe tout l'écran (vraiment) */
 body.vr-body-game #view-game {
   position: fixed;
   inset: 0;
@@ -730,7 +726,7 @@ body.vr-body-game #view-game {
   height: 100vh;
   min-height: 100vh;
   margin: 0;
-  padding: 72px 14px 18px; /* place pour les icônes */
+  padding: 72px 14px 16px;
   border-radius: 0;
   border: none;
   box-shadow: none;
@@ -743,42 +739,36 @@ body.vr-body-game #view-game {
   flex-direction: column;
 }
 
-/* Option : voile plus léger (tu peux mettre 0.0 si tu veux aucun voile) */
 body.vr-body-game #view-game::before {
   background: rgba(0, 0, 0, 0.25);
 }
 
 /* ===========================
-   2) JAUGES SÉPARÉES
-   - ton HTML: .vr-gauges + .vr-gauge-row + .vr-gauge-bar
+   2) 4 JAUGES SÉPARÉES
    =========================== */
 
-body.vr-body-game .vr-game-layout {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-body.vr-body-game .vr-gauges {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2x2 mobile */
-  gap: 10px;
-  margin: 0 auto 10px;
+body.vr-body-game .vr-gauges-row {
   width: 100%;
   max-width: 520px;
+  margin: 0 auto 10px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 @media (min-width: 768px) {
-  body.vr-body-game .vr-gauges {
-    grid-template-columns: repeat(4, 1fr); /* 4 en ligne desktop */
+  body.vr-body-game .vr-gauges-row {
     max-width: 980px;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-body.vr-body-game .vr-gauge-row {
+body.vr-body-game .vr-gauge {
   display: flex;
   flex-direction: column;
   gap: 6px;
+
   padding: 10px;
   border-radius: 14px;
   background: rgba(10, 15, 25, 0.35);
@@ -786,119 +776,113 @@ body.vr-body-game .vr-gauge-row {
   backdrop-filter: blur(6px);
 }
 
-body.vr-body-game .vr-gauge-row .vr-gauge-label {
+body.vr-body-game .vr-gauge .vr-gauge-label {
   font-size: 12px;
-  color: rgba(255,255,255,0.92);
+  color: rgba(255, 255, 255, 0.92);
   min-width: 0;
 }
 
-body.vr-body-game .vr-gauge-bar {
-  position: relative;
-  width: 100%;
-  height: 10px;
-  border-radius: 999px;
+body.vr-body-game .vr-gauge .vr-gauge-frame {
+  height: 12px;
   background: rgba(15, 23, 42, 0.9);
-  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.45);
 }
 
-body.vr-body-game .vr-gauge-bar .vr-gauge-fill,
-body.vr-body-game .vr-gauge-bar .vr-gauge-preview {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  border-radius: 999px;
+body.vr-body-game .vr-gauge .vr-gauge-fill,
+body.vr-body-game .vr-gauge .vr-gauge-preview {
   background: linear-gradient(to right, #22c55e, #fbbf24, #ef4444);
 }
 
-body.vr-body-game .vr-gauge-bar .vr-gauge-preview {
+body.vr-body-game .vr-gauge .vr-gauge-preview {
   opacity: 0.35;
 }
 
 /* ===========================
-   3) CARTE SCÉNARIO PLUS PETITE
-      + CHOIX EN DESSOUS, EN BAS D'ÉCRAN
-   - ton HTML: .vr-card-play-area + .vr-event-card#vr-card-main + .vr-event-choices
+   3) CARTE SCÉNARIO + CHOIX
    =========================== */
 
-/* pousse la zone carte vers le bas de l'écran */
-body.vr-body-game .vr-card-play-area {
+body.vr-body-game .vr-card-container {
   width: 100%;
-  margin-top: auto;      /* => colle en bas */
+  margin-top: auto;
   padding-bottom: 6px;
   display: flex;
   justify-content: center;
 }
 
-/* carte plus compacte */
-body.vr-body-game .vr-event-card.vr-card-main {
+body.vr-body-game .vr-card-stack {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body.vr-body-game .vr-card-main-compact {
   max-width: 360px;
   width: 100%;
-  margin: 0 auto;
-  padding: 16px 18px;
+  margin: 0 auto 6px auto;
+  padding: 14px 16px;
   border: none;
   box-shadow: none;
-  background-color: transparent; /* au cas où un fond "gris" se mettrait */
+  background-color: transparent;
 }
 
-/* évite tout fond parasite dans les wrappers internes */
-body.vr-body-game .vr-event-bg,
-body.vr-body-game .vr-event-content {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* texte du scénario bien collé sur la carte */
-body.vr-body-game .vr-event-title {
+body.vr-body-game .vr-card-main-compact .vr-card-title {
   margin: 0 0 6px;
   font-size: 16px;
 }
 
-body.vr-body-game .vr-event-text {
+body.vr-body-game .vr-card-main-compact .vr-card-text {
   margin: 0;
-  font-size: 14px;
-  color: var(--vr-text-muted);
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.78);
 }
 
-/* choix juste sous le scénario */
-body.vr-body-game .vr-event-choices.vr-card-choices {
-  margin-top: 12px;
-  gap: 14px;
+body.vr-body-game .vr-card-choices-bottom {
+  width: 100%;
+  margin-top: 10px;
+  gap: 12px;
+}
+
+body.vr-body-game .vr-choice-button {
+  align-items: flex-end;
+  padding: 10px 18px 14px;
+  min-height: 58px;
+  background-size: 100% 100%;
+}
+
+body.vr-body-game .vr-choice-label {
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.25;
 }
 
 /* ===========================
-   META (ton HTML: .vr-meta/.vr-meta-line)
+   META BAR
    =========================== */
 
-body.vr-body-game .vr-meta {
-  margin: 8px auto 0;
-  width: 100%;
-  max-width: 980px;
+body.vr-body-game .vr-meta-bar {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 10px;
   font-size: 13px;
+  margin: 10px auto 0;
+  width: 100%;
+  max-width: 980px;
+  flex-wrap: wrap;
 }
 
-body.vr-body-game .vr-meta-line {
-  display: inline-flex;
-  gap: 6px;
-  align-items: baseline;
+body.vr-body-game .vr-meta-bar > span {
   padding: 6px 10px;
   border-radius: 12px;
   background: rgba(10, 15, 25, 0.28);
   border: 1px solid rgba(148, 163, 184, 0.22);
   backdrop-filter: blur(6px);
-}
-
-body.vr-body-game .vr-meta-label {
-  color: rgba(255,255,255,0.75);
-  font-size: 12px;
-}
-
-body.vr-body-game .vr-meta-value {
-  color: rgba(255,255,255,0.95);
+  color: rgba(255, 255, 255, 0.92);
   font-weight: 700;
+}
+
+/* (optionnel) : cache le titre/sous-titre si tu ne les veux pas */
+body.vr-body-game .vr-game-header {
+  display: none;
 }
