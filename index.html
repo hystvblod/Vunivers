@@ -140,6 +140,22 @@
       .vr-icon-button{ width: 40px !important; height: 40px !important; }
       .vr-icon-button img{ width: 28px !important; height: 28px !important; }
     }
+    /* Enlève l'effet "bandeau" de la carte disabled */
+.vr-card.vr-card-disabled,
+.vr-card[disabled]{
+  opacity: .55 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* Si ton style.css met une bordure via pseudo-element */
+.vr-card.vr-card-disabled::before,
+.vr-card.vr-card-disabled::after{
+  box-shadow: none !important;
+}
+
   </style>
 </head>
 
