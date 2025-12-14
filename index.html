@@ -7,9 +7,9 @@
 
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- ✅ Overrides DIRECT DANS INDEX (pour écraser style.css) -->
+  <!-- ✅ Overrides DIRECT DANS INDEX -->
   <style>
-    /* ===== HEADER ICONS (profil / paramètres / shop) tout en haut, au-dessus du logo ===== */
+    /* ===== HEADER ICONS tout en haut, sans halo/blur/cadre ===== */
     .vr-header{
       position: fixed !important;
       top: 0 !important;
@@ -22,7 +22,7 @@
     }
     .vr-top-actions{
       display: flex !important;
-      justify-content: flex-end !important;
+      justify-content: center !important;   /* ✅ centré comme ton screen */
       gap: 10px !important;
       pointer-events: auto; /* ✅ cliquable */
     }
@@ -32,33 +32,42 @@
       justify-content: center !important;
       width: 44px !important;
       height: 44px !important;
-      border-radius: 14px !important;
-      background: rgba(255,255,255,.18) !important;
-      backdrop-filter: blur(6px) !important;
-      -webkit-backdrop-filter: blur(6px) !important;
-      box-shadow: 0 6px 18px rgba(0,0,0,.18) !important;
-      border: 1px solid rgba(255,255,255,.14) !important;
+
+      /* ✅ suppression totale de l’effet */
+      background: transparent !important;
+      box-shadow: none !important;
+      border: 0 !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+
       text-decoration: none !important;
+      padding: 0 !important;
     }
     .vr-icon-button img{
-      width: 26px !important;
-      height: 26px !important;
+      width: 30px !important;
+      height: 30px !important;
       object-fit: contain !important;
       display:block !important;
+      filter: none !important;
     }
 
     /* Laisse de la place au contenu sous le header */
     .vr-main{ padding-top: 72px !important; }
 
-    /* ===== CARDS: WebP en fond à 50% + texte au-dessus lisible + "?" DANS la cartouche ===== */
-    .vr-card{ position: relative !important; overflow: hidden !important; }
+    /* ===== CARTES (plus de button dans button) ===== */
+    .vr-card{
+      position: relative !important;
+      overflow: hidden !important;
+      border-radius: 16px; /* si ton style.css gère déjà, pas grave */
+    }
 
+    /* WebP en fond à 50% */
     .vr-card-bg{
       position: absolute !important;
       inset: 0 !important;
       background-size: cover !important;
       background-position: center !important;
-      opacity: .5 !important;   /* ✅ 50% */
+      opacity: .5 !important;
       z-index: 0 !important;
     }
 
@@ -67,20 +76,22 @@
       content: "" !important;
       position: absolute !important;
       inset: 0 !important;
-      background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.62)) !important;
+      background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.62)) !important;
       pointer-events: none !important;
       z-index: 1 !important;
     }
 
-    /* contenu au-dessus (important pour écraser ton style.css qui met parfois relative) */
-    .vr-card-content{
+    /* bouton invisible qui couvre la carte = clic pour lancer */
+    .vr-card-launch{
       position: absolute !important;
       inset: 0 !important;
-      display: flex !important;
       z-index: 2 !important;
+      background: transparent !important;
+      border: 0 !important;
+      cursor: pointer !important;
     }
 
-    /* ligne interne */
+    /* header dans la carte (titre + ?) */
     .vr-card-header-line{
       position: absolute !important;
       top: 12px !important;
@@ -90,7 +101,8 @@
       align-items: center !important;
       justify-content: space-between !important;
       gap: 10px !important;
-      z-index: 3 !important;
+      z-index: 3 !important; /* ✅ au-dessus du bouton launch */
+      pointer-events: none;   /* on réactive uniquement sur ? */
     }
 
     .vr-card-title{
@@ -103,9 +115,9 @@
       line-height: 1.1 !important;
     }
 
-    /* bouton ? (force static pour éviter un ancien style qui le met à gauche) */
+    /* ? DANS la cartouche */
     .vr-info-btn{
-      position: static !important;
+      pointer-events: auto;  /* ✅ cliquable malgré le pointer-events:none du parent */
       width: 38px !important;
       height: 38px !important;
       border-radius: 999px !important;
@@ -124,7 +136,7 @@
     }
     .vr-info-btn:active{ transform: scale(.96) !important; }
 
-    /* tooltip (au cas où) */
+    /* tooltip */
     .vr-tooltip{
       position: fixed;
       transform: translateX(-50%);
@@ -146,7 +158,7 @@
     @media (max-width: 520px){
       .vr-main{ padding-top: 64px !important; }
       .vr-icon-button{ width: 40px !important; height: 40px !important; }
-      .vr-icon-button img{ width: 24px !important; height: 24px !important; }
+      .vr-icon-button img{ width: 28px !important; height: 28px !important; }
       .vr-card-title{ font-size: 14px !important; }
       .vr-info-btn{ width: 34px !important; height: 34px !important; font-size: 15px !important; }
       .vr-card-header-line{ top: 10px !important; left: 10px !important; right: 10px !important; }
@@ -157,7 +169,7 @@
 <body class="vr-body">
   <div class="vr-overlay"></div>
 
-  <!-- ✅ ICONS EN HAUT (tes vrais noms de fichiers) -->
+  <!-- ✅ ICONS EN HAUT -->
   <header class="vr-header" aria-label="Top actions">
     <div class="vr-top-actions">
       <a class="vr-icon-button" href="profile.html" aria-label="Profile">
@@ -188,75 +200,69 @@
 
         <div class="vr-universe-grid">
 
-          <button class="vr-card" type="button" data-universe="hell_king">
+          <!-- ✅ Carte = DIV (pas button) -->
+          <div class="vr-card" data-universe="hell_king" role="button" tabindex="0" aria-label="Hell King">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/hell_king.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.hell_king.title"></h3>
-                <button type="button" class="vr-info-btn" data-i18n-tip="universe.hell_king.desc" data-tip="Règne sur les Enfers.">?</button>
-              </div>
+            <button class="vr-card-launch" type="button" aria-label="Lancer Hell King"></button>
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.hell_king.title"></h3>
+              <button type="button" class="vr-info-btn" data-i18n-tip="universe.hell_king.desc" data-tip="Règne sur les Enfers.">?</button>
             </div>
-          </button>
+          </div>
 
-          <button class="vr-card" type="button" data-universe="heaven_king">
+          <div class="vr-card" data-universe="heaven_king" role="button" tabindex="0" aria-label="Heaven King">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/heaven_king.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.heaven_king.title"></h3>
-                <button type="button" class="vr-info-btn" data-i18n-tip="universe.heaven_king.desc" data-tip="Gère le Ciel.">?</button>
-              </div>
+            <button class="vr-card-launch" type="button" aria-label="Lancer Heaven King"></button>
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.heaven_king.title"></h3>
+              <button type="button" class="vr-info-btn" data-i18n-tip="universe.heaven_king.desc" data-tip="Gère le Ciel.">?</button>
             </div>
-          </button>
+          </div>
 
-          <button class="vr-card" type="button" data-universe="medieval_king">
+          <div class="vr-card" data-universe="medieval_king" role="button" tabindex="0" aria-label="Medieval King">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/medieval_king.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.medieval_king.title"></h3>
-                <button type="button" class="vr-info-btn" data-i18n-tip="universe.medieval_king.desc" data-tip="Royaume médiéval.">?</button>
-              </div>
+            <button class="vr-card-launch" type="button" aria-label="Lancer Medieval King"></button>
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.medieval_king.title"></h3>
+              <button type="button" class="vr-info-btn" data-i18n-tip="universe.medieval_king.desc" data-tip="Royaume médiéval.">?</button>
             </div>
-          </button>
+          </div>
 
-          <button class="vr-card" type="button" data-universe="western_president">
+          <div class="vr-card" data-universe="western_president" role="button" tabindex="0" aria-label="Western President">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/western_president.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.western_president.title"></h3>
-                <button type="button" class="vr-info-btn" data-i18n-tip="universe.western_president.desc" data-tip="Politique moderne.">?</button>
-              </div>
+            <button class="vr-card-launch" type="button" aria-label="Lancer Western President"></button>
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.western_president.title"></h3>
+              <button type="button" class="vr-info-btn" data-i18n-tip="universe.western_president.desc" data-tip="Politique moderne.">?</button>
             </div>
-          </button>
+          </div>
 
-          <button class="vr-card" type="button" data-universe="mega_corp_ceo">
+          <div class="vr-card" data-universe="mega_corp_ceo" role="button" tabindex="0" aria-label="Mega Corp CEO">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/mega_corp_ceo.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></h3>
-                <button type="button" class="vr-info-btn" data-i18n-tip="universe.mega_corp_ceo.desc" data-tip="Entreprise géante.">?</button>
-              </div>
+            <button class="vr-card-launch" type="button" aria-label="Lancer Mega Corp CEO"></button>
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></h3>
+              <button type="button" class="vr-info-btn" data-i18n-tip="universe.mega_corp_ceo.desc" data-tip="Entreprise géante.">?</button>
             </div>
-          </button>
+          </div>
 
-          <button class="vr-card" type="button" data-universe="new_world_explorer">
+          <div class="vr-card" data-universe="new_world_explorer" role="button" tabindex="0" aria-label="New World Explorer">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/new_world_explorer.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
-                <button type="button" class="vr-info-btn" data-i18n-tip="universe.new_world_explorer.desc" data-tip="Exploration.">?</button>
-              </div>
+            <button class="vr-card-launch" type="button" aria-label="Lancer New World Explorer"></button>
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
+              <button type="button" class="vr-info-btn" data-i18n-tip="universe.new_world_explorer.desc" data-tip="Exploration.">?</button>
             </div>
-          </button>
+          </div>
 
-          <button class="vr-card" type="button" data-universe="vampire_lord">
+          <div class="vr-card" data-universe="vampire_lord" role="button" tabindex="0" aria-label="Vampire Lord">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/vampire_lord.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
-                <button type="button" class="vr-info-btn" data-i18n-tip="universe.vampire_lord.desc" data-tip="Nuit & influence.">?</button>
-              </div>
+            <button class="vr-card-launch" type="button" aria-label="Lancer Vampire Lord"></button>
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
+              <button type="button" class="vr-info-btn" data-i18n-tip="universe.vampire_lord.desc" data-tip="Nuit & influence.">?</button>
             </div>
-          </button>
+          </div>
 
         </div>
       </section>
@@ -266,6 +272,7 @@
   <div class="vr-tooltip" id="vrTooltip" aria-hidden="true"></div>
 
   <script>
+    // 1) Tooltip "?"
     (function () {
       const tooltip = document.getElementById("vrTooltip");
       if (!tooltip) return;
@@ -282,7 +289,7 @@
       document.querySelectorAll(".vr-info-btn").forEach((btn) => {
         btn.addEventListener("click", (e) => {
           e.preventDefault();
-          e.stopPropagation();
+          e.stopPropagation(); // ✅ ne lance pas le jeu
 
           let text = btn.getAttribute("data-tip") || "?";
           if (window.VRI18n?.t) {
@@ -299,6 +306,35 @@
 
           tooltip.classList.add("show");
           tooltip.setAttribute("aria-hidden", "false");
+        });
+      });
+    })();
+
+    // 2) Lancer game.html + stocker l'univers
+    (function () {
+      function launchUniverse(universeId) {
+        if (!universeId) return;
+        localStorage.setItem("vrealms_universe", universeId); // ✅ le même que game.js utilise
+        window.location.href = "game.html";
+      }
+
+      document.querySelectorAll(".vr-card").forEach((card) => {
+        const id = card.getAttribute("data-universe");
+        const hit = card.querySelector(".vr-card-launch");
+
+        if (hit) {
+          hit.addEventListener("click", (e) => {
+            e.preventDefault();
+            launchUniverse(id);
+          });
+        }
+
+        // clavier (enter / espace)
+        card.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            launchUniverse(id);
+          }
         });
       });
     })();
