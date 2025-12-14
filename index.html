@@ -5,101 +5,151 @@
   <title>VRealms</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Ton CSS global -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- ✅ CSS DIRECT DANS INDEX : WebP en fond à 50% + texte au-dessus lisible + "?" dans la cartouche -->
+  <!-- ✅ Overrides DIRECT DANS INDEX (pour écraser style.css) -->
   <style>
-    /* Cards */
-    .vr-card{ position:relative; overflow:hidden; }
+    /* ===== HEADER ICONS (profil / paramètres / shop) tout en haut, au-dessus du logo ===== */
+    .vr-header{
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 9999 !important;
+      padding: 10px 12px !important;
+      background: transparent !important;
+      pointer-events: none; /* on réactive sur les boutons */
+    }
+    .vr-top-actions{
+      display: flex !important;
+      justify-content: flex-end !important;
+      gap: 10px !important;
+      pointer-events: auto; /* ✅ cliquable */
+    }
+    .vr-icon-button{
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 44px !important;
+      height: 44px !important;
+      border-radius: 14px !important;
+      background: rgba(255,255,255,.18) !important;
+      backdrop-filter: blur(6px) !important;
+      -webkit-backdrop-filter: blur(6px) !important;
+      box-shadow: 0 6px 18px rgba(0,0,0,.18) !important;
+      border: 1px solid rgba(255,255,255,.14) !important;
+      text-decoration: none !important;
+    }
+    .vr-icon-button img{
+      width: 26px !important;
+      height: 26px !important;
+      object-fit: contain !important;
+      display:block !important;
+    }
 
-    /* WebP en fond (50%) */
+    /* Laisse de la place au contenu sous le header */
+    .vr-main{ padding-top: 72px !important; }
+
+    /* ===== CARDS: WebP en fond à 50% + texte au-dessus lisible + "?" DANS la cartouche ===== */
+    .vr-card{ position: relative !important; overflow: hidden !important; }
+
     .vr-card-bg{
-      position:absolute; inset:0;
-      background-size:cover;
-      background-position:center;
-      opacity:.5;          /* ✅ 50% */
-      z-index:0;
+      position: absolute !important;
+      inset: 0 !important;
+      background-size: cover !important;
+      background-position: center !important;
+      opacity: .5 !important;   /* ✅ 50% */
+      z-index: 0 !important;
     }
 
-    /* Voile pour lisibilité du texte (au-dessus du fond) */
+    /* voile pour lisibilité */
     .vr-card::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.60));
-      pointer-events:none;
-      z-index:1;
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 !important;
+      background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.62)) !important;
+      pointer-events: none !important;
+      z-index: 1 !important;
     }
 
-    /* Contenu au-dessus */
+    /* contenu au-dessus (important pour écraser ton style.css qui met parfois relative) */
     .vr-card-content{
-      position:absolute; inset:0;
-      display:flex;
-      z-index:2;
+      position: absolute !important;
+      inset: 0 !important;
+      display: flex !important;
+      z-index: 2 !important;
     }
 
-    /* Header interne: titre à gauche / ? à droite */
+    /* ligne interne */
     .vr-card-header-line{
-      position:absolute;
-      top:12px; left:12px; right:12px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
+      position: absolute !important;
+      top: 12px !important;
+      left: 12px !important;
+      right: 12px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 10px !important;
+      z-index: 3 !important;
     }
 
-    /* Titre visible et lisible */
     .vr-card-title{
-      margin:0;
-      color:#fff;
-      font-weight:900;
-      font-size:16px;
-      letter-spacing:.2px;
-      text-shadow: 0 2px 10px rgba(0,0,0,.85);
-      line-height:1.1;
+      margin: 0 !important;
+      color: #fff !important;
+      font-weight: 900 !important;
+      font-size: 16px !important;
+      letter-spacing: .2px !important;
+      text-shadow: 0 2px 10px rgba(0,0,0,.85) !important;
+      line-height: 1.1 !important;
     }
 
-    /* Bouton ? (dans la cartouche) */
+    /* bouton ? (force static pour éviter un ancien style qui le met à gauche) */
     .vr-info-btn{
-      width:44px; height:44px;
-      border-radius:999px;
-      border:0;
-      background: rgba(245,246,249,.92);
-      color:#2b2a55;
-      font-weight:900;
-      font-size:18px;
-      display:flex; align-items:center; justify-content:center;
-      box-shadow: 0 2px 10px rgba(0,0,0,.25);
-      cursor:pointer;
-      user-select:none;
-      flex:0 0 auto;
+      position: static !important;
+      width: 38px !important;
+      height: 38px !important;
+      border-radius: 999px !important;
+      border: 0 !important;
+      background: rgba(245,246,249,.92) !important;
+      color: #2b2a55 !important;
+      font-weight: 900 !important;
+      font-size: 16px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-shadow: 0 2px 10px rgba(0,0,0,.25) !important;
+      cursor: pointer !important;
+      user-select: none !important;
+      flex: 0 0 auto !important;
     }
-    .vr-info-btn:hover{ filter:brightness(1.03); }
-    .vr-info-btn:active{ transform:scale(.96); }
+    .vr-info-btn:active{ transform: scale(.96) !important; }
 
-    /* Tooltip (si ton style.css ne le gère pas) */
+    /* tooltip (au cas où) */
     .vr-tooltip{
-      position:fixed;
-      transform:translateX(-50%);
-      max-width:min(360px, calc(100vw - 24px));
+      position: fixed;
+      transform: translateX(-50%);
+      max-width: min(360px, calc(100vw - 24px));
       background: rgba(20,20,28,.92);
-      color:#fff;
-      padding:10px 12px;
-      border-radius:12px;
-      font-size:13px;
-      line-height:1.35;
-      box-shadow:0 10px 30px rgba(0,0,0,.35);
-      opacity:0;
-      pointer-events:none;
-      transition:opacity .12s ease;
-      z-index:9999;
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      line-height: 1.35;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .12s ease;
+      z-index: 99999;
     }
-    .vr-tooltip.show{ opacity:1; }
+    .vr-tooltip.show{ opacity: 1; }
 
     @media (max-width: 520px){
-      .vr-info-btn{ width:38px; height:38px; font-size:16px; }
-      .vr-card-header-line{ top:10px; left:10px; right:10px; }
-      .vr-card-title{ font-size:14px; }
+      .vr-main{ padding-top: 64px !important; }
+      .vr-icon-button{ width: 40px !important; height: 40px !important; }
+      .vr-icon-button img{ width: 24px !important; height: 24px !important; }
+      .vr-card-title{ font-size: 14px !important; }
+      .vr-info-btn{ width: 34px !important; height: 34px !important; font-size: 15px !important; }
+      .vr-card-header-line{ top: 10px !important; left: 10px !important; right: 10px !important; }
     }
   </style>
 </head>
@@ -107,6 +157,7 @@
 <body class="vr-body">
   <div class="vr-overlay"></div>
 
+  <!-- ✅ ICONS EN HAUT (tes vrais noms de fichiers) -->
   <header class="vr-header" aria-label="Top actions">
     <div class="vr-top-actions">
       <a class="vr-icon-button" href="profile.html" aria-label="Profile">
@@ -137,114 +188,72 @@
 
         <div class="vr-universe-grid">
 
-          <!-- Enfers -->
           <button class="vr-card" type="button" data-universe="hell_king">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/hell_king.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.hell_king.title"></h3>
-                <button
-                  type="button"
-                  class="vr-info-btn"
-                  data-i18n-tip="universe.hell_king.desc"
-                  data-tip="Règne sur les Enfers : âmes, légions, chaos et ordre."
-                >?</button>
+                <button type="button" class="vr-info-btn" data-i18n-tip="universe.hell_king.desc" data-tip="Règne sur les Enfers.">?</button>
               </div>
             </div>
           </button>
 
-          <!-- Paradis -->
           <button class="vr-card" type="button" data-universe="heaven_king">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/heaven_king.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.heaven_king.title"></h3>
-                <button
-                  type="button"
-                  class="vr-info-btn"
-                  data-i18n-tip="universe.heaven_king.desc"
-                  data-tip="Gère la foi, les prières, les miracles et l’équilibre céleste."
-                >?</button>
+                <button type="button" class="vr-info-btn" data-i18n-tip="universe.heaven_king.desc" data-tip="Gère le Ciel.">?</button>
               </div>
             </div>
           </button>
 
-          <!-- Médiéval -->
           <button class="vr-card" type="button" data-universe="medieval_king">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/medieval_king.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.medieval_king.title"></h3>
-                <button
-                  type="button"
-                  class="vr-info-btn"
-                  data-i18n-tip="universe.medieval_king.desc"
-                  data-tip="Royaume médiéval : peuple, armée, or et stabilité."
-                >?</button>
+                <button type="button" class="vr-info-btn" data-i18n-tip="universe.medieval_king.desc" data-tip="Royaume médiéval.">?</button>
               </div>
             </div>
           </button>
 
-          <!-- Western -->
           <button class="vr-card" type="button" data-universe="western_president">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/western_president.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.western_president.title"></h3>
-                <button
-                  type="button"
-                  class="vr-info-btn"
-                  data-i18n-tip="universe.western_president.desc"
-                  data-tip="Opinion, économie, sécurité, diplomatie : chaque choix compte."
-                >?</button>
+                <button type="button" class="vr-info-btn" data-i18n-tip="universe.western_president.desc" data-tip="Politique moderne.">?</button>
               </div>
             </div>
           </button>
 
-          <!-- CEO -->
           <button class="vr-card" type="button" data-universe="mega_corp_ceo">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/mega_corp_ceo.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></h3>
-                <button
-                  type="button"
-                  class="vr-info-btn"
-                  data-i18n-tip="universe.mega_corp_ceo.desc"
-                  data-tip="Investisseurs, employés, image et croissance : équilibre fragile."
-                >?</button>
+                <button type="button" class="vr-info-btn" data-i18n-tip="universe.mega_corp_ceo.desc" data-tip="Entreprise géante.">?</button>
               </div>
             </div>
           </button>
 
-          <!-- Explorateur -->
           <button class="vr-card" type="button" data-universe="new_world_explorer">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/new_world_explorer.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
-                <button
-                  type="button"
-                  class="vr-info-btn"
-                  data-i18n-tip="universe.new_world_explorer.desc"
-                  data-tip="Exploration : ravitaillement, morale, découvertes, dangers."
-                >?</button>
+                <button type="button" class="vr-info-btn" data-i18n-tip="universe.new_world_explorer.desc" data-tip="Exploration.">?</button>
               </div>
             </div>
           </button>
 
-          <!-- Vampire -->
           <button class="vr-card" type="button" data-universe="vampire_lord">
             <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/vampire_lord.webp');"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
                 <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
-                <button
-                  type="button"
-                  class="vr-info-btn"
-                  data-i18n-tip="universe.vampire_lord.desc"
-                  data-tip="Nuit, influence, serviteurs… chaque décision a un prix."
-                >?</button>
+                <button type="button" class="vr-info-btn" data-i18n-tip="universe.vampire_lord.desc" data-tip="Nuit & influence.">?</button>
               </div>
             </div>
           </button>
@@ -257,7 +266,6 @@
   <div class="vr-tooltip" id="vrTooltip" aria-hidden="true"></div>
 
   <script>
-    // Tooltips sur les "?"
     (function () {
       const tooltip = document.getElementById("vrTooltip");
       if (!tooltip) return;
@@ -296,7 +304,6 @@
     })();
   </script>
 
-  <!-- Scripts -->
   <script src="js/userData.js"></script>
   <script src="js/ads.js"></script>
   <script src="js/purchases.js"></script>
