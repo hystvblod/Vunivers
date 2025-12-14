@@ -48,6 +48,17 @@
     /* Laisse de la place sous le header */
     .vr-main{ padding-top: 72px !important; }
 
+    /* ✅ Logo un peu plus bas (entre icônes et titre) */
+    .vr-intro{
+      margin-top: 14px !important;
+      margin-bottom: 12px !important;
+      display: flex !important;
+      justify-content: center !important;
+    }
+    .vr-main-logo{
+      margin-top: 6px !important;
+    }
+
     /* ===== Cartouches : plus grandes + fond webp 50% + texte au-dessus ===== */
     .vr-universe-grid{
       display: grid !important;
@@ -63,6 +74,8 @@
       height: 64px !important;
       border-radius: 18px !important;
       cursor: pointer !important;
+      border: 0 !important;
+      outline: 0 !important;
     }
 
     /* Fond webp */
@@ -112,24 +125,41 @@
       text-shadow: 0 2px 10px rgba(0,0,0,.85) !important;
     }
 
-    /* ✅ ? DANS la cartouche : SPAN (pas de button dans button) */
+    /* ✅ ? DANS la cartouche : quasi transparent (plus de rond blanc) */
     .vr-info-btn{
       width: 40px !important;
       height: 40px !important;
       border-radius: 999px !important;
-      background: rgba(245,246,249,.92) !important;
-      color: #2b2a55 !important;
+      background: rgba(255,255,255,.10) !important;
+      border: 1px solid rgba(255,255,255,.18) !important;
+      color: rgba(255,255,255,.95) !important;
       font-weight: 900 !important;
       font-size: 16px !important;
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      box-shadow: 0 2px 10px rgba(0,0,0,.25) !important;
+      box-shadow: none !important;
       user-select: none !important;
       flex: 0 0 auto !important;
       cursor: pointer !important;
     }
+    .vr-info-btn:hover{ background: rgba(255,255,255,.14) !important; }
     .vr-info-btn:active{ transform: scale(.96) !important; }
+
+    /* ✅ Enlève l'effet "bandeau" de la carte disabled */
+    .vr-card.vr-card-disabled,
+    .vr-card[disabled]{
+      opacity: .55 !important;
+      border: 0 !important;
+      outline: 0 !important;
+      box-shadow: none !important;
+      filter: none !important;
+    }
+    /* ⚠️ On ne coupe pas ::after sinon on perd le voile sur toutes les cartes.
+       On coupe juste l'ombre / effets potentiels. */
+    .vr-card.vr-card-disabled::before{
+      box-shadow: none !important;
+    }
 
     /* Mobile */
     @media (max-width: 520px){
@@ -140,22 +170,6 @@
       .vr-icon-button{ width: 40px !important; height: 40px !important; }
       .vr-icon-button img{ width: 28px !important; height: 28px !important; }
     }
-    /* Enlève l'effet "bandeau" de la carte disabled */
-.vr-card.vr-card-disabled,
-.vr-card[disabled]{
-  opacity: .55 !important;
-  border: 0 !important;
-  outline: 0 !important;
-  box-shadow: none !important;
-  filter: none !important;
-}
-
-/* Si ton style.css met une bordure via pseudo-element */
-.vr-card.vr-card-disabled::before,
-.vr-card.vr-card-disabled::after{
-  box-shadow: none !important;
-}
-
   </style>
 </head>
 
