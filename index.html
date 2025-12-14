@@ -6,28 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body class="vr-body">
   <div class="vr-overlay"></div>
 
-  <header class="vr-header" aria-label="Top actions">
+  <header class="vr-header">
     <div class="vr-top-actions">
-      <!-- ✅ page par page : liens directs (pas de SPA) -->
-      <a class="vr-icon-button" href="profile.html" aria-label="Profile">
+      <button class="vr-icon-button" data-view-target="profile">
         <div class="vr-icon-image vr-icon-profile"></div>
-      </a>
-      <a class="vr-icon-button" href="settings.html" aria-label="Settings">
+      </button>
+      <button class="vr-icon-button" data-view-target="settings">
         <div class="vr-icon-image vr-icon-settings"></div>
-      </a>
-      <a class="vr-icon-button" href="shop.html" aria-label="Shop">
+      </button>
+      <button class="vr-icon-button" data-view-target="shop">
         <div class="vr-icon-image vr-icon-shop"></div>
-      </a>
+      </button>
     </div>
   </header>
 
   <main class="vr-main">
-    <!-- ✅ ACCUEIL uniquement -->
-    <section id="home">
+    <!-- Vue : Accueil / choix d'univers -->
+    <section id="view-home" class="vr-view vr-view-active">
       <section class="vr-intro">
         <img
           src="assets/img/ui/logo_vrealms.webp"
@@ -42,7 +40,7 @@
 
         <div class="vr-universe-grid">
           <!-- Roi des Enfers -->
-          <button class="vr-card" type="button" data-universe="hell_king">
+          <button class="vr-card" data-universe="hell_king">
             <div class="vr-card-bg vr-card-bg-hell"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
@@ -52,13 +50,15 @@
                   class="vr-info-btn"
                   data-i18n-tip="universe.hell_king.desc"
                   data-tip="Dirige les légions démoniaques, gère l’afflux d’âmes damnées et maintiens l’équilibre entre chaos et ordre cosmique."
-                >?</button>
+                >
+                  ?
+                </button>
               </div>
             </div>
           </button>
 
           <!-- Paradis -->
-          <button class="vr-card" type="button" data-universe="heaven_king">
+          <button class="vr-card" data-universe="heaven_king">
             <div class="vr-card-bg vr-card-bg-heaven"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
@@ -68,13 +68,15 @@
                   class="vr-info-btn"
                   data-i18n-tip="universe.heaven_king.desc"
                   data-tip="Arbitre les prières, contient le fanatisme et décide jusqu’où le Ciel doit intervenir dans le monde des mortels."
-                >?</button>
+                >
+                  ?
+                </button>
               </div>
             </div>
           </button>
 
           <!-- Roi médiéval -->
-          <button class="vr-card" type="button" data-universe="medieval_king">
+          <button class="vr-card" data-universe="medieval_king">
             <div class="vr-card-bg vr-card-bg-medieval"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
@@ -84,13 +86,15 @@
                   class="vr-info-btn"
                   data-i18n-tip="universe.medieval_king.desc"
                   data-tip="Églises, armée, peuple, trésor : chaque décision te rapproche de la prospérité… ou de la révolte."
-                >?</button>
+                >
+                  ?
+                </button>
               </div>
             </div>
           </button>
 
           <!-- Président puissance occidentale -->
-          <button class="vr-card" type="button" data-universe="western_president">
+          <button class="vr-card" data-universe="western_president">
             <div class="vr-card-bg vr-card-bg-western"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
@@ -100,13 +104,15 @@
                   class="vr-info-btn"
                   data-i18n-tip="universe.western_president.desc"
                   data-tip="Opinion publique, économie, diplomatie et crises médiatiques : une signature peut tout faire basculer."
-                >?</button>
+                >
+                  ?
+                </button>
               </div>
             </div>
           </button>
 
           <!-- CEO méga-entreprise -->
-          <button class="vr-card" type="button" data-universe="mega_corp_ceo">
+          <button class="vr-card" data-universe="mega_corp_ceo">
             <div class="vr-card-bg vr-card-bg-corp"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
@@ -116,13 +122,15 @@
                   class="vr-info-btn"
                   data-i18n-tip="universe.mega_corp_ceo.desc"
                   data-tip="Investisseurs, employés, régulateurs et image de marque. Ta moindre décision peut faire exploser la valorisation… ou tout crasher."
-                >?</button>
+                >
+                  ?
+                </button>
               </div>
             </div>
           </button>
 
           <!-- Explorateur du Nouveau Monde -->
-          <button class="vr-card" type="button" data-universe="new_world_explorer">
+          <button class="vr-card" data-universe="new_world_explorer">
             <div class="vr-card-bg vr-card-bg-explorer"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
@@ -132,13 +140,15 @@
                   class="vr-info-btn"
                   data-i18n-tip="universe.new_world_explorer.desc"
                   data-tip="Négocier avec les peuples locaux, convertir, exploiter ou protéger : ta conquête écrira l’histoire."
-                >?</button>
+                >
+                  ?
+                </button>
               </div>
             </div>
           </button>
 
           <!-- Chef vampire -->
-          <button class="vr-card" type="button" data-universe="vampire_lord">
+          <button class="vr-card" data-universe="vampire_lord">
             <div class="vr-card-bg vr-card-bg-vampire"></div>
             <div class="vr-card-content">
               <div class="vr-card-header-line">
@@ -148,13 +158,15 @@
                   class="vr-info-btn"
                   data-i18n-tip="universe.vampire_lord.desc"
                   data-tip="Entre soif de sang, discrétion et luttes de clan, chaque nuit peut être la dernière… ou le début d’une nouvelle dynastie."
-                >?</button>
+                >
+                  ?
+                </button>
               </div>
             </div>
           </button>
 
           <!-- Univers futur verrouillé -->
-          <button class="vr-card vr-card-disabled" type="button" disabled>
+          <button class="vr-card vr-card-disabled" disabled>
             <div class="vr-card-bg vr-card-bg-locked"></div>
             <div class="vr-card-content">
               <h3 class="vr-card-title" data-i18n="universe.locked.title"></h3>
@@ -172,7 +184,6 @@
 
   <div id="vr-tooltip" class="vr-tooltip"></div>
 
-  <!-- Tooltip -->
   <script>
     (function () {
       const tooltip = document.getElementById("vr-tooltip");
@@ -213,36 +224,21 @@
     })();
   </script>
 
-  <!-- ✅ Page par page : clic univers => stocke + redirige vers game.html -->
-  <script>
-    (function () {
-      function setUniverseAndGo(universeId) {
-        // garde compat avec tes clés existantes
-        if (window.VR_STORAGE_KEYS) {
-          localStorage.setItem(window.VR_STORAGE_KEYS.universe, universeId);
-        } else {
-          localStorage.setItem("vrealms_universe", universeId);
-        }
-        window.location.href = "game.html";
-      }
-
-      document.querySelectorAll(".vr-card[data-universe]").forEach((card) => {
-        card.addEventListener("click", () => {
-          if (card.disabled) return;
-          const universeId = card.getAttribute("data-universe");
-          if (!universeId) return;
-          setUniverseAndGo(universeId);
-        });
-      });
-    })();
-  </script>
-
   <script src="js/userData.js"></script>
   <script src="js/ads.js"></script>
   <script src="js/purchases.js"></script>
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
-  <!-- game.js n'est pas nécessaire sur index.html en page-par-page,
-       mais tu peux le laisser si tu veux. Idéalement: pas besoin ici. -->
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        if (window.VRI18n && typeof window.VRI18n.initI18n === "function") {
+          await window.VRI18n.initI18n();
+        }
+      } catch (e) {
+        console.error("[VRealms] i18n init error:", e);
+      }
+    });
+  </script>
 </body>
 </html>

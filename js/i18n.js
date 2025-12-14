@@ -1,71 +1,62 @@
-// VRealms - i18n.js
-// Gère les textes d'interface (UI) et la langue active.
-
 (function () {
-  const VR_I18N_PATH = "data/i18n";
+  "use strict";
+
+  // i18n runtime state (for tooltips + UI text)
+  let _vrCurrentLang = "fr";
+  let _vrCurrentDict = {};
+
+  const VR_I18N_PATH = "i18n"; // dossier
   const VR_DEFAULT_LANG = "fr";
 
   const VR_STORAGE_KEYS = {
-    lang: "vrealms_lang",
-    universe: "vrealms_universe"
+    LANG: "vr_lang"
   };
 
-  async function loadLocale(langCode) {
-    try {
-      const res = await fetch(`${VR_I18N_PATH}/ui_${langCode}.json`, {
-        cache: "no-cache"
-      });
-      if (!res.ok) throw new Error("i18n not found");
-      return await res.json();
-    } catch (e) {
-      console.error("Erreur i18n", e);
-      if (langCode !== VR_DEFAULT_LANG) {
-        return loadLocale(VR_DEFAULT_LANG);
-      }
-      return {};
-    }
+  async function loadJSON(path) {
+    const res = await fetch(path);
+    if (!res.ok) throw new Error(`i18n fetch failed: ${path} (${res.status})`);
+    return await res.json();
   }
 
-  function resolveKey(dict, path) {
-    return path.split(".").reduce((acc, part) => {
-      if (acc && Object.prototype.hasOwnProperty.call(acc, part)) return acc[part];
-      return undefined;
-    }, dict);
+  function resolveKey(obj, key) {
+    if (!obj || !key) return null;
+    const parts = key.split(".");
+    let cur = obj;
+    for (const p of parts) {
+      if (cur && Object.prototype.hasOwnProperty.call(cur, p)) cur = cur[p];
+      else return null;
+    }
+    return cur;
   }
 
   function applyTranslations(dict) {
+    // texte simple
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
-      if (!key) return;
-      const text = resolveKey(dict, key);
-      if (typeof text === "string") {
-        el.textContent = text;
-      }
+      const val = resolveKey(dict, key);
+      if (typeof val === "string") el.textContent = val;
+    });
+
+    // placeholders
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      const val = resolveKey(dict, key);
+      if (typeof val === "string") el.setAttribute("placeholder", val);
     });
   }
 
+  async function loadLocale(lang) {
+    const l = lang || VR_DEFAULT_LANG;
+    return await loadJSON(`${VR_I18N_PATH}/${l}.json`);
+  }
+
   async function initI18n() {
-    const langSelect = document.getElementById("lang-select");
-    const savedLang =
-      localStorage.getItem(VR_STORAGE_KEYS.lang) || VR_DEFAULT_LANG;
-
-    if (langSelect) {
-      langSelect.value = savedLang;
-    }
-
-    const dict = await loadLocale(savedLang);
-    applyTranslations(dict);
-
-    if (langSelect) {
-      langSelect.addEventListener("change", async (e) => {
-        const newLang = e.target.value;
-        localStorage.setItem(VR_STORAGE_KEYS.lang, newLang);
-        const newDict = await loadLocale(newLang);
-        applyTranslations(newDict);
-      });
-    }
-
-    return savedLang;
+    let lang = localStorage.getItem(VR_STORAGE_KEYS.LANG) || VR_DEFAULT_LANG;
+    const translations = await loadLocale(lang);
+    _vrCurrentLang = lang || "fr";
+    _vrCurrentDict = translations || {};
+    applyTranslations(_vrCurrentDict);
+    document.documentElement.lang = _vrCurrentLang;
   }
 
   window.VRI18n = {
@@ -75,9 +66,18 @@
     initI18n,
     VR_I18N_PATH,
     VR_DEFAULT_LANG,
-    VR_STORAGE_KEYS
+    VR_STORAGE_KEYS,
+    // Translate a key using the currently loaded dictionary
+    t(key) {
+      if (!key) return "";
+      const v = resolveKey(_vrCurrentDict || {}, key);
+      return typeof v === "string" ? v : "";
+    },
+    getLang() {
+      return _vrCurrentLang;
+    }
   };
 
-  window.VR_STORAGE_KEYS = VR_STORAGE_KEYS;
-  window.VR_DEFAULT_LANG = VR_DEFAULT_LANG;
+  // Backward compatible alias (used by older tooltip scripts)
+  window.i18nGet = (key) => window.VRI18n.t(key);
 })();
