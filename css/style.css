@@ -237,8 +237,8 @@ body.vr-body-game .vr-header::before { content: none; }
 
 .vr-gauge-frame{
   position:relative;
-  width: var(--vr-gauge-size, 74px);
-  height: var(--vr-gauge-size, 74px);
+  width: var(--vr-gauge-size, 84px);
+  height: var(--vr-gauge-size, 84px);
   flex:0 0 auto;
   background-size: contain;
   background-position: center;
