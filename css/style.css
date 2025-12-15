@@ -523,6 +523,40 @@ body.vr-body-game .vr-gauge-label{
   --vr-universe-choice: url("../assets/img/ui/vampire_choice.webp");
 }
 
+
+
+/* ===== OVERRIDE URGENT: jauges en ligne + icônes top visibles ===== */
+
+/* 1) Icônes du haut: jamais cachées */
+.vr-header{ display:flex !important; }
+.vr-top-actions{ display:flex !important; align-items:center; justify-content:center; flex-wrap:nowrap; }
+
+body.vr-body-game .vr-header{
+  position:fixed !important;
+  top:0 !important; left:0 !important; right:0 !important;
+  z-index:9999 !important;
+  padding:10px 16px 6px !important;
+  pointer-events:auto !important;
+}
+body.vr-body-game .vr-icon-button{ width:44px !important; height:44px !important; display:inline-flex !important; }
+body.vr-body-game .vr-top-icon{ width:34px !important; height:34px !important; object-fit:contain !important; display:block !important; }
+
+/* 2) Laisse la place aux icônes */
+body.vr-body-game #view-game{ padding-top:78px !important; }
+
+/* 3) Jauges: 4 côte à côte (force) */
+.vr-gauges-row{
+  display:grid !important;
+  grid-template-columns:repeat(4, minmax(0,1fr)) !important;
+  gap:10px !important;
+  align-items:start !important;
+}
+.vr-gauge{ flex-direction:column !important; align-items:center !important; gap:6px !important; }
+.vr-gauge-label{ min-width:0 !important; text-align:center !important; }
+
+@media (max-width:720px){ .vr-gauges-row{ grid-template-columns:repeat(2,1fr) !important; } }
+@media (max-width:420px){ .vr-gauges-row{ grid-template-columns:1fr !important; } }
+
 /* ==========================================================
    JAUGES HELL (SANS data-gauge-id) -> on mappe par ordre 1..4
    ========================================================== */
