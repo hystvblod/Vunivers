@@ -828,3 +828,30 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="g4"]{
 }
 
 /* Tu dupliques le bloc pour heaven_king, medieval_king, etc. */
+/* =========================================================
+   FIX DEFINITIF : 1 SEULE COUCHE DE FOND (HOME)
+   (bg + overlay fusionnés) + plus de superposition visuelle
+   ========================================================= */
+
+/* le <html> a aussi le fond (évite toute bordure si un jour le body “déborde”) */
+html { background: var(--vr-bg); }
+
+/* on coupe l’ancien système (body bg + div overlay) */
+body.vr-body { background: transparent !important; }
+.vr-overlay { display: none !important; }
+
+/* 1 seule couche fixée derrière tout : overlay + bg */
+body.vr-body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: var(--vr-overlay), var(--vr-bg);
+}
+
+/* le contenu reste au-dessus */
+.vr-header, .vr-main { position: relative; z-index: 1; }
+
+/* en mode jeu : on ne force rien (le jeu gère déjà ses backgrounds) */
+body.vr-body-game::before { display: none !important; }
