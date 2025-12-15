@@ -28,9 +28,6 @@
   --vr-universe-choice: none;
 }
 
-/* ✅ sécurité : si un vieux vr-overlay traîne encore dans le HTML */
-.vr-overlay { display: none !important; }
-
 /* ===== Reset / base ===== */
 
 *,
@@ -130,33 +127,14 @@ body.vr-body-game .vr-header::before {
 .vr-top-actions {
   display: flex;
   gap: 16px;
-  align-items: center;
-  justify-content: center;
 }
 
-/* ✅ Taille explicite des boutons + images (sinon ça peut disparaître visuellement) */
 .vr-icon-button {
   border: none;
   background: transparent;
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-
-  width: 46px;
-  height: 46px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.vr-top-icon{
-  width: 46px;
-  height: 46px;
-  display: block;
-  object-fit: contain;
-  user-select: none;
-  -webkit-user-drag: none;
 }
 
 /* (optionnel si tu utilises des <span class="vr-icon-image">) */
@@ -535,7 +513,7 @@ body.vr-body-game .vr-header::before {
 }
 
 /* ==========================================================
-   FIX GAME (game.html) — HEADER TOUJOURS AU-DESSUS
+   FIX GAME (game.html) — PLEIN ÉCRAN + JAUGES + CARTE/CHOIX
    ========================================================== */
 
 body.vr-body-game {
@@ -543,29 +521,22 @@ body.vr-body-game {
   overflow: hidden;
 }
 
-/* ✅ header bien visible, au dessus du décor */
 body.vr-body-game .vr-header {
   position: fixed;
-  top: 0;
+  top: 10px;
   left: 0;
   right: 0;
-  z-index: 999;
-  margin: 0;
+  z-index: 50;
+  padding: 10px 18px;
   max-width: none;
-
-  padding:
-    max(10px, env(safe-area-inset-top))
-    16px
-    6px
-    16px;
-
-  pointer-events: auto;
+  margin: 0;
+  pointer-events: none;
 }
 
 body.vr-body-game .vr-top-actions {
+  pointer-events: auto;
   justify-content: center;
   gap: 14px;
-  pointer-events: auto;
 }
 
 body.vr-body-game .vr-main {
@@ -584,10 +555,7 @@ body.vr-body-game #view-game {
   height: 100vh;
   min-height: 100vh;
   margin: 0;
-
-  /* ✅ laisse la place au header */
-  padding: 78px 14px 16px;
-
+  padding: 72px 14px 16px;
   border-radius: 0;
   border: none;
   box-shadow: none;
@@ -695,56 +663,6 @@ body.vr-body-game .vr-choice-label{
   --vr-universe-card: url("../assets/img/ui/vampire_card.webp");
   --vr-universe-choice: url("../assets/img/ui/vampire_choice.webp");
 }
-
-
-/* ==========================================================
-   TOP ACTIONS EN JEU (comme index) — 3 icônes côte-à-côte
-   ========================================================== */
-
-/* ✅ on n'utilise PAS le header en jeu */
-body.vr-body-game .vr-header { display: none !important; }
-
-/* ✅ barre d'icônes fixée en haut */
-body.vr-body-game .vr-top-actions-game{
-  position: fixed !important;
-  top: 10px !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 2000 !important;
-
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 10px !important;
-
-  padding: 10px 12px 8px !important;
-}
-
-/* ✅ taille bouton */
-body.vr-body-game .vr-icon-button{
-  width: 44px !important;
-  height: 44px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* ✅ taille image : anti “engrenage géant” */
-body.vr-body-game .vr-icon-button img,
-body.vr-body-game .vr-top-icon{
-  width: 30px !important;
-  height: 30px !important;
-  object-fit: contain !important;
-  display: block !important;
-}
-
-/* ✅ on laisse de la place au dessus pour ne pas passer sous les icônes */
-body.vr-body-game #view-game{
-  padding-top: 78px !important;
-}
-
 
 /* ===== Gauges assets par univers (1 seul CSS) ===== */
 
