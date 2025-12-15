@@ -41,31 +41,47 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
 }
 
-/* ✅ FIX 1 : le fond s’applique aussi au <html> (sinon “bordure grise” autour sur desktop/devtools) */
+/* ✅ Fond aussi sur <html> */
 html {
   background: var(--vr-bg);
 }
 
+/* =========================================================
+   ✅ FIX PROPRE : 1 SEULE COUCHE DE FOND (HOME)
+   - plus de <div class="vr-overlay">
+   - bg + overlay fusionnés dans body::before
+   ========================================================= */
+
 body.vr-body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: var(--vr-bg);
+
+  /* IMPORTANT : pas de bg ici (sinon “double couche”) */
+  background: transparent;
+
   color: var(--vr-text-main);
-  min-height: 100vh;
+  min-height: 100svh; /* mieux que 100vh sur mobile */
   display: flex;
   flex-direction: column;
   position: relative;
   overflow-x: hidden;
-  width: 100%;
 }
 
-.vr-overlay {
+/* 1 seule couche FIXE derrière tout */
+body.vr-body::before {
+  content: "";
   position: fixed;
   inset: 0;
-  background: var(--vr-overlay);
   pointer-events: none;
   z-index: 0;
+  background: var(--vr-overlay), var(--vr-bg);
+}
+
+/* Si jamais une page garde encore .vr-overlay, on le tue (sans dépendre de lui) */
+.vr-overlay {
+  display: none !important;
 }
 
 /* ===== Layout principal ===== */
@@ -74,7 +90,7 @@ body.vr-body {
   position: relative;
   z-index: 1;
 
-  /* ✅ FIX 2 : plus de “cadre” centré */
+  /* ✅ plus de “cadre” centré */
   max-width: none;
   width: 100%;
   margin: 0;
@@ -91,7 +107,7 @@ body.vr-body {
   justify-content: center;
   padding: 12px 24px 4px;
 
-  /* ✅ FIX 3 : plus de “cadre” centré */
+  /* ✅ plus de “cadre” centré */
   max-width: none;
   margin: 0;
   width: 100%;
@@ -261,7 +277,7 @@ body.vr-body-game .vr-header::before {
 .vr-card-bg {
   position: absolute;
   inset: 0;
-  opacity: 0.42; /* ✅ 0.32 -> 0.42 */
+  opacity: 0.42;
   background-size: cover;
   background-position: center;
   pointer-events: none;
@@ -300,23 +316,23 @@ body.vr-body-game .vr-header::before {
 .vr-card-bg-vampire { background-image: linear-gradient(135deg, #111827, #4b0219); }
 .vr-card-bg-locked { background-image: linear-gradient(135deg, #4b5563, #020617); }
 
-/* Tooltip (✅ plus large) */
+/* Tooltip */
 .vr-tooltip {
   position: fixed;
   transform: translateX(-50%);
-  width: min(360px, 88vw);      /* ✅ */
-  max-width: 420px;             /* ✅ */
+  width: min(360px, 88vw);
+  max-width: 420px;
   padding: 10px 12px;
   border-radius: 12px;
   background: rgba(15, 23, 42, 0.98);
   color: #e5e7eb;
   font-size: 12px;
-  line-height: 1.35;            /* ✅ */
+  line-height: 1.35;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   display: none;
   z-index: 50;
-  word-break: normal;           /* ✅ */
-  overflow-wrap: break-word;    /* ✅ */
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 /* ==========================================================
@@ -372,13 +388,11 @@ body.vr-body-game .vr-header::before {
   gap:8px;
 }
 
-/* label au-dessus en mode game (déjà géré plus bas) */
 .vr-gauge-label{
   font-size:12px;
   min-width:72px;
 }
 
-/* ✅ cadre = image frame, fill = image fill découpée par % */
 .vr-gauge-frame{
   position:relative;
   width:74px;
@@ -390,11 +404,9 @@ body.vr-body-game .vr-header::before {
   background-position: center;
   background-repeat: no-repeat;
 
-  /* pour éviter les artefacts */
   transform: translateZ(0);
 }
 
-/* fill / preview: image pleine taille, découpée depuis le haut */
 .vr-gauge-fill,
 .vr-gauge-preview{
   position:absolute;
@@ -405,14 +417,12 @@ body.vr-body-game .vr-header::before {
   background-repeat: no-repeat;
   pointer-events:none;
 
-  /* on montre le bas : top = 100% - pct */
   clip-path: inset(calc(100% - var(--vr-pct, 50%)) 0 0 0);
 }
 
 .vr-gauge-preview{
   opacity:0.35;
 }
-
 
 /* ===== Carte + choix ===== */
 
@@ -555,7 +565,7 @@ body.vr-body-game .vr-header::before {
   box-shadow: var(--vr-shadow-soft);
 }
 
-/* ✅ Footer : neutralisé (évite tout “bloc” en bas si un CSS/JS le rallume) */
+/* Footer neutralisé */
 .vr-footer {
   display: none !important;
   height: 0 !important;
@@ -579,8 +589,9 @@ body.vr-body-game {
   overflow: hidden;
 }
 
-body.vr-body-game .vr-overlay {
-  display: none;
+/* ✅ en jeu on coupe la couche home */
+body.vr-body.vr-body-game::before {
+  display: none !important;
 }
 
 body.vr-body-game .vr-header {
@@ -649,14 +660,10 @@ body.vr-body-game .vr-gauges-row {
 }
 
 @media (max-width: 720px) {
-  body.vr-body-game .vr-gauges-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  body.vr-body-game .vr-gauges-row { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 420px) {
-  body.vr-body-game .vr-gauges-row {
-    grid-template-columns: 1fr;
-  }
+  body.vr-body-game .vr-gauges-row { grid-template-columns: 1fr; }
 }
 
 body.vr-body-game .vr-gauge {
@@ -705,36 +712,29 @@ body.vr-body-game .vr-card-main-compact .vr-card-text{
   color: rgba(255,255,255,0.85);
 }
 
-
 /* Choix : texte en bas */
 body.vr-body-game .vr-choice-button{
   width: min(440px, 96vw);
   max-width: 440px;
-
   height: 92px;
   min-height: 92px;
-
   padding: 12px 18px 14px;
   align-items: flex-end;
-
   background-size: 100% 100%;
 }
 
 body.vr-body-game .vr-choice-label{
   width: 100%;
   text-align: left;
-
   font-size: 1rem;
   line-height: 1.2;
 
-  /* ✅ le texte reste DANS la cartouche */
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; /* 3 lignes max */
+  -webkit-line-clamp: 3;
   overflow: hidden;
   word-break: break-word;
 }
-
 
 /* Meta bar centrée et lisible */
 body.vr-body-game .vr-meta-bar {
@@ -758,9 +758,7 @@ body.vr-body-game .vr-meta-bar > span {
   font-weight: 700;
 }
 
-body.vr-body-game .vr-game-header {
-  display: none;
-}
+body.vr-body-game .vr-game-header { display: none; }
 
 /* ==========================================================
    UNIVERS -> choix auto des chemins (1 seul CSS)
@@ -828,30 +826,3 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="g4"]{
 }
 
 /* Tu dupliques le bloc pour heaven_king, medieval_king, etc. */
-/* =========================================================
-   FIX DEFINITIF : 1 SEULE COUCHE DE FOND (HOME)
-   (bg + overlay fusionnés) + plus de superposition visuelle
-   ========================================================= */
-
-/* le <html> a aussi le fond (évite toute bordure si un jour le body “déborde”) */
-html { background: var(--vr-bg); }
-
-/* on coupe l’ancien système (body bg + div overlay) */
-body.vr-body { background: transparent !important; }
-.vr-overlay { display: none !important; }
-
-/* 1 seule couche fixée derrière tout : overlay + bg */
-body.vr-body::before{
-  content:"";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background: var(--vr-overlay), var(--vr-bg);
-}
-
-/* le contenu reste au-dessus */
-.vr-header, .vr-main { position: relative; z-index: 1; }
-
-/* en mode jeu : on ne force rien (le jeu gère déjà ses backgrounds) */
-body.vr-body-game::before { display: none !important; }
