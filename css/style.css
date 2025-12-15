@@ -1,92 +1,91 @@
 /* =========================================
-   VREALMS - STYLE GLOBAL NETTOYÉ (PROPRE)
+   VREALMS - STYLE GLOBAL (PROPRE)
    - 1 seul fond (html)
-   - game: pas de texte "Partie en cours"
-   - game: 4 jauges côte à côte
-   - icônes top: toujours visibles + taille fixe
+   - game: icônes top toujours visibles + groupées centre
+   - game: jauges 4 côte à côte (même mobile)
+   - jauges webp: clip via --vr-pct
    ========================================= */
 
 /* ===== Variables ===== */
-:root {
+:root{
   --vr-bg: radial-gradient(circle at top, #f6e7cf 0, #141b2f 72%);
-  --vr-overlay: linear-gradient(
-    to bottom right,
-    rgba(255, 255, 255, 0.16),
-    rgba(15, 23, 42, 0.70)
-  );
+  --vr-overlay: linear-gradient(to bottom right, rgba(255,255,255,0.16), rgba(15,23,42,0.70));
 
   --vr-card-bg: rgba(15, 23, 42, 0.92);
   --vr-card-border: rgba(209, 213, 219, 0.55);
   --vr-text-main: #f9fafb;
   --vr-text-muted: #d1d5db;
   --vr-radius-xl: 22px;
-  --vr-shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --vr-shadow-soft: 0 16px 40px rgba(0,0,0,0.45);
 
-  /* Defaults (si jamais une classe univers manque) */
+  /* univers (injectés via classe sur #view-game) */
   --vr-universe-bg: none;
   --vr-universe-card: none;
   --vr-universe-choice: none;
+
+  /* tailles (game) */
+  --vr-topbar-h: 72px; /* réserve verticale pour les icônes */
+  --vr-gauge-size: clamp(46px, 11.5vw, 62px);
 }
 
-/* sécurité : si un vieux overlay traîne */
-.vr-overlay { display: none !important; }
+/* sécurité si un vieux overlay traîne */
+.vr-overlay{ display:none !important; }
 
 /* ===== Reset / base ===== */
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after{ box-sizing:border-box; }
 
-/* ✅ 1 SEUL FOND : sur html */
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+html{
+  margin:0;
+  padding:0;
+  height:100%;
   background: var(--vr-overlay), var(--vr-bg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  width: 100%;
+body{
+  margin:0;
+  padding:0;
+  min-height:100vh;
+  width:100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--vr-text-main);
   background: transparent;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
+  display:flex;
+  flex-direction:column;
+  overflow-x:hidden;
 }
 
-/* ===== Layout principal ===== */
-.vr-main {
-  position: relative;
-  z-index: 1;
-  max-width: none;
-  width: 100%;
-  margin: 0;
-  padding: 12px 16px 24px;
+/* ===== Layout ===== */
+.vr-main{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:12px 16px 24px;
 }
 
-/* ===== Header avec icônes ===== */
-.vr-header {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  padding: 12px 24px 4px;
-  max-width: none;
-  margin: 0;
-  width: 100%;
+/* ===== Header (HOME) ===== */
+.vr-header{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:center;
+  padding:12px 24px 4px;
+  width:100%;
+  max-width:none;
+  margin:0;
 }
 
-/* ✅ Empêche de “voir” le contenu qui scroll derrière le header (HOME) */
-body:not(.vr-body-game) .vr-header::before {
-  content: "";
-  position: absolute;
-  inset: -8px 0 -10px 0;
+/* voile doux derrière le header uniquement sur HOME */
+body:not(.vr-body-game) .vr-header::before{
+  content:"";
+  position:absolute;
+  inset:-8px 0 -10px 0;
   background: linear-gradient(
     180deg,
     rgba(5, 8, 16, 0.55) 0%,
@@ -95,166 +94,159 @@ body:not(.vr-body-game) .vr-header::before {
   );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  pointer-events: none;
-  z-index: 0;
+  pointer-events:none;
+  z-index:0;
 }
-body:not(.vr-body-game) .vr-header > * { position: relative; z-index: 1; }
-body.vr-body-game .vr-header::before { content: none; }
+body:not(.vr-body-game) .vr-header > *{ position:relative; z-index:1; }
 
-/* ancien logo / side nav masqués */
-.vr-logo, .vr-side-nav { display: none !important; }
+/* anciens blocs masqués */
+.vr-logo, .vr-side-nav{ display:none !important; }
 
-.vr-top-actions {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
+.vr-top-actions{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:nowrap;
+  gap:16px;
 }
 
-/* ✅ taille fixe anti “icônes géantes” */
+/* icônes */
 .vr-icon-button{
-  border: none;
-  background: transparent;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  text-decoration: none;
-  width: 44px;
-  height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  border:none;
+  background:transparent;
+  padding:0;
+  margin:0;
+  cursor:pointer;
+  text-decoration:none;
+  width:44px;
+  height:44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 }
 .vr-top-icon{
-  width: 34px !important;
-  height: 34px !important;
-  max-width: 34px !important;
-  max-height: 34px !important;
-  object-fit: contain;
-  display: block;
-  user-select: none;
-  -webkit-user-drag: none;
+  width:34px !important;
+  height:34px !important;
+  max-width:34px !important;
+  max-height:34px !important;
+  object-fit:contain;
+  display:block;
+  user-select:none;
+  -webkit-user-drag:none;
 }
 
-/* (optionnel si tu utilises des <span class="vr-icon-image">) */
+/* optionnel (si tu utilises des spans en background-image) */
 .vr-icon-image{
-  width: 32px;
-  height: 32px;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  width:32px;
+  height:32px;
+  background-size:contain;
+  background-position:center;
+  background-repeat:no-repeat;
 }
-.vr-icon-profile { background-image: url("../assets/img/ui/btn_profile.webp"); }
-.vr-icon-settings { background-image: url("../assets/img/ui/btn_settings.webp"); }
-.vr-icon-shop { background-image: url("../assets/img/ui/btn_shop.webp"); }
 
-/* ===== Sélecteur langue ===== */
-.vr-lang-selector { display: flex; align-items: center; gap: 8px; }
-.vr-label { font-size: 13px; color: var(--vr-text-muted); }
-.vr-select {
+/* ===== Lang selector ===== */
+.vr-lang-selector{ display:flex; align-items:center; gap:8px; }
+.vr-label{ font-size:13px; color:var(--vr-text-muted); }
+.vr-select{
   background: rgba(15, 23, 42, 0.95);
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.6);
+  border-radius:999px;
+  border:1px solid rgba(148, 163, 184, 0.6);
   color: var(--vr-text-main);
-  padding: 6px 10px;
-  font-size: 13px;
-  outline: none;
+  padding:6px 10px;
+  font-size:13px;
+  outline:none;
 }
 
-/* ===== Vues ===== */
-.vr-view { display: none; }
-.vr-view-active { display: block; }
+/* ===== Views ===== */
+.vr-view{ display:none; }
+.vr-view-active{ display:block; }
 
-/* ===== Accueil (home) ===== */
-.vr-intro { margin-top: 8px; margin-bottom: 16px; display: flex; justify-content: center; }
-.vr-main-logo {
-  height: 72px;
-  max-width: 240px;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.45));
+/* ===== Home ===== */
+.vr-intro{ margin:8px 0 16px; display:flex; justify-content:center; }
+.vr-main-logo{
+  height:72px;
+  max-width:240px;
+  object-fit:contain;
+  filter: drop-shadow(0 10px 28px rgba(0,0,0,0.45));
 }
-.vr-section-title { font-size: 18px; margin: 12px 0 10px; }
-.vr-universe-grid { display: flex; flex-direction: column; gap: 10px; }
+.vr-section-title{ font-size:18px; margin:12px 0 10px; }
+.vr-universe-grid{ display:flex; flex-direction:column; gap:10px; }
 
-/* Cartes d'univers */
-.vr-card {
-  position: relative;
+.vr-card{
+  position:relative;
   border-radius: var(--vr-radius-xl);
-  overflow: hidden;
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid var(--vr-card-border);
-  padding: 10px 14px;
-  text-align: left;
-  display: block;
-  width: 100%;
-  cursor: pointer;
+  overflow:hidden;
+  background: rgba(15, 23, 42, 0.90);
+  border:1px solid var(--vr-card-border);
+  padding:10px 14px;
+  text-align:left;
+  width:100%;
+  cursor:pointer;
   box-shadow: var(--vr-shadow-soft);
 }
-.vr-card-disabled { opacity: 0.4; cursor: not-allowed; }
-.vr-card-bg {
-  position: absolute;
-  inset: 0;
-  opacity: 0.42;
-  background-size: cover;
-  background-position: center;
-  pointer-events: none;
+.vr-card-disabled{ opacity:0.4; cursor:not-allowed; }
+.vr-card-bg{
+  position:absolute;
+  inset:0;
+  opacity:0.42;
+  background-size:cover;
+  background-position:center;
+  pointer-events:none;
 }
-.vr-card-content { position: relative; z-index: 1; }
-.vr-card-header-line { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.vr-card-title { margin: 0 0 3px; font-size: 16px; }
-.vr-card-text { margin: 0; font-size: 13px; color: var(--vr-text-muted); }
+.vr-card-content{ position:relative; z-index:1; }
+.vr-card-header-line{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.vr-card-title{ margin:0 0 3px; font-size:16px; }
+.vr-card-text{ margin:0; font-size:13px; color:var(--vr-text-muted); }
 
 /* Tooltip */
-.vr-tooltip {
-  position: fixed;
+.vr-tooltip{
+  position:fixed;
   transform: translateX(-50%);
-  width: min(360px, 88vw);
-  max-width: 420px;
-  padding: 10px 12px;
-  border-radius: 12px;
+  width:min(360px, 88vw);
+  max-width:420px;
+  padding:10px 12px;
+  border-radius:12px;
   background: rgba(15, 23, 42, 0.98);
-  color: #e5e7eb;
-  font-size: 12px;
-  line-height: 1.35;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  display: none;
-  z-index: 50;
-  word-break: normal;
-  overflow-wrap: break-word;
+  color:#e5e7eb;
+  font-size:12px;
+  line-height:1.35;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  display:none;
+  z-index:50;
+  overflow-wrap:break-word;
 }
 
 /* ==========================================================
-   VUE JEU (base)
+   GAME VIEW (base)
    ========================================================== */
-#view-game {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 12px 12px 16px 12px;
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
+#view-game{
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  margin:0;
+  padding:12px 12px 16px;
+  border:none;
+  border-radius:0;
+  box-shadow:none;
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
   background-image: var(--vr-universe-bg);
 
-  overflow: hidden;
+  overflow:hidden;
 }
-#view-game::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  pointer-events: none;
-  z-index: 0;
+#view-game::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.35);
+  pointer-events:none;
+  z-index:0;
 }
-#view-game > * { position: relative; z-index: 1; }
+#view-game > *{ position:relative; z-index:1; }
 
-/* ===== Jauges (WEBP) ===== */
+/* Jauges (WEBP) */
 .vr-gauges-row{
   display:flex;
   flex-direction:column;
@@ -269,371 +261,314 @@ body.vr-body-game .vr-header::before { content: none; }
   width:74px;
   height:74px;
   flex:0 0 auto;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size:contain;
+  background-position:center;
+  background-repeat:no-repeat;
   transform: translateZ(0);
 }
 .vr-gauge-fill,
 .vr-gauge-preview{
   position:absolute;
   inset:0;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size:contain;
+  background-position:center;
+  background-repeat:no-repeat;
   pointer-events:none;
   clip-path: inset(calc(100% - var(--vr-pct, 50%)) 0 0 0);
 }
 .vr-gauge-preview{ opacity:0.35; }
 
-/* ===== Carte + choix ===== */
-.vr-card-container { display: flex; justify-content: center; margin-top: 8px; width: 100%; }
-.vr-card-stack {
-  width: 100%;
-  max-width: 380px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+/* Carte + choix */
+.vr-card-container{ display:flex; justify-content:center; margin-top:8px; width:100%; }
+.vr-card-stack{
+  width:100%;
+  max-width:380px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
 }
-.vr-card-main {
-  position: relative;
-  width: 100%;
-  max-width: 380px;
-  margin: 0 auto;
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+.vr-card-main{
+  position:relative;
+  width:100%;
+  max-width:380px;
+  margin:0 auto;
+  background-size:100% 100%;
+  background-position:center;
+  background-repeat:no-repeat;
   background-image: var(--vr-universe-card);
-  padding: 18px 20px;
-  border: none;
-  box-shadow: none;
+  padding:18px 20px;
+  border:none;
+  box-shadow:none;
 }
-.vr-card-main.vr-card-dragging { transition: none; }
-.vr-card-text { margin: 0; font-size: 14px; color: var(--vr-text-muted); }
+.vr-card-main.vr-card-dragging{ transition:none; }
 
-.vr-card-choices { display: flex; flex-direction: column; gap: 14px; width: 100%; }
-
-.vr-choice-button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 340px;
-  margin: 0 auto;
-  min-height: 52px;
-  padding: 4px 20px;
-  background-color: transparent;
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+.vr-card-choices{ display:flex; flex-direction:column; gap:14px; width:100%; }
+.vr-choice-button{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  max-width:340px;
+  margin:0 auto;
+  min-height:52px;
+  padding:4px 20px;
+  background-color:transparent;
+  background-size:100% 100%;
+  background-position:center;
+  background-repeat:no-repeat;
   background-image: var(--vr-universe-choice);
-  border: none;
-  cursor: pointer;
+  border:none;
+  cursor:pointer;
 }
-.vr-choice-label {
-  position: relative;
-  z-index: 1;
-  color: #ffffff;
-  font-size: 0.9rem;
-  line-height: 1.35;
-  text-align: left;
-  width: 100%;
-  word-break: break-word;
-}
-
-/* ===== Meta bar ===== */
-.vr-meta-bar {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  font-size: 13px;
-  margin-top: 10px;
-  margin-bottom: 6px;
+.vr-choice-label{
+  position:relative;
+  z-index:1;
+  color:#fff;
+  font-size:0.9rem;
+  line-height:1.35;
+  text-align:left;
+  width:100%;
+  word-break:break-word;
 }
 
-/* ===== Fin ===== */
-.vr-ending-overlay {
-  position: fixed;
-  inset: 0;
+/* Meta */
+.vr-meta-bar{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  font-size:13px;
+  margin-top:10px;
+  margin-bottom:6px;
+}
+
+/* Fin */
+.vr-ending-overlay{
+  position:fixed;
+  inset:0;
   background: rgba(15, 23, 42, 0.85);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
 }
-.vr-ending-overlay.vr-ending-visible { display: flex; }
-
-.vr-ending-card {
-  max-width: 360px;
-  width: 100%;
-  padding: 20px 18px;
-  border-radius: 18px;
+.vr-ending-overlay.vr-ending-visible{ display:flex; }
+.vr-ending-card{
+  max-width:360px;
+  width:100%;
+  padding:20px 18px;
+  border-radius:18px;
   background: rgba(15, 23, 42, 0.98);
-  border: 1px solid rgba(209, 213, 219, 0.5);
+  border:1px solid rgba(209, 213, 219, 0.5);
   box-shadow: var(--vr-shadow-soft);
-  text-align: left;
+  text-align:left;
 }
-.vr-ending-title { margin: 0 0 8px; font-size: 18px; }
-.vr-ending-text  { margin: 0 0 14px; font-size: 14px; color: var(--vr-text-muted); }
+.vr-ending-title{ margin:0 0 8px; font-size:18px; }
+.vr-ending-text{ margin:0 0 14px; font-size:14px; color:var(--vr-text-muted); }
 
-/* ===== Profil / Shop / Settings ===== */
-.vr-profile-grid { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
-.vr-profile-card {
+/* Profil / Shop / Settings */
+.vr-profile-grid{ display:flex; flex-direction:column; gap:10px; margin-top:12px; }
+.vr-profile-card{
   border-radius: var(--vr-radius-xl);
   background: rgba(15, 23, 42, 0.96);
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  padding: 10px 14px;
+  border:1px solid rgba(148, 163, 184, 0.5);
+  padding:10px 14px;
   box-shadow: var(--vr-shadow-soft);
 }
 
-/* Footer neutralisé */
-.vr-footer {
-  display: none !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
+/* Footer off */
+.vr-footer{
+  display:none !important;
+  height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
 }
 
-#vr-card-main { touch-action: none; }
+#vr-card-main{ touch-action:none; }
 
-@media (min-width: 768px) {
-  .vr-main { padding: 16px 24px 32px; }
+@media (min-width:768px){
+  .vr-main{ padding:16px 24px 32px; }
 }
 
 /* ==========================================================
-   FIX GAME (game.html) — PLEIN ÉCRAN + JAUGES + ICÔNES
+   GAME (game.html) — PLEIN ÉCRAN + TOP ICONS + 4 GAUGES
    ========================================================== */
-body.vr-body-game { background: #000; overflow: hidden; }
-
-/* ✅ icônes toujours en haut */
-body.vr-body-game .vr-header{
-  position: fixed;
-  top: 10px;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  padding: 10px 18px;
-  max-width: none;
-  margin: 0;
-  pointer-events: none;
-}
-body.vr-body-game .vr-top-actions{
-  pointer-events: auto;
-  justify-content: center;
-  gap: 14px;
+body.vr-body-game{
+  background:#000;
+  overflow:hidden;
 }
 
-/* ✅ SUPPRIME le texte “Partie en cours …” */
-body.vr-body-game .vr-game-header{ display: none !important; }
+/* ✅ TOP ICONS: groupées au centre (comme ton screenshot), pas étalées */
+body.vr-body-game .vr-top-actions-game{
+  position:fixed !important;
+  top: calc(10px + env(safe-area-inset-top)) !important;
+  left:50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 100000 !important;
 
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:14px !important;
+
+  width: fit-content !important;
+  padding: 6px 10px !important;
+
+  background: transparent !important;
+  pointer-events: auto !important;
+}
+body.vr-body-game .vr-top-actions-game .vr-icon-button{
+  width:44px !important;
+  height:44px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+body.vr-body-game .vr-top-actions-game .vr-top-icon{
+  width:34px !important;
+  height:34px !important;
+  object-fit:contain !important;
+  display:block !important;
+}
+
+/* supprime le bloc “Partie en cours…” */
+body.vr-body-game .vr-game-header{ display:none !important; }
+
+/* plein écran */
 body.vr-body-game .vr-main{
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  overflow: hidden;
+  max-width:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  width:100vw !important;
+  height:100vh !important;
+  overflow:hidden !important;
 }
 
 body.vr-body-game #view-game{
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100vh;
-  min-height: 100vh;
-  margin: 0;
-  padding: 72px 14px 16px; /* place pour les icônes */
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
+  position:fixed !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100vh !important;
+  min-height:100vh !important;
 
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  /* réserve pour icônes */
+  padding: calc(var(--vr-topbar-h) + env(safe-area-inset-top)) 14px 16px !important;
 
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  overflow-y:auto !important;
+  -webkit-overflow-scrolling:touch !important;
+
+  display:flex !important;
+  flex-direction:column !important;
+  gap:10px !important;
 }
-body.vr-body-game #view-game::before{ background: rgba(0,0,0,0.25); }
+body.vr-body-game #view-game::before{
+  background: rgba(0,0,0,0.25) !important;
+}
 
-/* ✅ 4 jauges côte à côte (FORCÉ) */
+/* ✅ 4 jauges TOUJOURS côte à côte (pas de media queries qui cassent) */
 body.vr-body-game .vr-gauges-row{
-  width: 100%;
+  width:100%;
   max-width: 980px;
   margin: 0 auto 8px;
-  display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+
+  display:grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap:10px !important;
+  justify-items:center !important;
+  align-items:start !important;
 }
-@media (max-width: 720px){
-  body.vr-body-game .vr-gauges-row{ grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 420px){
-  body.vr-body-game .vr-gauges-row{ grid-template-columns: 1fr; }
-}
+
 body.vr-body-game .vr-gauge{
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
+  flex-direction:column !important;
+  align-items:center !important;
+  gap:6px !important;
 }
+
 body.vr-body-game .vr-gauge-label{
-  min-width: 0;
-  text-align: center;
+  min-width:0 !important;
+  text-align:center !important;
+  font-size: clamp(10px, 2.3vw, 12px) !important;
+  line-height:1.1 !important;
+}
+
+body.vr-body-game .vr-gauge-frame{
+  width: var(--vr-gauge-size) !important;
+  height: var(--vr-gauge-size) !important;
 }
 
 /* ==========================================================
    UNIVERS -> fond / cartes / choix (1 seul CSS)
    ========================================================== */
-#view-game.vr-bg-hell_king {
+#view-game.vr-bg-hell_king{
   --vr-universe-bg: url("../assets/img/backgrounds/hell_king_bg.webp");
   --vr-universe-card: url("../assets/img/ui/hell_card.webp");
   --vr-universe-choice: url("../assets/img/ui/hell_choice.webp");
 }
-#view-game.vr-bg-heaven_king {
+#view-game.vr-bg-heaven_king{
   --vr-universe-bg: url("../assets/img/backgrounds/heaven_king_bg.webp");
   --vr-universe-card: url("../assets/img/ui/heaven_card.webp");
   --vr-universe-choice: url("../assets/img/ui/heaven_choice.webp");
 }
-#view-game.vr-bg-medieval_king {
+#view-game.vr-bg-medieval_king{
   --vr-universe-bg: url("../assets/img/backgrounds/medieval_king_bg.webp");
   --vr-universe-card: url("../assets/img/ui/medieval_card.webp");
   --vr-universe-choice: url("../assets/img/ui/medieval_choice.webp");
 }
-#view-game.vr-bg-western_president {
+#view-game.vr-bg-western_president{
   --vr-universe-bg: url("../assets/img/backgrounds/western_president_bg.webp");
   --vr-universe-card: url("../assets/img/ui/western_card.webp");
   --vr-universe-choice: url("../assets/img/ui/western_choice.webp");
 }
-#view-game.vr-bg-mega_corp_ceo {
+#view-game.vr-bg-mega_corp_ceo{
   --vr-universe-bg: url("../assets/img/backgrounds/mega_corp_ceo_bg.webp");
   --vr-universe-card: url("../assets/img/ui/corp_card.webp");
   --vr-universe-choice: url("../assets/img/ui/corp_choice.webp");
 }
-#view-game.vr-bg-new_world_explorer {
+#view-game.vr-bg-new_world_explorer{
   --vr-universe-bg: url("../assets/img/backgrounds/new_world_explorer_bg.webp");
   --vr-universe-card: url("../assets/img/ui/explorer_card.webp");
   --vr-universe-choice: url("../assets/img/ui/explorer_choice.webp");
 }
-#view-game.vr-bg-vampire_lord {
+#view-game.vr-bg-vampire_lord{
   --vr-universe-bg: url("../assets/img/backgrounds/vampire_lord_bg.webp");
   --vr-universe-card: url("../assets/img/ui/vampire_card.webp");
   --vr-universe-choice: url("../assets/img/ui/vampire_choice.webp");
 }
 
-
-
-/* ===== OVERRIDE URGENT: jauges en ligne + icônes top visibles ===== */
-
-/* 1) Icônes du haut: jamais cachées */
-.vr-header{ display:flex !important; }
-.vr-top-actions{ display:flex !important; align-items:center; justify-content:center; flex-wrap:nowrap; }
-
-body.vr-body-game .vr-header{
-  position:fixed !important;
-  top:0 !important; left:0 !important; right:0 !important;
-  z-index:9999 !important;
-  padding:10px 16px 6px !important;
-  pointer-events:auto !important;
-}
-body.vr-body-game .vr-icon-button{ width:44px !important; height:44px !important; display:inline-flex !important; }
-body.vr-body-game .vr-top-icon{ width:34px !important; height:34px !important; object-fit:contain !important; display:block !important; }
-
-/* 2) Laisse la place aux icônes */
-body.vr-body-game #view-game{ padding-top:78px !important; }
-
-/* 3) Jauges: 4 côte à côte (force) */
-.vr-gauges-row{
-  display:grid !important;
-  grid-template-columns:repeat(4, minmax(0,1fr)) !important;
-  gap:10px !important;
-  align-items:start !important;
-}
-.vr-gauge{ flex-direction:column !important; align-items:center !important; gap:6px !important; }
-.vr-gauge-label{ min-width:0 !important; text-align:center !important; }
-
-@media (max-width:720px){ .vr-gauges-row{ grid-template-columns:repeat(2,1fr) !important; } }
-@media (max-width:420px){ .vr-gauges-row{ grid-template-columns:1fr !important; } }
-
 /* ==========================================================
-   JAUGES HELL (SANS data-gauge-id) -> on mappe par ordre 1..4
+   JAUGES HELL (mapping PROPRE par data-gauge-id)
+   Fichiers conservés: g1..g4 comme tu avais.
    ========================================================== */
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-frame{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="souls"] .vr-gauge-frame{
   background-image: url("../assets/img/gauges/hell_king/g1_frame.webp");
 }
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-fill,
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-preview{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="souls"] .vr-gauge-fill,
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="souls"] .vr-gauge-preview{
   background-image: url("../assets/img/gauges/hell_king/g1_fill.webp");
 }
 
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-frame{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="legions"] .vr-gauge-frame{
   background-image: url("../assets/img/gauges/hell_king/g2_frame.webp");
 }
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-fill,
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-preview{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="legions"] .vr-gauge-fill,
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="legions"] .vr-gauge-preview{
   background-image: url("../assets/img/gauges/hell_king/g2_fill.webp");
 }
 
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-frame{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="order"] .vr-gauge-frame{
   background-image: url("../assets/img/gauges/hell_king/g3_frame.webp");
 }
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-fill,
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-preview{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="order"] .vr-gauge-fill,
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="order"] .vr-gauge-preview{
   background-image: url("../assets/img/gauges/hell_king/g3_fill.webp");
 }
 
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-frame{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-frame{
   background-image: url("../assets/img/gauges/hell_king/g4_frame.webp");
 }
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-fill,
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-preview{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-fill,
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-preview{
   background-image: url("../assets/img/gauges/hell_king/g4_fill.webp");
-}
-
-/* ==========================================================
-   FIX DÉFINITIF — Icônes TOP dans game.html
-   Problème: #view-game est en position:fixed et recouvre les icônes (qui n'étaient pas positionnées).
-   Solution: on fixe .vr-top-actions-game au-dessus avec un z-index élevé.
-   ========================================================== */
-
-body.vr-body-game .vr-top-actions-game{
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 100000 !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  flex-wrap: nowrap !important;
-  gap: 14px !important;
-
-  padding: calc(10px + env(safe-area-inset-top)) 16px 6px !important;
-  pointer-events: none !important;
-}
-
-body.vr-body-game .vr-top-actions-game .vr-icon-button{
-  pointer-events: auto !important;
-  width: 44px !important;
-  height: 44px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-body.vr-body-game .vr-top-actions-game .vr-top-icon{
-  width: 34px !important;
-  height: 34px !important;
-  max-width: 34px !important;
-  max-height: 34px !important;
-  object-fit: contain !important;
-  display: block !important;
-}
-
-/* on garde un espace pour que le contenu ne passe pas sous les icônes */
-body.vr-body-game #view-game{
-  padding-top: calc(78px + env(safe-area-inset-top)) !important;
 }
