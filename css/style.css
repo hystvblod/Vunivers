@@ -225,7 +225,7 @@ body.vr-body-game .vr-header::before { content: none; }
   background-position: center;
   background-repeat: no-repeat;
 
-  opacity: 0.05; /* ✅ 5% transparent (ajuste 0.90 / 0.85 si tu veux) */
+  opacity: 0.85; /* ✅ 5% transparent (ajuste 0.90 / 0.85 si tu veux) */
 
   pointer-events:none;
   z-index:0;
