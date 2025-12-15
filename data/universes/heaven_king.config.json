@@ -1,0 +1,31 @@
+{
+  "id": "heaven_king",
+  "gauges": [
+    {
+      "id": "prayers",
+      "label_fr": "Prières",
+      "label_en": "Prayers"
+    },
+    {
+      "id": "cult",
+      "label_fr": "Culte",
+      "label_en": "Cult"
+    },
+    {
+      "id": "free_will",
+      "label_fr": "Libre arbitre",
+      "label_en": "Free will"
+    },
+    {
+      "id": "intervention",
+      "label_fr": "Intervention",
+      "label_en": "Intervention"
+    }
+  ],
+  "initialGauges": {
+    "prayers": 50,
+    "cult": 50,
+    "free_will": 50,
+    "intervention": 50
+  }
+}
