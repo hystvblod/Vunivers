@@ -5,75 +5,74 @@
   "ui": {
     "language": "Langue",
     "subtitle": "Choisissez votre destin.",
-    "subtitle_desc": "Incarnez un souverain, un président, un vampire ou un explorateur. Chaque décision influe sur vos jauges, votre monde et les générations suivantes.",
+    "subtitle_desc": "Incarnez un souverain, un président, un va...flue sur vos jauges, votre monde et les générations suivantes.",
     "choose_universe": "Sélectionnez un univers",
     "footer": "VUniverse   Vboldstudio.",
     "profile": "Profil",
     "settings": "Paramètres",
     "shop": "Boutique",
-
-    
-  "gauges.hell_king.souls": "Âmes damnées",
-  "gauges.hell_king.legions": "Légions",
-  "gauges.hell_king.order": "organisaiton de l'enfer",
-  "gauges.hell_king.surface": "Influence sur Terre"
-
-
-
-
-
+    "gauges": {
+      "hell_king": {
+        "souls": "Âmes",
+        "legions": "Légions",
+        "order": "Ordre",
+        "surface": "Surface"
+      }
+    }
   },
   "game": {
     "title": "Partie en cours",
-    "subtitle": "Faites vos choix. Surveillez vos jauges. Survivez le plus longtemps possible."
+    "subtitle": "Faites vos choix.",
+    "restart": "Recommencer"
   },
   "profile": {
-    "title": "Profil joueur",
-    "subtitle": "Statistiques, succès et progression globale."
+    "title": "Profil",
+    "subtitle": "Vos stats et progression.",
+    "vc": "VCoins",
+    "rank": "Rang",
+    "streak": "Série",
+    "inventory": "Inventaire"
   },
   "shop": {
     "title": "Boutique",
-    "subtitle": "Cartes spéciales, thèmes, bonus et options premium."
+    "subtitle": "Dépenser vos VCoins",
+    "soon": "Bientôt disponible"
   },
   "settings": {
     "title": "Paramètres",
-    "subtitle": "Langue, audio, préférences et gestion des données."
+    "subtitle": "Préférences & langue",
+    "sound": "Son",
+    "music": "Musique",
+    "notifications": "Notifications"
   },
   "universe": {
     "hell_king": {
       "title": "Roi des Enfers",
-      "desc": "Dirige les légions démoniaques, gère l’afflux d’âmes damnées et maintiens l’équilibre entre chaos et ordre cosmique."
+      "desc": "Règne sur les âmes et les légions."
     },
     "heaven_king": {
-      "title": "Souverain du Paradis",
-      "desc": "Arbitre les prières, contiens le fanatisme et décide jusqu’où le Ciel doit intervenir dans le monde des mortels."
+      "title": "Roi des Cieux",
+      "desc": "Guidé par la foi et la paix."
     },
     "medieval_king": {
-      "title": "Roi médiéval",
-      "desc": "Église, armée, peuple, trésor : chaque choix rapproche ton royaume de la prospérité… ou de la révolte."
+      "title": "Roi Médiéval",
+      "desc": "Couronne, alliances, guerre."
     },
     "western_president": {
-      "title": "Président d’une puissance occidentale",
-      "desc": "Opinion publique, économie, diplomatie et crises médiatiques. Une signature peut tout faire basculer."
+      "title": "Président",
+      "desc": "Pouvoir, opinion, diplomatie."
     },
     "mega_corp_ceo": {
-      "title": "CEO d’une méga-entreprise",
-      "desc": "Investisseurs, employés, régulateurs et image de marque. Pousse la valorisation au sommet sans tout faire exploser."
+      "title": "CEO",
+      "desc": "Business, influence, contrôle."
     },
     "new_world_explorer": {
-      "title": "Explorateur du Nouveau Monde",
-      "desc": "Conquiers, convertis et négocie avec les royaumes locaux tout en rendant des comptes à ta couronne."
+      "title": "Explorateur",
+      "desc": "Découverte et survie."
     },
     "vampire_lord": {
-      "title": "Seigneur vampire",
-      "desc": "Étends ton influence dans l’ombre. Trop de sang attire les chasseurs, trop de prudence affaiblit ton clan."
-    },
-    "locked": {
-      "title": "Univers à venir",
-      "desc": "De nouveaux destins seront bientôt disponibles."
+      "title": "Seigneur Vampire",
+      "desc": "Nuit, pouvoir, secrets."
     }
   }
-
-  
 }
-
