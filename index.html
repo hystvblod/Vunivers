@@ -13,11 +13,22 @@
       --vr-overlay: linear-gradient(to bottom right, rgba(255,255,255,0.14), rgba(15,23,42,0.70));
     }
 
-    /* ===== Header FIXED + MASQUE ce qui scroll dessous ===== */
+    /* ✅ Wrapper centré (pour garder l’aspect “mobile” sans créer de bordure/coupure) */
+    .vr-home-wrap{
+      width: 100% !important;
+      max-width: 420px !important;
+      margin: 0 auto !important;
+    }
+
+    /* ===== Header FIXED + FULL WIDTH (supprime l'effet “cadre/gris”) ===== */
     .vr-header{
       position: fixed !important;
       top: 0 !important; left: 0 !important; right: 0 !important;
       z-index: 9999 !important;
+
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
 
       /* ✅ empêche le logo/texte de "passer sous les icônes" */
       background: linear-gradient(
@@ -205,20 +216,22 @@
 
   <header class="vr-header">
     <div class="vr-top-actions">
-      <button class="vr-icon-button" data-view-target="profile" aria-label="Profil">
+      <!-- ✅ plus de data-view-target (SPA) -->
+      <button class="vr-icon-button" type="button" aria-label="Profil" onclick="window.location.href='profile.html'">
         <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
       </button>
-      <button class="vr-icon-button" data-view-target="settings" aria-label="Paramètres">
+      <button class="vr-icon-button" type="button" aria-label="Paramètres" onclick="window.location.href='settings.html'">
         <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
       </button>
-      <button class="vr-icon-button" data-view-target="shop" aria-label="Boutique">
+      <button class="vr-icon-button" type="button" aria-label="Boutique" onclick="window.location.href='shop.html'">
         <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
       </button>
     </div>
   </header>
 
   <main class="vr-main">
-    <section id="view-home" class="vr-view vr-view-active">
+    <!-- ✅ plus de vr-view / vr-view-active (SPA) -->
+    <div class="vr-home-wrap">
       <section class="vr-intro">
         <img
           src="assets/img/ui/logo_vrealms.webp"
@@ -313,12 +326,7 @@
           </button>
         </div>
       </section>
-    </section>
-
-    <section id="view-game" class="vr-view"></section>
-    <section id="view-profile" class="vr-view"></section>
-    <section id="view-shop" class="vr-view"></section>
-    <section id="view-settings" class="vr-view"></section>
+    </div>
   </main>
 
   <footer class="vr-footer">
@@ -413,7 +421,7 @@
   <script src="js/i18n.js"></script>
   <!-- IMPORTANT : PAS DE js/game.js SUR INDEX -->
 
-  <!-- ✅ Anti-bug : empêche un script de coller data-universe / vr-body-game sur la HOME -->
+  <!-- ✅ Anti-bug conservé (ne fait pas “SPA”, il évite juste que la HOME se transforme en GAME) -->
   <script>
   (function () {
     function cleanHomeUniverseLeak() {
