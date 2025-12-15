@@ -33,8 +33,10 @@
         <p class="vr-main-text" data-i18n="game.subtitle"></p>
       </div>
 
+      <!-- ✅ IMPORTANT : on enlève data-gauge-id="g1/g2/g3/g4"
+           car les vrais ids viennent de la config (cfg.id) et sont posés par ui-binding.js -->
       <div class="vr-gauges-row">
-        <div class="vr-gauge" data-gauge-id="g1">
+        <div class="vr-gauge">
           <span class="vr-gauge-label"></span>
           <div class="vr-gauge-frame">
             <div class="vr-gauge-preview"></div>
@@ -42,7 +44,7 @@
           </div>
         </div>
 
-        <div class="vr-gauge" data-gauge-id="g2">
+        <div class="vr-gauge">
           <span class="vr-gauge-label"></span>
           <div class="vr-gauge-frame">
             <div class="vr-gauge-preview"></div>
@@ -50,7 +52,7 @@
           </div>
         </div>
 
-        <div class="vr-gauge" data-gauge-id="g3">
+        <div class="vr-gauge">
           <span class="vr-gauge-label"></span>
           <div class="vr-gauge-frame">
             <div class="vr-gauge-preview"></div>
@@ -58,7 +60,7 @@
           </div>
         </div>
 
-        <div class="vr-gauge" data-gauge-id="g4">
+        <div class="vr-gauge">
           <span class="vr-gauge-label"></span>
           <div class="vr-gauge-frame">
             <div class="vr-gauge-preview"></div>

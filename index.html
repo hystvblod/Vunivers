@@ -13,19 +13,32 @@
       --vr-overlay: linear-gradient(to bottom right, rgba(255,255,255,0.14), rgba(15,23,42,0.70));
     }
 
-    /* ===== Header fixed + propre ===== */
+    /* ===== Header FIXED + MASQUE ce qui scroll dessous ===== */
     .vr-header{
       position: fixed !important;
       top: 0 !important; left: 0 !important; right: 0 !important;
       z-index: 9999 !important;
-      padding: 10px 12px !important;
-      background: transparent !important;
+
+      /* ✅ empêche le logo/texte de "passer sous les icônes" */
+      background: linear-gradient(
+        180deg,
+        rgba(10,15,28,0.78) 0%,
+        rgba(10,15,28,0.28) 65%,
+        rgba(10,15,28,0.00) 100%
+      ) !important;
+
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+
+      padding: 10px 12px 14px !important;
     }
+
     .vr-top-actions{
       display: flex !important;
       justify-content: center !important;
       gap: 10px !important;
     }
+
     .vr-icon-button{
       width: 44px !important;
       height: 44px !important;
@@ -40,6 +53,7 @@
       justify-content: center !important;
       cursor: pointer !important;
     }
+
     .vr-icon-button img{
       width: 30px !important;
       height: 30px !important;
@@ -50,17 +64,17 @@
       user-select: none !important;
     }
 
-    /* ✅ Laisse de la place sous le header (évite chevauchement) */
-    .vr-main{ padding-top: 84px !important; }
+    /* ✅ laisse de la place sous le header */
+    .vr-main{ padding-top: 72px !important; }
 
     /* ✅ Logo un peu plus bas (entre icônes et titre) */
     .vr-intro{
-      margin-top: 10px !important;
+      margin-top: 14px !important;
       margin-bottom: 12px !important;
       display: flex !important;
       justify-content: center !important;
     }
-    .vr-main-logo{ margin-top: 4px !important; }
+    .vr-main-logo{ margin-top: 6px !important; }
 
     /* ===== Cartouches ===== */
     .vr-universe-grid{
@@ -93,7 +107,7 @@
       z-index: 0 !important;
     }
 
-    /* voile pour lisibilité (✅ un peu moins sombre) */
+    /* voile pour lisibilité */
     .vr-card::after{
       content: "" !important;
       position: absolute !important;
@@ -130,7 +144,7 @@
       text-shadow: 0 2px 10px rgba(0,0,0,.65) !important;
     }
 
-    /* ✅ ? quasi transparent */
+    /* ? */
     .vr-info-btn{
       width: 40px !important;
       height: 40px !important;
@@ -151,7 +165,7 @@
     .vr-info-btn:hover{ background: rgba(255,255,255,.14) !important; }
     .vr-info-btn:active{ transform: scale(.96) !important; }
 
-    /* ✅ Tooltip plus large */
+    /* Tooltip plus large */
     .vr-tooltip{
       width: min(360px, calc(100vw - 32px)) !important;
       max-width: 360px !important;
@@ -161,7 +175,7 @@
       border-radius: 14px !important;
     }
 
-    /* ✅ Carte disabled : neutralise locked.webp */
+    /* Carte disabled */
     .vr-card.vr-card-disabled,
     .vr-card[disabled]{
       opacity: .55 !important;
@@ -175,18 +189,8 @@
       opacity: .42 !important;
     }
 
-    /* ✅ Footer neutralisé aussi côté index */
-    .vr-footer{
-      display:none !important;
-      height:0 !important;
-      margin:0 !important;
-      padding:0 !important;
-      overflow:hidden !important;
-    }
-
-    /* Mobile */
     @media (max-width: 520px){
-      .vr-main{ padding-top: 76px !important; }
+      .vr-main{ padding-top: 64px !important; }
       .vr-card{ min-height: 60px !important; height: 60px !important; }
       .vr-card-title{ font-size: 14px !important; }
       .vr-info-btn{ width: 38px !important; height: 38px !important; font-size: 15px !important; }
@@ -324,12 +328,6 @@
   <div id="vr-tooltip" class="vr-tooltip"></div>
 
   <script>
-    /* ✅ Sécurité HOME : si un script essaie d’injecter un univers sur index, on l’écrase */
-    document.addEventListener("DOMContentLoaded", () => {
-      document.body.removeAttribute("data-universe");
-      document.body.className = "vr-body";
-    });
-
     function _t(key) {
       try {
         if (window.VRI18n && typeof window.VRI18n.t === "function") return window.VRI18n.t(key) || "";
@@ -362,7 +360,9 @@
         const vw = document.documentElement.clientWidth || window.innerWidth;
         const desiredCenter = rect.left + rect.width / 2;
         const pad = 16;
-        const clampedCenter = Math.max(pad, Math.min(vw - pad, desiredCenter));
+        const minCenter = pad;
+        const maxCenter = vw - pad;
+        const clampedCenter = Math.max(minCenter, Math.min(maxCenter, desiredCenter));
 
         tooltip.style.top = (rect.bottom + 8 + scrollY) + "px";
         tooltip.style.left = (clampedCenter + scrollX) + "px";
@@ -411,7 +411,30 @@
   <script src="js/purchases.js"></script>
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
+  <!-- IMPORTANT : PAS DE js/game.js SUR INDEX -->
 
-  <!-- ✅ IMPORTANT : PAS DE js/game.js SUR INDEX -->
+  <!-- ✅ Anti-bug : empêche un script de coller data-universe / vr-body-game sur la HOME -->
+  <script>
+  (function () {
+    function cleanHomeUniverseLeak() {
+      document.body.removeAttribute("data-universe");
+      document.body.classList.remove("vr-body-game");
+      if (!document.body.classList.contains("vr-body")) {
+        document.body.classList.add("vr-body");
+      }
+    }
+
+    cleanHomeUniverseLeak();
+    window.addEventListener("DOMContentLoaded", cleanHomeUniverseLeak);
+    window.addEventListener("pageshow", cleanHomeUniverseLeak);
+
+    const obs = new MutationObserver(() => {
+      if (document.body.hasAttribute("data-universe") || document.body.classList.contains("vr-body-game")) {
+        cleanHomeUniverseLeak();
+      }
+    });
+    obs.observe(document.body, { attributes: true, attributeFilter: ["data-universe", "class"] });
+  })();
+  </script>
 </body>
 </html>
