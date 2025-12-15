@@ -13,22 +13,11 @@
       --vr-overlay: linear-gradient(to bottom right, rgba(255,255,255,0.14), rgba(15,23,42,0.70));
     }
 
-    /* ✅ Wrapper centré (pour garder l’aspect “mobile” sans créer de bordure/coupure) */
-    .vr-home-wrap{
-      width: 100% !important;
-      max-width: 420px !important;
-      margin: 0 auto !important;
-    }
-
-    /* ===== Header FIXED + FULL WIDTH (supprime l'effet “cadre/gris”) ===== */
+    /* ===== Header FIXED + MASQUE ce qui scroll dessous ===== */
     .vr-header{
       position: fixed !important;
       top: 0 !important; left: 0 !important; right: 0 !important;
       z-index: 9999 !important;
-
-      width: 100% !important;
-      max-width: none !important;
-      margin: 0 !important;
 
       /* ✅ empêche le logo/texte de "passer sous les icônes" */
       background: linear-gradient(
@@ -42,6 +31,11 @@
       -webkit-backdrop-filter: blur(10px) !important;
 
       padding: 10px 12px 14px !important;
+
+      /* ✅ FULL WIDTH (évite l’impression de cadre centré) */
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
     }
 
     .vr-top-actions{
@@ -63,6 +57,7 @@
       align-items: center !important;
       justify-content: center !important;
       cursor: pointer !important;
+      text-decoration: none !important;
     }
 
     .vr-icon-button img{
@@ -216,117 +211,114 @@
 
   <header class="vr-header">
     <div class="vr-top-actions">
-      <!-- ✅ plus de data-view-target (SPA) -->
-      <button class="vr-icon-button" type="button" aria-label="Profil" onclick="window.location.href='profile.html'">
+      <!-- ✅ plus de SPA: liens directs -->
+      <a class="vr-icon-button" href="profile.html" aria-label="Profil">
         <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
-      </button>
-      <button class="vr-icon-button" type="button" aria-label="Paramètres" onclick="window.location.href='settings.html'">
+      </a>
+      <a class="vr-icon-button" href="settings.html" aria-label="Paramètres">
         <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
-      </button>
-      <button class="vr-icon-button" type="button" aria-label="Boutique" onclick="window.location.href='shop.html'">
+      </a>
+      <a class="vr-icon-button" href="shop.html" aria-label="Boutique">
         <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
-      </button>
+      </a>
     </div>
   </header>
 
   <main class="vr-main">
-    <!-- ✅ plus de vr-view / vr-view-active (SPA) -->
-    <div class="vr-home-wrap">
-      <section class="vr-intro">
-        <img
-          src="assets/img/ui/logo_vrealms.webp"
-          alt="VRealms"
-          class="vr-main-logo"
-          draggable="false"
-        />
-      </section>
+    <section class="vr-intro">
+      <img
+        src="assets/img/ui/logo_vrealms.webp"
+        alt="VRealms"
+        class="vr-main-logo"
+        draggable="false"
+      />
+    </section>
 
-      <section class="vr-universes">
-        <h2 class="vr-section-title" data-i18n="ui.choose_universe"></h2>
+    <section class="vr-universes">
+      <h2 class="vr-section-title" data-i18n="ui.choose_universe"></h2>
 
-        <div class="vr-universe-grid">
-          <button class="vr-card" data-universe="hell_king" type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/hell_king.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.hell_king.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.hell_king.desc">?</span>
-              </div>
+      <div class="vr-universe-grid">
+        <button class="vr-card" data-universe="hell_king" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/hell_king.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.hell_king.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.hell_king.desc">?</span>
             </div>
-          </button>
+          </div>
+        </button>
 
-          <button class="vr-card" data-universe="heaven_king" type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/heaven_king.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.heaven_king.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.heaven_king.desc">?</span>
-              </div>
+        <button class="vr-card" data-universe="heaven_king" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/heaven_king.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.heaven_king.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.heaven_king.desc">?</span>
             </div>
-          </button>
+          </div>
+        </button>
 
-          <button class="vr-card" data-universe="medieval_king" type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/medieval_king.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.medieval_king.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.medieval_king.desc">?</span>
-              </div>
+        <button class="vr-card" data-universe="medieval_king" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/medieval_king.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.medieval_king.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.medieval_king.desc">?</span>
             </div>
-          </button>
+          </div>
+        </button>
 
-          <button class="vr-card" data-universe="western_president" type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/western_president.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.western_president.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.western_president.desc">?</span>
-              </div>
+        <button class="vr-card" data-universe="western_president" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/western_president.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.western_president.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.western_president.desc">?</span>
             </div>
-          </button>
+          </div>
+        </button>
 
-          <button class="vr-card" data-universe="mega_corp_ceo" type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/mega_corp_ceo.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.mega_corp_ceo.desc">?</span>
-              </div>
+        <button class="vr-card" data-universe="mega_corp_ceo" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/mega_corp_ceo.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.mega_corp_ceo.desc">?</span>
             </div>
-          </button>
+          </div>
+        </button>
 
-          <button class="vr-card" data-universe="new_world_explorer" type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/new_world_explorer.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.new_world_explorer.desc">?</span>
-              </div>
+        <button class="vr-card" data-universe="new_world_explorer" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/new_world_explorer.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.new_world_explorer.desc">?</span>
             </div>
-          </button>
+          </div>
+        </button>
 
-          <button class="vr-card" data-universe="vampire_lord" type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/vampire_lord.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.vampire_lord.desc">?</span>
-              </div>
+        <button class="vr-card" data-universe="vampire_lord" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/vampire_lord.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.vampire_lord.desc">?</span>
             </div>
-          </button>
+          </div>
+        </button>
 
-          <button class="vr-card vr-card-disabled" disabled type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/locked.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.locked.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="-1" aria-hidden="true" data-i18n-tip="universe.locked.desc">?</span>
-              </div>
+        <button class="vr-card vr-card-disabled" disabled type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/locked.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.locked.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="-1" aria-hidden="true" data-i18n-tip="universe.locked.desc">?</span>
             </div>
-          </button>
-        </div>
-      </section>
-    </div>
+          </div>
+        </button>
+      </div>
+    </section>
   </main>
 
   <footer class="vr-footer">
@@ -420,29 +412,5 @@
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
   <!-- IMPORTANT : PAS DE js/game.js SUR INDEX -->
-
-  <!-- ✅ Anti-bug conservé (ne fait pas “SPA”, il évite juste que la HOME se transforme en GAME) -->
-  <script>
-  (function () {
-    function cleanHomeUniverseLeak() {
-      document.body.removeAttribute("data-universe");
-      document.body.classList.remove("vr-body-game");
-      if (!document.body.classList.contains("vr-body")) {
-        document.body.classList.add("vr-body");
-      }
-    }
-
-    cleanHomeUniverseLeak();
-    window.addEventListener("DOMContentLoaded", cleanHomeUniverseLeak);
-    window.addEventListener("pageshow", cleanHomeUniverseLeak);
-
-    const obs = new MutationObserver(() => {
-      if (document.body.hasAttribute("data-universe") || document.body.classList.contains("vr-body-game")) {
-        cleanHomeUniverseLeak();
-      }
-    });
-    obs.observe(document.body, { attributes: true, attributeFilter: ["data-universe", "class"] });
-  })();
-  </script>
 </body>
 </html>
