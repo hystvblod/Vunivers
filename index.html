@@ -7,19 +7,15 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
-    /* ✅ Fond global un peu plus clair (override variables du style.css) */
     :root{
       --vr-bg: radial-gradient(circle at top, #f6e7cf 0, #23355a 62%, #0b1020 100%);
       --vr-overlay: linear-gradient(to bottom right, rgba(255,255,255,0.14), rgba(15,23,42,0.70));
     }
 
-    /* ===== Header FIXED + MASQUE ce qui scroll dessous ===== */
     .vr-header{
       position: fixed !important;
       top: 0 !important; left: 0 !important; right: 0 !important;
       z-index: 9999 !important;
-
-      /* ✅ empêche le logo/texte de "passer sous les icônes" */
       background: linear-gradient(
         180deg,
         rgba(10,15,28,0.78) 0%,
@@ -29,45 +25,17 @@
 
       backdrop-filter: blur(10px) !important;
       -webkit-backdrop-filter: blur(10px) !important;
-
       padding: 10px 12px 14px !important;
     }
 
     .vr-top-actions{
       display: flex !important;
       justify-content: center !important;
-      gap: 10px !important;
+      gap: 16px !important;
     }
 
-    .vr-icon-button{
-      width: 44px !important;
-      height: 44px !important;
-      border: 0 !important;
-      background: transparent !important;
-      box-shadow: none !important;
-      backdrop-filter: none !important;
-      -webkit-backdrop-filter: none !important;
-      padding: 0 !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      cursor: pointer !important;
-    }
-
-    .vr-icon-button img{
-      width: 30px !important;
-      height: 30px !important;
-      object-fit: contain !important;
-      display: block !important;
-      filter: none !important;
-      pointer-events: none !important;
-      user-select: none !important;
-    }
-
-    /* ✅ laisse de la place sous le header */
     .vr-main{ padding-top: 72px !important; }
 
-    /* ✅ Logo un peu plus bas (entre icônes et titre) */
     .vr-intro{
       margin-top: 14px !important;
       margin-bottom: 12px !important;
@@ -76,365 +44,149 @@
     }
     .vr-main-logo{ margin-top: 6px !important; }
 
-    /* ===== Cartouches ===== */
     .vr-universe-grid{
       display: grid !important;
-      grid-template-columns: 1fr !important;
-      gap: 14px !important;
-    }
-
-    .vr-card{
-      position: relative !important;
-      overflow: hidden !important;
-      width: 100% !important;
-      min-height: 64px !important;
-      height: 64px !important;
-      border-radius: 18px !important;
-      cursor: pointer !important;
-      border: 0 !important;
-      outline: 0 !important;
-      background: transparent !important;
-      box-shadow: none !important;
-    }
-
-    /* Fond webp (✅ +10% visible) */
-    .vr-card-bg{
-      position: absolute !important;
-      inset: 0 !important;
-      background-size: cover !important;
-      background-position: center !important;
-      opacity: .58 !important;
-      z-index: 0 !important;
-    }
-
-    /* voile pour lisibilité */
-    .vr-card::after{
-      content: "" !important;
-      position: absolute !important;
-      inset: 0 !important;
-      background: linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.48)) !important;
-      pointer-events: none !important;
-      z-index: 1 !important;
-    }
-
-    .vr-card-content{
-      position: relative !important;
-      z-index: 2 !important;
-      height: 100% !important;
-      display: flex !important;
-      align-items: center !important;
-    }
-
-    .vr-card-header-line{
-      width: 100% !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
       gap: 12px !important;
-      padding: 0 14px !important;
-    }
-
-    .vr-card-title{
-      margin: 0 !important;
-      color: #fff !important;
-      font-weight: 900 !important;
-      font-size: 16px !important;
-      letter-spacing: .2px !important;
-      line-height: 1.1 !important;
-      text-shadow: 0 2px 10px rgba(0,0,0,.65) !important;
-    }
-
-    /* ? */
-    .vr-info-btn{
-      width: 40px !important;
-      height: 40px !important;
-      border-radius: 999px !important;
-      background: rgba(255,255,255,.10) !important;
-      border: 1px solid rgba(255,255,255,.18) !important;
-      color: rgba(255,255,255,.95) !important;
-      font-weight: 900 !important;
-      font-size: 16px !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      box-shadow: none !important;
-      user-select: none !important;
-      flex: 0 0 auto !important;
-      cursor: pointer !important;
-    }
-    .vr-info-btn:hover{ background: rgba(255,255,255,.14) !important; }
-    .vr-info-btn:active{ transform: scale(.96) !important; }
-
-    /* Tooltip plus large */
-    .vr-tooltip{
-      width: min(360px, calc(100vw - 32px)) !important;
-      max-width: 360px !important;
-      padding: 12px 14px !important;
-      font-size: 13px !important;
-      line-height: 1.35 !important;
-      border-radius: 14px !important;
-    }
-
-    /* Carte disabled */
-    .vr-card.vr-card-disabled,
-    .vr-card[disabled]{
-      opacity: .55 !important;
-      border: 0 !important;
-      outline: 0 !important;
-      box-shadow: none !important;
-      filter: none !important;
-    }
-    .vr-card.vr-card-disabled .vr-card-bg{
-      background-image: linear-gradient(135deg, rgba(255,255,255,.10), rgba(0,0,0,.35)) !important;
-      opacity: .42 !important;
-    }
-
-    @media (max-width: 520px){
-      .vr-main{ padding-top: 64px !important; }
-      .vr-card{ min-height: 60px !important; height: 60px !important; }
-      .vr-card-title{ font-size: 14px !important; }
-      .vr-info-btn{ width: 38px !important; height: 38px !important; font-size: 15px !important; }
-      .vr-icon-button{ width: 40px !important; height: 40px !important; }
-      .vr-icon-button img{ width: 28px !important; height: 28px !important; }
     }
   </style>
 </head>
 
-<body class="vr-body">
-  <div class="vr-overlay"></div>
+<body>
 
   <header class="vr-header">
     <div class="vr-top-actions">
-      <button class="vr-icon-button" data-view-target="profile" aria-label="Profil">
+      <a class="vr-icon-button" href="profile.html" aria-label="Profil">
         <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
-      </button>
-      <button class="vr-icon-button" data-view-target="settings" aria-label="Paramètres">
+      </a>
+      <a class="vr-icon-button" href="settings.html" aria-label="Paramètres">
         <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
-      </button>
-      <button class="vr-icon-button" data-view-target="shop" aria-label="Boutique">
+      </a>
+      <a class="vr-icon-button" href="shop.html" aria-label="Boutique">
         <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
-      </button>
+      </a>
     </div>
   </header>
 
   <main class="vr-main">
-    <section id="view-home" class="vr-view vr-view-active">
-      <section class="vr-intro">
-        <img
-          src="assets/img/ui/logo_vrealms.webp"
-          alt="VRealms"
-          class="vr-main-logo"
-          draggable="false"
-        />
-      </section>
-
-      <section class="vr-universes">
-        <h2 class="vr-section-title" data-i18n="ui.choose_universe"></h2>
-
-        <div class="vr-universe-grid">
-          <button class="vr-card" data-universe="hell_king" type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/hell_king.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.hell_king.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.hell_king.desc">?</span>
-              </div>
-            </div>
-          </button>
-
-          <button class="vr-card" data-universe="heaven_king" type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/heaven_king.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.heaven_king.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.heaven_king.desc">?</span>
-              </div>
-            </div>
-          </button>
-
-          <button class="vr-card" data-universe="medieval_king" type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/medieval_king.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.medieval_king.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.medieval_king.desc">?</span>
-              </div>
-            </div>
-          </button>
-
-          <button class="vr-card" data-universe="western_president" type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/western_president.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.western_president.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.western_president.desc">?</span>
-              </div>
-            </div>
-          </button>
-
-          <button class="vr-card" data-universe="mega_corp_ceo" type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/mega_corp_ceo.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.mega_corp_ceo.desc">?</span>
-              </div>
-            </div>
-          </button>
-
-          <button class="vr-card" data-universe="new_world_explorer" type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/new_world_explorer.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.new_world_explorer.desc">?</span>
-              </div>
-            </div>
-          </button>
-
-          <button class="vr-card" data-universe="vampire_lord" type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/vampire_lord.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.vampire_lord.desc">?</span>
-              </div>
-            </div>
-          </button>
-
-          <button class="vr-card vr-card-disabled" disabled type="button">
-            <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/locked.webp');"></div>
-            <div class="vr-card-content">
-              <div class="vr-card-header-line">
-                <h3 class="vr-card-title" data-i18n="universe.locked.title"></h3>
-                <span class="vr-info-btn" role="button" tabindex="-1" aria-hidden="true" data-i18n-tip="universe.locked.desc">?</span>
-              </div>
-            </div>
-          </button>
-        </div>
-      </section>
+    <section class="vr-intro">
+      <img
+        src="assets/img/ui/logo_vrealms.webp"
+        alt="VRealms"
+        class="vr-main-logo"
+        draggable="false"
+      />
     </section>
 
-    <section id="view-game" class="vr-view"></section>
-    <section id="view-profile" class="vr-view"></section>
-    <section id="view-shop" class="vr-view"></section>
-    <section id="view-settings" class="vr-view"></section>
+    <section class="vr-universes">
+      <h2 class="vr-section-title" data-i18n="ui.choose_universe"></h2>
+
+      <div class="vr-universe-grid">
+        <button class="vr-card" data-universe="hell_king" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/hell_king.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.hell_king.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.hell_king.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="vr-card" data-universe="paradise_sovereign" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/paradise_sovereign.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.paradise_sovereign.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.paradise_sovereign.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="vr-card" data-universe="medieval_king" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/medieval_king.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.medieval_king.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.medieval_king.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="vr-card" data-universe="western_president" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/western_president.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.western_president.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.western_president.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="vr-card" data-universe="ceo_empire" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/ceo_empire.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.ceo_empire.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.ceo_empire.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="vr-card" data-universe="new_world_explorer" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/new_world_explorer.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.new_world_explorer.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="vr-card" data-universe="vampire_lord" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/vampire_lord.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.vampire_lord.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="vr-card" type="button" disabled aria-disabled="true">
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="ui.coming_soon"></h3>
+              <span class="vr-info-btn" aria-hidden="true">?</span>
+            </div>
+          </div>
+        </button>
+      </div>
+    </section>
   </main>
 
   <footer class="vr-footer">
     <span class="vr-footer-text" data-i18n="ui.footer"></span>
   </footer>
 
-  <div id="vr-tooltip" class="vr-tooltip"></div>
-
-  <script>
-    function _t(key) {
-      try {
-        if (window.VRI18n && typeof window.VRI18n.t === "function") return window.VRI18n.t(key) || "";
-        if (typeof window.i18nGet === "function") return window.i18nGet(key) || "";
-      } catch (_) {}
-      return "";
-    }
-
-    (function () {
-      const tooltip = document.getElementById("vr-tooltip");
-      if (!tooltip) return;
-
-      function hideTooltip() {
-        tooltip.classList.remove("vr-tooltip-visible");
-        tooltip.style.display = "none";
-      }
-
-      function showTooltip(el) {
-        const key = el.getAttribute("data-i18n-tip");
-        const tr = key ? _t(key) : "";
-        const text = tr || "?";
-
-        const rect = el.getBoundingClientRect();
-        const scrollY = window.scrollY || window.pageYOffset;
-        const scrollX = window.scrollX || window.pageXOffset;
-
-        tooltip.textContent = text;
-        tooltip.style.display = "block";
-
-        const vw = document.documentElement.clientWidth || window.innerWidth;
-        const desiredCenter = rect.left + rect.width / 2;
-        const pad = 16;
-        const minCenter = pad;
-        const maxCenter = vw - pad;
-        const clampedCenter = Math.max(minCenter, Math.min(maxCenter, desiredCenter));
-
-        tooltip.style.top = (rect.bottom + 8 + scrollY) + "px";
-        tooltip.style.left = (clampedCenter + scrollX) + "px";
-        tooltip.classList.add("vr-tooltip-visible");
-      }
-
-      document.querySelectorAll(".vr-info-btn").forEach((el) => {
-        el.addEventListener("click", function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          showTooltip(el);
-        });
-
-        el.addEventListener("keydown", function (e) {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            e.stopPropagation();
-            showTooltip(el);
-          }
-        });
-      });
-
-      document.addEventListener("click", hideTooltip);
-      window.addEventListener("scroll", hideTooltip, { passive: true });
-      window.addEventListener("resize", hideTooltip);
-    })();
-
-    (function () {
-      function launchUniverse(universeId) {
-        if (!universeId) return;
-        localStorage.setItem("vrealms_universe", universeId);
-        window.location.href = "game.html";
-      }
-
-      document.querySelectorAll(".vr-card[data-universe]").forEach((card) => {
-        card.addEventListener("click", () => {
-          const id = card.getAttribute("data-universe");
-          launchUniverse(id);
-        });
-      });
-    })();
-  </script>
+  <div id="vr-tooltip" class="vr-tooltip" style="display:none;"></div>
 
   <script src="js/userData.js"></script>
-  <script src="js/ads.js"></script>
-  <script src="js/purchases.js"></script>
-  <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
-  <!-- IMPORTANT : PAS DE js/game.js SUR INDEX -->
 
-  <!-- ✅ Anti-bug : empêche un script de coller data-universe / vr-body-game sur la HOME -->
   <script>
-  (function () {
-    function cleanHomeUniverseLeak() {
-      document.body.removeAttribute("data-universe");
-      document.body.classList.remove("vr-body-game");
-      if (!document.body.classList.contains("vr-body")) {
-        document.body.classList.add("vr-body");
-      }
-    }
-
-    cleanHomeUniverseLeak();
-    window.addEventListener("DOMContentLoaded", cleanHomeUniverseLeak);
-    window.addEventListener("pageshow", cleanHomeUniverseLeak);
-
-    const obs = new MutationObserver(() => {
-      if (document.body.hasAttribute("data-universe") || document.body.classList.contains("vr-body-game")) {
-        cleanHomeUniverseLeak();
-      }
+    // Sélection univers -> game.html (robuste: query + localStorage)
+    document.querySelectorAll(".vr-card[data-universe]").forEach((btn) => {
+      if (btn.disabled) return;
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.universe;
+        try {
+          localStorage.setItem("vr_universe", id);
+          localStorage.setItem("vr_selected_universe", id);
+          sessionStorage.setItem("vr_universe", id);
+        } catch(e) {}
+        location.href = "game.html?u=" + encodeURIComponent(id);
+      });
     });
-    obs.observe(document.body, { attributes: true, attributeFilter: ["data-universe", "class"] });
-  })();
   </script>
+
 </body>
 </html>
