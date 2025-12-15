@@ -208,32 +208,29 @@ body.vr-body-game .vr-header::before { content: none; }
   border: none;
   box-shadow: none;
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: var(--vr-universe-bg);
+  /* ✅ IMPORTANT : le BG n’est PAS ici (sinon pas d’opacité possible) */
+  background: none;
 
   overflow: hidden;
 }
+
+/* ✅ BG via pseudo-element + opacité réglable */
 #view-game::before{
   content:"";
   position:absolute;
   inset:0;
 
-  /* ✅ le BG passe ici */
   background-image: var(--vr-universe-bg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  /* ✅ 5% transparent */
-  opacity: 0.7;
+  opacity: 0.95; /* ✅ 5% transparent (ajuste 0.90 / 0.85 si tu veux) */
 
   pointer-events:none;
   z-index:0;
 }
-#view-game > *{ position:relative; z-index:1; }
-
+#view-game > * { position: relative; z-index: 1; }
 
 /* ===== Jauges (WEBP) ===== */
 .vr-gauges-row{
@@ -438,7 +435,6 @@ body.vr-body-game #view-game{
   gap: 10px;
 }
 
-
 /* ✅ 4 jauges côte à côte (TOUJOURS) */
 body.vr-body-game .vr-gauges-row{
   width: 100%;
@@ -488,7 +484,7 @@ body.vr-body-game .vr-gauge-label{
 }
 #view-game.vr-bg-western_president {
   --vr-universe-bg: url("../assets/img/backgrounds/western_president_bg.webp");
-  --vr-universe-card: url("../assets/img/ui/western_card.webp");
+  --vr-universe-card: url("../assets/img/ui/western_choice.webp"); /* si tu as un card dédié, remplace ici */
   --vr-universe-choice: url("../assets/img/ui/western_choice.webp");
 }
 #view-game.vr-bg-mega_corp_ceo {
@@ -552,7 +548,6 @@ body.vr-body-game #view-game{
 
 /* ==========================================================
    JAUGES HELL -> mapping SÉCURISÉ par ID (pas par ordre)
-   (ça garantit que "souls" utilisera toujours g1, etc.)
    ========================================================== */
 body[data-universe="hell_king"] .vr-gauge[data-gauge-id="souls"] .vr-gauge-frame{
   background-image: url("../assets/img/gauges/hell_king/g1_frame.webp");
