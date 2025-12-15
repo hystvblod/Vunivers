@@ -325,29 +325,43 @@
         tooltip.style.display = "none";
       }
 
-      function showTooltip(el) {
-        const key = el.getAttribute("data-i18n-tip");
-        const tr = key ? _t(key) : "";
-        const text = tr || "?";
+   function showTooltip(el) {
+  const key = el.getAttribute("data-i18n-tip");
+  const tr = key ? _t(key) : "";
+  const text = tr || "?";
 
-        const rect = el.getBoundingClientRect();
-        const scrollY = window.scrollY || window.pageYOffset;
-        const scrollX = window.scrollX || window.pageXOffset;
+  const rect = el.getBoundingClientRect();
 
-        tooltip.textContent = text;
-        tooltip.style.display = "block";
+  tooltip.textContent = text;
+  tooltip.style.display = "block";
 
-        const vw = document.documentElement.clientWidth || window.innerWidth;
-        const desiredCenter = rect.left + rect.width / 2;
-        const pad = 16;
-        const minCenter = pad;
-        const maxCenter = vw - pad;
-        const clampedCenter = Math.max(minCenter, Math.min(maxCenter, desiredCenter));
+  const vw = document.documentElement.clientWidth || window.innerWidth;
+  const vh = document.documentElement.clientHeight || window.innerHeight;
 
-        tooltip.style.top = (rect.bottom + 8 + scrollY) + "px";
-        tooltip.style.left = (clampedCenter + scrollX) + "px";
-        tooltip.classList.add("vr-tooltip-visible");
-      }
+  // mesurer la taille réelle du tooltip
+  const tw = tooltip.offsetWidth || 0;
+  const th = tooltip.offsetHeight || 0;
+
+  const pad = 12;
+
+  // clamp horizontal en tenant compte de la moitié de la largeur
+  const desiredCenter = rect.left + rect.width / 2;
+  const minCenter = pad + tw / 2;
+  const maxCenter = vw - pad - tw / 2;
+  const clampedCenter = Math.max(minCenter, Math.min(maxCenter, desiredCenter));
+
+  // position verticale : dessous, sinon au-dessus si ça déborde
+  let top = rect.bottom + 8;
+  if (top + th > vh - pad) {
+    top = rect.top - 8 - th;
+  }
+  if (top < pad) top = pad;
+
+  tooltip.style.left = clampedCenter + "px";
+  tooltip.style.top = top + "px";
+  tooltip.classList.add("vr-tooltip-visible");
+}
+
 
       document.querySelectorAll(".vr-info-btn").forEach((el) => {
         el.addEventListener("click", function (e) {
