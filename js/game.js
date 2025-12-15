@@ -39,9 +39,7 @@
       const url = `${DECKS_PATH}/${universeId}.json`;
       const res = await fetch(url, { cache: "no-cache" });
       if (!res.ok) {
-        throw new Error(
-          `[VREventsLoader] Impossible de charger le deck: ${url}`
-        );
+        throw new Error(`[VREventsLoader] Impossible de charger le deck: ${url}`);
       }
 
       const deckJson = await res.json();
@@ -63,9 +61,7 @@
       const url = `${CARDS_I18N_PATH}/cards_${universeId}_${lang}.json`;
       const res = await fetch(url, { cache: "no-cache" });
       if (!res.ok) {
-        throw new Error(
-          `[VREventsLoader] Impossible de charger ${url}`
-        );
+        throw new Error(`[VREventsLoader] Impossible de charger ${url}`);
       }
       return res.json();
     }
@@ -118,7 +114,6 @@
         const labelEl = el.querySelector(".vr-gauge-label");
         const fillEl = el.querySelector(".vr-gauge-fill");
         const cfg = gaugesCfg[idx];
-
         if (!cfg) return;
 
         // ✅ label par langue si dispo
@@ -128,7 +123,12 @@
           cfg?.id;
 
         if (labelEl) labelEl.textContent = label || "—";
+
+        // ✅ id pour lire la valeur
         if (fillEl) fillEl.dataset.gaugeId = cfg.id;
+
+        // ✅ important pour le CSS: body[data-universe] .vr-gauge[data-gauge-id="..."]
+        el.dataset.gaugeId = cfg.id;
       });
     },
 
@@ -139,12 +139,16 @@
         if (!preview) {
           preview = document.createElement("div");
           preview.className = "vr-gauge-preview";
-          preview.style.width = "0%";
+
+          // ✅ webp: on pilote par --vr-pct
+          preview.style.setProperty("--vr-pct", "0%");
+
           el.querySelector(".vr-gauge-frame")?.appendChild(preview);
         }
       });
     },
 
+    // ✅ VERSION WEBP : on ne met PLUS width, on met --vr-pct
     updateGauges() {
       const gaugesCfg = this.universeConfig?.gauges || [];
       const fillEls = document.querySelectorAll(".vr-gauge-fill");
@@ -152,12 +156,17 @@
       fillEls.forEach((fillEl, idx) => {
         const gaugeId = fillEl.dataset.gaugeId || gaugesCfg[idx]?.id || null;
         if (!gaugeId) return;
-        const val = window.VRState.getGaugeValue(gaugeId) ?? gaugesCfg[idx]?.start ?? 50;
-        fillEl.style.width = `${val}%`;
+
+        const val =
+          window.VRState.getGaugeValue(gaugeId) ??
+          gaugesCfg[idx]?.start ??
+          50;
+
+        fillEl.style.setProperty("--vr-pct", `${val}%`);
       });
 
       const previewEls = document.querySelectorAll(".vr-gauge-preview");
-      previewEls.forEach((previewEl) => (previewEl.style.width = "0%"));
+      previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-pct", "0%"));
     },
 
     showCard(cardLogic) {
@@ -323,12 +332,15 @@
       card.addEventListener("touchend", onPointerUp);
     },
 
+    // ✅ VERSION WEBP : preview pilotée par --vr-pct
     _updatePreviewFromDrag(dragChoice) {
       const gaugesCfg = this.universeConfig?.gauges || [];
       const previewEls = document.querySelectorAll(".vr-gauge-preview");
+
       previewEls.forEach((previewEl, idx) => {
         const cfg = gaugesCfg[idx];
         if (!cfg) return;
+
         const gaugeId = cfg.id;
         const baseVal = window.VRState.getGaugeValue(gaugeId) ?? cfg.start ?? 50;
 
@@ -337,8 +349,9 @@
           const d = this.currentCardLogic.choices[dragChoice].gaugeDelta?.[gaugeId];
           if (typeof d === "number") delta = d;
         }
+
         const previewVal = Math.max(0, Math.min(100, baseVal + delta));
-        previewEl.style.width = `${previewVal}%`;
+        previewEl.style.setProperty("--vr-pct", `${previewVal}%`);
       });
     }
   };
@@ -622,7 +635,7 @@ window.VRGame = {
     const viewGame = document.getElementById("view-game");
     if (!viewGame) return;
 
-    // ✅ pour CSS variables univers
+    // ✅ pour CSS variables univers + jauges univers
     if (universeId) document.body.dataset.universe = universeId;
     else delete document.body.dataset.universe;
 

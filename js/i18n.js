@@ -2,16 +2,15 @@
   "use strict";
 
   // === CONFIG ===
-  const BASE_PATH = "data/i18n"; // ✅ ton chemin réel
+  const BASE_PATH = "data/i18n";
   const DEFAULT_LANG = "fr";
-  const STORAGE_KEY = "vr_lang";
 
-  // Bundles optionnels (on charge ce qui existe, sinon on ignore)
-  // ui_* = textes UI (index, menus)
-  // cards_* = textes des cartes
-  // endings_* = fins
-  // cards_paradis_* = cartes paradis (si utilisé)
-  const BUNDLES = ["ui", "cards", "endings", "cards_paradis"];
+  // ✅ aligné avec le reste de ton projet
+  const STORAGE_KEY = "vrealms_lang";
+
+  // ✅ on ne charge PLUS "cards" / "endings" ici
+  // (les cartes et les fins sont chargées par le moteur: events-loader + VREndings)
+  const UI_BUNDLES = ["ui"];
 
   let _lang = DEFAULT_LANG;
   let _dict = {};
@@ -19,8 +18,7 @@
   function normalizeLang(raw) {
     const s = String(raw || "").trim().toLowerCase();
     if (!s) return DEFAULT_LANG;
-    // "fr-FR" -> "fr"
-    if (s.includes("-")) return s.split("-")[0];
+    if (s.includes("-")) return s.split("-")[0]; // fr-FR -> fr
     return s;
   }
 
@@ -44,30 +42,29 @@
     return res.json();
   }
 
-  async function tryLoadBundle(bundle, lang) {
-    const url = `${BASE_PATH}/${bundle}_${lang}.json`; // ✅ ui_fr.json etc
+  async function tryLoadUiBundle(bundle, lang) {
+    const url = `${BASE_PATH}/${bundle}_${lang}.json`; // ui_fr.json
     try {
       return await fetchJson(url);
-    } catch (e) {
-      // 404 = normal si tu n'as pas encore ce bundle pour cette langue
+    } catch (_) {
       return null;
     }
   }
 
-  async function loadAllBundles(lang) {
+  async function loadUi(lang) {
     const l = normalizeLang(lang);
 
-    // 1) on tente la langue demandée
+    // 1) tente la langue demandée
     const out = {};
-    for (const b of BUNDLES) {
-      const j = await tryLoadBundle(b, l);
+    for (const b of UI_BUNDLES) {
+      const j = await tryLoadUiBundle(b, l);
       if (j) deepMerge(out, j);
     }
 
-    // 2) fallback : si rien n'a chargé, on tente la langue par défaut
+    // 2) fallback sur fr si rien n’a chargé
     if (Object.keys(out).length === 0 && l !== DEFAULT_LANG) {
-      for (const b of BUNDLES) {
-        const j = await tryLoadBundle(b, DEFAULT_LANG);
+      for (const b of UI_BUNDLES) {
+        const j = await tryLoadUiBundle(b, DEFAULT_LANG);
         if (j) deepMerge(out, j);
       }
       return { dict: out, lang: DEFAULT_LANG };
@@ -148,7 +145,7 @@
 
   async function initI18n() {
     const wanted = getSavedLang();
-    const { dict, lang } = await loadAllBundles(wanted);
+    const { dict, lang } = await loadUi(wanted);
 
     _lang = lang || wanted || DEFAULT_LANG;
     _dict = dict || {};
@@ -161,7 +158,7 @@
 
   async function setLang(lang) {
     const l = saveLangLocal(lang);
-    const { dict, lang: resolvedLang } = await loadAllBundles(l);
+    const { dict, lang: resolvedLang } = await loadUi(l);
 
     _lang = resolvedLang || l;
     _dict = dict || {};
@@ -169,7 +166,7 @@
     applyTranslations(_dict);
     document.documentElement.lang = _lang;
 
-    // hook DB (plus tard Supabase)
+    // hook remote (plus tard)
     try {
       if (window.VRRemoteStore?.saveLang) await window.VRRemoteStore.saveLang(_lang);
     } catch (e) {

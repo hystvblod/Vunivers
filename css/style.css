@@ -345,56 +345,62 @@ body.vr-body-game .vr-header::before {
   z-index: 1;
 }
 
-/* ===== Jauges (base) ===== */
-.vr-gauges-row {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 12px;
+/* ===== Jauges (WEBP) ===== */
+
+.vr-gauges-row{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-bottom:12px;
 }
 
-.vr-gauge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.vr-gauge{
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
 
-.vr-gauge-label {
-  font-size: 12px;
-  min-width: 72px;
+/* label au-dessus en mode game (déjà géré plus bas) */
+.vr-gauge-label{
+  font-size:12px;
+  min-width:72px;
 }
 
-.vr-gauge-frame {
-  position: relative;
-  flex: 1;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.9);
-  overflow: hidden;
-  border: 1px solid rgba(148, 163, 184, 0.5);
+/* ✅ cadre = image frame, fill = image fill découpée par % */
+.vr-gauge-frame{
+  position:relative;
+  width:74px;
+  height:74px;
+  flex:0 0 auto;
+
+  background-image: var(--vr-gauge-frame-url);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* pour éviter les artefacts */
+  transform: translateZ(0);
 }
 
-.vr-gauge-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 50%;
-  border-radius: 999px;
-  background: linear-gradient(to right, #22c55e, #fbbf24, #ef4444);
+/* fill / preview: image pleine taille, découpée depuis le haut */
+.vr-gauge-fill,
+.vr-gauge-preview{
+  position:absolute;
+  inset:0;
+  background-image: var(--vr-gauge-fill-url);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events:none;
+
+  /* on montre le bas : top = 100% - pct */
+  clip-path: inset(calc(100% - var(--vr-pct, 50%)) 0 0 0);
 }
 
-.vr-gauge-preview {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0%;
-  border-radius: 999px;
-  background: linear-gradient(to right, #22c55e, #fbbf24, #ef4444);
-  opacity: 0.35;
-  pointer-events: none;
+.vr-gauge-preview{
+  opacity:0.35;
 }
+
 
 /* ===== Carte + choix ===== */
 
@@ -666,41 +672,57 @@ body.vr-body-game .vr-gauge .vr-gauge-frame {
 }
 
 /* Carte scenario compacte */
-body.vr-body-game .vr-card-main-compact {
-  width: min(330px, 92vw);
-  max-width: 330px;
-  padding: 14px 16px;
-  margin: 0 auto 6px auto;
+body.vr-body-game .vr-card-main-compact{
+  width: min(420px, 94vw);
+  max-width: 420px;
+  padding: 18px 18px;
+  margin: 0 auto 10px auto;
   background-color: transparent;
 }
 
-body.vr-body-game .vr-card-main-compact .vr-card-title {
-  margin: 0 0 6px;
-  font-size: 16px;
+body.vr-body-game .vr-card-main-compact .vr-card-title{
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 1.15;
 }
 
-body.vr-body-game .vr-card-main-compact .vr-card-text {
+body.vr-body-game .vr-card-main-compact .vr-card-text{
   margin: 0;
-  font-size: 13.5px;
-  color: rgba(255,255,255,0.82);
+  font-size: 14.2px;
+  line-height: 1.35;
+  color: rgba(255,255,255,0.85);
 }
+
 
 /* Choix : texte en bas */
-body.vr-body-game .vr-choice-button {
-  width: min(330px, 92vw);
-  max-width: 330px;
-  height: 74px;
-  min-height: 74px;
-  padding: 10px 18px 12px;
+body.vr-body-game .vr-choice-button{
+  width: min(440px, 96vw);
+  max-width: 440px;
+
+  height: 92px;
+  min-height: 92px;
+
+  padding: 12px 18px 14px;
   align-items: flex-end;
+
   background-size: 100% 100%;
 }
 
-body.vr-body-game .vr-choice-label {
+body.vr-body-game .vr-choice-label{
+  width: 100%;
   text-align: left;
-  font-size: 0.95rem;
+
+  font-size: 1rem;
   line-height: 1.2;
+
+  /* ✅ le texte reste DANS la cartouche */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* 3 lignes max */
+  overflow: hidden;
+  word-break: break-word;
 }
+
 
 /* Meta bar centrée et lisible */
 body.vr-body-game .vr-meta-bar {
@@ -773,3 +795,23 @@ body.vr-body-game .vr-game-header {
   --vr-universe-card: url("../assets/img/ui/vampire_card.webp");
   --vr-universe-choice: url("../assets/img/ui/vampire_choice.webp");
 }
+/* ===== Gauges assets par univers (1 seul CSS) ===== */
+
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="g1"]{
+  --vr-gauge-frame-url: url("../assets/img/gauges/hell_king/g1_frame.webp");
+  --vr-gauge-fill-url:  url("../assets/img/gauges/hell_king/g1_fill.webp");
+}
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="g2"]{
+  --vr-gauge-frame-url: url("../assets/img/gauges/hell_king/g2_frame.webp");
+  --vr-gauge-fill-url:  url("../assets/img/gauges/hell_king/g2_fill.webp");
+}
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="g3"]{
+  --vr-gauge-frame-url: url("../assets/img/gauges/hell_king/g3_frame.webp");
+  --vr-gauge-fill-url:  url("../assets/img/gauges/hell_king/g3_fill.webp");
+}
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="g4"]{
+  --vr-gauge-frame-url: url("../assets/img/gauges/hell_king/g4_frame.webp");
+  --vr-gauge-fill-url:  url("../assets/img/gauges/hell_king/g4_fill.webp");
+}
+
+/* Tu dupliques le bloc pour heaven_king, medieval_king, etc. */
