@@ -58,10 +58,18 @@
     },
 
     async _loadCardTexts(universeId, lang) {
-      const url = `${CARDS_I18N_PATH}/cards_${universeId}_${lang}.json`;
-      const res = await fetch(url, { cache: "no-cache" });
+      // ✅ NOUVEAU FORMAT : data/i18n/<lang>/cards_<universeId>.json
+      const urlNew = `${CARDS_I18N_PATH}/${lang}/cards_${universeId}.json`;
+
+      // ✅ FALLBACK ANCIEN FORMAT : data/i18n/cards_<universeId>_<lang>.json
+      const urlOld = `${CARDS_I18N_PATH}/cards_${universeId}_${lang}.json`;
+
+      let res = await fetch(urlNew, { cache: "no-cache" });
       if (!res.ok) {
-        throw new Error(`[VREventsLoader] Impossible de charger ${url}`);
+        res = await fetch(urlOld, { cache: "no-cache" });
+      }
+      if (!res.ok) {
+        throw new Error(`[VREventsLoader] Impossible de charger ${urlNew} (ou fallback ${urlOld})`);
       }
       return res.json();
     }
@@ -443,8 +451,14 @@
     const key = `${universeId}__${lang}`;
     if (cache.has(key)) return cache.get(key);
 
-    const url = `${ENDINGS_BASE_PATH}/endings_${universeId}_${lang}.json`;
-    const res = await fetch(url, { cache: "no-cache" });
+    // ✅ NOUVEAU FORMAT : data/i18n/<lang>/endings_<universeId>.json
+    const urlNew = `${ENDINGS_BASE_PATH}/${lang}/endings_${universeId}.json`;
+
+    // ✅ FALLBACK ANCIEN FORMAT : data/i18n/endings_<universeId>_<lang>.json
+    const urlOld = `${ENDINGS_BASE_PATH}/endings_${universeId}_${lang}.json`;
+
+    let res = await fetch(urlNew, { cache: "no-cache" });
+    if (!res.ok) res = await fetch(urlOld, { cache: "no-cache" });
 
     // Si le fichier n'existe pas, on ne crash pas : on met endings vides.
     if (!res.ok) {
