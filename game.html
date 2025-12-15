@@ -9,7 +9,7 @@
 
 <body class="vr-body vr-body-game">
 
-  <!-- ✅ Icônes TOP -->
+  <!-- ✅ Icônes DIRECTEMENT dans la page (comme index) -->
   <div class="vr-top-actions vr-top-actions-game" aria-label="Top actions">
     <a class="vr-icon-button" href="profile.html" aria-label="Profil">
       <img class="vr-top-icon" src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
@@ -27,27 +27,11 @@
   <main class="vr-main">
     <section id="view-game" class="vr-view vr-view-active">
 
-      <!-- ✅ BARRE STATS (entre icônes et jauges) -->
-      <div class="vr-top-stats" aria-label="Stats">
-        <div class="vr-top-stats-row vr-top-stats-currencies">
-          <div class="vr-top-stat">
-            <img class="vr-top-stat-icon" src="assets/img/ui/icon_vcoins.webp" alt="" draggable="false" />
-            <span id="meta-vcoins" class="vr-top-stat-value">0</span>
-          </div>
-
-          <div class="vr-top-stat">
-            <img class="vr-top-stat-icon" src="assets/img/ui/icon_tokens.webp" alt="" draggable="false" />
-            <span id="meta-tokens" class="vr-top-stat-value">0</span>
-          </div>
-        </div>
-
-        <div class="vr-top-stats-row vr-top-stats-king">
-          <span id="meta-king-name" class="vr-top-king">—</span>
-          <span id="meta-years" class="vr-top-years">0 ans</span>
-        </div>
+      <div class="vr-game-header">
+        <h2 class="vr-section-title" data-i18n="game.title"></h2>
+        <p class="vr-main-text" data-i18n="game.subtitle"></p>
       </div>
 
-      <!-- ✅ Jauges -->
       <div class="vr-gauges-row">
         <div class="vr-gauge">
           <span class="vr-gauge-label"></span>
@@ -82,7 +66,6 @@
         </div>
       </div>
 
-      <!-- Carte + choix -->
       <div class="vr-card-container">
         <div class="vr-card-stack">
 
@@ -106,14 +89,12 @@
         </div>
       </div>
 
-      <!-- ✅ (tu peux garder, mais on ne l’affiche plus) -->
-      <div class="vr-meta-bar" style="display:none;">
-        <span id="meta-king-name-legacy"></span>
-        <span id="meta-years-legacy"></span>
-        <span id="meta-coins-legacy"></span>
+      <div class="vr-meta-bar">
+        <span id="meta-king-name"></span>
+        <span id="meta-years"></span>
+        <span id="meta-coins"></span>
       </div>
 
-      <!-- Fin -->
       <div class="vr-ending-overlay" id="vr-ending-overlay">
         <div class="vr-ending-card">
           <h3 class="vr-ending-title" id="ending-title"></h3>

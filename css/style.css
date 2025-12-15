@@ -215,15 +215,25 @@ body.vr-body-game .vr-header::before { content: none; }
 
   overflow: hidden;
 }
-#view-game::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: transparent; /* ✅ VOILE JEU OFF */
-  pointer-events: none;
-  z-index: 0;
+#view-game::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  /* ✅ le BG passe ici */
+  background-image: var(--vr-universe-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* ✅ 5% transparent */
+  opacity: 0.95;
+
+  pointer-events:none;
+  z-index:0;
 }
-#view-game > * { position: relative; z-index: 1; }
+#view-game > *{ position:relative; z-index:1; }
+
 
 /* ===== Jauges (WEBP) ===== */
 .vr-gauges-row{
@@ -427,7 +437,7 @@ body.vr-body-game #view-game{
   flex-direction: column;
   gap: 10px;
 }
-body.vr-body-game #view-game::before{ background: transparent !important; } /* ✅ VOILE OFF */
+
 
 /* ✅ 4 jauges côte à côte (TOUJOURS) */
 body.vr-body-game .vr-gauges-row{
