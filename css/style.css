@@ -40,10 +40,7 @@ html{
   margin:0;
   padding:0;
   height:100%;
-  html{
-  background: var(--vr-bg);
-}
-
+  background: var(--vr-overlay), var(--vr-bg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -159,7 +156,7 @@ body:not(.vr-body-game) .vr-header > *{ position:relative; z-index:1; }
   height:72px;
   max-width:240px;
   object-fit:contain;
-  filter: drop-shadow(0 10px 28px rgba(0,0,0,0.0));
+  filter: drop-shadow(0 10px 28px rgba(0,0,0,0.45));
 }
 .vr-section-title{ font-size:18px; margin:12px 0 10px; }
 .vr-universe-grid{ display:flex; flex-direction:column; gap:10px; }
@@ -232,7 +229,7 @@ body:not(.vr-body-game) .vr-header > *{ position:relative; z-index:1; }
   content:"";
   position:absolute;
   inset:0;
-  background: transparent;
+  background: rgba(0,0,0,0.35);
   pointer-events:none;
   z-index:0;
 }
