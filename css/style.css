@@ -85,6 +85,32 @@ body.vr-body {
   margin: 0 auto;
 }
 
+/* ✅ Empêche de “voir” le contenu qui scroll derrière le header (HOME) */
+body:not(.vr-body-game) .vr-header::before {
+  content: "";
+  position: absolute;
+  inset: -8px 0 -10px 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 8, 16, 0.55) 0%,
+    rgba(5, 8, 16, 0.20) 55%,
+    rgba(5, 8, 16, 0.0) 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: none;
+  z-index: 0;
+}
+body:not(.vr-body-game) .vr-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* En jeu : pas de “barre” */
+body.vr-body-game .vr-header::before {
+  content: none;
+}
+
 /* ancien logo / side nav masqués */
 .vr-logo,
 .vr-side-nav {
@@ -511,7 +537,15 @@ body.vr-body {
   box-shadow: var(--vr-shadow-soft);
 }
 
-.vr-footer { display: none; }
+/* ✅ Footer : neutralisé (évite tout “bloc” en bas si un CSS/JS le rallume) */
+.vr-footer {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
 #vr-card-main { touch-action: none; }
 
 @media (min-width: 768px) {
