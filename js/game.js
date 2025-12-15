@@ -116,18 +116,25 @@
         const cfg = gaugesCfg[idx];
         if (!cfg) return;
 
-        // ✅ label par langue si dispo
-        const label =
+        // ✅ label via i18n (ui_xx.json) si dispo, sinon fallback config
+        const key = `gauges.${this.universeConfig?.id || "default"}.${cfg.id}`;
+        const tr = (window.VRI18n && typeof window.VRI18n.t === "function")
+          ? window.VRI18n.t(key)
+          : key;
+
+        const fallback =
           cfg?.[`label_${this.lang}`] ||
           cfg?.label ||
           cfg?.id;
 
-        if (labelEl) labelEl.textContent = label || "—";
+        const finalLabel = (tr && tr !== key) ? tr : fallback;
+
+        if (labelEl) labelEl.textContent = finalLabel || "—";
 
         // ✅ id pour lire la valeur
         if (fillEl) fillEl.dataset.gaugeId = cfg.id;
 
-        // ✅ important pour le CSS: body[data-universe] .vr-gauge[data-gauge-id="..."]
+        // ✅ utile pour CSS si tu veux mapper par data-gauge-id
         el.dataset.gaugeId = cfg.id;
       });
     },
@@ -139,16 +146,13 @@
         if (!preview) {
           preview = document.createElement("div");
           preview.className = "vr-gauge-preview";
-
-          // ✅ webp: on pilote par --vr-pct
-          preview.style.setProperty("--vr-pct", "0%");
-
+          preview.style.setProperty("--vr-fill", "0");
           el.querySelector(".vr-gauge-frame")?.appendChild(preview);
         }
       });
     },
 
-    // ✅ VERSION WEBP : on ne met PLUS width, on met --vr-pct
+    // ✅ NOUVEL AFFICHAGE : on pilote l’intensité via --vr-fill (0..1)
     updateGauges() {
       const gaugesCfg = this.universeConfig?.gauges || [];
       const fillEls = document.querySelectorAll(".vr-gauge-fill");
@@ -162,11 +166,11 @@
           gaugesCfg[idx]?.start ??
           50;
 
-        fillEl.style.setProperty("--vr-pct", `${val}%`);
+        fillEl.style.setProperty("--vr-fill", String(Math.max(0, Math.min(100, val)) / 100));
       });
 
       const previewEls = document.querySelectorAll(".vr-gauge-preview");
-      previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-pct", "0%"));
+      previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-fill", "0"));
     },
 
     showCard(cardLogic) {
@@ -332,7 +336,7 @@
       card.addEventListener("touchend", onPointerUp);
     },
 
-    // ✅ VERSION WEBP : preview pilotée par --vr-pct
+    // (preview gardée, mais côté CSS elle est masquée)
     _updatePreviewFromDrag(dragChoice) {
       const gaugesCfg = this.universeConfig?.gauges || [];
       const previewEls = document.querySelectorAll(".vr-gauge-preview");
@@ -351,7 +355,7 @@
         }
 
         const previewVal = Math.max(0, Math.min(100, baseVal + delta));
-        previewEl.style.setProperty("--vr-pct", `${previewVal}%`);
+        previewEl.style.setProperty("--vr-fill", String(previewVal / 100));
       });
     }
   };

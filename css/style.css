@@ -224,7 +224,7 @@ body.vr-body-game .vr-header::before { content: none; }
 }
 #view-game > * { position: relative; z-index: 1; }
 
-/* ===== Jauges (WEBP) ===== */
+/* ===== Jauges (FRAME + FILL, intensité via opacité) ===== */
 .vr-gauges-row{
   display:flex;
   flex-direction:column;
@@ -253,11 +253,12 @@ body.vr-body-game .vr-header::before { content: none; }
   background-position: center;
   background-repeat: no-repeat;
   pointer-events:none;
-  /* ✅ plus de "découpe" : on pilote l’intensité via --vr-fill (0..1) */
   clip-path: none;
 }
 
-/* ✅ intensité (valeur) via opacité + saturation */
+.vr-gauge-preview{ display:none !important; }
+
+/* ✅ intensité (valeur) via opacité + saturation (0..1) */
 .vr-gauge-fill{
   opacity: calc(0.22 + (var(--vr-fill, 0.5) * 0.78));
   filter:
@@ -265,9 +266,6 @@ body.vr-body-game .vr-header::before { content: none; }
     contrast(calc(0.98 + (var(--vr-fill, 0.5) * 0.22)))
     brightness(calc(0.96 + (var(--vr-fill, 0.5) * 0.10)));
 }
-
-/* ✅ l'ancienne preview est désactivée (on n’utilise plus le "webp transparent") */
-.vr-gauge-preview{ display:none !important; }
 
 /* ===== Carte + choix ===== */
 .vr-card-container { display: flex; justify-content: center; margin-top: 8px; width: 100%; }
@@ -422,7 +420,7 @@ body.vr-body-game #view-game{
   flex-direction: column;
   gap: 10px;
 }
-body.vr-body-game #view-game::before{ background: transparent !important; } /* ✅ VOILE OFF */
+body.vr-body-game #view-game::before{ background: transparent !important; }
 
 /* ✅ 4 jauges côte à côte (FORCÉ) */
 body.vr-body-game .vr-gauges-row{
@@ -443,6 +441,7 @@ body.vr-body-game .vr-gauge{
   flex-direction: column;
   align-items: center;
   gap: 6px;
+  justify-self: center; /* ✅ évite l’étirement chelou en grid */
 }
 body.vr-body-game .vr-gauge-label{
   min-width: 0;
@@ -540,7 +539,7 @@ body.vr-body-game #view-game{
 }
 
 /* ==========================================================
-   JAUGES HELL (SANS data-gauge-id) -> mapping par ordre 1..4
+   JAUGES HELL -> mapping par ordre 1..4 (comme tu avais)
    ========================================================== */
 body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-frame{
   background-image: url("../assets/img/gauges/hell_king/g1_frame.webp");
