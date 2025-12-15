@@ -9,24 +9,20 @@
 
 <body class="vr-body vr-body-game">
 
-  <header class="vr-header vr-header-game" aria-label="Top actions">
-    <div class="vr-top-actions">
-      <button class="vr-icon-button" type="button" id="btn-profile" aria-label="Profile">
-        <img class="vr-top-icon" src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
-      </button>
+  <!-- ✅ Icônes DIRECTEMENT dans la page (comme index) -->
+  <div class="vr-top-actions vr-top-actions-game" aria-label="Top actions">
+    <a class="vr-icon-button" href="profile.html" aria-label="Profil">
+      <img class="vr-top-icon" src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
+    </a>
 
-      <button class="vr-icon-button" type="button" id="btn-settings" aria-label="Settings">
-        <img class="vr-top-icon" src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
-      </button>
+    <a class="vr-icon-button" href="settings.html" aria-label="Paramètres">
+      <img class="vr-top-icon" src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
+    </a>
 
-      <button class="vr-icon-button" type="button" id="btn-shop" aria-label="Shop">
-        <img class="vr-top-icon" src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
-      </button>
-    </div>
-  </header>
-
-  <!-- ✅ SUPPRIMÉ : plus de vr-overlay en game (ça peut cacher le header) -->
-  <!-- <div class="vr-overlay"></div> -->
+    <a class="vr-icon-button" href="shop.html" aria-label="Boutique">
+      <img class="vr-top-icon" src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
+    </a>
+  </div>
 
   <main class="vr-main">
     <section id="view-game" class="vr-view vr-view-active">
@@ -118,23 +114,6 @@
   <script src="js/purchases.js"></script>
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
-
-  <!-- ✅ Navigation boutons (pages HTML) -->
-  <script>
-    (function(){
-      const go = (url) => { window.location.href = url; };
-
-      const p = document.getElementById("btn-profile");
-      const s = document.getElementById("btn-settings");
-      const sh = document.getElementById("btn-shop");
-
-      if (p)  p.addEventListener("click", () => go("profile.html"));
-      if (s)  s.addEventListener("click", () => go("settings.html"));
-      if (sh) sh.addEventListener("click", () => go("shop.html"));
-    })();
-  </script>
-
-  <!-- IMPORTANT : ton moteur/engine -->
   <script src="js/game.js"></script>
 </body>
 </html>

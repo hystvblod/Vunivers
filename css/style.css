@@ -696,6 +696,56 @@ body.vr-body-game .vr-choice-label{
   --vr-universe-choice: url("../assets/img/ui/vampire_choice.webp");
 }
 
+
+/* ==========================================================
+   TOP ACTIONS EN JEU (comme index) — 3 icônes côte-à-côte
+   ========================================================== */
+
+/* ✅ on n'utilise PAS le header en jeu */
+body.vr-body-game .vr-header { display: none !important; }
+
+/* ✅ barre d'icônes fixée en haut */
+body.vr-body-game .vr-top-actions-game{
+  position: fixed !important;
+  top: 10px !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 2000 !important;
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 10px !important;
+
+  padding: 10px 12px 8px !important;
+}
+
+/* ✅ taille bouton */
+body.vr-body-game .vr-icon-button{
+  width: 44px !important;
+  height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ✅ taille image : anti “engrenage géant” */
+body.vr-body-game .vr-icon-button img,
+body.vr-body-game .vr-top-icon{
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* ✅ on laisse de la place au dessus pour ne pas passer sous les icônes */
+body.vr-body-game #view-game{
+  padding-top: 78px !important;
+}
+
+
 /* ===== Gauges assets par univers (1 seul CSS) ===== */
 
 body[data-universe="hell_king"] .vr-gauge[data-gauge-id="g1"]{
