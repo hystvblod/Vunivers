@@ -16,10 +16,16 @@
   let _dict = {};
 
   function normalizeLang(raw) {
-    const s = String(raw || "").trim().toLowerCase();
-    if (!s) return DEFAULT_LANG;
-    if (s.includes("-")) return s.split("-")[0]; // fr-FR -> fr
-    return s;
+    const s0 = String(raw || "").trim().toLowerCase();
+    if (!s0) return DEFAULT_LANG;
+
+    // pt-br => ptbr (comme ton dossier)
+    if (s0 === "pt-br" || s0 === "ptbr") return "ptbr";
+
+    // fr-FR => fr / en-US => en
+    if (s0.includes("-")) return s0.split("-")[0];
+
+    return s0;
   }
 
   function deepMerge(target, source) {
@@ -43,11 +49,20 @@
   }
 
   async function tryLoadUiBundle(bundle, lang) {
-    const url = `${BASE_PATH}/${bundle}_${lang}.json`; // ui_fr.json
+    // ✅ NOUVEAU FORMAT : data/i18n/<lang>/<bundle>.json  (ex: data/i18n/fr/ui.json)
+    const urlNew = `${BASE_PATH}/${lang}/${bundle}.json`;
+
+    // ✅ FALLBACK ANCIEN FORMAT : data/i18n/<bundle>_<lang>.json (ex: ui_fr.json)
+    const urlOld = `${BASE_PATH}/${bundle}_${lang}.json`;
+
     try {
-      return await fetchJson(url);
+      return await fetchJson(urlNew);
     } catch (_) {
-      return null;
+      try {
+        return await fetchJson(urlOld);
+      } catch (__) {
+        return null;
+      }
     }
   }
 
