@@ -2,8 +2,9 @@
    VREALMS - STYLE GLOBAL NETTOYÉ (PROPRE)
    - 1 seul fond (html)
    - game: pas de texte "Partie en cours"
-   - game: 4 jauges côte à côte
+   - game: 4 jauges côte à côte (toujours)
    - icônes top: toujours visibles + taille fixe
+   - jauges: frame + fill + preview par découpe (clip)
    ========================================= */
 
 /* ===== Variables ===== */
@@ -224,7 +225,7 @@ body.vr-body-game .vr-header::before { content: none; }
 }
 #view-game > * { position: relative; z-index: 1; }
 
-/* ===== Jauges (FRAME + FILL, intensité via opacité) ===== */
+/* ===== Jauges (WEBP) ===== */
 .vr-gauges-row{
   display:flex;
   flex-direction:column;
@@ -236,8 +237,8 @@ body.vr-body-game .vr-header::before { content: none; }
 
 .vr-gauge-frame{
   position:relative;
-  width:74px;
-  height:74px;
+  width: var(--vr-gauge-size, 74px);
+  height: var(--vr-gauge-size, 74px);
   flex:0 0 auto;
   background-size: contain;
   background-position: center;
@@ -253,18 +254,18 @@ body.vr-body-game .vr-header::before { content: none; }
   background-position: center;
   background-repeat: no-repeat;
   pointer-events:none;
-  clip-path: none;
+  clip-path: inset(calc(100% - var(--vr-pct, 50%)) 0 0 0);
 }
 
-.vr-gauge-preview{ display:none !important; }
+/* Preview (pendant drag) */
+.vr-gauge-preview{
+  opacity: 0.35;
+  filter: saturate(1.05) brightness(1.05);
+}
 
-/* ✅ intensité (valeur) via opacité + saturation (0..1) */
+/* Fill (valeur réelle) */
 .vr-gauge-fill{
-  opacity: calc(0.22 + (var(--vr-fill, 0.5) * 0.78));
-  filter:
-    saturate(calc(0.70 + (var(--vr-fill, 0.5) * 0.85)))
-    contrast(calc(0.98 + (var(--vr-fill, 0.5) * 0.22)))
-    brightness(calc(0.96 + (var(--vr-fill, 0.5) * 0.10)));
+  opacity: 1;
 }
 
 /* ===== Carte + choix ===== */
@@ -387,7 +388,13 @@ body.vr-body-game .vr-header::before { content: none; }
 /* ==========================================================
    FIX GAME (game.html) — PLEIN ÉCRAN + JAUGES + ICÔNES
    ========================================================== */
-body.vr-body-game { background: #000; overflow: hidden; }
+body.vr-body-game {
+  /* ✅ jauges: taille auto pour garder 4 colonnes même sur petit écran */
+  --vr-gauge-size: clamp(52px, 18vw, 74px);
+
+  background: #000;
+  overflow: hidden;
+}
 
 /* ✅ SUPPRIME le texte “Partie en cours …” */
 body.vr-body-game .vr-game-header{ display: none !important; }
@@ -420,9 +427,9 @@ body.vr-body-game #view-game{
   flex-direction: column;
   gap: 10px;
 }
-body.vr-body-game #view-game::before{ background: transparent !important; }
+body.vr-body-game #view-game::before{ background: transparent !important; } /* ✅ VOILE OFF */
 
-/* ✅ 4 jauges côte à côte (FORCÉ) */
+/* ✅ 4 jauges côte à côte (TOUJOURS) */
 body.vr-body-game .vr-gauges-row{
   width: 100%;
   max-width: 980px;
@@ -431,19 +438,14 @@ body.vr-body-game .vr-gauges-row{
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
 }
-@media (max-width: 720px){
-  body.vr-body-game .vr-gauges-row{ grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 420px){
-  body.vr-body-game .vr-gauges-row{ grid-template-columns: 1fr; }
-}
+
 body.vr-body-game .vr-gauge{
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  justify-self: center; /* ✅ évite l’étirement chelou en grid */
 }
 body.vr-body-game .vr-gauge-label{
+  font-size: clamp(10px, 2.7vw, 12px);
   min-width: 0;
   text-align: center;
 
@@ -539,32 +541,37 @@ body.vr-body-game #view-game{
 }
 
 /* ==========================================================
-   JAUGES HELL -> mapping par ordre 1..4 (comme tu avais)
+   JAUGES HELL -> mapping SÉCURISÉ par ID (pas par ordre)
+   (ça garantit que "souls" utilisera toujours g1, etc.)
    ========================================================== */
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-frame{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="souls"] .vr-gauge-frame{
   background-image: url("../assets/img/gauges/hell_king/g1_frame.webp");
 }
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-fill{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="souls"] .vr-gauge-fill,
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="souls"] .vr-gauge-preview{
   background-image: url("../assets/img/gauges/hell_king/g1_fill.webp");
 }
 
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-frame{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="legions"] .vr-gauge-frame{
   background-image: url("../assets/img/gauges/hell_king/g2_frame.webp");
 }
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-fill{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="legions"] .vr-gauge-fill,
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="legions"] .vr-gauge-preview{
   background-image: url("../assets/img/gauges/hell_king/g2_fill.webp");
 }
 
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-frame{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="order"] .vr-gauge-frame{
   background-image: url("../assets/img/gauges/hell_king/g3_frame.webp");
 }
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-fill{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="order"] .vr-gauge-fill,
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="order"] .vr-gauge-preview{
   background-image: url("../assets/img/gauges/hell_king/g3_fill.webp");
 }
 
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-frame{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-frame{
   background-image: url("../assets/img/gauges/hell_king/g4_frame.webp");
 }
-body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-fill{
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-fill,
+body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-preview{
   background-image: url("../assets/img/gauges/hell_king/g4_fill.webp");
 }

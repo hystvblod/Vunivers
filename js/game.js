@@ -109,6 +109,7 @@
     _setupGaugeLabels() {
       const gaugesCfg = this.universeConfig?.gauges || [];
       const gaugeEls = document.querySelectorAll(".vr-gauge");
+      const universeId = this.universeConfig?.id || "unknown";
 
       gaugeEls.forEach((el, idx) => {
         const labelEl = el.querySelector(".vr-gauge-label");
@@ -116,26 +117,28 @@
         const cfg = gaugesCfg[idx];
         if (!cfg) return;
 
-        // ✅ label via i18n (ui_xx.json) si dispo, sinon fallback config
-        const key = `gauges.${this.universeConfig?.id || "default"}.${cfg.id}`;
-        const tr = (window.VRI18n && typeof window.VRI18n.t === "function")
-          ? window.VRI18n.t(key)
-          : key;
+        const gaugeId = cfg.id;
 
-        const fallback =
+        // ✅ i18n prioritaire: gauges.<universeId>.<gaugeId>
+        const i18nKey = `gauges.${universeId}.${gaugeId}`;
+        const translated =
+          window.VRI18n && typeof window.VRI18n.t === "function"
+            ? window.VRI18n.t(i18nKey)
+            : null;
+
+        const label =
+          (translated && translated !== i18nKey ? translated : null) ||
           cfg?.[`label_${this.lang}`] ||
           cfg?.label ||
           cfg?.id;
 
-        const finalLabel = (tr && tr !== key) ? tr : fallback;
-
-        if (labelEl) labelEl.textContent = finalLabel || "—";
+        if (labelEl) labelEl.textContent = label || "—";
 
         // ✅ id pour lire la valeur
-        if (fillEl) fillEl.dataset.gaugeId = cfg.id;
+        if (fillEl) fillEl.dataset.gaugeId = gaugeId;
 
-        // ✅ utile pour CSS si tu veux mapper par data-gauge-id
-        el.dataset.gaugeId = cfg.id;
+        // ✅ crucial pour le CSS: .vr-gauge[data-gauge-id="souls"] etc.
+        el.dataset.gaugeId = gaugeId;
       });
     },
 
@@ -146,13 +149,12 @@
         if (!preview) {
           preview = document.createElement("div");
           preview.className = "vr-gauge-preview";
-          preview.style.setProperty("--vr-fill", "0");
+          preview.style.setProperty("--vr-pct", "0%");
           el.querySelector(".vr-gauge-frame")?.appendChild(preview);
         }
       });
     },
 
-    // ✅ NOUVEL AFFICHAGE : on pilote l’intensité via --vr-fill (0..1)
     updateGauges() {
       const gaugesCfg = this.universeConfig?.gauges || [];
       const fillEls = document.querySelectorAll(".vr-gauge-fill");
@@ -163,14 +165,17 @@
 
         const val =
           window.VRState.getGaugeValue(gaugeId) ??
+          this.universeConfig?.initialGauges?.[gaugeId] ??
           gaugesCfg[idx]?.start ??
           50;
 
-        fillEl.style.setProperty("--vr-fill", String(Math.max(0, Math.min(100, val)) / 100));
+        // ✅ CSS fait la découpe via clip-path avec --vr-pct (ex: 50%)
+        fillEl.style.setProperty("--vr-pct", `${val}%`);
       });
 
+      // preview = 0 par défaut (sera mis à jour pendant le drag)
       const previewEls = document.querySelectorAll(".vr-gauge-preview");
-      previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-fill", "0"));
+      previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-pct", "0%"));
     },
 
     showCard(cardLogic) {
@@ -336,7 +341,6 @@
       card.addEventListener("touchend", onPointerUp);
     },
 
-    // (preview gardée, mais côté CSS elle est masquée)
     _updatePreviewFromDrag(dragChoice) {
       const gaugesCfg = this.universeConfig?.gauges || [];
       const previewEls = document.querySelectorAll(".vr-gauge-preview");
@@ -346,7 +350,11 @@
         if (!cfg) return;
 
         const gaugeId = cfg.id;
-        const baseVal = window.VRState.getGaugeValue(gaugeId) ?? cfg.start ?? 50;
+        const baseVal =
+          window.VRState.getGaugeValue(gaugeId) ??
+          this.universeConfig?.initialGauges?.[gaugeId] ??
+          cfg.start ??
+          50;
 
         let delta = 0;
         if (dragChoice && this.currentCardLogic?.choices?.[dragChoice]) {
@@ -355,7 +363,7 @@
         }
 
         const previewVal = Math.max(0, Math.min(100, baseVal + delta));
-        previewEl.style.setProperty("--vr-fill", String(previewVal / 100));
+        previewEl.style.setProperty("--vr-pct", `${previewVal}%`);
       });
     }
   };
@@ -389,7 +397,7 @@
       this.cardsPlayed = 0;
 
       (universeConfig.gauges || []).forEach((g) => {
-        this.gauges[g.id] = g.start ?? 50;
+        this.gauges[g.id] = universeConfig?.initialGauges?.[g.id] ?? g.start ?? 50;
         this.gaugeOrder.push(g.id);
       });
     },
@@ -639,11 +647,10 @@ window.VRGame = {
     const viewGame = document.getElementById("view-game");
     if (!viewGame) return;
 
-    // ✅ pour CSS variables univers + jauges univers
+    // ✅ pour CSS mapping jauges + fonds
     if (universeId) document.body.dataset.universe = universeId;
     else delete document.body.dataset.universe;
 
-    // legacy classes (optionnel)
     viewGame.classList.remove(
       "vr-bg-hell_king","vr-bg-heaven_king","vr-bg-medieval_king",
       "vr-bg-western_president","vr-bg-mega_corp_ceo","vr-bg-new_world_explorer","vr-bg-vampire_lord"
