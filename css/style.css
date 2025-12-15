@@ -28,6 +28,9 @@
   --vr-universe-choice: none;
 }
 
+/* ✅ sécurité : si un vieux vr-overlay traîne encore dans le HTML */
+.vr-overlay { display: none !important; }
+
 /* ===== Reset / base ===== */
 
 *,
@@ -127,14 +130,33 @@ body.vr-body-game .vr-header::before {
 .vr-top-actions {
   display: flex;
   gap: 16px;
+  align-items: center;
+  justify-content: center;
 }
 
+/* ✅ Taille explicite des boutons + images (sinon ça peut disparaître visuellement) */
 .vr-icon-button {
   border: none;
   background: transparent;
   padding: 0;
   cursor: pointer;
   text-decoration: none;
+
+  width: 46px;
+  height: 46px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vr-top-icon{
+  width: 46px;
+  height: 46px;
+  display: block;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* (optionnel si tu utilises des <span class="vr-icon-image">) */
@@ -513,7 +535,7 @@ body.vr-body-game .vr-header::before {
 }
 
 /* ==========================================================
-   FIX GAME (game.html) — PLEIN ÉCRAN + JAUGES + CARTE/CHOIX
+   FIX GAME (game.html) — HEADER TOUJOURS AU-DESSUS
    ========================================================== */
 
 body.vr-body-game {
@@ -521,22 +543,29 @@ body.vr-body-game {
   overflow: hidden;
 }
 
+/* ✅ header bien visible, au dessus du décor */
 body.vr-body-game .vr-header {
   position: fixed;
-  top: 10px;
+  top: 0;
   left: 0;
   right: 0;
-  z-index: 50;
-  padding: 10px 18px;
-  max-width: none;
+  z-index: 999;
   margin: 0;
-  pointer-events: none;
+  max-width: none;
+
+  padding:
+    max(10px, env(safe-area-inset-top))
+    16px
+    6px
+    16px;
+
+  pointer-events: auto;
 }
 
 body.vr-body-game .vr-top-actions {
-  pointer-events: auto;
   justify-content: center;
   gap: 14px;
+  pointer-events: auto;
 }
 
 body.vr-body-game .vr-main {
@@ -555,7 +584,10 @@ body.vr-body-game #view-game {
   height: 100vh;
   min-height: 100vh;
   margin: 0;
-  padding: 72px 14px 16px;
+
+  /* ✅ laisse la place au header */
+  padding: 78px 14px 16px;
+
   border-radius: 0;
   border: none;
   box-shadow: none;
