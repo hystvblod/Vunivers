@@ -399,7 +399,7 @@ body.vr-body-game {
   /* ✅ jauges: taille auto pour garder 4 colonnes même sur petit écran */
   --vr-gauge-size: clamp(52px, 18vw, 74px);
 
-  background: #000;
+  background: transparent;
   overflow: hidden;
 }
 
