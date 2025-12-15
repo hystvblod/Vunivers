@@ -14,16 +14,19 @@
       <button class="vr-icon-button" type="button" id="btn-profile" aria-label="Profile">
         <img class="vr-top-icon" src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
       </button>
+
       <button class="vr-icon-button" type="button" id="btn-settings" aria-label="Settings">
         <img class="vr-top-icon" src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
       </button>
+
       <button class="vr-icon-button" type="button" id="btn-shop" aria-label="Shop">
         <img class="vr-top-icon" src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
       </button>
     </div>
   </header>
 
-  <div class="vr-overlay"></div>
+  <!-- ✅ SUPPRIMÉ : plus de vr-overlay en game (ça peut cacher le header) -->
+  <!-- <div class="vr-overlay"></div> -->
 
   <main class="vr-main">
     <section id="view-game" class="vr-view vr-view-active">
@@ -33,8 +36,6 @@
         <p class="vr-main-text" data-i18n="game.subtitle"></p>
       </div>
 
-      <!-- ✅ IMPORTANT : on enlève data-gauge-id="g1/g2/g3/g4"
-           car les vrais ids viennent de la config (cfg.id) et sont posés par ui-binding.js -->
       <div class="vr-gauges-row">
         <div class="vr-gauge">
           <span class="vr-gauge-label"></span>
@@ -117,6 +118,21 @@
   <script src="js/purchases.js"></script>
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
+
+  <!-- ✅ Navigation boutons (pages HTML) -->
+  <script>
+    (function(){
+      const go = (url) => { window.location.href = url; };
+
+      const p = document.getElementById("btn-profile");
+      const s = document.getElementById("btn-settings");
+      const sh = document.getElementById("btn-shop");
+
+      if (p)  p.addEventListener("click", () => go("profile.html"));
+      if (s)  s.addEventListener("click", () => go("settings.html"));
+      if (sh) sh.addEventListener("click", () => go("shop.html"));
+    })();
+  </script>
 
   <!-- IMPORTANT : ton moteur/engine -->
   <script src="js/game.js"></script>
