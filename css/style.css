@@ -591,3 +591,49 @@ body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-
 body[data-universe="hell_king"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-preview{
   background-image: url("../assets/img/gauges/hell_king/g4_fill.webp");
 }
+
+/* ==========================================================
+   FIX DÉFINITIF — Icônes TOP dans game.html
+   Problème: #view-game est en position:fixed et recouvre les icônes (qui n'étaient pas positionnées).
+   Solution: on fixe .vr-top-actions-game au-dessus avec un z-index élevé.
+   ========================================================== */
+
+body.vr-body-game .vr-top-actions-game{
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 100000 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  gap: 14px !important;
+
+  padding: calc(10px + env(safe-area-inset-top)) 16px 6px !important;
+  pointer-events: none !important;
+}
+
+body.vr-body-game .vr-top-actions-game .vr-icon-button{
+  pointer-events: auto !important;
+  width: 44px !important;
+  height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.vr-body-game .vr-top-actions-game .vr-top-icon{
+  width: 34px !important;
+  height: 34px !important;
+  max-width: 34px !important;
+  max-height: 34px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* on garde un espace pour que le contenu ne passe pas sous les icônes */
+body.vr-body-game #view-game{
+  padding-top: calc(78px + env(safe-area-inset-top)) !important;
+}
