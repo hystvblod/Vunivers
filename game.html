@@ -32,6 +32,25 @@
         <p class="vr-main-text" data-i18n="game.subtitle"></p>
       </div>
 
+      <!-- ✅ HUD : VCoins / Jetons / Nom / Ans (entre icônes et jauges) -->
+      <div class="vr-hud" aria-label="HUD">
+        <div class="vr-hud-money">
+          <div class="vr-hud-item">
+            <img class="vr-hud-icon" src="assets/img/ui/vcoins.webp" alt="" draggable="false" />
+            <span class="vr-hud-value" id="meta-coins">0</span>
+          </div>
+          <div class="vr-hud-item">
+            <img class="vr-hud-icon" src="assets/img/ui/jeton.webp" alt="" draggable="false" />
+            <span class="vr-hud-value" id="meta-tokens">0</span>
+          </div>
+        </div>
+
+        <div class="vr-hud-identity">
+          <span class="vr-hud-name" id="meta-king-name">—</span>
+          <span class="vr-hud-years" id="meta-years">0</span>
+        </div>
+      </div>
+
       <div class="vr-gauges-row">
         <div class="vr-gauge">
           <span class="vr-gauge-label"></span>
@@ -87,12 +106,6 @@
           </div>
 
         </div>
-      </div>
-
-      <div class="vr-meta-bar">
-        <span id="meta-king-name"></span>
-        <span id="meta-years"></span>
-        <span id="meta-coins"></span>
       </div>
 
       <div class="vr-ending-overlay" id="vr-ending-overlay">

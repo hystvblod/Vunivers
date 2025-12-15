@@ -19,6 +19,9 @@
   --vr-radius-xl: 22px;
   --vr-shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.45);
 
+  /* ✅ intensité du BG webp dans game (1 = normal, 0.95 = 5% transparent) */
+  --vr-game-bg-opacity: 0.95;
+
   /* Defaults (si jamais une classe univers manque) */
   --vr-universe-bg: none;
   --vr-universe-card: none;
@@ -120,6 +123,64 @@ body.vr-body-game .vr-header::before { content: none; }
   -webkit-user-drag: none;
 }
 
+/* ===== HUD (game) ===== */
+body.vr-body-game .vr-hud{
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+body.vr-body-game .vr-hud-money{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+body.vr-body-game .vr-hud-item{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.30);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+body.vr-body-game .vr-hud-icon{
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+body.vr-body-game .vr-hud-value{
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+body.vr-body-game .vr-hud-identity{
+  display: inline-flex;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: center;
+  font-weight: 800;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+}
+
+body.vr-body-game .vr-hud-name{ font-size: 15px; }
+body.vr-body-game .vr-hud-years{ font-size: 13px; opacity: 0.92; }
+
 /* ===== Sélecteur langue ===== */
 .vr-lang-selector { display: flex; align-items: center; gap: 8px; }
 .vr-label { font-size: 13px; color: var(--vr-text-muted); }
@@ -208,13 +269,13 @@ body.vr-body-game .vr-header::before { content: none; }
   border: none;
   box-shadow: none;
 
-  /* ✅ IMPORTANT : le BG n’est PAS ici (sinon pas d’opacité possible) */
-  background: none;
+  /* ⚠️ le BG webp est rendu via ::before pour pouvoir gérer l'opacité */
+  background: transparent;
 
   overflow: hidden;
 }
 
-/* ✅ BG via pseudo-element + opacité réglable */
+/* ✅ BG webp avec opacité contrôlée */
 #view-game::before{
   content:"";
   position:absolute;
@@ -225,11 +286,11 @@ body.vr-body-game .vr-header::before { content: none; }
   background-position: center;
   background-repeat: no-repeat;
 
-  opacity: 0.1; /* ✅ 5% transparent (ajuste 0.90 / 0.85 si tu veux) */
-
+  opacity: var(--vr-game-bg-opacity);
   pointer-events:none;
   z-index:0;
 }
+
 #view-game > * { position: relative; z-index: 1; }
 
 /* ===== Jauges (WEBP) ===== */
@@ -332,16 +393,6 @@ body.vr-body-game .vr-header::before { content: none; }
   word-break: break-word;
 }
 
-/* ===== Meta bar ===== */
-.vr-meta-bar {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  font-size: 13px;
-  margin-top: 10px;
-  margin-bottom: 6px;
-}
-
 /* ===== Fin ===== */
 .vr-ending-overlay {
   position: fixed;
@@ -399,7 +450,7 @@ body.vr-body-game {
   /* ✅ jauges: taille auto pour garder 4 colonnes même sur petit écran */
   --vr-gauge-size: clamp(52px, 18vw, 74px);
 
-  background: transparent;
+  background: #000;
   overflow: hidden;
 }
 
@@ -484,7 +535,7 @@ body.vr-body-game .vr-gauge-label{
 }
 #view-game.vr-bg-western_president {
   --vr-universe-bg: url("../assets/img/backgrounds/western_president_bg.webp");
-  --vr-universe-card: url("../assets/img/ui/western_choice.webp"); /* si tu as un card dédié, remplace ici */
+  --vr-universe-card: url("../assets/img/ui/western_card.webp");
   --vr-universe-choice: url("../assets/img/ui/western_choice.webp");
 }
 #view-game.vr-bg-mega_corp_ceo {
@@ -504,7 +555,7 @@ body.vr-body-game .vr-gauge-label{
 }
 
 /* ==========================================================
-   FIX DÉFINITIF — Icônes TOP dans game.html
+   FIX DÉFINITIF — Icônes TOP dans game.html (plus grandes)
    ========================================================== */
 body.vr-body-game .vr-top-actions-game{
   position: fixed !important;
@@ -525,25 +576,25 @@ body.vr-body-game .vr-top-actions-game{
 
 body.vr-body-game .vr-top-actions-game .vr-icon-button{
   pointer-events: auto !important;
-  width: 44px !important;
-  height: 44px !important;
+  width: 56px !important;
+  height: 56px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
 }
 
 body.vr-body-game .vr-top-actions-game .vr-top-icon{
-  width: 34px !important;
-  height: 34px !important;
-  max-width: 34px !important;
-  max-height: 34px !important;
+  width: 44px !important;
+  height: 44px !important;
+  max-width: 44px !important;
+  max-height: 44px !important;
   object-fit: contain !important;
   display: block !important;
 }
 
 /* on garde un espace pour que le contenu ne passe pas sous les icônes */
 body.vr-body-game #view-game{
-  padding-top: calc(78px + env(safe-area-inset-top)) !important;
+  padding-top: calc(86px + env(safe-area-inset-top)) !important;
 }
 
 /* ==========================================================
