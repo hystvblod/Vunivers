@@ -1,9 +1,8 @@
 /* =========================================
-   VREALMS - STYLE GLOBAL NETTOYÉ
+   VREALMS - STYLE GLOBAL NETTOYÉ (FULL)
    ========================================= */
 
 /* ===== Variables ===== */
-
 :root {
   --vr-bg: radial-gradient(circle at top, #f6e7cf 0, #141b2f 72%);
   --vr-overlay: linear-gradient(
@@ -23,10 +22,14 @@
   --vr-universe-bg: none;
   --vr-universe-card: none;
   --vr-universe-choice: none;
+
+  /* Gauges */
+  --vr-gauge-frame-url: none;
+  --vr-gauge-fill-url: none;
+  --vr-pct: 50%;
 }
 
 /* ===== Reset / base ===== */
-
 *,
 *::before,
 *::after {
@@ -38,20 +41,17 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
 }
 
 /* =========================================================
    HOME : 1 SEULE COUCHE DE FOND (PROPRE)
-   - plus de <div class="vr-overlay">
    - bg + overlay fusionnés dans body::before
    ========================================================= */
-
-/* fond fallback sur html (au cas où) */
 html {
   background: var(--vr-bg);
 }
 
-/* body = structure + typo, pas de background direct */
 body.vr-body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--vr-text-main);
@@ -77,8 +77,12 @@ body.vr-body::before {
   background: var(--vr-overlay), var(--vr-bg);
 }
 
-/* ===== Layout principal ===== */
+/* si ton HTML garde <div class="vr-overlay"> on le neutralise */
+.vr-overlay {
+  display: none !important;
+}
 
+/* ===== Layout principal ===== */
 .vr-main {
   position: relative;
   z-index: 1;
@@ -91,7 +95,6 @@ body.vr-body::before {
 }
 
 /* ===== Header avec icônes ===== */
-
 .vr-header {
   position: relative;
   z-index: 2;
@@ -138,7 +141,11 @@ body.vr-body-game .vr-header::before {
 
 .vr-top-actions {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 16px;
+  flex-wrap: nowrap; /* ✅ toujours côte à côte */
 }
 
 /* Bouton icône seul */
@@ -148,9 +155,27 @@ body.vr-body-game .vr-header::before {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
+
+  /* ✅ empêche un bouton de s'étirer */
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Icônes image (webp) si tu utilises les classes */
+/* ✅ FIX IMPORTANT : tes <img class="vr-top-icon"> ne doivent JAMAIS prendre 100% */
+.vr-top-icon {
+  width: 34px !important;
+  height: 34px !important;
+  max-width: 34px !important;
+  max-height: 34px !important;
+  display: block;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+/* Icônes image (webp) si tu utilises les classes (optionnel) */
 .vr-icon-image {
   width: 32px;
   height: 32px;
@@ -165,7 +190,6 @@ body.vr-body-game .vr-header::before {
 .vr-icon-shop { background-image: url("../assets/img/ui/btn_shop.webp"); }
 
 /* ===== Sélecteur langue (si réutilisé) ===== */
-
 .vr-lang-selector {
   display: flex;
   align-items: center;
@@ -188,12 +212,10 @@ body.vr-body-game .vr-header::before {
 }
 
 /* ===== Vues (ok même sans SPA) ===== */
-
 .vr-view { display: none; }
 .vr-view-active { display: block; }
 
 /* ===== Accueil (home) ===== */
-
 .vr-intro {
   margin-top: 8px;
   margin-bottom: 16px;
@@ -233,7 +255,6 @@ body.vr-body-game .vr-header::before {
 }
 
 /* Cartes d'univers */
-
 .vr-card {
   position: relative;
   border-radius: var(--vr-radius-xl);
@@ -307,7 +328,6 @@ body.vr-body-game .vr-header::before {
 /* ==========================================================
    VUE JEU (base)
    ========================================================== */
-
 #view-game {
   position: relative;
   width: 100%;
@@ -343,7 +363,6 @@ body.vr-body-game .vr-header::before {
 }
 
 /* ===== Jauges (WEBP) ===== */
-
 .vr-gauges-row{
   display:flex;
   flex-direction:column;
@@ -392,7 +411,6 @@ body.vr-body-game .vr-header::before {
 .vr-gauge-preview{ opacity:0.35; }
 
 /* ===== Carte + choix ===== */
-
 .vr-card-container {
   display: flex;
   justify-content: center;
@@ -537,7 +555,6 @@ body.vr-body-game .vr-header::before {
 /* ==========================================================
    FIX GAME (MODE game.html)
    ========================================================== */
-
 body.vr-body-game {
   background: #000;
   overflow: hidden;
@@ -562,6 +579,7 @@ body.vr-body-game .vr-top-actions {
   pointer-events: auto;
   justify-content: center;
   gap: 14px;
+  flex-wrap: nowrap; /* ✅ toujours côte à côte */
 }
 
 body.vr-body-game .vr-main {
@@ -634,10 +652,65 @@ body.vr-body-game .vr-gauge .vr-gauge-label {
   min-width: 0;
 }
 
+/* Carte scenario compacte */
+body.vr-body-game .vr-card-main-compact{
+  width: min(420px, 94vw);
+  max-width: 420px;
+  padding: 18px 18px;
+  margin: 0 auto 10px auto;
+  background-color: transparent;
+}
+
+body.vr-body-game .vr-choice-button{
+  width: min(440px, 96vw);
+  max-width: 440px;
+  height: 92px;
+  min-height: 92px;
+  padding: 12px 18px 14px;
+  align-items: flex-end;
+  background-size: 100% 100%;
+}
+
+body.vr-body-game .vr-choice-label{
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.2;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+/* Meta bar centrée et lisible */
+body.vr-body-game .vr-meta-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+  margin: 8px auto 0;
+  width: 100%;
+  max-width: 980px;
+  flex-wrap: wrap;
+}
+
+body.vr-body-game .vr-meta-bar > span {
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: rgba(10, 15, 25, 0.28);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  backdrop-filter: blur(6px);
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
+}
+
+body.vr-body-game .vr-game-header { display: none; }
+
 /* ==========================================================
    UNIVERS -> choix auto des chemins (1 seul CSS)
    ========================================================== */
-
 #view-game.vr-bg-hell_king {
   --vr-universe-bg: url("../assets/img/backgrounds/hell_king_bg.webp");
   --vr-universe-card: url("../assets/img/ui/hell_card.webp");
@@ -681,7 +754,6 @@ body.vr-body-game .vr-gauge .vr-gauge-label {
 }
 
 /* ===== Gauges assets par univers (1 seul CSS) ===== */
-
 body[data-universe="hell_king"] .vr-gauge[data-gauge-id="g1"]{
   --vr-gauge-frame-url: url("../assets/img/gauges/hell_king/g1_frame.webp");
   --vr-gauge-fill-url:  url("../assets/img/gauges/hell_king/g1_fill.webp");
@@ -698,3 +770,5 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="g4"]{
   --vr-gauge-frame-url: url("../assets/img/gauges/hell_king/g4_frame.webp");
   --vr-gauge-fill-url:  url("../assets/img/gauges/hell_king/g4_fill.webp");
 }
+
+/* Tu dupliques le bloc pour heaven_king, medieval_king, etc. */
