@@ -5,10 +5,7 @@
 /* ===== Variables ===== */
 
 :root {
-  /* ✅ un peu plus clair que #0b1120 */
   --vr-bg: radial-gradient(circle at top, #f6e7cf 0, #141b2f 72%);
-
-  /* ✅ overlay moins sombre */
   --vr-overlay: linear-gradient(
     to bottom right,
     rgba(255, 255, 255, 0.16),
@@ -41,35 +38,36 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  width: 100%;
-}
-
-/* ✅ Fond aussi sur <html> */
-html {
-  background: var(--vr-bg);
 }
 
 /* =========================================================
-   ✅ FIX PROPRE : 1 SEULE COUCHE DE FOND (HOME)
+   HOME : 1 SEULE COUCHE DE FOND (PROPRE)
    - plus de <div class="vr-overlay">
    - bg + overlay fusionnés dans body::before
    ========================================================= */
 
-body.vr-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-  /* IMPORTANT : pas de bg ici (sinon “double couche”) */
-  background: transparent;
-
-  color: var(--vr-text-main);
-  min-height: 100svh; /* mieux que 100vh sur mobile */
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow-x: hidden;
+/* fond fallback sur html (au cas où) */
+html {
+  background: var(--vr-bg);
 }
 
-/* 1 seule couche FIXE derrière tout */
+/* body = structure + typo, pas de background direct */
+body.vr-body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--vr-text-main);
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* couche unique fixe derrière tout */
 body.vr-body::before {
   content: "";
   position: fixed;
@@ -79,18 +77,12 @@ body.vr-body::before {
   background: var(--vr-overlay), var(--vr-bg);
 }
 
-/* Si jamais une page garde encore .vr-overlay, on le tue (sans dépendre de lui) */
-.vr-overlay {
-  display: none !important;
-}
-
 /* ===== Layout principal ===== */
 
 .vr-main {
   position: relative;
   z-index: 1;
 
-  /* ✅ plus de “cadre” centré */
   max-width: none;
   width: 100%;
   margin: 0;
@@ -107,7 +99,6 @@ body.vr-body::before {
   justify-content: center;
   padding: 12px 24px 4px;
 
-  /* ✅ plus de “cadre” centré */
   max-width: none;
   margin: 0;
   width: 100%;
@@ -159,7 +150,7 @@ body.vr-body-game .vr-header::before {
   text-decoration: none;
 }
 
-/* Icônes image (webp) */
+/* Icônes image (webp) si tu utilises les classes */
 .vr-icon-image {
   width: 32px;
   height: 32px;
@@ -168,16 +159,10 @@ body.vr-body-game .vr-header::before {
   background-repeat: no-repeat;
 }
 
-/* Icônes spécifiques */
-.vr-icon-profile {
-  background-image: url("../assets/img/ui/btn_profile.webp");
-}
-.vr-icon-settings {
-  background-image: url("../assets/img/ui/btn_settings.webp");
-}
-.vr-icon-shop {
-  background-image: url("../assets/img/ui/btn_shop.webp");
-}
+/* Icônes spécifiques (si besoin) */
+.vr-icon-profile { background-image: url("../assets/img/ui/btn_profile.webp"); }
+.vr-icon-settings { background-image: url("../assets/img/ui/btn_settings.webp"); }
+.vr-icon-shop { background-image: url("../assets/img/ui/btn_shop.webp"); }
 
 /* ===== Sélecteur langue (si réutilisé) ===== */
 
@@ -202,14 +187,10 @@ body.vr-body-game .vr-header::before {
   outline: none;
 }
 
-/* ===== Vues (tu peux garder, même sans SPA) ===== */
+/* ===== Vues (ok même sans SPA) ===== */
 
-.vr-view {
-  display: none;
-}
-.vr-view-active {
-  display: block;
-}
+.vr-view { display: none; }
+.vr-view-active { display: block; }
 
 /* ===== Accueil (home) ===== */
 
@@ -243,9 +224,7 @@ body.vr-body-game .vr-header::before {
   margin: 12px 0 10px;
 }
 
-.vr-universes {
-  margin-top: 4px;
-}
+.vr-universes { margin-top: 4px; }
 
 .vr-universe-grid {
   display: flex;
@@ -305,16 +284,6 @@ body.vr-body-game .vr-header::before {
   font-size: 13px;
   color: var(--vr-text-muted);
 }
-
-/* Backgrounds simples pour les cartes d'univers */
-.vr-card-bg-hell { background-image: linear-gradient(135deg, #450a0a, #7f1d1d); }
-.vr-card-bg-heaven { background-image: linear-gradient(135deg, #93c5fd, #e5e7eb); }
-.vr-card-bg-medieval { background-image: linear-gradient(135deg, #4b5563, #1f2937); }
-.vr-card-bg-western { background-image: linear-gradient(135deg, #78350f, #1f2937); }
-.vr-card-bg-corp { background-image: linear-gradient(135deg, #0f172a, #111827); }
-.vr-card-bg-explorer { background-image: linear-gradient(135deg, #065f46, #111827); }
-.vr-card-bg-vampire { background-image: linear-gradient(135deg, #111827, #4b0219); }
-.vr-card-bg-locked { background-image: linear-gradient(135deg, #4b5563, #020617); }
 
 /* Tooltip */
 .vr-tooltip {
@@ -420,9 +389,7 @@ body.vr-body-game .vr-header::before {
   clip-path: inset(calc(100% - var(--vr-pct, 50%)) 0 0 0);
 }
 
-.vr-gauge-preview{
-  opacity:0.35;
-}
+.vr-gauge-preview{ opacity:0.35; }
 
 /* ===== Carte + choix ===== */
 
@@ -458,20 +425,7 @@ body.vr-body-game .vr-header::before {
   box-shadow: none;
 }
 
-.vr-card-main.vr-card-dragging {
-  transition: none;
-}
-
-.vr-card-title {
-  margin: 0 0 6px;
-  font-size: 18px;
-}
-
-.vr-card-text {
-  margin: 0;
-  font-size: 14px;
-  color: var(--vr-text-muted);
-}
+.vr-card-main.vr-card-dragging { transition: none; }
 
 .vr-card-choices {
   display: flex;
@@ -581,7 +535,7 @@ body.vr-body-game .vr-header::before {
 }
 
 /* ==========================================================
-   FIX GAME (MODE game.html) — PLEIN ÉCRAN + JAUGES + CARTE/CHOIX
+   FIX GAME (MODE game.html)
    ========================================================== */
 
 body.vr-body-game {
@@ -589,10 +543,8 @@ body.vr-body-game {
   overflow: hidden;
 }
 
-/* ✅ en jeu on coupe la couche home */
-body.vr-body.vr-body-game::before {
-  display: none !important;
-}
+/* IMPORTANT : on coupe le fond HOME en mode game */
+body.vr-body-game::before { display: none !important; }
 
 body.vr-body-game .vr-header {
   position: fixed;
@@ -682,84 +634,6 @@ body.vr-body-game .vr-gauge .vr-gauge-label {
   min-width: 0;
 }
 
-body.vr-body-game .vr-gauge .vr-gauge-frame {
-  height: 12px;
-  border-radius: 999px;
-  background: rgba(0,0,0,0.18);
-  border: 1px solid rgba(255,255,255,0.22);
-  overflow: hidden;
-}
-
-/* Carte scenario compacte */
-body.vr-body-game .vr-card-main-compact{
-  width: min(420px, 94vw);
-  max-width: 420px;
-  padding: 18px 18px;
-  margin: 0 auto 10px auto;
-  background-color: transparent;
-}
-
-body.vr-body-game .vr-card-main-compact .vr-card-title{
-  margin: 0 0 8px;
-  font-size: 18px;
-  line-height: 1.15;
-}
-
-body.vr-body-game .vr-card-main-compact .vr-card-text{
-  margin: 0;
-  font-size: 14.2px;
-  line-height: 1.35;
-  color: rgba(255,255,255,0.85);
-}
-
-/* Choix : texte en bas */
-body.vr-body-game .vr-choice-button{
-  width: min(440px, 96vw);
-  max-width: 440px;
-  height: 92px;
-  min-height: 92px;
-  padding: 12px 18px 14px;
-  align-items: flex-end;
-  background-size: 100% 100%;
-}
-
-body.vr-body-game .vr-choice-label{
-  width: 100%;
-  text-align: left;
-  font-size: 1rem;
-  line-height: 1.2;
-
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-  word-break: break-word;
-}
-
-/* Meta bar centrée et lisible */
-body.vr-body-game .vr-meta-bar {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  font-size: 13px;
-  margin: 8px auto 0;
-  width: 100%;
-  max-width: 980px;
-  flex-wrap: wrap;
-}
-
-body.vr-body-game .vr-meta-bar > span {
-  padding: 6px 10px;
-  border-radius: 12px;
-  background: rgba(10, 15, 25, 0.28);
-  border: 1px solid rgba(148, 163, 184, 0.22);
-  backdrop-filter: blur(6px);
-  color: rgba(255, 255, 255, 0.92);
-  font-weight: 700;
-}
-
-body.vr-body-game .vr-game-header { display: none; }
-
 /* ==========================================================
    UNIVERS -> choix auto des chemins (1 seul CSS)
    ========================================================== */
@@ -824,5 +698,3 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="g4"]{
   --vr-gauge-frame-url: url("../assets/img/gauges/hell_king/g4_frame.webp");
   --vr-gauge-fill-url:  url("../assets/img/gauges/hell_king/g4_fill.webp");
 }
-
-/* Tu dupliques le bloc pour heaven_king, medieval_king, etc. */
