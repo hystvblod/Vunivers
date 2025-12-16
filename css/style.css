@@ -662,21 +662,18 @@ Polices par unviers
   font-style: normal;
   font-display: swap;
 }
-body[data-universe="hell_king"]{
-  --vr-font-title: "VR_Quintess", serif;
-  --vr-font-card: "VR_LoveSister", cursive;
-}
-/* Titre de carte (scénario) */
-body.vr-body-game .vr-card-title{
-  font-family: var(--vr-font-title) !important;
+
+/* ✅ HELL : scénario (titre + texte) = Quintess */
+body[data-universe="hell_king"].vr-body-game .vr-card-title,
+body[data-universe="hell_king"].vr-body-game .vr-card-text{
+  font-family: "VR_Quintess", serif !important;
 }
 
-/* Texte scénario + choix */
-body.vr-body-game .vr-card-text,
-body.vr-body-game .vr-choice-label{
-  font-family: var(--vr-font-card) !important;
+/* ✅ HELL : choix = LoveSister noir */
+body[data-universe="hell_king"].vr-body-game .vr-choice-label{
+  font-family: "VR_LoveSister", cursive !important;
+  color: #000 !important;
 }
-
 
 
 
