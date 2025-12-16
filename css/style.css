@@ -642,6 +642,42 @@ body.vr-body-game .vr-card-container{
   margin-top: 0;
 }
 
+
+/* ==========================================================
+Polices par unviers
+   ========================================================== */
+
+@font-face{
+  font-family: "VR_Quintess";
+  src: url("../assets/fronts/Quintessential-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "VR_LoveSister";
+  src: url("../assets/fronts/LoveYaLikeASister-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+body[data-universe="hell_king"]{
+  --vr-font-title: "VR_Quintess", serif;
+  --vr-font-card: "VR_LoveSister", cursive;
+}
+/* Titre de carte (scénario) */
+body.vr-body-game .vr-card-title{
+  font-family: var(--vr-font-title) !important;
+}
+
+/* Texte scénario + choix */
+body.vr-body-game .vr-card-text,
+body.vr-body-game .vr-choice-label{
+  font-family: var(--vr-font-card) !important;
+}
+
+
 /* ==========================================================
    UNIVERS -> fond / cartes / choix
    ========================================================== */
