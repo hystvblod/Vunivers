@@ -568,7 +568,7 @@ body.vr-body-game .vr-card-main .vr-card-text{
    FIX GAME (game.html) — PLEIN ÉCRAN + PAS DE SCROLL
    ========================================================== */
 body.vr-body-game {
-  --vr-gauge-size: clamp(52px, 18vw, 74px);
+  --vr-gauge-size: clamp(60px, 19vw, 88px);
   overflow: hidden;
 }
 
@@ -592,7 +592,7 @@ body.vr-body-game #view-game{
   height: 100vh;
   min-height: 100vh;
   margin: 0;
-  padding: calc(78px + env(safe-area-inset-top)) 14px 14px !important;
+  padding: calc(62px + env(safe-area-inset-top)) 14px 14px !important;
   border-radius: 0;
   border: none;
   box-shadow: none;

@@ -69,7 +69,9 @@
         res = await fetch(urlOld, { cache: "no-cache" });
       }
       if (!res.ok) {
-        throw new Error(`[VREventsLoader] Impossible de charger ${urlNew} (ou fallback ${urlOld})`);
+        throw new Error(
+          `[VREventsLoader] Impossible de charger ${urlNew} (ou fallback ${urlOld})`
+        );
       }
       return res.json();
     }
@@ -185,7 +187,9 @@
 
       // preview = 0 par défaut (sera mis à jour pendant le drag)
       const previewEls = document.querySelectorAll(".vr-gauge-preview");
-      previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-pct", "0%"));
+      previewEls.forEach((previewEl) =>
+        previewEl.style.setProperty("--vr-pct", "0%")
+      );
     },
 
     showCard(cardLogic) {
@@ -536,7 +540,8 @@
     };
 
     titleEl.textContent = ending?.title || t("game.ending.title") || "Fin du règne";
-    textEl.textContent = ending?.text || ending?.body || t("game.ending.body") || "Votre règne s'achève ici.";
+    textEl.textContent =
+      ending?.text || ending?.body || t("game.ending.body") || "Votre règne s'achève ici.";
 
     overlay.classList.add("vr-ending-visible");
   }
@@ -695,7 +700,9 @@
         window.VUserData?.save?.(u);
       }
 
-      if (window.VRGame?.session) window.VRGame.session.reignLength = Number(snap.sessionReignLength || 0);
+      if (window.VRGame?.session) {
+        window.VRGame.session.reignLength = Number(snap.sessionReignLength || 0);
+      }
 
       // restore current card = cardId of snapshot
       const card = this.deck.find(c => c.id === snap.cardId) || this.currentCardLogic;
@@ -739,7 +746,9 @@
       } else {
         const user = window.VUserData.load();
         user.vcoins += BASE_COINS_PER_CARD;
-        if (this.coinsStreak > 0 && this.coinsStreak % STREAK_STEP === 0) user.vcoins += STREAK_BONUS;
+        if (this.coinsStreak > 0 && this.coinsStreak % STREAK_STEP === 0) {
+          user.vcoins += STREAK_BONUS;
+        }
         window.VUserData.save(user);
       }
 
@@ -1033,10 +1042,11 @@ window.VRGame = {
     if (universeId) document.body.dataset.universe = universeId;
     else delete document.body.dataset.universe;
 
-    viewGame.classList.remove(
-      "vr-bg-hell_king","vr-bg-heaven_king","vr-bg-medieval_king",
-      "vr-bg-western_president","vr-bg-mega_corp_ceo","vr-bg-new_world_explorer","vr-bg-vampire_lord"
-    );
+    // ✅ OPTION B: supprime TOUTES les classes vr-bg-* (zéro maintenance)
+    Array.from(viewGame.classList).forEach((cls) => {
+      if (cls.startsWith("vr-bg-")) viewGame.classList.remove(cls);
+    });
+
     if (universeId) viewGame.classList.add(`vr-bg-${universeId}`);
   },
 
