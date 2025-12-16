@@ -455,23 +455,23 @@ body.vr-body-game .vr-card-main .vr-card-text{
 .vr-ending-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.85);
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  padding: calc(18px + env(safe-area-inset-top)) 18px calc(18px + env(safe-area-inset-bottom));
+  background: rgba(15, 23, 42, 0.88);
+  z-index: 300000;
 }
 .vr-ending-overlay.vr-ending-visible { display: flex; }
 
 .vr-ending-card {
-  max-width: 360px;
-  width: 100%;
-  padding: 20px 18px;
+  width: min(420px, 92vw);
+  padding: 22px 20px;
   border-radius: 18px;
   background: rgba(15, 23, 42, 0.98);
   border: 1px solid rgba(209, 213, 219, 0.5);
   box-shadow: var(--vr-shadow-soft);
-  text-align: left;
+  text-align: center;
 }
 .vr-ending-title { margin: 0 0 8px; font-size: 18px; }
 .vr-ending-text  { margin: 0 0 14px; font-size: 14px; color: var(--vr-text-muted); }
@@ -560,7 +560,15 @@ body.vr-body-game {
   --vr-gauge-size: clamp(52px, 18vw, 74px);
 
   background: #000;
+  height: 100vh;
   overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+}
+
+html, body.vr-body-game{
+  height: 100%;
+  overflow: hidden !important;
 }
 
 /* ✅ SUPPRIME le texte “Partie en cours …” */
@@ -582,17 +590,18 @@ body.vr-body-game #view-game{
   height: 100vh;
   min-height: 100vh;
   margin: 0;
-  padding: 72px 14px 16px; /* place pour les icônes */
+  padding: 72px 14px calc(16px + env(safe-area-inset-bottom)); /* place pour les icônes */
   border-radius: 0;
   border: none;
   box-shadow: none;
 
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  /* ✅ pas de scroll sur l’écran de jeu */
+  overflow: hidden;
+  overscroll-behavior: none;
 
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: clamp(8px, 1.3vh, 10px);
 }
 body.vr-body-game #view-game::before{ background: transparent !important; } /* ✅ VOILE OFF */
 
@@ -766,39 +775,7 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-pre
   background-image: url("../assets/img/gauges/hell_king/g4_fill.webp");
 }
 
-
-/* ==========================================================
-   JAUGES HEAVEN -> mapping SÉCURISÉ par ID (pas par ordre)
-   (IDs d'après heaven_king.config.json : prayers, cult, free_will, intervention)
-   ========================================================== */
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="prayers"] .vr-gauge-frame{
-  background-image: url("../assets/img/gauges/heaven_king/g1_frame.webp");
-}
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="prayers"] .vr-gauge-fill,
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="prayers"] .vr-gauge-preview{
-  background-image: url("../assets/img/gauges/heaven_king/g1_fill.webp");
-}
-
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="cult"] .vr-gauge-frame{
-  background-image: url("../assets/img/gauges/heaven_king/g2_frame.webp");
-}
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="cult"] .vr-gauge-fill,
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="cult"] .vr-gauge-preview{
-  background-image: url("../assets/img/gauges/heaven_king/g2_fill.webp");
-}
-
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="free_will"] .vr-gauge-frame{
-  background-image: url("../assets/img/gauges/heaven_king/g3_frame.webp");
-}
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="free_will"] .vr-gauge-fill,
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="free_will"] .vr-gauge-preview{
-  background-image: url("../assets/img/gauges/heaven_king/g3_fill.webp");
-}
-
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="intervention"] .vr-gauge-frame{
-  background-image: url("../assets/img/gauges/heaven_king/g4_frame.webp");
-}
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="intervention"] .vr-gauge-fill,
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="intervention"] .vr-gauge-preview{
-  background-image: url("../assets/img/gauges/heaven_king/g4_fill.webp");
-}
+/* === GAME: tailles adaptatives pour éviter tout overflow sans scroll === */
+body.vr-body-game .vr-card-stack{ gap: clamp(8px, 1.3vh, 12px); }
+body.vr-body-game .vr-card-main{ padding: clamp(18px, 3vh, 26px) clamp(18px, 4vw, 30px); }
+body.vr-body-game .vr-choice-button{ min-height: clamp(58px, 9vh, 78px); padding: clamp(10px, 1.8vh, 12px) 30px; }
