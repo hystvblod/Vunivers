@@ -14,6 +14,64 @@
       height: 100% !important;
     }
     :root { --vr-bg: #fff !important; }
+
+    /* =========================
+       OVERRIDES GAME HUD + ESPACES
+       ========================= */
+
+    /* HUD: VCoins gauche / Nom+Années centre / Jeton droite */
+    body.vr-body-game .vr-hud{
+      display: grid !important;
+      grid-template-columns: 1fr auto 1fr !important;
+      align-items: center !important;
+      gap: 10px !important;
+      width: 100% !important;
+      max-width: 980px !important;
+      margin: 0 auto !important;
+    }
+    body.vr-body-game .vr-hud-left{
+      justify-self: start !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+    }
+    body.vr-body-game .vr-hud-center{
+      justify-self: center !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    body.vr-body-game .vr-hud-right{
+      justify-self: end !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+    }
+
+    /* Nom + années: même taille */
+    body.vr-body-game .vr-hud-identity{
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      text-align: center !important;
+    }
+    body.vr-body-game .vr-hud-name,
+    body.vr-body-game .vr-hud-years{
+      font-size: 15px !important;
+      line-height: 1.1 !important;
+    }
+
+    /* Réduire l’espace noir entre jauges et carte scénario */
+    body.vr-body-game .vr-card-container{
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+    }
+
+    /* Optionnel: resserre un peu le rythme vertical global */
+    body.vr-body-game #view-game{
+      gap: 8px !important;
+    }
   </style>
 </head>
 
@@ -48,15 +106,27 @@
         <p class="vr-main-text" data-i18n="game.subtitle"></p>
       </div>
 
-      <!-- ✅ HUD : VCoins / Jetons / Nom / Ans (entre icônes et jauges) -->
+      <!-- ✅ HUD : VCoins gauche / Identité centre / Jetons droite -->
       <div class="vr-hud" aria-label="HUD">
-        <div class="vr-hud-money">
+
+        <!-- Gauche: VCoins -->
+        <div class="vr-hud-left">
           <div class="vr-hud-item">
             <img class="vr-hud-icon" src="assets/img/ui/vcoins.webp" alt="" draggable="false" />
             <span class="vr-hud-value" id="meta-coins">0</span>
           </div>
+        </div>
 
-          <!-- ✅ Jeton cliquable (bouton) -->
+        <!-- Centre: Nom + Années -->
+        <div class="vr-hud-center">
+          <div class="vr-hud-identity">
+            <span class="vr-hud-name" id="meta-king-name">—</span>
+            <span class="vr-hud-years" id="meta-years">0</span>
+          </div>
+        </div>
+
+        <!-- Droite: Jeton -->
+        <div class="vr-hud-right">
           <div class="vr-hud-item">
             <button id="btn-jeton" type="button"
                     class="vr-hud-icon-btn"
@@ -69,10 +139,6 @@
           </div>
         </div>
 
-        <div class="vr-hud-identity">
-          <span class="vr-hud-name" id="meta-king-name">—</span>
-          <span class="vr-hud-years" id="meta-years">0</span>
-        </div>
       </div>
 
       <!-- ✅ IMPORTANT: ton JS attend l'ID vr-gauges-row -->
