@@ -196,7 +196,7 @@ body.vr-body-game .vr-hud-identity{
 }
 
 body.vr-body-game .vr-hud-name{ font-size: 15px; }
-body.vr-body-game .vr-hud-years{ font-size: 13px; opacity: 0.92; }
+body.vr-body-game .vr-hud-years{ font-size: 15px; }
 
 /* ===== Sélecteur langue ===== */
 .vr-lang-selector { display: flex; align-items: center; gap: 8px; }
@@ -316,7 +316,8 @@ button.vr-card:focus-visible{
   pointer-events: none;
   z-index: 0;
 }
-#view-game > * { position: relative; z-index: 1; }
+#view-game > *:not(.vr-ending-overlay) { position: relative; z-index: 1; }
+
 
 /* ===== Jauges (WEBP) ===== */
 .vr-gauges-row{
@@ -636,8 +637,8 @@ body.vr-body-game .vr-card-container{
   flex: 1 1 auto;
   min-height: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   margin-top: 0;
 }
 
