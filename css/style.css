@@ -581,6 +581,7 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-pre
   background-image: url("../assets/img/gauges/hell_king/g4_fill.webp");
 }
 
+
 /* ==========================================================
    JAUGES HEAVEN -> mapping SÉCURISÉ par ID (pas par ordre)
    (IDs d'après heaven_king.config.json : prayers, cult, free_will, intervention)
