@@ -1,0 +1,31 @@
+{
+  "id": "vampire_lord",
+  "gauges": [
+    {
+      "id": "blood",
+      "label_fr": "Sang",
+      "label_en": "Blood"
+    },
+    {
+      "id": "hunters",
+      "label_fr": "Chasseurs",
+      "label_en": "Hunters"
+    },
+    {
+      "id": "clan",
+      "label_fr": "Clan",
+      "label_en": "Clan"
+    },
+    {
+      "id": "cult",
+      "label_fr": "Culte vampirique",
+      "label_en": "Vampiric cult"
+    }
+  ],
+  "initialGauges": {
+    "blood": 50,
+    "hunters": 50,
+    "clan": 50,
+    "cult": 50
+  }
+}

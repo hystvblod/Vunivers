@@ -15,6 +15,12 @@
 
 <body class="vr-body vr-body-game">
 
+  <!-- ✅ Bouton Accueil (tout en haut à gauche) -->
+  <a class="vr-icon-button" href="index.html" aria-label="Accueil"
+     style="position:fixed; top:calc(10px + env(safe-area-inset-top)); left:14px; z-index:100002; pointer-events:auto;">
+    <img class="vr-top-icon" src="assets/img/ui/btn_home.webp" alt="Accueil" draggable="false" />
+  </a>
+
   <!-- ✅ Icônes DIRECTEMENT dans la page (comme index) -->
   <div class="vr-top-actions vr-top-actions-game" aria-label="Top actions">
     <a class="vr-icon-button" href="profile.html" aria-label="Profil">
@@ -45,8 +51,16 @@
             <img class="vr-hud-icon" src="assets/img/ui/vcoins.webp" alt="" draggable="false" />
             <span class="vr-hud-value" id="meta-coins">0</span>
           </div>
+
+          <!-- ✅ Jeton cliquable (bouton) -->
           <div class="vr-hud-item">
-            <img class="vr-hud-icon" src="assets/img/ui/jeton.webp" alt="" draggable="false" />
+            <button id="btn-jeton" type="button"
+                    class="vr-hud-icon-btn"
+                    aria-label="Jeton"
+                    aria-haspopup="dialog"
+                    aria-controls="vr-token-popup">
+              <img class="vr-hud-icon" src="assets/img/ui/jeton.webp" alt="Jeton" draggable="false" />
+            </button>
             <span class="vr-hud-value" id="meta-tokens">0</span>
           </div>
         </div>
@@ -111,6 +125,35 @@
             </button>
           </div>
 
+        </div>
+      </div>
+
+      <!-- ✅ Popup Jeton -->
+      <div class="vr-popup" id="vr-token-popup" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="vr-popup-inner">
+          <h3 class="vr-popup-title" data-i18n="token.popup.title">Utiliser un jeton pour...</h3>
+
+          <!-- ✅ Cartouches style index (on réutilise la classe .vr-card) -->
+          <button class="vr-card vr-token-card" type="button" data-token-action="gauge50">
+            <div class="vr-card-content">
+              <h4 class="vr-card-title" data-i18n="token.popup.gauge50.title">Mettre une jauge à 50%</h4>
+              <p class="vr-card-text" data-i18n="token.popup.gauge50.text">Choisir une jauge et la remettre à mi-niveau.</p>
+            </div>
+          </button>
+
+          <button class="vr-card vr-token-card" type="button" data-token-action="back3">
+            <div class="vr-card-content">
+              <h4 class="vr-card-title" data-i18n="token.popup.back3.title">Revenir 3 choix en arrière</h4>
+              <p class="vr-card-text" data-i18n="token.popup.back3.text">Annuler les 3 dernières décisions.</p>
+            </div>
+          </button>
+
+          <button class="vr-card vr-token-card" type="button" data-token-action="close">
+            <div class="vr-card-content">
+              <h4 class="vr-card-title" data-i18n="common.cancel">Annuler</h4>
+              <p class="vr-card-text" data-i18n="token.popup.close.text">Fermer.</p>
+            </div>
+          </button>
         </div>
       </div>
 
