@@ -88,14 +88,16 @@
   const DRAG_THRESHOLD = 60;
 
   const VRUIBinding = {
-    updateMeta(kingName, years, coins) {
+    updateMeta(kingName, years, coins, tokens) {
       const kingEl = document.getElementById("meta-king-name");
       const yearsEl = document.getElementById("meta-years");
       const coinsEl = document.getElementById("meta-coins");
+      const tokensEl = document.getElementById("meta-tokens");
 
       if (kingEl) kingEl.textContent = kingName || "—";
-      if (yearsEl) yearsEl.textContent = (years || 0) + " ans";
-      if (coinsEl) coinsEl.textContent = (coins || 0) + " VCoins";
+      if (yearsEl) yearsEl.textContent = String(years || 0);
+      if (coinsEl) coinsEl.textContent = String(coins || 0);
+      if (tokensEl) tokensEl.textContent = String(tokens || 0);
     },
 
     universeConfig: null,
@@ -202,9 +204,9 @@
 
       if (titleEl) titleEl.textContent = texts.title || "";
       if (bodyEl) bodyEl.textContent = texts.body || "";
-      if (choiceAEl) choiceAEl.textContent = texts.choices?.A || "Choix A";
-      if (choiceBEl) choiceBEl.textContent = texts.choices?.B || "Choix B";
-      if (choiceCEl) choiceCEl.textContent = texts.choices?.C || "Choix C";
+      if (choiceAEl) choiceAEl.textContent = texts.choices?.A || "";
+      if (choiceBEl) choiceBEl.textContent = texts.choices?.B || "";
+      if (choiceCEl) choiceCEl.textContent = texts.choices?.C || "";
 
       this._resetCardPosition();
     },
@@ -413,6 +415,12 @@
     isAlive() { return this.alive; },
     getGaugeValue(id) { return this.gauges[id]; },
 
+    setGaugeValue(id, val) {
+      this.gauges[id] = clamp(Number(val ?? 50), 0, 100);
+      this.lastDeath = null;
+      this.alive = true;
+    },
+
     applyDeltas(deltaMap) {
       if (!this.alive) return;
 
@@ -516,6 +524,7 @@
   const BASE_COINS_PER_CARD = 5;
   const STREAK_STEP = 10;
   const STREAK_BONUS = 25;
+  const HISTORY_MAX = 30;
 
   const HELL_KING_DYNASTIES = ["Lucifer","Belzebuth","Lilith","Asmodée","Mammon","Baal","Astaroth","Abaddon"];
 
@@ -523,6 +532,10 @@
     const baseName = HELL_KING_DYNASTIES[reignIndex % HELL_KING_DYNASTIES.length];
     const number = Math.floor(reignIndex / HELL_KING_DYNASTIES.length) + 1;
     return `${baseName} ${number}`;
+  }
+
+  function deepClone(obj) {
+    try { return JSON.parse(JSON.stringify(obj)); } catch (_) { return obj; }
   }
 
   const VREngine = {
@@ -535,6 +548,8 @@
     reignIndex: 0,
     coinsStreak: 0,
     lang: "fr",
+
+    history: [],
 
     async init(universeId, lang) {
       this.universeId = universeId;
@@ -549,6 +564,7 @@
       this.recentCards = [];
       this.reignIndex = 0;
       this.coinsStreak = 0;
+      this.history = [];
 
       window.VRState.initUniverse(this.universeConfig);
       window.VRUIBinding.init(this.universeConfig, this.lang, this.cardTextsDict);
@@ -564,10 +580,12 @@
 
       const kingName = getDynastyName(this.reignIndex - 1);
       const years = window.VRState.getReignYears();
-      const user = window.VUserData.load();
-      const coins = user.vcoins;
 
-      window.VRUIBinding.updateMeta(kingName, years, coins);
+      const u = window.VUserData?.load?.() || {};
+      const coins = Number(u.vcoins || 0);
+      const tokens = Number(u.jetons || 0);
+
+      window.VRUIBinding.updateMeta(kingName, years, coins, tokens);
       this._nextCard();
     },
 
@@ -595,26 +613,113 @@
       if (this.recentCards.length > RECENT_MEMORY_SIZE) this.recentCards.shift();
     },
 
+    _pushHistorySnapshot(cardLogic) {
+      const u = window.VUserData?.load?.() || {};
+      const snap = {
+        cardId: cardLogic?.id || null,
+        gauges: deepClone(window.VRState.gauges),
+        alive: true,
+        lastDeath: null,
+        reignYears: window.VRState.reignYears,
+        cardsPlayed: window.VRState.cardsPlayed,
+        recentCards: deepClone(this.recentCards),
+        coinsStreak: this.coinsStreak,
+        userVcoins: Number(u.vcoins || 0),
+        sessionReignLength: Number(window.VRGame?.session?.reignLength || 0)
+      };
+      this.history.push(snap);
+      if (this.history.length > HISTORY_MAX) this.history.shift();
+    },
+
+    undoChoices(steps) {
+      const n = Math.max(1, Math.min(Number(steps || 1), 10));
+      if (!this.history.length) return false;
+
+      let snap = null;
+      for (let i = 0; i < n; i++) {
+        if (!this.history.length) break;
+        snap = this.history.pop();
+      }
+      if (!snap) return false;
+
+      // restore state
+      window.VRState.gauges = deepClone(snap.gauges) || window.VRState.gauges;
+      window.VRState.alive = true;
+      window.VRState.lastDeath = null;
+      window.VRState.reignYears = Number(snap.reignYears || 0);
+      window.VRState.cardsPlayed = Number(snap.cardsPlayed || 0);
+
+      this.recentCards = deepClone(snap.recentCards) || [];
+      this.coinsStreak = Number(snap.coinsStreak || 0);
+
+      // restore coins (cache local) + future hook supabase via VUserData
+      if (window.VUserData?.setVcoins) window.VUserData.setVcoins(Number(snap.userVcoins || 0));
+      else {
+        const u = window.VUserData?.load?.() || {};
+        u.vcoins = Number(snap.userVcoins || 0);
+        window.VUserData?.save?.(u);
+      }
+
+      if (window.VRGame?.session) window.VRGame.session.reignLength = Number(snap.sessionReignLength || 0);
+
+      // restore current card = cardId of snapshot
+      const card = this.deck.find(c => c.id === snap.cardId) || this.currentCardLogic;
+      if (card) {
+        this.currentCardLogic = card;
+        window.VRUIBinding.showCard(card);
+      }
+
+      window.VRUIBinding.updateGauges();
+
+      const kingName = getDynastyName(this.reignIndex - 1);
+      const u2 = window.VUserData?.load?.() || {};
+      window.VRUIBinding.updateMeta(
+        kingName,
+        window.VRState.getReignYears(),
+        Number(u2.vcoins || 0),
+        Number(u2.jetons || 0)
+      );
+
+      return true;
+    },
+
     applyChoice(cardLogic, choiceId) {
       if (!cardLogic || !cardLogic.choices || !cardLogic.choices[choiceId]) return;
+
+      // ✅ snapshot AVANT application (pour “revenir en arrière”)
+      this._pushHistorySnapshot(cardLogic);
 
       const choiceData = cardLogic.choices[choiceId];
       const deltas = choiceData.gaugeDelta || {};
       window.VRState.applyDeltas(deltas);
 
       this.coinsStreak += 1;
-      const user = window.VUserData.load();
-      user.vcoins += BASE_COINS_PER_CARD;
-      if (this.coinsStreak > 0 && this.coinsStreak % STREAK_STEP === 0) user.vcoins += STREAK_BONUS;
-      window.VUserData.save(user);
+
+      // ✅ VCoins => via VUserData (cache local + hook supabase)
+      if (window.VUserData?.addVcoins) {
+        window.VUserData.addVcoins(BASE_COINS_PER_CARD);
+        if (this.coinsStreak > 0 && this.coinsStreak % STREAK_STEP === 0) {
+          window.VUserData.addVcoins(STREAK_BONUS);
+        }
+      } else {
+        const user = window.VUserData.load();
+        user.vcoins += BASE_COINS_PER_CARD;
+        if (this.coinsStreak > 0 && this.coinsStreak % STREAK_STEP === 0) user.vcoins += STREAK_BONUS;
+        window.VUserData.save(user);
+      }
 
       window.VRGame?.onCardResolved?.();
       window.VRState.tickYear();
 
       const years = window.VRState.getReignYears();
       const kingName = getDynastyName(this.reignIndex - 1);
-      const userAfter = window.VUserData.load();
-      window.VRUIBinding.updateMeta(kingName, years, userAfter.vcoins);
+      const userAfter = window.VUserData?.load?.() || {};
+      window.VRUIBinding.updateMeta(
+        kingName,
+        years,
+        Number(userAfter.vcoins || 0),
+        Number(userAfter.jetons || 0)
+      );
       window.VRUIBinding.updateGauges();
 
       if (!window.VRState.isAlive()) this._handleDeath();
@@ -638,6 +743,228 @@
   };
 
   window.VREngine = VREngine;
+})();
+
+
+// VRealms - Token UI + Actions (popup, pub=>jeton, jauge 50%, revenir -3)
+(function () {
+  "use strict";
+
+  function t(key, fallback) {
+    try {
+      const out = window.VRI18n?.t?.(key);
+      if (out && out !== key) return out;
+    } catch (_) {}
+    return fallback || key;
+  }
+
+  function toast(msg) {
+    try {
+      if (typeof window.showToast === "function") return window.showToast(msg);
+    } catch (_) {}
+
+    try {
+      const id = "__vr_toast";
+      let el = document.getElementById(id);
+      if (!el) {
+        el = document.createElement("div");
+        el.id = id;
+        el.style.cssText =
+          "position:fixed;left:50%;bottom:12%;transform:translateX(-50%);" +
+          "background:rgba(0,0,0,.85);color:#fff;padding:10px 14px;border-radius:12px;" +
+          "font:14px/1.35 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;" +
+          "z-index:2147483647;max-width:84vw;text-align:center";
+        document.body.appendChild(el);
+      }
+      el.textContent = String(msg || "");
+      el.style.opacity = "1";
+      clearTimeout(el.__t1); clearTimeout(el.__t2);
+      el.__t1 = setTimeout(() => { el.style.transition = "opacity .25s"; el.style.opacity = "0"; }, 2200);
+      el.__t2 = setTimeout(() => { try { el.remove(); } catch (_) {} }, 2600);
+    } catch (_) {}
+  }
+
+  const VRTokenUI = {
+    selectMode: false,
+
+    init() {
+      const btnJeton = document.getElementById("btn-jeton");
+      const popup = document.getElementById("vr-token-popup");
+      const overlay = document.getElementById("vr-token-gauge-overlay");
+      const cancelGaugeBtn = document.getElementById("btn-cancel-gauge-select");
+      const gaugesRow = document.getElementById("vr-gauges-row");
+
+      if (!btnJeton || !popup) return;
+
+      const openPopup = () => {
+        if (this.selectMode) return;
+        popup.setAttribute("aria-hidden", "false");
+        popup.style.display = "flex";
+      };
+
+      const closePopup = () => {
+        popup.setAttribute("aria-hidden", "true");
+        popup.style.display = "none";
+      };
+
+      const openGaugeOverlay = () => {
+        if (!overlay) return;
+        overlay.setAttribute("aria-hidden", "false");
+        overlay.style.display = "flex";
+      };
+
+      const closeGaugeOverlay = () => {
+        if (!overlay) return;
+        overlay.setAttribute("aria-hidden", "true");
+        overlay.style.display = "none";
+      };
+
+      const startSelectGauge50 = () => {
+        this.selectMode = true;
+        document.body.classList.add("vr-token-select-mode");
+        closePopup();
+        openGaugeOverlay();
+        toast(t("token.toast.select_gauge", "Choisis une jauge à remettre à 50%"));
+      };
+
+      const stopSelectGauge50 = () => {
+        this.selectMode = false;
+        document.body.classList.remove("vr-token-select-mode");
+        closeGaugeOverlay();
+      };
+
+      btnJeton.addEventListener("click", () => {
+        openPopup();
+      });
+
+      // click hors popup => ferme (si clic sur fond .vr-popup)
+      popup.addEventListener("click", (e) => {
+        if (e.target === popup) closePopup();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          if (this.selectMode) stopSelectGauge50();
+          closePopup();
+        }
+      });
+
+      // actions popup
+      popup.querySelectorAll("[data-token-action]").forEach((el) => {
+        el.addEventListener("click", async () => {
+          const action = el.getAttribute("data-token-action");
+          if (!action) return;
+
+          if (action === "close") {
+            closePopup();
+            return;
+          }
+
+          if (action === "adtoken") {
+            // ✅ pub rewarded => +1 jeton
+            closePopup();
+
+            const ok = await (window.VRAds?.showRewardedAd?.({ placement: "token" }) || Promise.resolve(false));
+            if (ok) {
+              window.VUserData?.addJetons?.(1);
+              const u = window.VUserData?.load?.() || {};
+              const kingName = document.getElementById("meta-king-name")?.textContent || "—";
+              window.VRUIBinding?.updateMeta?.(
+                kingName,
+                window.VRState?.getReignYears?.() || 0,
+                Number(u.vcoins || 0),
+                Number(u.jetons || 0)
+              );
+              toast(t("token.toast.reward_ok", "+1 jeton ajouté"));
+            } else {
+              toast(t("token.toast.reward_fail", "Pub indisponible"));
+            }
+            return;
+          }
+
+          if (action === "gauge50") {
+            // ✅ mode sélection jauge (on consomme 1 jeton au moment du clic sur jauge)
+            const u = window.VUserData?.load?.() || {};
+            if (Number(u.jetons || 0) <= 0) {
+              toast(t("token.toast.no_tokens", "Tu n'as pas de jeton"));
+              closePopup();
+              return;
+            }
+            startSelectGauge50();
+            return;
+          }
+
+          if (action === "back3") {
+            // ✅ consomme 1 jeton puis undo 3, sinon on rembourse
+            const canSpend = window.VUserData?.spendJetons?.(1);
+            if (!canSpend) {
+              toast(t("token.toast.no_tokens", "Tu n'as pas de jeton"));
+              closePopup();
+              return;
+            }
+
+            closePopup();
+
+            const ok = window.VREngine?.undoChoices?.(3);
+            if (!ok) {
+              window.VUserData?.addJetons?.(1); // rembourse
+              toast(t("token.toast.undo_fail", "Impossible de revenir en arrière"));
+            } else {
+              toast(t("token.toast.undo_done", "Retour -3 effectué"));
+            }
+            return;
+          }
+        });
+      });
+
+      // annuler sélection jauge
+      if (cancelGaugeBtn) {
+        cancelGaugeBtn.addEventListener("click", () => stopSelectGauge50());
+      }
+      if (overlay) {
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) stopSelectGauge50();
+        });
+      }
+
+      // clic sur une jauge => set 50 + consomme 1 jeton
+      if (gaugesRow) {
+        gaugesRow.addEventListener("click", (e) => {
+          if (!this.selectMode) return;
+
+          const gaugeEl = e.target?.closest?.(".vr-gauge");
+          if (!gaugeEl) return;
+
+          const gaugeId = gaugeEl.dataset.gaugeId;
+          if (!gaugeId) return;
+
+          const spent = window.VUserData?.spendJetons?.(1);
+          if (!spent) {
+            toast(t("token.toast.no_tokens", "Tu n'as pas de jeton"));
+            stopSelectGauge50();
+            return;
+          }
+
+          window.VRState?.setGaugeValue?.(gaugeId, 50);
+          window.VRUIBinding?.updateGauges?.();
+
+          const u = window.VUserData?.load?.() || {};
+          const kingName = document.getElementById("meta-king-name")?.textContent || "—";
+          window.VRUIBinding?.updateMeta?.(
+            kingName,
+            window.VRState?.getReignYears?.() || 0,
+            Number(u.vcoins || 0),
+            Number(u.jetons || 0)
+          );
+
+          toast(t("token.toast.gauge_set_50", "Jauge remise à 50%"));
+          stopSelectGauge50();
+        });
+      }
+    }
+  };
+
+  window.VRTokenUI = VRTokenUI;
 })();
 
 
@@ -674,9 +1001,12 @@ window.VRGame = {
 
   onCardResolved() {
     this.session.reignLength += 1;
-    const user = window.VUserData.load();
-    user.vcoins += 1;
-    window.VUserData.save(user);
+    if (window.VUserData?.addVcoins) window.VUserData.addVcoins(1);
+    else {
+      const user = window.VUserData.load();
+      user.vcoins += 1;
+      window.VUserData.save(user);
+    }
   },
 
   onRunEnded() {
@@ -703,8 +1033,18 @@ window.VRGame = {
       console.error("[VRealms] Erreur init i18n:", e);
     }
 
+    // ✅ Sync user (cache local + futur Supabase) sans casser si pas prêt
+    try {
+      if (window.VUserData && typeof window.VUserData.init === "function") {
+        await window.VUserData.init();
+      }
+    } catch (_) {}
+
     const hasGameView = !!document.getElementById("view-game");
     if (!hasGameView) return;
+
+    // ✅ init UI jetons
+    try { window.VRTokenUI?.init?.(); } catch (_) {}
 
     const universeId = localStorage.getItem("vrealms_universe") || "hell_king";
     if (window.VRGame && typeof window.VRGame.onUniverseSelected === "function") {
@@ -714,4 +1054,3 @@ window.VRGame = {
 
   document.addEventListener("DOMContentLoaded", initApp);
 })();
-
