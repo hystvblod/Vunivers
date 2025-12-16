@@ -754,6 +754,43 @@ body.vr-body-game .vr-top-actions-game .vr-top-icon{
   display: block !important;
 }
 
+
+
+/* ==========================================================
+   HEAVEN (ou header_king) — agrandir uniquement scénario + choix
+   ========================================================== */
+body.vr-body-game[data-universe="heaven_king"] .vr-card-stack{
+  max-width: min(600px, 98vw);
+  gap: 14px;
+}
+
+body.vr-body-game[data-universe="heaven_king"] .vr-card-main{
+  max-width: min(600px, 98vw);
+  padding: 32px 36px;     /* ✅ “scénario” plus grand */
+}
+
+body.vr-body-game[data-universe="heaven_king"] .vr-choice-button{
+  max-width: min(600px, 98vw);
+  min-height: 92px;       /* ✅ “choice” plus grand */
+  padding: 14px 36px;
+}
+
+body.vr-body-game[data-universe="heaven_king"] .vr-choice-label{
+  font-size: 1.12rem;
+  max-width: 86%;
+}
+
+/* Option micro-écrans */
+@media (max-width: 360px){
+  body.vr-body-game[data-universe="heaven_king"] .vr-card-main{
+    padding: 28px 30px;
+  }
+  body.vr-body-game[data-universe="heaven_king"] .vr-choice-button{
+    min-height: 86px;
+    padding: 12px 30px;
+  }
+}
+
 /* ==========================================================
    JAUGES HELL -> mapping par ID
    ========================================================== */
