@@ -404,7 +404,7 @@ body.vr-body-game .vr-card-main .vr-card-title{
 body.vr-body-game .vr-card-main .vr-card-text{
   margin: 0;
   line-height: 1.35;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--vr-text-muted);
 }
 
@@ -432,7 +432,7 @@ body.vr-body-game .vr-card-main .vr-card-text{
   position: relative;
   z-index: 1;
   color: #ffffff;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   line-height: 1.35;
   text-align: center;
   width: 100%;
