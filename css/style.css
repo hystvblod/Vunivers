@@ -331,7 +331,7 @@ body.vr-body-game .vr-hud-years{ font-size: 13px; opacity: 0.92; }
 
 .vr-card-stack {
   width: 100%;
-  max-width: 440px; /* ✅ + large (avant 380) */
+  max-width: min(520px, 96vw); /* ✅ + large, responsive */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -341,18 +341,35 @@ body.vr-body-game .vr-hud-years{ font-size: 13px; opacity: 0.92; }
 .vr-card-main {
   position: relative;
   width: 100%;
-  max-width: 440px; /* ✅ + large (avant 380) */
+  max-width: min(520px, 96vw); /* ✅ + large, responsive */
   margin: 0 auto;
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-image: var(--vr-universe-card);
-  padding: 18px 20px;
+  padding: 26px 30px; /* ✅ + d’air autour du texte */
   border: none;
   box-shadow: none;
 }
 .vr-card-main.vr-card-dragging { transition: none; }
 .vr-card-text { margin: 0; font-size: 14px; color: var(--vr-text-muted); }
+
+/* ✅ SCÉNARIO : titre + texte centrés + "safe area" interne */
+body.vr-body-game .vr-card-main .vr-card-title,
+body.vr-body-game .vr-card-main .vr-card-text{
+  max-width: 86%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+body.vr-body-game .vr-card-main .vr-card-title{
+  margin: 0 0 10px;
+  line-height: 1.15;
+}
+body.vr-body-game .vr-card-main .vr-card-text{
+  margin: 0;
+  line-height: 1.35;
+}
 
 .vr-card-choices { display: flex; flex-direction: column; gap: 14px; width: 100%; }
 
@@ -362,10 +379,10 @@ body.vr-body-game .vr-hud-years{ font-size: 13px; opacity: 0.92; }
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 440px; /* ✅ + large (avant 340) */
+  max-width: min(520px, 96vw); /* ✅ + large, responsive */
   margin: 0 auto;
-  min-height: 72px; /* ✅ + haut (avant 52) */
-  padding: 4px 20px;
+  min-height: 78px; /* ✅ + haut */
+  padding: 12px 30px; /* ✅ + d’air autour du texte */
   background-color: transparent;
   background-size: 100% 100%;
   background-position: center;
@@ -380,10 +397,11 @@ body.vr-body-game .vr-hud-years{ font-size: 13px; opacity: 0.92; }
   color: #ffffff;
   font-size: 0.9rem;
   line-height: 1.35;
-  text-align: center; /* ✅ centrage texte choix */
+  text-align: center;
   width: 100%;
-  max-width: 92%;
+  max-width: 84%; /* ✅ zone texte mieux calée */
   margin: 0 auto;
+  padding: 8px 0; /* ✅ espace haut/bas */
   display: block;
   word-break: break-word;
 }
