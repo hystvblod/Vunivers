@@ -621,6 +621,24 @@ body.vr-body-game #view-game{
   padding-top: calc(78px + env(safe-area-inset-top)) !important;
 }
 
+/* ✅ SCÉNARIO : centrer VRAIMENT le bloc titre+texte dans la zone */
+body.vr-body-game .vr-card-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* centre les blocs */
+  text-align: center;       /* centre le texte */
+}
+
+body.vr-body-game .vr-card-main .vr-card-title,
+body.vr-body-game .vr-card-main .vr-card-text{
+  width: 100%;
+  max-width: 86%;           /* marge autour dans la “zone texte” */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
 /* ==========================================================
    JAUGES HELL -> mapping SÉCURISÉ par ID (pas par ordre)
    (ça garantit que "souls" utilisera toujours g1, etc.)
