@@ -637,6 +637,11 @@ body.vr-body-game .vr-card-main .vr-card-text{
   margin-right: auto;
   text-align: center;
 }
+/* ✅ Ajuste le centrage VISUEL dans la zone grise (scénario) */
+body[data-universe="hell_king"] .vr-card-main{
+  padding-left: 38px;   /* augmente pour pousser à droite */
+  padding-right: 30px;
+}
 
 
 /* ==========================================================
