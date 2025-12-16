@@ -120,6 +120,64 @@ body.vr-body-game .vr-header::before { content: none; }
   -webkit-user-drag: none;
 }
 
+/* ===== HUD (game) ===== */
+body.vr-body-game .vr-hud{
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+body.vr-body-game .vr-hud-money{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+body.vr-body-game .vr-hud-item{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.30);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+body.vr-body-game .vr-hud-icon{
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+body.vr-body-game .vr-hud-value{
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+body.vr-body-game .vr-hud-identity{
+  display: inline-flex;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: center;
+  font-weight: 800;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+}
+
+body.vr-body-game .vr-hud-name{ font-size: 15px; }
+body.vr-body-game .vr-hud-years{ font-size: 13px; opacity: 0.92; }
+
 /* ===== Sélecteur langue ===== */
 .vr-lang-selector { display: flex; align-items: center; gap: 8px; }
 .vr-label { font-size: 13px; color: var(--vr-text-muted); }
