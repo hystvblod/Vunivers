@@ -494,14 +494,49 @@
 
     const endings = await loadEndings(universeId, lang);
 
-    const key = lastDeath?.gaugeId
-      ? `${lastDeath.gaugeId}_${lastDeath.direction}`
-      : "default";
+    const gaugeId = lastDeath?.gaugeId || null;
+    const direction = lastDeath?.direction || null; // "down" (0) ou "up" (100)
 
-    const ending = endings[key] || endings["default"];
+    const candidates = [];
+    let value = null;
+    if (direction === "down") value = "0";
+    if (direction === "up") value = "100";
 
-    titleEl.textContent = ending?.title || "Fin du règne";
-    textEl.textContent = ending?.text || "Votre règne s'achève ici.";
+    if (gaugeId && direction) {
+      // format simple
+      candidates.push(`${gaugeId}_${direction}`);
+    }
+    if (gaugeId && value != null) {
+      // autres formats (compat)
+      candidates.push(`${gaugeId}_${value}`);
+      candidates.push(`end_${gaugeId}_${value}`);
+
+      // scan : ex. "hk_end_souls_0" (préfixe variable selon univers)
+      const esc = String(gaugeId).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const reEnd = new RegExp(`(^|_)end_${esc}_${value}$`);
+      for (const k of Object.keys(endings || {})) {
+        if (reEnd.test(k)) candidates.push(k);
+      }
+    }
+
+    candidates.push("default");
+
+    let ending = null;
+    for (const k of candidates) {
+      if (k && endings && endings[k]) { ending = endings[k]; break; }
+    }
+
+    // i18n fallback (si présent)
+    const t = (key) => {
+      try {
+        const out = window.VRI18n?.t?.(key);
+        if (out && out !== key) return out;
+      } catch (_) {}
+      return null;
+    };
+
+    titleEl.textContent = ending?.title || t("game.ending.title") || "Fin du règne";
+    textEl.textContent = ending?.text || ending?.body || t("game.ending.body") || "Votre règne s'achève ici.";
 
     overlay.classList.add("vr-ending-visible");
   }
@@ -860,7 +895,7 @@
             return;
           }
 
-          if (action === "adtoken") {
+          if (action === "ad_token") {
             // ✅ pub rewarded => +1 jeton
             closePopup();
 
@@ -912,6 +947,12 @@
             } else {
               toast(t("token.toast.undo_done", "Retour -3 effectué"));
             }
+            return;
+          }
+
+          if (action === "back_menu") {
+            closePopup();
+            try { window.location.href = "index.html"; } catch (_) {}
             return;
           }
         });

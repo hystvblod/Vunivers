@@ -1,7 +1,7 @@
 /* =========================================
    VREALMS - STYLE GLOBAL NETTOYÉ (PROPRE)
    - 1 seul fond (html)
-   - game: pas de texte "Partie en cours"
+   - game: pas de scroll
    - game: 4 jauges côte à côte (toujours)
    - icônes top: toujours visibles + taille fixe
    - jauges: frame + fill + preview par découpe (clip)
@@ -67,7 +67,7 @@ body {
   padding: 12px 16px 24px;
 }
 
-/* ===== Header avec icônes ===== */
+/* ===== Header avec icônes (home) ===== */
 .vr-header {
   position: relative;
   z-index: 2;
@@ -366,7 +366,7 @@ button.vr-card:focus-visible{
 
 .vr-card-stack {
   width: 100%;
-  max-width: min(520px, 96vw); /* ✅ + large, responsive */
+  max-width: min(520px, 96vw);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -376,18 +376,17 @@ button.vr-card:focus-visible{
 .vr-card-main {
   position: relative;
   width: 100%;
-  max-width: min(520px, 96vw); /* ✅ + large, responsive */
+  max-width: min(520px, 96vw);
   margin: 0 auto;
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-image: var(--vr-universe-card);
-  padding: 26px 30px; /* ✅ + d’air autour du texte */
+  padding: 26px 30px;
   border: none;
   box-shadow: none;
 }
 .vr-card-main.vr-card-dragging { transition: none; }
-.vr-card-text { margin: 0; font-size: 14px; color: var(--vr-text-muted); }
 
 /* ✅ SCÉNARIO : titre + texte centrés + "safe area" interne */
 body.vr-body-game .vr-card-main .vr-card-title,
@@ -404,6 +403,8 @@ body.vr-body-game .vr-card-main .vr-card-title{
 body.vr-body-game .vr-card-main .vr-card-text{
   margin: 0;
   line-height: 1.35;
+  font-size: 14px;
+  color: var(--vr-text-muted);
 }
 
 .vr-card-choices { display: flex; flex-direction: column; gap: 14px; width: 100%; }
@@ -414,10 +415,10 @@ body.vr-body-game .vr-card-main .vr-card-text{
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: min(520px, 96vw); /* ✅ + large, responsive */
+  max-width: min(520px, 96vw);
   margin: 0 auto;
-  min-height: 78px; /* ✅ + haut */
-  padding: 12px 30px; /* ✅ + d’air autour du texte */
+  min-height: 78px;
+  padding: 12px 30px;
   background-color: transparent;
   background-size: 100% 100%;
   background-position: center;
@@ -434,44 +435,34 @@ body.vr-body-game .vr-card-main .vr-card-text{
   line-height: 1.35;
   text-align: center;
   width: 100%;
-  max-width: 84%; /* ✅ zone texte mieux calée */
+  max-width: 84%;
   margin: 0 auto;
-  padding: 8px 0; /* ✅ espace haut/bas */
+  padding: 8px 0;
   display: block;
   word-break: break-word;
-}
-
-/* ===== Meta bar ===== */
-.vr-meta-bar {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  font-size: 13px;
-  margin-top: 10px;
-  margin-bottom: 6px;
 }
 
 /* ===== Fin ===== */
 .vr-ending-overlay {
   position: fixed;
   inset: 0;
+  background: rgba(15, 23, 42, 0.85);
   display: none;
   align-items: center;
   justify-content: center;
-  padding: calc(18px + env(safe-area-inset-top)) 18px calc(18px + env(safe-area-inset-bottom));
-  background: rgba(15, 23, 42, 0.88);
-  z-index: 300000;
+  z-index: 10;
 }
 .vr-ending-overlay.vr-ending-visible { display: flex; }
 
 .vr-ending-card {
-  width: min(420px, 92vw);
-  padding: 22px 20px;
+  max-width: 360px;
+  width: 100%;
+  padding: 20px 18px;
   border-radius: 18px;
   background: rgba(15, 23, 42, 0.98);
   border: 1px solid rgba(209, 213, 219, 0.5);
   box-shadow: var(--vr-shadow-soft);
-  text-align: center;
+  text-align: left;
 }
 .vr-ending-title { margin: 0 0 8px; font-size: 18px; }
 .vr-ending-text  { margin: 0 0 14px; font-size: 14px; color: var(--vr-text-muted); }
@@ -482,14 +473,13 @@ body.vr-body-game .vr-card-main .vr-card-text{
 .vr-popup{
   position: fixed;
   inset: 0;
-  display: none;              /* JS ajoute .visible */
+  display: none;
   align-items: center;
   justify-content: center;
   background: rgba(0,0,0,0.58);
-  z-index: 200000;            /* au-dessus de tout */
+  z-index: 200000;
   padding: 18px;
 }
-.vr-popup.visible{ display: flex; }
 
 .vr-popup-inner{
   width: min(560px, 94vw);
@@ -516,7 +506,7 @@ body.vr-body-game .vr-card-main .vr-card-text{
 }
 
 .vr-token-card{
-  padding: 12px 14px; /* un peu + que les cartes home */
+  padding: 12px 14px;
 }
 .vr-token-card .vr-card-title{
   font-size: 15px;
@@ -525,6 +515,28 @@ body.vr-body-game .vr-card-main .vr-card-text{
 .vr-token-card .vr-card-text{
   font-size: 13px;
   line-height: 1.35;
+}
+
+/* ✅ Overlay sélection jauge (pour ton JS) */
+.vr-token-gauge-overlay{
+  position: fixed;
+  inset: 0;
+  display: none;                 /* JS met style.display = "flex" */
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.62);
+  z-index: 210000;
+  padding: 18px;
+}
+.vr-token-gauge-card{
+  width: min(560px, 94vw);
+  border-radius: 22px;
+  padding: 16px 14px 14px;
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 /* ===== Profil / Shop / Settings ===== */
@@ -553,22 +565,11 @@ body.vr-body-game .vr-card-main .vr-card-text{
 }
 
 /* ==========================================================
-   FIX GAME (game.html) — PLEIN ÉCRAN + JAUGES + ICÔNES
+   FIX GAME (game.html) — PLEIN ÉCRAN + PAS DE SCROLL
    ========================================================== */
 body.vr-body-game {
-  /* ✅ jauges: taille auto pour garder 4 colonnes même sur petit écran */
   --vr-gauge-size: clamp(52px, 18vw, 74px);
-
-  background: #000;
-  height: 100vh;
   overflow: hidden;
-  overscroll-behavior: none;
-  touch-action: manipulation;
-}
-
-html, body.vr-body-game{
-  height: 100%;
-  overflow: hidden !important;
 }
 
 /* ✅ SUPPRIME le texte “Partie en cours …” */
@@ -580,9 +581,10 @@ body.vr-body-game .vr-main{
   padding: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
+/* ✅ page fixe sans scroll */
 body.vr-body-game #view-game{
   position: fixed;
   inset: 0;
@@ -590,26 +592,23 @@ body.vr-body-game #view-game{
   height: 100vh;
   min-height: 100vh;
   margin: 0;
-  padding: 72px 14px calc(16px + env(safe-area-inset-bottom)); /* place pour les icônes */
+  padding: calc(78px + env(safe-area-inset-top)) 14px 14px !important;
   border-radius: 0;
   border: none;
   box-shadow: none;
 
-  /* ✅ pas de scroll sur l’écran de jeu */
-  overflow: hidden;
-  overscroll-behavior: none;
-
+  overflow: hidden !important;       /* ✅ NO SCROLL */
   display: flex;
   flex-direction: column;
-  gap: clamp(8px, 1.3vh, 10px);
+  gap: 10px;
 }
-body.vr-body-game #view-game::before{ background: transparent !important; } /* ✅ VOILE OFF */
+body.vr-body-game #view-game::before{ background: transparent !important; }
 
 /* ✅ 4 jauges côte à côte (TOUJOURS) */
 body.vr-body-game .vr-gauges-row{
   width: 100%;
   max-width: 980px;
-  margin: 0 auto 8px;
+  margin: 0 auto 6px;
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
@@ -624,8 +623,6 @@ body.vr-body-game .vr-gauge-label{
   font-size: clamp(10px, 2.7vw, 12px);
   min-width: 0;
   text-align: center;
-
-  /* ✅ hauteur identique pour tous (1 ou 2 lignes) */
   min-height: 2.6em;
   line-height: 1.15;
   display: flex;
@@ -634,8 +631,18 @@ body.vr-body-game .vr-gauge-label{
   padding: 0 2px;
 }
 
+/* ✅ Zone cartes: prend le reste sans scroller */
+body.vr-body-game .vr-card-container{
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+}
+
 /* ==========================================================
-   UNIVERS -> fond / cartes / choix (1 seul CSS)
+   UNIVERS -> fond / cartes / choix
    ========================================================== */
 #view-game.vr-bg-hell_king {
   --vr-universe-bg: url("../assets/img/backgrounds/hell_king_bg.webp");
@@ -711,37 +718,8 @@ body.vr-body-game .vr-top-actions-game .vr-top-icon{
   display: block !important;
 }
 
-/* on garde un espace pour que le contenu ne passe pas sous les icônes */
-body.vr-body-game #view-game{
-  padding-top: calc(78px + env(safe-area-inset-top)) !important;
-}
-
-/* ✅ SCÉNARIO : centrer VRAIMENT le bloc titre+texte dans la zone */
-body.vr-body-game .vr-card-main{
-  display: flex;
-  flex-direction: column;
-  align-items: center;      /* centre les blocs */
-  text-align: center;       /* centre le texte */
-}
-
-body.vr-body-game .vr-card-main .vr-card-title,
-body.vr-body-game .vr-card-main .vr-card-text{
-  width: 100%;
-  max-width: 86%;           /* marge autour dans la “zone texte” */
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-/* ✅ Ajuste le centrage VISUEL dans la zone grise (scénario) */
-body[data-universe="hell_king"] .vr-card-main{
-  padding-left: 36px;   /* augmente pour pousser à droite */
-  padding-right: 30px;
-}
-
-
 /* ==========================================================
-   JAUGES HELL -> mapping SÉCURISÉ par ID (pas par ordre)
-   (ça garantit que "souls" utilisera toujours g1, etc.)
+   JAUGES HELL -> mapping par ID
    ========================================================== */
 body[data-universe="hell_king"] .vr-gauge[data-gauge-id="souls"] .vr-gauge-frame{
   background-image: url("../assets/img/gauges/hell_king/g1_frame.webp");
@@ -775,7 +753,38 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-pre
   background-image: url("../assets/img/gauges/hell_king/g4_fill.webp");
 }
 
-/* === GAME: tailles adaptatives pour éviter tout overflow sans scroll === */
-body.vr-body-game .vr-card-stack{ gap: clamp(8px, 1.3vh, 12px); }
-body.vr-body-game .vr-card-main{ padding: clamp(18px, 3vh, 26px) clamp(18px, 4vw, 30px); }
-body.vr-body-game .vr-choice-button{ min-height: clamp(58px, 9vh, 78px); padding: clamp(10px, 1.8vh, 12px) 30px; }
+/* ==========================================================
+   JAUGES HEAVEN -> mapping par ID
+   (IDs: prayers, cult, free_will, intervention)
+   ========================================================== */
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="prayers"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/heaven_king/g1_frame.webp");
+}
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="prayers"] .vr-gauge-fill,
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="prayers"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/heaven_king/g1_fill.webp");
+}
+
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="cult"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/heaven_king/g2_frame.webp");
+}
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="cult"] .vr-gauge-fill,
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="cult"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/heaven_king/g2_fill.webp");
+}
+
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="free_will"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/heaven_king/g3_frame.webp");
+}
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="free_will"] .vr-gauge-fill,
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="free_will"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/heaven_king/g3_fill.webp");
+}
+
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="intervention"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/heaven_king/g4_frame.webp");
+}
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="intervention"] .vr-gauge-fill,
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="intervention"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/heaven_king/g4_fill.webp");
+}
