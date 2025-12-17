@@ -1,23 +1,26 @@
 /* =========================================
-   VREALMS - STYLE GLOBAL NETTOYÉ (PROPRE)
+   VREALMS - STYLE GLOBAL (PROPRE & UNIQUE)
    - 1 seul fond (html)
-   - game: pas de scroll
-   - game: 4 jauges côte à côte (toujours)
-   - icônes top: toujours visibles + taille fixe
-   - jauges: frame + fill + preview par découpe (clip)
-   - cartes scénario/choix: RESPONSIVE + lisible (tous écrans)
-   - popup jeton: police de base (les polices d’univers n’y touchent pas)
+   - game: plein écran + pas de scroll
+   - game: top icons fixed + responsive (tablette ok)
+   - game: HUD 3 zones (VCoins / Nom+Années / Jeton)
+   - game: 4 jauges côte à côte
+   - jauges: frame + fill + preview (clip)
+   - cartes scénario/choix: WEBP responsive + typo responsive
+   - HELL: scénario légèrement + bas et + à droite (HELL ONLY)
+   - popup jeton: police de base (jamais affectée par les polices d’univers)
    ========================================= */
 
-/* ===== Variables ===== */
-:root {
+/* ===== Variables globales ===== */
+:root{
   --vr-bg: radial-gradient(circle at top, #f6e7cf 0, #141b2f 72%);
-  --vr-overlay: none; /* ✅ VOILE OFF */
+  --vr-overlay: none;
 
   --vr-card-bg: rgba(15, 23, 42, 0.92);
   --vr-card-border: rgba(209, 213, 219, 0.55);
   --vr-text-main: #f9fafb;
   --vr-text-muted: #d1d5db;
+
   --vr-radius-xl: 22px;
   --vr-shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.45);
 
@@ -26,45 +29,49 @@
   --vr-universe-card: none;
   --vr-universe-choice: none;
 
-  /* ✅ Top icons responsive */
-  --vr-top-btn: clamp(38px, 8vw, 44px);
-  --vr-top-icon: clamp(28px, 6.2vw, 34px);
+  /* Top icons (home + game) : scale tablette/desktop */
+  --vr-top-btn:  clamp(34px, 6.2vmin, 60px);
+  --vr-top-icon: clamp(24px, 4.8vmin, 48px);
+
+  /* Typo GAME (scénario/texte/choix) */
+  --vr-font-scn-title: clamp(15px, 2.4vmin, 28px);
+  --vr-font-scn-text:  clamp(13px, 2.1vmin, 24px);
+  --vr-font-choice:    clamp(13px, 2.2vmin, 24px);
 }
 
 /* sécurité : si un vieux overlay traîne */
-.vr-overlay { display: none !important; }
+.vr-overlay{ display:none !important; }
 
 /* ===== Reset / base ===== */
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after{ box-sizing: border-box; }
 
-/* ✅ 1 SEUL FOND : sur html (SANS VOILE) */
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+html{
+  margin:0;
+  padding:0;
+  height:100%;
   background: var(--vr-bg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  width: 100%;
+body{
+  margin:0;
+  padding:0;
+  min-height:100vh;
+  width:100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--vr-text-main);
   background: transparent;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
+  display:flex;
+  flex-direction:column;
+  overflow-x:hidden;
 }
 
 /* ===== Layout principal ===== */
-.vr-main {
+.vr-main{
   position: relative;
   z-index: 1;
   max-width: none;
@@ -73,112 +80,153 @@ body {
   padding: 12px 16px 24px;
 }
 
-/* ===== Header avec icônes (home) ===== */
-.vr-header {
+/* ==========================================================
+   HEADER (HOME)
+   ========================================================== */
+.vr-header{
   position: relative;
   z-index: 2;
-  display: flex;
-  justify-content: center;
+  display:flex;
+  justify-content:center;
   padding: 12px 24px 4px;
-  max-width: none;
-  margin: 0;
-  width: 100%;
+  max-width:none;
+  margin:0;
+  width:100%;
 }
 
-/* ✅ VOILE HEADER OFF (HOME) */
-body:not(.vr-body-game) .vr-header::before { content: none !important; display:none !important; }
-body:not(.vr-body-game) .vr-header > * { position: relative; z-index: 1; }
-body.vr-body-game .vr-header::before { content: none; }
+/* voile header OFF */
+body:not(.vr-body-game) .vr-header::before{ content:none !important; display:none !important; }
+body:not(.vr-body-game) .vr-header > *{ position: relative; z-index:1; }
+body.vr-body-game .vr-header::before{ content:none; }
 
-/* ancien logo / side nav masqués */
-.vr-logo, .vr-side-nav { display: none !important; }
+.vr-logo, .vr-side-nav{ display:none !important; }
 
-.vr-top-actions {
-  display: flex;
+.vr-top-actions{
+  display:flex;
   gap: 16px;
-  align-items: center;
-  justify-content: center;
+  align-items:center;
+  justify-content:center;
   flex-wrap: nowrap;
 }
 
-/* ✅ top buttons responsive (au lieu de fixe) */
 .vr-icon-button{
-  border: none;
+  border:none;
   background: transparent;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  text-decoration: none;
+  padding:0;
+  margin:0;
+  cursor:pointer;
+  text-decoration:none;
+
   width: var(--vr-top-btn);
   height: var(--vr-top-btn);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 }
+
 .vr-top-icon{
   width: var(--vr-top-icon) !important;
   height: var(--vr-top-icon) !important;
   max-width: var(--vr-top-icon) !important;
   max-height: var(--vr-top-icon) !important;
   object-fit: contain;
-  display: block;
-  user-select: none;
-  -webkit-user-drag: none;
+  display:block;
+  user-select:none;
+  -webkit-user-drag:none;
 }
 
-/* ===== HUD (game) ===== */
+/* ==========================================================
+   HUD (GAME) — 3 zones
+   Requiert idéalement : .vr-hud-left / .vr-hud-center / .vr-hud-right
+   (si tu les as déjà, c’est parfait)
+   ========================================================== */
 body.vr-body-game .vr-hud{
-  width: 100%;
+  width:100%;
   max-width: 980px;
   margin: 0 auto 2px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
+
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items:center;
+  gap: clamp(6px, 1.6vw, 14px);
+  padding: 0 clamp(6px, 2.6vw, 14px);
 }
 
+/* wrappers (si présents) */
+body.vr-body-game .vr-hud-left{
+  justify-self:start;
+  display:inline-flex;
+  align-items:center;
+  gap: clamp(6px, 1.6vw, 12px);
+  min-width:0;
+}
+body.vr-body-game .vr-hud-center{
+  justify-self:center;
+  min-width:0;
+}
+body.vr-body-game .vr-hud-right{
+  justify-self:end;
+  display:inline-flex;
+  align-items:center;
+  gap: clamp(6px, 1.6vw, 12px);
+  min-width:0;
+}
+
+/* fallback si ancien markup : .vr-hud-money + .vr-hud-identity */
 body.vr-body-game .vr-hud-money{
-  display: flex;
+  justify-self:start;
+  display:inline-flex;
   gap: 12px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
+  align-items:center;
+  flex-wrap:nowrap;
+}
+body.vr-body-game .vr-hud-identity{
+  justify-self:center;
+  display:inline-flex;
+  gap: clamp(6px, 1.2vw, 12px);
+  align-items: baseline;
+  justify-content:center;
+  font-weight: 900;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+  white-space: nowrap;
+  max-width: 100%;
 }
 
+/* items VCoins / Jeton */
 body.vr-body-game .vr-hud-item{
-  display: inline-flex;
-  align-items: center;
+  display:inline-flex;
+  align-items:center;
   gap: 8px;
-  padding: clamp(4px, 1.2vh, 6px) clamp(8px, 2.4vw, 10px);
+  padding: clamp(4px, 1.2vh, 8px) clamp(8px, 2.2vw, 14px);
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.30);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255,255,255,0.10);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
 
 body.vr-body-game .vr-hud-icon{
-  width: clamp(18px, 5.2vw, 22px);
-  height: clamp(18px, 5.2vw, 22px);
+  width:  clamp(18px, 4.2vw, 28px);
+  height: clamp(18px, 4.2vw, 28px);
   object-fit: contain;
-  display: block;
-  user-select: none;
-  -webkit-user-drag: none;
+  display:block;
+  user-select:none;
+  -webkit-user-drag:none;
 }
 
-/* ✅ bouton jeton cliquable */
 body.vr-body-game .vr-hud-icon-btn{
-  border: none;
+  border:none;
   background: transparent;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(18px, 5.2vw, 22px);
-  height: clamp(18px, 5.2vw, 22px);
-  line-height: 0;
+  padding:0;
+  margin:0;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:  clamp(18px, 4.2vw, 28px);
+  height: clamp(18px, 4.2vw, 28px);
+  line-height:0;
 }
 body.vr-body-game .vr-hud-icon-btn:focus-visible{
   outline: 2px solid rgba(255,255,255,0.65);
@@ -187,88 +235,100 @@ body.vr-body-game .vr-hud-icon-btn:focus-visible{
 }
 
 body.vr-body-game .vr-hud-value{
-  font-weight: 800;
-  font-size: clamp(12px, 3.6vw, 13px);
+  font-weight: 900;
+  font-size: clamp(12px, 2.2vmin, 16px);
   letter-spacing: 0.2px;
 }
 
-body.vr-body-game .vr-hud-identity{
-  display: inline-flex;
-  gap: 10px;
-  align-items: baseline;
-  justify-content: center;
-  font-weight: 800;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+body.vr-body-game .vr-hud-name,
+body.vr-body-game .vr-hud-years{
+  font-size: clamp(13px, 2.2vmin, 18px);
+  line-height: 1.1;
+  white-space: nowrap;
 }
 
-body.vr-body-game .vr-hud-name{ font-size: clamp(13px, 3.6vw, 15px); }
-body.vr-body-game .vr-hud-years{ font-size: clamp(13px, 3.6vw, 15px); }
+/* petits écrans : repli propre */
+@media (max-width: 420px){
+  body.vr-body-game .vr-hud{
+    grid-template-columns: 1fr 1fr;
+    row-gap: 4px;
+  }
+  body.vr-body-game .vr-hud-center{ grid-column: 1 / -1; }
+}
+@media (max-width: 340px){
+  body.vr-body-game .vr-hud{ grid-template-columns: 1fr; }
+  body.vr-body-game .vr-hud-left,
+  body.vr-body-game .vr-hud-right,
+  body.vr-body-game .vr-hud-money{
+    justify-self:center;
+  }
+}
 
 /* ===== Sélecteur langue ===== */
-.vr-lang-selector { display: flex; align-items: center; gap: 8px; }
-.vr-label { font-size: 13px; color: var(--vr-text-muted); }
-.vr-select {
+.vr-lang-selector{ display:flex; align-items:center; gap:8px; }
+.vr-label{ font-size:13px; color: var(--vr-text-muted); }
+.vr-select{
   background: rgba(15, 23, 42, 0.95);
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.6);
+  border: 1px solid rgba(148,163,184,0.6);
   color: var(--vr-text-main);
   padding: 6px 10px;
   font-size: 13px;
-  outline: none;
+  outline:none;
 }
 
 /* ===== Vues ===== */
-.vr-view { display: none; }
-.vr-view-active { display: block; }
+.vr-view{ display:none; }
+.vr-view-active{ display:block; }
 
-/* ===== Accueil (home) ===== */
-.vr-intro { margin-top: 8px; margin-bottom: 16px; display: flex; justify-content: center; }
-.vr-main-logo {
-  height: 72px;
-  max-width: 240px;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.45));
+/* ==========================================================
+   HOME
+   ========================================================== */
+.vr-intro{ margin-top:8px; margin-bottom:16px; display:flex; justify-content:center; }
+.vr-main-logo{
+  height:72px;
+  max-width:240px;
+  object-fit:contain;
+  filter: drop-shadow(0 10px 28px rgba(0,0,0,0.45));
 }
-.vr-section-title { font-size: 18px; margin: 12px 0 10px; }
-.vr-universe-grid { display: flex; flex-direction: column; gap: 10px; }
+.vr-section-title{ font-size:18px; margin:12px 0 10px; }
+.vr-universe-grid{ display:flex; flex-direction:column; gap:10px; }
 
-/* Cartes d'univers */
-.vr-card {
-  position: relative;
+.vr-card{
+  position:relative;
   border-radius: var(--vr-radius-xl);
-  overflow: hidden;
+  overflow:hidden;
   background: rgba(15, 23, 42, 0.9);
   border: 1px solid var(--vr-card-border);
   padding: 10px 14px;
-  text-align: left;
-  display: block;
-  width: 100%;
-  cursor: pointer;
+  text-align:left;
+  display:block;
+  width:100%;
+  cursor:pointer;
   box-shadow: var(--vr-shadow-soft);
 }
-.vr-card-disabled { opacity: 0.4; cursor: not-allowed; }
-.vr-card-bg {
-  position: absolute;
-  inset: 0;
-  opacity: 0.42;
-  background-size: cover;
-  background-position: center;
-  pointer-events: none;
+.vr-card-disabled{ opacity:0.4; cursor:not-allowed; }
+.vr-card-bg{
+  position:absolute;
+  inset:0;
+  opacity:0.42;
+  background-size:cover;
+  background-position:center;
+  pointer-events:none;
 }
-.vr-card-content { position: relative; z-index: 1; }
-.vr-card-header-line { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.vr-card-title { margin: 0 0 3px; font-size: 16px; }
-.vr-card-text { margin: 0; font-size: 13px; color: var(--vr-text-muted); }
+.vr-card-content{ position:relative; z-index:1; }
+.vr-card-header-line{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.vr-card-title{ margin:0 0 3px; font-size:16px; }
+.vr-card-text{ margin:0; font-size:13px; color: var(--vr-text-muted); }
 
-/* ✅ quand .vr-card est un bouton (popup jeton) : neutraliser le style natif */
 button.vr-card{
-  appearance: none;
-  -webkit-appearance: none;
+  appearance:none;
+  -webkit-appearance:none;
   border: 1px solid var(--vr-card-border);
   background: rgba(15, 23, 42, 0.9);
   color: inherit;
   font: inherit;
-  text-align: left;
+  text-align:left;
 }
 button.vr-card:focus-visible{
   outline: 2px solid rgba(255,255,255,0.65);
@@ -276,7 +336,7 @@ button.vr-card:focus-visible{
 }
 
 /* Tooltip */
-.vr-tooltip {
+.vr-tooltip{
   position: fixed;
   transform: translateX(-50%);
   width: min(360px, 88vw);
@@ -287,9 +347,9 @@ button.vr-card:focus-visible{
   color: #e5e7eb;
   font-size: 12px;
   line-height: 1.35;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  display: none;
-  z-index: 50;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  display:none;
+  z-index:50;
   word-break: normal;
   overflow-wrap: break-word;
 }
@@ -297,7 +357,7 @@ button.vr-card:focus-visible{
 /* ==========================================================
    VUE JEU (base)
    ========================================================== */
-#view-game {
+#view-game{
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -314,19 +374,20 @@ button.vr-card:focus-visible{
 
   overflow: hidden;
 }
-#view-game::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: transparent; /* ✅ VOILE JEU OFF */
-  pointer-events: none;
-  z-index: 0;
-}
-#view-game > *:not(.vr-ending-overlay):not(.vr-popup):not(.vr-token-gauge-overlay) {
-  position: relative;
-  z-index: 1;
+
+#view-game::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: transparent;
+  pointer-events:none;
+  z-index:0;
 }
 
+#view-game > *:not(.vr-ending-overlay):not(.vr-popup):not(.vr-token-gauge-overlay){
+  position: relative;
+  z-index:1;
+}
 
 /* ===== Jauges (WEBP) ===== */
 .vr-gauges-row{
@@ -344,8 +405,8 @@ button.vr-card:focus-visible{
   height: var(--vr-gauge-size, 84px);
   flex:0 0 auto;
   background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-position:center;
+  background-repeat:no-repeat;
   transform: translateZ(0);
 }
 
@@ -354,140 +415,138 @@ button.vr-card:focus-visible{
   position:absolute;
   inset:0;
   background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-position:center;
+  background-repeat:no-repeat;
   pointer-events:none;
   clip-path: inset(calc(100% - var(--vr-pct, 50%)) 0 0 0);
 }
-
-/* Preview (pendant drag) */
 .vr-gauge-preview{
-  opacity: 0.35;
+  opacity:0.35;
   filter: saturate(1.05) brightness(1.05);
 }
-
-/* Fill (valeur réelle) */
-.vr-gauge-fill{
-  opacity: 1;
-}
+.vr-gauge-fill{ opacity:1; }
 
 /* ===== Carte + choix ===== */
-.vr-card-container { display: flex; justify-content: center; margin-top: 8px; width: 100%; }
-body.vr-body-game .vr-card-container{ justify-content: center !important; }
+.vr-card-container{ display:flex; justify-content:center; margin-top:8px; width:100%; }
+body.vr-body-game .vr-card-container{ justify-content:center !important; }
 
-.vr-card-stack {
-  width: 100%;
+.vr-card-stack{
+  width:100%;
   max-width: min(640px, 96vw);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
 }
 
-.vr-card-main {
-  position: relative;
-  width: 100%;
+.vr-card-main{
+  position:relative;
+  width:100%;
   max-width: min(640px, 96vw);
-  margin: 0 auto;
+  margin:0 auto;
   background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-position:center;
+  background-repeat:no-repeat;
   background-image: var(--vr-universe-card);
   padding: 26px 30px;
-  border: none;
-  box-shadow: none;
+  border:none;
+  box-shadow:none;
 }
-.vr-card-main.vr-card-dragging { transition: none; }
+.vr-card-main.vr-card-dragging{ transition:none; }
 
-/* ✅ SCÉNARIO : safe zone variable (par univers si besoin) */
+/* scénario safe zone */
 body.vr-body-game .vr-card-main .vr-card-title,
 body.vr-body-game .vr-card-main .vr-card-text{
   max-width: var(--vr-scn-safe, 88%);
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
 }
 body.vr-body-game .vr-card-main .vr-card-title{
   margin: 0 0 10px;
   line-height: 1.15;
+  font-size: var(--vr-font-scn-title);
 }
 body.vr-body-game .vr-card-main .vr-card-text{
-  margin: 0;
-  line-height: 1.35;
-  font-size: 16px;
+  margin:0;
+  line-height:1.35;
+  font-size: var(--vr-font-scn-text);
   color: var(--vr-text-muted);
 }
 
-.vr-card-choices { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+.vr-card-choices{ display:flex; flex-direction:column; gap:14px; width:100%; }
 
-.vr-choice-button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+.vr-choice-button{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:100%;
   max-width: min(640px, 96vw);
-  margin: 0 auto;
+  margin:0 auto;
+
   min-height: 78px;
   padding: 12px 30px;
+
   background-color: transparent;
   background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-position:center;
+  background-repeat:no-repeat;
   background-image: var(--vr-universe-choice);
-  border: none;
-  cursor: pointer;
+
+  border:none;
+  cursor:pointer;
 }
-.vr-choice-label {
-  position: relative;
-  z-index: 1;
-  color: #ffffff;
-  font-size: 1.05rem;
-  line-height: 1.35;
-  text-align: center;
-  width: 100%;
+
+.vr-choice-label{
+  position:relative;
+  z-index:1;
+  color:#fff;
+  font-size: var(--vr-font-choice);
+  line-height:1.35;
+  text-align:center;
+  width:100%;
   max-width: var(--vr-choice-safe, 88%);
-  margin: 0 auto;
+  margin:0 auto;
   padding: 8px 0;
-  display: block;
+  display:block;
   word-break: break-word;
   text-shadow: 0 2px 10px rgba(0,0,0,0.45);
 }
 
 /* ===== Fin ===== */
-.vr-ending-overlay {
+.vr-ending-overlay{
   position: fixed;
-  inset: 0;
+  inset:0;
   background: rgba(15, 23, 42, 0.85);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
 }
-.vr-ending-overlay.vr-ending-visible { display: flex; }
+.vr-ending-overlay.vr-ending-visible{ display:flex; }
 
-.vr-ending-card {
+.vr-ending-card{
   max-width: 360px;
   width: 100%;
   padding: 20px 18px;
   border-radius: 18px;
   background: rgba(15, 23, 42, 0.98);
-  border: 1px solid rgba(209, 213, 219, 0.5);
+  border: 1px solid rgba(209,213,219,0.5);
   box-shadow: var(--vr-shadow-soft);
-  text-align: left;
+  text-align:left;
 }
-.vr-ending-title { margin: 0 0 8px; font-size: 18px; }
-.vr-ending-text  { margin: 0 0 14px; font-size: 14px; color: var(--vr-text-muted); }
+.vr-ending-title{ margin:0 0 8px; font-size:18px; }
+.vr-ending-text{ margin:0 0 14px; font-size:14px; color: var(--vr-text-muted); }
 
 /* ==========================================================
-   POPUP JETON
-   - ✅ police de base (aucune police d’univers ici)
+   POPUP JETON — police de base forcée
    ========================================================== */
 .vr-popup,
 .vr-popup *{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
 }
-
 .vr-token-gauge-overlay,
 .vr-token-gauge-overlay *{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
@@ -495,19 +554,19 @@ body.vr-body-game .vr-card-main .vr-card-text{
 
 .vr-popup{
   position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
   background: rgba(0,0,0,0.58);
-  z-index: 200000;
-  padding: 18px;
+  z-index:200000;
+  padding:18px;
 }
 
 .vr-popup-inner{
   width: min(560px, 94vw);
   max-height: min(80vh, 720px);
-  overflow: auto;
+  overflow:auto;
   border-radius: 22px;
   padding: 16px 14px 14px;
   background: rgba(15, 23, 42, 0.96);
@@ -515,9 +574,9 @@ body.vr-body-game .vr-card-main .vr-card-text{
   box-shadow: 0 18px 50px rgba(0,0,0,0.55);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
 .vr-popup-title{
@@ -525,23 +584,23 @@ body.vr-body-game .vr-card-main .vr-card-text{
   font-size: 16px;
   font-weight: 900;
   letter-spacing: 0.2px;
-  text-align: center;
+  text-align:center;
 }
 
 .vr-token-card{ padding: 12px 14px; }
-.vr-token-card .vr-card-title{ font-size: 15px; margin: 0 0 4px; }
+.vr-token-card .vr-card-title{ font-size: 15px; margin:0 0 4px; }
 .vr-token-card .vr-card-text{ font-size: 13px; line-height: 1.35; }
 
-/* ✅ Overlay sélection jauge (pour ton JS) */
+/* overlay sélection jauge */
 .vr-token-gauge-overlay{
   position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
   background: rgba(0,0,0,0.62);
-  z-index: 210000;
-  padding: 18px;
+  z-index:210000;
+  padding:18px;
 }
 .vr-token-gauge-card{
   width: min(560px, 94vw);
@@ -554,104 +613,107 @@ body.vr-body-game .vr-card-main .vr-card-text{
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* ==========================================================
-   FIX CLICS — Overlay jauges “click-through”
-   ========================================================== */
+/* click-through */
 #vr-token-gauge-overlay,
-.vr-token-gauge-overlay{
-  pointer-events: none;
-}
+.vr-token-gauge-overlay{ pointer-events:none; }
 #vr-token-gauge-overlay .vr-token-gauge-card,
-.vr-token-gauge-overlay .vr-token-gauge-card{
-  pointer-events: auto;
-}
+.vr-token-gauge-overlay .vr-token-gauge-card{ pointer-events:auto; }
 
-/* (optionnel) feedback visuel quand tu es en mode sélection */
 body.vr-token-select-mode .vr-gauge{
-  cursor: pointer;
+  cursor:pointer;
   outline: 2px solid rgba(255,255,255,.25);
-  outline-offset: 4px;
+  outline-offset:4px;
 }
 
 /* ===== Profil / Shop / Settings ===== */
-.vr-profile-grid { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
-.vr-profile-card {
+.vr-profile-grid{ display:flex; flex-direction:column; gap:10px; margin-top:12px; }
+.vr-profile-card{
   border-radius: var(--vr-radius-xl);
   background: rgba(15, 23, 42, 0.96);
-  border: 1px solid rgba(148, 163, 184, 0.5);
+  border: 1px solid rgba(148,163,184,0.5);
   padding: 10px 14px;
   box-shadow: var(--vr-shadow-soft);
 }
 
 /* Footer neutralisé */
-.vr-footer {
-  display: none !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
+.vr-footer{
+  display:none !important;
+  height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
 }
 
-#vr-card-main { touch-action: none; }
+#vr-card-main{ touch-action:none; }
 
-@media (min-width: 768px) {
-  .vr-main { padding: 16px 24px 32px; }
+@media (min-width: 768px){
+  .vr-main{ padding: 16px 24px 32px; }
 }
 
 /* ==========================================================
-   FIX GAME (game.html) — PLEIN ÉCRAN + PAS DE SCROLL
-   + ✅ espace jauges -> scénario RÉDUIT
-   + ✅ cartouches WEBP scénario/choix RESPONSIVES
+   GAME — plein écran + pas de scroll + layout serré
    ========================================================== */
 body.vr-body-game{
-  /* ✅ jauges un peu plus grandes mais safe en 4 colonnes */
-  --vr-gauge-size: clamp(66px, 18vw, 104px);
+  overflow: hidden;
 
-  /* ✅ cartouches */
-  --vr-card-w: clamp(360px, 96vw, 940px);
+  /* jauges */
+  --vr-gauge-size: clamp(60px, 16vw, 110px);
 
-  /* ✅ scénario */
-  --vr-scn-h: clamp(150px, 18vh, 260px);
-  --vr-scn-pad-y: clamp(18px, 2.2vh, 34px);
-  --vr-scn-pad-x: clamp(22px, 5.0vw, 56px);
+  /* cartes */
+  --vr-card-w: clamp(360px, 96vw, 980px);
 
-  /* ✅ choix */
-  --vr-choice-h: clamp(118px, 15vh, 200px);
-  --vr-choice-pad-y: clamp(12px, 2.0vh, 22px);
-  --vr-choice-pad-x: clamp(24px, 5.6vw, 64px);
+  /* scénario */
+  --vr-scn-h: clamp(150px, 18vh, 300px);
+  --vr-scn-pad-y: clamp(18px, 2.2vh, 36px);
+  --vr-scn-pad-x: clamp(22px, 5.4vw, 76px);
 
-  /* ✅ safe zones par défaut */
+  /* choix */
+  --vr-choice-h: clamp(118px, 15vh, 230px);
+  --vr-choice-pad-y: clamp(12px, 2.0vh, 24px);
+  --vr-choice-pad-x: clamp(24px, 6.0vw, 82px);
+
+  /* safe zones */
   --vr-scn-safe: 88%;
   --vr-choice-safe: 88%;
 
-  /* ✅ rythme vertical global plus serré */
+  /* gaps */
   --vr-game-gap: clamp(2px, 0.35vh, 5px);
   --vr-stack-gap: clamp(6px, 0.7vh, 10px);
   --vr-choices-gap: clamp(8px, 0.9vh, 12px);
-
-  overflow: hidden;
 }
 
-/* ✅ SUPPRIME le texte “Partie en cours …” */
-body.vr-body-game .vr-game-header{ display: none !important; }
+@supports (height: 1svh){
+  body.vr-body-game{
+    --vr-scn-h: clamp(150px, 18svh, 300px);
+    --vr-choice-h: clamp(118px, 15svh, 230px);
+    --vr-scn-pad-y: clamp(18px, 2.2svh, 36px);
+    --vr-choice-pad-y: clamp(12px, 2.0svh, 24px);
+    --vr-game-gap: clamp(2px, 0.35svh, 5px);
+    --vr-stack-gap: clamp(6px, 0.7svh, 10px);
+    --vr-choices-gap: clamp(8px, 0.9svh, 12px);
+  }
+}
+
+/* supprime le texte “Partie en cours …” */
+body.vr-body-game .vr-game-header{ display:none !important; }
 
 body.vr-body-game .vr-main{
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  overflow: hidden !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  width:100vw !important;
+  height:100vh !important;
+  overflow:hidden !important;
 }
 
-/* ✅ page fixe sans scroll */
+/* page fixe sans scroll */
 body.vr-body-game #view-game{
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100vh;
-  min-height: 100vh;
-  margin: 0;
+  width:100%;
+  height:100vh;
+  min-height:100vh;
+  margin:0;
 
   padding:
     calc(clamp(44px, 6vh, 58px) + env(safe-area-inset-top))
@@ -659,197 +721,86 @@ body.vr-body-game #view-game{
     clamp(8px, 1.6vh, 12px)
     clamp(10px, 3.4vw, 18px) !important;
 
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
+  border-radius:0;
+  border:none;
+  box-shadow:none;
 
-  overflow: hidden !important;
-  display: flex;
-  flex-direction: column;
-  gap: var(--vr-game-gap);
+  overflow:hidden !important;
+  display:flex;
+  flex-direction:column;
+  gap: var(--vr-game-gap) !important;
 }
-body.vr-body-game #view-game::before{ background: transparent !important; }
 
-/* ✅ 4 jauges côte à côte (TOUJOURS) */
+/* 4 jauges côte à côte (toujours) */
 body.vr-body-game .vr-gauges-row{
-  width: 100%;
+  width:100%;
   max-width: 980px;
   margin: 0 auto 0 !important;
-  display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display:grid !important;
+  grid-template-columns: repeat(4, minmax(0,1fr));
   gap: clamp(8px, 2.2vw, 14px);
 }
 
 body.vr-body-game .vr-gauge{
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
 }
 body.vr-body-game .vr-gauge-label{
-  font-size: clamp(11px, 2.9vw, 14px);
-  min-width: 0;
-  text-align: center;
+  font-size: clamp(11px, 2.0vmin, 15px);
+  min-width:0;
+  text-align:center;
   min-height: 2.0em;
-  line-height: 1.15;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  line-height:1.15;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   padding: 0 2px;
   text-shadow: 0 2px 10px rgba(0,0,0,0.45);
 }
 
-/* ✅ Zone cartes: remonte sous les jauges */
+/* zone cartes: remonte sous jauges */
 body.vr-body-game .vr-card-container{
   flex: 1 1 auto;
-  min-height: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center !important;
+  min-height:0;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center !important;
   margin-top: -6px !important;
 }
 
-/* ✅ pile cartes */
+/* pile cartes */
 body.vr-body-game .vr-card-stack{
   width: min(100%, var(--vr-card-w)) !important;
-  max-width: none !important;
-  margin-inline: auto !important;
-  align-self: center !important;
+  max-width:none !important;
+  margin-inline:auto !important;
+  align-self:center !important;
   gap: var(--vr-stack-gap) !important;
 }
 
-/* ✅ scénario: cartouche responsive */
+/* scénario */
 body.vr-body-game .vr-card-main{
-  width: 100% !important;
-  max-width: none !important;
-  margin-inline: auto !important;
+  width:100% !important;
+  max-width:none !important;
+  margin-inline:auto !important;
   min-height: var(--vr-scn-h) !important;
   padding: var(--vr-scn-pad-y) var(--vr-scn-pad-x) !important;
   background-size: 100% 100% !important;
 }
 
-/* ✅ choix: cartouches responsive */
-body.vr-body-game .vr-card-choices{
-  gap: var(--vr-choices-gap) !important;
-}
+/* choix */
+body.vr-body-game .vr-card-choices{ gap: var(--vr-choices-gap) !important; }
 body.vr-body-game .vr-choice-button{
-  width: 100% !important;
-  max-width: none !important;
-  margin-inline: auto !important;
+  width:100% !important;
+  max-width:none !important;
+  margin-inline:auto !important;
   min-height: var(--vr-choice-h) !important;
   padding: var(--vr-choice-pad-y) var(--vr-choice-pad-x) !important;
   background-size: 100% 100% !important;
 }
 
 /* ==========================================================
-   Polices par univers
-   ========================================================== */
-@font-face{
-  font-family: "VR_Quintess";
-  src: url("../assets/fronts/Quintessential-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face{
-  font-family: "VR_LoveSister";
-  src: url("../assets/fronts/LoveYaLikeASister-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ✅ HELL : scénario (titre + texte) = Quintess */
-body[data-universe="hell_king"].vr-body-game #view-game .vr-card-title,
-body[data-universe="hell_king"].vr-body-game #view-game .vr-card-text{
-  font-family: "VR_Quintess", serif !important;
-}
-
-/* ✅ HELL : choix = LoveSister noir */
-body[data-universe="hell_king"].vr-body-game #view-game .vr-choice-label{
-  font-family: "VR_LoveSister", cursive !important;
-  color: #000 !important;
-  text-shadow: none !important;
-}
-
-/* ==========================================================
-   ✅ HELL ONLY — cartouches + grandes + texte moins large (safe zone)
-   ========================================================== */
-body.vr-body-game[data-universe="hell_king"]{
-  /* cartouches un peu + grandes */
-  --vr-card-w: clamp(380px, 98vw, 980px);
-
-  --vr-scn-h: clamp(170px, 20vh, 300px);
-  --vr-scn-pad-y: clamp(20px, 2.4vh, 36px);
-  --vr-scn-pad-x: clamp(26px, 6.2vw, 72px);
-
-  --vr-choice-h: clamp(128px, 16vh, 220px);
-  --vr-choice-pad-y: clamp(12px, 2.0vh, 24px);
-  --vr-choice-pad-x: clamp(28px, 6.8vw, 78px);
-
-  /* ✅ zone texte moins large (évite de “déborder” sur le parchemin) */
-  --vr-scn-safe: 82%;
-  --vr-choice-safe: 84%;
-}
-
-/* ✅ HELL ONLY — padding latéral du jeu un poil réduit => plus de place utile */
-body.vr-body-game[data-universe="hell_king"] #view-game{
-  padding-left: clamp(8px, 2.8vw, 16px) !important;
-  padding-right: clamp(8px, 2.8vw, 16px) !important;
-}
-
-/* ==========================================================
-   FIX HELL — (ancien décalage trop fort -> provoquait des dépassements)
-   ========================================================== */
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main #card-title,
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main #card-text,
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title,
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-text{
-  position: relative !important;
-  left: clamp(0px, 0.6vw, 6px) !important; /* ✅ léger seulement */
-}
-
-/* ==========================================================
-   UNIVERS -> fond / cartes / choix
-   ========================================================== */
-#view-game.vr-bg-hell_king {
-  --vr-universe-bg: url("../assets/img/backgrounds/hell_king_bg.webp");
-  --vr-universe-card: url("../assets/img/ui/hell_card.webp");
-  --vr-universe-choice: url("../assets/img/ui/hell_choice.webp");
-}
-#view-game.vr-bg-heaven_king {
-  --vr-universe-bg: url("../assets/img/backgrounds/heaven_king_bg.webp");
-  --vr-universe-card: url("../assets/img/ui/heaven_card.webp");
-  --vr-universe-choice: url("../assets/img/ui/heaven_choice.webp");
-}
-#view-game.vr-bg-medieval_king {
-  --vr-universe-bg: url("../assets/img/backgrounds/medieval_king_bg.webp");
-  --vr-universe-card: url("../assets/img/ui/medieval_card.webp");
-  --vr-universe-choice: url("../assets/img/ui/medieval_choice.webp");
-}
-#view-game.vr-bg-western_president {
-  --vr-universe-bg: url("../assets/img/backgrounds/western_president_bg.webp");
-  --vr-universe-card: url("../assets/img/ui/western_card.webp");
-  --vr-universe-choice: url("../assets/img/ui/western_choice.webp");
-}
-#view-game.vr-bg-mega_corp_ceo {
-  --vr-universe-bg: url("../assets/img/backgrounds/mega_corp_ceo_bg.webp");
-  --vr-universe-card: url("../assets/img/ui/corp_card.webp");
-  --vr-universe-choice: url("../assets/img/ui/corp_choice.webp");
-}
-#view-game.vr-bg-new_world_explorer {
-  --vr-universe-bg: url("../assets/img/backgrounds/new_world_explorer_bg.webp");
-  --vr-universe-card: url("../assets/img/ui/explorer_card.webp");
-  --vr-universe-choice: url("../assets/img/ui/explorer_choice.webp");
-}
-#view-game.vr-bg-vampire_lord {
-  --vr-universe-bg: url("../assets/img/backgrounds/vampire_lord_bg.webp");
-  --vr-universe-card: url("../assets/img/ui/vampire_card.webp");
-  --vr-universe-choice: url("../assets/img/ui/vampire_choice.webp");
-}
-
-/* ==========================================================
-   FIX DÉFINITIF — Icônes TOP dans game.html
+   TOP ICONS (GAME) — fixed
    ========================================================== */
 body.vr-body-game .vr-top-actions-game{
   position: fixed !important;
@@ -858,37 +809,142 @@ body.vr-body-game .vr-top-actions-game{
   right: 0 !important;
   z-index: 100000 !important;
 
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-wrap: nowrap !important;
-  gap: clamp(10px, 2.8vw, 14px) !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex-wrap:nowrap !important;
 
-  padding: calc(clamp(8px, 1.2vh, 10px) + env(safe-area-inset-top)) 16px 6px !important;
-  pointer-events: none !important;
+  gap: clamp(8px, 2.2vw, 16px) !important;
+  padding: calc(clamp(8px, 1.2vh, 12px) + env(safe-area-inset-top)) 16px 6px !important;
+
+  pointer-events:none !important;
 }
-
 body.vr-body-game .vr-top-actions-game .vr-icon-button{
-  pointer-events: auto !important;
+  pointer-events:auto !important;
   width: var(--vr-top-btn) !important;
   height: var(--vr-top-btn) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
 }
-
 body.vr-body-game .vr-top-actions-game .vr-top-icon{
   width: var(--vr-top-icon) !important;
   height: var(--vr-top-icon) !important;
   max-width: var(--vr-top-icon) !important;
   max-height: var(--vr-top-icon) !important;
   object-fit: contain !important;
-  display: block !important;
+  display:block !important;
 }
 
 /* ==========================================================
-   JAUGES HELL -> mapping par ID
+   FONTS par univers
    ========================================================== */
+@font-face{
+  font-family: "VR_Quintess";
+  src: url("../assets/fronts/Quintessential-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "VR_LoveSister";
+  src: url("../assets/fronts/LoveYaLikeASister-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* HELL : scénario */
+body[data-universe="hell_king"].vr-body-game #view-game .vr-card-title,
+body[data-universe="hell_king"].vr-body-game #view-game .vr-card-text{
+  font-family: "VR_Quintess", serif !important;
+}
+
+/* HELL : choix */
+body[data-universe="hell_king"].vr-body-game #view-game .vr-choice-label{
+  font-family: "VR_LoveSister", cursive !important;
+  color: #000 !important;
+  text-shadow: none !important;
+}
+
+/* ==========================================================
+   HELL ONLY — safe zones + + shift scénario (bas/droite)
+   ========================================================== */
+body.vr-body-game[data-universe="hell_king"]{
+  --vr-card-w: clamp(380px, 98vw, 980px);
+
+  --vr-scn-h: clamp(170px, 20vh, 320px);
+  --vr-scn-pad-y: clamp(20px, 2.4vh, 38px);
+  --vr-scn-pad-x: clamp(26px, 6.2vw, 82px);
+
+  --vr-choice-h: clamp(128px, 16vh, 240px);
+  --vr-choice-pad-y: clamp(12px, 2.0vh, 26px);
+  --vr-choice-pad-x: clamp(28px, 6.8vw, 88px);
+
+  --vr-scn-safe: 82%;
+  --vr-choice-safe: 84%;
+
+  /* ✅ scénario : léger shift */
+  --vr-hell-scn-shift-x: clamp(8px, 1.2vw, 14px);
+  --vr-hell-scn-shift-y: clamp(6px, 0.9vh, 12px);
+}
+
+body.vr-body-game[data-universe="hell_king"] #view-game{
+  padding-left: clamp(8px, 2.8vw, 16px) !important;
+  padding-right: clamp(8px, 2.8vw, 16px) !important;
+}
+
+/* shift seulement sur le contenu scénario (pas sur les choix) */
+body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title,
+body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-text{
+  position: relative !important;
+  left: var(--vr-hell-scn-shift-x) !important;
+  top:  var(--vr-hell-scn-shift-y) !important;
+}
+
+/* ==========================================================
+   UNIVERS -> fond / cartes / choix
+   ========================================================== */
+#view-game.vr-bg-hell_king{
+  --vr-universe-bg: url("../assets/img/backgrounds/hell_king_bg.webp");
+  --vr-universe-card: url("../assets/img/ui/hell_card.webp");
+  --vr-universe-choice: url("../assets/img/ui/hell_choice.webp");
+}
+#view-game.vr-bg-heaven_king{
+  --vr-universe-bg: url("../assets/img/backgrounds/heaven_king_bg.webp");
+  --vr-universe-card: url("../assets/img/ui/heaven_card.webp");
+  --vr-universe-choice: url("../assets/img/ui/heaven_choice.webp");
+}
+#view-game.vr-bg-medieval_king{
+  --vr-universe-bg: url("../assets/img/backgrounds/medieval_king_bg.webp");
+  --vr-universe-card: url("../assets/img/ui/medieval_card.webp");
+  --vr-universe-choice: url("../assets/img/ui/medieval_choice.webp");
+}
+#view-game.vr-bg-western_president{
+  --vr-universe-bg: url("../assets/img/backgrounds/western_president_bg.webp");
+  --vr-universe-card: url("../assets/img/ui/western_card.webp");
+  --vr-universe-choice: url("../assets/img/ui/western_choice.webp");
+}
+#view-game.vr-bg-mega_corp_ceo{
+  --vr-universe-bg: url("../assets/img/backgrounds/mega_corp_ceo_bg.webp");
+  --vr-universe-card: url("../assets/img/ui/corp_card.webp");
+  --vr-universe-choice: url("../assets/img/ui/corp_choice.webp");
+}
+#view-game.vr-bg-new_world_explorer{
+  --vr-universe-bg: url("../assets/img/backgrounds/new_world_explorer_bg.webp");
+  --vr-universe-card: url("../assets/img/ui/explorer_card.webp");
+  --vr-universe-choice: url("../assets/img/ui/explorer_choice.webp");
+}
+#view-game.vr-bg-vampire_lord{
+  --vr-universe-bg: url("../assets/img/backgrounds/vampire_lord_bg.webp");
+  --vr-universe-card: url("../assets/img/ui/vampire_card.webp");
+  --vr-universe-choice: url("../assets/img/ui/vampire_choice.webp");
+}
+
+/* ==========================================================
+   JAUGES — mapping par ID
+   ========================================================== */
+/* HELL */
 body[data-universe="hell_king"] .vr-gauge[data-gauge-id="souls"] .vr-gauge-frame{
   background-image: url("../assets/img/gauges/hell_king/g1_frame.webp");
 }
@@ -921,9 +977,7 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-pre
   background-image: url("../assets/img/gauges/hell_king/g4_fill.webp");
 }
 
-/* ==========================================================
-   JAUGES HEAVEN -> mapping par ID
-   ========================================================== */
+/* HEAVEN */
 body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="prayers"] .vr-gauge-frame{
   background-image: url("../assets/img/gauges/heaven_king/g1_frame.webp");
 }
@@ -956,130 +1010,24 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
   background-image: url("../assets/img/gauges/heaven_king/g4_fill.webp");
 }
 
-/* ==========================================================
-   HEAVEN only — petit ajustement propre via variables
-   ========================================================== */
+/* HEAVEN only — léger ajustement via variables */
 body.vr-body-game[data-universe="heaven_king"]{
   --vr-card-w: clamp(360px, 96vw, 900px);
   --vr-stack-gap: clamp(6px, 0.8vh, 10px);
   --vr-choices-gap: clamp(8px, 1.0vh, 12px);
 }
-/* =========================================
-   FIX HELL — alignement scénario (texte + titre)
-   - recentre le bloc un peu vers la droite
-   - descend légèrement le titre
-   ========================================= */
-body.vr-body-game[data-universe="hell_king"]{
-  --vr-hell-scn-shift-x: clamp(10px, 1.6vw, 18px);  /* + à droite */
-  --vr-hell-title-mt: clamp(6px, 1.0vh, 10px);      /* titre un peu plus bas */
-}
 
-/* Appliquer le shift au contenu scénario (pas aux choix) */
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main #card-title,
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main #card-text,
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title,
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-text{
-  position: relative !important;
-  left: var(--vr-hell-scn-shift-x) !important;
-}
-
-/* Descendre un peu le titre uniquement */
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main #card-title,
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title{
-  margin-top: var(--vr-hell-title-mt) !important;
-}
-/* =========================
-   FIX RESPONSIVE GAME (SE + desktop)
-   ========================= */
-
-/* Top icons : min plus petit (SE) */
-:root{
-  --vr-top-btn: clamp(32px, 8vw, 44px);
-  --vr-top-icon: clamp(22px, 6.2vw, 34px);
-}
-
-/* Typo qui scale (grand écran) + heights/paddings qui scale (petit écran) */
-body.vr-body-game{
-  --vr-font-scn-title: clamp(14px, 2.2vmin, 22px);
-  --vr-font-scn-text:  clamp(13px, 1.9vmin, 20px);
-  --vr-font-choice:    clamp(13px, 2.0vmin, 20px);
-
-  --vr-scn-h:    clamp(120px, 18vh, 300px);
-  --vr-choice-h: clamp(86px, 12vh, 210px);
-
-  --vr-scn-pad-y: clamp(14px, 2.0vh, 34px);
-  --vr-scn-pad-x: clamp(18px, 5.0vw, 72px);
-  --vr-choice-pad-y: clamp(10px, 1.6vh, 24px);
-  --vr-choice-pad-x: clamp(18px, 5.8vw, 78px);
-
-  --vr-game-gap: clamp(0px, 0.25vh, 4px);
-  --vr-stack-gap: clamp(6px, 0.6vh, 10px);
-  --vr-choices-gap: clamp(6px, 0.7vh, 12px);
-}
-
-/* mobile address bar friendly */
-@supports (height: 1svh){
-  body.vr-body-game{
-    --vr-scn-h:    clamp(120px, 18svh, 300px);
-    --vr-choice-h: clamp(86px, 12svh, 210px);
-    --vr-scn-pad-y: clamp(14px, 2.0svh, 34px);
-    --vr-choice-pad-y: clamp(10px, 1.6svh, 24px);
-    --vr-game-gap: clamp(0px, 0.25svh, 4px);
-    --vr-stack-gap: clamp(6px, 0.6svh, 10px);
-    --vr-choices-gap: clamp(6px, 0.7svh, 12px);
-  }
-}
-
-/* IMPORTANT: force le gap (sinon ton ancien override le casse) */
-body.vr-body-game #view-game{
-  gap: var(--vr-game-gap) !important;
-}
-
-/* Applique les tailles de typo dans le jeu */
-body.vr-body-game #view-game .vr-card-title{ font-size: var(--vr-font-scn-title) !important; }
-body.vr-body-game #view-game .vr-card-text{ font-size: var(--vr-font-scn-text) !important; }
-body.vr-body-game #view-game .vr-choice-label{ font-size: var(--vr-font-choice) !important; }
-
-/* Top actions : évite overflow + laisse la place au bouton Home à gauche */
-body.vr-body-game .vr-top-actions-game{
-  gap: clamp(6px, 2.2vw, 14px) !important;
-  padding-left: calc(var(--vr-top-btn) + 20px) !important;
-  padding-right: clamp(8px, 2.6vw, 16px) !important;
-}
-
-/* HUD: VCoins / Nom+Années / Jeton => toujours sur la même ligne */
-body.vr-body-game .vr-hud{
-  display: grid !important;
-  grid-template-columns: auto minmax(0,1fr) auto !important;
-  gap: clamp(6px, 2vw, 10px) !important;
-  padding: 0 clamp(6px, 2.6vw, 12px) !important;
-}
-body.vr-body-game .vr-hud-center{ min-width:0 !important; }
-body.vr-body-game .vr-hud-identity{
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  max-width: 100% !important;
-}
-
-/* HELL: stop les décalages qui cassent (on garde juste safe-zone) */
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title,
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-text{
-  left: 0 !important;
-}
-body.vr-body-game[data-universe="hell_king"] #view-game .vr-card-title{
-  margin-top: clamp(2px, 0.6vh, 8px) !important;
-}
-
-/* iPhone SE / petits écrans : shrink fort pour que RIEN ne soit coupé */
+/* ==========================================================
+   iPhone SE / très petits écrans : shrink fort
+   ========================================================== */
 @media (max-width: 360px), (max-height: 620px){
-  :root{ --vr-top-btn: 30px; --vr-top-icon: 20px; }
+  :root{
+    --vr-top-btn: 30px;
+    --vr-top-icon: 20px;
+  }
 
   body.vr-body-game{
     --vr-gauge-size: clamp(52px, 16vw, 76px);
-
-    --vr-scn-h: clamp(100px, 18vh, 220px);
-    --vr-choice-h: clamp(68px, 12vh, 150px);
 
     --vr-font-scn-title: clamp(13px, 3.8vw, 17px);
     --vr-font-scn-text:  clamp(12px, 3.4vw, 16px);
@@ -1090,7 +1038,7 @@ body.vr-body-game[data-universe="hell_king"] #view-game .vr-card-title{
   }
 
   body.vr-body-game .vr-gauge-label{
-    font-size: 10px !important;
-    min-height: 1.6em !important;
+    font-size: 10px;
+    min-height: 1.6em;
   }
 }
