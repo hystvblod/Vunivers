@@ -137,21 +137,23 @@ body.vr-body-game .vr-header::before{ content:none; }
 }
 
 /* ==========================================================
-   HUD (GAME) — 3 zones
+   HUD (GAME) — 3 zones (✅ TOUJOURS 1 LIGNE)
    ========================================================== */
 body.vr-body-game .vr-hud{
   width:100%;
   max-width: 980px;
   margin: 0 auto 2px;
 
-  display:grid;
-  grid-template-columns: 1fr auto 1fr;
+  display:grid !important;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important;
   align-items:center;
   gap: clamp(6px, 1.6vw, 14px);
   padding: 0 clamp(6px, 2.6vw, 14px);
+
+  /* ✅ empêche le passage à la ligne */
+  white-space: nowrap;
 }
 
-/* wrappers */
 body.vr-body-game .vr-hud-left{
   justify-self:start;
   display:inline-flex;
@@ -162,6 +164,9 @@ body.vr-body-game .vr-hud-left{
 body.vr-body-game .vr-hud-center{
   justify-self:center;
   min-width:0;
+
+  /* ✅ petit recentrage visuel (tu peux ajuster si besoin) */
+  transform: translateX(clamp(4px, 0.8vw, 10px));
 }
 body.vr-body-game .vr-hud-right{
   justify-self:end;
@@ -179,6 +184,8 @@ body.vr-body-game .vr-hud-money{
   align-items:center;
   flex-wrap:nowrap;
 }
+
+/* centre : pas de wrap, ellipsis si trop long */
 body.vr-body-game .vr-hud-identity{
   justify-self:center;
   display:inline-flex;
@@ -188,7 +195,14 @@ body.vr-body-game .vr-hud-identity{
   font-weight: 900;
   text-shadow: 0 2px 10px rgba(0,0,0,0.55);
   white-space: nowrap;
-  max-width: 100%;
+  max-width: min(58vw, 520px);
+  overflow: hidden;
+}
+body.vr-body-game .vr-hud-name,
+body.vr-body-game .vr-hud-years{
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* ✅ items VCoins / Jeton (align nickel) */
@@ -215,18 +229,27 @@ body.vr-body-game .vr-hud-icon{
   flex:0 0 auto;
 }
 
+/* ✅ VCoins + Jeton = même bouton => même rendu (iOS/Safari OK) */
 body.vr-body-game .vr-hud-icon-btn{
-  border:none;
-  background: transparent;
-  padding:0;
-  margin:0;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+
   cursor:pointer;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
+
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
   width:  clamp(18px, 4.2vw, 30px);
   height: clamp(18px, 4.2vw, 30px);
-  line-height:0;
+
+  line-height: 0 !important;
+  font-size: 0 !important;
+  vertical-align: middle !important;
   flex:0 0 auto;
 }
 body.vr-body-game .vr-hud-icon-btn:focus-visible{
@@ -247,23 +270,6 @@ body.vr-body-game .vr-hud-years{
   font-size: clamp(13px, 2.2vmin, 18px);
   line-height: 1.1;
   white-space: nowrap;
-}
-
-/* petits écrans : repli propre */
-@media (max-width: 420px){
-  body.vr-body-game .vr-hud{
-    grid-template-columns: 1fr 1fr;
-    row-gap: 4px;
-  }
-  body.vr-body-game .vr-hud-center{ grid-column: 1 / -1; }
-}
-@media (max-width: 340px){
-  body.vr-body-game .vr-hud{ grid-template-columns: 1fr; }
-  body.vr-body-game .vr-hud-left,
-  body.vr-body-game .vr-hud-right,
-  body.vr-body-game .vr-hud-money{
-    justify-self:center;
-  }
 }
 
 /* ===== Sélecteur langue ===== */
@@ -720,7 +726,7 @@ body.vr-body-game #view-game{
 
   overflow:hidden !important;
 
-  /* ✅ GRID : HUD + Jauges + Cartes (le reste s’adapte) */
+  /* ✅ GRID : HUD + Jauges + Cartes */
   display:grid !important;
   grid-template-rows: auto auto 1fr;
   row-gap: var(--vr-game-gap) !important;
@@ -775,8 +781,6 @@ body.vr-body-game .vr-card-stack{
   margin-inline:auto !important;
   align-self:stretch !important;
   gap: var(--vr-stack-gap) !important;
-
-  /* ✅ laisse le stack se compresser correctement */
   min-height:0;
 }
 
@@ -870,7 +874,7 @@ body[data-universe="hell_king"].vr-body-game #view-game .vr-choice-label{
 }
 
 /* ==========================================================
-   HELL ONLY — safe zones + + shift scénario (bas/droite)
+   HELL ONLY — texte scénario mieux centré + descendu + à droite
    ========================================================== */
 body.vr-body-game[data-universe="hell_king"]{
   --vr-card-w: clamp(380px, 98vw, 980px);
@@ -883,12 +887,17 @@ body.vr-body-game[data-universe="hell_king"]{
   --vr-choice-pad-y: clamp(10px, 1.7svh, 22px);
   --vr-choice-pad-x: clamp(20px, 6.0vw, 82px);
 
-  --vr-scn-safe: 82%;
+  --vr-scn-safe: 80%;
   --vr-choice-safe: 84%;
 
-  /* ✅ scénario : léger shift (un peu + que avant) */
-  --vr-hell-scn-shift-x: clamp(10px, 1.6vw, 18px);
-  --vr-hell-scn-shift-y: clamp(8px, 1.2svh, 14px);
+  /* ✅ plus à droite / plus bas */
+  --vr-hell-scn-shift-x: clamp(16px, 2.4vw, 26px);
+  --vr-hell-scn-shift-y: clamp(10px, 1.8svh, 18px);
+
+  /* ✅ typo Hell (responsive) */
+  --vr-font-scn-title: clamp(17px, 3.0vmin, 34px);
+  --vr-font-scn-text:  clamp(14px, 2.6vmin, 28px);
+  --vr-font-choice:    clamp(15px, 2.8vmin, 30px);
 }
 
 body.vr-body-game[data-universe="hell_king"] #view-game{
@@ -896,18 +905,13 @@ body.vr-body-game[data-universe="hell_king"] #view-game{
   padding-right: clamp(8px, 2.8vw, 16px) !important;
 }
 
-/* shift seulement sur le contenu scénario (pas sur les choix) */
+/* ✅ déplacement du contenu via translate (plus stable que left/top) */
 body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title,
 body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-text{
   position: relative !important;
-  left: var(--vr-hell-scn-shift-x) !important;
-  top:  var(--vr-hell-scn-shift-y) !important;
-}
-/* ✅ HELL ONLY — police plus grande (responsive) */
-body.vr-body-game[data-universe="hell_king"]{
-  --vr-font-scn-title: clamp(17px, 3.0vmin, 34px);
-  --vr-font-scn-text:  clamp(14px, 2.6vmin, 28px);
-  --vr-font-choice:    clamp(15px, 2.8vmin, 30px);
+  left: auto !important;
+  top: auto !important;
+  transform: translate(var(--vr-hell-scn-shift-x), var(--vr-hell-scn-shift-y)) !important;
 }
 
 /* ==========================================================
@@ -1026,7 +1030,7 @@ body.vr-body-game[data-universe="heaven_king"]{
 }
 
 /* ==========================================================
-   iPhone SE / très petits écrans : shrink FORT (plus de cartouche coupée)
+   iPhone SE / très petits écrans : shrink FORT
    ========================================================== */
 @media (max-width: 360px), (max-height: 620px){
   :root{
@@ -1043,7 +1047,6 @@ body.vr-body-game[data-universe="heaven_king"]{
     --vr-font-scn-text:  clamp(12px, 3.5vw, 15px);
     --vr-font-choice:    clamp(12px, 3.7vw, 15px);
 
-    /* ✅ clés : on baisse VRAIMENT les hauteurs mini */
     --vr-scn-h: clamp(110px, 17svh, 185px);
     --vr-choice-h: clamp(76px, 12svh, 130px);
 
@@ -1065,24 +1068,7 @@ body.vr-body-game[data-universe="heaven_king"]{
     min-height: 1.6em;
   }
 
-  /* ✅ un peu moins de padding bas pour gagner des pixels */
   body.vr-body-game #view-game{
     padding-bottom: 8px !important;
   }
-}
-/* ✅ HELL — centre visuellement dans la fenêtre du WEBP + descend un peu */
-body.vr-body-game[data-universe="hell_king"]{
-  --vr-hell-scn-shift-x: clamp(16px, 2.4vw, 26px); /* + à droite */
-  --vr-hell-scn-shift-y: clamp(10px, 1.8svh, 18px); /* + bas */
-  --vr-scn-safe: 80%; /* évite d’aller mordre sur les bords “déchirés” */
-  --vr-font-scn-title: clamp(16px, 2.8vmin, 32px);
-  --vr-font-scn-text:  clamp(14px, 2.4vmin, 26px);
-}
-
-/* remplace le déplacement left/top par translate (plus fiable) */
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title,
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-text{
-  left: auto !important;
-  top:  auto !important;
-  transform: translate(var(--vr-hell-scn-shift-x), var(--vr-hell-scn-shift-y)) !important;
 }

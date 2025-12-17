@@ -14,7 +14,6 @@
       height: 100% !important;
     }
     :root { --vr-bg: #fff !important; }
-
   </style>
 </head>
 
@@ -52,10 +51,16 @@
       <!-- ✅ HUD : VCoins gauche / Identité centre / Jetons droite -->
       <div class="vr-hud" aria-label="HUD">
 
-        <!-- Gauche: VCoins -->
+        <!-- Gauche: VCoins (✅ bouton + popup) -->
         <div class="vr-hud-left">
           <div class="vr-hud-item">
-            <img class="vr-hud-icon" src="assets/img/ui/vcoins.webp" alt="" draggable="false" />
+            <button id="btn-vcoins" type="button"
+                    class="vr-hud-icon-btn"
+                    aria-label="VCoins"
+                    aria-haspopup="dialog"
+                    aria-controls="vr-coins-popup">
+              <img class="vr-hud-icon" src="assets/img/ui/vcoins.webp" alt="" draggable="false" />
+            </button>
             <span class="vr-hud-value" id="meta-coins">0</span>
           </div>
         </div>
@@ -174,6 +179,38 @@
               <div class="vr-card-content">
                 <h4 class="vr-card-title" data-i18n="common.cancel"></h4>
                 <p class="vr-card-text" data-i18n="token.popup.close.text"></p>
+              </div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ✅ Popup VCoins (menu) -->
+      <div class="vr-popup" id="vr-coins-popup" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="vr-popup-inner">
+
+          <div class="vr-token-view" data-coins-view="menu">
+            <h3 class="vr-popup-title" data-i18n="coins.popup.title"></h3>
+
+            <button class="vr-card vr-token-card vr-token-card-big" type="button" data-coins-action="adcoins">
+              <div class="vr-card-content">
+                <h4 class="vr-card-title" data-i18n="coins.popup.ad.title"></h4>
+                <p class="vr-card-text" data-i18n="coins.popup.ad.text"></p>
+              </div>
+            </button>
+
+            <button class="vr-card vr-token-card" type="button" data-coins-action="open_shop">
+              <div class="vr-card-content">
+                <h4 class="vr-card-title" data-i18n="coins.popup.shop.title"></h4>
+                <p class="vr-card-text" data-i18n="coins.popup.shop.text"></p>
+              </div>
+            </button>
+
+            <button class="vr-card vr-token-card" type="button" data-coins-action="close">
+              <div class="vr-card-content">
+                <h4 class="vr-card-title" data-i18n="common.cancel"></h4>
+                <p class="vr-card-text" data-i18n="coins.popup.close.text"></p>
               </div>
             </button>
           </div>
