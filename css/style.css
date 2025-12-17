@@ -318,7 +318,6 @@ button.vr-card:focus-visible{
 }
 #view-game > *:not(.vr-ending-overlay) { position: relative; z-index: 1; }
 
-
 /* ===== Jauges (WEBP) ===== */
 .vr-gauges-row{
   display:flex;
@@ -642,9 +641,8 @@ body.vr-body-game .vr-card-container{
   margin-top: 0;
 }
 
-
 /* ==========================================================
-Polices par unviers
+   Polices par univers
    ========================================================== */
 
 @font-face{
@@ -674,8 +672,6 @@ body[data-universe="hell_king"].vr-body-game .vr-choice-label{
   font-family: "VR_LoveSister", cursive !important;
   color: #000 !important;
 }
-
-
 
 /* ==========================================================
    UNIVERS -> fond / cartes / choix
@@ -754,43 +750,6 @@ body.vr-body-game .vr-top-actions-game .vr-top-icon{
   display: block !important;
 }
 
-
-
-/* ==========================================================
-   HEAVEN (ou header_king) — agrandir uniquement scénario + choix
-   ========================================================== */
-body.vr-body-game[data-universe="heaven_king"] .vr-card-stack{
-  max-width: min(600px, 98vw);
-  gap: 14px;
-}
-
-body.vr-body-game[data-universe="heaven_king"] .vr-card-main{
-  max-width: min(600px, 98vw);
-  padding: 32px 36px;     /* ✅ “scénario” plus grand */
-}
-
-body.vr-body-game[data-universe="heaven_king"] .vr-choice-button{
-  max-width: min(600px, 98vw);
-  min-height: 92px;       /* ✅ “choice” plus grand */
-  padding: 14px 36px;
-}
-
-body.vr-body-game[data-universe="heaven_king"] .vr-choice-label{
-  font-size: 1.12rem;
-  max-width: 86%;
-}
-
-/* Option micro-écrans */
-@media (max-width: 360px){
-  body.vr-body-game[data-universe="heaven_king"] .vr-card-main{
-    padding: 28px 30px;
-  }
-  body.vr-body-game[data-universe="heaven_king"] .vr-choice-button{
-    min-height: 86px;
-    padding: 12px 30px;
-  }
-}
-
 /* ==========================================================
    JAUGES HELL -> mapping par ID
    ========================================================== */
@@ -860,4 +819,53 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="intervention"] .vr-ga
 body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="intervention"] .vr-gauge-fill,
 body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="intervention"] .vr-gauge-preview{
   background-image: url("../assets/img/gauges/heaven_king/g4_fill.webp");
+}
+
+/* ==========================================================
+   FIX HEAVEN — WebP plus grands + texte “collé” dans la fenêtre
+   (si ton id est "header_king", remplace heaven_king par header_king)
+   ========================================================== */
+
+body.vr-body-game[data-universe="heaven_king"] .vr-card-stack{
+  max-width: min(620px, 98vw);
+  gap: 14px;
+}
+
+/* SCÉNARIO (carte) */
+body.vr-body-game[data-universe="heaven_king"] .vr-card-main{
+  max-width: min(620px, 98vw);
+  min-height: 140px;          /* base plus “grande” même si texte court */
+  padding: 34px 36px;         /* colle le texte dans la zone vide */
+  background-size: 100% auto; /* évite le stretch vertical */
+}
+
+/* Fenêtre texte interne */
+body.vr-body-game[data-universe="heaven_king"] .vr-card-main .vr-card-title,
+body.vr-body-game[data-universe="heaven_king"] .vr-card-main .vr-card-text{
+  max-width: 78%;
+}
+
+/* CHOIX */
+body.vr-body-game[data-universe="heaven_king"] .vr-choice-button{
+  max-width: min(620px, 98vw);
+  min-height: 96px;
+  padding: 14px 40px;
+  background-size: 100% auto; /* évite le stretch vertical */
+}
+
+body.vr-body-game[data-universe="heaven_king"] .vr-choice-label{
+  max-width: 80%;
+  font-size: 1.12rem;
+}
+
+/* micro-écrans */
+@media (max-width: 360px){
+  body.vr-body-game[data-universe="heaven_king"] .vr-card-main{
+    padding: 30px 30px;
+    min-height: 130px;
+  }
+  body.vr-body-game[data-universe="heaven_king"] .vr-choice-button{
+    min-height: 88px;
+    padding: 12px 30px;
+  }
 }
