@@ -337,6 +337,82 @@
   window.VRUIBinding = VRUIBinding;
 })();
 
+
+// ✅✅✅ AJOUT (SANS RIEN SUPPRIMER) : VRealms - engine/events-loader.js
+// But : éviter ton crash "Cannot read properties of undefined (reading 'loadUniverseData')"
+// On ne remplace pas si déjà OK, mais si manquant/incomplet => on injecte le loader.
+(function () {
+  "use strict";
+
+  const CONFIG_PATH = "data/universes";
+  const DECKS_PATH = "data/decks";
+  const I18N_PATH = "data/i18n";
+
+  async function fetchJson(url) {
+    const res = await fetch(url, { cache: "no-cache" });
+    if (!res.ok) return { ok: false, data: null, status: res.status, url };
+    const data = await res.json().catch(() => null);
+    return { ok: true, data, status: res.status, url };
+  }
+
+  function needsFix(loader) {
+    return !loader || typeof loader.loadUniverseData !== "function";
+  }
+
+  if (needsFix(window.VREventsLoader)) {
+    window.VREventsLoader = {
+      async loadUniverseData(universeId, lang) {
+        if (!universeId) throw new Error("[VREventsLoader] universeId manquant");
+        const safeLang = lang || "fr";
+
+        const [config, deck, cardTexts] = await Promise.all([
+          this._loadConfig(universeId),
+          this._loadDeck(universeId),
+          this._loadCardTexts(universeId, safeLang)
+        ]);
+
+        return { config, deck, cardTexts };
+      },
+
+      async _loadConfig(universeId) {
+        const url = `${CONFIG_PATH}/${universeId}.config.json`;
+        const r = await fetchJson(url);
+        if (!r.ok || !r.data || typeof r.data !== "object") {
+          throw new Error(`[VREventsLoader] Config introuvable/invalid: ${url}`);
+        }
+        return r.data;
+      },
+
+      async _loadDeck(universeId) {
+        const url = `${DECKS_PATH}/${universeId}.deck.json`;
+        const r = await fetchJson(url);
+        if (!r.ok || !Array.isArray(r.data)) {
+          throw new Error(`[VREventsLoader] Deck introuvable/invalid: ${url}`);
+        }
+        return r.data;
+      },
+
+      async _loadCardTexts(universeId, lang) {
+        // ✅ Nouveau format : data/i18n/<lang>/cards_<universeId>.json
+        const urlNew = `${I18N_PATH}/${lang}/cards_${universeId}.json`;
+        // ✅ Ancien fallback : data/i18n/cards_<universeId>_<lang>.json
+        const urlOld = `${I18N_PATH}/cards_${universeId}_${lang}.json`;
+
+        let r = await fetchJson(urlNew);
+        if (!r.ok) r = await fetchJson(urlOld);
+
+        if (!r.ok || !r.data || typeof r.data !== "object") {
+          throw new Error(
+            `[VREventsLoader] Textes cartes introuvables/invalid. Testés:\n- ${urlNew}\n- ${urlOld}`
+          );
+        }
+        return r.data;
+      }
+    };
+  }
+})();
+
+
 // VRealms - engine/state.js
 (function () {
   "use strict";
@@ -1227,4 +1303,3 @@ window.VRGame = {
 
   document.addEventListener("DOMContentLoaded", initApp);
 })();
-
