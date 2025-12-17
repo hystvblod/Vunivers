@@ -337,6 +337,7 @@
   window.VRUIBinding = VRUIBinding;
 })();
 
+
 // VRealms - engine/state.js
 (function () {
   "use strict";
@@ -540,7 +541,15 @@
     coinsStreak: 0,
     lang: "fr",
 
+    // ✅ Peek (impact réel) pendant N cartes
+    revealRemaining: 0,
+
     history: [],
+
+    enableGaugePeek(count) {
+      const n = Math.max(1, Math.min(Number(count || 15), 50));
+      this.revealRemaining = Math.max(this.revealRemaining || 0, n);
+    },
 
     async init(universeId, lang) {
       this.universeId = universeId;
@@ -556,6 +565,9 @@
       this.reignIndex = 0;
       this.coinsStreak = 0;
       this.history = [];
+
+      // ✅ reset peek au lancement (si tu veux le conserver entre runs, enlève cette ligne)
+      this.revealRemaining = 0;
 
       window.VRState.initUniverse(this.universeConfig);
       window.VRUIBinding.init(this.universeConfig, this.lang, this.cardTextsDict);
@@ -596,7 +608,14 @@
       this.currentCardLogic = card;
       this._rememberCard(card.id);
       window.VRState.incrementCardsPlayed();
+
+      // ✅ Peek auto pendant N cartes
+      const revealActive = (this.revealRemaining || 0) > 0;
+      window.VRUIBinding?.setRevealMode?.(revealActive);
+
       window.VRUIBinding.showCard(card);
+
+      if (revealActive) this.revealRemaining -= 1;
     },
 
     _rememberCard(cardId) {
@@ -659,6 +678,11 @@
       const card = this.deck.find(c => c.id === snap.cardId) || this.currentCardLogic;
       if (card) {
         this.currentCardLogic = card;
+
+        // ✅ si peek restant: setRevealMode avant showCard
+        const revealActive = (this.revealRemaining || 0) > 0;
+        window.VRUIBinding?.setRevealMode?.(revealActive);
+
         window.VRUIBinding.showCard(card);
       }
 
@@ -734,6 +758,9 @@
         };
       }
       this.coinsStreak = 0;
+
+      // ✅ on coupe le mode reveal visuel à la mort (sans toucher revealRemaining)
+      window.VRUIBinding?.setRevealMode?.(false);
     }
   };
 
@@ -1226,4 +1253,4 @@ window.VRGame = {
   }
 
   document.addEventListener("DOMContentLoaded", initApp);
-})();  
+})(); 
