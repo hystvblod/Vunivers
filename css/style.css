@@ -932,11 +932,11 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="prayers"] .vr-gauge-p
   background-image: url("../assets/img/gauges/heaven_king/g1_fill.webp");
 }
 
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="cult"] .vr-gauge-frame{
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="cults"] .vr-gauge-frame{
   background-image: url("../assets/img/gauges/heaven_king/g2_frame.webp");
 }
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="cult"] .vr-gauge-fill,
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="cult"] .vr-gauge-preview{
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="cults"] .vr-gauge-fill,
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="cults"] .vr-gauge-preview{
   background-image: url("../assets/img/gauges/heaven_king/g2_fill.webp");
 }
 
@@ -948,11 +948,11 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="free_will"] .vr-gauge
   background-image: url("../assets/img/gauges/heaven_king/g3_fill.webp");
 }
 
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="intervention"] .vr-gauge-frame{
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-gauge-frame{
   background-image: url("../assets/img/gauges/heaven_king/g4_frame.webp");
 }
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="intervention"] .vr-gauge-fill,
-body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="intervention"] .vr-gauge-preview{
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-gauge-fill,
+body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-gauge-preview{
   background-image: url("../assets/img/gauges/heaven_king/g4_fill.webp");
 }
 
