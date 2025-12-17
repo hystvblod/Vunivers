@@ -1070,3 +1070,19 @@ body.vr-body-game[data-universe="heaven_king"]{
     padding-bottom: 8px !important;
   }
 }
+/* ✅ HELL — centre visuellement dans la fenêtre du WEBP + descend un peu */
+body.vr-body-game[data-universe="hell_king"]{
+  --vr-hell-scn-shift-x: clamp(16px, 2.4vw, 26px); /* + à droite */
+  --vr-hell-scn-shift-y: clamp(10px, 1.8svh, 18px); /* + bas */
+  --vr-scn-safe: 80%; /* évite d’aller mordre sur les bords “déchirés” */
+  --vr-font-scn-title: clamp(16px, 2.8vmin, 32px);
+  --vr-font-scn-text:  clamp(14px, 2.4vmin, 26px);
+}
+
+/* remplace le déplacement left/top par translate (plus fiable) */
+body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title,
+body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-text{
+  left: auto !important;
+  top:  auto !important;
+  transform: translate(var(--vr-hell-scn-shift-x), var(--vr-hell-scn-shift-y)) !important;
+}
