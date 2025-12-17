@@ -1037,7 +1037,7 @@ body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main{
 
 /* ✅ Heaven : choix (pas de crop, pas de cover) */
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-choice-button{
-  background-size: 100% 100% !important;
+  background-size: 120% 100% !important;
   background-position: center !important;
 }
 
