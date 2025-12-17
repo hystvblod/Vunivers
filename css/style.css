@@ -845,8 +845,8 @@ body.vr-body-game[data-universe="heaven_king"] .vr-card-stack{
 
 /* SCÉNARIO (carte) */
 body.vr-body-game[data-universe="heaven_king"] .vr-card-main{
-  max-width: min(700px, 99vw);
-  min-height: 160px;
+  max-width: min(760px, 99vw);
+  min-height: 180px;
   padding: 38px 42px;
   background-size: 100% auto; /* évite le stretch vertical */
 }
@@ -859,8 +859,8 @@ body.vr-body-game[data-universe="heaven_king"] .vr-card-main .vr-card-text{
 
 /* CHOIX */
 body.vr-body-game[data-universe="heaven_king"] .vr-choice-button{
-  max-width: min(700px, 99vw);
-  min-height: 104px;
+  max-width: min(760px, 99vw);
+  min-height: 125px;
   padding: 16px 46px;
   background-size: 100% auto; /* évite le stretch vertical */
 }
