@@ -968,9 +968,10 @@ body.vr-body-game[data-universe="hell_king"]{
   --vr-choice-inset-left: 14%;
 
   /* ✅ typo Hell (responsive) */
-  --vr-font-scn-title: clamp(17px, 3.0vmin, 34px);
-  --vr-font-scn-text:  clamp(14px, 2.6vmin, 28px);
-  --vr-font-choice:    clamp(15px, 2.8vmin, 30px);
+--vr-font-scn-title: clamp(18px, 3.2vmin, 36px);
+--vr-font-scn-text:  clamp(15px, 2.8vmin, 30px);
+--vr-font-choice:    clamp(16px, 3.0vmin, 32px);
+
 }
 
 body.vr-body-game[data-universe="hell_king"] #view-game{
@@ -1007,9 +1008,10 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-choice-inset-left: 12%;
 
   /* ✅ typo Heaven (responsive) */
-  --vr-font-scn-title: clamp(18px, 3.0vmin, 36px);
-  --vr-font-scn-text:  clamp(14px, 2.45vmin, 26px);
-  --vr-font-choice:    clamp(15px, 2.55vmin, 28px);
+--vr-font-scn-title: clamp(19px, 3.2vmin, 38px);
+--vr-font-scn-text:  clamp(15px, 2.7vmin, 30px);
+--vr-font-choice:    clamp(16px, 2.9vmin, 32px);
+
 }
 
 /* ✅ Heaven : scénario */
@@ -1021,7 +1023,7 @@ body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main{
 
 /* ✅ Heaven : choix */
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-choice-button{
-  background-size: 120% 105% !important;
+  background-size: 125% 105% !important;
   background-position: center !important;
 }
 
@@ -1051,7 +1053,7 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-title{
 /* ✅ Heaven : texte scénario Cormorant noir */
 body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-text{
   font-family: "VR_Cormorant", serif !important;
-  color: #111 !important;
+  color: #000 !important;
   text-shadow: none !important;
   line-height: 1.22 !important;
 }
@@ -1059,7 +1061,7 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-text{
 /* ✅ Heaven : choix Cormorant noir */
 body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
   font-family: "VR_Cormorant", serif !important;
-  color: #111 !important;
+  color: #000 !important;
   text-shadow: none !important;
   line-height: 1.22 !important;
 }
