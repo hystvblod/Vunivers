@@ -128,6 +128,9 @@
       this._peekChoiceActive = null;
       try { document.body?.classList?.remove("vr-peek-mode"); } catch (_) {}
 
+      // ✅ AJOUT MINIMAL : styles de clignotement/preview si ton CSS ne les a pas
+      this._ensurePeekStyles();
+
       this._setupGaugeLabels();
       this._ensureGaugePreviewBars();
       this.updateGauges();
@@ -137,9 +140,58 @@
     enablePeek(steps) {
       const n = Math.max(0, Math.min(Number(steps || 0), 99));
       this.peekRemaining = n;
+
+      // ✅ AJOUT MINIMAL : s’assure que l’effet est visible
+      this._ensurePeekStyles();
+
       try {
         if (n > 0) document.body.classList.add("vr-peek-mode");
         else document.body.classList.remove("vr-peek-mode");
+      } catch (_) {}
+    },
+
+    // ✅ AJOUT MINIMAL : injecte un mini CSS pour rendre l’aperçu VISIBLE (clignote + preview)
+    _ensurePeekStyles() {
+      try {
+        const ID = "vr_peek_styles";
+        if (document.getElementById(ID)) return;
+
+        const style = document.createElement("style");
+        style.id = ID;
+        style.textContent = `
+@keyframes vrPeekGlow {
+  0%   { filter: brightness(1); }
+  50%  { filter: brightness(1.25); }
+  100% { filter: brightness(1); }
+}
+@keyframes vrPeekPulse {
+  0%   { transform: translateZ(0) scale(1); }
+  50%  { transform: translateZ(0) scale(1.01); }
+  100% { transform: translateZ(0) scale(1); }
+}
+
+/* clignotement des jauges impactées */
+body.vr-peek-mode .vr-gauge.vr-peek-up,
+body.vr-peek-mode .vr-gauge.vr-peek-down{
+  animation: vrPeekGlow 650ms ease-in-out infinite;
+}
+
+/* léger glow sur le cadre (sans casser ton thème) */
+body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-frame,
+body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-frame{
+  box-shadow: 0 0 0 2px rgba(255,255,255,.18), 0 10px 24px rgba(0,0,0,.22);
+}
+
+/* preview: visible + découpe par --vr-pct (si ton CSS ne le fait pas) */
+body.vr-peek-mode .vr-gauge-preview{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.55;
+  clip-path: inset(calc(100% - var(--vr-pct, 0%)) 0 0 0);
+}
+`;
+        (document.head || document.documentElement).appendChild(style);
       } catch (_) {}
     },
 
@@ -197,7 +249,24 @@
           preview = document.createElement("div");
           preview.className = "vr-gauge-preview";
           preview.style.setProperty("--vr-pct", "0%");
-          el.querySelector(".vr-gauge-frame")?.appendChild(preview);
+
+          // ✅ AJOUT MINIMAL : assure un positioning correct même si CSS absent
+          try {
+            preview.style.position = "absolute";
+            preview.style.inset = "0";
+            preview.style.pointerEvents = "none";
+            preview.style.opacity = "0.55";
+            preview.style.clipPath = "inset(calc(100% - var(--vr-pct, 0%)) 0 0 0)";
+          } catch (_) {}
+
+          const frame = el.querySelector(".vr-gauge-frame");
+          if (frame) {
+            try {
+              const pos = getComputedStyle(frame).position;
+              if (pos === "static") frame.style.position = "relative";
+            } catch (_) {}
+            frame.appendChild(preview);
+          }
         }
       });
     },
@@ -989,6 +1058,45 @@
           closePopup();
         }
       });
+
+      // ✅ AJOUT MINIMAL : si l’option PEEK n’existe pas dans le HTML, on l’injecte pour qu’elle soit VISIBLE
+      try {
+        const host =
+          (popup.querySelector("[data-token-action]")?.parentElement) || popup;
+
+        if (host && !host.querySelector('[data-token-action="peek15"]')) {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.setAttribute("data-token-action", "peek15");
+          btn.style.cssText =
+            "display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;" +
+            "padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.14);" +
+            "background:rgba(255,255,255,.08);color:inherit;font:inherit;text-align:left;cursor:pointer;";
+
+          const title = document.createElement("div");
+          title.style.cssText = "font-weight:700;font-size:14px;line-height:1.2;";
+          title.textContent = t("token.popup.peek.title", "Voir les effets (15)");
+
+          const desc = document.createElement("div");
+          desc.style.cssText = "opacity:.85;font-size:12.5px;line-height:1.25;";
+          desc.textContent = t(
+            "token.popup.peek.text",
+            "Pendant 15 choix, les jauges concernées clignotent et affichent un aperçu."
+          );
+
+          btn.appendChild(title);
+          btn.appendChild(desc);
+
+          // insertion “logique” (avant gauge50 si possible)
+          const before =
+            host.querySelector('[data-token-action="gauge50"]') ||
+            host.querySelector('[data-token-action="back3"]') ||
+            host.querySelector('[data-token-action="close"]');
+
+          if (before && before.parentNode === host) host.insertBefore(btn, before);
+          else host.appendChild(btn);
+        }
+      } catch (_) {}
 
       popup.querySelectorAll("[data-token-action]").forEach((el) => {
         el.addEventListener("click", async () => {
