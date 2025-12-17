@@ -543,7 +543,6 @@ body.vr-body-game .vr-card-main .vr-card-text{
 
 /* ==========================================================
    FIX CLICS — Overlay jauges “click-through”
-   (marche si ton overlay est un id #vr-token-gauge-overlay ou une classe .vr-token-gauge-overlay)
    ========================================================== */
 #vr-token-gauge-overlay,
 .vr-token-gauge-overlay{
@@ -589,8 +588,18 @@ body.vr-token-select-mode .vr-gauge{
 /* ==========================================================
    FIX GAME (game.html) — PLEIN ÉCRAN + PAS DE SCROLL
    ========================================================== */
-body.vr-body-game {
-  --vr-gauge-size: clamp(60px, 19vw, 88px);
+body.vr-body-game{
+  /* ✅ variables responsive (jauges + textes) */
+  --vr-gauge-size: clamp(72px, 11vw, 120px);
+  --vr-gauge-label-size: clamp(11px, 1.25vw, 14px);
+
+  --vr-scn-title-size: clamp(15px, 1.7vw, 20px);
+  --vr-scn-text-size:  clamp(14px, 1.6vw, 18px);
+  --vr-choice-text-size: clamp(15px, 1.8vw, 20px);
+
+  --vr-hud-name-size: clamp(13px, 1.6vw, 18px);
+  --vr-hud-value-size: clamp(12px, 1.4vw, 15px);
+
   overflow: hidden;
 }
 
@@ -632,6 +641,15 @@ body.vr-body-game #view-game{
 }
 body.vr-body-game #view-game::before{ background: transparent !important; }
 
+/* HUD responsive */
+body.vr-body-game .vr-hud-name,
+body.vr-body-game .vr-hud-years{
+  font-size: var(--vr-hud-name-size) !important;
+}
+body.vr-body-game .vr-hud-value{
+  font-size: var(--vr-hud-value-size) !important;
+}
+
 /* ✅ 4 jauges côte à côte (TOUJOURS) */
 body.vr-body-game .vr-gauges-row{
   width: 100%;
@@ -647,8 +665,14 @@ body.vr-body-game .vr-gauge{
   align-items: center;
   gap: 6px;
 }
+
+body.vr-body-game .vr-gauge-frame{
+  width: var(--vr-gauge-size) !important;
+  height: var(--vr-gauge-size) !important;
+}
+
 body.vr-body-game .vr-gauge-label{
-  font-size: clamp(10px, 2.7vw, 12px);
+  font-size: var(--vr-gauge-label-size) !important;
   min-width: 0;
   text-align: center;
   min-height: 2.6em;
@@ -667,6 +691,17 @@ body.vr-body-game .vr-card-container{
   align-items: flex-start;
   justify-content: center !important;
   margin-top: 0;
+}
+
+/* Textes scénario/choix responsive */
+body.vr-body-game .vr-card-main .vr-card-title{
+  font-size: var(--vr-scn-title-size) !important;
+}
+body.vr-body-game .vr-card-main .vr-card-text{
+  font-size: var(--vr-scn-text-size) !important;
+}
+body.vr-body-game .vr-choice-label{
+  font-size: var(--vr-choice-text-size) !important;
 }
 
 /* ==========================================================
