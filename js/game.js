@@ -338,6 +338,81 @@
 })();
 
 
+// ✅✅✅ AJOUT (SANS RIEN SUPPRIMER) : VRealms - engine/events-loader.js
+// But : éviter ton crash "Cannot read properties of undefined (reading 'loadUniverseData')"
+// On ne remplace pas si déjà OK, mais si manquant/incomplet => on injecte le loader.
+(function () {
+  "use strict";
+
+  const CONFIG_PATH = "data/universes";
+  const DECKS_PATH = "data/decks";
+  const I18N_PATH = "data/i18n";
+
+  async function fetchJson(url) {
+    const res = await fetch(url, { cache: "no-cache" });
+    if (!res.ok) return { ok: false, data: null, status: res.status, url };
+    const data = await res.json().catch(() => null);
+    return { ok: true, data, status: res.status, url };
+  }
+
+  function needsFix(loader) {
+    return !loader || typeof loader.loadUniverseData !== "function";
+  }
+
+  if (needsFix(window.VREventsLoader)) {
+    window.VREventsLoader = {
+      async loadUniverseData(universeId, lang) {
+        if (!universeId) throw new Error("[VREventsLoader] universeId manquant");
+        const safeLang = lang || "fr";
+
+        const [config, deck, cardTexts] = await Promise.all([
+          this._loadConfig(universeId),
+          this._loadDeck(universeId),
+          this._loadCardTexts(universeId, safeLang)
+        ]);
+
+        return { config, deck, cardTexts };
+      },
+
+      async _loadConfig(universeId) {
+        const url = `${CONFIG_PATH}/${universeId}.config.json`;
+        const r = await fetchJson(url);
+        if (!r.ok || !r.data || typeof r.data !== "object") {
+          throw new Error(`[VREventsLoader] Config introuvable/invalid: ${url}`);
+        }
+        return r.data;
+      },
+
+      async _loadDeck(universeId) {
+        const url = `${DECKS_PATH}/${universeId}.deck.json`;
+        const r = await fetchJson(url);
+        if (!r.ok || !Array.isArray(r.data)) {
+          throw new Error(`[VREventsLoader] Deck introuvable/invalid: ${url}`);
+        }
+        return r.data;
+      },
+
+      async _loadCardTexts(universeId, lang) {
+        // ✅ Nouveau format : data/i18n/<lang>/cards_<universeId>.json
+        const urlNew = `${I18N_PATH}/${lang}/cards_${universeId}.json`;
+        // ✅ Ancien fallback : data/i18n/cards_<universeId>_<lang>.json
+        const urlOld = `${I18N_PATH}/cards_${universeId}_${lang}.json`;
+
+        let r = await fetchJson(urlNew);
+        if (!r.ok) r = await fetchJson(urlOld);
+
+        if (!r.ok || !r.data || typeof r.data !== "object") {
+          throw new Error(
+            `[VREventsLoader] Textes cartes introuvables/invalid. Testés:\n- ${urlNew}\n- ${urlOld}`
+          );
+        }
+        return r.data;
+      }
+    };
+  }
+})();
+
+
 // VRealms - engine/state.js
 (function () {
   "use strict";
@@ -541,15 +616,7 @@
     coinsStreak: 0,
     lang: "fr",
 
-    // ✅ Peek (impact réel) pendant N cartes
-    revealRemaining: 0,
-
     history: [],
-
-    enableGaugePeek(count) {
-      const n = Math.max(1, Math.min(Number(count || 15), 50));
-      this.revealRemaining = Math.max(this.revealRemaining || 0, n);
-    },
 
     async init(universeId, lang) {
       this.universeId = universeId;
@@ -565,9 +632,6 @@
       this.reignIndex = 0;
       this.coinsStreak = 0;
       this.history = [];
-
-      // ✅ reset peek au lancement (si tu veux le conserver entre runs, enlève cette ligne)
-      this.revealRemaining = 0;
 
       window.VRState.initUniverse(this.universeConfig);
       window.VRUIBinding.init(this.universeConfig, this.lang, this.cardTextsDict);
@@ -608,14 +672,7 @@
       this.currentCardLogic = card;
       this._rememberCard(card.id);
       window.VRState.incrementCardsPlayed();
-
-      // ✅ Peek auto pendant N cartes
-      const revealActive = (this.revealRemaining || 0) > 0;
-      window.VRUIBinding?.setRevealMode?.(revealActive);
-
       window.VRUIBinding.showCard(card);
-
-      if (revealActive) this.revealRemaining -= 1;
     },
 
     _rememberCard(cardId) {
@@ -678,11 +735,6 @@
       const card = this.deck.find(c => c.id === snap.cardId) || this.currentCardLogic;
       if (card) {
         this.currentCardLogic = card;
-
-        // ✅ si peek restant: setRevealMode avant showCard
-        const revealActive = (this.revealRemaining || 0) > 0;
-        window.VRUIBinding?.setRevealMode?.(revealActive);
-
         window.VRUIBinding.showCard(card);
       }
 
@@ -758,9 +810,6 @@
         };
       }
       this.coinsStreak = 0;
-
-      // ✅ on coupe le mode reveal visuel à la mort (sans toucher revealRemaining)
-      window.VRUIBinding?.setRevealMode?.(false);
     }
   };
 
