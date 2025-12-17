@@ -681,7 +681,7 @@ body.vr-body-game[data-universe="hell_king"] #vr-card-main #card-title,
 body.vr-body-game[data-universe="hell_king"] #vr-card-main #card-text,
 body.vr-body-game[data-universe="hell_king"] #vr-card-main .vr-card-title,
 body.vr-body-game[data-universe="hell_king"] #vr-card-main .vr-card-text{
-  padding-left: 16px !important;   /* ajuste: 6/8/12px selon ton rendu */
+  padding-left: 20px !important;   /* ajuste: 6/8/12px selon ton rendu */
   padding-right: 0 !important;
 }
 
