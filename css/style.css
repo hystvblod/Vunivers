@@ -932,3 +932,74 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-stack-gap: clamp(6px, 0.8vh, 10px);
   --vr-choices-gap: clamp(8px, 1.0vh, 12px);
 }
+/* ==========================================================
+   FIX VISUEL — CARTOUCHES TROP PETITES vs TEXTE
+   + GAP JAUGES -> SCENARIO TROP GRAND
+   (GLOBAL + OVERRIDES HELL_KING)
+   A COLLER TOUT EN BAS DU CSS
+   ========================================================== */
+
+/* ===== GLOBAL : agrandir les WEBP (conteneurs), sans toucher aux polices ===== */
+body.vr-body-game{
+  /* Cartouche scénario + choix plus grandes */
+  --vr-card-w: clamp(390px, 96vw, 1020px);
+  --vr-scn-h: clamp(200px, 24vh, 360px);
+  --vr-choice-h: clamp(150px, 19vh, 270px);
+
+  /* Un peu plus de padding interne = plus de “place” dans le webp */
+  --vr-scn-pad-y: clamp(20px, 2.6vh, 40px);
+  --vr-scn-pad-x: clamp(24px, 5.4vw, 64px);
+
+  --vr-choice-pad-y: clamp(14px, 2.3vh, 26px);
+  --vr-choice-pad-x: clamp(26px, 6.0vw, 70px);
+
+  /* Resserre le layout vertical (réduit le “trou” jauges -> scénario) */
+  --vr-game-gap: clamp(0px, 0.25vh, 3px);
+  --vr-stack-gap: clamp(4px, 0.55vh, 8px);
+  --vr-choices-gap: clamp(6px, 0.75vh, 10px);
+}
+
+/* Rapprochement jauges -> scénario (sans casser le responsive) */
+body.vr-body-game .vr-gauges-row{
+  margin-bottom: -6px !important;
+}
+body.vr-body-game .vr-card-container{
+  margin-top: -16px !important;
+}
+
+/* Appliquer les tailles des cartouches partout */
+body.vr-body-game #view-game .vr-card-stack{
+  width: min(100%, var(--vr-card-w)) !important;
+}
+body.vr-body-game #view-game .vr-card-main{
+  min-height: var(--vr-scn-h) !important;
+  padding: var(--vr-scn-pad-y) var(--vr-scn-pad-x) !important;
+  background-size: 100% 100% !important;
+}
+body.vr-body-game #view-game .vr-choice-button{
+  min-height: var(--vr-choice-h) !important;
+  padding: var(--vr-choice-pad-y) var(--vr-choice-pad-x) !important;
+  background-size: 100% 100% !important;
+}
+
+/* ===== HELL_KING ONLY : le gris a une “zone imprimable” plus contraignante ===== */
+body.vr-body-game[data-universe="hell_king"]{
+  /* Encore plus grand sur Hell pour éviter tout dépassement */
+  --vr-scn-h: clamp(240px, 28vh, 460px);
+  --vr-choice-h: clamp(170px, 22vh, 320px);
+
+  /* On “descend” le contenu dans la cartouche grise (sans changer la police) */
+  --vr-scn-pad-y: clamp(30px, 3.4vh, 56px);
+}
+
+/* Texte du scénario Hell : zone sûre un peu plus étroite + descendu */
+body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title,
+body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-text{
+  max-width: 82% !important;       /* laisse plus de marge dans le gris */
+  transform: translateY(6px);      /* descend légèrement le bloc texte */
+}
+
+/* Choix Hell : élargir la marge interne “utile” (sans changer police) */
+body.vr-body-game[data-universe="hell_king"] #view-game .vr-choice-label{
+  max-width: 84% !important;       /* évite que ça colle aux bords */
+}
