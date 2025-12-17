@@ -132,7 +132,11 @@
         const gaugeId = cfg.id;
 
         // ✅ i18n prioritaire: gauges.<universeId>.<gaugeId>
-    const i18nKey = `gauges.${universeId}.${gaugeId}`
+        const i18nKey = `gauges.${universeId}.${gaugeId}`;
+        const translated =
+          window.VRI18n && typeof window.VRI18n.t === "function"
+            ? window.VRI18n.t(i18nKey)
+            : null;
 
         const label =
           (translated && translated !== i18nKey ? translated : null) ||
