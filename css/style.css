@@ -126,11 +126,11 @@ body.vr-body-game .vr-header::before { content: none; }
 body.vr-body-game .vr-hud{
   width: 100%;
   max-width: 980px;
-  margin: 0 auto 4px; /* ✅ un peu moins d'espace */
+  margin: 0 auto 2px;      /* ✅ réduit un peu l’espace sous HUD */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;           /* ✅ un peu moins d'espace */
+  gap: 2px;                /* ✅ réduit un peu l’espace */
 }
 
 body.vr-body-game .vr-hud-money{
@@ -318,7 +318,11 @@ button.vr-card:focus-visible{
   pointer-events: none;
   z-index: 0;
 }
-#view-game > *:not(.vr-ending-overlay) { position: relative; z-index: 1; }
+#view-game > *:not(.vr-ending-overlay):not(.vr-popup):not(.vr-token-gauge-overlay) {
+  position: relative;
+  z-index: 1;
+}
+
 
 /* ===== Jauges (WEBP) ===== */
 .vr-gauges-row{
@@ -592,30 +596,30 @@ body.vr-token-select-mode .vr-gauge{
 
 /* ==========================================================
    FIX GAME (game.html) — PLEIN ÉCRAN + PAS DE SCROLL
-   + ✅ réduit l'espace “bleu/rouge” entre jauges et scénario (tous univers)
-   + ✅ jauges + cartes + textes plus grands et responsives
+   + ✅ espace jauges -> scénario RÉDUIT
+   + ✅ cartouches WEBP scénario/choix AGRANDIES (texte inchangé)
    ========================================================== */
 body.vr-body-game{
-  /* ✅ jauges plus grandes mais safe en 4 colonnes */
+  /* ✅ jauges un peu plus grandes mais safe en 4 colonnes */
   --vr-gauge-size: clamp(66px, 18vw, 104px);
 
-  /* ✅ cartes (webp) plus grandes */
-  --vr-card-w: clamp(340px, 94vw, 860px);
+  /* ✅ cartouches plus larges */
+  --vr-card-w: clamp(360px, 96vw, 940px);
 
-  /* ✅ hauteur/paddings scénario (lisible mais sans gros vide) */
-  --vr-scn-h: clamp(120px, 14vh, 190px);
-  --vr-scn-pad-y: clamp(18px, 2.0vh, 30px);
-  --vr-scn-pad-x: clamp(22px, 4.8vw, 48px);
+  /* ✅ scénario: on agrandit le “bloc” (webp) sans toucher au texte */
+  --vr-scn-h: clamp(150px, 18vh, 260px);
+  --vr-scn-pad-y: clamp(18px, 2.2vh, 34px);
+  --vr-scn-pad-x: clamp(22px, 5.0vw, 56px);
 
-  /* ✅ hauteur/paddings choix */
-  --vr-choice-h: clamp(88px, 12vh, 150px);
-  --vr-choice-pad-y: clamp(10px, 1.6vh, 18px);
-  --vr-choice-pad-x: clamp(22px, 5.2vw, 54px);
+  /* ✅ choix: on agrandit les “blocs” (webp) sans toucher au texte */
+  --vr-choice-h: clamp(118px, 15vh, 200px);
+  --vr-choice-pad-y: clamp(12px, 2.0vh, 22px);
+  --vr-choice-pad-x: clamp(24px, 5.6vw, 64px);
 
-  /* ✅ espaces entre blocs (réduit le “trou” entre jauges et scénario) */
-  --vr-game-gap: clamp(4px, 0.8vh, 8px);
-  --vr-stack-gap: clamp(8px, 1.0vh, 12px);
-  --vr-choices-gap: clamp(10px, 1.2vh, 14px);
+  /* ✅ rythme vertical global plus serré */
+  --vr-game-gap: clamp(2px, 0.35vh, 5px);
+  --vr-stack-gap: clamp(6px, 0.7vh, 10px);
+  --vr-choices-gap: clamp(8px, 0.9vh, 12px);
 
   overflow: hidden;
 }
@@ -641,11 +645,10 @@ body.vr-body-game #view-game{
   min-height: 100vh;
   margin: 0;
 
-  /* ✅ top padding réduit = moins d’espace vide */
   padding:
     calc(clamp(44px, 6vh, 58px) + env(safe-area-inset-top))
     clamp(10px, 3.4vw, 18px)
-    clamp(10px, 2.0vh, 14px)
+    clamp(8px, 1.6vh, 12px)
     clamp(10px, 3.4vw, 18px) !important;
 
   border-radius: 0;
@@ -663,7 +666,7 @@ body.vr-body-game #view-game::before{ background: transparent !important; }
 body.vr-body-game .vr-gauges-row{
   width: 100%;
   max-width: 980px;
-  margin: 0 auto 2px; /* ✅ réduit l'espace sous les jauges */
+  margin: 0 auto 0 !important;      /* ✅ plus de marge sous jauges */
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(8px, 2.2vw, 14px);
@@ -678,7 +681,7 @@ body.vr-body-game .vr-gauge-label{
   font-size: clamp(11px, 2.9vw, 14px);
   min-width: 0;
   text-align: center;
-  min-height: 2.4em;
+  min-height: 2.0em;               /* ✅ moins haut => remonte le scénario */
   line-height: 1.15;
   display: flex;
   align-items: center;
@@ -687,19 +690,17 @@ body.vr-body-game .vr-gauge-label{
   text-shadow: 0 2px 10px rgba(0,0,0,0.45);
 }
 
-/* ✅ Zone cartes: prend le reste sans scroller */
+/* ✅ Zone cartes: remonte sous les jauges */
 body.vr-body-game .vr-card-container{
   flex: 1 1 auto;
   min-height: 0;
   display: flex;
   align-items: flex-start;
   justify-content: center !important;
-  margin-top: 0 !important;
+  margin-top: -6px !important;     /* ✅ réduit visuellement l’espace jauges->scénario */
 }
 
-/* ==========================================================
-   FIX GLOBAL — CARTES SCÉNARIO/CHOIX RESPONSIVE + CENTRÉES
-   ========================================================== */
+/* ✅ pile cartes */
 body.vr-body-game .vr-card-stack{
   width: min(100%, var(--vr-card-w)) !important;
   max-width: none !important;
@@ -708,6 +709,7 @@ body.vr-body-game .vr-card-stack{
   gap: var(--vr-stack-gap) !important;
 }
 
+/* ✅ scénario: cartouche plus grande */
 body.vr-body-game .vr-card-main{
   width: 100% !important;
   max-width: none !important;
@@ -717,21 +719,10 @@ body.vr-body-game .vr-card-main{
   background-size: 100% 100% !important;
 }
 
-/* ✅ texte scénario + titre plus grands et responsives */
-body.vr-body-game .vr-card-main .vr-card-title{
-  font-size: clamp(16px, 3.8vw, 22px);
-  line-height: 1.15;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
-}
-body.vr-body-game .vr-card-main .vr-card-text{
-  font-size: clamp(14px, 3.3vw, 18px);
-  line-height: 1.35;
-}
-
+/* ✅ choix: cartouches plus grandes */
 body.vr-body-game .vr-card-choices{
   gap: var(--vr-choices-gap) !important;
 }
-
 body.vr-body-game .vr-choice-button{
   width: 100% !important;
   max-width: none !important;
@@ -741,17 +732,10 @@ body.vr-body-game .vr-choice-button{
   background-size: 100% 100% !important;
 }
 
-/* ✅ texte choix plus grand et responsive */
-body.vr-body-game .vr-choice-label{
-  font-size: clamp(15px, 3.6vw, 20px);
-  line-height: 1.25;
-  max-width: 90%;
-}
-
 /* ==========================================================
    Polices par univers
    - ✅ APPLIQUÉES UNIQUEMENT DANS #view-game
-   - ✅ donc la popup jeton garde la police de base
+   - ✅ la popup jeton garde la police de base
    ========================================================== */
 @font-face{
   font-family: "VR_Quintess";
@@ -769,7 +753,7 @@ body.vr-body-game .vr-choice-label{
   font-display: swap;
 }
 
-/* ✅ HELL : scénario (titre + texte) = Quintess (UNIQUEMENT dans #view-game) */
+/* ✅ HELL : scénario (titre + texte) = Quintess */
 body[data-universe="hell_king"].vr-body-game #view-game .vr-card-title,
 body[data-universe="hell_king"].vr-body-game #view-game .vr-card-text{
   font-family: "VR_Quintess", serif !important;

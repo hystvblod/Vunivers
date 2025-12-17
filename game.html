@@ -16,7 +16,8 @@
     :root { --vr-bg: #fff !important; }
 
     /* =========================
-       OVERRIDES GAME HUD + ESPACES
+       OVERRIDES GAME HUD UNIQUEMENT
+       (on ne touche plus aux gaps/placements du layout ici)
        ========================= */
 
     /* HUD: VCoins gauche / Nom+Années centre / Jeton droite */
@@ -60,17 +61,6 @@
     body.vr-body-game .vr-hud-years{
       font-size: 15px !important;
       line-height: 1.1 !important;
-    }
-
-    /* Réduire l’espace noir entre jauges et carte scénario */
-    body.vr-body-game .vr-card-container{
-      align-items: flex-start !important;
-      justify-content: flex-start !important;
-    }
-
-    /* Optionnel: resserre un peu le rythme vertical global */
-    body.vr-body-game #view-game{
-      gap: 8px !important;
     }
   </style>
 </head>

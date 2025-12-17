@@ -840,27 +840,56 @@
 
       if (!btnJeton || !popup) return;
 
+      // ✅ SÉCURITÉ : si popup/overlay sont à l’intérieur de #view-game,
+      // on les remonte dans <body> pour éviter toute règle CSS du type:
+      // #view-game > * { position: relative; ... }
+      try {
+        const vg = document.getElementById("view-game");
+        if (vg) {
+          if (popup && vg.contains(popup)) document.body.appendChild(popup);
+          if (overlay && vg.contains(overlay)) document.body.appendChild(overlay);
+        }
+      } catch (_) {}
+
+      // --- A11y + Focus safe show/hide (évite l’avertissement aria-hidden) ---
+      const _showDialog = (el, focusEl) => {
+        if (!el) return;
+        try { el.removeAttribute("inert"); } catch (_) {}
+        el.setAttribute("aria-hidden", "false");
+        el.style.display = "flex";
+        try { focusEl?.focus?.({ preventScroll: true }); } catch (_) {}
+      };
+
+      const _hideDialog = (el, focusBackEl) => {
+        if (!el) return;
+        const active = document.activeElement;
+        if (active && el.contains(active)) {
+          try { active.blur(); } catch (_) {}
+          try { focusBackEl?.focus?.({ preventScroll: true }); } catch (_) {}
+        }
+        try { el.setAttribute("inert", ""); } catch (_) {}
+        el.setAttribute("aria-hidden", "true");
+        el.style.display = "none";
+      };
+
       const openPopup = () => {
         if (this.selectMode) return;
-        popup.setAttribute("aria-hidden", "false");
-        popup.style.display = "flex";
+        const first = popup?.querySelector?.("[data-token-action]");
+        _showDialog(popup, first || btnJeton);
       };
 
       const closePopup = () => {
-        popup.setAttribute("aria-hidden", "true");
-        popup.style.display = "none";
+        _hideDialog(popup, btnJeton);
       };
 
       const openGaugeOverlay = () => {
         if (!overlay) return;
-        overlay.setAttribute("aria-hidden", "false");
-        overlay.style.display = "flex";
+        _showDialog(overlay, cancelGaugeBtn || btnJeton);
       };
 
       const closeGaugeOverlay = () => {
         if (!overlay) return;
-        overlay.setAttribute("aria-hidden", "true");
-        overlay.style.display = "none";
+        _hideDialog(overlay, btnJeton);
       };
 
       const startSelectGauge50 = () => {
