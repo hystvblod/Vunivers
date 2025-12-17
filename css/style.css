@@ -964,3 +964,27 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-stack-gap: clamp(6px, 0.8vh, 10px);
   --vr-choices-gap: clamp(8px, 1.0vh, 12px);
 }
+/* =========================================
+   FIX HELL — alignement scénario (texte + titre)
+   - recentre le bloc un peu vers la droite
+   - descend légèrement le titre
+   ========================================= */
+body.vr-body-game[data-universe="hell_king"]{
+  --vr-hell-scn-shift-x: clamp(10px, 1.6vw, 18px);  /* + à droite */
+  --vr-hell-title-mt: clamp(6px, 1.0vh, 10px);      /* titre un peu plus bas */
+}
+
+/* Appliquer le shift au contenu scénario (pas aux choix) */
+body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main #card-title,
+body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main #card-text,
+body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title,
+body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-text{
+  position: relative !important;
+  left: var(--vr-hell-scn-shift-x) !important;
+}
+
+/* Descendre un peu le titre uniquement */
+body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main #card-title,
+body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title{
+  margin-top: var(--vr-hell-title-mt) !important;
+}
