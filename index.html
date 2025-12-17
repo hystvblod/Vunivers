@@ -185,89 +185,6 @@
       .vr-icon-button{ width:40px !important; height:40px !important; }
       .vr-icon-button img{ width:28px !important; height:28px !important; }
     }
-
-    /* ===========================
-       Username modal (Supabase)
-       =========================== */
-    .vr-modal{
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      background: rgba(0,0,0,.62);
-      z-index: 99999;
-    }
-    .vr-modal.vr-modal-open{ display:flex; }
-    .vr-modal-card{
-      width: min(520px, 92vw);
-      border-radius: 18px;
-      padding: 16px 14px 14px;
-      background: rgba(15, 23, 42, 0.96);
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: 0 18px 50px rgba(0,0,0,.55);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      color: #fff;
-    }
-    .vr-modal-title{
-      margin: 2px 0 6px;
-      font-size: 16px;
-      font-weight: 900;
-      text-align: center;
-    }
-    .vr-modal-sub{
-      margin: 0 0 10px;
-      font-size: 13px;
-      line-height: 1.35;
-      color: rgba(229,231,235,.95);
-      text-align: center;
-    }
-    .vr-modal-row{ display:flex; gap:10px; }
-    .vr-modal-input{
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color: #fff;
-      padding: 10px 12px;
-      font-size: 14px;
-      outline: none;
-    }
-    .vr-modal-input:focus{
-      border-color: rgba(255,255,255,.35);
-      background: rgba(255,255,255,.08);
-    }
-    .vr-modal-actions{
-      display:flex;
-      gap:10px;
-      justify-content: center;
-      margin-top: 12px;
-    }
-    .vr-btn{
-      border: 0;
-      border-radius: 12px;
-      padding: 10px 12px;
-      font-weight: 900;
-      cursor: pointer;
-    }
-    .vr-btn-primary{
-      background: rgba(255,255,255,.92);
-      color: #0b1020;
-    }
-    .vr-btn-ghost{
-      background: rgba(255,255,255,.10);
-      color: rgba(255,255,255,.95);
-      border: 1px solid rgba(255,255,255,.16);
-    }
-    .vr-modal-error{
-      margin-top: 10px;
-      font-size: 12px;
-      color: #fecaca;
-      text-align: center;
-      min-height: 1.2em;
-    }
   </style>
 </head>
 
@@ -371,7 +288,9 @@
           </div>
         </button>
 
-        <!-- ✅ Carte “locked” supprimée -->
+        <!-- ✅ Carte “locked” supprimée (elle était vide car i18n universe.locked.title renvoyait vide)
+             Pour en ajouter une nouvelle : copie un <button class="vr-card" data-universe="xxx"> ... </button>
+             + ajoute les clés i18n universe.xxx.title / universe.xxx.desc -->
       </div>
     </section>
 
@@ -382,26 +301,6 @@
   </footer>
 
   <div id="vr-tooltip" class="vr-tooltip"></div>
-
-  <!-- Username modal (Supabase) -->
-  <div id="vr-username-modal" class="vr-modal" aria-hidden="true">
-    <div class="vr-modal-card" role="dialog" aria-modal="true" aria-labelledby="vr-username-title">
-      <div class="vr-modal-title" id="vr-username-title" data-i18n="ui.username.title"></div>
-      <div class="vr-modal-sub" data-i18n="ui.username.subtitle"></div>
-
-      <div class="vr-modal-row">
-        <input id="vr-username-input" class="vr-modal-input" maxlength="20" autocomplete="off"
-               placeholder="Pseudo" data-i18n-placeholder="ui.username.placeholder" />
-      </div>
-
-      <div id="vr-username-error" class="vr-modal-error"></div>
-
-      <div class="vr-modal-actions">
-        <button id="vr-username-skip" class="vr-btn vr-btn-ghost" type="button" data-i18n="ui.username.skip"></button>
-        <button id="vr-username-save" class="vr-btn vr-btn-primary" type="button" data-i18n="ui.username.save"></button>
-      </div>
-    </div>
-  </div>
 
   <script>
     function _t(key) {
@@ -495,126 +394,11 @@
     })();
   </script>
 
-  <!-- Supabase -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/supabaseClient.js"></script>
-
   <script src="js/userData.js"></script>
   <script src="js/ads.js"></script>
   <script src="js/purchases.js"></script>
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
   <!-- IMPORTANT : PAS DE js/game.js SUR INDEX -->
-
-  <script>
-    function __t(key) {
-      try {
-        if (window.VRI18n && typeof window.VRI18n.t === "function") return window.VRI18n.t(key) || "";
-        if (typeof window.i18nGet === "function") return window.i18nGet(key) || "";
-      } catch (_) {}
-      return "";
-    }
-
-    function __applyPlaceholders() {
-      document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-        const k = el.getAttribute("data-i18n-placeholder");
-        const v = k ? (__t(k) || "") : "";
-        if (v) el.setAttribute("placeholder", v);
-      });
-    }
-
-    (function () {
-      const modal = document.getElementById("vr-username-modal");
-      const input = document.getElementById("vr-username-input");
-      const btnSave = document.getElementById("vr-username-save");
-      const btnSkip = document.getElementById("vr-username-skip");
-      const err = document.getElementById("vr-username-error");
-
-      if (!modal || !input || !btnSave || !btnSkip || !err) return;
-
-      function openModal() {
-        err.textContent = "";
-        modal.classList.add("vr-modal-open");
-        modal.setAttribute("aria-hidden", "false");
-        setTimeout(() => { try { input.focus(); } catch (_) {} }, 50);
-      }
-
-      function closeModal() {
-        modal.classList.remove("vr-modal-open");
-        modal.setAttribute("aria-hidden", "true");
-      }
-
-      function setError(keyFallback, raw) {
-        const msg = __t(keyFallback) || raw || "";
-        err.textContent = msg;
-      }
-
-      function validateUsername(u) {
-        const s = (u || "").trim();
-        if (s.length < 3 || s.length > 20) return { ok: false, errKey: "ui.username.error_format" };
-        if (!/^[a-zA-Z0-9_-]+$/.test(s)) return { ok: false, errKey: "ui.username.error_format" };
-        return { ok: true, value: s };
-      }
-
-      // ✅ Au chargement : auth anon + si pas de username -> popup
-      async function boot() {
-        __applyPlaceholders();
-
-        if (window.VUserData && typeof window.VUserData.init === "function") {
-          try { await window.VUserData.init(); } catch (_) {}
-        }
-
-        if (typeof window.bootstrapAuthAndProfile !== "function") return;
-
-        const me = await window.bootstrapAuthAndProfile();
-        if (!me) return;
-
-        // sync cache local aussi
-        if (window.VUserData && typeof window.VUserData.init === "function") {
-          try { await window.VUserData.init(); } catch (_) {}
-        }
-
-        const username = (me.username || "").toString().trim();
-        if (!username) openModal();
-      }
-
-      btnSkip.addEventListener("click", () => closeModal());
-
-      btnSave.addEventListener("click", async () => {
-        err.textContent = "";
-
-        const v = validateUsername(input.value);
-        if (!v.ok) return setError(v.errKey, "Pseudo invalide.");
-
-        if (!window.VUserData || typeof window.VUserData.setUsernameRemote !== "function") {
-          return setError("ui.username.error_generic", "Supabase non prêt.");
-        }
-
-        btnSave.disabled = true;
-        btnSkip.disabled = true;
-
-        const ok = await window.VUserData.setUsernameRemote(v.value);
-
-        btnSave.disabled = false;
-        btnSkip.disabled = false;
-
-        if (ok) {
-          closeModal();
-          return;
-        }
-
-        // false = déjà pris (dans ton SQL)
-        setError("ui.username.error_taken", "Pseudo déjà pris.");
-      });
-
-      input.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") btnSave.click();
-      });
-
-      window.addEventListener("load", boot);
-      window.addEventListener("vrealms:i18n-ready", __applyPlaceholders);
-      setTimeout(__applyPlaceholders, 250);
-    })();
-  </script>
 </body>
 </html>
