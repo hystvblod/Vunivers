@@ -2,6 +2,28 @@
   "app": {
     "title": "VRealms"
   },
+  "common": {
+    "continue": "Continuer",
+    "cancel": "Annuler",
+    "close": "Fermer"
+  },
+  "auth": {
+    "username": {
+      "title": "Choisis ton pseudo",
+      "subtitle": "Il sera visible dans l’app.",
+      "label": "Pseudo",
+      "placeholder": "Ex: Lucifer_7",
+      "cta": "Valider",
+      "skip": "Plus tard",
+      "rules": "3 à 20 caractères • lettres/chiffres/_/-",
+      "errors": {
+        "length": "Le pseudo doit faire entre 3 et 20 caractères.",
+        "chars": "Utilise seulement lettres, chiffres, _ ou -.",
+        "taken": "Ce pseudo est déjà pris, essaie-en un autre.",
+        "generic": "Impossible d’enregistrer le pseudo."
+      }
+    }
+  },
   "ui": {
     "language": "Langue",
     "subtitle": "Choisissez votre destin.",
@@ -17,15 +39,8 @@
         "legions": "Légions",
         "order": "Ordre",
         "surface": "Surface"
-
-
-        
       }
     }
-
-
-
-    
   },
   "game": {
     "title": "Partie en cours",
