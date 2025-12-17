@@ -461,11 +461,8 @@ body.vr-body-game .vr-card-container{ justify-content:center !important; }
 
 /* ==========================================================
    ✅ SAFE ZONE SCÉNARIO (en %)
-   - Tu règles : --vr-scn-inset-top/right/bottom/left
-   - Ça colle au WEBP (responsive)
    ========================================================== */
 body.vr-body-game .vr-card-main{
-  /* (valeurs par défaut si un univers n’override pas) */
   padding:
     var(--vr-scn-inset-top, 14%)
     var(--vr-scn-inset-right, 10%)
@@ -542,8 +539,6 @@ body.vr-body-game .vr-card-main .vr-card-text{
 
 /* ==========================================================
    ✅ SAFE ZONE CHOIX (en %)
-   - Tu règles : --vr-choice-inset-top/right/bottom/left
-   - Le texte est ABSOLU dans le bouton, collé au WEBP
    ========================================================== */
 body.vr-body-game .vr-choice-button{
   padding: 0 !important; /* tout se pilote avec les insets en % */
@@ -840,7 +835,7 @@ body.vr-body-game .vr-card-main{
   min-height: var(--vr-scn-h) !important;
   background-size: 100% 100% !important;
 
-  /* ✅ safe zone en % (tu ajustes les variables) */
+  /* ✅ safe zone en % */
   padding:
     var(--vr-scn-inset-top)
     var(--vr-scn-inset-right)
@@ -897,7 +892,6 @@ body.vr-body-game .vr-top-actions-game .vr-top-icon{
 
 /* ==========================================================
    FONTS par univers
-   (✅ double src pour éviter les 404 selon où se trouve le CSS)
    ========================================================== */
 @font-face{
   font-family: "VR_Quintess";
@@ -952,7 +946,8 @@ body[data-universe="hell_king"].vr-body-game #view-game .vr-choice-label{
 }
 
 /* ==========================================================
-   HELL ONLY — insets % + shift texte (comme avant)
+   HELL ONLY — ✅ corrigé : texte + haut + gauche
+   + ✅ zone texte choix réduite (Hell seulement)
    ========================================================== */
 body.vr-body-game[data-universe="hell_king"]{
   --vr-card-w: clamp(380px, 98vw, 980px);
@@ -960,20 +955,17 @@ body.vr-body-game[data-universe="hell_king"]{
   --vr-scn-h: clamp(140px, 19svh, 300px);
   --vr-choice-h: clamp(88px, 13.2svh, 220px);
 
-  /* ✅ SAFE ZONES Hell (en %) */
-  --vr-scn-inset-top: 15%;
-  --vr-scn-inset-right: 11%;
-  --vr-scn-inset-bottom: 13%;
-  --vr-scn-inset-left: 11%;
+  /* ✅ SAFE ZONES Hell (en %) — Ajusté pour remonter + décaler à gauche */
+  --vr-scn-inset-top: 12%;
+  --vr-scn-inset-right: 13%;
+  --vr-scn-inset-bottom: 16%;
+  --vr-scn-inset-left: 9%;
 
-  --vr-choice-inset-top: 20%;
-  --vr-choice-inset-right: 10%;
-  --vr-choice-inset-bottom: 18%;
-  --vr-choice-inset-left: 10%;
-
-  /* ✅ plus à droite / plus bas (Hell uniquement) */
-  --vr-hell-scn-shift-x: clamp(16px, 2.4vw, 26px);
-  --vr-hell-scn-shift-y: clamp(10px, 1.8svh, 18px);
+  /* ✅ Hell : choix -> zone texte plus petite (plus de marge autour) */
+  --vr-choice-inset-top: 24%;
+  --vr-choice-inset-right: 14%;
+  --vr-choice-inset-bottom: 22%;
+  --vr-choice-inset-left: 14%;
 
   /* ✅ typo Hell (responsive) */
   --vr-font-scn-title: clamp(17px, 3.0vmin, 34px);
@@ -984,15 +976,6 @@ body.vr-body-game[data-universe="hell_king"]{
 body.vr-body-game[data-universe="hell_king"] #view-game{
   padding-left: clamp(8px, 2.8vw, 16px) !important;
   padding-right: clamp(8px, 2.8vw, 16px) !important;
-}
-
-/* ✅ déplacement du contenu via translate (plus stable que left/top) */
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title,
-body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-text{
-  position: relative !important;
-  left: auto !important;
-  top: auto !important;
-  transform: translate(var(--vr-hell-scn-shift-x), var(--vr-hell-scn-shift-y)) !important;
 }
 
 /* ==========================================================
@@ -1028,16 +1011,16 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-font-choice:    clamp(15px, 2.55vmin, 28px);
 }
 
-/* ✅ Heaven : scénario (pas de crop, pas de cover) */
+/* ✅ Heaven : scénario */
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main{
   overflow: hidden;
   background-size: 100% 100% !important;
   background-position: center !important;
 }
 
-/* ✅ Heaven : choix (pas de crop, pas de cover) */
+/* ✅ Heaven : choix */
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-choice-button{
-  background-size: 120% 100% !important;
+  background-size: 100% 100% !important;
   background-position: center !important;
 }
 
