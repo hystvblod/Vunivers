@@ -1048,6 +1048,144 @@
 })();
 
 
+// ✅✅✅ VRealms - VCoins UI + Actions (popup, pub=>+500 vcoins, shop)
+(function () {
+  "use strict";
+
+  function t(key, fallback) {
+    try {
+      const out = window.VRI18n?.t?.(key);
+      if (out && out !== key) return out;
+    } catch (_) {}
+    return fallback || key;
+  }
+
+  function toast(msg) {
+    try {
+      if (typeof window.showToast === "function") return window.showToast(msg);
+    } catch (_) {}
+
+    try {
+      const id = "__vr_toast";
+      let el = document.getElementById(id);
+      if (!el) {
+        el = document.createElement("div");
+        el.id = id;
+        el.style.cssText =
+          "position:fixed;left:50%;bottom:12%;transform:translateX(-50%);" +
+          "background:rgba(0,0,0,.85);color:#fff;padding:10px 14px;border-radius:12px;" +
+          "font:14px/1.35 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;" +
+          "z-index:2147483647;max-width:84vw;text-align:center";
+        document.body.appendChild(el);
+      }
+      el.textContent = String(msg || "");
+      el.style.opacity = "1";
+      clearTimeout(el.__t1); clearTimeout(el.__t2);
+      el.__t1 = setTimeout(() => { el.style.transition = "opacity .25s"; el.style.opacity = "0"; }, 2200);
+      el.__t2 = setTimeout(() => { try { el.remove(); } catch (_) {} }, 2600);
+    } catch (_) {}
+  }
+
+  const VRCoinUI = {
+    init() {
+      const btnVcoins = document.getElementById("btn-vcoins");
+      const popup = document.getElementById("vr-coins-popup");
+      if (!btnVcoins || !popup) return;
+
+      // ✅ SÉCURITÉ : si popup est dans #view-game, on la remonte dans <body>
+      try {
+        const vg = document.getElementById("view-game");
+        if (vg && popup && vg.contains(popup)) document.body.appendChild(popup);
+      } catch (_) {}
+
+      const _showDialog = (el, focusEl) => {
+        if (!el) return;
+        try { el.removeAttribute("inert"); } catch (_) {}
+        el.setAttribute("aria-hidden", "false");
+        el.style.display = "flex";
+        try { focusEl?.focus?.({ preventScroll: true }); } catch (_) {}
+      };
+
+      const _hideDialog = (el, focusBackEl) => {
+        if (!el) return;
+        const active = document.activeElement;
+        if (active && el.contains(active)) {
+          try { active.blur(); } catch (_) {}
+          try { focusBackEl?.focus?.({ preventScroll: true }); } catch (_) {}
+        }
+        try { el.setAttribute("inert", ""); } catch (_) {}
+        el.setAttribute("aria-hidden", "true");
+        el.style.display = "none";
+      };
+
+      const openPopup = () => {
+        const first = popup?.querySelector?.("[data-coins-action]");
+        _showDialog(popup, first || btnVcoins);
+      };
+
+      const closePopup = () => {
+        _hideDialog(popup, btnVcoins);
+      };
+
+      btnVcoins.addEventListener("click", () => openPopup());
+
+      // clic hors popup => ferme
+      popup.addEventListener("click", (e) => {
+        if (e.target === popup) closePopup();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closePopup();
+      });
+
+      popup.querySelectorAll("[data-coins-action]").forEach((el) => {
+        el.addEventListener("click", async () => {
+          const action = el.getAttribute("data-coins-action");
+          if (!action) return;
+
+          if (action === "close") {
+            closePopup();
+            return;
+          }
+
+          if (action === "open_shop") {
+            closePopup();
+            try { window.location.href = "shop.html"; } catch (_) {}
+            return;
+          }
+
+          if (action === "adcoins") {
+            closePopup();
+
+            // ✅ rewarded ad => +500 vcoins
+            const ok = await (window.VRAds?.showRewardedAd?.({ placement: "coins_500" }) || Promise.resolve(false));
+            if (ok) {
+              window.VUserData?.addVcoins?.(500);
+
+              const u = window.VUserData?.load?.() || {};
+              const kingName = document.getElementById("meta-king-name")?.textContent || "—";
+              window.VRUIBinding?.updateMeta?.(
+                kingName,
+                window.VRState?.getReignYears?.() || 0,
+                Number(u.vcoins || 0),
+                Number(u.jetons || 0)
+              );
+
+              toast(t("coins.toast.reward_ok", "+500 pièces ajoutées"));
+            } else {
+              toast(t("coins.toast.reward_fail", "Pub indisponible"));
+            }
+            return;
+          }
+        });
+      });
+    }
+  };
+
+  window.VRCoinUI = VRCoinUI;
+})();
+
+
 // VRealms - game.js
 window.VRGame = {
   currentUniverse: null,
@@ -1126,6 +1264,9 @@ window.VRGame = {
 
     // ✅ init UI jetons
     try { window.VRTokenUI?.init?.(); } catch (_) {}
+
+    // ✅ init UI vcoins
+    try { window.VRCoinUI?.init?.(); } catch (_) {}
 
     const universeId = localStorage.getItem("vrealms_universe") || "hell_king";
     if (window.VRGame && typeof window.VRGame.onUniverseSelected === "function") {
