@@ -988,3 +988,109 @@ body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main #card-titl
 body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title{
   margin-top: var(--vr-hell-title-mt) !important;
 }
+/* =========================
+   FIX RESPONSIVE GAME (SE + desktop)
+   ========================= */
+
+/* Top icons : min plus petit (SE) */
+:root{
+  --vr-top-btn: clamp(32px, 8vw, 44px);
+  --vr-top-icon: clamp(22px, 6.2vw, 34px);
+}
+
+/* Typo qui scale (grand écran) + heights/paddings qui scale (petit écran) */
+body.vr-body-game{
+  --vr-font-scn-title: clamp(14px, 2.2vmin, 22px);
+  --vr-font-scn-text:  clamp(13px, 1.9vmin, 20px);
+  --vr-font-choice:    clamp(13px, 2.0vmin, 20px);
+
+  --vr-scn-h:    clamp(120px, 18vh, 300px);
+  --vr-choice-h: clamp(86px, 12vh, 210px);
+
+  --vr-scn-pad-y: clamp(14px, 2.0vh, 34px);
+  --vr-scn-pad-x: clamp(18px, 5.0vw, 72px);
+  --vr-choice-pad-y: clamp(10px, 1.6vh, 24px);
+  --vr-choice-pad-x: clamp(18px, 5.8vw, 78px);
+
+  --vr-game-gap: clamp(0px, 0.25vh, 4px);
+  --vr-stack-gap: clamp(6px, 0.6vh, 10px);
+  --vr-choices-gap: clamp(6px, 0.7vh, 12px);
+}
+
+/* mobile address bar friendly */
+@supports (height: 1svh){
+  body.vr-body-game{
+    --vr-scn-h:    clamp(120px, 18svh, 300px);
+    --vr-choice-h: clamp(86px, 12svh, 210px);
+    --vr-scn-pad-y: clamp(14px, 2.0svh, 34px);
+    --vr-choice-pad-y: clamp(10px, 1.6svh, 24px);
+    --vr-game-gap: clamp(0px, 0.25svh, 4px);
+    --vr-stack-gap: clamp(6px, 0.6svh, 10px);
+    --vr-choices-gap: clamp(6px, 0.7svh, 12px);
+  }
+}
+
+/* IMPORTANT: force le gap (sinon ton ancien override le casse) */
+body.vr-body-game #view-game{
+  gap: var(--vr-game-gap) !important;
+}
+
+/* Applique les tailles de typo dans le jeu */
+body.vr-body-game #view-game .vr-card-title{ font-size: var(--vr-font-scn-title) !important; }
+body.vr-body-game #view-game .vr-card-text{ font-size: var(--vr-font-scn-text) !important; }
+body.vr-body-game #view-game .vr-choice-label{ font-size: var(--vr-font-choice) !important; }
+
+/* Top actions : évite overflow + laisse la place au bouton Home à gauche */
+body.vr-body-game .vr-top-actions-game{
+  gap: clamp(6px, 2.2vw, 14px) !important;
+  padding-left: calc(var(--vr-top-btn) + 20px) !important;
+  padding-right: clamp(8px, 2.6vw, 16px) !important;
+}
+
+/* HUD: VCoins / Nom+Années / Jeton => toujours sur la même ligne */
+body.vr-body-game .vr-hud{
+  display: grid !important;
+  grid-template-columns: auto minmax(0,1fr) auto !important;
+  gap: clamp(6px, 2vw, 10px) !important;
+  padding: 0 clamp(6px, 2.6vw, 12px) !important;
+}
+body.vr-body-game .vr-hud-center{ min-width:0 !important; }
+body.vr-body-game .vr-hud-identity{
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 100% !important;
+}
+
+/* HELL: stop les décalages qui cassent (on garde juste safe-zone) */
+body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title,
+body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-text{
+  left: 0 !important;
+}
+body.vr-body-game[data-universe="hell_king"] #view-game .vr-card-title{
+  margin-top: clamp(2px, 0.6vh, 8px) !important;
+}
+
+/* iPhone SE / petits écrans : shrink fort pour que RIEN ne soit coupé */
+@media (max-width: 360px), (max-height: 620px){
+  :root{ --vr-top-btn: 30px; --vr-top-icon: 20px; }
+
+  body.vr-body-game{
+    --vr-gauge-size: clamp(52px, 16vw, 76px);
+
+    --vr-scn-h: clamp(100px, 18vh, 220px);
+    --vr-choice-h: clamp(68px, 12vh, 150px);
+
+    --vr-font-scn-title: clamp(13px, 3.8vw, 17px);
+    --vr-font-scn-text:  clamp(12px, 3.4vw, 16px);
+    --vr-font-choice:    clamp(12px, 3.6vw, 16px);
+
+    --vr-scn-safe: 86%;
+    --vr-choice-safe: 86%;
+  }
+
+  body.vr-body-game .vr-gauge-label{
+    font-size: 10px !important;
+    min-height: 1.6em !important;
+  }
+}
