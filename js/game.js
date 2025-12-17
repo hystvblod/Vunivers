@@ -1,93 +1,8 @@
-// VRealms - engine/events-loader.js
-// Charge la config d'univers + le deck (par univers) + les textes des cartes (par univers + langue).
-
-(function () {
-  "use strict";
-
-  const CONFIG_PATH = "data/universes";
-  const DECKS_PATH = "data/decks";
-  const CARDS_I18N_PATH = "data/i18n";
-
-  const VREventsLoader = {
-    async loadUniverseData(universeId, lang) {
-      const configPromise = this._loadConfig(universeId);
-      const deckPromise = this._loadDeck(universeId);
-      const textsPromise = this._loadCardTexts(universeId, lang);
-
-      const [config, deck, cardTexts] = await Promise.all([
-        configPromise,
-        deckPromise,
-        textsPromise
-      ]);
-
-      return { config, deck, cardTexts };
-    },
-
-    async _loadConfig(universeId) {
-      const res = await fetch(`${CONFIG_PATH}/${universeId}.config.json`, {
-        cache: "no-cache"
-      });
-      if (!res.ok) {
-        throw new Error(
-          `[VREventsLoader] Impossible de charger la config univers ${universeId}`
-        );
-      }
-      return res.json();
-    },
-
-    async _loadDeck(universeId) {
-      const url = `${DECKS_PATH}/${universeId}.json`;
-      const res = await fetch(url, { cache: "no-cache" });
-      if (!res.ok) {
-        throw new Error(`[VREventsLoader] Impossible de charger le deck: ${url}`);
-      }
-
-      const deckJson = await res.json();
-
-      // Supporte 2 formats :
-      // 1) { "cards": [ ... ] }
-      // 2) [ ... ] (array direct)
-      const cards = Array.isArray(deckJson) ? deckJson : (deckJson?.cards || null);
-
-      if (!Array.isArray(cards)) {
-        throw new Error(
-          `[VREventsLoader] Deck invalide pour ${universeId} (attendu array ou {cards:[]}).`
-        );
-      }
-      return cards;
-    },
-
-    async _loadCardTexts(universeId, lang) {
-      // ✅ NOUVEAU FORMAT : data/i18n/<lang>/cards_<universeId>.json
-      const urlNew = `${CARDS_I18N_PATH}/${lang}/cards_${universeId}.json`;
-
-      // ✅ FALLBACK ANCIEN FORMAT : data/i18n/cards_<universeId>_<lang>.json
-      const urlOld = `${CARDS_I18N_PATH}/cards_${universeId}_${lang}.json`;
-
-      let res = await fetch(urlNew, { cache: "no-cache" });
-      if (!res.ok) {
-        res = await fetch(urlOld, { cache: "no-cache" });
-      }
-      if (!res.ok) {
-        throw new Error(
-          `[VREventsLoader] Impossible de charger ${urlNew} (ou fallback ${urlOld})`
-        );
-      }
-      return res.json();
-    }
-  };
-
-  window.VREventsLoader = VREventsLoader;
-})();
-
-
 // VRealms - engine/ui-binding.js
-// Fait le lien moteur ↔ interface (jauges, carte, choix + preview + swipe).
+// Fait le lien moteur ↔ interface (jauges, carte, choix + hint + swipe).
 
 (function () {
   "use strict";
-
-  const DRAG_THRESHOLD = 60;
 
   const VRUIBinding = {
     updateMeta(kingName, years, coins, tokens) {
@@ -107,6 +22,21 @@
     currentCardLogic: null,
     cardTextsDict: null,
 
+    // ✅ Mode “peek” (token) : autorise l’affichage de la preview réelle
+    revealMode: false,
+
+    // ✅ Animations (zoom +/-) sur jauges touchées
+    _pulseAnims: new Map(),
+
+    setRevealMode(flag) {
+      this.revealMode = !!flag;
+      // si on désactive, on enlève toute preview + hints
+      if (!this.revealMode) {
+        this._clearGaugePreview();
+      }
+      this._clearGaugeHints();
+    },
+
     init(universeConfig, lang, cardTextsDict) {
       this.universeConfig = universeConfig;
       this.lang = lang || "fr";
@@ -116,6 +46,9 @@
       this._ensureGaugePreviewBars();
       this.updateGauges();
       this._setupChoiceButtons();
+
+      // ✅ IMPORTANT : plus aucun swipe/clic sur la carte scénario
+      // (on ne bind plus rien sur #vr-card-main)
     },
 
     _setupGaugeLabels() {
@@ -146,10 +79,7 @@
 
         if (labelEl) labelEl.textContent = label || "—";
 
-        // ✅ id pour lire la valeur
         if (fillEl) fillEl.dataset.gaugeId = gaugeId;
-
-        // ✅ crucial pour le CSS: .vr-gauge[data-gauge-id="souls"] etc.
         el.dataset.gaugeId = gaugeId;
       });
     },
@@ -181,11 +111,14 @@
           gaugesCfg[idx]?.start ??
           50;
 
-        // ✅ CSS fait la découpe via clip-path avec --vr-pct (ex: 50%)
         fillEl.style.setProperty("--vr-pct", `${val}%`);
       });
 
-      // preview = 0 par défaut (sera mis à jour pendant le drag)
+      // ✅ par défaut, preview = 0 (on n’affiche pas l’impact sans token)
+      this._clearGaugePreview();
+    },
+
+    _clearGaugePreview() {
       const previewEls = document.querySelectorAll(".vr-gauge-preview");
       previewEls.forEach((previewEl) =>
         previewEl.style.setProperty("--vr-pct", "0%")
@@ -194,6 +127,7 @@
 
     showCard(cardLogic) {
       this.currentCardLogic = cardLogic;
+
       const texts = this.cardTextsDict?.[cardLogic.id];
       if (!texts) {
         console.error("[VRUIBinding] Textes introuvables pour la carte", cardLogic.id);
@@ -213,6 +147,8 @@
       if (choiceCEl) choiceCEl.textContent = texts.choices?.C || "";
 
       this._resetCardPosition();
+      this._clearGaugeHints();
+      if (!this.revealMode) this._clearGaugePreview();
     },
 
     _resetCardPosition() {
@@ -223,30 +159,28 @@
     },
 
     _setupChoiceButtons() {
-      // ✅ Seulement les 3 choix (A/B/C), pas le bouton "restart"
       const buttons = Array.from(
         document.querySelectorAll(".vr-choice-button[data-choice]")
       );
 
       buttons.forEach((btn) => {
-        // Tap = valide
+        // ✅ clic = validation (principal)
         btn.addEventListener("click", () => {
           const choiceId = btn.getAttribute("data-choice");
           if (!choiceId) return;
           if (!this.currentCardLogic) return;
+          this._clearGaugeHints();
+          if (!this.revealMode) this._clearGaugePreview();
           window.VREngine.applyChoice(this.currentCardLogic, choiceId);
         });
 
-        // ✅ Swipe sur la cartouche = valide aussi le choix
+        // ✅ swipe = validation aussi (secondaire)
         this._setupChoiceSwipe(btn);
       });
-
-      // On garde aussi le swipe sur la carte scénario (A à gauche / C à droite)
-      this._setupCardDrag();
     },
 
     _setupChoiceSwipe(btn) {
-      const TH = 50;
+      const TH = 70; // ✅ un peu plus haut => “plus de clic que de swipe”
       let startX = 0;
       let currentX = 0;
       let dragging = false;
@@ -261,13 +195,26 @@
 
         try { btn.setPointerCapture?.(e.pointerId); } catch (_) {}
         btn.classList.add("vr-choice-dragging");
+
+        const choiceId = btn.getAttribute("data-choice");
+        if (choiceId) this._hintGaugesForChoice(choiceId);
       };
 
       const onMove = (e) => {
         if (!dragging) return;
         currentX = getX(e);
         const delta = currentX - startX;
+
         btn.style.transform = `translateX(${delta}px)`;
+
+        const choiceId = btn.getAttribute("data-choice");
+        if (choiceId) {
+          this._hintGaugesForChoice(choiceId);
+
+          // ✅ seulement si token “peek” actif : on montre l’impact réel
+          if (this.revealMode) this._updatePreviewFromChoice(choiceId);
+          else this._clearGaugePreview();
+        }
       };
 
       const onUp = () => {
@@ -277,6 +224,9 @@
         const delta = currentX - startX;
         btn.classList.remove("vr-choice-dragging");
         btn.style.transform = "";
+
+        this._clearGaugeHints();
+        if (!this.revealMode) this._clearGaugePreview();
 
         if (Math.abs(delta) >= TH && this.currentCardLogic) {
           const choiceId = btn.getAttribute("data-choice");
@@ -294,68 +244,72 @@
       btn.addEventListener("touchend", onUp);
     },
 
-    _setupCardDrag() {
-      const card = document.getElementById("vr-card-main");
-      if (!card) return;
+    _hintGaugesForChoice(choiceId) {
+      const impacts = this._getImpactedGaugeIds(choiceId);
+      const all = (this.universeConfig?.gauges || []).map(g => g.id);
 
-      let startX = 0;
-      let currentX = 0;
-      let dragging = false;
-
-      const onPointerDown = (e) => {
-        dragging = true;
-        startX = e.clientX || e.touches?.[0]?.clientX || 0;
-        currentX = startX;
-        card.setPointerCapture?.(e.pointerId || 1);
-        card.classList.add("vr-card-dragging");
-      };
-
-      const onPointerMove = (e) => {
-        if (!dragging) return;
-        const x = e.clientX || e.touches?.[0]?.clientX || 0;
-        const delta = x - startX;
-        currentX = x;
-
-        card.style.transform = `translateX(${delta}px) rotate(${delta * 0.05}deg)`;
-
-        const dragChoice =
-          delta > DRAG_THRESHOLD ? "C" : delta < -DRAG_THRESHOLD ? "A" : "";
-
-        card.dataset.dragChoice = dragChoice;
-        this._updatePreviewFromDrag(dragChoice);
-      };
-
-      const onPointerUp = () => {
-        if (!dragging) return;
-        dragging = false;
-
-        const delta = currentX - startX;
-        const dragChoice =
-          delta > DRAG_THRESHOLD ? "C" : delta < -DRAG_THRESHOLD ? "A" : "";
-
-        card.classList.remove("vr-card-dragging");
-        card.style.transform = "";
-        card.dataset.dragChoice = "";
-
-        this._updatePreviewFromDrag("");
-
-        if (dragChoice && this.currentCardLogic) {
-          window.VREngine.applyChoice(this.currentCardLogic, dragChoice);
-        }
-      };
-
-      card.addEventListener("pointerdown", onPointerDown);
-      card.addEventListener("pointermove", onPointerMove);
-      card.addEventListener("pointerup", onPointerUp);
-      card.addEventListener("pointercancel", onPointerUp);
-      card.addEventListener("pointerleave", onPointerUp);
-
-      card.addEventListener("touchstart", (e) => onPointerDown(e.touches[0]));
-      card.addEventListener("touchmove", (e) => onPointerMove(e.touches[0]));
-      card.addEventListener("touchend", onPointerUp);
+      // active / inactive
+      all.forEach((gid) => {
+        this._setGaugePulse(gid, impacts.includes(gid));
+      });
     },
 
-    _updatePreviewFromDrag(dragChoice) {
+    _getImpactedGaugeIds(choiceId) {
+      const out = [];
+      const logic = this.currentCardLogic;
+      const deltas = logic?.choices?.[choiceId]?.gaugeDelta || null;
+      if (!deltas || typeof deltas !== "object") return out;
+
+      Object.entries(deltas).forEach(([gaugeId, d]) => {
+        if (typeof d === "number" && d !== 0) out.push(gaugeId);
+      });
+
+      return out;
+    },
+
+    _setGaugePulse(gaugeId, active) {
+      const el = document.querySelector(`.vr-gauge[data-gauge-id="${gaugeId}"]`);
+      if (!el) return;
+
+      const prev = this._pulseAnims.get(gaugeId);
+
+      if (active) {
+        if (prev) return; // déjà en cours
+        try {
+          el.style.willChange = "transform";
+          const anim = el.animate(
+            [
+              { transform: "scale(1)" },
+              { transform: "scale(1.06)" }
+            ],
+            {
+              duration: 650,
+              iterations: Infinity,
+              direction: "alternate",
+              easing: "ease-in-out"
+            }
+          );
+          this._pulseAnims.set(gaugeId, anim);
+        } catch (_) {
+          // fallback silencieux (si animate() pas dispo)
+          el.style.transform = "scale(1.04)";
+        }
+      } else {
+        if (prev) {
+          try { prev.cancel(); } catch (_) {}
+          this._pulseAnims.delete(gaugeId);
+        }
+        el.style.transform = "";
+        el.style.willChange = "";
+      }
+    },
+
+    _clearGaugeHints() {
+      const all = (this.universeConfig?.gauges || []).map(g => g.id);
+      all.forEach((gid) => this._setGaugePulse(gid, false));
+    },
+
+    _updatePreviewFromChoice(choiceId) {
       const gaugesCfg = this.universeConfig?.gauges || [];
       const previewEls = document.querySelectorAll(".vr-gauge-preview");
 
@@ -371,10 +325,8 @@
           50;
 
         let delta = 0;
-        if (dragChoice && this.currentCardLogic?.choices?.[dragChoice]) {
-          const d = this.currentCardLogic.choices[dragChoice].gaugeDelta?.[gaugeId];
-          if (typeof d === "number") delta = d;
-        }
+        const d = this.currentCardLogic?.choices?.[choiceId]?.gaugeDelta?.[gaugeId];
+        if (typeof d === "number") delta = d;
 
         const previewVal = Math.max(0, Math.min(100, baseVal + delta));
         previewEl.style.setProperty("--vr-pct", `${previewVal}%`);
@@ -384,7 +336,6 @@
 
   window.VRUIBinding = VRUIBinding;
 })();
-
 
 // VRealms - engine/state.js
 (function () {
