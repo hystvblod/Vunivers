@@ -185,6 +185,61 @@
       .vr-icon-button{ width:40px !important; height:40px !important; }
       .vr-icon-button img{ width:28px !important; height:28px !important; }
     }
+
+    /* ===== Popup pseudo (léger, sans dépendre du style.css) ===== */
+    #vr-username-popup{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:9999;
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    #vr-username-popup .vr-username-inner{
+      width: min(520px, calc(100vw - 36px));
+      border-radius: 18px;
+      padding: 16px 16px 14px 16px;
+      background: rgba(12, 16, 32, 0.92);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      color: #fff;
+    }
+    #vr-username-title{ margin:0 0 8px 0; font-weight:900; font-size:18px; }
+    #vr-username-desc{ margin:0 0 12px 0; opacity:.9; font-size:13px; line-height:1.35; }
+
+    #vr-username-row{ display:flex; gap:10px; align-items:center; }
+    #vr-username-input{
+      flex:1;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.22);
+      color:#fff;
+      outline:none;
+      font-size:14px;
+    }
+    #vr-username-save{
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.12);
+      color:#fff;
+      font-weight:900;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    #vr-username-save:disabled{ opacity:.7; cursor:default; }
+    #vr-username-error{
+      margin-top:10px;
+      font-size:13px;
+      opacity:.95;
+      display:none;
+      color: rgba(255, 220, 220, 0.95);
+    }
   </style>
 </head>
 
@@ -302,6 +357,21 @@
 
   <div id="vr-tooltip" class="vr-tooltip"></div>
 
+  <!-- ✅ Popup pseudo (AJOUT) -->
+  <div id="vr-username-popup" aria-hidden="true">
+    <div class="vr-username-inner">
+      <h2 id="vr-username-title"></h2>
+      <p id="vr-username-desc"></p>
+
+      <div id="vr-username-row">
+        <input id="vr-username-input" type="text" autocomplete="off" maxlength="20" />
+        <button id="vr-username-save" type="button"></button>
+      </div>
+
+      <div id="vr-username-error"></div>
+    </div>
+  </div>
+
   <script>
     function _t(key) {
       try {
@@ -394,11 +464,113 @@
     })();
   </script>
 
+  <!-- ✅ Supabase (AJOUT) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabaseBootstrap.js"></script>
+
   <script src="js/userData.js"></script>
   <script src="js/ads.js"></script>
   <script src="js/purchases.js"></script>
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
+
+  <!-- ✅ Init auth anonyme + popup pseudo (AJOUT) -->
+  <script>
+    (function () {
+      function tt(key, fallback) {
+        try {
+          const v = _t(key);
+          return v || fallback || "";
+        } catch (_) { return fallback || ""; }
+      }
+
+      const popup = document.getElementById("vr-username-popup");
+      const titleEl = document.getElementById("vr-username-title");
+      const descEl = document.getElementById("vr-username-desc");
+      const inputEl = document.getElementById("vr-username-input");
+      const btnEl = document.getElementById("vr-username-save");
+      const errEl = document.getElementById("vr-username-error");
+
+      function showError(msg) {
+        if (!errEl) return;
+        errEl.textContent = msg || "";
+        errEl.style.display = msg ? "block" : "none";
+      }
+
+      function openPopup() {
+        if (!popup) return;
+        titleEl.textContent = tt("auth.username.title", "Choisis ton pseudo");
+        descEl.textContent  = tt("auth.username.desc", "Ce pseudo s'affichera dans ton profil.");
+        inputEl.placeholder = tt("auth.username.placeholder", "Pseudo (3-20, lettres/chiffres/_/-)");
+        btnEl.textContent   = tt("auth.username.save", "Valider");
+        showError("");
+
+        popup.style.display = "flex";
+        popup.setAttribute("aria-hidden", "false");
+        setTimeout(() => { try { inputEl.focus(); } catch (_) {} }, 50);
+      }
+
+      async function submit() {
+        const name = (inputEl.value || "").trim();
+        showError("");
+
+        btnEl.disabled = true;
+
+        try {
+          const res = await window.VUserData?.setUsername?.(name);
+          if (res?.ok) {
+            popup.style.display = "none";
+            popup.setAttribute("aria-hidden", "true");
+            return;
+          }
+
+          if (res?.reason === "taken") {
+            showError(tt("auth.username.error_taken", "Ce pseudo est déjà pris."));
+          } else if (res?.reason === "invalid") {
+            showError(tt("auth.username.error_invalid", "Pseudo invalide (3-20, lettres/chiffres/_/-)."));
+          } else {
+            showError(tt("auth.username.error_generic", "Impossible d'enregistrer le pseudo."));
+          }
+        } catch (_) {
+          showError(tt("auth.username.error_generic", "Impossible d'enregistrer le pseudo."));
+        } finally {
+          btnEl.disabled = false;
+        }
+      }
+
+      if (btnEl) btnEl.addEventListener("click", submit);
+      if (inputEl) {
+        inputEl.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") submit();
+        });
+      }
+
+      (async function boot() {
+        // 1) auth anonyme + profil
+        try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
+
+        // 2) init userData (sync remote -> local en arrière plan)
+        try { window.VUserData?.init?.(); } catch (_) {}
+
+        // 3) si ton i18n a un init explicite, on essaye (sans casser)
+        try {
+          const lang = window.VUserData?.getLang?.() || "fr";
+          if (window.VRI18n && typeof window.VRI18n.initI18n === "function") {
+            await window.VRI18n.initI18n(lang);
+          }
+        } catch (_) {}
+
+        // 4) popup pseudo si vide
+        try {
+          const u = window.VUserData?.load?.() || {};
+          if (!((u.username || "").toString().trim())) openPopup();
+        } catch (_) {
+          openPopup();
+        }
+      })();
+    })();
+  </script>
+
   <!-- IMPORTANT : PAS DE js/game.js SUR INDEX -->
 </body>
 </html>
