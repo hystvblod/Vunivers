@@ -931,28 +931,42 @@ body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-t
    (corrige le dépassement + rend le webp plus large)
    ========================================================== */
 body.vr-body-game[data-universe="heaven_king"]{
-  /* ✅ plus large (scénario + choix) */
-  --vr-card-w: clamp(420px, 98vw, 1040px);
+  /* ✅ webp + grand (scénario + choix) */
+  --vr-card-w: clamp(520px, 100vw, 1320px);
 
-  /* ✅ zones texte plus “sûres” pour éviter les bords */
-  --vr-scn-safe: 76%;
-  --vr-choice-safe: 82%;
+  /* ✅ zones texte adaptées */
+  --vr-scn-safe: 84%;
+  --vr-choice-safe: 88%;
 
-  /* ✅ un peu plus haut pour éviter le cut */
-  --vr-scn-h: clamp(160px, 21svh, 340px);
-  --vr-choice-h: clamp(92px, 14svh, 240px);
+  /* ✅ cartes + hautes (surtout les choix) */
+  --vr-scn-h: clamp(210px, 26svh, 460px);
+  --vr-choice-h: clamp(130px, 18svh, 300px);
+
+  /* ✅ padding adaptés (texte mieux placé dans le webp) */
+  --vr-scn-pad-y: clamp(18px, 3.0svh, 58px);
+  --vr-scn-pad-x: clamp(18px, 7.2vw, 150px);
+
+  --vr-choice-pad-y: clamp(14px, 2.3svh, 30px);
+  --vr-choice-pad-x: clamp(18px, 7.4vw, 160px);
 
   /* ✅ typo Heaven (responsive) */
-  --vr-font-scn-title: clamp(16px, 2.7vmin, 32px);
-  --vr-font-scn-text:  clamp(13px, 2.3vmin, 24px);
-  --vr-font-choice:    clamp(14px, 2.5vmin, 26px);
+  --vr-font-scn-title: clamp(19px, 3.2vmin, 40px);
+  --vr-font-scn-text:  clamp(15px, 2.7vmin, 28px);
+  --vr-font-choice:    clamp(16px, 2.9vmin, 30px);
 }
 
-/* ✅ padding Heaven : titre + bas bien dans la fenêtre du webp */
+/* ✅ padding Heaven : piloté par variables Heaven */
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main{
-  /* top / left-right / bottom */
-  padding: clamp(26px, 3.8svh, 64px) clamp(22px, 6.6vw, 110px) clamp(16px, 2.4svh, 40px) !important;
-  overflow: hidden; /* ✅ plus de dépassement “hors webp” */
+  padding: var(--vr-scn-pad-y) var(--vr-scn-pad-x) !important;
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+/* ✅ Heaven : choix -> webp plus grand visuellement (utile si l'image a des marges) */
+body.vr-body-game[data-universe="heaven_king"] #view-game .vr-choice-button{
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 /* ✅ si le texte est long : scroll interne discret (pas de scroll page) */
@@ -991,6 +1005,7 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
   color: #111 !important;
   text-shadow: none !important;
 }
+
 
 /* ==========================================================
    UNIVERS -> fond / cartes / choix
