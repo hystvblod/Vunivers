@@ -986,9 +986,10 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-card-w: clamp(460px, 100vw, 1240px);
 
   /* ✅ moins d'espace entre les cartouches */
-  --vr-game-gap: clamp(1px, 0.18svh, 3px);
-  --vr-stack-gap: clamp(3px, 0.35svh, 6px);
-  --vr-choices-gap: clamp(5px, 0.55svh, 8px);
+--vr-game-gap:   clamp(0px, 0.10svh, 2px);
+--vr-stack-gap:  clamp(2px, 0.22svh, 4px);
+--vr-choices-gap:clamp(3px, 0.30svh, 6px);
+
 
   /* ✅ tailles (choix plus grands) */
   --vr-scn-h: clamp(170px, 21svh, 360px);
