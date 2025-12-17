@@ -10,6 +10,7 @@
    - HELL: scénario légèrement + bas et + à droite (HELL ONLY)
    - HEAVEN: largeur + typo + couleurs + gaps réduits + choix plus grands (HEAVEN ONLY)
    - popup jeton: police de base (jamais affectée par les polices d’univers)
+   - ✅ SAFE ZONES en % : scénario + choix (tu règles 4 valeurs en %)
    ========================================= */
 
 /* ===== Variables globales ===== */
@@ -458,14 +459,34 @@ body.vr-body-game .vr-card-container{ justify-content:center !important; }
 }
 .vr-card-main.vr-card-dragging{ transition:none; }
 
-/* scénario safe zone */
+/* ==========================================================
+   ✅ SAFE ZONE SCÉNARIO (en %)
+   - Tu règles : --vr-scn-inset-top/right/bottom/left
+   - Ça colle au WEBP (responsive)
+   ========================================================== */
+body.vr-body-game .vr-card-main{
+  /* (valeurs par défaut si un univers n’override pas) */
+  padding:
+    var(--vr-scn-inset-top, 14%)
+    var(--vr-scn-inset-right, 10%)
+    var(--vr-scn-inset-bottom, 14%)
+    var(--vr-scn-inset-left, 10%) !important;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
 body.vr-body-game .vr-card-main .vr-card-title,
 body.vr-body-game .vr-card-main .vr-card-text{
-  max-width: var(--vr-scn-safe, 88%);
-  margin-left:auto;
-  margin-right:auto;
+  width:100%;
+  max-width: 100%;
+  margin-left:0;
+  margin-right:0;
   text-align:center;
 }
+
 body.vr-body-game .vr-card-main .vr-card-title{
   margin: 0 0 10px;
   line-height: 1.15;
@@ -517,6 +538,34 @@ body.vr-body-game .vr-card-main .vr-card-text{
   display:block;
   word-break: break-word;
   text-shadow: 0 2px 10px rgba(0,0,0,0.45);
+}
+
+/* ==========================================================
+   ✅ SAFE ZONE CHOIX (en %)
+   - Tu règles : --vr-choice-inset-top/right/bottom/left
+   - Le texte est ABSOLU dans le bouton, collé au WEBP
+   ========================================================== */
+body.vr-body-game .vr-choice-button{
+  padding: 0 !important; /* tout se pilote avec les insets en % */
+  overflow: hidden;
+}
+
+body.vr-body-game .vr-choice-label{
+  position:absolute !important;
+  inset:
+    var(--vr-choice-inset-top, 18%)
+    var(--vr-choice-inset-right, 10%)
+    var(--vr-choice-inset-bottom, 18%)
+    var(--vr-choice-inset-left, 10%) !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  width:auto !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:0 !important;
 }
 
 /* ===== Fin ===== */
@@ -671,17 +720,20 @@ body.vr-body-game{
 
   /* scénario */
   --vr-scn-h: clamp(132px, 18svh, 280px);
-  --vr-scn-pad-y: clamp(14px, 2.0svh, 34px);
-  --vr-scn-pad-x: clamp(18px, 5.2vw, 72px);
 
   /* choix */
   --vr-choice-h: clamp(84px, 12.8svh, 210px);
-  --vr-choice-pad-y: clamp(10px, 1.6svh, 22px);
-  --vr-choice-pad-x: clamp(18px, 5.4vw, 78px);
 
-  /* safe zones */
-  --vr-scn-safe: 88%;
-  --vr-choice-safe: 88%;
+  /* ✅ SAFE ZONES en % (valeurs par défaut GLOBAL) */
+  --vr-scn-inset-top: 14%;
+  --vr-scn-inset-right: 10%;
+  --vr-scn-inset-bottom: 14%;
+  --vr-scn-inset-left: 10%;
+
+  --vr-choice-inset-top: 18%;
+  --vr-choice-inset-right: 10%;
+  --vr-choice-inset-bottom: 18%;
+  --vr-choice-inset-left: 10%;
 
   /* ✅ gaps (resserré global) */
   --vr-game-gap: clamp(1px, 0.25svh, 4px);
@@ -786,8 +838,14 @@ body.vr-body-game .vr-card-main{
   max-width:none !important;
   margin-inline:auto !important;
   min-height: var(--vr-scn-h) !important;
-  padding: var(--vr-scn-pad-y) var(--vr-scn-pad-x) !important;
   background-size: 100% 100% !important;
+
+  /* ✅ safe zone en % (tu ajustes les variables) */
+  padding:
+    var(--vr-scn-inset-top)
+    var(--vr-scn-inset-right)
+    var(--vr-scn-inset-bottom)
+    var(--vr-scn-inset-left) !important;
 }
 
 /* choix */
@@ -797,7 +855,6 @@ body.vr-body-game .vr-choice-button{
   max-width:none !important;
   margin-inline:auto !important;
   min-height: var(--vr-choice-h) !important;
-  padding: var(--vr-choice-pad-y) var(--vr-choice-pad-x) !important;
   background-size: 100% 100% !important;
 }
 
@@ -895,23 +952,26 @@ body[data-universe="hell_king"].vr-body-game #view-game .vr-choice-label{
 }
 
 /* ==========================================================
-   HELL ONLY — texte scénario mieux centré + descendu + à droite
+   HELL ONLY — insets % + shift texte (comme avant)
    ========================================================== */
 body.vr-body-game[data-universe="hell_king"]{
   --vr-card-w: clamp(380px, 98vw, 980px);
 
   --vr-scn-h: clamp(140px, 19svh, 300px);
-  --vr-scn-pad-y: clamp(14px, 2.1svh, 34px);
-  --vr-scn-pad-x: clamp(20px, 5.8vw, 78px);
-
   --vr-choice-h: clamp(88px, 13.2svh, 220px);
-  --vr-choice-pad-y: clamp(10px, 1.7svh, 22px);
-  --vr-choice-pad-x: clamp(20px, 6.0vw, 82px);
 
-  --vr-scn-safe: 80%;
-  --vr-choice-safe: 84%;
+  /* ✅ SAFE ZONES Hell (en %) */
+  --vr-scn-inset-top: 15%;
+  --vr-scn-inset-right: 11%;
+  --vr-scn-inset-bottom: 13%;
+  --vr-scn-inset-left: 11%;
 
-  /* ✅ plus à droite / plus bas */
+  --vr-choice-inset-top: 20%;
+  --vr-choice-inset-right: 10%;
+  --vr-choice-inset-bottom: 18%;
+  --vr-choice-inset-left: 10%;
+
+  /* ✅ plus à droite / plus bas (Hell uniquement) */
   --vr-hell-scn-shift-x: clamp(16px, 2.4vw, 26px);
   --vr-hell-scn-shift-y: clamp(10px, 1.8svh, 18px);
 
@@ -936,15 +996,11 @@ body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-t
 }
 
 /* ==========================================================
-   HEAVEN ONLY — serré + choix plus grands + webp plus large
+   HEAVEN ONLY — serré + choix plus grands + SAFE ZONES en %
    ========================================================== */
 body.vr-body-game[data-universe="heaven_king"]{
   /* ✅ webp + grand (scénario + choix) */
   --vr-card-w: clamp(460px, 100vw, 1240px);
-
-  /* ✅ zones texte (plus large => texte mieux placé sans toucher les bords) */
-  --vr-scn-safe: 84%;
-  --vr-choice-safe: 86%;
 
   /* ✅ moins d'espace entre les cartouches */
   --vr-game-gap: clamp(1px, 0.18svh, 3px);
@@ -955,12 +1011,16 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-scn-h: clamp(170px, 21svh, 360px);
   --vr-choice-h: clamp(120px, 16.6svh, 290px);
 
-  /* ✅ padding (texte bien au centre de la fenêtre webp) */
-  --vr-scn-pad-y: clamp(14px, 2.0svh, 34px);
-  --vr-scn-pad-x: clamp(18px, 5.8vw, 110px);
+  /* ✅ SAFE ZONES Heaven (en %) — TU MODIFIES ICI */
+  --vr-scn-inset-top: 16%;
+  --vr-scn-inset-right: 12%;
+  --vr-scn-inset-bottom: 14%;
+  --vr-scn-inset-left: 12%;
 
-  --vr-choice-pad-y: clamp(14px, 2.0svh, 24px);
-  --vr-choice-pad-x: clamp(22px, 6.8vw, 120px);
+  --vr-choice-inset-top: 22%;
+  --vr-choice-inset-right: 12%;
+  --vr-choice-inset-bottom: 20%;
+  --vr-choice-inset-left: 12%;
 
   /* ✅ typo Heaven (responsive) */
   --vr-font-scn-title: clamp(18px, 3.0vmin, 36px);
@@ -970,7 +1030,6 @@ body.vr-body-game[data-universe="heaven_king"]{
 
 /* ✅ Heaven : scénario (pas de crop, pas de cover) */
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main{
-  padding: var(--vr-scn-pad-y) var(--vr-scn-pad-x) !important;
   overflow: hidden;
   background-size: 100% 100% !important;
   background-position: center !important;
@@ -1150,17 +1209,19 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
     --vr-scn-h: clamp(110px, 17svh, 185px);
     --vr-choice-h: clamp(90px, 13.8svh, 160px);
 
-    --vr-scn-pad-y: clamp(10px, 1.4svh, 14px);
-    --vr-scn-pad-x: clamp(14px, 4.6vw, 22px);
-
-    --vr-choice-pad-y: clamp(10px, 1.3svh, 14px);
-    --vr-choice-pad-x: clamp(14px, 4.8vw, 22px);
-
     --vr-stack-gap: 5px;
     --vr-choices-gap: 6px;
 
-    --vr-scn-safe: 86%;
-    --vr-choice-safe: 86%;
+    /* ✅ SAFE ZONES petits écrans (en %) */
+    --vr-scn-inset-top: 13%;
+    --vr-scn-inset-right: 9%;
+    --vr-scn-inset-bottom: 12%;
+    --vr-scn-inset-left: 9%;
+
+    --vr-choice-inset-top: 18%;
+    --vr-choice-inset-right: 9%;
+    --vr-choice-inset-bottom: 16%;
+    --vr-choice-inset-left: 9%;
   }
 
   body.vr-body-game .vr-gauge-label{
