@@ -913,7 +913,7 @@ body.vr-body-game[data-universe="hell_king"]{
 }
 
 body.vr-body-game[data-universe="hell_king"] #view-game{
-  padding-left: clamp(8px, 2.8vw, 16px) !important;
+  padding-left: clamp(8x, 2.8vw, 16px) !important;
   padding-right: clamp(8px, 2.8vw, 16px) !important;
 }
 
