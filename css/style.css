@@ -8,7 +8,7 @@
    - jauges: frame + fill + preview (clip)
    - cartes scénario/choix: WEBP responsive + typo responsive
    - HELL: scénario légèrement + bas et + à droite (HELL ONLY)
-   - HEAVEN: largeur + typo + couleurs (HEAVEN ONLY)
+   - HEAVEN: largeur + typo + couleurs + gaps réduits + choix plus grands (HEAVEN ONLY)
    - popup jeton: police de base (jamais affectée par les polices d’univers)
    ========================================= */
 
@@ -683,10 +683,10 @@ body.vr-body-game{
   --vr-scn-safe: 88%;
   --vr-choice-safe: 88%;
 
-  /* gaps */
-  --vr-game-gap: clamp(2px, 0.35svh, 5px);
-  --vr-stack-gap: clamp(6px, 0.7svh, 10px);
-  --vr-choices-gap: clamp(8px, 0.9svh, 12px);
+  /* ✅ gaps (resserré global) */
+  --vr-game-gap: clamp(1px, 0.25svh, 4px);
+  --vr-stack-gap: clamp(4px, 0.55svh, 8px);
+  --vr-choices-gap: clamp(6px, 0.7svh, 10px);
 }
 
 /* supprime le texte “Partie en cours …” */
@@ -713,7 +713,7 @@ body.vr-body-game #view-game{
   padding:
     var(--vr-topbar-h)
     clamp(10px, 3.4vw, 18px)
-    clamp(8px, 1.4svh, 12px)
+    clamp(8px, 1.2svh, 12px)
     clamp(10px, 3.4vw, 18px) !important;
 
   border-radius:0;
@@ -840,17 +840,22 @@ body.vr-body-game .vr-top-actions-game .vr-top-icon{
 
 /* ==========================================================
    FONTS par univers
+   (✅ double src pour éviter les 404 selon où se trouve le CSS)
    ========================================================== */
 @font-face{
   font-family: "VR_Quintess";
-  src: url("../assets/fronts/Quintessential-Regular.woff2") format("woff2");
+  src:
+    url("../assets/fronts/Quintessential-Regular.woff2") format("woff2"),
+    url("assets/fronts/Quintessential-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face{
   font-family: "VR_LoveSister";
-  src: url("../assets/fronts/LoveYaLikeASister-Regular.woff2") format("woff2");
+  src:
+    url("../assets/fronts/LoveYaLikeASister-Regular.woff2") format("woff2"),
+    url("assets/fronts/LoveYaLikeASister-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -859,14 +864,18 @@ body.vr-body-game .vr-top-actions-game .vr-top-icon{
 /* ✅ HEAVEN fonts */
 @font-face{
   font-family: "VR_Cinzel";
-  src: url("../assets/fronts/Cinzel-Regular.woff2") format("woff2");
+  src:
+    url("../assets/fronts/Cinzel-Regular.woff2") format("woff2"),
+    url("assets/fronts/Cinzel-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face{
   font-family: "VR_Cormorant";
-  src: url("../assets/fronts/CormorantGaramond-Regular.woff2") format("woff2");
+  src:
+    url("../assets/fronts/CormorantGaramond-Regular.woff2") format("woff2"),
+    url("assets/fronts/CormorantGaramond-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -913,7 +922,7 @@ body.vr-body-game[data-universe="hell_king"]{
 }
 
 body.vr-body-game[data-universe="hell_king"] #view-game{
-  padding-left: clamp(8x, 2.8vw, 16px) !important;
+  padding-left: clamp(8px, 2.8vw, 16px) !important;
   padding-right: clamp(8px, 2.8vw, 16px) !important;
 }
 
@@ -927,45 +936,49 @@ body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-t
 }
 
 /* ==========================================================
-   HEAVEN ONLY — largeur cartes + safe zones + polices + couleurs
-   (corrige le dépassement + rend le webp plus large)
+   HEAVEN ONLY — serré + choix plus grands + webp plus large
    ========================================================== */
 body.vr-body-game[data-universe="heaven_king"]{
   /* ✅ webp + grand (scénario + choix) */
-  --vr-card-w: clamp(520px, 100vw, 1320px);
+  --vr-card-w: clamp(460px, 100vw, 1240px);
 
-  /* ✅ zones texte adaptées */
+  /* ✅ zones texte (plus large => texte mieux placé sans toucher les bords) */
   --vr-scn-safe: 84%;
-  --vr-choice-safe: 88%;
+  --vr-choice-safe: 86%;
 
-  /* ✅ cartes + hautes (surtout les choix) */
-  --vr-scn-h: clamp(210px, 26svh, 460px);
-  --vr-choice-h: clamp(130px, 18svh, 300px);
+  /* ✅ moins d'espace entre les cartouches */
+  --vr-game-gap: clamp(1px, 0.18svh, 3px);
+  --vr-stack-gap: clamp(3px, 0.35svh, 6px);
+  --vr-choices-gap: clamp(5px, 0.55svh, 8px);
 
-  /* ✅ padding adaptés (texte mieux placé dans le webp) */
-  --vr-scn-pad-y: clamp(18px, 3.0svh, 58px);
-  --vr-scn-pad-x: clamp(18px, 7.2vw, 150px);
+  /* ✅ tailles (choix plus grands) */
+  --vr-scn-h: clamp(170px, 21svh, 360px);
+  --vr-choice-h: clamp(120px, 16.6svh, 290px);
 
-  --vr-choice-pad-y: clamp(14px, 2.3svh, 30px);
-  --vr-choice-pad-x: clamp(18px, 7.4vw, 160px);
+  /* ✅ padding (texte bien au centre de la fenêtre webp) */
+  --vr-scn-pad-y: clamp(14px, 2.0svh, 34px);
+  --vr-scn-pad-x: clamp(18px, 5.8vw, 110px);
+
+  --vr-choice-pad-y: clamp(14px, 2.0svh, 24px);
+  --vr-choice-pad-x: clamp(22px, 6.8vw, 120px);
 
   /* ✅ typo Heaven (responsive) */
-  --vr-font-scn-title: clamp(19px, 3.2vmin, 40px);
-  --vr-font-scn-text:  clamp(15px, 2.7vmin, 28px);
-  --vr-font-choice:    clamp(16px, 2.9vmin, 30px);
+  --vr-font-scn-title: clamp(18px, 3.0vmin, 36px);
+  --vr-font-scn-text:  clamp(14px, 2.45vmin, 26px);
+  --vr-font-choice:    clamp(15px, 2.55vmin, 28px);
 }
 
-/* ✅ padding Heaven : piloté par variables Heaven */
+/* ✅ Heaven : scénario (pas de crop, pas de cover) */
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main{
   padding: var(--vr-scn-pad-y) var(--vr-scn-pad-x) !important;
   overflow: hidden;
-  background-size: cover !important;
+  background-size: 100% 100% !important;
   background-position: center !important;
 }
 
-/* ✅ Heaven : choix -> webp plus grand visuellement (utile si l'image a des marges) */
+/* ✅ Heaven : choix (pas de crop, pas de cover) */
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-choice-button{
-  background-size: cover !important;
+  background-size: 100% 100% !important;
   background-position: center !important;
 }
 
@@ -989,6 +1002,7 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-title{
   font-family: "VR_Cinzel", serif !important;
   color: #ffd86b !important;
   text-shadow: 0 2px 10px rgba(0,0,0,0.35) !important;
+  margin: clamp(2px, 0.4svh, 8px) 0 clamp(6px, 0.9svh, 12px) !important;
 }
 
 /* ✅ Heaven : texte scénario Cormorant noir */
@@ -996,7 +1010,7 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-text{
   font-family: "VR_Cormorant", serif !important;
   color: #111 !important;
   text-shadow: none !important;
-  line-height: 1.25 !important;
+  line-height: 1.22 !important;
 }
 
 /* ✅ Heaven : choix Cormorant noir */
@@ -1004,8 +1018,8 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
   font-family: "VR_Cormorant", serif !important;
   color: #111 !important;
   text-shadow: none !important;
+  line-height: 1.22 !important;
 }
-
 
 /* ==========================================================
    UNIVERS -> fond / cartes / choix
@@ -1134,16 +1148,16 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
     --vr-font-choice:    clamp(12px, 3.7vw, 15px);
 
     --vr-scn-h: clamp(110px, 17svh, 185px);
-    --vr-choice-h: clamp(76px, 12svh, 130px);
+    --vr-choice-h: clamp(90px, 13.8svh, 160px);
 
     --vr-scn-pad-y: clamp(10px, 1.4svh, 14px);
     --vr-scn-pad-x: clamp(14px, 4.6vw, 22px);
 
-    --vr-choice-pad-y: clamp(8px, 1.2svh, 12px);
+    --vr-choice-pad-y: clamp(10px, 1.3svh, 14px);
     --vr-choice-pad-x: clamp(14px, 4.8vw, 22px);
 
-    --vr-stack-gap: 6px;
-    --vr-choices-gap: 8px;
+    --vr-stack-gap: 5px;
+    --vr-choices-gap: 6px;
 
     --vr-scn-safe: 86%;
     --vr-choice-safe: 86%;
