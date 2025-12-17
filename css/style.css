@@ -675,13 +675,12 @@ body[data-universe="hell_king"].vr-body-game .vr-choice-label{
 
 /* ==========================================================
    FIX HELL — décale légèrement vers la droite le titre + scénario (carte du haut)
-   (propre: padding interne, pas de transform)
    ========================================================== */
 body.vr-body-game[data-universe="hell_king"] #vr-card-main #card-title,
 body.vr-body-game[data-universe="hell_king"] #vr-card-main #card-text,
 body.vr-body-game[data-universe="hell_king"] #vr-card-main .vr-card-title,
 body.vr-body-game[data-universe="hell_king"] #vr-card-main .vr-card-text{
-  padding-left: 20px !important;   /* ajuste: 6/8/12px selon ton rendu */
+  padding-left: 20px !important;
   padding-right: 0 !important;
 }
 
@@ -834,50 +833,88 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="intervention"] .vr-ga
 }
 
 /* ==========================================================
-   FIX HEAVEN — WebP scénario + choix ENCORE plus grands + texte bien “collé”
-   (si ton id est "header_king", remplace heaven_king par header_king)
+   FIX HEAVEN — COMPACT + PLUS LARGE + TEXTE LISIBLE (HEAVEN ONLY)
+   - réduit espaces “bleu” (gaps + marges)
+   - élargit les 4 cartes (scénario + 3 choix)
+   - gère la zone de texte (couleur + largeur interne)
    ========================================================== */
 
+/* 1) compact global (entre HUD/jauges/cartes) */
+body.vr-body-game[data-universe="heaven_king"] #view-game{
+  gap: 6px !important;                 /* ↓ espace entre blocs */
+  padding-left: 10px !important;       /* ↑ largeur utile pour les cartes */
+  padding-right: 10px !important;
+}
+
+/* 2) jauges -> scénario : encore plus serré */
+body.vr-body-game[data-universe="heaven_king"] .vr-gauges-row{
+  margin-bottom: 2px !important;
+  gap: 8px !important;
+}
+
+/* 3) scénario + choix : réduire les espaces entre cartes */
 body.vr-body-game[data-universe="heaven_king"] .vr-card-stack{
-  max-width: min(700px, 99vw);
-  gap: 14px;
+  max-width: min(820px, 100%) !important;  /* ↑ largeur globale stack */
+  gap: 8px !important;                    /* ↓ espace scénario ⇄ choix */
 }
 
-/* SCÉNARIO (carte) */
+body.vr-body-game[data-universe="heaven_king"] .vr-card-choices{
+  gap: 10px !important;                   /* ↓ espace entre les 3 choix */
+}
+
+/* 4) SCÉNARIO (carte du haut) : plus large, un peu moins “haut”, texte bien placé */
 body.vr-body-game[data-universe="heaven_king"] .vr-card-main{
-  max-width: min(760px, 99vw);
-  min-height: 180px;
-  padding: 38px 42px;
-  background-size: 100% auto; /* évite le stretch vertical */
+  max-width: min(820px, 100%) !important;
+  min-height: 170px !important;           /* réduit le vide */
+  padding: 44px 40px 34px !important;     /* place le texte dans la fenêtre */
+  background-size: 100% auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;     /* stabilise la zone texte */
 }
 
-/* Fenêtre texte interne */
+/* Fenêtre texte interne (zone texte) */
 body.vr-body-game[data-universe="heaven_king"] .vr-card-main .vr-card-title,
 body.vr-body-game[data-universe="heaven_king"] .vr-card-main .vr-card-text{
-  max-width: 80%;
+  max-width: 82% !important;
 }
 
-/* CHOIX */
+/* Texte scénario lisible sur carte claire (important sur ta capture) */
+body.vr-body-game[data-universe="heaven_king"] #vr-card-main #card-title,
+body.vr-body-game[data-universe="heaven_king"] #vr-card-main #card-text,
+body.vr-body-game[data-universe="heaven_king"] #vr-card-main .vr-card-title,
+body.vr-body-game[data-universe="heaven_king"] #vr-card-main .vr-card-text{
+  color: rgba(15, 23, 42, 0.92) !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.35) !important;
+}
+
+/* 5) CHOIX : plus larges + un peu moins hauts + moins de vide */
 body.vr-body-game[data-universe="heaven_king"] .vr-choice-button{
-  max-width: min(760px, 99vw);
-  min-height: 125px;
-  padding: 16px 46px;
-  background-size: 100% auto; /* évite le stretch vertical */
+  max-width: min(820px, 100%) !important;
+  min-height: 112px !important;           /* ↓ évite le gros vide */
+  padding: 14px 42px !important;
+  background-size: 100% auto !important;
 }
 
 body.vr-body-game[data-universe="heaven_king"] .vr-choice-label{
-  max-width: 82%;
-  font-size: 1.14rem;
+  max-width: 86% !important;
+  font-size: 1.10rem !important;
+  padding: 6px 0 !important;
 }
 
 /* micro-écrans */
 @media (max-width: 360px){
+  body.vr-body-game[data-universe="heaven_king"] #view-game{
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    gap: 5px !important;
+  }
   body.vr-body-game[data-universe="heaven_king"] .vr-card-main{
-    padding: 32px 32px;
-    min-height: 150px;
+    min-height: 160px !important;
+    padding: 40px 30px 30px !important;
   }
   body.vr-body-game[data-universe="heaven_king"] .vr-choice-button{
-    min-height: 94px;
-    padding: 14px 34px;
+    min-height: 104px !important;
+    padding: 12px 32px !important;
   }
 }
