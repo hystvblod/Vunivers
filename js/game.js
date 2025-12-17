@@ -904,7 +904,8 @@
             return;
           }
 
-          if (action === "ad_token") {
+          // ✅ compat: accepte "adtoken" (nouveau) et "ad_token" (ancien)
+          if (action === "adtoken" || action === "ad_token") {
             // ✅ pub rewarded => +1 jeton
             closePopup();
 
