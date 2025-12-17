@@ -25,6 +25,10 @@
   --vr-universe-bg: none;
   --vr-universe-card: none;
   --vr-universe-choice: none;
+
+  /* ✅ Top icons responsive */
+  --vr-top-btn: clamp(38px, 8vw, 44px);
+  --vr-top-icon: clamp(28px, 6.2vw, 34px);
 }
 
 /* sécurité : si un vieux overlay traîne */
@@ -97,7 +101,7 @@ body.vr-body-game .vr-header::before { content: none; }
   flex-wrap: nowrap;
 }
 
-/* ✅ taille fixe anti “icônes géantes” */
+/* ✅ top buttons responsive (au lieu de fixe) */
 .vr-icon-button{
   border: none;
   background: transparent;
@@ -105,17 +109,17 @@ body.vr-body-game .vr-header::before { content: none; }
   margin: 0;
   cursor: pointer;
   text-decoration: none;
-  width: 44px;
-  height: 44px;
+  width: var(--vr-top-btn);
+  height: var(--vr-top-btn);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 .vr-top-icon{
-  width: 34px !important;
-  height: 34px !important;
-  max-width: 34px !important;
-  max-height: 34px !important;
+  width: var(--vr-top-icon) !important;
+  height: var(--vr-top-icon) !important;
+  max-width: var(--vr-top-icon) !important;
+  max-height: var(--vr-top-icon) !important;
   object-fit: contain;
   display: block;
   user-select: none;
@@ -126,11 +130,11 @@ body.vr-body-game .vr-header::before { content: none; }
 body.vr-body-game .vr-hud{
   width: 100%;
   max-width: 980px;
-  margin: 0 auto 2px;      /* ✅ réduit un peu l’espace sous HUD */
+  margin: 0 auto 2px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;                /* ✅ réduit un peu l’espace */
+  gap: 2px;
 }
 
 body.vr-body-game .vr-hud-money{
@@ -145,7 +149,7 @@ body.vr-body-game .vr-hud-item{
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 10px;
+  padding: clamp(4px, 1.2vh, 6px) clamp(8px, 2.4vw, 10px);
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.30);
   border: 1px solid rgba(255, 255, 255, 0.10);
@@ -154,8 +158,8 @@ body.vr-body-game .vr-hud-item{
 }
 
 body.vr-body-game .vr-hud-icon{
-  width: 22px;
-  height: 22px;
+  width: clamp(18px, 5.2vw, 22px);
+  height: clamp(18px, 5.2vw, 22px);
   object-fit: contain;
   display: block;
   user-select: none;
@@ -172,8 +176,8 @@ body.vr-body-game .vr-hud-icon-btn{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
+  width: clamp(18px, 5.2vw, 22px);
+  height: clamp(18px, 5.2vw, 22px);
   line-height: 0;
 }
 body.vr-body-game .vr-hud-icon-btn:focus-visible{
@@ -184,7 +188,7 @@ body.vr-body-game .vr-hud-icon-btn:focus-visible{
 
 body.vr-body-game .vr-hud-value{
   font-weight: 800;
-  font-size: 13px;
+  font-size: clamp(12px, 3.6vw, 13px);
   letter-spacing: 0.2px;
 }
 
@@ -197,8 +201,8 @@ body.vr-body-game .vr-hud-identity{
   text-shadow: 0 2px 10px rgba(0,0,0,0.55);
 }
 
-body.vr-body-game .vr-hud-name{ font-size: 15px; }
-body.vr-body-game .vr-hud-years{ font-size: 15px; }
+body.vr-body-game .vr-hud-name{ font-size: clamp(13px, 3.6vw, 15px); }
+body.vr-body-game .vr-hud-years{ font-size: clamp(13px, 3.6vw, 15px); }
 
 /* ===== Sélecteur langue ===== */
 .vr-lang-selector { display: flex; align-items: center; gap: 8px; }
@@ -395,10 +399,10 @@ body.vr-body-game .vr-card-container{ justify-content: center !important; }
 }
 .vr-card-main.vr-card-dragging { transition: none; }
 
-/* ✅ SCÉNARIO : titre + texte centrés + "safe area" interne */
+/* ✅ SCÉNARIO : safe zone variable (par univers si besoin) */
 body.vr-body-game .vr-card-main .vr-card-title,
 body.vr-body-game .vr-card-main .vr-card-text{
-  max-width: 88%;
+  max-width: var(--vr-scn-safe, 88%);
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -442,7 +446,7 @@ body.vr-body-game .vr-card-main .vr-card-text{
   line-height: 1.35;
   text-align: center;
   width: 100%;
-  max-width: 88%;
+  max-width: var(--vr-choice-safe, 88%);
   margin: 0 auto;
   padding: 8px 0;
   display: block;
@@ -597,24 +601,28 @@ body.vr-token-select-mode .vr-gauge{
 /* ==========================================================
    FIX GAME (game.html) — PLEIN ÉCRAN + PAS DE SCROLL
    + ✅ espace jauges -> scénario RÉDUIT
-   + ✅ cartouches WEBP scénario/choix AGRANDIES (texte inchangé)
+   + ✅ cartouches WEBP scénario/choix RESPONSIVES
    ========================================================== */
 body.vr-body-game{
   /* ✅ jauges un peu plus grandes mais safe en 4 colonnes */
   --vr-gauge-size: clamp(66px, 18vw, 104px);
 
-  /* ✅ cartouches plus larges */
+  /* ✅ cartouches */
   --vr-card-w: clamp(360px, 96vw, 940px);
 
-  /* ✅ scénario: on agrandit le “bloc” (webp) sans toucher au texte */
+  /* ✅ scénario */
   --vr-scn-h: clamp(150px, 18vh, 260px);
   --vr-scn-pad-y: clamp(18px, 2.2vh, 34px);
   --vr-scn-pad-x: clamp(22px, 5.0vw, 56px);
 
-  /* ✅ choix: on agrandit les “blocs” (webp) sans toucher au texte */
+  /* ✅ choix */
   --vr-choice-h: clamp(118px, 15vh, 200px);
   --vr-choice-pad-y: clamp(12px, 2.0vh, 22px);
   --vr-choice-pad-x: clamp(24px, 5.6vw, 64px);
+
+  /* ✅ safe zones par défaut */
+  --vr-scn-safe: 88%;
+  --vr-choice-safe: 88%;
 
   /* ✅ rythme vertical global plus serré */
   --vr-game-gap: clamp(2px, 0.35vh, 5px);
@@ -666,7 +674,7 @@ body.vr-body-game #view-game::before{ background: transparent !important; }
 body.vr-body-game .vr-gauges-row{
   width: 100%;
   max-width: 980px;
-  margin: 0 auto 0 !important;      /* ✅ plus de marge sous jauges */
+  margin: 0 auto 0 !important;
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(8px, 2.2vw, 14px);
@@ -681,7 +689,7 @@ body.vr-body-game .vr-gauge-label{
   font-size: clamp(11px, 2.9vw, 14px);
   min-width: 0;
   text-align: center;
-  min-height: 2.0em;               /* ✅ moins haut => remonte le scénario */
+  min-height: 2.0em;
   line-height: 1.15;
   display: flex;
   align-items: center;
@@ -697,7 +705,7 @@ body.vr-body-game .vr-card-container{
   display: flex;
   align-items: flex-start;
   justify-content: center !important;
-  margin-top: -6px !important;     /* ✅ réduit visuellement l’espace jauges->scénario */
+  margin-top: -6px !important;
 }
 
 /* ✅ pile cartes */
@@ -709,7 +717,7 @@ body.vr-body-game .vr-card-stack{
   gap: var(--vr-stack-gap) !important;
 }
 
-/* ✅ scénario: cartouche plus grande */
+/* ✅ scénario: cartouche responsive */
 body.vr-body-game .vr-card-main{
   width: 100% !important;
   max-width: none !important;
@@ -719,7 +727,7 @@ body.vr-body-game .vr-card-main{
   background-size: 100% 100% !important;
 }
 
-/* ✅ choix: cartouches plus grandes */
+/* ✅ choix: cartouches responsive */
 body.vr-body-game .vr-card-choices{
   gap: var(--vr-choices-gap) !important;
 }
@@ -734,8 +742,6 @@ body.vr-body-game .vr-choice-button{
 
 /* ==========================================================
    Polices par univers
-   - ✅ APPLIQUÉES UNIQUEMENT DANS #view-game
-   - ✅ la popup jeton garde la police de base
    ========================================================== */
 @font-face{
   font-family: "VR_Quintess";
@@ -767,14 +773,40 @@ body[data-universe="hell_king"].vr-body-game #view-game .vr-choice-label{
 }
 
 /* ==========================================================
-   FIX HELL — décale vers la droite UNIQUEMENT la zone texte du SCÉNARIO
+   ✅ HELL ONLY — cartouches + grandes + texte moins large (safe zone)
+   ========================================================== */
+body.vr-body-game[data-universe="hell_king"]{
+  /* cartouches un peu + grandes */
+  --vr-card-w: clamp(380px, 98vw, 980px);
+
+  --vr-scn-h: clamp(170px, 20vh, 300px);
+  --vr-scn-pad-y: clamp(20px, 2.4vh, 36px);
+  --vr-scn-pad-x: clamp(26px, 6.2vw, 72px);
+
+  --vr-choice-h: clamp(128px, 16vh, 220px);
+  --vr-choice-pad-y: clamp(12px, 2.0vh, 24px);
+  --vr-choice-pad-x: clamp(28px, 6.8vw, 78px);
+
+  /* ✅ zone texte moins large (évite de “déborder” sur le parchemin) */
+  --vr-scn-safe: 82%;
+  --vr-choice-safe: 84%;
+}
+
+/* ✅ HELL ONLY — padding latéral du jeu un poil réduit => plus de place utile */
+body.vr-body-game[data-universe="hell_king"] #view-game{
+  padding-left: clamp(8px, 2.8vw, 16px) !important;
+  padding-right: clamp(8px, 2.8vw, 16px) !important;
+}
+
+/* ==========================================================
+   FIX HELL — (ancien décalage trop fort -> provoquait des dépassements)
    ========================================================== */
 body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main #card-title,
 body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main #card-text,
 body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-title,
 body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-text{
   position: relative !important;
-  left: clamp(8px, 1.6vw, 16px) !important;
+  left: clamp(0px, 0.6vw, 6px) !important; /* ✅ léger seulement */
 }
 
 /* ==========================================================
@@ -830,26 +862,26 @@ body.vr-body-game .vr-top-actions-game{
   align-items: center !important;
   justify-content: center !important;
   flex-wrap: nowrap !important;
-  gap: 14px !important;
+  gap: clamp(10px, 2.8vw, 14px) !important;
 
-  padding: calc(10px + env(safe-area-inset-top)) 16px 6px !important;
+  padding: calc(clamp(8px, 1.2vh, 10px) + env(safe-area-inset-top)) 16px 6px !important;
   pointer-events: none !important;
 }
 
 body.vr-body-game .vr-top-actions-game .vr-icon-button{
   pointer-events: auto !important;
-  width: 44px !important;
-  height: 44px !important;
+  width: var(--vr-top-btn) !important;
+  height: var(--vr-top-btn) !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
 }
 
 body.vr-body-game .vr-top-actions-game .vr-top-icon{
-  width: 34px !important;
-  height: 34px !important;
-  max-width: 34px !important;
-  max-height: 34px !important;
+  width: var(--vr-top-icon) !important;
+  height: var(--vr-top-icon) !important;
+  max-width: var(--vr-top-icon) !important;
+  max-height: var(--vr-top-icon) !important;
   object-fit: contain !important;
   display: block !important;
 }
@@ -925,7 +957,7 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="intervention"] .vr-ga
 }
 
 /* ==========================================================
-   HEAVEN only — petit ajustement propre via variables (sans casser le global)
+   HEAVEN only — petit ajustement propre via variables
    ========================================================== */
 body.vr-body-game[data-universe="heaven_king"]{
   --vr-card-w: clamp(360px, 96vw, 900px);
