@@ -83,6 +83,26 @@
       "gauge_set_50": "Jauge remise à 50%"
     }
   },
+  "coins": {
+    "popup": {
+      "title": "Pièces",
+      "ad": {
+        "title": "Regarder une pub",
+        "text": "Gagne 500 pièces"
+      },
+      "shop": {
+        "title": "Aller à la boutique",
+        "text": "Acheter des pièces"
+      },
+      "close": {
+        "text": "Fermer cette fenêtre"
+      }
+    },
+    "toast": {
+      "reward_ok": "+500 pièces ajoutées",
+      "reward_fail": "Pub indisponible"
+    }
+  },
   "game": {
     "title": "Partie en cours",
     "subtitle": "Faites vos choix.",
