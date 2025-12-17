@@ -42,10 +42,55 @@
       }
     }
   },
+  "gauges": {
+    "hell_king": {
+      "souls": "Âmes",
+      "legions": "Légions",
+      "order": "Ordre",
+      "surface": "Surface"
+    }
+  },
+  "token": {
+    "popup": {
+      "title": "Jeton",
+      "ad": {
+        "title": "Regarder une pub",
+        "text": "Gagne 1 jeton"
+      },
+      "gauge50": {
+        "title": "Remettre une jauge à 50%",
+        "text": "Choisis une jauge"
+      },
+      "back3": {
+        "title": "Revenir en arrière (-3)",
+        "text": "Annule tes 3 derniers choix"
+      },
+      "close": {
+        "text": "Fermer ce menu"
+      },
+      "pickGauge": {
+        "title": "Choisir une jauge",
+        "text": "Clique sur une jauge pour la remettre à 50%."
+      }
+    },
+    "toast": {
+      "select_gauge": "Choisis une jauge à remettre à 50%",
+      "reward_ok": "+1 jeton ajouté",
+      "reward_fail": "Pub indisponible",
+      "no_tokens": "Tu n'as pas de jeton",
+      "undo_fail": "Impossible de revenir en arrière",
+      "undo_done": "Retour -3 effectué",
+      "gauge_set_50": "Jauge remise à 50%"
+    }
+  },
   "game": {
     "title": "Partie en cours",
     "subtitle": "Faites vos choix.",
-    "restart": "Recommencer"
+    "restart": "Recommencer",
+    "ending": {
+      "title": "Fin du règne",
+      "body": "Votre règne s'achève ici."
+    }
   },
   "profile": {
     "title": "Profil",
