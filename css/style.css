@@ -901,6 +901,12 @@ body.vr-body-game[data-universe="hell_king"] #view-game #vr-card-main .vr-card-t
   left: var(--vr-hell-scn-shift-x) !important;
   top:  var(--vr-hell-scn-shift-y) !important;
 }
+/* ✅ HELL ONLY — police plus grande (responsive) */
+body.vr-body-game[data-universe="hell_king"]{
+  --vr-font-scn-title: clamp(18px, 3.0vmin, 34px);
+  --vr-font-scn-text:  clamp(15px, 2.6vmin, 28px);
+  --vr-font-choice:    clamp(16px, 2.8vmin, 30px);
+}
 
 /* ==========================================================
    UNIVERS -> fond / cartes / choix
