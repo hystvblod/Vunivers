@@ -1175,6 +1175,40 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
   background-image: url("../assets/img/gauges/heaven_king/g4_fill.webp");
 }
 
+
+/* WESTERN PRESIDENT */
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="public_opinion"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/western_president/g1_frame.webp");
+}
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="public_opinion"] .vr-gauge-fill,
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="public_opinion"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/western_president/g1_fill.webp");
+}
+
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="economy"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/western_president/g2_frame.webp");
+}
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="economy"] .vr-gauge-fill,
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="economy"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/western_president/g2_fill.webp");
+}
+
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="defense"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/western_president/g3_frame.webp");
+}
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="defense"] .vr-gauge-fill,
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="defense"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/western_president/g3_fill.webp");
+}
+
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/western_president/g4_frame.webp");
+}
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-fill,
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/western_president/g4_fill.webp");
+}
+
 /* ==========================================================
    iPhone SE / très petits écrans : shrink FORT
    ========================================================== */
