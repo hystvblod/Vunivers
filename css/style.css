@@ -1079,9 +1079,21 @@ body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-butto
 
 body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main{
   overflow: hidden;
-  background-size: 90% 110% !important;
+  background-size: 90% 105% !important;
   background-position: center !important;
 }
+
+body.vr-body-game[data-universe="western_president"]{
+  /* ✅ webp + grand (scénario + choix) */
+  --vr-card-w: clamp(460px, 100vw, 1240px);
+
+  /* ✅ moins d'espace entre les cartouches */
+  --vr-game-gap: clamp(2px, 0.25svh, 6px);
+  --vr-stack-gap: clamp(6px, 0.55svh, 8px);
+  --vr-choices-gap: clamp(6px, 0.7svh, 10px);
+
+
+
 /* ==========================================================
    UNIVERS -> fond / cartes / choix
    ========================================================== */
