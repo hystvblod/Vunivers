@@ -957,7 +957,7 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-title{
 
 /* ✅ Heaven : texte scénario Cormorant noir */
 body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-text{
-  font-family: "VR_Cormorant", serif !important;
+  font-family: "VR_Cinzel", serif !important;
   color: #000 !important;
 
 }
@@ -1082,7 +1082,7 @@ body.vr-body-game[data-universe="heaven_king"]{
 /* ✅ Heaven : scénario */
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main{
   overflow: hidden;
-  background-size: 120% 120% !important;
+  background-size: 120% 125% !important;
   background-position: center !important;
 }
 
