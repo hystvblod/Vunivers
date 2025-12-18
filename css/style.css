@@ -1067,6 +1067,15 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
   line-height: 1.22 !important;
 }
 
+
+/* ==========================================================
+   Western-president
+   ========================================================== */
+/* ✅ Heaven : choix */
+body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-button{
+  background-size: 110% 110% !important;
+  background-position: center !important;
+}
 /* ==========================================================
    UNIVERS -> fond / cartes / choix
    ========================================================== */
