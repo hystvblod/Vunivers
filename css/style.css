@@ -945,6 +945,47 @@ body[data-universe="hell_king"].vr-body-game #view-game .vr-choice-label{
   text-shadow: none !important;
 }
 
+
+
+/* WESTERN_PRESIDENT fonts & styles */
+@font-face{
+  font-family: "VR_InterExtraLight";
+  src:
+    url("../assets/fronts/Inter_18pt-ExtraLight.woff2") format("woff2"),
+    url("assets/fronts/Inter_18pt-ExtraLight.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "VR_RobotoThin";
+  src:
+    url("../assets/fronts/RobotoCondensed-Thin.woff2") format("woff2"),
+    url("assets/fronts/RobotoCondensed-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Titre + texte scénario : Inter ExtraLight 300, noir */
+body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main .vr-card-title,
+body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main .vr-card-body{
+  font-family: "VR_InterExtraLight", system-ui, sans-serif;
+  font-weight: 300;
+  color: #000 !important;
+}
+
+/* Choix : Roboto Thin 100, noir */
+body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main .vr-choice,
+body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main .vr-choice-label,
+body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main .vr-choice-text{
+  font-family: "VR_RobotoThin", system-ui, sans-serif;
+  font-weight: 100;
+  color: #000 !important;
+}
+
+
 /* ==========================================================
    HELL ONLY — ✅ corrigé : texte + haut + gauche
    + ✅ zone texte choix réduite (Hell seulement)
