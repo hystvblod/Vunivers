@@ -912,6 +912,21 @@ body.vr-body-game .vr-top-actions-game .vr-top-icon{
   font-display: swap;
 }
 
+
+/* HELL : scénario */
+body[data-universe="hell_king"].vr-body-game #view-game .vr-card-title,
+body[data-universe="hell_king"].vr-body-game #view-game .vr-card-text{
+  font-family: "VR_Quintess", serif !important;
+}
+
+/* HELL : choix */
+body[data-universe="hell_king"].vr-body-game #view-game .vr-choice-label{
+  font-family: "VR_LoveSister", cursive !important;
+  color: #000 !important;
+  text-shadow: none !important;
+}
+
+
 /* ✅ HEAVEN fonts */
 @font-face{
   font-family: "VR_Cinzel";
@@ -932,19 +947,27 @@ body.vr-body-game .vr-top-actions-game .vr-top-icon{
   font-display: swap;
 }
 
-/* HELL : scénario */
-body[data-universe="hell_king"].vr-body-game #view-game .vr-card-title,
-body[data-universe="hell_king"].vr-body-game #view-game .vr-card-text{
-  font-family: "VR_Quintess", serif !important;
+/* ✅ Heaven : titre Cinzel jaune */
+body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-title{
+  font-family: "VR_Cinzel", serif !important;
+  color: #ffd86b !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.35) !important;
+  margin: clamp(2px, 0.4svh, 8px) 0 clamp(6px, 0.9svh, 12px) !important;
 }
 
-/* HELL : choix */
-body[data-universe="hell_king"].vr-body-game #view-game .vr-choice-label{
-  font-family: "VR_LoveSister", cursive !important;
+/* ✅ Heaven : texte scénario Cormorant noir */
+body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-text{
+  font-family: "VR_Cormorant", serif !important;
   color: #000 !important;
-  text-shadow: none !important;
+
 }
 
+/* ✅ Heaven : choix Cormorant noir */
+body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
+  font-family: "VR_Cormorant", serif !important;
+  color: #000 !important;
+
+}
 
 
 /* WESTERN_PRESIDENT fonts & styles */
@@ -1085,27 +1108,6 @@ body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main .vr-card
   border-radius: 999px;
 }
 
-/* ✅ Heaven : titre Cinzel jaune */
-body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-title{
-  font-family: "VR_Cinzel", serif !important;
-  color: #ffd86b !important;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.35) !important;
-  margin: clamp(2px, 0.4svh, 8px) 0 clamp(6px, 0.9svh, 12px) !important;
-}
-
-/* ✅ Heaven : texte scénario Cormorant noir */
-body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-text{
-  font-family: "VR_Cormorant", serif !important;
-  color: #000 !important;
-
-}
-
-/* ✅ Heaven : choix Cormorant noir */
-body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
-  font-family: "VR_Cormorant", serif !important;
-  color: #000 !important;
-
-}
 
 
 /* ==========================================================
