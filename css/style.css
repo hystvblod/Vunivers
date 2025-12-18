@@ -1079,7 +1079,7 @@ body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-butto
 
 body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main{
   overflow: hidden;
-  background-size: 100% 100% !important;
+  background-size: 100% 85% !important;
   background-position: center !important;
 }
 /* ==========================================================
