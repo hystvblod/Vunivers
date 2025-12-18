@@ -973,6 +973,7 @@ body[data-universe="hell_king"].vr-body-game #view-game .vr-choice-label{
 body[data-universe="western_president"].vr-body-game #view-game .vr-card-title,
 body[data-universe="western_president"].vr-body-game #view-game .vr-card-text{
   font-family: "VR_InterExtraLight", serif !important;
+  color: #000 !important
 }
 
 
@@ -1096,16 +1097,14 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-title{
 body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-text{
   font-family: "VR_Cormorant", serif !important;
   color: #000 !important;
-  text-shadow: none !important;
-  line-height: 1.22 !important;
+
 }
 
 /* ✅ Heaven : choix Cormorant noir */
 body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
   font-family: "VR_Cormorant", serif !important;
   color: #000 !important;
-  text-shadow: none !important;
-  line-height: 1.22 !important;
+
 }
 
 
