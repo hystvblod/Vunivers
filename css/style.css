@@ -950,7 +950,7 @@ body[data-universe="hell_king"].vr-body-game #view-game .vr-choice-label{
 /* ✅ Heaven : titre Cinzel jaune */
 body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-title{
   font-family: "VR_Cinzel", serif !important;
-  color: #ffd86b !important;
+  color: #cf9f19 !important;
   text-shadow: 0 2px 10px rgba(0,0,0,0.35) !important;
  
 }
