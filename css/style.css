@@ -1076,6 +1076,12 @@ body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-butto
   background-size: 110% 110% !important;
   background-position: center !important;
 }
+
+body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main{
+  overflow: hidden;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+}
 /* ==========================================================
    UNIVERS -> fond / cartes / choix
    ========================================================== */
