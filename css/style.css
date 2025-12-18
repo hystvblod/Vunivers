@@ -1133,6 +1133,7 @@ body.vr-body-game[data-universe="western_president"]{
 --vr-stack-gap:  clamp(10px, 1.0svh, 18px);  /* carte scénario ↔ bloc choix */
 --vr-choices-gap:clamp(10px, 1.2svh, 22px);  /* entre les choix A/B/C */
 
+}
 
 /* ==========================================================
    UNIVERS -> fond / cartes / choix
