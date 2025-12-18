@@ -1091,8 +1091,7 @@ body.vr-body-game[data-universe="western_president"]{
   --vr-game-gap: clamp(2px, 0.25svh, 6px);
   --vr-stack-gap: clamp(6px, 0.55svh, 8px);
   --vr-choices-gap: clamp(6px, 0.7svh, 10px);
-
-
+}
 
 /* ==========================================================
    UNIVERS -> fond / cartes / choix
