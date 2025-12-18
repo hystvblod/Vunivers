@@ -952,7 +952,7 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-title{
   font-family: "VR_Cinzel", serif !important;
   color: #ffd86b !important;
   text-shadow: 0 2px 10px rgba(0,0,0,0.35) !important;
-  margin: clamp(2px, 0.4svh, 8px) 0 clamp(6px, 0.9svh, 12px) !important;
+ 
 }
 
 /* ✅ Heaven : texte scénario Cormorant noir */
@@ -992,7 +992,7 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
 }
 
 /* Titre + texte scénario : Inter ExtraLight 300, noir */
-/* HELL : scénario */
+
 body[data-universe="western_president"].vr-body-game #view-game .vr-card-title,
 body[data-universe="western_president"].vr-body-game #view-game .vr-card-text{
   font-family: "VR_InterExtraLight", serif !important;
@@ -1000,7 +1000,6 @@ body[data-universe="western_president"].vr-body-game #view-game .vr-card-text{
 }
 
 
-/* HELL : choix */
 body[data-universe="western_president"].vr-body-game #view-game .vr-choice-label{
   font-family: "VR_RobotoThin", !important;
   color: #000 !important;
