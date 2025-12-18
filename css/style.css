@@ -1073,7 +1073,7 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
    ========================================================== */
 /* ✅ Heaven : choix */
 body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-button{
-  background-size: 110% 125% !important;
+  background-size: 110% 140% !important;
   background-position: center !important;
 }
 
