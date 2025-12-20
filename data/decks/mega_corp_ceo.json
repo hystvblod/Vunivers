@@ -453,457 +453,460 @@
   ]
 }
 {
-  "mcc_051": {
-    "title": "Réunion qui fuit",
-    "body": "Un extrait audio interne circule : on t’entend dire “on coupe les coûts, même si ça grince”. Mauvais timing.",
-    "choices": {
-      "A": "Assumer et expliquer le contexte publiquement.",
-      "B": "Nier et menacer de poursuites pour fuite.",
-      "C": "Faire une vidéo interne d’excuses + ajuster le plan."
+  "cards": [
+    {
+      "id": "mcc_051",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -5, "regulators": 5 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -10, "employees": -10, "regulators": -5 } },
+        "C": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_052",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "investors": 10, "brand_image": -5, "employees": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -10, "employees": 0, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -10, "regulators": 5 } }
+      }
+    },
+    {
+      "id": "mcc_053",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "employees": -5, "brand_image": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": -5, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_054",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 5, "investors": 5, "brand_image": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "employees": -5, "investors": 0, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 10, "investors": -5, "brand_image": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_055",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -10, "brand_image": -5, "employees": -5 } },
+        "C": { "gaugeDelta": { "investors": 10, "brand_image": -5, "employees": -5, "regulators": -5 } }
+      }
+    },
+    {
+      "id": "mcc_056",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 0, "investors": 5, "regulators": 0, "employees": -5 } }
+      }
+    },
+    {
+      "id": "mcc_057",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 15, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -15, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "investors": -5, "brand_image": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_058",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "investors": 10, "employees": -5, "brand_image": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -10, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": 5, "brand_image": 5, "employees": 0, "regulators": 5 } }
+      }
+    },
+    {
+      "id": "mcc_059",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_060",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "investors": -5, "brand_image": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_061",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -10, "employees": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": 0, "regulators": 0, "employees": 0 } },
+        "C": { "gaugeDelta": { "investors": 10, "brand_image": -15, "regulators": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_062",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "investors": 5, "regulators": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": 5, "regulators": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_063",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -5, "regulators": 5 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "employees": 0, "investors": 0, "regulators": 5 } }
+      }
+    },
+    {
+      "id": "mcc_064",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "investors": -5, "brand_image": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_065",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -5, "regulators": 5 } },
+        "B": { "gaugeDelta": { "brand_image": 0, "investors": 5, "employees": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": -5 } }
+      }
+    },
+    {
+      "id": "mcc_066",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "investors": -5, "employees": 5, "brand_image": 5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -5, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 10, "investors": -5, "brand_image": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_067",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -5, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 0, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_068",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "investors": 5, "employees": -5, "brand_image": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -10, "brand_image": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "investors": 5, "brand_image": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_069",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "investors": -5, "regulators": 5, "brand_image": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 10, "investors": 5, "employees": 5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": -5 } }
+      }
+    },
+    {
+      "id": "mcc_070",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "employees": 0, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_071",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -10, "employees": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -10, "brand_image": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 0, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_072",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 15, "brand_image": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "employees": -15, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "investors": 0, "brand_image": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_073",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "investors": 0, "employees": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": -5, "brand_image": -5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": -5, "regulators": -5 } }
+      }
+    },
+    {
+      "id": "mcc_074",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": 5, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_075",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "investors": 5, "brand_image": 5, "employees": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -15, "employees": -10, "regulators": -5 } },
+        "C": { "gaugeDelta": { "investors": 5, "brand_image": 0, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_076",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": 0, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "investors": -5, "brand_image": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_077",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -5, "regulators": -5, "employees": -5 } },
+        "C": { "gaugeDelta": { "investors": 5, "brand_image": 5, "regulators": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_078",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -10, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_079",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "investors": 10, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -5, "investors": -5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": -5, "brand_image": 5, "employees": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_080",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 0, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_081",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -5, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 10, "investors": -5, "brand_image": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_082",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "employees": -15, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "investors": 0, "brand_image": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_083",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "investors": 5, "brand_image": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "employees": -5, "investors": 0, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_084",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -10, "employees": -5 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_085",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 10, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "regulators": -5, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_086",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": -5, "brand_image": 0, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": 10, "employees": -10, "brand_image": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_087",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": 0, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_088",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": -10, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_089",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": -5, "brand_image": 5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": 10, "brand_image": 5, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_090",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -10, "employees": -5 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -15, "employees": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "employees": 0, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_091",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_092",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "investors": 10, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "employees": 5, "investors": -5, "brand_image": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": 5, "brand_image": 5, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_093",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -10, "brand_image": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 0, "investors": 0, "employees": -5 } }
+      }
+    },
+    {
+      "id": "mcc_094",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": -5, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_095",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "employees": 5, "investors": -10, "brand_image": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": 5, "employees": 0, "brand_image": 0, "regulators": 5 } }
+      }
+    },
+    {
+      "id": "mcc_096",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "investors": 15, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -10, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": 10, "brand_image": 0, "employees": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_097",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "investors": 0, "brand_image": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_098",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "investors": 5, "employees": -5, "regulators": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": 5, "brand_image": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": 0, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_099",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "investors": 10, "employees": -5, "brand_image": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "employees": 5, "investors": -5, "brand_image": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": 5, "regulators": 5, "employees": 0, "brand_image": 0 } }
+      }
+    },
+    {
+      "id": "mcc_100",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -10, "employees": -5 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "regulators": -10, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } }
+      }
     }
-  },
-  "mcc_052": {
-    "title": "Stock qui dort",
-    "body": "Un entrepôt est plein d’invendus. Les investisseurs demandent un plan avant la prochaine publication.",
-    "choices": {
-      "A": "Grosse promo immédiate, quitte à rogner la marge.",
-      "B": "Détruire/retirer discrètement et passer à autre chose.",
-      "C": "Transformer en dons + campagne image."
-    }
-  },
-  "mcc_053": {
-    "title": "Service client saturé",
-    "body": "Le support ne suit plus. Les délais de réponse doublent, les avis en ligne chutent.",
-    "choices": {
-      "A": "Recruter et former rapidement du renfort.",
-      "B": "Automatiser plus fort avec IA pour absorber.",
-      "C": "Prioriser les cas critiques et compenser les autres."
-    }
-  },
-  "mcc_054": {
-    "title": "Interdiction d’email",
-    "body": "Un audit interne montre que l’email est devenu un cimetière de décisions. Tout le monde se plaint.",
-    "choices": {
-      "A": "Imposer des règles strictes : moins d’emails, plus de décisions claires.",
-      "B": "Laisser faire : c’est la culture de la boîte.",
-      "C": "Lancer un outil interne de décisions + formation."
-    }
-  },
-  "mcc_055": {
-    "title": "Nouvelle taxe locale",
-    "body": "Une région annonce une nouvelle taxe sur ton activité. Le site local pourrait devenir déficitaire.",
-    "choices": {
-      "A": "Négocier avec les autorités, jouer la coopération.",
-      "B": "Menacer de partir si la taxe reste.",
-      "C": "Répercuter le coût sur les prix dans cette région."
-    }
-  },
-  "mcc_056": {
-    "title": "Produit “trop addictif”",
-    "body": "Des médias critiquent ton produit : “trop conçu pour rendre accro”. Ça fait débat.",
-    "choices": {
-      "A": "Ajouter des options de contrôle/limites et communiquer.",
-      "B": "Ignorer : les gens sont responsables.",
-      "C": "Changer l’algorithme discrètement, sans annonce."
-    }
-  },
-  "mcc_057": {
-    "title": "Retard de paie",
-    "body": "Un bug de paie menace de retarder les salaires d’une partie des employés. Panique.",
-    "choices": {
-      "A": "Payer en avance via un virement exceptionnel.",
-      "B": "Attendre le fix technique, “désolé”.",
-      "C": "Proposer une avance sur salaire sur demande."
-    }
-  },
-  "mcc_058": {
-    "title": "R&D contre court terme",
-    "body": "Ton nouveau labo coûte cher et ne rapportera pas avant 18 mois. Le marché veut du résultat.",
-    "choices": {
-      "A": "Réduire le labo, sécuriser le court terme.",
-      "B": "Doubler l’investissement, assumer le pari.",
-      "C": "Chercher un co-financement externe."
-    }
-  },
-  "mcc_059": {
-    "title": "Badge “Top Employer”",
-    "body": "On te propose un label “Top Employer”… contre un gros budget communication. Ça sent le badge acheté.",
-    "choices": {
-      "A": "Refuser : on améliore d’abord le réel.",
-      "B": "Accepter : ça aide le recrutement.",
-      "C": "Négocier : audit sérieux + label sans blabla."
-    }
-  },
-  "mcc_060": {
-    "title": "Accident de livraison",
-    "body": "Une tournée a été mal planifiée : plusieurs livreurs se retrouvent avec des journées impossibles.",
-    "choices": {
-      "A": "Réviser les objectifs et renforcer la planification.",
-      "B": "Maintenir : “on tient la promesse client”.",
-      "C": "Offrir une prime ponctuelle aux équipes concernées."
-    }
-  },
-  "mcc_061": {
-    "title": "Rappel de produit discret",
-    "body": "Un défaut rare existe sur une série. Tu peux faire un rappel discret ou public.",
-    "choices": {
-      "A": "Rappel public, transparence totale.",
-      "B": "Rappel discret : seulement les clients identifiés.",
-      "C": "Attendre : probabilité faible, on surveille."
-    }
-  },
-  "mcc_062": {
-    "title": "Équipe marketing en roue libre",
-    "body": "Le marketing veut un slogan agressif : “On écrase la concurrence.” Le juridique soupire.",
-    "choices": {
-      "A": "Valider : guerre psychologique.",
-      "B": "Refuser : ton sobre et fiable.",
-      "C": "Garder l’énergie mais changer la formulation."
-    }
-  },
-  "mcc_063": {
-    "title": "Partenariat universitaire",
-    "body": "Une université propose un partenariat de recherche. C’est lent, mais prestigieux.",
-    "choices": {
-      "A": "Signer : long terme + image.",
-      "B": "Refuser : trop lent, trop administratif.",
-      "C": "Signer sur un projet pilote court."
-    }
-  },
-  "mcc_064": {
-    "title": "Système de primes contesté",
-    "body": "Les primes actuelles sont jugées injustes : trop opaques, trop variables, trop “politique”.",
-    "choices": {
-      "A": "Rendre le système transparent avec critères clairs.",
-      "B": "Ne rien changer : c’est comme ça.",
-      "C": "Ajouter une part collective + garder une part individuelle."
-    }
-  },
-  "mcc_065": {
-    "title": "Critique sur la diversité",
-    "body": "On accuse l’entreprise d’être trop homogène en haut de l’organigramme. Ça commence à se voir.",
-    "choices": {
-      "A": "Plan concret : recrutement + promotion + suivi chiffré.",
-      "B": "Déclaration vague : “on fera mieux”.",
-      "C": "Ignorer : priorité business."
-    }
-  },
-  "mcc_066": {
-    "title": "Coupure internet",
-    "body": "Une coupure internet régionale bloque un site. Les équipes ne peuvent plus travailler.",
-    "choices": {
-      "A": "Investir dans une redondance réseau immédiate.",
-      "B": "Attendre : ce n’est pas “de ta faute”.",
-      "C": "Donner une journée de repos payée aux équipes touchées."
-    }
-  },
-  "mcc_067": {
-    "title": "Prix interne",
-    "body": "Un employé invente un outil qui fait gagner du temps. Les équipes veulent le récompenser publiquement.",
-    "choices": {
-      "A": "Prime + promotion, et on généralise l’outil.",
-      "B": "Merci verbal, pas de précédent.",
-      "C": "Prime symbolique + équipe dédiée pour industrialiser."
-    }
-  },
-  "mcc_068": {
-    "title": "Contrat public",
-    "body": "Un contrat public énorme est possible, mais le dossier administratif est lourd et très contrôlé.",
-    "choices": {
-      "A": "Y aller : équipe conformité dédiée.",
-      "B": "Refuser : trop de contraintes.",
-      "C": "Y aller via un partenaire déjà habilité."
-    }
-  },
-  "mcc_069": {
-    "title": "Produit concurrent copié",
-    "body": "Un concurrent lance un produit très similaire au tien. Les équipes demandent une riposte.",
-    "choices": {
-      "A": "Attaquer en justice.",
-      "B": "Innover vite : version 2 améliorée.",
-      "C": "Baisser les prix et écraser le marché."
-    }
-  },
-  "mcc_070": {
-    "title": "Téléphone du CEO",
-    "body": "Ton téléphone fuit des notifications en plein événement public. Ça lance des spéculations.",
-    "choices": {
-      "A": "En rire et détourner : “oui, je bosse”.",
-      "B": "Refuser de commenter, fermer la porte.",
-      "C": "Publier une clarification et calmer le jeu."
-    }
-  },
-  "mcc_071": {
-    "title": "Nouvelle norme",
-    "body": "Une nouvelle norme technique arrive dans 6 mois. Tu peux anticiper ou attendre.",
-    "choices": {
-      "A": "Anticiper dès maintenant, migration complète.",
-      "B": "Attendre le dernier moment.",
-      "C": "Anticiper sur les produits critiques seulement."
-    }
-  },
-  "mcc_072": {
-    "title": "Équipe sous pression",
-    "body": "Un département est en burn-out (sans drame, mais fatigue réelle). Les résultats chutent.",
-    "choices": {
-      "A": "Réduire les objectifs et renforcer les effectifs.",
-      "B": "Exiger : “c’est un moment intense, on tient”.",
-      "C": "Mettre un manager de crise + rotations."
-    }
-  },
-  "mcc_073": {
-    "title": "Visite surprise",
-    "body": "Des investisseurs demandent une visite surprise de l’usine. Le site est… pas au top ce mois-ci.",
-    "choices": {
-      "A": "Accepter et être transparent.",
-      "B": "Reporter avec une excuse officielle.",
-      "C": "Nettoyage express + mise en scène."
-    }
-  },
-  "mcc_074": {
-    "title": "Politique de remboursements",
-    "body": "Finance veut durcir les remboursements. Le support dit que tu vas te faire massacrer en avis.",
-    "choices": {
-      "A": "Assouplir : satisfaction client d’abord.",
-      "B": "Durcir : lutte contre abus.",
-      "C": "Segmenter : souple pour clients fidèles, strict sinon."
-    }
-  },
-  "mcc_075": {
-    "title": "Migration informatique",
-    "body": "Ton infra doit migrer vers une nouvelle plateforme. Risque de bugs, mais gros gain à terme.",
-    "choices": {
-      "A": "Migration progressive, sécurisée.",
-      "B": "Big bang : tout d’un coup.",
-      "C": "Repousser : trop risqué cette année."
-    }
-  },
-  "mcc_076": {
-    "title": "Débat sur les salaires",
-    "body": "Les salaires d’entrée sont jugés trop bas. Recrutement difficile, tensions internes.",
-    "choices": {
-      "A": "Augmenter les salaires d’entrée.",
-      "B": "Maintenir, compenser par avantages.",
-      "C": "Augmenter un peu + plan de progression rapide."
-    }
-  },
-  "mcc_077": {
-    "title": "Rapport trimestriel",
-    "body": "Tu peux annoncer des chiffres “propres” mais prudents, ou des objectifs agressifs pour faire rêver.",
-    "choices": {
-      "A": "Prudent et fiable.",
-      "B": "Agressif et ambitieux.",
-      "C": "Ambitieux mais avec garde-fous."
-    }
-  },
-  "mcc_078": {
-    "title": "Bureau trop luxueux",
-    "body": "Un article critique ton siège : “marbre et fauteuils, pendant que le terrain rame”.",
-    "choices": {
-      "A": "Ouvrir le siège aux équipes et réduire les dépenses visibles.",
-      "B": "Ignorer : c’est ton image de puissance.",
-      "C": "Investir davantage dans le terrain et le montrer."
-    }
-  },
-  "mcc_079": {
-    "title": "Sous-traitant en retard",
-    "body": "Un sous-traitant prend du retard. Si tu le presses, tu casses la relation. Si tu attends, tu rates une fenêtre marché.",
-    "choices": {
-      "A": "Le presser avec pénalités.",
-      "B": "Attendre et protéger la relation.",
-      "C": "Diversifier en urgence avec un second sous-traitant."
-    }
-  },
-  "mcc_080": {
-    "title": "Conférence internationale",
-    "body": "Tu es invité à parler. Bonne vitrine, mais chaque phrase sera scrutée.",
-    "choices": {
-      "A": "Discours très transparent avec chiffres.",
-      "B": "Discours vague et inspirant.",
-      "C": "Discours court + Q/R contrôlée."
-    }
-  },
-  "mcc_081": {
-    "title": "Logiciel interne obsolète",
-    "body": "Un vieux logiciel interne ralentit tout le monde. Le remplacer coûte cher, mais le garder coûte du temps.",
-    "choices": {
-      "A": "Remplacer maintenant.",
-      "B": "Garder encore un an.",
-      "C": "Remplacer par étapes, service par service."
-    }
-  },
-  "mcc_082": {
-    "title": "Prime des cadres",
-    "body": "Les cadres demandent une prime spéciale. Les employés de base voient ça d’un mauvais œil.",
-    "choices": {
-      "A": "Prime pour tous, plus petite.",
-      "B": "Prime cadres seulement.",
-      "C": "Prime cadres + enveloppe formation pour tous."
-    }
-  },
-  "mcc_083": {
-    "title": "Surcharge de réunions",
-    "body": "Les équipes disent qu’elles passent leur vie en réunion. La productivité chute… en parlant de productivité.",
-    "choices": {
-      "A": "Interdire certaines réunions, règles strictes.",
-      "B": "Laisser : “communication d’abord”.",
-      "C": "Créer des “jours sans réunions” hebdo."
-    }
-  },
-  "mcc_084": {
-    "title": "Nouveau label qualité",
-    "body": "Un label qualité reconnu est accessible, mais demande du temps et des audits réguliers.",
-    "choices": {
-      "A": "Le viser : excellence.",
-      "B": "Ne pas y aller : trop cher.",
-      "C": "Commencer par une certification partielle."
-    }
-  },
-  "mcc_085": {
-    "title": "Équipe de vente agressive",
-    "body": "Les ventes montent, mais des clients se plaignent de pratiques trop insistantes.",
-    "choices": {
-      "A": "Recadrer la vente : charte + contrôle.",
-      "B": "Laisser : ça marche.",
-      "C": "Bonus sur satisfaction client, pas seulement sur volume."
-    }
-  },
-  "mcc_086": {
-    "title": "Chantier bruyant",
-    "body": "Un chantier près d’un site rend la logistique compliquée. Les retards s’accumulent.",
-    "choices": {
-      "A": "Négocier avec la ville pour ajuster les horaires.",
-      "B": "Déplacer temporairement une partie des opérations.",
-      "C": "Pousser les équipes à compenser par des heures sup."
-    }
-  },
-  "mcc_087": {
-    "title": "Application trop lourde",
-    "body": "Ton app devient lente. Les utilisateurs râlent, mais le produit veut ajouter encore plus de fonctionnalités.",
-    "choices": {
-      "A": "Pause : optimisation performance d’abord.",
-      "B": "Ajouter quand même : features > vitesse.",
-      "C": "Optimiser une partie + features limitées."
-    }
-  },
-  "mcc_088": {
-    "title": "Débat sur l’open source",
-    "body": "Des ingénieurs veulent ouvrir une partie du code. Le juridique et les investisseurs hésitent.",
-    "choices": {
-      "A": "Ouvrir : attirer des talents et crédibilité tech.",
-      "B": "Refuser : protection maximale.",
-      "C": "Ouvrir seulement des outils non stratégiques."
-    }
-  },
-  "mcc_089": {
-    "title": "Réclamation d’un grand client",
-    "body": "Un grand client menace de partir si tu ne changes pas une clause du contrat. Ça ferait mal au chiffre.",
-    "choices": {
-      "A": "Céder : garder le client.",
-      "B": "Tenir : pas de précédent.",
-      "C": "Compromis : ajuster contre engagement plus long."
-    }
-  },
-  "mcc_090": {
-    "title": "Arrêt de ligne",
-    "body": "Une ligne de production a trop de micro-pannes. Tu peux la stopper pour maintenance lourde.",
-    "choices": {
-      "A": "Stopper et réparer à fond.",
-      "B": "Continuer et gérer au jour le jour.",
-      "C": "Maintenance de nuit + production réduite."
-    }
-  },
-  "mcc_091": {
-    "title": "Sondage interne",
-    "body": "Un sondage interne montre une baisse de confiance envers la direction. Ça pique.",
-    "choices": {
-      "A": "Répondre avec un plan clair et dates.",
-      "B": "Minimiser : “c’est normal”.",
-      "C": "Faire des réunions d’écoute, puis agir."
-    }
-  },
-  "mcc_092": {
-    "title": "Chasse aux coûts",
-    "body": "Le CFO propose de couper les budgets “non essentiels” (événements, outils, petites dépenses).",
-    "choices": {
-      "A": "Couper fort, rapide.",
-      "B": "Couper légèrement, préserver le moral.",
-      "C": "Couper ciblé + réinvestir dans terrain."
-    }
-  },
-  "mcc_093": {
-    "title": "Sécurité physique",
-    "body": "On signale des contrôles d’accès faibles dans un site. Rien de grave, mais ça te met mal.",
-    "choices": {
-      "A": "Renforcer immédiatement, contrôles stricts.",
-      "B": "Laisser : incident rare.",
-      "C": "Renforcer mais sans rigidifier trop."
-    }
-  },
-  "mcc_094": {
-    "title": "Rumeur d’augmentation de prix",
-    "body": "Une rumeur dit que tu vas augmenter les prix. Les clients s’énervent avant même l’annonce.",
-    "choices": {
-      "A": "Clarifier rapidement avec transparence.",
-      "B": "Profiter : augmenter maintenant.",
-      "C": "Repousser l’augmentation et calmer le marché."
-    }
-  },
-  "mcc_095": {
-    "title": "Équipe juridique débordée",
-    "body": "Le juridique est saturé. Les contrats prennent des semaines, les ventes râlent.",
-    "choices": {
-      "A": "Recruter et moderniser les process.",
-      "B": "Mettre la pression : “faut accélérer”.",
-      "C": "Standardiser des contrats types + automatiser."
-    }
-  },
-  "mcc_096": {
-    "title": "Commande géante",
-    "body": "Une commande géante arrive. Tu peux l’accepter, mais ça va tordre toute ta production pendant un mois.",
-    "choices": {
-      "A": "Accepter : croissance immédiate.",
-      "B": "Refuser : protéger le reste.",
-      "C": "Accepter partiellement, étaler dans le temps."
-    }
-  },
-  "mcc_097": {
-    "title": "Réputation des managers",
-    "body": "Des managers sont jugés trop “durs”. Résultats bons, ambiance moyenne.",
-    "choices": {
-      "A": "Former les managers et recadrer.",
-      "B": "Garder : performance avant tout.",
-      "C": "Changer quelques managers clés, pas tous."
-    }
-  },
-  "mcc_098": {
-    "title": "Innovation “gadget”",
-    "body": "Une fonctionnalité fun est demandée. Elle ne sert pas à grand-chose… mais fait parler.",
-    "choices": {
-      "A": "La lancer : buzz.",
-      "B": "Refuser : focus utile.",
-      "C": "La lancer en option, sans perturber le cœur."
-    }
-  },
-  "mcc_099": {
-    "title": "Contrôle des dépenses",
-    "body": "Des notes de frais partent dans tous les sens. Pas scandaleux, mais ça gonfle les coûts.",
-    "choices": {
-      "A": "Règles strictes et validation obligatoire.",
-      "B": "Laisser : ça coûte plus cher de contrôler.",
-      "C": "Plafonds simples + contrôles aléatoires."
-    }
-  },
-  "mcc_100": {
-    "title": "Charte de transparence",
-    "body": "Tu peux adopter une charte de transparence sur tes pratiques. Bonne image, mais plus de contraintes internes.",
-    "choices": {
-      "A": "Adopter pleinement et publier des rapports réguliers.",
-      "B": "Refuser : trop de contraintes.",
-      "C": "Adopter une version light, progressive."
-    }
-  }
+  ]
 }
+
 {
   "cards": [
     {
@@ -1813,458 +1816,466 @@
   ]
 }
 {
-  "mcc_201": {
-    "title": "Visite ministérielle surprise",
-    "body": "Un ministre annonce une visite “pour valoriser l’industrie”. Tes équipes demandent si on doit enlever les gobelets du bureau.",
-    "choices": {
-      "A": "Jouer la transparence : visite réelle, sans décor.",
-      "B": "Faire une visite vitrine ultra propre (et très encadrée).",
-      "C": "Proposer une visioconférence : moins de stress, plus de contrôle."
-    }
-  },
-  "mcc_202": {
-    "title": "La loi “anti-jargon” (presque)",
-    "body": "Un député propose un texte pour limiter le jargon dans les contrats. Tes juristes font une syncope polie.",
-    "choices": {
-      "A": "Simplifier tes contrats volontairement.",
-      "B": "Attendre : “ça ne passera jamais”.",
-      "C": "Créer un résumé clair en plus du contrat."
-    }
-  },
-  "mcc_203": {
-    "title": "Commission d’enquête… sur les réunions",
-    "body": "Une commission nationale veut comprendre pourquoi “les réunions durent si longtemps”. Tu te sens visé.",
-    "choices": {
-      "A": "Lancer une réforme interne “réunions courtes”.",
-      "B": "Ignorer : ce n’est pas ton problème.",
-      "C": "Sponsoriser une étude… avec ton logo partout."
-    }
-  },
-  "mcc_204": {
-    "title": "Subvention verte, paperasse grise",
-    "body": "Une subvention existe pour verdir un site, mais le dossier fait 84 pages. Le CFO demande un café.",
-    "choices": {
-      "A": "Monter le dossier proprement et investir.",
-      "B": "Laisser tomber : trop long.",
-      "C": "Faire un pilote plus petit, dossier plus simple."
-    }
-  },
-  "mcc_205": {
-    "title": "Le “comité des comités” public",
-    "body": "Les autorités créent un comité sur ton secteur. Puis un sous-comité. Puis un groupe de travail. Tout le monde a un badge.",
-    "choices": {
-      "A": "Participer activement et rester coopératif.",
-      "B": "Participer au minimum, discret.",
-      "C": "Proposer une charte simple pour accélérer."
-    }
-  },
-  "mcc_206": {
-    "title": "Panne d’affichage des prix",
-    "body": "Un bug affiche des prix incohérents. Un élu local twitte : “C’est ça, la vie chère ?”.",
-    "choices": {
-      "A": "Corriger et communiquer humblement.",
-      "B": "Minimiser : “incident technique mineur”.",
-      "C": "Offrir un geste aux clients touchés."
-    }
-  },
-  "mcc_207": {
-    "title": "Semaine de la sobriété énergétique",
-    "body": "Le gouvernement lance une semaine “sobriété”. Tes bureaux brillent comme un stade.",
-    "choices": {
-      "A": "Réduire l’éclairage et afficher des gestes concrets.",
-      "B": "Ne rien changer : “on paie, donc on éclaire”.",
-      "C": "Faire une action symbolique (1 jour) + plan long terme."
-    }
-  },
-  "mcc_208": {
-    "title": "L’audit surprise du régulateur",
-    "body": "Un mail arrive : “contrôle sur site demain”. Ton équipe compliance court partout, même dans les couloirs.",
-    "choices": {
-      "A": "Coopérer à fond et corriger tout ce qui manque.",
-      "B": "Répondre au strict nécessaire.",
-      "C": "Demander un délai officiel et lancer un audit interne express."
-    }
-  },
-  "mcc_209": {
-    "title": "Le badge “Entreprise citoyenne”",
-    "body": "Une mairie propose un badge “citoyen” si tu finances un événement local. Tes équipes demandent si ça se mange.",
-    "choices": {
-      "A": "Soutenir l’événement, sans en faire trop.",
-      "B": "Refuser : pas de mélange business/politique locale.",
-      "C": "Soutenir mais exiger transparence totale."
-    }
-  },
-  "mcc_210": {
-    "title": "Discours au forum économique",
-    "body": "Tu dois parler au forum économique. Deux minutes. Ton équipe com’ a écrit… 12 minutes.",
-    "choices": {
-      "A": "Couper et rester simple, direct.",
-      "B": "Lire tout : “la vision n’a pas de minute”.",
-      "C": "Faire 2 minutes + une note écrite optionnelle."
-    }
-  },
-  "mcc_211": {
-    "title": "Campagne d’affichage “trop patriotique”",
-    "body": "Marketing propose une campagne “Made Here, Made Proud”. Dans certains pays, ça fait grincer.",
-    "choices": {
-      "A": "Adapter par pays pour éviter les malentendus.",
-      "B": "Garder partout : message unique.",
-      "C": "Rendre le message neutre : qualité plutôt que drapeau."
-    }
-  },
-  "mcc_212": {
-    "title": "Consultation publique en ligne",
-    "body": "Une consultation publique sur ton secteur est ouverte. Les commentaires vont de “génial” à “stop tout”.",
-    "choices": {
-      "A": "Répondre calmement et proposer des engagements.",
-      "B": "Ne pas répondre : trop risqué.",
-      "C": "Faire répondre une association pro du secteur."
-    }
-  },
-  "mcc_213": {
-    "title": "Le débat sur la publicité",
-    "body": "Un projet de loi limite certaines pubs. Tes équipes marketing demandent si “les mèmes” comptent comme pub.",
-    "choices": {
-      "A": "Adapter et jouer la transparence.",
-      "B": "Tester la limite du cadre.",
-      "C": "Réduire la pub et miser sur le produit."
-    }
-  },
-  "mcc_214": {
-    "title": "Dîner “réseau” (très réseau)",
-    "body": "On t’invite à un dîner où tout le monde se tutoie… et où personne ne dit clairement pourquoi.",
-    "choices": {
-      "A": "Y aller, mais rester ultra transparent sur tes échanges.",
-      "B": "Refuser : trop flou.",
-      "C": "Y aller avec une équipe conformité et un agenda clair."
-    }
-  },
-  "mcc_215": {
-    "title": "La taxe surprise",
-    "body": "Une taxe sectorielle est annoncée. Tes investisseurs grognent, tes clients ne veulent pas payer plus.",
-    "choices": {
-      "A": "Absorber une partie et optimiser les coûts.",
-      "B": "Répercuter tout sur les prix.",
-      "C": "Adapter l’offre (entrée de gamme) pour limiter l’impact."
-    }
-  },
-  "mcc_216": {
-    "title": "Débat sur le “local”",
-    "body": "Un élu te demande : “Pourquoi pas 100% local ?”. Ta supply chain rigole nerveusement.",
-    "choices": {
-      "A": "Augmenter le local progressivement avec objectifs.",
-      "B": "Promettre 100% local (et improviser après).",
-      "C": "Expliquer la réalité et proposer un mix."
-    }
-  },
-  "mcc_217": {
-    "title": "Manifestation devant le siège",
-    "body": "Une petite manif apparaît devant ton siège avec des pancartes créatives. Très créatives.",
-    "choices": {
-      "A": "Dialoguer calmement et écouter les demandes.",
-      "B": "Sécuriser et ignorer.",
-      "C": "Proposer une rencontre officielle avec médiation."
-    }
-  },
-  "mcc_218": {
-    "title": "Rumeur de “grand plan secret”",
-    "body": "Les réseaux s’emballent : tu aurais un “plan secret” avec l’État. Tu n’es même pas au courant.",
-    "choices": {
-      "A": "Démentir avec des faits, simple.",
-      "B": "Laisser courir : “ça fera mystérieux”.",
-      "C": "Publier un point transparence (FAQ)."
-    }
-  },
-  "mcc_219": {
-    "title": "Jour d’élection = jour de tension",
-    "body": "Le pays vote. Tes équipes demandent si on peut éviter les sujets sensibles au bureau. Bonne idée.",
-    "choices": {
-      "A": "Rappel de respect + neutralité au travail.",
-      "B": "Ignorer : “ça va aller”.",
-      "C": "Organiser un moment calme (pause, écoute, médiation)."
-    }
-  },
-  "mcc_220": {
-    "title": "La loi “réparabilité” arrive",
-    "body": "Une loi impose plus de réparabilité. Tes ingénieurs disent : “On peut… mais pas demain matin.”",
-    "choices": {
-      "A": "Investir et anticiper (roadmap claire).",
-      "B": "Faire le strict minimum.",
-      "C": "Commencer par les produits phares."
-    }
-  },
-  "mcc_221": {
-    "title": "Parlement des stagiaires",
-    "body": "Les stagiaires organisent un “parlement interne” pour proposer des idées. Ils votent tout. Même les pauses.",
-    "choices": {
-      "A": "Écouter et retenir les meilleures idées.",
-      "B": "Stopper : “on n’est pas une république”.",
-      "C": "Garder, mais cadrer (1 sujet par mois)."
-    }
-  },
-  "mcc_222": {
-    "title": "Crise diplomatique du logo",
-    "body": "Ton logo ressemble à un symbole officiel dans un pays. Personne n’avait vérifié. Oups.",
-    "choices": {
-      "A": "Adapter le logo localement.",
-      "B": "Garder : “c’est un hasard”.",
-      "C": "Changer globalement (gros chantier)."
-    }
-  },
-  "mcc_223": {
-    "title": "Le maire veut “un mot”",
-    "body": "Le maire de la ville où tu as un site veut “un mot”. Ton équipe devine déjà : emploi, subventions, photo…",
-    "choices": {
-      "A": "Rencontrer, parler emplois et projets concrets.",
-      "B": "Refuser : pas de politique.",
-      "C": "Envoyer un représentant + engagements mesurables."
-    }
-  },
-  "mcc_224": {
-    "title": "Débat sur les prix “justes”",
-    "body": "Une émission débat sur les “prix justes” et cite ton entreprise. Ton service com’ serre les dents en souriant.",
-    "choices": {
-      "A": "Expliquer ta structure de coûts avec pédagogie.",
-      "B": "Attaquer l’émission : “désinformation”.",
-      "C": "Faire un geste sur une gamme populaire."
-    }
-  },
-  "mcc_225": {
-    "title": "Baromètre social national",
-    "body": "Un baromètre social compare les entreprises. Tu es “moyen”. Le pire : c’est public.",
-    "choices": {
-      "A": "Lancer un plan bien-être et progression.",
-      "B": "Faire une opération com’ pour remonter vite.",
-      "C": "Contester le baromètre (méthode) publiquement."
-    }
-  },
-  "mcc_226": {
-    "title": "La décarbonation en 3 slides",
-    "body": "On te demande un plan décarbonation. Le board veut 3 slides. La planète, elle, voulait un roman.",
-    "choices": {
-      "A": "Plan simple mais sérieux avec étapes chiffrées.",
-      "B": "3 slides vagues, et on verra.",
-      "C": "Plan long interne + version courte publique."
-    }
-  },
-  "mcc_227": {
-    "title": "Conférence “monde d’après”",
-    "body": "Tu es invité à parler du “monde d’après”. Personne ne sait ce que c’est, mais tout le monde applaudit.",
-    "choices": {
-      "A": "Parler concret : actions, objectifs, limites.",
-      "B": "Faire un discours très inspirant (sans détails).",
-      "C": "Refuser et publier une note claire à la place."
-    }
-  },
-  "mcc_228": {
-    "title": "Règlement sur l’IA",
-    "body": "Un règlement arrive sur l’IA. Tes équipes veulent l’utiliser partout, même pour choisir la musique d’ascenseur.",
-    "choices": {
-      "A": "Encadrer l’IA : usages autorisés + audit.",
-      "B": "Interdire pour éviter les risques.",
-      "C": "Autoriser en interne seulement (pas sur clients)."
-    }
-  },
-  "mcc_229": {
-    "title": "Protection du consommateur",
-    "body": "Une nouvelle règle impose plus de clarté sur les abonnements. Ton produit a “un bouton discret”. Très discret.",
-    "choices": {
-      "A": "Rendre tout clair et facile à annuler.",
-      "B": "Garder le bouton discret : rentable.",
-      "C": "Améliorer un peu, sans tout changer."
-    }
-  },
-  "mcc_230": {
-    "title": "Jour férié discuté",
-    "body": "Un débat national sur un jour férié arrive. Les employés veulent le garder. Les investisseurs veulent “aligner les coûts”.",
-    "choices": {
-      "A": "Garder le jour et compenser par organisation.",
-      "B": "Supprimer le jour dans l’entreprise.",
-      "C": "Garder, mais optionnel selon métiers (compensation)."
-    }
-  },
-  "mcc_231": {
-    "title": "Contrat public possible",
-    "body": "Un gros contrat public est en jeu. Bonne vitrine, mais exigences de conformité très strictes.",
-    "choices": {
-      "A": "Y aller : conformité exemplaire.",
-      "B": "Éviter : trop de contraintes.",
-      "C": "Y aller via un partenariat expérimenté."
-    }
-  },
-  "mcc_232": {
-    "title": "Le débat sur les salaires",
-    "body": "Un débat politique sur les salaires explose. Tes employés demandent un geste. Ton CFO demande… du calme.",
-    "choices": {
-      "A": "Revaloriser ciblé + transparence.",
-      "B": "Refuser : “contexte difficile”.",
-      "C": "Bonus ponctuel + plan à long terme."
-    }
-  },
-  "mcc_233": {
-    "title": "Le rapport “ESG” qui endort",
-    "body": "Ton rapport ESG fait 120 pages. Personne ne le lit, mais tout le monde le cite comme preuve d’effort.",
-    "choices": {
-      "A": "Raccourcir + rendre concret (indicateurs).",
-      "B": "Garder long : “ça fait sérieux”.",
-      "C": "Garder long + résumé 1 page obligatoire."
-    }
-  },
-  "mcc_234": {
-    "title": "Publicité et neutralité",
-    "body": "Une pub est jugée “trop politique” par certains, “pas assez engagée” par d’autres. Exploit.",
-    "choices": {
-      "A": "Retirer et refaire plus neutre.",
-      "B": "Assumer : “on a des valeurs”.",
-      "C": "Garder mais clarifier l’intention."
-    }
-  },
-  "mcc_235": {
-    "title": "Le contrôle des labels",
-    "body": "Un label “responsable” est contrôlé plus strictement. Tes équipes demandent : “On l’a vraiment mérité ?”.",
-    "choices": {
-      "A": "Auditer et corriger avant le contrôle.",
-      "B": "Espérer que ça passe.",
-      "C": "Retirer le label temporairement par prudence."
-    }
-  },
-  "mcc_236": {
-    "title": "Vote interne sur la cantine",
-    "body": "Les employés votent : plus végétal à la cantine. Certains crient au complot du brocoli.",
-    "choices": {
-      "A": "Ajouter plus d’options végétales, sans imposer.",
-      "B": "Refuser : “la cantine n’est pas un parlement”.",
-      "C": "Tester 2 jours/semaine et mesurer la satisfaction."
-    }
-  },
-  "mcc_237": {
-    "title": "Crise de confiance médias",
-    "body": "Les médias parlent beaucoup de ton secteur. Tout est “scandale potentiel”. Tes équipes com’ veulent dormir.",
-    "choices": {
-      "A": "Transparence proactive et preuves.",
-      "B": "Discrétion totale.",
-      "C": "Parler seulement via un porte-parole unique."
-    }
-  },
-  "mcc_238": {
-    "title": "Le débat sur la souveraineté",
-    "body": "On te demande si tes données doivent rester “dans le pays”. Tech dit oui, finance dit “ça coûte”.",
-    "choices": {
-      "A": "Localiser les données sensibles.",
-      "B": "Tout laisser global : efficacité.",
-      "C": "Solution hybride : sensible local, reste global."
-    }
-  },
-  "mcc_239": {
-    "title": "Loi anti-gaspillage",
-    "body": "Une loi anti-gaspillage arrive. Tes stocks invendus te regardent… avec tristesse.",
-    "choices": {
-      "A": "Donner/recycler et revoir la production.",
-      "B": "Détruire discrètement (au risque d’être critiqué).",
-      "C": "Vendre à prix réduit via une plateforme dédiée."
-    }
-  },
-  "mcc_240": {
-    "title": "L’étiquette “origine”",
-    "body": "Une règle impose plus de clarté sur l’origine. Ton packaging va ressembler à un passeport.",
-    "choices": {
-      "A": "Mettre l’origine clairement et assumer.",
-      "B": "Faire le minimum en tout petit.",
-      "C": "Mettre l’origine + une explication pédagogique."
-    }
-  },
-  "mcc_241": {
-    "title": "Le débat sur les “profits”",
-    "body": "Ton entreprise fait de bons profits. Un élu demande si tu peux “partager un peu”. Tes actionnaires font une grimace.",
-    "choices": {
-      "A": "Investir davantage localement (emploi, formation).",
-      "B": "Refuser : business = business.",
-      "C": "Faire un fonds social modeste + communication sobre."
-    }
-  },
-  "mcc_242": {
-    "title": "Le contrôle des sous-traitants",
-    "body": "Une nouvelle règle te rend plus responsable de tes sous-traitants. Ton acheteur demande : “on audit qui, là ?”.",
-    "choices": {
-      "A": "Auditer sérieusement et exiger des standards.",
-      "B": "Changer vite de sous-traitants (sans trop vérifier).",
-      "C": "Auditer seulement les plus critiques."
-    }
-  },
-  "mcc_243": {
-    "title": "Manifestation… pour te féliciter",
-    "body": "Une association te félicite publiquement pour une action verte. C’est rare. Tes équipes ne savent pas où se mettre.",
-    "choices": {
-      "A": "Remercier humblement et continuer.",
-      "B": "Transformer en grande campagne marketing.",
-      "C": "Rester discret pour éviter le retour de bâton."
-    }
-  },
-  "mcc_244": {
-    "title": "Le débat sur les horaires",
-    "body": "Une réforme nationale sur les horaires est discutée. Tes sites tournent 24/7. Tes managers demandent une baguette magique.",
-    "choices": {
-      "A": "Adapter les plannings avec concertation.",
-      "B": "Faire pression pour garder le modèle actuel.",
-      "C": "Automatiser une partie et réduire les horaires difficiles."
-    }
-  },
-  "mcc_245": {
-    "title": "La conférence “neutralité carbone”",
-    "body": "Tu promets “neutralité carbone” sur scène. Ton responsable opérationnel t’envoie juste : “😅”.",
-    "choices": {
-      "A": "Reformuler : objectifs réalistes, étapes claires.",
-      "B": "Maintenir la promesse et accélérer coûte que coûte.",
-      "C": "Promesse sur une gamme/zone d’abord."
-    }
-  },
-  "mcc_246": {
-    "title": "Nouvelle règle anti-fraude",
-    "body": "Une règle anti-fraude exige plus de contrôles. Tes équipes produit disent : “ça va ajouter 3 clics”.",
-    "choices": {
-      "A": "Renforcer contrôles et améliorer l’UX.",
-      "B": "Faire le strict minimum.",
-      "C": "Contrôles progressifs selon risque."
-    }
-  },
-  "mcc_247": {
-    "title": "Le débat “monopole”",
-    "body": "On accuse les grandes entreprises de trop dominer. Tu es invité à “justifier ta taille”. C’est nouveau.",
-    "choices": {
-      "A": "Montrer tes apports (emploi, innovation, prix).",
-      "B": "Ignorer et continuer.",
-      "C": "Annoncer des engagements pro-concurrence (API, partenariats)."
-    }
-  },
-  "mcc_248": {
-    "title": "Le “jour sans voiture” national",
-    "body": "Le pays fait un jour sans voiture. Tes employés demandent télétravail. Tes managers demandent “mais la machine à café ?”.",
-    "choices": {
-      "A": "Télétravail ce jour + transport alternatif.",
-      "B": "Présence obligatoire : “on s’adaptera”.",
-      "C": "Présence partielle + horaires décalés."
-    }
-  },
-  "mcc_249": {
-    "title": "Débat sur les contenus en ligne",
-    "body": "Une loi veut encadrer certains contenus en ligne. Ton service a une modération… “optimiste”.",
-    "choices": {
-      "A": "Renforcer la modération et la transparence.",
-      "B": "Minimiser : “la liberté d’abord”.",
-      "C": "Renforcer sur les cas critiques seulement."
-    }
-  },
-  "mcc_250": {
-    "title": "Le grand débat mondialisation",
-    "body": "À la TV, on débat mondialisation. Ton entreprise est citée comme exemple. Personne ne prononce ton nom correctement.",
-    "choices": {
-      "A": "Expliquer calmement ta chaîne de valeur et tes efforts locaux.",
-      "B": "Rester silencieux : moins on parle, mieux c’est.",
-      "C": "Faire une mini-campagne pédagogique “comment ça marche”."
-    }
-  }
-}
+  
+
 {
+  "cards": [
+    {
+      "id": "mcc_201",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "employees": 5, "investors": -5 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "investors": 5, "employees": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 0, "investors": 5, "employees": -5 } }
+      }
+    },
+    {
+      "id": "mcc_202",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "employees": 0, "investors": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -5, "brand_image": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_203",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": -5, "employees": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_204",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": 0, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_205",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -5, "brand_image": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": -5 } }
+      }
+    },
+    {
+      "id": "mcc_206",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "employees": 0, "investors": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -10, "employees": 0, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -10, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_207",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -5, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 0, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_208",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 15, "brand_image": 5, "investors": -10, "employees": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -10, "brand_image": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 0, "investors": -5, "employees": -5 } }
+      }
+    },
+    {
+      "id": "mcc_209",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": 0, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -10, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_210",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -5, "employees": -5, "investors": 5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": 0, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_211",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -10, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_212",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -5, "regulators": 0, "investors": 5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 0, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_213",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "regulators": -10, "brand_image": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": -5, "employees": 0, "regulators": 5 } }
+      }
+    },
+    {
+      "id": "mcc_214",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 0, "regulators": 0, "investors": 5, "employees": -5 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 0, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_215",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "employees": 0, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -5, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": 0, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_216",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "regulators": -5, "investors": 5, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_217",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "regulators": 5, "investors": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "regulators": 5, "brand_image": 5, "investors": -5 } }
+      }
+    },
+    {
+      "id": "mcc_218",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "investors": 5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 0, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_219",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "employees": -5, "brand_image": -5, "investors": 5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_220",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -5, "brand_image": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_221",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "employees": -10, "brand_image": -5, "investors": 5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 0, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_222",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -10, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": -10, "employees": -5, "regulators": 5 } }
+      }
+    },
+    {
+      "id": "mcc_223",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "employees": 5, "investors": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": 0, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_224",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "investors": 5, "employees": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -10, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_225",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 10, "investors": 5, "employees": -10, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 0, "investors": 0, "employees": -5, "regulators": -5 } }
+      }
+    },
+    {
+      "id": "mcc_226",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_227",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "employees": 0, "investors": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "investors": 5, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_228",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "employees": 5, "investors": -5 } },
+        "B": { "gaugeDelta": { "regulators": 5, "investors": 5, "employees": -10, "brand_image": -5 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 0, "investors": 0, "employees": -5 } }
+      }
+    },
+    {
+      "id": "mcc_229",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "regulators": -10, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_230",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "investors": 0, "brand_image": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_231",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "investors": 5, "brand_image": 5, "employees": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": 5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "investors": 5, "brand_image": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_232",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_233",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "investors": 5, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_234",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "investors": 5, "regulators": -5, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 0, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_235",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -10, "regulators": -10, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 0, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_236",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 0, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_237",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -5, "investors": 5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": 0, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_238",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_239",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -15, "regulators": -10, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": 5, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_240",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -10, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -10, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_241",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -10, "regulators": 5 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_242",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -5, "brand_image": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 0, "investors": 0, "employees": -5 } }
+      }
+    },
+    {
+      "id": "mcc_243",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": 0, "employees": 5 } },
+        "B": { "gaugeDelta": { "brand_image": 10, "investors": 5, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_244",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "regulators": 5, "investors": -5, "brand_image": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -5, "employees": -10, "brand_image": -5 } },
+        "C": { "gaugeDelta": { "investors": 10, "employees": -5, "brand_image": 5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_245",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 10, "investors": -10, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 0, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_246",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -5, "brand_image": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "investors": 0, "brand_image": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_247",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_248",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "employees": -10, "brand_image": -5, "investors": 5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 0, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_249",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -10, "brand_image": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 0, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_250",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -5, "investors": 5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": -5, "employees": 0, "regulators": 0 } }
+      }
+    }
+  ]
+}
+
+
+
+
   "cards": [
     {
       "id": "mcc_251",
@@ -2719,454 +2730,1367 @@
   ]
 }
 {
-  "mcc_301": {
-    "title": "La “loi du bouton rouge”",
-    "body": "Un député veut obliger tous les services à avoir un bouton rouge “Annuler en 1 clic”. Ton produit a… un labyrinthe.",
-    "choices": {
-      "A": "Créer un vrai bouton rouge (clair et immédiat).",
-      "B": "Créer un bouton… mais caché dans les paramètres avancés.",
-      "C": "Créer un bouton rouge + un parcours d’aide qui retient les clients."
+  "cards": [
+    {
+      "id": "mcc_301",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -10, "regulators": -10, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_302",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_303",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "investors": 5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_304",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 10, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_305",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "employees": 5, "investors": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": 0, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_306",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_307",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "employees": 0, "investors": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -10, "regulators": -5, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_308",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "regulators": -5, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_309",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 15, "brand_image": 5, "investors": -10, "employees": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -10, "brand_image": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": -5 } }
+      }
+    },
+    {
+      "id": "mcc_310",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": 5, "regulators": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_311",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 5 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_312",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "employees": 5, "brand_image": 5, "investors": -5 } },
+        "B": { "gaugeDelta": { "regulators": 5, "employees": -10, "investors": 5, "brand_image": 0 } },
+        "C": { "gaugeDelta": { "investors": 5, "regulators": 5, "employees": -5, "brand_image": 0 } }
+      }
+    },
+    {
+      "id": "mcc_313",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": -5 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -5, "investors": 0, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_314",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 0, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_315",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "investors": 5, "employees": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 0, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_316",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -10, "employees": 5 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "investors": 5, "employees": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_317",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_318",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -5, "brand_image": -5, "employees": -5 } },
+        "C": { "gaugeDelta": { "employees": -5, "investors": -5, "brand_image": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_319",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 0, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_320",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": -5, "brand_image": 5, "employees": 5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_321",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "investors": 5, "regulators": -5, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -10, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_322",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_323",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "regulators": 5, "investors": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -5, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "regulators": 5, "investors": -5, "brand_image": 0 } }
+      }
+    },
+    {
+      "id": "mcc_324",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -15, "regulators": -10, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_325",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "investors": 0, "brand_image": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_326",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -5, "brand_image": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_327",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "investors": 5, "regulators": 5, "brand_image": 5, "employees": 5 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -10, "regulators": -10, "employees": -5 } },
+        "C": { "gaugeDelta": { "investors": 0, "brand_image": 5, "regulators": 5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_328",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -10, "regulators": 5 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -5, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "regulators": 5, "investors": -5, "brand_image": 0 } }
+      }
+    },
+    {
+      "id": "mcc_329",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": -5 } },
+        "B": { "gaugeDelta": { "brand_image": 0, "investors": 5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_330",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -10, "regulators": 5 } },
+        "B": { "gaugeDelta": { "investors": 10, "employees": -15, "brand_image": -10, "regulators": -5 } },
+        "C": { "gaugeDelta": { "investors": 5, "employees": 0, "brand_image": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_331",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -15, "regulators": -5, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": 5, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_332",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "regulators": -10, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_333",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "regulators": 5, "brand_image": 5, "investors": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 0, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_334",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "investors": 0, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": -5, "regulators": -5 } }
+      }
+    },
+    {
+      "id": "mcc_335",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -5, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "investors": -5, "regulators": 5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_336",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "investors": 10, "regulators": 5, "brand_image": 5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "investors": 5, "regulators": 5, "brand_image": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_337",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "regulators": -10, "employees": 0 } },
+        "C": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_338",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "regulators": 5, "investors": 0, "brand_image": 0, "employees": 0 } },
+        "C": { "gaugeDelta": { "investors": 5, "employees": -5, "brand_image": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_339",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 0, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_340",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_341",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -10, "regulators": 5 } },
+        "B": { "gaugeDelta": { "brand_image": -15, "regulators": -5, "investors": 0, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": -5, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_342",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_343",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -15, "regulators": -10, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_344",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -10, "regulators": 5 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -5, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "regulators": 5, "investors": -5, "brand_image": 0 } }
+      }
+    },
+    {
+      "id": "mcc_345",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": -5, "brand_image": -5, "investors": 5, "regulators": 5 } }
+      }
+    },
+    {
+      "id": "mcc_346",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": -5, "investors": 5, "employees": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_347",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "regulators": -10, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_348",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 5, "regulators": 5, "brand_image": 5, "investors": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -5, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_349",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "regulators": 5, "brand_image": -5, "investors": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 0, "investors": 0, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_350",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 5, "brand_image": 5, "regulators": 5, "investors": -5 } },
+        "B": { "gaugeDelta": { "investors": 10, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": 5, "employees": 5, "brand_image": 5, "regulators": 0 } }
+      }
     }
-  },
-  "mcc_302": {
-    "title": "Le discours sur la “valeur travail”",
-    "body": "Un ministre fait un discours sur la valeur travail. Tes employés te regardent comme si tu avais écrit le discours.",
-    "choices": {
-      "A": "Annoncer une prime liée aux résultats (simple).",
-      "B": "Annoncer plus d’objectifs, pas plus de moyens.",
-      "C": "Lancer un plan formation + mobilité interne."
+  ]
+}
+{
+  "cards": [
+    {
+      "id": "mcc_351",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 10, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 5 } }
+      }
+    },
+    {
+      "id": "mcc_352",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -10, "investors": 5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_353",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "employees": -10, "brand_image": -10, "investors": 5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_354",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -5, "regulators": -5, "investors": 5, "employees": -5 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 0, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_355",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "investors": -5, "employees": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "regulators": 5, "employees": 5, "brand_image": 0, "investors": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_356",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "investors": 5, "employees": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 0, "regulators": 5, "investors": 0, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_357",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_358",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 10, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -15, "regulators": -10, "investors": 5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": -5 } }
+      }
+    },
+    {
+      "id": "mcc_359",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_360",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 10, "investors": 0, "employees": 5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_361",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 0, "employees": 5, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_362",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 0, "investors": 5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_363",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "employees": -5, "brand_image": -10, "investors": 5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_364",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 0, "employees": 5, "investors": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 10, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_365",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "employees": -5, "investors": 5, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_366",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -5, "investors": 0, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": -5, "employees": 0, "regulators": 5 } }
+      }
+    },
+    {
+      "id": "mcc_367",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "employees": 0, "investors": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": 0, "regulators": -5 } }
+      }
+    },
+    {
+      "id": "mcc_368",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "employees": 0, "investors": -5 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -10, "investors": 5, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -10, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_369",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -5, "investors": 0, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": -10, "employees": 5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_370",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -5, "regulators": -5, "investors": 5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": 0, "regulators": -5 } }
+      }
+    },
+    {
+      "id": "mcc_371",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -5, "investors": 0, "employees": -5 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_372",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -5, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_373",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -10, "regulators": -10, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_374",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "employees": 0, "investors": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -10, "investors": 5, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_375",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -15, "regulators": -5, "investors": 0, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": -5, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_376",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 5 } },
+        "B": { "gaugeDelta": { "employees": 5, "brand_image": 0, "investors": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -10, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_377",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -5, "investors": 5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_378",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "regulators": -10, "brand_image": -10, "employees": -5 } },
+        "C": { "gaugeDelta": { "employees": 5, "regulators": 5, "investors": -5, "brand_image": 0 } }
+      }
+    },
+    {
+      "id": "mcc_379",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -10, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_380",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -5, "brand_image": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_381",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -15, "regulators": -10, "investors": 5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_382",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -10, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_383",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -5, "investors": 0, "employees": -5 } },
+        "C": { "gaugeDelta": { "regulators": 5, "employees": 5, "brand_image": 0, "investors": 0 } }
+      }
+    },
+    {
+      "id": "mcc_384",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -5, "investors": 5, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_385",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": -5, "investors": 5, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_386",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_387",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 5, "regulators": 5, "brand_image": 5, "investors": -5 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": 0, "regulators": -5 } },
+        "C": { "gaugeDelta": { "employees": 10, "regulators": 5, "investors": -5, "brand_image": 0 } }
+      }
+    },
+    {
+      "id": "mcc_388",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -10, "regulators": 5 } },
+        "B": { "gaugeDelta": { "brand_image": -5, "investors": 5, "employees": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_389",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -10, "employees": 0, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_390",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -5, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": -5, "investors": 5, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_391",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -10, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_392",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "employees": -5, "brand_image": -5, "investors": 5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": -10, "brand_image": -5, "investors": 5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_393",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": -10, "brand_image": -5, "investors": 5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_394",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": -5, "regulators": -5, "investors": 5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_395",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 10, "investors": 0, "employees": 5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_396",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "investors": 5, "brand_image": 0, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_397",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -5, "regulators": 5 } },
+        "B": { "gaugeDelta": { "brand_image": -15, "employees": -10, "investors": 0, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": -10, "regulators": -10, "investors": 5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_398",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -10, "regulators": -10, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_399",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "employees": 0, "investors": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -5, "investors": 5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_400",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 0, "investors": 5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -10, "regulators": 0 } }
+      }
     }
-  },
-  "mcc_303": {
-    "title": "La commission “anti-fake news”",
-    "body": "Une commission te demande comment tu luttes contre la désinformation… alors que tu vends des chaussettes connectées.",
-    "choices": {
-      "A": "Répondre sérieusement : transparence et modération si besoin.",
-      "B": "Répondre ironique : “nos chaussettes ne mentent jamais”.",
-      "C": "Proposer une charte volontaire sectorielle."
+  ]
+}
+{
+  "cards": [
+    {
+      "id": "mcc_401",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 0, "investors": 5, "employees": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": 0, "regulators": -5 } }
+      }
+    },
+    {
+      "id": "mcc_402",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 5, "brand_image": 0, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_403",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_404",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": 0, "regulators": 5 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_405",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "investors": 5, "employees": 0, "brand_image": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_406",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -5, "investors": 5, "employees": -5 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_407",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "regulators": 0, "investors": 0, "employees": 5 } },
+        "B": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_408",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -10, "employees": 5 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_409",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -5, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 0, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_410",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 0, "regulators": 0, "investors": 5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 10, "investors": 5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": 0, "employees": 0, "regulators": 0 } }
+      }
+    },
+
+    {
+      "id": "mcc_411",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 5, "regulators": 5, "brand_image": 5, "investors": -5 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -5, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_412",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "employees": 10, "brand_image": 0, "investors": -10, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": -10, "brand_image": -5, "investors": 5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_413",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "employees": 0, "investors": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -5, "investors": 5, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_414",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "investors": 5, "employees": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_415",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_416",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "regulators": -10, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_417",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -5, "investors": 5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -10, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_418",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 10, "investors": -10, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_419",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -10, "employees": 5 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_420",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 0, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "regulators": -10, "brand_image": -5, "investors": 0, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+
+    {
+      "id": "mcc_421",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -10, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_422",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 0, "regulators": 0, "investors": 5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": 0, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_423",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "employees": 5, "brand_image": 5, "investors": -10 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_424",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 0, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_425",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "investors": 5, "brand_image": 5, "employees": 0, "regulators": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 10, "investors": 0, "employees": 5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_426",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "investors": 5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_427",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "regulators": 5, "investors": -5 } },
+        "B": { "gaugeDelta": { "investors": 10, "employees": -5, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 0, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_428",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": 10, "brand_image": -15, "employees": -5, "regulators": -5 } }
+      }
+    },
+    {
+      "id": "mcc_429",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -5, "investors": 0, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_430",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "regulators": 5, "investors": -5 } },
+        "B": { "gaugeDelta": { "employees": -5, "brand_image": -5, "investors": 5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_431",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -5, "investors": 5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_432",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "employees": 5, "brand_image": -5, "investors": 5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "employees": -10, "brand_image": -5, "investors": 5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_433",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": 0, "employees": 5 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": -10 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_434",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "regulators": -15, "brand_image": -10, "investors": 0, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_435",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "investors": 0, "employees": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": 0, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "investors": 5, "brand_image": 0, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_436",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -5, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_437",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 0, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_438",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -5, "investors": 5, "regulators": -5, "employees": -5 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 5, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_439",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 0, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_440",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "regulators": 10, "investors": -10, "employees": 0 } }
+      }
+    },
+
+    {
+      "id": "mcc_441",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": 0, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": -10, "regulators": -5, "investors": 5, "employees": -5 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_442",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "investors": -5, "employees": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_443",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "regulators": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": 0, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": -10, "regulators": -5, "investors": 0, "employees": -5 } }
+      }
+    },
+    {
+      "id": "mcc_444",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_445",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -10, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 10, "brand_image": -10, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_446",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "employees": 10, "brand_image": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "employees": -10, "brand_image": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "employees": 5, "brand_image": 0, "investors": 0, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_447",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": 0, "regulators": -5 } },
+        "C": { "gaugeDelta": { "regulators": 5, "brand_image": 0, "investors": 0, "employees": 0 } }
+      }
+    },
+    {
+      "id": "mcc_448",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 10, "brand_image": 10, "investors": -5, "employees": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "regulators": -5, "employees": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 5, "regulators": 5, "investors": -5, "employees": -5 } }
+      }
+    },
+    {
+      "id": "mcc_449",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "brand_image": 5, "employees": 5, "investors": -5, "regulators": 0 } },
+        "B": { "gaugeDelta": { "investors": 5, "brand_image": -5, "employees": -5, "regulators": 0 } },
+        "C": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": -5, "regulators": 0 } }
+      }
+    },
+    {
+      "id": "mcc_450",
+      "universe": "mega_corp_ceo",
+      "choices": {
+        "A": { "gaugeDelta": { "regulators": 5, "brand_image": 0, "investors": 5, "employees": 0 } },
+        "B": { "gaugeDelta": { "brand_image": 10, "employees": 5, "investors": 0, "regulators": -5 } },
+        "C": { "gaugeDelta": { "regulators": 10, "brand_image": 5, "investors": -5, "employees": 0 } }
+      }
     }
-  },
-  "mcc_304": {
-    "title": "Le débat sur les “méga-bonus”",
-    "body": "Un projet de loi veut encadrer les bonus des dirigeants. Ton CFO dit : “on change le mot bonus en… surprise ?”.",
-    "choices": {
-      "A": "Réduire et lier aux objectifs sociaux/environnement.",
-      "B": "Contourner via avantages indirects.",
-      "C": "Rendre la rémunération transparente et justifiée."
-    }
-  },
-  "mcc_305": {
-    "title": "Le maire veut une “usine vitrine”",
-    "body": "Le maire veut une usine vitrine pour sa campagne. Tes équipes veulent surtout une usine qui marche.",
-    "choices": {
-      "A": "Créer un parcours de visite public avec vraies infos.",
-      "B": "Refuser : pas de vitrine politique.",
-      "C": "Proposer une journée portes ouvertes neutre (sans slogans)."
-    }
-  },
-  "mcc_306": {
-    "title": "Le débat sur les emballages",
-    "body": "Une loi veut limiter les emballages. Ton produit a déjà un emballage pour l’emballage. Oui.",
-    "choices": {
-      "A": "Réduire drastiquement et communiquer preuves.",
-      "B": "Faire le minimum légal.",
-      "C": "Basculer sur recharge/réutilisable sur une gamme."
-    }
-  },
-  "mcc_307": {
-    "title": "Le “grand plan patriotique” du marketing",
-    "body": "Marketing propose une pub avec drapeau, fanfare et slogan “Chez nous !”. Les régulateurs adorent rarement les fanfares.",
-    "choices": {
-      "A": "Adapter : valoriser l’emploi sans chauvinisme.",
-      "B": "Garder la fanfare : ça marque.",
-      "C": "Retirer le drapeau : garder juste la qualité."
-    }
-  },
-  "mcc_308": {
-    "title": "Débat sur la “semaine sans écrans”",
-    "body": "Une semaine sans écrans est proposée. Ton activité est… sur écran. Tes équipes cherchent une version papier.",
-    "choices": {
-      "A": "Proposer un mode “sobriété” (temps limité).",
-      "B": "Ignorer et pousser les notifications (ouch).",
-      "C": "Soutenir l’initiative et proposer des pauses intégrées."
-    }
-  },
-  "mcc_309": {
-    "title": "L’audit des contrats publics",
-    "body": "Un audit examine les contrats publics de ton secteur. Ils veulent “tout”, y compris les mails de 2014.",
-    "choices": {
-      "A": "Coopérer à fond, clean et organisé.",
-      "B": "Résister et fournir au strict minimum.",
-      "C": "Mandater un audit externe et livrer un dossier clair."
-    }
-  },
-  "mcc_310": {
-    "title": "Le débat sur la “taxe pubs”",
-    "body": "On parle d’une taxe sur la publicité. Ton marketing demande si un sticker sur un mug compte comme pub.",
-    "choices": {
-      "A": "Réduire la pub et renforcer la qualité/service.",
-      "B": "Déplacer vers influenceurs à fond.",
-      "C": "Diversifier : pub utile + transparence + moins d’intrusif."
-    }
-  },
-  "mcc_311": {
-    "title": "Réforme “droit à la déconnexion”",
-    "body": "Le droit à la déconnexion est renforcé. Ton manager star envoie des mails à 2h du matin “par inspiration”.",
-    "choices": {
-      "A": "Bloquer l’envoi la nuit (sauf urgence).",
-      "B": "Laisser faire : “la passion n’a pas d’horaires”.",
-      "C": "Autoriser l’envoi mais programmer automatiquement le lendemain."
-    }
-  },
-  "mcc_312": {
-    "title": "Le débat sur l’IA au travail",
-    "body": "Une loi veut encadrer l’IA au travail. Tes employés demandent si l’IA va aussi faire le café.",
-    "choices": {
-      "A": "Charte IA : usages, protections, formation.",
-      "B": "Interdire l’IA : zéro risque.",
-      "C": "Utiliser l’IA seulement sur tâches internes non sensibles."
-    }
-  },
-  "mcc_313": {
-    "title": "Le scandale du badge visiteur",
-    "body": "Un influenceur s’est fait passer pour un visiteur et filme tes locaux. Un député s’indigne… en story.",
-    "choices": {
-      "A": "Renforcer sécurité + excuses + correctifs publics.",
-      "B": "Menacer juridiquement immédiatement.",
-      "C": "Inviter officiellement la presse (contrôlé) et expliquer."
-    }
-  },
-  "mcc_314": {
-    "title": "Le débat sur les prix “ronds”",
-    "body": "Un élu veut interdire les prix en .99 “manipulateurs”. Ton pricing est en deuil.",
-    "choices": {
-      "A": "Passer à des prix ronds + expliquer.",
-      "B": "Garder .99 et assumer.",
-      "C": "Tester prix ronds sur une gamme seulement."
-    }
-  },
-  "mcc_315": {
-    "title": "La photo avec le candidat",
-    "body": "Un candidat veut une photo avec toi. Il promet de “sauver l’économie”. Ton équipe com’ hurle en silence.",
-    "choices": {
-      "A": "Refuser : neutralité stricte.",
-      "B": "Accepter : visibilité énorme.",
-      "C": "Accepter seulement une rencontre privée sans photo."
-    }
-  },
-  "mcc_316": {
-    "title": "Le débat sur le “made local”",
-    "body": "Un débat télé réclame du 100% local. Ton supply chain répond : “100% local… sur quelle planète ?”.",
-    "choices": {
-      "A": "Objectifs progressifs + indicateurs publics.",
-      "B": "Promettre 100% local (et croiser les doigts).",
-      "C": "Mettre l’accent sur la traçabilité plutôt que le slogan."
-    }
-  },
-  "mcc_317": {
-    "title": "Une loi sur la “clarté des CGU”",
-    "body": "Les CGU doivent être claires. Les tiennes font 40 pages. Même ton juriste ne les lit plus.",
-    "choices": {
-      "A": "Résumé 1 page + icônes + langage simple.",
-      "B": "Laisser comme ça : c’est légal.",
-      "C": "Simplifier un peu, mais garder les gros paragraphes."
-    }
-  },
-  "mcc_318": {
-    "title": "Le débat sur les “profits et l’eau”",
-    "body": "Une région manque d’eau. On pointe les industries. Ton usine boit… pas mal.",
-    "choices": {
-      "A": "Investir dans recyclage d’eau + réduction mesurée.",
-      "B": "Continuer et payer les surcoûts.",
-      "C": "Déplacer une partie de la production."
-    }
-  },
-  "mcc_319": {
-    "title": "L’amendement “cantine locale”",
-    "body": "Un amendement veut rendre la cantine plus locale. Tes employés veulent surtout que ce soit bon.",
-    "choices": {
-      "A": "Plus local + menu varié (test & feedback).",
-      "B": "Refuser : ça coûte trop.",
-      "C": "Local sur certains produits seulement."
-    }
-  },
-  "mcc_320": {
-    "title": "Le débat “anti-hypercroissance”",
-    "body": "Un mouvement politique critique l’hypercroissance. Tes investisseurs adorent… l’hypercroissance.",
-    "choices": {
-      "A": "Réorienter : croissance + responsabilité (preuves).",
-      "B": "Ignorer : croissance à fond.",
-      "C": "Cadrer : croissance modérée, plus de stabilité."
-    }
-  },
-  "mcc_321": {
-    "title": "La panne pendant le débat télé",
-    "body": "Ton service tombe en panne pile pendant un débat télé. Les gens pensent à un complot. Ton serveur pense à une sieste.",
-    "choices": {
-      "A": "Transparence immédiate + rapport technique simple.",
-      "B": "Silence radio jusqu’à réparation.",
-      "C": "Dédommagement + communication sobre."
-    }
-  },
-  "mcc_322": {
-    "title": "La “taxe sur les jets privés”",
-    "body": "Une taxe jets privés fait débat. Tu n’as pas de jet… mais on te confond avec quelqu’un d’autre. Classique.",
-    "choices": {
-      "A": "Clarifier : déplacements pro + politique sobre.",
-      "B": "Ignorer : pas concerné.",
-      "C": "Publier une politique mobilité durable."
-    }
-  },
-  "mcc_323": {
-    "title": "Le débat sur les stages",
-    "body": "Un projet veut mieux encadrer les stages. Tes managers aiment les stagiaires… quand ils remplacent des postes (aïe).",
-    "choices": {
-      "A": "Stages payés + missions réelles + mentorat.",
-      "B": "Réduire les stages : trop contraignant.",
-      "C": "Garder les stages mais limiter fortement leur nombre."
-    }
-  },
-  "mcc_324": {
-    "title": "La loi “anti-greenwashing”",
-    "body": "Une loi anti-greenwashing arrive. Ton marketing a mis “éco” sur tout, même sur la souris d’ordinateur.",
-    "choices": {
-      "A": "Nettoyer les messages + preuves + audits.",
-      "B": "Garder : tout le monde le fait.",
-      "C": "Réduire les promesses, garder les actions."
-    }
-  },
-  "mcc_325": {
-    "title": "Le débat sur le télétravail",
-    "body": "Le télétravail devient un sujet politique. Tes employés veulent 5 jours, tes managers veulent 0, ton badge veut exister.",
-    "choices": {
-      "A": "Modèle hybride clair et stable.",
-      "B": "Retour complet sur site.",
-      "C": "Télétravail large + règles de performance."
-    }
-  },
-  "mcc_326": {
-    "title": "Le débat sur la “sécurité des données”",
-    "body": "Après une fuite médiatisée ailleurs, le régulateur veut des garanties. Ton équipe sécurité dit : “on veut un budget”.",
-    "choices": {
-      "A": "Investir fort + audit externe + transparence.",
-      "B": "Faire le minimum légal.",
-      "C": "Investir progressivement sur les points critiques."
-    }
-  },
-  "mcc_327": {
-    "title": "La subvention “innovation”",
-    "body": "Une subvention innovation est possible, mais il faut prouver que tu innoves. Ton équipe propose de renommer un bouton.",
-    "choices": {
-      "A": "Vrai projet R&D et dossier solide.",
-      "B": "Renommer un bouton et tenter le dossier (lol).",
-      "C": "Projet pilote modeste mais réel."
-    }
-  },
-  "mcc_328": {
-    "title": "Le débat sur l’apprentissage",
-    "body": "Le gouvernement pousse l’apprentissage. Tes sites peuvent former… mais ça demande du temps et des tuteurs.",
-    "choices": {
-      "A": "Programme apprentissage ambitieux.",
-      "B": "Programme minimal.",
-      "C": "Programme ciblé sur métiers en tension."
-    }
-  },
-  "mcc_329": {
-    "title": "L’émission “Cash & Clash”",
-    "body": "Une émission d’investigation veut “te suivre une semaine”. Ta com’ s’évanouit. Ton CFO aussi.",
-    "choices": {
-      "A": "Accepter avec transparence (et préparation).",
-      "B": "Refuser net.",
-      "C": "Proposer une visite encadrée + documents publics."
-    }
-  },
-  "mcc_330": {
-    "title": "Le débat “loi anti-licenciements”",
-    "body": "Un parti propose de limiter les licenciements. Tes investisseurs veulent flexibilité. Tes employés veulent dormir.",
-    "choices": {
-      "A": "Éviter licenciements : mobilité + formation.",
-      "B": "Préparer une restructuration rapide.",
-      "C": "Geler embauches et réduire coûts ailleurs."
-    }
-  },
-  "mcc_331": {
-    "title": "La campagne “achetez moins”",
-    "body": "Une campagne publique encourage à acheter moins. Ton marketing demande si c’est une attaque personnelle.",
-    "choices": {
-      "A": "Proposer réparation, seconde main, durabilité.",
-      "B": "Push agressif : acheter plus.",
-      "C": "Faire une gamme plus durable (prix un peu plus élevé)."
-    }
-  },
-  "mcc_332": {
-    "title": "Le débat sur la “livraison rapide”",
-    "body": "Un député veut limiter la livraison express pour l’environnement. Tes clients veulent “hier”.",
-    "choices": {
-      "A": "Option lente par défaut + express payant.",
-      "B": "Express partout, tout le temps.",
-      "C": "Express sur zones limitées + flotte plus propre."
-    }
-  },
-  "mcc_333": {
-    "title": "Un syndicat invite un élu",
-    "body": "Un syndicat invite un élu à discuter sur ton site. Tes managers demandent “et nous, on vient ?”.",
-    "choices": {
-      "A": "Réunion tripartite : élus + salariés + direction.",
-      "B": "Refuser la présence politique sur site.",
-      "C": "Accepter mais en format public et cadré."
-    }
-  },
-  "mcc_334": {
-    "title": "Le débat sur la “sobriété”",
-    "body": "On te demande de réduire l’énergie. Ton siège est éclairé comme un sapin de Noël corporate.",
-    "choices": {
-      "A": "Plan sobriété réel + mesures visibles.",
-      "B": "Mesure symbolique 1 semaine.",
-      "C": "Ne rien faire : productivité d’abord."
-    }
-  },
-  "mcc_335": {
-    "title": "Le débat sur les “commissions bancaires”",
-    "body": "Si tu fais du paiement, on te demande de baisser les commissions. Si tu n’en fais pas, on te le demande aussi. Mystère.",
-    "choices": {
-      "A": "Baisser un peu + compenser par volume/efficacité.",
-      "B": "Refuser et garder les marges.",
-      "C": "Créer une offre “petits commerçants” moins chère."
-    }
-  },
-  "mcc_336": {
-    "title": "Le “fonds souverain” s’intéresse à toi",
-    "body": "Un fonds souverain veut investir. Super… sauf que ça déclenche des débats politiques sur ton indépendance.",
-    "choices": {
-      "A": "Accepter avec garde-fous et transparence.",
-      "B": "Refuser : trop sensible.",
-      "C": "Accepter une part minoritaire seulement."
-    }
-  },
-  "mcc_337": {
-    "title": "Le débat sur les “prix dynamiques”",
-    "body": "Les prix dynamiques sont critiqués. Ton algorithme est fier. Les gens, moins.",
-    "choices": {
-      "A": "Limiter et rendre transparent (plafonds).",
-      "B": "Garder : profit maximum.",
-      "C": "Garder mais sur peu de produits seulement."
-    }
-  },
-  "mcc_338": {
-    "title": "Le débat sur la “qualité de l’air”",
-    "body": "Une ville impose une norme air plus stricte. Ton site est dans la zone. Ton directeur d’usine demande un miracle.",
-    "choices": {
-      "A": "Investir filtres et modernisation.",
-      "B": "Négocier un délai.",
-      "C": "Réduire la production temporairement."
-    }
-  },
-  "mcc_339": {
-    "title": "Le débat sur les “délais de paiement”",
-    "body": "Une loi veut réduire les délais de paiement aux fournisseurs. Ton trésorier veut garder le cash. Tes fournisseurs veulent vivre.",
-    "choices": {
-      "A": "Payer plus vite, sécuriser la chaîne.",
-      "B": "Payer au dernier jour possible.",
-      "C": "Payer vite les petits, normal pour les gros."
-    }
-  },
-  "mcc_340": {
-    "title": "La proposition “anti-open space”",
-    "body": "Un mouvement politique veut limiter les open spaces “toxiques”. Ton bureau est un open space… avec plantes (ça compte ?).",
-    "choices": {
-      "A": "Aménager plus de zones calmes et bureaux fermés.",
-      "B": "Rien changer : c’est moderne.",
-      "C": "Télétravail plus large pour réduire l’open space."
-    }
-  },
-  "mcc_341": {
-    "title": "Un député critique ton SAV",
-    "body": "Un député se plaint publiquement de ton SAV. Ton SAV se plaint publiquement… en interne.",
-    "choices": {
-      "A": "Renforcer SAV + promesse de délai tenue.",
-      "B": "Répondre agressivement : mauvais plan.",
-      "C": "Offrir un canal VIP pour cas publics (et améliorer le reste)."
-    }
-  },
-  "mcc_342": {
-    "title": "Le débat sur les “parachutes dorés”",
-    "body": "On reparle des parachutes dorés. Ton board propose un “parachute beige, plus discret”.",
-    "choices": {
-      "A": "Réduire et publier une politique raisonnable.",
-      "B": "Garder : attirer les talents.",
-      "C": "Lier à performance long terme (et pas juste départ)."
-    }
-  },
-  "mcc_343": {
-    "title": "La loi “zéro surprise” sur factures",
-    "body": "Une loi veut interdire les frais surprise. Ton produit a un petit frais “service”. Très petit… pour toi.",
-    "choices": {
-      "A": "Supprimer les frais cachés, prix clair.",
-      "B": "Garder, en police plus petite (non).",
-      "C": "Garder mais rendre ultra visible avant paiement."
-    }
-  },
-  "mcc_344": {
-    "title": "Le débat sur la “formation obligatoire”",
-    "body": "Une réforme impose plus de formation. Ton RH dit “super”, ton manager dit “quand ?”.",
-    "choices": {
-      "A": "Plan formation massif + temps dédié.",
-      "B": "Minimum légal.",
-      "C": "Formation ciblée sur compétences critiques."
-    }
-  },
-  "mcc_345": {
-    "title": "Les élections internes des représentants",
-    "body": "Des élections internes agitent l’entreprise. Des tracts circulent. Même la machine à café a un avis.",
-    "choices": {
-      "A": "Faciliter un débat sain et neutre.",
-      "B": "Ignorer : pas ton sujet.",
-      "C": "Limiter la campagne interne (trop strict)."
-    }
-  },
-  "mcc_346": {
-    "title": "Le débat sur les “retours produits”",
-    "body": "On critique le gaspillage des retours. Tes retours coûtent cher et polluent. Ta logistique pleure en silence.",
-    "choices": {
-      "A": "Réduire retours via meilleure info + reconditionnement.",
-      "B": "Continuer : c’est le commerce.",
-      "C": "Facturer une petite part des retours."
-    }
-  },
-  "mcc_347": {
-    "title": "Le débat sur la “puissance des plateformes”",
-    "body": "On veut réguler les plateformes. Si tu es une plateforme, c’est toi. Si tu ne l’es pas, on te suspecte d’en être une.",
-    "choices": {
-      "A": "Coopérer : transparence + règles claires.",
-      "B": "Résister et attaquer la régulation.",
-      "C": "S’auto-réguler avant la loi."
-    }
-  },
-  "mcc_348": {
-    "title": "Le débat sur le “temps de trajet”",
-    "body": "Un projet veut comptabiliser une partie du trajet en temps de travail. Tes RH sortent une calculatrice en feu.",
-    "choices": {
-      "A": "Négocier un cadre interne équitable.",
-      "B": "Refuser et attendre la loi.",
-      "C": "Compenser par télétravail et horaires flexibles."
-    }
-  },
-  "mcc_349": {
-    "title": "Un ministre cite ton slogan",
-    "body": "Un ministre cite ton slogan en discours. Il le cite mal. Très mal. Internet adore.",
-    "choices": {
-      "A": "Réagir avec humour + correction douce.",
-      "B": "Demander un retrait officiel.",
-      "C": "Ne rien dire : laisser passer."
-    }
-  },
-  "mcc_350": {
-    "title": "Le débat “productivité nationale”",
-    "body": "La productivité nationale est un sujet brûlant. On te demande un engagement. Ton équipe propose : “moins de réunions”.",
-    "choices": {
-      "A": "Plan productivité : outils + simplification + respect humain.",
-      "B": "Plan productivité : pression et objectifs plus durs.",
-      "C": "Plan productivité : automatisation + formation."
-    }
-  }
+  ]
 }
