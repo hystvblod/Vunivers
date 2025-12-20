@@ -1135,6 +1135,34 @@ body.vr-body-game[data-universe="western_president"]{
 
 }
 
+
+/* ==========================================================
+   CEO
+   ========================================================== */
+/* ✅ Ceo : choix */
+body.vr-body-game[data-universe="mega_corp-ceo"] #view-game .vr-choice-button{
+  background-size: 100% 110% !important;
+  background-position: center !important;
+}
+
+body.vr-body-game[data-universe="mega_corp-ceo"] #view-game .vr-card-main{
+  overflow: hidden;
+  background-size: 90% 105% !important;
+  background-position: center !important;
+}
+
+body.vr-body-game[data-universe="mega_corp-ceo"]{
+  /* ✅ webp + grand (scénario + choix) */
+  --vr-card-w: clamp(460px, 100vw, 1240px);
+
+  /* ✅ moins d'espace entre les cartouches */
+--vr-game-gap:   clamp(6px, 0.8svh, 14px);   /* HUD ↔ jauges ↔ cartes */
+--vr-stack-gap:  clamp(10px, 1.2svh, 22px);  /* carte scénario ↔ bloc choix */
+--vr-choices-gap:clamp(10px, 1.2svh, 22px);  /* entre les choix A/B/C */
+
+}
+
+
 /* ==========================================================
    UNIVERS -> fond / cartes / choix
    ========================================================== */
