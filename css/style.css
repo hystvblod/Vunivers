@@ -1191,7 +1191,7 @@ body.vr-body-game[data-universe="mega_corp-ceo"]{
 
   /* ✅ moins d'espace entre les cartouches */
 --vr-game-gap:   clamp(6px, 0.8svh, 14px);   /* HUD ↔ jauges ↔ cartes */
---vr-stack-gap:  clamp(10px, 1.2svh, 22px);  /* carte scénario ↔ bloc choix */
+--vr-stack-gap:  clamp(10px, 1svh, 22px);  /* carte scénario ↔ bloc choix */
 --vr-choices-gap:clamp(10px, 1.2svh, 22px);  /* entre les choix A/B/C */
 
 }
