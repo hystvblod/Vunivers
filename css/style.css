@@ -1006,6 +1006,39 @@ body[data-universe="western_president"].vr-body-game #view-game .vr-choice-label
   text-shadow: none !important;
 }
 
+/* MEGA_CORP_CEO fonts & styles */
+@font-face{
+  font-family: "VR_DMSerifText";
+  src:
+    url("../assets/fronts/DMSerifText-Regular.woff2") format("woff2"),
+    url("assets/fronts/DMSerifText-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "VR_OutfitMedium";
+  src:
+    url("../assets/fronts/Outfit-Medium.woff2") format("woff2"),
+    url("assets/fronts/Outfit-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Titre : DM Serif Text, noir */
+body[data-universe="mega_corp_ceo"].vr-body-game #view-game .vr-card-title{
+  font-family: "VR_DMSerifText", serif !important;
+  color: #000 !important;
+}
+
+/* Choix : Outfit Medium, noir */
+body[data-universe="mega_corp_ceo"].vr-body-game #view-game .vr-choice-label{
+  font-family: "VR_OutfitMedium", sans-serif !important;
+  color: #000 !important;
+  text-shadow: none !important;
+}
 
 
 
