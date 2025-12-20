@@ -1029,7 +1029,7 @@ body[data-universe="western_president"].vr-body-game #view-game .vr-choice-label
 
 /* Titre : DM Serif Text, noir */
 body[data-universe="mega_corp_ceo"].vr-body-game #view-game .vr-card-title,
-body[data-universe="western_president"].vr-body-game #view-game .vr-card-text{
+body[data-universe="mega_corp_ceo"].vr-body-game #view-game .vr-card-text{
   font-family: "VR_DMSerifText", serif !important;
   color: #000 !important;
 }
