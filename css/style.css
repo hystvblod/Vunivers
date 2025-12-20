@@ -1175,7 +1175,7 @@ body.vr-body-game[data-universe="western_president"]{
    ========================================================== */
 /* ✅ Ceo : choix */
 body.vr-body-game[data-universe="mega_corp-ceo"] #view-game .vr-choice-button{
-  background-size: 105% 115% !important;
+  background-size: 115% 130% !important;
   background-position: center !important;
 }
 
