@@ -1277,6 +1277,40 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
   background-image: url("../assets/img/gauges/western_president/g4_fill.webp");
 }
 
+/* MEGA CORP CEO */
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="investors"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g1_frame.webp");
+}
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="investors"] .vr-gauge-fill,
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="investors"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g1_fill.webp");
+}
+
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="employees"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g2_frame.webp");
+}
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="employees"] .vr-gauge-fill,
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="employees"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g2_fill.webp");
+}
+
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="regulators"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g3_frame.webp");
+}
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="regulators"] .vr-gauge-fill,
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="regulators"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g3_fill.webp");
+}
+
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g4_frame.webp");
+}
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-gauge-fill,
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g4_fill.webp");
+}
+
+
 /* ==========================================================
    iPhone SE / très petits écrans : shrink FORT
    ========================================================== */
