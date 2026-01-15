@@ -1126,20 +1126,11 @@ body.vr-body-game[data-universe="heaven_king"] #view-game .vr-choice-button{
   background-position: center !important;
 }
 
-/* ✅ si le texte est long : scroll interne discret (pas de scroll page) */
-/* ✅ Heaven : scroll interne OK, mais scrollbar invisible (propre) */
+/* Heaven = Hell : pas de scroll interne */
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main .vr-card-text{
-  max-height: calc(var(--vr-scn-h) - 4.2em);
-  overflow: auto;
-  padding-right: 0;
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* vieux Edge */
-}
-
-/* Chrome / Safari */
-body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main .vr-card-text::-webkit-scrollbar{
-  width: 0;
-  height: 0;
+  max-height: none !important;
+  overflow: visible !important;
+  padding-right: 0 !important;
 }
 
 
