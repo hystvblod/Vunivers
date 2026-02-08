@@ -1919,5 +1919,2887 @@
       "C": "Dejar que voces lo condenen como 'anti-Paraíso' y predigan sanciones"
     },
     "body": "Un festival celebra la paz y la tolerancia, sin referencia directa al Paraíso."
+  },
+  "heaven_161": {
+    "id": "heaven_161",
+    "universe": "heaven_king",
+    "title": "Pueblo dividido entre dos sacerdotes",
+    "description": "Un sacerdote habla sobre todo de misericordia, el otro sobre todo de leyes y sanciones.",
+    "choices": {
+      "A": "Reforzar la voz de quien habla de misericordia",
+      "B": "Dejar que el pueblo se divida entre las dos visiones",
+      "C": "Dar brevemente más éxito al sacerdote más punitivo"
+    },
+    "body": "Un sacerdote habla sobre todo de misericordia, el otro sobre todo de leyes y sanciones."
+  },
+  "heaven_162": {
+    "id": "heaven_162",
+    "universe": "heaven_king",
+    "title": "Joven que duda",
+    "description": "Un joven creyente ya no se atreve a rezar por miedo a ser hipócrita.",
+    "choices": {
+      "A": "Enviarle una intuición simple: el derecho a ser sincero incluso en la duda",
+      "B": "No hacer nada, dejarle atravesar su crisis",
+      "C": "Dejar que arraigue en él la convicción de que será castigado por dudar"
+    },
+    "body": "Un joven creyente ya no se atreve a rezar por miedo a ser hipócrita."
+  },
+  "heaven_163": {
+    "id": "heaven_163",
+    "universe": "heaven_king",
+    "title": "Residencia de ancianos olvidada",
+    "description": "En una residencia de ancianos, ya nadie viene a hacer visitas espirituales.",
+    "choices": {
+      "A": "Inspirar a algunos voluntarios para que vuelvan",
+      "B": "Dejar que la soledad espiritual se prolongue",
+      "C": "Dejar que algunos residentes crean que están pagando faltas antiguas"
+    },
+    "body": "En una residencia de ancianos, ya nadie viene a hacer visitas espirituales."
+  },
+  "heaven_164": {
+    "id": "heaven_164",
+    "universe": "heaven_king",
+    "title": "Taller de meditación",
+    "description": "Un taller de meditación duda si hablar de ti o permanecer neutral y laico.",
+    "choices": {
+      "A": "Deslizar allí una experiencia de paz profunda sin etiquetas",
+      "B": "Dejar que sigan siendo puramente técnicos",
+      "C": "Dejar que voces les acusen de traicionar la verdadera fe y prometan sanciones"
+    },
+    "body": "Un taller de meditación duda si hablar de ti o permanecer neutral y laico."
+  },
+  "heaven_165": {
+    "id": "heaven_165",
+    "universe": "heaven_king",
+    "title": "Club de lectura espiritual",
+    "description": "Un grupo lee textos espirituales variados y benevolentes.",
+    "choices": {
+      "A": "Hacer que ciertas lecturas sean particularmente luminosas para ellos",
+      "B": "Dejarles simplemente discutir",
+      "C": "Dejar que un líder les diga que cualquier lectura distinta a la suya será castigada"
+    },
+    "body": "Un grupo lee textos espirituales variados y benevolentes."
+  },
+  "heaven_166": {
+    "id": "heaven_166",
+    "universe": "heaven_king",
+    "title": "Culto al cansancio",
+    "description": "Personas se sienten agotadas por obligaciones religiosas sin fin.",
+    "choices": {
+      "A": "Susurrarles que a veces pueden descansar sin ser rechazados",
+      "B": "Dejar que este exceso de trabajo espiritual continúe",
+      "C": "Reforzar la idea de que cualquier pausa será sancionada"
+    },
+    "body": "Personas se sienten agotadas por obligaciones religiosas sin fin."
+  },
+  "heaven_167": {
+    "id": "heaven_167",
+    "universe": "heaven_king",
+    "title": "Coro vacilante",
+    "description": "Un coro ya no sabe si canta realmente para ti o solo para el público.",
+    "choices": {
+      "A": "Encender a veces una emoción sincera en los cantantes",
+      "B": "Dejar que la música siga siendo solo estética",
+      "C": "Dejar que algunos crean que serán castigados si cantan mal"
+    },
+    "body": "Un coro ya no sabe si canta realmente para ti o solo para el público."
+  },
+  "heaven_168": {
+    "id": "heaven_168",
+    "universe": "heaven_king",
+    "title": "Fiesta sin sentido",
+    "description": "Una fiesta religiosa se ha convertido en un simple día festivo de consumo.",
+    "choices": {
+      "A": "Deslizar algunos encuentros inesperados que despierten la solidaridad",
+      "B": "Dejar que la fiesta siga vacía de sentido",
+      "C": "Dejar que algunos predicadores anuncien sanciones para quienes no respetan los antiguos ritos"
+    },
+    "body": "Una fiesta religiosa se ha convertido en un simple día festivo de consumo."
+  },
+  "heaven_169": {
+    "id": "heaven_169",
+    "universe": "heaven_king",
+    "title": "Pequeño santuario al borde de la carretera",
+    "description": "Un pequeño altar al borde de la carretera subsiste, cuidado por una sola persona mayor.",
+    "choices": {
+      "A": "Darle a veces un fuerte sentimiento de presencia",
+      "B": "Dejar que el altar se degrade poco a poco",
+      "C": "Dejar que algunos automovilistas crean que un accidente es una sanción por haberlo ignorado"
+    },
+    "body": "Un pequeño altar al borde de la carretera subsiste, cuidado por una sola persona mayor."
+  },
+  "heaven_170": {
+    "id": "heaven_170",
+    "universe": "heaven_king",
+    "title": "Proyecto benéfico",
+    "description": "Una comunidad quiere lanzar un gran proyecto de solidaridad, pero duda si vincularlo a un culto estricto.",
+    "choices": {
+      "A": "Fomentar un proyecto centrado en la ayuda desinteresada",
+      "B": "Dejar que condicionen la ayuda a la adhesión a sus ritos",
+      "C": "Dejar creer que quienes no se adhieren al culto merecen sufrir"
+    },
+    "body": "Una comunidad quiere lanzar un gran proyecto de solidaridad, pero duda si vincularlo a un culto estricto."
+  },
+  "heaven_171": {
+    "id": "heaven_171",
+    "universe": "heaven_king",
+    "title": "Sueños de Paraíso azucarado",
+    "description": "Muchos niños imaginan el Paraíso como un parque de atracciones infinito.",
+    "choices": {
+      "A": "Dejar que este símbolo alegre exista sin corregirlo",
+      "B": "Hacer evolucionar poco a poco sus sueños hacia más relación y dulzura",
+      "C": "Dejar que algunos adultos ridiculicen estos sueños hablando de castigo en su lugar"
+    },
+    "body": "Muchos niños imaginan el Paraíso como un parque de atracciones infinito."
+  },
+  "heaven_172": {
+    "id": "heaven_172",
+    "universe": "heaven_king",
+    "title": "Ira contra el Cielo",
+    "description": "Tras una catástrofe, los supervivientes están enfadados contigo y cesan toda oración.",
+    "choices": {
+      "A": "Aceptar su ira y enviar personas capaces de escuchar",
+      "B": "Dejar que su silencio y su ira duren",
+      "C": "Dejar que otras voces les digan que han sido sancionados por sus faltas"
+    },
+    "body": "Tras una catástrofe, los supervivientes están enfadados contigo y cesan toda oración."
+  },
+  "heaven_173": {
+    "id": "heaven_173",
+    "universe": "heaven_king",
+    "title": "Guerra de profetas",
+    "description": "Varios guías autoproclamados pretenden hablar en tu nombre, con mensajes contradictorios.",
+    "choices": {
+      "A": "Inspirar a algunas personas a verificar los frutos en lugar de las amenazas",
+      "B": "Dejar que la confusión se desarrolle",
+      "C": "Dejar que el más agresivo prospere gracias a un discurso de sanciones"
+    },
+    "body": "Varios guías autoproclamados pretenden hablar en tu nombre, con mensajes contradictorios."
+  },
+  "heaven_174": {
+    "id": "heaven_174",
+    "universe": "heaven_king",
+    "title": "Vínculo con el Infierno",
+    "description": "Ciertos grupos afirman que cada desgracia viene directamente de un pacto con las fuerzas infernales.",
+    "choices": {
+      "A": "Inspirar a algunas voces para matizar esta visión",
+      "B": "Dejar que esta lectura simplista domine",
+      "C": "Dejar que un evento coincida con estas acusaciones, como una sanción venida de abajo"
+    },
+    "body": "Ciertos grupos afirman que cada desgracia viene directamente de un pacto con las fuerzas infernales."
+  },
+  "heaven_175": {
+    "id": "heaven_175",
+    "universe": "heaven_king",
+    "title": "Debate sobre el libre albedrío",
+    "description": "Creyentes debaten para saber si todo está ya escrito o no.",
+    "choices": {
+      "A": "Dejar que cada uno pruebe un poco de libertad interior",
+      "B": "No intervenir, el debate sigue siendo teórico",
+      "C": "Dejar que algunos hablen de un Cielo que sanciona cualquier uso 'malo' del libre albedrío"
+    },
+    "body": "Creyentes debaten para saber si todo está ya escrito o no."
+  },
+  "heaven_176": {
+    "id": "heaven_176",
+    "universe": "heaven_king",
+    "title": "Brecha entre ciencia y fe",
+    "description": "Algunos dicen que amar la ciencia es renegar del Paraíso.",
+    "choices": {
+      "A": "Inspirar a personas capaces de mantener ambas juntas",
+      "B": "Dejar que el conflicto se endurezca",
+      "C": "Dejar que predicadores anuncien sanciones para quienes estudian demasiado"
+    },
+    "body": "Algunos dicen que amar la ciencia es renegar del Paraíso."
+  },
+  "heaven_177": {
+    "id": "heaven_177",
+    "universe": "heaven_king",
+    "title": "Oraciones para ganar",
+    "description": "Equipos deportivos rezan sobre todo para aplastar al adversario.",
+    "choices": {
+      "A": "Deslizar a veces un espíritu de juego limpio y respeto",
+      "B": "Dejar que las oraciones sigan centradas en la victoria",
+      "C": "Dejar que algunos perdedores crean que han sido sancionados"
+    },
+    "body": "Equipos deportivos rezan sobre todo para aplastar al adversario."
+  },
+  "heaven_178": {
+    "id": "heaven_178",
+    "universe": "heaven_king",
+    "title": "Red de ayuda discreta",
+    "description": "Creyentes actúan en la sombra, sin discursos, ayudando a los más frágiles.",
+    "choices": {
+      "A": "Reforzar esta discreción luminosa",
+      "B": "Dejar que esta red siga siendo muy pequeña",
+      "C": "Dejar que algunos líderes religiosos los critiquen y amenacen con sanciones por falta de visibilidad"
+    },
+    "body": "Creyentes actúan en la sombra, sin discursos, ayudando a los más frágiles."
+  },
+  "heaven_179": {
+    "id": "heaven_179",
+    "universe": "heaven_king",
+    "title": "Dogma de la pureza alimentaria",
+    "description": "Un grupo afirma que ciertos alimentos envían directamente al Infierno.",
+    "choices": {
+      "A": "Inspirar a algunas personas a ver la salud antes que el castigo",
+      "B": "Dejar que estas reglas se multipliquen",
+      "C": "Dejar que un incidente de salud sea visto como sanción divina para quienes comen 'mal'"
+    },
+    "body": "Un grupo afirma que ciertos alimentos envían directamente al Infierno."
+  },
+  "heaven_180": {
+    "id": "heaven_180",
+    "universe": "heaven_king",
+    "title": "Clases de espiritualidad en prisión",
+    "description": "En prisión, reclusos siguen cursos espirituales para mantenerse en pie.",
+    "choices": {
+      "A": "Hacer nacer verdaderos momentos de paz y responsabilidad",
+      "B": "Dejar que los cursos sigan siendo superficiales",
+      "C": "Reforzar la idea de que están encerrados como sanción eterna del Cielo"
+    },
+    "body": "En prisión, reclusos siguen cursos espirituales para mantenerse en pie."
+  },
+  "heaven_181": {
+    "id": "heaven_181",
+    "universe": "heaven_king",
+    "title": "Pueblo al borde de un volcán",
+    "description": "Un pueblo vive al pie de un volcán y ve cada estruendo como una advertencia del Cielo o del Infierno.",
+    "choices": {
+      "A": "Inspirar a algunos habitantes a prepararse sin pánico religioso",
+      "B": "Dejar que las interpretaciones extremas continúen",
+      "C": "Dejar que un pequeño episodio explosivo sea vivido como sanción por sus faltas"
+    },
+    "body": "Un pueblo vive al pie de un volcán y ve cada estruendo como una advertencia del Cielo o del Infierno."
+  },
+  "heaven_182": {
+    "id": "heaven_182",
+    "universe": "heaven_king",
+    "title": "Vínculo con los muertos",
+    "description": "Familias hablan a sus difuntos imaginándote como intermediario.",
+    "choices": {
+      "A": "Dejar nacer un sentimiento de consuelo real",
+      "B": "No intervenir, este diálogo sigue siendo unilateral",
+      "C": "Dejar que algunos médiums amenacen con sanciones a quienes no siguen sus mensajes"
+    },
+    "body": "Familias hablan a sus difuntos imaginándote como intermediario."
+  },
+  "heaven_183": {
+    "id": "heaven_183",
+    "universe": "heaven_king",
+    "title": "Concurso de milagros",
+    "description": "Una reunión promete un milagro espectacular a quienes tienen una fe perfecta.",
+    "choices": {
+      "A": "Conceder más bien una pequeña señal discreta a quienes más sufren",
+      "B": "Dejar que el show se desarrolle sin milagro evidente",
+      "C": "Dejar que una curación espectacular sea interpretada como sanción contra quienes dudan"
+    },
+    "body": "Una reunión promete un milagro espectacular a quienes tienen una fe perfecta."
+  },
+  "heaven_184": {
+    "id": "heaven_184",
+    "universe": "heaven_king",
+    "title": "Influencia del reino de abajo",
+    "description": "En ciertas ciudades, la fascinación por el Infierno crece a través de películas y músicas.",
+    "choices": {
+      "A": "Inspirar también obras que hablen de luz y curación",
+      "B": "Dejar pasar o instalarse la moda infernal",
+      "C": "Dejar que algunos predicadores anuncien sanciones terribles debido a esta fascinación"
+    },
+    "body": "En ciertas ciudades, la fascinación por el Infierno crece a través de películas y músicas."
+  },
+  "heaven_185": {
+    "id": "heaven_185",
+    "universe": "heaven_king",
+    "title": "Paraíso reservado a los 'puros'",
+    "description": "Un grupo afirma que estarán solos en el Paraíso y que todos los demás irán abajo.",
+    "choices": {
+      "A": "Sembrar la duda en algunos miembros sobre esta visión exclusiva",
+      "B": "Dejar que este grupo se encierre en sí mismo",
+      "C": "Dejar que coincidencias positivas refuercen su discurso de sanción"
+    },
+    "body": "Un grupo afirma que estarán solos en el Paraíso y que todos los demás irán abajo."
+  },
+  "heaven_186": {
+    "id": "heaven_186",
+    "universe": "heaven_king",
+    "title": "Oraciones para escapar de los Infiernos",
+    "description": "Muchas oraciones no son más que listas ansiosas para 'evitar lo peor'.",
+    "choices": {
+      "A": "Enviar a veces una sensación de paz en medio de estas oraciones",
+      "B": "Dejar persistir este clima ansioso",
+      "C": "Dejar que algunos predicadores confirmen que el menor olvido será sancionado"
+    },
+    "body": "Muchas oraciones no son más que listas ansiosas para 'evitar lo peor'."
+  },
+  "heaven_187": {
+    "id": "heaven_187",
+    "universe": "heaven_king",
+    "title": "Unión de dos tradiciones",
+    "description": "Dos tradiciones religiosas diferentes quieren rezar juntas por primera vez.",
+    "choices": {
+      "A": "Fomentar un momento auténtico de respeto mutuo",
+      "B": "Dejar fracasar este proyecto por miedo a traicionar la 'verdadera fe'",
+      "C": "Dejar que líderes afirmen que esta unión será sancionada"
+    },
+    "body": "Dos tradiciones religiosas diferentes quieren rezar juntas por primera vez."
+  },
+  "heaven_188": {
+    "id": "heaven_188",
+    "universe": "heaven_king",
+    "title": "Silencio en un monasterio",
+    "description": "Un monasterio vive un tiempo de silencio extremo donde ya nadie siente tu presencia.",
+    "choices": {
+      "A": "Deslizar una pequeña experiencia interior en algunos monjes",
+      "B": "Dejar durar este desierto espiritual",
+      "C": "Dejar creer a algunos que están sancionados por sus dudas secretas"
+    },
+    "body": "Un monasterio vive un tiempo de silencio extremo donde ya nadie siente tu presencia."
+  },
+  "heaven_189": {
+    "id": "heaven_189",
+    "universe": "heaven_king",
+    "title": "Videojuego sobre el más allá",
+    "description": "Un videojuego popular representa el Paraíso y el Infierno de manera caricaturesca.",
+    "choices": {
+      "A": "Dejar que algunos jugadores sientan sin embargo una pregunta profunda",
+      "B": "Dejar que el juego siga siendo un simple entretenimiento",
+      "C": "Dejar que ciertos grupos lo condenen como puerta directa hacia el Infierno y agiten sanciones"
+    },
+    "body": "Un videojuego popular representa el Paraíso y el Infierno de manera caricaturesca."
+  },
+  "heaven_190": {
+    "id": "heaven_190",
+    "universe": "heaven_king",
+    "title": "Huelga de oración",
+    "description": "Un grupo deja voluntariamente de rezar para protestar contra la injusticia en el mundo.",
+    "choices": {
+      "A": "Escuchar este grito silencioso e inspirar la acción concreta",
+      "B": "Dejar que este boicot se prolongue",
+      "C": "Dejar que otros afirmen que este gesto será gravemente sancionado"
+    },
+    "body": "Un grupo deja voluntariamente de rezar para protestar contra la injusticia en el mundo."
+  },
+  "heaven_191": {
+    "id": "heaven_191",
+    "universe": "heaven_king",
+    "title": "Promesas hechas al Cielo",
+    "description": "Personas hacen promesas irrealistas a cambio de un milagro.",
+    "choices": {
+      "A": "Ayudarles a descubrir que no todo se basa en el regateo",
+      "B": "Dejar que estos pactos ingenuos se multipliquen",
+      "C": "Dejar creer a algunos que serán sancionados por no haber mantenido un voto imposible"
+    },
+    "body": "Personas hacen promesas irrealistas a cambio de un milagro."
+  },
+  "heaven_192": {
+    "id": "heaven_192",
+    "universe": "heaven_king",
+    "title": "Pequeño milagro cotidiano",
+    "description": "Un niño ve un evento banal como un milagro personal.",
+    "choices": {
+      "A": "Reforzar en él la capacidad de ver la belleza simple",
+      "B": "Dejar que esta percepción se desvanezca al crecer",
+      "C": "Dejar que algunos adultos se burlen y amenacen con sanción si 'habla mal de lo sagrado'"
+    },
+    "body": "Un niño ve un evento banal como un milagro personal."
+  },
+  "heaven_193": {
+    "id": "heaven_193",
+    "universe": "heaven_king",
+    "title": "Conferencia sobre el miedo y el amor",
+    "description": "Una gran conferencia debate: ¿es mejor predicar por amor o por miedo?",
+    "choices": {
+      "A": "Dar fuerza a los ponentes que hablan de compasión",
+      "B": "Dejar que los dos bandos se equilibren",
+      "C": "Dejar que el discurso más aterrador sea el más difundido"
+    },
+    "body": "Una gran conferencia debate: ¿es mejor predicar por amor o por miedo?"
+  },
+  "heaven_194": {
+    "id": "heaven_194",
+    "universe": "heaven_king",
+    "title": "Vínculo directo con los infiernos",
+    "description": "Algunos cuentan que el Infierno gana terreno porque el Paraíso sería demasiado 'blando'.",
+    "choices": {
+      "A": "Inspirar a algunas personas a ver la fuerza en la dulzura",
+      "B": "Dejar que esta oposición alimente a ambos extremos",
+      "C": "Dejar que se extienda la idea de que hacen falta más sanciones para contener el Infierno"
+    },
+    "body": "Algunos cuentan que el Infierno gana terreno porque el Paraíso sería demasiado 'blando'."
+  },
+  "heaven_195": {
+    "id": "heaven_195",
+    "universe": "heaven_king",
+    "title": "Sueños mezclados Paraíso–Infierno",
+    "description": "Mucha gente sueña con lugares donde el Paraíso y el Infierno parecen tocarse.",
+    "choices": {
+      "A": "Transformar ciertos sueños en recorridos de curación",
+      "B": "Dejar que estos sueños sigan siendo desconcertantes",
+      "C": "Dejar que intérpretes afirmen que estos sueños anuncian sanciones reales"
+    },
+    "body": "Mucha gente sueña con lugares donde el Paraíso y el Infierno parecen tocarse."
+  },
+  "heaven_196": {
+    "id": "heaven_196",
+    "universe": "heaven_king",
+    "title": "Escuela de ángeles de la guarda",
+    "description": "Historias para niños enseñan que cada gesto es vigilado por un ángel juez.",
+    "choices": {
+      "A": "Hacer nacer historias donde el ángel consuela tanto como vigila",
+      "B": "Dejar que la visión del juez siga siendo dominante",
+      "C": "Dejar que algunos adultos amenacen con el Infierno en nombre de estos ángeles de la guarda"
+    },
+    "body": "Historias para niños enseñan que cada gesto es vigilado por un ángel juez."
+  },
+  "heaven_197": {
+    "id": "heaven_197",
+    "universe": "heaven_king",
+    "title": "Culto de la regla perfecta",
+    "description": "Un grupo busca escribir el reglamento perfecto para 'merecer' el Paraíso.",
+    "choices": {
+      "A": "Inspirar la idea de que ningún texto reemplaza al corazón",
+      "B": "Dejar que este trabajo jurídico prosiga",
+      "C": "Dejar creer que cualquier pequeña desviación de este reglamento será sancionada doblemente"
+    },
+    "body": "Un grupo busca escribir el reglamento perfecto para 'merecer' el Paraíso."
+  },
+  "heaven_198": {
+    "id": "heaven_198",
+    "universe": "heaven_king",
+    "title": "Cantos venidos de abajo",
+    "description": "Cantos oscuros inspirados en el Infierno se ponen de moda, incluso en lugares habitualmente pacíficos.",
+    "choices": {
+      "A": "Inspirar también cantos dulces que toquen los corazones",
+      "B": "Dejar que esta moda pase o se instale",
+      "C": "Dejar que algunos movimientos anuncien sanciones severas contra quienes los escuchan"
+    },
+    "body": "Cantos oscuros inspirados en el Infierno se ponen de moda, incluso en lugares habitualmente pacíficos."
+  },
+  "heaven_199": {
+    "id": "heaven_199",
+    "universe": "heaven_king",
+    "title": "Última oración de un moribundo",
+    "description": "Una persona en agonía ya no consigue creer que merece el Paraíso.",
+    "choices": {
+      "A": "Ofrecerle una última paz interior, incluso sin palabras",
+      "B": "Dejar que esta partida se haga en la duda",
+      "C": "Dejar que familiares le digan que paga aquí las faltas que le llevarán abajo"
+    },
+    "body": "Una persona en agonía ya no consigue creer que merece el Paraíso."
+  },
+  "heaven_200": {
+    "id": "heaven_200",
+    "universe": "heaven_king",
+    "title": "Gran sínodo celestial en la Tierra",
+    "description": "Representantes de múltiples tradiciones se reúnen para redefinir la imagen del Paraíso.",
+    "choices": {
+      "A": "Soplar un impulso común hacia más compasión y libertad",
+      "B": "Dejar que cada tradición permanezca encerrada en sus fronteras",
+      "C": "Dejar que una fracción imponga una visión muy punitiva hablando de sanciones eternas"
+    },
+    "body": "Representantes de múltiples tradiciones se reúnen para redefinir la imagen del Paraíso."
+  },
+  "heaven_201": {
+    "id": "heaven_201",
+    "universe": "heaven_king",
+    "title": "Ciudad sin cantos",
+    "description": "Una gran ciudad ha perdido poco a poco toda forma de cantos sagrados, incluso durante las ceremonias.",
+    "choices": {
+      "A": "Inspirar algunas melodías simples en el corazón de los niños",
+      "B": "Dejar que la ciudad permanezca silenciosa en el plano espiritual",
+      "C": "Dejar que predicadores anuncien que tal silencio será severamente sancionado"
+    },
+    "body": "Una gran ciudad ha perdido poco a poco toda forma de cantos sagrados, incluso durante las ceremonias."
+  },
+  "heaven_202": {
+    "id": "heaven_202",
+    "universe": "heaven_king",
+    "title": "Influencer del Cielo",
+    "description": "Un influencer popular habla del Paraíso con humor, pero mezcla verdad y espectáculo.",
+    "choices": {
+      "A": "Ayudarle a transmitir a veces un verdadero mensaje de compasión",
+      "B": "Dejarle proseguir su show sin intervención",
+      "C": "Dejar que algunos le amenacen públicamente con ir al Infierno como sanción"
+    },
+    "body": "Un influencer popular habla del Paraíso con humor, pero mezcla verdad y espectáculo."
+  },
+  "heaven_203": {
+    "id": "heaven_203",
+    "universe": "heaven_king",
+    "title": "Puente entre Paraíso e Infierno",
+    "description": "Un teólogo describe el mundo como un puente frágil entre Paraíso e Infierno, donde cada elección pesa mucho.",
+    "choices": {
+      "A": "Inspirarle un discurso matizado sobre la misericordia",
+      "B": "Dejarle insistir en el riesgo de caída sin matices",
+      "C": "Dejar que rumores digan que ciertos pueblos están ya 'condenados' abajo"
+    },
+    "body": "Un teólogo describe el mundo como un puente frágil entre Paraíso e Infierno, donde cada elección pesa mucho."
+  },
+  "heaven_204": {
+    "id": "heaven_204",
+    "universe": "heaven_king",
+    "title": "Concurso de oraciones en línea",
+    "description": "Una plataforma clasifica las oraciones por número de likes y compartidos.",
+    "choices": {
+      "A": "Susurrar discretamente que la sinceridad cuenta más que la visibilidad",
+      "B": "Dejar que este sistema de popularidad se refuerce",
+      "C": "Dejar creer a algunos que las oraciones no publicadas serán ignoradas o incluso castigadas"
+    },
+    "body": "Una plataforma clasifica las oraciones por número de likes y compartidos."
+  },
+  "heaven_205": {
+    "id": "heaven_205",
+    "universe": "heaven_king",
+    "title": "Alianza con los exiliados de abajo",
+    "description": "Una leyenda cuenta que ciertas almas escapadas del Infierno pueden ser acogidas en el Paraíso.",
+    "choices": {
+      "A": "Inspirar una teología de segunda oportunidad y reconciliación",
+      "B": "Dejar que esta historia siga siendo un rumor marginal",
+      "C": "Dejar que grupos condenen esta idea como herejía pasible de fuertes sanciones"
+    },
+    "body": "Una leyenda cuenta que ciertas almas escapadas del Infierno pueden ser acogidas en el Paraíso."
+  },
+  "heaven_206": {
+    "id": "heaven_206",
+    "universe": "heaven_king",
+    "title": "Milagro a la carta",
+    "description": "Un servicio de pago pretende garantizar 'milagros exprés' a cambio de una donación importante.",
+    "choices": {
+      "A": "Hacer fracasar discretamente algunas promesas para despertar las conciencias",
+      "B": "Dejar prosperar este comercio espiritual",
+      "C": "Dejar que algunos usuarios piensen que serán castigados si dejan de pagar"
+    },
+    "body": "Un servicio de pago pretende garantizar 'milagros exprés' a cambio de una donación importante."
+  },
+  "heaven_207": {
+    "id": "heaven_207",
+    "universe": "heaven_king",
+    "title": "Paraíso reservado a los héroes",
+    "description": "Una doctrina se extiende: solo los héroes o mártires tendrán acceso al Paraíso.",
+    "choices": {
+      "A": "Inspirar voces que recuerden el valor de cada vida ordinaria",
+      "B": "Dejar que el ideal heroico aplaste a los otros",
+      "C": "Dejar que se propague la idea de que las personas 'banales' irán abajo por sanción"
+    },
+    "body": "Una doctrina se extiende: solo los héroes o mártires tendrán acceso al Paraíso."
+  },
+  "heaven_208": {
+    "id": "heaven_208",
+    "universe": "heaven_king",
+    "title": "IA profeta",
+    "description": "Una inteligencia artificial es programada para 'interpretar' la voluntad del Cielo a partir de datos.",
+    "choices": {
+      "A": "Inspirar algunos salvaguardas éticos a sus creadores",
+      "B": "Dejar que la IA produzca oráculos fríos y mecánicos",
+      "C": "Dejar que algunos tomen cada output como sanción o recompensa directamente enviada del Cielo"
+    },
+    "body": "Una inteligencia artificial es programada para 'interpretar' la voluntad del Cielo a partir de datos."
+  },
+  "heaven_209": {
+    "id": "heaven_209",
+    "universe": "heaven_king",
+    "title": "Procesiones contra las tinieblas",
+    "description": "Procesiones nocturnas se organizan para 'repeler el Infierno' de los barrios pobres.",
+    "choices": {
+      "A": "Orientar estas marchas hacia más ayuda concreta a los habitantes",
+      "B": "Dejar que las procesiones sigan siendo solo simbólicas",
+      "C": "Dejar que los habitantes sean estigmatizados como 'amigos del Infierno' y amenazados con sanciones"
+    },
+    "body": "Procesiones nocturnas se organizan para 'repeler el Infierno' de los barrios pobres."
+  },
+  "heaven_210": {
+    "id": "heaven_210",
+    "universe": "heaven_king",
+    "title": "Paraíso ultra-reglamentado",
+    "description": "Una comunidad detalla hasta el menor gesto autorizado para 'merecer' el Paraíso.",
+    "choices": {
+      "A": "Susurrar que el amor cuenta más que la exactitud maníaca",
+      "B": "Dejar que la lista de reglas se alargue aún más",
+      "C": "Dejar creer que la menor infracción hará caer directamente al Infierno"
+    },
+    "body": "Una comunidad detalla hasta el menor gesto autorizado para 'merecer' el Paraíso."
+  },
+  "heaven_211": {
+    "id": "heaven_211",
+    "universe": "heaven_king",
+    "title": "Campo de batalla espiritual",
+    "description": "Creyentes imaginan cada calle como un campo de batalla entre ángeles y demonios.",
+    "choices": {
+      "A": "Fomentar una visión más interior y menos paranoica",
+      "B": "Dejar que esta dramatización continúe",
+      "C": "Dejar que ciertos grupos utilicen esta imagen para justificar sanciones sociales"
+    },
+    "body": "Creyentes imaginan cada calle como un campo de batalla entre ángeles y demonios."
+  },
+  "heaven_212": {
+    "id": "heaven_212",
+    "universe": "heaven_king",
+    "title": "Puente de reconciliación",
+    "description": "Víctimas de violencias, justificadas antaño en nombre del Cielo, buscan reconstruir una fe apaciguada.",
+    "choices": {
+      "A": "Ofrecer una experiencia íntima de dulzura que les ayude a creer de nuevo",
+      "B": "Dejar que la desconfianza siga siendo dominante",
+      "C": "Dejar que algunos verdugos se presenten como arrepentidos y reclamen la ausencia total de sanciones"
+    },
+    "body": "Víctimas de violencias, justificadas antaño en nombre del Cielo, buscan reconstruir una fe apaciguada."
+  },
+  "heaven_213": {
+    "id": "heaven_213",
+    "universe": "heaven_king",
+    "title": "Festival de los dos reinos",
+    "description": "Una ciudad quiere organizar un festival artístico que represente a la vez el Paraíso y el Infierno.",
+    "choices": {
+      "A": "Inspirar obras que muestren la libertad de elegir la luz",
+      "B": "Dejar que el festival se pierda en el sensacionalismo",
+      "C": "Dejar que grupos extremos amenacen con ataques o sanciones en nombre del Cielo"
+    },
+    "body": "Una ciudad quiere organizar un festival artístico que represente a la vez el Paraíso y el Infierno."
+  },
+  "heaven_214": {
+    "id": "heaven_214",
+    "universe": "heaven_king",
+    "title": "Apuesta sobre la salvación",
+    "description": "Jugadores apuestan dinero sobre quién 'irá abajo' o 'arriba' en su entorno.",
+    "choices": {
+      "A": "Despertar en algunos un malestar que les empuje a dejar este juego",
+      "B": "Dejar que esta apuesta blasfema se banalice",
+      "C": "Dejar que un evento dramático ocurra y sea interpretado como sanción directa del Cielo"
+    },
+    "body": "Jugadores apuestan dinero sobre quién 'irá abajo' o 'arriba' en su entorno."
+  },
+  "heaven_215": {
+    "id": "heaven_215",
+    "universe": "heaven_king",
+    "title": "Liturgia mecánica",
+    "description": "En una gran ciudad, los oficios son espléndidos pero los corazones permanecen cerrados.",
+    "choices": {
+      "A": "Encender una pequeña llama interior en algunos participantes",
+      "B": "Dejar que la liturgia siga siendo un espectáculo",
+      "C": "Dejar que algunos sacerdotes utilicen el miedo al Infierno para llenar los bancos"
+    },
+    "body": "En una gran ciudad, los oficios son espléndidos pero los corazones permanecen cerrados."
+  },
+  "heaven_216": {
+    "id": "heaven_216",
+    "universe": "heaven_king",
+    "title": "Ciudad que discute con los demonios",
+    "description": "Círculos ocultos pretenden negociar con las fuerzas infernales para obtener poder y protección.",
+    "choices": {
+      "A": "Inspirar a personas para proponer otro camino que esta fascinación oscura",
+      "B": "Dejar que estos círculos sigan siendo marginales",
+      "C": "Dejar que algunos religiosos exijan sanciones extremas contra todos los participantes, sin matices"
+    },
+    "body": "Círculos ocultos pretenden negociar con las fuerzas infernales para obtener poder y protección."
+  },
+  "heaven_217": {
+    "id": "heaven_217",
+    "universe": "heaven_king",
+    "title": "Recuerdo de un infierno personal",
+    "description": "Una persona que ha vivido una vida de violencia sueña con pasillos de Infierno cada noche.",
+    "choices": {
+      "A": "Deslizar en el corazón de sus sueños una puerta de luz posible",
+      "B": "Dejar que estos sueños continúen sin cambios",
+      "C": "Dejar que predicadores le confirmen que ya está sancionada para siempre"
+    },
+    "body": "Una persona que ha vivido una vida de violencia sueña con pasillos de Infierno cada noche."
+  },
+  "heaven_218": {
+    "id": "heaven_218",
+    "universe": "heaven_king",
+    "title": "Escuela que habla de libertad",
+    "description": "Una escuela enseña el libre albedrío sin mencionar el Paraíso ni el Infierno.",
+    "choices": {
+      "A": "Hacer brotar en algunos alumnos una sed de sentido más profunda",
+      "B": "Dejar que el discurso siga siendo puramente filosófico",
+      "C": "Dejar que grupos exteriores acusen a la escuela de preparar a los niños para el Infierno y exijan sanciones"
+    },
+    "body": "Una escuela enseña el libre albedrío sin mencionar el Paraíso ni el Infierno."
+  },
+  "heaven_219": {
+    "id": "heaven_219",
+    "universe": "heaven_king",
+    "title": "Puente de luz hacia los infiernos",
+    "description": "Algunos místicos dicen descender en oración a las zonas más oscuras para llevar un poco de luz.",
+    "choices": {
+      "A": "Autorizar algunas experiencias de compasión real por los más perdidos",
+      "B": "Dejar que estos relatos sigan siendo simbólicos e incomprendidos",
+      "C": "Dejar que autoridades religiosas condenen a estos místicos como aliados de los Infiernos y los sancionen"
+    },
+    "body": "Algunos místicos dicen descender en oración a las zonas más oscuras para llevar un poco de luz."
+  },
+  "heaven_220": {
+    "id": "heaven_220",
+    "universe": "heaven_king",
+    "title": "Juego para niños sobre el juicio",
+    "description": "Un juego educativo muestra a un juez celestial que envía personajes arriba o abajo según faltas simplificadas.",
+    "choices": {
+      "A": "Inspirar una versión más matizada, con perdón y reparación",
+      "B": "Dejar que el juego siga siendo muy binario",
+      "C": "Dejar que algunos adultos se sirvan de este juego para amenazar a los niños con sanciones eternas"
+    },
+    "body": "Un juego educativo muestra a un juez celestial que envía personajes arriba o abajo según faltas simplificadas."
+  },
+  "heaven_221": {
+    "id": "heaven_221",
+    "universe": "heaven_king",
+    "title": "Culto del miedo puro",
+    "description": "Un movimiento religioso proclama que solo el miedo permanente al Infierno permite entrar en el Paraíso.",
+    "choices": {
+      "A": "Despertar algunas dudas en miembros clave del movimiento",
+      "B": "Dejar prosperar este movimiento por el miedo",
+      "C": "Dejar explotar su número prometiendo sanciones a todos los que los dejen"
+    },
+    "body": "Un movimiento religioso proclama que solo el miedo permanente al Infierno permite entrar en el Paraíso."
+  },
+  "heaven_222": {
+    "id": "heaven_222",
+    "universe": "heaven_king",
+    "title": "Sacerdotes cansados",
+    "description": "Responsables espirituales están agotados, tentados de amenazar en lugar de consolar.",
+    "choices": {
+      "A": "Ofrecer a algunos una verdadera experiencia de descanso y dulzura",
+      "B": "Dejar que la fatiga transforme sus palabras en severidad",
+      "C": "Dejar que se banalicen sermones centrados en la sanción y el miedo"
+    },
+    "body": "Responsables espirituales están agotados, tentados de amenazar en lugar de consolar."
+  },
+  "heaven_223": {
+    "id": "heaven_223",
+    "universe": "heaven_king",
+    "title": "Ciudad de indiferencia",
+    "description": "Una gran metrópoli se muestra educada pero totalmente indiferente a toda idea de Paraíso o Infierno.",
+    "choices": {
+      "A": "Deslizar encuentros que despierten discretamente preguntas profundas",
+      "B": "Dejar que la indiferencia siga siendo la norma",
+      "C": "Dejar surgir grupos radicales gritando a la sanción inminente para despertar a las multitudes"
+    },
+    "body": "Una gran metrópoli se muestra educada pero totalmente indiferente a toda idea de Paraíso o Infierno."
+  },
+  "heaven_224": {
+    "id": "heaven_224",
+    "universe": "heaven_king",
+    "title": "Ritual de perdón imposible",
+    "description": "Un ritual enseña que hay que confesarlo todo en detalle para ser perdonado, si no es el Infierno.",
+    "choices": {
+      "A": "Inspirar una comprensión más amplia del perdón y la curación",
+      "B": "Dejar subir la presión psicológica",
+      "C": "Dejar que los confesores amenacen con sanciones a quienes olviden un detalle"
+    },
+    "body": "Un ritual enseña que hay que confesarlo todo en detalle para ser perdonado, si no es el Infierno."
+  },
+  "heaven_225": {
+    "id": "heaven_225",
+    "universe": "heaven_king",
+    "title": "Puente final antes de la muerte",
+    "description": "En un hospital, un equipo quiere acompañar espiritualmente a los moribundos, sin imponer ni Paraíso ni Infierno.",
+    "choices": {
+      "A": "Hacer pasar a través de ellos una verdadera dulzura que calme los miedos",
+      "B": "Dejar que este acompañamiento siga siendo neutral y protocolario",
+      "C": "Dejar que visitantes externos vengan a anunciar sanciones de última hora"
+    },
+    "body": "En un hospital, un equipo quiere acompañar espiritualmente a los moribundos, sin imponer ni Paraíso ni Infierno."
+  },
+  "heaven_226": {
+    "id": "heaven_226",
+    "universe": "heaven_king",
+    "title": "Barrio con velas",
+    "description": "Un barrio comienza a encender velas en las ventanas cada noche 'por la paz'.",
+    "choices": {
+      "A": "Dejar nacer un pequeño hábito de oración silenciosa",
+      "B": "No intervenir, que esto siga siendo un simple gesto estético",
+      "C": "Dejar que grupos reivindiquen este ritual como obligatorio bajo pena de sanción"
+    },
+    "body": "Un barrio comienza a encender velas en las ventanas cada noche 'por la paz'."
+  },
+  "heaven_227": {
+    "id": "heaven_227",
+    "universe": "heaven_king",
+    "title": "Cronista del más allá",
+    "description": "Un escritor de éxito describe el Paraíso como un tribunal frío y el Infierno como un caos total.",
+    "choices": {
+      "A": "Inspirarle un personaje que descubra una misericordia inesperada",
+      "B": "Dejar que sus libros alimenten esta visión ansiosa",
+      "C": "Dejar que algunos lectores tomen sus descripciones al pie de la letra y vivan con miedo a sanciones"
+    },
+    "body": "Un escritor de éxito describe el Paraíso como un tribunal frío y el Infierno como un caos total."
+  },
+  "heaven_228": {
+    "id": "heaven_228",
+    "universe": "heaven_king",
+    "title": "Lágrimas ante el cielo",
+    "description": "Una mujer mira al cielo cada noche y llora, convencida de que la has abandonado.",
+    "choices": {
+      "A": "Hacer surgir una pequeña señal de ternura en su vida cotidiana",
+      "B": "Dejar que sus lágrimas continúen sin respuesta aparente",
+      "C": "Dejar que alguien le diga que está castigada por faltas olvidadas"
+    },
+    "body": "Una mujer mira al cielo cada noche y llora, convencida de que la has abandonado."
+  },
+  "heaven_229": {
+    "id": "heaven_229",
+    "universe": "heaven_king",
+    "title": "Religiosos y supersticiosos",
+    "description": "En una misma ciudad, algunos rezan sinceramente, otros acumulan amuletos por miedo a los infiernos.",
+    "choices": {
+      "A": "Reforzar los lugares donde la oración es simple y confiada",
+      "B": "Dejar coexistir las dos actitudes sin tocarse",
+      "C": "Dejar que los vendedores de amuletos prometan evitar sanciones infernales"
+    },
+    "body": "En una misma ciudad, algunos rezan sinceramente, otros acumulan amuletos por miedo a los infiernos."
+  },
+  "heaven_230": {
+    "id": "heaven_230",
+    "universe": "heaven_king",
+    "title": "Diario de oraciones",
+    "description": "Una chica lleva un diario de oraciones donde anota todas sus peticiones y sus resultados.",
+    "choices": {
+      "A": "Ayudarla a ver también las respuestas discretas e interiores",
+      "B": "Dejar que su cuaderno se convierta en una tabla de estadísticas",
+      "C": "Dejar nacer la idea de que cada petición ignorada es una sanción contra ella"
+    },
+    "body": "Una chica lleva un diario de oraciones donde anota todas sus peticiones y sus resultados."
+  },
+  "heaven_231": {
+    "id": "heaven_231",
+    "universe": "heaven_king",
+    "title": "Exorcistas improvisados",
+    "description": "Gente se autoproclama exorcista y ve el Infierno detrás de cada sufrimiento psicológico.",
+    "choices": {
+      "A": "Inspirar algunas voces para recordar la importancia de los cuidados humanos",
+      "B": "Dejar que estas prácticas se multipliquen",
+      "C": "Dejar que estos falsos exorcistas amenacen a los enfermos con graves sanciones espirituales"
+    },
+    "body": "Gente se autoproclama exorcista y ve el Infierno detrás de cada sufrimiento psicológico."
+  },
+  "heaven_232": {
+    "id": "heaven_232",
+    "universe": "heaven_king",
+    "title": "Paraíso reservado a los 'piadosos'",
+    "description": "Un grupo enseña que solo las personas muy practicantes serán salvadas.",
+    "choices": {
+      "A": "Sembrar la idea de que la bondad de corazón cuenta tanto como los ritos",
+      "B": "Dejar que este grupo siga cerrado y seguro de sí mismo",
+      "C": "Dejar que sus predicadores amplifiquen las amenazas de Infierno para todos los demás"
+    },
+    "body": "Un grupo enseña que solo las personas muy practicantes serán salvadas."
+  },
+  "heaven_233": {
+    "id": "heaven_233",
+    "universe": "heaven_king",
+    "title": "Sueños de jardines",
+    "description": "Numerosas personas sueñan con jardines luminosos donde se sienten por fin seguras.",
+    "choices": {
+      "A": "Dejar que estos sueños se conviertan en dulces recordatorios del Paraíso",
+      "B": "No cambiar nada, que estos sueños sigan siendo solo agradables",
+      "C": "Dejar que algunos gurús pretendan que solo sus discípulos accederán a estos jardines, siendo los otros sancionados"
+    },
+    "body": "Numerosas personas sueñan con jardines luminosos donde se sienten por fin seguras."
+  },
+  "heaven_234": {
+    "id": "heaven_234",
+    "universe": "heaven_king",
+    "title": "Decisión de un juez humano",
+    "description": "Un juez debe pronunciar una pena grave y dice que siente sobre él la mirada del Cielo.",
+    "choices": {
+      "A": "Susurrarle una mezcla de justicia y misericordia",
+      "B": "Dejar que su decisión descanse únicamente en la ley humana",
+      "C": "Dejar que el juez crea que es tu brazo de sanción en la Tierra"
+    },
+    "body": "Un juez debe pronunciar una pena grave y dice que siente sobre él la mirada del Cielo."
+  },
+  "heaven_235": {
+    "id": "heaven_235",
+    "universe": "heaven_king",
+    "title": "Ciudad en busca de señal",
+    "description": "Tras una sequía, una ciudad espera una señal clara del cielo para saber si está perdonada.",
+    "choices": {
+      "A": "Ofrecer una lluvia suave que calme sin gran espectáculo",
+      "B": "Dejar que el clima siga su curso sin vínculo visible",
+      "C": "Dejar que una tormenta violenta sea leída como sanción final"
+    },
+    "body": "Tras una sequía, una ciudad espera una señal clara del cielo para saber si está perdonada."
+  },
+  "heaven_236": {
+    "id": "heaven_236",
+    "universe": "heaven_king",
+    "title": "Turismo espiritual",
+    "description": "Viajes organizados prometen 'acercarse al Paraíso' visitando lugares sagrados.",
+    "choices": {
+      "A": "Permitir a algunos viajeros vivir una verdadera experiencia interior",
+      "B": "Dejar que estos viajes sigan siendo un consumo de imágenes",
+      "C": "Dejar que guías afirmen que quienes no participan se arriesgan a la sanción divina"
+    },
+    "body": "Viajes organizados prometen 'acercarse al Paraíso' visitando lugares sagrados."
+  },
+  "heaven_237": {
+    "id": "heaven_237",
+    "universe": "heaven_king",
+    "title": "Concurso de virtud",
+    "description": "Una red social permite mostrar públicamente sus 'buenas acciones' para ganar insignias del Cielo.",
+    "choices": {
+      "A": "Susurrar a algunos que la verdadera bondad puede permanecer discreta",
+      "B": "Dejar prosperar este concurso de virtud",
+      "C": "Dejar entender que quienes no participan serán sancionados"
+    },
+    "body": "Una red social permite mostrar públicamente sus 'buenas acciones' para ganar insignias del Cielo."
+  },
+  "heaven_238": {
+    "id": "heaven_238",
+    "universe": "heaven_king",
+    "title": "Música de los dos reinos",
+    "description": "Artistas componen un álbum dividido en dos: una cara Paraíso, una cara Infierno.",
+    "choices": {
+      "A": "Inspirar letras que muestren la posibilidad de elegir la luz",
+      "B": "Dejar que el álbum juegue con el choque sin profundidad",
+      "C": "Dejar que algunos grupos lo diabolicen y profeticen sanciones contra quienes lo escuchan"
+    },
+    "body": "Artistas componen un álbum dividido en dos: una cara Paraíso, una cara Infierno."
+  },
+  "heaven_239": {
+    "id": "heaven_239",
+    "universe": "heaven_king",
+    "title": "Muro de agradecimientos",
+    "description": "En una ciudad, un gran muro está dedicado a los agradecimientos anónimos dirigidos al Cielo.",
+    "choices": {
+      "A": "Hacer nacer verdaderos impulsos de gratitud leyendo estos mensajes",
+      "B": "Dejar que el muro se convierta en una atracción turística",
+      "C": "Dejar que algunos exijan que cada agradecimiento siga una fórmula estricta bajo pena de sanción"
+    },
+    "body": "En una ciudad, un gran muro está dedicado a los agradecimientos anónimos dirigidos al Cielo."
+  },
+  "heaven_240": {
+    "id": "heaven_240",
+    "universe": "heaven_king",
+    "title": "Paraíso o Infierno en las escuelas",
+    "description": "Programas escolares discuten: ¿hay que hablar del Paraíso y del Infierno o permanecer neutral?",
+    "choices": {
+      "A": "Inspirar a algunos profesores a hablar de libertad y respeto ante todo",
+      "B": "Dejar que el debate siga siendo técnico y administrativo",
+      "C": "Dejar que grupos amenacen con el Infierno a las escuelas juzgadas demasiado neutrales"
+    },
+    "body": "Programas escolares discuten: ¿hay que hablar del Paraíso y del Infierno o permanecer neutral?"
+  },
+
+  "heaven_241": {
+    "id": "heaven_241",
+    "universe": "heaven_king",
+    "title": "Apuesta de último segundo",
+    "description": "Un hombre que siempre ignoró las cuestiones espirituales entra en pánico en su lecho de muerte.",
+    "choices": {
+      "A": "Ofrecerle una percepción fugaz de tu presencia acogedora",
+      "B": "Dejar que su miedo se despliegue sin señal particular",
+      "C": "Dejar que un familiar le diga que es demasiado tarde y que está sancionado"
+    },
+    "body": "Un hombre que siempre ignoró las cuestiones espirituales entra en pánico en su lecho de muerte."
+  },
+  "heaven_242": {
+    "id": "heaven_242",
+    "universe": "heaven_king",
+    "title": "Culto del éxito espiritual",
+    "description": "Una comunidad muestra sus 'puntuaciones de santidad' en porcentaje de éxito moral.",
+    "choices": {
+      "A": "Inspirar a algunos miembros a desprenderse de estas cifras",
+      "B": "Dejar que estas puntuaciones se conviertan en una obsesión colectiva",
+      "C": "Dejar que se imponga la idea de que cualquier puntuación a la baja conlleva una sanción del Cielo"
+    },
+    "body": "Una comunidad muestra sus 'puntuaciones de santidad' en porcentaje de éxito moral."
+  },
+  "heaven_243": {
+    "id": "heaven_243",
+    "universe": "heaven_king",
+    "title": "Puente de oración hacia los infiernos",
+    "description": "Personas rezan explícitamente por aquellos que, según las doctrinas, ya estarían perdidos abajo.",
+    "choices": {
+      "A": "Dejar que esta oración amplíe su compasión",
+      "B": "No intervenir, dejar que esto siga siendo una práctica minoritaria",
+      "C": "Dejar que autoridades condenen estas oraciones como ofensivas y las sancionen"
+    },
+    "body": "Personas rezan explícitamente por aquellos que, según las doctrinas, ya estarían perdidos abajo."
+  },
+  "heaven_244": {
+    "id": "heaven_244",
+    "universe": "heaven_king",
+    "title": "Creyentes de fachada",
+    "description": "En una región, la gente participa en los ritos por presión social más que por convicción.",
+    "choices": {
+      "A": "Hacer nacer en algunos un verdadero deseo de sentido",
+      "B": "Dejar continuar la fachada ordenada",
+      "C": "Dejar que élites religiosas amenacen con sanciones a quienes se muestren menos presentes"
+    },
+    "body": "En una región, la gente participa en los ritos por presión social más que por convicción."
+  },
+  "heaven_245": {
+    "id": "heaven_245",
+    "universe": "heaven_king",
+    "title": "Reconciliación imposible",
+    "description": "Dos pueblos se acusan mutuamente de estar 'del lado del Infierno' tras décadas de conflicto.",
+    "choices": {
+      "A": "Inspirar a algunos artesanos de paz capaces de escuchar a ambos lados",
+      "B": "Dejar que el odio religioso se transmita de generación en generación",
+      "C": "Dejar que líderes prometan sanciones celestiales por cualquier acuerdo de paz"
+    },
+    "body": "Dos pueblos se acusan mutuamente de estar 'del lado del Infierno' tras décadas de conflicto."
+  },
+  "heaven_246": {
+    "id": "heaven_246",
+    "universe": "heaven_king",
+    "title": "Juego de mesa sobre el Paraíso",
+    "description": "Un juego de mesa muy popular presenta ángeles, demonios, sanciones y recompensas.",
+    "choices": {
+      "A": "Dejar que algunos jugadores descubran en él el gusto por la cooperación antes que por el miedo",
+      "B": "Dejar que el juego siga siendo un simple entretenimiento",
+      "C": "Dejar que grupos lo utilicen en clase para amenazar a los niños con sanciones reales"
+    },
+    "body": "Un juego de mesa muy popular presenta ángeles, demonios, sanciones y recompensas."
+  },
+  "heaven_247": {
+    "id": "heaven_247",
+    "universe": "heaven_king",
+    "title": "Silencio tras una catástrofe",
+    "description": "Tras un terremoto, los supervivientes rezan, pero tienen la impresión de no recibir ninguna respuesta.",
+    "choices": {
+      "A": "Hacer nacer una solidaridad inesperada que se convierta en tu respuesta silenciosa",
+      "B": "Dejar que el sentimiento de abandono se instale",
+      "C": "Dejar que algunos predicadores afirmen que el seísmo ya era una sanción"
+    },
+    "body": "Tras un terremoto, los supervivientes rezan, pero tienen la impresión de no recibir ninguna respuesta."
+  },
+  "heaven_248": {
+    "id": "heaven_248",
+    "universe": "heaven_king",
+    "title": "Templo compartido",
+    "description": "Un lugar antiguo es reclamado a la vez por un culto volcado hacia el Paraíso y un grupo dedicado a las fuerzas de abajo.",
+    "choices": {
+      "A": "Inspirar un uso compartido centrado en la paz y la escucha",
+      "B": "Dejar que el conflicto simbólico se transforme en simple turismo",
+      "C": "Dejar que extremistas impongan un cierre violento, en nombre de la sanción divina"
+    },
+    "body": "Un lugar antiguo es reclamado a la vez por un culto volcado hacia el Paraíso y un grupo dedicado a las fuerzas de abajo."
+  },
+  "heaven_249": {
+    "id": "heaven_249",
+    "universe": "heaven_king",
+    "title": "Despertar en una secta",
+    "description": "Un adepto se da cuenta de que su grupo utiliza el miedo al Infierno para controlarlo todo.",
+    "choices": {
+      "A": "Darle el valor de irse y ayudar a otros a salir",
+      "B": "Dejar que su duda crezca sin acción concreta",
+      "C": "Dejar que los dirigentes refuercen las sanciones espirituales anunciadas contra los 'traidores'"
+    },
+    "body": "Un adepto se da cuenta de que su grupo utiliza el miedo al Infierno para controlarlo todo."
+  },
+  "heaven_250": {
+    "id": "heaven_250",
+    "universe": "heaven_king",
+    "title": "Último canto",
+    "description": "Un anciano canta por última vez en un coro, convencido de que su voz ya no vale nada para el Cielo.",
+    "choices": {
+      "A": "Ofrecerle un momento de paz interior donde se sienta acogido",
+      "B": "Dejar que este último ensayo termine en la banalidad",
+      "C": "Dejar que alguien le diga que paga ahora faltas pasadas y que su voz está sancionada"
+    },
+    "body": "Un anciano canta por última vez en un coro, convencido de que su voz ya no vale nada para el Cielo."
+  },
+  "heaven_251": {
+    "id": "heaven_251",
+    "universe": "heaven_king",
+    "title": "Ciudad sin campanarios",
+    "description": "Una gran ciudad ha demolido sus antiguos campanarios para construir torres de cristal.",
+    "choices": {
+      "A": "Susurrar a algunos habitantes la idea de inventar nuevas señales discretas hacia el cielo",
+      "B": "Dejar que la ciudad asuma totalmente esta elección moderna",
+      "C": "Dejar que grupos anuncien que esta ciudad será severamente sancionada"
+    },
+    "body": "Una gran ciudad ha demolido sus antiguos campanarios para construir torres de cristal."
+  },
+  "heaven_252": {
+    "id": "heaven_252",
+    "universe": "heaven_king",
+    "title": "Podcast sobre el más allá",
+    "description": "Un podcast muy seguido habla cada semana de Paraíso, Infierno y juicio final.",
+    "choices": {
+      "A": "Inspirar episodios centrados en la misericordia y la responsabilidad personal",
+      "B": "Dejar que el podcast aproveche el miedo para ganar audiencia",
+      "C": "Dejar que algunos oyentes organicen 'campañas de sanción' contra quienes juzgan impíos"
+    },
+    "body": "Un podcast muy seguido habla cada semana de Paraíso, Infierno y juicio final."
+  },
+  "heaven_253": {
+    "id": "heaven_253",
+    "universe": "heaven_king",
+    "title": "Niños que juegan al juicio",
+    "description": "En un patio de colegio, niños juegan a enviar a los otros al Paraíso o al Infierno según sus notas.",
+    "choices": {
+      "A": "Deslizar una idea de juego donde uno se apoya en lugar de condenarse",
+      "B": "Dejar que este juego siga siendo una simple burla infantil",
+      "C": "Dejar que adultos retomen el mismo lenguaje de sanción en sus discursos"
+    },
+    "body": "En un patio de colegio, niños juegan a enviar a los otros al Paraíso o al Infierno según sus notas."
+  },
+  "heaven_254": {
+    "id": "heaven_254",
+    "universe": "heaven_king",
+    "title": "Influencer de milagros",
+    "description": "Un influencer difunde vídeos supuestamente milagrosos en tu nombre.",
+    "choices": {
+      "A": "Hacer aparecer algunos testimonios sobrios pero auténticos de curación interior",
+      "B": "Dejar que los vídeos espectaculares se multipliquen",
+      "C": "Dejar nacer la idea de que quienes no crean en estos vídeos serán sancionados abajo"
+    },
+    "body": "Un influencer difunde vídeos supuestamente milagrosos en tu nombre."
+  },
+  "heaven_255": {
+    "id": "heaven_255",
+    "universe": "heaven_king",
+    "title": "Barrio de los invisibles",
+    "description": "Un barrio pobre es ignorado por las grandes instituciones religiosas de la ciudad.",
+    "choices": {
+      "A": "Inspirar a algunos creyentes a ir a vivir allí una solidaridad simple",
+      "B": "Dejar que este barrio permanezca en la sombra",
+      "C": "Dejar que algunos digan que si son pobres, es una sanción merecida"
+    },
+    "body": "Un barrio pobre es ignorado por las grandes instituciones religiosas de la ciudad."
+  },
+  "heaven_256": {
+    "id": "heaven_256",
+    "universe": "heaven_king",
+    "title": "Teatro de los condenados",
+    "description": "Una compañía de teatro escenifica a condenados que negocian su salida del Infierno.",
+    "choices": {
+      "A": "Inspirar un final donde la compasión sorprenda a los espectadores",
+      "B": "Dejar que la obra siga siendo un entretenimiento oscuro",
+      "C": "Dejar que algunos grupos griten blasfemia y prometan sanciones"
+    },
+    "body": "Una compañía de teatro escenifica a condenados que negocian su salida del Infierno."
+  },
+  "heaven_257": {
+    "id": "heaven_257",
+    "universe": "heaven_king",
+    "title": "Peregrinaje en línea",
+    "description": "Un sitio propone un 'peregrinaje virtual' con oraciones preescritas y donaciones automáticas.",
+    "choices": {
+      "A": "Permitir a algunos vivir a pesar de todo un verdadero momento de recogimiento",
+      "B": "Dejar que esta práctica siga siendo muy comercial",
+      "C": "Dejar que el sitio amenace con maldiciones a quienes dejen de pagar"
+    },
+    "body": "Un sitio propone un 'peregrinaje virtual' con oraciones preescritas y donaciones automáticas."
+  },
+  "heaven_258": {
+    "id": "heaven_258",
+    "universe": "heaven_king",
+    "title": "Libro de las faltas",
+    "description": "Un predicador lleva un registro público de las 'faltas' de la ciudad, pretendiendo leer tu juicio.",
+    "choices": {
+      "A": "Inspirar a ciudadanos a impugnar este registro en nombre de la dignidad humana",
+      "B": "Dejar que el registro se convierta en un espectáculo malsano",
+      "C": "Dejar que el predicador amenace con el Infierno a aquellos cuyo nombre aparezca en él"
+    },
+    "body": "Un predicador lleva un registro público de las 'faltas' de la ciudad, pretendiendo leer tu juicio."
+  },
+  "heaven_259": {
+    "id": "heaven_259",
+    "universe": "heaven_king",
+    "title": "Culto de la prosperidad",
+    "description": "Un movimiento enseña que la riqueza material prueba el favor del Paraíso.",
+    "choices": {
+      "A": "Despertar testigos que recuerden el valor de los pobres y frágiles",
+      "B": "Dejar que este mensaje seductor se extienda",
+      "C": "Dejar que este culto describa la pobreza como una sanción directa de tu parte"
+    },
+    "body": "Un movimiento enseña que la riqueza material prueba el favor del Paraíso."
+  },
+  "heaven_260": {
+    "id": "heaven_260",
+    "universe": "heaven_king",
+    "title": "Línea directa con los ángeles",
+    "description": "Un servicio telefónico de pago pretende transmitir los mensajes de los ángeles de la guarda.",
+    "choices": {
+      "A": "Hacer sentir a algunos que llaman que el verdadero consuelo viene de otra parte",
+      "B": "Dejar prosperar esta empresa",
+      "C": "Dejar creer que no llamar corta la protección celestial y atrae la sanción"
+    },
+    "body": "Un servicio telefónico de pago pretende transmitir los mensajes de los ángeles de la guarda."
+  },
+  "heaven_261": {
+    "id": "heaven_261",
+    "universe": "heaven_king",
+    "title": "Ciudad de las promesas incumplidas",
+    "description": "Una ciudad multiplica los votos y promesas religiosas nunca respetadas.",
+    "choices": {
+      "A": "Inspirar una campaña local centrada en pequeños compromisos realistas",
+      "B": "Dejar que esta hipocresía siga siendo un folclore",
+      "C": "Dejar que voces anuncien una sanción colectiva inminente"
+    },
+    "body": "Una ciudad multiplica los votos y promesas religiosas nunca respetadas."
+  },
+  "heaven_262": {
+    "id": "heaven_262",
+    "universe": "heaven_king",
+    "title": "Despertar de un antiguo culto",
+    "description": "En una región remota, un culto antiguo mezcla tu nombre con fuerzas más oscuras venidas de abajo.",
+    "choices": {
+      "A": "Despertar a algunas personas ante la manipulación de la que son víctimas",
+      "B": "Dejar que este culto siga siendo marginal",
+      "C": "Dejar que extremistas quieran quemarlo todo hablando de sanción celestial"
+    },
+    "body": "En una región remota, un culto antiguo mezcla tu nombre con fuerzas más oscuras venidas de abajo."
+  },
+  "heaven_263": {
+    "id": "heaven_263",
+    "universe": "heaven_king",
+    "title": "Sueños de ángeles silenciosos",
+    "description": "Muchas personas sueñan con ángeles que las miran sin hablar.",
+    "choices": {
+      "A": "Transformar a veces este silencio en sensación de ser amado a pesar de todo",
+      "B": "Dejar que estos sueños sigan siendo misteriosos",
+      "C": "Dejar que algunos gurús interpreten cada sueño como amenaza de sanción"
+    },
+    "body": "Muchas personas sueñan con ángeles que las miran sin hablar."
+  },
+  "heaven_264": {
+    "id": "heaven_264",
+    "universe": "heaven_king",
+    "title": "Escuela del miedo",
+    "description": "Una escuela religiosa enseña sobre todo el miedo al fuego eterno para 'controlar' a los alumnos.",
+    "choices": {
+      "A": "Inspirar a un o una profe a hablar de amor y responsabilidad en lugar de sanciones",
+      "B": "Dejar que esta pedagogía funcione por el miedo",
+      "C": "Dejar a la administración amenazar con el Infierno a los padres contestatarios"
+    },
+    "body": "Una escuela religiosa enseña sobre todo el miedo al fuego eterno para 'controlar' a los alumnos."
+  },
+  "heaven_265": {
+    "id": "heaven_265",
+    "universe": "heaven_king",
+    "title": "Regalos a los ángeles",
+    "description": "Niños depositan cada noche dibujos y pequeños objetos para sus ángeles de la guarda.",
+    "choices": {
+      "A": "Dejar que este gesto refuerce un vínculo confiado y simple",
+      "B": "No intervenir, que esto siga siendo un hábito de infancia",
+      "C": "Dejar que algunos adultos afirmen que los niños que olviden serán sancionados"
+    },
+    "body": "Niños depositan cada noche dibujos y pequeños objetos para sus ángeles de la guarda."
+  },
+  "heaven_266": {
+    "id": "heaven_266",
+    "universe": "heaven_king",
+    "title": "Libro para hablar con los muertos",
+    "description": "Un best-seller pretende explicar cómo contactar con los muertos, algunos hablando de puertas al Infierno.",
+    "choices": {
+      "A": "Inspirar verdaderos lugares de palabra para los dolientes",
+      "B": "Dejar que este libro haga fortuna",
+      "C": "Dejar que movimientos utilicen este libro para amenazar con sanciones demoníacas"
+    },
+    "body": "Un best-seller pretende explicar cómo contactar con los muertos, algunos hablando de puertas al Infierno."
+  },
+  "heaven_267": {
+    "id": "heaven_267",
+    "universe": "heaven_king",
+    "title": "Promesa de paraíso de pago",
+    "description": "Una organización vende certificados que aseguran una plaza en el Paraíso.",
+    "choices": {
+      "A": "Despertar la conciencia de algunos compradores clave",
+      "B": "Dejar prosperar esta práctica pseudo-espiritual",
+      "C": "Dejar que los vendedores amenacen con el Infierno a quienes se nieguen a comprar"
+    },
+    "body": "Una organización vende certificados que aseguran una plaza en el Paraíso."
+  },
+  "heaven_268": {
+    "id": "heaven_268",
+    "universe": "heaven_king",
+    "title": "Culto del sacrificio absoluto",
+    "description": "Un movimiento predica que cuanto más dura es la vida aquí, más alto será el lugar en el Paraíso.",
+    "choices": {
+      "A": "Inspirar a algunos miembros a buscar también la alegría y la justicia desde ahora",
+      "B": "Dejar que este culto glorifique el sufrimiento",
+      "C": "Dejar que los líderes traten toda búsqueda de bienestar como falta sancionada"
+    },
+    "body": "Un movimiento predica que cuanto más dura es la vida aquí, más alto será el lugar en el Paraíso."
+  },
+  "heaven_269": {
+    "id": "heaven_269",
+    "universe": "heaven_king",
+    "title": "Muro de oraciones rechazadas",
+    "description": "En un foro, gente cuenta sus oraciones 'no escuchadas' y concluyen que no existes.",
+    "choices": {
+      "A": "Orientar a algunos hacia una comprensión más profunda de lo que es una respuesta",
+      "B": "Dejar crecer este muro de decepción",
+      "C": "Dejar que fundamentalistas acusen a estas personas de estar ya prometidas al Infierno"
+    },
+    "body": "En un foro, gente cuenta sus oraciones 'no escuchadas' y concluyen que no existes."
+  },
+  "heaven_270": {
+    "id": "heaven_270",
+    "universe": "heaven_king",
+    "title": "Pinturas del juicio",
+    "description": "Un artista pinta frescos gigantes del juicio final en el corazón de una ciudad.",
+    "choices": {
+      "A": "Inspirarle también escenas de consuelo y reparación",
+      "B": "Dejar que sus frescos sigan centrados en el miedo",
+      "C": "Dejar que predicadores utilicen estos frescos para amenazar a la población con sanciones"
+    },
+    "body": "Un artista pinta frescos gigantes del juicio final en el corazón de una ciudad."
+  },
+  "heaven_271": {
+    "id": "heaven_271",
+    "universe": "heaven_king",
+    "title": "Ciudad de las risas nerviosas",
+    "description": "Los habitantes bromean sin cesar sobre el Infierno y el Paraíso para no hablar de ello seriamente.",
+    "choices": {
+      "A": "Sembrar una o dos conversaciones sinceras detrás de estas bromas",
+      "B": "Dejar que la ironía enmascare toda profundidad",
+      "C": "Dejar que extremistas condenen estas burlas como merecedoras de sanción inmediata"
+    },
+    "body": "Los habitantes bromean sin cesar sobre el Infierno y el Paraíso para no hablar de ello seriamente."
+  },
+  "heaven_272": {
+    "id": "heaven_272",
+    "universe": "heaven_king",
+    "title": "Puente de luz sobre el Infierno",
+    "description": "Místicos afirman poder 'descender' en oración hasta las profundidades más bajas.",
+    "choices": {
+      "A": "Autorizar algunas experiencias de amor desinteresado hacia los más perdidos",
+      "B": "Dejar que estos relatos pasen por metáforas extrañas",
+      "C": "Dejar que autoridades los denuncien como pactando con el Infierno y los sancionen"
+    },
+    "body": "Místicos afirman poder 'descender' en oración hasta las profundidades más bajas."
+  },
+  "heaven_273": {
+    "id": "heaven_273",
+    "universe": "heaven_king",
+    "title": "Recuento de 'almas salvadas'",
+    "description": "Una organización se jacta de 'salvar' un cierto número de almas al día, con estadísticas detalladas.",
+    "choices": {
+      "A": "Inspirar un recentrado en la escucha y el acompañamiento real",
+      "B": "Dejar que la lógica de las cifras domine",
+      "C": "Dejar que esta organización amenace a todos los que se nieguen a seguirles"
+    },
+    "body": "Una organización se jacta de 'salvar' un cierto número de almas al día, con estadísticas detalladas."
+  },
+  "heaven_274": {
+    "id": "heaven_274",
+    "universe": "heaven_king",
+    "title": "Ciudad que rechaza el Infierno",
+    "description": "Una ciudad entera rechaza el concepto de Infierno y solo habla de cuidado y reparación.",
+    "choices": {
+      "A": "Fomentar una reflexión profunda sobre justicia y responsabilidad",
+      "B": "Dejar que la ciudad permanezca en un optimismo a veces ingenuo",
+      "C": "Dejar que predicadores exteriores prometan una sanción tanto más dura"
+    },
+    "body": "Una ciudad entera rechaza el concepto de Infierno y solo habla de cuidado y reparación."
+  },
+  "heaven_275": {
+    "id": "heaven_275",
+    "universe": "heaven_king",
+    "title": "Paraíso reservado a una élite",
+    "description": "Un grupo afirma que un pequeño número de iniciados solamente verá el Paraíso.",
+    "choices": {
+      "A": "Despertar los celos de los excluidos para que busquen otra vía más sana",
+      "B": "Dejar que este grupo se encierre en sí mismo",
+      "C": "Dejar que este grupo amenace a todos los 'no iniciados' con una sanción eterna"
+    },
+    "body": "Un grupo afirma que un pequeño número de iniciados solamente verá el Paraíso."
+  },
+  "heaven_276": {
+    "id": "heaven_276",
+    "universe": "heaven_king",
+    "title": "Exilio de los divorciados",
+    "description": "Una comunidad excluye a las personas divorciadas de sus ceremonias, hablando de fidelidad al Paraíso.",
+    "choices": {
+      "A": "Inspirar voces que hablen de perdón y de trayectorias complejas",
+      "B": "Dejar que esta exclusión perdure",
+      "C": "Dejar que algunos predicadores amenacen a estas personas con el Infierno sin retorno"
+    },
+    "body": "Una comunidad excluye a las personas divorciadas de sus ceremonias, hablando de fidelidad al Paraíso."
+  },
+  "heaven_277": {
+    "id": "heaven_277",
+    "universe": "heaven_king",
+    "title": "Niños del Infierno",
+    "description": "En una ciudad marcada por el crimen, ciertos niños son llamados 'niños del Infierno'.",
+    "choices": {
+      "A": "Poner en su camino a adultos capaces de creer en ellos",
+      "B": "Dejar que estas etiquetas se peguen a su piel",
+      "C": "Dejar que autoridades religiosas validen este lenguaje de sanción"
+    },
+    "body": "En una ciudad marcada por el crimen, ciertos niños son llamados 'niños del Infierno'."
+  },
+  "heaven_278": {
+    "id": "heaven_278",
+    "universe": "heaven_king",
+    "title": "Ayuno para abrir las puertas",
+    "description": "Un grupo promete que largos ayunos forzados pueden 'forzar' las puertas del Paraíso.",
+    "choices": {
+      "A": "Inspirar prácticas más equilibradas y respetuosas con el cuerpo",
+      "B": "Dejar que estos ayunos extremos se extiendan",
+      "C": "Dejar que los líderes presenten toda debilidad como falta sancionada"
+    },
+    "body": "Un grupo promete que largos ayunos forzados pueden 'forzar' las puertas del Paraíso."
+  },
+  "heaven_279": {
+    "id": "heaven_279",
+    "universe": "heaven_king",
+    "title": "Escritor de los infiernos",
+    "description": "Un autor describe el Infierno con un realismo escalofriante y fascina tanto como aterroriza.",
+    "choices": {
+      "A": "Susurrarle un personaje que descubra una escapatoria inesperada",
+      "B": "Dejar crecer la fascinación por el horror",
+      "C": "Dejar que grupos utilicen sus libros para asustar a los niños con sanciones"
+    },
+    "body": "Un autor describe el Infierno con un realismo escalofriante y fascina tanto como aterroriza."
+  },
+  "heaven_280": {
+    "id": "heaven_280",
+    "universe": "heaven_king",
+    "title": "Silencio de los monasterios",
+    "description": "Monasterios rezan día y noche, sin que el mundo exterior lo note.",
+    "choices": {
+      "A": "Dejar que esta oración silenciosa riegue ciertos corazones a lo lejos",
+      "B": "Dejar que este silencio permanezca ignorado",
+      "C": "Dejar que algunos monjes valoren su papel hasta el punto de despreciar al resto del mundo"
+    },
+    "body": "Monasterios rezan día y noche, sin que el mundo exterior lo note."
+  },
+  "heaven_281": {
+    "id": "heaven_281",
+    "universe": "heaven_king",
+    "title": "Torneo de debates teológicos",
+    "description": "Un gran torneo enfrenta a oradores sobre la cuestión Paraíso vs Infierno.",
+    "choices": {
+      "A": "Inspirar algunos discursos que devuelvan a la vida real y a los más frágiles",
+      "B": "Dejar que el torneo se convierta en un deporte intelectual",
+      "C": "Dejar que ciertos oradores amenacen con sanciones a quienes no piensen como ellos"
+    },
+    "body": "Un gran torneo enfrenta a oradores sobre la cuestión Paraíso vs Infierno."
+  },
+  "heaven_282": {
+    "id": "heaven_282",
+    "universe": "heaven_king",
+    "title": "Cementerio olvidado",
+    "description": "Un antiguo cementerio es dejado en el abandono, invadido de vegetación.",
+    "choices": {
+      "A": "Inspirar a un pequeño grupo a restaurarlo con respeto",
+      "B": "Dejar que este lugar se disuelva en el olvido",
+      "C": "Dejar que algunos afirmen que los muertos olvidados son castigados abajo"
+    },
+    "body": "Un antiguo cementerio es dejado en el abandono, invadido de vegetación."
+  },
+  "heaven_283": {
+    "id": "heaven_283",
+    "universe": "heaven_king",
+    "title": "Red de ayuda anónima",
+    "description": "Una red secreta ofrece ayuda material y psicológica sin predicar directamente.",
+    "choices": {
+      "A": "Dejar que esta ayuda mutua se convierta en una parábola viva del Paraíso",
+      "B": "No intervenir, que esto siga siendo discreto",
+      "C": "Dejar que ciertos grupos religiosos denuncien esta red como 'peligrosa' y la sancionen"
+    },
+    "body": "Una red secreta ofrece ayuda material y psicológica sin predicar directamente."
+  },
+  "heaven_284": {
+    "id": "heaven_284",
+    "universe": "heaven_king",
+    "title": "Culto de la pureza",
+    "description": "Un movimiento exige una pureza absoluta y destierra a toda persona juzgada 'impura'.",
+    "choices": {
+      "A": "Inspirar a escondidas a miembros para apoyar a los excluidos",
+      "B": "Dejar que este movimiento se endurezca",
+      "C": "Dejar que los líderes blandan el Infierno como sanción por la menor desviación"
+    },
+    "body": "Un movimiento exige una pureza absoluta y destierra a toda persona juzgada 'impura'."
+  },
+  "heaven_285": {
+    "id": "heaven_285",
+    "universe": "heaven_king",
+    "title": "Mercado de reliquias",
+    "description": "Un mercado negro vende reliquias que supuestamente garantizan un acceso prioritario al Paraíso.",
+    "choices": {
+      "A": "Hacer surgir algunas investigaciones que revelen la estafa",
+      "B": "Dejar que este comercio continúe en secreto",
+      "C": "Dejar que los vendedores amenacen con el Infierno a quienes se nieguen a comprar"
+    },
+    "body": "Un mercado negro vende reliquias que supuestamente garantizan un acceso prioritario al Paraíso."
+  },
+  "heaven_286": {
+    "id": "heaven_286",
+    "universe": "heaven_king",
+    "title": "Ciudad de los apáticos",
+    "description": "A una ciudad le da igual: ni Paraíso, ni Infierno, ni justicia última les interesan.",
+    "choices": {
+      "A": "Deslizar algunos eventos que despierten la cuestión del sentido",
+      "B": "Dejar que esta indiferencia continúe",
+      "C": "Dejar que fanáticos vengan a amenazar a la ciudad con sanciones espectaculares"
+    },
+    "body": "A una ciudad le da igual: ni Paraíso, ni Infierno, ni justicia última les interesan."
+  },
+  "heaven_287": {
+    "id": "heaven_287",
+    "universe": "heaven_king",
+    "title": "Pasillo de hospital",
+    "description": "En un pasillo de hospital, familias rezan, otras insultan al cielo.",
+    "choices": {
+      "A": "Dejar que un momento inesperado de dulzura circule entre ellas",
+      "B": "Dejar que cada familia permanezca encerrada en su dolor",
+      "C": "Dejar que alguien explique que la enfermedad es una sanción personal"
+    },
+    "body": "En un pasillo de hospital, familias rezan, otras insultan al cielo."
+  },
+  "heaven_288": {
+    "id": "heaven_288",
+    "universe": "heaven_king",
+    "title": "Sueño de un puente quemado",
+    "description": "Una persona sueña a menudo con un puente entre Paraíso e Infierno que se derrumba bajo sus pasos.",
+    "choices": {
+      "A": "Insertar en sus sueños a un guía que le muestre otra ruta",
+      "B": "Dejar que esta pesadilla la atormente",
+      "C": "Dejar que un predicador le diga que ya está sancionada y sin retorno"
+    },
+    "body": "Una persona sueña a menudo con un puente entre Paraíso e Infierno que se derrumba bajo sus pasos."
+  },
+  "heaven_289": {
+    "id": "heaven_289",
+    "universe": "heaven_king",
+    "title": "Realidad virtual del Cielo",
+    "description": "Un estudio crea una experiencia VR 'Paraíso' muy realista, de pago y adictiva.",
+    "choices": {
+      "A": "Permitir a algunos usuarios sentir en ella una verdadera sed de profundidad",
+      "B": "Dejar que esta VR reemplace toda búsqueda espiritual real",
+      "C": "Dejar que grupos afirmen que no participar te expone a una sanción celestial"
+    },
+    "body": "Un estudio crea una experiencia VR 'Paraíso' muy realista, de pago y adictiva."
+  },
+  "heaven_290": {
+    "id": "heaven_290",
+    "universe": "heaven_king",
+    "title": "Canto único",
+    "description": "En una pequeña capilla, un canto muy simple toca profundamente a quienes lo oyen.",
+    "choices": {
+      "A": "Dejar que este canto se convierta en una fuente de oración silenciosa",
+      "B": "Dejar que la capilla siga siendo discreta y poco frecuentada",
+      "C": "Dejar que algunos proclamen que no venir a cantar allí merece sanción"
+    },
+    "body": "En una pequeña capilla, un canto muy simple toca profundamente a quienes lo oyen."
+  },
+  "heaven_291": {
+    "id": "heaven_291",
+    "universe": "heaven_king",
+    "title": "Correo venido de abajo",
+    "description": "Una campaña de spam afirma provenir de los infiernos y amenaza a quienes no reenvíen el mensaje.",
+    "choices": {
+      "A": "Inspirar la burla y la prudencia en la mayoría de los destinatarios",
+      "B": "Dejar que el rumor digital se extienda",
+      "C": "Dejar que personas angustiadas vean en ello una verdadera sanción"
+    },
+    "body": "Una campaña de spam afirma provenir de los infiernos y amenaza a quienes no reenvíen el mensaje."
+  },
+  "heaven_292": {
+    "id": "heaven_292",
+    "universe": "heaven_king",
+    "title": "Culto de los mártires forzados",
+    "description": "Un grupo empuja a jóvenes a sacrificarse para 'garantizar' su plaza en el Paraíso.",
+    "choices": {
+      "A": "Despertar en algunos un sobresalto de miedo sano ante esta manipulación",
+      "B": "Dejar que esta ideología se propague",
+      "C": "Dejar que los líderes prometan el Infierno a quienes se nieguen a morir"
+    },
+    "body": "Un grupo empuja a jóvenes a sacrificarse para 'garantizar' su plaza en el Paraíso."
+  },
+  "heaven_293": {
+    "id": "heaven_293",
+    "universe": "heaven_king",
+    "title": "Paraíso para los animales",
+    "description": "Una niña pregunta si sus animales irán también al Paraíso.",
+    "choices": {
+      "A": "Dejar nacer en ella una visión del Paraíso como lugar de dulzura para toda creación",
+      "B": "Dejar la pregunta sin respuesta clara",
+      "C": "Dejar que un adulto le diga que sus animales están perdidos y que debe aceptar esta sanción"
+    },
+    "body": "Una niña pregunta si sus animales irán también al Paraíso."
+  },
+  "heaven_294": {
+    "id": "heaven_294",
+    "universe": "heaven_king",
+    "title": "Memoria de los linchamientos espirituales",
+    "description": "Una comunidad recuerda épocas donde los 'impuros' eran humillados en nombre del Cielo.",
+    "choices": {
+      "A": "Inspirar un trabajo de memoria y de petición de perdón",
+      "B": "Dejar que estas historias sigan siendo murmullos amargos",
+      "C": "Dejar que algunos nostálgicos sueñen con restaurar este sistema de sanciones"
+    },
+    "body": "Una comunidad recuerda épocas donde los 'impuros' eran humillados en nombre del Cielo."
+  },
+  "heaven_295": {
+    "id": "heaven_295",
+    "universe": "heaven_king",
+    "title": "Paraíso corporativo",
+    "description": "Una gran empresa habla de 'paraíso fiscal' y de 'colaboradores condenados' en broma.",
+    "choices": {
+      "A": "Hacer nacer una reflexión más honesta sobre la justicia social",
+      "B": "Dejar que este lenguaje cínico se banalice",
+      "C": "Dejar que algunos responsables crean que pueden tratar a los empleados como almas sancionadas"
+    },
+    "body": "Una gran empresa habla de 'paraíso fiscal' y de 'colaboradores condenados' en broma."
+  },
+  "heaven_296": {
+    "id": "heaven_296",
+    "universe": "heaven_king",
+    "title": "Pueblo que se cree maldito",
+    "description": "Un pueblo acumula las desgracias y se convence de que lo has maldecido.",
+    "choices": {
+      "A": "Enviar personas del exterior para apoyar y contradecir este relato",
+      "B": "Dejar que el pueblo se repliegue en su sentimiento de sanción",
+      "C": "Dejar que predicadores confirmen que son castigados por viejos pecados"
+    },
+    "body": "Un pueblo acumula las desgracias y se convence de que lo has maldecido."
+  },
+  "heaven_297": {
+    "id": "heaven_297",
+    "universe": "heaven_king",
+    "title": "Fe en las ruinas",
+    "description": "Tras una guerra civil, ruinas albergan aún pequeñas comunidades de oración.",
+    "choices": {
+      "A": "Hacer de estas pequeñas comunidades verdaderos núcleos de reconstrucción",
+      "B": "Dejar que estas oraciones sigan siendo aisladas",
+      "C": "Dejar que facciones reivindiquen el monopolio del Paraíso y amenacen a los otros con sanciones"
+    },
+    "body": "Tras una guerra civil, ruinas albergan aún pequeñas comunidades de oración."
+  },
+  "heaven_298": {
+    "id": "heaven_298",
+    "universe": "heaven_king",
+    "title": "Confesión pública forzada",
+    "description": "Un movimiento exige que las faltas sean confesadas públicamente en las redes sociales.",
+    "choices": {
+      "A": "Inspirar críticas sobre la violencia de estas humillaciones",
+      "B": "Dejar que la práctica se ponga de moda",
+      "C": "Dejar que los organizadores blandan el Infierno para quienes se nieguen a confesar"
+    },
+    "body": "Un movimiento exige que las faltas sean confesadas públicamente en las redes sociales."
+  },
+  "heaven_299": {
+    "id": "heaven_299",
+    "universe": "heaven_king",
+    "title": "Postal del Paraíso",
+    "description": "Una región turística se vende como 'pequeño paraíso en la Tierra', olvidando a sus habitantes precarios.",
+    "choices": {
+      "A": "Despertar algunas conciencias locales ante estas injusticias",
+      "B": "Dejar prosperar este eslogan de marketing",
+      "C": "Dejar que habitantes crean que están sancionados a trabajar allí sin poder disfrutarlo"
+    },
+    "body": "Una región turística se vende como 'pequeño paraíso en la Tierra', olvidando a sus habitantes precarios."
+  },
+  "heaven_300": {
+    "id": "heaven_300",
+    "universe": "heaven_king",
+    "title": "Última mirada al cielo",
+    "description": "Una persona moribunda mira al cielo por la ventana y se pregunta adónde irá.",
+    "choices": {
+      "A": "Ofrecerle una última paz interior dulce y confiada",
+      "B": "Dejar flotar esta duda sin respuesta clara",
+      "C": "Dejar que un familiar le hable de sanción y miedo en lugar de alivio"
+    },
+    "body": "Una persona moribunda mira al cielo por la ventana y se pregunta adónde irá."
+  },
+  "heaven_301": {
+    "id": "heaven_301",
+    "universe": "heaven_king",
+    "title": "Plaza de las linternas",
+    "description": "Una ciudad prepara una fiesta donde cada uno depositará una linterna para sus deseos.",
+    "choices": {
+      "A": "Susurrar la idea de acompañar cada linterna con un pensamiento sincero",
+      "B": "Dejar que la fiesta siga siendo sobre todo estética",
+      "C": "Animar a las autoridades religiosas a encuadrar la fiesta con ritos oficiales"
+    },
+    "body": "Una ciudad prepara una fiesta donde cada uno depositará una linterna para sus deseos."
+  },
+  "heaven_302": {
+    "id": "heaven_302",
+    "universe": "heaven_king",
+    "title": "Coro del domingo",
+    "description": "Un pequeño coro duda si continuar porque poca gente viene a escuchar.",
+    "choices": {
+      "A": "Ayudarles a sentir que cantar es ya una forma de oración",
+      "B": "Dejar que el coro se detenga suavemente",
+      "C": "Animar a la parroquia a organizar grandes conciertos para atraer gente"
+    },
+    "body": "Un pequeño coro duda si continuar porque poca gente viene a escuchar."
+  },
+  "heaven_303": {
+    "id": "heaven_303",
+    "universe": "heaven_king",
+    "title": "Pausa en la oficina",
+    "description": "En una empresa, algunos colegas sugieren un tiempo de silencio diario.",
+    "choices": {
+      "A": "Dejar que este tiempo de silencio se convierta en un momento libre de oración para algunos",
+      "B": "Dejar que cada uno gestione sus pausas como quiera",
+      "C": "Animar a la dirección a formalizar este momento con un ritual fijo"
+    },
+    "body": "En una empresa, algunos colegas sugieren un tiempo de silencio diario."
+  },
+  "heaven_304": {
+    "id": "heaven_304",
+    "universe": "heaven_king",
+    "title": "Cuaderno de gratitud",
+    "description": "Una familia desea mantener un cuaderno de gratitud común en la mesa del salón.",
+    "choices": {
+      "A": "Ayudarles a anotar espontáneamente sus agradecimientos diarios",
+      "B": "Dejar que la idea caiga en el olvido tras unos días",
+      "C": "Animar a un mayor a convertirlo en una regla estricta para todos"
+    },
+    "body": "Una familia desea mantener un cuaderno de gratitud común en la mesa del salón."
+  },
+  "heaven_305": {
+    "id": "heaven_305",
+    "universe": "heaven_king",
+    "title": "Montaña silenciosa",
+    "description": "Excursionistas suben cada año a una montaña y observan allí el amanecer.",
+    "choices": {
+      "A": "Hacer de este momento un espacio de contemplación interior para algunos",
+      "B": "Dejar que la ascensión siga siendo sobre todo deportiva",
+      "C": "Animar la creación de un pequeño santuario organizado en la cima"
+    },
+    "body": "Excursionistas suben cada año a una montaña y observan allí el amanecer."
+  },
+  "heaven_306": {
+    "id": "heaven_306",
+    "universe": "heaven_king",
+    "title": "Taller de escritura",
+    "description": "Un grupo se reúne para escribir cartas que nunca enviarán.",
+    "choices": {
+      "A": "Orientar a algunos hacia cartas silenciosamente dirigidas al cielo",
+      "B": "Dejar que el taller siga siendo un simple ejercicio literario",
+      "C": "Animar a la animadora a introducir textos religiosos canónicos en él"
+    },
+    "body": "Un grupo se reúne para escribir cartas que nunca enviarán."
+  },
+  "heaven_307": {
+    "id": "heaven_307",
+    "universe": "heaven_king",
+    "title": "Huerto compartido",
+    "description": "Un terreno baldío es transformado en huerto colectivo.",
+    "choices": {
+      "A": "Hacer nacer un hábito de agradecer por cada cosecha",
+      "B": "Dejar que el huerto siga siendo un proyecto ecológico neutral",
+      "C": "Animar la instalación de un pequeño oratorio central gestionado por una asociación"
+    },
+    "body": "Un terreno baldío es transformado en huerto colectivo."
+  },
+  "heaven_308": {
+    "id": "heaven_308",
+    "universe": "heaven_king",
+    "title": "Noche de las estrellas",
+    "description": "Una ciudad organiza una noche de observación del cielo con telescopios.",
+    "choices": {
+      "A": "Dejar que algunos se sientan conectados al misterio en silencio",
+      "B": "Dejar que el evento siga siendo puramente científico",
+      "C": "Animar a una comunidad local a distribuir folletos espirituales"
+    },
+    "body": "Una ciudad organiza una noche de observación del cielo con telescopios."
+  },
+  "heaven_309": {
+    "id": "heaven_309",
+    "universe": "heaven_king",
+    "title": "Pequeña estatua",
+    "description": "Una vieja estatua en una esquina se convierte en punto de encuentro para los habitantes.",
+    "choices": {
+      "A": "Dejar que algunos depositen flores como gesto de oración muda",
+      "B": "Dejar que la estatua siga siendo un simple hito urbano",
+      "C": "Animar a un comité a organizar ceremonias oficiales alrededor"
+    },
+    "body": "Una vieja estatua en una esquina se convierte en punto de encuentro para los habitantes."
+  },
+  "heaven_310": {
+    "id": "heaven_310",
+    "universe": "heaven_king",
+    "title": "Café de las preguntas",
+    "description": "Un café propone una velada mensual 'preguntas abiertas sobre el sentido de la vida'.",
+    "choices": {
+      "A": "Inspirar intercambios honestos donde cada uno pueda hablar libremente",
+      "B": "Dejar que la velada siga siendo un debate ligero",
+      "C": "Animar a un grupo estructurado a instalar allí un discurso bien enmarcado"
+    },
+    "body": "Un café propone una velada mensual 'preguntas abiertas sobre el sentido de la vida'."
+  },
+  "heaven_311": {
+    "id": "heaven_311",
+    "universe": "heaven_king",
+    "title": "Videojuego contemplativo",
+    "description": "Un estudio desarrolla un juego sin combate, centrado en la luz, la música y la exploración.",
+    "choices": {
+      "A": "Susurrar algunos símbolos que inviten a la gratitud",
+      "B": "Dejar que el juego siga siendo puramente artístico",
+      "C": "Animar a los desarrolladores a integrar un sistema de 'templos' y rituales codificados"
+    },
+    "body": "Un estudio desarrolla un juego sin combate, centrado en la luz, la música y la exploración."
+  },
+  "heaven_312": {
+    "id": "heaven_312",
+    "universe": "heaven_king",
+    "title": "Vecino que escucha",
+    "description": "Un vecino se pone a escuchar discretamente a la gente en apuros en el rellano.",
+    "choices": {
+      "A": "Ayudarle a percibir su escucha como un servicio discreto al cielo",
+      "B": "Dejar que este gesto siga siendo simplemente humano",
+      "C": "Animarle a unirse oficialmente a una estructura de ayuda religiosa"
+    },
+    "body": "Un vecino se pone a escuchar discretamente a la gente en apuros en el rellano."
+  },
+  "heaven_313": {
+    "id": "heaven_313",
+    "universe": "heaven_king",
+    "title": "Fiesta de los nombres",
+    "description": "Una escuela decide celebrar cada nombre y su historia.",
+    "choices": {
+      "A": "Hacer emerger pequeñas historias de vocación y sentido",
+      "B": "Dejar que esto siga siendo una simple actividad lúdica",
+      "C": "Animar a algunos a vincular los nombres a tradiciones rituales oficiales"
+    },
+    "body": "Una escuela decide celebrar cada nombre y su historia."
+  },
+  "heaven_314": {
+    "id": "heaven_314",
+    "universe": "heaven_king",
+    "title": "Biblioteca de silencio",
+    "description": "Una biblioteca abre una sala dedicada al silencio completo.",
+    "choices": {
+      "A": "Permitir que este lugar se convierta en un refugio de oración interior para algunos",
+      "B": "Dejar que la sala siga siendo un espacio neutral para leer y concentrarse",
+      "C": "Animar la exhibición de textos espirituales oficiales en las paredes"
+    },
+    "body": "Una biblioteca abre una sala dedicada al silencio completo."
+  },
+  "heaven_315": {
+    "id": "heaven_315",
+    "universe": "heaven_king",
+    "title": "Ritual de las buenas noches",
+    "description": "Unos padres inventan una pequeña frase tranquilizadora para decir cada noche a sus hijos.",
+    "choices": {
+      "A": "Dejar que esta frase se convierta en una forma de oración tierna",
+      "B": "Dejar que este ritual se desvanezca con el tiempo",
+      "C": "Animar a los padres a añadir fórmulas procedentes de un libro de oraciones oficial"
+    },
+    "body": "Unos padres inventan una pequeña frase tranquilizadora para decir cada noche a sus hijos."
+  },
+  "heaven_316": {
+    "id": "heaven_316",
+    "universe": "heaven_king",
+    "title": "Arte callejero luminoso",
+    "description": "Un artista pinta frescos de luz y alas en los muros de la ciudad.",
+    "choices": {
+      "A": "Hacer que algunos transeúntes se sientan simplemente elevados al verlos",
+      "B": "Dejar que estos frescos se conviertan solo en una moda visual",
+      "C": "Animar al ayuntamiento a añadir paneles explicativos religiosos"
+    },
+    "body": "Un artista pinta frescos de luz y alas en los muros de la ciudad."
+  },
+  "heaven_317": {
+    "id": "heaven_317",
+    "universe": "heaven_king",
+    "title": "Círculo de palabra",
+    "description": "En un centro social, se establece un círculo de palabra cada semana.",
+    "choices": {
+      "A": "Hacer nacer una dimensión de respeto profundo por el misterio de cada uno",
+      "B": "Dejar que el círculo siga siendo una simple herramienta de mediación",
+      "C": "Animar al facilitador a añadir lecturas espirituales comunes"
+    },
+    "body": "En un centro social, se establece un círculo de palabra cada semana."
+  },
+  "heaven_318": {
+    "id": "heaven_318",
+    "universe": "heaven_king",
+    "title": "Música en el metro",
+    "description": "Un músico toca cada mañana melodías relajantes en el metro.",
+    "choices": {
+      "A": "Inspirarle piezas que abran a la paz interior",
+      "B": "Dejar que la música sea un simple fondo sonoro",
+      "C": "Animar a una asociación a convertirlo en un programa cultural etiquetado"
+    },
+    "body": "Un músico toca cada mañana melodías relajantes en el metro."
+  },
+  "heaven_319": {
+    "id": "heaven_319",
+    "universe": "heaven_king",
+    "title": "Cuaderno de buenos gestos",
+    "description": "Una clase escolar lleva un cuaderno de los gestos de amabilidad observados cada día.",
+    "choices": {
+      "A": "Animar a los niños a ver estos gestos como 'pequeñas luces'",
+      "B": "Dejar que el cuaderno siga siendo una actividad pedagógica",
+      "C": "Incitar a los profesores a vincular estos gestos a reglas morales más codificadas"
+    },
+    "body": "Una clase escolar lleva un cuaderno de los gestos de amabilidad observados cada día."
+  },
+  "heaven_320": {
+    "id": "heaven_320",
+    "universe": "heaven_king",
+    "title": "Retiro en línea",
+    "description": "Un sitio propone un retiro espiritual para seguir desde casa.",
+    "choices": {
+      "A": "Inspirar algunos momentos de verdadero encuentro interior",
+      "B": "Dejar que esto siga siendo una serie de vídeos inspiradores",
+      "C": "Animar a una estructura religiosa a encuadrar fuertemente el contenido"
+    },
+    "body": "Un sitio propone un retiro espiritual para seguir desde casa."
+  },
+
+  "heaven_321": {
+    "id": "heaven_321",
+    "universe": "heaven_king",
+    "title": "Taller de iconos modernos",
+    "description": "Artistas reinventan símbolos espirituales con un estilo muy contemporáneo.",
+    "choices": {
+      "A": "Dejar que estos iconos toquen a quienes los necesitan sin demasiada explicación",
+      "B": "Dejar que el taller siga siendo un experimento artístico",
+      "C": "Animar a una institución a validar ciertos modelos como 'oficiales'"
+    },
+    "body": "Artistas reinventan símbolos espirituales con un estilo muy contemporáneo."
+  },
+  "heaven_322": {
+    "id": "heaven_322",
+    "universe": "heaven_king",
+    "title": "Tiempo de pantalla limitado",
+    "description": "Una familia decide apagar las pantallas una hora al día.",
+    "choices": {
+      "A": "Dejar que algunos aprovechen este tiempo para reflexionar o rezar en silencio",
+      "B": "Dejar que esta hora se convierta en un simple momento de juegos de mesa",
+      "C": "Animar al progenitor a instaurar un pequeño momento de lectura espiritual común"
+    },
+    "body": "Una familia decide apagar las pantallas una hora al día."
+  },
+  "heaven_323": {
+    "id": "heaven_323",
+    "universe": "heaven_king",
+    "title": "Festival del libro",
+    "description": "Un festival del libro honra relatos de búsqueda de sentido.",
+    "choices": {
+      "A": "Susurrar a algunos autores personajes tocados por la gracia",
+      "B": "Dejar que el festival siga siendo un evento cultural neutral",
+      "C": "Animar a una editorial religiosa a hacerse muy visible"
+    },
+    "body": "Un festival del libro honra relatos de búsqueda de sentido."
+  },
+  "heaven_324": {
+    "id": "heaven_324",
+    "universe": "heaven_king",
+    "title": "Grupo de senderismo",
+    "description": "Un grupo de caminantes comienza cada salida con un momento de silencio ante el paisaje.",
+    "choices": {
+      "A": "Dejar que este silencio sea vivido como un espacio libre de oración",
+      "B": "Dejar que el grupo evolucione hacia una simple asociación deportiva",
+      "C": "Animar a algunos a proponer textos meditativos fijos"
+    },
+    "body": "Un grupo de caminantes comienza cada salida con un momento de silencio ante el paisaje."
+  },
+  "heaven_325": {
+    "id": "heaven_325",
+    "universe": "heaven_king",
+    "title": "Aplicación de meditación",
+    "description": "Una aplicación de meditación guiada se vuelve muy popular.",
+    "choices": {
+      "A": "Dejar que algunas sesiones inviten discretamente a la gratitud y a la apertura",
+      "B": "Dejar que la app siga centrada en la gestión del estrés",
+      "C": "Animar a los creadores a añadir una sección de meditaciones inspiradas en grandes tradiciones"
+    },
+    "body": "Una aplicación de meditación guiada se vuelve muy popular."
+  },
+  "heaven_326": {
+    "id": "heaven_326",
+    "universe": "heaven_king",
+    "title": "Ceremonia del amanecer",
+    "description": "Un pueblo quiere instaurar una pequeña ceremonia al amanecer al borde del agua.",
+    "choices": {
+      "A": "Inspirar un ritual simple, abierto a todos y libre de interpretación",
+      "B": "Dejar que el proyecto se quede en estado de idea",
+      "C": "Animar al ayuntamiento a estructurar fuertemente la ceremonia con un programa fijo"
+    },
+    "body": "Un pueblo quiere instaurar una pequeña ceremonia al amanecer al borde del agua."
+  },
+  "heaven_327": {
+    "id": "heaven_327",
+    "universe": "heaven_king",
+    "title": "Escuela de música sacra",
+    "description": "Una escuela de música se especializa en cantos tradicionales.",
+    "choices": {
+      "A": "Hacer nacer una verdadera profundidad interior en algunos alumnos",
+      "B": "Dejar que la música siga siendo una disciplina técnica",
+      "C": "Animar a la escuela a convertirse en una institución reconocida y muy codificada"
+    },
+    "body": "Una escuela de música se especializa en cantos tradicionales."
+  },
+  "heaven_328": {
+    "id": "heaven_328",
+    "universe": "heaven_king",
+    "title": "Comida solidaria",
+    "description": "Una asociación organiza una comida semanal para cualquier persona aislada.",
+    "choices": {
+      "A": "Dejar que estas comidas sean vividas como una experiencia de fraternidad casi sagrada",
+      "B": "Dejar que la asociación haga su trabajo sin referencia explícita a lo espiritual",
+      "C": "Animar la adición de un breve tiempo de palabra espiritual al principio"
+    },
+    "body": "Una asociación organiza una comida semanal para cualquier persona aislada."
+  },
+  "heaven_329": {
+    "id": "heaven_329",
+    "universe": "heaven_king",
+    "title": "Periódico local",
+    "description": "Un periódico local abre una sección 'historias de bondad ordinaria'.",
+    "choices": {
+      "A": "Inspirar testimonios que dejen adivinar una luz mayor",
+      "B": "Dejar que la sección siga siendo un simple rayo de sol mediático",
+      "C": "Animar al periódico a invitar a responsables religiosos a comentar estas historias"
+    },
+    "body": "Un periódico local abre una sección 'historias de bondad ordinaria'."
+  },
+  "heaven_330": {
+    "id": "heaven_330",
+    "universe": "heaven_king",
+    "title": "Balcón florido",
+    "description": "Una persona llena de flores su balcón de manera espectacular, atrayendo las miradas de los transeúntes.",
+    "choices": {
+      "A": "Susurrarle que ofrecer belleza es ya una forma de servicio silencioso",
+      "B": "Dejar que esto siga siendo un simple hobby",
+      "C": "Animar a un grupo de vecinos a convertirlo en un concurso estructurado"
+    },
+    "body": "Una persona llena de flores su balcón de manera espectacular, atrayendo las miradas de los transeúntes."
+  },
+  "heaven_331": {
+    "id": "heaven_331",
+    "universe": "heaven_king",
+    "title": "Tren de la mañana",
+    "description": "En un tren de cercanías, varias personas leen textos de sabiduría sin hablarse.",
+    "choices": {
+      "A": "Dejar que una atmósfera de calma se extienda en el vagón",
+      "B": "Dejar que cada uno se quede en su burbuja",
+      "C": "Animar a un viajero a lanzar un pequeño grupo de lectura organizado"
+    },
+    "body": "En un tren de cercanías, varias personas leen textos de sabiduría sin hablarse."
+  },
+  "heaven_332": {
+    "id": "heaven_332",
+    "universe": "heaven_king",
+    "title": "Estudio de danza",
+    "description": "Un estudio de danza propone una clase de 'danza e interioridad'.",
+    "choices": {
+      "A": "Permitir a algunos sentir una verdadera conexión con algo más grande",
+      "B": "Dejar que la clase siga siendo una disciplina corporal",
+      "C": "Animar al profesor a integrar símbolos más explícitamente religiosos"
+    },
+    "body": "Un estudio de danza propone una clase de 'danza e interioridad'."
+  },
+  "heaven_333": {
+    "id": "heaven_333",
+    "universe": "heaven_king",
+    "title": "Juego de mesa cooperativo",
+    "description": "Un juego de mesa sin competitividad se pone de moda en una ciudad.",
+    "choices": {
+      "A": "Dejar que este juego se convierta en una parábola de cooperación para algunos",
+      "B": "Dejar que el juego sea un simple entretenimiento de convivencia",
+      "C": "Animar a un grupo a utilizarlo en un marco de formación espiritual"
+    },
+    "body": "Un juego de mesa sin competitividad se pone de moda en una ciudad."
+  },
+  "heaven_334": {
+    "id": "heaven_334",
+    "universe": "heaven_king",
+    "title": "Banco bajo el árbol",
+    "description": "Un viejo banco bajo un gran árbol se convierte en el lugar favorito de un jubilado para reflexionar.",
+    "choices": {
+      "A": "Ayudarle a transformar sus pensamientos en diálogo interior tranquilizador",
+      "B": "Dejar que sus reflexiones sigan siendo vagas",
+      "C": "Animar al ayuntamiento a instalar una placa con una cita espiritual"
+    },
+    "body": "Un viejo banco bajo un gran árbol se convierte en el lugar favorito de un jubilado para reflexionar."
+  },
+  "heaven_335": {
+    "id": "heaven_335",
+    "universe": "heaven_king",
+    "title": "Vacaciones sencillas",
+    "description": "Una familia elige unas vacaciones muy sencillas, lejos de pantallas y lujos.",
+    "choices": {
+      "A": "Dejar que estas vacaciones se conviertan en un tiempo de recentrado y gratitud",
+      "B": "Dejar que esta sencillez sea sobre todo una elección económica",
+      "C": "Animar a un familiar a proponerles un programa de actividades espirituales estructuradas"
+    },
+    "body": "Una familia elige unas vacaciones muy sencillas, lejos de pantallas y lujos."
+  },
+  "heaven_336": {
+    "id": "heaven_336",
+    "universe": "heaven_king",
+    "title": "Taller de mandalas",
+    "description": "Un grupo se reúne para colorear mandalas en un ambiente tranquilo.",
+    "choices": {
+      "A": "Dejar que algunos entren en una verdadera meditación suave",
+      "B": "Dejar que el taller siga siendo una actividad de relajación",
+      "C": "Animar a la animadora a convertirlo en un camino espiritual más marcado"
+    },
+    "body": "Un grupo se reúne para colorear mandalas en un ambiente tranquilo."
+  },
+  "heaven_337": {
+    "id": "heaven_337",
+    "universe": "heaven_king",
+    "title": "Llamada del mar",
+    "description": "Habitantes de una ciudad costera aman caminar al borde del agua al crepúsculo.",
+    "choices": {
+      "A": "Hacer sentir a algunos una presencia benevolente en este paisaje",
+      "B": "Dejar que estos paseos sigan siendo un simple ocio",
+      "C": "Animar la construcción de un pequeño lugar de recogimiento oficial frente al mar"
+    },
+    "body": "Habitantes de una ciudad costera aman caminar al borde del agua al crepúsculo."
+  },
+  "heaven_338": {
+    "id": "heaven_338",
+    "universe": "heaven_king",
+    "title": "Libro de imágenes",
+    "description": "Un ilustrador crea un libro sin texto, solo escenas de luz y sombra.",
+    "choices": {
+      "A": "Dejar que algunos lectores proyecten espontáneamente su búsqueda interior en él",
+      "B": "Dejar que el libro sea percibido como un objeto de arte",
+      "C": "Animar a un editor a añadir un prefacio espiritual muy explícito"
+    },
+    "body": "Un ilustrador crea un libro sin texto, solo escenas de luz y sombra."
+  },
+  "heaven_339": {
+    "id": "heaven_339",
+    "universe": "heaven_king",
+    "title": "Tienda de té",
+    "description": "Una pequeña tienda de té ofrece un rincón tranquilo donde nadie habla alto.",
+    "choices": {
+      "A": "Dejar que algunos clientes vivan momentos de verdadera pausa interior allí",
+      "B": "Dejar que este espacio sea simplemente apreciado por su calma",
+      "C": "Animar al propietario a colgar frases de sabiduría en las paredes"
+    },
+    "body": "Una pequeña tienda de té ofrece un rincón tranquilo donde nadie habla alto."
+  },
+  "heaven_340": {
+    "id": "heaven_340",
+    "universe": "heaven_king",
+    "title": "Taller de escucha de sueños",
+    "description": "Un pequeño grupo se reúne para compartir sus sueños nocturnos.",
+    "choices": {
+      "A": "Dejar emerger la idea de que ciertos sueños animan a más bondad",
+      "B": "Dejar que el taller siga siendo una simple exploración psicológica",
+      "C": "Animar a la facilitadora a vincular ciertos símbolos a tradiciones antiguas"
+    },
+    "body": "Un pequeño grupo se reúne para compartir sus sueños nocturnos."
+  },
+  "heaven_341": {
+    "id": "heaven_341",
+    "universe": "heaven_king",
+    "title": "Ruta de peregrinos",
+    "description": "Una antigua ruta de peregrinaje es redescubierta por caminantes modernos.",
+    "choices": {
+      "A": "Dejar que algunos caminantes la vivan como un camino de transformación interior",
+      "B": "Dejar que esta ruta se convierta en un simple sendero turístico",
+      "C": "Animar a una organización a volver a poner etapas rituales estructuradas"
+    },
+    "body": "Una antigua ruta de peregrinaje es redescubierta por caminantes modernos."
+  },
+  "heaven_342": {
+    "id": "heaven_342",
+    "universe": "heaven_king",
+    "title": "Taller de cocina",
+    "description": "Un taller de cocina invita a la gente a preparar una comida juntos para compartirla.",
+    "choices": {
+      "A": "Dejar que algunos sientan la mesa como un lugar de comunión profunda",
+      "B": "Dejar que el taller siga siendo un momento de convivencia sin más",
+      "C": "Animar a los organizadores a añadir una pequeña bendición común antes de comer"
+    },
+    "body": "Un taller de cocina invita a la gente a preparar una comida juntos para compartirla."
+  },
+  "heaven_343": {
+    "id": "heaven_343",
+    "universe": "heaven_king",
+    "title": "Proyecto de bosque urbano",
+    "description": "Una ciudad quiere plantar un minibosque en el corazón de los edificios.",
+    "choices": {
+      "A": "Dejar que este proyecto despierte la conciencia de una creación a respetar",
+      "B": "Dejar que el bosque sea visto como una simple mejora ecológica",
+      "C": "Animar a una comunidad local a celebrar regularmente tiempos de recogimiento allí"
+    },
+    "body": "Una ciudad quiere plantar un minibosque en el corazón de los edificios."
+  },
+  "heaven_344": {
+    "id": "heaven_344",
+    "universe": "heaven_king",
+    "title": "Club de lectura de sabiduría",
+    "description": "Un club de lectura se dedica a textos filosóficos y espirituales.",
+    "choices": {
+      "A": "Dejar que el grupo se convierta en un espacio de intercambio libre y profundo",
+      "B": "Dejar que esto siga siendo un ejercicio intelectual",
+      "C": "Animar a algunos a estructurar el club en torno a una sola tradición"
+    },
+    "body": "Un club de lectura se dedica a textos filosóficos y espirituales."
+  },
+  "heaven_345": {
+    "id": "heaven_345",
+    "universe": "heaven_king",
+    "title": "Círculos de perdón",
+    "description": "Se crean círculos para aprender a pedir perdón y a perdonar.",
+    "choices": {
+      "A": "Dejar nacer verdaderas reconciliaciones interiores",
+      "B": "Dejar que estos círculos sigan siendo experimentales y limitados",
+      "C": "Animar a una institución a recuperar la idea y establecer un protocolo fijo"
+    },
+    "body": "Se crean círculos para aprender a pedir perdón y a perdonar."
+  },
+  "heaven_346": {
+    "id": "heaven_346",
+    "universe": "heaven_king",
+    "title": "Postales anónimas",
+    "description": "Un buzón recibe postales anónimas de agradecimiento por la vida.",
+    "choices": {
+      "A": "Dejar que estos mensajes alimenten una cultura de gratitud discreta",
+      "B": "Dejar que esta iniciativa siga siendo marginal",
+      "C": "Animar a una asociación a transformar la idea en campaña oficial"
+    },
+    "body": "Un buzón recibe postales anónimas de agradecimiento por la vida."
+  },
+  "heaven_347": {
+    "id": "heaven_347",
+    "universe": "heaven_king",
+    "title": "Festival de la luz",
+    "description": "Un festival de invierno ilumina una ciudad entera con miles de pequeñas luces.",
+    "choices": {
+      "A": "Dejar que algunos habitantes vean en ello una señal de esperanza",
+      "B": "Dejar que el festival siga siendo un evento turístico",
+      "C": "Animar la adición de un gran discurso institucional en el corazón del festival"
+    },
+    "body": "Un festival de invierno ilumina una ciudad entera con miles de pequeñas luces."
+  },
+  "heaven_348": {
+    "id": "heaven_348",
+    "universe": "heaven_king",
+    "title": "Pequeña ermita",
+    "description": "Una pequeña cabaña aislada se convierte en el refugio de una persona en busca de silencio.",
+    "choices": {
+      "A": "Ayudarle a encontrar en este silencio un espacio de presencia interior",
+      "B": "Dejar que este retiro siga siendo una simple pausa lejos del ruido",
+      "C": "Animar a un monasterio a recuperar la cabaña como lugar de acogida oficial"
+    },
+    "body": "Una pequeña cabaña aislada se convierte en el refugio de una persona en busca de silencio."
+  },
+  "heaven_349": {
+    "id": "heaven_349",
+    "universe": "heaven_king",
+    "title": "Podcast de dulzura",
+    "description": "Un pequeño podcast difunde cada día un pensamiento benevolente y tranquilizador.",
+    "choices": {
+      "A": "Dejar que algunos oyentes perciban en él una voz profundamente tranquilizadora",
+      "B": "Dejar que el podcast siga siendo confidencial",
+      "C": "Animar a una organización a convertirlo en un programa estructurado en su red"
+    },
+    "body": "Un pequeño podcast difunde cada día un pensamiento benevolente y tranquilizador."
+  },
+  "heaven_350": {
+    "id": "heaven_350",
+    "universe": "heaven_king",
+    "title": "Mirada hacia el cielo",
+    "description": "Un niño mira a menudo al cielo sin saber realmente por qué.",
+    "choices": {
+      "A": "Dejar que este gesto se convierta en un reflejo de confianza muda",
+      "B": "Dejar que el niño crezca y olvide poco a poco este gesto",
+      "C": "Animar a un adulto a enseñarle algunas palabras simples para decir cuando mira al cielo"
+    },
+    "body": "Un niño mira a menudo al cielo sin saber realmente por qué."
+  },
+  "heaven_351": {
+    "id": "heaven_351",
+    "universe": "heaven_king",
+    "title": "Barrio residuo cero",
+    "description": "Un barrio lanza un desafío 'residuo cero' durante un mes.",
+    "choices": {
+      "A": "Inspirar a los habitantes a verlo como un gesto de respeto por la creación",
+      "B": "Dejar que el desafío siga siendo un simple juego ecológico",
+      "C": "Animar a una asociación a estructurar el desafío con reglas y compromisos públicos"
+    },
+    "body": "Un barrio lanza un desafío 'residuo cero' durante un mes."
+  },
+  "heaven_352": {
+    "id": "heaven_352",
+    "universe": "heaven_king",
+    "title": "Estación de bicicletas",
+    "description": "Una ciudad instala un inmenso aparcamiento de bicicletas cerca de la estación.",
+    "choices": {
+      "A": "Susurrar a algunos el placer de un estilo de vida más simple y suave",
+      "B": "Dejar que la iniciativa sea vista como una medida práctica",
+      "C": "Animar a un colectivo a transformar el lugar en punto de encuentro militante"
+    },
+    "body": "Una ciudad instala un inmenso aparcamiento de bicicletas cerca de la estación."
+  },
+  "heaven_353": {
+    "id": "heaven_353",
+    "universe": "heaven_king",
+    "title": "Comedor vegetariano",
+    "description": "Una escuela prueba un día de comida vegetariana por semana.",
+    "choices": {
+      "A": "Fomentar el descubrimiento de una alimentación más respetuosa con la vida",
+      "B": "Dejar que la experiencia sea vivida como un simple cambio de menú",
+      "C": "Incitar a la administración a imponer fuertemente esta práctica a largo plazo"
+    },
+    "body": "Una escuela prueba un día de comida vegetariana por semana."
+  },
+  "heaven_354": {
+    "id": "heaven_354",
+    "universe": "heaven_king",
+    "title": "App anti-desperdicio",
+    "description": "Una aplicación permite a los comercios donar sus invendidos por la noche.",
+    "choices": {
+      "A": "Dejar nacer un sentimiento de solidaridad alegre en torno a estas donaciones",
+      "B": "Dejar que la app sea vista como un buen plan económico",
+      "C": "Animar a una gran estructura a retomar la idea y normativizarla fuertemente"
+    },
+    "body": "Una aplicación permite a los comercios donar sus invendidos por la noche."
+  },
+  "heaven_355": {
+    "id": "heaven_355",
+    "universe": "heaven_king",
+    "title": "Bosque limpiado",
+    "description": "Habitantes organizan una jornada de recogida de residuos en el bosque.",
+    "choices": {
+      "A": "Transformar este gesto en verdadero acto de gratitud hacia la naturaleza",
+      "B": "Dejar que el evento sea una simple operación de limpieza",
+      "C": "Animar al ayuntamiento a convertirlo en un evento oficial con programa preciso"
+    },
+    "body": "Habitantes organizan una jornada de recogida de residuos en el bosque."
+  },
+  "heaven_356": {
+    "id": "heaven_356",
+    "universe": "heaven_king",
+    "title": "Balcón huerto",
+    "description": "Cada vez más gente cultiva verduras en su balcón.",
+    "choices": {
+      "A": "Susurrar la idea de agradecer interiormente por cada cosecha",
+      "B": "Dejar que esta moda de huerto siga siendo un hobby",
+      "C": "Animar a influencers a convertirlo casi en una nueva norma social"
+    },
+    "body": "Cada vez más gente cultiva verduras en su balcón."
+  },
+  "heaven_357": {
+    "id": "heaven_357",
+    "universe": "heaven_king",
+    "title": "Playa sin colillas",
+    "description": "Una campaña local pretende hacer la playa totalmente limpia.",
+    "choices": {
+      "A": "Dejar que algunos paseantes sientan la belleza como un regalo a preservar",
+      "B": "Dejar que la campaña se limite a carteles de prevención",
+      "C": "Animar patrullas de voluntarios muy organizadas"
+    },
+    "body": "Una campaña local pretende hacer la playa totalmente limpia."
+  },
+  "heaven_358": {
+    "id": "heaven_358",
+    "universe": "heaven_king",
+    "title": "Torre de refrigeración",
+    "description": "Una fábrica instala una tecnología más limpia para reducir sus emisiones.",
+    "choices": {
+      "A": "Inspirar a algunos ingenieros a sentirse guardianes de un bien común",
+      "B": "Dejar que la decisión siga guiada por la reglamentación",
+      "C": "Animar al grupo industrial a comunicar fuertemente sobre su 'virtud'"
+    },
+    "body": "Una fábrica instala una tecnología más limpia para reducir sus emisiones."
+  },
+  "heaven_359": {
+    "id": "heaven_359",
+    "universe": "heaven_king",
+    "title": "Videojuego coop ecología",
+    "description": "Un estudio prepara un juego cooperativo sobre la protección de un planeta imaginario.",
+    "choices": {
+      "A": "Susurrar una historia que dé ganas de cuidar la Tierra real",
+      "B": "Dejar que el juego siga siendo un entretenimiento divertido",
+      "C": "Animar al estudio a vincular el juego a una campaña muy enmarcada"
+    },
+    "body": "Un estudio prepara un juego cooperativo sobre la protección de un planeta imaginario."
+  },
+  "heaven_360": {
+    "id": "heaven_360",
+    "universe": "heaven_king",
+    "title": "Mercado de productores",
+    "description": "Un mercado de productores locales reemplaza poco a poco a un supermercado.",
+    "choices": {
+      "A": "Dejar nacer vínculos de confianza y reconocimiento mutuo",
+      "B": "Dejar que el cambio sea visto sobre todo como una elección económica",
+      "C": "Animar al ayuntamiento a transformar este mercado en evento oficial muy codificado"
+    },
+    "body": "Un mercado de productores locales reemplaza poco a poco a un supermercado."
+  },
+  "heaven_361": {
+    "id": "heaven_361",
+    "universe": "heaven_king",
+    "title": "Día sin coche",
+    "description": "Una metrópoli prueba un gran día sin coche en su centro.",
+    "choices": {
+      "A": "Hacer sentir un aire más respirable como una bendición",
+      "B": "Dejar que el evento sea percibido como una restricción pasajera",
+      "C": "Animar a los organizadores a convertirlo en una cita anual muy estructurada"
+    },
+    "body": "Una metrópoli prueba un gran día sin coche en su centro."
+  },
+  "heaven_362": {
+    "id": "heaven_362",
+    "universe": "heaven_king",
+    "title": "Redes sociales apaciguadas",
+    "description": "Un creador lanza una página dedicada únicamente a mensajes alentadores.",
+    "choices": {
+      "A": "Susurrar palabras que realmente calmen y levanten a quienes leen",
+      "B": "Dejar que la página encuentre su público o no",
+      "C": "Animar a una organización a apropiarse del concepto y acotarlo"
+    },
+    "body": "Un creador lanza una página dedicada únicamente a mensajes alentadores."
+  },
+  "heaven_363": {
+    "id": "heaven_363",
+    "universe": "heaven_king",
+    "title": "Pausa digital",
+    "description": "Un desafío en línea invita a pasar un día entero sin teléfono.",
+    "choices": {
+      "A": "Ayudar a algunos participantes a descubrir un verdadero silencio interior",
+      "B": "Dejar que el desafío sea visto como una moda pasajera",
+      "C": "Animar a grupos a transformar el desafío en programa rígido semanal"
+    },
+    "body": "Un desafío en línea invita a pasar un día entero sin teléfono."
+  },
+  "heaven_364": {
+    "id": "heaven_364",
+    "universe": "heaven_king",
+    "title": "Zona de calma en la ciudad",
+    "description": "Una ciudad crea una 'zona de silencio' donde la gente puede descansar del ruido.",
+    "choices": {
+      "A": "Dejar que algunos vivan allí una forma de oración o meditación libre",
+      "B": "Dejar que la zona sea utilizada sobre todo para echar una pequeña siesta",
+      "C": "Animar a una institución a proponer actividades espirituales programadas allí"
+    },
+    "body": "Una ciudad crea una 'zona de silencio' donde la gente puede descansar del ruido."
+  },
+  "heaven_365": {
+    "id": "heaven_365",
+    "universe": "heaven_king",
+    "title": "Taller anti-soledad",
+    "description": "Un centro social propone encuentros para romper el aislamiento.",
+    "choices": {
+      "A": "Ayudar a crear verdaderos vínculos cálidos y respetuosos",
+      "B": "Dejar que los encuentros sigan siendo un simple momento de convivencia",
+      "C": "Animar la adición de rituales de apertura y cierre muy estructurados"
+    },
+    "body": "Un centro social propone encuentros para romper el aislamiento."
+  },
+  "heaven_366": {
+    "id": "heaven_366",
+    "universe": "heaven_king",
+    "title": "Caja de libros",
+    "description": "Una pequeña caja de libros se instala en una esquina de la calle.",
+    "choices": {
+      "A": "Susurrar que algunos depositen libros que abran al sentido y a la bondad",
+      "B": "Dejar que la caja sirva para cualquier tipo de lectura",
+      "C": "Animar a un grupo a colocar sobre todo textos espirituales en ella"
+    },
+    "body": "Una pequeña caja de libros se instala en una esquina de la calle."
+  },
+  "heaven_367": {
+    "id": "heaven_367",
+    "universe": "heaven_king",
+    "title": "Café asociativo",
+    "description": "Un café asociativo abre con precios libres y sonrisas garantizadas.",
+    "choices": {
+      "A": "Dejar que una atmósfera de verdadera fraternidad se instale",
+      "B": "Dejar que el café siga siendo un lugar agradable sin más",
+      "C": "Animar la creación de un marco de valores colgado en la pared"
+    },
+    "body": "Un café asociativo abre con precios libres y sonrisas garantizadas."
+  },
+  "heaven_368": {
+    "id": "heaven_368",
+    "universe": "heaven_king",
+    "title": "Grupo de apoyo parental",
+    "description": "Padres se reúnen para hablar de las dificultades educativas.",
+    "choices": {
+      "A": "Ayudar a hacer nacer la compasión hacia uno mismo y sus hijos",
+      "B": "Dejar que el grupo siga siendo un espacio de intercambio de trucos",
+      "C": "Animar a un moderador a introducir reglas y un marco más estricto"
+    },
+    "body": "Padres se reúnen para hablar de las dificultades educativas."
+  },
+  "heaven_369": {
+    "id": "heaven_369",
+    "universe": "heaven_king",
+    "title": "Taller de benevolencia en el trabajo",
+    "description": "Una empresa quiere mejorar el clima entre compañeros.",
+    "choices": {
+      "A": "Susurrar gestos simples de reconocimiento a diario",
+      "B": "Dejar que el enfoque sea un simple seminario de RRHH",
+      "C": "Animar a la dirección a imponer un código de conducta muy detallado"
+    },
+    "body": "Una empresa quiere mejorar el clima entre compañeros."
+  },
+  "heaven_370": {
+    "id": "heaven_370",
+    "universe": "heaven_king",
+    "title": "Pausa naturaleza en open space",
+    "description": "Una oficina instala plantas y un rincón de relajación con vistas al cielo.",
+    "choices": {
+      "A": "Ayudar a algunos a utilizar este rincón para centrarse interiormente",
+      "B": "Dejar que el espacio sea un simple rincón de café mejorado",
+      "C": "Animar a la empresa a organizar tiempos de meditación enmarcados allí"
+    },
+    "body": "Una oficina instala plantas y un rincón de relajación con vistas al cielo."
+  },
+  "heaven_371": {
+    "id": "heaven_371",
+    "universe": "heaven_king",
+    "title": "Festival del reciclaje creativo",
+    "description": "Artistas transforman residuos en obras sorprendentes.",
+    "choices": {
+      "A": "Dejar que algunos visitantes sientan una forma de renacimiento en estos objetos",
+      "B": "Dejar que el festival sea un evento cultural divertido",
+      "C": "Animar a estructuras a convertirlo en un concurso con jurado oficial"
+    },
+    "body": "Artistas transforman residuos en obras sorprendentes."
+  },
+  "heaven_372": {
+    "id": "heaven_372",
+    "universe": "heaven_king",
+    "title": "Taller de comunicación no violenta",
+    "description": "Un formador propone sesiones para aprender a dialogar sin agresividad.",
+    "choices": {
+      "A": "Dejar que algunos descubran una verdadera manera de hablar con el corazón",
+      "B": "Dejar que la formación siga siendo una herramienta de desarrollo personal",
+      "C": "Animar a una institución a hacer esta formación casi obligatoria"
+    },
+    "body": "Un formador propone sesiones para aprender a dialogar sin agresividad."
+  },
+  "heaven_373": {
+    "id": "heaven_373",
+    "universe": "heaven_king",
+    "title": "Noche de juegos intergeneracional",
+    "description": "Una casa de barrio organiza noches de juegos entre jóvenes y mayores.",
+    "choices": {
+      "A": "Ayudar a hacer nacer una verdadera ternura entre generaciones",
+      "B": "Dejar que el evento siga siendo un momento lúdico",
+      "C": "Animar la puesta en marcha de un programa fijo y muy enmarcado"
+    },
+    "body": "Una casa de barrio organiza noches de juegos entre jóvenes y mayores."
+  },
+  "heaven_374": {
+    "id": "heaven_374",
+    "universe": "heaven_king",
+    "title": "Taller de reparación",
+    "description": "Un taller repara pequeños objetos gratuitamente para evitar tirar.",
+    "choices": {
+      "A": "Dejar emerger la idea de que reparar es también cuidar de la gente",
+      "B": "Dejar que el taller siga siendo una actividad práctica",
+      "C": "Animar a una gran asociación a estructurar una red de estos talleres"
+    },
+    "body": "Un taller repara pequeños objetos gratuitamente para evitar tirar."
+  },
+  "heaven_375": {
+    "id": "heaven_375",
+    "universe": "heaven_king",
+    "title": "Tren nocturno",
+    "description": "Los trenes nocturnos vuelven a ponerse de moda para viajar de otra manera.",
+    "choices": {
+      "A": "Susurrar a algunos viajeros una forma de contemplación mirando por la ventana",
+      "B": "Dejar que el tren nocturno sea una opción de transporte entre otras",
+      "C": "Animar a una compañía a proponer animaciones muy enmarcadas a bordo"
+    },
+    "body": "Los trenes nocturnos vuelven a ponerse de moda para viajar de otra manera."
+  },
+  "heaven_376": {
+    "id": "heaven_376",
+    "universe": "heaven_king",
+    "title": "Perro visitante",
+    "description": "Un perro y su dueño visitan a ancianos en una residencia.",
+    "choices": {
+      "A": "Dejar que estas visitas se conviertan en verdaderos momentos de dulzura casi sagrada",
+      "B": "Dejar que las visitas sean vistas como una animación divertida",
+      "C": "Animar a la dirección a integrar estas visitas en un programa terapéutico rígido"
+    },
+    "body": "Un perro y su dueño visitan a ancianos en una residencia."
+  },
+  "heaven_377": {
+    "id": "heaven_377",
+    "universe": "heaven_king",
+    "title": "Taller de dibujo de sueños",
+    "description": "Niños dibujan el mundo ideal en el que querrían vivir.",
+    "choices": {
+      "A": "Susurrar imágenes de paz, naturaleza y compartir",
+      "B": "Dejar que el taller sea una actividad escolar",
+      "C": "Animar a la escuela a transformar estos dibujos en carta oficial"
+    },
+    "body": "Niños dibujan el mundo ideal en el que querrían vivir."
+  },
+  "heaven_378": {
+    "id": "heaven_378",
+    "universe": "heaven_king",
+    "title": "Grupo de marcha lenta",
+    "description": "Un grupo se forma para practicar la marcha lenta en la ciudad.",
+    "choices": {
+      "A": "Ayudar a algunos a vivir la ciudad como un lugar de presencia y escucha",
+      "B": "Dejar que la actividad sea vista como una moda de bienestar",
+      "C": "Animar a un coach a estructurar la marcha como un programa completo"
+    },
+    "body": "Un grupo se forma para practicar la marcha lenta en la ciudad."
+  },
+  "heaven_379": {
+    "id": "heaven_379",
+    "universe": "heaven_king",
+    "title": "Círculo de música improvisada",
+    "description": "Un grupo se reúne para improvisar sonidos juntos sin juicio.",
+    "choices": {
+      "A": "Dejar que algunos sientan una verdadera comunión a través de los sonidos",
+      "B": "Dejar que el círculo siga siendo una experiencia musical divertida",
+      "C": "Animar al facilitador a imponer una estructura y reglas estrictas"
+    },
+    "body": "Un grupo se reúne para improvisar sonidos juntos sin juicio."
+  },
+  "heaven_380": {
+    "id": "heaven_380",
+    "universe": "heaven_king",
+    "title": "Rincón de lectura en el metro",
+    "description": "Un vagón de metro es redecorado con extractos de textos tranquilizadores.",
+    "choices": {
+      "A": "Hacer que algunos pasajeros se sientan realmente calmados al leerlos",
+      "B": "Dejar que estos textos pasen desapercibidos para la mayoría",
+      "C": "Animar a la gerencia a reservar este vagón para un uso muy reglamentado"
+    },
+    "body": "Un vagón de metro es redecorado con extractos de textos tranquilizadores."
+  },
+  "heaven_381": {
+    "id": "heaven_381",
+    "universe": "heaven_king",
+    "title": "Ciudadanos jardineros",
+    "description": "Habitantes se ocupan espontáneamente de parterres públicos dejados en el abandono.",
+    "choices": {
+      "A": "Dejar nacer un orgullo tranquilo de cuidar el lugar común",
+      "B": "Dejar que estos gestos sigan siendo marginales",
+      "C": "Animar al ayuntamiento a formalizar estas iniciativas con un reglamento estricto"
+    },
+    "body": "Habitantes se ocupan espontáneamente de parterres públicos dejados en el abandono."
+  },
+  "heaven_382": {
+    "id": "heaven_382",
+    "universe": "heaven_king",
+    "title": "Taller de gratitud en línea",
+    "description": "Una animadora dirige cada semana un directo para compartir gratitudes.",
+    "choices": {
+      "A": "Susurrar frases que realmente abran el corazón",
+      "B": "Dejar que el directo sea una cita simpática pero superficial",
+      "C": "Animar a la animadora a definir un recorrido preciso de varias semanas"
+    },
+    "body": "Una animadora dirige cada semana un directo para compartir gratitudes."
+  },
+  "heaven_383": {
+    "id": "heaven_383",
+    "universe": "heaven_king",
+    "title": "Biblioteca de objetos",
+    "description": "Una 'biblioteca de objetos' abre para prestar herramientas, juegos, instrumentos.",
+    "choices": {
+      "A": "Dejar emerger una cultura del compartir y de la sobriedad alegre",
+      "B": "Dejar que el lugar funcione como un servicio práctico",
+      "C": "Animar la puesta en marcha de un reglamento muy detallado y estricto"
+    },
+    "body": "Una 'biblioteca de objetos' abre para prestar herramientas, juegos, instrumentos."
+  },
+  "heaven_384": {
+    "id": "heaven_384",
+    "universe": "heaven_king",
+    "title": "Taller de siesta guiada",
+    "description": "Un centro de bienestar propone una siesta guiada para descansar en mitad del día.",
+    "choices": {
+      "A": "Dejar que algunos prueben un verdadero soltar cercano a la oración",
+      "B": "Dejar que la siesta guiada siga siendo un simple servicio de bienestar",
+      "C": "Animar al centro a declinar un programa completo con etapas obligatorias"
+    },
+    "body": "Un centro de bienestar propone una siesta guiada para descansar en mitad del día."
+  },
+  "heaven_385": {
+    "id": "heaven_385",
+    "universe": "heaven_king",
+    "title": "Festival de películas inspiradoras",
+    "description": "Un festival de cine pone en cartelera películas que dan ganas de ser mejor.",
+    "choices": {
+      "A": "Susurrar algunas historias que toquen profundamente a los espectadores",
+      "B": "Dejar que el festival sea percibido como un evento cultural clásico",
+      "C": "Animar la adición de debates muy enmarcados tras cada proyección"
+    },
+    "body": "Un festival de cine pone en cartelera películas que dan ganas de ser mejor."
+  },
+  "heaven_386": {
+    "id": "heaven_386",
+    "universe": "heaven_king",
+    "title": "Rincón de escucha en el instituto",
+    "description": "Un instituto pone en marcha un rincón donde un adulto está ahí para escuchar a los alumnos.",
+    "choices": {
+      "A": "Dejar que algunos encuentren allí un verdadero espacio de palabra y consuelo",
+      "B": "Dejar que el rincón sea utilizado sobre todo para hablar de clases y orientación",
+      "C": "Animar a la administración a rodear este dispositivo de procedimientos muy estrictos"
+    },
+    "body": "Un instituto pone en marcha un rincón donde un adulto está ahí para escuchar a los alumnos."
+  },
+  "heaven_387": {
+    "id": "heaven_387",
+    "universe": "heaven_king",
+    "title": "Postales para los cuidadores",
+    "description": "Habitantes escriben tarjetas de agradecimiento a los cuidadores del hospital.",
+    "choices": {
+      "A": "Dejar que estas palabras toquen verdaderamente el corazón de quienes las reciben",
+      "B": "Dejar que la iniciativa siga siendo puntual",
+      "C": "Animar a la dirección a institucionalizar estos agradecimientos en un protocolo"
+    },
+    "body": "Habitantes escriben tarjetas de agradecimiento a los cuidadores del hospital."
+  },
+  "heaven_388": {
+    "id": "heaven_388",
+    "universe": "heaven_king",
+    "title": "Grupo de marcha trash day",
+    "description": "Habitantes combinan jogging y recogida de residuos ('plogging').",
+    "choices": {
+      "A": "Dejar que este grupo sienta la ciudad como un lugar que cuidan",
+      "B": "Dejar que la actividad siga siendo un deporte original",
+      "C": "Animar a una gran marca a patrocinar y estructurar fuertemente el movimiento"
+    },
+    "body": "Habitantes combinan jogging y recogida de residuos ('plogging')."
+  },
+  "heaven_389": {
+    "id": "heaven_389",
+    "universe": "heaven_king",
+    "title": "Lectura en el parque",
+    "description": "Una persona lee en voz alta historias tranquilizadoras en un parque.",
+    "choices": {
+      "A": "Dejar que algunos oyentes sientan una verdadera dulzura",
+      "B": "Dejar que esta iniciativa siga siendo espontánea e informal",
+      "C": "Animar a la ciudad a convertirlo en un evento oficial con programa"
+    },
+    "body": "Una persona lee en voz alta historias tranquilizadoras en un parque."
+  },
+  "heaven_390": {
+    "id": "heaven_390",
+    "universe": "heaven_king",
+    "title": "Taller de dibujo de gratitud",
+    "description": "Niños dibujan aquello por lo que están agradecidos.",
+    "choices": {
+      "A": "Hacer emerger una verdadera conciencia de la suerte que tienen",
+      "B": "Dejar que el dibujo siga siendo un ejercicio de artes plásticas",
+      "C": "Animar al profesor a exponer estos dibujos como reglamento moral de la clase"
+    },
+    "body": "Niños dibujan aquello por lo que están agradecidos."
+  },
+  "heaven_391": {
+    "id": "heaven_391",
+    "universe": "heaven_king",
+    "title": "Café sin wifi",
+    "description": "Un café elige apagar el wifi para fomentar las conversaciones.",
+    "choices": {
+      "A": "Dejar nacer intercambios más profundos entre desconocidos",
+      "B": "Dejar que el lugar sea simplemente apreciado por su ambiente retro",
+      "C": "Animar al propietario a poner muchas reglas sobre la forma de discutir"
+    },
+    "body": "Un café elige apagar el wifi para fomentar las conversaciones."
+  },
+  "heaven_392": {
+    "id": "heaven_392",
+    "universe": "heaven_king",
+    "title": "Jardín sonoro",
+    "description": "Un parque instala instrumentos de música en libre acceso para los transeúntes.",
+    "choices": {
+      "A": "Dejar que algunos improvisen momentos de verdadera alegría compartida",
+      "B": "Dejar que el jardín sonoro sea un simple equipamiento público",
+      "C": "Animar horarios y reglas de uso muy estrictos"
+    },
+    "body": "Un parque instala instrumentos de música en libre acceso para los transeúntes."
+  },
+  "heaven_393": {
+    "id": "heaven_393",
+    "universe": "heaven_king",
+    "title": "Podcast 'una buena noticia al día'",
+    "description": "Un podcast comparte cada día una pequeña buena noticia verdadera.",
+    "choices": {
+      "A": "Susurrar historias que devuelvan realmente la confianza en la humanidad",
+      "B": "Dejar que el podcast siga siendo una burbuja optimista",
+      "C": "Animar a una red a convertirlo en una herramienta de comunicación muy enmarcada"
+    },
+    "body": "Un podcast comparte cada día una pequeña buena noticia verdadera."
+  },
+  "heaven_394": {
+    "id": "heaven_394",
+    "universe": "heaven_king",
+    "title": "Taller de pintura sobre guijarros",
+    "description": "Niños pintan guijarros con palabras dulces y los dejan en la ciudad.",
+    "choices": {
+      "A": "Dejar que estos guijarros actúen como pequeñas sorpresas de consuelo",
+      "B": "Dejar que el taller sea una actividad creativa",
+      "C": "Animar a la escuela a planificar una gran operación anual muy organizada"
+    },
+    "body": "Niños pintan guijarros con palabras dulces y los dejan en la ciudad."
+  },
+  "heaven_395": {
+    "id": "heaven_395",
+    "universe": "heaven_king",
+    "title": "Círculo 'una pequeña victoria'",
+    "description": "Un grupo se reúne para compartir cada semana una pequeña victoria personal.",
+    "choices": {
+      "A": "Ayudar a que estos intercambios alimenten la confianza interior de cada uno",
+      "B": "Dejar que el círculo siga siendo un momento de intercambio de convivencia",
+      "C": "Animar a un moderador a imponer un método rígido de toma de palabra"
+    },
+    "body": "Un grupo se reúne para compartir cada semana una pequeña victoria personal."
+  },
+  "heaven_396": {
+    "id": "heaven_396",
+    "universe": "heaven_king",
+    "title": "Taller de compost",
+    "description": "Un edificio instala un compost compartido para sus habitantes.",
+    "choices": {
+      "A": "Dejar que algunos vean en ello el ciclo de la vida como algo precioso",
+      "B": "Dejar que el compost sea gestionado como una simple basura especial",
+      "C": "Animar a la comunidad de vecinos a poner un reglamento detallado y controles"
+    },
+    "body": "Un edificio instala un compost compartido para sus habitantes."
+  },
+  "heaven_397": {
+    "id": "heaven_397",
+    "universe": "heaven_king",
+    "title": "Día 'gracias vida'",
+    "description": "Una escuela organiza un día para agradecer por las pequeñas cosas de la vida cotidiana.",
+    "choices": {
+      "A": "Hacer nacer en algunos alumnos un verdadero hábito de gratitud",
+      "B": "Dejar que el día sea vivido como un proyecto pedagógico",
+      "C": "Animar al establecimiento a convertirlo en un evento muy guionizado cada año"
+    },
+    "body": "Una escuela organiza un día para agradecer por las pequeñas cosas de la vida cotidiana."
+  },
+  "heaven_398": {
+    "id": "heaven_398",
+    "universe": "heaven_king",
+    "title": "Grupo 'camina y habla'",
+    "description": "Personas se encuentran para caminar y discutir sin juicio.",
+    "choices": {
+      "A": "Dejar que ciertas conversaciones se conviertan en verdaderos momentos de verdad",
+      "B": "Dejar que el grupo sea visto como una actividad de ocio",
+      "C": "Animar la organización de un marco y reglas formales"
+    },
+    "body": "Personas se encuentran para caminar y discutir sin juicio."
+  },
+  "heaven_399": {
+    "id": "heaven_399",
+    "universe": "heaven_king",
+    "title": "Taller 'cartas al futuro yo'",
+    "description": "Participantes escriben una carta a la persona que serán dentro de diez años.",
+    "choices": {
+      "A": "Susurrar palabras de benevolencia y esperanza en estas cartas",
+      "B": "Dejar que el taller siga siendo un ejercicio introspectivo neutral",
+      "C": "Animar al facilitador a construir un método muy estructurado en torno a estas cartas"
+    },
+    "body": "Participantes escriben una carta a la persona que serán dentro de diez años."
+  },
+  "heaven_400": {
+    "id": "heaven_400",
+    "universe": "heaven_king",
+    "title": "Barrio de las luciérnagas",
+    "description": "Un barrio decide apagar la iluminación superflua para ver mejor las estrellas.",
+    "choices": {
+      "A": "Dejar que algunos habitantes sientan una forma de comunión bajo el cielo oscuro",
+      "B": "Dejar que la medida sea vista como un gesto ecológico práctico",
+      "C": "Animar la creación de un gran evento oficial en torno a esta noche"
+    },
+    "body": "Un barrio decide apagar la iluminación superflua para ver mejor las estrellas."
   }
 }
