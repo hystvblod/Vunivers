@@ -1,0 +1,31 @@
+{
+  "id": "hell_king",
+  "gauges": [
+    {
+      "id": "souls",
+      "label_fr": "Âmes damnées",
+      "label_en": "Damned souls"
+    },
+    {
+      "id": "legions",
+      "label_fr": "Légions",
+      "label_en": "Legions"
+    },
+    {
+      "id": "order",
+      "label_fr": "Ordre infernal",
+      "label_en": "Infernal order"
+    },
+    {
+      "id": "surface",
+      "label_fr": "Influence sur Terre",
+      "label_en": "Influence on Earth"
+    }
+  ],
+  "initialGauges": {
+    "souls": 50,
+    "legions": 50,
+    "order": 50,
+    "surface": 50
+  }
+}

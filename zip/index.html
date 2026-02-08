@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>VRealms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ✅ Fond global un peu plus clair (override variables du style.css) */
+    :root{
+      --vr-bg: radial-gradient(circle at top, #f6e7cf 0, #23355a 62%, #0b1020 100%);
+      --vr-overlay: none; /* ✅ VOILE GLOBAL OFF */
+    }
+
+    /* ✅ On NE VEUT PLUS du header (même si style.css le gère) */
+    .vr-header{ display:none !important; }
+
+    /* ✅ Top actions directement dans la page */
+    .vr-top-actions{
+      display:flex !important;
+      justify-content:center !important;
+      gap:10px !important;
+      padding: 10px 12px 8px !important;
+      position: relative !important;
+      z-index: 10 !important;
+    }
+
+    /* boutons icônes */
+    .vr-icon-button{
+      width:44px !important;
+      height:44px !important;
+      border:0 !important;
+      background:transparent !important;
+      box-shadow:none !important;
+      padding:0 !important;
+      display:inline-flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      cursor:pointer !important;
+      text-decoration:none !important;
+    }
+
+    .vr-icon-button img{
+      width:30px !important;
+      height:30px !important;
+      object-fit:contain !important;
+      display:block !important;
+      pointer-events:none !important;
+      user-select:none !important;
+      filter:none !important;
+    }
+
+    /* ✅ Plus de "réserve" sous header */
+    .vr-main{ padding-top: 12px !important; }
+
+    /* ✅ Logo juste en dessous des icônes */
+    .vr-intro{
+      margin-top: 6px !important;
+      margin-bottom: 12px !important;
+      display:flex !important;
+      justify-content:center !important;
+    }
+    .vr-main-logo{ margin-top: 0 !important; }
+
+    /* ===== Cartouches ===== */
+    .vr-universe-grid{
+      display:grid !important;
+      grid-template-columns:1fr !important;
+      gap:14px !important;
+    }
+
+    .vr-card{
+      position:relative !important;
+      overflow:hidden !important;
+      width:100% !important;
+      min-height:64px !important;
+      height:64px !important;
+      border-radius:18px !important;
+      cursor:pointer !important;
+      border:0 !important;
+      outline:0 !important;
+      background:transparent !important;
+      box-shadow:none !important;
+    }
+
+    /* Fond webp (✅ bien visible) */
+    .vr-card-bg{
+      position:absolute !important;
+      inset:0 !important;
+      background-size:cover !important;
+      background-position:center !important;
+      opacity:1 !important;
+      z-index:0 !important;
+    }
+
+    /* ✅ Flou + voile ULTRA léger (≈ 5%) pour lisibilité */
+    .vr-card::after{
+      content:"" !important;
+      position:absolute !important;
+      inset:0 !important;
+      background: rgba(0,0,0,.01) !important; /* ~5% */
+      backdrop-filter: blur(2px) !important;
+      -webkit-backdrop-filter: blur(2px) !important;
+      pointer-events:none !important;
+      z-index:1 !important;
+    }
+
+    /* (optionnel mais propre) un tout petit liseré doux */
+    .vr-card::before{
+      content:"" !important;
+      position:absolute !important;
+      inset:0 !important;
+      border-radius:18px !important;
+      border: 1px solid rgba(255,255,255,.08) !important;
+      pointer-events:none !important;
+      z-index:2 !important;
+    }
+
+    .vr-card-content{
+      position:relative !important;
+      z-index:3 !important;
+      height:100% !important;
+      display:flex !important;
+      align-items:center !important;
+    }
+
+    .vr-card-header-line{
+      width:100% !important;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:space-between !important;
+      gap:12px !important;
+      padding:0 14px !important;
+    }
+
+    .vr-card-title{
+      margin:0 !important;
+      color:#fff !important;
+      font-weight:900 !important;
+      font-size:16px !important;
+      letter-spacing:.2px !important;
+      line-height:1.1 !important;
+      text-shadow:0 2px 10px rgba(0,0,0,.65) !important;
+    }
+
+    /* ? */
+    .vr-info-btn{
+      width:40px !important;
+      height:40px !important;
+      border-radius:999px !important;
+      background:rgba(255,255,255,.10) !important;
+      border:1px solid rgba(255,255,255,.18) !important;
+      color:rgba(255,255,255,.95) !important;
+      font-weight:900 !important;
+      font-size:16px !important;
+      display:inline-flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      box-shadow:none !important;
+      user-select:none !important;
+      flex:0 0 auto !important;
+      cursor:pointer !important;
+      position:relative !important;
+      z-index:4 !important;
+    }
+    .vr-info-btn:hover{ background:rgba(255,255,255,.14) !important; }
+    .vr-info-btn:active{ transform:scale(.96) !important; }
+
+    /* Tooltip plus large */
+    .vr-tooltip{
+      width: min(360px, calc(100vw - 32px)) !important;
+      max-width: 360px !important;
+      padding: 12px 14px !important;
+      font-size: 13px !important;
+      line-height: 1.35 !important;
+      border-radius: 14px !important;
+    }
+
+    @media (max-width: 520px){
+      .vr-main{ padding-top: 10px !important; }
+      .vr-card{ min-height:60px !important; height:60px !important; }
+      .vr-card-title{ font-size:14px !important; }
+      .vr-info-btn{ width:38px !important; height:38px !important; font-size:15px !important; }
+      .vr-icon-button{ width:40px !important; height:40px !important; }
+      .vr-icon-button img{ width:28px !important; height:28px !important; }
+    }
+
+    /* ===== Popup pseudo (léger, sans dépendre du style.css) ===== */
+    #vr-username-popup{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:9999;
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    #vr-username-popup .vr-username-inner{
+      width: min(520px, calc(100vw - 36px));
+      border-radius: 18px;
+      padding: 16px 16px 14px 16px;
+      background: rgba(12, 16, 32, 0.92);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      color: #fff;
+    }
+    #vr-username-title{ margin:0 0 8px 0; font-weight:900; font-size:18px; }
+    #vr-username-desc{ margin:0 0 12px 0; opacity:.9; font-size:13px; line-height:1.35; }
+
+    #vr-username-row{ display:flex; gap:10px; align-items:center; }
+    #vr-username-input{
+      flex:1;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.22);
+      color:#fff;
+      outline:none;
+      font-size:14px;
+    }
+    #vr-username-save{
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.12);
+      color:#fff;
+      font-weight:900;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    #vr-username-save:disabled{ opacity:.7; cursor:default; }
+    #vr-username-error{
+      margin-top:10px;
+      font-size:13px;
+      opacity:.95;
+      display:none;
+      color: rgba(255, 220, 220, 0.95);
+    }
+  </style>
+</head>
+
+<body class="vr-body">
+
+  <main class="vr-main">
+
+    <!-- ✅ Icônes DIRECTEMENT dans la page (plus de header) -->
+    <div class="vr-top-actions">
+      <a class="vr-icon-button" href="profile.html" aria-label="Profil">
+        <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
+      </a>
+      <a class="vr-icon-button" href="settings.html" aria-label="Paramètres">
+        <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
+      </a>
+      <a class="vr-icon-button" href="shop.html" aria-label="Boutique">
+        <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
+      </a>
+    </div>
+
+    <section class="vr-intro">
+      <img
+        src="assets/img/ui/logo_vrealms.webp"
+        alt="VRealms"
+        class="vr-main-logo"
+        draggable="false"
+      />
+    </section>
+
+    <section class="vr-universes">
+      <h2 class="vr-section-title" data-i18n="ui.choose_universe"></h2>
+
+      <div class="vr-universe-grid">
+        <button class="vr-card" data-universe="hell_king" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/hell_king.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.hell_king.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.hell_king.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="vr-card" data-universe="heaven_king" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/heaven_king.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.heaven_king.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.heaven_king.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="vr-card" data-universe="western_president" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/western_president.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.western_president.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.western_president.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="vr-card" data-universe="mega_corp_ceo" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/mega_corp_ceo.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.mega_corp_ceo.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="vr-card" data-universe="new_world_explorer" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/new_world_explorer.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.new_world_explorer.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="vr-card" data-universe="vampire_lord" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/vampire_lord.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.vampire_lord.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+             <button class="vr-card" data-universe="medieval_king" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/medieval_king.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.medieval_king.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.medieval_king.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- ✅ Carte “locked” supprimée (elle était vide car i18n universe.locked.title renvoyait vide)
+             Pour en ajouter une nouvelle : copie un <button class="vr-card" data-universe="xxx"> ... </button>
+             + ajoute les clés i18n universe.xxx.title / universe.xxx.desc -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="vr-footer">
+    <span class="vr-footer-text" data-i18n="ui.footer"></span>
+  </footer>
+
+  <div id="vr-tooltip" class="vr-tooltip"></div>
+
+  <!-- ✅ Popup pseudo (AJOUT) -->
+  <div id="vr-username-popup" aria-hidden="true">
+    <div class="vr-username-inner">
+      <h2 id="vr-username-title"></h2>
+      <p id="vr-username-desc"></p>
+
+      <div id="vr-username-row">
+        <input id="vr-username-input" type="text" autocomplete="off" maxlength="20" />
+        <button id="vr-username-save" type="button"></button>
+      </div>
+
+      <div id="vr-username-error"></div>
+    </div>
+  </div>
+
+  <script>
+    function _t(key) {
+      try {
+        if (window.VRI18n && typeof window.VRI18n.t === "function") return window.VRI18n.t(key) || "";
+        if (typeof window.i18nGet === "function") return window.i18nGet(key) || "";
+      } catch (_) {}
+      return "";
+    }
+
+    (function () {
+      const tooltip = document.getElementById("vr-tooltip");
+      if (!tooltip) return;
+
+      function hideTooltip() {
+        tooltip.classList.remove("vr-tooltip-visible");
+        tooltip.style.display = "none";
+      }
+
+      function showTooltip(el) {
+        const key = el.getAttribute("data-i18n-tip");
+        const tr = key ? _t(key) : "";
+        const text = tr || "?";
+
+        const rect = el.getBoundingClientRect();
+
+        tooltip.textContent = text;
+        tooltip.style.display = "block";
+
+        const vw = document.documentElement.clientWidth || window.innerWidth;
+        const vh = document.documentElement.clientHeight || window.innerHeight;
+
+        // mesurer la taille réelle du tooltip
+        const tw = tooltip.offsetWidth || 0;
+        const th = tooltip.offsetHeight || 0;
+
+        const pad = 12;
+
+        // clamp horizontal en tenant compte de la moitié de la largeur
+        const desiredCenter = rect.left + rect.width / 2;
+        const minCenter = pad + tw / 2;
+        const maxCenter = vw - pad - tw / 2;
+        const clampedCenter = Math.max(minCenter, Math.min(maxCenter, desiredCenter));
+
+        // position verticale : dessous, sinon au-dessus si ça déborde
+        let top = rect.bottom + 8;
+        if (top + th > vh - pad) {
+          top = rect.top - 8 - th;
+        }
+        if (top < pad) top = pad;
+
+        tooltip.style.left = clampedCenter + "px";
+        tooltip.style.top = top + "px";
+        tooltip.classList.add("vr-tooltip-visible");
+      }
+
+      document.querySelectorAll(".vr-info-btn").forEach((el) => {
+        el.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          showTooltip(el);
+        });
+
+        el.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            e.stopPropagation();
+            showTooltip(el);
+          }
+        });
+      });
+
+      document.addEventListener("click", hideTooltip);
+      window.addEventListener("scroll", hideTooltip, { passive: true });
+      window.addEventListener("resize", hideTooltip);
+    })();
+
+    (function () {
+      function launchUniverse(universeId) {
+        if (!universeId) return;
+        localStorage.setItem("vrealms_universe", universeId);
+        window.location.href = "game.html";
+      }
+
+      document.querySelectorAll(".vr-card[data-universe]").forEach((card) => {
+        card.addEventListener("click", () => {
+          const id = card.getAttribute("data-universe");
+          launchUniverse(id);
+        });
+      });
+    })();
+  </script>
+
+  <!-- ✅ Supabase (AJOUT) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabaseBootstrap.js"></script>
+
+  <script src="js/userData.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/purchases.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/i18n.js"></script>
+
+  <!-- ✅ Init auth anonyme + popup pseudo (AJOUT) -->
+  <script>
+    (function () {
+      function tt(key, fallback) {
+        try {
+          const v = _t(key);
+          return v || fallback || "";
+        } catch (_) { return fallback || ""; }
+      }
+
+      const popup = document.getElementById("vr-username-popup");
+      const titleEl = document.getElementById("vr-username-title");
+      const descEl = document.getElementById("vr-username-desc");
+      const inputEl = document.getElementById("vr-username-input");
+      const btnEl = document.getElementById("vr-username-save");
+      const errEl = document.getElementById("vr-username-error");
+
+      function showError(msg) {
+        if (!errEl) return;
+        errEl.textContent = msg || "";
+        errEl.style.display = msg ? "block" : "none";
+      }
+
+      function openPopup() {
+        if (!popup) return;
+        titleEl.textContent = tt("auth.username.title", "Choisis ton pseudo");
+        descEl.textContent  = tt("auth.username.desc", "Ce pseudo s'affichera dans ton profil.");
+        inputEl.placeholder = tt("auth.username.placeholder", "Pseudo (3-20, lettres/chiffres/_/-)");
+        btnEl.textContent   = tt("auth.username.save", "Valider");
+        showError("");
+
+        popup.style.display = "flex";
+        popup.setAttribute("aria-hidden", "false");
+        setTimeout(() => { try { inputEl.focus(); } catch (_) {} }, 50);
+      }
+
+      async function submit() {
+        const name = (inputEl.value || "").trim();
+        showError("");
+
+        btnEl.disabled = true;
+
+        try {
+          const res = await window.VUserData?.setUsername?.(name);
+          if (res?.ok) {
+            popup.style.display = "none";
+            popup.setAttribute("aria-hidden", "true");
+            return;
+          }
+
+          if (res?.reason === "taken") {
+            showError(tt("auth.username.error_taken", "Ce pseudo est déjà pris."));
+          } else if (res?.reason === "invalid") {
+            showError(tt("auth.username.error_invalid", "Pseudo invalide (3-20, lettres/chiffres/_/-)."));
+          } else {
+            showError(tt("auth.username.error_generic", "Impossible d'enregistrer le pseudo."));
+          }
+        } catch (_) {
+          showError(tt("auth.username.error_generic", "Impossible d'enregistrer le pseudo."));
+        } finally {
+          btnEl.disabled = false;
+        }
+      }
+
+      if (btnEl) btnEl.addEventListener("click", submit);
+      if (inputEl) {
+        inputEl.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") submit();
+        });
+      }
+
+      (async function boot() {
+        // 1) auth anonyme + profil
+        try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
+
+        // 2) init userData (sync remote -> local en arrière plan)
+        try { window.VUserData?.init?.(); } catch (_) {}
+
+        // 3) si ton i18n a un init explicite, on essaye (sans casser)
+        try {
+          const lang = window.VUserData?.getLang?.() || "fr";
+          if (window.VRI18n && typeof window.VRI18n.initI18n === "function") {
+            await window.VRI18n.initI18n(lang);
+          }
+        } catch (_) {}
+
+        // 4) popup pseudo si vide
+        try {
+          const u = window.VUserData?.load?.() || {};
+          if (!((u.username || "").toString().trim())) openPopup();
+        } catch (_) {
+          openPopup();
+        }
+      })();
+    })();
+  </script>
+
+  <!-- IMPORTANT : PAS DE js/game.js SUR INDEX -->
+</body>
+</html>

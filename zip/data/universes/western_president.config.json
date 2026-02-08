@@ -1,0 +1,31 @@
+{
+  "id": "westerne_president",
+  "gauges": [
+    {
+      "id": "public_opinion",
+      "label_fr": "Opinion publique",
+      "label_en": "Public opinion"
+    },
+    {
+      "id": "economy",
+      "label_fr": "Économie",
+      "label_en": "Economy"
+    },
+    {
+      "id": "defense",
+      "label_fr": "Défense",
+      "label_en": "Defense"
+    },
+    {
+      "id": "diplomacy",
+      "label_fr": "Diplomatie",
+      "label_en": "Diplomacy"
+    }
+  ],
+  "initialGauges": {
+    "public_opinion": 50,
+    "economy": 50,
+    "defense": 50,
+    "diplomacy": 50
+  }
+}

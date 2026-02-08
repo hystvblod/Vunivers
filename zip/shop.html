@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>VRealms - Boutique</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="vr-body">
+
+  <header class="vr-header" aria-label="Top actions">
+    <div class="vr-top-actions">
+      <button class="vr-icon-button" type="button" id="btn-profile" aria-label="Profile">
+        <span class="vr-icon-image vr-icon-profile"></span>
+      </button>
+      <button class="vr-icon-button" type="button" id="btn-settings" aria-label="Settings">
+        <span class="vr-icon-image vr-icon-settings"></span>
+      </button>
+      <button class="vr-icon-button" type="button" id="btn-shop" aria-label="Shop">
+        <span class="vr-icon-image vr-icon-shop"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="vr-overlay"></div>
+
+  <main class="vr-main">
+    <section id="view-shop" class="vr-view vr-view-active">
+      <h2 class="vr-section-title" data-i18n="shop.title"></h2>
+      <div class="vr-profile-grid">
+        <div class="vr-profile-card">
+          <p data-i18n="shop.soon"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

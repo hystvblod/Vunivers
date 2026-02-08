@@ -1,0 +1,31 @@
+{
+  "id": "new_world_explorer",
+  "gauges": [
+    {
+      "id": "conquered_territory",
+      "label_fr": "Territoire conquis",
+      "label_en": "Conquered territory"
+    },
+    {
+      "id": "found_wealth",
+      "label_fr": "Richesses trouvées",
+      "label_en": "Found wealth"
+    },
+    {
+      "id": "converted_population",
+      "label_fr": "Population convertie",
+      "label_en": "Converted population"
+    },
+    {
+      "id": "royal_treasury",
+      "label_fr": "Compte à la couronne",
+      "label_en": "Royal treasury"
+    }
+  ],
+  "initialGauges": {
+    "conquered_territory": 50,
+    "found_wealth": 50,
+    "converted_population": 50,
+    "royal_treasury": 50
+  }
+}

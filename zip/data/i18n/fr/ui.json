@@ -1,0 +1,165 @@
+{
+  "app": {
+    "title": "VRealms"
+  },
+  "common": {
+    "continue": "Continuer",
+    "cancel": "Annuler",
+    "close": "Fermer"
+  },
+  "auth": {
+    "username": {
+      "title": "Choisis ton pseudo",
+      "subtitle": "Il sera visible dans l’app.",
+      "label": "Pseudo",
+      "placeholder": "Ex: Lucifer_7",
+      "cta": "Valider",
+      "skip": "Plus tard",
+      "rules": "3 à 20 caractères • lettres/chiffres/_/-",
+      "errors": {
+        "length": "Le pseudo doit faire entre 3 et 20 caractères.",
+        "chars": "Utilise seulement lettres, chiffres, _ ou -.",
+        "taken": "Ce pseudo est déjà pris, essaie-en un autre.",
+        "generic": "Impossible d’enregistrer le pseudo."
+      }
+    }
+  },
+  "ui": {
+    "language": "Langue",
+    "subtitle": "Choisissez votre destin.",
+    "subtitle_desc": "Incarnez un souverain, un président, un va...flue sur vos jauges, votre monde et les générations suivantes.",
+    "choose_universe": "Sélectionnez un univers",
+    "footer": "VUniverse   Vboldstudio.",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "shop": "Boutique",
+    "gauges": {
+      "hell_king": {
+        "souls": "Âmes",
+        "legions": "Légions",
+        "order": "Ordre",
+        "surface": "Surface"
+      }
+    }
+  },
+  "gauges": {
+    "hell_king": {
+      "souls": "Âmes",
+      "legions": "Légions",
+      "order": "Ordre",
+      "surface": "Surface"
+    }
+  },
+  "token": {
+    "popup": {
+      "title": "Jeton",
+      "ad": {
+        "title": "Regarder une pub",
+        "text": "Gagne 1 jeton"
+      },
+      "gauge50": {
+        "title": "Remettre une jauge à 50%",
+        "text": "Choisis une jauge"
+      },
+      "back3": {
+        "title": "Revenir en arrière (-3)",
+        "text": "Annule tes 3 derniers choix"
+      },
+      "close": {
+        "text": "Fermer ce menu"
+      },
+      "pickGauge": {
+        "title": "Choisir une jauge",
+        "text": "Clique sur une jauge pour la remettre à 50%."
+      }
+    },
+    "toast": {
+      "select_gauge": "Choisis une jauge à remettre à 50%",
+      "reward_ok": "+1 jeton ajouté",
+      "reward_fail": "Pub indisponible",
+      "no_tokens": "Tu n'as pas de jeton",
+      "undo_fail": "Impossible de revenir en arrière",
+      "undo_done": "Retour -3 effectué",
+      "gauge_set_50": "Jauge remise à 50%"
+    }
+  },
+  "coins": {
+    "popup": {
+      "title": "Pièces",
+      "ad": {
+        "title": "Regarder une pub",
+        "text": "Gagne 500 pièces"
+      },
+      "shop": {
+        "title": "Aller à la boutique",
+        "text": "Acheter des pièces"
+      },
+      "close": {
+        "text": "Fermer cette fenêtre"
+      }
+    },
+    "toast": {
+      "reward_ok": "+500 pièces ajoutées",
+      "reward_fail": "Pub indisponible"
+    }
+  },
+  "game": {
+    "title": "Partie en cours",
+    "subtitle": "Faites vos choix.",
+    "restart": "Recommencer",
+    "ending": {
+      "title": "Fin du règne",
+      "body": "Votre règne s'achève ici."
+    }
+  },
+  "profile": {
+    "title": "Profil",
+    "subtitle": "Vos stats et progression.",
+    "vc": "VCoins",
+    "rank": "Rang",
+    "streak": "Série",
+    "inventory": "Inventaire"
+  },
+  "shop": {
+    "title": "Boutique",
+    "subtitle": "Dépenser vos VCoins",
+    "soon": "Bientôt disponible"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "subtitle": "Préférences & langue",
+    "sound": "Son",
+    "music": "Musique",
+    "notifications": "Notifications"
+  },
+  "universe": {
+    "hell_king": {
+      "title": "Roi des Enfers",
+      "desc": "Dirige les légions démoniaques, gère l’afflux d’âmes damnées et maintiens l’ordre et enfer et influence la surface."
+    },
+    "heaven_king": {
+      "title": "Souverain du Paradis",
+      "desc": "Arbitre les prières, contiens le fanatisme et décide jusqu’où le Ciel doit intervenir dans le monde des mortels."
+    },
+    "medieval_king": {
+      "title": "Roi Médiéval",
+      "desc": "Église, armée, peuple, trésor : chaque choix rapproche ton royaume de la prospérité… ou de la révolte."
+    },
+    "western_president": {
+      "title": "Président",
+      "desc": "Opinion publique, économie, défense et crises diplomaitques. Une signature peut tout faire basculer."
+    },
+    "mega_corp_ceo": {
+      "title": "CEO",
+      "desc": "Investisseurs, employés, régulateurs et image de marque. Pousse la valorisation au sommet sans tout faire exploser."
+    },
+    "new_world_explorer": {
+      "title": "Explorateur",
+      "desc": "Conquiers, convertis, trouve la richesse locale  tout en rendant des comptes à ta couronne."
+    },
+    "vampire_lord": {
+      "title": "Seigneur Vampire",
+      "desc": "Étends ton influence dans l’ombre. Trop de sang attire les chasseurs, trop de prudence affaiblit ton clan."
+    }
+  }
+}
