@@ -1013,7 +1013,6 @@ if (card) {
 
     _startNewReign() {
       this.reignIndex += 1;
-      window.VRState.initUniverse(this.universeConfig);
       window.VRState.alive = true;
       window.VRState.lastDeath = null;
       window.VRState.reignYears = 0;
