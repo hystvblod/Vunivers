@@ -893,7 +893,7 @@ body.vr-peek-mode .vr-gauge-preview{
         window.VUserData.save(user);
       }
 
-      window.VRGame?.onCardResolved?.();
+      window.VRGame?.onCardResolved?.();  // ✅ inchangé
       window.VRState.tickYear();
 
       const years = window.VRState.getReignYears();
@@ -908,6 +908,9 @@ body.vr-peek-mode .vr-gauge-preview{
       window.VRUIBinding.updateGauges();
 
       try { window.VRUIBinding?._consumePeekDecision?.(); } catch (_) {}
+
+      // ✅ AJOUT MINIMAL: interstitiel tous les 7 choix (non bloquant)
+      try { window.VRGame?.maybeShowInterstitial?.(); } catch (_) {}
 
       if (!window.VRState.isAlive()) this._handleDeath();
       else this._nextCard();
@@ -925,6 +928,34 @@ body.vr-peek-mode .vr-gauge-preview{
           this._startNewReign();
         };
       }
+
+      // ✅ AJOUT MINIMAL: revive rewarded → undo 1 (revient juste avant le choix fatal)
+      const reviveBtn = document.getElementById("ending-revive-btn");
+      if (reviveBtn) {
+        reviveBtn.onclick = async () => {
+          // évite double click
+          reviveBtn.disabled = true;
+          try {
+            const ok = await (window.VRAds?.showRewardedAd?.({ placement: "revive" }) || Promise.resolve(false));
+            if (ok) {
+              // ferme l’ending
+              window.VREndings.hideEnding();
+
+              // revient d’1 choix (snapshot pris avant applyChoice)
+              const undone = window.VREngine?.undoChoices?.(1);
+              if (!undone) {
+                // si pas d’historique, on redémarre un règne propre
+                this._startNewReign();
+              }
+            }
+          } catch (e) {
+            console.error("[VREngine] revive error:", e);
+          } finally {
+            reviveBtn.disabled = false;
+          }
+        };
+      }
+
       this.coinsStreak = 0;
     }
   };
@@ -1358,11 +1389,14 @@ body.vr-peek-mode .vr-gauge-preview{
 // VRealms - game.js (VRGame + anti-retour navigateur)
 window.VRGame = {
   currentUniverse: null,
-  session: { reignLength: 0 },
+
+  // ✅ AJOUT MINIMAL: on garde tes champs, et on ajoute un compteur de choix
+  session: { reignLength: 0, choiceCount: 0 },
 
   async onUniverseSelected(universeId) {
     this.currentUniverse = universeId;
     this.session.reignLength = 0;
+    this.session.choiceCount = 0; // ✅ reset compteur interstitiel
 
     this.applyUniverseBackground(universeId);
 
@@ -1383,6 +1417,21 @@ window.VRGame = {
     });
 
     if (universeId) viewGame.classList.add(`vr-bg-${universeId}`);
+  },
+
+  // ✅ AJOUT MINIMAL: interstitiel tous les 7 choix (si VRAds le supporte)
+  async maybeShowInterstitial() {
+    try {
+      this.session.choiceCount = Number(this.session.choiceCount || 0) + 1;
+
+      // tous les 7 choix
+      if (this.session.choiceCount % 7 !== 0) return;
+
+      // si tu n’as pas encore de showInterstitialAd dans ads.js, ça ne fera rien (safe)
+      await (window.VRAds?.showInterstitialAd?.({ placement: "every_7_choices" }) || Promise.resolve(false));
+    } catch (e) {
+      console.warn("[VRGame] interstitial skipped:", e);
+    }
   },
 
   onCardResolved() {

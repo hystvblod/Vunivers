@@ -18,7 +18,7 @@
   var AD_UNIT_ID_REWARDED     = "ca-app-pub-6837328794080297/8202263221";
 
   // ✅ Règle interstitiel : 1 pub tous les 7 choix (cumul global)
-  var INTERSTITIEL_EVERY_X_ACTIONS = 7;
+  var INTERSTITIEL_EVERY_X_ACTIONS = 8;
   var INTER_COOLDOWN_MS = 0; // anti-spam (0 = off)
 
   // --- Récompenses par défaut (utilisées par l'UI si besoin)
