@@ -293,11 +293,12 @@ body.vr-body-game .vr-hud-years{
 
 /* ✅ LOGO HOME : plus grand et responsive (au lieu de 72px fixe) */
 .vr-main-logo{
-  height: clamp(86px, 11vmin, 132px);
-  max-width: clamp(260px, 72vw, 420px);
-  object-fit:contain;
-  filter: drop-shadow(0 10px 28px rgba(0,0,0,0.45));
+  height: clamp(120px, 18vmin, 190px) !important;
+  width: min(90vw, 560px) !important;   /* au lieu de max-width */
+  max-width: none !important;
+  object-fit: contain !important;
 }
+
 
 .vr-section-title{ font-size:18px; margin:12px 0 10px; }
 .vr-universe-grid{ display:flex; flex-direction:column; gap:10px; }
