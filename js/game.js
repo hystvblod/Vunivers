@@ -915,15 +915,29 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         // current card
-        const cardId = e.currentCardId || null;
-        const card = cardId ? this.deck.find(c => c && c.id === cardId) : null;
-        if (card) {
-          this.currentCardLogic = card;
-          window.VRUIBinding.showCard(card);
-        } else {
-          // si la carte n’est plus trouvable, on repart sur une pioche normale sans casser les compteurs
-          this._nextCard();
-        }
+ // current card
+const cardId = e.currentCardId || null;
+const card = cardId ? this.deck.find(c => c && c.id === cardId) : null;
+
+if (card) {
+  this.currentCardLogic = card;
+  window.VRUIBinding.showCard(card);
+} else {
+  // ✅ fallback restore SANS effets (ne touche pas aux compteurs)
+  const deck = this.deck || [];
+  if (!deck.length) return false;
+
+  const candidates = deck.filter(c => c && !this.recentCards.includes(c.id));
+  const pool = candidates.length ? candidates : deck;
+
+  const picked = pool[Math.floor(Math.random() * pool.length)];
+  if (!picked) return false;
+
+  this.currentCardLogic = picked;
+  window.VRUIBinding.showCard(picked);
+}
+
+
 
         window.VRUIBinding.updateGauges();
 
@@ -999,6 +1013,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
     _startNewReign() {
       this.reignIndex += 1;
+      window.VRState.initUniverse(this.universeConfig);
       window.VRState.alive = true;
       window.VRState.lastDeath = null;
       window.VRState.reignYears = 0;
