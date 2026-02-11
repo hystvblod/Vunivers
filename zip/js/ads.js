@@ -1,208 +1,557 @@
-// VRealms - ads.js
-// Implémentation robuste (Capacitor AdMob si dispo) + fallback stub navigateur.
+// FILE: zip/js/ads.js
+// VRealms - ads.js (AdMob Capacitor Community, no-import) — SANS SSV
+// ✅ Version "DB only" : plus de localStorage pour consent/actions/inter cooldown
+// ✅ Ajout stats pubs (24h + total) via RPC secure_get_ads_stats()
+// ✅ Log interstitiel réellement affiché via RPC secure_log_ad_event('interstitial', ...)
+// ⚠️ Rewarded: le log le plus safe doit être fait côté DB (dans secure_claim_reward). Ici on fait un log best-effort.
 
 (function () {
   "use strict";
 
-  // ✅ À REMPLIR quand tu les as (AdMob > Blocs d'annonces)
-  const AD_UNITS = {
-    appIdAndroid: "ca-app-pub-6837328794080297~5780104273",
-    rewardedAndroid: "",     // ex: ca-app-pub-xxxx/yyyy
-    interstitialAndroid: ""  // ex: ca-app-pub-xxxx/yyyy
+  // ------- Raccourcis globaux -------
+  var Capacitor = (window.Capacitor || {});
+  var AdMob = (Capacitor.Plugins && Capacitor.Plugins.AdMob) ? Capacitor.Plugins.AdMob : null;
+  var App = (Capacitor.App) ? Capacitor.App
+          : ((Capacitor.Plugins && Capacitor.Plugins.App) ? Capacitor.Plugins.App : null);
+
+  // ------- STRICT PROD -------
+  var __DEV_ADS__ = false;      // true pour tests locaux
+  var SHOW_DIAG_PANEL = false;  // overlay debug (laisse false en prod)
+
+  // ✅ Tes Ad Units (PROD)
+  var AD_UNIT_ID_INTERSTITIEL = "ca-app-pub-6837328794080297/8465879302";
+  var AD_UNIT_ID_REWARDED     = "ca-app-pub-6837328794080297/8202263221";
+
+  // ✅ Règle interstitiel : 1 pub tous les X choix (cumul global)
+  var INTERSTITIEL_EVERY_X_ACTIONS = 8;
+  var INTER_COOLDOWN_MS = 0; // anti-spam (0 = off)
+
+  // --- Récompenses par défaut (utilisées par l'UI si besoin)
+  window.REWARD_JETONS = typeof window.REWARD_JETONS === "number" ? window.REWARD_JETONS : 1;
+  window.REWARD_VCOINS = typeof window.REWARD_VCOINS === "number" ? window.REWARD_VCOINS : 200;
+
+  // --- Flags d'état ---
+  var isRewardShowing = false;
+  window.__ads_active = false; // flag global anti-back/anti-overlays côté app
+
+  // --- Compteurs (désormais server-side) ---
+  var ACTIONS_KEY = "vr_actions_count";   // conservé pour compat (plus utilisé en localStorage)
+  var LAST_INTER_KEY = "vr_last_inter_ts"; // conservé pour compat (plus utilisé en localStorage)
+
+  // Cache mémoire (synchro via DB)
+  var actionsCount = 0;
+  var lastInterTs = 0;
+
+  // --- Consent server-side (cache mémoire) ---
+  var _adsState = {
+    rgpdConsent: null,   // "accept" | "refuse" | null
+    adsConsent: null,    // boolean|null
+    adsEnabled: null     // boolean|null
   };
 
-  let _initDone = false;
-  let _busy = false;
+  // --- Stats pubs (cache mémoire) ---
+  var _adsStats = {
+    rewarded_total: 0,
+    rewarded_24h: 0,
+    inter_total: 0,
+    inter_24h: 0
+  };
 
-  function _getCapacitorAdMob() {
+  function sbReady() {
+    return !!(window.sb && window.sb.auth && typeof window.sb.rpc === "function");
+  }
+
+  // =============================
+  // Helpers plateforme
+  // =============================
+  function isNative() {
     try {
-      const cap = window.Capacitor;
-      if (!cap || !cap.Plugins) return null;
-      // Plusieurs plugins exposent "AdMob"
-      return cap.Plugins.AdMob || null;
+      return !!(Capacitor && Capacitor.isNativePlatform && Capacitor.isNativePlatform());
     } catch (_) {
-      return null;
+      return false;
     }
   }
 
-  async function _ensureInit() {
-    if (_initDone) return true;
+  // =============================
+  // Consent / Request options (NPA) - SERVER SIDE
+  // =============================
+  function getPersonalizedAdsGranted() {
+    // Plus de localStorage.
+    // Logique : si RGPD refuse => false
+    // sinon on regarde adsConsent / adsEnabled
+    try {
+      var rgpd = _adsState.rgpdConsent; // "accept"|"refuse"|null
+      var adsConsent = _adsState.adsConsent; // boolean|null
+      var adsEnabled = _adsState.adsEnabled; // boolean|null
 
-    const AdMob = _getCapacitorAdMob();
-    if (!AdMob) {
-      console.warn("[VRAds] Capacitor AdMob plugin non détecté (mode navigateur).");
-      _initDone = true;
+      if (rgpd === "refuse") return false;
+
+      if (rgpd === "accept") {
+        if (typeof adsConsent === "boolean") return adsConsent === true;
+        if (typeof adsEnabled === "boolean") return adsEnabled === true;
+        return false;
+      }
+
+      if (typeof adsConsent === "boolean") return adsConsent === true;
+      if (typeof adsEnabled === "boolean") return adsEnabled === true;
+
+      return false;
+    } catch (_) {
       return false;
     }
+  }
 
+  function buildAdMobRequestOptions() {
+    // npa: "1" => non-personnalisées, "0" => personnalisées
+    return { npa: getPersonalizedAdsGranted() ? "0" : "1" };
+  }
+
+  async function syncAdsStateFromServer() {
     try {
-      // Selon plugin : initialize() ou initialize({ ... })
-      if (typeof AdMob.initialize === "function") {
-        await AdMob.initialize({
-          initializeForTesting: false,
-          // certains plugins acceptent requestTrackingAuthorization (iOS)
+      if (!sbReady()) return false;
+
+      // Assure que la session existe
+      try { await window.sb.auth.getUser(); } catch (_) {}
+
+      var r = await window.sb.rpc("secure_get_ads_state");
+      if (r && !r.error && r.data) {
+        _adsState.rgpdConsent = (typeof r.data.rgpdConsent === "string") ? r.data.rgpdConsent : null;
+        _adsState.adsConsent  = (typeof r.data.adsConsent === "boolean") ? r.data.adsConsent : null;
+        _adsState.adsEnabled  = (typeof r.data.adsEnabled === "boolean") ? r.data.adsEnabled : null;
+
+        actionsCount = parseInt(r.data.actionsCount || 0, 10) || 0;
+        lastInterTs  = parseInt(r.data.lastInterTs || 0, 10) || 0;
+        return true;
+      }
+      return false;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  async function refreshAdsStats() {
+    try {
+      if (!sbReady()) return _adsStats;
+
+      var r = await window.sb.rpc("secure_get_ads_stats");
+      if (r && !r.error && r.data) {
+        _adsStats.rewarded_total = parseInt(r.data.rewarded_total || 0, 10) || 0;
+        _adsStats.rewarded_24h   = parseInt(r.data.rewarded_24h || 0, 10) || 0;
+        _adsStats.inter_total    = parseInt(r.data.inter_total || 0, 10) || 0;
+        _adsStats.inter_24h      = parseInt(r.data.inter_24h || 0, 10) || 0;
+      }
+      return _adsStats;
+    } catch (_) {
+      return _adsStats;
+    }
+  }
+
+  // =============================
+  // Helpers anti-surcouches avant/après show() — WHITELIST SAFE
+  // =============================
+  var APP_OVERLAYS = [
+    "#popup-consent",
+    "#update-banner",
+    ".tooltip-box",
+    ".popup-consent-bg",
+    ".modal-app",
+    ".dialog-app",
+    ".backdrop-app",
+    ".overlay-app",
+    ".loading-app"
+  ];
+
+  function hideOverlays() {
+    try {
+      APP_OVERLAYS.forEach(function (sel) {
+        document.querySelectorAll(sel).forEach(function (el) {
+          el.__prevDisplay = el.style.display;
+          el.style.display = "none";
         });
-      } else if (typeof AdMob.init === "function") {
-        await AdMob.init();
+      });
+    } catch (_) {}
+  }
+
+  function restoreOverlays() {
+    try {
+      APP_OVERLAYS.forEach(function (sel) {
+        document.querySelectorAll(sel).forEach(function (el) {
+          el.style.display = (typeof el.__prevDisplay === "string") ? el.__prevDisplay : "";
+          try { delete el.__prevDisplay; } catch (_) {}
+        });
+      });
+    } catch (_) {}
+  }
+
+  function preShowAdCleanup() {
+    try {
+      hideOverlays();
+      window.__ads_active = true;
+    } catch (_) {}
+  }
+
+  function postAdCleanup() {
+    try {
+      window.__ads_active = false;
+      restoreOverlays();
+    } catch (_) {}
+  }
+
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) {
+      if (!isRewardShowing) postAdCleanup();
+    }
+  });
+
+  // =============================
+  // Panneau diag (optionnel)
+  // =============================
+  function diag(msg) {
+    if (!SHOW_DIAG_PANEL) return;
+    try {
+      var el = document.getElementById("__ads_diag");
+      if (!el) {
+        el = document.createElement("div");
+        el.id = "__ads_diag";
+        el.style.cssText =
+          "position:fixed;left:8px;bottom:8px;z-index:999999;" +
+          "background:rgba(0,0,0,.6);color:#fff;padding:6px 8px;border-radius:8px;" +
+          "font:12px/1.35 monospace;max-width:80vw;";
+        document.body.appendChild(el);
+      }
+      var sep = el.textContent ? "\n" : "";
+      el.textContent += sep + "[" + new Date().toLocaleTimeString() + "] " + msg;
+    } catch (_) {}
+  }
+
+  // =============================
+  // Écouteurs AdMob (1 seule fois)
+  // =============================
+  function registerAdEventsOnce() {
+    try {
+      if (!AdMob || !AdMob.addListener || window.__adListenersRegistered) return;
+      window.__adListenersRegistered = true;
+
+      var SAFE = function (fn) {
+        return function (arg) { try { fn && fn(arg); } catch (_) {} };
+      };
+
+      var map = [
+        ["onAdFullScreenContentOpened", function () {
+          isRewardShowing = true;
+          window.__ads_active = true;
+          diag("Ad opened");
+        }],
+        ["onAdDismissedFullScreenContent", function () {
+          diag("Ad dismissed");
+          isRewardShowing = false;
+          postAdCleanup();
+        }],
+        ["onAdFailedToShowFullScreenContent", function () {
+          diag("Ad failed to show");
+          isRewardShowing = false;
+          postAdCleanup();
+        }],
+        ["onRewarded", function () {
+          diag("Rewarded granted");
+        }]
+      ];
+
+      for (var i = 0; i < map.length; i++) {
+        try { AdMob.addListener(map[i][0], SAFE(map[i][1])); } catch (_) {}
+      }
+    } catch (_) {}
+  }
+
+  // =============================
+  // Init (silencieux si web)
+  // =============================
+  (async function initAdMobOnce() {
+    try {
+      if (!isNative()) return;
+      if (!AdMob || !AdMob.initialize) return;
+
+      // Sync server-side consent & counters (tout via DB)
+      await syncAdsStateFromServer().catch(function () {});
+      await refreshAdsStats().catch(function () {});
+
+      await AdMob.initialize({
+        requestTrackingAuthorization: false,
+        initializeForTesting: __DEV_ADS__
+      });
+
+      registerAdEventsOnce();
+    } catch (_) {}
+  })();
+
+  // =============================
+  // Helpers "wait" (ouvert / dismissed / rewarded)
+  // =============================
+  function waitDismissedOnce() {
+    return new Promise(function (resolve) {
+      var off1 = null, off2 = null;
+      function done(ok) {
+        try { off1 && off1.remove && off1.remove(); } catch (_) {}
+        try { off2 && off2.remove && off2.remove(); } catch (_) {}
+        resolve(!!ok);
+      }
+      try {
+        off1 = AdMob.addListener("onAdDismissedFullScreenContent", function () { done(true); });
+        off2 = AdMob.addListener("onAdFailedToShowFullScreenContent", function () { done(false); });
+      } catch (_) {
+        done(false);
+      }
+    });
+  }
+
+  function waitRewardedOnce(timeoutMs) {
+    return new Promise(function (resolve) {
+      var off = null, timer = null;
+      function done(ok) {
+        try { off && off.remove && off.remove(); } catch (_) {}
+        if (timer) { clearTimeout(timer); timer = null; }
+        resolve(!!ok);
+      }
+      try {
+        off = AdMob.addListener("onRewarded", function () { done(true); });
+      } catch (_) {
+        done(false);
+        return;
+      }
+      timer = setTimeout(function () { done(false); }, timeoutMs || 30000);
+    });
+  }
+
+  function waitAppReturnOnce() {
+    return new Promise(function (resolve) {
+      var resolved = false;
+      function done() {
+        if (resolved) return;
+        resolved = true;
+        cleanup();
+        resolve(true);
       }
 
-      _initDone = true;
-      console.log("[VRAds] init OK");
-      return true;
-    } catch (e) {
-      console.warn("[VRAds] init failed:", e);
-      _initDone = true; // on évite boucle
-      return false;
-    }
+      function onVis() { try { if (!document.hidden) done(); } catch (_) {} }
+      function onFocus() { done(); }
+
+      var off1 = null, off2 = null;
+
+      function cleanup() {
+        try { document.removeEventListener("visibilitychange", onVis); } catch (_) {}
+        try { window.removeEventListener("focus", onFocus); } catch (_) {}
+        try { off1 && off1.remove && off1.remove(); } catch (_) {}
+        try { off2 && off2.remove && off2.remove(); } catch (_) {}
+      }
+
+      try { document.addEventListener("visibilitychange", onVis, { once: true }); } catch (_) {}
+      try { window.addEventListener("focus", onFocus, { once: true }); } catch (_) {}
+
+      try {
+        if (App && App.addListener) {
+          off1 = App.addListener("resume", done);
+          off2 = App.addListener("appStateChange", function (state) {
+            try { if (state && state.isActive) done(); } catch (_) {}
+          });
+        }
+      } catch (_) {}
+    });
   }
 
-  function _hasUnit(id) {
-    return typeof id === "string" && id.trim().length > 0;
+  // =============================
+  // Interstitiel (LOAD/SHOW)
+  // =============================
+  function canShowInterstitialNow() {
+    if (!INTER_COOLDOWN_MS) return true;
+    var now = Date.now();
+    return (now - lastInterTs) >= INTER_COOLDOWN_MS;
   }
 
-  function _platformAndroid() {
+  async function markInterstitialShownNow() {
+    // Plus de localStorage -> DB
+    lastInterTs = Date.now();
     try {
-      return !!window.Capacitor && window.Capacitor.getPlatform && window.Capacitor.getPlatform() === "android";
+      if (sbReady()) {
+        var r = await window.sb.rpc("secure_ads_mark_interstitial_shown");
+        if (r && !r.error && typeof r.data !== "undefined") {
+          lastInterTs = parseInt(r.data || lastInterTs, 10) || lastInterTs;
+        }
+      }
+    } catch (_) {}
+  }
+
+  async function showInterstitialAd() {
+    try {
+      if (!isNative()) return false;
+      if (!AdMob || !AdMob.prepareInterstitial || !AdMob.showInterstitial) return false;
+      if (!canShowInterstitialNow()) return false;
+
+      await AdMob.prepareInterstitial({
+        adId: AD_UNIT_ID_INTERSTITIEL,
+        requestOptions: buildAdMobRequestOptions()
+      });
+
+      preShowAdCleanup();
+
+      var dismissedP = waitDismissedOnce();
+      var res = await AdMob.showInterstitial();
+
+      await Promise.race([dismissedP.catch(function () {}), waitAppReturnOnce()]);
+      postAdCleanup();
+
+      if (res !== false) {
+        await markInterstitialShownNow();
+
+        // ✅ Log interstitiel réellement affiché (DB)
+        try {
+          if (sbReady()) {
+            await window.sb.rpc("secure_log_ad_event", { p_kind: "interstitial", p_placement: "auto" });
+          }
+        } catch (_) {}
+
+        // Refresh stats best-effort
+        try { await refreshAdsStats(); } catch (_) {}
+
+        // Preload best-effort
+        setTimeout(function () {
+          try {
+            AdMob.prepareInterstitial({
+              adId: AD_UNIT_ID_INTERSTITIEL,
+              requestOptions: buildAdMobRequestOptions()
+            }).catch(function () {});
+          } catch (_) {}
+        }, 1200);
+
+        return true;
+      }
+
+      return false;
     } catch (_) {
+      try {
+        AdMob.prepareInterstitial({
+          adId: AD_UNIT_ID_INTERSTITIEL,
+          requestOptions: buildAdMobRequestOptions()
+        }).catch(function () {});
+      } catch (_) {}
+      try { postAdCleanup(); } catch (_) {}
       return false;
     }
   }
 
-  function _getUnits() {
-    // (si tu ajoutes iOS plus tard, on étendra)
-    return {
-      rewarded: AD_UNITS.rewardedAndroid,
-      interstitial: AD_UNITS.interstitialAndroid
-    };
-  }
-
-  async function _showRewardedNative(placement) {
-    const AdMob = _getCapacitorAdMob();
-    if (!AdMob) return { ok: false, reason: "no_plugin" };
-
-    const units = _getUnits();
-    if (!_hasUnit(units.rewarded)) return { ok: false, reason: "missing_rewarded_unit" };
-
-    // Compat multi-plugins :
-    // - showRewardVideoAd({ adId })
-    // - showRewarded({ adId })
-    // - prepareRewardVideoAd({ adId }) + showRewardVideoAd()
+  // =============================
+  // Rewarded (LOAD/SHOW)
+  // =============================
+  async function showRewardedAd(opts) {
+    opts = opts || {};
     try {
-      // 1) prepare (si existe)
-      if (typeof AdMob.prepareRewardVideoAd === "function") {
-        await AdMob.prepareRewardVideoAd({ adId: units.rewarded });
-      } else if (typeof AdMob.prepareRewarded === "function") {
-        await AdMob.prepareRewarded({ adId: units.rewarded });
-      } else if (typeof AdMob.prepareRewardedAd === "function") {
-        await AdMob.prepareRewardedAd({ adId: units.rewarded });
+      if (!isNative()) return false;
+      if (!AdMob || !AdMob.prepareRewardVideoAd || !AdMob.showRewardVideoAd) return false;
+
+      await AdMob.prepareRewardVideoAd({
+        adId: AD_UNIT_ID_REWARDED,
+        requestOptions: buildAdMobRequestOptions()
+      });
+
+      preShowAdCleanup();
+      isRewardShowing = true;
+
+      var rewardedP = waitRewardedOnce(30000);
+      var dismissedP = waitDismissedOnce();
+
+      var showPromise = AdMob.showRewardVideoAd();
+
+      var gotReward = await rewardedP;
+      await Promise.race([dismissedP.catch(function () {}), waitAppReturnOnce()]);
+      postAdCleanup();
+
+      try { await showPromise; } catch (_) {}
+      isRewardShowing = false;
+
+      // ⚠️ Best-effort log rewarded view.
+      // Le plus safe: logger côté DB au moment du credit (secure_claim_reward).
+      if (gotReward) {
+        try {
+          if (sbReady()) {
+            var plc = (opts && opts.placement) ? String(opts.placement) : "rewarded";
+            await window.sb.rpc("secure_log_ad_event", { p_kind: "rewarded", p_placement: plc });
+          }
+        } catch (_) {}
+        try { await refreshAdsStats(); } catch (_) {}
       }
 
-      // 2) show
-      if (typeof AdMob.showRewardVideoAd === "function") {
-        await AdMob.showRewardVideoAd();
-      } else if (typeof AdMob.showRewarded === "function") {
-        await AdMob.showRewarded();
-      } else if (typeof AdMob.showRewardedAd === "function") {
-        await AdMob.showRewardedAd();
-      } else {
-        // certains plugins font showRewarded({ adId })
-        if (typeof AdMob.showRewarded === "function") {
-          await AdMob.showRewarded({ adId: units.rewarded });
-        } else {
-          return { ok: false, reason: "no_rewarded_method" };
-        }
-      }
-
-      // Beaucoup de plugins ne renvoient pas "reward granted" en résultat direct.
-      // On fait simple : si la pub a pu s'afficher sans throw → ok.
-      console.log("[VRAds] Rewarded shown:", placement);
-      return { ok: true };
-    } catch (e) {
-      console.warn("[VRAds] Rewarded failed:", e);
-      return { ok: false, reason: "show_failed" };
+      return !!gotReward;
+    } catch (_) {
+      try { postAdCleanup(); } catch (_) {}
+      isRewardShowing = false;
+      return false;
     }
   }
 
-  async function _showInterstitialNative(placement) {
-    const AdMob = _getCapacitorAdMob();
-    if (!AdMob) return { ok: false, reason: "no_plugin" };
+  // =============================
+  // Compteur actions → déclenche interstitiel tous les X choix (server-side)
+  // =============================
+  function getActionsCount() {
+    return actionsCount || 0;
+  }
 
-    const units = _getUnits();
-    if (!_hasUnit(units.interstitial)) return { ok: false, reason: "missing_interstitial_unit" };
-
+  async function resetActionsCount() {
+    actionsCount = 0;
     try {
-      // prepare
-      if (typeof AdMob.prepareInterstitial === "function") {
-        await AdMob.prepareInterstitial({ adId: units.interstitial });
-      } else if (typeof AdMob.prepareInterstitialAd === "function") {
-        await AdMob.prepareInterstitialAd({ adId: units.interstitial });
-      }
-
-      // show
-      if (typeof AdMob.showInterstitial === "function") {
-        await AdMob.showInterstitial();
-      } else if (typeof AdMob.showInterstitialAd === "function") {
-        await AdMob.showInterstitialAd();
-      } else {
-        // certains plugins font showInterstitial({ adId })
-        if (typeof AdMob.showInterstitial === "function") {
-          await AdMob.showInterstitial({ adId: units.interstitial });
-        } else {
-          return { ok: false, reason: "no_interstitial_method" };
+      if (sbReady()) {
+        await window.sb.rpc("secure_ads_reset_actions");
+        var s = await window.sb.rpc("secure_get_ads_state");
+        if (s && !s.error && s.data) {
+          actionsCount = parseInt(s.data.actionsCount || 0, 10) || 0;
+          lastInterTs = parseInt(s.data.lastInterTs || 0, 10) || 0;
         }
       }
-
-      console.log("[VRAds] Interstitial shown:", placement);
-      return { ok: true };
-    } catch (e) {
-      console.warn("[VRAds] Interstitial failed:", e);
-      return { ok: false, reason: "show_failed" };
-    }
+    } catch (_) {}
   }
 
-  window.VRAds = {
-    setAdUnits({ rewardedAndroid, interstitialAndroid } = {}) {
-      if (typeof rewardedAndroid === "string") AD_UNITS.rewardedAndroid = rewardedAndroid.trim();
-      if (typeof interstitialAndroid === "string") AD_UNITS.interstitialAndroid = interstitialAndroid.trim();
-    },
-
-    async showRewardedAd({ placement = "generic" } = {}) {
-      if (_busy) return false;
-      _busy = true;
-      try {
-        await _ensureInit();
-
-        // En navigateur : stub propre
-        const AdMob = _getCapacitorAdMob();
-        if (!AdMob) {
-          console.log("[VRAds] (stub) rewarded:", placement);
-          return false;
+  async function markActionAndMaybeShowInterstitial() {
+    // Incrémente puis vérifie (pub APRES le Xème choix) => DB
+    try {
+      if (sbReady()) {
+        var r = await window.sb.rpc("secure_ads_mark_action", { p_delta: 1 });
+        if (r && !r.error) {
+          actionsCount = parseInt(r.data || actionsCount, 10) || actionsCount;
+        } else {
+          // fallback soft: resync
+          await syncAdsStateFromServer().catch(function () {});
         }
-
-        const res = await _showRewardedNative(placement);
-        return !!res.ok;
-      } finally {
-        _busy = false;
+      } else {
+        // sans Supabase -> on incrémente en mémoire uniquement (aucun persist)
+        actionsCount = (actionsCount || 0) + 1;
       }
-    },
-
-    async showInterstitial({ placement = "generic" } = {}) {
-      if (_busy) return false;
-      _busy = true;
-      try {
-        await _ensureInit();
-
-        const AdMob = _getCapacitorAdMob();
-        if (!AdMob) {
-          console.log("[VRAds] (stub) interstitial:", placement);
-          return false;
-        }
-
-        const res = await _showInterstitialNative(placement);
-        return !!res.ok;
-      } finally {
-        _busy = false;
-      }
+    } catch (_) {
+      actionsCount = (actionsCount || 0) + 1;
     }
-  };
+
+    if (INTERSTITIEL_EVERY_X_ACTIONS > 0 && (actionsCount % INTERSTITIEL_EVERY_X_ACTIONS) === 0) {
+      try { await showInterstitialAd(); } catch (_) {}
+    }
+
+    return actionsCount;
+  }
+
+  // =============================
+  // Expose API attendue par ton jeu
+  // =============================
+  window.VRAds = window.VRAds || {};
+  window.VRAds.isNative = isNative;
+  window.VRAds.showInterstitialAd = showInterstitialAd;
+  window.VRAds.showRewardedAd = showRewardedAd;
+
+  // ➜ API "actions"
+  window.VRAds.getActionsCount = getActionsCount;
+  window.VRAds.resetActionsCount = resetActionsCount;
+  window.VRAds.markAction = markActionAndMaybeShowInterstitial;
+
+  // ➜ API "stats"
+  window.VRAds.getStats = function () { return _adsStats; };
+  window.VRAds.refreshStats = refreshAdsStats;
+
+  // ➜ API "state"
+  window.VRAds.refreshState = syncAdsStateFromServer;
+
 })();

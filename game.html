@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>VRealms - Partie</title>
+  <title>Vuniverse - Partie</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
 
@@ -148,7 +148,7 @@
       </div>
 
       <!-- ✅ Popup Jeton (menu) -->
-      <div class="vr-popup" id="vr-token-popup" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="vr-popup" id="vr-token-popup" role="dialog" aria-modal="true" aria-hidden="true" inert>
         <div class="vr-popup-inner">
 
           <div class="vr-token-view" data-token-view="menu">
@@ -187,8 +187,8 @@
       </div>
 
       <!-- ✅ Popup VCoins (menu) -->
-      <div class="vr-popup" id="vr-coins-popup" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="vr-popup-inner>
+      <div class="vr-popup" id="vr-coins-popup" role="dialog" aria-modal="true" aria-hidden="true" inert>
+        <div class="vr-popup-inner">
 
           <div class="vr-token-view" data-coins-view="menu">
             <h3 class="vr-popup-title" data-i18n="coins.popup.title"></h3>
@@ -219,7 +219,7 @@
       </div>
 
       <!-- ✅ Overlay sélection jauge (ton JS l'attend) -->
-      <div class="vr-token-gauge-overlay" id="vr-token-gauge-overlay" aria-hidden="true">
+      <div class="vr-token-gauge-overlay" id="vr-token-gauge-overlay" aria-hidden="true" inert>
         <div class="vr-token-gauge-card" role="dialog" aria-modal="true" aria-label="Choisir une jauge">
           <h3 class="vr-popup-title" data-i18n="token.popup.pickGauge.title"></h3>
           <p class="vr-card-text" style="text-align:center" data-i18n="token.popup.pickGauge.text"></p>
@@ -243,9 +243,8 @@
             <span data-i18n="game.restart"></span>
           </button>
 
-          <!-- ✅ AJOUT: revive via rewarded -->
           <button id="ending-revive-btn" class="vr-choice-button" type="button">
-            <span data-i18n="game.revive_ad">Revivre (pub)</span>
+            <span data-i18n="game.revive_ad"></span>
           </button>
         </div>
       </div>
@@ -253,7 +252,7 @@
     </section>
   </main>
 
-  <!-- ✅ Supabase (AJOUT) -->
+  <!-- ✅ Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabaseBootstrap.js"></script>
 
@@ -262,6 +261,30 @@
   <script src="js/purchases.js"></script>
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
+
+  <!-- ✅ Boot Supabase + userData + i18n AVANT game.js (AJOUT, sans rien supprimer) -->
+  <script>
+    (function () {
+      async function boot() {
+        // 1) auth anonyme + profil
+        try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
+
+        // 2) init userData (sync remote -> local)
+        try { window.VUserData?.init?.(); } catch (_) {}
+
+        // 3) init i18n si dispo
+        try {
+          const lang = window.VUserData?.getLang?.() || "fr";
+          if (window.VRI18n && typeof window.VRI18n.initI18n === "function") {
+            await window.VRI18n.initI18n(lang);
+          }
+        } catch (_) {}
+      }
+
+      boot();
+    })();
+  </script>
+
   <script src="js/game.js"></script>
 </body>
 </html>

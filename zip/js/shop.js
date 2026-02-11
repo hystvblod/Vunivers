@@ -11,34 +11,66 @@
 
   async function rewardJeton() {
     setStatus("");
+
+    // 1) Affiche la pub (côté client)
     const ok = await (window.VRAds?.showRewardedAd?.({ placement: "shop_jeton" }) || Promise.resolve(false));
     if (!ok) return setStatus("Pub indisponible pour le moment.");
 
+    // 2) Crédit = serveur (anti-triche / quotas / mapping DB)
     try {
-      await window.VUserData?.addJetons?.(1);
-    } catch (_) {
-      const u = window.VUserData.load();
-      u.jetons = (u.jetons || 0) + 1;
-      window.VUserData.save(u);
-    }
+      if (!window.VUserData?.claimReward) {
+        // fallback strict: on ne crédite rien si claimReward n'existe pas
+        // (sinon triche possible)
+        await window.VUserData?.refresh?.().catch(() => false);
+        return setStatus("Mise à jour impossible (client non prêt).");
+      }
 
-    setStatus("+1 jeton ajouté ✅");
+      const res = await window.VUserData.claimReward("shop_jeton");
+      if (!res) {
+        await window.VUserData?.refresh?.().catch(() => false);
+        return setStatus("Erreur lors de la validation de la récompense.");
+      }
+
+      if (res.limited) {
+        return setStatus("Limite journalière atteinte pour cette récompense.");
+      }
+
+      setStatus("+1 jeton ajouté ✅");
+    } catch (_) {
+      await window.VUserData?.refresh?.().catch(() => false);
+      setStatus("Erreur lors de la validation de la récompense.");
+    }
   }
 
   async function rewardCoins() {
     setStatus("");
+
+    // 1) Affiche la pub (côté client)
     const ok = await (window.VRAds?.showRewardedAd?.({ placement: "shop_200_coins" }) || Promise.resolve(false));
     if (!ok) return setStatus("Pub indisponible pour le moment.");
 
+    // 2) Crédit = serveur (anti-triche / quotas / mapping DB)
     try {
-      await window.VUserData?.addVcoins?.(200);
-    } catch (_) {
-      const u = window.VUserData.load();
-      u.vcoins = (u.vcoins || 0) + 200;
-      window.VUserData.save(u);
-    }
+      if (!window.VUserData?.claimReward) {
+        await window.VUserData?.refresh?.().catch(() => false);
+        return setStatus("Mise à jour impossible (client non prêt).");
+      }
 
-    setStatus("+200 pièces ajoutées ✅");
+      const res = await window.VUserData.claimReward("shop_200_coins");
+      if (!res) {
+        await window.VUserData?.refresh?.().catch(() => false);
+        return setStatus("Erreur lors de la validation de la récompense.");
+      }
+
+      if (res.limited) {
+        return setStatus("Limite journalière atteinte pour cette récompense.");
+      }
+
+      setStatus("+200 pièces ajoutées ✅");
+    } catch (_) {
+      await window.VUserData?.refresh?.().catch(() => false);
+      setStatus("Erreur lors de la validation de la récompense.");
+    }
   }
 
   function wireNav() {

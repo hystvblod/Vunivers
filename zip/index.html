@@ -124,7 +124,7 @@
       content:"" !important;
       position:absolute !important;
       inset:0 !important;
-      background: rgba(0,0,0,.01) !important; /* ~5% */
+      background: rgba(0,0,0,.05) !important; /* ✅ ~5% (corrigé) */
       backdrop-filter: blur(2px) !important;
       -webkit-backdrop-filter: blur(2px) !important;
       pointer-events:none !important;
@@ -409,6 +409,18 @@
     </div>
   </div>
 
+  <!-- ✅ Supabase (AJOUT) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabaseBootstrap.js"></script>
+
+  <script src="js/userData.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/purchases.js"></script>
+  <script src="js/shop.js"></script>
+
+  <!-- ✅ i18n DOIT être chargé AVANT les scripts inline qui appellent _t() -->
+  <script src="js/i18n.js"></script>
+
   <script>
     function _t(key) {
       try {
@@ -501,16 +513,6 @@
     })();
   </script>
 
-  <!-- ✅ Supabase (AJOUT) -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/supabaseBootstrap.js"></script>
-
-  <script src="js/userData.js"></script>
-  <script src="js/ads.js"></script>
-  <script src="js/purchases.js"></script>
-  <script src="js/shop.js"></script>
-  <script src="js/i18n.js"></script>
-
   <!-- ✅ Init auth anonyme + popup pseudo (AJOUT) -->
   <script>
     (function () {
@@ -586,8 +588,8 @@
         // 1) auth anonyme + profil
         try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
 
-        // 2) init userData (sync remote -> local en arrière plan)
-        try { window.VUserData?.init?.(); } catch (_) {}
+        // 2) init userData (sync remote -> local) => IMPORTANT: on attend si async
+        try { await window.VUserData?.init?.(); } catch (_) {}
 
         // 3) si ton i18n a un init explicite, on essaye (sans casser)
         try {

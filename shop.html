@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body class="vr-body">
   <header class="vr-header" aria-label="Top actions">
     <div class="vr-top-actions">
@@ -29,6 +30,7 @@
 
       <div class="vr-profile-grid">
 
+        <!-- Rewarded -->
         <div class="vr-profile-card">
           <h3 class="vr-profile-title" data-i18n="shop.rewarded_title"></h3>
           <p class="vr-profile-text" data-i18n="shop.rewarded_desc"></p>
@@ -38,15 +40,73 @@
           </button>
 
           <button class="vr-choice-button" id="btn-reward-coins" type="button">
-            <span data-i18n="shop.get_200_coins"></span>
+            <span data-i18n="shop.get_300_coins"></span>
           </button>
 
           <p class="vr-profile-text" id="shop-status" style="opacity:.85;margin-top:10px;"></p>
         </div>
 
+        <!-- No Ads -->
+        <div class="vr-profile-card">
+          <h3 class="vr-profile-title" data-i18n="shop.noads_title"></h3>
+          <p class="vr-profile-text" data-i18n="shop.noads_desc"></p>
+
+          <button class="vr-choice-button" id="btn-buy-noads" type="button">
+            <span data-i18n="shop.noads_buy"></span>
+            <span class="vr-price" data-price-for="vrealms_no_ads" style="margin-left:8px;opacity:.9;"></span>
+          </button>
+
+          <p class="vr-profile-text" id="noads-status" style="opacity:.85;margin-top:10px;"></p>
+        </div>
+
+        <!-- Pièces -->
+        <div class="vr-profile-card">
+          <h3 class="vr-profile-title" data-i18n="shop.coins_title"></h3>
+          <p class="vr-profile-text" data-i18n="shop.coins_desc"></p>
+
+          <button class="vr-choice-button" id="btn-buy-coins-300" type="button">
+            <span data-i18n="shop.coins_300"></span>
+            <span class="vr-price" data-price-for="vrealms_coins_300" style="margin-left:8px;opacity:.9;"></span>
+          </button>
+
+          <button class="vr-choice-button" id="btn-buy-coins-500" type="button">
+            <span data-i18n="shop.coins_500"></span>
+            <span class="vr-price" data-price-for="vrealms_coins_500" style="margin-left:8px;opacity:.9;"></span>
+          </button>
+
+          <button class="vr-choice-button" id="btn-buy-coins-3000" type="button">
+            <span data-i18n="shop.coins_3000"></span>
+            <span class="vr-price" data-price-for="vrealms_coins_3000" style="margin-left:8px;opacity:.9;"></span>
+          </button>
+        </div>
+
+        <!-- Jetons -->
+        <div class="vr-profile-card">
+          <h3 class="vr-profile-title" data-i18n="shop.jetons_title"></h3>
+          <p class="vr-profile-text" data-i18n="shop.jetons_desc"></p>
+
+          <button class="vr-choice-button" id="btn-buy-jetons-5" type="button">
+            <span data-i18n="shop.jetons_5"></span>
+            <span class="vr-price" data-price-for="vrealms_jetons_5" style="margin-left:8px;opacity:.9;"></span>
+          </button>
+
+          <button class="vr-choice-button" id="btn-buy-jetons-12" type="button">
+            <span data-i18n="shop.jetons_12"></span>
+            <span class="vr-price" data-price-for="vrealms_jetons_12" style="margin-left:8px;opacity:.9;"></span>
+          </button>
+
+          <button class="vr-choice-button" id="btn-buy-jetons-50" type="button">
+            <span data-i18n="shop.jetons_50"></span>
+            <span class="vr-price" data-price-for="vrealms_jetons_50" style="margin-left:8px;opacity:.9;"></span>
+          </button>
+        </div>
+
       </div>
     </section>
   </main>
+
+  <!-- Cordova/Capacitor bridge (en app; en web ça peut 404, c’est OK) -->
+  <script src="cordova.js"></script>
 
   <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -67,13 +127,10 @@
         window.__vr_bootstrap_ready = true;
       }
 
-      // Lance immédiatement (sans bloquer le parsing)
       ensureBootstrap();
 
-      // Optionnel: si un script veut attendre explicitement
       window.vrWaitBootstrap = async function () {
         if (window.__vr_bootstrap_ready) return true;
-        // petite attente max ~3s (best effort)
         var t0 = Date.now();
         while (!window.__vr_bootstrap_ready && (Date.now() - t0) < 3000) {
           await new Promise(function (r) { setTimeout(r, 50); });
@@ -85,7 +142,7 @@
 
   <script src="js/userData.js"></script>
   <script src="js/ads.js"></script>
-  <script src="js/shop.js"></script>
+  <script src="js/purchases.js"></script>
   <script src="js/i18n.js"></script>
 </body>
 </html>

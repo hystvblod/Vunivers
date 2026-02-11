@@ -5,6 +5,7 @@
 // - State / Endings / Engine core
 // - Popups Jeton & VCoins
 // - VRGame + anti-retour navigateur (best-effort)
+// - ✅ SAVE LOCAL PAR UNIVERS (reprise session)
 // ===============================================
 
 
@@ -48,6 +49,62 @@
     async getMe(maxAgeMs) { return await getMeFresh(maxAgeMs); },
     _n: n
   };
+})();
+
+
+// -------------------------------------------------------
+// ✅ Save system local (par univers) — reprise session
+// - Stocke uniquement l’état de RUN (pas profil Supabase)
+// - Clé: vrealms_save_<universeId>
+// -------------------------------------------------------
+(function () {
+  "use strict";
+
+  const SAVE_PREFIX = "vrealms_save_";
+  const SAVE_VERSION = 1;
+
+  function _key(universeId) {
+    return `${SAVE_PREFIX}${String(universeId || "unknown")}`;
+  }
+
+  function _safeParse(raw) {
+    try { return JSON.parse(raw); } catch (_) { return null; }
+  }
+
+  function load(universeId) {
+    try {
+      const raw = localStorage.getItem(_key(universeId));
+      if (!raw) return null;
+      const data = _safeParse(raw);
+      if (!data || typeof data !== "object") return null;
+      if (data.version !== SAVE_VERSION) return null;
+      if (data.universeId !== universeId) return null;
+      return data;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function save(universeId, payload) {
+    try {
+      const data = {
+        version: SAVE_VERSION,
+        universeId,
+        ts: Date.now(),
+        ...payload
+      };
+      localStorage.setItem(_key(universeId), JSON.stringify(data));
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function clear(universeId) {
+    try { localStorage.removeItem(_key(universeId)); } catch (_) {}
+  }
+
+  window.VRSave = { load, save, clear, _key };
 })();
 
 
@@ -787,6 +844,104 @@ body.vr-peek-mode .vr-gauge-preview{
     _uiCoins: 0,
     _uiTokens: 0,
 
+    // ✅ restore flags
+    _restored: false,
+
+    _makeSavePayload() {
+      try {
+        return {
+          state: {
+            alive: !!window.VRState?.alive,
+            lastDeath: window.VRState?.lastDeath || null,
+            reignYears: Number(window.VRState?.reignYears || 0),
+            cardsPlayed: Number(window.VRState?.cardsPlayed || 0),
+            gauges: deepClone(window.VRState?.gauges || {})
+          },
+          engine: {
+            reignIndex: Number(this.reignIndex || 0),
+            recentCards: deepClone(this.recentCards || []),
+            coinsStreak: Number(this.coinsStreak || 0),
+            currentCardId: this.currentCardLogic?.id || null
+          },
+          session: {
+            reignLength: Number(window.VRGame?.session?.reignLength || 0)
+          }
+        };
+      } catch (_) {
+        return null;
+      }
+    },
+
+    _saveRunSoft() {
+      try {
+        const universeId = this.universeId || window.VRState?.universeId || localStorage.getItem("vrealms_universe") || "unknown";
+        const payload = this._makeSavePayload();
+        if (!payload) return;
+        window.VRSave?.save?.(universeId, payload);
+      } catch (_) {}
+    },
+
+    _restoreFromSaveIfAny() {
+      try {
+        const universeId = this.universeId;
+        if (!universeId) return false;
+
+        const saved = window.VRSave?.load?.(universeId);
+        if (!saved) return false;
+
+        const s = saved.state || {};
+        const e = saved.engine || {};
+        const sess = saved.session || {};
+
+        // state
+        if (s && typeof s === "object") {
+          if (s.gauges && typeof s.gauges === "object") {
+            window.VRState.gauges = deepClone(s.gauges) || window.VRState.gauges;
+          }
+          window.VRState.alive = (s.alive !== false);
+          window.VRState.lastDeath = s.lastDeath || null;
+          window.VRState.reignYears = Number(s.reignYears || 0);
+          window.VRState.cardsPlayed = Number(s.cardsPlayed || 0);
+        }
+
+        // engine
+        this.reignIndex = Math.max(0, Number(e.reignIndex || 0));
+        this.recentCards = Array.isArray(e.recentCards) ? deepClone(e.recentCards) : [];
+        this.coinsStreak = Number(e.coinsStreak || 0);
+
+        // session mirror
+        if (window.VRGame?.session) {
+          window.VRGame.session.reignLength = Number(sess.reignLength || 0);
+        }
+
+        // current card
+        const cardId = e.currentCardId || null;
+        const card = cardId ? this.deck.find(c => c && c.id === cardId) : null;
+        if (card) {
+          this.currentCardLogic = card;
+          window.VRUIBinding.showCard(card);
+        } else {
+          // si la carte n’est plus trouvable, on repart sur une pioche normale sans casser les compteurs
+          this._nextCard();
+        }
+
+        window.VRUIBinding.updateGauges();
+
+        const kingName = getDynastyName(Math.max(0, this.reignIndex - 1));
+        window.VRUIBinding.updateMeta(
+          kingName,
+          window.VRState.getReignYears(),
+          this._uiCoins,
+          this._uiTokens
+        );
+
+        this._restored = true;
+        return true;
+      } catch (_) {
+        return false;
+      }
+    },
+
     async init(universeId, lang) {
       this.universeId = universeId;
 
@@ -808,6 +963,8 @@ body.vr-peek-mode .vr-gauge-preview{
       this.reignIndex = 0;
       this.coinsStreak = 0;
       this.history = [];
+      this.currentCardLogic = null;
+      this._restored = false;
 
       // init UI balances from remote
       try {
@@ -822,7 +979,12 @@ body.vr-peek-mode .vr-gauge-preview{
       window.VRState.initUniverse(this.universeConfig);
       window.VRUIBinding.init(this.universeConfig, this.lang, this.cardTextsDict);
 
-      this._startNewReign();
+      // ✅ RESTORE si une save existe (sinon nouvelle run)
+      const restored = this._restoreFromSaveIfAny();
+      if (!restored) {
+        this._startNewReign();
+        this._saveRunSoft();
+      }
     },
 
     async _refreshUIBalancesSoft() {
@@ -838,8 +1000,14 @@ body.vr-peek-mode .vr-gauge-preview{
     _startNewReign() {
       this.reignIndex += 1;
       window.VRState.alive = true;
+      window.VRState.lastDeath = null;
       window.VRState.reignYears = 0;
       window.VRState.cardsPlayed = 0;
+
+      this.recentCards = [];
+      this.coinsStreak = 0;
+      this.history = [];
+      this.currentCardLogic = null;
 
       const kingName = getDynastyName(this.reignIndex - 1);
       const years = window.VRState.getReignYears();
@@ -852,6 +1020,7 @@ body.vr-peek-mode .vr-gauge-preview{
       });
 
       this._nextCard();
+      this._saveRunSoft();
     },
 
     _nextCard() {
@@ -876,6 +1045,8 @@ body.vr-peek-mode .vr-gauge-preview{
       this._rememberCard(card.id);
       window.VRState.incrementCardsPlayed();
       window.VRUIBinding.showCard(card);
+
+      this._saveRunSoft();
     },
 
     _rememberCard(cardId) {
@@ -944,6 +1115,7 @@ body.vr-peek-mode .vr-gauge-preview{
         this._uiTokens
       );
 
+      this._saveRunSoft();
       return true;
     },
 
@@ -977,6 +1149,9 @@ body.vr-peek-mode .vr-gauge-preview{
       // ✅ interstitiel tous les X choix (non bloquant)
       try { window.VRGame?.maybeShowInterstitial?.(); } catch (_) {}
 
+      // ✅ SAVE après résolution du choix (avant next/death)
+      this._saveRunSoft();
+
       // petit refresh soft pour recoller à la DB
       this._refreshUIBalancesSoft().then(() => {
         window.VRUIBinding.updateMeta(
@@ -995,6 +1170,9 @@ body.vr-peek-mode .vr-gauge-preview{
       const lastDeath = window.VRState.getLastDeath();
       await window.VRGame?.onRunEnded?.(); // ✅ maintenant async
       await window.VREndings.showEnding(this.universeConfig, lastDeath);
+
+      // ✅ SAVE état "mort" (utile si l’utilisateur quitte sur l’ending)
+      this._saveRunSoft();
 
       const btn = document.getElementById("ending-restart-btn");
       if (btn) {
@@ -1026,6 +1204,7 @@ body.vr-peek-mode .vr-gauge-preview{
       }
 
       this.coinsStreak = 0;
+      this._saveRunSoft();
     }
   };
 
@@ -1330,6 +1509,9 @@ body.vr-peek-mode .vr-gauge-preview{
           window.VRState?.setGaugeValue?.(gaugeId, 50);
           window.VRUIBinding?.updateGauges?.();
 
+          // ✅ SAVE (changement de run)
+          try { window.VREngine?._saveRunSoft?.(); } catch (_) {}
+
           // refresh balances
           try {
             const me = await window.VRProfile?.getMe?.(0);
@@ -1621,8 +1803,30 @@ window.VRGame = {
     try { document.body.style.overscrollBehavior = "none"; } catch (_) {}
   }
 
+  function setupSaveGuards() {
+    // ✅ Save run quand l’app passe en arrière-plan / se ferme (best-effort)
+    const flush = () => {
+      try { window.VREngine?._saveRunSoft?.(); } catch (_) {}
+    };
+
+    try {
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") flush();
+      });
+    } catch (_) {}
+
+    try {
+      window.addEventListener("pagehide", () => flush());
+    } catch (_) {}
+
+    try {
+      window.addEventListener("beforeunload", () => flush());
+    } catch (_) {}
+  }
+
   async function initApp() {
     setupNavigationGuards();
+    setupSaveGuards();
 
     try {
       if (window.VRI18n && typeof window.VRI18n.initI18n === "function") {
