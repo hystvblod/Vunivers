@@ -6,7 +6,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 7,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": -5
@@ -16,16 +16,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": -5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 13,
+            "found_wealth": 15,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -37,7 +37,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 10
           }
@@ -46,13 +46,13 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 10,
             "converted_population": -10,
             "royal_treasury": 10
@@ -76,8 +76,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 7,
-            "royal_treasury": -13
+            "converted_population": 10,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -85,7 +85,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -10,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -143,7 +143,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -172,7 +172,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 5
@@ -226,7 +226,7 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -246,7 +246,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 17,
+            "conquered_territory": 20,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": -5
@@ -256,16 +256,16 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": -5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 3,
+            "found_wealth": 5,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -277,7 +277,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -286,13 +286,13 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 10,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 20
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -10,
             "royal_treasury": 5
@@ -316,8 +316,8 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 7,
-            "royal_treasury": -8
+            "converted_population": 10,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -325,7 +325,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -10,
-            "royal_treasury": 13
+            "royal_treasury": 15
           }
         }
       }
@@ -383,7 +383,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -5,
             "royal_treasury": 10
           }
@@ -412,7 +412,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 5
@@ -466,7 +466,7 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": -5
           }
         },
@@ -486,7 +486,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 0
@@ -496,16 +496,16 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": -5,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -3
+            "royal_treasury": 0
           }
         }
       }
@@ -517,7 +517,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": 5,
             "royal_treasury": 10
           }
@@ -526,13 +526,13 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 5,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 20
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
@@ -556,8 +556,8 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -565,7 +565,7 @@
             "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -5,
-            "royal_treasury": 13
+            "royal_treasury": 15
           }
         }
       }
@@ -623,7 +623,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 10
           }
@@ -652,7 +652,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 5
@@ -706,7 +706,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
@@ -726,7 +726,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 0,
             "converted_population": -5,
             "royal_treasury": -5
@@ -736,16 +736,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": -5,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 10,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -757,7 +757,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 15
           }
@@ -766,13 +766,13 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 5,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 20
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 15,
             "converted_population": -10,
             "royal_treasury": 5
@@ -796,8 +796,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -805,7 +805,7 @@
             "conquered_territory": 5,
             "found_wealth": -10,
             "converted_population": 0,
-            "royal_treasury": 3
+            "royal_treasury": 5
           }
         }
       }
@@ -863,7 +863,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 10
           }
@@ -892,7 +892,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -946,7 +946,7 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -966,7 +966,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 5,
             "royal_treasury": -10
@@ -976,16 +976,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 10,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -997,7 +997,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": 0,
             "royal_treasury": 10
           }
@@ -1006,13 +1006,13 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -10,
             "royal_treasury": 5
@@ -1036,8 +1036,8 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 12,
-            "royal_treasury": -3
+            "converted_population": 15,
+            "royal_treasury": 0
           }
         },
         "C": {
@@ -1045,7 +1045,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -1103,7 +1103,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -1132,7 +1132,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 5,
             "converted_population": -10,
             "royal_treasury": 5
@@ -1186,7 +1186,7 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": -5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": -5
           }
         },
@@ -1206,7 +1206,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 7,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": 5,
             "royal_treasury": -5
@@ -1216,16 +1216,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 0,
-            "royal_treasury": -3
+            "royal_treasury": 0
           }
         }
       }
@@ -1237,7 +1237,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -1246,13 +1246,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 10,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 10
@@ -1276,8 +1276,8 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -13
+            "converted_population": 15,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -1285,7 +1285,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -1343,7 +1343,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -1372,7 +1372,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 10,
             "converted_population": -10,
             "royal_treasury": 5
@@ -1426,7 +1426,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -10
           }
         },
@@ -1446,7 +1446,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 17,
+            "conquered_territory": 20,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": -5
@@ -1456,16 +1456,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": -5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": -5,
-            "found_wealth": 13,
+            "found_wealth": 15,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -1477,7 +1477,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": 5,
             "royal_treasury": 10
           }
@@ -1486,13 +1486,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 20
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 5
@@ -1516,8 +1516,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 12,
-            "royal_treasury": -13
+            "converted_population": 15,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -1525,7 +1525,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -10,
-            "royal_treasury": 13
+            "royal_treasury": 15
           }
         }
       }
@@ -1583,7 +1583,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -10,
             "royal_treasury": 0
           }
@@ -1612,7 +1612,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -10,
             "royal_treasury": 5
@@ -1666,7 +1666,7 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
@@ -1686,7 +1686,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": -10
@@ -1696,16 +1696,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 13,
+            "found_wealth": 15,
             "converted_population": 10,
-            "royal_treasury": -3
+            "royal_treasury": 0
           }
         }
       }
@@ -1717,7 +1717,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -1726,13 +1726,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 10
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -1756,8 +1756,8 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -3
+            "converted_population": 15,
+            "royal_treasury": 0
           }
         },
         "C": {
@@ -1765,7 +1765,7 @@
             "conquered_territory": 0,
             "found_wealth": -5,
             "converted_population": 0,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -1823,7 +1823,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -1852,7 +1852,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -1906,7 +1906,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
@@ -1926,7 +1926,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 0,
             "converted_population": 0,
             "royal_treasury": -5
@@ -1936,16 +1936,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": -5,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -1957,7 +1957,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -1966,13 +1966,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 10
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 0
@@ -1996,8 +1996,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 7,
-            "royal_treasury": -8
+            "converted_population": 10,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -2005,7 +2005,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -2063,7 +2063,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -10,
             "royal_treasury": 5
           }
@@ -2092,7 +2092,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 0,
             "converted_population": -5,
             "royal_treasury": 10
@@ -2146,7 +2146,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": -10
           }
         },
@@ -2166,7 +2166,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 0
@@ -2176,16 +2176,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -2197,7 +2197,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 10
           }
@@ -2206,13 +2206,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
@@ -2236,8 +2236,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 7,
-            "royal_treasury": -8
+            "converted_population": 10,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -2245,7 +2245,7 @@
             "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -5,
-            "royal_treasury": 13
+            "royal_treasury": 15
           }
         }
       }
@@ -2303,7 +2303,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -2332,7 +2332,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 0
@@ -2386,7 +2386,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": -5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -2406,7 +2406,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 17,
+            "conquered_territory": 20,
             "found_wealth": 0,
             "converted_population": 5,
             "royal_treasury": -5
@@ -2416,16 +2416,16 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -2437,7 +2437,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -2446,13 +2446,13 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 10
@@ -2476,8 +2476,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 10,
-            "converted_population": 12,
-            "royal_treasury": -3
+            "converted_population": 15,
+            "royal_treasury": 0
           }
         },
         "C": {
@@ -2485,7 +2485,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": 0,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -2543,7 +2543,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -2572,7 +2572,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 10
@@ -2626,7 +2626,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -10
           }
         },
@@ -2646,7 +2646,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 17,
+            "conquered_territory": 20,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": -10
@@ -2656,16 +2656,16 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -2677,7 +2677,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 10
           }
@@ -2686,13 +2686,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -2716,8 +2716,8 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 7,
-            "royal_treasury": -8
+            "converted_population": 10,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -2725,7 +2725,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": 0,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -2783,7 +2783,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -2812,7 +2812,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 0
@@ -2866,7 +2866,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -10
           }
         },
@@ -2886,7 +2886,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 17,
+            "conquered_territory": 20,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": -5
@@ -2896,16 +2896,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": -5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": -5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 13,
+            "found_wealth": 15,
             "converted_population": 10,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -2917,7 +2917,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 10
           }
@@ -2926,13 +2926,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 20
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 0
@@ -2956,8 +2956,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -3
+            "converted_population": 15,
+            "royal_treasury": 0
           }
         },
         "C": {
@@ -2965,7 +2965,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -3023,7 +3023,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -3052,7 +3052,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 10
@@ -3106,7 +3106,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": -5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -3126,7 +3126,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 0
@@ -3136,16 +3136,16 @@
           "gaugeDelta": {
             "conquered_territory": 10,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": -5,
-            "found_wealth": 3,
+            "found_wealth": 5,
             "converted_population": 10,
-            "royal_treasury": -3
+            "royal_treasury": 0
           }
         }
       }
@@ -3157,7 +3157,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -3166,13 +3166,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 0
@@ -3196,8 +3196,8 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -3205,7 +3205,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": 0,
-            "royal_treasury": 13
+            "royal_treasury": 15
           }
         }
       }
@@ -3263,7 +3263,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -3292,7 +3292,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 5
@@ -3346,7 +3346,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -3366,7 +3366,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 0,
             "converted_population": 0,
             "royal_treasury": -5
@@ -3376,16 +3376,16 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": -5,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 10,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -3397,7 +3397,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -3406,13 +3406,13 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 10,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 10
@@ -3436,8 +3436,8 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 0,
-            "converted_population": 7,
-            "royal_treasury": -13
+            "converted_population": 10,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -3445,7 +3445,7 @@
             "conquered_territory": 0,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -3503,7 +3503,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -3532,7 +3532,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 10
@@ -3586,7 +3586,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
@@ -3606,7 +3606,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 17,
+            "conquered_territory": 20,
             "found_wealth": 0,
             "converted_population": 5,
             "royal_treasury": -10
@@ -3616,16 +3616,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -13
+            "royal_treasury": -10
           }
         }
       }
@@ -3637,7 +3637,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -3646,13 +3646,13 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 10,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -3676,8 +3676,8 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 10,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -3685,7 +3685,7 @@
             "conquered_territory": 5,
             "found_wealth": -10,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -3743,7 +3743,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -10,
             "royal_treasury": 5
           }
@@ -3772,7 +3772,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -10,
             "royal_treasury": 5
@@ -3826,7 +3826,7 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
@@ -3846,7 +3846,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 7,
+            "conquered_territory": 10,
             "found_wealth": 0,
             "converted_population": 0,
             "royal_treasury": -5
@@ -3856,16 +3856,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -13
+            "royal_treasury": -10
           }
         }
       }
@@ -3877,7 +3877,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": 0,
             "royal_treasury": 10
           }
@@ -3886,13 +3886,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 10,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 20
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 5
@@ -3916,8 +3916,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -3925,7 +3925,7 @@
             "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -5,
-            "royal_treasury": 13
+            "royal_treasury": 15
           }
         }
       }
@@ -3983,7 +3983,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 0
           }
@@ -4012,7 +4012,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 10
@@ -4066,7 +4066,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": -5
           }
         },
@@ -4086,7 +4086,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": -10
@@ -4096,16 +4096,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": -5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": -5,
-            "found_wealth": 3,
+            "found_wealth": 5,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -4117,7 +4117,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 10
           }
@@ -4126,13 +4126,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 10,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 20
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 5
@@ -4156,8 +4156,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -4165,7 +4165,7 @@
             "conquered_territory": 0,
             "found_wealth": -10,
             "converted_population": 0,
-            "royal_treasury": 3
+            "royal_treasury": 5
           }
         }
       }
@@ -4223,7 +4223,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -4252,7 +4252,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 0
@@ -4306,7 +4306,7 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -4326,7 +4326,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 5,
             "royal_treasury": 0
@@ -4336,16 +4336,16 @@
           "gaugeDelta": {
             "conquered_territory": 10,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -4357,7 +4357,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 15
           }
@@ -4366,13 +4366,13 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 20
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
@@ -4396,8 +4396,8 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -4405,7 +4405,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -10,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -4463,7 +4463,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -10,
             "royal_treasury": 10
           }
@@ -4492,7 +4492,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 0
@@ -4546,7 +4546,7 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 0,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": -5
           }
         },
@@ -4566,7 +4566,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 17,
+            "conquered_territory": 20,
             "found_wealth": 0,
             "converted_population": 0,
             "royal_treasury": 0
@@ -4576,16 +4576,16 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -13
+            "royal_treasury": -10
           }
         }
       }
@@ -4597,7 +4597,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 10
           }
@@ -4606,13 +4606,13 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 10,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -4636,8 +4636,8 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 5,
-            "converted_population": 7,
-            "royal_treasury": -8
+            "converted_population": 10,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -4645,7 +4645,7 @@
             "conquered_territory": 10,
             "found_wealth": -5,
             "converted_population": 0,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -4703,7 +4703,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 0
           }
@@ -4732,7 +4732,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": -10,
             "royal_treasury": 5
@@ -4786,7 +4786,7 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 0,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": -10
           }
         },
@@ -4806,7 +4806,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 17,
+            "conquered_territory": 20,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": -5
@@ -4816,16 +4816,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": -5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -4837,7 +4837,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -4846,13 +4846,13 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 5,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -4876,8 +4876,8 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 5,
-            "converted_population": 7,
-            "royal_treasury": -13
+            "converted_population": 10,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -4885,7 +4885,7 @@
             "conquered_territory": 10,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -4943,7 +4943,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -4972,7 +4972,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 10
@@ -5026,7 +5026,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -5046,7 +5046,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 7,
+            "conquered_territory": 10,
             "found_wealth": 0,
             "converted_population": 5,
             "royal_treasury": 0
@@ -5056,16 +5056,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 10,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -5077,7 +5077,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -5086,13 +5086,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 10
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -5116,8 +5116,8 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 10,
-            "converted_population": 12,
-            "royal_treasury": -3
+            "converted_population": 15,
+            "royal_treasury": 0
           }
         },
         "C": {
@@ -5125,7 +5125,7 @@
             "conquered_territory": 10,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 3
+            "royal_treasury": 5
           }
         }
       }
@@ -5183,7 +5183,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -5212,7 +5212,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 5
@@ -5266,7 +5266,7 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -10
           }
         },
@@ -5286,7 +5286,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 0
@@ -5296,16 +5296,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 3,
+            "found_wealth": 5,
             "converted_population": 10,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -5317,7 +5317,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -5326,13 +5326,13 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 20
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -5356,8 +5356,8 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 5,
-            "converted_population": 7,
-            "royal_treasury": -13
+            "converted_population": 10,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -5365,7 +5365,7 @@
             "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -5423,7 +5423,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -5452,7 +5452,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": -10,
             "royal_treasury": 5
@@ -5506,7 +5506,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -5526,7 +5526,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 7,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": -5
@@ -5536,16 +5536,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 13,
+            "found_wealth": 15,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -5557,7 +5557,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 5,
             "royal_treasury": 15
           }
@@ -5566,13 +5566,13 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 20
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 0
@@ -5596,8 +5596,8 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 0,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -5605,7 +5605,7 @@
             "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -10,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -5663,7 +5663,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -5692,7 +5692,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 5
@@ -5746,7 +5746,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
@@ -5766,7 +5766,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": -5
@@ -5776,16 +5776,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 13,
+            "found_wealth": 15,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -5797,7 +5797,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": 0,
             "royal_treasury": 10
           }
@@ -5806,13 +5806,13 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -5836,8 +5836,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -5845,7 +5845,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -5903,7 +5903,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -5932,7 +5932,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 5
@@ -5986,7 +5986,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
@@ -6006,7 +6006,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 17,
+            "conquered_territory": 20,
             "found_wealth": 0,
             "converted_population": 0,
             "royal_treasury": 0
@@ -6016,16 +6016,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 0,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -6037,7 +6037,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": 5,
             "royal_treasury": 10
           }
@@ -6046,13 +6046,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -10,
             "royal_treasury": 0
@@ -6076,8 +6076,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 17,
-            "royal_treasury": -13
+            "converted_population": 20,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -6085,7 +6085,7 @@
             "conquered_territory": 0,
             "found_wealth": 0,
             "converted_population": -10,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -6143,7 +6143,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -6172,7 +6172,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 0
@@ -6226,7 +6226,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": -5
           }
         },
@@ -6246,7 +6246,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": -10
@@ -6256,16 +6256,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 10,
-            "royal_treasury": -13
+            "royal_treasury": -10
           }
         }
       }
@@ -6277,7 +6277,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 10
           }
@@ -6286,13 +6286,13 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 10,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 5
@@ -6316,8 +6316,8 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 7,
-            "royal_treasury": -13
+            "converted_population": 10,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -6325,7 +6325,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -10,
-            "royal_treasury": 13
+            "royal_treasury": 15
           }
         }
       }
@@ -6383,7 +6383,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -10,
             "royal_treasury": 5
           }
@@ -6412,7 +6412,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -6466,7 +6466,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": -10
           }
         },
@@ -6486,7 +6486,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 17,
+            "conquered_territory": 20,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": -10
@@ -6496,16 +6496,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": -5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 3,
+            "found_wealth": 5,
             "converted_population": 5,
-            "royal_treasury": -13
+            "royal_treasury": -10
           }
         }
       }
@@ -6517,7 +6517,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 10
           }
@@ -6526,13 +6526,13 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 20
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 10
@@ -6556,8 +6556,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -6565,7 +6565,7 @@
             "conquered_territory": 10,
             "found_wealth": -5,
             "converted_population": 0,
-            "royal_treasury": 13
+            "royal_treasury": 15
           }
         }
       }
@@ -6623,7 +6623,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": -10,
             "royal_treasury": 0
           }
@@ -6652,7 +6652,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -6706,7 +6706,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -6726,7 +6726,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 0
@@ -6736,16 +6736,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": -5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": -5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 3,
+            "found_wealth": 5,
             "converted_population": 0,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -6757,7 +6757,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 15
           }
@@ -6766,13 +6766,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 10,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -10,
             "royal_treasury": 5
@@ -6796,8 +6796,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 7,
-            "royal_treasury": -8
+            "converted_population": 10,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -6805,7 +6805,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 3
+            "royal_treasury": 5
           }
         }
       }
@@ -6863,7 +6863,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 0
           }
@@ -6892,7 +6892,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 5
@@ -6946,7 +6946,7 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -10
           }
         },
@@ -6966,7 +6966,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 5,
             "royal_treasury": -5
@@ -6976,16 +6976,16 @@
           "gaugeDelta": {
             "conquered_territory": 10,
             "found_wealth": -5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 13,
+            "found_wealth": 15,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -6997,7 +6997,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 15
           }
@@ -7006,13 +7006,13 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 10,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 5
@@ -7036,8 +7036,8 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 0,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -7045,7 +7045,7 @@
             "conquered_territory": 5,
             "found_wealth": -10,
             "converted_population": 0,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -7103,7 +7103,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -5,
             "royal_treasury": 0
           }
@@ -7132,7 +7132,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 0,
             "converted_population": -10,
             "royal_treasury": 5
@@ -7186,7 +7186,7 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 0,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": -10
           }
         },
@@ -7206,7 +7206,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 0
@@ -7216,16 +7216,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": -5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -3
+            "royal_treasury": 0
           }
         }
       }
@@ -7237,7 +7237,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -7246,13 +7246,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 10,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 20
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 5
@@ -7276,8 +7276,8 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -13
+            "converted_population": 15,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -7285,7 +7285,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 13
+            "royal_treasury": 15
           }
         }
       }
@@ -7343,7 +7343,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -7372,7 +7372,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -10,
             "royal_treasury": 5
@@ -7426,7 +7426,7 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": -5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -10
           }
         },
@@ -7446,7 +7446,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 0
@@ -7456,16 +7456,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -3
+            "royal_treasury": 0
           }
         }
       }
@@ -7477,7 +7477,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -7486,13 +7486,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 10
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -10,
             "royal_treasury": 10
@@ -7516,8 +7516,8 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 0,
-            "converted_population": 12,
-            "royal_treasury": -13
+            "converted_population": 15,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -7525,7 +7525,7 @@
             "conquered_territory": 5,
             "found_wealth": -10,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -7583,7 +7583,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -5,
             "royal_treasury": 0
           }
@@ -7612,7 +7612,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -7666,7 +7666,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": -5
           }
         },
@@ -7686,7 +7686,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 5,
             "royal_treasury": -10
@@ -7696,16 +7696,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 3,
+            "found_wealth": 5,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -7717,7 +7717,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 10
           }
@@ -7726,13 +7726,13 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 5
@@ -7756,8 +7756,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -13
+            "converted_population": 15,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -7765,7 +7765,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": 0,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -7823,7 +7823,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -7852,7 +7852,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 0,
             "converted_population": -5,
             "royal_treasury": 5
@@ -7906,7 +7906,7 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -10
           }
         },
@@ -7926,7 +7926,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 5,
             "royal_treasury": 0
@@ -7936,16 +7936,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -13
+            "royal_treasury": -10
           }
         }
       }
@@ -7957,7 +7957,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 5,
             "royal_treasury": 10
           }
@@ -7966,13 +7966,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 10
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 5
@@ -7996,8 +7996,8 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 5,
-            "converted_population": 7,
-            "royal_treasury": -8
+            "converted_population": 10,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -8005,7 +8005,7 @@
             "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -8063,7 +8063,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -5,
             "royal_treasury": 10
           }
@@ -8092,7 +8092,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -8146,7 +8146,7 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -8166,7 +8166,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 17,
+            "conquered_territory": 20,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": -5
@@ -8176,16 +8176,16 @@
           "gaugeDelta": {
             "conquered_territory": 10,
             "found_wealth": 0,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 13,
+            "found_wealth": 15,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -8197,7 +8197,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": 0,
             "royal_treasury": 15
           }
@@ -8206,13 +8206,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 5
@@ -8236,8 +8236,8 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -13
+            "converted_population": 15,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -8245,7 +8245,7 @@
             "conquered_territory": 10,
             "found_wealth": -5,
             "converted_population": -10,
-            "royal_treasury": 3
+            "royal_treasury": 5
           }
         }
       }
@@ -8303,7 +8303,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 10
           }
@@ -8332,7 +8332,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -5,
             "royal_treasury": 5
@@ -8386,7 +8386,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": -5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
@@ -8406,7 +8406,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 7,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": -5
@@ -8416,16 +8416,16 @@
           "gaugeDelta": {
             "conquered_territory": 10,
             "found_wealth": 0,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": -5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 3,
+            "found_wealth": 5,
             "converted_population": 5,
-            "royal_treasury": -3
+            "royal_treasury": 0
           }
         }
       }
@@ -8437,7 +8437,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": 0,
             "royal_treasury": 15
           }
@@ -8446,13 +8446,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 10
@@ -8476,8 +8476,8 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 7,
-            "royal_treasury": -3
+            "converted_population": 10,
+            "royal_treasury": 0
           }
         },
         "C": {
@@ -8485,7 +8485,7 @@
             "conquered_territory": 10,
             "found_wealth": -5,
             "converted_population": 0,
-            "royal_treasury": 3
+            "royal_treasury": 5
           }
         }
       }
@@ -8543,7 +8543,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -10,
             "royal_treasury": 10
           }
@@ -8572,7 +8572,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -5,
             "royal_treasury": 5
@@ -8626,7 +8626,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -8646,7 +8646,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 5,
             "royal_treasury": -5
@@ -8656,16 +8656,16 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 13,
+            "found_wealth": 15,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -8677,7 +8677,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 10
           }
@@ -8686,13 +8686,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 20
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 5
@@ -8716,8 +8716,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -8725,7 +8725,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -10,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -8783,7 +8783,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -8812,7 +8812,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 10
@@ -8866,7 +8866,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -10
           }
         },
@@ -8886,7 +8886,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": -5
@@ -8896,16 +8896,16 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": -5,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -8917,7 +8917,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 15
           }
@@ -8926,13 +8926,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 10
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
@@ -8956,8 +8956,8 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 7,
-            "royal_treasury": -8
+            "converted_population": 10,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -8965,7 +8965,7 @@
             "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -9023,7 +9023,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -9052,7 +9052,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 0
@@ -9106,7 +9106,7 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -10
           }
         },
@@ -9126,7 +9126,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": -5
@@ -9136,16 +9136,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 10,
-            "royal_treasury": -3
+            "royal_treasury": 0
           }
         }
       }
@@ -9157,7 +9157,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -9166,13 +9166,13 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -10,
             "royal_treasury": 5
@@ -9196,8 +9196,8 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 10,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -9205,7 +9205,7 @@
             "conquered_territory": 10,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -9263,7 +9263,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -9292,7 +9292,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 0
@@ -9346,7 +9346,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -9366,7 +9366,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 7,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": -5
@@ -9376,16 +9376,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 13,
+            "found_wealth": 15,
             "converted_population": 10,
-            "royal_treasury": -3
+            "royal_treasury": 0
           }
         }
       }
@@ -9397,7 +9397,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -5,
             "royal_treasury": 10
           }
@@ -9406,13 +9406,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 10
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 10
@@ -9436,8 +9436,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -13
+            "converted_population": 15,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -9445,7 +9445,7 @@
             "conquered_territory": 10,
             "found_wealth": -10,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -9503,7 +9503,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -9532,7 +9532,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 5
@@ -9586,7 +9586,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
@@ -9606,7 +9606,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": -5
@@ -9616,16 +9616,16 @@
           "gaugeDelta": {
             "conquered_territory": 10,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 3,
+            "found_wealth": 5,
             "converted_population": 5,
-            "royal_treasury": -13
+            "royal_treasury": -10
           }
         }
       }
@@ -9637,7 +9637,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": 0,
             "royal_treasury": 10
           }
@@ -9646,13 +9646,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -9676,8 +9676,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -9685,7 +9685,7 @@
             "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -10,
-            "royal_treasury": 3
+            "royal_treasury": 5
           }
         }
       }
@@ -9743,7 +9743,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -9772,7 +9772,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 5
@@ -9826,7 +9826,7 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
@@ -9846,7 +9846,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": -5
@@ -9856,16 +9856,16 @@
           "gaugeDelta": {
             "conquered_territory": 10,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 13,
+            "found_wealth": 15,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -9877,7 +9877,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": 5,
             "royal_treasury": 10
           }
@@ -9886,13 +9886,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 10,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 20
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 0
@@ -9916,8 +9916,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -9925,7 +9925,7 @@
             "conquered_territory": 0,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -9983,7 +9983,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": 0,
             "royal_treasury": 0
           }
@@ -10012,7 +10012,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -10066,7 +10066,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": -10
           }
         },
@@ -10086,7 +10086,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 0
@@ -10096,16 +10096,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": -5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": -5,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -3
+            "royal_treasury": 0
           }
         }
       }
@@ -10117,7 +10117,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 10
           }
@@ -10126,13 +10126,13 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 10
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 0
@@ -10156,8 +10156,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 17,
-            "royal_treasury": -8
+            "converted_population": 20,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -10165,7 +10165,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -10223,7 +10223,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 0
           }
@@ -10252,7 +10252,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 0
@@ -10306,7 +10306,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": -5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -10326,7 +10326,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 7,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": -5
@@ -10336,16 +10336,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 3,
+            "found_wealth": 5,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -10357,7 +10357,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 5
           }
@@ -10366,13 +10366,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -10396,8 +10396,8 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 5,
-            "converted_population": 17,
-            "royal_treasury": -8
+            "converted_population": 20,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -10405,7 +10405,7 @@
             "conquered_territory": 5,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -10463,7 +10463,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": -10,
             "royal_treasury": 5
           }
@@ -10492,7 +10492,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 0,
             "converted_population": -10,
             "royal_treasury": 10
@@ -10546,7 +10546,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -10566,7 +10566,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 7,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": -5
@@ -10576,16 +10576,16 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 0,
-            "royal_treasury": -13
+            "royal_treasury": -10
           }
         }
       }
@@ -10597,7 +10597,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -10606,13 +10606,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 0
@@ -10636,8 +10636,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 12,
-            "royal_treasury": -13
+            "converted_population": 15,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -10645,7 +10645,7 @@
             "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -5,
-            "royal_treasury": 3
+            "royal_treasury": 5
           }
         }
       }
@@ -10703,7 +10703,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 0
           }
@@ -10732,7 +10732,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 0,
             "converted_population": -5,
             "royal_treasury": 5
@@ -10786,7 +10786,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -10806,7 +10806,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 7,
+            "conquered_territory": 10,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 0
@@ -10816,16 +10816,16 @@
           "gaugeDelta": {
             "conquered_territory": 10,
             "found_wealth": 0,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 0,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -10837,7 +10837,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 10
           }
@@ -10846,13 +10846,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 10
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -10876,8 +10876,8 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 7,
-            "royal_treasury": -3
+            "converted_population": 10,
+            "royal_treasury": 0
           }
         },
         "C": {
@@ -10885,7 +10885,7 @@
             "conquered_territory": 0,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -10943,7 +10943,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -10,
             "royal_treasury": 0
           }
@@ -10972,7 +10972,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 0
@@ -11026,7 +11026,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -11046,7 +11046,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 17,
+            "conquered_territory": 20,
             "found_wealth": 5,
             "converted_population": 0,
             "royal_treasury": 0
@@ -11056,16 +11056,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 13,
+            "found_wealth": 15,
             "converted_population": 5,
-            "royal_treasury": -3
+            "royal_treasury": 0
           }
         }
       }
@@ -11077,7 +11077,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 10,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": 0,
             "royal_treasury": 10
           }
@@ -11086,13 +11086,13 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 5,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 10
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 15,
             "converted_population": -10,
             "royal_treasury": 5
@@ -11116,8 +11116,8 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 12,
-            "royal_treasury": -13
+            "converted_population": 15,
+            "royal_treasury": -10
           }
         },
         "C": {
@@ -11125,7 +11125,7 @@
             "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -11183,7 +11183,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 0
           }
@@ -11212,7 +11212,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 5,
             "converted_population": -10,
             "royal_treasury": 10
@@ -11266,7 +11266,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": 0
           }
         },
@@ -11286,7 +11286,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 0,
             "converted_population": 0,
             "royal_treasury": -5
@@ -11296,16 +11296,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 3,
+            "converted_population": 5,
             "royal_treasury": 0
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 3,
+            "found_wealth": 5,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -11317,7 +11317,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 10
           }
@@ -11326,13 +11326,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 10,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 5
@@ -11356,8 +11356,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 12,
-            "royal_treasury": -8
+            "converted_population": 15,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -11365,7 +11365,7 @@
             "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -11423,7 +11423,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": 0,
             "royal_treasury": 0
           }
@@ -11452,7 +11452,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 8,
+            "conquered_territory": 10,
             "found_wealth": 10,
             "converted_population": 0,
             "royal_treasury": 10
@@ -11506,7 +11506,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 13,
+            "converted_population": 15,
             "royal_treasury": -10
           }
         },
@@ -11526,7 +11526,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 0,
             "converted_population": 0,
             "royal_treasury": -5
@@ -11536,16 +11536,16 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 5,
-            "royal_treasury": -8
+            "royal_treasury": -5
           }
         }
       }
@@ -11557,7 +11557,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 17,
+            "found_wealth": 20,
             "converted_population": -5,
             "royal_treasury": 10
           }
@@ -11566,13 +11566,13 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 15
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 10,
             "converted_population": -5,
             "royal_treasury": 5
@@ -11596,8 +11596,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 5,
-            "converted_population": 17,
-            "royal_treasury": -8
+            "converted_population": 20,
+            "royal_treasury": -5
           }
         },
         "C": {
@@ -11605,7 +11605,7 @@
             "conquered_territory": 10,
             "found_wealth": -5,
             "converted_population": -5,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -11663,7 +11663,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 5
           }
@@ -11692,7 +11692,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 0,
             "converted_population": -5,
             "royal_treasury": 5
@@ -11746,7 +11746,7 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
@@ -11766,7 +11766,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 12,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": 5,
             "royal_treasury": -10
@@ -11776,16 +11776,16 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 0,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 5
           }
         },
         "C": {
           "gaugeDelta": {
             "conquered_territory": 0,
-            "found_wealth": 8,
+            "found_wealth": 10,
             "converted_population": 0,
-            "royal_treasury": -3
+            "royal_treasury": 0
           }
         }
       }
@@ -11797,7 +11797,7 @@
         "A": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 12,
+            "found_wealth": 15,
             "converted_population": -5,
             "royal_treasury": 10
           }
@@ -11806,13 +11806,13 @@
           "gaugeDelta": {
             "conquered_territory": 5,
             "found_wealth": 10,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": 10
           }
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 13,
+            "conquered_territory": 15,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 5
@@ -11836,8 +11836,8 @@
           "gaugeDelta": {
             "conquered_territory": 0,
             "found_wealth": 10,
-            "converted_population": 7,
-            "royal_treasury": -3
+            "converted_population": 10,
+            "royal_treasury": 0
           }
         },
         "C": {
@@ -11845,7 +11845,7 @@
             "conquered_territory": 10,
             "found_wealth": -5,
             "converted_population": -10,
-            "royal_treasury": 8
+            "royal_treasury": 10
           }
         }
       }
@@ -11903,7 +11903,7 @@
         "C": {
           "gaugeDelta": {
             "conquered_territory": 5,
-            "found_wealth": 7,
+            "found_wealth": 10,
             "converted_population": -10,
             "royal_treasury": 5
           }
@@ -11932,7 +11932,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 3,
+            "conquered_territory": 5,
             "found_wealth": 5,
             "converted_population": -5,
             "royal_treasury": 10
@@ -11986,7 +11986,7 @@
           "gaugeDelta": {
             "conquered_territory": -5,
             "found_wealth": 5,
-            "converted_population": 8,
+            "converted_population": 10,
             "royal_treasury": -5
           }
         },
