@@ -1,5 +1,10 @@
 // FILE: zip/js/ads.js
 // VRealms - ads.js (AdMob Capacitor Community, no-import) — SANS SSV
+// ✅ Version "DB only" : plus de localStorage pour consent/actions/inter cooldown
+// ✅ Ajout stats pubs (24h + total) via RPC secure_get_ads_stats()
+// ✅ Log interstitiel réellement affiché via RPC secure_log_ad_event('interstitial', ...)
+// ⚠️ Rewarded: le log le plus safe doit être fait côté DB (dans secure_claim_reward). Ici on fait un log best-effort.
+
 (function () {
   "use strict";
 
@@ -17,7 +22,7 @@
   var AD_UNIT_ID_INTERSTITIEL = "ca-app-pub-6837328794080297/8465879302";
   var AD_UNIT_ID_REWARDED     = "ca-app-pub-6837328794080297/8202263221";
 
-  // ✅ Règle interstitiel : 1 pub tous les 7 choix (cumul global)
+  // ✅ Règle interstitiel : 1 pub tous les X choix (cumul global)
   var INTERSTITIEL_EVERY_X_ACTIONS = 8;
   var INTER_COOLDOWN_MS = 0; // anti-spam (0 = off)
 
@@ -29,11 +34,32 @@
   var isRewardShowing = false;
   window.__ads_active = false; // flag global anti-back/anti-overlays côté app
 
-  // --- Compteurs persistés (interstitiels) ---
-  var ACTIONS_KEY = "vr_actions_count";
-  var LAST_INTER_KEY = "vr_last_inter_ts";
-  var actionsCount = parseInt(localStorage.getItem(ACTIONS_KEY) || "0", 10);
-  var lastInterTs = parseInt(localStorage.getItem(LAST_INTER_KEY) || "0", 10);
+  // --- Compteurs (désormais server-side) ---
+  var ACTIONS_KEY = "vr_actions_count";   // conservé pour compat (plus utilisé en localStorage)
+  var LAST_INTER_KEY = "vr_last_inter_ts"; // conservé pour compat (plus utilisé en localStorage)
+
+  // Cache mémoire (synchro via DB)
+  var actionsCount = 0;
+  var lastInterTs = 0;
+
+  // --- Consent server-side (cache mémoire) ---
+  var _adsState = {
+    rgpdConsent: null,   // "accept" | "refuse" | null
+    adsConsent: null,    // boolean|null
+    adsEnabled: null     // boolean|null
+  };
+
+  // --- Stats pubs (cache mémoire) ---
+  var _adsStats = {
+    rewarded_total: 0,
+    rewarded_24h: 0,
+    inter_total: 0,
+    inter_24h: 0
+  };
+
+  function sbReady() {
+    return !!(window.sb && window.sb.auth && typeof window.sb.rpc === "function");
+  }
 
   // =============================
   // Helpers plateforme
@@ -47,27 +73,77 @@
   }
 
   // =============================
-  // Consent / Request options (NPA)
+  // Consent / Request options (NPA) - SERVER SIDE
   // =============================
   function getPersonalizedAdsGranted() {
-    var rgpd = localStorage.getItem("rgpdConsent"); // "accept"|"refuse"|null
-    var adsConsent = (localStorage.getItem("adsConsent") || "").toLowerCase();
-    var adsEnabled = (localStorage.getItem("adsEnabled") || "").toLowerCase();
+    // Plus de localStorage.
+    // Logique : si RGPD refuse => false
+    // sinon on regarde adsConsent / adsEnabled
+    try {
+      var rgpd = _adsState.rgpdConsent; // "accept"|"refuse"|null
+      var adsConsent = _adsState.adsConsent; // boolean|null
+      var adsEnabled = _adsState.adsEnabled; // boolean|null
 
-    if (rgpd === "refuse") return false;
-    if (rgpd === "accept") {
-      if (adsConsent) return adsConsent === "yes";
-      if (adsEnabled) return adsEnabled === "true";
+      if (rgpd === "refuse") return false;
+
+      if (rgpd === "accept") {
+        if (typeof adsConsent === "boolean") return adsConsent === true;
+        if (typeof adsEnabled === "boolean") return adsEnabled === true;
+        return false;
+      }
+
+      if (typeof adsConsent === "boolean") return adsConsent === true;
+      if (typeof adsEnabled === "boolean") return adsEnabled === true;
+
+      return false;
+    } catch (_) {
       return false;
     }
-    if (adsConsent) return adsConsent === "yes";
-    if (adsEnabled) return adsEnabled === "true";
-    return false;
   }
 
   function buildAdMobRequestOptions() {
     // npa: "1" => non-personnalisées, "0" => personnalisées
     return { npa: getPersonalizedAdsGranted() ? "0" : "1" };
+  }
+
+  async function syncAdsStateFromServer() {
+    try {
+      if (!sbReady()) return false;
+
+      // Assure que la session existe
+      try { await window.sb.auth.getUser(); } catch (_) {}
+
+      var r = await window.sb.rpc("secure_get_ads_state");
+      if (r && !r.error && r.data) {
+        _adsState.rgpdConsent = (typeof r.data.rgpdConsent === "string") ? r.data.rgpdConsent : null;
+        _adsState.adsConsent  = (typeof r.data.adsConsent === "boolean") ? r.data.adsConsent : null;
+        _adsState.adsEnabled  = (typeof r.data.adsEnabled === "boolean") ? r.data.adsEnabled : null;
+
+        actionsCount = parseInt(r.data.actionsCount || 0, 10) || 0;
+        lastInterTs  = parseInt(r.data.lastInterTs || 0, 10) || 0;
+        return true;
+      }
+      return false;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  async function refreshAdsStats() {
+    try {
+      if (!sbReady()) return _adsStats;
+
+      var r = await window.sb.rpc("secure_get_ads_stats");
+      if (r && !r.error && r.data) {
+        _adsStats.rewarded_total = parseInt(r.data.rewarded_total || 0, 10) || 0;
+        _adsStats.rewarded_24h   = parseInt(r.data.rewarded_24h || 0, 10) || 0;
+        _adsStats.inter_total    = parseInt(r.data.inter_total || 0, 10) || 0;
+        _adsStats.inter_24h      = parseInt(r.data.inter_24h || 0, 10) || 0;
+      }
+      return _adsStats;
+    } catch (_) {
+      return _adsStats;
+    }
   }
 
   // =============================
@@ -195,6 +271,10 @@
       if (!isNative()) return;
       if (!AdMob || !AdMob.initialize) return;
 
+      // Sync server-side consent & counters (tout via DB)
+      await syncAdsStateFromServer().catch(function () {});
+      await refreshAdsStats().catch(function () {});
+
       await AdMob.initialize({
         requestTrackingAuthorization: false,
         initializeForTesting: __DEV_ADS__
@@ -287,9 +367,17 @@
     return (now - lastInterTs) >= INTER_COOLDOWN_MS;
   }
 
-  function markInterstitialShownNow() {
+  async function markInterstitialShownNow() {
+    // Plus de localStorage -> DB
     lastInterTs = Date.now();
-    localStorage.setItem(LAST_INTER_KEY, String(lastInterTs));
+    try {
+      if (sbReady()) {
+        var r = await window.sb.rpc("secure_ads_mark_interstitial_shown");
+        if (r && !r.error && typeof r.data !== "undefined") {
+          lastInterTs = parseInt(r.data || lastInterTs, 10) || lastInterTs;
+        }
+      }
+    } catch (_) {}
   }
 
   async function showInterstitialAd() {
@@ -312,7 +400,18 @@
       postAdCleanup();
 
       if (res !== false) {
-        markInterstitialShownNow();
+        await markInterstitialShownNow();
+
+        // ✅ Log interstitiel réellement affiché (DB)
+        try {
+          if (sbReady()) {
+            await window.sb.rpc("secure_log_ad_event", { p_kind: "interstitial", p_placement: "auto" });
+          }
+        } catch (_) {}
+
+        // Refresh stats best-effort
+        try { await refreshAdsStats(); } catch (_) {}
+
         // Preload best-effort
         setTimeout(function () {
           try {
@@ -322,8 +421,10 @@
             }).catch(function () {});
           } catch (_) {}
         }, 1200);
+
         return true;
       }
+
       return false;
     } catch (_) {
       try {
@@ -366,6 +467,18 @@
       try { await showPromise; } catch (_) {}
       isRewardShowing = false;
 
+      // ⚠️ Best-effort log rewarded view.
+      // Le plus safe: logger côté DB au moment du credit (secure_claim_reward).
+      if (gotReward) {
+        try {
+          if (sbReady()) {
+            var plc = (opts && opts.placement) ? String(opts.placement) : "rewarded";
+            await window.sb.rpc("secure_log_ad_event", { p_kind: "rewarded", p_placement: plc });
+          }
+        } catch (_) {}
+        try { await refreshAdsStats(); } catch (_) {}
+      }
+
       return !!gotReward;
     } catch (_) {
       try { postAdCleanup(); } catch (_) {}
@@ -375,26 +488,49 @@
   }
 
   // =============================
-  // Compteur actions → déclenche interstitiel tous les 7 choix
+  // Compteur actions → déclenche interstitiel tous les X choix (server-side)
   // =============================
   function getActionsCount() {
-    actionsCount = parseInt(localStorage.getItem(ACTIONS_KEY) || "0", 10) || 0;
-    return actionsCount;
+    return actionsCount || 0;
   }
 
-  function resetActionsCount() {
+  async function resetActionsCount() {
     actionsCount = 0;
-    localStorage.setItem(ACTIONS_KEY, "0");
+    try {
+      if (sbReady()) {
+        await window.sb.rpc("secure_ads_reset_actions");
+        var s = await window.sb.rpc("secure_get_ads_state");
+        if (s && !s.error && s.data) {
+          actionsCount = parseInt(s.data.actionsCount || 0, 10) || 0;
+          lastInterTs = parseInt(s.data.lastInterTs || 0, 10) || 0;
+        }
+      }
+    } catch (_) {}
   }
 
   async function markActionAndMaybeShowInterstitial() {
-    // Incrémente puis vérifie (pub APRES le 7e choix)
-    actionsCount = (parseInt(localStorage.getItem(ACTIONS_KEY) || "0", 10) || 0) + 1;
-    localStorage.setItem(ACTIONS_KEY, String(actionsCount));
+    // Incrémente puis vérifie (pub APRES le Xème choix) => DB
+    try {
+      if (sbReady()) {
+        var r = await window.sb.rpc("secure_ads_mark_action", { p_delta: 1 });
+        if (r && !r.error) {
+          actionsCount = parseInt(r.data || actionsCount, 10) || actionsCount;
+        } else {
+          // fallback soft: resync
+          await syncAdsStateFromServer().catch(function () {});
+        }
+      } else {
+        // sans Supabase -> on incrémente en mémoire uniquement (aucun persist)
+        actionsCount = (actionsCount || 0) + 1;
+      }
+    } catch (_) {
+      actionsCount = (actionsCount || 0) + 1;
+    }
 
     if (INTERSTITIEL_EVERY_X_ACTIONS > 0 && (actionsCount % INTERSTITIEL_EVERY_X_ACTIONS) === 0) {
       try { await showInterstitialAd(); } catch (_) {}
     }
+
     return actionsCount;
   }
 
@@ -406,9 +542,16 @@
   window.VRAds.showInterstitialAd = showInterstitialAd;
   window.VRAds.showRewardedAd = showRewardedAd;
 
-  // ➜ nouvelle API "action"
+  // ➜ API "actions"
   window.VRAds.getActionsCount = getActionsCount;
   window.VRAds.resetActionsCount = resetActionsCount;
   window.VRAds.markAction = markActionAndMaybeShowInterstitial;
+
+  // ➜ API "stats"
+  window.VRAds.getStats = function () { return _adsStats; };
+  window.VRAds.refreshStats = refreshAdsStats;
+
+  // ➜ API "state"
+  window.VRAds.refreshState = syncAdsStateFromServer;
 
 })();

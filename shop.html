@@ -48,9 +48,40 @@
     </section>
   </main>
 
-  <!-- Supabase (si tu veux garder cohérent avec le reste) -->
+  <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabaseBootstrap.js"></script>
+
+  <!-- ✅ Mini bootstrap: assure session + profile avant scripts qui utilisent sb.rpc -->
+  <script>
+    (function () {
+      "use strict";
+      window.__vr_bootstrap_ready = false;
+
+      async function ensureBootstrap() {
+        try {
+          if (typeof window.bootstrapAuthAndProfile === "function") {
+            await window.bootstrapAuthAndProfile();
+          }
+        } catch (_) {}
+        window.__vr_bootstrap_ready = true;
+      }
+
+      // Lance immédiatement (sans bloquer le parsing)
+      ensureBootstrap();
+
+      // Optionnel: si un script veut attendre explicitement
+      window.vrWaitBootstrap = async function () {
+        if (window.__vr_bootstrap_ready) return true;
+        // petite attente max ~3s (best effort)
+        var t0 = Date.now();
+        while (!window.__vr_bootstrap_ready && (Date.now() - t0) < 3000) {
+          await new Promise(function (r) { setTimeout(r, 50); });
+        }
+        return !!window.__vr_bootstrap_ready;
+      };
+    })();
+  </script>
 
   <script src="js/userData.js"></script>
   <script src="js/ads.js"></script>

@@ -1391,19 +1391,21 @@ window.VRGame = {
   currentUniverse: null,
 
   // ✅ AJOUT MINIMAL: on garde tes champs, et on ajoute un compteur de choix
-  session: { reignLength: 0, choiceCount: 0 },
+// session run
+session: { reignLength: 0 },
 
-  async onUniverseSelected(universeId) {
-    this.currentUniverse = universeId;
-    this.session.reignLength = 0;
-    this.session.choiceCount = 0; // ✅ reset compteur interstitiel
 
-    this.applyUniverseBackground(universeId);
+async onUniverseSelected(universeId) {
+  this.currentUniverse = universeId;
+  this.session.reignLength = 0;
 
-    const lang = localStorage.getItem("vrealms_lang") || "fr";
-    try { await window.VREngine.init(universeId, lang); }
-    catch (e) { console.error("[VRGame] Erreur init moteur:", e); }
-  },
+  this.applyUniverseBackground(universeId);
+
+  const lang = localStorage.getItem("vrealms_lang") || "fr";
+  try { await window.VREngine.init(universeId, lang); }
+  catch (e) { console.error("[VRGame] Erreur init moteur:", e); }
+},
+
 
   applyUniverseBackground(universeId) {
     const viewGame = document.getElementById("view-game");
@@ -1420,19 +1422,16 @@ window.VRGame = {
   },
 
   // ✅ AJOUT MINIMAL: interstitiel tous les 7 choix (si VRAds le supporte)
-  async maybeShowInterstitial() {
-    try {
-      this.session.choiceCount = Number(this.session.choiceCount || 0) + 1;
+// interstitiel global via ads.js (persistant) : 1 toutes les 8 actions
+async maybeShowInterstitial() {
+  try {
+    // markAction gère le compteur persistant + déclenche l’interstitiel quand il faut
+    await (window.VRAds?.markAction?.() || Promise.resolve(0));
+  } catch (e) {
+    console.warn("[VRGame] interstitial skipped:", e);
+  }
+},
 
-      // tous les 7 choix
-      if (this.session.choiceCount % 7 !== 0) return;
-
-      // si tu n’as pas encore de showInterstitialAd dans ads.js, ça ne fera rien (safe)
-      await (window.VRAds?.showInterstitialAd?.({ placement: "every_7_choices" }) || Promise.resolve(false));
-    } catch (e) {
-      console.warn("[VRGame] interstitial skipped:", e);
-    }
-  },
 
   onCardResolved() {
     this.session.reignLength += 1;
