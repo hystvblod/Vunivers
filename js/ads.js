@@ -1,207 +1,208 @@
 // VRealms - ads.js
-// Implémentation robuste (Capacitor AdMob si dispo) + fallback stub navigateur.
+// AdMob via Capacitor (community) - no import.
+// API exposée: window.VRAds.showRewardedAd({placement}), window.VRAds.showInterstitial({placement})
 
 (function () {
   "use strict";
 
-  // ✅ À REMPLIR quand tu les as (AdMob > Blocs d'annonces)
-  const AD_UNITS = {
-    appIdAndroid: "ca-app-pub-6837328794080297~5780104273",
-    rewardedAndroid: "",     // ex: ca-app-pub-xxxx/yyyy
-    interstitialAndroid: ""  // ex: ca-app-pub-xxxx/yyyy
-  };
+  var Capacitor = (window.Capacitor || {});
+  var AdMob = (Capacitor.Plugins && Capacitor.Plugins.AdMob) ? Capacitor.Plugins.AdMob : null;
 
-  let _initDone = false;
-  let _busy = false;
+  // ✅ IDs (tes vraies unités)
+  var AD_UNIT_ID_INTERSTITIAL = "ca-app-pub-6837328794080297/8465879302";
+  var AD_UNIT_ID_REWARDED     = "ca-app-pub-6837328794080297/8202263221";
 
-  function _getCapacitorAdMob() {
+  // Anti double-call
+  var __busy = false;
+  var __inited = false;
+
+  // Flag utile si tu veux bloquer certains overlays pendant une pub
+  window.__ads_active = false;
+
+  function isNative() {
     try {
-      const cap = window.Capacitor;
-      if (!cap || !cap.Plugins) return null;
-      // Plusieurs plugins exposent "AdMob"
-      return cap.Plugins.AdMob || null;
-    } catch (_) {
-      return null;
-    }
+      if (window.Capacitor && typeof window.Capacitor.getPlatform === "function") {
+        return window.Capacitor.getPlatform() !== "web";
+      }
+      if (Capacitor && typeof Capacitor.isNativePlatform === "function") return Capacitor.isNativePlatform();
+    } catch (_) {}
+    return false;
   }
 
-  async function _ensureInit() {
-    if (_initDone) return true;
+  function getPersonalizedAdsGranted() {
+    // Même logique que ton ancien fichier (simple + stable)
+    var rgpd = localStorage.getItem("rgpdConsent"); // "accept"|"refuse"|null
+    var adsConsent = (localStorage.getItem("adsConsent") || "").toLowerCase();
+    var adsEnabled = (localStorage.getItem("adsEnabled") || "").toLowerCase();
 
-    const AdMob = _getCapacitorAdMob();
-    if (!AdMob) {
-      console.warn("[VRAds] Capacitor AdMob plugin non détecté (mode navigateur).");
-      _initDone = true;
+    if (rgpd === "refuse") return false;
+
+    if (rgpd === "accept") {
+      if (adsConsent) return adsConsent === "yes";
+      if (adsEnabled) return adsEnabled === "true";
+      return false;
+    }
+
+    if (adsConsent) return adsConsent === "yes";
+    if (adsEnabled) return adsEnabled === "true";
+    return false;
+  }
+
+  function buildRequestOptions() {
+    // npa: 1 = non-personnalisée, 0 = personnalisée
+    return { npa: getPersonalizedAdsGranted() ? "0" : "1" };
+  }
+
+  async function ensureInit() {
+    if (__inited) return true;
+    __inited = true;
+
+    if (!isNative() || !AdMob || !AdMob.initialize) {
+      console.warn("[VRAds] AdMob non dispo (web ou plugin manquant).");
       return false;
     }
 
     try {
-      // Selon plugin : initialize() ou initialize({ ... })
-      if (typeof AdMob.initialize === "function") {
-        await AdMob.initialize({
-          initializeForTesting: false,
-          // certains plugins acceptent requestTrackingAuthorization (iOS)
-        });
-      } else if (typeof AdMob.init === "function") {
-        await AdMob.init();
-      }
-
-      _initDone = true;
+      await AdMob.initialize({
+        requestTrackingAuthorization: false,
+        initializeForTesting: false
+      });
       console.log("[VRAds] init OK");
       return true;
     } catch (e) {
       console.warn("[VRAds] init failed:", e);
-      _initDone = true; // on évite boucle
       return false;
     }
   }
 
-  function _hasUnit(id) {
-    return typeof id === "string" && id.trim().length > 0;
+  function waitOnce(eventName, timeoutMs) {
+    return new Promise(function (resolve) {
+      var done = false;
+      var off = null;
+      var t = setTimeout(function () {
+        if (done) return;
+        done = true;
+        try { off && off.remove && off.remove(); } catch (_) {}
+        resolve({ ok: false, reason: "timeout" });
+      }, timeoutMs || 15000);
+
+      try {
+        off = AdMob.addListener(eventName, function (arg) {
+          if (done) return;
+          done = true;
+          clearTimeout(t);
+          try { off && off.remove && off.remove(); } catch (_) {}
+          resolve({ ok: true, arg: arg });
+        });
+      } catch (_) {
+        clearTimeout(t);
+        resolve({ ok: false, reason: "no_listener" });
+      }
+    });
   }
 
-  function _platformAndroid() {
-    try {
-      return !!window.Capacitor && window.Capacitor.getPlatform && window.Capacitor.getPlatform() === "android";
-    } catch (_) {
+  async function showRewardedInternal(placement) {
+    if (!isNative() || !AdMob) return false;
+
+    // Compat: certains plugins utilisent prepareRewardVideoAd/showRewardVideoAd
+    if (!AdMob.prepareRewardVideoAd || !AdMob.showRewardVideoAd) {
+      console.warn("[VRAds] Méthodes rewarded manquantes sur ce plugin.");
       return false;
     }
-  }
 
-  function _getUnits() {
-    // (si tu ajoutes iOS plus tard, on étendra)
-    return {
-      rewarded: AD_UNITS.rewardedAndroid,
-      interstitial: AD_UNITS.interstitialAndroid
-    };
-  }
+    // On considère "récompense validée" uniquement si on reçoit onRewarded
+    var rewardedP = waitOnce("onRewarded", 45000);
 
-  async function _showRewardedNative(placement) {
-    const AdMob = _getCapacitorAdMob();
-    if (!AdMob) return { ok: false, reason: "no_plugin" };
+    await AdMob.prepareRewardVideoAd({
+      adId: AD_UNIT_ID_REWARDED,
+      requestOptions: buildRequestOptions()
+    });
 
-    const units = _getUnits();
-    if (!_hasUnit(units.rewarded)) return { ok: false, reason: "missing_rewarded_unit" };
-
-    // Compat multi-plugins :
-    // - showRewardVideoAd({ adId })
-    // - showRewarded({ adId })
-    // - prepareRewardVideoAd({ adId }) + showRewardVideoAd()
+    window.__ads_active = true;
     try {
-      // 1) prepare (si existe)
-      if (typeof AdMob.prepareRewardVideoAd === "function") {
-        await AdMob.prepareRewardVideoAd({ adId: units.rewarded });
-      } else if (typeof AdMob.prepareRewarded === "function") {
-        await AdMob.prepareRewarded({ adId: units.rewarded });
-      } else if (typeof AdMob.prepareRewardedAd === "function") {
-        await AdMob.prepareRewardedAd({ adId: units.rewarded });
-      }
-
-      // 2) show
-      if (typeof AdMob.showRewardVideoAd === "function") {
-        await AdMob.showRewardVideoAd();
-      } else if (typeof AdMob.showRewarded === "function") {
-        await AdMob.showRewarded();
-      } else if (typeof AdMob.showRewardedAd === "function") {
-        await AdMob.showRewardedAd();
-      } else {
-        // certains plugins font showRewarded({ adId })
-        if (typeof AdMob.showRewarded === "function") {
-          await AdMob.showRewarded({ adId: units.rewarded });
-        } else {
-          return { ok: false, reason: "no_rewarded_method" };
-        }
-      }
-
-      // Beaucoup de plugins ne renvoient pas "reward granted" en résultat direct.
-      // On fait simple : si la pub a pu s'afficher sans throw → ok.
-      console.log("[VRAds] Rewarded shown:", placement);
-      return { ok: true };
+      await AdMob.showRewardVideoAd();
     } catch (e) {
-      console.warn("[VRAds] Rewarded failed:", e);
-      return { ok: false, reason: "show_failed" };
+      window.__ads_active = false;
+      return false;
     }
+
+    // On attend la récompense (ou timeout)
+    var res = await rewardedP;
+    window.__ads_active = false;
+
+    if (res.ok) {
+      console.log("[VRAds] rewarded OK:", placement);
+      return true;
+    }
+    return false;
   }
 
-  async function _showInterstitialNative(placement) {
-    const AdMob = _getCapacitorAdMob();
-    if (!AdMob) return { ok: false, reason: "no_plugin" };
+  async function showInterstitialInternal(placement) {
+    if (!isNative() || !AdMob) return false;
 
-    const units = _getUnits();
-    if (!_hasUnit(units.interstitial)) return { ok: false, reason: "missing_interstitial_unit" };
+    if (!AdMob.prepareInterstitial || !AdMob.showInterstitial) {
+      console.warn("[VRAds] Méthodes interstitial manquantes sur ce plugin.");
+      return false;
+    }
 
+    await AdMob.prepareInterstitial({
+      adId: AD_UNIT_ID_INTERSTITIAL,
+      requestOptions: buildRequestOptions()
+    });
+
+    window.__ads_active = true;
     try {
-      // prepare
-      if (typeof AdMob.prepareInterstitial === "function") {
-        await AdMob.prepareInterstitial({ adId: units.interstitial });
-      } else if (typeof AdMob.prepareInterstitialAd === "function") {
-        await AdMob.prepareInterstitialAd({ adId: units.interstitial });
-      }
-
-      // show
-      if (typeof AdMob.showInterstitial === "function") {
-        await AdMob.showInterstitial();
-      } else if (typeof AdMob.showInterstitialAd === "function") {
-        await AdMob.showInterstitialAd();
-      } else {
-        // certains plugins font showInterstitial({ adId })
-        if (typeof AdMob.showInterstitial === "function") {
-          await AdMob.showInterstitial({ adId: units.interstitial });
-        } else {
-          return { ok: false, reason: "no_interstitial_method" };
-        }
-      }
-
-      console.log("[VRAds] Interstitial shown:", placement);
-      return { ok: true };
+      await AdMob.showInterstitial();
+      console.log("[VRAds] interstitial shown:", placement);
+      return true;
     } catch (e) {
-      console.warn("[VRAds] Interstitial failed:", e);
-      return { ok: false, reason: "show_failed" };
+      return false;
+    } finally {
+      window.__ads_active = false;
+      // précharge “soft” pour la prochaine
+      try {
+        setTimeout(function () {
+          try { AdMob.prepareInterstitial({ adId: AD_UNIT_ID_INTERSTITIAL, requestOptions: buildRequestOptions() }); } catch (_) {}
+        }, 1200);
+      } catch (_) {}
     }
   }
 
   window.VRAds = {
-    setAdUnits({ rewardedAndroid, interstitialAndroid } = {}) {
-      if (typeof rewardedAndroid === "string") AD_UNITS.rewardedAndroid = rewardedAndroid.trim();
-      if (typeof interstitialAndroid === "string") AD_UNITS.interstitialAndroid = interstitialAndroid.trim();
+    // (si tu changes les ids plus tard sans toucher au fichier)
+    setAdUnits: function (cfg) {
+      cfg = cfg || {};
+      if (typeof cfg.rewarded === "string") AD_UNIT_ID_REWARDED = cfg.rewarded.trim();
+      if (typeof cfg.interstitial === "string") AD_UNIT_ID_INTERSTITIAL = cfg.interstitial.trim();
     },
 
-    async showRewardedAd({ placement = "generic" } = {}) {
-      if (_busy) return false;
-      _busy = true;
+    showRewardedAd: async function (opts) {
+      opts = opts || {};
+      var placement = String(opts.placement || "generic");
+
+      if (__busy) return false;
+      __busy = true;
       try {
-        await _ensureInit();
-
-        // En navigateur : stub propre
-        const AdMob = _getCapacitorAdMob();
-        if (!AdMob) {
-          console.log("[VRAds] (stub) rewarded:", placement);
-          return false;
-        }
-
-        const res = await _showRewardedNative(placement);
-        return !!res.ok;
+        var okInit = await ensureInit();
+        if (!okInit) return false;
+        return await showRewardedInternal(placement);
       } finally {
-        _busy = false;
+        __busy = false;
       }
     },
 
-    async showInterstitial({ placement = "generic" } = {}) {
-      if (_busy) return false;
-      _busy = true;
+    showInterstitial: async function (opts) {
+      opts = opts || {};
+      var placement = String(opts.placement || "generic");
+
+      if (__busy) return false;
+      __busy = true;
       try {
-        await _ensureInit();
-
-        const AdMob = _getCapacitorAdMob();
-        if (!AdMob) {
-          console.log("[VRAds] (stub) interstitial:", placement);
-          return false;
-        }
-
-        const res = await _showInterstitialNative(placement);
-        return !!res.ok;
+        var okInit = await ensureInit();
+        if (!okInit) return false;
+        return await showInterstitialInternal(placement);
       } finally {
-        _busy = false;
+        __busy = false;
       }
     }
   };
