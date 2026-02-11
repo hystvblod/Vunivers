@@ -1,4 +1,4 @@
-// VRealms - userData.js
+// Vuniverse - userData.js
 // Local cache (localStorage) + Supabase (window.sb) en "source of truth" pour vcoins/jetons.
 // - Auth anonyme au lancement (via window.bootstrapAuthAndProfile si dispo).
 // - Lecture profil via RPC secure_get_me()
@@ -191,7 +191,8 @@
         const r = await sb.rpc("secure_spend_jetons", { p_delta: c });
 
         if (r?.error) return null;
-        return !!r?.data; // boolean
+        // ✅ FIX: la fonction renvoie le nouveau solde (integer/bigint), pas un boolean
+        return Number(r?.data ?? 0);
       } catch (_) {
         return null;
       }
