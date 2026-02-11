@@ -188,7 +188,8 @@
       if (c <= 0) return null;
 
       try {
-        const r = await sb.rpc("secure_spend_jetons", { p_cost: c });
+        const r = await sb.rpc("secure_spend_jetons", { p_delta: c });
+
         if (r?.error) return null;
         return !!r?.data; // boolean
       } catch (_) {
