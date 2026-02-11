@@ -19,20 +19,35 @@
     /* ✅ Top actions directement dans la page */
     .vr-top-actions{
       display:flex !important;
-      justify-content:center !important;
+      align-items:center !important;
+      justify-content:space-between !important;   /* ✅ GAUCHE / CENTRE / DROITE */
       gap:10px !important;
       padding: 10px 12px 8px !important;
       position: relative !important;
       z-index: 10 !important;
+      width:100% !important;
     }
 
-    /* boutons icônes */
+    .vr-top-slot{
+      flex:1 1 0 !important;
+      display:flex !important;
+      align-items:center !important;
+    }
+    .vr-top-left{ justify-content:flex-start !important; }
+    .vr-top-center{ justify-content:center !important; }
+    .vr-top-right{ justify-content:flex-end !important; }
+
+    /* boutons icônes (✅ rendus lisibles sur fond clair) */
     .vr-icon-button{
       width:44px !important;
       height:44px !important;
-      border:0 !important;
-      background:transparent !important;
-      box-shadow:none !important;
+      border-radius:999px !important;
+      border: 1px solid rgba(255,255,255,0.28) !important;
+      background: rgba(0,0,0,0.28) !important;
+      backdrop-filter: blur(6px) !important;
+      -webkit-backdrop-filter: blur(6px) !important;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.22) !important;
+
       padding:0 !important;
       display:inline-flex !important;
       align-items:center !important;
@@ -48,7 +63,9 @@
       display:block !important;
       pointer-events:none !important;
       user-select:none !important;
-      filter:none !important;
+
+      /* ✅ les SVG / icônes blanches deviennent lisibles */
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.65)) contrast(1.2) brightness(1.08) !important;
     }
 
     /* ✅ Plus de "réserve" sous header */
@@ -61,7 +78,15 @@
       display:flex !important;
       justify-content:center !important;
     }
-    .vr-main-logo{ margin-top: 0 !important; }
+
+    /* ✅ LOGO PLUS GRAND */
+    .vr-main-logo{
+      margin-top: 0 !important;
+      height: clamp(86px, 11vmin, 132px) !important;
+      max-width: clamp(260px, 72vw, 420px) !important;
+      object-fit: contain !important;
+      filter: drop-shadow(0 12px 30px rgba(0,0,0,0.45)) !important;
+    }
 
     /* ===== Cartouches ===== */
     .vr-universe-grid{
@@ -182,8 +207,15 @@
       .vr-card{ min-height:60px !important; height:60px !important; }
       .vr-card-title{ font-size:14px !important; }
       .vr-info-btn{ width:38px !important; height:38px !important; font-size:15px !important; }
+
       .vr-icon-button{ width:40px !important; height:40px !important; }
       .vr-icon-button img{ width:28px !important; height:28px !important; }
+
+      /* ✅ logo plus grand même sur mobile */
+      .vr-main-logo{
+        height: clamp(80px, 13vmin, 120px) !important;
+        max-width: clamp(240px, 78vw, 380px) !important;
+      }
     }
 
     /* ===== Popup pseudo (léger, sans dépendre du style.css) ===== */
@@ -249,15 +281,25 @@
 
     <!-- ✅ Icônes DIRECTEMENT dans la page (plus de header) -->
     <div class="vr-top-actions">
-      <a class="vr-icon-button" href="profile.html" aria-label="Profil">
-        <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
-      </a>
-      <a class="vr-icon-button" href="settings.html" aria-label="Paramètres">
-        <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
-      </a>
-      <a class="vr-icon-button" href="shop.html" aria-label="Boutique">
-        <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
-      </a>
+
+      <div class="vr-top-slot vr-top-left">
+        <a class="vr-icon-button" href="profile.html" aria-label="Profil">
+          <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
+        </a>
+      </div>
+
+      <div class="vr-top-slot vr-top-center">
+        <a class="vr-icon-button" href="settings.html" aria-label="Paramètres">
+          <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
+        </a>
+      </div>
+
+      <div class="vr-top-slot vr-top-right">
+        <a class="vr-icon-button" href="shop.html" aria-label="Boutique">
+          <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
+        </a>
+      </div>
+
     </div>
 
     <section class="vr-intro">
@@ -333,15 +375,6 @@
           </div>
         </button>
 
-             <button class="vr-card" data-universe="medieval_king" type="button">
-          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/medieval_king.webp');"></div>
-          <div class="vr-card-content">
-            <div class="vr-card-header-line">
-              <h3 class="vr-card-title" data-i18n="universe.medieval_king.title"></h3>
-              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.medieval_king.desc">?</span>
-            </div>
-          </div>
-        </button>
 
         <!-- ✅ Carte “locked” supprimée (elle était vide car i18n universe.locked.title renvoyait vide)
              Pour en ajouter une nouvelle : copie un <button class="vr-card" data-universe="xxx"> ... </button>
