@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="vr-body">
-
   <header class="vr-header" aria-label="Top actions">
     <div class="vr-top-actions">
       <button class="vr-icon-button" type="button" id="btn-profile" aria-label="Profile">
@@ -27,15 +26,35 @@
   <main class="vr-main">
     <section id="view-shop" class="vr-view vr-view-active">
       <h2 class="vr-section-title" data-i18n="shop.title"></h2>
+
       <div class="vr-profile-grid">
+
         <div class="vr-profile-card">
-          <p data-i18n="shop.soon"></p>
+          <h3 class="vr-profile-title" data-i18n="shop.rewarded_title"></h3>
+          <p class="vr-profile-text" data-i18n="shop.rewarded_desc"></p>
+
+          <button class="vr-choice-button" id="btn-reward-jeton" type="button">
+            <span data-i18n="shop.get_jeton"></span>
+          </button>
+
+          <button class="vr-choice-button" id="btn-reward-coins" type="button">
+            <span data-i18n="shop.get_200_coins"></span>
+          </button>
+
+          <p class="vr-profile-text" id="shop-status" style="opacity:.85;margin-top:10px;"></p>
         </div>
+
       </div>
     </section>
   </main>
 
+  <!-- Supabase (si tu veux garder cohérent avec le reste) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabaseBootstrap.js"></script>
+
+  <script src="js/userData.js"></script>
+  <script src="js/ads.js"></script>
+  <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
-  <script src="js/game.js"></script>
 </body>
 </html>
