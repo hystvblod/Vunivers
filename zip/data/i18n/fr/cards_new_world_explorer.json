@@ -1,0 +1,4802 @@
+{
+  "nw_001": {
+    "id": "nw_001",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_002": {
+    "id": "nw_002",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_003": {
+    "id": "nw_003",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_004": {
+    "id": "nw_004",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_005": {
+    "id": "nw_005",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_006": {
+    "id": "nw_006",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_007": {
+    "id": "nw_007",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_008": {
+    "id": "nw_008",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_009": {
+    "id": "nw_009",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_010": {
+    "id": "nw_010",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_011": {
+    "id": "nw_011",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_012": {
+    "id": "nw_012",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_013": {
+    "id": "nw_013",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_014": {
+    "id": "nw_014",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_015": {
+    "id": "nw_015",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_016": {
+    "id": "nw_016",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_017": {
+    "id": "nw_017",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_018": {
+    "id": "nw_018",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_019": {
+    "id": "nw_019",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_020": {
+    "id": "nw_020",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_021": {
+    "id": "nw_021",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_022": {
+    "id": "nw_022",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_023": {
+    "id": "nw_023",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_024": {
+    "id": "nw_024",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_025": {
+    "id": "nw_025",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_026": {
+    "id": "nw_026",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_027": {
+    "id": "nw_027",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_028": {
+    "id": "nw_028",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_029": {
+    "id": "nw_029",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_030": {
+    "id": "nw_030",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_031": {
+    "id": "nw_031",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_032": {
+    "id": "nw_032",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_033": {
+    "id": "nw_033",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_034": {
+    "id": "nw_034",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_035": {
+    "id": "nw_035",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_036": {
+    "id": "nw_036",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_037": {
+    "id": "nw_037",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_038": {
+    "id": "nw_038",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_039": {
+    "id": "nw_039",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_040": {
+    "id": "nw_040",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_041": {
+    "id": "nw_041",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_042": {
+    "id": "nw_042",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_043": {
+    "id": "nw_043",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_044": {
+    "id": "nw_044",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_045": {
+    "id": "nw_045",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_046": {
+    "id": "nw_046",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_047": {
+    "id": "nw_047",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_048": {
+    "id": "nw_048",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_049": {
+    "id": "nw_049",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_050": {
+    "id": "nw_050",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_051": {
+    "id": "nw_051",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_052": {
+    "id": "nw_052",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_053": {
+    "id": "nw_053",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_054": {
+    "id": "nw_054",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_055": {
+    "id": "nw_055",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_056": {
+    "id": "nw_056",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_057": {
+    "id": "nw_057",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_058": {
+    "id": "nw_058",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_059": {
+    "id": "nw_059",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_060": {
+    "id": "nw_060",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_061": {
+    "id": "nw_061",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_062": {
+    "id": "nw_062",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_063": {
+    "id": "nw_063",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_064": {
+    "id": "nw_064",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_065": {
+    "id": "nw_065",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_066": {
+    "id": "nw_066",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_067": {
+    "id": "nw_067",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_068": {
+    "id": "nw_068",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_069": {
+    "id": "nw_069",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_070": {
+    "id": "nw_070",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_071": {
+    "id": "nw_071",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_072": {
+    "id": "nw_072",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_073": {
+    "id": "nw_073",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_074": {
+    "id": "nw_074",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_075": {
+    "id": "nw_075",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_076": {
+    "id": "nw_076",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_077": {
+    "id": "nw_077",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_078": {
+    "id": "nw_078",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_079": {
+    "id": "nw_079",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_080": {
+    "id": "nw_080",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_081": {
+    "id": "nw_081",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_082": {
+    "id": "nw_082",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_083": {
+    "id": "nw_083",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_084": {
+    "id": "nw_084",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_085": {
+    "id": "nw_085",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_086": {
+    "id": "nw_086",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_087": {
+    "id": "nw_087",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_088": {
+    "id": "nw_088",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_089": {
+    "id": "nw_089",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_090": {
+    "id": "nw_090",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_091": {
+    "id": "nw_091",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_092": {
+    "id": "nw_092",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_093": {
+    "id": "nw_093",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_094": {
+    "id": "nw_094",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_095": {
+    "id": "nw_095",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_096": {
+    "id": "nw_096",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_097": {
+    "id": "nw_097",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_098": {
+    "id": "nw_098",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_099": {
+    "id": "nw_099",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_100": {
+    "id": "nw_100",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_101": {
+    "id": "nw_101",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_102": {
+    "id": "nw_102",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_103": {
+    "id": "nw_103",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_104": {
+    "id": "nw_104",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_105": {
+    "id": "nw_105",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_106": {
+    "id": "nw_106",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_107": {
+    "id": "nw_107",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_108": {
+    "id": "nw_108",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_109": {
+    "id": "nw_109",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_110": {
+    "id": "nw_110",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_111": {
+    "id": "nw_111",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_112": {
+    "id": "nw_112",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_113": {
+    "id": "nw_113",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_114": {
+    "id": "nw_114",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_115": {
+    "id": "nw_115",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_116": {
+    "id": "nw_116",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_117": {
+    "id": "nw_117",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_118": {
+    "id": "nw_118",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_119": {
+    "id": "nw_119",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_120": {
+    "id": "nw_120",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_121": {
+    "id": "nw_121",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_122": {
+    "id": "nw_122",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_123": {
+    "id": "nw_123",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_124": {
+    "id": "nw_124",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_125": {
+    "id": "nw_125",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_126": {
+    "id": "nw_126",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_127": {
+    "id": "nw_127",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_128": {
+    "id": "nw_128",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_129": {
+    "id": "nw_129",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_130": {
+    "id": "nw_130",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_131": {
+    "id": "nw_131",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_132": {
+    "id": "nw_132",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_133": {
+    "id": "nw_133",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_134": {
+    "id": "nw_134",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_135": {
+    "id": "nw_135",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_136": {
+    "id": "nw_136",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_137": {
+    "id": "nw_137",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_138": {
+    "id": "nw_138",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_139": {
+    "id": "nw_139",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_140": {
+    "id": "nw_140",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_141": {
+    "id": "nw_141",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_142": {
+    "id": "nw_142",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_143": {
+    "id": "nw_143",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_144": {
+    "id": "nw_144",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_145": {
+    "id": "nw_145",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_146": {
+    "id": "nw_146",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_147": {
+    "id": "nw_147",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_148": {
+    "id": "nw_148",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_149": {
+    "id": "nw_149",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_150": {
+    "id": "nw_150",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_151": {
+    "id": "nw_151",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_152": {
+    "id": "nw_152",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_153": {
+    "id": "nw_153",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_154": {
+    "id": "nw_154",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_155": {
+    "id": "nw_155",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_156": {
+    "id": "nw_156",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_157": {
+    "id": "nw_157",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_158": {
+    "id": "nw_158",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_159": {
+    "id": "nw_159",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_160": {
+    "id": "nw_160",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_161": {
+    "id": "nw_161",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_162": {
+    "id": "nw_162",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_163": {
+    "id": "nw_163",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_164": {
+    "id": "nw_164",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_165": {
+    "id": "nw_165",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_166": {
+    "id": "nw_166",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_167": {
+    "id": "nw_167",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_168": {
+    "id": "nw_168",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_169": {
+    "id": "nw_169",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_170": {
+    "id": "nw_170",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_171": {
+    "id": "nw_171",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_172": {
+    "id": "nw_172",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_173": {
+    "id": "nw_173",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_174": {
+    "id": "nw_174",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_175": {
+    "id": "nw_175",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_176": {
+    "id": "nw_176",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_177": {
+    "id": "nw_177",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_178": {
+    "id": "nw_178",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_179": {
+    "id": "nw_179",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_180": {
+    "id": "nw_180",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_181": {
+    "id": "nw_181",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_182": {
+    "id": "nw_182",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_183": {
+    "id": "nw_183",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_184": {
+    "id": "nw_184",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_185": {
+    "id": "nw_185",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_186": {
+    "id": "nw_186",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_187": {
+    "id": "nw_187",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_188": {
+    "id": "nw_188",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_189": {
+    "id": "nw_189",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_190": {
+    "id": "nw_190",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_191": {
+    "id": "nw_191",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_192": {
+    "id": "nw_192",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_193": {
+    "id": "nw_193",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_194": {
+    "id": "nw_194",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_195": {
+    "id": "nw_195",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_196": {
+    "id": "nw_196",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_197": {
+    "id": "nw_197",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_198": {
+    "id": "nw_198",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_199": {
+    "id": "nw_199",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_200": {
+    "id": "nw_200",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_201": {
+    "id": "nw_201",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_202": {
+    "id": "nw_202",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_203": {
+    "id": "nw_203",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_204": {
+    "id": "nw_204",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_205": {
+    "id": "nw_205",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_206": {
+    "id": "nw_206",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_207": {
+    "id": "nw_207",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_208": {
+    "id": "nw_208",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_209": {
+    "id": "nw_209",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_210": {
+    "id": "nw_210",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_211": {
+    "id": "nw_211",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_212": {
+    "id": "nw_212",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_213": {
+    "id": "nw_213",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_214": {
+    "id": "nw_214",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_215": {
+    "id": "nw_215",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_216": {
+    "id": "nw_216",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_217": {
+    "id": "nw_217",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_218": {
+    "id": "nw_218",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_219": {
+    "id": "nw_219",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_220": {
+    "id": "nw_220",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_221": {
+    "id": "nw_221",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_222": {
+    "id": "nw_222",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_223": {
+    "id": "nw_223",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_224": {
+    "id": "nw_224",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_225": {
+    "id": "nw_225",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_226": {
+    "id": "nw_226",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_227": {
+    "id": "nw_227",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_228": {
+    "id": "nw_228",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_229": {
+    "id": "nw_229",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_230": {
+    "id": "nw_230",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_231": {
+    "id": "nw_231",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_232": {
+    "id": "nw_232",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_233": {
+    "id": "nw_233",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_234": {
+    "id": "nw_234",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_235": {
+    "id": "nw_235",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_236": {
+    "id": "nw_236",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_237": {
+    "id": "nw_237",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_238": {
+    "id": "nw_238",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_239": {
+    "id": "nw_239",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_240": {
+    "id": "nw_240",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_241": {
+    "id": "nw_241",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_242": {
+    "id": "nw_242",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_243": {
+    "id": "nw_243",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_244": {
+    "id": "nw_244",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_245": {
+    "id": "nw_245",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_246": {
+    "id": "nw_246",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_247": {
+    "id": "nw_247",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_248": {
+    "id": "nw_248",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_249": {
+    "id": "nw_249",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_250": {
+    "id": "nw_250",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_251": {
+    "id": "nw_251",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_252": {
+    "id": "nw_252",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_253": {
+    "id": "nw_253",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_254": {
+    "id": "nw_254",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_255": {
+    "id": "nw_255",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_256": {
+    "id": "nw_256",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_257": {
+    "id": "nw_257",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_258": {
+    "id": "nw_258",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_259": {
+    "id": "nw_259",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_260": {
+    "id": "nw_260",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_261": {
+    "id": "nw_261",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_262": {
+    "id": "nw_262",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_263": {
+    "id": "nw_263",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_264": {
+    "id": "nw_264",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_265": {
+    "id": "nw_265",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_266": {
+    "id": "nw_266",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_267": {
+    "id": "nw_267",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_268": {
+    "id": "nw_268",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_269": {
+    "id": "nw_269",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_270": {
+    "id": "nw_270",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_271": {
+    "id": "nw_271",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_272": {
+    "id": "nw_272",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_273": {
+    "id": "nw_273",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_274": {
+    "id": "nw_274",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_275": {
+    "id": "nw_275",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_276": {
+    "id": "nw_276",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_277": {
+    "id": "nw_277",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_278": {
+    "id": "nw_278",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_279": {
+    "id": "nw_279",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_280": {
+    "id": "nw_280",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_281": {
+    "id": "nw_281",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_282": {
+    "id": "nw_282",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_283": {
+    "id": "nw_283",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_284": {
+    "id": "nw_284",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_285": {
+    "id": "nw_285",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_286": {
+    "id": "nw_286",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_287": {
+    "id": "nw_287",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_288": {
+    "id": "nw_288",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_289": {
+    "id": "nw_289",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_290": {
+    "id": "nw_290",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_291": {
+    "id": "nw_291",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_292": {
+    "id": "nw_292",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_293": {
+    "id": "nw_293",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_294": {
+    "id": "nw_294",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_295": {
+    "id": "nw_295",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_296": {
+    "id": "nw_296",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_297": {
+    "id": "nw_297",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_298": {
+    "id": "nw_298",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_299": {
+    "id": "nw_299",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_300": {
+    "id": "nw_300",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_301": {
+    "id": "nw_301",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_302": {
+    "id": "nw_302",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_303": {
+    "id": "nw_303",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_304": {
+    "id": "nw_304",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_305": {
+    "id": "nw_305",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_306": {
+    "id": "nw_306",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_307": {
+    "id": "nw_307",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_308": {
+    "id": "nw_308",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_309": {
+    "id": "nw_309",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_310": {
+    "id": "nw_310",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_311": {
+    "id": "nw_311",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_312": {
+    "id": "nw_312",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_313": {
+    "id": "nw_313",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_314": {
+    "id": "nw_314",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_315": {
+    "id": "nw_315",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_316": {
+    "id": "nw_316",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_317": {
+    "id": "nw_317",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_318": {
+    "id": "nw_318",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_319": {
+    "id": "nw_319",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_320": {
+    "id": "nw_320",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_321": {
+    "id": "nw_321",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_322": {
+    "id": "nw_322",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_323": {
+    "id": "nw_323",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_324": {
+    "id": "nw_324",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_325": {
+    "id": "nw_325",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_326": {
+    "id": "nw_326",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_327": {
+    "id": "nw_327",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_328": {
+    "id": "nw_328",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_329": {
+    "id": "nw_329",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_330": {
+    "id": "nw_330",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_331": {
+    "id": "nw_331",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_332": {
+    "id": "nw_332",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_333": {
+    "id": "nw_333",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_334": {
+    "id": "nw_334",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_335": {
+    "id": "nw_335",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_336": {
+    "id": "nw_336",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_337": {
+    "id": "nw_337",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_338": {
+    "id": "nw_338",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_339": {
+    "id": "nw_339",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_340": {
+    "id": "nw_340",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_341": {
+    "id": "nw_341",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_342": {
+    "id": "nw_342",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_343": {
+    "id": "nw_343",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_344": {
+    "id": "nw_344",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_345": {
+    "id": "nw_345",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_346": {
+    "id": "nw_346",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_347": {
+    "id": "nw_347",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_348": {
+    "id": "nw_348",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_349": {
+    "id": "nw_349",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_350": {
+    "id": "nw_350",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_351": {
+    "id": "nw_351",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_352": {
+    "id": "nw_352",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_353": {
+    "id": "nw_353",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_354": {
+    "id": "nw_354",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_355": {
+    "id": "nw_355",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_356": {
+    "id": "nw_356",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_357": {
+    "id": "nw_357",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_358": {
+    "id": "nw_358",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_359": {
+    "id": "nw_359",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_360": {
+    "id": "nw_360",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_361": {
+    "id": "nw_361",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_362": {
+    "id": "nw_362",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_363": {
+    "id": "nw_363",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_364": {
+    "id": "nw_364",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_365": {
+    "id": "nw_365",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_366": {
+    "id": "nw_366",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_367": {
+    "id": "nw_367",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_368": {
+    "id": "nw_368",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_369": {
+    "id": "nw_369",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_370": {
+    "id": "nw_370",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_371": {
+    "id": "nw_371",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_372": {
+    "id": "nw_372",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_373": {
+    "id": "nw_373",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_374": {
+    "id": "nw_374",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_375": {
+    "id": "nw_375",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_376": {
+    "id": "nw_376",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_377": {
+    "id": "nw_377",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Réparer le compas",
+      "B": "Naviguer aux étoiles",
+      "C": "Demander au mousse"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_378": {
+    "id": "nw_378",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Négocier fermement",
+      "B": "Surpayer pour aller vite",
+      "C": "Faire un échange malin"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_379": {
+    "id": "nw_379",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Améliorer les rations",
+      "B": "Faire un festin",
+      "C": "Rationner strictement"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_380": {
+    "id": "nw_380",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Inviter à bord",
+      "B": "Participer à leur fête",
+      "C": "Observer en silence"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_381": {
+    "id": "nw_381",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Explorer plus loin",
+      "B": "Cartographier et sécuriser",
+      "C": "Revenir avec renfort"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_382": {
+    "id": "nw_382",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Couper les dépenses",
+      "B": "Demander plus de fonds",
+      "C": "Optimiser via taxes"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_383": {
+    "id": "nw_383",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Célébrer ensemble",
+      "B": "Célébrer à bord",
+      "C": "Annuler (pluie)"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_384": {
+    "id": "nw_384",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "S’abriter",
+      "B": "Continuer quand même",
+      "C": "Faire un détour"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_385": {
+    "id": "nw_385",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Questionner le cartographe",
+      "B": "Improviser à l’instinct",
+      "C": "Tirer au sort"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_386": {
+    "id": "nw_386",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Vendre des babioles",
+      "B": "Chercher un vrai trésor",
+      "C": "Investir dans la logistique"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_387": {
+    "id": "nw_387",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Renforcer la discipline",
+      "B": "Remonter le moral",
+      "C": "Chercher un meilleur endroit"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_388": {
+    "id": "nw_388",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Demander un guide",
+      "C": "Rebrousser chemin"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_389": {
+    "id": "nw_389",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Installer un poste",
+      "B": "Continuer la route",
+      "C": "Faire un détour"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_390": {
+    "id": "nw_390",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Envoyer de l’or",
+      "B": "Envoyer une lettre brillante",
+      "C": "Envoyer une carte (jolie)"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_391": {
+    "id": "nw_391",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Former des interprètes",
+      "B": "Laisser faire naturellement",
+      "C": "Faire discret"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_392": {
+    "id": "nw_392",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Attendre",
+      "B": "Accélérer",
+      "C": "Démonter le camp"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  },
+  "nw_393": {
+    "id": "nw_393",
+    "universe": "new_world_explorer",
+    "title": "La carte… approximative",
+    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
+    "choices": {
+      "A": "Forcer le cap",
+      "B": "Faire une pause et recalculer",
+      "C": "Suivre les oiseaux"
+    },
+    "body": "La carte indique ‘ici des dragons’. Très rassurant."
+  },
+  "nw_394": {
+    "id": "nw_394",
+    "universe": "new_world_explorer",
+    "title": "Le prix du sel",
+    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
+    "choices": {
+      "A": "Ouvrir un comptoir",
+      "B": "Rester discret",
+      "C": "Taxer à la couronne"
+    },
+    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
+  },
+  "nw_395": {
+    "id": "nw_395",
+    "universe": "new_world_explorer",
+    "title": "Le tonneau fuyant",
+    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
+    "choices": {
+      "A": "Réparer tout de suite",
+      "B": "Reporter à demain",
+      "C": "Nommer un responsable"
+    },
+    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
+  },
+  "nw_396": {
+    "id": "nw_396",
+    "universe": "new_world_explorer",
+    "title": "Fête locale",
+    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
+    "choices": {
+      "A": "Offrir des présents",
+      "B": "Proposer un échange de services",
+      "C": "Rester à distance"
+    },
+    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
+  },
+  "nw_397": {
+    "id": "nw_397",
+    "universe": "new_world_explorer",
+    "title": "Grotte étincelante",
+    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
+    "choices": {
+      "A": "Prélever des échantillons",
+      "B": "Laisser intact",
+      "C": "Montrer à tout le monde"
+    },
+    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
+  },
+  "nw_398": {
+    "id": "nw_398",
+    "universe": "new_world_explorer",
+    "title": "Médailles pour tous",
+    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
+    "choices": {
+      "A": "Faire un show",
+      "B": "Rester sobre",
+      "C": "Blâmer l’intendant"
+    },
+    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
+  },
+  "nw_399": {
+    "id": "nw_399",
+    "universe": "new_world_explorer",
+    "title": "Fête partagée",
+    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
+    "choices": {
+      "A": "Organiser une cérémonie",
+      "B": "Privilégier le dialogue",
+      "C": "Remettre à plus tard"
+    },
+    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
+  },
+  "nw_400": {
+    "id": "nw_400",
+    "universe": "new_world_explorer",
+    "title": "Orage têtu",
+    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
+    "choices": {
+      "A": "Sécuriser les stocks",
+      "B": "Sauver les cartes",
+      "C": "Sauver le rhum"
+    },
+    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
+  }
+}

@@ -202,7 +202,7 @@
       border-radius: 14px !important;
     }
 
- @media (max-width: 520px){
+@media (max-width: 520px){
   .vr-main{ padding-top: 10px !important; }
   .vr-card{ min-height:60px !important; height:60px !important; }
   .vr-card-title{ font-size:14px !important; }
@@ -211,15 +211,16 @@
   .vr-icon-button{ width:40px !important; height:40px !important; }
   .vr-icon-button img{ width:28px !important; height:28px !important; }
 
-  /* ✅ logo vraiment grand sur mobile */
+  /* ✅ logo un tout petit peu plus petit */
   .vr-main-logo{
-    width: min(92vw, 680px) !important;
+    width: min(86vw, 600px) !important; /* ↓ de 92vw/680px */
     height: auto !important;
-    max-height: 220px !important;
+    max-height: 180px !important;       /* ↓ de 220px */
     display: block;
-    margin: 0 auto 18px auto;
+    margin: 0 auto 16px auto;           /* ↓ un poil l'espace */
   }
 }
+
 
     /* ===== Popup pseudo (léger, sans dépendre du style.css) ===== */
     #vr-username-popup{
