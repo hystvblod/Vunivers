@@ -1,9 +1,11 @@
 // Vuniverse - userData.js
-// Local cache (localStorage) + Supabase (window.sb) en "source of truth" pour vcoins/jetons.
+// Local cache (localStorage) + Supabase (window.sb) en "source of truth" pour vcoins/jetons/univers débloqués.
 // - Auth anonyme au lancement (via window.bootstrapAuthAndProfile si dispo).
 // - Lecture profil via RPC secure_get_me()
-// - Écriture solde uniquement via RPC (secure_add_vcoins / secure_add_jetons / secure_spend_jetons)
+// - Écriture solde uniquement via RPC (secure_add_vcoins / secure_add_jetons / secure_spend_jetons / secure_reduce_vcoins_to)
 // - Username via RPC secure_set_username()
+// - Lang via RPC secure_set_lang()
+// - Univers via RPC secure_unlock_universe()
 
 (function () {
   "use strict";
@@ -11,23 +13,20 @@
   const VUserDataKey = "vrealms_user_data";
   const LangStorageKey = "vrealms_lang";
 
-  // Petite queue pour sérialiser les appels Supabase (évite les races)
   let _remoteQueue = Promise.resolve();
   function queueRemote(fn) {
     _remoteQueue = _remoteQueue.then(fn).catch(() => null);
     return _remoteQueue;
   }
 
-  // ====== IMPORTANT ======
-  // ✅ Supabase = source de vérité.
-  // ✅ localStorage = cache UX (évite reset entre pages + offline).
-  // Le cache se met à jour automatiquement dès qu'une donnée change.
   const _memState = {
     user_id: "",
     username: "",
     vcoins: 0,
     jetons: 0,
     lang: "fr",
+    // Univers débloqués (cache local UX). Supabase = source de vérité.
+    unlocked_universes: ["hell_king", "heaven_king"],
     updated_at: Date.now(),
     last_sync_at: 0
   };
@@ -57,7 +56,6 @@
   }
 
   function _persistLocal() {
-    // Cache minimal (UX). Supabase reste la vérité.
     try {
       _writeLocal({
         user_id: (_memState.user_id || "").toString(),
@@ -65,12 +63,12 @@
         vcoins: _clampInt(_memState.vcoins || 0),
         jetons: _clampInt(_memState.jetons || 0),
         lang: (_memState.lang || "fr").toString(),
+        unlocked_universes: Array.isArray(_memState.unlocked_universes) ? _memState.unlocked_universes.slice(0) : ["hell_king","heaven_king"],
         updated_at: Date.now(),
         last_sync_at: Number(_memState.last_sync_at || 0)
       });
     } catch (_) {}
 
-    // Align i18n
     try { localStorage.setItem(LangStorageKey, (_memState.lang || "fr").toString()); } catch (_) {}
   }
 
@@ -83,7 +81,8 @@
             username: _memState.username,
             lang: _memState.lang,
             vcoins: _memState.vcoins,
-            jetons: _memState.jetons
+            jetons: _memState.jetons,
+            unlocked_universes: Array.isArray(_memState.unlocked_universes) ? _memState.unlocked_universes.slice(0) : ["hell_king","heaven_king"]
           }
         })
       );
@@ -97,6 +96,7 @@
       vcoins: 0,
       jetons: 0,
       lang: "fr",
+      unlocked_universes: ["hell_king", "heaven_king"],
       updated_at: Date.now()
     };
   }
@@ -109,6 +109,16 @@
     _memState.vcoins = _clampInt(me.vcoins || 0);
     _memState.jetons = _clampInt(me.jetons || 0);
     _memState.lang = (me.lang || "fr").toString();
+
+    // ✅ Univers débloqués (si la colonne existe côté DB)
+    if (Array.isArray(me.unlocked_universes)) {
+      _memState.unlocked_universes = me.unlocked_universes.filter(Boolean).map(String);
+    } else if (typeof me.unlocked_universes === "string" && me.unlocked_universes) {
+      _memState.unlocked_universes = [me.unlocked_universes];
+    } else if (!Array.isArray(_memState.unlocked_universes) || !_memState.unlocked_universes.length) {
+      _memState.unlocked_universes = ["hell_king", "heaven_king"];
+    }
+
     _memState.updated_at = Date.now();
     _memState.last_sync_at = Date.now();
 
@@ -127,7 +137,6 @@
       const sb = window.sb;
       if (!sb || !sb.auth) return null;
 
-      // Si tu as la fonction globale de bootstrap, on l’utilise
       try {
         if (typeof window.bootstrapAuthAndProfile === "function") {
           const p = await window.bootstrapAuthAndProfile();
@@ -135,7 +144,6 @@
         }
       } catch (_) {}
 
-      // Sinon, fallback robuste
       const uid = await this._getUid();
       if (uid) return uid;
 
@@ -184,7 +192,6 @@
       try {
         const r = await sb.rpc("secure_set_username", { p_username: username });
         if (r?.error) return { ok: false, reason: "rpc_error" };
-        // La fonction renvoie boolean: true = ok, false = déjà pris
         return { ok: !!r?.data, reason: r?.data ? "ok" : "taken" };
       } catch (_) {
         return { ok: false, reason: "exception" };
@@ -241,9 +248,7 @@
 
       try {
         const r = await sb.rpc("secure_spend_jetons", { p_delta: c });
-
         if (r?.error) return null;
-        // ✅ FIX: la fonction renvoie le nouveau solde (integer/bigint), pas un boolean
         return Number(r?.data ?? 0);
       } catch (_) {
         return null;
@@ -268,6 +273,25 @@
       }
     },
 
+    async unlockUniverse(universeId) {
+      const sb = window.sb;
+      if (!sb || typeof sb.rpc !== "function") return { ok: false, reason: "no_client" };
+
+      const uid = await this.ensureAuth();
+      if (!uid) return { ok: false, reason: "no_auth" };
+
+      const u = (universeId || "").toString().trim();
+      if (!u) return { ok: false, reason: "invalid_universe" };
+
+      try {
+        const r = await sb.rpc("secure_unlock_universe", { p_universe: u });
+        if (r?.error) return { ok: false, reason: r.error.message || "rpc_error", error: r.error };
+        return { ok: true, data: r?.data || null };
+      } catch (e) {
+        return { ok: false, reason: "rpc_exception", error: e };
+      }
+    },
+
     async setLang(lang) {
       const sb = window.sb;
       if (!sb || typeof sb.rpc !== "function") return false;
@@ -287,16 +311,10 @@
 
   const VUserData = {
     async init() {
-      // 1) Hydrate instant depuis le cache local (UX)
       const cached = _readLocal();
-      if (cached) {
-        this.save(cached);
-      } else {
-        const u = this.load();
-        this.save(u);
-      }
+      if (cached) this.save(cached);
+      else this.save(this.load());
 
-      // 2) Si Supabase est dispo, on sync le profil au démarrage (attendu)
       if (window.VRRemoteStore?.enabled?.()) {
         await this.refresh().catch(() => false);
       }
@@ -315,7 +333,6 @@
     },
 
     load() {
-      // ✅ état en mémoire (runtime) + cache local via init/save
       try {
         const d = _default();
         return {
@@ -325,6 +342,7 @@
           vcoins: _clampInt(_memState.vcoins || 0),
           jetons: _clampInt(_memState.jetons || 0),
           lang: (_memState.lang || "fr").toString(),
+          unlocked_universes: Array.isArray(_memState.unlocked_universes) ? _memState.unlocked_universes.slice(0) : ["hell_king","heaven_king"],
           updated_at: Number(_memState.updated_at || Date.now())
         };
       } catch (_) {
@@ -333,7 +351,6 @@
     },
 
     save(u) {
-      // ✅ met à jour état mémoire + cache local
       try {
         const data = (u && typeof u === "object") ? u : _default();
         _memState.user_id = (data.user_id || _memState.user_id || "").toString();
@@ -341,31 +358,71 @@
         _memState.vcoins = _clampInt(typeof data.vcoins !== "undefined" ? data.vcoins : _memState.vcoins);
         _memState.jetons = _clampInt(typeof data.jetons !== "undefined" ? data.jetons : _memState.jetons);
         _memState.lang = (data.lang || _memState.lang || "fr").toString();
+
+        if (Array.isArray(data.unlocked_universes)) {
+          _memState.unlocked_universes = data.unlocked_universes.filter(Boolean).map(String);
+        } else if (!Array.isArray(_memState.unlocked_universes) || !_memState.unlocked_universes.length) {
+          _memState.unlocked_universes = ["hell_king","heaven_king"];
+        }
+
         _memState.updated_at = Date.now();
         _emitProfile();
         _persistLocal();
       } catch (_) {}
     },
 
-    getUsername() {
+    getUnlockedUniverses() {
       const u = this.load();
-      return (u.username || "").toString();
+      const arr = Array.isArray(u.unlocked_universes) ? u.unlocked_universes : null;
+      if (arr && arr.length) return arr.filter(Boolean).map(String);
+      return ["hell_king","heaven_king"];
     },
 
-    getUserId() {
-      const u = this.load();
-      return (u.user_id || "").toString();
+    isUniverseUnlocked(universeId) {
+      const id = (universeId || "").toString();
+      if (!id) return false;
+      const set = new Set(this.getUnlockedUniverses());
+      return set.has(id);
     },
+
+    async unlockUniverse(universeId) {
+      const id = (universeId || "").toString().trim();
+      if (!id) return { ok: false, reason: "invalid_universe" };
+
+      if (this.isUniverseUnlocked(id)) return { ok: true, reason: "already", data: this.load() };
+
+      if (!window.VRRemoteStore?.enabled?.()) return { ok: false, reason: "no_remote" };
+
+      const res = await window.VRRemoteStore.unlockUniverse(id);
+      if (!res?.ok) return res || { ok: false, reason: "error" };
+
+      const me = Array.isArray(res.data) ? (res.data[0] || null) : res.data;
+      if (me && typeof me === "object") {
+        const cur = this.load();
+        this.save({
+          ...cur,
+          user_id: (me.id || cur.user_id || "").toString(),
+          username: (me.username || cur.username || "").toString(),
+          vcoins: (typeof me.vcoins !== "undefined") ? me.vcoins : cur.vcoins,
+          jetons: (typeof me.jetons !== "undefined") ? me.jetons : cur.jetons,
+          lang: (me.lang || cur.lang || "fr").toString(),
+          unlocked_universes: Array.isArray(me.unlocked_universes) ? me.unlocked_universes : cur.unlocked_universes
+        });
+      } else {
+        await this.refresh().catch(() => false);
+      }
+      return { ok: true, reason: "ok", data: this.load() };
+    },
+
+    getUsername() { return (this.load().username || "").toString(); },
+    getUserId() { return (this.load().user_id || "").toString(); },
+    getLang() { return (this.load().lang || "fr").toString(); },
 
     async setUsername(username) {
       const name = (username || "").toString().trim();
       if (name.length < 3 || name.length > 20) return { ok: false, reason: "invalid" };
       if (!/^[a-zA-Z0-9_-]+$/.test(name)) return { ok: false, reason: "invalid" };
-
-      // ✅ remote-first (unicité)
-      if (!window.VRRemoteStore?.enabled?.()) {
-        return { ok: false, reason: "no_remote" };
-      }
+      if (!window.VRRemoteStore?.enabled?.()) return { ok: false, reason: "no_remote" };
 
       const res = await window.VRRemoteStore.setUsername(name);
       if (res?.ok) {
@@ -375,53 +432,30 @@
       return res || { ok: false, reason: "error" };
     },
 
-    getLang() {
-      const u = this.load();
-      return (u.lang || "fr").toString();
-    },
-
     async setLang(lang) {
       const l = (lang || "fr").toString().trim().toLowerCase() || "fr";
-
-      // ✅ local-first (UX immédiate)
       const cur = this.load();
       this.save({ ...cur, lang: l });
 
-      // ✅ sync Supabase (best-effort)
       if (window.VRRemoteStore?.enabled?.()) {
         const ok = await window.VRRemoteStore.setLang(l);
         if (ok) {
           await this.refresh().catch(() => false);
           return l;
         }
-
-        // fallback : on resync ce que dit le serveur
         await this.refresh().catch(() => false);
         return this.getLang();
       }
-
-      // offline / no remote: on garde le local
       return l;
     },
 
-    getVcoins() {
-      const u = this.load();
-      return Number(u.vcoins || 0);
-    },
-
-    getJetons() {
-      const u = this.load();
-      return Number(u.jetons || 0);
-    },
+    getVcoins() { return Number(this.load().vcoins || 0); },
+    getJetons() { return Number(this.load().jetons || 0); },
 
     addVcoins(delta) {
       const d = Math.floor(Number(delta || 0));
       if (d <= 0) return this.getVcoins();
-
-      // ✅ tout via Supabase
-      if (!window.VRRemoteStore?.enabled?.()) {
-        return this.getVcoins();
-      }
+      if (!window.VRRemoteStore?.enabled?.()) return this.getVcoins();
 
       queueRemote(async () => {
         const newv = await window.VRRemoteStore.addVcoins(d);
@@ -433,7 +467,6 @@
         } else {
           await this.refresh().catch(() => false);
         }
-        return true;
       });
 
       return this.getVcoins();
@@ -441,7 +474,6 @@
 
     setVcoins(v) {
       const target = Math.max(0, Math.floor(Number(v || 0)));
-
       if (!window.VRRemoteStore?.enabled?.()) return this.getVcoins();
 
       queueRemote(async () => {
@@ -454,7 +486,6 @@
         } else {
           await this.refresh().catch(() => false);
         }
-        return true;
       });
 
       return this.getVcoins();
@@ -463,11 +494,7 @@
     addJetons(delta) {
       const d = Math.floor(Number(delta || 0));
       if (d <= 0) return this.getJetons();
-
-      // ✅ tout via Supabase
-      if (!window.VRRemoteStore?.enabled?.()) {
-        return this.getJetons();
-      }
+      if (!window.VRRemoteStore?.enabled?.()) return this.getJetons();
 
       queueRemote(async () => {
         const newj = await window.VRRemoteStore.addJetons(d);
@@ -479,7 +506,6 @@
         } else {
           await this.refresh().catch(() => false);
         }
-        return true;
       });
 
       return this.getJetons();
@@ -488,28 +514,19 @@
     async spendJetons(cost) {
       const c = Math.floor(Number(cost || 0));
       if (c <= 0) return false;
+      if (!window.VRRemoteStore?.enabled?.()) return false;
 
-      // ✅ tout via Supabase
-      if (!window.VRRemoteStore?.enabled?.()) {
-        return false;
-      }
-
-      // Remote d'abord (source of truth)
       const newBal = await window.VRRemoteStore.spendJetons(c);
-
-      // ⚠️ newBal peut être 0 (valide). On échoue seulement si null/NaN.
       if (typeof newBal !== "number" || Number.isNaN(newBal)) {
         await this.refresh().catch(() => false);
         return false;
       }
 
-      // Update immédiat UI + cache local
       _memState.jetons = _clampInt(newBal);
       _memState.updated_at = Date.now();
       _emitProfile();
       _persistLocal();
 
-      // Resync authoritative (au cas où)
       await this.refresh().catch(() => false);
       return true;
     }
