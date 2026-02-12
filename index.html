@@ -221,7 +221,6 @@
   }
 }
 
-
     /* ===== Popup pseudo (léger, sans dépendre du style.css) ===== */
     #vr-username-popup{
       position:fixed;
@@ -276,6 +275,27 @@
       display:none;
       color: rgba(255, 220, 220, 0.95);
     }
+
+    /* ===== AJOUT MINIMAL: univers verrouillés ===== */
+    .vr-universe-badge{
+      position:absolute;
+      bottom:6px;
+      right:8px;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:900;
+      backdrop-filter: blur(6px);
+      background: rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.15);
+      color:white;
+      z-index:10;
+      pointer-events:none;
+      user-select:none;
+    }
+    .vr-universe-badge.locked{ background:rgba(0,0,0,.55); }
+    .vr-universe-badge.unlocked{ background:rgba(0,0,0,.25); }
+    .vr-card.vr-card-locked{ opacity:.65; }
   </style>
 </head>
 
@@ -378,7 +398,6 @@
             </div>
           </div>
         </button>
-
 
         <!-- ✅ Carte “locked” supprimée (elle était vide car i18n universe.locked.title renvoyait vide)
              Pour en ajouter une nouvelle : copie un <button class="vr-card" data-universe="xxx"> ... </button>
@@ -496,20 +515,93 @@
       window.addEventListener("scroll", hideTooltip, { passive: true });
       window.addEventListener("resize", hideTooltip);
     })();
+  </script>
 
+  <!-- ✅ MODIF: lancement univers + locks + badge + redirection shop (SANS SUPPRIMER AUTRE CHOSE) -->
+  <script>
     (function () {
+      const PRICE = 300;
+
+      function badge(card, text, type) {
+        let b = card.querySelector(".vr-universe-badge");
+        if (!b) {
+          b = document.createElement("div");
+          b.className = "vr-universe-badge";
+          card.appendChild(b);
+        }
+        b.textContent = text;
+        b.classList.remove("locked", "unlocked");
+        b.classList.add(type);
+      }
+
+      function isFreeUniverse(id) {
+        return (id === "hell_king" || id === "heaven_king");
+      }
+
+      function isUnlocked(id) {
+        if (isFreeUniverse(id)) return true;
+
+        try {
+          if (window.VUserData && typeof window.VUserData.isUniverseUnlocked === "function") {
+            return !!window.VUserData.isUniverseUnlocked(id);
+          }
+        } catch (_) {}
+
+        // fallback: si userData n'a pas encore la fonction, on lit un tableau local
+        try {
+          const u = window.VUserData?.load?.() || {};
+          const arr = Array.isArray(u.unlocked_universes) ? u.unlocked_universes : [];
+          return arr.includes(id);
+        } catch (_) {}
+
+        return false;
+      }
+
+      function applyLocks() {
+        document.querySelectorAll(".vr-card[data-universe]").forEach((card) => {
+          const id = card.getAttribute("data-universe");
+
+          if (isUnlocked(id)) {
+            card.classList.remove("vr-card-locked");
+            badge(card, "✓ Débloqué", "unlocked");
+          } else {
+            card.classList.add("vr-card-locked");
+            badge(card, "🔒 " + PRICE + " VCoins", "locked");
+          }
+        });
+      }
+
       function launchUniverse(universeId) {
         if (!universeId) return;
         localStorage.setItem("vrealms_universe", universeId);
         window.location.href = "game.html";
       }
 
+      function goShop(universeId) {
+        localStorage.setItem("vrealms_shop_focus_universe", universeId);
+        window.location.href = "shop.html";
+      }
+
       document.querySelectorAll(".vr-card[data-universe]").forEach((card) => {
         card.addEventListener("click", () => {
           const id = card.getAttribute("data-universe");
-          launchUniverse(id);
+
+          // si clique sur ? => le tooltip gère déjà stopPropagation, donc ici c'est ok.
+          if (isUnlocked(id)) launchUniverse(id);
+          else goShop(id);
         });
       });
+
+      // applique d'abord en l'état
+      applyLocks();
+
+      // puis re-applique après init userData (si async) sans casser
+      (async function refreshLater(){
+        try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
+        try { await window.VUserData?.init?.(); } catch (_) {}
+        try { applyLocks(); } catch (_) {}
+      })();
+
     })();
   </script>
 
