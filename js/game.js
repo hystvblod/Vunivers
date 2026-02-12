@@ -16,10 +16,7 @@
   "use strict";
 
   // Cache mémoire (PAS localStorage) juste pour éviter de spam RPC
-  const _mem = {
-    me: null,
-    ts: 0
-  };
+  const _mem = { me: null, ts: 0 };
 
   async function getMeFresh(maxAgeMs) {
     const now = Date.now();
@@ -133,13 +130,9 @@
     },
 
     async _loadConfig(universeId) {
-      const res = await fetch(`${CONFIG_PATH}/${universeId}.config.json`, {
-        cache: "no-cache"
-      });
+      const res = await fetch(`${CONFIG_PATH}/${universeId}.config.json`, { cache: "no-cache" });
       if (!res.ok) {
-        throw new Error(
-          `[VREventsLoader] Impossible de charger la config univers ${universeId}`
-        );
+        throw new Error(`[VREventsLoader] Impossible de charger la config univers ${universeId}`);
       }
       return res.json();
     },
@@ -159,9 +152,7 @@
       const cards = Array.isArray(deckJson) ? deckJson : (deckJson?.cards || null);
 
       if (!Array.isArray(cards)) {
-        throw new Error(
-          `[VREventsLoader] Deck invalide pour ${universeId} (attendu array ou {cards:[]}).`
-        );
+        throw new Error(`[VREventsLoader] Deck invalide pour ${universeId} (attendu array ou {cards:[]}).`);
       }
       return cards;
     },
@@ -174,13 +165,10 @@
       const urlOld = `${CARDS_I18N_PATH}/cards_${universeId}_${lang}.json`;
 
       let res = await fetch(urlNew, { cache: "no-cache" });
+      if (!res.ok) res = await fetch(urlOld, { cache: "no-cache" });
+
       if (!res.ok) {
-        res = await fetch(urlOld, { cache: "no-cache" });
-      }
-      if (!res.ok) {
-        throw new Error(
-          `[VREventsLoader] Impossible de charger ${urlNew} (ou fallback ${urlOld})`
-        );
+        throw new Error(`[VREventsLoader] Impossible de charger ${urlNew} (ou fallback ${urlOld})`);
       }
       return res.json();
     }
@@ -390,9 +378,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
       // preview = 0 par défaut
       const previewEls = document.querySelectorAll(".vr-gauge-preview");
-      previewEls.forEach((previewEl) =>
-        previewEl.style.setProperty("--vr-pct", "0%")
-      );
+      previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-pct", "0%"));
 
       this._clearPeekClasses();
     },
@@ -430,9 +416,7 @@ body.vr-peek-mode .vr-gauge-preview{
     },
 
     _setupChoiceButtons() {
-      const buttons = Array.from(
-        document.querySelectorAll(".vr-choice-button[data-choice]")
-      );
+      const buttons = Array.from(document.querySelectorAll(".vr-choice-button[data-choice]"));
 
       buttons.forEach((btn) => {
         // swipe only
@@ -583,9 +567,7 @@ body.vr-peek-mode .vr-gauge-preview{
       this._peekChoiceActive = null;
 
       const previewEls = document.querySelectorAll(".vr-gauge-preview");
-      previewEls.forEach((previewEl) =>
-        previewEl.style.setProperty("--vr-pct", "0%")
-      );
+      previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-pct", "0%"));
 
       this._clearPeekClasses();
     },
@@ -811,8 +793,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
   const RECENT_MEMORY_SIZE = 4;
   const BASE_COINS_PER_CARD = 5;
-  const STREAK_STEP = 10;
-  const STREAK_BONUS = 25;
   const HISTORY_MAX = 30;
 
   const HELL_KING_DYNASTIES = ["Lucifer","Belzebuth","Lilith","Asmodée","Mammon","Baal","Astaroth","Abaddon"];
@@ -874,7 +854,12 @@ body.vr-peek-mode .vr-gauge-preview{
 
     _saveRunSoft() {
       try {
-        const universeId = this.universeId || window.VRState?.universeId || localStorage.getItem("vrealms_universe") || "unknown";
+        const universeId =
+          this.universeId ||
+          window.VRState?.universeId ||
+          localStorage.getItem("vrealms_universe") ||
+          "unknown";
+
         const payload = this._makeSavePayload();
         if (!payload) return;
         window.VRSave?.save?.(universeId, payload);
@@ -915,29 +900,26 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         // current card
- // current card
-const cardId = e.currentCardId || null;
-const card = cardId ? this.deck.find(c => c && c.id === cardId) : null;
+        const cardId = e.currentCardId || null;
+        const card = cardId ? this.deck.find(c => c && c.id === cardId) : null;
 
-if (card) {
-  this.currentCardLogic = card;
-  window.VRUIBinding.showCard(card);
-} else {
-  // ✅ fallback restore SANS effets (ne touche pas aux compteurs)
-  const deck = this.deck || [];
-  if (!deck.length) return false;
+        if (card) {
+          this.currentCardLogic = card;
+          window.VRUIBinding.showCard(card);
+        } else {
+          // ✅ fallback restore SANS effets (ne touche pas aux compteurs)
+          const deck = this.deck || [];
+          if (!deck.length) return false;
 
-  const candidates = deck.filter(c => c && !this.recentCards.includes(c.id));
-  const pool = candidates.length ? candidates : deck;
+          const candidates = deck.filter(c => c && !this.recentCards.includes(c.id));
+          const pool = candidates.length ? candidates : deck;
 
-  const picked = pool[Math.floor(Math.random() * pool.length)];
-  if (!picked) return false;
+          const picked = pool[Math.floor(Math.random() * pool.length)];
+          if (!picked) return false;
 
-  this.currentCardLogic = picked;
-  window.VRUIBinding.showCard(picked);
-}
-
-
+          this.currentCardLogic = picked;
+          window.VRUIBinding.showCard(picked);
+        }
 
         window.VRUIBinding.updateGauges();
 
@@ -1354,8 +1336,7 @@ if (card) {
 
       // ✅ AJOUT MINIMAL : si l’option PEEK n’existe pas dans le HTML, on l’injecte pour qu’elle soit VISIBLE
       try {
-        const host =
-          (popup.querySelector("[data-token-action]")?.parentElement) || popup;
+        const host = (popup.querySelector("[data-token-action]")?.parentElement) || popup;
 
         if (host && !host.querySelector('[data-token-action="peek15"]')) {
           const btn = document.createElement("button");
@@ -1829,13 +1810,8 @@ window.VRGame = {
       });
     } catch (_) {}
 
-    try {
-      window.addEventListener("pagehide", () => flush());
-    } catch (_) {}
-
-    try {
-      window.addEventListener("beforeunload", () => flush());
-    } catch (_) {}
+    try { window.addEventListener("pagehide", () => flush()); } catch (_) {}
+    try { window.addEventListener("beforeunload", () => flush()); } catch (_) {}
   }
 
   async function initApp() {

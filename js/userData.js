@@ -9,6 +9,7 @@
   "use strict";
 
   const VUserDataKey = "vrealms_user_data";
+  const LangStorageKey = "vrealms_lang";
 
   // Petite queue pour sérialiser les appels Supabase (évite les races)
   let _remoteQueue = Promise.resolve();
@@ -18,8 +19,9 @@
   }
 
   // ====== IMPORTANT ======
-  // ✅ Rien en localStorage. Tout est lu/écrit via Supabase.
-  // On conserve un cache en mémoire (runtime) pour l'UI uniquement.
+  // ✅ Supabase = source de vérité.
+  // ✅ localStorage = cache UX (évite reset entre pages + offline).
+  // Le cache se met à jour automatiquement dès qu'une donnée change.
   const _memState = {
     user_id: "",
     username: "",
@@ -32,6 +34,44 @@
 
   function _clampInt(n) {
     return Math.max(0, Math.floor(Number(n || 0)));
+  }
+
+  function _safeParse(raw) {
+    try { return JSON.parse(raw); } catch (_) { return null; }
+  }
+
+  function _readLocal() {
+    try {
+      const raw = localStorage.getItem(VUserDataKey);
+      if (!raw) return null;
+      const o = _safeParse(raw);
+      if (!o || typeof o !== "object") return null;
+      return o;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function _writeLocal(obj) {
+    try { localStorage.setItem(VUserDataKey, JSON.stringify(obj)); } catch (_) {}
+  }
+
+  function _persistLocal() {
+    // Cache minimal (UX). Supabase reste la vérité.
+    try {
+      _writeLocal({
+        user_id: (_memState.user_id || "").toString(),
+        username: (_memState.username || "").toString(),
+        vcoins: _clampInt(_memState.vcoins || 0),
+        jetons: _clampInt(_memState.jetons || 0),
+        lang: (_memState.lang || "fr").toString(),
+        updated_at: Date.now(),
+        last_sync_at: Number(_memState.last_sync_at || 0)
+      });
+    } catch (_) {}
+
+    // Align i18n
+    try { localStorage.setItem(LangStorageKey, (_memState.lang || "fr").toString()); } catch (_) {}
   }
 
   function _emitProfile() {
@@ -50,6 +90,17 @@
     } catch (_) {}
   }
 
+  function _default() {
+    return {
+      user_id: "",
+      username: "",
+      vcoins: 0,
+      jetons: 0,
+      lang: "fr",
+      updated_at: Date.now()
+    };
+  }
+
   function _applyMe(me) {
     if (!me) return false;
 
@@ -62,6 +113,7 @@
     _memState.last_sync_at = Date.now();
 
     _emitProfile();
+    _persistLocal();
     return true;
   }
 
@@ -83,7 +135,7 @@
         }
       } catch (_) {}
 
-      // Sinon, on fait au plus robuste:
+      // Sinon, fallback robuste
       const uid = await this._getUid();
       if (uid) return uid;
 
@@ -233,36 +285,24 @@
     }
   };
 
-  // --------- Local store ----------
-  function _default() {
-    return {
-      user_id: "",
-      username: "",
-      vcoins: 0,
-      jetons: 0,
-      lang: "fr",
-      updated_at: Date.now()
-    };
-  }
-
   const VUserData = {
-    init() {
-      // On garde l'appel load/save pour compat, mais ça n'écrit plus rien en local.
-      const u = this.load();
-      this.save(u);
-
-      // Si Supabase est dispo, on sync le profil au démarrage (non bloquant)
-      if (window.VRRemoteStore?.enabled?.()) {
-        queueRemote(async () => {
-          const me = await window.VRRemoteStore.getMe();
-          if (!me) return null;
-          _applyMe(me);
-          return true;
-        });
+    async init() {
+      // 1) Hydrate instant depuis le cache local (UX)
+      const cached = _readLocal();
+      if (cached) {
+        this.save(cached);
+      } else {
+        const u = this.load();
+        this.save(u);
       }
+
+      // 2) Si Supabase est dispo, on sync le profil au démarrage (attendu)
+      if (window.VRRemoteStore?.enabled?.()) {
+        await this.refresh().catch(() => false);
+      }
+      return true;
     },
 
-    // ✅ NEW: sync explicite (utile pages shop/profil)
     async refresh() {
       if (!window.VRRemoteStore?.enabled?.()) return false;
 
@@ -275,7 +315,7 @@
     },
 
     load() {
-      // ✅ plus de localStorage: on renvoie l'état mémoire
+      // ✅ état en mémoire (runtime) + cache local via init/save
       try {
         const d = _default();
         return {
@@ -293,7 +333,7 @@
     },
 
     save(u) {
-      // ✅ plus de localStorage: on met juste à jour l'état mémoire
+      // ✅ met à jour état mémoire + cache local
       try {
         const data = (u && typeof u === "object") ? u : _default();
         _memState.user_id = (data.user_id || _memState.user_id || "").toString();
@@ -303,10 +343,10 @@
         _memState.lang = (data.lang || _memState.lang || "fr").toString();
         _memState.updated_at = Date.now();
         _emitProfile();
+        _persistLocal();
       } catch (_) {}
     },
 
-    // ----- Profil -----
     getUsername() {
       const u = this.load();
       return (u.username || "").toString();
@@ -317,27 +357,24 @@
       return (u.user_id || "").toString();
     },
 
-    // Utilisé par l'index (popup pseudo)
     async setUsername(username) {
       const name = (username || "").toString().trim();
       if (name.length < 3 || name.length > 20) return { ok: false, reason: "invalid" };
       if (!/^[a-zA-Z0-9_-]+$/.test(name)) return { ok: false, reason: "invalid" };
 
-      // ✅ tout via Supabase
+      // ✅ remote-first (unicité)
       if (!window.VRRemoteStore?.enabled?.()) {
         return { ok: false, reason: "no_remote" };
       }
 
       const res = await window.VRRemoteStore.setUsername(name);
       if (res?.ok) {
-        // refresh authoritative
         await this.refresh().catch(() => false);
         return { ok: true, reason: "ok" };
       }
       return res || { ok: false, reason: "error" };
     },
 
-    // ----- Lang -----
     getLang() {
       const u = this.load();
       return (u.lang || "fr").toString();
@@ -346,23 +383,27 @@
     async setLang(lang) {
       const l = (lang || "fr").toString().trim().toLowerCase() || "fr";
 
-      // ✅ tout via Supabase
-      if (!window.VRRemoteStore?.enabled?.()) {
-        return "fr";
-      }
+      // ✅ local-first (UX immédiate)
+      const cur = this.load();
+      this.save({ ...cur, lang: l });
 
-      const ok = await window.VRRemoteStore.setLang(l);
-      if (ok) {
+      // ✅ sync Supabase (best-effort)
+      if (window.VRRemoteStore?.enabled?.()) {
+        const ok = await window.VRRemoteStore.setLang(l);
+        if (ok) {
+          await this.refresh().catch(() => false);
+          return l;
+        }
+
+        // fallback : on resync ce que dit le serveur
         await this.refresh().catch(() => false);
-        return l;
+        return this.getLang();
       }
 
-      // fallback : on resync ce que dit le serveur
-      await this.refresh().catch(() => false);
-      return this.getLang();
+      // offline / no remote: on garde le local
+      return l;
     },
 
-    // ----- Soldes (server authoritative) -----
     getVcoins() {
       const u = this.load();
       return Number(u.vcoins || 0);
@@ -388,13 +429,34 @@
           _memState.vcoins = _clampInt(newv);
           _memState.updated_at = Date.now();
           _emitProfile();
+          _persistLocal();
         } else {
           await this.refresh().catch(() => false);
         }
         return true;
       });
 
-      // retour immédiat = valeur actuelle (sera mise à jour après sync)
+      return this.getVcoins();
+    },
+
+    setVcoins(v) {
+      const target = Math.max(0, Math.floor(Number(v || 0)));
+
+      if (!window.VRRemoteStore?.enabled?.()) return this.getVcoins();
+
+      queueRemote(async () => {
+        const newv = await window.VRRemoteStore.reduceVcoinsTo(target);
+        if (typeof newv === "number" && !Number.isNaN(newv)) {
+          _memState.vcoins = _clampInt(newv);
+          _memState.updated_at = Date.now();
+          _emitProfile();
+          _persistLocal();
+        } else {
+          await this.refresh().catch(() => false);
+        }
+        return true;
+      });
+
       return this.getVcoins();
     },
 
@@ -413,6 +475,7 @@
           _memState.jetons = _clampInt(newj);
           _memState.updated_at = Date.now();
           _emitProfile();
+          _persistLocal();
         } else {
           await this.refresh().catch(() => false);
         }
@@ -422,7 +485,6 @@
       return this.getJetons();
     },
 
-    // Important: cette version est async (car on veut être sûr côté serveur)
     async spendJetons(cost) {
       const c = Math.floor(Number(cost || 0));
       if (c <= 0) return false;
@@ -433,39 +495,23 @@
       }
 
       // Remote d'abord (source of truth)
-      const ok = await window.VRRemoteStore.spendJetons(c);
-      if (!ok) {
+      const newBal = await window.VRRemoteStore.spendJetons(c);
+
+      // ⚠️ newBal peut être 0 (valide). On échoue seulement si null/NaN.
+      if (typeof newBal !== "number" || Number.isNaN(newBal)) {
         await this.refresh().catch(() => false);
         return false;
       }
 
-      // Resync authoritative
+      // Update immédiat UI + cache local
+      _memState.jetons = _clampInt(newBal);
+      _memState.updated_at = Date.now();
+      _emitProfile();
+      _persistLocal();
+
+      // Resync authoritative (au cas où)
       await this.refresh().catch(() => false);
       return true;
-    },
-
-    // Utilisé par l’undo : on autorise uniquement une réduction côté serveur
-    setVcoins(v) {
-      const target = Math.max(0, Math.floor(Number(v || 0)));
-
-      // ✅ tout via Supabase
-      if (!window.VRRemoteStore?.enabled?.()) {
-        return this.getVcoins();
-      }
-
-      queueRemote(async () => {
-        const newv = await window.VRRemoteStore.reduceVcoinsTo(target);
-        if (typeof newv === "number" && !Number.isNaN(newv)) {
-          _memState.vcoins = _clampInt(newv);
-          _memState.updated_at = Date.now();
-          _emitProfile();
-        } else {
-          await this.refresh().catch(() => false);
-        }
-        return true;
-      });
-
-      return this.getVcoins();
     }
   };
 
