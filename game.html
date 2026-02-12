@@ -188,7 +188,7 @@
 
       <!-- ✅ Popup VCoins (menu) -->
       <div class="vr-popup" id="vr-coins-popup" role="dialog" aria-modal="true" aria-hidden="true" inert>
-        <div class="vr-popup-inner">
+        <div class="vr-popup-inner>
 
           <div class="vr-token-view" data-coins-view="menu">
             <h3 class="vr-popup-title" data-i18n="coins.popup.title"></h3>
@@ -262,15 +262,15 @@
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
 
-  <!-- ✅ Boot Supabase + userData + i18n AVANT game.js (AJOUT, sans rien supprimer) -->
+  <!-- ✅ Boot Supabase + userData + i18n AVANT game.js (FIX: on ATTEND init) -->
   <script>
     (function () {
       async function boot() {
         // 1) auth anonyme + profil
         try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
 
-        // 2) init userData (sync remote -> local)
-        try { window.VUserData?.init?.(); } catch (_) {}
+        // 2) init userData (IMPORTANT: await)
+        try { await window.VUserData?.init?.(); } catch (_) {}
 
         // 3) init i18n si dispo
         try {

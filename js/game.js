@@ -11,6 +11,7 @@
 
 // -------------------------------------------------------
 // Helpers profil (100% Supabase authoritative)
+// + ✅ miroir local (fallback offline) : username/lang + cache me
 // -------------------------------------------------------
 (function () {
   "use strict";
@@ -18,19 +19,70 @@
   // Cache mémoire (PAS localStorage) juste pour éviter de spam RPC
   const _mem = { me: null, ts: 0 };
 
+  const LS_ME_CACHE = "vrealms_me_cache";
+  const LS_LANG = "vrealms_lang";
+  const LS_USERNAME = "vrealms_username";
+
+  function _safeParse(raw) {
+    try { return JSON.parse(raw); } catch (_) { return null; }
+  }
+
+  function _saveLocalMe(me) {
+    try {
+      if (!me || typeof me !== "object") return;
+
+      // cache objet complet (fallback offline)
+      localStorage.setItem(LS_ME_CACHE, JSON.stringify({ ts: Date.now(), me }));
+
+      // miroir simple (pratique pour index/endings/offline)
+      if (me.lang != null) localStorage.setItem(LS_LANG, String(me.lang));
+      const u = me.username ?? me.pseudo ?? me.display_name ?? me.name;
+      if (u != null) localStorage.setItem(LS_USERNAME, String(u));
+
+      // (optionnel) mirror aussi les soldes si présents
+      if (me.vcoins != null) localStorage.setItem("vrealms_vcoins", String(me.vcoins));
+      if (me.jetons != null) localStorage.setItem("vrealms_jetons", String(me.jetons));
+    } catch (_) {}
+  }
+
+  function _loadLocalMe() {
+    try {
+      const raw = localStorage.getItem(LS_ME_CACHE);
+      if (!raw) return null;
+      const parsed = _safeParse(raw);
+      const me = parsed?.me;
+      if (!me || typeof me !== "object") return null;
+      return me;
+    } catch (_) {
+      return null;
+    }
+  }
+
   async function getMeFresh(maxAgeMs) {
     const now = Date.now();
     const age = now - (_mem.ts || 0);
     if (_mem.me && age <= (maxAgeMs || 0)) return _mem.me;
 
+    // 1) Remote (Supabase) authoritative
     try {
       const me = await window.VRRemoteStore?.getMe?.();
       if (me) {
         _mem.me = me;
         _mem.ts = now;
+        _saveLocalMe(me);
         return me;
       }
     } catch (_) {}
+
+    // 2) Fallback local si offline / RPC down
+    if (!_mem.me) {
+      const local = _loadLocalMe();
+      if (local) {
+        _mem.me = local;
+        _mem.ts = now;
+        return local;
+      }
+    }
 
     return _mem.me; // peut être null
   }
@@ -44,6 +96,8 @@
   // Expose global (utile partout dans ce bundle)
   window.VRProfile = window.VRProfile || {
     async getMe(maxAgeMs) { return await getMeFresh(maxAgeMs); },
+    getLocalMe() { return _loadLocalMe(); },
+    syncLocal(me) { _saveLocalMe(me); },
     _n: n
   };
 })();

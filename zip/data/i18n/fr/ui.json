@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "VRealms"
+    "title": "Vuniverse"
   },
   "common": {
     "continue": "Continuer",
@@ -123,7 +123,25 @@
   "shop": {
     "title": "Boutique",
     "subtitle": "Dépenser vos VCoins",
-    "soon": "Bientôt disponible"
+    "soon": "Bientôt disponible",
+    "rewarded_title": "Récompenses (pub)",
+    "rewarded_desc": "Regarde une pub pour obtenir une petite récompense.",
+    "get_jeton": "Obtenir +1 jeton",
+    "get_200_coins": "Obtenir 200 pièces",
+    "get_300_coins": "Obtenir +300 pièces",
+    "noads_title": "No Pub",
+    "noads_desc": "Désactive les interstitiels (les pubs récompensées restent disponibles).",
+    "noads_buy": "Activer No Pub",
+    "coins_title": "Pièces",
+    "coins_desc": "Achète des pièces pour débloquer plus vite.",
+    "coins_300": "+300 pièces",
+    "coins_500": "+500 pièces",
+    "coins_3000": "+3000 pièces",
+    "jetons_title": "Jetons",
+    "jetons_desc": "Les jetons donnent accès aux actions spéciales.",
+    "jetons_5": "+5 jetons",
+    "jetons_12": "+12 jetons",
+    "jetons_50": "+50 jetons"
   },
   "settings": {
     "title": "Paramètres",

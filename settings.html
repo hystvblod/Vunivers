@@ -2,10 +2,68 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>VRealms - Paramètres</title>
+  <title>Vuniverse - Paramètres</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ✅ rendu plus "studio" du sélecteur langues avec drapeaux */
+    .vr-lang-row{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .vr-lang-select{
+      width:100%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      color: #fff;
+      font-size: 14px;
+      outline:none;
+      appearance:none;
+      -webkit-appearance:none;
+      cursor:pointer;
+    }
+    .vr-lang-preview{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+    }
+    .vr-flag{
+      font-size: 20px;
+      line-height: 1;
+      width: 24px;
+      text-align:center;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,.45));
+    }
+    .vr-lang-name{
+      font-weight: 900;
+      letter-spacing: .2px;
+    }
+    .vr-lang-code{
+      margin-left:auto;
+      opacity:.85;
+      font-weight:800;
+      font-size: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+    .vr-hint{
+      font-size: 12px;
+      opacity: .85;
+      line-height: 1.3;
+    }
+  </style>
 </head>
+
 <body class="vr-body">
 
   <header class="vr-header" aria-label="Top actions">
@@ -31,26 +89,104 @@
       <div class="vr-profile-grid">
         <div class="vr-profile-card">
           <label class="vr-label" data-i18n="settings.language"></label>
-          <select id="settings-lang" class="vr-select">
-            <option value="fr">Français</option>
-            <option value="en">English</option>
-          </select>
+
+          <div class="vr-lang-row">
+            <!-- ✅ Preview drapeau + nom -->
+            <div class="vr-lang-preview" aria-live="polite">
+              <span class="vr-flag" id="lang-flag">🇫🇷</span>
+              <span class="vr-lang-name" id="lang-name">Français</span>
+              <span class="vr-lang-code" id="lang-code">FR</span>
+            </div>
+
+            <!-- ✅ Select (options avec drapeaux) -->
+            <select id="settings-lang" class="vr-lang-select" aria-label="Language">
+              <option value="fr">🇫🇷 Français (FR)</option>
+              <option value="en">🇺🇸 English (US)</option>
+              <option value="de">🇩🇪 Deutsch (DE)</option>
+              <option value="es">🇪🇸 Español (ES)</option>
+              <option value="pt">🇵🇹 Português (PT)</option>
+              <option value="ptbr">🇧🇷 Português (BR)</option>
+              <option value="it">🇮🇹 Italiano (IT)</option>
+              <option value="ko">🇰🇷 한국어 (KO)</option>
+              <option value="ja">🇯🇵 日本語 (JA)</option>
+              <option value="id">🇮🇩 Bahasa Indonesia (ID)</option>
+            </select>
+
+            <div class="vr-hint" data-i18n="settings.language_hint"></div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- ✅ IMPORTANT : Supabase + bootstrap + userData avant i18n / UI -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabaseBootstrap.js"></script>
+  <script src="js/userData.js"></script>
+
   <script src="js/i18n.js"></script>
   <script src="js/game.js"></script>
+
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    // mapping drapeaux + libellés
+    const LANG_META = {
+      fr:   { flag: "🇫🇷", name: "Français", code: "FR" },
+      en:   { flag: "🇺🇸", name: "English", code: "US" },
+      de:   { flag: "🇩🇪", name: "Deutsch", code: "DE" },
+      es:   { flag: "🇪🇸", name: "Español", code: "ES" },
+      pt:   { flag: "🇵🇹", name: "Português", code: "PT" },
+      ptbr: { flag: "🇧🇷", name: "Português", code: "BR" },
+      it:   { flag: "🇮🇹", name: "Italiano", code: "IT" },
+      ko:   { flag: "🇰🇷", name: "한국어", code: "KO" },
+      ja:   { flag: "🇯🇵", name: "日本語", code: "JA" },
+      id:   { flag: "🇮🇩", name: "Bahasa Indonesia", code: "ID" }
+    };
+
+    function setPreview(lang) {
+      const meta = LANG_META[lang] || LANG_META.fr;
+      const flagEl = document.getElementById("lang-flag");
+      const nameEl = document.getElementById("lang-name");
+      const codeEl = document.getElementById("lang-code");
+      if (flagEl) flagEl.textContent = meta.flag;
+      if (nameEl) nameEl.textContent = meta.name;
+      if (codeEl) codeEl.textContent = meta.code;
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      // 1) Auth + client Supabase
+      try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
+
+      // 2) Hydrate cache local + refresh DB (lang authoritative si déjà en base)
+      try { await window.VUserData?.init?.(); } catch (_) {}
+
+      // 3) Applique i18n avec la langue actuelle
+      try {
+        const lang = window.VUserData?.getLang?.() || "fr";
+        if (window.VRI18n && typeof window.VRI18n.initI18n === "function") {
+          await window.VRI18n.initI18n(lang);
+        }
+      } catch (_) {}
+
       const sel = document.getElementById("settings-lang");
-      const current = localStorage.getItem("vrealms_lang") || "fr";
-      sel.value = current;
-      sel.addEventListener("change", () => {
-        localStorage.setItem("vrealms_lang", sel.value);
-        location.reload();
-      });
+
+      // langue actuelle (après sync)
+      const current = (window.VUserData?.getLang?.() || localStorage.getItem("vrealms_lang") || "fr").toString().toLowerCase();
+      if (sel) sel.value = LANG_META[current] ? current : "fr";
+      setPreview(sel ? sel.value : "fr");
+
+      // 4) Change langue = local-first + sync Supabase via VUserData.setLang()
+      if (sel) {
+        sel.addEventListener("change", async () => {
+          const chosen = sel.value;
+          setPreview(chosen);
+
+          // applique + sync
+          try { await window.VUserData?.setLang?.(chosen); } catch (_) {}
+
+          // reload pour recharger ui.json dans la bonne langue (simple et fiable)
+          location.reload();
+        });
+      }
     });
   </script>
 </body>

@@ -4,6 +4,8 @@
 // ✅ Ajout stats pubs (24h + total) via RPC secure_get_ads_stats()
 // ✅ Log interstitiel réellement affiché via RPC secure_log_ad_event('interstitial', ...)
 // ⚠️ Rewarded: le log le plus safe doit être fait côté DB (dans secure_claim_reward). Ici on fait un log best-effort.
+//
+// ✅ Ajout "no_ads" : BLOQUE UNIQUEMENT LES INTERSTITIELS (rewarded autorisés)
 
 (function () {
   "use strict";
@@ -57,6 +59,10 @@
     inter_24h: 0
   };
 
+  // --- No Ads (cache mémoire) ---
+  // ⚠️ no_ads BLOQUE UNIQUEMENT les interstitiels (rewarded restent OK)
+  var _noAds = false;
+
   function sbReady() {
     return !!(window.sb && window.sb.auth && typeof window.sb.rpc === "function");
   }
@@ -70,6 +76,30 @@
     } catch (_) {
       return false;
     }
+  }
+
+  // =============================
+  // No Ads (read-only) - SERVER SIDE
+  // =============================
+  async function syncNoAdsFromServer() {
+    try {
+      if (!sbReady()) return _noAds;
+
+      // Assure que la session existe
+      try { await window.sb.auth.getUser(); } catch (_) {}
+
+      var r = await window.sb.rpc("secure_get_no_ads");
+      if (r && !r.error) {
+        _noAds = (r.data === true);
+      }
+      return _noAds;
+    } catch (_) {
+      return _noAds;
+    }
+  }
+
+  function isNoAds() {
+    return _noAds === true;
   }
 
   // =============================
@@ -273,6 +303,7 @@
 
       // Sync server-side consent & counters (tout via DB)
       await syncAdsStateFromServer().catch(function () {});
+      await syncNoAdsFromServer().catch(function () {}); // ✅ no_ads
       await refreshAdsStats().catch(function () {});
 
       await AdMob.initialize({
@@ -382,6 +413,9 @@
 
   async function showInterstitialAd() {
     try {
+      // ✅ no_ads => on bloque UNIQUEMENT l'interstitiel
+      if (isNoAds()) return false;
+
       if (!isNative()) return false;
       if (!AdMob || !AdMob.prepareInterstitial || !AdMob.showInterstitial) return false;
       if (!canShowInterstitialNow()) return false;
@@ -444,6 +478,7 @@
   async function showRewardedAd(opts) {
     opts = opts || {};
     try {
+      // ⚠️ no_ads NE BLOQUE PAS les rewarded (volontaire)
       if (!isNative()) return false;
       if (!AdMob || !AdMob.prepareRewardVideoAd || !AdMob.showRewardVideoAd) return false;
 
@@ -527,8 +562,11 @@
       actionsCount = (actionsCount || 0) + 1;
     }
 
-    if (INTERSTITIEL_EVERY_X_ACTIONS > 0 && (actionsCount % INTERSTITIEL_EVERY_X_ACTIONS) === 0) {
-      try { await showInterstitialAd(); } catch (_) {}
+    // ✅ no_ads => on ne déclenche jamais l'interstitiel auto
+    if (!isNoAds()) {
+      if (INTERSTITIEL_EVERY_X_ACTIONS > 0 && (actionsCount % INTERSTITIEL_EVERY_X_ACTIONS) === 0) {
+        try { await showInterstitialAd(); } catch (_) {}
+      }
     }
 
     return actionsCount;
@@ -553,5 +591,9 @@
 
   // ➜ API "state"
   window.VRAds.refreshState = syncAdsStateFromServer;
+
+  // ➜ API "no_ads" (utile pour UI/diagnostic)
+  window.VRAds.isNoAds = isNoAds;
+  window.VRAds.refreshNoAds = syncNoAdsFromServer;
 
 })();
