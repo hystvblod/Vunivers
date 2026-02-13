@@ -27,14 +27,14 @@
   "ui": {
     "universe_buy": {
       "desc": "Cet univers est verrouillé. Tu peux le débloquer avec {price} VCoins, ou acheter 300 VCoins sur le store.",
-      "pay": "Débloquer ({price} VCoins)",
+      "pay": "Débloquer pour {price} VCoins",
       "iap": "Acheter 300 VCoins",
-      "open_shop": "Ouvrir la boutique",
+      "cancel": "Annuler",
       "err_unlock": "Impossible de débloquer (VCoins insuffisants ou erreur réseau).",
-      "err_app_only": "Achat Play Store dispo uniquement dans l’app. Ouvre la boutique.",
+      "err_app_only": "Achat Play Store dispo uniquement dans l’app.",
       "err_not_ready": "Système d’achat non prêt.",
       "err_buy_failed": "Achat annulé ou impossible.",
-      "err_unlock_after_buy": "Achat ok, mais unlock impossible (réessaye depuis la boutique)."
+      "err_unlock_after_buy": "Achat ok, mais déblocage impossible. Réessaie plus tard."
     },
     "language": "Langue",
     "subtitle": "Choisissez votre destin.",
