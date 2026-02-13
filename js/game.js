@@ -1,5 +1,5 @@
 // ===============================================
-// VRealms - js/game.js (bundle complet)
+// VRealms - js/game.js (bundle complet) — VERSION À JOUR
 // - Loader univers/decks/i18n
 // - UI binding + swipe animé sur les choix (A/B/C)
 // - State / Endings / Engine core
@@ -7,6 +7,8 @@
 // - VRGame + anti-retour navigateur (best-effort)
 // - ✅ SAVE LOCAL PAR UNIVERS (reprise session)
 // - ✅ EVENTS: toutes les 3 cartes -> 1/10, pool 30, anti-répétition 25/30
+// - ✅ Fix: events anti-répétition = 25 DISTINCTS (pas “25 tirages”)
+// - ✅ Fix: undo/save restore aussi les jetons UI
 // ===============================================
 
 
@@ -902,8 +904,8 @@ body.vr-peek-mode .vr-gauge-preview{
   // ✅ EVENTS règles
   const EVENT_CHECK_EVERY_N_CARDS = 3; // toutes les 3 cartes (par univers)
   const EVENT_CHANCE = 0.10;           // 1/10
-  const EVENT_NO_REPEAT_UNTIL = 25;    // pas de répétition avant 25 events distincts
-  const EVENT_EXCLUDE_LAST = 5;        // après reset, on exclut les 5 derniers
+  const EVENT_NO_REPEAT_UNTIL = 25;    // pas de répétition avant 25 DISTINCTS
+  const EVENT_EXCLUDE_LAST = 5;        // après reset, on exclut les 5 derniers (tirages)
 
   const HELL_KING_DYNASTIES = ["Lucifer","Belzebuth","Lilith","Asmodée","Mammon","Baal","Astaroth","Abaddon"];
 
@@ -938,7 +940,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
     history: [],
 
-    // petit miroir UI (PAS persisté)
+    // petit miroir UI (PAS persisté officiellement DB)
     _uiCoins: 0,
     _uiTokens: 0,
 
@@ -955,17 +957,32 @@ body.vr-peek-mode .vr-gauge-preview{
     _cardsSinceEventRoll: 0,
     _eventShowing: false,
 
+    _distinctSeenCount() {
+      try { return new Set(Array.isArray(this._seenEvents) ? this._seenEvents : []).size; }
+      catch (_) { return 0; }
+    },
+
     _rebuildEventIndex() {
       this._eventById = new Map();
       const arr = Array.isArray(this.eventsLogic?.events) ? this.eventsLogic.events : [];
       arr.forEach((ev) => {
         if (ev && ev.id) this._eventById.set(ev.id, ev);
       });
+
       this._allEventIds = Array.from(this._eventById.keys());
-      if (!Array.isArray(this._eventPool) || !this._eventPool.length) {
+
+      if (!Array.isArray(this._eventPool)) this._eventPool = [];
+      if (!Array.isArray(this._seenEvents)) this._seenEvents = [];
+
+      // ✅ sanitize pool/seen against current ids
+      const allow = new Set(this._allEventIds);
+      this._eventPool = this._eventPool.filter(id => allow.has(id));
+      this._seenEvents = this._seenEvents.filter(id => allow.has(id));
+
+      if (!this._eventPool.length && this._allEventIds.length) {
         this._eventPool = this._allEventIds.slice();
       }
-      if (!Array.isArray(this._seenEvents)) this._seenEvents = [];
+
       if (!Number.isFinite(this._cardsSinceEventRoll)) this._cardsSinceEventRoll = 0;
     },
 
@@ -991,6 +1008,12 @@ body.vr-peek-mode .vr-gauge-preview{
               cardsSinceRoll: asInt(this._cardsSinceEventRoll, 0),
               pool: Array.isArray(this._eventPool) ? deepClone(this._eventPool) : [],
               seen: Array.isArray(this._seenEvents) ? deepClone(this._seenEvents) : []
+            },
+
+            // ✅ persist UI mirrors (utile si events appliquent avant refresh DB)
+            ui: {
+              coins: asInt(this._uiCoins, 0),
+              tokens: asInt(this._uiTokens, 0)
             }
           },
           session: {
@@ -1043,7 +1066,6 @@ body.vr-peek-mode .vr-gauge-preview{
         this.reignIndex = Math.max(0, Number(e.reignIndex || 0));
         this.recentCards = Array.isArray(e.recentCards) ? deepClone(e.recentCards) : [];
         this.coinsStreak = Number(e.coinsStreak || 0);
-
         this._reviveUsed = !!e.reviveUsed;
 
         // ✅ restore events per universe
@@ -1051,6 +1073,11 @@ body.vr-peek-mode .vr-gauge-preview{
         this._cardsSinceEventRoll = asInt(evs.cardsSinceRoll, 0);
         this._eventPool = Array.isArray(evs.pool) ? deepClone(evs.pool) : [];
         this._seenEvents = Array.isArray(evs.seen) ? deepClone(evs.seen) : [];
+
+        // ✅ restore UI mirrors
+        const ui = e.ui || {};
+        if (Number.isFinite(Number(ui.coins))) this._uiCoins = asInt(ui.coins, this._uiCoins);
+        if (Number.isFinite(Number(ui.tokens))) this._uiTokens = asInt(ui.tokens, this._uiTokens);
 
         // session mirror
         if (window.VRGame?.session) {
@@ -1153,13 +1180,15 @@ body.vr-peek-mode .vr-gauge-preview{
 
       // ✅ RESTORE si une save existe (sinon nouvelle run)
       const restored = this._restoreFromSaveIfAny();
-      this._rebuildEventIndex(); // important même après restore
+
+      // important: rebuild + sanitize pool/seen après restore
+      this._rebuildEventIndex();
 
       if (!restored) {
         this._startNewReign();
         this._saveRunSoft();
       } else {
-        // petit garde-fou si pool vide
+        // garde-fou si pool vide
         if (!this._eventPool.length && this._allEventIds.length) {
           this._eventPool = this._allEventIds.slice();
         }
@@ -1177,14 +1206,7 @@ body.vr-peek-mode .vr-gauge-preview{
       } catch (_) {}
     },
 
-    _startNewReign() {
-      this.reignIndex += 1;
-      window.VRState.alive = true;
-      window.VRState.lastDeath = null;
-      window.VRState.reignYears = 0;
-      window.VRState.cardsPlayed = 0;
-
-      // ✅ reset gauges (50% / initialGauges)
+    _resetGaugesToInitial() {
       try {
         const cfg = this.universeConfig || {};
         const init = (cfg && cfg.initialGauges) ? cfg.initialGauges : {};
@@ -1194,6 +1216,17 @@ body.vr-peek-mode .vr-gauge-preview{
           window.VRState.gauges[g.id] = (Number.isFinite(Number(v)) ? Number(v) : 50);
         });
       } catch (_) {}
+    },
+
+    _startNewReign() {
+      this.reignIndex += 1;
+      window.VRState.alive = true;
+      window.VRState.lastDeath = null;
+      window.VRState.reignYears = 0;
+      window.VRState.cardsPlayed = 0;
+
+      // ✅ reset gauges (50% / initialGauges)
+      this._resetGaugesToInitial();
 
       this.recentCards = [];
       this.coinsStreak = 0;
@@ -1205,7 +1238,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
       // ✅ reset event counter for this run (par univers)
       this._cardsSinceEventRoll = 0;
-      // pool/seen on garde (car tu veux persistant par univers)
+      // pool/seen on garde (persistant par univers)
       if (!this._eventPool.length && this._allEventIds.length) {
         this._eventPool = this._allEventIds.slice();
       }
@@ -1235,34 +1268,45 @@ body.vr-peek-mode .vr-gauge-preview{
       } catch (_) {}
     },
 
-    // ✅ Restart "propre": clear save + reset run + repartir du début
+    // ✅ Recommencer = clear save + reset jauges + nouvelle partie (début)
     restartRun() {
       try { this._clearRunSave(); } catch (_) {}
+
+      // reset “run” en RAM pour repartir au tout début
       this._reviveUsed = false;
+      this.history = [];
+      this.recentCards = [];
+      this.coinsStreak = 0;
+      this.currentCardLogic = null;
+
+      // reset “début” (dynastie 1) + events clean
+      this.reignIndex = 0;
+      this._cardsSinceEventRoll = 0;
+      this._eventShowing = false;
+      this._eventPool = this._allEventIds.slice();
+      this._seenEvents = [];
+
+      if (window.VRGame?.session) window.VRGame.session.reignLength = 0;
+
+      // relance run
       this._startNewReign();
     },
 
-    // ✅ Revivre (seconde chance) : reset jauges + repartir sur une carte (même règne)
+    // ✅ Revivre (seconde chance) : reset jauges + reprendre sur une carte (même règne)
     reviveSecondChance() {
-      // une seule fois par run (tu peux enlever si tu veux illimité)
-      if (this._reviveUsed) return false;
+      if (this._reviveUsed) return false; // une seule fois par run
       this._reviveUsed = true;
 
+      // reset jauges + revive
+      this._resetGaugesToInitial();
       try {
-        const cfg = this.universeConfig || {};
-        const init = (cfg && cfg.initialGauges) ? cfg.initialGauges : {};
-        const gauges = (cfg.gauges || []);
-        gauges.forEach((g) => {
-          const v = (init && Object.prototype.hasOwnProperty.call(init, g.id)) ? init[g.id] : (g.start ?? 50);
-          window.VRState.gauges[g.id] = (Number.isFinite(Number(v)) ? Number(v) : 50);
-        });
         window.VRState.alive = true;
         window.VRState.lastDeath = null;
       } catch (_) {}
 
       try { window.VRUIBinding?.updateGauges?.(); } catch (_) {}
 
-      // repart sur une carte aléatoire (ou la suivante)
+      // reprise sur une carte
       try { this._nextCard_internalOnly(); } catch (_) { try { this._nextCard(); } catch (_) {} }
 
       try { this._saveRunSoft(); } catch (_) {}
@@ -1313,6 +1357,7 @@ body.vr-peek-mode .vr-gauge-preview{
         recentCards: deepClone(this.recentCards),
         coinsStreak: this.coinsStreak,
         uiCoins: this._uiCoins,
+        uiTokens: this._uiTokens,
         sessionReignLength: Number(window.VRGame?.session?.reignLength || 0),
 
         // ✅ aussi pour undo: on garde le compteur (sinon dé-sync)
@@ -1344,6 +1389,7 @@ body.vr-peek-mode .vr-gauge-preview{
       this.recentCards = deepClone(snap.recentCards) || [];
       this.coinsStreak = Number(snap.coinsStreak || 0);
       this._uiCoins = Number(snap.uiCoins || 0);
+      this._uiTokens = Number(snap.uiTokens || 0);
 
       // ✅ restore events state
       this._cardsSinceEventRoll = asInt(snap.cardsSinceEventRoll, 0);
@@ -1375,7 +1421,6 @@ body.vr-peek-mode .vr-gauge-preview{
     },
 
     _maybeRollEventAfterCardResolved() {
-      // par univers -> variables sauvées dans save locale
       this._cardsSinceEventRoll = asInt(this._cardsSinceEventRoll, 0) + 1;
 
       if (this._cardsSinceEventRoll < EVENT_CHECK_EVERY_N_CARDS) {
@@ -1404,22 +1449,23 @@ body.vr-peek-mode .vr-gauge-preview{
       if (!Array.isArray(this._seenEvents)) this._seenEvents = [];
       if (!Array.isArray(this._eventPool)) this._eventPool = [];
 
-      // si pool vide, on reconstruit selon règle “25/30 puis exclure last 5”
-      if (this._eventPool.length === 0) {
-        if (this._seenEvents.length < EVENT_NO_REPEAT_UNTIL) {
-          // pas censé arriver souvent, mais au cas où
-          const seenSet = new Set(this._seenEvents);
-          this._eventPool = all.filter(id => !seenSet.has(id));
-          if (!this._eventPool.length) this._eventPool = all.slice();
-          return;
-        }
+      if (this._eventPool.length !== 0) return;
 
-        // après 25 distincts, on exclut les 5 derniers
-        const last = this._seenEvents.slice(-EVENT_EXCLUDE_LAST);
-        const lastSet = new Set(last);
-        this._eventPool = all.filter(id => !lastSet.has(id));
+      // ✅ règle: pas de répétition avant 25 DISTINCTS
+      const distinct = this._distinctSeenCount();
+
+      if (distinct < EVENT_NO_REPEAT_UNTIL) {
+        const seenSet = new Set(this._seenEvents);
+        this._eventPool = all.filter(id => !seenSet.has(id));
         if (!this._eventPool.length) this._eventPool = all.slice();
+        return;
       }
+
+      // après 25 distincts, on exclut les 5 derniers tirages
+      const last = this._seenEvents.slice(-EVENT_EXCLUDE_LAST);
+      const lastSet = new Set(last);
+      this._eventPool = all.filter(id => !lastSet.has(id));
+      if (!this._eventPool.length) this._eventPool = all.slice();
     },
 
     _pickRandomEventId() {
@@ -1432,9 +1478,8 @@ body.vr-peek-mode .vr-gauge-preview{
       // retire du pool
       this._eventPool.splice(idx, 1);
 
-      // push seen
-      if (!this._seenEvents.includes(id)) this._seenEvents.push(id);
-      else this._seenEvents.push(id); // on garde l'ordre même si doublon (rare)
+      // push seen (ordre réel des tirages)
+      this._seenEvents.push(id);
 
       return id || null;
     },
@@ -1562,7 +1607,6 @@ body.vr-peek-mode .vr-gauge-preview{
       // ✅ EVENTS: toutes les 3 cartes jouées (par univers) -> tirage
       const shouldEvent = this._maybeRollEventAfterCardResolved();
       if (shouldEvent) {
-        // IMPORTANT: on déclenche l’event à la place de nextCard
         this._triggerRandomEvent();
         return;
       }
@@ -1623,6 +1667,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
       const closeRevivePopup = () => hideDialog(revivePopup, reviveBtn || btn);
 
+      // ✅ Recommencer (clear save + reset jauges + nouvelle partie début)
       if (btn) {
         btn.onclick = () => {
           window.VREndings.hideEnding();
@@ -1630,6 +1675,7 @@ body.vr-peek-mode .vr-gauge-preview{
         };
       }
 
+      // ✅ Retour (clear save + index.html)
       if (returnBtn) {
         returnBtn.onclick = () => {
           try { this._clearRunSave(); } catch (_) {}
@@ -1637,6 +1683,7 @@ body.vr-peek-mode .vr-gauge-preview{
         };
       }
 
+      // ✅ Revivre (popup Jeton OU Pub)
       if (reviveBtn) {
         reviveBtn.disabled = !!this._reviveUsed;
         reviveBtn.onclick = () => {
@@ -1669,7 +1716,6 @@ body.vr-peek-mode .vr-gauge-preview{
               let ok = false;
 
               if (action === "token") {
-                // pay 1 jeton
                 ok = await (window.VUserData?.spendJetons?.(1) || Promise.resolve(false));
                 if (!ok) {
                   try { window.showToast?.(t("token.toast.no_tokens", "Tu n'as pas de jeton")); } catch (_) {}
@@ -1686,13 +1732,12 @@ body.vr-peek-mode .vr-gauge-preview{
               if (ok) {
                 closeRevivePopup();
                 window.VREndings.hideEnding();
+
                 const did = this.reviveSecondChance();
                 if (!did) {
-                  // si revive déjà utilisé (ou bug) -> fallback restart
                   this.restartRun();
                 }
               } else {
-                // on laisse l’overlay fin affiché
                 try { reviveBtn.disabled = !!this._reviveUsed; } catch (_) {}
               }
             } catch (e) {
