@@ -933,6 +933,9 @@ body.vr-peek-mode .vr-gauge-preview{
     coinsStreak: 0,
     lang: "fr",
 
+    // ✅ revive (seconde chance) — 1 fois par run
+    _reviveUsed: false,
+
     history: [],
 
     // petit miroir UI (PAS persisté)
@@ -981,6 +984,7 @@ body.vr-peek-mode .vr-gauge-preview{
             recentCards: deepClone(this.recentCards || []),
             coinsStreak: Number(this.coinsStreak || 0),
             currentCardId: this.currentCardLogic?.id || null,
+            reviveUsed: !!this._reviveUsed,
 
             // ✅ persist events per-universe
             events: {
@@ -1039,6 +1043,8 @@ body.vr-peek-mode .vr-gauge-preview{
         this.reignIndex = Math.max(0, Number(e.reignIndex || 0));
         this.recentCards = Array.isArray(e.recentCards) ? deepClone(e.recentCards) : [];
         this.coinsStreak = Number(e.coinsStreak || 0);
+
+        this._reviveUsed = !!e.reviveUsed;
 
         // ✅ restore events per universe
         const evs = e.events || {};
@@ -1121,6 +1127,7 @@ body.vr-peek-mode .vr-gauge-preview{
       this.history = [];
       this.currentCardLogic = null;
       this._restored = false;
+      this._reviveUsed = false;
 
       // ✅ events init
       this.eventsLogic = eventsLogic || { events: [] };
@@ -1177,10 +1184,24 @@ body.vr-peek-mode .vr-gauge-preview{
       window.VRState.reignYears = 0;
       window.VRState.cardsPlayed = 0;
 
+      // ✅ reset gauges (50% / initialGauges)
+      try {
+        const cfg = this.universeConfig || {};
+        const init = (cfg && cfg.initialGauges) ? cfg.initialGauges : {};
+        const gauges = (cfg.gauges || []);
+        gauges.forEach((g) => {
+          const v = (init && Object.prototype.hasOwnProperty.call(init, g.id)) ? init[g.id] : (g.start ?? 50);
+          window.VRState.gauges[g.id] = (Number.isFinite(Number(v)) ? Number(v) : 50);
+        });
+      } catch (_) {}
+
       this.recentCards = [];
       this.coinsStreak = 0;
       this.history = [];
       this.currentCardLogic = null;
+
+      // ✅ reset revive for this run
+      this._reviveUsed = false;
 
       // ✅ reset event counter for this run (par univers)
       this._cardsSinceEventRoll = 0;
@@ -1200,6 +1221,52 @@ body.vr-peek-mode .vr-gauge-preview{
 
       this._nextCard();
       this._saveRunSoft();
+    },
+
+    // ✅ Clear save locale du RUN (par univers)
+    _clearRunSave() {
+      try {
+        const universeId =
+          this.universeId ||
+          window.VRState?.universeId ||
+          localStorage.getItem("vrealms_universe") ||
+          "unknown";
+        window.VRSave?.clear?.(universeId);
+      } catch (_) {}
+    },
+
+    // ✅ Restart "propre": clear save + reset run + repartir du début
+    restartRun() {
+      try { this._clearRunSave(); } catch (_) {}
+      this._reviveUsed = false;
+      this._startNewReign();
+    },
+
+    // ✅ Revivre (seconde chance) : reset jauges + repartir sur une carte (même règne)
+    reviveSecondChance() {
+      // une seule fois par run (tu peux enlever si tu veux illimité)
+      if (this._reviveUsed) return false;
+      this._reviveUsed = true;
+
+      try {
+        const cfg = this.universeConfig || {};
+        const init = (cfg && cfg.initialGauges) ? cfg.initialGauges : {};
+        const gauges = (cfg.gauges || []);
+        gauges.forEach((g) => {
+          const v = (init && Object.prototype.hasOwnProperty.call(init, g.id)) ? init[g.id] : (g.start ?? 50);
+          window.VRState.gauges[g.id] = (Number.isFinite(Number(v)) ? Number(v) : 50);
+        });
+        window.VRState.alive = true;
+        window.VRState.lastDeath = null;
+      } catch (_) {}
+
+      try { window.VRUIBinding?.updateGauges?.(); } catch (_) {}
+
+      // repart sur une carte aléatoire (ou la suivante)
+      try { this._nextCard_internalOnly(); } catch (_) { try { this._nextCard(); } catch (_) {} }
+
+      try { this._saveRunSoft(); } catch (_) {}
+      return true;
     },
 
     _nextCard() {
@@ -1516,31 +1583,130 @@ body.vr-peek-mode .vr-gauge-preview{
       this._saveRunSoft();
 
       const btn = document.getElementById("ending-restart-btn");
+      const reviveBtn = document.getElementById("ending-revive-btn");
+      const returnBtn = document.getElementById("ending-return-btn");
+      const revivePopup = document.getElementById("vr-revive-popup");
+
+      const t = (key, fallback) => {
+        try {
+          const out = window.VRI18n?.t?.(key);
+          if (out && out !== key) return out;
+        } catch (_) {}
+        return fallback || key;
+      };
+
+      const showDialog = (el, focusEl) => {
+        if (!el) return;
+        try { el.removeAttribute("inert"); } catch (_) {}
+        el.setAttribute("aria-hidden", "false");
+        el.style.display = "flex";
+        try { focusEl?.focus?.({ preventScroll: true }); } catch (_) {}
+      };
+
+      const hideDialog = (el, focusBackEl) => {
+        if (!el) return;
+        const active = document.activeElement;
+        if (active && el.contains(active)) {
+          try { active.blur(); } catch (_) {}
+          try { focusBackEl?.focus?.({ preventScroll: true }); } catch (_) {}
+        }
+        try { el.setAttribute("inert", ""); } catch (_) {}
+        el.setAttribute("aria-hidden", "true");
+        el.style.display = "none";
+      };
+
+      const openRevivePopup = () => {
+        if (!revivePopup) return;
+        const first = revivePopup?.querySelector?.("[data-revive-action]");
+        showDialog(revivePopup, first || reviveBtn || btn);
+      };
+
+      const closeRevivePopup = () => hideDialog(revivePopup, reviveBtn || btn);
+
       if (btn) {
         btn.onclick = () => {
           window.VREndings.hideEnding();
-          this._startNewReign();
+          this.restartRun();
         };
       }
 
-      const reviveBtn = document.getElementById("ending-revive-btn");
-      if (reviveBtn) {
-        reviveBtn.onclick = async () => {
-          reviveBtn.disabled = true;
-          try {
-            const ok = await (window.VRAds?.showRewardedAd?.({ placement: "revive" }) || Promise.resolve(false));
-            if (ok) {
-              window.VREndings.hideEnding();
-
-              const undone = window.VREngine?.undoChoices?.(1);
-              if (!undone) this._startNewReign();
-            }
-          } catch (e) {
-            console.error("[VREngine] revive error:", e);
-          } finally {
-            reviveBtn.disabled = false;
-          }
+      if (returnBtn) {
+        returnBtn.onclick = () => {
+          try { this._clearRunSave(); } catch (_) {}
+          try { window.location.href = "index.html"; } catch (_) {}
         };
+      }
+
+      if (reviveBtn) {
+        reviveBtn.disabled = !!this._reviveUsed;
+        reviveBtn.onclick = () => {
+          if (this._reviveUsed) return;
+          openRevivePopup();
+        };
+      }
+
+      // actions popup revive
+      if (revivePopup) {
+        revivePopup.addEventListener("click", (e) => {
+          if (e.target === revivePopup) closeRevivePopup();
+        });
+
+        revivePopup.querySelectorAll("[data-revive-action]").forEach((el) => {
+          el.addEventListener("click", async () => {
+            const action = el.getAttribute("data-revive-action");
+            if (!action) return;
+
+            if (action === "cancel") {
+              closeRevivePopup();
+              return;
+            }
+
+            // lock
+            try { el.disabled = true; } catch (_) {}
+            try { reviveBtn.disabled = true; } catch (_) {}
+
+            try {
+              let ok = false;
+
+              if (action === "token") {
+                // pay 1 jeton
+                ok = await (window.VUserData?.spendJetons?.(1) || Promise.resolve(false));
+                if (!ok) {
+                  try { window.showToast?.(t("token.toast.no_tokens", "Tu n'as pas de jeton")); } catch (_) {}
+                }
+              }
+
+              if (action === "ad") {
+                ok = await (window.VRAds?.showRewardedAd?.({ placement: "revive" }) || Promise.resolve(false));
+                if (!ok) {
+                  try { window.showToast?.(t("revive.toast.ad_fail", "Pub indisponible")); } catch (_) {}
+                }
+              }
+
+              if (ok) {
+                closeRevivePopup();
+                window.VREndings.hideEnding();
+                const did = this.reviveSecondChance();
+                if (!did) {
+                  // si revive déjà utilisé (ou bug) -> fallback restart
+                  this.restartRun();
+                }
+              } else {
+                // on laisse l’overlay fin affiché
+                try { reviveBtn.disabled = !!this._reviveUsed; } catch (_) {}
+              }
+            } catch (e) {
+              console.error("[VREngine] revive popup error:", e);
+              try { reviveBtn.disabled = !!this._reviveUsed; } catch (_) {}
+            } finally {
+              try { el.disabled = false; } catch (_) {}
+            }
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeRevivePopup();
+        });
       }
 
       this.coinsStreak = 0;
@@ -2176,4 +2342,4 @@ window.VRGame = {
   }
 
   document.addEventListener("DOMContentLoaded", initApp);
-})(); 
+})();

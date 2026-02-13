@@ -20,10 +20,10 @@
         "length": "Le pseudo doit faire entre 3 et 20 caractères.",
         "chars": "Utilise seulement lettres, chiffres, _ ou -.",
         "taken": "Ce pseudo est déjà pris, essaie-en un autre.",
-        "generic": "Impossible d’enregistrer le pseudo.",
-  "game.restart": "Recommencer",
-  "game.revive_ad": "Retour",
-
+        "generic": "Impossible d’enregistrer le pseudo."
+      }
+    }
+  },
   "ui": {
     "universe_buy": {
       "desc": "Cet univers est verrouillé. Tu peux le débloquer avec {price} VCoins, ou acheter 300 VCoins sur le store.",
@@ -35,15 +35,7 @@
       "err_not_ready": "Système d’achat non prêt.",
       "err_buy_failed": "Achat annulé ou impossible.",
       "err_unlock_after_buy": "Achat ok, mais unlock impossible (réessaye depuis la boutique)."
-    }
-  }
-
-
-
-      }
-    }
-  },
-  "ui": {
+    },
     "language": "Langue",
     "subtitle": "Choisissez votre destin.",
     "subtitle_desc": "Incarnez un souverain, un président, un va...flue sur vos jauges, votre monde et les générations suivantes.",
@@ -122,10 +114,32 @@
       "reward_fail": "Pub indisponible"
     }
   },
+  "revive": {
+    "popup": {
+      "title": "Revivre",
+      "text": "Choisis comment utiliser ta seconde chance.",
+      "use_token": {
+        "title": "Utiliser 1 jeton",
+        "text": "Consomme 1 jeton pour revivre maintenant."
+      },
+      "use_ad": {
+        "title": "Regarder une pub",
+        "text": "Regarde une pub récompensée pour revivre."
+      },
+      "cancel": {
+        "text": "Revenir à l’écran de fin"
+      }
+    },
+    "toast": {
+      "ad_fail": "Pub indisponible"
+    }
+  },
   "game": {
     "title": "Partie en cours",
     "subtitle": "Faites vos choix.",
     "restart": "Recommencer",
+    "revive": "Revivre",
+    "return": "Retour",
     "ending": {
       "title": "Fin du règne",
       "body": "Votre règne s'achève ici."

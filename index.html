@@ -5,1064 +5,1002 @@
   <title>Vuniverse</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
-
   <style>
-    /* ✅ Fond global un peu plus clair (override variables du style.css) */
+    /* ----- PAGE INDEX : fond + layout ----- */
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 700px at 50% 20%, rgba(122,167,255,.10), transparent 55%),
+                  linear-gradient(180deg, #0b0d12 0%, #07080c 100%);
+      color: #eaeef7;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
     :root{
-      --vr-bg: radial-gradient(circle at top, #f6e7cf 0, #23355a 62%, #0b1020 100%);
-      --vr-overlay: none; /* ✅ VOILE GLOBAL OFF */
+      --bg:#0b0d12;
+      --text:#eaeef7;
+      --muted:#c8d0e6;
+      --muted2:#8e97ad;
+      --border:rgba(255,255,255,.12);
+      --shadow:0 18px 60px rgba(0,0,0,.55);
+      --r:18px;
+      --accent:#7aa7ff;
+
+      --topbar-h: 64px;
+      --pad: clamp(14px, 3.6vw, 22px);
+      --title: clamp(18px, 2.6vmin, 30px);
+      --body: clamp(14px, 2.1vmin, 16px);
     }
 
-    /* ✅ On NE VEUT PLUS du header (même si style.css le gère) */
-    .vr-header{ display:none !important; }
-
-    /* ✅ Top actions directement dans la page */
-    .vr-top-actions{
-      display:flex !important;
-      align-items:center !important;
-      justify-content:space-between !important;   /* ✅ GAUCHE / CENTRE / DROITE */
-      gap:10px !important;
-      padding: 10px 12px 8px !important;
-      position: relative !important;
-      z-index: 10 !important;
-      width:100% !important;
+    .vr-topbar{
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: calc(var(--topbar-h) + env(safe-area-inset-top));
+      padding-top: env(safe-area-inset-top);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-left: 14px;
+      padding-right: 14px;
+      background: linear-gradient(180deg, rgba(10,12,18,.92) 0%, rgba(10,12,18,.55) 60%, rgba(10,12,18,0) 100%);
+      z-index: 10000;
+      pointer-events: none;
     }
+    .vr-topbar > *{ pointer-events: auto; }
 
-    .vr-top-slot{
-      flex:1 1 0 !important;
-      display:flex !important;
-      align-items:center !important;
-    }
-    .vr-top-left{ justify-content:flex-start !important; }
-    .vr-top-center{ justify-content:center !important; }
-    .vr-top-right{ justify-content:flex-end !important; }
-
-    /* boutons icônes (✅ rendus lisibles sur fond clair) */
     .vr-icon-button{
-      width:44px !important;
-      height:44px !important;
-      border-radius:999px !important;
-      border: 1px solid rgba(255,255,255,0.28) !important;
-      background: rgba(0,0,0,0.28) !important;
-      backdrop-filter: blur(6px) !important;
-      -webkit-backdrop-filter: blur(6px) !important;
-      box-shadow: 0 10px 22px rgba(0,0,0,0.22) !important;
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      text-decoration: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .vr-icon-button:active{ transform: translateY(1px); }
+    .vr-top-icon{ width: 26px; height: 26px; opacity: .95; }
 
-      padding:0 !important;
-      display:inline-flex !important;
-      align-items:center !important;
-      justify-content:center !important;
-      cursor:pointer !important;
-      text-decoration:none !important;
+    .vr-main{
+      padding-top: calc(var(--topbar-h) + env(safe-area-inset-top) + 18px);
+      padding-left: var(--pad);
+      padding-right: var(--pad);
+      padding-bottom: 34px;
+      max-width: 980px;
+      margin: 0 auto;
     }
 
-    .vr-icon-button img{
-      width:30px !important;
-      height:30px !important;
-      object-fit:contain !important;
-      display:block !important;
-      pointer-events:none !important;
-      user-select:none !important;
-
-      /* ✅ les SVG / icônes blanches deviennent lisibles */
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.65)) contrast(1.2) brightness(1.08) !important;
+    .vr-hero{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+      margin-bottom: 18px;
+      text-align: center;
     }
-
-    /* ✅ Plus de "réserve" sous header */
-    .vr-main{ padding-top: 12px !important; }
-
-    /* ✅ Logo juste en dessous des icônes */
-    .vr-intro{
-      margin-top: 6px !important;
-      margin-bottom: 12px !important;
-      display:flex !important;
-      justify-content:center !important;
-    }
-
-    /* ✅ LOGO PLUS GRAND */
     .vr-main-logo{
-      margin-top: 0 !important;
-      height: clamp(86px, 11vmin, 132px) !important;
-      max-width: clamp(260px, 72vw, 420px) !important;
-      object-fit: contain !important;
-      filter: drop-shadow(0 12px 30px rgba(0,0,0,0.45)) !important;
+      height: clamp(86px, 16vmin, 150px);
+      max-width: min(520px, 92vw);
+      object-fit: contain;
+      filter: drop-shadow(0 18px 34px rgba(0,0,0,.45));
+    }
+    .vr-subtitle{
+      margin: 0;
+      font-size: var(--title);
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .vr-subtitle-desc{
+      margin: 0;
+      margin-top: -2px;
+      font-size: var(--body);
+      color: var(--muted);
+      line-height: 1.35;
+      max-width: 720px;
     }
 
-    /* ===== Cartouches ===== */
+    .vr-section-title{
+      margin: 18px 0 10px;
+      font-size: 16px;
+      color: var(--muted2);
+      font-weight: 700;
+      letter-spacing: .4px;
+      text-transform: uppercase;
+    }
+
     .vr-universe-grid{
-      display:grid !important;
-      grid-template-columns:1fr !important;
-      gap:14px !important;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    @media (min-width: 760px){
+      .vr-universe-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
     .vr-card{
-      position:relative !important;
-      overflow:hidden !important;
-      width:100% !important;
-      min-height:64px !important;
-      height:64px !important;
-      border-radius:18px !important;
-      cursor:pointer !important;
-      border:0 !important;
-      outline:0 !important;
-      background:transparent !important;
-      box-shadow:none !important;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+      overflow: hidden;
+      position: relative;
+      min-height: 92px;
+      display: flex;
+      align-items: stretch;
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .12s ease, background .12s ease;
+    }
+    .vr-card:hover{ transform: translateY(-1px); background: rgba(255,255,255,.075); }
+    .vr-card:active{ transform: translateY(0px); }
+
+    .vr-card-inner{
+      padding: 14px 14px 14px 14px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      width: 100%;
     }
 
-    /* Fond webp (✅ bien visible) */
-    .vr-card-bg{
-      position:absolute !important;
-      inset:0 !important;
-      background-size:cover !important;
-      background-position:center !important;
-      opacity:1 !important;
-      z-index:0 !important;
+    .vr-card-badge{
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(122,167,255,.10);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
     }
+    .vr-card-badge img{ width: 22px; height: 22px; opacity: .95; }
 
-    /* ✅ Flou + voile ULTRA léger (≈ 5%) pour lisibilité */
-    .vr-card::after{
-      content:"" !important;
-      position:absolute !important;
-      inset:0 !important;
-      background: rgba(0,0,0,.05) !important; /* ✅ ~5% */
-      backdrop-filter: blur(2px) !important;
-      -webkit-backdrop-filter: blur(2px) !important;
-      pointer-events:none !important;
-      z-index:1 !important;
-    }
-
-    /* un tout petit liseré doux */
-    .vr-card::before{
-      content:"" !important;
-      position:absolute !important;
-      inset:0 !important;
-      border-radius:18px !important;
-      border: 1px solid rgba(255,255,255,.08) !important;
-      pointer-events:none !important;
-      z-index:2 !important;
-    }
-
-    .vr-card-content{
-      position:relative !important;
-      z-index:3 !important;
-      height:100% !important;
-      display:flex !important;
-      align-items:center !important;
-    }
-
-    .vr-card-header-line{
-      width:100% !important;
-      display:flex !important;
-      align-items:center !important;
-      justify-content:space-between !important;
-      gap:12px !important;
-      padding:0 14px !important;
-    }
-
+    .vr-card-text{ flex: 1 1 auto; min-width: 0; }
     .vr-card-title{
-      margin:0 !important;
-      color:#fff !important;
-      font-weight:900 !important;
-      font-size:16px !important;
-      letter-spacing:.2px !important;
-      line-height:1.1 !important;
-      text-shadow:0 2px 10px rgba(0,0,0,.65) !important;
+      margin: 0;
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .vr-card-sub{
+      margin: 0;
+      margin-top: 3px;
+      font-size: 13px;
+      color: var(--muted);
+      opacity: .95;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .vr-info-btn{
-      width:40px !important;
-      height:40px !important;
-      border-radius:999px !important;
-      background:rgba(255,255,255,.10) !important;
-      border:1px solid rgba(255,255,255,.18) !important;
-      color:rgba(255,255,255,.95) !important;
-      font-weight:900 !important;
-      font-size:16px !important;
-      display:inline-flex !important;
-      align-items:center !important;
-      justify-content:center !important;
-      box-shadow:none !important;
-      user-select:none !important;
-      flex:0 0 auto !important;
-      cursor:pointer !important;
-      position:relative !important;
-      z-index:4 !important;
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      flex: 0 0 auto;
+      cursor: pointer;
     }
-    .vr-info-btn:hover{ background:rgba(255,255,255,.14) !important; }
-    .vr-info-btn:active{ transform:scale(.96) !important; }
+    .vr-info-btn:hover{ background: rgba(255,255,255,.09); }
 
-    /* Tooltip plus large */
-    .vr-tooltip{
-      width: min(360px, calc(100vw - 32px)) !important;
-      max-width: 360px !important;
-      padding: 12px 14px !important;
-      font-size: 13px !important;
-      line-height: 1.35 !important;
-      border-radius: 14px !important;
+    .vr-lock{
+      position: absolute;
+      top: 10px; right: 10px;
+      width: 24px; height: 24px;
+      opacity: .95;
+      display: none;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
     }
+    .vr-card.locked .vr-lock{ display: block; }
+    .vr-card.locked{
+      outline: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.045);
+    }
+
+    .vr-selected{
+      outline: 2px solid rgba(122,167,255,.50);
+      box-shadow: 0 22px 64px rgba(122,167,255,.14), 0 18px 60px rgba(0,0,0,.45);
+    }
+
+    .vr-footer{
+      margin: 22px 0 0;
+      text-align: center;
+      color: var(--muted2);
+      font-size: 12px;
+      opacity: .9;
+    }
+
+    /* ----- TOOLTIP ----- */
+    .vr-tooltip{
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: calc(14px + env(safe-area-inset-bottom));
+      width: min(560px, calc(100vw - 28px));
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(12,14,20,.92);
+      box-shadow: 0 18px 70px rgba(0,0,0,.60);
+      padding: 14px 14px 12px;
+      z-index: 10050;
+      display: none;
+      backdrop-filter: blur(10px);
+    }
+    .vr-tooltip.show{ display:block; }
+    .vr-tooltip-title{
+      margin: 0;
+      font-weight: 900;
+      font-size: 16px;
+    }
+    .vr-tooltip-body{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .vr-tooltip-actions{
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    .vr-tooltip-btn{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .vr-tooltip-btn.primary{
+      border-color: rgba(122,167,255,.35);
+      background: rgba(122,167,255,.12);
+    }
+
+    /* ----- POPUP UNLOCK ----- */
+    .vr-pop-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 10100;
+    }
+    .vr-pop-overlay.show{ display:flex; }
+    .vr-pop{
+      width: min(520px, calc(100vw - 28px));
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(12,14,20,.94);
+      box-shadow: 0 20px 85px rgba(0,0,0,.68);
+      padding: 16px;
+      backdrop-filter: blur(12px);
+    }
+    .vr-pop-title{
+      margin: 0;
+      font-weight: 1000;
+      letter-spacing: .2px;
+      font-size: 18px;
+    }
+    .vr-pop-body{
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    #vr-buy-actions{
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+    .vr-buy-btn{
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 900;
+      padding: 12px 12px;
+      cursor: pointer;
+    }
+    .vr-buy-btn.primary{
+      border-color: rgba(122,167,255,.35);
+      background: rgba(122,167,255,.14);
+    }
+    .vr-buy-btn.ghost{
+      background: rgba(255,255,255,.04);
+    }
+    .vr-buy-btn:disabled{
+      opacity: .55;
+      cursor: not-allowed;
+    }
+    #vr-buy-error{
+      margin-top: 10px;
+      color: #ffb4b4;
+      font-size: 12.5px;
+      display: none;
+    }
+    #vr-buy-error.show{ display:block; }
+
+    /* ----- POPUP USERNAME ----- */
+    .vr-usr-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.64);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 10200;
+    }
+    .vr-usr-overlay.show{ display:flex; }
+    .vr-usr{
+      width: min(520px, calc(100vw - 28px));
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(12,14,20,.94);
+      box-shadow: 0 20px 85px rgba(0,0,0,.70);
+      padding: 16px;
+      backdrop-filter: blur(12px);
+    }
+    .vr-usr-title{ margin: 0; font-weight: 1000; font-size: 18px; }
+    .vr-usr-sub{ margin: 6px 0 0; color: var(--muted); font-size: 13px; }
+    .vr-usr-row{ margin-top: 12px; display: grid; gap: 10px; }
+    .vr-usr-input{
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding: 12px 12px;
+      font-weight: 800;
+      outline: none;
+    }
+    .vr-usr-hint{ color: var(--muted2); font-size: 12px; margin-top: -4px; }
+    .vr-usr-actions{ margin-top: 12px; display: grid; gap: 10px; }
+    .vr-usr-btn{
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 900;
+      padding: 12px 12px;
+      cursor: pointer;
+    }
+    .vr-usr-btn.primary{
+      border-color: rgba(122,167,255,.35);
+      background: rgba(122,167,255,.14);
+    }
+    .vr-usr-err{
+      margin-top: 10px;
+      color: #ffb4b4;
+      font-size: 12.5px;
+      display: none;
+    }
+    .vr-usr-err.show{ display:block; }
 
     @media (max-width: 520px){
-      .vr-main{ padding-top: 10px !important; }
-      .vr-card{ min-height:60px !important; height:60px !important; }
-      .vr-card-title{ font-size:14px !important; }
-      .vr-info-btn{ width:38px !important; height:38px !important; font-size:15px !important; }
-
-      .vr-icon-button{ width:40px !important; height:40px !important; }
-      .vr-icon-button img{ width:28px !important; height:28px !important; }
-
-      /* ✅ logo un tout petit peu plus petit */
+      .vr-main{ padding-top: calc(var(--topbar-h) + env(safe-area-inset-top) + 12px); }
+      .vr-card{ min-height: 78px; }
+      .vr-card-title{ font-size: 14px; }
+      .vr-info-btn{ width: 38px; height: 38px; font-size: 15px; }
+      .vr-icon-button{ width: 40px; height: 40px; }
+      .vr-icon-button img{ width: 28px; height: 28px; }
       .vr-main-logo{
-        width: min(82vw, 580px) !important;
-        height: auto !important;
-        max-height: 140px !important;
-        display: block;
-        margin: 0 auto 16px auto;
+        height: clamp(80px, 13vmin, 120px);
+        max-width: clamp(240px, 78vw, 380px);
       }
-    }
-
-    /* ===== Popup pseudo ===== */
-    #vr-username-popup{
-      position:fixed;
-      inset:0;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      z-index:9999;
-      background: rgba(0,0,0,.55);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-    }
-    #vr-username-popup .vr-username-inner{
-      width: min(520px, calc(100vw - 36px));
-      border-radius: 18px;
-      padding: 16px 16px 14px 16px;
-      background: rgba(12, 16, 32, 0.92);
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: 0 14px 40px rgba(0,0,0,.35);
-      color: #fff;
-    }
-    #vr-username-title{ margin:0 0 8px 0; font-weight:900; font-size:18px; }
-    #vr-username-desc{ margin:0 0 10px 0; opacity:.9; font-size:13px; line-height:1.35; }
-    #vr-username-rules{ margin:8px 0 0 0; opacity:.85; font-size:12px; line-height:1.35; }
-
-    #vr-username-row{ display:flex; gap:10px; align-items:center; }
-    #vr-username-input{
-      flex:1;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(0,0,0,.22);
-      color:#fff;
-      outline:none;
-      font-size:14px;
-    }
-    #vr-username-save{
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.12);
-      color:#fff;
-      font-weight:900;
-      cursor:pointer;
-      white-space:nowrap;
-    }
-    #vr-username-save:disabled{ opacity:.7; cursor:default; }
-    #vr-username-error{
-      margin-top:10px;
-      font-size:13px;
-      opacity:.95;
-      display:none;
-      color: rgba(255, 220, 220, 0.95);
-    }
-
-    /* ===== univers verrouillés (SVG au centre) ===== */
-    .vr-card.vr-card-locked::after{
-      background: rgba(0,0,0,.22) !important;
-      backdrop-filter: blur(3px) !important;
-      -webkit-backdrop-filter: blur(3px) !important;
-    }
-    .vr-card.vr-card-locked .vr-card-bg{
-      filter: blur(1.2px) saturate(.92) !important;
-      transform: scale(1.02);
-    }
-
-    .vr-locked-overlay{
-      position:absolute;
-      inset:0;
-      z-index:6;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      pointer-events:none;
-      user-select:none;
-    }
-
-    /* bulle comme les icônes du top */
-    .vr-locked-bubble{
-      width:44px;
-      height:44px;
-      border-radius:999px;
-      border: 1px solid rgba(255,255,255,0.28);
-      background: rgba(0,0,0,0.28);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.22);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .vr-locked-bubble svg{
-      width:24px;
-      height:24px;
-      display:block;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.65)) contrast(1.2) brightness(1.08);
-      opacity:.98;
-    }
-
-    /* ===== Popup achat univers ===== */
-    #vr-universe-buy-popup{
-      position:fixed;
-      inset:0;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      z-index:10000;
-      background: rgba(0,0,0,.55);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-    }
-
-    #vr-universe-buy-popup .vr-buy-inner{
-      width: min(520px, calc(100vw - 36px));
-      border-radius: 18px;
-      padding: 16px 16px 14px 16px;
-      background: rgba(12, 16, 32, 0.92);
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: 0 14px 40px rgba(0,0,0,.35);
-      color: #fff;
-    }
-
-    #vr-buy-title{
-      margin:0 0 8px 0;
-      font-weight:900;
-      font-size:18px;
-      line-height:1.15;
-    }
-
-    #vr-buy-desc{
-      margin:0 0 12px 0;
-      opacity:.92;
-      font-size:13px;
-      line-height:1.35;
-    }
-
-    #vr-buy-actions{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      margin-top:12px;
-    }
-
-    .vr-buy-btn{
-      width:100%;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.12);
-      color:#fff;
-      font-weight:900;
-      cursor:pointer;
-      text-align:center;
-    }
-
-    .vr-buy-btn.primary{
-      background: rgba(122,167,255,.22);
-      border-color: rgba(122,167,255,.35);
-    }
-
-    .vr-buy-btn.ghost{
-      background: rgba(0,0,0,.18);
-      border-color: rgba(255,255,255,.16);
-      font-weight:800;
-      opacity:.95;
-    }
-
-    .vr-buy-btn:active{ transform: scale(.99); }
-
-    #vr-buy-error{
-      margin-top:10px;
-      font-size:13px;
-      opacity:.95;
-      display:none;
-      color: rgba(255, 220, 220, 0.95);
     }
   </style>
 </head>
 
-<body class="vr-body">
+<body>
 
-  <main class="vr-main">
+  <!-- TOPBAR -->
+  <div class="vr-topbar">
+    <a class="vr-icon-button" href="profile.html" aria-label="Profil">
+      <img class="vr-top-icon" src="assets/img/ui/user.webp" alt="Profil" />
+    </a>
 
-    <!-- ✅ Icônes DIRECTEMENT dans la page (plus de header) -->
-    <div class="vr-top-actions">
-
-      <div class="vr-top-slot vr-top-left">
-        <a class="vr-icon-button" href="profile.html" aria-label="Profil">
-          <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
-        </a>
-      </div>
-
-      <div class="vr-top-slot vr-top-center">
-        <a class="vr-icon-button" href="settings.html" aria-label="Paramètres">
-          <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
-        </a>
-      </div>
-
-      <div class="vr-top-slot vr-top-right">
-        <a class="vr-icon-button" href="shop.html" aria-label="Boutique">
-          <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
-        </a>
-      </div>
-
-    </div>
-
-    <section class="vr-intro">
-      <img
-        src="assets/img/ui/logo_vuniverse.webp"
-        alt="Vuniverse"
-        class="vr-main-logo"
-        draggable="false"
-      />
-    </section>
-
-    <section class="vr-universes">
-      <h2 class="vr-section-title" data-i18n="ui.choose_universe"></h2>
-
-      <div class="vr-universe-grid">
-        <button class="vr-card" data-universe="hell_king" type="button">
-          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/hell_king.webp');"></div>
-          <div class="vr-card-content">
-            <div class="vr-card-header-line">
-              <h3 class="vr-card-title" data-i18n="universe.hell_king.title"></h3>
-              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.hell_king.desc">?</span>
-            </div>
-          </div>
-        </button>
-
-        <button class="vr-card" data-universe="heaven_king" type="button">
-          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/heaven_king.webp');"></div>
-          <div class="vr-card-content">
-            <div class="vr-card-header-line">
-              <h3 class="vr-card-title" data-i18n="universe.heaven_king.title"></h3>
-              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.heaven_king.desc">?</span>
-            </div>
-          </div>
-        </button>
-
-        <button class="vr-card" data-universe="western_president" type="button">
-          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/western_president.webp');"></div>
-          <div class="vr-card-content">
-            <div class="vr-card-header-line">
-              <h3 class="vr-card-title" data-i18n="universe.western_president.title"></h3>
-              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.western_president.desc">?</span>
-            </div>
-          </div>
-        </button>
-
-        <button class="vr-card" data-universe="mega_corp_ceo" type="button">
-          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/mega_corp_ceo.webp');"></div>
-          <div class="vr-card-content">
-            <div class="vr-card-header-line">
-              <h3 class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></h3>
-              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.mega_corp_ceo.desc">?</span>
-            </div>
-          </div>
-        </button>
-
-        <button class="vr-card" data-universe="new_world_explorer" type="button">
-          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/new_world_explorer.webp');"></div>
-          <div class="vr-card-content">
-            <div class="vr-card-header-line">
-              <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
-              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.new_world_explorer.desc">?</span>
-            </div>
-          </div>
-        </button>
-
-        <button class="vr-card" data-universe="vampire_lord" type="button">
-          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/vampire_lord.webp');"></div>
-          <div class="vr-card-content">
-            <div class="vr-card-header-line">
-              <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
-              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.vampire_lord.desc">?</span>
-            </div>
-          </div>
-        </button>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="vr-footer">
-    <span class="vr-footer-text" data-i18n="ui.footer"></span>
-  </footer>
-
-  <div id="vr-tooltip" class="vr-tooltip"></div>
-
-  <!-- ✅ Popup pseudo -->
-  <div id="vr-username-popup" aria-hidden="true">
-    <div class="vr-username-inner">
-      <h2 id="vr-username-title"></h2>
-      <p id="vr-username-desc"></p>
-
-      <div id="vr-username-row">
-        <input id="vr-username-input" type="text" autocomplete="off" maxlength="20" />
-        <button id="vr-username-save" type="button"></button>
-      </div>
-
-      <div id="vr-username-rules"></div>
-      <div id="vr-username-error"></div>
+    <div style="display:flex; gap:10px;">
+      <a class="vr-icon-button" href="settings.html" aria-label="Paramètres">
+        <img class="vr-top-icon" src="assets/img/ui/settings.webp" alt="Paramètres" />
+      </a>
+      <a class="vr-icon-button" href="shop.html" aria-label="Boutique">
+        <img class="vr-top-icon" src="assets/img/ui/shop.webp" alt="Boutique" />
+      </a>
     </div>
   </div>
 
-  <!-- ✅ Popup achat univers -->
-  <div id="vr-universe-buy-popup" aria-hidden="true">
-    <div class="vr-buy-inner" role="dialog" aria-modal="true" aria-label="Débloquer univers">
-      <h2 id="vr-buy-title"></h2>
-      <p id="vr-buy-desc"></p>
+  <main class="vr-main">
+    <section class="vr-hero">
+      <img class="vr-main-logo" src="assets/img/ui/logo_vuniverse.webp" alt="Vuniverse" />
+      <h1 class="vr-subtitle" data-i18n="ui.subtitle"></h1>
+      <p class="vr-subtitle-desc" data-i18n="ui.subtitle_desc"></p>
+    </section>
+
+    <div class="vr-section-title" data-i18n="ui.choose_universe"></div>
+
+    <section class="vr-universe-grid" id="vr-universe-grid" aria-label="Univers">
+      <!-- Carte univers : exemple (dupliquer/adapter) -->
+      <div class="vr-card" data-universe="hell_king">
+        <img class="vr-lock" src="assets/img/ui/lock.webp" alt="Verrouillé">
+        <div class="vr-card-inner">
+          <div class="vr-card-badge"><img src="assets/img/ui/skull.webp" alt=""></div>
+          <div class="vr-card-text">
+            <p class="vr-card-title" data-i18n="universe.hell_king.title"></p>
+            <p class="vr-card-sub" data-i18n="universe.hell_king.desc"></p>
+          </div>
+          <button class="vr-info-btn" type="button" aria-label="Infos"
+                  data-i18n-tip-title="universe.hell_king.title"
+                  data-i18n-tip="universe.hell_king.desc">i</button>
+        </div>
+      </div>
+
+      <div class="vr-card" data-universe="heaven_king">
+        <img class="vr-lock" src="assets/img/ui/lock.webp" alt="Verrouillé">
+        <div class="vr-card-inner">
+          <div class="vr-card-badge"><img src="assets/img/ui/halo.webp" alt=""></div>
+          <div class="vr-card-text">
+            <p class="vr-card-title" data-i18n="universe.heaven_king.title"></p>
+            <p class="vr-card-sub" data-i18n="universe.heaven_king.desc"></p>
+          </div>
+          <button class="vr-info-btn" type="button" aria-label="Infos"
+                  data-i18n-tip-title="universe.heaven_king.title"
+                  data-i18n-tip="universe.heaven_king.desc">i</button>
+        </div>
+      </div>
+
+      <div class="vr-card" data-universe="western_president">
+        <img class="vr-lock" src="assets/img/ui/lock.webp" alt="Verrouillé">
+        <div class="vr-card-inner">
+          <div class="vr-card-badge"><img src="assets/img/ui/flag.webp" alt=""></div>
+          <div class="vr-card-text">
+            <p class="vr-card-title" data-i18n="universe.western_president.title"></p>
+            <p class="vr-card-sub" data-i18n="universe.western_president.desc"></p>
+          </div>
+          <button class="vr-info-btn" type="button" aria-label="Infos"
+                  data-i18n-tip-title="universe.western_president.title"
+                  data-i18n-tip="universe.western_president.desc">i</button>
+        </div>
+      </div>
+
+      <div class="vr-card" data-universe="mega_corp_ceo">
+        <img class="vr-lock" src="assets/img/ui/lock.webp" alt="Verrouillé">
+        <div class="vr-card-inner">
+          <div class="vr-card-badge"><img src="assets/img/ui/briefcase.webp" alt=""></div>
+          <div class="vr-card-text">
+            <p class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></p>
+            <p class="vr-card-sub" data-i18n="universe.mega_corp_ceo.desc"></p>
+          </div>
+          <button class="vr-info-btn" type="button" aria-label="Infos"
+                  data-i18n-tip-title="universe.mega_corp_ceo.title"
+                  data-i18n-tip="universe.mega_corp_ceo.desc">i</button>
+        </div>
+      </div>
+
+      <div class="vr-card" data-universe="new_world_explorer">
+        <img class="vr-lock" src="assets/img/ui/lock.webp" alt="Verrouillé">
+        <div class="vr-card-inner">
+          <div class="vr-card-badge"><img src="assets/img/ui/compass.webp" alt=""></div>
+          <div class="vr-card-text">
+            <p class="vr-card-title" data-i18n="universe.new_world_explorer.title"></p>
+            <p class="vr-card-sub" data-i18n="universe.new_world_explorer.desc"></p>
+          </div>
+          <button class="vr-info-btn" type="button" aria-label="Infos"
+                  data-i18n-tip-title="universe.new_world_explorer.title"
+                  data-i18n-tip="universe.new_world_explorer.desc">i</button>
+        </div>
+      </div>
+
+      <div class="vr-card" data-universe="vampire_lord">
+        <img class="vr-lock" src="assets/img/ui/lock.webp" alt="Verrouillé">
+        <div class="vr-card-inner">
+          <div class="vr-card-badge"><img src="assets/img/ui/bat.webp" alt=""></div>
+          <div class="vr-card-text">
+            <p class="vr-card-title" data-i18n="universe.vampire_lord.title"></p>
+            <p class="vr-card-sub" data-i18n="universe.vampire_lord.desc"></p>
+          </div>
+          <button class="vr-info-btn" type="button" aria-label="Infos"
+                  data-i18n-tip-title="universe.vampire_lord.title"
+                  data-i18n-tip="universe.vampire_lord.desc">i</button>
+        </div>
+      </div>
+    </section>
+
+    <p class="vr-footer" data-i18n="ui.footer"></p>
+  </main>
+
+  <!-- TOOLTIP -->
+  <div class="vr-tooltip" id="vr-tooltip" role="dialog" aria-modal="false" aria-live="polite">
+    <p class="vr-tooltip-title" id="vr-tooltip-title"></p>
+    <p class="vr-tooltip-body" id="vr-tooltip-body"></p>
+    <div class="vr-tooltip-actions">
+      <button class="vr-tooltip-btn" id="vr-tooltip-close" type="button" data-i18n="common.close"></button>
+    </div>
+  </div>
+
+  <!-- POPUP UNLOCK UNIVERSE -->
+  <div class="vr-pop-overlay" id="vr-buy-overlay" role="dialog" aria-modal="true">
+    <div class="vr-pop">
+      <h2 class="vr-pop-title" id="vr-buy-title"></h2>
+      <p class="vr-pop-body" id="vr-buy-desc"></p>
 
       <div id="vr-buy-actions">
         <button id="vr-buy-pay" class="vr-buy-btn primary" type="button"></button>
-        <button id="vr-buy-iap" class="vr-buy-btn primary" type="button"></button>
-        <button id="vr-buy-getcoins" class="vr-buy-btn ghost" type="button"></button>
-        <button id="vr-buy-cancel" class="vr-buy-btn" type="button"></button>
+        <button id="vr-buy-iap" class="vr-buy-btn" type="button"></button>
+        <button id="vr-buy-cancel" class="vr-buy-btn ghost" type="button"></button>
       </div>
 
       <div id="vr-buy-error"></div>
     </div>
   </div>
 
-  <!-- ✅ Supabase -->
+  <!-- POPUP USERNAME -->
+  <div class="vr-usr-overlay" id="vr-usr-overlay" role="dialog" aria-modal="true">
+    <div class="vr-usr">
+      <h2 class="vr-usr-title" id="vr-usr-title"></h2>
+      <p class="vr-usr-sub" id="vr-usr-sub"></p>
+
+      <div class="vr-usr-row">
+        <input class="vr-usr-input" id="vr-usr-input" maxlength="20" autocomplete="nickname" />
+        <div class="vr-usr-hint" id="vr-usr-hint"></div>
+      </div>
+
+      <div class="vr-usr-actions">
+        <button class="vr-usr-btn primary" id="vr-usr-save" type="button"></button>
+        <button class="vr-usr-btn" id="vr-usr-skip" type="button"></button>
+      </div>
+
+      <div class="vr-usr-err" id="vr-usr-err"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/supabaseBootstrap.js"></script>
+  <script src="js/supabase_bootstrap.js"></script>
 
   <script src="js/userData.js"></script>
   <script src="js/ads.js"></script>
   <script src="js/purchases.js"></script>
-  <script src="js/shop.js"></script>
-
-  <!-- ✅ i18n DOIT être chargé AVANT les scripts inline qui appellent _t() -->
   <script src="js/i18n.js"></script>
 
   <script>
-    // i18n helper + mini templating {price}, {amount}...
-    function _t(key, fallback, vars) {
-      let s = "";
+    // Petite aide i18n : _t(key, fallback, vars)
+    function _t(key, fallback, vars){
       try {
-        if (window.VRI18n && typeof window.VRI18n.t === "function") s = window.VRI18n.t(key) || "";
-        else if (typeof window.i18nGet === "function") s = window.i18nGet(key) || "";
-      } catch (_) {}
-
-      if (!s) s = (fallback || "");
-
-      if (vars && s) {
-        try {
-          Object.keys(vars).forEach((k) => {
-            s = s.split("{" + k + "}").join(String(vars[k]));
+        var s = (window.VRI18n && typeof window.VRI18n.t === "function") ? window.VRI18n.t(key) : "";
+        if (!s || s === key) s = fallback || "";
+        if (vars && s) {
+          Object.keys(vars).forEach(function(k){
+            s = s.replace(new RegExp("\\\\{"+k+"\\\\}", "g"), String(vars[k]));
           });
-        } catch (_) {}
+        }
+        return s;
+      } catch(e){
+        return fallback || "";
       }
-
-      return s || "";
     }
   </script>
 
-  <!-- Tooltip ? -->
   <script>
-    (function () {
-      const tooltip = document.getElementById("vr-tooltip");
-      if (!tooltip) return;
+    // ---------------------------
+    // TOOLTIP (infos univers)
+    // ---------------------------
+    (function(){
+      const tip = document.getElementById("vr-tooltip");
+      const tipTitle = document.getElementById("vr-tooltip-title");
+      const tipBody = document.getElementById("vr-tooltip-body");
+      const closeBtn = document.getElementById("vr-tooltip-close");
 
-      function hideTooltip() {
-        tooltip.classList.remove("vr-tooltip-visible");
-        tooltip.style.display = "none";
+      function openTip(titleKey, bodyKey){
+        tipTitle.textContent = _t(titleKey, "");
+        tipBody.textContent = _t(bodyKey, "");
+        closeBtn.textContent = _t("common.close", "Fermer");
+        tip.classList.add("show");
+      }
+      function closeTip(){
+        tip.classList.remove("show");
       }
 
-      function showTooltip(el) {
-        const key = el.getAttribute("data-i18n-tip");
-        const tr = key ? _t(key, "") : "";
-        const text = tr || "?";
-
-        const rect = el.getBoundingClientRect();
-
-        tooltip.textContent = text;
-        tooltip.style.display = "block";
-
-        const vw = document.documentElement.clientWidth || window.innerWidth;
-        const vh = document.documentElement.clientHeight || window.innerHeight;
-
-        const tw = tooltip.offsetWidth || 0;
-        const th = tooltip.offsetHeight || 0;
-
-        const pad = 12;
-
-        const desiredCenter = rect.left + rect.width / 2;
-        const minCenter = pad + tw / 2;
-        const maxCenter = vw - pad - tw / 2;
-        const clampedCenter = Math.max(minCenter, Math.min(maxCenter, desiredCenter));
-
-        let top = rect.bottom + 8;
-        if (top + th > vh - pad) {
-          top = rect.top - 8 - th;
-        }
-        if (top < pad) top = pad;
-
-        tooltip.style.left = clampedCenter + "px";
-        tooltip.style.top = top + "px";
-        tooltip.classList.add("vr-tooltip-visible");
-      }
-
-      document.querySelectorAll(".vr-info-btn").forEach((el) => {
-        el.addEventListener("click", function (e) {
+      document.addEventListener("click", (e)=>{
+        const btn = e.target.closest("[data-i18n-tip]");
+        if (btn){
           e.preventDefault();
-          e.stopPropagation();
-          showTooltip(el);
-        });
-
-        el.addEventListener("keydown", function (e) {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            e.stopPropagation();
-            showTooltip(el);
-          }
-        });
+          openTip(btn.getAttribute("data-i18n-tip-title"), btn.getAttribute("data-i18n-tip"));
+          return;
+        }
+        if (e.target === tip) closeTip();
       });
 
-      document.addEventListener("click", hideTooltip);
-      window.addEventListener("scroll", hideTooltip, { passive: true });
-      window.addEventListener("resize", hideTooltip);
+      closeBtn.addEventListener("click", closeTip);
+      document.addEventListener("keydown", (e)=>{
+        if (e.key === "Escape") closeTip();
+      });
     })();
   </script>
 
-  <!-- ✅ Locks + popup achat + IAP (ta version) — avec clés i18n partout -->
   <script>
+    // =====================================================================
+    // UNIVERSE UNLOCK (VCoins OR IAP) — popup 3 boutons (pas "ouvrir boutique")
+    // - Débloquer pour 300 VCoins
+    // - Acheter 300 VCoins (prix Play Store) [dans l'app uniquement]
+    // - Annuler
+    // =====================================================================
     (function () {
-      const PRICE = 300;
+      "use strict";
 
-      // ⚠️ SKU Play Store : ne change pas si ton produit Play Console s'appelle déjà comme ça
-      const SKU_COINS_300 = "vrealms_coins_300";
+      const PRICE_VCOINS_UNLOCK = 300;
+      const SKU_COINS_300 = "vrealms_coins_300"; // <-- ton Product ID Play Store
 
-      // ✅ On garde compat vrealms + nouveau prefix vuniverse
-      const KEY_PREFIX = "vuniverse";
-      const LEGACY_PREFIX = "vrealms";
+      // Prefixes storage (compat)
+      const KEY_PREFIX = "vrealms_";
+      const LEGACY_PREFIX = "vr_";
 
-      const IAP_TARGET_KEY = KEY_PREFIX + "_iap_unlock_target";
-      const IAP_TARGET_KEY_LEGACY = LEGACY_PREFIX + "_iap_unlock_target";
+      const IAP_TARGET_KEY = (KEY_PREFIX + "iap_target_universe"); // pending universe to unlock after coins credited
 
-      function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (_) {} }
-      function lsGet(k) { try { return localStorage.getItem(k); } catch (_) { return null; } }
-      function lsDel(k) { try { localStorage.removeItem(k); } catch (_) {} }
+      // Popup refs
+      const buyOverlay = document.getElementById("vr-buy-overlay");
+      const buyTitle = document.getElementById("vr-buy-title");
+      const buyDesc = document.getElementById("vr-buy-desc");
+      const buyPay = document.getElementById("vr-buy-pay");
+      const buyIap = document.getElementById("vr-buy-iap");
+      const buyCancel = document.getElementById("vr-buy-cancel");
+      const buyError = document.getElementById("vr-buy-error");
 
-      function setUniverseToLaunch(universeId) {
-        // ✅ nouveau + legacy (si game.html lit encore vrealms_universe)
-        lsSet(KEY_PREFIX + "_universe", universeId);
-        lsSet(LEGACY_PREFIX + "_universe", universeId);
+      // Cards
+      const grid = document.getElementById("vr-universe-grid");
+      const cards = Array.from(grid.querySelectorAll(".vr-card"));
+
+      // Helper: read selected universe (compat vrealms_ / vr_)
+      function getSelectedUniverse() {
+        return localStorage.getItem(KEY_PREFIX + "universe") ||
+               localStorage.getItem(LEGACY_PREFIX + "universe") ||
+               "hell_king";
+      }
+      function setSelectedUniverse(id) {
+        localStorage.setItem(KEY_PREFIX + "universe", id);
+        // legacy mirror
+        try { localStorage.setItem(LEGACY_PREFIX + "universe", id); } catch(e){}
       }
 
-      function setShopFocusUniverse(universeId) {
-        lsSet(KEY_PREFIX + "_shop_focus_universe", universeId);
-        lsSet(LEGACY_PREFIX + "_shop_focus_universe", universeId);
+      // Helper: unlocked list (set)
+      function getUnlockedSet() {
+        // priority new key, else legacy
+        let raw = localStorage.getItem(KEY_PREFIX + "unlocked_universes");
+        if (!raw) raw = localStorage.getItem(LEGACY_PREFIX + "unlocked_universes");
+        let arr = [];
+        try { arr = raw ? JSON.parse(raw) : []; } catch(e){ arr = []; }
+        if (!Array.isArray(arr)) arr = [];
+        // always ensure base universe
+        if (!arr.includes("hell_king")) arr.unshift("hell_king");
+        return new Set(arr);
+      }
+      function setUnlockedSet(set) {
+        const arr = Array.from(set);
+        localStorage.setItem(KEY_PREFIX + "unlocked_universes", JSON.stringify(arr));
+        try { localStorage.setItem(LEGACY_PREFIX + "unlocked_universes", JSON.stringify(arr)); } catch(e){}
       }
 
-      // Free universes
-      function isFreeUniverse(id) {
-        return (id === "hell_king" || id === "heaven_king");
-      }
-
-      // Unlocked?
-      function isUnlocked(id) {
-        if (isFreeUniverse(id)) return true;
-
-        try {
-          if (window.VUserData && typeof window.VUserData.isUniverseUnlocked === "function") {
-            return !!window.VUserData.isUniverseUnlocked(id);
-          }
-        } catch (_) {}
-
-        try {
-          const u = window.VUserData?.load?.() || {};
-          const arr = Array.isArray(u.unlocked_universes) ? u.unlocked_universes : [];
-          return arr.includes(id);
-        } catch (_) {}
-
-        return false;
-      }
-
-      const LOCK_SVG = `
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path fill="white" d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2Zm-7-2a2 2 0 1 1 4 0v2h-4V7Zm2 11a2 2 0 0 1-1-3.732V13a1 1 0 1 1 2 0v1.268A2 2 0 0 1 12 18Z"/>
-        </svg>
-      `;
-
-      function ensureLockedOverlay(card) {
-        let ov = card.querySelector(".vr-locked-overlay");
-        if (ov) return;
-
-        ov = document.createElement("div");
-        ov.className = "vr-locked-overlay";
-
-        const bubble = document.createElement("div");
-        bubble.className = "vr-locked-bubble";
-        bubble.innerHTML = LOCK_SVG;
-
-        ov.appendChild(bubble);
-        card.appendChild(ov);
-      }
-
-      function removeLockedOverlay(card) {
-        const ov = card.querySelector(".vr-locked-overlay");
-        if (ov) ov.remove();
-      }
-
-      function applyLocks() {
-        document.querySelectorAll(".vr-card[data-universe]").forEach((card) => {
+      // UI: update locks & selected highlight
+      function updateUniverseLocks() {
+        const unlocked = getUnlockedSet();
+        const selected = getSelectedUniverse();
+        cards.forEach(card=>{
           const id = card.getAttribute("data-universe");
-          if (!id) return;
-
-          if (isUnlocked(id)) {
-            card.classList.remove("vr-card-locked");
-            removeLockedOverlay(card);
-            card.removeAttribute("aria-disabled");
-          } else {
-            card.classList.add("vr-card-locked");
-            ensureLockedOverlay(card);
-            card.setAttribute("aria-disabled", "true");
-          }
+          const isUnlocked = unlocked.has(id);
+          card.classList.toggle("locked", !isUnlocked);
+          card.classList.toggle("vr-selected", id === selected);
         });
       }
 
-      function launchUniverse(universeId) {
-        if (!universeId) return;
-        setUniverseToLaunch(universeId);
-        window.location.href = "game.html";
-      }
-
-      // Popup refs
-      const buyPopup  = document.getElementById("vr-universe-buy-popup");
-      const buyTitle  = document.getElementById("vr-buy-title");
-      const buyDesc   = document.getElementById("vr-buy-desc");
-      const buyPay    = document.getElementById("vr-buy-pay");
-      const buyIap    = document.getElementById("vr-buy-iap");
-      const buyGet    = document.getElementById("vr-buy-getcoins");
-      const buyCancel = document.getElementById("vr-buy-cancel");
-      const buyErr    = document.getElementById("vr-buy-error");
-
+      // Popup helpers
       let pendingUniverseId = null;
 
-      function showBuyError(msg) {
-        if (!buyErr) return;
-        buyErr.textContent = msg || "";
-        buyErr.style.display = msg ? "block" : "none";
-      }
-
-      function closeBuyPopup() {
-        pendingUniverseId = null;
-        showBuyError("");
-        if (buyPopup) {
-          buyPopup.style.display = "none";
-          buyPopup.setAttribute("aria-hidden", "true");
-        }
+      function showBuyError(msg){
+        if (!buyError) return;
+        buyError.textContent = msg || "";
+        buyError.classList.toggle("show", !!msg);
       }
 
       function currentCoins300Price() {
         const p = window.VRIAP?.getPrice?.(SKU_COINS_300) || "";
-        return p ? (" " + p) : "";
+        return p ? (" (" + p + ")") : "";
       }
 
       function openBuyPopup(universeId) {
         pendingUniverseId = universeId;
 
-        const title = _t("universe." + universeId + ".title", "Univers");
-        if (buyTitle) buyTitle.textContent = title;
+        // title = universe title (i18n)
+        const titleKey = "universe." + universeId + ".title";
+        buyTitle.textContent = _t(titleKey, universeId);
 
-        if (buyDesc) {
-          buyDesc.textContent = _t(
-            "ui.universe_buy.desc",
-            "Cet univers est verrouillé. Tu peux le débloquer avec {price} VCoins, ou acheter 300 VCoins sur le store.",
-            { price: PRICE }
-          );
+        // desc (i18n with {price})
+        buyDesc.textContent = _t(
+          "ui.universe_buy.desc",
+          "Cet univers est verrouillé. Tu peux le débloquer avec {price} VCoins, ou acheter 300 VCoins sur le store.",
+          { price: PRICE_VCOINS_UNLOCK }
+        );
+
+        // buttons (i18n)
+        buyPay.textContent = _t(
+          "ui.universe_buy.pay",
+          "Débloquer pour {price} VCoins",
+          { price: PRICE_VCOINS_UNLOCK }
+        );
+
+        buyIap.textContent = _t("ui.universe_buy.iap", "Acheter 300 VCoins") + currentCoins300Price();
+        buyCancel.textContent = _t("ui.universe_buy.cancel", "Annuler");
+
+        // reset
+        showBuyError("");
+        buyOverlay.classList.add("show");
+      }
+
+      function closeBuyPopup() {
+        buyOverlay.classList.remove("show");
+        pendingUniverseId = null;
+        showBuyError("");
+      }
+
+      // Unlock flow with VCoins (RPC)
+      async function unlockUniverseWithVCoins(universeId) {
+        if (!universeId) return false;
+        try {
+          if (!window.VRRemoteStore?.unlockUniverse) throw new Error("unlockUniverse missing");
+          const ok = await window.VRRemoteStore.unlockUniverse(universeId, PRICE_VCOINS_UNLOCK);
+          if (!ok) return false;
+
+          // update local unlocked set
+          const unlocked = getUnlockedSet();
+          unlocked.add(universeId);
+          setUnlockedSet(unlocked);
+
+          // select & refresh ui
+          setSelectedUniverse(universeId);
+          updateUniverseLocks();
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+
+      // Buy coins via Play Store then auto unlock with VCoins
+      async function buyCoins300ThenUnlock(universeId){
+        if (!universeId) return;
+
+        // Store only available in App (Capacitor + IAP plugin)
+        const isIapAvailable = !!window.VRIAP?.isAvailable?.();
+        if (!isIapAvailable){
+          showBuyError(_t("ui.universe_buy.err_app_only", "Achat Play Store dispo uniquement dans l’app."));
+          return;
         }
 
-        if (buyPay) {
-          buyPay.textContent = _t(
-            "ui.universe_buy.pay",
-            "Débloquer ({price} VCoins)",
-            { price: PRICE }
-          );
+        // remember target universe, then purchase product
+        try { localStorage.setItem(IAP_TARGET_KEY, universeId); } catch(e){}
+
+        try {
+          const ok = await window.VRIAP.buy?.(SKU_COINS_300);
+          if (!ok){
+            showBuyError(_t("ui.universe_buy.err_buy_failed", "Achat annulé ou impossible."));
+            return;
+          }
+          // success purchase -> credit event should fire (vr:iap_credited), then we'll auto-unlock there.
+          showBuyError(""); // clear
+        } catch(e){
+          showBuyError(_t("ui.universe_buy.err_iap_not_ready", "Système d’achat non prêt."));
+        }
+      }
+
+      // Handle clicking outside popup
+      buyOverlay.addEventListener("click", (e)=>{
+        if (e.target === buyOverlay) closeBuyPopup();
+      });
+      document.addEventListener("keydown", (e)=>{
+        if (e.key === "Escape" && buyOverlay.classList.contains("show")) closeBuyPopup();
+      });
+
+      // Button events
+      buyCancel.addEventListener("click", closeBuyPopup);
+
+      buyPay.addEventListener("click", async () => {
+        showBuyError("");
+        buyPay.disabled = true;
+        buyIap.disabled = true;
+
+        const ok = await unlockUniverseWithVCoins(pendingUniverseId);
+        if (ok){
+          closeBuyPopup();
+        } else {
+          showBuyError(_t("ui.universe_buy.err_unlock", "Impossible de débloquer (VCoins insuffisants ou erreur réseau)."));
         }
 
-        if (buyIap) {
+        buyPay.disabled = false;
+        buyIap.disabled = false;
+      });
+
+      buyIap.addEventListener("click", async () => {
+        showBuyError("");
+        buyPay.disabled = true;
+        buyIap.disabled = true;
+
+        await buyCoins300ThenUnlock(pendingUniverseId);
+
+        buyPay.disabled = false;
+        buyIap.disabled = false;
+      });
+
+      // Update price live when purchases.js emits vr:iap_price
+      window.addEventListener("vr:iap_price", (ev)=>{
+        const d = ev?.detail || {};
+        if (d.productId === SKU_COINS_300){
           buyIap.textContent = _t("ui.universe_buy.iap", "Acheter 300 VCoins") + currentCoins300Price();
         }
+      });
 
-        if (buyGet) buyGet.textContent = _t("ui.universe_buy.open_shop", "Ouvrir la boutique");
-        if (buyCancel) buyCancel.textContent = _t("common.cancel", "Annuler");
-        showBuyError("");
-
-        if (buyPopup) {
-          buyPopup.style.display = "flex";
-          buyPopup.setAttribute("aria-hidden", "false");
-        }
-      }
-
-      // Acheter via VCoins existants (RPC secure_unlock_universe)
-      async function tryUnlockWithVcoins(universeId) {
-        showBuyError("");
-        try { await window.VUserData?.refresh?.(); } catch (_) {}
-
-        const res = await window.VUserData?.unlockUniverse?.(universeId);
-        if (!res?.ok) {
-          showBuyError(_t("ui.universe_buy.err_unlock", "Impossible de débloquer (VCoins insuffisants ou erreur réseau)."));
-          return false;
-        }
-
-        try { applyLocks(); } catch (_) {}
-        closeBuyPopup();
-        launchUniverse(universeId);
-        return true;
-      }
-
-      // Acheter 300 VCoins (IAP) puis unlock auto
-      async function buyCoins300ThenUnlock(universeId) {
-        showBuyError("");
-
-        // IAP dispo uniquement dans l'app
-        if (!window.VRIAP?.isAvailable?.()) {
-          showBuyError(_t("ui.universe_buy.err_app_only", "Achat Play Store dispo uniquement dans l’app. Ouvre la boutique."));
-          return false;
-        }
-
-        // mémorise la cible d'unlock (nouveau + legacy)
-        lsSet(IAP_TARGET_KEY, universeId);
-        lsSet(IAP_TARGET_KEY_LEGACY, universeId);
-
-        // lance l'achat
+      // After coins credited, auto-unlock the stored target universe
+      window.addEventListener("vr:iap_credited", async (ev)=>{
         try {
-          if (typeof window.safeOrder === "function") {
-            await window.safeOrder(SKU_COINS_300);
-          } else if (window.VRIAP?.order) {
-            await window.VRIAP.order(SKU_COINS_300);
+          const d = ev?.detail || {};
+          if (d.productId !== SKU_COINS_300) return;
+
+          const target = localStorage.getItem(IAP_TARGET_KEY) || "";
+          if (!target) return;
+
+          // refresh user coins from server if possible
+          try { await window.VRRemoteStore?.refreshMe?.(); } catch(e){}
+
+          // try unlock
+          const ok = await unlockUniverseWithVCoins(target);
+
+          // clear target regardless (avoid loops)
+          try { localStorage.removeItem(IAP_TARGET_KEY); } catch(e){}
+
+          if (!ok){
+            // If popup is open, show error
+            if (buyOverlay.classList.contains("show")){
+              showBuyError(_t("ui.universe_buy.err_unlock_after_buy", "Achat ok, mais déblocage impossible. Réessaie plus tard."));
+            }
           } else {
-            showBuyError(_t("ui.universe_buy.err_not_ready", "Système d’achat non prêt."));
-            return false;
+            // close popup if it was open
+            if (buyOverlay.classList.contains("show")) closeBuyPopup();
           }
-        } catch (_) {
-          showBuyError(_t("ui.universe_buy.err_buy_failed", "Achat annulé ou impossible."));
-          return false;
-        }
+        } catch(e){}
+      });
 
-        // le reste se fait sur event vr:iap_credited
-        return true;
-      }
-
-      // boutons popup
-      if (buyPay) {
-        buyPay.addEventListener("click", () => {
-          if (!pendingUniverseId) return;
-          tryUnlockWithVcoins(pendingUniverseId);
-        });
-      }
-
-      if (buyIap) {
-        buyIap.addEventListener("click", () => {
-          if (!pendingUniverseId) return;
-          buyCoins300ThenUnlock(pendingUniverseId);
-        });
-      }
-
-      if (buyGet) {
-        buyGet.addEventListener("click", () => {
-          if (!pendingUniverseId) return;
-          setShopFocusUniverse(pendingUniverseId);
-          window.location.href = "shop.html";
-        });
-      }
-
-      if (buyCancel) buyCancel.addEventListener("click", closeBuyPopup);
-
-      if (buyPopup) {
-        buyPopup.addEventListener("click", (e) => {
-          if (e.target === buyPopup) closeBuyPopup();
-        });
-      }
-
-      // click cartes
-      document.querySelectorAll(".vr-card[data-universe]").forEach((card) => {
-        card.addEventListener("click", (e) => {
+      // Card click -> select or open popup if locked
+      cards.forEach(card=>{
+        card.addEventListener("click", (e)=>{
           const id = card.getAttribute("data-universe");
           if (!id) return;
 
-          if (isUnlocked(id)) {
-            launchUniverse(id);
-          } else {
-            e.preventDefault();
+          // ignore clicks on info button (handled by tooltip)
+          if (e.target.closest(".vr-info-btn")) return;
+
+          const unlocked = getUnlockedSet();
+          if (!unlocked.has(id)){
             openBuyPopup(id);
-          }
-        });
-      });
-
-      // ✅ Quand prix IAP arrive, update bouton si popup ouverte
-      window.addEventListener("vr:iap_price", () => {
-        try {
-          if (buyPopup && buyPopup.style.display === "flex" && buyIap) {
-            buyIap.textContent = _t("ui.universe_buy.iap", "Acheter 300 VCoins") + currentCoins300Price();
-          }
-        } catch (_) {}
-      });
-
-      // ✅ Quand achat crédité : si on attendait un unlock, on le fait
-      window.addEventListener("vr:iap_credited", async (ev) => {
-        try {
-          const d = ev?.detail || {};
-          if (String(d.productId || "") !== SKU_COINS_300) return;
-
-          const target = lsGet(IAP_TARGET_KEY) || lsGet(IAP_TARGET_KEY_LEGACY);
-          if (!target) return;
-
-          // consomme la cible (anti double)
-          lsDel(IAP_TARGET_KEY);
-          lsDel(IAP_TARGET_KEY_LEGACY);
-
-          // refresh profil (coins)
-          try { await window.VUserData?.refresh?.(); } catch (_) {}
-
-          // unlock
-          const res = await window.VUserData?.unlockUniverse?.(target);
-          if (!res?.ok) {
-            showBuyError(_t("ui.universe_buy.err_unlock_after_buy", "Achat ok, mais unlock impossible (réessaye depuis la boutique)."));
             return;
           }
 
-          try { applyLocks(); } catch (_) {}
-          closeBuyPopup();
-          launchUniverse(target);
-        } catch (_) {}
+          setSelectedUniverse(id);
+          updateUniverseLocks();
+        });
       });
 
-      // init locks + refresh userData
-      applyLocks();
-
-      (async function refreshLater(){
-        try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
-        try { await window.VUserData?.init?.(); } catch (_) {}
-        try { applyLocks(); } catch (_) {}
-      })();
-
+      // Init
+      updateUniverseLocks();
     })();
   </script>
 
-  <!-- ✅ Init auth anonyme + popup pseudo (100% i18n keys) -->
   <script>
+    // =====================================================================
+    // USERNAME POPUP (si pas de pseudo)
+    // =====================================================================
     (function () {
-      const popup = document.getElementById("vr-username-popup");
-      const titleEl = document.getElementById("vr-username-title");
-      const descEl = document.getElementById("vr-username-desc");
-      const rulesEl = document.getElementById("vr-username-rules");
-      const inputEl = document.getElementById("vr-username-input");
-      const btnEl = document.getElementById("vr-username-save");
-      const errEl = document.getElementById("vr-username-error");
+      "use strict";
 
-      function showError(msg) {
-        if (!errEl) return;
+      const overlay = document.getElementById("vr-usr-overlay");
+      const titleEl = document.getElementById("vr-usr-title");
+      const subEl = document.getElementById("vr-usr-sub");
+      const inputEl = document.getElementById("vr-usr-input");
+      const hintEl = document.getElementById("vr-usr-hint");
+      const btnSave = document.getElementById("vr-usr-save");
+      const btnSkip = document.getElementById("vr-usr-skip");
+      const errEl = document.getElementById("vr-usr-err");
+
+      function showErr(msg){
         errEl.textContent = msg || "";
-        errEl.style.display = msg ? "block" : "none";
+        errEl.classList.toggle("show", !!msg);
       }
 
-      function openPopup() {
-        if (!popup) return;
-
-        if (titleEl) titleEl.textContent = _t("auth.username.title", "Choisis ton pseudo");
-        if (descEl)  descEl.textContent  = _t("auth.username.subtitle", "Il sera visible dans l’app.");
-        if (inputEl) inputEl.placeholder = _t("auth.username.placeholder", "Ex: Lucifer_7");
-        if (btnEl)   btnEl.textContent   = _t("auth.username.cta", "Valider");
-        if (rulesEl) rulesEl.textContent = _t("auth.username.rules", "");
-
-        showError("");
-
-        popup.style.display = "flex";
-        popup.setAttribute("aria-hidden", "false");
-        setTimeout(() => { try { inputEl.focus(); } catch (_) {} }, 50);
+      function open(){
+        titleEl.textContent = _t("auth.username.title", "Choisis ton pseudo");
+        subEl.textContent = _t("auth.username.subtitle", "Il sera visible dans l’app.");
+        inputEl.placeholder = _t("auth.username.placeholder", "Ex: Lucifer_7");
+        hintEl.textContent = _t("auth.username.rules", "3 à 20 caractères • lettres/chiffres/_/-");
+        btnSave.textContent = _t("auth.username.cta", "Valider");
+        btnSkip.textContent = _t("auth.username.skip", "Plus tard");
+        showErr("");
+        overlay.classList.add("show");
+        setTimeout(()=>inputEl.focus(), 120);
       }
 
-      async function submit() {
-        const name = (inputEl?.value || "").trim();
-        showError("");
+      function close(){
+        overlay.classList.remove("show");
+        showErr("");
+      }
 
-        if (btnEl) btnEl.disabled = true;
+      function validName(name){
+        if (!name) return false;
+        if (name.length < 3 || name.length > 20) return false;
+        return /^[a-zA-Z0-9_-]+$/.test(name);
+      }
 
-        try {
-          const res = await window.VUserData?.setUsername?.(name);
+      btnSkip.addEventListener("click", close);
+      overlay.addEventListener("click", (e)=>{ if (e.target === overlay) close(); });
+      document.addEventListener("keydown", (e)=>{ if (e.key === "Escape" && overlay.classList.contains("show")) close(); });
 
-          if (res?.ok) {
-            popup.style.display = "none";
-            popup.setAttribute("aria-hidden", "true");
-            return;
-          }
+      btnSave.addEventListener("click", async ()=>{
+        const raw = (inputEl.value || "").trim();
+        showErr("");
 
-          // Mapping reasons => ton JSON (auth.username.errors.*)
-          if (res?.reason === "taken") {
-            showError(_t("auth.username.errors.taken", "Ce pseudo est déjà pris, essaie-en un autre."));
-          } else if (res?.reason === "invalid") {
-            // si ton userData renvoie "invalid" on peut choisir un message générique ou combiner length+chars
-            showError(_t("auth.username.errors.chars", "Utilise seulement lettres, chiffres, _ ou -."));
-          } else if (res?.reason === "length") {
-            showError(_t("auth.username.errors.length", "Le pseudo doit faire entre 3 et 20 caractères."));
-          } else {
-            showError(_t("auth.username.errors.generic", "Impossible d’enregistrer le pseudo."));
-          }
-        } catch (_) {
-          showError(_t("auth.username.errors.generic", "Impossible d’enregistrer le pseudo."));
-        } finally {
-          if (btnEl) btnEl.disabled = false;
+        if (raw.length < 3 || raw.length > 20){
+          showErr(_t("auth.username.errors.length", "Le pseudo doit faire entre 3 et 20 caractères."));
+          return;
         }
-      }
+        if (!/^[a-zA-Z0-9_-]+$/.test(raw)){
+          showErr(_t("auth.username.errors.chars", "Utilise seulement lettres, chiffres, _ ou -."));
+          return;
+        }
 
-      if (btnEl) btnEl.addEventListener("click", submit);
-      if (inputEl) {
-        inputEl.addEventListener("keydown", (e) => {
-          if (e.key === "Enter") submit();
-        });
-      }
+        btnSave.disabled = true;
+        btnSkip.disabled = true;
 
-      (async function boot() {
-        // 1) auth anonyme + profil
-        try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
-
-        // 2) init userData
-        try { await window.VUserData?.init?.(); } catch (_) {}
-
-        // 3) init i18n si tu as une init explicite
-        try {
-          const lang = window.VUserData?.getLang?.() || "fr";
-          if (window.VRI18n && typeof window.VRI18n.initI18n === "function") {
-            await window.VRI18n.initI18n(lang);
+        try{
+          const ok = await window.VRRemoteStore?.setUsername?.(raw);
+          if (ok){
+            close();
+          } else {
+            showErr(_t("auth.username.errors.taken", "Ce pseudo est déjà pris, essaie-en un autre."));
           }
-        } catch (_) {}
+        } catch(e){
+          showErr(_t("auth.username.errors.generic", "Impossible d’enregistrer le pseudo."));
+        }
 
-        // 4) popup pseudo si vide
-        try {
-          const u = window.VUserData?.load?.() || {};
-          if (!((u.username || "").toString().trim())) openPopup();
-        } catch (_) {
-          openPopup();
+        btnSave.disabled = false;
+        btnSkip.disabled = false;
+      });
+
+      // open only if username missing (server authoritative)
+      (async function init(){
+        try{
+          const me = await window.VRRemoteStore?.getMe?.();
+          const uname = me?.username || "";
+          if (!uname) open();
+        } catch(e){
+          // if cannot fetch, do nothing (avoid blocking)
         }
       })();
     })();
   </script>
 
-  <!-- IMPORTANT : PAS DE js/game.js SUR INDEX -->
 </body>
 </html>
