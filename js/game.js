@@ -1,5 +1,5 @@
 // ===============================================
-// VRealms - js/game.js (bundle complet) — VERSION À JOUR
+// VRealms - js/game.js (bundle complet) — VERSION À JOUR (PATCH FIXES)
 // - Loader univers/decks/i18n
 // - UI binding + swipe animé sur les choix (A/B/C)
 // - State / Endings / Engine core
@@ -9,6 +9,10 @@
 // - ✅ EVENTS: toutes les 3 cartes -> 1/10, pool 30, anti-répétition 25/30
 // - ✅ Fix: events anti-répétition = 25 DISTINCTS (pas “25 tirages”)
 // - ✅ Fix: undo/save restore aussi les jetons UI
+// - ✅ FIX(1): swipe = PointerEvents only (+ fallback touch si pas PointerEvent)
+// - ✅ FIX(2): _handleDeath() n’empile plus de listeners (bind once + delegation)
+// - ✅ FIX(3): events jetons: UI ne bouge que si DB ok + refresh soft après event
+// - ✅ FIX(5): i18n overlay event (Continuer / Événement) avec fallback
 // ===============================================
 
 
@@ -231,6 +235,14 @@
 (function () {
   "use strict";
 
+  const tt = (k, fb) => {
+    try {
+      const v = window.VRI18n?.t?.(k);
+      if (v && v !== k) return v;
+    } catch (_) {}
+    return fb;
+  };
+
   function ensureOverlay() {
     const ID = "vr-event-overlay";
     let root = document.getElementById(ID);
@@ -263,7 +275,7 @@
     const btn = document.createElement("button");
     btn.id = "vr-event-continue";
     btn.type = "button";
-    btn.textContent = "Continuer";
+    btn.textContent = tt("event.continue", "Continuer");
     btn.style.cssText =
       "border:0;border-radius:14px;padding:10px 14px;cursor:pointer;" +
       "background:rgba(255,255,255,.14);color:#fff;font:600 14px/1 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;";
@@ -284,7 +296,8 @@
     const bEl = document.getElementById("vr-event-body");
     const btn = document.getElementById("vr-event-continue");
 
-    if (tEl) tEl.textContent = title || "Événement";
+    if (btn) btn.textContent = tt("event.continue", "Continuer");
+    if (tEl) tEl.textContent = title || tt("event.title", "Événement");
     if (bEl) bEl.textContent = bodyText || "";
 
     return new Promise((resolve) => {
@@ -306,11 +319,12 @@
 
 
 // VRealms - engine/ui-binding.js
-// (inchangé)
+// (modifié: FIX(1) PointerOnly + fallback touch)
 (function () {
   "use strict";
 
   const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
+  const HAS_POINTER = ("PointerEvent" in window);
 
   const VRUIBinding = {
     updateMeta(kingName, years, coins, tokens) {
@@ -650,15 +664,18 @@ body.vr-peek-mode .vr-gauge-preview{
         }
       };
 
-      btn.addEventListener("pointerdown", onDown, { passive: false });
-      btn.addEventListener("pointermove", onMove, { passive: false });
-      btn.addEventListener("pointerup", onUp, { passive: true });
-      btn.addEventListener("pointercancel", onUp, { passive: true });
-
-      btn.addEventListener("touchstart", onDown, { passive: false });
-      btn.addEventListener("touchmove", onMove, { passive: false });
-      btn.addEventListener("touchend", onUp, { passive: true });
-      btn.addEventListener("touchcancel", onUp, { passive: true });
+      // ✅ FIX(1): pointer only (fallback touch only if no PointerEvent)
+      if (HAS_POINTER) {
+        btn.addEventListener("pointerdown", onDown, { passive: false });
+        btn.addEventListener("pointermove", onMove, { passive: false });
+        btn.addEventListener("pointerup", onUp, { passive: true });
+        btn.addEventListener("pointercancel", onUp, { passive: true });
+      } else {
+        btn.addEventListener("touchstart", onDown, { passive: false });
+        btn.addEventListener("touchmove", onMove, { passive: false });
+        btn.addEventListener("touchend", onUp, { passive: true });
+        btn.addEventListener("touchcancel", onUp, { passive: true });
+      }
     },
 
     _clearPeekClasses() {
@@ -957,6 +974,9 @@ body.vr-peek-mode .vr-gauge-preview{
     _cardsSinceEventRoll: 0,
     _eventShowing: false,
 
+    // ✅ FIX(2): binding death UI once
+    _deathUiBound: false,
+
     _distinctSeenCount() {
       try { return new Set(Array.isArray(this._seenEvents) ? this._seenEvents : []).size; }
       catch (_) { return 0; }
@@ -1010,7 +1030,7 @@ body.vr-peek-mode .vr-gauge-preview{
               seen: Array.isArray(this._seenEvents) ? deepClone(this._seenEvents) : []
             },
 
-            // ✅ persist UI mirrors (utile si events appliquent avant refresh DB)
+            // ✅ persist UI mirrors
             ui: {
               coins: asInt(this._uiCoins, 0),
               tokens: asInt(this._uiTokens, 0)
@@ -1501,7 +1521,7 @@ body.vr-peek-mode .vr-gauge-preview{
           window.VRState.applyDeltas(deltaMap);
         }
 
-        // vcoins
+        // vcoins (best-effort)
         const dv =
           (typeof ev?.vcoins === "number") ? ev.vcoins :
           (typeof ev?.vcoinsDelta === "number") ? ev.vcoinsDelta :
@@ -1512,23 +1532,28 @@ body.vr-peek-mode .vr-gauge-preview{
           try { window.VUserData?.addVcoins?.(dv); } catch (_) {}
         }
 
-        // jetons
+        // ✅ FIX(3): jetons strict
         const dj =
           (typeof ev?.jetons === "number") ? ev.jetons :
           (typeof ev?.jetonsDelta === "number") ? ev.jetonsDelta :
           0;
 
         if (dj) {
-          this._uiTokens += dj;
           if (dj > 0) {
-            try { window.VUserData?.addJetons?.(dj); } catch (_) {}
+            const ok = await (window.VUserData?.addJetons?.(dj) || Promise.resolve(false));
+            if (ok !== false) this._uiTokens += dj;
           } else {
-            try { window.VUserData?.spendJetons?.(Math.abs(dj)); } catch (_) {}
+            const cost = Math.abs(dj);
+            const ok = await (window.VUserData?.spendJetons?.(cost) || Promise.resolve(false));
+            if (ok) this._uiTokens -= cost;
           }
         }
       } catch (e) {
         console.error("[VREngine] event apply error:", e);
       }
+
+      // ✅ recoller à la DB après event (safe)
+      await this._refreshUIBalancesSoft();
 
       // UI update
       const kingName = document.getElementById("meta-king-name")?.textContent || getDynastyName(this.reignIndex - 1);
@@ -1539,7 +1564,15 @@ body.vr-peek-mode .vr-gauge-preview{
       this._eventShowing = true;
       this._saveRunSoft();
 
-      const title = texts?.title || "Événement";
+      const t = (k, fb) => {
+        try {
+          const out = window.VRI18n?.t?.(k);
+          if (out && out !== k) return out;
+        } catch (_) {}
+        return fb;
+      };
+
+      const title = texts?.title || t("event.title", "Événement");
       const body = texts?.body || texts?.text || "";
 
       try {
@@ -1619,6 +1652,43 @@ body.vr-peek-mode .vr-gauge-preview{
       this._nextCard();
     },
 
+    // ✅ FIX(2): bind death UI once + delegation stable
+    _bindDeathUIOnce() {
+      if (this._deathUiBound) return;
+      this._deathUiBound = true;
+
+      const revivePopup = document.getElementById("vr-revive-popup");
+
+      // Escape: ferme seulement si popup ouvert
+      document.addEventListener("keydown", (e) => {
+        if (e.key !== "Escape") return;
+        const rp = document.getElementById("vr-revive-popup");
+        if (!rp) return;
+        const open = (rp.style && rp.style.display === "flex") || rp.getAttribute("aria-hidden") === "false";
+        if (open) {
+          try { rp.__close?.(); } catch (_) {}
+        }
+      });
+
+      if (revivePopup) {
+        revivePopup.addEventListener("click", async (e) => {
+          // click sur fond => close
+          if (e.target === revivePopup) {
+            try { revivePopup.__close?.(); } catch (_) {}
+            return;
+          }
+
+          const btn = e.target?.closest?.("[data-revive-action]");
+          if (!btn) return;
+
+          const action = btn.getAttribute("data-revive-action");
+          if (!action) return;
+
+          try { await (revivePopup.__act?.(action, btn) || Promise.resolve()); } catch (_) {}
+        });
+      }
+    },
+
     async _handleDeath() {
       const lastDeath = window.VRState.getLastDeath();
       await window.VRGame?.onRunEnded?.();
@@ -1692,66 +1762,56 @@ body.vr-peek-mode .vr-gauge-preview{
         };
       }
 
-      // actions popup revive
+      // ✅ FIX(2): bind once (delegation)
+      this._bindDeathUIOnce();
+
+      // update handlers (pas d’empilement)
       if (revivePopup) {
-        revivePopup.addEventListener("click", (e) => {
-          if (e.target === revivePopup) closeRevivePopup();
-        });
+        revivePopup.__close = closeRevivePopup;
 
-        revivePopup.querySelectorAll("[data-revive-action]").forEach((el) => {
-          el.addEventListener("click", async () => {
-            const action = el.getAttribute("data-revive-action");
-            if (!action) return;
+        revivePopup.__act = async (action, clickedEl) => {
+          if (action === "cancel") {
+            closeRevivePopup();
+            return;
+          }
 
-            if (action === "cancel") {
+          // lock (sur le bouton cliqué)
+          try { if (clickedEl) clickedEl.disabled = true; } catch (_) {}
+          try { if (reviveBtn) reviveBtn.disabled = true; } catch (_) {}
+
+          try {
+            let ok = false;
+
+            if (action === "token") {
+              ok = await (window.VUserData?.spendJetons?.(1) || Promise.resolve(false));
+              if (!ok) {
+                try { window.showToast?.(t("token.toast.no_tokens", "Tu n'as pas de jeton")); } catch (_) {}
+              }
+            }
+
+            if (action === "ad") {
+              ok = await (window.VRAds?.showRewardedAd?.({ placement: "revive" }) || Promise.resolve(false));
+              if (!ok) {
+                try { window.showToast?.(t("revive.toast.ad_fail", "Pub indisponible")); } catch (_) {}
+              }
+            }
+
+            if (ok) {
               closeRevivePopup();
-              return;
+              window.VREndings.hideEnding();
+
+              const did = this.reviveSecondChance();
+              if (!did) this.restartRun();
+            } else {
+              try { if (reviveBtn) reviveBtn.disabled = !!this._reviveUsed; } catch (_) {}
             }
-
-            // lock
-            try { el.disabled = true; } catch (_) {}
-            try { reviveBtn.disabled = true; } catch (_) {}
-
-            try {
-              let ok = false;
-
-              if (action === "token") {
-                ok = await (window.VUserData?.spendJetons?.(1) || Promise.resolve(false));
-                if (!ok) {
-                  try { window.showToast?.(t("token.toast.no_tokens", "Tu n'as pas de jeton")); } catch (_) {}
-                }
-              }
-
-              if (action === "ad") {
-                ok = await (window.VRAds?.showRewardedAd?.({ placement: "revive" }) || Promise.resolve(false));
-                if (!ok) {
-                  try { window.showToast?.(t("revive.toast.ad_fail", "Pub indisponible")); } catch (_) {}
-                }
-              }
-
-              if (ok) {
-                closeRevivePopup();
-                window.VREndings.hideEnding();
-
-                const did = this.reviveSecondChance();
-                if (!did) {
-                  this.restartRun();
-                }
-              } else {
-                try { reviveBtn.disabled = !!this._reviveUsed; } catch (_) {}
-              }
-            } catch (e) {
-              console.error("[VREngine] revive popup error:", e);
-              try { reviveBtn.disabled = !!this._reviveUsed; } catch (_) {}
-            } finally {
-              try { el.disabled = false; } catch (_) {}
-            }
-          });
-        });
-
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") closeRevivePopup();
-        });
+          } catch (e) {
+            console.error("[VREngine] revive popup error:", e);
+            try { if (reviveBtn) reviveBtn.disabled = !!this._reviveUsed; } catch (_) {}
+          } finally {
+            try { if (clickedEl) clickedEl.disabled = false; } catch (_) {}
+          }
+        };
       }
 
       this.coinsStreak = 0;
