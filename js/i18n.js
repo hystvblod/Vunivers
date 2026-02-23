@@ -183,7 +183,7 @@
 
     // hook remote (plus tard)
     try {
-      if (window.VRRemoteStore?.saveLang) await window.VRRemoteStore.saveLang(_lang);
+      if (window.VRRemoteStore?.setLang) await window.VRRemoteStore.setLang(_lang);
     } catch (e) {
       console.warn("[VRI18n] saveLang remote failed", e);
     }

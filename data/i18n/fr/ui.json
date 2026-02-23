@@ -51,6 +51,37 @@
         "order": "Ordre",
         "surface": "Surface"
       }
+    },
+
+    "settings_title": "Paramètres",
+    "settings_lang_desc": "Choisis la langue. Elle est sauvegardée sur l’appareil et sur ton profil.",
+    "settings_back_home_aria": "Retour à l’accueil",
+    "settings_open_profile_aria": "Ouvrir le profil",
+    "settings_choose_lang_aria": "Choisir la langue : {code}",
+
+    "settings_ads_title": "Publicités",
+    "settings_ads_personalized_label": "Publicités personnalisées",
+    "settings_ads_personalized_desc": "Autoriser des publicités plus pertinentes. Tu peux changer à tout moment.",
+    "settings_ads_saved": "Préférence publicitaire enregistrée.",
+
+    "settings_help_title": "Aide",
+    "settings_help_email_label": "Contact :",
+    "settings_help_email": "help.vboldstudio@gmail.com",
+
+    "settings_msg_saved": "Langue enregistrée.",
+    "settings_msg_saved_local": "Langue enregistrée sur l’appareil. Synchronisation serveur plus tard.",
+
+    "lang_name": {
+      "en": "Anglais",
+      "fr": "Français",
+      "de": "Allemand",
+      "es": "Espagnol",
+      "pt": "Portugais",
+      "ptbr": "Portugais (Brésil)",
+      "it": "Italien",
+      "ko": "Coréen",
+      "ja": "Japonais",
+      "id": "Indonésien"
     }
   },
   "gauges": {
@@ -181,7 +212,26 @@
     "subtitle": "Préférences & langue",
     "sound": "Son",
     "music": "Musique",
-    "notifications": "Notifications"
+    "notifications": "Notifications",
+
+    "language": "Langue",
+    "language_hint": "Choisis la langue. Elle est sauvegardée sur l’appareil et sur ton profil.",
+
+    "back_home_aria": "Retour à l’accueil",
+    "open_profile_aria": "Ouvrir le profil",
+    "choose_lang_aria": "Choisir la langue : {code}",
+
+    "ads_title": "Publicités",
+    "ads_personalized_label": "Publicités personnalisées",
+    "ads_personalized_desc": "Autoriser des publicités plus pertinentes. Tu peux changer à tout moment.",
+    "ads_saved": "Préférence publicitaire enregistrée.",
+
+    "help_title": "Aide",
+    "help_email_label": "Contact :",
+    "help_email": "help.vboldstudio@gmail.com",
+
+    "msg_saved": "Langue enregistrée.",
+    "msg_saved_local": "Langue enregistrée sur l’appareil. Synchronisation serveur plus tard."
   },
   "universe": {
     "hell_king": {
