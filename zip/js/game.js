@@ -1,11 +1,18 @@
 // ===============================================
-// VRealms - js/game.js (bundle complet)
+// VRealms - js/game.js (bundle complet) — VERSION À JOUR (PATCH FIXES)
 // - Loader univers/decks/i18n
 // - UI binding + swipe animé sur les choix (A/B/C)
 // - State / Endings / Engine core
 // - Popups Jeton & VCoins
 // - VRGame + anti-retour navigateur (best-effort)
 // - ✅ SAVE LOCAL PAR UNIVERS (reprise session)
+// - ✅ EVENTS: toutes les 3 cartes -> 1/10, pool 30, anti-répétition 25/30
+// - ✅ Fix: events anti-répétition = 25 DISTINCTS (pas “25 tirages”)
+// - ✅ Fix: undo/save restore aussi les jetons UI
+// - ✅ FIX(1): swipe = PointerEvents only (+ fallback touch si pas PointerEvent)
+// - ✅ FIX(2): _handleDeath() n’empile plus de listeners (bind once + delegation)
+// - ✅ FIX(3): events jetons: UI ne bouge que si DB ok + refresh soft après event
+// - ✅ FIX(5): i18n overlay event (Continuer / Événement) avec fallback
 // ===============================================
 
 
@@ -107,12 +114,16 @@
 
 // VRealms - engine/events-loader.js
 // Charge la config d'univers + le deck (par univers) + les textes des cartes (par univers + langue).
+// + ✅ charge EVENTS (logic + i18n) par univers
 (function () {
   "use strict";
 
   const CONFIG_PATH = "data/universes";
   const DECKS_PATH = "data/decks";
-  const CARDS_I18N_PATH = "data/i18n";
+  const I18N_PATH = "data/i18n";
+
+  // ✅ events
+  const EVENTS_LOGIC_PATH = "data/events";
 
   const VREventsLoader = {
     async loadUniverseData(universeId, lang) {
@@ -127,6 +138,16 @@
       ]);
 
       return { config, deck, cardTexts };
+    },
+
+    // ✅ NEW: load events (logic + i18n)
+    async loadUniverseEvents(universeId, lang) {
+      const logicPromise = this._loadEventsLogic(universeId);
+      const textsPromise = this._loadEventsTexts(universeId, lang);
+
+      const [logic, texts] = await Promise.all([logicPromise, textsPromise]);
+
+      return { eventsLogic: logic, eventsTexts: texts };
     },
 
     async _loadConfig(universeId) {
@@ -159,10 +180,10 @@
 
     async _loadCardTexts(universeId, lang) {
       // ✅ NOUVEAU FORMAT : data/i18n/<lang>/cards_<universeId>.json
-      const urlNew = `${CARDS_I18N_PATH}/${lang}/cards_${universeId}.json`;
+      const urlNew = `${I18N_PATH}/${lang}/cards_${universeId}.json`;
 
       // ✅ FALLBACK ANCIEN FORMAT : data/i18n/cards_<universeId>_<lang>.json
-      const urlOld = `${CARDS_I18N_PATH}/cards_${universeId}_${lang}.json`;
+      const urlOld = `${I18N_PATH}/cards_${universeId}_${lang}.json`;
 
       let res = await fetch(urlNew, { cache: "no-cache" });
       if (!res.ok) res = await fetch(urlOld, { cache: "no-cache" });
@@ -171,6 +192,35 @@
         throw new Error(`[VREventsLoader] Impossible de charger ${urlNew} (ou fallback ${urlOld})`);
       }
       return res.json();
+    },
+
+    async _loadEventsLogic(universeId) {
+      // ✅ Ton chemin : data/events/logic_events_<universeId>.json
+      const url = `${EVENTS_LOGIC_PATH}/logic_events_${universeId}.json`;
+      const res = await fetch(url, { cache: "no-cache" });
+      if (!res.ok) {
+        // pas bloquant : si un univers n’a pas d’events, on renvoie vide
+        return { events: [] };
+      }
+      const data = await res.json();
+      if (Array.isArray(data)) return { events: data };
+      if (data && typeof data === "object" && Array.isArray(data.events)) return data;
+      return { events: [] };
+    },
+
+    async _loadEventsTexts(universeId, lang) {
+      // ✅ Ton chemin : data/i18n/<lang>/events_<universeId>.json
+      const urlNew = `${I18N_PATH}/${lang}/events_${universeId}.json`;
+
+      // (optionnel) fallback ancien format si un jour tu en as besoin
+      const urlOld = `${I18N_PATH}/events_${universeId}_${lang}.json`;
+
+      let res = await fetch(urlNew, { cache: "no-cache" });
+      if (!res.ok) res = await fetch(urlOld, { cache: "no-cache" });
+
+      if (!res.ok) return {};
+      const data = await res.json();
+      return (data && typeof data === "object") ? data : {};
     }
   };
 
@@ -178,12 +228,103 @@
 })();
 
 
+// -------------------------------------------------------
+// ✅ Event Overlay (pas besoin de modifier game.html)
+// Affiche titre + texte + bouton Continuer
+// -------------------------------------------------------
+(function () {
+  "use strict";
+
+  const tt = (k, fb) => {
+    try {
+      const v = window.VRI18n?.t?.(k);
+      if (v && v !== k) return v;
+    } catch (_) {}
+    return fb;
+  };
+
+  function ensureOverlay() {
+    const ID = "vr-event-overlay";
+    let root = document.getElementById(ID);
+    if (root) return root;
+
+    root = document.createElement("div");
+    root.id = ID;
+    root.setAttribute("aria-hidden", "true");
+    root.style.cssText =
+      "position:fixed;inset:0;display:none;align-items:center;justify-content:center;" +
+      "background:rgba(0,0,0,.58);z-index:2147483000;padding:16px;";
+
+    const card = document.createElement("div");
+    card.style.cssText =
+      "width:min(720px, 94vw);border-radius:18px;padding:18px 18px 14px;" +
+      "background:rgba(18,20,26,.94);color:#fff;box-shadow:0 18px 60px rgba(0,0,0,.55);" +
+      "border:1px solid rgba(255,255,255,.14);";
+
+    const title = document.createElement("div");
+    title.id = "vr-event-title";
+    title.style.cssText = "font:700 18px/1.2 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0 0 10px;";
+
+    const body = document.createElement("div");
+    body.id = "vr-event-body";
+    body.style.cssText = "font:14.5px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;opacity:.95;white-space:pre-wrap;";
+
+    const row = document.createElement("div");
+    row.style.cssText = "display:flex;justify-content:flex-end;gap:10px;margin-top:14px;";
+
+    const btn = document.createElement("button");
+    btn.id = "vr-event-continue";
+    btn.type = "button";
+    btn.textContent = tt("event.continue", "Continuer");
+    btn.style.cssText =
+      "border:0;border-radius:14px;padding:10px 14px;cursor:pointer;" +
+      "background:rgba(255,255,255,.14);color:#fff;font:600 14px/1 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;";
+
+    row.appendChild(btn);
+    card.appendChild(title);
+    card.appendChild(body);
+    card.appendChild(row);
+    root.appendChild(card);
+
+    document.body.appendChild(root);
+    return root;
+  }
+
+  async function showEvent(title, bodyText) {
+    const root = ensureOverlay();
+    const tEl = document.getElementById("vr-event-title");
+    const bEl = document.getElementById("vr-event-body");
+    const btn = document.getElementById("vr-event-continue");
+
+    if (btn) btn.textContent = tt("event.continue", "Continuer");
+    if (tEl) tEl.textContent = title || tt("event.title", "Événement");
+    if (bEl) bEl.textContent = bodyText || "";
+
+    return new Promise((resolve) => {
+      const close = () => {
+        root.setAttribute("aria-hidden", "true");
+        root.style.display = "none";
+        try { btn.removeEventListener("click", close); } catch (_) {}
+        resolve(true);
+      };
+      try { btn.addEventListener("click", close); } catch (_) {}
+      root.setAttribute("aria-hidden", "false");
+      root.style.display = "flex";
+      try { btn.focus?.({ preventScroll: true }); } catch (_) {}
+    });
+  }
+
+  window.VREventOverlay = { showEvent };
+})();
+
+
 // VRealms - engine/ui-binding.js
-// Fait le lien moteur ↔ interface (jauges, carte, choix + preview + swipe).
+// (modifié: FIX(1) PointerOnly + fallback touch)
 (function () {
   "use strict";
 
   const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
+  const HAS_POINTER = ("PointerEvent" in window);
 
   const VRUIBinding = {
     updateMeta(kingName, years, coins, tokens) {
@@ -216,9 +357,7 @@
       this._peekChoiceActive = null;
       try { document.body?.classList?.remove("vr-peek-mode"); } catch (_) {}
 
-      // ✅ AJOUT MINIMAL : styles de clignotement/preview si ton CSS ne les a pas
       this._ensurePeekStyles();
-
       this._setupGaugeLabels();
       this._ensureGaugePreviewBars();
       this.updateGauges();
@@ -229,7 +368,6 @@
       const n = Math.max(0, Math.min(Number(steps || 0), 99));
       this.peekRemaining = n;
 
-      // ✅ AJOUT MINIMAL : s’assure que l’effet est visible
       this._ensurePeekStyles();
 
       try {
@@ -238,7 +376,6 @@
       } catch (_) {}
     },
 
-    // ✅ AJOUT MINIMAL : injecte un mini CSS pour rendre l’aperçu VISIBLE (clignote + preview)
     _ensurePeekStyles() {
       try {
         const ID = "vr_peek_styles";
@@ -257,20 +394,14 @@
   50%  { transform: translateZ(0) scale(1.01); }
   100% { transform: translateZ(0) scale(1); }
 }
-
-/* clignotement des jauges impactées */
 body.vr-peek-mode .vr-gauge.vr-peek-up,
 body.vr-peek-mode .vr-gauge.vr-peek-down{
   animation: vrPeekGlow 650ms ease-in-out infinite;
 }
-
-/* léger glow sur le cadre (sans casser ton thème) */
 body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-frame,
 body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-frame{
   box-shadow: 0 0 0 2px rgba(255,255,255,.18), 0 10px 24px rgba(0,0,0,.22);
 }
-
-/* preview: visible + découpe par --vr-pct (si ton CSS ne le fait pas) */
 body.vr-peek-mode .vr-gauge-preview{
   position:absolute;
   inset:0;
@@ -306,7 +437,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
         const gaugeId = cfg.id;
 
-        // ✅ i18n prioritaire: gauges.<universeId>.<gaugeId>
         const i18nKey = `gauges.${universeId}.${gaugeId}`;
         const translated =
           window.VRI18n && typeof window.VRI18n.t === "function"
@@ -321,10 +451,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
         if (labelEl) labelEl.textContent = label || "—";
 
-        // ✅ id pour lire la valeur
         if (fillEl) fillEl.dataset.gaugeId = gaugeId;
-
-        // ✅ crucial pour le CSS: .vr-gauge[data-gauge-id="souls"] etc.
         el.dataset.gaugeId = gaugeId;
       });
     },
@@ -338,7 +465,6 @@ body.vr-peek-mode .vr-gauge-preview{
           preview.className = "vr-gauge-preview";
           preview.style.setProperty("--vr-pct", "0%");
 
-          // ✅ AJOUT MINIMAL : assure un positioning correct même si CSS absent
           try {
             preview.style.position = "absolute";
             preview.style.inset = "0";
@@ -376,7 +502,6 @@ body.vr-peek-mode .vr-gauge-preview{
         fillEl.style.setProperty("--vr-pct", `${val}%`);
       });
 
-      // preview = 0 par défaut
       const previewEls = document.querySelectorAll(".vr-gauge-preview");
       previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-pct", "0%"));
 
@@ -419,15 +544,12 @@ body.vr-peek-mode .vr-gauge-preview{
       const buttons = Array.from(document.querySelectorAll(".vr-choice-button[data-choice]"));
 
       buttons.forEach((btn) => {
-        // swipe only
         btn.addEventListener("click", (e) => {
           e.preventDefault();
           e.stopPropagation();
         });
 
-        // ultra important: sinon le navigateur peut bouffer le geste
         try { btn.style.touchAction = "none"; } catch (_) {}
-
         this._setupSwipeOnChoiceCard(btn);
       });
     },
@@ -511,7 +633,6 @@ body.vr-peek-mode .vr-gauge-preview{
         const dx = lastX - startX;
         const dy = lastY - startY;
 
-        // si trop vertical, on réduit (sinon c'est “bizarre”)
         if (Math.abs(dy) > Math.abs(dx) * 1.25) {
           setTransform(dx * 0.25);
           return;
@@ -543,15 +664,18 @@ body.vr-peek-mode .vr-gauge-preview{
         }
       };
 
-      btn.addEventListener("pointerdown", onDown, { passive: false });
-      btn.addEventListener("pointermove", onMove, { passive: false });
-      btn.addEventListener("pointerup", onUp, { passive: true });
-      btn.addEventListener("pointercancel", onUp, { passive: true });
-
-      btn.addEventListener("touchstart", onDown, { passive: false });
-      btn.addEventListener("touchmove", onMove, { passive: false });
-      btn.addEventListener("touchend", onUp, { passive: true });
-      btn.addEventListener("touchcancel", onUp, { passive: true });
+      // ✅ FIX(1): pointer only (fallback touch only if no PointerEvent)
+      if (HAS_POINTER) {
+        btn.addEventListener("pointerdown", onDown, { passive: false });
+        btn.addEventListener("pointermove", onMove, { passive: false });
+        btn.addEventListener("pointerup", onUp, { passive: true });
+        btn.addEventListener("pointercancel", onUp, { passive: true });
+      } else {
+        btn.addEventListener("touchstart", onDown, { passive: false });
+        btn.addEventListener("touchmove", onMove, { passive: false });
+        btn.addEventListener("touchend", onUp, { passive: true });
+        btn.addEventListener("touchcancel", onUp, { passive: true });
+      }
     },
 
     _clearPeekClasses() {
@@ -722,7 +846,6 @@ body.vr-peek-mode .vr-gauge-preview{
     const universeId =
       universeConfig?.id || localStorage.getItem("vrealms_universe") || "hell_king";
 
-    // ✅ 100% Supabase pour la langue (fallback local si offline)
     let lang = "fr";
     try {
       const me = await window.VRProfile?.getMe?.(4000);
@@ -795,6 +918,12 @@ body.vr-peek-mode .vr-gauge-preview{
   const BASE_COINS_PER_CARD = 5;
   const HISTORY_MAX = 30;
 
+  // ✅ EVENTS règles
+  const EVENT_CHECK_EVERY_N_CARDS = 3; // toutes les 3 cartes (par univers)
+  const EVENT_CHANCE = 0.10;           // 1/10
+  const EVENT_NO_REPEAT_UNTIL = 25;    // pas de répétition avant 25 DISTINCTS
+  const EVENT_EXCLUDE_LAST = 5;        // après reset, on exclut les 5 derniers (tirages)
+
   const HELL_KING_DYNASTIES = ["Lucifer","Belzebuth","Lilith","Asmodée","Mammon","Baal","Astaroth","Abaddon"];
 
   function getDynastyName(reignIndex) {
@@ -805,6 +934,11 @@ body.vr-peek-mode .vr-gauge-preview{
 
   function deepClone(obj) {
     try { return JSON.parse(JSON.stringify(obj)); } catch (_) { return obj; }
+  }
+
+  function asInt(x, fallback) {
+    const n = Number(x);
+    return Number.isFinite(n) ? Math.trunc(n) : (fallback || 0);
   }
 
   const VREngine = {
@@ -818,14 +952,59 @@ body.vr-peek-mode .vr-gauge-preview{
     coinsStreak: 0,
     lang: "fr",
 
+    // ✅ revive (seconde chance) — 1 fois par run
+    _reviveUsed: false,
+
     history: [],
 
-    // petit miroir UI (PAS persisté)
+    // petit miroir UI (PAS persisté officiellement DB)
     _uiCoins: 0,
     _uiTokens: 0,
 
     // ✅ restore flags
     _restored: false,
+
+    // ✅ EVENTS runtime (persistés via save locale)
+    eventsLogic: { events: [] },
+    eventsTexts: {},
+    _eventById: new Map(),
+    _allEventIds: [],
+    _eventPool: [],
+    _seenEvents: [],
+    _cardsSinceEventRoll: 0,
+    _eventShowing: false,
+
+    // ✅ FIX(2): binding death UI once
+    _deathUiBound: false,
+
+    _distinctSeenCount() {
+      try { return new Set(Array.isArray(this._seenEvents) ? this._seenEvents : []).size; }
+      catch (_) { return 0; }
+    },
+
+    _rebuildEventIndex() {
+      this._eventById = new Map();
+      const arr = Array.isArray(this.eventsLogic?.events) ? this.eventsLogic.events : [];
+      arr.forEach((ev) => {
+        if (ev && ev.id) this._eventById.set(ev.id, ev);
+      });
+
+      this._allEventIds = Array.from(this._eventById.keys());
+
+      if (!Array.isArray(this._eventPool)) this._eventPool = [];
+      if (!Array.isArray(this._seenEvents)) this._seenEvents = [];
+
+      // ✅ sanitize pool/seen against current ids
+      const allow = new Set(this._allEventIds);
+      this._eventPool = this._eventPool.filter(id => allow.has(id));
+      this._seenEvents = this._seenEvents.filter(id => allow.has(id));
+
+      if (!this._eventPool.length && this._allEventIds.length) {
+        this._eventPool = this._allEventIds.slice();
+      }
+
+      if (!Number.isFinite(this._cardsSinceEventRoll)) this._cardsSinceEventRoll = 0;
+    },
 
     _makeSavePayload() {
       try {
@@ -841,7 +1020,21 @@ body.vr-peek-mode .vr-gauge-preview{
             reignIndex: Number(this.reignIndex || 0),
             recentCards: deepClone(this.recentCards || []),
             coinsStreak: Number(this.coinsStreak || 0),
-            currentCardId: this.currentCardLogic?.id || null
+            currentCardId: this.currentCardLogic?.id || null,
+            reviveUsed: !!this._reviveUsed,
+
+            // ✅ persist events per-universe
+            events: {
+              cardsSinceRoll: asInt(this._cardsSinceEventRoll, 0),
+              pool: Array.isArray(this._eventPool) ? deepClone(this._eventPool) : [],
+              seen: Array.isArray(this._seenEvents) ? deepClone(this._seenEvents) : []
+            },
+
+            // ✅ persist UI mirrors
+            ui: {
+              coins: asInt(this._uiCoins, 0),
+              tokens: asInt(this._uiTokens, 0)
+            }
           },
           session: {
             reignLength: Number(window.VRGame?.session?.reignLength || 0)
@@ -893,6 +1086,18 @@ body.vr-peek-mode .vr-gauge-preview{
         this.reignIndex = Math.max(0, Number(e.reignIndex || 0));
         this.recentCards = Array.isArray(e.recentCards) ? deepClone(e.recentCards) : [];
         this.coinsStreak = Number(e.coinsStreak || 0);
+        this._reviveUsed = !!e.reviveUsed;
+
+        // ✅ restore events per universe
+        const evs = e.events || {};
+        this._cardsSinceEventRoll = asInt(evs.cardsSinceRoll, 0);
+        this._eventPool = Array.isArray(evs.pool) ? deepClone(evs.pool) : [];
+        this._seenEvents = Array.isArray(evs.seen) ? deepClone(evs.seen) : [];
+
+        // ✅ restore UI mirrors
+        const ui = e.ui || {};
+        if (Number.isFinite(Number(ui.coins))) this._uiCoins = asInt(ui.coins, this._uiCoins);
+        if (Number.isFinite(Number(ui.tokens))) this._uiTokens = asInt(ui.tokens, this._uiTokens);
 
         // session mirror
         if (window.VRGame?.session) {
@@ -907,7 +1112,6 @@ body.vr-peek-mode .vr-gauge-preview{
           this.currentCardLogic = card;
           window.VRUIBinding.showCard(card);
         } else {
-          // ✅ fallback restore SANS effets (ne touche pas aux compteurs)
           const deck = this.deck || [];
           if (!deck.length) return false;
 
@@ -952,6 +1156,15 @@ body.vr-peek-mode .vr-gauge-preview{
       const { config, deck, cardTexts } =
         await window.VREventsLoader.loadUniverseData(universeId, this.lang);
 
+      // ✅ load events for this universe (non bloquant)
+      let eventsLogic = { events: [] };
+      let eventsTexts = {};
+      try {
+        const ev = await window.VREventsLoader.loadUniverseEvents(universeId, this.lang);
+        eventsLogic = ev?.eventsLogic || { events: [] };
+        eventsTexts = ev?.eventsTexts || {};
+      } catch (_) {}
+
       this.universeConfig = config;
       this.deck = Array.isArray(deck) ? deck : [];
       this.cardTextsDict = cardTexts || {};
@@ -961,6 +1174,16 @@ body.vr-peek-mode .vr-gauge-preview{
       this.history = [];
       this.currentCardLogic = null;
       this._restored = false;
+      this._reviveUsed = false;
+
+      // ✅ events init
+      this.eventsLogic = eventsLogic || { events: [] };
+      this.eventsTexts = eventsTexts || {};
+      this._eventPool = [];
+      this._seenEvents = [];
+      this._cardsSinceEventRoll = 0;
+      this._eventShowing = false;
+      this._rebuildEventIndex();
 
       // init UI balances from remote
       try {
@@ -977,8 +1200,18 @@ body.vr-peek-mode .vr-gauge-preview{
 
       // ✅ RESTORE si une save existe (sinon nouvelle run)
       const restored = this._restoreFromSaveIfAny();
+
+      // important: rebuild + sanitize pool/seen après restore
+      this._rebuildEventIndex();
+
       if (!restored) {
         this._startNewReign();
+        this._saveRunSoft();
+      } else {
+        // garde-fou si pool vide
+        if (!this._eventPool.length && this._allEventIds.length) {
+          this._eventPool = this._allEventIds.slice();
+        }
         this._saveRunSoft();
       }
     },
@@ -993,6 +1226,18 @@ body.vr-peek-mode .vr-gauge-preview{
       } catch (_) {}
     },
 
+    _resetGaugesToInitial() {
+      try {
+        const cfg = this.universeConfig || {};
+        const init = (cfg && cfg.initialGauges) ? cfg.initialGauges : {};
+        const gauges = (cfg.gauges || []);
+        gauges.forEach((g) => {
+          const v = (init && Object.prototype.hasOwnProperty.call(init, g.id)) ? init[g.id] : (g.start ?? 50);
+          window.VRState.gauges[g.id] = (Number.isFinite(Number(v)) ? Number(v) : 50);
+        });
+      } catch (_) {}
+    },
+
     _startNewReign() {
       this.reignIndex += 1;
       window.VRState.alive = true;
@@ -1000,17 +1245,29 @@ body.vr-peek-mode .vr-gauge-preview{
       window.VRState.reignYears = 0;
       window.VRState.cardsPlayed = 0;
 
+      // ✅ reset gauges (50% / initialGauges)
+      this._resetGaugesToInitial();
+
       this.recentCards = [];
       this.coinsStreak = 0;
       this.history = [];
       this.currentCardLogic = null;
+
+      // ✅ reset revive for this run
+      this._reviveUsed = false;
+
+      // ✅ reset event counter for this run (par univers)
+      this._cardsSinceEventRoll = 0;
+      // pool/seen on garde (persistant par univers)
+      if (!this._eventPool.length && this._allEventIds.length) {
+        this._eventPool = this._allEventIds.slice();
+      }
 
       const kingName = getDynastyName(this.reignIndex - 1);
       const years = window.VRState.getReignYears();
 
       window.VRUIBinding.updateMeta(kingName, years, this._uiCoins, this._uiTokens);
 
-      // refresh remote in background for perfect UI
       this._refreshUIBalancesSoft().then(() => {
         window.VRUIBinding.updateMeta(kingName, years, this._uiCoins, this._uiTokens);
       });
@@ -1019,8 +1276,67 @@ body.vr-peek-mode .vr-gauge-preview{
       this._saveRunSoft();
     },
 
+    // ✅ Clear save locale du RUN (par univers)
+    _clearRunSave() {
+      try {
+        const universeId =
+          this.universeId ||
+          window.VRState?.universeId ||
+          localStorage.getItem("vrealms_universe") ||
+          "unknown";
+        window.VRSave?.clear?.(universeId);
+      } catch (_) {}
+    },
+
+    // ✅ Recommencer = clear save + reset jauges + nouvelle partie (début)
+    restartRun() {
+      try { this._clearRunSave(); } catch (_) {}
+
+      // reset “run” en RAM pour repartir au tout début
+      this._reviveUsed = false;
+      this.history = [];
+      this.recentCards = [];
+      this.coinsStreak = 0;
+      this.currentCardLogic = null;
+
+      // reset “début” (dynastie 1) + events clean
+      this.reignIndex = 0;
+      this._cardsSinceEventRoll = 0;
+      this._eventShowing = false;
+      this._eventPool = this._allEventIds.slice();
+      this._seenEvents = [];
+
+      if (window.VRGame?.session) window.VRGame.session.reignLength = 0;
+
+      // relance run
+      this._startNewReign();
+    },
+
+    // ✅ Revivre (seconde chance) : reset jauges + reprendre sur une carte (même règne)
+    reviveSecondChance() {
+      if (this._reviveUsed) return false; // une seule fois par run
+      this._reviveUsed = true;
+
+      // reset jauges + revive
+      this._resetGaugesToInitial();
+      try {
+        window.VRState.alive = true;
+        window.VRState.lastDeath = null;
+      } catch (_) {}
+
+      try { window.VRUIBinding?.updateGauges?.(); } catch (_) {}
+
+      // reprise sur une carte
+      try { this._nextCard_internalOnly(); } catch (_) { try { this._nextCard(); } catch (_) {} }
+
+      try { this._saveRunSoft(); } catch (_) {}
+      return true;
+    },
+
     _nextCard() {
       if (!window.VRState.isAlive()) return;
+      if (this._eventShowing) return;
+
       if (!Array.isArray(this.deck) || this.deck.length === 0) {
         console.error("[VREngine] Deck vide : impossible de piocher une carte.");
         return;
@@ -1060,9 +1376,14 @@ body.vr-peek-mode .vr-gauge-preview{
         cardsPlayed: window.VRState.cardsPlayed,
         recentCards: deepClone(this.recentCards),
         coinsStreak: this.coinsStreak,
-        // ✅ plus de "userVcoins local"
         uiCoins: this._uiCoins,
-        sessionReignLength: Number(window.VRGame?.session?.reignLength || 0)
+        uiTokens: this._uiTokens,
+        sessionReignLength: Number(window.VRGame?.session?.reignLength || 0),
+
+        // ✅ aussi pour undo: on garde le compteur (sinon dé-sync)
+        cardsSinceEventRoll: asInt(this._cardsSinceEventRoll, 0),
+        eventPool: deepClone(this._eventPool || []),
+        seenEvents: deepClone(this._seenEvents || [])
       };
       this.history.push(snap);
       if (this.history.length > HISTORY_MAX) this.history.shift();
@@ -1087,9 +1408,13 @@ body.vr-peek-mode .vr-gauge-preview{
 
       this.recentCards = deepClone(snap.recentCards) || [];
       this.coinsStreak = Number(snap.coinsStreak || 0);
-
-      // ✅ UI coins uniquement (la DB reste source of truth)
       this._uiCoins = Number(snap.uiCoins || 0);
+      this._uiTokens = Number(snap.uiTokens || 0);
+
+      // ✅ restore events state
+      this._cardsSinceEventRoll = asInt(snap.cardsSinceEventRoll, 0);
+      this._eventPool = Array.isArray(snap.eventPool) ? deepClone(snap.eventPool) : this._eventPool;
+      this._seenEvents = Array.isArray(snap.seenEvents) ? deepClone(snap.seenEvents) : this._seenEvents;
 
       if (window.VRGame?.session) {
         window.VRGame.session.reignLength = Number(snap.sessionReignLength || 0);
@@ -1115,6 +1440,159 @@ body.vr-peek-mode .vr-gauge-preview{
       return true;
     },
 
+    _maybeRollEventAfterCardResolved() {
+      this._cardsSinceEventRoll = asInt(this._cardsSinceEventRoll, 0) + 1;
+
+      if (this._cardsSinceEventRoll < EVENT_CHECK_EVERY_N_CARDS) {
+        this._saveRunSoft();
+        return false;
+      }
+
+      this._cardsSinceEventRoll = 0;
+
+      // si pas d’events dans cet univers => rien
+      if (!this._allEventIds.length) {
+        this._saveRunSoft();
+        return false;
+      }
+
+      // tirage 1/10
+      const hit = Math.random() < EVENT_CHANCE;
+      this._saveRunSoft();
+      return hit;
+    },
+
+    _refillEventPoolIfNeeded() {
+      const all = this._allEventIds || [];
+      if (!all.length) return;
+
+      if (!Array.isArray(this._seenEvents)) this._seenEvents = [];
+      if (!Array.isArray(this._eventPool)) this._eventPool = [];
+
+      if (this._eventPool.length !== 0) return;
+
+      // ✅ règle: pas de répétition avant 25 DISTINCTS
+      const distinct = this._distinctSeenCount();
+
+      if (distinct < EVENT_NO_REPEAT_UNTIL) {
+        const seenSet = new Set(this._seenEvents);
+        this._eventPool = all.filter(id => !seenSet.has(id));
+        if (!this._eventPool.length) this._eventPool = all.slice();
+        return;
+      }
+
+      // après 25 distincts, on exclut les 5 derniers tirages
+      const last = this._seenEvents.slice(-EVENT_EXCLUDE_LAST);
+      const lastSet = new Set(last);
+      this._eventPool = all.filter(id => !lastSet.has(id));
+      if (!this._eventPool.length) this._eventPool = all.slice();
+    },
+
+    _pickRandomEventId() {
+      this._refillEventPoolIfNeeded();
+      if (!this._eventPool.length) return null;
+
+      const idx = Math.floor(Math.random() * this._eventPool.length);
+      const id = this._eventPool[idx];
+
+      // retire du pool
+      this._eventPool.splice(idx, 1);
+
+      // push seen (ordre réel des tirages)
+      this._seenEvents.push(id);
+
+      return id || null;
+    },
+
+    async _triggerRandomEvent() {
+      if (this._eventShowing) return false;
+      if (!window.VRState.isAlive()) return false;
+
+      const id = this._pickRandomEventId();
+      if (!id) return false;
+
+      const ev = this._eventById.get(id) || null;
+      const texts = this.eventsTexts?.[id] || null;
+
+      // applique effets (jauges + vcoins + jetons)
+      try {
+        const deltaMap = ev?.effects || ev?.gaugeDelta || ev?.deltas || {};
+        if (deltaMap && typeof deltaMap === "object") {
+          window.VRState.applyDeltas(deltaMap);
+        }
+
+        // vcoins (best-effort)
+        const dv =
+          (typeof ev?.vcoins === "number") ? ev.vcoins :
+          (typeof ev?.vcoinsDelta === "number") ? ev.vcoinsDelta :
+          0;
+
+        if (dv) {
+          this._uiCoins += dv;
+          try { window.VUserData?.addVcoins?.(dv); } catch (_) {}
+        }
+
+        // ✅ FIX(3): jetons strict
+        const dj =
+          (typeof ev?.jetons === "number") ? ev.jetons :
+          (typeof ev?.jetonsDelta === "number") ? ev.jetonsDelta :
+          0;
+
+        if (dj) {
+          if (dj > 0) {
+            const ok = await (window.VUserData?.addJetons?.(dj) || Promise.resolve(false));
+            if (ok !== false) this._uiTokens += dj;
+          } else {
+            const cost = Math.abs(dj);
+            const ok = await (window.VUserData?.spendJetons?.(cost) || Promise.resolve(false));
+            if (ok) this._uiTokens -= cost;
+          }
+        }
+      } catch (e) {
+        console.error("[VREngine] event apply error:", e);
+      }
+
+      // ✅ recoller à la DB après event (safe)
+      await this._refreshUIBalancesSoft();
+
+      // UI update
+      const kingName = document.getElementById("meta-king-name")?.textContent || getDynastyName(this.reignIndex - 1);
+      window.VRUIBinding.updateGauges();
+      window.VRUIBinding.updateMeta(kingName, window.VRState.getReignYears(), this._uiCoins, this._uiTokens);
+
+      // show overlay
+      this._eventShowing = true;
+      this._saveRunSoft();
+
+      const t = (k, fb) => {
+        try {
+          const out = window.VRI18n?.t?.(k);
+          if (out && out !== k) return out;
+        } catch (_) {}
+        return fb;
+      };
+
+      const title = texts?.title || t("event.title", "Événement");
+      const body = texts?.body || texts?.text || "";
+
+      try {
+        await window.VREventOverlay?.showEvent?.(title, body);
+      } catch (_) {}
+
+      this._eventShowing = false;
+
+      // si l’event a tué le joueur -> handleDeath
+      if (!window.VRState.isAlive()) {
+        await this._handleDeath();
+        return true;
+      }
+
+      // sinon next card
+      this._saveRunSoft();
+      this._nextCard();
+      return true;
+    },
+
     applyChoice(cardLogic, choiceId) {
       if (!cardLogic || !cardLogic.choices || !cardLogic.choices[choiceId]) return;
 
@@ -1126,10 +1604,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
       this.coinsStreak += 1;
 
-      // ✅ Coins: Supabase authoritative via RPC (userData.js devra exposer addVcoins async)
-      // On garde un affichage "optimiste" pour l’UI (mémoire uniquement).
       this._uiCoins += BASE_COINS_PER_CARD;
-
       try { window.VUserData?.addVcoins?.(BASE_COINS_PER_CARD); } catch (_) {}
 
       window.VRGame?.onCardResolved?.();
@@ -1141,11 +1616,9 @@ body.vr-peek-mode .vr-gauge-preview{
       window.VRUIBinding.updateGauges();
 
       try { window.VRUIBinding?._consumePeekDecision?.(); } catch (_) {}
-
-      // ✅ interstitiel tous les X choix (non bloquant)
       try { window.VRGame?.maybeShowInterstitial?.(); } catch (_) {}
 
-      // ✅ SAVE après résolution du choix (avant next/death)
+      // ✅ SAVE après résolution du choix
       this._saveRunSoft();
 
       // petit refresh soft pour recoller à la DB
@@ -1158,43 +1631,185 @@ body.vr-peek-mode .vr-gauge-preview{
         );
       });
 
-      if (!window.VRState.isAlive()) this._handleDeath();
-      else this._nextCard();
+      // si mort -> ending direct
+      if (!window.VRState.isAlive()) {
+        this._handleDeath();
+        return;
+      }
+
+      // ✅ EVENTS: toutes les 3 cartes jouées (par univers) -> tirage
+      const shouldEvent = this._maybeRollEventAfterCardResolved();
+      if (shouldEvent) {
+        this._triggerRandomEvent();
+        return;
+      }
+
+      // sinon carte normale
+      this._nextCard();
+    },
+
+    _nextCard_internalOnly() {
+      this._nextCard();
+    },
+
+    // ✅ FIX(2): bind death UI once + delegation stable
+    _bindDeathUIOnce() {
+      if (this._deathUiBound) return;
+      this._deathUiBound = true;
+
+      const revivePopup = document.getElementById("vr-revive-popup");
+
+      // Escape: ferme seulement si popup ouvert
+      document.addEventListener("keydown", (e) => {
+        if (e.key !== "Escape") return;
+        const rp = document.getElementById("vr-revive-popup");
+        if (!rp) return;
+        const open = (rp.style && rp.style.display === "flex") || rp.getAttribute("aria-hidden") === "false";
+        if (open) {
+          try { rp.__close?.(); } catch (_) {}
+        }
+      });
+
+      if (revivePopup) {
+        revivePopup.addEventListener("click", async (e) => {
+          // click sur fond => close
+          if (e.target === revivePopup) {
+            try { revivePopup.__close?.(); } catch (_) {}
+            return;
+          }
+
+          const btn = e.target?.closest?.("[data-revive-action]");
+          if (!btn) return;
+
+          const action = btn.getAttribute("data-revive-action");
+          if (!action) return;
+
+          try { await (revivePopup.__act?.(action, btn) || Promise.resolve()); } catch (_) {}
+        });
+      }
     },
 
     async _handleDeath() {
       const lastDeath = window.VRState.getLastDeath();
-      await window.VRGame?.onRunEnded?.(); // ✅ maintenant async
+      await window.VRGame?.onRunEnded?.();
       await window.VREndings.showEnding(this.universeConfig, lastDeath);
 
-      // ✅ SAVE état "mort" (utile si l’utilisateur quitte sur l’ending)
       this._saveRunSoft();
 
       const btn = document.getElementById("ending-restart-btn");
+      const reviveBtn = document.getElementById("ending-revive-btn");
+      const returnBtn = document.getElementById("ending-return-btn");
+      const revivePopup = document.getElementById("vr-revive-popup");
+
+      const t = (key, fallback) => {
+        try {
+          const out = window.VRI18n?.t?.(key);
+          if (out && out !== key) return out;
+        } catch (_) {}
+        return fallback || key;
+      };
+
+      const showDialog = (el, focusEl) => {
+        if (!el) return;
+        try { el.removeAttribute("inert"); } catch (_) {}
+        el.setAttribute("aria-hidden", "false");
+        el.style.display = "flex";
+        try { focusEl?.focus?.({ preventScroll: true }); } catch (_) {}
+      };
+
+      const hideDialog = (el, focusBackEl) => {
+        if (!el) return;
+        const active = document.activeElement;
+        if (active && el.contains(active)) {
+          try { active.blur(); } catch (_) {}
+          try { focusBackEl?.focus?.({ preventScroll: true }); } catch (_) {}
+        }
+        try { el.setAttribute("inert", ""); } catch (_) {}
+        el.setAttribute("aria-hidden", "true");
+        el.style.display = "none";
+      };
+
+      const openRevivePopup = () => {
+        if (!revivePopup) return;
+        const first = revivePopup?.querySelector?.("[data-revive-action]");
+        showDialog(revivePopup, first || reviveBtn || btn);
+      };
+
+      const closeRevivePopup = () => hideDialog(revivePopup, reviveBtn || btn);
+
+      // ✅ Recommencer (clear save + reset jauges + nouvelle partie début)
       if (btn) {
         btn.onclick = () => {
           window.VREndings.hideEnding();
-          this._startNewReign();
+          this.restartRun();
         };
       }
 
-      // ✅ revive rewarded → undo 1 (revient juste avant le choix fatal)
-      const reviveBtn = document.getElementById("ending-revive-btn");
+      // ✅ Retour (clear save + index.html)
+      if (returnBtn) {
+        returnBtn.onclick = () => {
+          try { this._clearRunSave(); } catch (_) {}
+          try { window.location.href = "index.html"; } catch (_) {}
+        };
+      }
+
+      // ✅ Revivre (popup Jeton OU Pub)
       if (reviveBtn) {
-        reviveBtn.onclick = async () => {
-          reviveBtn.disabled = true;
+        reviveBtn.disabled = !!this._reviveUsed;
+        reviveBtn.onclick = () => {
+          if (this._reviveUsed) return;
+          openRevivePopup();
+        };
+      }
+
+      // ✅ FIX(2): bind once (delegation)
+      this._bindDeathUIOnce();
+
+      // update handlers (pas d’empilement)
+      if (revivePopup) {
+        revivePopup.__close = closeRevivePopup;
+
+        revivePopup.__act = async (action, clickedEl) => {
+          if (action === "cancel") {
+            closeRevivePopup();
+            return;
+          }
+
+          // lock (sur le bouton cliqué)
+          try { if (clickedEl) clickedEl.disabled = true; } catch (_) {}
+          try { if (reviveBtn) reviveBtn.disabled = true; } catch (_) {}
+
           try {
-            const ok = await (window.VRAds?.showRewardedAd?.({ placement: "revive" }) || Promise.resolve(false));
+            let ok = false;
+
+            if (action === "token") {
+              ok = await (window.VUserData?.spendJetons?.(1) || Promise.resolve(false));
+              if (!ok) {
+                try { window.showToast?.(t("token.toast.no_tokens", "Tu n'as pas de jeton")); } catch (_) {}
+              }
+            }
+
+            if (action === "ad") {
+              ok = await (window.VRAds?.showRewardedAd?.({ placement: "revive" }) || Promise.resolve(false));
+              if (!ok) {
+                try { window.showToast?.(t("revive.toast.ad_fail", "Pub indisponible")); } catch (_) {}
+              }
+            }
+
             if (ok) {
+              closeRevivePopup();
               window.VREndings.hideEnding();
 
-              const undone = window.VREngine?.undoChoices?.(1);
-              if (!undone) this._startNewReign();
+              const did = this.reviveSecondChance();
+              if (!did) this.restartRun();
+            } else {
+              try { if (reviveBtn) reviveBtn.disabled = !!this._reviveUsed; } catch (_) {}
             }
           } catch (e) {
-            console.error("[VREngine] revive error:", e);
+            console.error("[VREngine] revive popup error:", e);
+            try { if (reviveBtn) reviveBtn.disabled = !!this._reviveUsed; } catch (_) {}
           } finally {
-            reviveBtn.disabled = false;
+            try { if (clickedEl) clickedEl.disabled = false; } catch (_) {}
           }
         };
       }
@@ -1208,7 +1823,9 @@ body.vr-peek-mode .vr-gauge-preview{
 })();
 
 
-// VRealms - Token UI + Actions (popup, pub=>jeton, jauge 50%, revenir -3, PEEK 15)
+// -------------------------------------------------------
+// Token UI + Actions (inchangé)
+// -------------------------------------------------------
 (function () {
   "use strict";
 
@@ -1258,7 +1875,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
       if (!btnJeton || !popup) return;
 
-      // ✅ SÉCURITÉ : remonter popup/overlay dans <body>
       try {
         const vg = document.getElementById("view-game");
         if (vg) {
@@ -1334,7 +1950,7 @@ body.vr-peek-mode .vr-gauge-preview{
         }
       });
 
-      // ✅ AJOUT MINIMAL : si l’option PEEK n’existe pas dans le HTML, on l’injecte pour qu’elle soit VISIBLE
+      // inject peek button if missing
       try {
         const host = (popup.querySelector("[data-token-action]")?.parentElement) || popup;
 
@@ -1385,7 +2001,6 @@ body.vr-peek-mode .vr-gauge-preview{
             if (ok) {
               try { await window.VUserData?.addJetons?.(1); } catch (_) {}
 
-              // refresh UI balances
               try {
                 const me = await window.VRProfile?.getMe?.(0);
                 if (me) {
@@ -1446,14 +2061,12 @@ body.vr-peek-mode .vr-gauge-preview{
 
             const ok = window.VREngine?.undoChoices?.(3);
             if (!ok) {
-              // remboursement (remote)
               try { await window.VUserData?.addJetons?.(1); } catch (_) {}
               toast(t("token.toast.undo_fail", "Impossible de revenir en arrière"));
             } else {
               toast(t("token.toast.undo_done", "Retour -3 effectué"));
             }
 
-            // refresh UI balances after spend/refund
             try {
               const me2 = await window.VRProfile?.getMe?.(0);
               if (me2) {
@@ -1504,10 +2117,8 @@ body.vr-peek-mode .vr-gauge-preview{
           window.VRState?.setGaugeValue?.(gaugeId, 50);
           window.VRUIBinding?.updateGauges?.();
 
-          // ✅ SAVE (changement de run)
           try { window.VREngine?._saveRunSoft?.(); } catch (_) {}
 
-          // refresh balances
           try {
             const me = await window.VRProfile?.getMe?.(0);
             if (me) {
@@ -1535,7 +2146,7 @@ body.vr-peek-mode .vr-gauge-preview{
 })();
 
 
-// VRealms - VCoins UI + Actions (popup, pub=>+500 vcoins, shop)
+// VRealms - VCoins UI + Actions (inchangé)
 (function () {
   "use strict";
 
@@ -1731,13 +2342,9 @@ window.VRGame = {
   async onRunEnded() {
     try {
       const reign = Number(this.session.reignLength || 0);
-      // (rien à ajouter en vcoins ici)
 
-      // ✅ Stats DB (total_runs + best_reign_length) via RPC
-      // Priorité à secure_finish_run si dispo, sinon fallback sur 2 RPC
       const sb = window.sb;
       if (sb && typeof sb.rpc === "function") {
-        // si tu as créé secure_finish_run
         let did = false;
         try {
           const r = await sb.rpc("secure_finish_run", { p_reign_length: reign });
@@ -1750,7 +2357,6 @@ window.VRGame = {
         }
       }
 
-      // refresh UI balances/tokens (et aussi stats si tu veux les afficher)
       try {
         const me = await window.VRProfile?.getMe?.(0);
         if (me) {
@@ -1768,7 +2374,6 @@ window.VRGame = {
 // ===== Init page jeu seule (game.html) =====
 (function () {
   function setupNavigationGuards() {
-    // 1) Anti "retour" via bouton back / geste back (best-effort)
     try {
       history.pushState({ vr_game: 1 }, "", location.href);
       history.pushState({ vr_game: 2 }, "", location.href);
@@ -1778,7 +2383,6 @@ window.VRGame = {
       });
     } catch (_) {}
 
-    // 2) Anti edge-swipe back (surtout Android/Chrome; iOS Safari reste partiellement non-bloquable)
     const EDGE = 18;
     const blockEdge = (e) => {
       try {
@@ -1793,13 +2397,11 @@ window.VRGame = {
     try { document.addEventListener("touchstart", blockEdge, { passive: false, capture: true }); } catch (_) {}
     try { document.addEventListener("pointerdown", blockEdge, { passive: false, capture: true }); } catch (_) {}
 
-    // 3) Anti overscroll / pull-to-refresh (best-effort)
     try { document.documentElement.style.overscrollBehavior = "none"; } catch (_) {}
     try { document.body.style.overscrollBehavior = "none"; } catch (_) {}
   }
 
   function setupSaveGuards() {
-    // ✅ Save run quand l’app passe en arrière-plan / se ferme (best-effort)
     const flush = () => {
       try { window.VREngine?._saveRunSoft?.(); } catch (_) {}
     };

@@ -6,6 +6,14 @@
 // ⚠️ Rewarded: le log le plus safe doit être fait côté DB (dans secure_claim_reward). Ici on fait un log best-effort.
 //
 // ✅ Ajout "no_ads" : BLOQUE UNIQUEMENT LES INTERSTITIELS (rewarded autorisés)
+//
+// ✅ FIX (6 points côté Ads) :
+// 1) Inter auto NE PEUT PAS se déclencher si overlay/app busy (__ads_active)
+// 2) __ads_active respecté aussi côté "canShowInterstitialNow()"
+// 3) Séparation interstitial vs rewarded (isRewardShowing ne doit pas bloquer l'app pour un inter)
+// 4) Cleanup robuste (postAdCleanup) même après visiblitychange / resume
+// 5) Garde DB-only + no_ads + stats + logs
+// 6) Anti double-show best-effort (verrou simple sur inter/reward)
 
 (function () {
   "use strict";
@@ -33,11 +41,14 @@
   window.REWARD_VCOINS = typeof window.REWARD_VCOINS === "number" ? window.REWARD_VCOINS : 200;
 
   // --- Flags d'état ---
-  var isRewardShowing = false;
-  window.__ads_active = false; // flag global anti-back/anti-overlays côté app
+  var isRewardShowing = false;     // TRUE uniquement pendant rewarded
+  var currentAdKind = null;        // "interstitial" | "rewarded" | null
+  var __showLock = false;          // anti double show best-effort
+
+  window.__ads_active = false;     // flag global anti-back/anti-overlays côté app
 
   // --- Compteurs (désormais server-side) ---
-  var ACTIONS_KEY = "vr_actions_count";   // conservé pour compat (plus utilisé en localStorage)
+  var ACTIONS_KEY = "vr_actions_count";    // conservé pour compat (plus utilisé en localStorage)
   var LAST_INTER_KEY = "vr_last_inter_ts"; // conservé pour compat (plus utilisé en localStorage)
 
   // Cache mémoire (synchro via DB)
@@ -227,9 +238,10 @@
     } catch (_) {}
   }
 
+  // Quand l’app revient au premier plan : on nettoie SI pas rewarded en cours
   document.addEventListener("visibilitychange", function () {
     if (!document.hidden) {
-      if (!isRewardShowing) postAdCleanup();
+      if (!(currentAdKind === "rewarded" && isRewardShowing)) postAdCleanup();
     }
   });
 
@@ -268,18 +280,22 @@
 
       var map = [
         ["onAdFullScreenContentOpened", function () {
-          isRewardShowing = true;
+          // ⚠️ NE PAS forcer isRewardShowing ici (ça s'applique aussi aux inter)
           window.__ads_active = true;
           diag("Ad opened");
         }],
         ["onAdDismissedFullScreenContent", function () {
           diag("Ad dismissed");
-          isRewardShowing = false;
+          if (currentAdKind === "rewarded") isRewardShowing = false;
+          currentAdKind = null;
+          __showLock = false;
           postAdCleanup();
         }],
         ["onAdFailedToShowFullScreenContent", function () {
           diag("Ad failed to show");
-          isRewardShowing = false;
+          if (currentAdKind === "rewarded") isRewardShowing = false;
+          currentAdKind = null;
+          __showLock = false;
           postAdCleanup();
         }],
         ["onRewarded", function () {
@@ -316,7 +332,7 @@
   })();
 
   // =============================
-  // Helpers "wait" (ouvert / dismissed / rewarded)
+  // Helpers "wait" (dismissed / rewarded / app return)
   // =============================
   function waitDismissedOnce() {
     return new Promise(function (resolve) {
@@ -393,6 +409,13 @@
   // Interstitiel (LOAD/SHOW)
   // =============================
   function canShowInterstitialNow() {
+    // ✅ Bloque si app busy (event/ending/overlay/rewarded/etc.)
+    if (window.__ads_active) return false;
+    if (__showLock) return false;
+
+    // Si une rewarded est en cours -> jamais d'inter
+    if (currentAdKind === "rewarded" && isRewardShowing) return false;
+
     if (!INTER_COOLDOWN_MS) return true;
     var now = Date.now();
     return (now - lastInterTs) >= INTER_COOLDOWN_MS;
@@ -420,6 +443,9 @@
       if (!AdMob || !AdMob.prepareInterstitial || !AdMob.showInterstitial) return false;
       if (!canShowInterstitialNow()) return false;
 
+      __showLock = true;
+      currentAdKind = "interstitial";
+
       await AdMob.prepareInterstitial({
         adId: AD_UNIT_ID_INTERSTITIEL,
         requestOptions: buildAdMobRequestOptions()
@@ -432,6 +458,9 @@
 
       await Promise.race([dismissedP.catch(function () {}), waitAppReturnOnce()]);
       postAdCleanup();
+
+      currentAdKind = null;
+      __showLock = false;
 
       if (res !== false) {
         await markInterstitialShownNow();
@@ -468,6 +497,8 @@
         }).catch(function () {});
       } catch (_) {}
       try { postAdCleanup(); } catch (_) {}
+      currentAdKind = null;
+      __showLock = false;
       return false;
     }
   }
@@ -481,6 +512,12 @@
       // ⚠️ no_ads NE BLOQUE PAS les rewarded (volontaire)
       if (!isNative()) return false;
       if (!AdMob || !AdMob.prepareRewardVideoAd || !AdMob.showRewardVideoAd) return false;
+
+      // si app busy, on refuse (évite double overlay)
+      if (window.__ads_active || __showLock) return false;
+
+      __showLock = true;
+      currentAdKind = "rewarded";
 
       await AdMob.prepareRewardVideoAd({
         adId: AD_UNIT_ID_REWARDED,
@@ -500,7 +537,10 @@
       postAdCleanup();
 
       try { await showPromise; } catch (_) {}
+
       isRewardShowing = false;
+      currentAdKind = null;
+      __showLock = false;
 
       // ⚠️ Best-effort log rewarded view.
       // Le plus safe: logger côté DB au moment du credit (secure_claim_reward).
@@ -518,6 +558,8 @@
     } catch (_) {
       try { postAdCleanup(); } catch (_) {}
       isRewardShowing = false;
+      currentAdKind = null;
+      __showLock = false;
       return false;
     }
   }
@@ -564,6 +606,9 @@
 
     // ✅ no_ads => on ne déclenche jamais l'interstitiel auto
     if (!isNoAds()) {
+      // ✅ si overlay/app busy => on NE déclenche pas
+      if (window.__ads_active) return actionsCount;
+
       if (INTERSTITIEL_EVERY_X_ACTIONS > 0 && (actionsCount % INTERSTITIEL_EVERY_X_ACTIONS) === 0) {
         try { await showInterstitialAd(); } catch (_) {}
       }

@@ -64,6 +64,19 @@
   }
 
   // -------------------------
+  // Event helpers (AJOUT)
+  // -------------------------
+  function emit(name, detail) {
+    try { window.dispatchEvent(new CustomEvent(name, { detail: detail || {} })); } catch (_) {}
+  }
+
+  // Expose API pour index (AJOUT)
+  window.VRIAP = window.VRIAP || {};
+  window.VRIAP.isAvailable = function () { return !!window.CdvPurchase?.store; };
+  window.VRIAP.getPrice = function (productId) { return PRICES_BY_ID[String(productId || "")] || ""; };
+  window.VRIAP.order = function (productId) { return safeOrder(productId); };
+
+  // -------------------------
   // Auth "comme l'autre app" mais version VRealms
   // -> on s'appuie sur VRRemoteStore.ensureAuth / bootstrap
   // -------------------------
@@ -128,7 +141,6 @@
     if (!uid) throw new Error("no_session");
 
     if (cfg.kind === "vcoins") {
-      // RPC: secure_add_vcoins (déjà dans userData.js)
       const r = await window.VRRemoteStore?.addVcoins?.(cfg.amount);
       if (r === null || r === undefined) throw new Error("credit_vcoins_failed");
     } else if (cfg.kind === "jetons") {
@@ -142,11 +154,20 @@
     }
 
     if (txId) markCredited(txId);
+
+    // ✅ Event "crédit OK" (AJOUT)
+    emit("vr:iap_credited", {
+      productId: String(productId || ""),
+      kind: String(cfg.kind || ""),
+      amount: Number(cfg.amount || 0),
+      txId: String(txId || "")
+    });
+
     return true;
   }
 
   // -------------------------
-  // Extract robust txId / productId (comme l'autre fichier)
+  // Extract robust txId / productId
   // -------------------------
   function parseMaybeJson(x) {
     try {
@@ -163,7 +184,6 @@
       const rec = tx?.transaction?.receipt || tx?.receipt;
       const r = typeof rec === "string" ? parseMaybeJson(rec) : rec;
 
-      // Google Play payload
       if (r?.payload) {
         const p = typeof r.payload === "string" ? parseMaybeJson(r.payload) : r.payload;
         if (p?.purchaseToken) return p.purchaseToken;
@@ -216,7 +236,6 @@
     } catch {}
   }
 
-  // Expose API "comme l'autre app"
   window.refreshDisplayedPrices = function () {
     updateDisplayedPrices();
   };
@@ -256,10 +275,8 @@
       return;
     }
 
-    // Pré-auth (hyper important: on veut un UID stable AVANT achats)
     await ensureAuthStrict();
 
-    // Register
     try {
       const P = window.CdvPurchase?.ProductType;
       S.register({ id: "vrealms_no_ads",     type: P.NON_CONSUMABLE, platform: S.Platform.GOOGLE_PLAY });
@@ -273,7 +290,6 @@
       warn("register failed", e?.message || e);
     }
 
-    // When product updated => price cache
     S.when()
       .productUpdated((p) => {
         try {
@@ -282,11 +298,13 @@
           if (id && price) {
             PRICES_BY_ID[id] = price;
             updateDisplayedPrices();
+
+            // ✅ Event "prix dispo" (AJOUT)
+            emit("vr:iap_price", { productId: String(id), price: String(price) });
           }
         } catch {}
       })
 
-      // Approved => CREDIT THEN FINISH
       .approved(async (tx) => {
         const txId = getTxIdFromTx(tx);
         const productId = getProductIdFromTx(tx);
@@ -309,18 +327,23 @@
           removePending(txId);
           setText("shop-status", "✅ Achat crédité");
         } catch (e) {
-          // On NE finish PAS si pas crédité => pending rejouable
           setText("shop-status", "❌ Achat non crédité (sera retenté)");
           warn("credit failed", productId, txId, e?.message || e);
+
+          // ✅ Event "crédit KO" (AJOUT)
+          emit("vr:iap_credit_failed", {
+            productId: String(productId || ""),
+            txId: String(txId || ""),
+            error: String(e?.message || e || "credit_failed")
+          });
+
           if (txId) IN_FLIGHT_TX.delete(txId);
           return;
         }
 
-        // finish seulement après crédit
         try { await tx.finish(); } catch (e) { warn("finish failed", e?.message || e); }
         if (txId) IN_FLIGHT_TX.delete(txId);
 
-        // refresh noads cache côté ads.js si dispo
         try { window.VRAds?.refreshNoAds && (await window.VRAds.refreshNoAds()); } catch {}
         try { await refreshNoAdsUI(); } catch {}
       });
@@ -364,8 +387,6 @@
       const ok = await window.VRAds.showRewardedAd({ placement: String(placement || "shop") });
       if (!ok) { setText("shop-status", "❌ Pub non validée"); return false; }
 
-      // Crédit “reward” : à brancher sur TES RPC reward si tu en as.
-      // Ici on reste safe: pas de faux crédit.
       setText("shop-status", "✅ Récompense validée");
       return true;
     } catch {
@@ -378,6 +399,8 @@
     const { S } = getStoreApi();
     if (!S) {
       setText("shop-status", "⚠️ IAP indisponible (web).");
+      // ✅ Event pour index (AJOUT)
+      emit("vr:iap_unavailable", { productId: String(productId || "") });
       return;
     }
 
@@ -390,6 +413,7 @@
     const p = S.get ? S.get(productId, S.Platform.GOOGLE_PLAY) : (S.products?.byId?.[productId]);
     if (!p) {
       setText("shop-status", "⚠️ Produit introuvable: " + productId);
+      emit("vr:iap_order_failed", { productId: String(productId || ""), error: "product_not_found" });
       return;
     }
 
@@ -398,7 +422,10 @@
     if (offer?.order) err = await offer.order();
     else if (p?.order) err = await p.order();
 
-    if (err?.isError) warn("order err", err.code, err.message);
+    if (err?.isError) {
+      warn("order err", err.code, err.message);
+      emit("vr:iap_order_failed", { productId: String(productId || ""), error: String(err.message || err.code || "order_error") });
+    }
   }
 
   function wireShopButtons() {
@@ -428,7 +455,6 @@
     if (bJ50) bJ50.addEventListener("click", () => safeOrder("vrealms_jetons_50"));
   }
 
-  // Restore helper
   window.restorePurchases = async function () {
     try {
       await replayLocalPending();
@@ -437,15 +463,10 @@
     } catch {}
   };
 
-  // Export "safeOrder" too (comme l'autre app)
   window.safeOrder = safeOrder;
   window.buyProduct = safeOrder;
 
-  // -------------------------
-  // Start when ready (deviceready / fallback)
-  // -------------------------
   function startWhenReady() {
-    // UI wiring now
     try { wireTopNav(); wireShopButtons(); } catch {}
 
     const fire = () => { start().catch((e) => warn("start failed", e?.message || e)); };
@@ -464,12 +485,10 @@
         fire();
       }, { once: true });
 
-      // fallback "best effort"
       setTimeout(() => { if (window._cordovaReady) fire(); }, 1200);
       setTimeout(() => { try { updateDisplayedPrices(); } catch {} }, 1500);
     }
 
-    // refresh affichage noads même en web (RPC dispo)
     refreshNoAdsUI().catch(() => {});
   }
 
