@@ -112,6 +112,15 @@
 })();
 
 
+// -------------------------------------------------------
+// Badge thresholds (sans mort)
+// bronze = 40 choix, argent = 60, or = 100
+// -------------------------------------------------------
+const VR_BADGE_BRONZE_CHOICES = 40;
+const VR_BADGE_SILVER_CHOICES = 60;
+const VR_BADGE_GOLD_CHOICES = 100;
+
+
 // VRealms - engine/events-loader.js
 // Charge la config d'univers + le deck (par univers) + les textes des cartes (par univers + langue).
 // + ✅ charge EVENTS (logic + i18n) par univers
@@ -2334,8 +2343,34 @@ window.VRGame = {
     }
   },
 
+  async maybeUnlockRunBadges() {
+    try {
+      if (!window.VRState?.isAlive?.()) return;
+
+      const reign = Number(this.session?.reignLength || 0);
+      const universeId = String(this.currentUniverse || localStorage.getItem("vrealms_universe") || "").trim();
+      if (!universeId) return;
+
+      const all = window.VUProfileBadges?.getAll?.() || { map: {} };
+      const row = (all.map && all.map[universeId]) ? all.map[universeId] : {};
+
+      if (reign >= VR_BADGE_BRONZE_CHOICES && !row.bronze) {
+        await window.VUProfileBadges?.setBadge?.(universeId, "bronze", true);
+      }
+      if (reign >= VR_BADGE_SILVER_CHOICES && !row.silver) {
+        await window.VUProfileBadges?.setBadge?.(universeId, "silver", true);
+      }
+      if (reign >= VR_BADGE_GOLD_CHOICES && !row.gold) {
+        await window.VUProfileBadges?.setBadge?.(universeId, "gold", true);
+      }
+    } catch (e) {
+      console.warn("[VRGame] badge unlock skipped:", e);
+    }
+  },
+
   onCardResolved() {
     this.session.reignLength += 1;
+    Promise.resolve().then(() => this.maybeUnlockRunBadges());
   },
 
   // ✅ maintenant async + 100% DB pour stats
@@ -2364,8 +2399,11 @@ window.VRGame = {
           window.VREngine._uiTokens = window.VRProfile._n(me.jetons);
         }
       } catch (_) {}
+
+      this.session.reignLength = 0;
     } catch (e) {
       console.error("[VRGame] onRunEnded error:", e);
+      this.session.reignLength = 0;
     }
   }
 };

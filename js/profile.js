@@ -185,6 +185,14 @@
     }
   }
 
+  function _hasAnyBadge(map) {
+    try {
+      return Object.values(map || {}).some((row) => row && (row.bronze || row.silver || row.gold));
+    } catch (_) {
+      return false;
+    }
+  }
+
   async function _initBadges() {
     const local = _readLocalBadges();
     const remote = await _readRemoteBadges();
@@ -194,13 +202,16 @@
       return local;
     }
 
-    if (remote.ts > local.ts) {
+    const localHas = _hasAnyBadge(local.map);
+    const remoteHas = _hasAnyBadge(remote.map);
+
+    if ((!localHas && remoteHas) || remote.ts >= local.ts) {
       _writeLocalBadges(remote);
       _emitBadges({ source: "remote", mode: "replace" });
       return remote;
     }
 
-    if (local.ts > 0 && local.ts >= remote.ts) {
+    if (localHas && local.ts > 0) {
       const pushed = await _writeRemoteBadges(local);
       if (pushed) {
         _writeLocalBadges(pushed);
@@ -219,7 +230,10 @@
 
     if (!remote) return local;
 
-    if (remote.ts > local.ts) {
+    const localHas = _hasAnyBadge(local.map);
+    const remoteHas = _hasAnyBadge(remote.map);
+
+    if ((!localHas && remoteHas) || remote.ts >= local.ts) {
       _writeLocalBadges(remote);
       _emitBadges({ source: "remote", mode: "replace" });
       return remote;
@@ -407,15 +421,28 @@
     else wrap.classList.remove("is-open");
   }
 
+  function _t(key, fallback) {
+    try {
+      const out = window.VRI18n?.t?.(key);
+      if (typeof out === "string" && out.trim()) return out;
+    } catch (_) {}
+    return String(fallback || "");
+  }
+
   function getKnownUniverses() {
+    const baseOrder = FALLBACK_UNIVERSES.slice();
+
     try {
       const list = window.VUserData?.getAllKnownUniverses?.();
-      if (Array.isArray(list) && list.length) {
-        return list.map(_norm).filter(Boolean);
-      }
-    } catch (_) {}
+      if (!Array.isArray(list) || !list.length) return baseOrder;
 
-    return FALLBACK_UNIVERSES.slice();
+      const set = new Set(list.map(_norm).filter(Boolean));
+      const ordered = baseOrder.filter((id) => set.has(id));
+      const extras = Array.from(set).filter((id) => !ordered.includes(id));
+      return ordered.concat(extras);
+    } catch (_) {
+      return baseOrder;
+    }
   }
 
   function getBadgeMap() {
@@ -466,15 +493,17 @@
 
       const st = getUniverseBadgeState(uid, badgeMap);
 
+      const unlocked = !!(window.VUserData?.isUniverseUnlocked?.(uid) || uid === "hell_king" || uid === "heaven_king");
+
       const card = document.createElement("div");
-      card.className = "vr-universe-card";
+      card.className = "vr-universe-card" + (unlocked ? "" : " is-locked");
 
       const inner = document.createElement("div");
       inner.className = "vr-universe-inner";
 
       const name = document.createElement("h3");
       name.className = "vr-universe-name";
-      name.setAttribute("data-i18n", `universe.${uid}.title`);
+      name.textContent = _t(`universe.${uid}.title`, uid);
       inner.appendChild(name);
 
       const badges = document.createElement("div");
@@ -488,7 +517,7 @@
         box.className = "vr-badge" + (unlocked ? " unlocked" : "");
         box.setAttribute("data-universe", uid);
         box.setAttribute("data-badge", key);
-        box.setAttribute("data-i18n-aria", `profile.badge_${key}_aria`);
+        box.setAttribute("aria-label", _t(`profile.badge_${key}_aria`, `badge ${key}`));
 
         const imgEmpty = document.createElement("img");
         imgEmpty.className = "empty";
@@ -510,7 +539,7 @@
       host.appendChild(card);
     }
 
-    try { window.VRI18n?.applyI18n?.(host); } catch (_) {}
+    try { window.VRI18n?.initI18n?.(); } catch (_) {}
   }
 
   function openModalWithSrc(src) {
@@ -731,7 +760,7 @@
       }
     });
 
-    try { window.VRI18n?.applyI18n?.(document); } catch (_) {}
+    try { window.VRI18n?.initI18n?.(); } catch (_) {}
   }
 
   document.addEventListener("DOMContentLoaded", boot);
