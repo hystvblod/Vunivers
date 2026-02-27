@@ -1,90 +1,655 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Vuniverse - Profil</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body class="vr-body">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title></title>
+  <link rel="stylesheet" href="css/app.css" />
 
-  <header class="vr-header" aria-label="Top actions">
-    <div class="vr-top-actions">
-      <button class="vr-icon-button" type="button" id="btn-profile" aria-label="Profile">
-        <span class="vr-icon-image vr-icon-profile"></span>
-      </button>
-      <button class="vr-icon-button" type="button" id="btn-settings" aria-label="Settings">
-        <span class="vr-icon-image vr-icon-settings"></span>
-      </button>
-      <button class="vr-icon-button" type="button" id="btn-shop" aria-label="Shop">
-        <span class="vr-icon-image vr-icon-shop"></span>
-      </button>
-    </div>
-  </header>
+  <style>
+    :root{
+      --vcp-bg: radial-gradient(circle at top, #f6e7cf 0, #1b6688 62%, #03279e 100%);
+      --vcp-text: rgba(255,255,255,.96);
+      --vcp-muted: rgba(255,255,255,.74);
 
-  <div class="vr-overlay"></div>
+      --vcp-gap-after-btn: 42px;
 
-  <main class="vr-main">
-    <section id="view-profile" class="vr-view vr-view-active">
-      <h2 class="vr-section-title" data-i18n="profile.title"></h2>
-      <div class="vr-profile-grid">
-        <div class="vr-profile-card">
-          <p><strong data-i18n="auth.username.label"></strong> : <span id="profile-username">—</span></p>
-          <p><strong data-i18n="profile.vcoins"></strong> : <span id="profile-vcoins">—</span></p>
-          <p><strong data-i18n="shop.jetons_title"></strong> : <span id="profile-jetons">—</span></p>
-          <p><strong data-i18n="profile.bestReign"></strong> : <span id="profile-best-reign">—</span></p>
-          <p><strong data-i18n="profile.totalRuns"></strong> : <span id="profile-total-runs">—</span></p>
-        </div>
-      </div>
-    </section>
-  </main>
+      --vcp-badge-gap: 10px;
+      --vcp-badge-min: 56px;
+      --vcp-badge-max: 100px;
+      --vcp-badge-pad: 7%;
 
- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-  <script src="js/supabaseBootstrap.js"></script>
+      --vcp-badge-modal-max: 78vmin;
+      --vcp-badge-modal-pad: 14px;
+      --vcp-badge-modal-radius: 20px;
+    }
 
-  <script src="js/userData.js"></script>
-  <script src="js/i18n.js"></script>
-  <script src="js/game.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", async () => {
-      // ✅ Auth + profil Supabase (sinon profile reste vide)
-      try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
+    *, *::before, *::after{ box-sizing:border-box; }
+    html, body{ width:100%; max-width:100%; overflow-x:hidden; }
+    img{ display:block; max-width:100%; height:auto; }
 
-      // ✅ Hydrate cache local puis refresh DB (source de vérité)
-      try { await window.VUserData?.init?.(); } catch (_) {}
+    .topbar{ display:none !important; }
 
-      function render() {
-        const user = window.VUserData?.load?.() || {};
-        const username = (user.username || "").toString().trim();
+    body.page-profile{
+      min-height:100vh;
+      margin:0;
+      color:var(--vcp-text);
+      background:var(--vcp-bg);
+      position:relative;
+    }
 
-        const elU = document.getElementById("profile-username");
-        const elVC = document.getElementById("profile-vcoins");
-        const elJ = document.getElementById("profile-jetons");
-        const elBR = document.getElementById("profile-best-reign");
-        const elTR = document.getElementById("profile-total-runs");
+    body.page-profile::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+      background:
+        radial-gradient(900px 520px at 50% -140px, rgba(255,255,255,.14), transparent 58%),
+        radial-gradient(640px 420px at 85% 12%, rgba(56,182,255,.12), transparent 56%),
+        radial-gradient(740px 460px at 18% 46%, rgba(0,98,255,.10), transparent 60%);
+      opacity:.95;
+    }
 
-        if (elU) elU.textContent = username || "—";
-        if (elVC) elVC.textContent = user.vcoins ?? 0;
-        if (elJ) elJ.textContent = user.jetons ?? 0;
+    body.page-profile::after{
+      content:"";
+      position:fixed;
+      inset:-60px;
+      z-index:0;
+      pointer-events:none;
+      background: radial-gradient(circle at 50% 40%, transparent 0 42%, rgba(0,0,0,.24) 74%, rgba(0,0,0,.34) 100%);
+    }
 
-        // compat: top-level ou stats.*
-        const best = (typeof user.best_reign_length !== "undefined") ? user.best_reign_length : (user.stats?.bestReignLength ?? 0);
-        const runs = (typeof user.total_runs !== "undefined") ? user.total_runs : (user.stats?.totalRuns ?? 0);
+    .vcp-top-actions{
+      position:relative;
+      z-index:10;
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:calc(10px + env(safe-area-inset-top)) 12px 8px;
+    }
 
-        if (elBR) elBR.textContent = best ?? 0;
-        if (elTR) elTR.textContent = runs ?? 0;
+    .vcp-top-slot{
+      flex:1 1 0;
+      display:flex;
+      align-items:center;
+    }
+
+    .vcp-top-left{ justify-content:flex-start; }
+    .vcp-top-center{ justify-content:center; }
+    .vcp-top-right{ justify-content:flex-end; gap:10px; }
+
+    .vcp-icon-button{
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(7, 20, 54, .20);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      box-shadow:0 10px 22px rgba(0,0,0,.18);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0;
+      text-decoration:none;
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .vcp-icon-button:active{ transform:scale(.98); }
+
+    .vcp-icon-button img{
+      width:30px;
+      height:30px;
+      object-fit:contain;
+      pointer-events:none;
+      user-select:none;
+      filter:drop-shadow(0 2px 8px rgba(0,0,0,.45)) contrast(1.06) brightness(1.03);
+    }
+
+    .vcp-back-ico{
+      width:24px;
+      height:24px;
+      display:block;
+      opacity:.98;
+      filter:drop-shadow(0 2px 8px rgba(0,0,0,.45));
+    }
+
+    .vcp-page{
+      position:relative;
+      z-index:1;
+      padding:0 12px 22px;
+    }
+
+    .vcp-title-wrap{
+      padding:4px 0 0;
+      text-align:center;
+    }
+
+    .vcp-page-title{
+      margin:10px 0 0;
+      font-weight:950;
+      letter-spacing:.2px;
+      font-size:18px;
+      text-align:center;
+    }
+
+    .vcp-page-sub{ display:none !important; }
+
+    .vcp-card{
+      margin:14px 0 0;
+      border:none;
+      background:transparent;
+      box-shadow:none;
+      overflow:visible;
+    }
+
+    .vcp-card-inner{ padding:0; }
+
+    .vcp-balances{
+      margin-top:10px;
+      display:flex;
+      justify-content:center;
+      width:100%;
+    }
+
+    .vcp-balances-row{
+      width:min(520px, 100%);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+
+    .vcp-pill{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:0;
+      border:none;
+      background:transparent;
+      min-width:0;
+    }
+
+    .vcp-pill img{
+      width:30px;
+      height:30px;
+      object-fit:contain;
+      filter:drop-shadow(0 2px 10px rgba(0,0,0,.34));
+    }
+
+    .vcp-pill .k{ display:none !important; }
+
+    .vcp-pill .v{
+      display:block;
+      font-weight:950;
+      font-size:18px;
+      letter-spacing:.2px;
+      line-height:1;
+    }
+
+    .vcp-username-block{
+      margin-top:16px;
+      text-align:center;
+    }
+
+    .vcp-row-head{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:8px;
+    }
+
+    .vcp-row-head .lbl{
+      font-size:12px;
+      color:var(--vcp-muted);
+      font-weight:900;
+      letter-spacing:.2px;
+      text-align:center;
+    }
+
+    .vcp-username-display{
+      border:none;
+      background:transparent;
+      padding:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+
+    .vcp-username-display .name{
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      font-size:18px;
+      font-weight:950;
+      letter-spacing:.2px;
+      max-width:100%;
+    }
+
+    .vcp-actions-under{
+      margin-top:10px !important;
+      margin-bottom:var(--vcp-gap-after-btn) !important;
+      display:flex;
+      justify-content:center;
+    }
+
+    .vcp-mini-btn{
+      border-radius:999px;
+      border:none;
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      padding:10px 14px;
+      font-weight:950;
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .vcp-mini-btn:active{ transform:scale(.99); }
+
+    .vcp-edit-wrap{
+      display:none;
+      margin-top:10px;
+    }
+
+    .vcp-edit-wrap.is-open{ display:block; }
+
+    .vcp-username-row{
+      display:flex;
+      gap:10px;
+      align-items:stretch;
+      flex-wrap:wrap;
+      margin-top:10px;
+      justify-content:center;
+    }
+
+    .vcp-input{
+      flex:1 1 220px;
+      min-width:180px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.18);
+      color:#fff;
+      padding:12px 12px;
+      outline:none;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    .vcp-btn{
+      flex:0 0 auto;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(74,167,255,.18);
+      color:#fff;
+      padding:12px 14px;
+      font-weight:950;
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .vcp-btn:active{ transform:scale(.99); }
+
+    .vcp-hint{
+      margin-top:10px;
+      font-size:12px;
+      color:var(--vcp-muted);
+      line-height:1.35;
+      text-align:center;
+    }
+
+    .vcp-msg{
+      margin-top:10px;
+      font-size:12px;
+      line-height:1.35;
+      display:none;
+      text-align:center;
+    }
+
+    .vcp-msg.ok{ color:rgba(220,255,230,.96); }
+    .vcp-msg.err{ color:rgba(255,220,220,.96); }
+
+    .vcp-section-head{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0;
+    }
+
+    .vcp-section-title{
+      margin:0;
+      font-weight:950;
+      font-size:16px;
+      letter-spacing:.2px;
+      text-align:center;
+    }
+
+    .vcp-scen-grid{
+      margin:12px 0 0;
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:28px 14px;
+      align-items:start;
+      width:100%;
+      max-width:100%;
+    }
+
+    .vcp-scen-card{
+      border:none !important;
+      background:transparent !important;
+      box-shadow:none !important;
+      overflow:visible !important;
+      padding:0 4px !important;
+      min-width:0 !important;
+      text-align:center;
+      opacity:1 !important;
+      filter:none !important;
+      --badgeSize: clamp(
+        var(--vcp-badge-min),
+        calc((100% - (2 * var(--vcp-badge-gap))) / 3),
+        var(--vcp-badge-max)
+      );
+    }
+
+    .vcp-scen-card.is-locked{
+      opacity:1 !important;
+      filter:none !important;
+    }
+
+    .vcp-scen-inner{
+      padding:0 !important;
+      min-width:0;
+    }
+
+    .vcp-scen-name{
+      margin:0;
+      font-weight:950;
+      font-size:13px;
+      letter-spacing:.2px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      text-align:center;
+      color:var(--vcp-text) !important;
+      opacity:1 !important;
+    }
+
+    .vcp-scen-ends{
+      margin-top:10px;
+      width:100%;
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:clamp(6px, 1.8vw, var(--vcp-badge-gap));
+      align-items:center;
+      justify-items:center;
+      overflow:visible;
+    }
+
+    .vcp-badge{
+      width:100% !important;
+      aspect-ratio:1 / 1 !important;
+      max-width:var(--badgeSize) !important;
+      border:none !important;
+      background:transparent !important;
+      box-shadow:none !important;
+      position:relative !important;
+      overflow:hidden !important;
+      padding:0 !important;
+      margin:0 !important;
+      line-height:0 !important;
+      filter:none !important;
+      opacity:1 !important;
+      cursor:pointer !important;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .vcp-badge:active{ transform:scale(.99); }
+
+    .vcp-badge img{
+      position:absolute !important;
+      inset:0 !important;
+      width:100% !important;
+      height:100% !important;
+      object-fit:contain !important;
+      padding:var(--vcp-badge-pad) !important;
+      box-sizing:border-box !important;
+      border:0 !important;
+      outline:0 !important;
+      background:transparent !important;
+      box-shadow:none !important;
+      filter:none !important;
+      opacity:1;
+      pointer-events:none;
+      user-select:none;
+    }
+
+    .vcp-badge .full{
+      opacity:0 !important;
+      transition:opacity .18s ease;
+    }
+
+    .vcp-badge.is-earned .full{
+      opacity:1 !important;
+    }
+
+    .vcp-scen-card.is-locked .vcp-badge{
+      opacity:1 !important;
+      filter:none !important;
+    }
+
+    .vcp-scen-card.is-locked .vcp-badge .full{
+      opacity:0 !important;
+    }
+
+    @media (max-width: 360px){
+      :root{
+        --vcp-badge-min:52px;
+        --vcp-badge-max:92px;
+        --vcp-badge-pad:8%;
       }
 
-      window.addEventListener("vr:profile", render);
-      render();
+      .vcp-scen-ends{ gap:8px; }
+    }
 
-      // Resync quand on revient sur l’onglet
-      document.addEventListener("visibilitychange", async () => {
-        if (document.visibilityState === "visible") {
-          try { await window.VUserData?.refresh?.(); } catch (_) {}
-        }
-      });
-    });
-  </script>
+    .vcp-modal{
+      position:fixed;
+      inset:0;
+      z-index:9999;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:calc(14px + env(safe-area-inset-top)) 14px calc(14px + env(safe-area-inset-bottom));
+    }
+
+    .vcp-modal.is-open{ display:flex; }
+
+    .vcp-modal__backdrop{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.62);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+    }
+
+    .vcp-modal__panel{
+      position:relative;
+      width:min(520px, 96vw);
+      border-radius:var(--vcp-badge-modal-radius);
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(7, 20, 54, .72);
+      box-shadow:0 24px 80px rgba(0,0,0,.55);
+      overflow:hidden;
+      transform:translateZ(0);
+    }
+
+    .vcp-modal__top{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      padding:10px 10px 0;
+    }
+
+    .vcp-modal__close{
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.08);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .vcp-modal__close:active{ transform:scale(.99); }
+
+    .vcp-modal__close svg{
+      width:22px;
+      height:22px;
+      filter:drop-shadow(0 2px 10px rgba(0,0,0,.55));
+    }
+
+    .vcp-modal__content{
+      padding:var(--vcp-badge-modal-pad);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .vcp-modal__img{
+      width:min(var(--vcp-badge-modal-max), 460px);
+      height:auto;
+      aspect-ratio:1 / 1;
+      object-fit:contain;
+      border-radius:18px;
+      background:radial-gradient(60% 60% at 50% 40%, rgba(255,255,255,.06), transparent 70%);
+      filter:drop-shadow(0 18px 46px rgba(0,0,0,.55));
+      user-select:none;
+      pointer-events:none;
+    }
+  </style>
+</head>
+<body class="page-profile">
+
+  <div class="vcp-top-actions">
+    <div class="vcp-top-slot vcp-top-left">
+      <a id="btnBackHome" class="vcp-icon-button" href="index.html" data-i18n-aria="ui.aria_back">
+        <svg class="vcp-back-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="white" d="M15.5 5.5a1 1 0 0 1 0 1.4L10.4 12l5.1 5.1a1 1 0 1 1-1.4 1.4l-5.8-5.8a1.2 1.2 0 0 1 0-1.4l5.8-5.8a1 1 0 0 1 1.4 0z"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="vcp-top-slot vcp-top-center">
+      <a class="vcp-icon-button" href="settings.html" data-i18n-aria="ui.aria_settings">
+        <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
+      </a>
+    </div>
+
+    <div class="vcp-top-slot vcp-top-right">
+      <a class="vcp-icon-button" href="shop.html" data-i18n-aria="ui.aria_shop">
+        <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
+      </a>
+    </div>
+  </div>
+
+  <main class="vcp-page">
+    <div class="vcp-title-wrap">
+      <h1 class="vcp-page-title" data-i18n="ui.profile_title"></h1>
+      <p class="vcp-page-sub" data-i18n="ui.profile_subtitle"></p>
+    </div>
+
+    <section class="vcp-card">
+      <div class="vcp-card-inner">
+
+        <div class="vcp-balances">
+          <div class="vcp-balances-row">
+            <div class="vcp-pill vcp-pill--left">
+              <img src="assets/img/ui/vcoin.webp" alt="" draggable="false" />
+              <div>
+                <span class="k" data-i18n="ui.profile_vcoins"></span>
+                <span class="v" id="pf_vcoins"></span>
+              </div>
+            </div>
+
+            <div class="vcp-pill vcp-pill--right">
+              <div>
+                <span class="k" data-i18n="ui.profile_jetons"></span>
+                <span class="v" id="pf_jetons"></span>
+              </div>
+              <img src="assets/img/ui/jeton.webp" alt="" draggable="false" />
+            </div>
+          </div>
+        </div>
+
+        <div class="vcp-username-block">
+          <div class="vcp-row-head">
+            <div class="lbl" data-i18n="ui.profile_username_label"></div>
+          </div>
+
+          <div class="vcp-username-display">
+            <div class="name" id="pf_username_text"></div>
+          </div>
+
+          <div class="vcp-actions-under">
+            <button class="vcp-mini-btn" id="pf_edit_toggle" type="button" data-i18n="ui.profile_username_edit"></button>
+          </div>
+
+          <div class="vcp-edit-wrap" id="pf_edit_wrap">
+            <div class="vcp-username-row">
+              <input
+                class="vcp-input"
+                id="pf_username_input"
+                type="text"
+                inputmode="text"
+                autocomplete="off"
+                spellcheck="false"
+                data-i18n-placeholder="ui.profile_username_placeholder"
+              />
+              <button class="vcp-btn" id="pf_save" type="button" data-i18n="ui.profile_username_save"></button>
+              <button class="vcp-mini-btn" id="pf_cancel" type="button" data-i18n="ui.profile_username_cancel"></button>
+            </div>
+
+            <div class="vcp-hint" id="pf_hint" data-i18n="ui.profile_username_hint"></div>
+            <div class="vcp-msg" id="pf_msg"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="vcp-section-head">
+      <h2 class="vcp-section-title" data-i18n="ui.profile_scenarios_title"></h2>
+    </div>
+
+    <section class="vcp-scen-grid" id="pf_scenarios"></section>
+  </main>
+
+  <div class="vcp-modal" id="badgeModal" aria-hidden="true">
+    <div class="vcp-modal__backdrop" id="badgeModalBackdrop"></div>
+    <div class="vcp-modal__panel" role="dialog" aria-modal="true" data-i18n-aria="ui.aria_badge_modal">
+      <div class="vcp-modal__top">
+        <button class="vcp-modal__close" id="badgeModalClose" type="button" data-i18n-aria="ui.aria_close">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="white" d="M18.3 5.7a1 1 0 0 1 0 1.4L13.4 12l4.9 4.9a1 1 0 1 1-1.4 1.4L12 13.4l-4.9 4.9a1 1 0 1 1-1.4-1.4l4.9-4.9-4.9-4.9a1 1 0 1 1 1.4-1.4L12 10.6l4.9-4.9a1 1 0 0 1 1.4 0z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="vcp-modal__content">
+        <img class="vcp-modal__img" id="badgeModalImg" alt="" draggable="false" />
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabaseBootstrap.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/userData.js"></script>
+  <script src="js/profile.js"></script>
 </body>
 </html>
