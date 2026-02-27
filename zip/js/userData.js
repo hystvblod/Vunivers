@@ -7,6 +7,16 @@
   const LangStorageKey = "vuniverse_lang";
   const LangStorageLegacyKey = "vrealms_lang";
 
+  const FREE_UNIVERSES = ["hell_king", "heaven_king"];
+  const DEFAULT_KNOWN_UNIVERSES = [
+    "hell_king",
+    "heaven_king",
+    "western_president",
+    "mega_corp_ceo",
+    "new_world_explorer",
+    "vampire_lord"
+  ];
+
   let _uiPaused = true;
   let _pendingEmit = false;
 
@@ -42,19 +52,6 @@
     return _remoteQueue;
   }
 
-  const _memState = {
-    user_id: "",
-    username: "",
-    vcoins: 0,
-    jetons: 0,
-    lang: "fr",
-    unlocked_universes: ["hell_king", "heaven_king"],
-    no_ads: false,
-    has_diamond: false,
-    updated_at: Date.now(),
-    last_sync_at: 0
-  };
-
   function _clampInt(n) {
     return Math.max(0, Math.floor(Number(n || 0)));
   }
@@ -62,6 +59,39 @@
   function _safeParse(raw) {
     try { return JSON.parse(raw); } catch (_) { return null; }
   }
+
+  function _uniqTextArray(arr) {
+    try {
+      const out = [];
+      const seen = new Set();
+      (Array.isArray(arr) ? arr : []).forEach((v) => {
+        const s = String(v || "").trim();
+        if (!s || seen.has(s)) return;
+        seen.add(s);
+        out.push(s);
+      });
+      return out;
+    } catch (_) {
+      return [];
+    }
+  }
+
+  function _mergeUniverses(a, b) {
+    return _uniqTextArray([].concat(a || [], b || [], FREE_UNIVERSES));
+  }
+
+  const _memState = {
+    user_id: "",
+    username: "",
+    vcoins: 0,
+    jetons: 0,
+    lang: "fr",
+    unlocked_universes: FREE_UNIVERSES.slice(0),
+    no_ads: false,
+    has_diamond: false,
+    updated_at: Date.now(),
+    last_sync_at: 0
+  };
 
   function _readLocal() {
     try {
@@ -88,9 +118,7 @@
         vcoins: _clampInt(_memState.vcoins || 0),
         jetons: _clampInt(_memState.jetons || 0),
         lang: (_memState.lang || "fr").toString(),
-        unlocked_universes: Array.isArray(_memState.unlocked_universes)
-          ? _memState.unlocked_universes.slice(0)
-          : ["hell_king", "heaven_king"],
+        unlocked_universes: _mergeUniverses(_memState.unlocked_universes, []),
         no_ads: !!_memState.no_ads,
         has_diamond: !!_memState.has_diamond,
         updated_at: Date.now(),
@@ -114,9 +142,7 @@
             lang: _memState.lang,
             vcoins: _memState.vcoins,
             jetons: _memState.jetons,
-            unlocked_universes: Array.isArray(_memState.unlocked_universes)
-              ? _memState.unlocked_universes.slice(0)
-              : ["hell_king", "heaven_king"],
+            unlocked_universes: _mergeUniverses(_memState.unlocked_universes, []),
             no_ads: !!_memState.no_ads,
             has_diamond: !!_memState.has_diamond
           }
@@ -132,32 +158,32 @@
       vcoins: 0,
       jetons: 0,
       lang: "fr",
-      unlocked_universes: ["hell_king", "heaven_king"],
+      unlocked_universes: FREE_UNIVERSES.slice(0),
       no_ads: false,
       has_diamond: false,
       updated_at: Date.now()
     };
   }
 
-  function _applyMe(me) {
-    if (!me) return false;
+  function _applyMergedRemote(me) {
+    if (!me || typeof me !== "object") return false;
 
-    _memState.user_id = (me.id || "").toString();
-    _memState.username = (me.username || "").toString();
-    _memState.vcoins = _clampInt(me.vcoins || 0);
-    _memState.jetons = _clampInt(me.jetons || 0);
-    _memState.lang = (me.lang || "fr").toString();
-    _memState.no_ads = !!me.no_ads;
-    _memState.has_diamond = !!me.has_diamond;
+    const localBefore = _readLocal() || {};
+    const remoteUnlocked = Array.isArray(me.unlocked_universes)
+      ? me.unlocked_universes
+      : (typeof me.unlocked_universes === "string" && me.unlocked_universes ? [me.unlocked_universes] : []);
+    const localUnlocked = Array.isArray(localBefore.unlocked_universes)
+      ? localBefore.unlocked_universes
+      : _memState.unlocked_universes;
 
-    if (Array.isArray(me.unlocked_universes)) {
-      _memState.unlocked_universes = me.unlocked_universes.filter(Boolean).map(String);
-    } else if (typeof me.unlocked_universes === "string" && me.unlocked_universes) {
-      _memState.unlocked_universes = [me.unlocked_universes];
-    } else if (!Array.isArray(_memState.unlocked_universes) || !_memState.unlocked_universes.length) {
-      _memState.unlocked_universes = ["hell_king", "heaven_king"];
-    }
-
+    _memState.user_id = (me.id || _memState.user_id || "").toString();
+    _memState.username = (me.username || _memState.username || "").toString();
+    _memState.vcoins = _clampInt(typeof me.vcoins !== "undefined" ? me.vcoins : _memState.vcoins);
+    _memState.jetons = _clampInt(typeof me.jetons !== "undefined" ? me.jetons : _memState.jetons);
+    _memState.lang = (me.lang || _memState.lang || "fr").toString();
+    _memState.no_ads = !!(me.no_ads || _memState.no_ads || localBefore.no_ads);
+    _memState.has_diamond = !!(me.has_diamond || _memState.has_diamond || localBefore.has_diamond);
+    _memState.unlocked_universes = _mergeUniverses(remoteUnlocked, localUnlocked);
     _memState.updated_at = Date.now();
     _memState.last_sync_at = Date.now();
 
@@ -225,6 +251,50 @@
         return r?.data || null;
       } catch (e) {
         _reportRemoteError("rpc.secure_get_me.exception", e);
+        return null;
+      }
+    },
+
+    async patchProfileLocalFirst(partial) {
+      const sb = window.sb;
+      if (!sb || typeof sb.from !== "function") return null;
+
+      const uid = await this.ensureAuth();
+      if (!uid) return null;
+
+      const payload = {};
+
+      if (Array.isArray(partial?.unlocked_universes)) {
+        payload.unlocked_universes = _mergeUniverses(partial.unlocked_universes, []);
+      }
+      if (typeof partial?.no_ads !== "undefined") {
+        payload.no_ads = !!partial.no_ads;
+      }
+      if (typeof partial?.has_diamond !== "undefined") {
+        payload.has_diamond = !!partial.has_diamond;
+      }
+      if (typeof partial?.lang !== "undefined") {
+        payload.lang = String(partial.lang || "fr");
+      }
+
+      if (!Object.keys(payload).length) return null;
+
+      try {
+        const q = sb
+          .from("profiles")
+          .update(payload)
+          .eq("id", uid)
+          .select("id,username,vcoins,jetons,lang,unlocked_universes,no_ads,has_diamond")
+          .single();
+
+        const r = await q;
+        if (r?.error) {
+          _reportRemoteError("profiles.update", r.error);
+          return null;
+        }
+        return r?.data || null;
+      } catch (e) {
+        _reportRemoteError("profiles.update.exception", e);
         return null;
       }
     },
@@ -340,29 +410,6 @@
       }
     },
 
-    async unlockUniverse(universeId) {
-      const sb = window.sb;
-      if (!sb || typeof sb.rpc !== "function") return { ok: false, reason: "no_client" };
-
-      const uid = await this.ensureAuth();
-      if (!uid) return { ok: false, reason: "no_auth" };
-
-      const u = (universeId || "").toString().trim();
-      if (!u) return { ok: false, reason: "invalid_universe" };
-
-      try {
-        const r = await sb.rpc("secure_unlock_universe", { p_universe: u });
-        if (r?.error) {
-          _reportRemoteError("rpc.secure_unlock_universe", r.error);
-          return { ok: false, reason: r.error.message || "rpc_error", error: r.error };
-        }
-        return { ok: true, data: r?.data || null };
-      } catch (e) {
-        _reportRemoteError("rpc.secure_unlock_universe.exception", e);
-        return { ok: false, reason: "rpc_exception", error: e };
-      }
-    },
-
     async setLang(lang) {
       const sb = window.sb;
       if (!sb || typeof sb.rpc !== "function") return false;
@@ -410,7 +457,7 @@
       return await queueRemote(async () => {
         const me = await window.VRRemoteStore.getMe();
         if (!me) return false;
-        _applyMe(me);
+        _applyMergedRemote(me);
         return true;
       }, "VUserData.refresh");
     },
@@ -425,9 +472,7 @@
           vcoins: _clampInt(_memState.vcoins || 0),
           jetons: _clampInt(_memState.jetons || 0),
           lang: (_memState.lang || "fr").toString(),
-          unlocked_universes: Array.isArray(_memState.unlocked_universes)
-            ? _memState.unlocked_universes.slice(0)
-            : ["hell_king","heaven_king"],
+          unlocked_universes: _mergeUniverses(_memState.unlocked_universes, []),
           no_ads: !!_memState.no_ads,
           has_diamond: !!_memState.has_diamond,
           updated_at: Number(_memState.updated_at || Date.now())
@@ -450,9 +495,9 @@
         _memState.has_diamond = !!(typeof data.has_diamond !== "undefined" ? data.has_diamond : _memState.has_diamond);
 
         if (Array.isArray(data.unlocked_universes)) {
-          _memState.unlocked_universes = data.unlocked_universes.filter(Boolean).map(String);
+          _memState.unlocked_universes = _mergeUniverses(data.unlocked_universes, []);
         } else if (!Array.isArray(_memState.unlocked_universes) || !_memState.unlocked_universes.length) {
-          _memState.unlocked_universes = ["hell_king","heaven_king"];
+          _memState.unlocked_universes = FREE_UNIVERSES.slice(0);
         }
 
         _memState.updated_at = Date.now();
@@ -467,59 +512,121 @@
     },
 
     getUnlockedUniverses() {
-      if (this.hasDiamond()) {
-        return [
-          "hell_king",
-          "heaven_king",
-          "western_president",
-          "mega_corp_ceo",
-          "new_world_explorer",
-          "vampire_lord",
-          "medieval_king"
-        ];
-      }
-
       const u = this.load();
-      const arr = Array.isArray(u.unlocked_universes) ? u.unlocked_universes : null;
-      if (arr && arr.length) return arr.filter(Boolean).map(String);
-      return ["hell_king","heaven_king"];
+      return _mergeUniverses(u.unlocked_universes, []);
+    },
+
+    getAllKnownUniverses() {
+      const local = this.getUnlockedUniverses();
+      return _mergeUniverses(DEFAULT_KNOWN_UNIVERSES, local);
     },
 
     isUniverseUnlocked(universeId) {
-      const id = (universeId || "").toString();
+      const id = (universeId || "").toString().trim();
       if (!id) return false;
+      if (FREE_UNIVERSES.includes(id)) return true;
       if (this.hasDiamond()) return true;
       const set = new Set(this.getUnlockedUniverses());
       return set.has(id);
     },
 
-    async unlockUniverse(universeId) {
+    async _syncEntitlementsToRemote() {
+      if (!window.VRRemoteStore?.enabled?.()) return false;
+      const cur = this.load();
+
+      return await queueRemote(async () => {
+        const patched = await window.VRRemoteStore.patchProfileLocalFirst({
+          unlocked_universes: cur.unlocked_universes,
+          no_ads: cur.no_ads,
+          has_diamond: cur.has_diamond
+        });
+
+        if (patched && typeof patched === "object") {
+          _applyMergedRemote(patched);
+          return true;
+        }
+
+        await this.refresh().catch(() => false);
+        return false;
+      }, "VUserData._syncEntitlementsToRemote");
+    },
+
+    async unlockUniverseWithVcoins(universeId, price) {
+      const id = (universeId || "").toString().trim();
+      const cost = _clampInt(price || 600);
+
+      if (!id) return { ok: false, reason: "invalid_universe" };
+      if (FREE_UNIVERSES.includes(id) || this.hasDiamond() || this.isUniverseUnlocked(id)) {
+        return { ok: true, reason: "already", data: this.load() };
+      }
+
+      const cur = this.load();
+      if (_clampInt(cur.vcoins) < cost) {
+        return { ok: false, reason: "insufficient_vcoins", balance: _clampInt(cur.vcoins), price: cost };
+      }
+
+      const next = {
+        ...cur,
+        vcoins: _clampInt(cur.vcoins) - cost,
+        unlocked_universes: _mergeUniverses(cur.unlocked_universes, [id])
+      };
+
+      this.save(next);
+
+      queueRemote(async () => {
+        try {
+          const newv = await window.VRRemoteStore?.reduceVcoinsTo?.(next.vcoins);
+          if (typeof newv === "number" && !Number.isNaN(newv)) {
+            _memState.vcoins = _clampInt(newv);
+            _persistLocal();
+            _emitProfile();
+          }
+        } catch (_) {}
+        await this._syncEntitlementsToRemote().catch(() => false);
+        return true;
+      }, "VUserData.unlockUniverseWithVcoins");
+
+      return { ok: true, reason: "ok", data: this.load() };
+    },
+
+    async markUniversePurchased(universeId) {
       const id = (universeId || "").toString().trim();
       if (!id) return { ok: false, reason: "invalid_universe" };
-
-      if (this.isUniverseUnlocked(id)) return { ok: true, reason: "already", data: this.load() };
-      if (!window.VRRemoteStore?.enabled?.()) return { ok: false, reason: "no_remote" };
-
-      const res = await window.VRRemoteStore.unlockUniverse(id);
-      if (!res?.ok) return res || { ok: false, reason: "error" };
-
-      const me = Array.isArray(res.data) ? (res.data[0] || null) : res.data;
-      if (me && typeof me === "object") {
-        const cur = this.load();
-        this.save({
-          ...cur,
-          user_id: (me.id || cur.user_id || "").toString(),
-          username: (me.username || cur.username || "").toString(),
-          vcoins: (typeof me.vcoins !== "undefined") ? me.vcoins : cur.vcoins,
-          jetons: (typeof me.jetons !== "undefined") ? me.jetons : cur.jetons,
-          lang: (me.lang || cur.lang || "fr").toString(),
-          unlocked_universes: Array.isArray(me.unlocked_universes) ? me.unlocked_universes : cur.unlocked_universes,
-          no_ads: (typeof me.no_ads !== "undefined") ? !!me.no_ads : cur.no_ads,
-          has_diamond: (typeof me.has_diamond !== "undefined") ? !!me.has_diamond : cur.has_diamond
-        });
-      } else {
-        await this.refresh().catch(() => false);
+      if (FREE_UNIVERSES.includes(id) || this.hasDiamond() || this.isUniverseUnlocked(id)) {
+        return { ok: true, reason: "already", data: this.load() };
       }
+
+      const cur = this.load();
+      this.save({
+        ...cur,
+        unlocked_universes: _mergeUniverses(cur.unlocked_universes, [id])
+      });
+
+      this._syncEntitlementsToRemote().catch(() => false);
+      return { ok: true, reason: "ok", data: this.load() };
+    },
+
+    async activateNoAdsPurchase() {
+      const cur = this.load();
+      if (cur.no_ads) return { ok: true, reason: "already", data: cur };
+
+      this.save({ ...cur, no_ads: true });
+      this._syncEntitlementsToRemote().catch(() => false);
+      return { ok: true, reason: "ok", data: this.load() };
+    },
+
+    async activateDiamondPurchase() {
+      const cur = this.load();
+      if (cur.has_diamond) return { ok: true, reason: "already", data: cur };
+
+      this.save({
+        ...cur,
+        has_diamond: true,
+        no_ads: true,
+        unlocked_universes: _mergeUniverses(cur.unlocked_universes, this.getAllKnownUniverses())
+      });
+
+      this._syncEntitlementsToRemote().catch(() => false);
       return { ok: true, reason: "ok", data: this.load() };
     },
 
@@ -533,7 +640,7 @@
 
     async setUsername(username) {
       const name = (username || "").toString().trim();
-      if (name.length < 3 || name.length > 20) return { ok: false, reason: "invalid" };
+      if (name.length < 3 || name.length > 20) return { ok: false, reason: "length" };
       if (!/^[a-zA-Z0-9_-]+$/.test(name)) return { ok: false, reason: "invalid" };
       if (!window.VRRemoteStore?.enabled?.()) return { ok: false, reason: "no_remote" };
 
@@ -556,8 +663,6 @@
           await this.refresh().catch(() => false);
           return l;
         }
-        await this.refresh().catch(() => false);
-        return this.getLang();
       }
       return l;
     },

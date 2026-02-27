@@ -85,7 +85,7 @@
 
   async function ensureAuthStrict() {
     try {
-      try { await window.vrWaitBootstrap?.(); } catch {}
+      try { await window.vrWaitBootstrap?.(); } catch (_) {}
       const uid = await window.VRRemoteStore?.ensureAuth?.();
       if (uid) return uid;
 
@@ -94,73 +94,44 @@
         const r = await sb.auth.getUser();
         return r?.data?.user?.id || null;
       }
-    } catch {}
+    } catch (_) {}
     return null;
   }
 
   function sbReady() {
-    return !!(window.sb && window.sb.auth && typeof window.sb.rpc === "function");
-  }
-
-  async function fetchNoAds() {
-    try {
-      if (!sbReady()) return false;
-      await ensureAuthStrict();
-      const r = await window.sb.rpc("secure_get_no_ads");
-      if (r && !r.error) return (r.data === true);
-    } catch {}
-    return false;
-  }
-
-  async function setNoAds(value) {
-    try {
-      if (!sbReady()) return false;
-      await ensureAuthStrict();
-      const r = await window.sb.rpc("secure_set_no_ads", { p_no_ads: !!value });
-      return !!(r && !r.error && r.data === true);
-    } catch {}
-    return false;
+    return !!(window.sb && window.sb.auth);
   }
 
   async function refreshNoAdsUI() {
-    const noAds = await fetchNoAds();
+    let noAds = false;
+    try {
+      noAds = !!window.VUserData?.hasNoAds?.();
+      if (!noAds && window.VUserData?.refresh) {
+        await window.VUserData.refresh().catch(() => false);
+        noAds = !!window.VUserData?.hasNoAds?.();
+      }
+    } catch (_) {}
     setText("noads-status", noAds ? "✅ No Pub : activé" : "ℹ️ No Pub : désactivé");
     return noAds;
   }
 
-  async function unlockUniverseDirectIap(universeId, productId, txId) {
-    const uid = await ensureAuthStrict();
-    if (!uid) throw new Error("no_session");
-
-    const sb = window.sb;
-    if (!sb?.rpc) throw new Error("no_client");
-
-    const r = await sb.rpc("secure_unlock_universe_iap", {
-      p_universe: String(universeId || ""),
-      p_product_id: String(productId || ""),
-      p_tx_id: String(txId || "")
-    });
-
-    if (r?.error) throw new Error(r.error.message || "secure_unlock_universe_iap_failed");
-
+  async function applyUniverseEntitlement(universeId) {
+    const res = await window.VUserData?.markUniversePurchased?.(universeId);
+    if (!res?.ok) throw new Error(res?.reason || "universe_local_unlock_failed");
     try { await window.VUserData?.refresh?.(); } catch (_) {}
     return true;
   }
 
-  async function grantDiamondPack(productId, txId) {
-    const uid = await ensureAuthStrict();
-    if (!uid) throw new Error("no_session");
+  async function applyDiamondEntitlement() {
+    const res = await window.VUserData?.activateDiamondPurchase?.();
+    if (!res?.ok) throw new Error(res?.reason || "diamond_local_unlock_failed");
+    try { await window.VUserData?.refresh?.(); } catch (_) {}
+    return true;
+  }
 
-    const sb = window.sb;
-    if (!sb?.rpc) throw new Error("no_client");
-
-    const r = await sb.rpc("secure_grant_diamond_pack", {
-      p_product_id: String(productId || ""),
-      p_tx_id: String(txId || "")
-    });
-
-    if (r?.error) throw new Error(r.error.message || "secure_grant_diamond_pack_failed");
-
+  async function applyNoAdsEntitlement() {
+    const res = await window.VUserData?.activateNoAdsPurchase?.();
+    if (!res?.ok) throw new Error(res?.reason || "noads_local_unlock_failed");
     try { await window.VUserData?.refresh?.(); } catch (_) {}
     return true;
   }
@@ -169,23 +140,22 @@
     const cfg = SKU[productId];
     if (!cfg) throw new Error("unknown_sku");
 
-    const uid = await ensureAuthStrict();
-    if (!uid) throw new Error("no_session");
-
     if (cfg.kind === "vcoins") {
+      const uid = await ensureAuthStrict();
+      if (!uid) throw new Error("no_session");
       const r = await window.VRRemoteStore?.addVcoins?.(cfg.amount);
       if (r === null || r === undefined) throw new Error("credit_vcoins_failed");
     } else if (cfg.kind === "jetons") {
+      const uid = await ensureAuthStrict();
+      if (!uid) throw new Error("no_session");
       const r = await window.VRRemoteStore?.addJetons?.(cfg.amount);
       if (r === null || r === undefined) throw new Error("credit_jetons_failed");
     } else if (cfg.kind === "noads") {
-      const ok = await setNoAds(true);
-      if (!ok) throw new Error("set_noads_failed");
-      try { await window.VUserData?.refresh?.(); } catch (_) {}
+      await applyNoAdsEntitlement();
     } else if (cfg.kind === "universe") {
-      await unlockUniverseDirectIap(cfg.universe, productId, txId);
+      await applyUniverseEntitlement(cfg.universe);
     } else if (cfg.kind === "diamond") {
-      await grantDiamondPack(productId, txId);
+      await applyDiamondEntitlement();
     } else {
       throw new Error("unknown_kind");
     }
@@ -222,7 +192,7 @@
         const p = typeof r.payload === "string" ? parseMaybeJson(r.payload) : r.payload;
         if (p?.purchaseToken) return p.purchaseToken;
       }
-    } catch {}
+    } catch (_) {}
 
     return (
       tx?.purchaseToken ||
@@ -264,7 +234,7 @@
         const price = PRICES_BY_ID[id];
         node.textContent = price ? `(${price})` : "";
       });
-    } catch {}
+    } catch (_) {}
   }
 
   window.refreshDisplayedPrices = function () {
@@ -300,7 +270,9 @@
     const { S } = getStoreApi();
     if (!S) return;
 
-    await ensureAuthStrict();
+    if (sbReady()) {
+      await ensureAuthStrict();
+    }
 
     try {
       const P = window.CdvPurchase?.ProductType;
@@ -333,7 +305,7 @@
             updateDisplayedPrices();
             emit("vr:iap_price", { productId: String(id), price: String(price) });
           }
-        } catch {}
+        } catch (_) {}
       })
       .approved(async (tx) => {
         const txId = getTxIdFromTx(tx);
@@ -342,7 +314,7 @@
         if (!productId) return;
 
         if (txId && (IN_FLIGHT_TX.has(txId) || isCredited(txId))) {
-          try { await tx.finish(); } catch {}
+          try { await tx.finish(); } catch (_) {}
           return;
         }
 
@@ -373,11 +345,11 @@
         try { await tx.finish(); } catch (e) { warn("finish failed", e?.message || e); }
         if (txId) IN_FLIGHT_TX.delete(txId);
 
-        try { window.VRAds?.refreshNoAds && (await window.VRAds.refreshNoAds()); } catch {}
-        try { await refreshNoAdsUI(); } catch {}
+        try { window.VRAds?.refreshNoAds && (await window.VRAds.refreshNoAds()); } catch (_) {}
+        try { await refreshNoAdsUI(); } catch (_) {}
       });
 
-    try { await replayLocalPending(); } catch {}
+    try { await replayLocalPending(); } catch (_) {}
 
     try {
       await S.initialize([S.Platform.GOOGLE_PLAY]);
@@ -387,8 +359,8 @@
       warn("store init/update failed", e?.message || e);
     }
 
-    try { updateDisplayedPrices(); } catch {}
-    try { await refreshNoAdsUI(); } catch {}
+    try { updateDisplayedPrices(); } catch (_) {}
+    try { await refreshNoAdsUI(); } catch (_) {}
   }
 
   function wireTopNav() {
@@ -413,7 +385,7 @@
 
       setText("shop-status", "✅ Récompense validée");
       return true;
-    } catch {
+    } catch (_) {
       setText("shop-status", "❌ Erreur rewarded");
       return false;
     }
@@ -427,10 +399,12 @@
       return;
     }
 
-    await ensureAuthStrict();
+    if (sbReady()) {
+      await ensureAuthStrict();
+    }
 
     if (!STORE_READY) {
-      try { await S.update(); STORE_READY = true; } catch {}
+      try { await S.update(); STORE_READY = true; } catch (_) {}
     }
 
     const p = S.get ? S.get(productId, S.Platform.GOOGLE_PLAY) : (S.products?.byId?.[productId]);
@@ -484,14 +458,14 @@
       await replayLocalPending();
       const { S } = getStoreApi();
       if (S?.update) await S.update();
-    } catch {}
+    } catch (_) {}
   };
 
   window.safeOrder = safeOrder;
   window.buyProduct = safeOrder;
 
   function startWhenReady() {
-    try { wireTopNav(); wireShopButtons(); } catch {}
+    try { wireTopNav(); wireShopButtons(); } catch (_) {}
 
     const fire = () => { start().catch((e) => warn("start failed", e?.message || e)); };
 
@@ -510,7 +484,7 @@
       }, { once: true });
 
       setTimeout(() => { if (window._cordovaReady) fire(); }, 1200);
-      setTimeout(() => { try { updateDisplayedPrices(); } catch {} }, 1500);
+      setTimeout(() => { try { updateDisplayedPrices(); } catch (_) {} }, 1500);
     }
 
     refreshNoAdsUI().catch(() => {});

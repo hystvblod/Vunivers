@@ -1,546 +1,769 @@
-(function(){
+// Vuniverse - js/profile.js
+// Gère:
+// - pseudo
+// - vcoins / jetons
+// - badges localStorage + base profiles.universe_badges
+// - 1 seul empty pour tous les badges
+// - modal d'aperçu badge
+//
+// Base attendue dans profiles:
+// - universe_badges jsonb
+// - universe_badges_updated_at timestamptz
+
+(function () {
   "use strict";
 
-  const ENDINGS_CACHE_KEY = "vchoice_endings_cache_v1";
+  const BADGES_STORAGE_KEY = "vuniverse_badges_v1";
 
-  const SCENARIO_IDS = [
-    "bunker_reserve",
-    "chateau_absents",
-    "dossier14_appartement",
-    "foret_relais",
-    "hopital_ferme",
-    "metro_station_zero",
-    "styx_gare",
-    "temple_mictlan"
+  const FALLBACK_UNIVERSES = [
+    "hell_king",
+    "heaven_king",
+    "western_president",
+    "mega_corp_ceo",
+    "new_world_explorer",
+    "vampire_lord"
   ];
 
-  function $(id){ return document.getElementById(id); }
-  function safeParse(raw){ try { return JSON.parse(raw); } catch (_) { return null; } }
-  function now(){ return Date.now(); }
-  function norm(x){ return String(x || "").trim().toLowerCase(); }
-
-  function t(key, vars){
-    try{
-      const out = window.VRI18n?.t?.(key, "", vars);
-      if (typeof out === "string") return out;
-    }catch(_){}
-    return "";
+  function $(id) {
+    return document.getElementById(id);
   }
 
-  function applyI18n(root){
-    const scope = root || document;
-
-    scope.querySelectorAll("[data-i18n]").forEach((el) => {
-      const key = el.getAttribute("data-i18n");
-      const txt = t(key);
-      if (txt) el.textContent = txt;
-    });
-
-    scope.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-      const key = el.getAttribute("data-i18n-placeholder");
-      const txt = t(key);
-      if (txt) el.setAttribute("placeholder", txt);
-    });
-
-    scope.querySelectorAll("[data-i18n-aria]").forEach((el) => {
-      const key = el.getAttribute("data-i18n-aria");
-      const txt = t(key);
-      if (txt) el.setAttribute("aria-label", txt);
-    });
-
-    document.title = t("ui.profile_title");
+  function _safeParse(raw) {
+    try { return JSON.parse(raw); } catch (_) { return null; }
   }
 
-  function readEndingsCache(){
-    const raw = localStorage.getItem(ENDINGS_CACHE_KEY);
-    const o = safeParse(raw);
-    if (!o || typeof o !== "object") return null;
-    if (!o.user_id) return null;
-    if (!o.map || typeof o.map !== "object") return null;
-    return o;
+  function _norm(v) {
+    return String(v || "").trim().toLowerCase();
   }
 
-  function writeEndingsCache(userId, map){
-    try{
-      localStorage.setItem(ENDINGS_CACHE_KEY, JSON.stringify({
-        user_id: String(userId || ""),
-        ts: now(),
-        map: map || {}
-      }));
-    }catch(_){}
+  function _now() {
+    return Date.now();
   }
 
-  function endingsJsonToMap(endings){
-    const map = {};
-    if (!endings || typeof endings !== "object") return map;
+  function _bool(v) {
+    return !!v;
+  }
 
-    for (const key of Object.keys(endings)){
-      const sid = norm(key);
-      if (!sid) continue;
+  function _fromIso(v) {
+    try {
+      const t = new Date(v).getTime();
+      return Number.isFinite(t) ? t : 0;
+    } catch (_) {
+      return 0;
+    }
+  }
 
-      const value = endings[key] || {};
-      map[sid] = {
-        good: !!value.good,
-        bad: !!value.bad,
-        secret: !!value.secret
+  function _toIso(ts) {
+    try {
+      return new Date(Number(ts || Date.now())).toISOString();
+    } catch (_) {
+      return new Date().toISOString();
+    }
+  }
+
+  function _normalizeBadgeMap(input) {
+    const out = {};
+    const src = (input && typeof input === "object") ? input : {};
+
+    Object.keys(src).forEach((universeId) => {
+      const uid = _norm(universeId);
+      if (!uid) return;
+
+      const row = src[universeId];
+      if (!row || typeof row !== "object") return;
+
+      out[uid] = {
+        bronze: _bool(row.bronze),
+        silver: _bool(row.silver),
+        gold: _bool(row.gold)
       };
-    }
+    });
 
-    return map;
+    return out;
   }
 
-  async function fetchEndingsFromProfiles(){
-    const st0 = window.VUserData?.load?.() || {};
-    const uid0 = String(st0.user_id || "");
-    const map0 = endingsJsonToMap(st0.endings);
+  function _readLocalBadges() {
+    const raw = localStorage.getItem(BADGES_STORAGE_KEY);
+    const parsed = _safeParse(raw);
 
-    if (uid0 && Object.keys(map0).length > 0){
-      return { uid: uid0, map: map0 };
+    if (!parsed || typeof parsed !== "object") {
+      return { ts: 0, map: {} };
     }
 
-    if (uid0 && window.VUserData?.refresh){
-      try{ await window.VUserData.refresh(); }catch(_){}
-      const st1 = window.VUserData?.load?.() || {};
-      const uid1 = String(st1.user_id || uid0);
-      const map1 = endingsJsonToMap(st1.endings);
-      return { uid: uid1, map: map1 };
-    }
-
-    return { uid: uid0, map: map0 };
-  }
-
-  function endingIconPaths(){
     return {
-      good: {
-        empty: "assets/img/ui/ending_good_empty.webp",
-        full: "assets/img/ui/ending_good_full.webp"
+      ts: Number(parsed.ts || 0) || 0,
+      map: _normalizeBadgeMap(parsed.map || {})
+    };
+  }
+
+  function _writeLocalBadges(data) {
+    const payload = {
+      ts: Number(data?.ts || 0) || _now(),
+      map: _normalizeBadgeMap(data?.map || {})
+    };
+
+    try {
+      localStorage.setItem(BADGES_STORAGE_KEY, JSON.stringify(payload));
+    } catch (_) {}
+  }
+
+  function _emitBadges(detail) {
+    try {
+      window.dispatchEvent(new CustomEvent("vr:reign_badge_updated", {
+        detail: detail || {}
+      }));
+    } catch (_) {}
+  }
+
+  async function _ensureAuth() {
+    try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
+
+    const sb = window.sb;
+    if (!sb || !sb.auth) return null;
+
+    try {
+      const r = await sb.auth.getUser();
+      return r?.data?.user?.id || null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  async function _readRemoteBadges() {
+    const sb = window.sb;
+    if (!sb || typeof sb.from !== "function") return null;
+
+    const uid = await _ensureAuth();
+    if (!uid) return null;
+
+    try {
+      const r = await sb
+        .from("profiles")
+        .select("id, universe_badges, universe_badges_updated_at")
+        .eq("id", uid)
+        .single();
+
+      if (r?.error) return null;
+
+      return {
+        ts: _fromIso(r?.data?.universe_badges_updated_at),
+        map: _normalizeBadgeMap(r?.data?.universe_badges || {})
+      };
+    } catch (_) {
+      return null;
+    }
+  }
+
+  async function _writeRemoteBadges(data) {
+    const sb = window.sb;
+    if (!sb || typeof sb.from !== "function") return null;
+
+    const uid = await _ensureAuth();
+    if (!uid) return null;
+
+    const payload = {
+      universe_badges: _normalizeBadgeMap(data?.map || {}),
+      universe_badges_updated_at: _toIso(data?.ts || _now())
+    };
+
+    try {
+      const r = await sb
+        .from("profiles")
+        .update(payload)
+        .eq("id", uid)
+        .select("id, universe_badges, universe_badges_updated_at")
+        .single();
+
+      if (r?.error) return null;
+
+      return {
+        ts: _fromIso(r?.data?.universe_badges_updated_at),
+        map: _normalizeBadgeMap(r?.data?.universe_badges || {})
+      };
+    } catch (_) {
+      return null;
+    }
+  }
+
+  async function _initBadges() {
+    const local = _readLocalBadges();
+    const remote = await _readRemoteBadges();
+
+    if (!remote) {
+      _writeLocalBadges(local);
+      return local;
+    }
+
+    if (remote.ts > local.ts) {
+      _writeLocalBadges(remote);
+      _emitBadges({ source: "remote", mode: "replace" });
+      return remote;
+    }
+
+    if (local.ts > 0 && local.ts >= remote.ts) {
+      const pushed = await _writeRemoteBadges(local);
+      if (pushed) {
+        _writeLocalBadges(pushed);
+        _emitBadges({ source: "local", mode: "push" });
+        return pushed;
+      }
+    }
+
+    _writeLocalBadges(local);
+    return local;
+  }
+
+  async function _refreshBadges() {
+    const local = _readLocalBadges();
+    const remote = await _readRemoteBadges();
+
+    if (!remote) return local;
+
+    if (remote.ts > local.ts) {
+      _writeLocalBadges(remote);
+      _emitBadges({ source: "remote", mode: "replace" });
+      return remote;
+    }
+
+    return local;
+  }
+
+  function _getAllBadges() {
+    return _readLocalBadges();
+  }
+
+  async function _syncBadges() {
+    const local = _readLocalBadges();
+    const pushed = await _writeRemoteBadges(local);
+
+    if (pushed) {
+      _writeLocalBadges(pushed);
+      _emitBadges({ source: "local", mode: "push" });
+      return pushed;
+    }
+
+    return local;
+  }
+
+  async function _setBadge(universeId, badgeKey, unlocked) {
+    const uid = _norm(universeId);
+    const key = _norm(badgeKey);
+
+    if (!uid) return false;
+    if (!["bronze", "silver", "gold"].includes(key)) return false;
+
+    const local = _readLocalBadges();
+    const map = _normalizeBadgeMap(local.map || {});
+
+    if (!map[uid]) {
+      map[uid] = { bronze: false, silver: false, gold: false };
+    }
+
+    map[uid][key] = !!unlocked;
+
+    const next = {
+      ts: _now(),
+      map
+    };
+
+    _writeLocalBadges(next);
+    _emitBadges({ universe_id: uid, badge: key, unlocked: !!unlocked, source: "local" });
+
+    const pushed = await _writeRemoteBadges(next);
+    if (pushed) {
+      _writeLocalBadges(pushed);
+      _emitBadges({ universe_id: uid, badge: key, unlocked: !!unlocked, source: "remote" });
+    }
+
+    return true;
+  }
+
+  async function _setUniverse(universeId, state) {
+    const uid = _norm(universeId);
+    if (!uid) return false;
+
+    const local = _readLocalBadges();
+    const map = _normalizeBadgeMap(local.map || {});
+
+    map[uid] = {
+      bronze: !!state?.bronze,
+      silver: !!state?.silver,
+      gold: !!state?.gold
+    };
+
+    const next = {
+      ts: _now(),
+      map
+    };
+
+    _writeLocalBadges(next);
+    _emitBadges({ universe_id: uid, source: "local" });
+
+    const pushed = await _writeRemoteBadges(next);
+    if (pushed) {
+      _writeLocalBadges(pushed);
+      _emitBadges({ universe_id: uid, source: "remote" });
+    }
+
+    return true;
+  }
+
+  async function _replaceAllBadges(fullMap) {
+    const next = {
+      ts: _now(),
+      map: _normalizeBadgeMap(fullMap || {})
+    };
+
+    _writeLocalBadges(next);
+    _emitBadges({ source: "local", mode: "replace_all" });
+
+    const pushed = await _writeRemoteBadges(next);
+    if (pushed) {
+      _writeLocalBadges(pushed);
+      _emitBadges({ source: "remote", mode: "replace_all" });
+    }
+
+    return true;
+  }
+
+  async function _clearUniverseBadges(universeId) {
+    const uid = _norm(universeId);
+    if (!uid) return false;
+
+    const local = _readLocalBadges();
+    const map = _normalizeBadgeMap(local.map || {});
+    delete map[uid];
+
+    const next = {
+      ts: _now(),
+      map
+    };
+
+    _writeLocalBadges(next);
+    _emitBadges({ universe_id: uid, source: "local", mode: "clear_universe" });
+
+    const pushed = await _writeRemoteBadges(next);
+    if (pushed) {
+      _writeLocalBadges(pushed);
+      _emitBadges({ universe_id: uid, source: "remote", mode: "clear_universe" });
+    }
+
+    return true;
+  }
+
+  function badgeIconPaths() {
+    return {
+      bronze: {
+        empty: "assets/img/ui/badge_empty.webp",
+        full: "assets/img/ui/badge_bronze_full.webp"
       },
-      bad: {
-        empty: "assets/img/ui/ending_bad_empty.webp",
-        full: "assets/img/ui/ending_bad_full.webp"
+      silver: {
+        empty: "assets/img/ui/badge_empty.webp",
+        full: "assets/img/ui/badge_silver_full.webp"
       },
-      secret: {
-        empty: "assets/img/ui/ending_secret_empty.webp",
-        full: "assets/img/ui/ending_secret_full.webp"
+      gold: {
+        empty: "assets/img/ui/badge_empty.webp",
+        full: "assets/img/ui/badge_gold_full.webp"
       }
     };
   }
 
-  function renderScenarios(ids, unlockedList, endingsMap){
-    const host = $("pf_scenarios");
-    if (!host) return;
-
-    host.innerHTML = "";
-
-    const unlocked = new Set((unlockedList || []).map(norm).filter(Boolean));
-    const icons = endingIconPaths();
-
-    for (const rawId of (ids || [])){
-      const id = String(rawId || "").trim();
-      if (!id) continue;
-
-      const sid = norm(id);
-      const isUnlocked = unlocked.has(sid);
-      const st = endingsMap?.[sid] || { good:false, bad:false, secret:false };
-
-      const card = document.createElement("div");
-      card.className = "vcp-scen-card" + (isUnlocked ? "" : " is-locked");
-
-      const inner = document.createElement("div");
-      inner.className = "vcp-scen-inner";
-
-      const name = document.createElement("h3");
-      name.className = "vcp-scen-name";
-      name.setAttribute("data-i18n", `scenarios.${id}.title`);
-      inner.appendChild(name);
-
-      const ends = document.createElement("div");
-      ends.className = "vcp-scen-ends";
-
-      for (const key of ["good","bad","secret"]){
-        const done = !!st[key];
-
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "vcp-badge" + (done ? " is-earned" : "");
-        button.setAttribute("data-earned", done ? "1" : "0");
-        button.setAttribute("data-src-empty", icons[key].empty);
-        button.setAttribute("data-src-full", icons[key].full);
-
-        const imgEmpty = document.createElement("img");
-        imgEmpty.className = "empty";
-        imgEmpty.alt = "";
-        imgEmpty.src = icons[key].empty;
-        imgEmpty.draggable = false;
-
-        const imgFull = document.createElement("img");
-        imgFull.className = "full";
-        imgFull.alt = "";
-        imgFull.src = icons[key].full;
-        imgFull.draggable = false;
-
-        button.appendChild(imgEmpty);
-        button.appendChild(imgFull);
-        ends.appendChild(button);
-      }
-
-      inner.appendChild(ends);
-      card.appendChild(inner);
-      host.appendChild(card);
-    }
-
-    applyI18n(host);
+  function clearMsg() {
+    const el = $("pf_msg");
+    if (!el) return;
+    el.textContent = "";
+    el.style.display = "none";
+    el.classList.remove("ok", "err");
   }
 
-  function setMsg(type, key, vars){
+  function setMsg(type, key, vars) {
     const el = $("pf_msg");
     if (!el) return;
 
-    el.classList.remove("ok","err");
+    const txt = window.VRI18n?.t?.(key, "", vars) || "";
+    el.classList.remove("ok", "err");
 
-    const txt = key ? t(key, vars) : "";
-    el.textContent = txt;
-    el.style.display = txt ? "block" : "none";
-
-    if (!txt) return;
-    el.classList.add(type === "ok" ? "ok" : "err");
-  }
-
-  function isValidUsername(u){
-    const s = String(u || "").trim();
-    if (s.length < 3 || s.length > 20) return false;
-    return /^[a-zA-Z0-9_]+$/.test(s);
-  }
-
-  function genRandomUsername(){
-    const n = Math.floor(1000 + Math.random() * 9000);
-    return `User_${n}`;
-  }
-
-  async function ensureDefaultUsernameIfMissing(){
-    const st = window.VUserData?.load?.() || {};
-    const uid = String(st.user_id || "");
-    const cur = String(st.username || "").trim();
-
-    if (!uid || cur) return;
-
-    for (let i = 0; i < 8; i++){
-      const candidate = genRandomUsername();
-      const r = await window.VCRemoteStore?.setUsername?.(candidate);
-
-      if (r === undefined) return;
-
-      if (r && r.ok){
-        try{ await window.VUserData?.refresh?.(); }catch(_){}
-        return;
-      }
+    if (!txt) {
+      el.textContent = "";
+      el.style.display = "none";
+      return;
     }
+
+    el.classList.add(type === "ok" ? "ok" : "err");
+    el.textContent = txt;
+    el.style.display = "block";
   }
 
-  function openEdit(open){
+  function isValidUsername(v) {
+    const s = String(v || "").trim();
+    if (s.length < 3 || s.length > 20) return false;
+    return /^[a-zA-Z0-9_-]+$/.test(s);
+  }
+
+  function openEdit(open) {
     const wrap = $("pf_edit_wrap");
     if (!wrap) return;
     if (open) wrap.classList.add("is-open");
     else wrap.classList.remove("is-open");
   }
 
-  async function handleSaveUsername(){
-    const inp = $("pf_username_input");
-    if (!inp) return;
+  function getKnownUniverses() {
+    try {
+      const list = window.VUserData?.getAllKnownUniverses?.();
+      if (Array.isArray(list) && list.length) {
+        return list.map(_norm).filter(Boolean);
+      }
+    } catch (_) {}
 
-    const next = String(inp.value || "").trim();
+    return FALLBACK_UNIVERSES.slice();
+  }
 
-    if (!isValidUsername(next)){
-      setMsg("err", "ui.profile_username_err_format");
+  function getBadgeMap() {
+    try {
+      const all = _getAllBadges();
+      return (all && all.map && typeof all.map === "object") ? all.map : {};
+    } catch (_) {
+      return {};
+    }
+  }
+
+  function getUniverseBadgeState(universeId, map) {
+    const uid = _norm(universeId);
+    const row = (map && map[uid] && typeof map[uid] === "object") ? map[uid] : {};
+
+    return {
+      bronze: !!row.bronze,
+      silver: !!row.silver,
+      gold: !!row.gold
+    };
+  }
+
+  function renderProfileFromState() {
+    const state = window.VUserData?.load?.() || {};
+
+    const elV = $("pf_vcoins");
+    const elJ = $("pf_jetons");
+    const elU = $("pf_username_text");
+
+    if (elV) elV.textContent = String(Number(state.vcoins ?? 0));
+    if (elJ) elJ.textContent = String(Number(state.jetons ?? 0));
+    if (elU) elU.textContent = String(state.username || "").trim() || "—";
+  }
+
+  function renderUniverses() {
+    const host = $("pf_universes");
+    if (!host) return;
+
+    host.innerHTML = "";
+
+    const icons = badgeIconPaths();
+    const ids = getKnownUniverses();
+    const badgeMap = getBadgeMap();
+
+    for (const rawId of ids) {
+      const uid = _norm(rawId);
+      if (!uid) continue;
+
+      const st = getUniverseBadgeState(uid, badgeMap);
+
+      const card = document.createElement("div");
+      card.className = "vr-universe-card";
+
+      const inner = document.createElement("div");
+      inner.className = "vr-universe-inner";
+
+      const name = document.createElement("h3");
+      name.className = "vr-universe-name";
+      name.setAttribute("data-i18n", `universe.${uid}.title`);
+      inner.appendChild(name);
+
+      const badges = document.createElement("div");
+      badges.className = "vr-universe-badges";
+
+      for (const key of ["bronze", "silver", "gold"]) {
+        const unlocked = !!st[key];
+
+        const box = document.createElement("button");
+        box.type = "button";
+        box.className = "vr-badge" + (unlocked ? " unlocked" : "");
+        box.setAttribute("data-universe", uid);
+        box.setAttribute("data-badge", key);
+        box.setAttribute("data-i18n-aria", `profile.badge_${key}_aria`);
+
+        const imgEmpty = document.createElement("img");
+        imgEmpty.className = "empty";
+        imgEmpty.alt = "";
+        imgEmpty.src = icons[key].empty;
+
+        const imgFull = document.createElement("img");
+        imgFull.className = "full";
+        imgFull.alt = "";
+        imgFull.src = icons[key].full;
+
+        box.appendChild(imgEmpty);
+        box.appendChild(imgFull);
+        badges.appendChild(box);
+      }
+
+      inner.appendChild(badges);
+      card.appendChild(inner);
+      host.appendChild(card);
+    }
+
+    try { window.VRI18n?.applyI18n?.(host); } catch (_) {}
+  }
+
+  function openModalWithSrc(src) {
+    const modal = $("badgeModal");
+    const img = $("badgeModalImg");
+    if (!modal || !img || !src) return;
+
+    img.src = src;
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+
+    try { document.documentElement.style.overflow = "hidden"; } catch (_) {}
+    try { document.body.style.overflow = "hidden"; } catch (_) {}
+  }
+
+  function closeModal() {
+    const modal = $("badgeModal");
+    const img = $("badgeModalImg");
+    if (!modal || !img) return;
+
+    img.removeAttribute("src");
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+
+    try { document.documentElement.style.overflow = ""; } catch (_) {}
+    try { document.body.style.overflow = ""; } catch (_) {}
+  }
+
+  function pickBadgeSrc(badgeEl) {
+    if (!badgeEl) return null;
+
+    const full = badgeEl.querySelector("img.full");
+    const empty = badgeEl.querySelector("img.empty");
+
+    if (badgeEl.classList.contains("unlocked") && full?.getAttribute("src")) {
+      return full.getAttribute("src");
+    }
+
+    if (empty?.getAttribute("src")) return empty.getAttribute("src");
+    if (full?.getAttribute("src")) return full.getAttribute("src");
+    return null;
+  }
+
+  async function handleSaveUsername() {
+    const input = $("pf_username_input");
+    if (!input) return;
+
+    const next = String(input.value || "").trim();
+
+    if (!isValidUsername(next)) {
+      if (next.length < 3 || next.length > 20) {
+        setMsg("err", "auth.username.errors.length");
+      } else {
+        setMsg("err", "auth.username.errors.chars");
+      }
       return;
     }
 
     const curState = window.VUserData?.load?.() || {};
     const cur = String(curState.username || "").trim();
-    const uid = String(curState.user_id || "");
+    const uid = String(curState.user_id || "").trim();
 
-    if (!uid){
-      setMsg("err", "ui.profile_err_not_ready");
+    if (!uid) {
+      setMsg("err", "auth.username.errors.generic");
       return;
     }
 
-    if (cur === next){
-      setMsg("ok", "ui.profile_username_ok_nochange");
+    if (cur === next) {
       openEdit(false);
+      setMsg("ok", "profile.username_ok_nochange");
       return;
-    }
-
-    const flagKey = `vchoice_username_changed_once_${uid}`;
-    const alreadyChanged = localStorage.getItem(flagKey) === "1";
-    const needCost = !!alreadyChanged;
-
-    if (needCost){
-      const jet = Number((window.VUserData?.load?.() || {}).jetons ?? 0);
-      if (jet < 1){
-        setMsg("err", "ui.profile_username_err_nojeton");
-        return;
-      }
     }
 
     const saveBtn = $("pf_save");
     if (saveBtn) saveBtn.disabled = true;
 
-    setMsg("ok", "ui.profile_username_working");
+    try {
+      const res = await window.VUserData?.setUsername?.(next);
 
-    try{
-      const r = await window.VCRemoteStore?.setUsername?.(next);
+      if (!res || !res.ok) {
+        const reason = res?.reason || "generic";
 
-      if (!r || !r.ok){
-        const reason = r?.reason || "rpc_error";
-        if (reason === "taken") setMsg("err", "ui.profile_username_err_taken");
-        else setMsg("err", "ui.profile_username_err_generic");
+        if (reason === "taken") setMsg("err", "auth.username.errors.taken");
+        else if (reason === "length") setMsg("err", "auth.username.errors.length");
+        else if (reason === "invalid") setMsg("err", "auth.username.errors.chars");
+        else setMsg("err", "auth.username.errors.generic");
+
         return;
       }
 
-      if (needCost){
-        const spent = await window.VCRemoteStore?.spendJetons?.(1);
-        if (spent === null || spent === false){
-          setMsg("err", "ui.profile_username_err_cost_failed");
-        }
-      } else {
-        try{ localStorage.setItem(flagKey, "1"); }catch(_){}
-      }
+      try { await window.VUserData?.refresh?.(); } catch (_) {}
 
-      try{ await window.VUserData?.refresh?.(); }catch(_){}
-      setMsg("ok", "ui.profile_username_ok_saved");
+      renderProfileFromState();
       openEdit(false);
+      setMsg("ok", "profile.username_ok_saved");
     } finally {
       if (saveBtn) saveBtn.disabled = false;
     }
   }
 
-  function renderProfileFromState(){
-    const st = window.VUserData?.load?.() || {};
-    const jet = Number(st.jetons ?? 0);
-    const vc = Number(st.vcoins ?? 0);
-    const un = String(st.username || "").trim();
+  function bindUsernameUi() {
+    const editBtn = $("pf_edit_toggle");
+    const cancelBtn = $("pf_cancel");
+    const saveBtn = $("pf_save");
 
-    const jetEl = $("pf_jetons");
-    const vcEl = $("pf_vcoins");
-    const textEl = $("pf_username_text");
+    if (editBtn) {
+      editBtn.addEventListener("click", () => {
+        const wrap = $("pf_edit_wrap");
+        const shouldOpen = !(wrap && wrap.classList.contains("is-open"));
+        openEdit(shouldOpen);
 
-    if (jetEl) jetEl.textContent = String(jet);
-    if (vcEl) vcEl.textContent = String(vc);
-    if (textEl) textEl.textContent = un || t("ui.profile_username_missing");
+        const state = window.VUserData?.load?.() || {};
+        const input = $("pf_username_input");
+        if (shouldOpen && input) {
+          input.value = String(state.username || "").trim();
+          input.focus();
+        }
+
+        if (!shouldOpen) clearMsg();
+      });
+    }
+
+    if (cancelBtn) {
+      cancelBtn.addEventListener("click", () => {
+        openEdit(false);
+        clearMsg();
+      });
+    }
+
+    if (saveBtn) {
+      saveBtn.addEventListener("click", handleSaveUsername);
+    }
   }
 
-  function bindBadgeModal(){
-    const grid = $("pf_scenarios");
-    const modal = $("badgeModal");
-    const modalImg = $("badgeModalImg");
-    const btnClose = $("badgeModalClose");
+  function bindBadgeModal() {
+    const grid = $("pf_universes");
     const backdrop = $("badgeModalBackdrop");
+    const closeBtn = $("badgeModalClose");
 
-    if (!grid || !modal || !modalImg || !btnClose || !backdrop) return;
+    if (grid) {
+      grid.addEventListener("click", (e) => {
+        const badgeEl = e.target?.closest?.(".vr-badge");
+        if (!badgeEl) return;
 
-    let lastFocus = null;
+        const src = pickBadgeSrc(badgeEl);
+        if (!src) return;
 
-    function openModal(src){
-      if (!src) return;
-
-      lastFocus = document.activeElement || null;
-      modalImg.src = src;
-      modal.classList.add("is-open");
-      modal.setAttribute("aria-hidden", "false");
-
-      try{ btnClose.focus({ preventScroll:true }); }catch(_){}
-      try{ document.documentElement.style.overflow = "hidden"; }catch(_){}
-      try{ document.body.style.overflow = "hidden"; }catch(_){}
+        e.preventDefault();
+        e.stopPropagation();
+        openModalWithSrc(src);
+      }, true);
     }
 
-    function closeModal(){
-      modal.classList.remove("is-open");
-      modal.setAttribute("aria-hidden", "true");
-      modalImg.removeAttribute("src");
-
-      try{ document.documentElement.style.overflow = ""; }catch(_){}
-      try{ document.body.style.overflow = ""; }catch(_){}
-
-      if (lastFocus && typeof lastFocus.focus === "function"){
-        try{ lastFocus.focus({ preventScroll:true }); }catch(_){}
-      }
-      lastFocus = null;
+    if (backdrop) {
+      backdrop.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeModal();
+      });
     }
 
-    grid.addEventListener("click", function(e){
-      const badge = e.target?.closest?.(".vcp-badge");
-      if (!badge) return;
+    if (closeBtn) {
+      closeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeModal();
+      });
+    }
 
-      const earned = badge.getAttribute("data-earned") === "1";
-      const full = badge.getAttribute("data-src-full") || "";
-      const empty = badge.getAttribute("data-src-empty") || "";
-      const src = earned ? (full || empty) : (empty || full);
+    window.addEventListener("keydown", (e) => {
+      const modal = $("badgeModal");
+      if (!modal || !modal.classList.contains("is-open")) return;
 
-      if (!src) return;
-
-      e.preventDefault();
-      e.stopPropagation();
-      openModal(src);
-    }, true);
-
-    btnClose.addEventListener("click", function(e){
-      e.preventDefault();
-      closeModal();
-    });
-
-    backdrop.addEventListener("click", function(e){
-      e.preventDefault();
-      closeModal();
-    });
-
-    window.addEventListener("keydown", function(e){
-      if (!modal.classList.contains("is-open")) return;
-      if (e.key === "Escape" || e.key === "Esc"){
+      if (e.key === "Escape" || e.key === "Esc") {
         e.preventDefault();
         closeModal();
       }
     });
   }
 
-  async function refreshEndingsOnce(){
-    const st = window.VUserData?.load?.() || {};
-    const uid = String(st.user_id || "");
-    const unlocked = window.VUserData?.getUnlockedScenarios?.() || [];
-    const ids = SCENARIO_IDS.slice();
+  async function refreshEverything() {
+    try { await window.VUserData?.refresh?.(); } catch (_) {}
+    try { await _refreshBadges(); } catch (_) {}
 
-    const cache = readEndingsCache();
-    const cacheOk = !!(cache && cache.user_id === uid && cache.map);
-
-    if (cacheOk){
-      renderScenarios(ids, unlocked, cache.map || {});
-      return;
-    }
-
-    if (!uid){
-      if (cache?.map){
-        renderScenarios(ids, unlocked, cache.map || {});
-        return;
-      }
-      renderScenarios(ids, unlocked, {});
-      return;
-    }
-
-    try{
-      const r = await fetchEndingsFromProfiles();
-      const endingsMap = r?.map || {};
-      writeEndingsCache(uid, endingsMap);
-      renderScenarios(ids, unlocked, endingsMap);
-    }catch(e){
-      console.error("[fetchEndingsFromProfiles]", e);
-      renderScenarios(ids, unlocked, {});
-    }
+    renderProfileFromState();
+    renderUniverses();
   }
 
-  let refreshEndingsRunning = false;
+  async function boot() {
+    try {
+      const lang = window.VRI18n?.getLang?.() || "fr";
+      await window.VRI18n?.initI18n?.(lang);
+    } catch (_) {}
 
-  async function refreshEndingsSafe(){
-    if (refreshEndingsRunning) return;
-    refreshEndingsRunning = true;
-    try{
-      await refreshEndingsOnce();
-    } finally {
-      refreshEndingsRunning = false;
-    }
-  }
+    try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
+    try { await window.VUserData?.init?.(); } catch (_) {}
+    try { await _initBadges(); } catch (_) {}
 
-  async function boot(){
-    try{
-      const langEarly = window.VRI18n?.getLang?.() || "fr";
-      await window.VRI18n?.initI18n?.(langEarly);
-    }catch(e){
-      console.error("[i18n]", e);
-    }
-
-    try{
-      await window.bootstrapAuthAndProfile?.();
-    }catch(e){
-      console.error("[bootstrapAuthAndProfile]", e);
-    }
-
-    try{
-      const p = window.VUserData?.init?.();
-      if (p && typeof p.then === "function") await p;
-    }catch(e){
-      console.error("[VUserData.init]", e);
-    }
-
-    applyI18n(document);
     renderProfileFromState();
+    renderUniverses();
 
-    try{
-      await ensureDefaultUsernameIfMissing();
-    }catch(e){
-      console.error("[ensureDefaultUsernameIfMissing]", e);
-    }
-
-    applyI18n(document);
-    renderProfileFromState();
-
-    const toggle = $("pf_edit_toggle");
-    const cancel = $("pf_cancel");
-    const save = $("pf_save");
-
-    if (toggle){
-      toggle.addEventListener("click", function(){
-        const wrap = $("pf_edit_wrap");
-        const open = !(wrap && wrap.classList.contains("is-open"));
-        openEdit(open);
-
-        const st = window.VUserData?.load?.() || {};
-        const cur = String(st.username || "").trim();
-        const inp = $("pf_username_input");
-
-        if (open && inp){
-          inp.value = cur || "";
-          try{ inp.focus(); }catch(_){}
-        }
-      });
-    }
-
-    if (cancel){
-      cancel.addEventListener("click", function(){
-        setMsg("ok", "");
-        openEdit(false);
-      });
-    }
-
-    if (save){
-      save.addEventListener("click", handleSaveUsername);
-    }
-
+    bindUsernameUi();
     bindBadgeModal();
 
-    window.addEventListener("vc:profile", function(){
-      applyI18n(document);
+    window.addEventListener("vr:profile", () => {
       renderProfileFromState();
-      refreshEndingsSafe();
     });
 
-    window.addEventListener("vc:endings_updated", function(){
-      refreshEndingsSafe();
+    window.addEventListener("vr:reign_badge_updated", () => {
+      renderUniverses();
     });
 
-    window.addEventListener("pageshow", function(){
-      applyI18n(document);
-      renderProfileFromState();
-      refreshEndingsSafe();
+    window.addEventListener("pageshow", () => {
+      refreshEverything();
     });
 
-    document.addEventListener("visibilitychange", function(){
-      if (document.visibilityState === "visible"){
-        applyI18n(document);
-        renderProfileFromState();
-        refreshEndingsSafe();
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") {
+        refreshEverything();
       }
     });
 
-    await refreshEndingsSafe();
+    try { window.VRI18n?.applyI18n?.(document); } catch (_) {}
   }
 
-  boot();
+  document.addEventListener("DOMContentLoaded", boot);
+
+  // API simple pour toi / console / logique jeu
+  window.VUProfileBadges = {
+    async setBadge(universeId, badgeKey, unlocked) {
+      return await _setBadge(universeId, badgeKey, unlocked);
+    },
+
+    async setUniverse(universeId, state) {
+      return await _setUniverse(universeId, state);
+    },
+
+    async replaceAll(map) {
+      return await _replaceAllBadges(map);
+    },
+
+    async clearUniverse(universeId) {
+      return await _clearUniverseBadges(universeId);
+    },
+
+    getAll() {
+      return _getAllBadges();
+    },
+
+    async refresh() {
+      return await _refreshBadges();
+    },
+
+    async sync() {
+      return await _syncBadges();
+    }
+  };
 })();

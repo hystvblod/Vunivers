@@ -90,10 +90,11 @@
     "profile_username_ok_saved": "Pseudo mis à jour.",
     "profile_scenarios_title": "Scénarios",
     "universe_buy": {
-      "desc": "Cet univers est verrouillé. Tu peux le débloquer avec {price} VCoins, l’acheter directement, ou ouvrir la boutique.",
+      "desc": "Cet univers est verrouillé. Tu peux le débloquer avec {price} VCoins, le débloquer directement via le store, ou ouvrir la boutique.",
       "pay_prefix": "Débloquer pour",
       "pay_balance_inline": "Solde : {balance}",
-      "iap_direct": "Acheter cet univers {price}",
+      "iap_direct": "Débloquer cet univers {price}",
+      "iap_direct_no_price": "Débloquer cet univers",
       "open_shop": "Ouvrir la boutique",
       "cancel": "Annuler",
       "err_unlock": "Impossible de débloquer cet univers.",

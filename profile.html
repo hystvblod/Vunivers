@@ -433,32 +433,6 @@
       opacity:1 !important;
     }
 
-    .vr-universe-card.is-locked{
-      opacity: 1 !important;
-      filter: none !important;
-    }
-
-    .vr-universe-card.is-locked .vr-badge{
-      opacity: 1 !important;
-      filter: none !important;
-    }
-
-    .vr-universe-card.is-locked .vr-badge .full{
-      opacity:0 !important;
-    }
-
-    @media (max-width: 360px){
-      :root{
-        --badgeMin: 52px;
-        --badgeMax: 92px;
-        --badgePad: 8%;
-      }
-
-      .vr-universe-badges{
-        gap: 8px;
-      }
-    }
-
     .vr-modal{
       position: fixed;
       inset: 0;
@@ -640,7 +614,7 @@
 
   <div class="vr-modal" id="badgeModal" aria-hidden="true">
     <div class="vr-modal__backdrop" id="badgeModalBackdrop"></div>
-    <div class="vr-modal__panel" role="dialog" aria-modal="true" data-i18n-aria="common.close">
+    <div class="vr-modal__panel" role="dialog" aria-modal="true" data-i18n-aria="ui.aria_badge_modal">
       <div class="vr-modal__top">
         <button class="vr-modal__close" id="badgeModalClose" type="button" data-i18n-aria="common.close">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -658,6 +632,7 @@
   <script src="js/supabaseBootstrap.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/userData.js"></script>
+  <script src="js/badgeStore.js"></script>
   <script src="js/profile.js"></script>
 </body>
 </html>
