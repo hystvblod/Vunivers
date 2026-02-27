@@ -313,7 +313,12 @@
       "title": "Seigneur vampire",
       "desc": "Étends ton influence dans l’ombre. Trop de sang attire les chasseurs, trop de prudence affaiblit ton clan."
     },
+
     
+  "ui": {
+    "symbol_help": "?"
+  },
+
   "ui.universe_buy.desc": "Cet univers est verrouillé.",
   "ui.universe_buy.pay_prefix": "Débloquer avec",
   "ui.universe_buy.pay_balance_inline": "Solde : {balance}",
