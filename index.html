@@ -687,51 +687,14 @@
 
       function getUniverseStoreButtonLabel(universeId) {
         const storePrice = currentUniverseIapPrice(universeId);
-
-        const customWithPrice = _t(
-          "ui.universe_buy.unlock_direct",
-          "",
-          { price: storePrice || "" }
-        ).trim();
-
-        const customNoPrice = _t(
-          "ui.universe_buy.unlock_direct_no_price",
-          ""
-        ).trim();
+        const prefix = _t("ui.universe_buy.unlock_store_prefix", "").trim();
+        const noPrice = _t("ui.universe_buy.unlock_store_no_price", "").trim();
 
         if (storePrice) {
-          if (customWithPrice) return customWithPrice;
-
-          const legacyWithPrice = _t(
-            "ui.universe_buy.iap_direct",
-            "",
-            { price: storePrice }
-          ).trim();
-
-          if (legacyWithPrice) {
-            return legacyWithPrice
-              .replace(/^acheter\b/i, "Débloquer")
-              .replace(/\s{2,}/g, " ")
-              .trim();
-          }
+          return prefix ? (prefix + " " + storePrice) : storePrice;
         }
 
-        if (customNoPrice) return customNoPrice;
-
-        const legacyNoPrice = _t(
-          "ui.universe_buy.iap_direct",
-          "",
-          { price: "" }
-        ).trim();
-
-        if (legacyNoPrice) {
-          return legacyNoPrice
-            .replace(/^acheter\b/i, "Débloquer")
-            .replace(/\s{2,}/g, " ")
-            .trim();
-        }
-
-        return "";
+        return noPrice || "";
       }
 
       function getCurrentVCoins() {
