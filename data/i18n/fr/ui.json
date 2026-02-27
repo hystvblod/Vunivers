@@ -5,7 +5,10 @@
   "common": {
     "continue": "Continuer",
     "cancel": "Annuler",
-    "close": "Fermer"
+    "close": "Fermer",
+    "back": "Retour",
+    "settings": "Paramètres",
+    "shop": "Boutique"
   },
   "auth": {
     "username": {
@@ -15,7 +18,7 @@
       "placeholder": "Ex: Lucifer_7",
       "cta": "Valider",
       "skip": "Plus tard",
-      "rules": "3 à 20 caractères • lettres/chiffres/_/-",
+      "rules": "3 à 20 caractères • lettres, chiffres, _ ou -",
       "errors": {
         "length": "Le pseudo doit faire entre 3 et 20 caractères.",
         "chars": "Utilise seulement des lettres, chiffres, _ ou -.",
@@ -25,20 +28,7 @@
     }
   },
   "ui": {
-    "universe_buy": {
-      "desc": "Cet univers est verrouillé. Tu peux le débloquer avec {price} VCoins, l’acheter directement, ou ouvrir la boutique.",
-      "pay_prefix": "Débloquer pour",
-      "pay_balance_inline": "Solde : {balance}",
-      "iap_direct": "Acheter cet univers {price}",
-      "open_shop": "Ouvrir la boutique",
-      "cancel": "Annuler",
-      "err_unlock": "Impossible de débloquer cet univers.",
-      "err_unlock_insufficient": "Tu n’as pas assez de VCoins. Solde : {balance} / Prix : {price}",
-      "err_app_only": "Achat Play Store disponible uniquement dans l’app.",
-      "err_not_ready": "Système d’achat non prêt.",
-      "err_buy_failed": "Achat annulé ou impossible.",
-      "err_unlock_after_buy": "Achat validé, mais déblocage impossible. Réessaie plus tard."
-    },
+    "symbol_help": "?",
     "language": "Langue",
     "subtitle": "Choisissez votre destin.",
     "subtitle_desc": "Incarnez un souverain, un président, un vampire ou un explorateur. Chaque choix influe sur vos jauges, votre monde et les générations suivantes.",
@@ -52,14 +42,6 @@
     "aria_shop": "Ouvrir la boutique",
     "aria_badge_modal": "Aperçu du badge",
     "aria_close": "Fermer",
-    "gauges": {
-      "hell_king": {
-        "souls": "Âmes",
-        "legions": "Légions",
-        "order": "Ordre",
-        "surface": "Surface"
-      }
-    },
     "settings_title": "Paramètres",
     "settings_lang_desc": "Choisis la langue. Elle est sauvegardée sur l’appareil et sur ton profil.",
     "settings_back_home_aria": "Retour à l’accueil",
@@ -86,7 +68,6 @@
       "ja": "Japonais",
       "id": "Indonésien"
     },
-
     "profile_title": "Profil",
     "profile_subtitle": "Vos stats et votre progression.",
     "profile_vcoins": "VCoins",
@@ -96,7 +77,7 @@
     "profile_username_placeholder": "Nouveau pseudo",
     "profile_username_save": "Enregistrer",
     "profile_username_cancel": "Annuler",
-    "profile_username_hint": "3 à 20 caractères. Lettres, chiffres et underscore uniquement. Le premier changement est gratuit, ensuite 1 jeton.",
+    "profile_username_hint": "3 à 20 caractères. Lettres, chiffres, _ ou -. Le pseudo doit être unique.",
     "profile_username_missing": "Pseudo manquant",
     "profile_username_err_format": "Format de pseudo invalide.",
     "profile_err_not_ready": "Profil non prêt.",
@@ -107,7 +88,30 @@
     "profile_username_err_generic": "Impossible de modifier le pseudo.",
     "profile_username_err_cost_failed": "Le pseudo a été modifié mais le coût n’a pas pu être débité.",
     "profile_username_ok_saved": "Pseudo mis à jour.",
-    "profile_scenarios_title": "Scénarios"
+    "profile_scenarios_title": "Scénarios",
+    "universe_buy": {
+      "desc": "Cet univers est verrouillé. Tu peux le débloquer avec {price} VCoins, l’acheter directement, ou ouvrir la boutique.",
+      "pay_prefix": "Débloquer pour",
+      "pay_balance_inline": "Solde : {balance}",
+      "iap_direct": "Acheter cet univers {price}",
+      "open_shop": "Ouvrir la boutique",
+      "cancel": "Annuler",
+      "err_unlock": "Impossible de débloquer cet univers.",
+      "err_unlock_insufficient": "Tu n’as pas assez de VCoins. Solde : {balance} / Prix : {price}",
+      "err_app_only": "Achat Play Store disponible uniquement dans l’app.",
+      "err_not_ready": "Système d’achat non prêt.",
+      "err_buy_failed": "Achat annulé ou impossible.",
+      "err_unlock_after_buy": "Achat validé, mais déblocage impossible. Réessaie plus tard.",
+      "err_unlock_after_iap": "Achat validé, mais déblocage impossible pour le moment. Réessaie depuis la boutique."
+    },
+    "gauges": {
+      "hell_king": {
+        "souls": "Âmes",
+        "legions": "Légions",
+        "order": "Ordre",
+        "surface": "Surface"
+      }
+    }
   },
   "gauges": {
     "hell_king": {
@@ -220,7 +224,7 @@
     "usernamePlaceholder": "Nouveau pseudo",
     "usernameSave": "Enregistrer",
     "usernameCancel": "Annuler",
-    "usernameHint": "3 à 20 caractères. Lettres, chiffres et underscore uniquement. Le premier changement est gratuit, ensuite 1 jeton.",
+    "usernameHint": "3 à 20 caractères. Lettres, chiffres, _ ou -. Le pseudo doit être unique.",
     "usernameMissing": "Pseudo manquant",
     "usernameErrFormat": "Format de pseudo invalide.",
     "errNotReady": "Profil non prêt.",
@@ -232,9 +236,19 @@
     "usernameErrCostFailed": "Le pseudo a été modifié mais le coût n’a pas pu être débité.",
     "usernameOkSaved": "Pseudo mis à jour.",
     "universesTitle": "Univers",
+    "scenariosTitle": "Scénarios",
+    "edit_username": "Modifier le pseudo",
+    "save_username": "Enregistrer",
+    "universes_title": "Univers",
+    "scenarios_title": "Scénarios",
+    "username_ok_nochange": "Aucun changement détecté.",
+    "username_ok_saved": "Pseudo mis à jour.",
     "badgeBronze": "Badge bronze",
     "badgeSilver": "Badge argent",
-    "badgeGold": "Badge or"
+    "badgeGold": "Badge or",
+    "badge_bronze_aria": "Agrandir le badge bronze",
+    "badge_silver_aria": "Agrandir le badge argent",
+    "badge_gold_aria": "Agrandir le badge or"
   },
   "shop": {
     "title": "Boutique",
@@ -312,23 +326,6 @@
     "vampire_lord": {
       "title": "Seigneur vampire",
       "desc": "Étends ton influence dans l’ombre. Trop de sang attire les chasseurs, trop de prudence affaiblit ton clan."
-    },
-
-    
-  "ui": {
-    "symbol_help": "?"
-  },
-
-  "ui.universe_buy.desc": "Cet univers est verrouillé.",
-  "ui.universe_buy.pay_prefix": "Débloquer avec",
-  "ui.universe_buy.pay_balance_inline": "Solde : {balance}",
-  "ui.universe_buy.iap_direct": "Débloquer au prix du store {price}",
-  "ui.universe_buy.open_shop": "Ouvrir la boutique",
-  "ui.universe_buy.err_unlock": "Impossible de débloquer cet univers.",
-  "ui.universe_buy.err_unlock_insufficient": "Pas assez de VCoins. Solde : {balance} / requis : {price}.",
-  "ui.universe_buy.err_app_only": "Cet achat est disponible uniquement dans l’application installée.",
-  "ui.universe_buy.err_not_ready": "Le système d’achat n’est pas prêt.",
-  "ui.universe_buy.err_buy_failed": "Achat annulé ou impossible.",
-  "ui.universe_buy.err_unlock_after_iap": "Achat validé, mais déblocage impossible pour le moment. Réessaie depuis la boutique."
-}
+    }
+  }
 }
