@@ -1,44 +1,19 @@
 // Vuniverse - userData.js
-// Local cache (localStorage) + Supabase (window.sb) en "source of truth" pour vcoins/jetons/univers débloqués.
-// - Auth anonyme au lancement (via window.bootstrapAuthAndProfile si dispo).
-// - Lecture profil via RPC secure_get_me()
-// - Écriture solde uniquement via RPC (secure_add_vcoins / secure_add_jetons / secure_spend_jetons / secure_reduce_vcoins_to)
-// - Username via RPC secure_set_username()
-// - Lang via RPC secure_set_lang()
-// - Univers via RPC secure_unlock_universe()
-//
-// ✅ Corrections "prod-safe" :
-// - Plus de logs visibles : aucun console.* par défaut (debug optionnel via window.__VR_DEBUG = true)
-// - queueRemote garde la chaîne sans casser, mais expose une erreur via event (debug-only)
-// - Ajout d'API async confirmées: addVcoinsAsync / addJetonsAsync / setVcoinsAsync (retourne solde confirmé)
-// - spendJetons : suppression du double refresh (1 seul refresh en fallback ou en fin si voulu)
-// - addVcoins/addJetons/setVcoins restent "fire-and-forget" pour l'UX (UI via event vr:profile)
-//
-// ✅ Fix anti-"flash UI" :
-// - On charge le cache local SANS émettre vr:profile
-// - On fait 1er refresh remote
-// - Puis on déverrouille l’UI et on émet UNE SEULE fois
-
 (function () {
   "use strict";
 
-  const VUserDataKey = "vrealms_user_data";
-  const LangStorageKey = "vrealms_lang";
+  const VUserDataKey = "vuniverse_user_data";
+  const VUserDataLegacyKey = "vrealms_user_data";
+  const LangStorageKey = "vuniverse_lang";
+  const LangStorageLegacyKey = "vrealms_lang";
 
-  // -----------------------------
-  // Anti "flash" : verrou UI
-  // -----------------------------
-  let _uiPaused = true;     // tant que true, on n’envoie pas vr:profile
-  let _pendingEmit = false; // si on a “raté” un emit, on le fera après
+  let _uiPaused = true;
+  let _pendingEmit = false;
 
-  // Debug DEV uniquement (aucun log en prod). Activer manuellement dans la console:
-  // window.__VR_DEBUG = true;
   function _isDebug() {
     try { return !!window.__VR_DEBUG; } catch (_) { return false; }
   }
 
-  // Remonte une erreur "silencieuse" : en prod => no-op.
-  // En debug => event + un champ mémoire consultable.
   const _errState = { last: null, ts: 0 };
   function _reportRemoteError(where, err) {
     try {
@@ -73,8 +48,9 @@
     vcoins: 0,
     jetons: 0,
     lang: "fr",
-    // Univers débloqués (cache local UX). Supabase = source de vérité.
     unlocked_universes: ["hell_king", "heaven_king"],
+    no_ads: false,
+    has_diamond: false,
     updated_at: Date.now(),
     last_sync_at: 0
   };
@@ -89,7 +65,7 @@
 
   function _readLocal() {
     try {
-      const raw = localStorage.getItem(VUserDataKey);
+      const raw = localStorage.getItem(VUserDataKey) || localStorage.getItem(VUserDataLegacyKey);
       if (!raw) return null;
       const o = _safeParse(raw);
       if (!o || typeof o !== "object") return null;
@@ -101,6 +77,7 @@
 
   function _writeLocal(obj) {
     try { localStorage.setItem(VUserDataKey, JSON.stringify(obj)); } catch (_) {}
+    try { localStorage.setItem(VUserDataLegacyKey, JSON.stringify(obj)); } catch (_) {}
   }
 
   function _persistLocal() {
@@ -111,13 +88,18 @@
         vcoins: _clampInt(_memState.vcoins || 0),
         jetons: _clampInt(_memState.jetons || 0),
         lang: (_memState.lang || "fr").toString(),
-        unlocked_universes: Array.isArray(_memState.unlocked_universes) ? _memState.unlocked_universes.slice(0) : ["hell_king","heaven_king"],
+        unlocked_universes: Array.isArray(_memState.unlocked_universes)
+          ? _memState.unlocked_universes.slice(0)
+          : ["hell_king", "heaven_king"],
+        no_ads: !!_memState.no_ads,
+        has_diamond: !!_memState.has_diamond,
         updated_at: Date.now(),
         last_sync_at: Number(_memState.last_sync_at || 0)
       });
     } catch (_) {}
 
     try { localStorage.setItem(LangStorageKey, (_memState.lang || "fr").toString()); } catch (_) {}
+    try { localStorage.setItem(LangStorageLegacyKey, (_memState.lang || "fr").toString()); } catch (_) {}
   }
 
   function _emitProfile() {
@@ -134,7 +116,9 @@
             jetons: _memState.jetons,
             unlocked_universes: Array.isArray(_memState.unlocked_universes)
               ? _memState.unlocked_universes.slice(0)
-              : ["hell_king", "heaven_king"]
+              : ["hell_king", "heaven_king"],
+            no_ads: !!_memState.no_ads,
+            has_diamond: !!_memState.has_diamond
           }
         })
       );
@@ -149,6 +133,8 @@
       jetons: 0,
       lang: "fr",
       unlocked_universes: ["hell_king", "heaven_king"],
+      no_ads: false,
+      has_diamond: false,
       updated_at: Date.now()
     };
   }
@@ -161,8 +147,9 @@
     _memState.vcoins = _clampInt(me.vcoins || 0);
     _memState.jetons = _clampInt(me.jetons || 0);
     _memState.lang = (me.lang || "fr").toString();
+    _memState.no_ads = !!me.no_ads;
+    _memState.has_diamond = !!me.has_diamond;
 
-    // ✅ Univers débloqués (si la colonne existe côté DB)
     if (Array.isArray(me.unlocked_universes)) {
       _memState.unlocked_universes = me.unlocked_universes.filter(Boolean).map(String);
     } else if (typeof me.unlocked_universes === "string" && me.unlocked_universes) {
@@ -179,7 +166,6 @@
     return true;
   }
 
-  // --------- Remote store (Supabase) ----------
   window.VRRemoteStore = window.VRRemoteStore || {
     enabled() {
       return !!(window.sb && window.sb.auth && typeof window.sb.rpc === "function");
@@ -320,7 +306,6 @@
       if (c <= 0) return null;
 
       try {
-        // ⚠️ Vérifie côté SQL que le param s'appelle bien p_delta
         const r = await sb.rpc("secure_spend_jetons", { p_delta: c });
         if (r?.error) {
           _reportRemoteError("rpc.secure_spend_jetons", r.error);
@@ -399,7 +384,6 @@
 
   const VUserData = {
     async init() {
-      // 1) Charge cache local mais SANS event UI (on évite le flash)
       const cached = _readLocal();
       if (cached) {
         this.save(cached, { silent: true });
@@ -407,7 +391,6 @@
         this.save(this.load(), { silent: true });
       }
 
-      // 2) Remote = source of truth
       if (window.VRRemoteStore?.enabled?.()) {
         await this.refresh().catch((e) => {
           _reportRemoteError("VUserData.init.refresh", e);
@@ -415,7 +398,6 @@
         });
       }
 
-      // 3) Maintenant seulement, on autorise l’UI et on émet 1 fois
       _uiPaused = false;
       if (_pendingEmit) { _pendingEmit = false; _emitProfile(); }
 
@@ -446,6 +428,8 @@
           unlocked_universes: Array.isArray(_memState.unlocked_universes)
             ? _memState.unlocked_universes.slice(0)
             : ["hell_king","heaven_king"],
+          no_ads: !!_memState.no_ads,
+          has_diamond: !!_memState.has_diamond,
           updated_at: Number(_memState.updated_at || Date.now())
         };
       } catch (_) {
@@ -453,7 +437,6 @@
       }
     },
 
-    // save(u, opts) : opts.silent = true => pas de vr:profile
     save(u, opts) {
       const silent = !!(opts && opts.silent);
       try {
@@ -463,6 +446,8 @@
         _memState.vcoins = _clampInt(typeof data.vcoins !== "undefined" ? data.vcoins : _memState.vcoins);
         _memState.jetons = _clampInt(typeof data.jetons !== "undefined" ? data.jetons : _memState.jetons);
         _memState.lang = (data.lang || _memState.lang || "fr").toString();
+        _memState.no_ads = !!(typeof data.no_ads !== "undefined" ? data.no_ads : _memState.no_ads);
+        _memState.has_diamond = !!(typeof data.has_diamond !== "undefined" ? data.has_diamond : _memState.has_diamond);
 
         if (Array.isArray(data.unlocked_universes)) {
           _memState.unlocked_universes = data.unlocked_universes.filter(Boolean).map(String);
@@ -477,12 +462,23 @@
       } catch (_) {}
     },
 
-    // Debug access (devtools uniquement)
     getLastRemoteError() {
       return _isDebug() ? (_errState.last ? { ..._errState.last } : null) : null;
     },
 
     getUnlockedUniverses() {
+      if (this.hasDiamond()) {
+        return [
+          "hell_king",
+          "heaven_king",
+          "western_president",
+          "mega_corp_ceo",
+          "new_world_explorer",
+          "vampire_lord",
+          "medieval_king"
+        ];
+      }
+
       const u = this.load();
       const arr = Array.isArray(u.unlocked_universes) ? u.unlocked_universes : null;
       if (arr && arr.length) return arr.filter(Boolean).map(String);
@@ -492,6 +488,7 @@
     isUniverseUnlocked(universeId) {
       const id = (universeId || "").toString();
       if (!id) return false;
+      if (this.hasDiamond()) return true;
       const set = new Set(this.getUnlockedUniverses());
       return set.has(id);
     },
@@ -501,7 +498,6 @@
       if (!id) return { ok: false, reason: "invalid_universe" };
 
       if (this.isUniverseUnlocked(id)) return { ok: true, reason: "already", data: this.load() };
-
       if (!window.VRRemoteStore?.enabled?.()) return { ok: false, reason: "no_remote" };
 
       const res = await window.VRRemoteStore.unlockUniverse(id);
@@ -517,7 +513,9 @@
           vcoins: (typeof me.vcoins !== "undefined") ? me.vcoins : cur.vcoins,
           jetons: (typeof me.jetons !== "undefined") ? me.jetons : cur.jetons,
           lang: (me.lang || cur.lang || "fr").toString(),
-          unlocked_universes: Array.isArray(me.unlocked_universes) ? me.unlocked_universes : cur.unlocked_universes
+          unlocked_universes: Array.isArray(me.unlocked_universes) ? me.unlocked_universes : cur.unlocked_universes,
+          no_ads: (typeof me.no_ads !== "undefined") ? !!me.no_ads : cur.no_ads,
+          has_diamond: (typeof me.has_diamond !== "undefined") ? !!me.has_diamond : cur.has_diamond
         });
       } else {
         await this.refresh().catch(() => false);
@@ -528,6 +526,10 @@
     getUsername() { return (this.load().username || "").toString(); },
     getUserId() { return (this.load().user_id || "").toString(); },
     getLang() { return (this.load().lang || "fr").toString(); },
+    getVcoins() { return Number(this.load().vcoins || 0); },
+    getJetons() { return Number(this.load().jetons || 0); },
+    hasDiamond() { return !!this.load().has_diamond; },
+    hasNoAds() { return !!this.load().no_ads; },
 
     async setUsername(username) {
       const name = (username || "").toString().trim();
@@ -560,12 +562,6 @@
       return l;
     },
 
-    getVcoins() { return Number(this.load().vcoins || 0); },
-    getJetons() { return Number(this.load().jetons || 0); },
-
-    // -----------------------------
-    // Fire-and-forget (UX)
-    // -----------------------------
     addVcoins(delta) {
       const d = Math.floor(Number(delta || 0));
       if (d <= 0) return this.getVcoins();
@@ -584,7 +580,6 @@
         return true;
       }, "VUserData.addVcoins");
 
-      // Retour immédiat (valeur actuelle). La UI doit écouter vr:profile.
       return this.getVcoins();
     },
 
@@ -629,9 +624,6 @@
       return this.getJetons();
     },
 
-    // -----------------------------
-    // Async confirmées (studio)
-    // -----------------------------
     async addVcoinsAsync(delta) {
       const d = Math.floor(Number(delta || 0));
       if (d <= 0) return this.getVcoins();
@@ -694,19 +686,14 @@
       return (typeof out === "number" && !Number.isNaN(out)) ? out : this.getVcoins();
     },
 
-    // -----------------------------
-    // Spend jetons (sync, confirmé)
-    // -----------------------------
     async spendJetons(cost) {
       const c = Math.floor(Number(cost || 0));
       if (c <= 0) return false;
       if (!window.VRRemoteStore?.enabled?.()) return false;
 
-      // Ici on attend le RPC : c'est un "achat", donc confirmé.
       const newBal = await window.VRRemoteStore.spendJetons(c);
 
       if (typeof newBal !== "number" || Number.isNaN(newBal)) {
-        // fallback: resync si RPC fail
         await this.refresh().catch(() => false);
         return false;
       }
@@ -716,7 +703,6 @@
       _emitProfile();
       _persistLocal();
 
-      // ✅ Pas de double refresh. Si tu veux reconfirmer, fais-le côté appelant.
       return true;
     }
   };

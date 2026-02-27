@@ -26,11 +26,14 @@
   },
   "ui": {
     "universe_buy": {
-      "desc": "Cet univers est verrouillé. Tu peux le débloquer avec {price} VCoins, ou acheter 300 VCoins sur le store.",
-      "pay": "Débloquer pour {price} VCoins",
-      "iap": "Acheter 300 VCoins",
+      "desc": "Cet univers est verrouillé. Tu peux le débloquer avec {price} VCoins, l’acheter directement, ou ouvrir la boutique.",
+      "pay_prefix": "Débloquer pour",
+      "pay_balance_inline": "Solde : {balance}",
+      "iap_direct": "Acheter cet univers {price}",
+      "open_shop": "Ouvrir la boutique",
       "cancel": "Annuler",
       "err_unlock": "Impossible de débloquer cet univers.",
+      "err_unlock_insufficient": "Tu n’as pas assez de VCoins. Solde : {balance} / Prix : {price}",
       "err_app_only": "Achat Play Store disponible uniquement dans l’app.",
       "err_not_ready": "Système d’achat non prêt.",
       "err_buy_failed": "Achat annulé ou impossible.",
@@ -44,13 +47,11 @@
     "profile": "Profil",
     "settings": "Paramètres",
     "shop": "Boutique",
-
     "aria_back": "Retour",
     "aria_settings": "Ouvrir les paramètres",
     "aria_shop": "Ouvrir la boutique",
     "aria_badge_modal": "Aperçu du badge",
     "aria_close": "Fermer",
-
     "gauges": {
       "hell_king": {
         "souls": "Âmes",
@@ -59,25 +60,20 @@
         "surface": "Surface"
       }
     },
-
     "settings_title": "Paramètres",
     "settings_lang_desc": "Choisis la langue. Elle est sauvegardée sur l’appareil et sur ton profil.",
     "settings_back_home_aria": "Retour à l’accueil",
     "settings_open_profile_aria": "Ouvrir le profil",
     "settings_choose_lang_aria": "Choisir la langue : {code}",
-
     "settings_ads_title": "Publicités",
     "settings_ads_personalized_label": "Publicités personnalisées",
     "settings_ads_personalized_desc": "Autoriser des publicités plus pertinentes. Tu peux changer à tout moment.",
     "settings_ads_saved": "Préférence publicitaire enregistrée.",
-
     "settings_help_title": "Aide",
     "settings_help_email_label": "Contact :",
     "settings_help_email": "help.vboldstudio@gmail.com",
-
     "settings_msg_saved": "Langue enregistrée.",
     "settings_msg_saved_local": "Langue enregistrée sur l’appareil. Synchronisation serveur plus tard.",
-
     "lang_name": {
       "en": "Anglais",
       "fr": "Français",
@@ -222,33 +218,28 @@
     "title": "Boutique",
     "subtitle": "Dépenser vos VCoins",
     "soon": "Bientôt disponible",
-
     "rewarded_title": "Récompenses",
     "rewarded_desc": "Regarde une pub pour obtenir une petite récompense.",
-
     "reward_title": "Récompenses",
     "reward_desc": "Regarde une pub pour obtenir une petite récompense.",
-
     "get_jeton": "Obtenir +1 jeton",
     "get_1_jeton": "Obtenir +1 jeton",
     "get_200_coins": "Obtenir 200 pièces",
     "get_300_coins": "Obtenir +300 pièces",
-
     "noads_title": "No Pub",
     "noads_desc": "Désactive les interstitiels. Les pubs récompensées restent disponibles.",
     "noads_buy": "Activer No Pub",
-
     "coins_title": "Pièces",
     "coins_desc": "Achète des pièces pour débloquer plus vite.",
-    "coins_300": "+300 pièces",
-    "coins_500": "+500 pièces",
+    "coins_1200": "+1200 pièces",
     "coins_3000": "+3000 pièces",
-
     "jetons_title": "Jetons",
     "jetons_desc": "Les jetons donnent accès aux actions spéciales.",
-    "jetons_5": "+5 jetons",
     "jetons_12": "+12 jetons",
-    "jetons_50": "+50 jetons"
+    "jetons_30": "+30 jetons",
+    "diamond_title": "Diamond",
+    "diamond_desc": "No Pub + tous les univers actuels débloqués. Les futurs univers peuvent aussi être inclus si ton backend active l’accès Diamond.",
+    "diamond_buy": "Activer Diamond"
   },
   "settings": {
     "title": "Paramètres",
@@ -256,23 +247,18 @@
     "sound": "Son",
     "music": "Musique",
     "notifications": "Notifications",
-
     "language": "Langue",
     "language_hint": "Choisis la langue. Elle est sauvegardée sur l’appareil et sur ton profil.",
-
     "back_home_aria": "Retour à l’accueil",
     "open_profile_aria": "Ouvrir le profil",
     "choose_lang_aria": "Choisir la langue : {code}",
-
     "ads_title": "Publicités",
     "ads_personalized_label": "Publicités personnalisées",
     "ads_personalized_desc": "Autoriser des publicités plus pertinentes. Tu peux changer à tout moment.",
     "ads_saved": "Préférence publicitaire enregistrée.",
-
     "help_title": "Aide",
     "help_email_label": "Contact :",
     "help_email": "help.vboldstudio@gmail.com",
-
     "msg_saved": "Langue enregistrée.",
     "msg_saved_local": "Langue enregistrée sur l’appareil. Synchronisation serveur plus tard."
   },
