@@ -7,12 +7,82 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
+    :root{
+      --vr-bg: radial-gradient(circle at top, #f6e7cf 0, #1b6688 62%, #03279e 100%);
+      --vr-overlay: none;
+    }
+
+    /* =========================
+       TOPBAR (copié du settings qui marche)
+    ========================= */
+    .vr-header{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display:block !important;
+    }
+
+    .vr-top-actions{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding: calc(10px + env(safe-area-inset-top)) 12px 8px;
+    }
+
+    .vr-top-slot{
+      flex:1 1 0;
+      display:flex;
+      align-items:center;
+    }
+
+    .vr-top-left{ justify-content:flex-start; }
+    .vr-top-center{ justify-content:center; }
+    .vr-top-right{ justify-content:flex-end; }
+
+    .vr-icon-button{
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.26);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+      padding:0;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      text-decoration:none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .vr-icon-button:active{ transform: scale(.98); }
+
+    .vr-icon-button img{
+      width:30px;
+      height:30px;
+      object-fit:contain;
+      display:block;
+      pointer-events:none;
+      user-select:none;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.65)) contrast(1.15) brightness(1.08);
+    }
+
+    .vr-back-ico{
+      width:24px;
+      height:24px;
+      display:block;
+      opacity:.98;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.65));
+    }
+
     /* =========================
        SHOP — Fix layout (IN-HTML)
        Objectif: mêmes cards que "Pièces" / pas d'icônes géantes
     ========================= */
-
-    .vr-header{ display:block !important; }
 
     /* grid 2 colonnes */
     .vr-shop-grid{
@@ -104,26 +174,33 @@
       max-width: 100%;
       height: auto;
     }
+    /* No Ads + Diamond: image seule centrée */
+.vr-shop-item[data-sku="vrealms_no_ads"] .vr-shop-top,
+.vr-shop-item[data-sku="vrealms_diamond"] .vr-shop-top{
+  justify-content: center;
+}
   </style>
 </head>
 
-<body class="vr-body" data-page="shop">
+<body class="vr-body page-shop" data-page="shop">
 
-  <!-- ✅ HEADER complet : retour index + profil -->
+  <!-- ✅ HEADER complet : retour index + profil (version fiable: SVG + IMG) -->
   <header class="vr-header" aria-label="" data-i18n-aria="shop.aria_top">
     <div class="vr-top-actions">
       <div class="vr-top-slot vr-top-left">
-        <button class="vr-icon-button" type="button" id="btn-back" aria-label="" data-i18n-aria="common.back">
-          <span class="vr-icon-image vr-icon-back" aria-hidden="true"></span>
-        </button>
+        <a id="btn-back" class="vr-icon-button" href="index.html" aria-label="" data-i18n-aria="common.back">
+          <svg class="vr-back-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="white" d="M15.5 5.5a1 1 0 0 1 0 1.4L10.4 12l5.1 5.1a1 1 0 1 1-1.4 1.4l-5.8-5.8a1.2 1.2 0 0 1 0-1.4l5.8-5.8a1 1 0 0 1 1.4 0z"/>
+          </svg>
+        </a>
       </div>
 
       <div class="vr-top-slot vr-top-center"></div>
 
       <div class="vr-top-slot vr-top-right">
-        <button class="vr-icon-button" type="button" id="btn-profile" aria-label="" data-i18n-aria="shop.aria_profile">
-          <span class="vr-icon-image vr-icon-profile" aria-hidden="true"></span>
-        </button>
+        <a id="btn-profile" class="vr-icon-button" href="profile.html" aria-label="" data-i18n-aria="shop.aria_profile">
+          <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
+        </a>
       </div>
     </div>
   </header>
@@ -193,7 +270,7 @@
               </button>
             </div>
 
-            <!-- VCoins 500 (slot indisponible si ton purchases ne gère pas) -->
+            <!-- VCoins 500 -->
             <div class="vr-shop-item" data-sku="vrealms_vcoins_500">
               <div class="vr-shop-top">
                 <img class="vr-shop-icon" src="assets/img/ui/vcoins.webp" alt="" draggable="false">
@@ -219,7 +296,7 @@
             <div class="vr-shop-item" data-sku="vrealms_no_ads">
               <div class="vr-shop-top">
                 <img class="vr-shop-icon" src="assets/img/ui/noads.webp" alt="" draggable="false">
-                <div class="vr-shop-qty" data-i18n="shop.pack_no_ads"></div>
+                
               </div>
               <button class="vr-choice-button vr-iap-button" type="button" data-iap="vrealms_no_ads">
                 <span class="vr-iap-label" data-i18n="shop.loading"></span>
@@ -230,7 +307,7 @@
             <div class="vr-shop-item" data-sku="vrealms_diamond">
               <div class="vr-shop-top">
                 <img class="vr-shop-icon" src="assets/img/ui/diamond.webp" alt="" draggable="false">
-                <div class="vr-shop-qty" data-i18n="shop.pack_diamond"></div>
+           
               </div>
               <button class="vr-choice-button vr-iap-button" type="button" data-iap="vrealms_diamond">
                 <span class="vr-iap-label" data-i18n="shop.loading"></span>
@@ -279,28 +356,6 @@
   <script src="js/userData.js"></script>
   <script src="js/ads.js"></script>
   <script src="js/purchases.js"></script>
-
-  <!-- ✅ mini nav shop (comme tes autres pages) -->
-  <script>
-    (function(){
-      function $(id){ return document.getElementById(id); }
-      document.addEventListener("DOMContentLoaded", function(){
-        const back = $("btn-back");
-        const profile = $("btn-profile");
-
-        if (back){
-          back.addEventListener("click", function(){
-            window.location.href = "index.html";
-          });
-        }
-        if (profile){
-          profile.addEventListener("click", function(){
-            window.location.href = "profile.html";
-          });
-        }
-      });
-    })();
-  </script>
 
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
