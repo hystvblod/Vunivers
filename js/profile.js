@@ -1,4 +1,4 @@
-(function () {
+(function(){
   "use strict";
 
   const ENDINGS_CACHE_KEY = "vchoice_endings_cache_v1";
@@ -14,32 +14,20 @@
     "temple_mictlan"
   ];
 
-  function $(id) {
-    return document.getElementById(id);
-  }
+  function $(id){ return document.getElementById(id); }
+  function safeParse(raw){ try { return JSON.parse(raw); } catch (_) { return null; } }
+  function now(){ return Date.now(); }
+  function norm(x){ return String(x || "").trim().toLowerCase(); }
 
-  function safeParse(raw) {
-    try { return JSON.parse(raw); }
-    catch (_) { return null; }
-  }
-
-  function now() {
-    return Date.now();
-  }
-
-  function norm(x) {
-    return String(x || "").trim().toLowerCase();
-  }
-
-  function t(key) {
-    try {
-      const out = window.VRI18n?.t?.(key);
-      if (out && out !== key) return String(out);
-    } catch (_) {}
+  function t(key, vars){
+    try{
+      const out = window.VRI18n?.t?.(key, "", vars);
+      if (typeof out === "string") return out;
+    }catch(_){}
     return "";
   }
 
-  function applyI18n(root) {
+  function applyI18n(root){
     const scope = root || document;
 
     scope.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -60,36 +48,33 @@
       if (txt) el.setAttribute("aria-label", txt);
     });
 
-    const title = t("ui.profile_title");
-    if (title) document.title = title;
+    document.title = t("ui.profile_title");
   }
 
-  function readEndingsCache() {
+  function readEndingsCache(){
     const raw = localStorage.getItem(ENDINGS_CACHE_KEY);
-    const obj = safeParse(raw);
-
-    if (!obj || typeof obj !== "object") return null;
-    if (!obj.user_id) return null;
-    if (!obj.map || typeof obj.map !== "object") return null;
-
-    return obj;
+    const o = safeParse(raw);
+    if (!o || typeof o !== "object") return null;
+    if (!o.user_id) return null;
+    if (!o.map || typeof o.map !== "object") return null;
+    return o;
   }
 
-  function writeEndingsCache(userId, map) {
-    try {
+  function writeEndingsCache(userId, map){
+    try{
       localStorage.setItem(ENDINGS_CACHE_KEY, JSON.stringify({
         user_id: String(userId || ""),
         ts: now(),
         map: map || {}
       }));
-    } catch (_) {}
+    }catch(_){}
   }
 
-  function endingsJsonToMap(endings) {
+  function endingsJsonToMap(endings){
     const map = {};
     if (!endings || typeof endings !== "object") return map;
 
-    for (const key of Object.keys(endings)) {
+    for (const key of Object.keys(endings)){
       const sid = norm(key);
       if (!sid) continue;
 
@@ -104,17 +89,17 @@
     return map;
   }
 
-  async function fetchEndingsFromProfiles() {
+  async function fetchEndingsFromProfiles(){
     const st0 = window.VUserData?.load?.() || {};
     const uid0 = String(st0.user_id || "");
     const map0 = endingsJsonToMap(st0.endings);
 
-    if (uid0 && Object.keys(map0).length > 0) {
+    if (uid0 && Object.keys(map0).length > 0){
       return { uid: uid0, map: map0 };
     }
 
-    if (uid0 && window.VUserData?.refresh) {
-      try { await window.VUserData.refresh(); } catch (_) {}
+    if (uid0 && window.VUserData?.refresh){
+      try{ await window.VUserData.refresh(); }catch(_){}
       const st1 = window.VUserData?.load?.() || {};
       const uid1 = String(st1.user_id || uid0);
       const map1 = endingsJsonToMap(st1.endings);
@@ -124,7 +109,7 @@
     return { uid: uid0, map: map0 };
   }
 
-  function endingIconPaths() {
+  function endingIconPaths(){
     return {
       good: {
         empty: "assets/img/ui/ending_good_empty.webp",
@@ -141,7 +126,7 @@
     };
   }
 
-  function renderScenarios(ids, unlockedList, endingsMap) {
+  function renderScenarios(ids, unlockedList, endingsMap){
     const host = $("pf_scenarios");
     if (!host) return;
 
@@ -150,13 +135,13 @@
     const unlocked = new Set((unlockedList || []).map(norm).filter(Boolean));
     const icons = endingIconPaths();
 
-    for (const rawId of ids || []) {
+    for (const rawId of (ids || [])){
       const id = String(rawId || "").trim();
       if (!id) continue;
 
       const sid = norm(id);
       const isUnlocked = unlocked.has(sid);
-      const endings = endingsMap?.[sid] || { good: false, bad: false, secret: false };
+      const st = endingsMap?.[sid] || { good:false, bad:false, secret:false };
 
       const card = document.createElement("div");
       card.className = "vcp-scen-card" + (isUnlocked ? "" : " is-locked");
@@ -169,17 +154,16 @@
       name.setAttribute("data-i18n", `scenarios.${id}.title`);
       inner.appendChild(name);
 
-      const badgeRow = document.createElement("div");
-      badgeRow.className = "vcp-scen-ends";
+      const ends = document.createElement("div");
+      ends.className = "vcp-scen-ends";
 
-      for (const key of ["good", "bad", "secret"]) {
-        const earned = !!endings[key];
+      for (const key of ["good","bad","secret"]){
+        const done = !!st[key];
 
         const button = document.createElement("button");
         button.type = "button";
-        button.className = "vcp-badge " + (earned ? "is-earned" : "is-locked");
-        button.setAttribute("data-type", key);
-        button.setAttribute("data-earned", earned ? "1" : "0");
+        button.className = "vcp-badge" + (done ? " is-earned" : "");
+        button.setAttribute("data-earned", done ? "1" : "0");
         button.setAttribute("data-src-empty", icons[key].empty);
         button.setAttribute("data-src-full", icons[key].full);
 
@@ -197,10 +181,10 @@
 
         button.appendChild(imgEmpty);
         button.appendChild(imgFull);
-        badgeRow.appendChild(button);
+        ends.appendChild(button);
       }
 
-      inner.appendChild(badgeRow);
+      inner.appendChild(ends);
       card.appendChild(inner);
       host.appendChild(card);
     }
@@ -208,74 +192,65 @@
     applyI18n(host);
   }
 
-  function setMsg(type, key) {
+  function setMsg(type, key, vars){
     const el = $("pf_msg");
     if (!el) return;
 
-    el.classList.remove("ok", "err");
+    el.classList.remove("ok","err");
 
-    if (!key) {
-      el.textContent = "";
-      el.style.display = "none";
-      return;
-    }
+    const txt = key ? t(key, vars) : "";
+    el.textContent = txt;
+    el.style.display = txt ? "block" : "none";
 
+    if (!txt) return;
     el.classList.add(type === "ok" ? "ok" : "err");
-    el.textContent = t(key);
-    el.style.display = el.textContent ? "block" : "none";
   }
 
-  function isValidUsername(u) {
+  function isValidUsername(u){
     const s = String(u || "").trim();
     if (s.length < 3 || s.length > 20) return false;
     return /^[a-zA-Z0-9_]+$/.test(s);
   }
 
-  function genRandomUsername() {
+  function genRandomUsername(){
     const n = Math.floor(1000 + Math.random() * 9000);
     return `User_${n}`;
   }
 
-  async function ensureDefaultUsernameIfMissing() {
+  async function ensureDefaultUsernameIfMissing(){
     const st = window.VUserData?.load?.() || {};
     const uid = String(st.user_id || "");
     const cur = String(st.username || "").trim();
 
     if (!uid || cur) return;
 
-    const textEl = $("pf_username_text");
-    if (textEl) {
-      textEl.textContent = t("ui.profile_username_missing") || "—";
-    }
-
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 8; i++){
       const candidate = genRandomUsername();
-      const res = await window.VCRemoteStore?.setUsername?.(candidate);
+      const r = await window.VCRemoteStore?.setUsername?.(candidate);
 
-      if (res === undefined) return;
+      if (r === undefined) return;
 
-      if (res && res.ok) {
-        try { await window.VUserData?.refresh?.(); } catch (_) {}
+      if (r && r.ok){
+        try{ await window.VUserData?.refresh?.(); }catch(_){}
         return;
       }
     }
   }
 
-  function openEdit(open) {
+  function openEdit(open){
     const wrap = $("pf_edit_wrap");
     if (!wrap) return;
-
     if (open) wrap.classList.add("is-open");
     else wrap.classList.remove("is-open");
   }
 
-  async function handleSaveUsername() {
+  async function handleSaveUsername(){
     const inp = $("pf_username_input");
     if (!inp) return;
 
     const next = String(inp.value || "").trim();
 
-    if (!isValidUsername(next)) {
+    if (!isValidUsername(next)){
       setMsg("err", "ui.profile_username_err_format");
       return;
     }
@@ -284,12 +259,12 @@
     const cur = String(curState.username || "").trim();
     const uid = String(curState.user_id || "");
 
-    if (!uid) {
+    if (!uid){
       setMsg("err", "ui.profile_err_not_ready");
       return;
     }
 
-    if (cur === next) {
+    if (cur === next){
       setMsg("ok", "ui.profile_username_ok_nochange");
       openEdit(false);
       return;
@@ -299,9 +274,9 @@
     const alreadyChanged = localStorage.getItem(flagKey) === "1";
     const needCost = !!alreadyChanged;
 
-    if (needCost) {
+    if (needCost){
       const jet = Number((window.VUserData?.load?.() || {}).jetons ?? 0);
-      if (jet < 1) {
+      if (jet < 1){
         setMsg("err", "ui.profile_username_err_nojeton");
         return;
       }
@@ -312,27 +287,26 @@
 
     setMsg("ok", "ui.profile_username_working");
 
-    try {
-      const res = await window.VCRemoteStore?.setUsername?.(next);
+    try{
+      const r = await window.VCRemoteStore?.setUsername?.(next);
 
-      if (!res || !res.ok) {
-        const reason = res?.reason || "rpc_error";
+      if (!r || !r.ok){
+        const reason = r?.reason || "rpc_error";
         if (reason === "taken") setMsg("err", "ui.profile_username_err_taken");
         else setMsg("err", "ui.profile_username_err_generic");
         return;
       }
 
-      if (needCost) {
+      if (needCost){
         const spent = await window.VCRemoteStore?.spendJetons?.(1);
-        if (spent === null || spent === false) {
+        if (spent === null || spent === false){
           setMsg("err", "ui.profile_username_err_cost_failed");
         }
       } else {
-        try { localStorage.setItem(flagKey, "1"); } catch (_) {}
+        try{ localStorage.setItem(flagKey, "1"); }catch(_){}
       }
 
-      try { await window.VUserData?.refresh?.(); } catch (_) {}
-
+      try{ await window.VUserData?.refresh?.(); }catch(_){}
       setMsg("ok", "ui.profile_username_ok_saved");
       openEdit(false);
     } finally {
@@ -340,22 +314,22 @@
     }
   }
 
-  function renderProfileFromState() {
+  function renderProfileFromState(){
     const st = window.VUserData?.load?.() || {};
     const jet = Number(st.jetons ?? 0);
     const vc = Number(st.vcoins ?? 0);
-    const username = String(st.username || "").trim();
+    const un = String(st.username || "").trim();
 
     const jetEl = $("pf_jetons");
     const vcEl = $("pf_vcoins");
-    const userEl = $("pf_username_text");
+    const textEl = $("pf_username_text");
 
     if (jetEl) jetEl.textContent = String(jet);
     if (vcEl) vcEl.textContent = String(vc);
-    if (userEl) userEl.textContent = username || (t("ui.profile_username_missing") || "—");
+    if (textEl) textEl.textContent = un || t("ui.profile_username_missing");
   }
 
-  function bindBadgeModal() {
+  function bindBadgeModal(){
     const grid = $("pf_scenarios");
     const modal = $("badgeModal");
     const modalImg = $("badgeModalImg");
@@ -366,7 +340,7 @@
 
     let lastFocus = null;
 
-    function openModal(src) {
+    function openModal(src){
       if (!src) return;
 
       lastFocus = document.activeElement || null;
@@ -374,26 +348,26 @@
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
 
-      try { btnClose.focus({ preventScroll: true }); } catch (_) {}
-      try { document.documentElement.style.overflow = "hidden"; } catch (_) {}
-      try { document.body.style.overflow = "hidden"; } catch (_) {}
+      try{ btnClose.focus({ preventScroll:true }); }catch(_){}
+      try{ document.documentElement.style.overflow = "hidden"; }catch(_){}
+      try{ document.body.style.overflow = "hidden"; }catch(_){}
     }
 
-    function closeModal() {
+    function closeModal(){
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden", "true");
       modalImg.removeAttribute("src");
 
-      try { document.documentElement.style.overflow = ""; } catch (_) {}
-      try { document.body.style.overflow = ""; } catch (_) {}
+      try{ document.documentElement.style.overflow = ""; }catch(_){}
+      try{ document.body.style.overflow = ""; }catch(_){}
 
-      if (lastFocus && typeof lastFocus.focus === "function") {
-        try { lastFocus.focus({ preventScroll: true }); } catch (_) {}
+      if (lastFocus && typeof lastFocus.focus === "function"){
+        try{ lastFocus.focus({ preventScroll:true }); }catch(_){}
       }
       lastFocus = null;
     }
 
-    grid.addEventListener("click", function (e) {
+    grid.addEventListener("click", function(e){
       const badge = e.target?.closest?.(".vcp-badge");
       if (!badge) return;
 
@@ -409,26 +383,26 @@
       openModal(src);
     }, true);
 
-    btnClose.addEventListener("click", function (e) {
+    btnClose.addEventListener("click", function(e){
       e.preventDefault();
       closeModal();
     });
 
-    backdrop.addEventListener("click", function (e) {
+    backdrop.addEventListener("click", function(e){
       e.preventDefault();
       closeModal();
     });
 
-    window.addEventListener("keydown", function (e) {
+    window.addEventListener("keydown", function(e){
       if (!modal.classList.contains("is-open")) return;
-      if (e.key === "Escape" || e.key === "Esc") {
+      if (e.key === "Escape" || e.key === "Esc"){
         e.preventDefault();
         closeModal();
       }
     });
   }
 
-  async function refreshEndingsOnce() {
+  async function refreshEndingsOnce(){
     const st = window.VUserData?.load?.() || {};
     const uid = String(st.user_id || "");
     const unlocked = window.VUserData?.getUnlockedScenarios?.() || [];
@@ -437,27 +411,26 @@
     const cache = readEndingsCache();
     const cacheOk = !!(cache && cache.user_id === uid && cache.map);
 
-    if (cacheOk) {
+    if (cacheOk){
       renderScenarios(ids, unlocked, cache.map || {});
       return;
     }
 
-    if (!uid) {
-      if (cache?.map) {
+    if (!uid){
+      if (cache?.map){
         renderScenarios(ids, unlocked, cache.map || {});
         return;
       }
-
       renderScenarios(ids, unlocked, {});
       return;
     }
 
-    try {
-      const res = await fetchEndingsFromProfiles();
-      const endingsMap = res?.map || {};
+    try{
+      const r = await fetchEndingsFromProfiles();
+      const endingsMap = r?.map || {};
       writeEndingsCache(uid, endingsMap);
       renderScenarios(ids, unlocked, endingsMap);
-    } catch (e) {
+    }catch(e){
       console.error("[fetchEndingsFromProfiles]", e);
       renderScenarios(ids, unlocked, {});
     }
@@ -465,46 +438,43 @@
 
   let refreshEndingsRunning = false;
 
-  async function refreshEndingsSafe() {
+  async function refreshEndingsSafe(){
     if (refreshEndingsRunning) return;
     refreshEndingsRunning = true;
-
-    try {
+    try{
       await refreshEndingsOnce();
     } finally {
       refreshEndingsRunning = false;
     }
   }
 
-  async function boot() {
-    try {
+  async function boot(){
+    try{
       const langEarly = window.VRI18n?.getLang?.() || "fr";
       await window.VRI18n?.initI18n?.(langEarly);
-    } catch (e) {
+    }catch(e){
       console.error("[i18n]", e);
     }
 
-    try {
+    try{
       await window.bootstrapAuthAndProfile?.();
-    } catch (e) {
+    }catch(e){
       console.error("[bootstrapAuthAndProfile]", e);
     }
 
-    try {
-      const initPromise = window.VUserData?.init?.();
-      if (initPromise && typeof initPromise.then === "function") {
-        await initPromise;
-      }
-    } catch (e) {
+    try{
+      const p = window.VUserData?.init?.();
+      if (p && typeof p.then === "function") await p;
+    }catch(e){
       console.error("[VUserData.init]", e);
     }
 
     applyI18n(document);
     renderProfileFromState();
 
-    try {
+    try{
       await ensureDefaultUsernameIfMissing();
-    } catch (e) {
+    }catch(e){
       console.error("[ensureDefaultUsernameIfMissing]", e);
     }
 
@@ -515,54 +485,54 @@
     const cancel = $("pf_cancel");
     const save = $("pf_save");
 
-    if (toggle) {
-      toggle.addEventListener("click", function () {
+    if (toggle){
+      toggle.addEventListener("click", function(){
         const wrap = $("pf_edit_wrap");
-        const willOpen = !(wrap && wrap.classList.contains("is-open"));
-        openEdit(willOpen);
+        const open = !(wrap && wrap.classList.contains("is-open"));
+        openEdit(open);
 
         const st = window.VUserData?.load?.() || {};
         const cur = String(st.username || "").trim();
         const inp = $("pf_username_input");
 
-        if (willOpen && inp) {
+        if (open && inp){
           inp.value = cur || "";
-          try { inp.focus(); } catch (_) {}
+          try{ inp.focus(); }catch(_){}
         }
       });
     }
 
-    if (cancel) {
-      cancel.addEventListener("click", function () {
+    if (cancel){
+      cancel.addEventListener("click", function(){
         setMsg("ok", "");
         openEdit(false);
       });
     }
 
-    if (save) {
+    if (save){
       save.addEventListener("click", handleSaveUsername);
     }
 
     bindBadgeModal();
 
-    window.addEventListener("vc:profile", function () {
+    window.addEventListener("vc:profile", function(){
       applyI18n(document);
       renderProfileFromState();
       refreshEndingsSafe();
     });
 
-    window.addEventListener("vc:endings_updated", function () {
+    window.addEventListener("vc:endings_updated", function(){
       refreshEndingsSafe();
     });
 
-    window.addEventListener("pageshow", function () {
+    window.addEventListener("pageshow", function(){
       applyI18n(document);
       renderProfileFromState();
       refreshEndingsSafe();
     });
 
-    document.addEventListener("visibilitychange", function () {
-      if (document.visibilityState === "visible") {
+    document.addEventListener("visibilitychange", function(){
+      if (document.visibilityState === "visible"){
         applyI18n(document);
         renderProfileFromState();
         refreshEndingsSafe();
