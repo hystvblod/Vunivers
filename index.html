@@ -710,26 +710,14 @@
         lsSet(LEGACY_PREFIX + "_shop_focus_universe", universeId);
       }
 
-      function isFreeUniverse(id) {
-        return (id === "hell_king" || id === "heaven_king");
-      }
-
       function isUnlocked(id) {
-        if (isFreeUniverse(id)) return true;
-
         try {
           if (window.VUserData && typeof window.VUserData.isUniverseUnlocked === "function") {
             return !!window.VUserData.isUniverseUnlocked(id);
           }
         } catch (_) {}
 
-        try {
-          const u = window.VUserData?.load?.() || {};
-          const arr = Array.isArray(u.unlocked_universes) ? u.unlocked_universes : [];
-          return arr.includes(id);
-        } catch (_) {}
-
-        return false;
+        return (id === "hell_king" || id === "heaven_king");
       }
 
       const LOCK_SVG = `
@@ -810,22 +798,18 @@
         }
       }
 
-      function openBuyPopup(universeId) {
-        pendingUniverseId = universeId;
+      function refreshPopupTexts() {
+        if (!pendingUniverseId) return;
 
         const balance = getCurrentVCoins();
-        const storePrice = currentUniverseIapPrice(universeId);
+        const storePrice = currentUniverseIapPrice(pendingUniverseId);
 
         if (buyTitle) {
-          buyTitle.textContent = _t("universe." + universeId + ".title", "");
+          buyTitle.textContent = _t("universe." + pendingUniverseId + ".title", "");
         }
 
         if (buyDesc) {
-          buyDesc.textContent = _t(
-            "ui.universe_buy.desc",
-            "",
-            { price: PRICE }
-          );
+          buyDesc.textContent = _t("ui.universe_buy.desc", "", { price: PRICE });
         }
 
         if (buyPayPrefix) {
@@ -854,7 +838,11 @@
 
         if (buyGet) buyGet.textContent = _t("ui.universe_buy.open_shop", "");
         if (buyCancel) buyCancel.textContent = _t("common.cancel", "");
+      }
 
+      function openBuyPopup(universeId) {
+        pendingUniverseId = universeId;
+        refreshPopupTexts();
         showBuyError("");
 
         if (buyPopup) {
@@ -865,16 +853,6 @@
 
       async function tryUnlockWithVcoins(universeId) {
         showBuyError("");
-
-        let refreshed = false;
-        try {
-          refreshed = await window.VUserData?.refresh?.().catch(() => false);
-        } catch (_) {}
-
-        if (!refreshed) {
-          showBuyError(_t("ui.universe_buy.err_unlock", ""));
-          return;
-        }
 
         const balance = getCurrentVCoins();
         if (balance < PRICE) {
@@ -888,33 +866,23 @@
           return;
         }
 
-        const res = await window.VUserData?.unlockUniverse?.(universeId);
-
+        const res = await window.VUserData?.unlockUniverseWithVcoins?.(universeId, PRICE);
         if (!res?.ok) {
-          const reason = String(
-            res?.reason ||
-            res?.error?.message ||
-            "rpc_error"
-          ).toLowerCase();
-
-          if (reason.includes("insufficient_vcoins")) {
+          if (String(res?.reason || "") === "insufficient_vcoins") {
             showBuyError(
               _t(
                 "ui.universe_buy.err_unlock_insufficient",
                 "",
-                { balance: getCurrentVCoins(), price: PRICE }
+                { balance: Number(res?.balance || 0), price: PRICE }
               )
             );
             return;
           }
-
-          console.warn("[unlockUniverse]", reason);
           showBuyError(_t("ui.universe_buy.err_unlock", ""));
           return;
         }
 
-        await window.VUserData?.refresh?.().catch(() => false);
-
+        refreshPopupTexts();
         applyLocks();
         closeBuyPopup();
         launchUniverse(universeId);
@@ -929,7 +897,6 @@
         }
 
         const sku = universeSku(universeId);
-
         lsSet(IAP_TARGET_KEY, universeId);
         lsSet(IAP_TARGET_KEY_LEGACY, universeId);
 
@@ -940,7 +907,6 @@
             await window.VRIAP.order(sku);
           } else {
             showBuyError(_t("ui.universe_buy.err_not_ready", ""));
-            return;
           }
         } catch (_) {
           showBuyError(_t("ui.universe_buy.err_buy_failed", ""));
@@ -974,25 +940,27 @@
         });
       }
 
-      function refreshIapLabel() {
+      window.addEventListener("vr:iap_price", () => {
         try {
-          if (buyPopup && buyPopup.style.display === "flex" && pendingUniverseId && buyIap) {
-            const storePrice = currentUniverseIapPrice(pendingUniverseId);
-            buyIap.textContent = _t(
-              "ui.universe_buy.iap_direct",
-              "",
-              { price: storePrice || "" }
-            );
+          if (buyPopup && buyPopup.style.display === "flex") {
+            refreshPopupTexts();
           }
         } catch (_) {}
-      }
+      });
 
-      window.addEventListener("vr:iap_price", refreshIapLabel);
+      window.addEventListener("vr:profile", () => {
+        try {
+          applyLocks();
+          if (buyPopup && buyPopup.style.display === "flex") {
+            refreshPopupTexts();
+          }
+        } catch (_) {}
+      });
 
       window.addEventListener("vr:iap_credited", async (ev) => {
         try {
           const d = ev?.detail || {};
-          const target = String(d.universeId || lsGet(IAP_TARGET_KEY) || lsGet(IAP_TARGET_KEY_LEGACY) || "");
+          const target = String(lsGet(IAP_TARGET_KEY) || lsGet(IAP_TARGET_KEY_LEGACY) || "");
           if (!target) return;
 
           const expectedSku = universeSku(target);
@@ -1018,7 +986,20 @@
           const expectedSku = universeSku(target);
           if (String(d.productId || "") !== expectedSku) return;
 
-          showBuyError(_t("ui.universe_buy.err_unlock_after_iap", ""));
+          showBuyError(_t("ui.universe_buy.err_buy_failed", ""));
+        } catch (_) {}
+      });
+
+      window.addEventListener("vr:iap_order_failed", (ev) => {
+        try {
+          const d = ev?.detail || {};
+          const target = String(pendingUniverseId || lsGet(IAP_TARGET_KEY) || lsGet(IAP_TARGET_KEY_LEGACY) || "");
+          if (!target) return;
+
+          const expectedSku = universeSku(target);
+          if (String(d.productId || "") !== expectedSku) return;
+
+          showBuyError(_t("ui.universe_buy.err_buy_failed", ""));
         } catch (_) {}
       });
 
