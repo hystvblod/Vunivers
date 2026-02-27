@@ -85,7 +85,29 @@
       "ko": "Coréen",
       "ja": "Japonais",
       "id": "Indonésien"
-    }
+    },
+
+    "profile_title": "Profil",
+    "profile_subtitle": "Vos stats et votre progression.",
+    "profile_vcoins": "VCoins",
+    "profile_jetons": "Jetons",
+    "profile_username_label": "Pseudo",
+    "profile_username_edit": "Modifier le pseudo",
+    "profile_username_placeholder": "Nouveau pseudo",
+    "profile_username_save": "Enregistrer",
+    "profile_username_cancel": "Annuler",
+    "profile_username_hint": "3 à 20 caractères. Lettres, chiffres et underscore uniquement. Le premier changement est gratuit, ensuite 1 jeton.",
+    "profile_username_missing": "Pseudo manquant",
+    "profile_username_err_format": "Format de pseudo invalide.",
+    "profile_err_not_ready": "Profil non prêt.",
+    "profile_username_ok_nochange": "Aucun changement détecté.",
+    "profile_username_err_nojeton": "Pas assez de jetons.",
+    "profile_username_working": "Mise à jour en cours...",
+    "profile_username_err_taken": "Ce pseudo est déjà pris.",
+    "profile_username_err_generic": "Impossible de modifier le pseudo.",
+    "profile_username_err_cost_failed": "Le pseudo a été modifié mais le coût n’a pas pu être débité.",
+    "profile_username_ok_saved": "Pseudo mis à jour.",
+    "profile_scenarios_title": "Scénarios"
   },
   "gauges": {
     "hell_king": {
@@ -290,6 +312,18 @@
     "vampire_lord": {
       "title": "Seigneur vampire",
       "desc": "Étends ton influence dans l’ombre. Trop de sang attire les chasseurs, trop de prudence affaiblit ton clan."
-    }
-  }
+    },
+    
+  "ui.universe_buy.desc": "Cet univers est verrouillé.",
+  "ui.universe_buy.pay_prefix": "Débloquer avec",
+  "ui.universe_buy.pay_balance_inline": "Solde : {balance}",
+  "ui.universe_buy.iap_direct": "Débloquer au prix du store {price}",
+  "ui.universe_buy.open_shop": "Ouvrir la boutique",
+  "ui.universe_buy.err_unlock": "Impossible de débloquer cet univers.",
+  "ui.universe_buy.err_unlock_insufficient": "Pas assez de VCoins. Solde : {balance} / requis : {price}.",
+  "ui.universe_buy.err_app_only": "Cet achat est disponible uniquement dans l’application installée.",
+  "ui.universe_buy.err_not_ready": "Le système d’achat n’est pas prêt.",
+  "ui.universe_buy.err_buy_failed": "Achat annulé ou impossible.",
+  "ui.universe_buy.err_unlock_after_iap": "Achat validé, mais déblocage impossible pour le moment. Réessaie depuis la boutique."
+}
 }
