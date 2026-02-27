@@ -685,6 +685,55 @@
         return String(window.VRIAP?.getPrice?.(sku) || "").trim();
       }
 
+      function getUniverseStoreButtonLabel(universeId) {
+        const storePrice = currentUniverseIapPrice(universeId);
+
+        const customWithPrice = _t(
+          "ui.universe_buy.unlock_direct",
+          "",
+          { price: storePrice || "" }
+        ).trim();
+
+        const customNoPrice = _t(
+          "ui.universe_buy.unlock_direct_no_price",
+          ""
+        ).trim();
+
+        if (storePrice) {
+          if (customWithPrice) return customWithPrice;
+
+          const legacyWithPrice = _t(
+            "ui.universe_buy.iap_direct",
+            "",
+            { price: storePrice }
+          ).trim();
+
+          if (legacyWithPrice) {
+            return legacyWithPrice
+              .replace(/^acheter\b/i, "Débloquer")
+              .replace(/\s{2,}/g, " ")
+              .trim();
+          }
+        }
+
+        if (customNoPrice) return customNoPrice;
+
+        const legacyNoPrice = _t(
+          "ui.universe_buy.iap_direct",
+          "",
+          { price: "" }
+        ).trim();
+
+        if (legacyNoPrice) {
+          return legacyNoPrice
+            .replace(/^acheter\b/i, "Débloquer")
+            .replace(/\s{2,}/g, " ")
+            .trim();
+        }
+
+        return "";
+      }
+
       function getCurrentVCoins() {
         try {
           if (window.VUserData && typeof window.VUserData.getVcoins === "function") {
@@ -802,14 +851,16 @@
         if (!pendingUniverseId) return;
 
         const balance = getCurrentVCoins();
-        const storePrice = currentUniverseIapPrice(pendingUniverseId);
 
         if (buyTitle) {
           buyTitle.textContent = _t("universe." + pendingUniverseId + ".title", "");
         }
 
         if (buyDesc) {
-          buyDesc.textContent = _t("ui.universe_buy.desc", "", { price: PRICE });
+          const rawDesc = _t("ui.universe_buy.desc", "", { price: PRICE });
+          buyDesc.textContent = rawDesc
+            .replace(/l[’']acheter directement/gi, "le débloquer directement")
+            .replace(/\bacheter directement\b/gi, "débloquer directement");
         }
 
         if (buyPayPrefix) {
@@ -829,11 +880,7 @@
         }
 
         if (buyIap) {
-          buyIap.textContent = _t(
-            "ui.universe_buy.iap_direct",
-            "",
-            { price: storePrice || "" }
-          );
+          buyIap.textContent = getUniverseStoreButtonLabel(pendingUniverseId);
         }
 
         if (buyGet) buyGet.textContent = _t("ui.universe_buy.open_shop", "");
