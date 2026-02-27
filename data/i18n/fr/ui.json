@@ -257,6 +257,22 @@
     "title": "Boutique",
     "subtitle": "Dépenser vos VCoins",
     "soon": "Bientôt disponible",
+
+    "store_title": "STORE",
+    "watch": "Regarder",
+    "loading": "Chargement...",
+    "unavailable": "Indisponible",
+
+    "reward_jeton_x1": "x1",
+    "reward_vcoins_x100": "x100",
+
+    "pack_jetons_12": "12",
+    "pack_jetons_30": "30",
+    "pack_vcoins_500": "500",
+    "pack_vcoins_3000": "3000",
+    "pack_no_ads": "No Ads",
+    "pack_diamond": "Diamond",
+
     "rewarded_title": "Récompenses",
     "rewarded_desc": "Regarde une pub pour obtenir une petite récompense.",
     "reward_title": "Récompenses",
@@ -278,7 +294,10 @@
     "jetons_30": "+30 jetons",
     "diamond_title": "Diamond",
     "diamond_desc": "No Pub + tous les univers actuels débloqués. Les futurs univers peuvent aussi être inclus si ton backend active l’accès Diamond.",
-    "diamond_buy": "Activer Diamond"
+    "diamond_buy": "Activer Diamond",
+
+    "aria_top": "Barre d’actions",
+    "aria_profile": "Profil"
   },
   "settings": {
     "title": "Paramètres",
