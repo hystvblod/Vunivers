@@ -1073,9 +1073,6 @@ body.vr-body-game[data-universe="hell_king"]{
 body.vr-body-game[data-universe="hell_king"] #view-game{
   padding-left: clamp(8px, 2.8vw, 16px) !important;
   padding-right: clamp(8px, 2.8vw, 16px) !important;
-  background-size: contain !important;
-  background-position: center top !important;
-  background-repeat: no-repeat !important;
 }
 /* ==========================================================
    HELL KING — HUD sculpté avec WEBP
