@@ -1230,7 +1230,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
 
 /* gauche */
 body.vr-body-game[data-universe="hell_king"] .vr-hud-left{
-  left: 1.1% !important;
+  left: 0.8% !important;
   width: 17.8% !important;
 }
 
@@ -1242,7 +1242,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-center{
 
 /* droite */
 body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
-  right: 1.1% !important;
+  right: 1.4% !important;
   width: 17.8% !important;
 }
 
