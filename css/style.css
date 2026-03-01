@@ -1076,7 +1076,7 @@ body.vr-body-game[data-universe="hell_king"]{
 
   /* HUD Hell */
   --vr-hell-hud-w: min(94vw, 980px);
-  -vr-hell-hud-icon-size: clamp(46px, 5.8vw, 72px);
+  --vr-hell-hud-icon-size: clamp(40px, 5vw, 64px);
   --vr-hell-hud-value-size: clamp(13px, 2vw, 24px);
   --vr-hell-hud-name-size: clamp(13px, 2vw, 28px);
   --vr-hell-hud-years-size: clamp(10px, 1.25vw, 16px);
@@ -1359,7 +1359,7 @@ body.vr-body-game[data-universe="hell_king"] #view-game .vr-choice-button{
 @media (max-width: 480px){
   body.vr-body-game[data-universe="hell_king"]{
     --vr-hell-hud-w: 96vw;
-    --vr-hell-hud-icon-size: clamp(46px, 5.8vw, 72px)
+    -vr-hell-hud-icon-size: clamp(40px, 5vw, 64px)
     --vr-hell-hud-value-size: clamp(11px, 2.8vw, 14px);
     --vr-hell-hud-name-size: clamp(11px, 3.1vw, 16px);
     --vr-hell-hud-years-size: clamp(9px, 2vw, 12px);
