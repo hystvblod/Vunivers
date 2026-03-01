@@ -1230,7 +1230,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
 
 /* gauche */
 body.vr-body-game[data-universe="hell_king"] .vr-hud-left{
-  left: 3 !important;
+  left: 4 !important;
   width: 17.8% !important;
 }
 
@@ -1242,7 +1242,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-center{
 
 /* droite */
 body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
-  right: 3% !important;
+  right: 4% !important;
   width: 17.8% !important;
 }
 
@@ -1370,12 +1370,12 @@ body.vr-body-game[data-universe="hell_king"] #view-game .vr-choice-button{
   }
 
   body.vr-body-game[data-universe="hell_king"] .vr-hud-left{
-    left: 3% !important;
+    left: 4% !important;
     width: 18.4% !important;
   }
 
   body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
-    right: 3% !important;
+    right: 4% !important;
     width: 18.4% !important;
   }
 
