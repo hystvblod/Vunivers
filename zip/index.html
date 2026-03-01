@@ -685,6 +685,18 @@
         return String(window.VRIAP?.getPrice?.(sku) || "").trim();
       }
 
+      function getUniverseStoreButtonLabel(universeId) {
+        const storePrice = currentUniverseIapPrice(universeId);
+        const prefix = _t("ui.universe_buy.unlock_store_prefix", "").trim();
+        const noPrice = _t("ui.universe_buy.unlock_store_no_price", "").trim();
+
+        if (storePrice) {
+          return prefix ? (prefix + " " + storePrice) : storePrice;
+        }
+
+        return noPrice || "";
+      }
+
       function getCurrentVCoins() {
         try {
           if (window.VUserData && typeof window.VUserData.getVcoins === "function") {
@@ -802,14 +814,16 @@
         if (!pendingUniverseId) return;
 
         const balance = getCurrentVCoins();
-        const storePrice = currentUniverseIapPrice(pendingUniverseId);
 
         if (buyTitle) {
           buyTitle.textContent = _t("universe." + pendingUniverseId + ".title", "");
         }
 
         if (buyDesc) {
-          buyDesc.textContent = _t("ui.universe_buy.desc", "", { price: PRICE });
+          const rawDesc = _t("ui.universe_buy.desc", "", { price: PRICE });
+          buyDesc.textContent = rawDesc
+            .replace(/l[’']acheter directement/gi, "le débloquer directement")
+            .replace(/\bacheter directement\b/gi, "débloquer directement");
         }
 
         if (buyPayPrefix) {
@@ -829,11 +843,7 @@
         }
 
         if (buyIap) {
-          buyIap.textContent = _t(
-            "ui.universe_buy.iap_direct",
-            "",
-            { price: storePrice || "" }
-          );
+          buyIap.textContent = getUniverseStoreButtonLabel(pendingUniverseId);
         }
 
         if (buyGet) buyGet.textContent = _t("ui.universe_buy.open_shop", "");

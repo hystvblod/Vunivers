@@ -112,18 +112,28 @@
 })();
 
 
+// -------------------------------------------------------
+// Badge thresholds (sans mort)
+// bronze = 40 choix, argent = 60, or = 100
+// -------------------------------------------------------
+const VR_BADGE_BRONZE_CHOICES = 40;
+const VR_BADGE_SILVER_CHOICES = 60;
+const VR_BADGE_GOLD_CHOICES = 100;
+
+
 // VRealms - engine/events-loader.js
 // Charge la config d'univers + le deck (par univers) + les textes des cartes (par univers + langue).
 // + ✅ charge EVENTS (logic + i18n) par univers
 (function () {
   "use strict";
 
-  const CONFIG_PATH = "data/universes";
-  const DECKS_PATH = "data/decks";
-  const I18N_PATH = "data/i18n";
+  const SCENARIOS_PATH = "data/scenarios";
 
-  // ✅ events
-  const EVENTS_LOGIC_PATH = "data/events";
+  // ✅ anciens chemins gardés en fallback pendant la transition
+  const LEGACY_CONFIG_PATH = "data/universes";
+  const LEGACY_DECKS_PATH = "data/decks";
+  const LEGACY_I18N_PATH = "data/i18n";
+  const LEGACY_EVENTS_LOGIC_PATH = "data/events";
 
   const VREventsLoader = {
     async loadUniverseData(universeId, lang) {
@@ -151,7 +161,14 @@
     },
 
     async _loadConfig(universeId) {
-      const res = await fetch(`${CONFIG_PATH}/${universeId}.config.json`, { cache: "no-cache" });
+      const urlNew = `${SCENARIOS_PATH}/${universeId}/config.json`;
+      let res = await fetch(urlNew, { cache: "no-cache" });
+
+      if (!res.ok) {
+        const urlOld = `${LEGACY_CONFIG_PATH}/${universeId}.config.json`;
+        res = await fetch(urlOld, { cache: "no-cache" });
+      }
+
       if (!res.ok) {
         throw new Error(`[VREventsLoader] Impossible de charger la config univers ${universeId}`);
       }
@@ -159,10 +176,16 @@
     },
 
     async _loadDeck(universeId) {
-      const url = `${DECKS_PATH}/${universeId}.json`;
-      const res = await fetch(url, { cache: "no-cache" });
+      const urlNew = `${SCENARIOS_PATH}/${universeId}/deck.json`;
+      let res = await fetch(urlNew, { cache: "no-cache" });
+
       if (!res.ok) {
-        throw new Error(`[VREventsLoader] Impossible de charger le deck: ${url}`);
+        const urlOld = `${LEGACY_DECKS_PATH}/${universeId}.json`;
+        res = await fetch(urlOld, { cache: "no-cache" });
+      }
+
+      if (!res.ok) {
+        throw new Error(`[VREventsLoader] Impossible de charger le deck pour ${universeId}`);
       }
 
       const deckJson = await res.json();
@@ -179,25 +202,31 @@
     },
 
     async _loadCardTexts(universeId, lang) {
-      // ✅ NOUVEAU FORMAT : data/i18n/<lang>/cards_<universeId>.json
-      const urlNew = `${I18N_PATH}/${lang}/cards_${universeId}.json`;
+      const urlNew = `${SCENARIOS_PATH}/${universeId}/cards_${lang}.json`;
 
-      // ✅ FALLBACK ANCIEN FORMAT : data/i18n/cards_<universeId>_<lang>.json
-      const urlOld = `${I18N_PATH}/cards_${universeId}_${lang}.json`;
+      // ✅ FALLBACK anciens formats
+      const urlOld1 = `${LEGACY_I18N_PATH}/${lang}/cards_${universeId}.json`;
+      const urlOld2 = `${LEGACY_I18N_PATH}/cards_${universeId}_${lang}.json`;
 
       let res = await fetch(urlNew, { cache: "no-cache" });
-      if (!res.ok) res = await fetch(urlOld, { cache: "no-cache" });
+      if (!res.ok) res = await fetch(urlOld1, { cache: "no-cache" });
+      if (!res.ok) res = await fetch(urlOld2, { cache: "no-cache" });
 
       if (!res.ok) {
-        throw new Error(`[VREventsLoader] Impossible de charger ${urlNew} (ou fallback ${urlOld})`);
+        throw new Error(`[VREventsLoader] Impossible de charger les cartes de ${universeId} en ${lang}`);
       }
       return res.json();
     },
 
     async _loadEventsLogic(universeId) {
-      // ✅ Ton chemin : data/events/logic_events_<universeId>.json
-      const url = `${EVENTS_LOGIC_PATH}/logic_events_${universeId}.json`;
-      const res = await fetch(url, { cache: "no-cache" });
+      const urlNew = `${SCENARIOS_PATH}/${universeId}/logic_events.json`;
+      let res = await fetch(urlNew, { cache: "no-cache" });
+
+      if (!res.ok) {
+        const urlOld = `${LEGACY_EVENTS_LOGIC_PATH}/logic_events_${universeId}.json`;
+        res = await fetch(urlOld, { cache: "no-cache" });
+      }
+
       if (!res.ok) {
         // pas bloquant : si un univers n’a pas d’events, on renvoie vide
         return { events: [] };
@@ -209,14 +238,15 @@
     },
 
     async _loadEventsTexts(universeId, lang) {
-      // ✅ Ton chemin : data/i18n/<lang>/events_<universeId>.json
-      const urlNew = `${I18N_PATH}/${lang}/events_${universeId}.json`;
+      const urlNew = `${SCENARIOS_PATH}/${universeId}/events_${lang}.json`;
 
-      // (optionnel) fallback ancien format si un jour tu en as besoin
-      const urlOld = `${I18N_PATH}/events_${universeId}_${lang}.json`;
+      // ✅ FALLBACK anciens formats
+      const urlOld1 = `${LEGACY_I18N_PATH}/${lang}/events_${universeId}.json`;
+      const urlOld2 = `${LEGACY_I18N_PATH}/events_${universeId}_${lang}.json`;
 
       let res = await fetch(urlNew, { cache: "no-cache" });
-      if (!res.ok) res = await fetch(urlOld, { cache: "no-cache" });
+      if (!res.ok) res = await fetch(urlOld1, { cache: "no-cache" });
+      if (!res.ok) res = await fetch(urlOld2, { cache: "no-cache" });
 
       if (!res.ok) return {};
       const data = await res.json();
@@ -811,18 +841,20 @@ body.vr-peek-mode .vr-gauge-preview{
 (function () {
   "use strict";
 
-  const ENDINGS_BASE_PATH = "data/i18n";
+  const ENDINGS_BASE_PATH = "data/scenarios";
   const cache = new Map(); // key = universeId__lang
 
   async function loadEndings(universeId, lang) {
     const key = `${universeId}__${lang}`;
     if (cache.has(key)) return cache.get(key);
 
-    const urlNew = `${ENDINGS_BASE_PATH}/${lang}/endings_${universeId}.json`;
-    const urlOld = `${ENDINGS_BASE_PATH}/endings_${universeId}_${lang}.json`;
+    const urlNew = `${ENDINGS_BASE_PATH}/${universeId}/endings_${lang}.json`;
+    const urlOld1 = `data/i18n/${lang}/endings_${universeId}.json`;
+    const urlOld2 = `data/i18n/endings_${universeId}_${lang}.json`;
 
     let res = await fetch(urlNew, { cache: "no-cache" });
-    if (!res.ok) res = await fetch(urlOld, { cache: "no-cache" });
+    if (!res.ok) res = await fetch(urlOld1, { cache: "no-cache" });
+    if (!res.ok) res = await fetch(urlOld2, { cache: "no-cache" });
 
     if (!res.ok) {
       const empty = {};
@@ -2334,8 +2366,34 @@ window.VRGame = {
     }
   },
 
+  async maybeUnlockRunBadges() {
+    try {
+      if (!window.VRState?.isAlive?.()) return;
+
+      const reign = Number(this.session?.reignLength || 0);
+      const universeId = String(this.currentUniverse || localStorage.getItem("vrealms_universe") || "").trim();
+      if (!universeId) return;
+
+      const all = window.VUProfileBadges?.getAll?.() || { map: {} };
+      const row = (all.map && all.map[universeId]) ? all.map[universeId] : {};
+
+      if (reign >= VR_BADGE_BRONZE_CHOICES && !row.bronze) {
+        await window.VUProfileBadges?.setBadge?.(universeId, "bronze", true);
+      }
+      if (reign >= VR_BADGE_SILVER_CHOICES && !row.silver) {
+        await window.VUProfileBadges?.setBadge?.(universeId, "silver", true);
+      }
+      if (reign >= VR_BADGE_GOLD_CHOICES && !row.gold) {
+        await window.VUProfileBadges?.setBadge?.(universeId, "gold", true);
+      }
+    } catch (e) {
+      console.warn("[VRGame] badge unlock skipped:", e);
+    }
+  },
+
   onCardResolved() {
     this.session.reignLength += 1;
+    Promise.resolve().then(() => this.maybeUnlockRunBadges());
   },
 
   // ✅ maintenant async + 100% DB pour stats
@@ -2364,8 +2422,11 @@ window.VRGame = {
           window.VREngine._uiTokens = window.VRProfile._n(me.jetons);
         }
       } catch (_) {}
+
+      this.session.reignLength = 0;
     } catch (e) {
       console.error("[VRGame] onRunEnded error:", e);
+      this.session.reignLength = 0;
     }
   }
 };

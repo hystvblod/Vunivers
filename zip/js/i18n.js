@@ -2,7 +2,7 @@
   "use strict";
 
   // === CONFIG ===
-  const BASE_PATH = "data/i18n";
+  const BASE_PATH = "data/ui";
   const DEFAULT_LANG = "fr";
 
   // ✅ aligné avec le reste de ton projet
@@ -48,23 +48,28 @@
     return res.json();
   }
 
-  async function tryLoadUiBundle(bundle, lang) {
-    // ✅ NOUVEAU FORMAT : data/i18n/<lang>/<bundle>.json  (ex: data/i18n/fr/ui.json)
-    const urlNew = `${BASE_PATH}/${lang}/${bundle}.json`;
+async function tryLoadUiBundle(bundle, lang) {
+  // ✅ nouveau format voulu : data/ui/ui_fr.json
+  const urlNew = `${BASE_PATH}/${bundle}_${lang}.json`;
 
-    // ✅ FALLBACK ANCIEN FORMAT : data/i18n/<bundle>_<lang>.json (ex: ui_fr.json)
-    const urlOld = `${BASE_PATH}/${bundle}_${lang}.json`;
+  // ✅ fallback anciens formats pendant la transition
+  const urlOld1 = `data/i18n/${lang}/${bundle}.json`;
+  const urlOld2 = `data/i18n/${bundle}_${lang}.json`;
 
+  try {
+    return await fetchJson(urlNew);
+  } catch (_) {
     try {
-      return await fetchJson(urlNew);
-    } catch (_) {
+      return await fetchJson(urlOld1);
+    } catch (__) {
       try {
-        return await fetchJson(urlOld);
-      } catch (__) {
+        return await fetchJson(urlOld2);
+      } catch (___) {
         return null;
       }
     }
   }
+}
 
   async function loadUi(lang) {
     const l = normalizeLang(lang);

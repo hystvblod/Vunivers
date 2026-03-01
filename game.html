@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- ✅ Fond blanc de base UNIQUEMENT sur game.html -->
+  <!-- ✅ Base sombre neutre pour laisser respirer les nouveaux volumes -->
   <style>
     html, body.vr-body-game {
-      background: #fff !important;
+      background: #06070b !important;
       overflow: hidden !important;
       height: 100% !important;
     }
-    :root { --vr-bg: #fff !important; }
+    :root { --vr-bg: #06070b !important; }
   </style>
 </head>
 
@@ -42,6 +42,14 @@
 
   <main class="vr-main">
     <section id="view-game" class="vr-view vr-view-active">
+
+      <div class="vr-stage-ambient" aria-hidden="true">
+        <div class="vr-ambient-gradient"></div>
+        <div class="vr-ambient-orbs"></div>
+        <div class="vr-ambient-fog vr-ambient-fog-back"></div>
+        <div class="vr-ambient-fog vr-ambient-fog-front"></div>
+        <div class="vr-ambient-vignette"></div>
+      </div>
 
       <div class="vr-game-header">
         <h2 class="vr-section-title" data-i18n="game.title"></h2>
@@ -290,7 +298,6 @@
   <!-- ✅ Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="js/supabaseBootstrap.js"></script>
-
   <script src="js/userData.js"></script>
   <script src="js/ads.js"></script>
   <script src="js/purchases.js"></script>

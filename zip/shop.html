@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>VRealms - Boutique</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title></title>
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
@@ -12,158 +12,340 @@
       --vr-overlay: none;
     }
 
-    .vr-universe-badge{
-      margin-top: 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .02em;
-      background: rgba(0,0,0,.30);
-      border: 1px solid rgba(255,255,255,.14);
-      width: fit-content;
-      max-width: 100%;
-      user-select: none;
+    /* =========================
+       TOPBAR (copié du settings qui marche)
+    ========================= */
+    .vr-header{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display:block !important;
     }
-    .vr-universe-badge.locked{ background: rgba(0,0,0,.40); }
-    .vr-universe-badge.unlocked{ background: rgba(0,0,0,.25); }
-    .vr-card.vr-card-locked{ opacity:.65; }
+
+    .vr-top-actions{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding: calc(10px + env(safe-area-inset-top)) 12px 8px;
+    }
+
+    .vr-top-slot{
+      flex:1 1 0;
+      display:flex;
+      align-items:center;
+    }
+
+    .vr-top-left{ justify-content:flex-start; }
+    .vr-top-center{ justify-content:center; }
+    .vr-top-right{ justify-content:flex-end; }
+
+    .vr-icon-button{
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.26);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+      padding:0;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      text-decoration:none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .vr-icon-button:active{ transform: scale(.98); }
+
+    .vr-icon-button img{
+      width:30px;
+      height:30px;
+      object-fit:contain;
+      display:block;
+      pointer-events:none;
+      user-select:none;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.65)) contrast(1.15) brightness(1.08);
+    }
+
+    .vr-back-ico{
+      width:24px;
+      height:24px;
+      display:block;
+      opacity:.98;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.65));
+    }
+
+    /* =========================
+       SHOP — SANS gros encadrés
+    ========================= */
+
+    /* Titres centrés */
+    .vr-section-title,
+    .vr-profile-title{
+      text-align:center !important;
+      color: rgba(255,255,255,.96) !important;
+      margin-left:auto !important;
+      margin-right:auto !important;
+    }
+
+    /* Espacement sections (sans grosse card autour) */
+    .vr-shop-block{
+      margin: 10px 0 18px;
+    }
+
+    /* grid 2 colonnes */
+    .vr-shop-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    /* petites cartes OFFRE */
+    .vr-shop-item{
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      padding: 14px 12px 12px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22);
+      box-shadow: 0 18px 34px rgba(0,0,0,.30);
+    }
+
+    .vr-shop-item::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      pointer-events:none;
+      background:
+        radial-gradient(420px 180px at 20% 12%, rgba(255,255,255,.08), transparent 60%),
+        radial-gradient(420px 220px at 75% 18%, rgba(255,59,59,.10), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.04), transparent 45%);
+      opacity:.9;
+    }
+
+    /* top line: icon + qty */
+    .vr-shop-top{
+      position: relative;
+      z-index: 1;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      min-height: 78px;
+      margin-bottom: 10px;
+    }
+
+    .vr-shop-icon{
+      width: 62px;
+      height: 62px;
+      max-width: 62px;
+      max-height: 62px;
+      object-fit: contain;
+      flex: 0 0 auto;
+      filter: drop-shadow(0 16px 26px rgba(0,0,0,.55));
+      user-select:none;
+      pointer-events:none;
+    }
+
+    .vr-shop-qty{
+      position: relative;
+      z-index: 1;
+      font-weight: 950;
+      font-size: 18px;
+      letter-spacing: .2px;
+      color: rgba(255,255,255,.96);
+      text-shadow: 0 12px 24px rgba(0,0,0,.55);
+      line-height: 1;
+    }
+
+    /* ✅ Boutons : texte BLANC + CENTRÉ */
+    .vr-shop-item .vr-choice-button{
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      border-radius: 14px;
+      padding: 12px 12px;
+      min-height: 44px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      box-shadow: 0 10px 22px rgba(0,0,0,.22);
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+
+      color: rgba(255,255,255,.96) !important;
+    }
+
+    .vr-shop-item .vr-choice-button span{
+      color: inherit !important;
+      opacity: 1 !important;
+    }
+
+    .vr-shop-item .vr-choice-button:active{
+      transform: translateY(1px);
+    }
+
+    /* sécurité: aucune image ne peut dépasser */
+    .vr-shop-item img,
+    .vr-shop-item svg{
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* No Ads + Diamond: image seule centrée */
+    .vr-shop-item[data-sku="vrealms_no_ads"] .vr-shop-top,
+    .vr-shop-item[data-sku="vrealms_diamond"] .vr-shop-top{
+      justify-content: center;
+    }
+
+    /* Status align */
+    #shop-status, #store-status{
+      text-align:center;
+      color: rgba(255,255,255,.86);
+    }
   </style>
 </head>
 
-<body class="vr-body">
-  <header class="vr-header" aria-label="Top actions">
+<body class="vr-body page-shop" data-page="shop">
+
+  <!-- ✅ HEADER complet : retour index + profil -->
+  <header class="vr-header" aria-label="" data-i18n-aria="shop.aria_top">
     <div class="vr-top-actions">
-      <button class="vr-icon-button" type="button" id="btn-profile" aria-label="Profile">
-        <span class="vr-icon-image vr-icon-profile"></span>
-      </button>
-      <button class="vr-icon-button" type="button" id="btn-settings" aria-label="Settings">
-        <span class="vr-icon-image vr-icon-settings"></span>
-      </button>
-      <button class="vr-icon-button" type="button" id="btn-shop" aria-label="Shop">
-        <span class="vr-icon-image vr-icon-shop"></span>
-      </button>
+      <div class="vr-top-slot vr-top-left">
+        <a id="btn-back" class="vr-icon-button" href="index.html" aria-label="" data-i18n-aria="common.back">
+          <svg class="vr-back-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="white" d="M15.5 5.5a1 1 0 0 1 0 1.4L10.4 12l5.1 5.1a1 1 0 1 1-1.4 1.4l-5.8-5.8a1.2 1.2 0 0 1 0-1.4l5.8-5.8a1 1 0 0 1 1.4 0z"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="vr-top-slot vr-top-center"></div>
+
+      <div class="vr-top-slot vr-top-right">
+        <a id="btn-profile" class="vr-icon-button" href="profile.html" aria-label="" data-i18n-aria="shop.aria_profile">
+          <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
+        </a>
+      </div>
     </div>
   </header>
 
-  <div class="vr-overlay"></div>
-
   <main class="vr-main">
     <section id="view-shop" class="vr-view vr-view-active">
+
+      <!-- ✅ BOUTIQUE centré -->
       <h2 class="vr-section-title" data-i18n="shop.title"></h2>
 
-      <div class="vr-profile-grid">
+      <!-- ✅ Rewarded (SANS gros encadré) -->
+      <div class="vr-shop-block">
+        <div class="vr-shop-grid" id="reward-grid">
 
-        <!-- ✅ NOUVEAU : Univers à débloquer (mêmes cartes que l'index) -->
-        <div class="vr-profile-card">
-          <h3 class="vr-profile-title">Univers</h3>
-          <p class="vr-profile-text" style="opacity:.85">Débloque de nouveaux univers avec tes VCoins (300 VCoins / univers).</p>
-
-          <div class="vr-universe-grid" id="shop-universe-grid">
-            <button class="vr-card" data-universe="hell_king" type="button">
-              <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/hell_king.webp');"></div>
-              <div class="vr-card-content">
-                <div class="vr-card-header-line">
-                  <h3 class="vr-card-title" data-i18n="universe.hell_king.title"></h3>
-                  <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.hell_king.desc">?</span>
-                </div>
-              </div>
-            </button>
-
-            <button class="vr-card" data-universe="heaven_king" type="button">
-              <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/heaven_king.webp');"></div>
-              <div class="vr-card-content">
-                <div class="vr-card-header-line">
-                  <h3 class="vr-card-title" data-i18n="universe.heaven_king.title"></h3>
-                  <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.heaven_king.desc">?</span>
-                </div>
-              </div>
-            </button>
-
-            <button class="vr-card" data-universe="western_president" type="button">
-              <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/western_president.webp');"></div>
-              <div class="vr-card-content">
-                <div class="vr-card-header-line">
-                  <h3 class="vr-card-title" data-i18n="universe.western_president.title"></h3>
-                  <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.western_president.desc">?</span>
-                </div>
-              </div>
-            </button>
-
-            <button class="vr-card" data-universe="mega_corp_ceo" type="button">
-              <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/mega_corp_ceo.webp');"></div>
-              <div class="vr-card-content">
-                <div class="vr-card-header-line">
-                  <h3 class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></h3>
-                  <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.mega_corp_ceo.desc">?</span>
-                </div>
-              </div>
-            </button>
-
-            <button class="vr-card" data-universe="new_world_explorer" type="button">
-              <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/new_world_explorer.webp');"></div>
-              <div class="vr-card-content">
-                <div class="vr-card-header-line">
-                  <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
-                  <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.new_world_explorer.desc">?</span>
-                </div>
-              </div>
-            </button>
-
-            <button class="vr-card" data-universe="vampire_lord" type="button">
-              <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/vampire_lord.webp');"></div>
-              <div class="vr-card-content">
-                <div class="vr-card-header-line">
-                  <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
-                  <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.vampire_lord.desc">?</span>
-                </div>
-              </div>
+          <div class="vr-shop-item">
+            <div class="vr-shop-top">
+              <img class="vr-shop-icon" src="assets/img/ui/jeton.webp" alt="" draggable="false">
+              <div class="vr-shop-qty" data-i18n="shop.reward_jeton_x1"></div>
+            </div>
+            <button class="vr-choice-button" id="btn-reward-jeton" type="button">
+              <span data-i18n="shop.watch"></span>
             </button>
           </div>
 
-          <p class="vr-profile-text" id="shop-universe-status" style="opacity:.85;margin-top:10px;"></p>
+          <div class="vr-shop-item">
+            <div class="vr-shop-top">
+              <img class="vr-shop-icon" src="assets/img/ui/vcoins.webp" alt="" draggable="false">
+              <div class="vr-shop-qty" data-i18n="shop.reward_vcoins_x100"></div>
+            </div>
+            <button class="vr-choice-button" id="btn-reward-coins" type="button">
+              <span data-i18n="shop.watch"></span>
+            </button>
+          </div>
+
         </div>
 
-        <!-- Rewarded (laissé intact, géré par purchases.js) -->
-        <div class="vr-profile-card">
-          <h3 class="vr-profile-title" data-i18n="shop.reward_title"></h3>
-          <p class="vr-profile-text" data-i18n="shop.reward_desc"></p>
-
-          <button class="vr-choice-button" id="btn-reward-jeton" type="button">
-            <span data-i18n="shop.get_1_jeton"></span>
-          </button>
-
-          <button class="vr-choice-button" id="btn-reward-coins" type="button">
-            <span data-i18n="shop.get_300_coins"></span>
-          </button>
-
-          <p class="vr-profile-text" id="shop-status" style="opacity:.85;margin-top:10px;"></p>
-        </div>
-
-        <!-- No Ads -->
-        <div class="vr-profile-card">
-          <h3 class="vr-profile-title" data-i18n="shop.noads_title"></h3>
-          <p class="vr-profile-text" data-i18n="shop.noads_desc"></p>
-
-          <button class="vr-choice-button" id="btn-buy-noads" type="button">
-            <span data-i18n="shop.noads_buy"></span>
-          </button>
-
-          <p class="vr-profile-text" id="noads-status" style="opacity:.85;margin-top:10px;"></p>
-        </div>
-
+        <p class="vr-profile-text" id="shop-status" style="opacity:.9;margin-top:10px;"></p>
       </div>
+
+      <!-- ✅ STORE centré -->
+      <h3 class="vr-profile-title" data-i18n="shop.store_title"></h3>
+
+      <!-- ✅ STORE packs (SANS gros encadré) -->
+      <div class="vr-shop-block">
+        <div class="vr-shop-grid" id="store-grid">
+
+          <div class="vr-shop-item" data-sku="vrealms_jetons_12">
+            <div class="vr-shop-top">
+              <img class="vr-shop-icon" src="assets/img/ui/jeton.webp" alt="" draggable="false">
+              <div class="vr-shop-qty" data-i18n="shop.pack_jetons_12"></div>
+            </div>
+            <button class="vr-choice-button vr-iap-button" type="button" data-iap="vrealms_jetons_12">
+              <span class="vr-iap-label" data-i18n="shop.loading"></span>
+            </button>
+          </div>
+
+          <div class="vr-shop-item" data-sku="vrealms_jetons_30">
+            <div class="vr-shop-top">
+              <img class="vr-shop-icon" src="assets/img/ui/jeton.webp" alt="" draggable="false">
+              <div class="vr-shop-qty" data-i18n="shop.pack_jetons_30"></div>
+            </div>
+            <button class="vr-choice-button vr-iap-button" type="button" data-iap="vrealms_jetons_30">
+              <span class="vr-iap-label" data-i18n="shop.loading"></span>
+            </button>
+          </div>
+
+          <div class="vr-shop-item" data-sku="vrealms_vcoins_500">
+            <div class="vr-shop-top">
+              <img class="vr-shop-icon" src="assets/img/ui/vcoins.webp" alt="" draggable="false">
+              <div class="vr-shop-qty" data-i18n="shop.pack_vcoins_500"></div>
+            </div>
+            <button class="vr-choice-button vr-iap-button" type="button" data-iap="vrealms_vcoins_500">
+              <span class="vr-iap-label" data-i18n="shop.unavailable"></span>
+            </button>
+          </div>
+
+          <div class="vr-shop-item" data-sku="vrealms_vcoins_3000">
+            <div class="vr-shop-top">
+              <img class="vr-shop-icon" src="assets/img/ui/vcoins.webp" alt="" draggable="false">
+              <div class="vr-shop-qty" data-i18n="shop.pack_vcoins_3000"></div>
+            </div>
+            <button class="vr-choice-button vr-iap-button" type="button" data-iap="vrealms_vcoins_3000">
+              <span class="vr-iap-label" data-i18n="shop.loading"></span>
+            </button>
+          </div>
+
+          <div class="vr-shop-item" data-sku="vrealms_no_ads">
+            <div class="vr-shop-top">
+              <img class="vr-shop-icon" src="assets/img/ui/noads.webp" alt="" draggable="false">
+            </div>
+            <button class="vr-choice-button vr-iap-button" type="button" data-iap="vrealms_no_ads">
+              <span class="vr-iap-label" data-i18n="shop.loading"></span>
+            </button>
+          </div>
+
+          <div class="vr-shop-item" data-sku="vrealms_diamond">
+            <div class="vr-shop-top">
+              <img class="vr-shop-icon" src="assets/img/ui/diamond.webp" alt="" draggable="false">
+            </div>
+            <button class="vr-choice-button vr-iap-button" type="button" data-iap="vrealms_diamond">
+              <span class="vr-iap-label" data-i18n="shop.loading"></span>
+            </button>
+          </div>
+
+        </div>
+
+        <p class="vr-profile-text" id="store-status" style="opacity:.9;margin-top:10px;"></p>
+      </div>
+
     </section>
   </main>
 
-  <!-- ✅ Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="js/supabaseBootstrap.js"></script>
 
-  <!-- helper bootstrap déjà présent dans ton shop -->
   <script>
     (function () {
       async function ensureBootstrap() {

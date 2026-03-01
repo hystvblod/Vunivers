@@ -1,141 +1,60 @@
-// VRealms - shop.js
-// Boutique d'univers : affiche locked/unlocked + achat 300 VCoins via RPC secure_unlock_universe
+// VRealms — shop.js
+// ✅ Boutique uniquement (rewarded + store IAP via purchases.js)
+// ✅ Aucun univers/scénario ici
 
 (function () {
   "use strict";
 
-  const PRICE_VCOINS = 300;
+  function isShopPage() {
+    try { return document.body && document.body.getAttribute("data-page") === "shop"; }
+    catch { return false; }
+  }
+  if (!isShopPage()) return;
 
   function $(id) { return document.getElementById(id); }
 
-  function setStatus(msg) {
-    const el = $("shop-universe-status") || $("shop-status");
-    if (el) el.textContent = msg || "";
-  }
-
-  function ensureBadge(card) {
-    const content = card.querySelector(".vr-card-content");
-    if (!content) return null;
-    let badge = content.querySelector(".vr-universe-badge");
-    if (!badge) {
-      badge = document.createElement("div");
-      badge.className = "vr-universe-badge";
-      badge.setAttribute("aria-hidden", "true");
-      content.appendChild(badge);
-    }
-    return badge;
-  }
-
-  function getUnlockedSet() {
-    try {
-      const arr = window.VUserData?.getUnlockedUniverses?.();
-      if (Array.isArray(arr) && arr.length) return new Set(arr.map(String));
-    } catch (_) {}
-    return new Set(["hell_king", "heaven_king"]);
-  }
-
-  function applyUniverseUI() {
-    const grid = document.getElementById("shop-universe-grid");
-    if (!grid) return;
-
-    const unlocked = getUnlockedSet();
-
-    grid.querySelectorAll(".vr-card[data-universe]").forEach((card) => {
-      const id = card.getAttribute("data-universe");
-      if (!id) return;
-
-      const badge = ensureBadge(card);
-      const ok = unlocked.has(id) || id === "hell_king" || id === "heaven_king";
-
-      if (ok) {
-        card.classList.remove("vr-card-locked");
-        if (badge) {
-          badge.className = "vr-universe-badge unlocked";
-          badge.textContent = "✓ Débloqué";
-        }
-      } else {
-        card.classList.add("vr-card-locked");
-        if (badge) {
-          badge.className = "vr-universe-badge locked";
-          badge.textContent = "🔒 " + PRICE_VCOINS + " VCoins";
-        }
-      }
-    });
-  }
-
-  function launchUniverse(universeId) {
-    localStorage.setItem("vrealms_universe", universeId);
-    window.location.href = "game.html";
-  }
-
-  async function buyUniverse(universeId) {
-    setStatus("");
-
-    const user = window.VUserData?.load?.() || {};
-    const v = Number(user.vcoins || 0);
-
-    if (v < PRICE_VCOINS) {
-      setStatus("Pas assez de VCoins (" + v + "/" + PRICE_VCOINS + ").");
-      return;
-    }
-
-    const ok = confirm("Débloquer cet univers pour " + PRICE_VCOINS + " VCoins ?");
-    if (!ok) return;
-
-    setStatus("Déblocage en cours…");
-
-    const res = await window.VUserData?.unlockUniverse?.(universeId);
-
-    if (!res?.ok) {
-      const r = (res?.reason || "").toString();
-      if (r.includes("insufficient_vcoins")) setStatus("Pas assez de VCoins.");
-      else if (r.includes("universe_not_for_sale")) setStatus("Univers non disponible.");
-      else setStatus("Erreur : " + (res?.reason || "unlock_failed"));
-      return;
-    }
-
-    setStatus("✅ Univers débloqué !");
-    applyUniverseUI();
+  function setStatus(id, keyOrText) {
+    const el = $(id);
+    if (!el) return;
+    el.textContent = keyOrText || "";
   }
 
   async function boot() {
-    const grid = document.getElementById("shop-universe-grid");
-    if (!grid) return; // shop.js est chargé aussi sur index, donc on évite de faire n’importe quoi
-
     try { await window.vrWaitBootstrap?.(); } catch (_) {}
     try { await window.VUserData?.init?.(); } catch (_) {}
     try { await window.VUserData?.refresh?.(); } catch (_) {}
 
-    applyUniverseUI();
+    // Nav boutons (pas de texte en dur)
+    const back = $("btn-back");
+    const profile = $("btn-profile");
 
-    // Si index a demandé un focus sur un univers verrouillé
-    const focus = localStorage.getItem("vrealms_shop_focus_universe");
-    if (focus) {
-      localStorage.removeItem("vrealms_shop_focus_universe");
-      const card = grid.querySelector('.vr-card[data-universe="' + focus + '"]');
-      if (card) {
-        card.scrollIntoView({ behavior: "smooth", block: "center" });
-        card.style.outline = "2px solid rgba(255,255,255,.45)";
-        setTimeout(() => { try { card.style.outline = ""; } catch (_) {} }, 1400);
-      }
+    if (back) {
+      back.addEventListener("click", () => {
+        // retour logique : si tu as une page index, on y va, sinon history
+        try {
+          const ref = document.referrer || "";
+          if (ref && ref.includes(location.origin)) history.back();
+          else location.href = "index.html";
+        } catch (_) {
+          location.href = "index.html";
+        }
+      });
     }
 
-    // Click cards
-    grid.addEventListener("click", async (e) => {
-      const card = e.target.closest(".vr-card[data-universe]");
-      if (!card) return;
+    if (profile) {
+      profile.addEventListener("click", () => {
+        location.href = "profile.html";
+      });
+    }
 
-      const id = card.getAttribute("data-universe");
-      if (!id) return;
+    // Purchases.js gère :
+    // - rewarded buttons (#btn-reward-jeton, #btn-reward-coins)
+    // - iap buttons (data-iap="SKU") + label .vr-iap-label
+    // Ici on ne duplique pas la logique pour éviter les conflits.
 
-      const unlocked = window.VUserData?.isUniverseUnlocked?.(id) || id === "hell_king" || id === "heaven_king";
-
-      if (unlocked) {
-        launchUniverse(id);
-      } else {
-        await buyUniverse(id);
-      }
-    });
+    // Petit clean des statuts au chargement
+    setStatus("shop-status", "");
+    setStatus("store-status", "");
   }
 
   document.addEventListener("DOMContentLoaded", boot);
