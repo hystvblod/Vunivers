@@ -1082,8 +1082,8 @@ body.vr-body-game[data-universe="hell_king"]{
   --vr-hell-hud-years-size: clamp(10px, 1.25vw, 16px);
 
   /* Top bar Hell */
-  --vr-hell-topbar-w: min(76vw, 620px);
-  --vr-hell-topbar-h: calc(var(--vr-hell-topbar-w) * 0.2061);
+--vr-hell-topbar-w: min(62vw, 500px);
+--vr-hell-topbar-h: calc(var(--vr-hell-topbar-w) * 0.2061);
 
   /* Back Hell */
   --vr-hell-back-size: clamp(46px, 11vw, 76px);
@@ -1112,7 +1112,7 @@ body.vr-body-game[data-universe="hell_king"] > a.vr-icon-button[aria-label="Accu
 /* barre centrale custom */
 body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game{
   position: fixed !important;
-  top: calc(4px + env(safe-area-inset-top)) !important;
+ top: calc(10px + env(safe-area-inset-top)) !important;
   left: 50% !important;
   right: auto !important;
   transform: translateX(-50%) !important;
@@ -1170,8 +1170,8 @@ body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-icon-butto
 /* bouton retour custom */
 body.vr-body-game[data-universe="hell_king"] > a.vr-icon-button[aria-label="Accueil"]{
   position: fixed !important;
-  top: calc(2px + env(safe-area-inset-top)) !important;
-  left: 8px !important;
+top: calc(12px + env(safe-area-inset-top)) !important;
+left: 16px !important;
   width: var(--vr-hell-back-size) !important;
   height: var(--vr-hell-back-size) !important;
   padding: 0 !important;
@@ -1364,7 +1364,7 @@ body.vr-body-game[data-universe="hell_king"] #view-game .vr-choice-button{
     --vr-hell-hud-name-size: clamp(11px, 3.1vw, 16px);
     --vr-hell-hud-years-size: clamp(9px, 2vw, 12px);
 
-    --vr-hell-topbar-w: min(84vw, 520px);
+   --vr-hell-topbar-w: min(72vw, 420px);
     --vr-hell-back-size: clamp(40px, 12vw, 60px);
     --vr-topbar-h: calc(clamp(50px, 12vw, 76px) + env(safe-area-inset-top) + 6px);
   }
@@ -1384,14 +1384,14 @@ body.vr-body-game[data-universe="hell_king"] #view-game .vr-choice-button{
     right: 20.8% !important;
   }
 
-  body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game{
-    top: calc(2px + env(safe-area-inset-top)) !important;
-  }
+body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game{
+  top: calc(8px + env(safe-area-inset-top)) !important;
+}
 
-  body.vr-body-game[data-universe="hell_king"] > a.vr-icon-button[aria-label="Accueil"]{
-    top: calc(1px + env(safe-area-inset-top)) !important;
-    left: 6px !important;
-  }
+body.vr-body-game[data-universe="hell_king"] > a.vr-icon-button[aria-label="Accueil"]{
+  top: calc(10px + env(safe-area-inset-top)) !important;
+  left: 12px !important;
+}
 
   body.vr-body-game[data-universe="hell_king"] .vr-hud-item{
     transform: translateY(-4px) !important;
