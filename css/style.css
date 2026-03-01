@@ -1064,10 +1064,16 @@ body.vr-body-game[data-universe="hell_king"]{
   --vr-choice-inset-left: 14%;
 
   /* ✅ typo Hell (responsive) */
---vr-font-scn-title: clamp(18px, 3.2vmin, 36px);
---vr-font-scn-text:  clamp(15px, 2.8vmin, 30px);
---vr-font-choice:    clamp(16px, 3.0vmin, 32px);
+  --vr-font-scn-title: clamp(18px, 3.2vmin, 36px);
+  --vr-font-scn-text:  clamp(15px, 2.8vmin, 30px);
+  --vr-font-choice:    clamp(16px, 3.0vmin, 32px);
 
+  /* ✅ HUD Hell */
+  --vr-hell-hud-w: min(94vw, 980px);
+  --vr-hell-hud-icon-size: clamp(24px, 3vw, 40px);
+  --vr-hell-hud-value-size: clamp(12px, 1.9vw, 22px);
+  --vr-hell-hud-name-size: clamp(13px, 2vw, 28px);
+  --vr-hell-hud-years-size: clamp(10px, 1.25vw, 16px);
 }
 
 body.vr-body-game[data-universe="hell_king"] #view-game{
@@ -1079,6 +1085,7 @@ body.vr-body-game[data-universe="hell_king"] #view-game{
   background-repeat: no-repeat !important;
   background-size: 100% 100% !important;
 }
+
 /* ==========================================================
    HELL KING — HUD sculpté avec WEBP
    Fichier requis : assets/img/ui/hell_hud_bar.webp
@@ -1086,14 +1093,6 @@ body.vr-body-game[data-universe="hell_king"] #view-game{
    Centre  = Nom + années
    Droite  = Jetons
    ========================================================== */
-
-body.vr-body-game[data-universe="hell_king"]{
-  --vr-hell-hud-w: min(94vw, 980px);
-  --vr-hell-hud-icon-size: clamp(10px, 1.45vw, 18px);
-  --vr-hell-hud-value-size: clamp(11px, 1.75vw, 22px);
-  --vr-hell-hud-name-size: clamp(13px, 2.0vw, 28px);
-  --vr-hell-hud-years-size: clamp(10px, 1.25vw, 16px);
-}
 
 /* Le HUD normal devient la barre Hell */
 body.vr-body-game[data-universe="hell_king"] .vr-hud{
@@ -1127,20 +1126,20 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
 
 /* Zone cercle gauche */
 body.vr-body-game[data-universe="hell_king"] .vr-hud-left{
-  left: 2.2% !important;
-  width: 15.2% !important;
+  left: 1.6% !important;
+  width: 16.8% !important;
 }
 
 /* Zone centrale */
 body.vr-body-game[data-universe="hell_king"] .vr-hud-center{
-  left: 18.5% !important;
-  right: 18.5% !important;
+  left: 19.2% !important;
+  right: 19.2% !important;
 }
 
 /* Zone cercle droit */
 body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
-  right: 2.2% !important;
-  width: 15.2% !important;
+  right: 1.6% !important;
+  width: 16.8% !important;
 }
 
 /* Supprime les capsules rondes actuelles dans Hell */
@@ -1148,8 +1147,8 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-item{
   width: 100% !important;
   height: 100% !important;
   min-height: 0 !important;
-  padding: 0 !important;
-  gap: clamp(3px, 0.6vw, 8px) !important;
+  padding: 0 clamp(2px, 0.35vw, 6px) !important;
+  gap: clamp(2px, 0.35vw, 6px) !important;
 
   display: flex !important;
   align-items: center !important;
@@ -1160,30 +1159,39 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-item{
   box-shadow: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
+
+  transform: translateY(1px) !important;
 }
 
 /* Boutons icônes dans les médaillons */
 body.vr-body-game[data-universe="hell_king"] .vr-hud-icon-btn{
   width: var(--vr-hell-hud-icon-size) !important;
   height: var(--vr-hell-hud-icon-size) !important;
+  min-width: var(--vr-hell-hud-icon-size) !important;
+  min-height: var(--vr-hell-hud-icon-size) !important;
   flex: 0 0 auto !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
 }
 
 body.vr-body-game[data-universe="hell_king"] .vr-hud-icon{
   width: 100% !important;
   height: 100% !important;
   object-fit: contain !important;
-  opacity: 0.98 !important;
+  object-position: center !important;
+  display: block !important;
+  opacity: 1 !important;
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
 }
 
 /* Valeurs VCoins / Jetons */
 body.vr-body-game[data-universe="hell_king"] .vr-hud-value{
   font-size: var(--vr-hell-hud-value-size) !important;
-  font-weight: 800 !important;
+  font-weight: 900 !important;
   line-height: 1 !important;
   letter-spacing: 0 !important;
   color: #f2eee8 !important;
@@ -1238,25 +1246,25 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-years{
 @media (max-width: 480px){
   body.vr-body-game[data-universe="hell_king"]{
     --vr-hell-hud-w: 96vw;
-    --vr-hell-hud-icon-size: clamp(9px, 2.1vw, 13px);
-    --vr-hell-hud-value-size: clamp(10px, 2.6vw, 14px);
+    --vr-hell-hud-icon-size: clamp(18px, 4.1vw, 24px);
+    --vr-hell-hud-value-size: clamp(11px, 2.8vw, 14px);
     --vr-hell-hud-name-size: clamp(11px, 3.1vw, 16px);
-    --vr-hell-hud-years-size: clamp(9px, 2.0vw, 12px);
+    --vr-hell-hud-years-size: clamp(9px, 2vw, 12px);
   }
 
   body.vr-body-game[data-universe="hell_king"] .vr-hud-left{
-    left: 2.6% !important;
-    width: 15.6% !important;
+    left: 1.8% !important;
+    width: 17.4% !important;
   }
 
   body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
-    right: 2.6% !important;
-    width: 15.6% !important;
+    right: 1.8% !important;
+    width: 17.4% !important;
   }
 
   body.vr-body-game[data-universe="hell_king"] .vr-hud-center{
-    left: 19% !important;
-    right: 19% !important;
+    left: 19.8% !important;
+    right: 19.8% !important;
   }
 }
 
