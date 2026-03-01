@@ -1083,7 +1083,7 @@ body.vr-body-game[data-universe="hell_king"]{
 
   /* Top bar Hell */
   --vr-hell-topbar-w: clamp(220px, 54vw, 420px);
-  --vr-hell-topbar-h: calc(var(--vr-hell-topbar-w) * 0.2061);
+ --vr-hell-topbar-h: calc(var(--vr-hell-topbar-w) * 0.255);
 
   /* Back Hell */
   --vr-hell-back-size: clamp(46px, 11vw, 76px);
