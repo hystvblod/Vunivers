@@ -1260,6 +1260,18 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-years{
   }
 }
 
+/* ✅ Hell: scénario */
+body.vr-body-game[data-universe="hell_king"] #view-game .vr-card-main{
+  overflow: hidden;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+}
+
+/* ✅ Hell : choix */
+body.vr-body-game[data-universe="hell_king"] #view-game .vr-choice-button{
+  background-size: 100% 100% !important;
+  background-position: center !important;
+}
 /* ==========================================================
    HEAVEN ONLY — serré + choix plus grands + SAFE ZONES en %
    ========================================================== */
