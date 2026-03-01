@@ -1076,14 +1076,14 @@ body.vr-body-game[data-universe="hell_king"]{
 
   /* HUD Hell */
   --vr-hell-hud-w: min(94vw, 980px);
-  -vr-hell-hud-icon-size: clamp(46px, 5.8vw, 72px)
+  -vr-hell-hud-icon-size: clamp(46px, 5.8vw, 72px);
   --vr-hell-hud-value-size: clamp(13px, 2vw, 24px);
   --vr-hell-hud-name-size: clamp(13px, 2vw, 28px);
   --vr-hell-hud-years-size: clamp(10px, 1.25vw, 16px);
 
   /* Top bar Hell */
   --vr-hell-topbar-w: clamp(220px, 54vw, 420px);
- --vr-hell-topbar-h: calc(var(--vr-hell-topbar-w) * 0.255);
+ --vr-hell-topbar-h: calc(var(--vr-hell-topbar-w) * 0.275);
 
   /* Back Hell */
   --vr-hell-back-size: clamp(46px, 11vw, 76px);
