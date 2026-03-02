@@ -1141,8 +1141,8 @@ body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game::before{
 /* zones cliquables conservées */
 body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-icon-button{
   position: absolute !important;
-  top: 14% !important;
-  width: 15.5% !important;
+  top: 16% !important;
+  width: 17% !important;
   height: 72% !important;
   padding: 0 !important;
   margin: 0 !important;
