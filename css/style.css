@@ -1154,17 +1154,17 @@ body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-icon-butto
 
 /* Profil */
 body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-icon-button:nth-child(1){
-  left: 18% !important;
+  left: 20% !important;
 }
 
 /* Paramètres */
 body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-icon-button:nth-child(2){
-  left: 42% !important;
+  left: 44% !important;
 }
 
 /* Boutique */
 body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-icon-button:nth-child(3){
-  left: 72% !important;
+  left: 62% !important;
 }
 
 /* bouton retour custom */
