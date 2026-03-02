@@ -1042,8 +1042,12 @@ body[data-universe="mega_corp_ceo"].vr-body-game #view-game .vr-choice-label{
 }
 
 /* ==========================================================
-   HELL ONLY — ✅ corrigé : texte + haut + gauche
-   + ✅ zone texte choix réduite (Hell seulement)
+   HELL ONLY — bloc complet final
+   - fond étiré plein écran
+   - HUD Hell sculpté
+   - top bar Hell custom cliquable
+   - bouton retour Hell custom cliquable
+   - safe zones Hell conservées
    ========================================================== */
 body.vr-body-game[data-universe="hell_king"]{
   --vr-card-w: clamp(380px, 98vw, 980px);
@@ -1051,30 +1055,356 @@ body.vr-body-game[data-universe="hell_king"]{
   --vr-scn-h: clamp(140px, 19svh, 300px);
   --vr-choice-h: clamp(88px, 13.2svh, 220px);
 
-  /* ✅ SAFE ZONES Hell (en %) — Ajusté pour remonter + décaler à gauche */
+  /* SAFE ZONES Hell */
   --vr-scn-inset-top: 12%;
   --vr-scn-inset-right: 13%;
   --vr-scn-inset-bottom: 16%;
   --vr-scn-inset-left: 9%;
 
-  /* ✅ Hell : choix -> zone texte plus petite (plus de marge autour) */
   --vr-choice-inset-top: 24%;
   --vr-choice-inset-right: 14%;
   --vr-choice-inset-bottom: 22%;
   --vr-choice-inset-left: 14%;
 
-  /* ✅ typo Hell (responsive) */
---vr-font-scn-title: clamp(18px, 3.2vmin, 36px);
---vr-font-scn-text:  clamp(15px, 2.8vmin, 30px);
---vr-font-choice:    clamp(16px, 3.0vmin, 32px);
+  /* typo Hell */
+  --vr-font-scn-title: clamp(18px, 3.2vmin, 36px);
+  --vr-font-scn-text:  clamp(15px, 2.8vmin, 30px);
+  --vr-font-choice:    clamp(16px, 3.0vmin, 32px);
 
+  /* réserve en haut pour la top bar custom */
+  --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
+
+  /* HUD Hell */
+  --vr-hell-hud-w: min(94vw, 980px);
+ --vr-hell-hud-icon-size: clamp(32px, 4.2vw, 52px);
+  --vr-hell-hud-value-size: clamp(13px, 2vw, 24px);
+  --vr-hell-hud-name-size: clamp(13px, 2vw, 28px);
+  --vr-hell-hud-years-size: clamp(10px, 1.25vw, 16px);
+
+  /* Top bar Hell */
+  --vr-hell-topbar-w: clamp(220px, 54vw, 420px);
+ --vr-hell-topbar-h: calc(var(--vr-hell-topbar-w) * 0.275);
+
+  /* Back Hell */
+  --vr-hell-back-size: clamp(46px, 11vw, 76px);
 }
 
 body.vr-body-game[data-universe="hell_king"] #view-game{
   padding-left: clamp(8px, 2.8vw, 16px) !important;
   padding-right: clamp(8px, 2.8vw, 16px) !important;
+
+  background-image: var(--vr-universe-bg) !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
 }
 
+/* ==========================================================
+   HELL ONLY — top bar custom
+   ========================================================== */
+
+/* cache uniquement les anciennes images, pas les liens */
+body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-top-icon,
+body.vr-body-game[data-universe="hell_king"] > a.vr-icon-button[aria-label="Accueil"] .vr-top-icon{
+  display: none !important;
+}
+
+/* barre centrale custom */
+body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game{
+  position: fixed !important;
+  top: calc(14px + env(safe-area-inset-top)) !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+
+  width: var(--vr-hell-topbar-w) !important;
+  height: var(--vr-hell-topbar-h) !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+  gap: 0 !important;
+
+  display: block !important;
+  pointer-events: none !important;
+  z-index: 100000 !important;
+}
+
+body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/img/ui/hell_topbar.webp") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.38));
+  pointer-events: none;
+}
+
+/* zones cliquables conservées */
+body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-icon-button{
+  position: absolute !important;
+  top: 16% !important;
+  width: 17% !important;
+  height: 72% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+  z-index: 1 !important;
+}
+
+/* Profil */
+body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-icon-button:nth-child(1){
+  left: 16% !important;
+}
+
+/* Paramètres */
+body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-icon-button:nth-child(2){
+  left: 41% !important;
+}
+
+/* Boutique */
+body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-icon-button:nth-child(3){
+  left: 66% !important;
+}
+
+/* bouton retour custom */
+body.vr-body-game[data-universe="hell_king"] > a.vr-icon-button[aria-label="Accueil"]{
+  position: fixed !important;
+  top: calc(18px + env(safe-area-inset-top)) !important;
+  left: 20px !important;
+  width: var(--vr-hell-back-size) !important;
+  height: var(--vr-hell-back-size) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  z-index: 100002 !important;
+  pointer-events: auto !important;
+}
+
+body.vr-body-game[data-universe="hell_king"] > a.vr-icon-button[aria-label="Accueil"]::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/img/ui/hell_back.webp") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.42));
+  pointer-events: none;
+}
+
+/* feedback tactile */
+body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-icon-button:active,
+body.vr-body-game[data-universe="hell_king"] > a.vr-icon-button[aria-label="Accueil"]:active{
+  transform: scale(0.97);
+}
+
+/* ==========================================================
+   HELL KING — HUD sculpté avec WEBP
+   ========================================================== */
+body.vr-body-game[data-universe="hell_king"] .vr-hud{
+  position: relative !important;
+  width: var(--vr-hell-hud-w) !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: block !important;
+  white-space: normal !important;
+
+  aspect-ratio: 1024 / 269;
+  background: url("../assets/img/ui/hell_hud_bar.webp") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.42));
+}
+
+body.vr-body-game[data-universe="hell_king"] .vr-hud-left,
+body.vr-body-game[data-universe="hell_king"] .vr-hud-center,
+body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: none !important;
+  justify-self: auto !important;
+}
+
+/* gauche */
+body.vr-body-game[data-universe="hell_king"] .vr-hud-left{
+  left: 3.6 !important;
+  width: 17.8% !important;
+}
+
+/* centre */
+body.vr-body-game[data-universe="hell_king"] .vr-hud-center{
+  left: 20.2% !important;
+  right: 20.2% !important;
+}
+
+/* droite */
+body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
+  right: 5% !important;
+  width: 17.8% !important;
+}
+
+body.vr-body-game[data-universe="hell_king"] .vr-hud-item{
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 0 clamp(1px, 0.22vw, 4px) !important;
+  gap: clamp(1px, 0.18vw, 4px) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  transform: translateY(-11px) !important;
+}
+
+body.vr-body-game[data-universe="hell_king"] .vr-hud-icon-btn{
+  width: var(--vr-hell-hud-icon-size) !important;
+  height: var(--vr-hell-hud-icon-size) !important;
+  min-width: var(--vr-hell-hud-icon-size) !important;
+  min-height: var(--vr-hell-hud-icon-size) !important;
+  flex: 0 0 auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  transform: translateY(-2px) !important;
+}
+
+body.vr-body-game[data-universe="hell_king"] .vr-hud-icon{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+}
+
+body.vr-body-game[data-universe="hell_king"] .vr-hud-value{
+  font-size: var(--vr-hell-hud-value-size) !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  color: #f2eee8 !important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.45),
+    0 0 8px rgba(0,0,0,0.35) !important;
+  transform: translateY(-2px) !important;
+}
+
+body.vr-body-game[data-universe="hell_king"] .vr-hud-identity{
+  width: 100% !important;
+  max-width: none !important;
+  overflow: hidden !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(4px, 0.7vw, 10px) !important;
+
+  white-space: nowrap !important;
+  text-align: center !important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.5),
+    0 2px 10px rgba(0,0,0,0.55) !important;
+}
+
+body.vr-body-game[data-universe="hell_king"] .vr-hud-name{
+  font-family: "VR_Quintess", serif !important;
+  font-size: var(--vr-hell-hud-name-size) !important;
+  font-weight: 700 !important;
+  color: #f4ede5 !important;
+  line-height: 1 !important;
+  max-width: 75% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+body.vr-body-game[data-universe="hell_king"] .vr-hud-years{
+  font-family: "VR_Quintess", serif !important;
+  font-size: var(--vr-hell-hud-years-size) !important;
+  font-weight: 700 !important;
+  color: rgba(244,237,229,0.95) !important;
+  line-height: 1 !important;
+  transform: translateY(1px) !important;
+  opacity: 0.95 !important;
+  flex: 0 0 auto !important;
+}
+
+/* Hell : scénario */
+body.vr-body-game[data-universe="hell_king"] #view-game .vr-card-main{
+  overflow: hidden;
+  background-size: 90% 90% !important;
+  background-position: center !important;
+}
+
+/* Hell : choix */
+body.vr-body-game[data-universe="hell_king"] #view-game .vr-choice-button{
+  background-size: 90% 90% !important;
+  background-position: center !important;
+}
+
+/* mobile Hell */
+@media (max-width: 480px){
+  body.vr-body-game[data-universe="hell_king"]{
+    --vr-hell-hud-w: 96vw;
+    --vr-hell-hud-icon-size: clamp(32px, 4.2vw, 52px);
+    --vr-hell-hud-value-size: clamp(11px, 2.8vw, 14px);
+    --vr-hell-hud-name-size: clamp(11px, 3.1vw, 16px);
+    --vr-hell-hud-years-size: clamp(9px, 2vw, 12px);
+
+    --vr-hell-topbar-w: clamp(210px, 58vw, 300px);
+    --vr-hell-back-size: clamp(40px, 12vw, 60px);
+    --vr-topbar-h: calc(clamp(50px, 12vw, 76px) + env(safe-area-inset-top) + 6px);
+  }
+
+  body.vr-body-game[data-universe="hell_king"] .vr-hud-left{
+    left: 3.6% !important;
+    width: 18.4% !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
+    right: 5% !important;
+    width: 18.4% !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] .vr-hud-center{
+    left: 20.8% !important;
+    right: 20.8% !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game{
+    top: calc(12px + env(safe-area-inset-top)) !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] > a.vr-icon-button[aria-label="Accueil"]{
+    top: calc(16px + env(safe-area-inset-top)) !important;
+    left: 16px !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] .vr-hud-item{
+    transform: translateY(-4px) !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] .vr-hud-icon-btn{
+    transform: translateY(-1px) !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] .vr-hud-value{
+    transform: translateY(-1px) !important;
+  }
+}
 /* ==========================================================
    HEAVEN ONLY — serré + choix plus grands + SAFE ZONES en %
    ========================================================== */
