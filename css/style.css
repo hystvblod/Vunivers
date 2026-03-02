@@ -1159,12 +1159,12 @@ body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-icon-butto
 
 /* Paramètres */
 body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-icon-button:nth-child(2){
-  left: 38% !important;
+  left: 41% !important;
 }
 
 /* Boutique */
 body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game .vr-icon-button:nth-child(3){
-  left: 68% !important;
+  left: 71% !important;
 }
 
 /* bouton retour custom */
@@ -1263,7 +1263,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-item{
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 
-  transform: translateY(-9px) !important;
+  transform: translateY(-10px) !important;
 }
 
 body.vr-body-game[data-universe="hell_king"] .vr-hud-icon-btn{
