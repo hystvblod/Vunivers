@@ -1484,18 +1484,18 @@ body.vr-body-game[data-universe="western_president"]{
    CEO
    ========================================================== */
 /* ✅ Ceo : choix */
-body.vr-body-game[data-universe="mega_corp-ceo"] #view-game .vr-choice-button{
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-button{
   background-size: 115% 130% !important;
   background-position: center !important;
 }
 
-body.vr-body-game[data-universe="mega_corp-ceo"] #view-game .vr-card-main{
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
   overflow: hidden;
   background-size: 100% 110% !important;
   background-position: center !important;
 }
 
-body.vr-body-game[data-universe="mega_corp-ceo"]{
+body.vr-body-game[data-universe="mega_corp_ceo"]{
   /* ✅ webp + grand (scénario + choix) */
   --vr-card-w: clamp(460px, 100vw, 1240px);
 
