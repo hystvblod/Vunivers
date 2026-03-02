@@ -1442,13 +1442,13 @@ body.vr-body-game[data-universe="heaven_king"]{
 /* ✅ Heaven : scénario */
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main{
   overflow: hidden;
-  background-size: 120% 125% !important;
+  background-size: 100% 100% !important;
   background-position: center !important;
 }
 
 /* ✅ Heaven : choix */
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-choice-button{
-  background-size: 125% 100% !important;
+  background-size: 110% 100% !important;
   background-position: center !important;
 }
 
