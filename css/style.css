@@ -376,8 +376,8 @@ button.vr-card:focus-visible{
   border: none;
   box-shadow: none;
 
-  background-size: cover;
-  background-position: center;
+  background-size: 100% 100%;
+  background-position: center center;
   background-repeat: no-repeat;
   background-image: var(--vr-universe-bg);
 
@@ -1092,11 +1092,6 @@ body.vr-body-game[data-universe="hell_king"]{
 body.vr-body-game[data-universe="hell_king"] #view-game{
   padding-left: clamp(8px, 2.8vw, 16px) !important;
   padding-right: clamp(8px, 2.8vw, 16px) !important;
-
-  background-image: var(--vr-universe-bg) !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-size: 100% 100% !important;
 }
 
 /* ==========================================================
