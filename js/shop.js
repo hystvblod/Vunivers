@@ -2,7 +2,7 @@
 // ✅ Boutique rewarded / store via purchases.js
 // ✅ Boutique cosmétiques branchée sur VUserData (achat + équipement)
 // ✅ Catalogue aussi disponible dans game.html pour la popup de personnalisation
-// ✅ Hell corrigé avec les nouveaux chemins/noms
+// ✅ Tous les univers utilisent maintenant la même structure de chemins
 // ✅ Structure propre et extensible pour tous les univers
 
 (function () {
@@ -18,13 +18,17 @@
     return String(n).padStart(2, "0");
   }
 
+  function normalizePath(value) {
+    return String(value || "").replace(/\/+$/, "").trim();
+  }
+
   function buildCosmeticItems(opts) {
     const prefix = String(opts?.prefix || "").trim();
     const keyNs = String(opts?.keyNs || "").trim();
     const category = String(opts?.category || "").trim();
     const price = Number(opts?.price || 0);
     const count = Number(opts?.count || 0);
-    const dir = String(opts?.dir || "").trim();
+    const dir = normalizePath(opts?.dir || "");
 
     const filePart =
       category === "background" ? "bg" :
@@ -53,6 +57,11 @@
   }
 
   function buildUniverseCatalog(opts) {
+    const bgDir = normalizePath(opts.bgDir || "assets/img/backgrounds");
+    const uiBaseDir = normalizePath(opts.uiDir || ("assets/img/ui/" + String(opts.prefix || "").trim()));
+    const msgDir = normalizePath(opts.msgDir || (uiBaseDir + "/msg"));
+    const choiceDir = normalizePath(opts.choiceDir || (uiBaseDir + "/choice"));
+
     return {
       id: String(opts?.id || "").trim(),
       labelKey: String(opts?.labelKey || "").trim(),
@@ -63,7 +72,7 @@
           category: "background",
           price: Number(opts.bgPrice || 400),
           count: Number(opts.bgCount || 0),
-          dir: String(opts.bgDir || "assets/img/backgrounds").trim()
+          dir: bgDir
         }),
         message: buildCosmeticItems({
           prefix: opts.prefix,
@@ -71,7 +80,7 @@
           category: "message",
           price: Number(opts.uiPrice || 300),
           count: Number(opts.msgCount || 0),
-          dir: String(opts.msgDir || "assets/img/ui").trim()
+          dir: msgDir
         }),
         choice: buildCosmeticItems({
           prefix: opts.prefix,
@@ -79,7 +88,7 @@
           category: "choice",
           price: Number(opts.uiPrice || 300),
           count: Number(opts.choiceCount || 0),
-          dir: String(opts.choiceDir || "assets/img/ui").trim()
+          dir: choiceDir
         })
       }
     };
@@ -92,8 +101,7 @@
       prefix: "hell",
       keyNs: "hell",
       bgDir: "assets/img/backgrounds",
-      msgDir: "assets/img/ui/hell/choix",
-      choiceDir: "assets/img/ui/hell/choix",
+      uiDir: "assets/img/ui/hell",
       bgCount: 6,
       msgCount: 7,
       choiceCount: 7,
@@ -107,8 +115,7 @@
       prefix: "heaven",
       keyNs: "heaven",
       bgDir: "assets/img/backgrounds",
-      msgDir: "assets/img/ui",
-      choiceDir: "assets/img/ui",
+      uiDir: "assets/img/ui/heaven",
       bgCount: 3,
       msgCount: 3,
       choiceCount: 3,
@@ -122,8 +129,7 @@
       prefix: "west",
       keyNs: "president",
       bgDir: "assets/img/backgrounds",
-      msgDir: "assets/img/ui",
-      choiceDir: "assets/img/ui",
+      uiDir: "assets/img/ui/west",
       bgCount: 3,
       msgCount: 3,
       choiceCount: 3,
@@ -137,8 +143,7 @@
       prefix: "corp",
       keyNs: "ceo",
       bgDir: "assets/img/backgrounds",
-      msgDir: "assets/img/ui",
-      choiceDir: "assets/img/ui",
+      uiDir: "assets/img/ui/corp",
       bgCount: 3,
       msgCount: 3,
       choiceCount: 3,
@@ -152,8 +157,7 @@
       prefix: "explorer",
       keyNs: "explorer",
       bgDir: "assets/img/backgrounds",
-      msgDir: "assets/img/ui",
-      choiceDir: "assets/img/ui",
+      uiDir: "assets/img/ui/explorer",
       bgCount: 3,
       msgCount: 3,
       choiceCount: 3,
@@ -167,8 +171,7 @@
       prefix: "vampire",
       keyNs: "vampire",
       bgDir: "assets/img/backgrounds",
-      msgDir: "assets/img/ui",
-      choiceDir: "assets/img/ui",
+      uiDir: "assets/img/ui/vampire",
       bgCount: 3,
       msgCount: 3,
       choiceCount: 3,
