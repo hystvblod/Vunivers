@@ -920,6 +920,11 @@ body.vr-body-game .vr-top-actions-game .vr-top-icon{
 body[data-universe="hell_king"].vr-body-game #view-game .vr-card-title,
 body[data-universe="hell_king"].vr-body-game #view-game .vr-card-text{
   font-family: "VR_Quintess", serif !important;
+  color: #000 !important;
+  text-align: center !important;
+  max-width: 92% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* HELL : choix */
@@ -1057,9 +1062,9 @@ body.vr-body-game[data-universe="hell_king"]{
 
   /* SAFE ZONES Hell */
   --vr-scn-inset-top: 12%;
-  --vr-scn-inset-right: 13%;
+  --vr-scn-inset-right: 14%;
   --vr-scn-inset-bottom: 16%;
-  --vr-scn-inset-left: 9%;
+  --vr-scn-inset-left: 14%;
 
   --vr-choice-inset-top: 24%;
   --vr-choice-inset-right: 14%;
@@ -1067,8 +1072,8 @@ body.vr-body-game[data-universe="hell_king"]{
   --vr-choice-inset-left: 14%;
 
   /* typo Hell */
-  --vr-font-scn-title: clamp(18px, 3.2vmin, 36px);
-  --vr-font-scn-text:  clamp(15px, 2.8vmin, 30px);
+  --vr-font-scn-title: clamp(17px, 3vmin, 32px);
+  --vr-font-scn-text:  clamp(14px, 2.5vmin, 27px);
   --vr-font-choice:    clamp(16px, 3.0vmin, 32px);
 
   /* réserve en haut pour la top bar custom */
@@ -1076,14 +1081,14 @@ body.vr-body-game[data-universe="hell_king"]{
 
   /* HUD Hell */
   --vr-hell-hud-w: min(94vw, 980px);
- --vr-hell-hud-icon-size: clamp(32px, 4.2vw, 52px);
+  --vr-hell-hud-icon-size: clamp(32px, 4.2vw, 52px);
   --vr-hell-hud-value-size: clamp(13px, 2vw, 24px);
   --vr-hell-hud-name-size: clamp(13px, 2vw, 28px);
   --vr-hell-hud-years-size: clamp(10px, 1.25vw, 16px);
 
   /* Top bar Hell */
   --vr-hell-topbar-w: clamp(220px, 54vw, 420px);
- --vr-hell-topbar-h: calc(var(--vr-hell-topbar-w) * 0.275);
+  --vr-hell-topbar-h: calc(var(--vr-hell-topbar-w) * 0.275);
 
   /* Back Hell */
   --vr-hell-back-size: clamp(46px, 11vw, 76px);
@@ -1225,7 +1230,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
 
 /* gauche */
 body.vr-body-game[data-universe="hell_king"] .vr-hud-left{
-  left: 3.3 !important;
+  left: 3.3% !important;
   width: 17.8% !important;
 }
 
