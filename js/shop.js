@@ -3,7 +3,6 @@
 // ✅ Boutique cosmétiques branchée sur VUserData (achat + équipement)
 // ✅ Catalogue aussi disponible dans game.html pour la popup de personnalisation
 // ✅ Tous les univers utilisent maintenant la même structure de chemins
-// ✅ Structure propre et extensible pour tous les univers
 
 (function () {
   "use strict";
@@ -117,8 +116,8 @@
       bgDir: "assets/img/backgrounds",
       uiDir: "assets/img/ui/heaven",
       bgCount: 3,
-      msgCount: 3,
-      choiceCount: 3,
+      msgCount: 5,
+      choiceCount: 5,
       bgPrice: 400,
       uiPrice: 300
     }),
@@ -206,6 +205,7 @@
     if (!el) return;
     el.textContent = text || "";
   }
+
   function toSafeNumber(value) {
     const n = Number(value);
     return Number.isFinite(n) && n >= 0 ? Math.floor(n) : null;
@@ -280,6 +280,7 @@
     if (coinsEl) coinsEl.textContent = String(balances.vcoins);
     if (jetonsEl) jetonsEl.textContent = String(balances.jetons);
   }
+
   function ensureStyles() {
     if (document.getElementById("vr-cosmetics-inline-style")) return;
 
@@ -300,13 +301,11 @@
       .vr-cos-track{display:flex;transition:transform .24s ease;will-change:transform}
       .vr-cos-slide{min-width:100%;width:100%;box-sizing:border-box}
       .vr-cos-card{position:relative;overflow:hidden;border-radius:18px;height:132px;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.24);box-shadow:0 16px 28px rgba(0,0,0,.28)}
-      .vr-cos-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0;user-select:none;pointer-events:none}
-      .vr-cos-card.is-ui img{object-fit:contain;padding:14px;background:radial-gradient(circle at 50% 40%, rgba(255,255,255,.10), transparent 46%),linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.08))}
+      .vr-cos-card > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0;user-select:none;pointer-events:none}
+      .vr-cos-card.is-ui > img{object-fit:contain;padding:14px;background:radial-gradient(circle at 50% 40%, rgba(255,255,255,.10), transparent 46%),linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.08))}
       .vr-cos-overlay{position:absolute;inset:auto 0 0 0;z-index:2;padding:32px 10px 10px;background:linear-gradient(180deg, transparent, rgba(0,0,0,.78))}
       .vr-cos-name{text-align:center;font-weight:900;font-size:13px;color:rgba(255,255,255,.96);line-height:1.15;margin-bottom:8px;text-shadow:0 8px 18px rgba(0,0,0,.45)}
-      .vr-cos-bottom{display:flex;align-items:center;justify-content:flex-end;gap:8px}.vr-cos-action{width:100%;margin-top:8px;display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);color:#fff;font-weight:900;cursor:pointer}
-      .vr-cos-price{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.30);box-shadow:0 10px 18px rgba(0,0,0,.22);color:rgba(255,255,255,.96);font-weight:950;font-size:12px;line-height:1}
-      .vr-cos-price img{position:static;width:16px;height:16px;object-fit:contain;padding:0;background:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}
+      .vr-cos-bottom{display:flex;align-items:center;justify-content:flex-end;gap:8px}
       .vr-cos-count{color:rgba(255,255,255,.86);font-size:12px;font-weight:900;text-shadow:0 8px 18px rgba(0,0,0,.45)}
       .vr-cos-dots{display:flex;justify-content:center;gap:6px;margin-top:8px}
       .vr-cos-dot{width:7px;height:7px;border-radius:999px;background:rgba(255,255,255,.28);box-shadow:0 4px 10px rgba(0,0,0,.22)}
@@ -595,7 +594,7 @@
         setStatus("store-status", "");
       }
 
-          renderTopBalances();
+      renderTopBalances();
       renderCosmetics();
     } catch (_) {
       setStatus("store-status", t("common.error_generic", "Erreur"));
@@ -617,7 +616,8 @@
     const profile = $("btn-profile");
 
     if (back) {
-      back.addEventListener("click", function () {
+      back.addEventListener("click", function (e) {
+        e.preventDefault();
         try {
           const ref = document.referrer || "";
           if (ref && ref.includes(location.origin)) history.back();
@@ -629,7 +629,8 @@
     }
 
     if (profile) {
-      profile.addEventListener("click", function () {
+      profile.addEventListener("click", function (e) {
+        e.preventDefault();
         location.href = "profile.html";
       });
     }
@@ -653,6 +654,10 @@
     });
 
     window.addEventListener("focus", function () {
+      renderTopBalances();
+    });
+
+    window.addEventListener("storage", function () {
       renderTopBalances();
     });
 
