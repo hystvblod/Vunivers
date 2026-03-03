@@ -206,7 +206,80 @@
     if (!el) return;
     el.textContent = text || "";
   }
+  function toSafeNumber(value) {
+    const n = Number(value);
+    return Number.isFinite(n) && n >= 0 ? Math.floor(n) : null;
+  }
 
+  function readStoredUserData() {
+    const keys = ["vuniverse_user_data", "vrealms_user_data"];
+
+    for (let i = 0; i < keys.length; i++) {
+      try {
+        const raw = localStorage.getItem(keys[i]);
+        if (!raw) continue;
+
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === "object") {
+          return parsed;
+        }
+      } catch (_) {}
+    }
+
+    return {};
+  }
+
+  function pickBalance(values) {
+    for (let i = 0; i < values.length; i++) {
+      const n = toSafeNumber(values[i]);
+      if (n !== null) return n;
+    }
+    return 0;
+  }
+
+  function getLiveBalances() {
+    const store = readStoredUserData();
+    const live = window.VUserData || {};
+    const liveData = typeof live.getData === "function" ? (live.getData() || {}) : {};
+
+    return {
+      vcoins: pickBalance([
+        typeof live.getVCoins === "function" ? live.getVCoins() : null,
+        typeof live.getBalance === "function" ? live.getBalance("vcoins") : null,
+        liveData.vcoins,
+        liveData.coins,
+        store.vcoins,
+        store.coins,
+        store.balance && store.balance.vcoins,
+        store.wallet && store.wallet.vcoins,
+        store.profile && store.profile.vcoins,
+        store.user && store.user.vcoins
+      ]),
+      jetons: pickBalance([
+        typeof live.getJetons === "function" ? live.getJetons() : null,
+        typeof live.getBalance === "function" ? live.getBalance("jetons") : null,
+        liveData.jetons,
+        liveData.tokens,
+        store.jetons,
+        store.tokens,
+        store.balance && store.balance.jetons,
+        store.wallet && store.wallet.jetons,
+        store.profile && store.profile.jetons,
+        store.user && store.user.jetons
+      ])
+    };
+  }
+
+  function renderTopBalances() {
+    const coinsEl = $("top-vcoins-balance");
+    const jetonsEl = $("top-jetons-balance");
+    if (!coinsEl && !jetonsEl) return;
+
+    const balances = getLiveBalances();
+
+    if (coinsEl) coinsEl.textContent = String(balances.vcoins);
+    if (jetonsEl) jetonsEl.textContent = String(balances.jetons);
+  }
   function ensureStyles() {
     if (document.getElementById("vr-cosmetics-inline-style")) return;
 
@@ -231,7 +304,7 @@
       .vr-cos-card.is-ui img{object-fit:contain;padding:14px;background:radial-gradient(circle at 50% 40%, rgba(255,255,255,.10), transparent 46%),linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.08))}
       .vr-cos-overlay{position:absolute;inset:auto 0 0 0;z-index:2;padding:32px 10px 10px;background:linear-gradient(180deg, transparent, rgba(0,0,0,.78))}
       .vr-cos-name{text-align:center;font-weight:900;font-size:13px;color:rgba(255,255,255,.96);line-height:1.15;margin-bottom:8px;text-shadow:0 8px 18px rgba(0,0,0,.45)}
-      .vr-cos-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}
+      .vr-cos-bottom{display:flex;align-items:center;justify-content:flex-end;gap:8px}.vr-cos-action{width:100%;margin-top:8px;display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);color:#fff;font-weight:900;cursor:pointer}
       .vr-cos-price{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.30);box-shadow:0 10px 18px rgba(0,0,0,.22);color:rgba(255,255,255,.96);font-weight:950;font-size:12px;line-height:1}
       .vr-cos-price img{position:static;width:16px;height:16px;object-fit:contain;padding:0;background:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}
       .vr-cos-count{color:rgba(255,255,255,.86);font-size:12px;font-weight:900;text-shadow:0 8px 18px rgba(0,0,0,.45)}
@@ -239,6 +312,8 @@
       .vr-cos-dot{width:7px;height:7px;border-radius:999px;background:rgba(255,255,255,.28);box-shadow:0 4px 10px rgba(0,0,0,.22)}
       .vr-cos-dot.active{background:rgba(255,255,255,.92)}
       .vr-cos-action{width:100%;margin-top:8px;display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);color:#fff;font-weight:900;cursor:pointer}
+      .vr-cos-action-content{display:inline-flex;align-items:center;justify-content:center;gap:8px;line-height:1}
+      .vr-cos-action-ico{width:16px;height:16px;object-fit:contain;display:block;flex:0 0 auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}
       .vr-cos-action.is-owned{background:rgba(255,255,255,.10)}
       .vr-cos-action.is-equipped{background:rgba(138,197,95,.22);border-color:rgba(138,197,95,.55)}
       .vr-cos-note{text-align:center;color:rgba(255,255,255,.84);font-size:12px;margin-top:6px}
@@ -382,7 +457,7 @@
       return {
         owned: owned,
         equipped: equipped,
-        text: t("common.equipped", "Équipé"),
+        html: `<span class="vr-cos-action-content">${t("common.equipped", "Équipé")}</span>`,
         className: "vr-cos-action is-equipped"
       };
     }
@@ -391,7 +466,7 @@
       return {
         owned: owned,
         equipped: equipped,
-        text: t("common.use", "Équiper"),
+        html: `<span class="vr-cos-action-content">${t("common.use", "Équiper")}</span>`,
         className: "vr-cos-action is-owned"
       };
     }
@@ -399,7 +474,12 @@
     return {
       owned: owned,
       equipped: equipped,
-      text: t("common.buy", "Acheter") + " · " + item.price,
+      html:
+        `<span class="vr-cos-action-content">` +
+          `<span>${t("common.buy", "Acheter")}</span>` +
+          `<img class="vr-cos-action-ico" src="assets/img/ui/vcoins.webp" alt="" draggable="false">` +
+          `<span>${item.price}</span>` +
+        `</span>`,
       className: "vr-cos-action"
     };
   }
@@ -440,10 +520,6 @@
                               <div class="vr-cos-overlay">
                                 <div class="vr-cos-name">${t(item.nameKey, item.id)}</div>
                                 <div class="vr-cos-bottom">
-                                  <div class="vr-cos-price">
-                                    <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
-                                    <span>${item.price}</span>
-                                  </div>
                                   <div class="vr-cos-count">${index + 1} / ${items.length}</div>
                                 </div>
                                 <button
@@ -454,7 +530,7 @@
                                   data-category="${item.category}"
                                   data-item-id="${item.id}"
                                   data-price="${item.price}"
-                                >${action.text}</button>
+                                >${action.html}</button>
                               </div>
                             </div>
                           </div>
@@ -519,6 +595,7 @@
         setStatus("store-status", "");
       }
 
+          renderTopBalances();
       renderCosmetics();
     } catch (_) {
       setStatus("store-status", t("common.error_generic", "Erreur"));
@@ -559,18 +636,35 @@
 
     setStatus("shop-status", "");
     setStatus("store-status", "");
+    renderTopBalances();
     renderCosmetics();
 
     document.addEventListener("click", async function (e) {
       const btn = e.target && e.target.closest ? e.target.closest("[data-cosmetic-action]") : null;
       if (!btn) return;
       await handleCosmeticAction(btn);
+      renderTopBalances();
     });
 
     window.addEventListener("vr:profile", function () {
       if (!isShopPage()) return;
+      renderTopBalances();
       renderCosmetics();
     });
+
+    window.addEventListener("focus", function () {
+      renderTopBalances();
+    });
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) return;
+      renderTopBalances();
+    });
+
+    setInterval(function () {
+      if (!isShopPage()) return;
+      renderTopBalances();
+    }, 800);
   }
 
   document.addEventListener("DOMContentLoaded", boot);
