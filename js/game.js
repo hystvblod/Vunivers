@@ -2515,11 +2515,11 @@ const DEFAULT_GRAY_ASSETS = {
     const choice = resolveAppliedAsset(universeId, "choice");
 
     if (bg) {
-      viewGame.style.backgroundImage = `url("${bg}")`;
-      viewGame.style.backgroundSize = "cover";
-      viewGame.style.backgroundPosition = "center center";
-      viewGame.style.backgroundRepeat = "no-repeat";
-    }
+  viewGame.style.backgroundImage = `url("${bg}")`;
+  viewGame.style.backgroundSize = "100% 100%";
+  viewGame.style.backgroundPosition = "center center";
+  viewGame.style.backgroundRepeat = "no-repeat";
+}
 
     if (cardMain && message) {
       cardMain.style.backgroundImage = `url("${message}")`;
