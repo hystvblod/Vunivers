@@ -1,9 +1,10 @@
 // ===============================================
-// VRealms - js/game.js (bundle complet) — VERSION À JOUR (PATCH FIXES)
+// VRealms - js/game.js (bundle complet) — VERSION À JOUR (PATCH FIXES + COSMETICS)
 // - Loader univers/decks/i18n
 // - UI binding + swipe animé sur les choix (A/B/C)
 // - State / Endings / Engine core
 // - Popups Jeton & VCoins
+// - Popup Personnalisation
 // - VRGame + anti-retour navigateur (best-effort)
 // - ✅ SAVE LOCAL PAR UNIVERS (reprise session)
 // - ✅ EVENTS: toutes les 3 cartes -> 1/10, pool 30, anti-répétition 25/30
@@ -13,6 +14,7 @@
 // - ✅ FIX(2): _handleDeath() n’empile plus de listeners (bind once + delegation)
 // - ✅ FIX(3): events jetons: UI ne bouge que si DB ok + refresh soft après event
 // - ✅ FIX(5): i18n overlay event (Continuer / Événement) avec fallback
+// - ✅ COSMETICS: fallback gris + popup perso + application live
 // ===============================================
 
 
@@ -22,7 +24,6 @@
 (function () {
   "use strict";
 
-  // Cache mémoire (PAS localStorage) juste pour éviter de spam RPC
   const _mem = { me: null, ts: 0 };
 
   async function getMeFresh(maxAgeMs) {
@@ -39,16 +40,14 @@
       }
     } catch (_) {}
 
-    return _mem.me; // peut être null
+    return _mem.me;
   }
 
-  // Petit helper pour éviter NaN
   function n(x) {
     const v = Number(x);
     return Number.isFinite(v) ? v : 0;
   }
 
-  // Expose global (utile partout dans ce bundle)
   window.VRProfile = window.VRProfile || {
     async getMe(maxAgeMs) { return await getMeFresh(maxAgeMs); },
     _n: n
@@ -58,8 +57,6 @@
 
 // -------------------------------------------------------
 // ✅ Save system local (par univers) — reprise session
-// - Stocke uniquement l’état de RUN (pas profil Supabase)
-// - Clé: vrealms_save_<universeId>
 // -------------------------------------------------------
 (function () {
   "use strict";
@@ -114,22 +111,19 @@
 
 // -------------------------------------------------------
 // Badge thresholds (sans mort)
-// bronze = 40 choix, argent = 60, or = 100
 // -------------------------------------------------------
 const VR_BADGE_BRONZE_CHOICES = 40;
 const VR_BADGE_SILVER_CHOICES = 60;
 const VR_BADGE_GOLD_CHOICES = 100;
 
 
-// VRealms - engine/events-loader.js
-// Charge la config d'univers + le deck (par univers) + les textes des cartes (par univers + langue).
-// + ✅ charge EVENTS (logic + i18n) par univers
+// -------------------------------------------------------
+// Loader univers / deck / textes / events
+// -------------------------------------------------------
 (function () {
   "use strict";
 
   const SCENARIOS_PATH = "data/scenarios";
-
-  // ✅ anciens chemins gardés en fallback pendant la transition
   const LEGACY_CONFIG_PATH = "data/universes";
   const LEGACY_DECKS_PATH = "data/decks";
   const LEGACY_I18N_PATH = "data/i18n";
@@ -150,7 +144,6 @@ const VR_BADGE_GOLD_CHOICES = 100;
       return { config, deck, cardTexts };
     },
 
-    // ✅ NEW: load events (logic + i18n)
     async loadUniverseEvents(universeId, lang) {
       const logicPromise = this._loadEventsLogic(universeId);
       const textsPromise = this._loadEventsTexts(universeId, lang);
@@ -189,10 +182,6 @@ const VR_BADGE_GOLD_CHOICES = 100;
       }
 
       const deckJson = await res.json();
-
-      // Supporte 2 formats :
-      // 1) { "cards": [ ... ] }
-      // 2) [ ... ] (array direct)
       const cards = Array.isArray(deckJson) ? deckJson : (deckJson?.cards || null);
 
       if (!Array.isArray(cards)) {
@@ -203,8 +192,6 @@ const VR_BADGE_GOLD_CHOICES = 100;
 
     async _loadCardTexts(universeId, lang) {
       const urlNew = `${SCENARIOS_PATH}/${universeId}/cards_${lang}.json`;
-
-      // ✅ FALLBACK anciens formats
       const urlOld1 = `${LEGACY_I18N_PATH}/${lang}/cards_${universeId}.json`;
       const urlOld2 = `${LEGACY_I18N_PATH}/cards_${universeId}_${lang}.json`;
 
@@ -227,10 +214,8 @@ const VR_BADGE_GOLD_CHOICES = 100;
         res = await fetch(urlOld, { cache: "no-cache" });
       }
 
-      if (!res.ok) {
-        // pas bloquant : si un univers n’a pas d’events, on renvoie vide
-        return { events: [] };
-      }
+      if (!res.ok) return { events: [] };
+
       const data = await res.json();
       if (Array.isArray(data)) return { events: data };
       if (data && typeof data === "object" && Array.isArray(data.events)) return data;
@@ -239,8 +224,6 @@ const VR_BADGE_GOLD_CHOICES = 100;
 
     async _loadEventsTexts(universeId, lang) {
       const urlNew = `${SCENARIOS_PATH}/${universeId}/events_${lang}.json`;
-
-      // ✅ FALLBACK anciens formats
       const urlOld1 = `${LEGACY_I18N_PATH}/${lang}/events_${universeId}.json`;
       const urlOld2 = `${LEGACY_I18N_PATH}/events_${universeId}_${lang}.json`;
 
@@ -259,8 +242,7 @@ const VR_BADGE_GOLD_CHOICES = 100;
 
 
 // -------------------------------------------------------
-// ✅ Event Overlay (pas besoin de modifier game.html)
-// Affiche titre + texte + bouton Continuer
+// Event Overlay
 // -------------------------------------------------------
 (function () {
   "use strict";
@@ -348,8 +330,9 @@ const VR_BADGE_GOLD_CHOICES = 100;
 })();
 
 
-// VRealms - engine/ui-binding.js
-// (modifié: FIX(1) PointerOnly + fallback touch)
+// -------------------------------------------------------
+// UI binding + swipe
+// -------------------------------------------------------
 (function () {
   "use strict";
 
@@ -373,8 +356,6 @@ const VR_BADGE_GOLD_CHOICES = 100;
     lang: "fr",
     currentCardLogic: null,
     cardTextsDict: null,
-
-    // ✅ PEEK (15 décisions) — activé via popup jeton
     peekRemaining: 0,
     _peekChoiceActive: null,
 
@@ -391,7 +372,7 @@ const VR_BADGE_GOLD_CHOICES = 100;
       this._setupGaugeLabels();
       this._ensureGaugePreviewBars();
       this.updateGauges();
-      this._setupChoiceButtons(); // ✅ swipe sur A/B/C
+      this._setupChoiceButtons();
     },
 
     enablePeek(steps) {
@@ -694,7 +675,6 @@ body.vr-peek-mode .vr-gauge-preview{
         }
       };
 
-      // ✅ FIX(1): pointer only (fallback touch only if no PointerEvent)
       if (HAS_POINTER) {
         btn.addEventListener("pointerdown", onDown, { passive: false });
         btn.addEventListener("pointermove", onMove, { passive: false });
@@ -771,7 +751,9 @@ body.vr-peek-mode .vr-gauge-preview{
 })();
 
 
-// VRealms - engine/state.js
+// -------------------------------------------------------
+// State
+// -------------------------------------------------------
 (function () {
   "use strict";
 
@@ -837,12 +819,14 @@ body.vr-peek-mode .vr-gauge-preview{
 })();
 
 
-// VRealms - engine/endings.js
+// -------------------------------------------------------
+// Endings
+// -------------------------------------------------------
 (function () {
   "use strict";
 
   const ENDINGS_BASE_PATH = "data/scenarios";
-  const cache = new Map(); // key = universeId__lang
+  const cache = new Map();
 
   async function loadEndings(universeId, lang) {
     const key = `${universeId}__${lang}`;
@@ -942,7 +926,9 @@ body.vr-peek-mode .vr-gauge-preview{
 })();
 
 
-// VRealms - engine/engine-core.js
+// -------------------------------------------------------
+// Engine core
+// -------------------------------------------------------
 (function () {
   "use strict";
 
@@ -950,11 +936,10 @@ body.vr-peek-mode .vr-gauge-preview{
   const BASE_COINS_PER_CARD = 5;
   const HISTORY_MAX = 30;
 
-  // ✅ EVENTS règles
-  const EVENT_CHECK_EVERY_N_CARDS = 3; // toutes les 3 cartes (par univers)
-  const EVENT_CHANCE = 0.10;           // 1/10
-  const EVENT_NO_REPEAT_UNTIL = 25;    // pas de répétition avant 25 DISTINCTS
-  const EVENT_EXCLUDE_LAST = 5;        // après reset, on exclut les 5 derniers (tirages)
+  const EVENT_CHECK_EVERY_N_CARDS = 3;
+  const EVENT_CHANCE = 0.10;
+  const EVENT_NO_REPEAT_UNTIL = 25;
+  const EVENT_EXCLUDE_LAST = 5;
 
   const HELL_KING_DYNASTIES = ["Lucifer","Belzebuth","Lilith","Asmodée","Mammon","Baal","Astaroth","Abaddon"];
 
@@ -983,20 +968,11 @@ body.vr-peek-mode .vr-gauge-preview{
     reignIndex: 0,
     coinsStreak: 0,
     lang: "fr",
-
-    // ✅ revive (seconde chance) — 1 fois par run
     _reviveUsed: false,
-
     history: [],
-
-    // petit miroir UI (PAS persisté officiellement DB)
     _uiCoins: 0,
     _uiTokens: 0,
-
-    // ✅ restore flags
     _restored: false,
-
-    // ✅ EVENTS runtime (persistés via save locale)
     eventsLogic: { events: [] },
     eventsTexts: {},
     _eventById: new Map(),
@@ -1005,8 +981,6 @@ body.vr-peek-mode .vr-gauge-preview{
     _seenEvents: [],
     _cardsSinceEventRoll: 0,
     _eventShowing: false,
-
-    // ✅ FIX(2): binding death UI once
     _deathUiBound: false,
 
     _distinctSeenCount() {
@@ -1026,7 +1000,6 @@ body.vr-peek-mode .vr-gauge-preview{
       if (!Array.isArray(this._eventPool)) this._eventPool = [];
       if (!Array.isArray(this._seenEvents)) this._seenEvents = [];
 
-      // ✅ sanitize pool/seen against current ids
       const allow = new Set(this._allEventIds);
       this._eventPool = this._eventPool.filter(id => allow.has(id));
       this._seenEvents = this._seenEvents.filter(id => allow.has(id));
@@ -1054,15 +1027,11 @@ body.vr-peek-mode .vr-gauge-preview{
             coinsStreak: Number(this.coinsStreak || 0),
             currentCardId: this.currentCardLogic?.id || null,
             reviveUsed: !!this._reviveUsed,
-
-            // ✅ persist events per-universe
             events: {
               cardsSinceRoll: asInt(this._cardsSinceEventRoll, 0),
               pool: Array.isArray(this._eventPool) ? deepClone(this._eventPool) : [],
               seen: Array.isArray(this._seenEvents) ? deepClone(this._seenEvents) : []
             },
-
-            // ✅ persist UI mirrors
             ui: {
               coins: asInt(this._uiCoins, 0),
               tokens: asInt(this._uiTokens, 0)
@@ -1103,7 +1072,6 @@ body.vr-peek-mode .vr-gauge-preview{
         const e = saved.engine || {};
         const sess = saved.session || {};
 
-        // state
         if (s && typeof s === "object") {
           if (s.gauges && typeof s.gauges === "object") {
             window.VRState.gauges = deepClone(s.gauges) || window.VRState.gauges;
@@ -1114,29 +1082,24 @@ body.vr-peek-mode .vr-gauge-preview{
           window.VRState.cardsPlayed = Number(s.cardsPlayed || 0);
         }
 
-        // engine
         this.reignIndex = Math.max(0, Number(e.reignIndex || 0));
         this.recentCards = Array.isArray(e.recentCards) ? deepClone(e.recentCards) : [];
         this.coinsStreak = Number(e.coinsStreak || 0);
         this._reviveUsed = !!e.reviveUsed;
 
-        // ✅ restore events per universe
         const evs = e.events || {};
         this._cardsSinceEventRoll = asInt(evs.cardsSinceRoll, 0);
         this._eventPool = Array.isArray(evs.pool) ? deepClone(evs.pool) : [];
         this._seenEvents = Array.isArray(evs.seen) ? deepClone(evs.seen) : [];
 
-        // ✅ restore UI mirrors
         const ui = e.ui || {};
         if (Number.isFinite(Number(ui.coins))) this._uiCoins = asInt(ui.coins, this._uiCoins);
         if (Number.isFinite(Number(ui.tokens))) this._uiTokens = asInt(ui.tokens, this._uiTokens);
 
-        // session mirror
         if (window.VRGame?.session) {
           window.VRGame.session.reignLength = Number(sess.reignLength || 0);
         }
 
-        // current card
         const cardId = e.currentCardId || null;
         const card = cardId ? this.deck.find(c => c && c.id === cardId) : null;
 
@@ -1149,7 +1112,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
           const candidates = deck.filter(c => c && !this.recentCards.includes(c.id));
           const pool = candidates.length ? candidates : deck;
-
           const picked = pool[Math.floor(Math.random() * pool.length)];
           if (!picked) return false;
 
@@ -1177,7 +1139,6 @@ body.vr-peek-mode .vr-gauge-preview{
     async init(universeId, lang) {
       this.universeId = universeId;
 
-      // ✅ 100% Supabase lang si possible (fallback param)
       let finalLang = (lang || "fr").toString();
       try {
         const me = await window.VRProfile?.getMe?.(4000);
@@ -1188,7 +1149,6 @@ body.vr-peek-mode .vr-gauge-preview{
       const { config, deck, cardTexts } =
         await window.VREventsLoader.loadUniverseData(universeId, this.lang);
 
-      // ✅ load events for this universe (non bloquant)
       let eventsLogic = { events: [] };
       let eventsTexts = {};
       try {
@@ -1208,7 +1168,6 @@ body.vr-peek-mode .vr-gauge-preview{
       this._restored = false;
       this._reviveUsed = false;
 
-      // ✅ events init
       this.eventsLogic = eventsLogic || { events: [] };
       this.eventsTexts = eventsTexts || {};
       this._eventPool = [];
@@ -1217,7 +1176,6 @@ body.vr-peek-mode .vr-gauge-preview{
       this._eventShowing = false;
       this._rebuildEventIndex();
 
-      // init UI balances from remote
       try {
         const me = await window.VRProfile?.getMe?.(0);
         this._uiCoins = window.VRProfile._n(me?.vcoins);
@@ -1230,17 +1188,13 @@ body.vr-peek-mode .vr-gauge-preview{
       window.VRState.initUniverse(this.universeConfig);
       window.VRUIBinding.init(this.universeConfig, this.lang, this.cardTextsDict);
 
-      // ✅ RESTORE si une save existe (sinon nouvelle run)
       const restored = this._restoreFromSaveIfAny();
-
-      // important: rebuild + sanitize pool/seen après restore
       this._rebuildEventIndex();
 
       if (!restored) {
         this._startNewReign();
         this._saveRunSoft();
       } else {
-        // garde-fou si pool vide
         if (!this._eventPool.length && this._allEventIds.length) {
           this._eventPool = this._allEventIds.slice();
         }
@@ -1277,20 +1231,15 @@ body.vr-peek-mode .vr-gauge-preview{
       window.VRState.reignYears = 0;
       window.VRState.cardsPlayed = 0;
 
-      // ✅ reset gauges (50% / initialGauges)
       this._resetGaugesToInitial();
 
       this.recentCards = [];
       this.coinsStreak = 0;
       this.history = [];
       this.currentCardLogic = null;
-
-      // ✅ reset revive for this run
       this._reviveUsed = false;
-
-      // ✅ reset event counter for this run (par univers)
       this._cardsSinceEventRoll = 0;
-      // pool/seen on garde (persistant par univers)
+
       if (!this._eventPool.length && this._allEventIds.length) {
         this._eventPool = this._allEventIds.slice();
       }
@@ -1308,7 +1257,6 @@ body.vr-peek-mode .vr-gauge-preview{
       this._saveRunSoft();
     },
 
-    // ✅ Clear save locale du RUN (par univers)
     _clearRunSave() {
       try {
         const universeId =
@@ -1320,18 +1268,15 @@ body.vr-peek-mode .vr-gauge-preview{
       } catch (_) {}
     },
 
-    // ✅ Recommencer = clear save + reset jauges + nouvelle partie (début)
     restartRun() {
       try { this._clearRunSave(); } catch (_) {}
 
-      // reset “run” en RAM pour repartir au tout début
       this._reviveUsed = false;
       this.history = [];
       this.recentCards = [];
       this.coinsStreak = 0;
       this.currentCardLogic = null;
 
-      // reset “début” (dynastie 1) + events clean
       this.reignIndex = 0;
       this._cardsSinceEventRoll = 0;
       this._eventShowing = false;
@@ -1339,17 +1284,13 @@ body.vr-peek-mode .vr-gauge-preview{
       this._seenEvents = [];
 
       if (window.VRGame?.session) window.VRGame.session.reignLength = 0;
-
-      // relance run
       this._startNewReign();
     },
 
-    // ✅ Revivre (seconde chance) : reset jauges + reprendre sur une carte (même règne)
     reviveSecondChance() {
-      if (this._reviveUsed) return false; // une seule fois par run
+      if (this._reviveUsed) return false;
       this._reviveUsed = true;
 
-      // reset jauges + revive
       this._resetGaugesToInitial();
       try {
         window.VRState.alive = true;
@@ -1358,7 +1299,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
       try { window.VRUIBinding?.updateGauges?.(); } catch (_) {}
 
-      // reprise sur une carte
       try { this._nextCard_internalOnly(); } catch (_) { try { this._nextCard(); } catch (_) {} }
 
       try { this._saveRunSoft(); } catch (_) {}
@@ -1411,8 +1351,6 @@ body.vr-peek-mode .vr-gauge-preview{
         uiCoins: this._uiCoins,
         uiTokens: this._uiTokens,
         sessionReignLength: Number(window.VRGame?.session?.reignLength || 0),
-
-        // ✅ aussi pour undo: on garde le compteur (sinon dé-sync)
         cardsSinceEventRoll: asInt(this._cardsSinceEventRoll, 0),
         eventPool: deepClone(this._eventPool || []),
         seenEvents: deepClone(this._seenEvents || [])
@@ -1443,7 +1381,6 @@ body.vr-peek-mode .vr-gauge-preview{
       this._uiCoins = Number(snap.uiCoins || 0);
       this._uiTokens = Number(snap.uiTokens || 0);
 
-      // ✅ restore events state
       this._cardsSinceEventRoll = asInt(snap.cardsSinceEventRoll, 0);
       this._eventPool = Array.isArray(snap.eventPool) ? deepClone(snap.eventPool) : this._eventPool;
       this._seenEvents = Array.isArray(snap.seenEvents) ? deepClone(snap.seenEvents) : this._seenEvents;
@@ -1482,13 +1419,11 @@ body.vr-peek-mode .vr-gauge-preview{
 
       this._cardsSinceEventRoll = 0;
 
-      // si pas d’events dans cet univers => rien
       if (!this._allEventIds.length) {
         this._saveRunSoft();
         return false;
       }
 
-      // tirage 1/10
       const hit = Math.random() < EVENT_CHANCE;
       this._saveRunSoft();
       return hit;
@@ -1503,7 +1438,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
       if (this._eventPool.length !== 0) return;
 
-      // ✅ règle: pas de répétition avant 25 DISTINCTS
       const distinct = this._distinctSeenCount();
 
       if (distinct < EVENT_NO_REPEAT_UNTIL) {
@@ -1513,7 +1447,6 @@ body.vr-peek-mode .vr-gauge-preview{
         return;
       }
 
-      // après 25 distincts, on exclut les 5 derniers tirages
       const last = this._seenEvents.slice(-EVENT_EXCLUDE_LAST);
       const lastSet = new Set(last);
       this._eventPool = all.filter(id => !lastSet.has(id));
@@ -1527,10 +1460,7 @@ body.vr-peek-mode .vr-gauge-preview{
       const idx = Math.floor(Math.random() * this._eventPool.length);
       const id = this._eventPool[idx];
 
-      // retire du pool
       this._eventPool.splice(idx, 1);
-
-      // push seen (ordre réel des tirages)
       this._seenEvents.push(id);
 
       return id || null;
@@ -1546,14 +1476,12 @@ body.vr-peek-mode .vr-gauge-preview{
       const ev = this._eventById.get(id) || null;
       const texts = this.eventsTexts?.[id] || null;
 
-      // applique effets (jauges + vcoins + jetons)
       try {
         const deltaMap = ev?.effects || ev?.gaugeDelta || ev?.deltas || {};
         if (deltaMap && typeof deltaMap === "object") {
           window.VRState.applyDeltas(deltaMap);
         }
 
-        // vcoins (best-effort)
         const dv =
           (typeof ev?.vcoins === "number") ? ev.vcoins :
           (typeof ev?.vcoinsDelta === "number") ? ev.vcoinsDelta :
@@ -1564,7 +1492,6 @@ body.vr-peek-mode .vr-gauge-preview{
           try { window.VUserData?.addVcoins?.(dv); } catch (_) {}
         }
 
-        // ✅ FIX(3): jetons strict
         const dj =
           (typeof ev?.jetons === "number") ? ev.jetons :
           (typeof ev?.jetonsDelta === "number") ? ev.jetonsDelta :
@@ -1584,15 +1511,12 @@ body.vr-peek-mode .vr-gauge-preview{
         console.error("[VREngine] event apply error:", e);
       }
 
-      // ✅ recoller à la DB après event (safe)
       await this._refreshUIBalancesSoft();
 
-      // UI update
       const kingName = document.getElementById("meta-king-name")?.textContent || getDynastyName(this.reignIndex - 1);
       window.VRUIBinding.updateGauges();
       window.VRUIBinding.updateMeta(kingName, window.VRState.getReignYears(), this._uiCoins, this._uiTokens);
 
-      // show overlay
       this._eventShowing = true;
       this._saveRunSoft();
 
@@ -1613,13 +1537,11 @@ body.vr-peek-mode .vr-gauge-preview{
 
       this._eventShowing = false;
 
-      // si l’event a tué le joueur -> handleDeath
       if (!window.VRState.isAlive()) {
         await this._handleDeath();
         return true;
       }
 
-      // sinon next card
       this._saveRunSoft();
       this._nextCard();
       return true;
@@ -1650,10 +1572,8 @@ body.vr-peek-mode .vr-gauge-preview{
       try { window.VRUIBinding?._consumePeekDecision?.(); } catch (_) {}
       try { window.VRGame?.maybeShowInterstitial?.(); } catch (_) {}
 
-      // ✅ SAVE après résolution du choix
       this._saveRunSoft();
 
-      // petit refresh soft pour recoller à la DB
       this._refreshUIBalancesSoft().then(() => {
         window.VRUIBinding.updateMeta(
           kingName,
@@ -1663,20 +1583,17 @@ body.vr-peek-mode .vr-gauge-preview{
         );
       });
 
-      // si mort -> ending direct
       if (!window.VRState.isAlive()) {
         this._handleDeath();
         return;
       }
 
-      // ✅ EVENTS: toutes les 3 cartes jouées (par univers) -> tirage
       const shouldEvent = this._maybeRollEventAfterCardResolved();
       if (shouldEvent) {
         this._triggerRandomEvent();
         return;
       }
 
-      // sinon carte normale
       this._nextCard();
     },
 
@@ -1684,14 +1601,12 @@ body.vr-peek-mode .vr-gauge-preview{
       this._nextCard();
     },
 
-    // ✅ FIX(2): bind death UI once + delegation stable
     _bindDeathUIOnce() {
       if (this._deathUiBound) return;
       this._deathUiBound = true;
 
       const revivePopup = document.getElementById("vr-revive-popup");
 
-      // Escape: ferme seulement si popup ouvert
       document.addEventListener("keydown", (e) => {
         if (e.key !== "Escape") return;
         const rp = document.getElementById("vr-revive-popup");
@@ -1704,7 +1619,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
       if (revivePopup) {
         revivePopup.addEventListener("click", async (e) => {
-          // click sur fond => close
           if (e.target === revivePopup) {
             try { revivePopup.__close?.(); } catch (_) {}
             return;
@@ -1769,7 +1683,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
       const closeRevivePopup = () => hideDialog(revivePopup, reviveBtn || btn);
 
-      // ✅ Recommencer (clear save + reset jauges + nouvelle partie début)
       if (btn) {
         btn.onclick = () => {
           window.VREndings.hideEnding();
@@ -1777,7 +1690,6 @@ body.vr-peek-mode .vr-gauge-preview{
         };
       }
 
-      // ✅ Retour (clear save + index.html)
       if (returnBtn) {
         returnBtn.onclick = () => {
           try { this._clearRunSave(); } catch (_) {}
@@ -1785,7 +1697,6 @@ body.vr-peek-mode .vr-gauge-preview{
         };
       }
 
-      // ✅ Revivre (popup Jeton OU Pub)
       if (reviveBtn) {
         reviveBtn.disabled = !!this._reviveUsed;
         reviveBtn.onclick = () => {
@@ -1794,10 +1705,8 @@ body.vr-peek-mode .vr-gauge-preview{
         };
       }
 
-      // ✅ FIX(2): bind once (delegation)
       this._bindDeathUIOnce();
 
-      // update handlers (pas d’empilement)
       if (revivePopup) {
         revivePopup.__close = closeRevivePopup;
 
@@ -1807,7 +1716,6 @@ body.vr-peek-mode .vr-gauge-preview{
             return;
           }
 
-          // lock (sur le bouton cliqué)
           try { if (clickedEl) clickedEl.disabled = true; } catch (_) {}
           try { if (reviveBtn) reviveBtn.disabled = true; } catch (_) {}
 
@@ -1856,7 +1764,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
 
 // -------------------------------------------------------
-// Token UI + Actions (inchangé)
+// Token UI
 // -------------------------------------------------------
 (function () {
   "use strict";
@@ -1982,7 +1890,6 @@ body.vr-peek-mode .vr-gauge-preview{
         }
       });
 
-      // inject peek button if missing
       try {
         const host = (popup.querySelector("[data-token-action]")?.parentElement) || popup;
 
@@ -2178,7 +2085,9 @@ body.vr-peek-mode .vr-gauge-preview{
 })();
 
 
-// VRealms - VCoins UI + Actions (inchangé)
+// -------------------------------------------------------
+// VCoins UI
+// -------------------------------------------------------
 (function () {
   "use strict";
 
@@ -2317,11 +2226,565 @@ body.vr-peek-mode .vr-gauge-preview{
 })();
 
 
-// VRealms - game.js (VRGame + anti-retour navigateur)
+// -------------------------------------------------------
+// COSMETICS GAME
+// -------------------------------------------------------
+(function () {
+  "use strict";
+
+  const DEFAULT_GRAY_ASSETS = {
+    hell_king: {
+      background: "assets/img/backgrounds/hell_default_gray.webp",
+      message: "assets/img/ui/hell_msg_default_gray.webp",
+      choice: "assets/img/ui/hell_choice_default_gray.webp"
+    },
+    heaven_king: {
+      background: "assets/img/backgrounds/heaven_default_gray.webp",
+      message: "assets/img/ui/heaven_msg_default_gray.webp",
+      choice: "assets/img/ui/heaven_choice_default_gray.webp"
+    },
+    western_president: {
+      background: "assets/img/backgrounds/west_default_gray.webp",
+      message: "assets/img/ui/west_msg_default_gray.webp",
+      choice: "assets/img/ui/west_choice_default_gray.webp"
+    },
+    mega_corp_ceo: {
+      background: "assets/img/backgrounds/corp_default_gray.webp",
+      message: "assets/img/ui/corp_msg_default_gray.webp",
+      choice: "assets/img/ui/corp_choice_default_gray.webp"
+    },
+    new_world_explorer: {
+      background: "assets/img/backgrounds/explorer_default_gray.webp",
+      message: "assets/img/ui/explorer_msg_default_gray.webp",
+      choice: "assets/img/ui/explorer_choice_default_gray.webp"
+    },
+    vampire_lord: {
+      background: "assets/img/backgrounds/vampire_default_gray.webp",
+      message: "assets/img/ui/vampire_msg_default_gray.webp",
+      choice: "assets/img/ui/vampire_choice_default_gray.webp"
+    }
+  };
+
+  const _state = {
+    open: false,
+    universeId: "",
+    index: {
+      background: 0,
+      message: 0,
+      choice: 0
+    }
+  };
+
+  function t(key, fallback) {
+    try {
+      const out = window.VRI18n?.t?.(key);
+      if (out && out !== key) return out;
+    } catch (_) {}
+    return fallback || key;
+  }
+
+  function toast(msg) {
+    try {
+      if (typeof window.showToast === "function") return window.showToast(msg);
+    } catch (_) {}
+
+    try {
+      const id = "__vr_toast";
+      let el = document.getElementById(id);
+      if (!el) {
+        el = document.createElement("div");
+        el.id = id;
+        el.style.cssText =
+          "position:fixed;left:50%;bottom:12%;transform:translateX(-50%);" +
+          "background:rgba(0,0,0,.85);color:#fff;padding:10px 14px;border-radius:12px;" +
+          "font:14px/1.35 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;" +
+          "z-index:2147483647;max-width:84vw;text-align:center";
+        document.body.appendChild(el);
+      }
+      el.textContent = String(msg || "");
+      el.style.opacity = "1";
+      clearTimeout(el.__t1); clearTimeout(el.__t2);
+      el.__t1 = setTimeout(() => { el.style.transition = "opacity .25s"; el.style.opacity = "0"; }, 2200);
+      el.__t2 = setTimeout(() => { try { el.remove(); } catch (_) {} }, 2600);
+    } catch (_) {}
+  }
+
+  function ensureStyles() {
+    if (document.getElementById("vr-customize-inline-style")) return;
+
+    const style = document.createElement("style");
+    style.id = "vr-customize-inline-style";
+    style.textContent = `
+      #vr-customize-content{
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+        margin-top:10px;
+      }
+      .vr-customize-universe-title{
+        text-align:center;
+        font-weight:900;
+        font-size:18px;
+        color:#fff;
+        margin:0 0 6px;
+      }
+      .vr-customize-row{
+        display:flex;
+        flex-direction:column;
+        gap:8px;
+      }
+      .vr-customize-subtitle{
+        text-align:center;
+        font-weight:800;
+        font-size:13px;
+        opacity:.95;
+      }
+      .vr-customize-carousel{
+        display:grid;
+        grid-template-columns:36px minmax(0,1fr) 36px;
+        align-items:center;
+        gap:8px;
+      }
+      .vr-customize-arrow{
+        width:36px;
+        height:36px;
+        border-radius:999px;
+        border:1px solid rgba(255,255,255,.14);
+        background:rgba(255,255,255,.08);
+        color:#fff;
+        font-size:18px;
+        font-weight:900;
+        cursor:pointer;
+      }
+      .vr-customize-arrow[disabled]{
+        opacity:.4;
+        cursor:default;
+      }
+      .vr-customize-card{
+        position:relative;
+        overflow:hidden;
+        border-radius:18px;
+        min-height:138px;
+        border:1px solid rgba(255,255,255,.12);
+        background:rgba(255,255,255,.06);
+        box-shadow:0 16px 30px rgba(0,0,0,.28);
+      }
+      .vr-customize-card.is-ui img{
+        object-fit:contain;
+        padding:12px;
+        background:
+          radial-gradient(circle at 50% 40%, rgba(255,255,255,.10), transparent 46%),
+          linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.08));
+      }
+      .vr-customize-card img{
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        display:block;
+      }
+      .vr-customize-overlay{
+        position:absolute;
+        inset:auto 0 0 0;
+        padding:34px 10px 10px;
+        background:linear-gradient(180deg, transparent, rgba(0,0,0,.78));
+      }
+      .vr-customize-name{
+        text-align:center;
+        font-weight:900;
+        font-size:13px;
+        color:#fff;
+        line-height:1.15;
+        margin-bottom:8px;
+      }
+      .vr-customize-bottom{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:8px;
+      }
+      .vr-customize-price{
+        display:inline-flex;
+        align-items:center;
+        gap:6px;
+        padding:6px 10px;
+        border-radius:999px;
+        border:1px solid rgba(255,255,255,.14);
+        background:rgba(0,0,0,.30);
+        color:#fff;
+        font-weight:950;
+        font-size:12px;
+      }
+      .vr-customize-price img{
+        position:static;
+        width:16px;
+        height:16px;
+        object-fit:contain;
+        padding:0;
+        background:none;
+      }
+      .vr-customize-count{
+        color:rgba(255,255,255,.86);
+        font-size:12px;
+        font-weight:900;
+      }
+      .vr-customize-action{
+        width:100%;
+        margin-top:8px;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        padding:10px 12px;
+        border-radius:14px;
+        border:1px solid rgba(255,255,255,.14);
+        background:rgba(255,255,255,.08);
+        color:#fff;
+        font-weight:900;
+        cursor:pointer;
+      }
+      .vr-customize-action.is-owned{
+        background:rgba(255,255,255,.10);
+      }
+      .vr-customize-action.is-equipped{
+        background:rgba(138,197,95,.22);
+        border-color:rgba(138,197,95,.55);
+      }
+      .vr-customize-note{
+        text-align:center;
+        color:rgba(255,255,255,.84);
+        font-size:12px;
+        margin-top:6px;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function getPopup() {
+    return document.getElementById("vr-customize-popup");
+  }
+
+  function getContent() {
+    return document.getElementById("vr-customize-content");
+  }
+
+  function getUniverse(universeId) {
+    try {
+      return window.VRCosmeticsCatalog?.getUniverse?.(universeId) || null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function getItem(universeId, category, itemId) {
+    try {
+      return window.VRCosmeticsCatalog?.getItem?.(universeId, category, itemId) || null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function getItems(universeId, category) {
+    const universe = getUniverse(universeId);
+    return Array.isArray(universe?.categories?.[category]) ? universe.categories[category] : [];
+  }
+
+  function getDefaultAsset(universeId, category) {
+    return DEFAULT_GRAY_ASSETS?.[universeId]?.[category] || "";
+  }
+
+  function getEquippedItem(universeId, category) {
+    const equippedId = String(window.VUserData?.getEquippedCosmetic?.(universeId, category) || "");
+    if (!equippedId) return null;
+    return getItem(universeId, category, equippedId);
+  }
+
+  function resolveAppliedAsset(universeId, category) {
+    const equippedItem = getEquippedItem(universeId, category);
+    if (equippedItem?.img) return equippedItem.img;
+    return getDefaultAsset(universeId, category);
+  }
+
+  function applyUniverseCosmetics(universeId) {
+    const viewGame = document.getElementById("view-game");
+    const cardMain = document.getElementById("vr-card-main");
+    const choiceBtns = document.querySelectorAll(".vr-choice-button[data-choice]");
+    if (!viewGame || !universeId) return;
+
+    const bg = resolveAppliedAsset(universeId, "background");
+    const message = resolveAppliedAsset(universeId, "message");
+    const choice = resolveAppliedAsset(universeId, "choice");
+
+    if (bg) {
+      viewGame.style.backgroundImage = `url("${bg}")`;
+      viewGame.style.backgroundSize = "cover";
+      viewGame.style.backgroundPosition = "center center";
+      viewGame.style.backgroundRepeat = "no-repeat";
+    }
+
+    if (cardMain && message) {
+      cardMain.style.backgroundImage = `url("${message}")`;
+      cardMain.style.backgroundSize = "100% 100%";
+      cardMain.style.backgroundPosition = "center center";
+      cardMain.style.backgroundRepeat = "no-repeat";
+    }
+
+    choiceBtns.forEach((btn) => {
+      if (!choice) return;
+      btn.style.backgroundImage = `url("${choice}")`;
+      btn.style.backgroundSize = "100% 100%";
+      btn.style.backgroundPosition = "center center";
+      btn.style.backgroundRepeat = "no-repeat";
+    });
+  }
+
+  function getActionMeta(universeId, category, item) {
+    const owned = !!window.VUserData?.isCosmeticOwned?.(universeId, category, item.id);
+    const equippedId = String(window.VUserData?.getEquippedCosmetic?.(universeId, category) || "");
+    const equipped = owned && equippedId === item.id;
+
+    if (equipped) {
+      return {
+        text: t("common.equipped", "Équipé"),
+        className: "vr-customize-action is-equipped"
+      };
+    }
+    if (owned) {
+      return {
+        text: t("common.use", "Équiper"),
+        className: "vr-customize-action is-owned"
+      };
+    }
+    return {
+      text: `${t("common.buy", "Acheter")} · ${item.price}`,
+      className: "vr-customize-action"
+    };
+  }
+
+  function clampIndex(category, max) {
+    const raw = Number(_state.index[category] || 0);
+    if (max <= 0) return 0;
+    return Math.max(0, Math.min(max - 1, raw));
+  }
+
+  function renderRow(universeId, category) {
+    const items = getItems(universeId, category);
+    const idx = clampIndex(category, items.length);
+    _state.index[category] = idx;
+
+    const subtitleKey = window.VRCosmeticsCatalog?.CATEGORY_KEYS?.[category] || category;
+
+    if (!items.length) {
+      return `
+        <div class="vr-customize-row">
+          <div class="vr-customize-subtitle">${t(subtitleKey, category)}</div>
+          <div class="vr-customize-note">${t("common.unavailable", "Indisponible")}</div>
+        </div>
+      `;
+    }
+
+    const item = items[idx];
+    const action = getActionMeta(universeId, category, item);
+
+    return `
+      <div class="vr-customize-row" data-category="${category}">
+        <div class="vr-customize-subtitle">${t(subtitleKey, category)}</div>
+
+        <div class="vr-customize-carousel">
+          <button class="vr-customize-arrow" type="button" data-cus-nav="prev" data-category="${category}" ${idx <= 0 ? "disabled" : ""}>‹</button>
+
+          <div class="vr-customize-card ${item.kind === "ui" ? "is-ui" : ""}">
+            <img src="${item.img}" alt="" draggable="false">
+            <div class="vr-customize-overlay">
+              <div class="vr-customize-name">${t(item.nameKey, item.id)}</div>
+              <div class="vr-customize-bottom">
+                <div class="vr-customize-price">
+                  <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
+                  <span>${item.price}</span>
+                </div>
+                <div class="vr-customize-count">${idx + 1} / ${items.length}</div>
+              </div>
+              <button
+                class="${action.className}"
+                type="button"
+                data-cus-action="item"
+                data-universe="${universeId}"
+                data-category="${category}"
+                data-item-id="${item.id}"
+                data-price="${item.price}"
+              >${action.text}</button>
+            </div>
+          </div>
+
+          <button class="vr-customize-arrow" type="button" data-cus-nav="next" data-category="${category}" ${idx >= items.length - 1 ? "disabled" : ""}>›</button>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderPopup() {
+    const content = getContent();
+    if (!content) return;
+
+    const universeId = _state.universeId || window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "hell_king";
+    const universe = getUniverse(universeId);
+
+    content.innerHTML = `
+      <div class="vr-customize-universe-title">${t(universe?.labelKey || universeId, universeId)}</div>
+      ${renderRow(universeId, "background")}
+      ${renderRow(universeId, "message")}
+      ${renderRow(universeId, "choice")}
+    `;
+  }
+
+  function showDialog(el, focusEl) {
+    if (!el) return;
+    try { el.removeAttribute("inert"); } catch (_) {}
+    el.setAttribute("aria-hidden", "false");
+    el.style.display = "flex";
+    try { focusEl?.focus?.({ preventScroll: true }); } catch (_) {}
+  }
+
+  function hideDialog(el, focusBackEl) {
+    if (!el) return;
+    const active = document.activeElement;
+    if (active && el.contains(active)) {
+      try { active.blur(); } catch (_) {}
+      try { focusBackEl?.focus?.({ preventScroll: true }); } catch (_) {}
+    }
+    try { el.setAttribute("inert", ""); } catch (_) {}
+    el.setAttribute("aria-hidden", "true");
+    el.style.display = "none";
+  }
+
+  function openPopup() {
+    const popup = getPopup();
+    const btn = document.getElementById("btn-customize");
+    _state.universeId = window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "hell_king";
+    renderPopup();
+    showDialog(popup, popup?.querySelector?.("[data-cus-nav], [data-cus-action]") || btn);
+    _state.open = true;
+  }
+
+  function closePopup() {
+    const popup = getPopup();
+    const btn = document.getElementById("btn-customize");
+    hideDialog(popup, btn);
+    _state.open = false;
+  }
+
+  async function handleItemAction(btn) {
+    const universeId = String(btn?.dataset?.universe || "").trim();
+    const category = String(btn?.dataset?.category || "").trim();
+    const itemId = String(btn?.dataset?.itemId || "").trim();
+    const price = Number(btn?.dataset?.price || 0);
+
+    if (!universeId || !category || !itemId) return;
+    btn.disabled = true;
+
+    try {
+      const owned = !!window.VUserData?.isCosmeticOwned?.(universeId, category, itemId);
+      let res = null;
+
+      if (!owned) {
+        res = await window.VUserData?.buyCosmetic?.({
+          universeId,
+          category,
+          itemId,
+          price
+        }, { autoEquip: true });
+      } else {
+        res = await window.VUserData?.equipCosmetic?.(universeId, category, itemId);
+      }
+
+      if (!res?.ok) {
+        if (res?.reason === "insufficient_vcoins") {
+          toast(t("shop.toast.insufficient_vcoins", "Pas assez de VCoins"));
+        } else if (res?.reason === "not_owned") {
+          toast(t("shop.toast.not_owned", "Objet non possédé"));
+        } else {
+          toast(t("common.error_generic", "Erreur"));
+        }
+      } else {
+        applyUniverseCosmetics(universeId);
+        renderPopup();
+      }
+    } catch (_) {
+      toast(t("common.error_generic", "Erreur"));
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  function init() {
+    ensureStyles();
+
+    const btn = document.getElementById("btn-customize");
+    const popup = getPopup();
+
+    if (!btn || !popup) return;
+
+    btn.addEventListener("click", () => openPopup());
+
+    popup.addEventListener("click", async (e) => {
+      if (e.target === popup) {
+        closePopup();
+        return;
+      }
+
+      const closeBtn = e.target?.closest?.("[data-customize-action='close']");
+      if (closeBtn) {
+        closePopup();
+        return;
+      }
+
+      const navBtn = e.target?.closest?.("[data-cus-nav]");
+      if (navBtn) {
+        const dir = String(navBtn.dataset.cusNav || "");
+        const category = String(navBtn.dataset.category || "");
+        const items = getItems(_state.universeId, category);
+        if (!items.length) return;
+
+        let next = Number(_state.index[category] || 0);
+        if (dir === "prev") next -= 1;
+        if (dir === "next") next += 1;
+        _state.index[category] = Math.max(0, Math.min(items.length - 1, next));
+        renderPopup();
+        return;
+      }
+
+      const actionBtn = e.target?.closest?.("[data-cus-action='item']");
+      if (actionBtn) {
+        await handleItemAction(actionBtn);
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && _state.open) closePopup();
+    });
+
+    window.addEventListener("vr:profile", () => {
+      if (_state.open) renderPopup();
+      const universeId = window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "hell_king";
+      applyUniverseCosmetics(universeId);
+    });
+  }
+
+  window.VRCosmeticsGame = {
+    init,
+    open: openPopup,
+    close: closePopup,
+    render: renderPopup,
+    apply: applyUniverseCosmetics
+  };
+})();
+
+
+// -------------------------------------------------------
+// VRGame
+// -------------------------------------------------------
 window.VRGame = {
   currentUniverse: null,
-
-  // session run
   session: { reignLength: 0 },
 
   async onUniverseSelected(universeId) {
@@ -2329,8 +2792,8 @@ window.VRGame = {
     this.session.reignLength = 0;
 
     this.applyUniverseBackground(universeId);
+    this.applyUniverseCosmetics(universeId);
 
-    // ✅ 100% Supabase lang (fallback local)
     let lang = "fr";
     try {
       const me = await window.VRProfile?.getMe?.(0);
@@ -2339,8 +2802,14 @@ window.VRGame = {
       lang = localStorage.getItem("vrealms_lang") || "fr";
     }
 
-    try { await window.VREngine.init(universeId, lang); }
-    catch (e) { console.error("[VRGame] Erreur init moteur:", e); }
+    try {
+      await window.VREngine.init(universeId, lang);
+    } catch (e) {
+      console.error("[VRGame] Erreur init moteur:", e);
+    }
+
+    this.applyUniverseCosmetics(universeId);
+    try { window.VRCosmeticsGame?.render?.(); } catch (_) {}
   },
 
   applyUniverseBackground(universeId) {
@@ -2357,7 +2826,10 @@ window.VRGame = {
     if (universeId) viewGame.classList.add(`vr-bg-${universeId}`);
   },
 
-  // interstitiel global via ads.js (persistant) : 1 toutes les X actions
+  applyUniverseCosmetics(universeId) {
+    try { window.VRCosmeticsGame?.apply?.(universeId); } catch (_) {}
+  },
+
   async maybeShowInterstitial() {
     try {
       await (window.VRAds?.markAction?.() || Promise.resolve(0));
@@ -2396,7 +2868,6 @@ window.VRGame = {
     Promise.resolve().then(() => this.maybeUnlockRunBadges());
   },
 
-  // ✅ maintenant async + 100% DB pour stats
   async onRunEnded() {
     try {
       const reign = Number(this.session.reignLength || 0);
@@ -2432,7 +2903,9 @@ window.VRGame = {
 };
 
 
-// ===== Init page jeu seule (game.html) =====
+// -------------------------------------------------------
+// Init page jeu seule
+// -------------------------------------------------------
 (function () {
   function setupNavigationGuards() {
     try {
@@ -2500,10 +2973,11 @@ window.VRGame = {
 
     try { window.VRTokenUI?.init?.(); } catch (_) {}
     try { window.VRCoinUI?.init?.(); } catch (_) {}
+    try { window.VRCosmeticsGame?.init?.(); } catch (_) {}
 
     const universeId = localStorage.getItem("vrealms_universe") || "hell_king";
     if (window.VRGame && typeof window.VRGame.onUniverseSelected === "function") {
-      window.VRGame.onUniverseSelected(universeId);
+      await window.VRGame.onUniverseSelected(universeId);
     }
   }
 

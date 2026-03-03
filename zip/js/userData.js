@@ -17,6 +17,8 @@
     "vampire_lord"
   ];
 
+  const COSMETIC_CATEGORIES = ["background", "message", "choice"];
+
   let _uiPaused = true;
   let _pendingEmit = false;
 
@@ -25,6 +27,7 @@
   }
 
   const _errState = { last: null, ts: 0 };
+
   function _reportRemoteError(where, err) {
     try {
       if (!_isDebug()) return;
@@ -60,6 +63,10 @@
     try { return JSON.parse(raw); } catch (_) { return null; }
   }
 
+  function _cloneJson(v) {
+    try { return JSON.parse(JSON.stringify(v ?? {})); } catch (_) { return {}; }
+  }
+
   function _uniqTextArray(arr) {
     try {
       const out = [];
@@ -80,6 +87,130 @@
     return _uniqTextArray([].concat(a || [], b || [], FREE_UNIVERSES));
   }
 
+  function _normalizeOwnedCosmetics(raw) {
+    let src = raw;
+    if (typeof src === "string") src = _safeParse(src);
+    if (!src || typeof src !== "object" || Array.isArray(src)) return {};
+
+    const out = {};
+    Object.keys(src).forEach((universeId) => {
+      const uid = String(universeId || "").trim();
+      if (!uid) return;
+
+      const row = src[universeId];
+      if (!row || typeof row !== "object" || Array.isArray(row)) return;
+
+      out[uid] = {};
+      COSMETIC_CATEGORIES.forEach((category) => {
+        out[uid][category] = _uniqTextArray(row[category]);
+      });
+    });
+    return out;
+  }
+
+  function _normalizeEquippedCosmetics(raw) {
+    let src = raw;
+    if (typeof src === "string") src = _safeParse(src);
+    if (!src || typeof src !== "object" || Array.isArray(src)) return {};
+
+    const out = {};
+    Object.keys(src).forEach((universeId) => {
+      const uid = String(universeId || "").trim();
+      if (!uid) return;
+
+      const row = src[universeId];
+      if (!row || typeof row !== "object" || Array.isArray(row)) return;
+
+      out[uid] = {};
+      COSMETIC_CATEGORIES.forEach((category) => {
+        const v = String(row[category] || "").trim();
+        if (v) out[uid][category] = v;
+      });
+    });
+    return out;
+  }
+
+  function _mergeOwnedCosmetics(a, b) {
+    const aa = _normalizeOwnedCosmetics(a);
+    const bb = _normalizeOwnedCosmetics(b);
+    const out = {};
+
+    [aa, bb].forEach((src) => {
+      Object.keys(src).forEach((universeId) => {
+        if (!out[universeId]) out[universeId] = {};
+        COSMETIC_CATEGORIES.forEach((category) => {
+          out[universeId][category] = _uniqTextArray([
+            ...(out[universeId][category] || []),
+            ...(src[universeId]?.[category] || [])
+          ]);
+        });
+      });
+    });
+
+    return out;
+  }
+
+  function _mergeEquippedCosmetics(primary, fallback) {
+    const p = _normalizeEquippedCosmetics(primary);
+    const f = _normalizeEquippedCosmetics(fallback);
+    const out = _cloneJson(f);
+
+    Object.keys(p).forEach((universeId) => {
+      if (!out[universeId]) out[universeId] = {};
+      COSMETIC_CATEGORIES.forEach((category) => {
+        const v = String(p[universeId]?.[category] || "").trim();
+        if (v) out[universeId][category] = v;
+      });
+    });
+
+    return out;
+  }
+
+  function _sanitizeEquippedCosmetics(owned, equipped) {
+    const o = _normalizeOwnedCosmetics(owned);
+    const e = _normalizeEquippedCosmetics(equipped);
+    const out = {};
+
+    Object.keys(e).forEach((universeId) => {
+      COSMETIC_CATEGORIES.forEach((category) => {
+        const itemId = String(e[universeId]?.[category] || "").trim();
+        if (!itemId) return;
+
+        const ownedList = o[universeId]?.[category] || [];
+        if (!ownedList.includes(itemId)) return;
+
+        if (!out[universeId]) out[universeId] = {};
+        out[universeId][category] = itemId;
+      });
+    });
+
+    return out;
+  }
+
+  function _addOwnedCosmetic(owned, universeId, category, itemId) {
+    const out = _normalizeOwnedCosmetics(owned);
+    const uid = String(universeId || "").trim();
+    const cat = String(category || "").trim();
+    const iid = String(itemId || "").trim();
+    if (!uid || !cat || !iid || !COSMETIC_CATEGORIES.includes(cat)) return out;
+
+    if (!out[uid]) out[uid] = {};
+    out[uid][cat] = _uniqTextArray([...(out[uid][cat] || []), iid]);
+    return out;
+  }
+
+  function _setEquippedCosmetic(equipped, universeId, category, itemId) {
+    const out = _normalizeEquippedCosmetics(equipped);
+    const uid = String(universeId || "").trim();
+    const cat = String(category || "").trim();
+    const iid = String(itemId || "").trim();
+    if (!uid || !cat || !iid || !COSMETIC_CATEGORIES.includes(cat)) return out;
+
+    if (!out[uid]) out[uid] = {};
+    out[uid][cat] = iid;
+    return out;
+  }
+
   const _memState = {
     user_id: "",
     username: "",
@@ -89,6 +220,8 @@
     unlocked_universes: FREE_UNIVERSES.slice(0),
     no_ads: false,
     has_diamond: false,
+    owned_cosmetics: {},
+    equipped_cosmetics: {},
     updated_at: Date.now(),
     last_sync_at: 0
   };
@@ -121,6 +254,11 @@
         unlocked_universes: _mergeUniverses(_memState.unlocked_universes, []),
         no_ads: !!_memState.no_ads,
         has_diamond: !!_memState.has_diamond,
+        owned_cosmetics: _normalizeOwnedCosmetics(_memState.owned_cosmetics),
+        equipped_cosmetics: _sanitizeEquippedCosmetics(
+          _memState.owned_cosmetics,
+          _memState.equipped_cosmetics
+        ),
         updated_at: Date.now(),
         last_sync_at: Number(_memState.last_sync_at || 0)
       });
@@ -144,7 +282,12 @@
             jetons: _memState.jetons,
             unlocked_universes: _mergeUniverses(_memState.unlocked_universes, []),
             no_ads: !!_memState.no_ads,
-            has_diamond: !!_memState.has_diamond
+            has_diamond: !!_memState.has_diamond,
+            owned_cosmetics: _normalizeOwnedCosmetics(_memState.owned_cosmetics),
+            equipped_cosmetics: _sanitizeEquippedCosmetics(
+              _memState.owned_cosmetics,
+              _memState.equipped_cosmetics
+            )
           }
         })
       );
@@ -161,6 +304,8 @@
       unlocked_universes: FREE_UNIVERSES.slice(0),
       no_ads: false,
       has_diamond: false,
+      owned_cosmetics: {},
+      equipped_cosmetics: {},
       updated_at: Date.now()
     };
   }
@@ -184,6 +329,36 @@
     _memState.no_ads = !!(me.no_ads || _memState.no_ads || localBefore.no_ads);
     _memState.has_diamond = !!(me.has_diamond || _memState.has_diamond || localBefore.has_diamond);
     _memState.unlocked_universes = _mergeUniverses(remoteUnlocked, localUnlocked);
+    _memState.updated_at = Date.now();
+    _memState.last_sync_at = Date.now();
+
+    _emitProfile();
+    _persistLocal();
+    return true;
+  }
+
+  function _applyMergedCosmetics(remote) {
+    if (!remote || typeof remote !== "object") return false;
+
+    const localBefore = _readLocal() || {};
+    const localOwned = _normalizeOwnedCosmetics(
+      localBefore.owned_cosmetics || _memState.owned_cosmetics
+    );
+    const localEquipped = _normalizeEquippedCosmetics(
+      localBefore.equipped_cosmetics || _memState.equipped_cosmetics
+    );
+
+    const remoteOwned = _normalizeOwnedCosmetics(remote.owned_cosmetics);
+    const remoteEquipped = _normalizeEquippedCosmetics(remote.equipped_cosmetics);
+
+    const mergedOwned = _mergeOwnedCosmetics(remoteOwned, localOwned);
+    const mergedEquipped = _sanitizeEquippedCosmetics(
+      mergedOwned,
+      _mergeEquippedCosmetics(remoteEquipped, localEquipped)
+    );
+
+    _memState.owned_cosmetics = mergedOwned;
+    _memState.equipped_cosmetics = mergedEquipped;
     _memState.updated_at = Date.now();
     _memState.last_sync_at = Date.now();
 
@@ -251,6 +426,27 @@
         return r?.data || null;
       } catch (e) {
         _reportRemoteError("rpc.secure_get_me.exception", e);
+        return null;
+      }
+    },
+
+    async getCosmeticsState() {
+      const sb = window.sb;
+      if (!sb || typeof sb.rpc !== "function") return null;
+
+      const uid = await this.ensureAuth();
+      if (!uid) return null;
+
+      try {
+        const r = await sb.rpc("secure_get_cosmetics_state");
+        if (r?.error) {
+          _reportRemoteError("rpc.secure_get_cosmetics_state", r.error);
+          return null;
+        }
+        if (Array.isArray(r?.data)) return r.data[0] || null;
+        return r?.data || null;
+      } catch (e) {
+        _reportRemoteError("rpc.secure_get_cosmetics_state.exception", e);
         return null;
       }
     },
@@ -426,6 +622,70 @@
         _reportRemoteError("rpc.secure_set_lang.exception", e);
         return false;
       }
+    },
+
+    async buyCosmetic(params) {
+      const sb = window.sb;
+      if (!sb || typeof sb.rpc !== "function") return null;
+
+      const uid = await this.ensureAuth();
+      if (!uid) return null;
+
+      const universeId = String(params?.universeId || params?.universe_id || "").trim();
+      const category = String(params?.category || "").trim().toLowerCase();
+      const itemId = String(params?.itemId || params?.item_id || params?.id || "").trim();
+      const price = _clampInt(params?.price);
+
+      if (!universeId || !category || !itemId) return null;
+
+      try {
+        const r = await sb.rpc("secure_buy_cosmetic", {
+          p_universe_id: universeId,
+          p_category: category,
+          p_item_id: itemId,
+          p_price: price
+        });
+        if (r?.error) {
+          _reportRemoteError("rpc.secure_buy_cosmetic", r.error);
+          return null;
+        }
+        if (Array.isArray(r?.data)) return r.data[0] || null;
+        return r?.data || null;
+      } catch (e) {
+        _reportRemoteError("rpc.secure_buy_cosmetic.exception", e);
+        return null;
+      }
+    },
+
+    async equipCosmetic(params) {
+      const sb = window.sb;
+      if (!sb || typeof sb.rpc !== "function") return null;
+
+      const uid = await this.ensureAuth();
+      if (!uid) return null;
+
+      const universeId = String(params?.universeId || params?.universe_id || "").trim();
+      const category = String(params?.category || "").trim().toLowerCase();
+      const itemId = String(params?.itemId || params?.item_id || params?.id || "").trim();
+
+      if (!universeId || !category || !itemId) return null;
+
+      try {
+        const r = await sb.rpc("secure_equip_cosmetic", {
+          p_universe_id: universeId,
+          p_category: category,
+          p_item_id: itemId
+        });
+        if (r?.error) {
+          _reportRemoteError("rpc.secure_equip_cosmetic", r.error);
+          return null;
+        }
+        if (Array.isArray(r?.data)) return r.data[0] || null;
+        return r?.data || null;
+      } catch (e) {
+        _reportRemoteError("rpc.secure_equip_cosmetic.exception", e);
+        return null;
+      }
     }
   };
 
@@ -456,9 +716,17 @@
 
       return await queueRemote(async () => {
         const me = await window.VRRemoteStore.getMe();
-        if (!me) return false;
-        _applyMergedRemote(me);
-        return true;
+        const cosmetics = await window.VRRemoteStore.getCosmeticsState();
+
+        let ok = false;
+        if (me) ok = _applyMergedRemote(me) || ok;
+        if (cosmetics) {
+          if (typeof cosmetics.vcoins !== "undefined") {
+            _memState.vcoins = _clampInt(cosmetics.vcoins);
+          }
+          ok = _applyMergedCosmetics(cosmetics) || ok;
+        }
+        return ok;
       }, "VUserData.refresh");
     },
 
@@ -475,6 +743,11 @@
           unlocked_universes: _mergeUniverses(_memState.unlocked_universes, []),
           no_ads: !!_memState.no_ads,
           has_diamond: !!_memState.has_diamond,
+          owned_cosmetics: _normalizeOwnedCosmetics(_memState.owned_cosmetics),
+          equipped_cosmetics: _sanitizeEquippedCosmetics(
+            _memState.owned_cosmetics,
+            _memState.equipped_cosmetics
+          ),
           updated_at: Number(_memState.updated_at || Date.now())
         };
       } catch (_) {
@@ -486,6 +759,7 @@
       const silent = !!(opts && opts.silent);
       try {
         const data = (u && typeof u === "object") ? u : _default();
+
         _memState.user_id = (data.user_id || _memState.user_id || "").toString();
         _memState.username = (data.username || _memState.username || "").toString();
         _memState.vcoins = _clampInt(typeof data.vcoins !== "undefined" ? data.vcoins : _memState.vcoins);
@@ -498,6 +772,21 @@
           _memState.unlocked_universes = _mergeUniverses(data.unlocked_universes, []);
         } else if (!Array.isArray(_memState.unlocked_universes) || !_memState.unlocked_universes.length) {
           _memState.unlocked_universes = FREE_UNIVERSES.slice(0);
+        }
+
+        if (typeof data.owned_cosmetics !== "undefined") {
+          _memState.owned_cosmetics = _normalizeOwnedCosmetics(data.owned_cosmetics);
+        } else if (!_memState.owned_cosmetics || typeof _memState.owned_cosmetics !== "object") {
+          _memState.owned_cosmetics = {};
+        }
+
+        if (typeof data.equipped_cosmetics !== "undefined") {
+          _memState.equipped_cosmetics = _sanitizeEquippedCosmetics(
+            _memState.owned_cosmetics,
+            _normalizeEquippedCosmetics(data.equipped_cosmetics)
+          );
+        } else if (!_memState.equipped_cosmetics || typeof _memState.equipped_cosmetics !== "object") {
+          _memState.equipped_cosmetics = {};
         }
 
         _memState.updated_at = Date.now();
@@ -528,6 +817,42 @@
       if (this.hasDiamond()) return true;
       const set = new Set(this.getUnlockedUniverses());
       return set.has(id);
+    },
+
+    getOwnedCosmetics() {
+      return _normalizeOwnedCosmetics(this.load().owned_cosmetics);
+    },
+
+    getEquippedCosmetics() {
+      return _sanitizeEquippedCosmetics(
+        this.getOwnedCosmetics(),
+        this.load().equipped_cosmetics
+      );
+    },
+
+    getCosmeticsState() {
+      return {
+        owned_cosmetics: this.getOwnedCosmetics(),
+        equipped_cosmetics: this.getEquippedCosmetics()
+      };
+    },
+
+    isCosmeticOwned(universeId, category, itemId) {
+      const uid = String(universeId || "").trim();
+      const cat = String(category || "").trim();
+      const iid = String(itemId || "").trim();
+      if (!uid || !cat || !iid) return false;
+
+      const owned = this.getOwnedCosmetics();
+      return !!(owned[uid]?.[cat] || []).includes(iid);
+    },
+
+    getEquippedCosmetic(universeId, category) {
+      const uid = String(universeId || "").trim();
+      const cat = String(category || "").trim();
+      if (!uid || !cat) return "";
+      const equipped = this.getEquippedCosmetics();
+      return String(equipped[uid]?.[cat] || "");
     },
 
     async _syncEntitlementsToRemote() {
@@ -573,6 +898,7 @@
 
       this.save(next);
 
+      const self = this;
       queueRemote(async () => {
         try {
           const newv = await window.VRRemoteStore?.reduceVcoinsTo?.(next.vcoins);
@@ -582,7 +908,7 @@
             _emitProfile();
           }
         } catch (_) {}
-        await this._syncEntitlementsToRemote().catch(() => false);
+        await self._syncEntitlementsToRemote().catch(() => false);
         return true;
       }, "VUserData.unlockUniverseWithVcoins");
 
@@ -672,6 +998,7 @@
       if (d <= 0) return this.getVcoins();
       if (!window.VRRemoteStore?.enabled?.()) return this.getVcoins();
 
+      const self = this;
       queueRemote(async () => {
         const newv = await window.VRRemoteStore.addVcoins(d);
         if (typeof newv === "number" && !Number.isNaN(newv)) {
@@ -680,7 +1007,7 @@
           _emitProfile();
           _persistLocal();
         } else {
-          await this.refresh().catch(() => false);
+          await self.refresh().catch(() => false);
         }
         return true;
       }, "VUserData.addVcoins");
@@ -692,6 +1019,7 @@
       const target = Math.max(0, Math.floor(Number(v || 0)));
       if (!window.VRRemoteStore?.enabled?.()) return this.getVcoins();
 
+      const self = this;
       queueRemote(async () => {
         const newv = await window.VRRemoteStore.reduceVcoinsTo(target);
         if (typeof newv === "number" && !Number.isNaN(newv)) {
@@ -700,7 +1028,7 @@
           _emitProfile();
           _persistLocal();
         } else {
-          await this.refresh().catch(() => false);
+          await self.refresh().catch(() => false);
         }
         return true;
       }, "VUserData.setVcoins");
@@ -713,6 +1041,7 @@
       if (d <= 0) return this.getJetons();
       if (!window.VRRemoteStore?.enabled?.()) return this.getJetons();
 
+      const self = this;
       queueRemote(async () => {
         const newj = await window.VRRemoteStore.addJetons(d);
         if (typeof newj === "number" && !Number.isNaN(newj)) {
@@ -721,7 +1050,7 @@
           _emitProfile();
           _persistLocal();
         } else {
-          await this.refresh().catch(() => false);
+          await self.refresh().catch(() => false);
         }
         return true;
       }, "VUserData.addJetons");
@@ -734,6 +1063,7 @@
       if (d <= 0) return this.getVcoins();
       if (!window.VRRemoteStore?.enabled?.()) return this.getVcoins();
 
+      const self = this;
       const out = await queueRemote(async () => {
         const newv = await window.VRRemoteStore.addVcoins(d);
         if (typeof newv === "number" && !Number.isNaN(newv)) {
@@ -743,8 +1073,8 @@
           _persistLocal();
           return _memState.vcoins;
         }
-        await this.refresh().catch(() => false);
-        return this.getVcoins();
+        await self.refresh().catch(() => false);
+        return self.getVcoins();
       }, "VUserData.addVcoinsAsync");
 
       return (typeof out === "number" && !Number.isNaN(out)) ? out : this.getVcoins();
@@ -755,6 +1085,7 @@
       if (d <= 0) return this.getJetons();
       if (!window.VRRemoteStore?.enabled?.()) return this.getJetons();
 
+      const self = this;
       const out = await queueRemote(async () => {
         const newj = await window.VRRemoteStore.addJetons(d);
         if (typeof newj === "number" && !Number.isNaN(newj)) {
@@ -764,8 +1095,8 @@
           _persistLocal();
           return _memState.jetons;
         }
-        await this.refresh().catch(() => false);
-        return this.getJetons();
+        await self.refresh().catch(() => false);
+        return self.getJetons();
       }, "VUserData.addJetonsAsync");
 
       return (typeof out === "number" && !Number.isNaN(out)) ? out : this.getJetons();
@@ -775,6 +1106,7 @@
       const target = Math.max(0, Math.floor(Number(v || 0)));
       if (!window.VRRemoteStore?.enabled?.()) return this.getVcoins();
 
+      const self = this;
       const out = await queueRemote(async () => {
         const newv = await window.VRRemoteStore.reduceVcoinsTo(target);
         if (typeof newv === "number" && !Number.isNaN(newv)) {
@@ -784,8 +1116,8 @@
           _persistLocal();
           return _memState.vcoins;
         }
-        await this.refresh().catch(() => false);
-        return this.getVcoins();
+        await self.refresh().catch(() => false);
+        return self.getVcoins();
       }, "VUserData.setVcoinsAsync");
 
       return (typeof out === "number" && !Number.isNaN(out)) ? out : this.getVcoins();
@@ -809,6 +1141,167 @@
       _persistLocal();
 
       return true;
+    },
+
+    async buyCosmetic(item, opts) {
+      const universeId = String(item?.universeId || item?.universe_id || "").trim();
+      const category = String(item?.category || "").trim().toLowerCase();
+      const itemId = String(item?.itemId || item?.item_id || item?.id || "").trim();
+      const price = _clampInt(item?.price);
+      const autoEquip = !!(opts && opts.autoEquip);
+
+      if (!universeId || !category || !itemId || !COSMETIC_CATEGORIES.includes(category)) {
+        return { ok: false, reason: "invalid_item" };
+      }
+
+      if (this.isCosmeticOwned(universeId, category, itemId)) {
+        if (autoEquip) {
+          return await this.equipCosmetic(universeId, category, itemId);
+        }
+        return {
+          ok: true,
+          reason: "already",
+          vcoins: this.getVcoins(),
+          data: this.getCosmeticsState()
+        };
+      }
+
+      const cur = this.load();
+      if (_clampInt(cur.vcoins) < price) {
+        return {
+          ok: false,
+          reason: "insufficient_vcoins",
+          balance: _clampInt(cur.vcoins),
+          price
+        };
+      }
+
+      const snapshot = {
+        vcoins: _clampInt(cur.vcoins),
+        owned_cosmetics: _cloneJson(cur.owned_cosmetics),
+        equipped_cosmetics: _cloneJson(cur.equipped_cosmetics)
+      };
+
+      const nextOwned = _addOwnedCosmetic(snapshot.owned_cosmetics, universeId, category, itemId);
+      this.save({
+        ...cur,
+        vcoins: _clampInt(cur.vcoins) - price,
+        owned_cosmetics: nextOwned,
+        equipped_cosmetics: snapshot.equipped_cosmetics
+      });
+
+      const self = this;
+      const out = await queueRemote(async () => {
+        const remote = await window.VRRemoteStore?.buyCosmetic?.({
+          universeId,
+          category,
+          itemId,
+          price
+        });
+
+        if (!remote || typeof remote !== "object") {
+          self.save({
+            ...self.load(),
+            vcoins: snapshot.vcoins,
+            owned_cosmetics: snapshot.owned_cosmetics,
+            equipped_cosmetics: snapshot.equipped_cosmetics
+          });
+          await self.refresh().catch(() => false);
+          return { ok: false, reason: "remote_error" };
+        }
+
+        if (typeof remote.vcoins !== "undefined") {
+          _memState.vcoins = _clampInt(remote.vcoins);
+        }
+
+        _applyMergedCosmetics(remote);
+        _memState.updated_at = Date.now();
+        _emitProfile();
+        _persistLocal();
+
+        return {
+          ok: true,
+          reason: "ok",
+          vcoins: self.getVcoins(),
+          data: self.getCosmeticsState()
+        };
+      }, "VUserData.buyCosmetic");
+
+      if (out?.ok && autoEquip) {
+        return await this.equipCosmetic(universeId, category, itemId);
+      }
+
+      return out || { ok: false, reason: "remote_error" };
+    },
+
+    async equipCosmetic(universeId, category, itemId) {
+      const uid = String(universeId || "").trim();
+      const cat = String(category || "").trim().toLowerCase();
+      const iid = String(itemId || "").trim();
+
+      if (!uid || !cat || !iid || !COSMETIC_CATEGORIES.includes(cat)) {
+        return { ok: false, reason: "invalid_item" };
+      }
+
+      if (!this.isCosmeticOwned(uid, cat, iid)) {
+        return { ok: false, reason: "not_owned" };
+      }
+
+      if (this.getEquippedCosmetic(uid, cat) === iid) {
+        return {
+          ok: true,
+          reason: "already",
+          vcoins: this.getVcoins(),
+          data: this.getCosmeticsState()
+        };
+      }
+
+      const cur = this.load();
+      const snapshot = {
+        equipped_cosmetics: _cloneJson(cur.equipped_cosmetics)
+      };
+
+      const nextEquipped = _setEquippedCosmetic(snapshot.equipped_cosmetics, uid, cat, iid);
+      this.save({
+        ...cur,
+        equipped_cosmetics: nextEquipped
+      });
+
+      const self = this;
+      const out = await queueRemote(async () => {
+        const remote = await window.VRRemoteStore?.equipCosmetic?.({
+          universeId: uid,
+          category: cat,
+          itemId: iid
+        });
+
+        if (!remote || typeof remote !== "object") {
+          self.save({
+            ...self.load(),
+            equipped_cosmetics: snapshot.equipped_cosmetics
+          });
+          await self.refresh().catch(() => false);
+          return { ok: false, reason: "remote_error" };
+        }
+
+        if (typeof remote.vcoins !== "undefined") {
+          _memState.vcoins = _clampInt(remote.vcoins);
+        }
+
+        _applyMergedCosmetics(remote);
+        _memState.updated_at = Date.now();
+        _emitProfile();
+        _persistLocal();
+
+        return {
+          ok: true,
+          reason: "ok",
+          vcoins: self.getVcoins(),
+          data: self.getCosmeticsState()
+        };
+      }, "VUserData.equipCosmetic");
+
+      return out || { ok: false, reason: "remote_error" };
     }
   };
 

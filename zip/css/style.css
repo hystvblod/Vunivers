@@ -376,8 +376,8 @@ button.vr-card:focus-visible{
   border: none;
   box-shadow: none;
 
-  background-size: cover;
-  background-position: center;
+  background-size: 100% 100%;
+  background-position: center center;
   background-repeat: no-repeat;
   background-image: var(--vr-universe-bg);
 
@@ -1092,11 +1092,6 @@ body.vr-body-game[data-universe="hell_king"]{
 body.vr-body-game[data-universe="hell_king"] #view-game{
   padding-left: clamp(8px, 2.8vw, 16px) !important;
   padding-right: clamp(8px, 2.8vw, 16px) !important;
-
-  background-image: var(--vr-universe-bg) !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-size: 100% 100% !important;
 }
 
 /* ==========================================================
@@ -1230,7 +1225,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
 
 /* gauche */
 body.vr-body-game[data-universe="hell_king"] .vr-hud-left{
-  left: 3.6 !important;
+  left: 3.3 !important;
   width: 17.8% !important;
 }
 
@@ -1242,7 +1237,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-center{
 
 /* droite */
 body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
-  right: 5% !important;
+  right: 5.3% !important;
   width: 17.8% !important;
 }
 
@@ -1370,12 +1365,12 @@ body.vr-body-game[data-universe="hell_king"] #view-game .vr-choice-button{
   }
 
   body.vr-body-game[data-universe="hell_king"] .vr-hud-left{
-    left: 3.6% !important;
+    left: 3.3% !important;
     width: 18.4% !important;
   }
 
   body.vr-body-game[data-universe="hell_king"] .vr-hud-right{
-    right: 5% !important;
+    right: 5.3% !important;
     width: 18.4% !important;
   }
 
@@ -1442,13 +1437,13 @@ body.vr-body-game[data-universe="heaven_king"]{
 /* ✅ Heaven : scénario */
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main{
   overflow: hidden;
-  background-size: 120% 125% !important;
+  background-size: 100% 100% !important;
   background-position: center !important;
 }
 
 /* ✅ Heaven : choix */
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-choice-button{
-  background-size: 125% 100% !important;
+  background-size: 100% 100% !important;
   background-position: center !important;
 }
 
@@ -1489,18 +1484,18 @@ body.vr-body-game[data-universe="western_president"]{
    CEO
    ========================================================== */
 /* ✅ Ceo : choix */
-body.vr-body-game[data-universe="mega_corp-ceo"] #view-game .vr-choice-button{
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-button{
   background-size: 115% 130% !important;
   background-position: center !important;
 }
 
-body.vr-body-game[data-universe="mega_corp-ceo"] #view-game .vr-card-main{
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
   overflow: hidden;
   background-size: 100% 110% !important;
   background-position: center !important;
 }
 
-body.vr-body-game[data-universe="mega_corp-ceo"]{
+body.vr-body-game[data-universe="mega_corp_ceo"]{
   /* ✅ webp + grand (scénario + choix) */
   --vr-card-w: clamp(460px, 100vw, 1240px);
 

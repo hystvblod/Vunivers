@@ -297,7 +297,109 @@
     "diamond_buy": "Activer Diamond",
 
     "aria_top": "Barre d’actions",
-    "aria_profile": "Profil"
+    "aria_profile": "Profil",
+
+
+
+
+
+
+
+  "shop.pack_vcoins_1200": "1 200 VCoins",
+
+  "shop.carousel.prev": "Précédent",
+  "shop.carousel.next": "Suivant",
+
+  "shop.universe.hell_king": "Enfers",
+  "shop.universe.heaven_king": "Paradis",
+  "shop.universe.western_president": "Président",
+  "shop.universe.mega_corp_ceo": "CEO",
+  "shop.universe.new_world_explorer": "Explorateur",
+  "shop.universe.vampire_lord": "Vampire",
+
+  "shop.cosmetics.background": "Fond",
+  "shop.cosmetics.message": "Carte message",
+  "shop.cosmetics.choice": "Choix",
+
+  "shop.cosmetics.hell.background_1": "Fond ruines ardentes",
+  "shop.cosmetics.hell.background_2": "Fond fournaise royale",
+  "shop.cosmetics.hell.background_3": "Fond trône de lave",
+  "shop.cosmetics.hell.background_4": "Fond abîme rouge",
+  "shop.cosmetics.hell.message_1": "Carte décret infernal",
+  "shop.cosmetics.hell.message_2": "Carte cendres noires",
+  "shop.cosmetics.hell.message_3": "Carte sceau démoniaque",
+  "shop.cosmetics.hell.choice_1": "Choix sentence de braise",
+  "shop.cosmetics.hell.choice_2": "Choix pacte sanglant",
+  "shop.cosmetics.hell.choice_3": "Choix ordre abyssal",
+
+  "shop.cosmetics.heaven.background_1": "Fond nuées dorées",
+  "shop.cosmetics.heaven.background_2": "Fond jardin sacré",
+  "shop.cosmetics.heaven.background_3": "Fond portail des anges",
+  "shop.cosmetics.heaven.message_1": "Carte lumière pure",
+  "shop.cosmetics.heaven.message_2": "Carte marbre divin",
+  "shop.cosmetics.heaven.message_3": "Carte aile céleste",
+  "shop.cosmetics.heaven.choice_1": "Choix grâce suprême",
+  "shop.cosmetics.heaven.choice_2": "Choix jugement céleste",
+  "shop.cosmetics.heaven.choice_3": "Choix serment angélique",
+
+  "shop.cosmetics.president.background_1": "Fond salle de crise",
+  "shop.cosmetics.president.background_2": "Fond bureau ovale",
+  "shop.cosmetics.president.background_3": "Fond capitale blindée",
+  "shop.cosmetics.president.message_1": "Carte dossier classé",
+  "shop.cosmetics.president.message_2": "Carte note exécutive",
+  "shop.cosmetics.president.message_3": "Carte briefing d'État",
+  "shop.cosmetics.president.choice_1": "Choix veto présidentiel",
+  "shop.cosmetics.president.choice_2": "Choix décret national",
+  "shop.cosmetics.president.choice_3": "Choix ordre exécutif",
+
+  "shop.cosmetics.ceo.background_1": "Fond tour de verre",
+  "shop.cosmetics.ceo.background_2": "Fond salle du board",
+  "shop.cosmetics.ceo.background_3": "Fond krach boursier",
+  "shop.cosmetics.ceo.message_1": "Carte rapport premium",
+  "shop.cosmetics.ceo.message_2": "Carte dossier investisseurs",
+  "shop.cosmetics.ceo.message_3": "Carte note stratégique",
+  "shop.cosmetics.ceo.choice_1": "Choix fusion rapide",
+  "shop.cosmetics.ceo.choice_2": "Choix plan agressif",
+  "shop.cosmetics.ceo.choice_3": "Choix décision du board",
+
+  "shop.cosmetics.explorer.background_1": "Fond rivage perdu",
+  "shop.cosmetics.explorer.background_2": "Fond jungle profonde",
+  "shop.cosmetics.explorer.background_3": "Fond camp colonial",
+  "shop.cosmetics.explorer.message_1": "Carte journal de bord",
+  "shop.cosmetics.explorer.message_2": "Carte parchemin royal",
+  "shop.cosmetics.explorer.message_3": "Carte note d'expédition",
+  "shop.cosmetics.explorer.choice_1": "Choix route inconnue",
+  "shop.cosmetics.explorer.choice_2": "Choix ordre de mission",
+  "shop.cosmetics.explorer.choice_3": "Choix cap vers l'empire",
+
+  "shop.cosmetics.vampire.background_1": "Fond château nocturne",
+  "shop.cosmetics.vampire.background_2": "Fond lune sanglante",
+  "shop.cosmetics.vampire.background_3": "Fond crypte impériale",
+  "shop.cosmetics.vampire.message_1": "Carte velours noir",
+  "shop.cosmetics.vampire.message_2": "Carte sceau écarlate",
+  "shop.cosmetics.vampire.message_3": "Carte décret immortel",
+  "shop.cosmetics.vampire.choice_1": "Choix morsure royale",
+  "shop.cosmetics.vampire.choice_2": "Choix loi du clan",
+  "shop.cosmetics.vampire.choice_3": "Choix sentence de la nuit",
+
+
+
+
+  
+  "game.customize.aria": "Personnalisation",
+  "game.customize.title": "Personnalisation",
+  "game.customize.close_text": "Revenir à la partie",
+  "shop.toast.insufficient_vcoins": "Pas assez de VCoins",
+  "shop.toast.not_owned": "Objet non possédé",
+  "common.use": "Équiper",
+  "common.buy": "Acheter",
+  "common.owned": "Possédé",
+  "common.locked": "À débloquer",
+  "common.equipped": "Équipé",
+  "common.close": "Fermer"
+
+
+
   },
   "settings": {
     "title": "Paramètres",
@@ -350,4 +452,12 @@
       "desc": "Étends ton influence dans l’ombre. Trop de sang attire les chasseurs, trop de prudence affaiblit ton clan."
     }
   }
+
+
+
+
+
+  
 }
+
+
