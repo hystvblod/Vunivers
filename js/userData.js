@@ -17,6 +17,8 @@
     "vampire_lord"
   ];
 
+  const COSMETIC_CATEGORIES = ["background", "message", "choice"];
+
   let _uiPaused = true;
   let _pendingEmit = false;
 
@@ -25,6 +27,7 @@
   }
 
   const _errState = { last: null, ts: 0 };
+
   function _reportRemoteError(where, err) {
     try {
       if (!_isDebug()) return;
@@ -60,6 +63,10 @@
     try { return JSON.parse(raw); } catch (_) { return null; }
   }
 
+  function _cloneJson(v) {
+    try { return JSON.parse(JSON.stringify(v ?? {})); } catch (_) { return {}; }
+  }
+
   function _uniqTextArray(arr) {
     try {
       const out = [];
@@ -76,12 +83,132 @@
     }
   }
 
-  // IMPORTANT:
-  // - For universes: DB is authoritative; local is only a cache.
-  // - FREE_UNIVERSES are always ensured locally (even if DB forgets them).
-  function _dbUniversesToLocal(arr) {
-    const base = Array.isArray(arr) ? arr : (typeof arr === "string" && arr ? [arr] : []);
-    return _uniqTextArray([].concat(base, FREE_UNIVERSES));
+  function _mergeUniverses(a, b) {
+    return _uniqTextArray([].concat(a || [], b || [], FREE_UNIVERSES));
+  }
+
+  function _normalizeOwnedCosmetics(raw) {
+    let src = raw;
+    if (typeof src === "string") src = _safeParse(src);
+    if (!src || typeof src !== "object" || Array.isArray(src)) return {};
+
+    const out = {};
+    Object.keys(src).forEach((universeId) => {
+      const uid = String(universeId || "").trim();
+      if (!uid) return;
+
+      const row = src[universeId];
+      if (!row || typeof row !== "object" || Array.isArray(row)) return;
+
+      out[uid] = {};
+      COSMETIC_CATEGORIES.forEach((category) => {
+        out[uid][category] = _uniqTextArray(row[category]);
+      });
+    });
+    return out;
+  }
+
+  function _normalizeEquippedCosmetics(raw) {
+    let src = raw;
+    if (typeof src === "string") src = _safeParse(src);
+    if (!src || typeof src !== "object" || Array.isArray(src)) return {};
+
+    const out = {};
+    Object.keys(src).forEach((universeId) => {
+      const uid = String(universeId || "").trim();
+      if (!uid) return;
+
+      const row = src[universeId];
+      if (!row || typeof row !== "object" || Array.isArray(row)) return;
+
+      out[uid] = {};
+      COSMETIC_CATEGORIES.forEach((category) => {
+        const v = String(row[category] || "").trim();
+        if (v) out[uid][category] = v;
+      });
+    });
+    return out;
+  }
+
+  function _mergeOwnedCosmetics(a, b) {
+    const aa = _normalizeOwnedCosmetics(a);
+    const bb = _normalizeOwnedCosmetics(b);
+    const out = {};
+
+    [aa, bb].forEach((src) => {
+      Object.keys(src).forEach((universeId) => {
+        if (!out[universeId]) out[universeId] = {};
+        COSMETIC_CATEGORIES.forEach((category) => {
+          out[universeId][category] = _uniqTextArray([
+            ...(out[universeId][category] || []),
+            ...(src[universeId]?.[category] || [])
+          ]);
+        });
+      });
+    });
+
+    return out;
+  }
+
+  function _mergeEquippedCosmetics(primary, fallback) {
+    const p = _normalizeEquippedCosmetics(primary);
+    const f = _normalizeEquippedCosmetics(fallback);
+    const out = _cloneJson(f);
+
+    Object.keys(p).forEach((universeId) => {
+      if (!out[universeId]) out[universeId] = {};
+      COSMETIC_CATEGORIES.forEach((category) => {
+        const v = String(p[universeId]?.[category] || "").trim();
+        if (v) out[universeId][category] = v;
+      });
+    });
+
+    return out;
+  }
+
+  function _sanitizeEquippedCosmetics(owned, equipped) {
+    const o = _normalizeOwnedCosmetics(owned);
+    const e = _normalizeEquippedCosmetics(equipped);
+    const out = {};
+
+    Object.keys(e).forEach((universeId) => {
+      COSMETIC_CATEGORIES.forEach((category) => {
+        const itemId = String(e[universeId]?.[category] || "").trim();
+        if (!itemId) return;
+
+        const ownedList = o[universeId]?.[category] || [];
+        if (!ownedList.includes(itemId)) return;
+
+        if (!out[universeId]) out[universeId] = {};
+        out[universeId][category] = itemId;
+      });
+    });
+
+    return out;
+  }
+
+  function _addOwnedCosmetic(owned, universeId, category, itemId) {
+    const out = _normalizeOwnedCosmetics(owned);
+    const uid = String(universeId || "").trim();
+    const cat = String(category || "").trim();
+    const iid = String(itemId || "").trim();
+    if (!uid || !cat || !iid || !COSMETIC_CATEGORIES.includes(cat)) return out;
+
+    if (!out[uid]) out[uid] = {};
+    out[uid][cat] = _uniqTextArray([...(out[uid][cat] || []), iid]);
+    return out;
+  }
+
+  function _setEquippedCosmetic(equipped, universeId, category, itemId) {
+    const out = _normalizeEquippedCosmetics(equipped);
+    const uid = String(universeId || "").trim();
+    const cat = String(category || "").trim();
+    const iid = String(itemId || "").trim();
+    if (!uid || !cat || !iid || !COSMETIC_CATEGORIES.includes(cat)) return out;
+
+    if (!out[uid]) out[uid] = {};
+    out[uid][cat] = iid;
+    return out;
   }
 
   const _memState = {
@@ -93,6 +220,8 @@
     unlocked_universes: FREE_UNIVERSES.slice(0),
     no_ads: false,
     has_diamond: false,
+    owned_cosmetics: {},
+    equipped_cosmetics: {},
     updated_at: Date.now(),
     last_sync_at: 0
   };
@@ -122,10 +251,14 @@
         vcoins: _clampInt(_memState.vcoins || 0),
         jetons: _clampInt(_memState.jetons || 0),
         lang: (_memState.lang || "fr").toString(),
-        // DB authoritative for universes, but we always ensure FREE_UNIVERSES.
-        unlocked_universes: _dbUniversesToLocal(_memState.unlocked_universes),
+        unlocked_universes: _mergeUniverses(_memState.unlocked_universes, []),
         no_ads: !!_memState.no_ads,
         has_diamond: !!_memState.has_diamond,
+        owned_cosmetics: _normalizeOwnedCosmetics(_memState.owned_cosmetics),
+        equipped_cosmetics: _sanitizeEquippedCosmetics(
+          _memState.owned_cosmetics,
+          _memState.equipped_cosmetics
+        ),
         updated_at: Date.now(),
         last_sync_at: Number(_memState.last_sync_at || 0)
       });
@@ -147,9 +280,14 @@
             lang: _memState.lang,
             vcoins: _memState.vcoins,
             jetons: _memState.jetons,
-            unlocked_universes: _dbUniversesToLocal(_memState.unlocked_universes),
+            unlocked_universes: _mergeUniverses(_memState.unlocked_universes, []),
             no_ads: !!_memState.no_ads,
-            has_diamond: !!_memState.has_diamond
+            has_diamond: !!_memState.has_diamond,
+            owned_cosmetics: _normalizeOwnedCosmetics(_memState.owned_cosmetics),
+            equipped_cosmetics: _sanitizeEquippedCosmetics(
+              _memState.owned_cosmetics,
+              _memState.equipped_cosmetics
+            )
           }
         })
       );
@@ -166,37 +304,31 @@
       unlocked_universes: FREE_UNIVERSES.slice(0),
       no_ads: false,
       has_diamond: false,
+      owned_cosmetics: {},
+      equipped_cosmetics: {},
       updated_at: Date.now()
     };
   }
 
-  // DB AUTHORITATIVE APPLY:
-  // - vcoins/jetons: set EXACTLY from DB (no merge)
-  // - unlocked_universes: set EXACTLY from DB (then ensure FREE_UNIVERSES)
-  // - no_ads/has_diamond: set from DB (no local OR)
-  function _applyRemoteAuthoritative(me) {
+  function _applyMergedRemote(me) {
     if (!me || typeof me !== "object") return false;
 
+    const localBefore = _readLocal() || {};
     const remoteUnlocked = Array.isArray(me.unlocked_universes)
       ? me.unlocked_universes
       : (typeof me.unlocked_universes === "string" && me.unlocked_universes ? [me.unlocked_universes] : []);
+    const localUnlocked = Array.isArray(localBefore.unlocked_universes)
+      ? localBefore.unlocked_universes
+      : _memState.unlocked_universes;
 
     _memState.user_id = (me.id || _memState.user_id || "").toString();
     _memState.username = (me.username || _memState.username || "").toString();
-
-    // DB decides:
-    _memState.vcoins = _clampInt(typeof me.vcoins !== "undefined" ? me.vcoins : 0);
-    _memState.jetons = _clampInt(typeof me.jetons !== "undefined" ? me.jetons : 0);
-
+    _memState.vcoins = _clampInt(typeof me.vcoins !== "undefined" ? me.vcoins : _memState.vcoins);
+    _memState.jetons = _clampInt(typeof me.jetons !== "undefined" ? me.jetons : _memState.jetons);
     _memState.lang = (me.lang || _memState.lang || "fr").toString();
-
-    // DB decides:
-    _memState.no_ads = !!me.no_ads;
-    _memState.has_diamond = !!me.has_diamond;
-
-    // DB decides universes (cache locally); DB can add or remove; local follows.
-    _memState.unlocked_universes = _dbUniversesToLocal(remoteUnlocked);
-
+    _memState.no_ads = !!(me.no_ads || _memState.no_ads || localBefore.no_ads);
+    _memState.has_diamond = !!(me.has_diamond || _memState.has_diamond || localBefore.has_diamond);
+    _memState.unlocked_universes = _mergeUniverses(remoteUnlocked, localUnlocked);
     _memState.updated_at = Date.now();
     _memState.last_sync_at = Date.now();
 
@@ -205,11 +337,36 @@
     return true;
   }
 
-  // Remote store:
-  // - getMe() via RPC secure_get_me
-  // - patch via profiles.update for unlocked_universes/no_ads/has_diamond/lang
-  // If you want DB to be able to "block" an universe, it will do so by updating profiles.unlocked_universes
-  // and app will follow on refresh().
+  function _applyMergedCosmetics(remote) {
+    if (!remote || typeof remote !== "object") return false;
+
+    const localBefore = _readLocal() || {};
+    const localOwned = _normalizeOwnedCosmetics(
+      localBefore.owned_cosmetics || _memState.owned_cosmetics
+    );
+    const localEquipped = _normalizeEquippedCosmetics(
+      localBefore.equipped_cosmetics || _memState.equipped_cosmetics
+    );
+
+    const remoteOwned = _normalizeOwnedCosmetics(remote.owned_cosmetics);
+    const remoteEquipped = _normalizeEquippedCosmetics(remote.equipped_cosmetics);
+
+    const mergedOwned = _mergeOwnedCosmetics(remoteOwned, localOwned);
+    const mergedEquipped = _sanitizeEquippedCosmetics(
+      mergedOwned,
+      _mergeEquippedCosmetics(remoteEquipped, localEquipped)
+    );
+
+    _memState.owned_cosmetics = mergedOwned;
+    _memState.equipped_cosmetics = mergedEquipped;
+    _memState.updated_at = Date.now();
+    _memState.last_sync_at = Date.now();
+
+    _emitProfile();
+    _persistLocal();
+    return true;
+  }
+
   window.VRRemoteStore = window.VRRemoteStore || {
     enabled() {
       return !!(window.sb && window.sb.auth && typeof window.sb.rpc === "function");
@@ -273,7 +430,28 @@
       }
     },
 
-    async patchProfile(partial) {
+    async getCosmeticsState() {
+      const sb = window.sb;
+      if (!sb || typeof sb.rpc !== "function") return null;
+
+      const uid = await this.ensureAuth();
+      if (!uid) return null;
+
+      try {
+        const r = await sb.rpc("secure_get_cosmetics_state");
+        if (r?.error) {
+          _reportRemoteError("rpc.secure_get_cosmetics_state", r.error);
+          return null;
+        }
+        if (Array.isArray(r?.data)) return r.data[0] || null;
+        return r?.data || null;
+      } catch (e) {
+        _reportRemoteError("rpc.secure_get_cosmetics_state.exception", e);
+        return null;
+      }
+    },
+
+    async patchProfileLocalFirst(partial) {
       const sb = window.sb;
       if (!sb || typeof sb.from !== "function") return null;
 
@@ -282,14 +460,18 @@
 
       const payload = {};
 
-      // For universes: ALWAYS write the authoritative list to DB
-      // (caller must pass the exact desired list; DB may still override later)
       if (Array.isArray(partial?.unlocked_universes)) {
-        payload.unlocked_universes = _dbUniversesToLocal(partial.unlocked_universes);
+        payload.unlocked_universes = _mergeUniverses(partial.unlocked_universes, []);
       }
-      if (typeof partial?.no_ads !== "undefined") payload.no_ads = !!partial.no_ads;
-      if (typeof partial?.has_diamond !== "undefined") payload.has_diamond = !!partial.has_diamond;
-      if (typeof partial?.lang !== "undefined") payload.lang = String(partial.lang || "fr");
+      if (typeof partial?.no_ads !== "undefined") {
+        payload.no_ads = !!partial.no_ads;
+      }
+      if (typeof partial?.has_diamond !== "undefined") {
+        payload.has_diamond = !!partial.has_diamond;
+      }
+      if (typeof partial?.lang !== "undefined") {
+        payload.lang = String(partial.lang || "fr");
+      }
 
       if (!Object.keys(payload).length) return null;
 
@@ -440,51 +622,81 @@
         _reportRemoteError("rpc.secure_set_lang.exception", e);
         return false;
       }
+    },
+
+    async buyCosmetic(params) {
+      const sb = window.sb;
+      if (!sb || typeof sb.rpc !== "function") return null;
+
+      const uid = await this.ensureAuth();
+      if (!uid) return null;
+
+      const universeId = String(params?.universeId || params?.universe_id || "").trim();
+      const category = String(params?.category || "").trim().toLowerCase();
+      const itemId = String(params?.itemId || params?.item_id || params?.id || "").trim();
+      const price = _clampInt(params?.price);
+
+      if (!universeId || !category || !itemId) return null;
+
+      try {
+        const r = await sb.rpc("secure_buy_cosmetic", {
+          p_universe_id: universeId,
+          p_category: category,
+          p_item_id: itemId,
+          p_price: price
+        });
+        if (r?.error) {
+          _reportRemoteError("rpc.secure_buy_cosmetic", r.error);
+          return null;
+        }
+        if (Array.isArray(r?.data)) return r.data[0] || null;
+        return r?.data || null;
+      } catch (e) {
+        _reportRemoteError("rpc.secure_buy_cosmetic.exception", e);
+        return null;
+      }
+    },
+
+    async equipCosmetic(params) {
+      const sb = window.sb;
+      if (!sb || typeof sb.rpc !== "function") return null;
+
+      const uid = await this.ensureAuth();
+      if (!uid) return null;
+
+      const universeId = String(params?.universeId || params?.universe_id || "").trim();
+      const category = String(params?.category || "").trim().toLowerCase();
+      const itemId = String(params?.itemId || params?.item_id || params?.id || "").trim();
+
+      if (!universeId || !category || !itemId) return null;
+
+      try {
+        const r = await sb.rpc("secure_equip_cosmetic", {
+          p_universe_id: universeId,
+          p_category: category,
+          p_item_id: itemId
+        });
+        if (r?.error) {
+          _reportRemoteError("rpc.secure_equip_cosmetic", r.error);
+          return null;
+        }
+        if (Array.isArray(r?.data)) return r.data[0] || null;
+        return r?.data || null;
+      } catch (e) {
+        _reportRemoteError("rpc.secure_equip_cosmetic.exception", e);
+        return null;
+      }
     }
   };
 
   const VUserData = {
-    _autoRefreshInstalled: false,
-    _lastAutoRefreshAt: 0,
-
-    _installAutoRefresh() {
-      if (this._autoRefreshInstalled) return;
-      this._autoRefreshInstalled = true;
-
-      const throttleMs = 8000;
-
-      const maybeRefresh = () => {
-        try {
-          if (document.visibilityState && document.visibilityState !== "visible") return;
-          const now = Date.now();
-          if (now - (this._lastAutoRefreshAt || 0) < throttleMs) return;
-          this._lastAutoRefreshAt = now;
-          this.refresh().catch(() => false);
-        } catch (_) {}
-      };
-
-      try { window.addEventListener("focus", maybeRefresh); } catch (_) {}
-      try { window.addEventListener("pageshow", maybeRefresh); } catch (_) {}
-      try {
-        document.addEventListener("visibilitychange", () => {
-          if (document.visibilityState === "visible") maybeRefresh();
-        });
-      } catch (_) {}
-
-
-    },
-
     async init() {
       const cached = _readLocal();
       if (cached) {
-        // local is only a cache; ok to show something quickly at boot
         this.save(cached, { silent: true });
       } else {
         this.save(this.load(), { silent: true });
       }
-
-      // Always install refresh hooks so DB can override locally (unlock/block, balance changes)
-      this._installAutoRefresh();
 
       if (window.VRRemoteStore?.enabled?.()) {
         await this.refresh().catch((e) => {
@@ -504,9 +716,17 @@
 
       return await queueRemote(async () => {
         const me = await window.VRRemoteStore.getMe();
-        if (!me) return false;
-        _applyRemoteAuthoritative(me);
-        return true;
+        const cosmetics = await window.VRRemoteStore.getCosmeticsState();
+
+        let ok = false;
+        if (me) ok = _applyMergedRemote(me) || ok;
+        if (cosmetics) {
+          if (typeof cosmetics.vcoins !== "undefined") {
+            _memState.vcoins = _clampInt(cosmetics.vcoins);
+          }
+          ok = _applyMergedCosmetics(cosmetics) || ok;
+        }
+        return ok;
       }, "VUserData.refresh");
     },
 
@@ -520,9 +740,14 @@
           vcoins: _clampInt(_memState.vcoins || 0),
           jetons: _clampInt(_memState.jetons || 0),
           lang: (_memState.lang || "fr").toString(),
-          unlocked_universes: _dbUniversesToLocal(_memState.unlocked_universes),
+          unlocked_universes: _mergeUniverses(_memState.unlocked_universes, []),
           no_ads: !!_memState.no_ads,
           has_diamond: !!_memState.has_diamond,
+          owned_cosmetics: _normalizeOwnedCosmetics(_memState.owned_cosmetics),
+          equipped_cosmetics: _sanitizeEquippedCosmetics(
+            _memState.owned_cosmetics,
+            _memState.equipped_cosmetics
+          ),
           updated_at: Number(_memState.updated_at || Date.now())
         };
       } catch (_) {
@@ -534,11 +759,9 @@
       const silent = !!(opts && opts.silent);
       try {
         const data = (u && typeof u === "object") ? u : _default();
+
         _memState.user_id = (data.user_id || _memState.user_id || "").toString();
         _memState.username = (data.username || _memState.username || "").toString();
-
-        // NOTE: even here, we keep "mem state" values as-is.
-        // DB will overwrite them on refresh().
         _memState.vcoins = _clampInt(typeof data.vcoins !== "undefined" ? data.vcoins : _memState.vcoins);
         _memState.jetons = _clampInt(typeof data.jetons !== "undefined" ? data.jetons : _memState.jetons);
         _memState.lang = (data.lang || _memState.lang || "fr").toString();
@@ -546,10 +769,24 @@
         _memState.has_diamond = !!(typeof data.has_diamond !== "undefined" ? data.has_diamond : _memState.has_diamond);
 
         if (Array.isArray(data.unlocked_universes)) {
-          // local is only cache; still store it, but DB will override on refresh.
-          _memState.unlocked_universes = _dbUniversesToLocal(data.unlocked_universes);
+          _memState.unlocked_universes = _mergeUniverses(data.unlocked_universes, []);
         } else if (!Array.isArray(_memState.unlocked_universes) || !_memState.unlocked_universes.length) {
           _memState.unlocked_universes = FREE_UNIVERSES.slice(0);
+        }
+
+        if (typeof data.owned_cosmetics !== "undefined") {
+          _memState.owned_cosmetics = _normalizeOwnedCosmetics(data.owned_cosmetics);
+        } else if (!_memState.owned_cosmetics || typeof _memState.owned_cosmetics !== "object") {
+          _memState.owned_cosmetics = {};
+        }
+
+        if (typeof data.equipped_cosmetics !== "undefined") {
+          _memState.equipped_cosmetics = _sanitizeEquippedCosmetics(
+            _memState.owned_cosmetics,
+            _normalizeEquippedCosmetics(data.equipped_cosmetics)
+          );
+        } else if (!_memState.equipped_cosmetics || typeof _memState.equipped_cosmetics !== "object") {
+          _memState.equipped_cosmetics = {};
         }
 
         _memState.updated_at = Date.now();
@@ -565,12 +802,12 @@
 
     getUnlockedUniverses() {
       const u = this.load();
-      return _dbUniversesToLocal(u.unlocked_universes);
+      return _mergeUniverses(u.unlocked_universes, []);
     },
 
     getAllKnownUniverses() {
-      // "known" list just for UI listings; not a rights source.
-      return _uniqTextArray([].concat(DEFAULT_KNOWN_UNIVERSES, this.getUnlockedUniverses()));
+      const local = this.getUnlockedUniverses();
+      return _mergeUniverses(DEFAULT_KNOWN_UNIVERSES, local);
     },
 
     isUniverseUnlocked(universeId) {
@@ -582,22 +819,55 @@
       return set.has(id);
     },
 
+    getOwnedCosmetics() {
+      return _normalizeOwnedCosmetics(this.load().owned_cosmetics);
+    },
+
+    getEquippedCosmetics() {
+      return _sanitizeEquippedCosmetics(
+        this.getOwnedCosmetics(),
+        this.load().equipped_cosmetics
+      );
+    },
+
+    getCosmeticsState() {
+      return {
+        owned_cosmetics: this.getOwnedCosmetics(),
+        equipped_cosmetics: this.getEquippedCosmetics()
+      };
+    },
+
+    isCosmeticOwned(universeId, category, itemId) {
+      const uid = String(universeId || "").trim();
+      const cat = String(category || "").trim();
+      const iid = String(itemId || "").trim();
+      if (!uid || !cat || !iid) return false;
+
+      const owned = this.getOwnedCosmetics();
+      return !!(owned[uid]?.[cat] || []).includes(iid);
+    },
+
+    getEquippedCosmetic(universeId, category) {
+      const uid = String(universeId || "").trim();
+      const cat = String(category || "").trim();
+      if (!uid || !cat) return "";
+      const equipped = this.getEquippedCosmetics();
+      return String(equipped[uid]?.[cat] || "");
+    },
+
     async _syncEntitlementsToRemote() {
       if (!window.VRRemoteStore?.enabled?.()) return false;
-
       const cur = this.load();
 
       return await queueRemote(async () => {
-        const patched = await window.VRRemoteStore.patchProfile({
+        const patched = await window.VRRemoteStore.patchProfileLocalFirst({
           unlocked_universes: cur.unlocked_universes,
           no_ads: cur.no_ads,
-          has_diamond: cur.has_diamond,
-          lang: cur.lang
+          has_diamond: cur.has_diamond
         });
 
         if (patched && typeof patched === "object") {
-          // DB authoritative, so apply patched profile as truth
-          _applyRemoteAuthoritative(patched);
+          _applyMergedRemote(patched);
           return true;
         }
 
@@ -606,9 +876,6 @@
       }, "VUserData._syncEntitlementsToRemote");
     },
 
-    // IMPORTANT: DB decides vcoins.
-    // So we DO NOT pre-decrement locally.
-    // We request DB to reduce, then refresh and decide unlock based on DB result.
     async unlockUniverseWithVcoins(universeId, price) {
       const id = (universeId || "").toString().trim();
       const cost = _clampInt(price || 600);
@@ -617,39 +884,33 @@
       if (FREE_UNIVERSES.includes(id) || this.hasDiamond() || this.isUniverseUnlocked(id)) {
         return { ok: true, reason: "already", data: this.load() };
       }
-      if (!window.VRRemoteStore?.enabled?.()) {
-        return { ok: false, reason: "no_remote" };
-      }
-
-      // 1) Refresh first to ensure we have DB truth
-      await this.refresh().catch(() => false);
 
       const cur = this.load();
       if (_clampInt(cur.vcoins) < cost) {
         return { ok: false, reason: "insufficient_vcoins", balance: _clampInt(cur.vcoins), price: cost };
       }
 
-      // 2) Ask DB to reduce balance (DB is truth)
-      const target = _clampInt(cur.vcoins) - cost;
-      const newv = await queueRemote(async () => {
-        return await window.VRRemoteStore.reduceVcoinsTo(target);
-      }, "VUserData.unlockUniverseWithVcoins.reduce");
+      const next = {
+        ...cur,
+        vcoins: _clampInt(cur.vcoins) - cost,
+        unlocked_universes: _mergeUniverses(cur.unlocked_universes, [id])
+      };
 
-      if (typeof newv !== "number" || Number.isNaN(newv)) {
-        await this.refresh().catch(() => false);
-        return { ok: false, reason: "db_reject" };
-      }
+      this.save(next);
 
-      // 3) Now set local universe cache + push to DB (entitlements)
-      const after = this.load(); // may still have old universes until refresh; we will update and sync
-      const nextUniverses = _dbUniversesToLocal([].concat(after.unlocked_universes || [], [id]));
-
-      // Update local cache immediately for UI
-      this.save({ ...after, unlocked_universes: nextUniverses }, { silent: false });
-
-      // Push entitlements to DB, then apply DB truth
-      await this._syncEntitlementsToRemote().catch(() => false);
-      await this.refresh().catch(() => false);
+      const self = this;
+      queueRemote(async () => {
+        try {
+          const newv = await window.VRRemoteStore?.reduceVcoinsTo?.(next.vcoins);
+          if (typeof newv === "number" && !Number.isNaN(newv)) {
+            _memState.vcoins = _clampInt(newv);
+            _persistLocal();
+            _emitProfile();
+          }
+        } catch (_) {}
+        await self._syncEntitlementsToRemote().catch(() => false);
+        return true;
+      }, "VUserData.unlockUniverseWithVcoins");
 
       return { ok: true, reason: "ok", data: this.load() };
     },
@@ -660,54 +921,38 @@
       if (FREE_UNIVERSES.includes(id) || this.hasDiamond() || this.isUniverseUnlocked(id)) {
         return { ok: true, reason: "already", data: this.load() };
       }
-      if (!window.VRRemoteStore?.enabled?.()) return { ok: false, reason: "no_remote" };
 
-      // Update local cache for UI, then push to DB
       const cur = this.load();
-      const nextUniverses = _dbUniversesToLocal([].concat(cur.unlocked_universes || [], [id]));
-      this.save({ ...cur, unlocked_universes: nextUniverses });
+      this.save({
+        ...cur,
+        unlocked_universes: _mergeUniverses(cur.unlocked_universes, [id])
+      });
 
-      await this._syncEntitlementsToRemote().catch(() => false);
-      await this.refresh().catch(() => false);
-
+      this._syncEntitlementsToRemote().catch(() => false);
       return { ok: true, reason: "ok", data: this.load() };
     },
 
     async activateNoAdsPurchase() {
-      if (!window.VRRemoteStore?.enabled?.()) return { ok: false, reason: "no_remote" };
-
-      await this.refresh().catch(() => false);
       const cur = this.load();
       if (cur.no_ads) return { ok: true, reason: "already", data: cur };
 
-      // Update local cache for UI
       this.save({ ...cur, no_ads: true });
-
-      await this._syncEntitlementsToRemote().catch(() => false);
-      await this.refresh().catch(() => false);
-
+      this._syncEntitlementsToRemote().catch(() => false);
       return { ok: true, reason: "ok", data: this.load() };
     },
 
     async activateDiamondPurchase() {
-      if (!window.VRRemoteStore?.enabled?.()) return { ok: false, reason: "no_remote" };
-
-      await this.refresh().catch(() => false);
       const cur = this.load();
       if (cur.has_diamond) return { ok: true, reason: "already", data: cur };
 
-      const allKnown = this.getAllKnownUniverses();
-      // Local cache for UI
       this.save({
         ...cur,
         has_diamond: true,
         no_ads: true,
-        unlocked_universes: _dbUniversesToLocal(allKnown)
+        unlocked_universes: _mergeUniverses(cur.unlocked_universes, this.getAllKnownUniverses())
       });
 
-      await this._syncEntitlementsToRemote().catch(() => false);
-      await this.refresh().catch(() => false);
-
+      this._syncEntitlementsToRemote().catch(() => false);
       return { ok: true, reason: "ok", data: this.load() };
     },
 
@@ -748,12 +993,12 @@
       return l;
     },
 
-    // DB decides vcoins: no optimistic local increment.
     addVcoins(delta) {
       const d = Math.floor(Number(delta || 0));
       if (d <= 0) return this.getVcoins();
       if (!window.VRRemoteStore?.enabled?.()) return this.getVcoins();
 
+      const self = this;
       queueRemote(async () => {
         const newv = await window.VRRemoteStore.addVcoins(d);
         if (typeof newv === "number" && !Number.isNaN(newv)) {
@@ -762,7 +1007,7 @@
           _emitProfile();
           _persistLocal();
         } else {
-          await this.refresh().catch(() => false);
+          await self.refresh().catch(() => false);
         }
         return true;
       }, "VUserData.addVcoins");
@@ -770,11 +1015,11 @@
       return this.getVcoins();
     },
 
-    // DB decides vcoins: no optimistic set.
     setVcoins(v) {
       const target = Math.max(0, Math.floor(Number(v || 0)));
       if (!window.VRRemoteStore?.enabled?.()) return this.getVcoins();
 
+      const self = this;
       queueRemote(async () => {
         const newv = await window.VRRemoteStore.reduceVcoinsTo(target);
         if (typeof newv === "number" && !Number.isNaN(newv)) {
@@ -783,7 +1028,7 @@
           _emitProfile();
           _persistLocal();
         } else {
-          await this.refresh().catch(() => false);
+          await self.refresh().catch(() => false);
         }
         return true;
       }, "VUserData.setVcoins");
@@ -791,12 +1036,12 @@
       return this.getVcoins();
     },
 
-    // DB decides jetons: no optimistic local increment.
     addJetons(delta) {
       const d = Math.floor(Number(delta || 0));
       if (d <= 0) return this.getJetons();
       if (!window.VRRemoteStore?.enabled?.()) return this.getJetons();
 
+      const self = this;
       queueRemote(async () => {
         const newj = await window.VRRemoteStore.addJetons(d);
         if (typeof newj === "number" && !Number.isNaN(newj)) {
@@ -805,7 +1050,7 @@
           _emitProfile();
           _persistLocal();
         } else {
-          await this.refresh().catch(() => false);
+          await self.refresh().catch(() => false);
         }
         return true;
       }, "VUserData.addJetons");
@@ -818,6 +1063,7 @@
       if (d <= 0) return this.getVcoins();
       if (!window.VRRemoteStore?.enabled?.()) return this.getVcoins();
 
+      const self = this;
       const out = await queueRemote(async () => {
         const newv = await window.VRRemoteStore.addVcoins(d);
         if (typeof newv === "number" && !Number.isNaN(newv)) {
@@ -827,8 +1073,8 @@
           _persistLocal();
           return _memState.vcoins;
         }
-        await this.refresh().catch(() => false);
-        return this.getVcoins();
+        await self.refresh().catch(() => false);
+        return self.getVcoins();
       }, "VUserData.addVcoinsAsync");
 
       return (typeof out === "number" && !Number.isNaN(out)) ? out : this.getVcoins();
@@ -839,6 +1085,7 @@
       if (d <= 0) return this.getJetons();
       if (!window.VRRemoteStore?.enabled?.()) return this.getJetons();
 
+      const self = this;
       const out = await queueRemote(async () => {
         const newj = await window.VRRemoteStore.addJetons(d);
         if (typeof newj === "number" && !Number.isNaN(newj)) {
@@ -848,8 +1095,8 @@
           _persistLocal();
           return _memState.jetons;
         }
-        await this.refresh().catch(() => false);
-        return this.getJetons();
+        await self.refresh().catch(() => false);
+        return self.getJetons();
       }, "VUserData.addJetonsAsync");
 
       return (typeof out === "number" && !Number.isNaN(out)) ? out : this.getJetons();
@@ -859,6 +1106,7 @@
       const target = Math.max(0, Math.floor(Number(v || 0)));
       if (!window.VRRemoteStore?.enabled?.()) return this.getVcoins();
 
+      const self = this;
       const out = await queueRemote(async () => {
         const newv = await window.VRRemoteStore.reduceVcoinsTo(target);
         if (typeof newv === "number" && !Number.isNaN(newv)) {
@@ -868,14 +1116,13 @@
           _persistLocal();
           return _memState.vcoins;
         }
-        await this.refresh().catch(() => false);
-        return this.getVcoins();
+        await self.refresh().catch(() => false);
+        return self.getVcoins();
       }, "VUserData.setVcoinsAsync");
 
       return (typeof out === "number" && !Number.isNaN(out)) ? out : this.getVcoins();
     },
 
-    // DB decides jetons: no optimistic local decrement.
     async spendJetons(cost) {
       const c = Math.floor(Number(cost || 0));
       if (c <= 0) return false;
@@ -894,6 +1141,167 @@
       _persistLocal();
 
       return true;
+    },
+
+    async buyCosmetic(item, opts) {
+      const universeId = String(item?.universeId || item?.universe_id || "").trim();
+      const category = String(item?.category || "").trim().toLowerCase();
+      const itemId = String(item?.itemId || item?.item_id || item?.id || "").trim();
+      const price = _clampInt(item?.price);
+      const autoEquip = !!(opts && opts.autoEquip);
+
+      if (!universeId || !category || !itemId || !COSMETIC_CATEGORIES.includes(category)) {
+        return { ok: false, reason: "invalid_item" };
+      }
+
+      if (this.isCosmeticOwned(universeId, category, itemId)) {
+        if (autoEquip) {
+          return await this.equipCosmetic(universeId, category, itemId);
+        }
+        return {
+          ok: true,
+          reason: "already",
+          vcoins: this.getVcoins(),
+          data: this.getCosmeticsState()
+        };
+      }
+
+      const cur = this.load();
+      if (_clampInt(cur.vcoins) < price) {
+        return {
+          ok: false,
+          reason: "insufficient_vcoins",
+          balance: _clampInt(cur.vcoins),
+          price
+        };
+      }
+
+      const snapshot = {
+        vcoins: _clampInt(cur.vcoins),
+        owned_cosmetics: _cloneJson(cur.owned_cosmetics),
+        equipped_cosmetics: _cloneJson(cur.equipped_cosmetics)
+      };
+
+      const nextOwned = _addOwnedCosmetic(snapshot.owned_cosmetics, universeId, category, itemId);
+      this.save({
+        ...cur,
+        vcoins: _clampInt(cur.vcoins) - price,
+        owned_cosmetics: nextOwned,
+        equipped_cosmetics: snapshot.equipped_cosmetics
+      });
+
+      const self = this;
+      const out = await queueRemote(async () => {
+        const remote = await window.VRRemoteStore?.buyCosmetic?.({
+          universeId,
+          category,
+          itemId,
+          price
+        });
+
+        if (!remote || typeof remote !== "object") {
+          self.save({
+            ...self.load(),
+            vcoins: snapshot.vcoins,
+            owned_cosmetics: snapshot.owned_cosmetics,
+            equipped_cosmetics: snapshot.equipped_cosmetics
+          });
+          await self.refresh().catch(() => false);
+          return { ok: false, reason: "remote_error" };
+        }
+
+        if (typeof remote.vcoins !== "undefined") {
+          _memState.vcoins = _clampInt(remote.vcoins);
+        }
+
+        _applyMergedCosmetics(remote);
+        _memState.updated_at = Date.now();
+        _emitProfile();
+        _persistLocal();
+
+        return {
+          ok: true,
+          reason: "ok",
+          vcoins: self.getVcoins(),
+          data: self.getCosmeticsState()
+        };
+      }, "VUserData.buyCosmetic");
+
+      if (out?.ok && autoEquip) {
+        return await this.equipCosmetic(universeId, category, itemId);
+      }
+
+      return out || { ok: false, reason: "remote_error" };
+    },
+
+    async equipCosmetic(universeId, category, itemId) {
+      const uid = String(universeId || "").trim();
+      const cat = String(category || "").trim().toLowerCase();
+      const iid = String(itemId || "").trim();
+
+      if (!uid || !cat || !iid || !COSMETIC_CATEGORIES.includes(cat)) {
+        return { ok: false, reason: "invalid_item" };
+      }
+
+      if (!this.isCosmeticOwned(uid, cat, iid)) {
+        return { ok: false, reason: "not_owned" };
+      }
+
+      if (this.getEquippedCosmetic(uid, cat) === iid) {
+        return {
+          ok: true,
+          reason: "already",
+          vcoins: this.getVcoins(),
+          data: this.getCosmeticsState()
+        };
+      }
+
+      const cur = this.load();
+      const snapshot = {
+        equipped_cosmetics: _cloneJson(cur.equipped_cosmetics)
+      };
+
+      const nextEquipped = _setEquippedCosmetic(snapshot.equipped_cosmetics, uid, cat, iid);
+      this.save({
+        ...cur,
+        equipped_cosmetics: nextEquipped
+      });
+
+      const self = this;
+      const out = await queueRemote(async () => {
+        const remote = await window.VRRemoteStore?.equipCosmetic?.({
+          universeId: uid,
+          category: cat,
+          itemId: iid
+        });
+
+        if (!remote || typeof remote !== "object") {
+          self.save({
+            ...self.load(),
+            equipped_cosmetics: snapshot.equipped_cosmetics
+          });
+          await self.refresh().catch(() => false);
+          return { ok: false, reason: "remote_error" };
+        }
+
+        if (typeof remote.vcoins !== "undefined") {
+          _memState.vcoins = _clampInt(remote.vcoins);
+        }
+
+        _applyMergedCosmetics(remote);
+        _memState.updated_at = Date.now();
+        _emitProfile();
+        _persistLocal();
+
+        return {
+          ok: true,
+          reason: "ok",
+          vcoins: self.getVcoins(),
+          data: self.getCosmeticsState()
+        };
+      }, "VUserData.equipCosmetic");
+
+      return out || { ok: false, reason: "remote_error" };
     }
   };
 

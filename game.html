@@ -25,6 +25,12 @@
     <img class="vr-top-icon" src="assets/img/ui/btn_home.webp" alt="Accueil" draggable="false" />
   </a>
 
+  <!-- ✅ Bouton personnalisation (en haut à droite, opposé à la flèche) -->
+  <button id="btn-customize" class="vr-icon-button" type="button" aria-label="" data-i18n-aria="game.customize.aria"
+     style="position:fixed; top:calc(10px + env(safe-area-inset-top)); right:14px; z-index:100002; pointer-events:auto;">
+    <img class="vr-top-icon" src="assets/img/ui/btn_customize.webp" alt="" draggable="false" />
+  </button>
+
   <!-- ✅ Icônes DIRECTEMENT dans la page (comme index) -->
   <div class="vr-top-actions vr-top-actions-game" aria-label="Top actions">
     <a class="vr-icon-button" href="profile.html" aria-label="Profil">
@@ -230,6 +236,23 @@
               <p class="vr-card-text" data-i18n="token.popup.close.text"></p>
             </div>
           </button>
+        </div>
+      </div>
+
+      <!-- ✅ Popup Personnalisation -->
+      <div class="vr-popup" id="vr-customize-popup" role="dialog" aria-modal="true" aria-hidden="true" inert>
+        <div class="vr-popup-inner">
+          <div class="vr-token-view" data-customize-view="menu">
+            <h3 class="vr-popup-title" data-i18n="game.customize.title">Personnalisation</h3>
+            <div id="vr-customize-content"></div>
+
+            <button class="vr-card vr-token-card" type="button" data-customize-action="close">
+              <div class="vr-card-content">
+                <h4 class="vr-card-title" data-i18n="common.close">Fermer</h4>
+                <p class="vr-card-text" data-i18n="game.customize.close_text">Revenir à la partie</p>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
 
