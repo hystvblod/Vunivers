@@ -2232,39 +2232,38 @@ body.vr-peek-mode .vr-gauge-preview{
 (function () {
   "use strict";
 
-  const DEFAULT_GRAY_ASSETS = {
-    hell_king: {
-      background: "assets/img/backgrounds/hell_default_gray.webp",
-      message: "assets/img/ui/hell_msg_default_gray.webp",
-      choice: "assets/img/ui/hell_choice_default_gray.webp"
-    },
-    heaven_king: {
-      background: "assets/img/backgrounds/heaven_default_gray.webp",
-      message: "assets/img/ui/heaven_msg_default_gray.webp",
-      choice: "assets/img/ui/heaven_choice_default_gray.webp"
-    },
-    western_president: {
-      background: "assets/img/backgrounds/west_default_gray.webp",
-      message: "assets/img/ui/west_msg_default_gray.webp",
-      choice: "assets/img/ui/west_choice_default_gray.webp"
-    },
-    mega_corp_ceo: {
-      background: "assets/img/backgrounds/corp_default_gray.webp",
-      message: "assets/img/ui/corp_msg_default_gray.webp",
-      choice: "assets/img/ui/corp_choice_default_gray.webp"
-    },
-    new_world_explorer: {
-      background: "assets/img/backgrounds/explorer_default_gray.webp",
-      message: "assets/img/ui/explorer_msg_default_gray.webp",
-      choice: "assets/img/ui/explorer_choice_default_gray.webp"
-    },
-    vampire_lord: {
-      background: "assets/img/backgrounds/vampire_default_gray.webp",
-      message: "assets/img/ui/vampire_msg_default_gray.webp",
-      choice: "assets/img/ui/vampire_choice_default_gray.webp"
-    }
-  };
-
+const DEFAULT_GRAY_ASSETS = {
+  hell_king: {
+    background: "assets/img/backgrounds/hell_default_gray.webp",
+    message: "assets/img/ui/hell_msg_default_gray.webp",
+    choice: "assets/img/ui/hell_choice_default_gray.webp"
+  },
+  heaven_king: {
+    background: "assets/img/backgrounds/heaven_default_gray.webp",
+    message: "assets/img/ui/heaven_msg_default_gray.webp",
+    choice: "assets/img/ui/heaven_choice_default_gray.webp"
+  },
+  western_president: {
+    background: "assets/img/backgrounds/west_default_gray.webp",
+    message: "assets/img/ui/western_card.webp",
+    choice: "assets/img/ui/western_choice.webp"
+  },
+  mega_corp_ceo: {
+    background: "assets/img/backgrounds/corp_default_gray.webp",
+    message: "assets/img/ui/corp_msg_default_gray.webp",
+    choice: "assets/img/ui/corp_choice_default_gray.webp"
+  },
+  new_world_explorer: {
+    background: "assets/img/backgrounds/explorer_default_gray.webp",
+    message: "assets/img/ui/western_card.webp",
+    choice: "assets/img/ui/western_choice.webp"
+  },
+  vampire_lord: {
+    background: "assets/img/backgrounds/vampire_default_gray.webp",
+    message: "assets/img/ui/hell_msg_default_gray.webp",
+    choice: "assets/img/ui/hell_choice_default_gray.webp"
+  }
+};
   const _state = {
     open: false,
     universeId: "",

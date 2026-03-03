@@ -2,6 +2,8 @@
 // ✅ Boutique rewarded / store via purchases.js
 // ✅ Boutique cosmétiques branchée sur VUserData (achat + équipement)
 // ✅ Catalogue aussi disponible dans game.html pour la popup de personnalisation
+// ✅ Hell corrigé avec les nouveaux chemins/noms
+// ✅ Structure propre et extensible pour tous les univers
 
 (function () {
   "use strict";
@@ -12,134 +14,167 @@
     choice: "shop.cosmetics.choice"
   };
 
+  function pad2(n) {
+    return String(n).padStart(2, "0");
+  }
+
+  function buildCosmeticItems(opts) {
+    const prefix = String(opts?.prefix || "").trim();
+    const keyNs = String(opts?.keyNs || "").trim();
+    const category = String(opts?.category || "").trim();
+    const price = Number(opts?.price || 0);
+    const count = Number(opts?.count || 0);
+    const dir = String(opts?.dir || "").trim();
+
+    const filePart =
+      category === "background" ? "bg" :
+      category === "message" ? "msg" :
+      "choice";
+
+    const keyPart =
+      category === "background" ? "background" :
+      category === "message" ? "message" :
+      "choice";
+
+    const kind = category === "background" ? "bg" : "ui";
+
+    return Array.from({ length: count }, function (_, index) {
+      const n = pad2(index + 1);
+      const base = prefix + "_" + filePart + "_" + n;
+
+      return {
+        id: base,
+        nameKey: "shop.cosmetics." + keyNs + "." + keyPart + "_" + (index + 1),
+        price: price,
+        img: dir + "/" + base + ".webp",
+        kind: kind
+      };
+    });
+  }
+
+  function buildUniverseCatalog(opts) {
+    return {
+      id: String(opts?.id || "").trim(),
+      labelKey: String(opts?.labelKey || "").trim(),
+      categories: {
+        background: buildCosmeticItems({
+          prefix: opts.prefix,
+          keyNs: opts.keyNs,
+          category: "background",
+          price: Number(opts.bgPrice || 400),
+          count: Number(opts.bgCount || 0),
+          dir: String(opts.bgDir || "assets/img/backgrounds").trim()
+        }),
+        message: buildCosmeticItems({
+          prefix: opts.prefix,
+          keyNs: opts.keyNs,
+          category: "message",
+          price: Number(opts.uiPrice || 300),
+          count: Number(opts.msgCount || 0),
+          dir: String(opts.msgDir || "assets/img/ui").trim()
+        }),
+        choice: buildCosmeticItems({
+          prefix: opts.prefix,
+          keyNs: opts.keyNs,
+          category: "choice",
+          price: Number(opts.uiPrice || 300),
+          count: Number(opts.choiceCount || 0),
+          dir: String(opts.choiceDir || "assets/img/ui").trim()
+        })
+      }
+    };
+  }
+
   const COSMETICS_DATA = [
-    {
+    buildUniverseCatalog({
       id: "hell_king",
       labelKey: "shop.universe.hell_king",
-      categories: {
-        background: [
-          { id: "hell_bg_01", nameKey: "shop.cosmetics.hell.background_1", price: 400, img: "assets/img/backgrounds/hell_king_bg.webp", kind: "bg" },
-          { id: "hell_bg_02", nameKey: "shop.cosmetics.hell.background_2", price: 400, img: "assets/img/backgrounds/hell_king_bg.webp", kind: "bg" },
-          { id: "hell_bg_03", nameKey: "shop.cosmetics.hell.background_3", price: 400, img: "assets/img/backgrounds/hell_king_bg.webp", kind: "bg" },
-          { id: "hell_bg_04", nameKey: "shop.cosmetics.hell.background_4", price: 400, img: "assets/img/backgrounds/hell_king_bg.webp", kind: "bg" }
-        ],
-        message: [
-          { id: "hell_msg_01", nameKey: "shop.cosmetics.hell.message_1", price: 300, img: "assets/img/ui/hell_card.webp", kind: "ui" },
-          { id: "hell_msg_02", nameKey: "shop.cosmetics.hell.message_2", price: 300, img: "assets/img/ui/hell_card.webp", kind: "ui" },
-          { id: "hell_msg_03", nameKey: "shop.cosmetics.hell.message_3", price: 300, img: "assets/img/ui/hell_card.webp", kind: "ui" }
-        ],
-        choice: [
-          { id: "hell_choice_01", nameKey: "shop.cosmetics.hell.choice_1", price: 300, img: "assets/img/ui/hell_choice.webp", kind: "ui" },
-          { id: "hell_choice_02", nameKey: "shop.cosmetics.hell.choice_2", price: 300, img: "assets/img/ui/hell_choice.webp", kind: "ui" },
-          { id: "hell_choice_03", nameKey: "shop.cosmetics.hell.choice_3", price: 300, img: "assets/img/ui/hell_choice.webp", kind: "ui" }
-        ]
-      }
-    },
-    {
+      prefix: "hell",
+      keyNs: "hell",
+      bgDir: "assets/img/backgrounds",
+      msgDir: "assets/img/ui/hell/choix",
+      choiceDir: "assets/img/ui/hell/choix",
+      bgCount: 6,
+      msgCount: 7,
+      choiceCount: 7,
+      bgPrice: 400,
+      uiPrice: 300
+    }),
+
+    buildUniverseCatalog({
       id: "heaven_king",
       labelKey: "shop.universe.heaven_king",
-      categories: {
-        background: [
-          { id: "heaven_bg_01", nameKey: "shop.cosmetics.heaven.background_1", price: 400, img: "assets/img/backgrounds/heaven_king_bg.png", kind: "bg" },
-          { id: "heaven_bg_02", nameKey: "shop.cosmetics.heaven.background_2", price: 400, img: "assets/img/backgrounds/heaven_king_bg.png", kind: "bg" },
-          { id: "heaven_bg_03", nameKey: "shop.cosmetics.heaven.background_3", price: 400, img: "assets/img/backgrounds/heaven_king_bg.png", kind: "bg" }
-        ],
-        message: [
-          { id: "heaven_msg_01", nameKey: "shop.cosmetics.heaven.message_1", price: 300, img: "assets/img/ui/heaven_card.webp", kind: "ui" },
-          { id: "heaven_msg_02", nameKey: "shop.cosmetics.heaven.message_2", price: 300, img: "assets/img/ui/heaven_card.webp", kind: "ui" },
-          { id: "heaven_msg_03", nameKey: "shop.cosmetics.heaven.message_3", price: 300, img: "assets/img/ui/heaven_card.webp", kind: "ui" }
-        ],
-        choice: [
-          { id: "heaven_choice_01", nameKey: "shop.cosmetics.heaven.choice_1", price: 300, img: "assets/img/ui/heaven_choice.webp", kind: "ui" },
-          { id: "heaven_choice_02", nameKey: "shop.cosmetics.heaven.choice_2", price: 300, img: "assets/img/ui/heaven_choice.webp", kind: "ui" },
-          { id: "heaven_choice_03", nameKey: "shop.cosmetics.heaven.choice_3", price: 300, img: "assets/img/ui/heaven_choice.webp", kind: "ui" }
-        ]
-      }
-    },
-    {
+      prefix: "heaven",
+      keyNs: "heaven",
+      bgDir: "assets/img/backgrounds",
+      msgDir: "assets/img/ui",
+      choiceDir: "assets/img/ui",
+      bgCount: 3,
+      msgCount: 3,
+      choiceCount: 3,
+      bgPrice: 400,
+      uiPrice: 300
+    }),
+
+    buildUniverseCatalog({
       id: "western_president",
       labelKey: "shop.universe.western_president",
-      categories: {
-        background: [
-          { id: "west_bg_01", nameKey: "shop.cosmetics.president.background_1", price: 400, img: "assets/img/backgrounds/western_president_bg.webp", kind: "bg" },
-          { id: "west_bg_02", nameKey: "shop.cosmetics.president.background_2", price: 400, img: "assets/img/backgrounds/western_president_bg.webp", kind: "bg" },
-          { id: "west_bg_03", nameKey: "shop.cosmetics.president.background_3", price: 400, img: "assets/img/backgrounds/western_president_bg.webp", kind: "bg" }
-        ],
-        message: [
-          { id: "west_msg_01", nameKey: "shop.cosmetics.president.message_1", price: 300, img: "assets/img/ui/western_card.webp", kind: "ui" },
-          { id: "west_msg_02", nameKey: "shop.cosmetics.president.message_2", price: 300, img: "assets/img/ui/western_card.webp", kind: "ui" },
-          { id: "west_msg_03", nameKey: "shop.cosmetics.president.message_3", price: 300, img: "assets/img/ui/western_card.webp", kind: "ui" }
-        ],
-        choice: [
-          { id: "west_choice_01", nameKey: "shop.cosmetics.president.choice_1", price: 300, img: "assets/img/ui/western_choice.webp", kind: "ui" },
-          { id: "west_choice_02", nameKey: "shop.cosmetics.president.choice_2", price: 300, img: "assets/img/ui/western_choice.webp", kind: "ui" },
-          { id: "west_choice_03", nameKey: "shop.cosmetics.president.choice_3", price: 300, img: "assets/img/ui/western_choice.webp", kind: "ui" }
-        ]
-      }
-    },
-    {
+      prefix: "west",
+      keyNs: "president",
+      bgDir: "assets/img/backgrounds",
+      msgDir: "assets/img/ui",
+      choiceDir: "assets/img/ui",
+      bgCount: 3,
+      msgCount: 3,
+      choiceCount: 3,
+      bgPrice: 400,
+      uiPrice: 300
+    }),
+
+    buildUniverseCatalog({
       id: "mega_corp_ceo",
       labelKey: "shop.universe.mega_corp_ceo",
-      categories: {
-        background: [
-          { id: "corp_bg_01", nameKey: "shop.cosmetics.ceo.background_1", price: 400, img: "assets/img/backgrounds/mega_corp_ceo_bg.webp", kind: "bg" },
-          { id: "corp_bg_02", nameKey: "shop.cosmetics.ceo.background_2", price: 400, img: "assets/img/backgrounds/mega_corp_ceo_bg.webp", kind: "bg" },
-          { id: "corp_bg_03", nameKey: "shop.cosmetics.ceo.background_3", price: 400, img: "assets/img/backgrounds/mega_corp_ceo_bg.webp", kind: "bg" }
-        ],
-        message: [
-          { id: "corp_msg_01", nameKey: "shop.cosmetics.ceo.message_1", price: 300, img: "assets/img/ui/corp_card.webp", kind: "ui" },
-          { id: "corp_msg_02", nameKey: "shop.cosmetics.ceo.message_2", price: 300, img: "assets/img/ui/corp_card.webp", kind: "ui" },
-          { id: "corp_msg_03", nameKey: "shop.cosmetics.ceo.message_3", price: 300, img: "assets/img/ui/corp_card.webp", kind: "ui" }
-        ],
-        choice: [
-          { id: "corp_choice_01", nameKey: "shop.cosmetics.ceo.choice_1", price: 300, img: "assets/img/ui/corp_choice.webp", kind: "ui" },
-          { id: "corp_choice_02", nameKey: "shop.cosmetics.ceo.choice_2", price: 300, img: "assets/img/ui/corp_choice.webp", kind: "ui" },
-          { id: "corp_choice_03", nameKey: "shop.cosmetics.ceo.choice_3", price: 300, img: "assets/img/ui/corp_choice.webp", kind: "ui" }
-        ]
-      }
-    },
-    {
+      prefix: "corp",
+      keyNs: "ceo",
+      bgDir: "assets/img/backgrounds",
+      msgDir: "assets/img/ui",
+      choiceDir: "assets/img/ui",
+      bgCount: 3,
+      msgCount: 3,
+      choiceCount: 3,
+      bgPrice: 400,
+      uiPrice: 300
+    }),
+
+    buildUniverseCatalog({
       id: "new_world_explorer",
       labelKey: "shop.universe.new_world_explorer",
-      categories: {
-        background: [
-          { id: "explorer_bg_01", nameKey: "shop.cosmetics.explorer.background_1", price: 400, img: "assets/img/backgrounds/new_world_explorer_bg.webp", kind: "bg" },
-          { id: "explorer_bg_02", nameKey: "shop.cosmetics.explorer.background_2", price: 400, img: "assets/img/backgrounds/new_world_explorer_bg.webp", kind: "bg" },
-          { id: "explorer_bg_03", nameKey: "shop.cosmetics.explorer.background_3", price: 400, img: "assets/img/backgrounds/new_world_explorer_bg.webp", kind: "bg" }
-        ],
-        message: [
-          { id: "explorer_msg_01", nameKey: "shop.cosmetics.explorer.message_1", price: 300, img: "assets/img/ui/western_card.webp", kind: "ui" },
-          { id: "explorer_msg_02", nameKey: "shop.cosmetics.explorer.message_2", price: 300, img: "assets/img/ui/western_card.webp", kind: "ui" },
-          { id: "explorer_msg_03", nameKey: "shop.cosmetics.explorer.message_3", price: 300, img: "assets/img/ui/western_card.webp", kind: "ui" }
-        ],
-        choice: [
-          { id: "explorer_choice_01", nameKey: "shop.cosmetics.explorer.choice_1", price: 300, img: "assets/img/ui/western_choice.webp", kind: "ui" },
-          { id: "explorer_choice_02", nameKey: "shop.cosmetics.explorer.choice_2", price: 300, img: "assets/img/ui/western_choice.webp", kind: "ui" },
-          { id: "explorer_choice_03", nameKey: "shop.cosmetics.explorer.choice_3", price: 300, img: "assets/img/ui/western_choice.webp", kind: "ui" }
-        ]
-      }
-    },
-    {
+      prefix: "explorer",
+      keyNs: "explorer",
+      bgDir: "assets/img/backgrounds",
+      msgDir: "assets/img/ui",
+      choiceDir: "assets/img/ui",
+      bgCount: 3,
+      msgCount: 3,
+      choiceCount: 3,
+      bgPrice: 400,
+      uiPrice: 300
+    }),
+
+    buildUniverseCatalog({
       id: "vampire_lord",
       labelKey: "shop.universe.vampire_lord",
-      categories: {
-        background: [
-          { id: "vampire_bg_01", nameKey: "shop.cosmetics.vampire.background_1", price: 400, img: "assets/img/backgrounds/vampire_lord_bg.webp", kind: "bg" },
-          { id: "vampire_bg_02", nameKey: "shop.cosmetics.vampire.background_2", price: 400, img: "assets/img/backgrounds/vampire_lord_bg.webp", kind: "bg" },
-          { id: "vampire_bg_03", nameKey: "shop.cosmetics.vampire.background_3", price: 400, img: "assets/img/backgrounds/vampire_lord_bg.webp", kind: "bg" }
-        ],
-        message: [
-          { id: "vampire_msg_01", nameKey: "shop.cosmetics.vampire.message_1", price: 300, img: "assets/img/ui/hell_card.webp", kind: "ui" },
-          { id: "vampire_msg_02", nameKey: "shop.cosmetics.vampire.message_2", price: 300, img: "assets/img/ui/hell_card.webp", kind: "ui" },
-          { id: "vampire_msg_03", nameKey: "shop.cosmetics.vampire.message_3", price: 300, img: "assets/img/ui/hell_card.webp", kind: "ui" }
-        ],
-        choice: [
-          { id: "vampire_choice_01", nameKey: "shop.cosmetics.vampire.choice_1", price: 300, img: "assets/img/ui/hell_choice.webp", kind: "ui" },
-          { id: "vampire_choice_02", nameKey: "shop.cosmetics.vampire.choice_2", price: 300, img: "assets/img/ui/hell_choice.webp", kind: "ui" },
-          { id: "vampire_choice_03", nameKey: "shop.cosmetics.vampire.choice_3", price: 300, img: "assets/img/ui/hell_choice.webp", kind: "ui" }
-        ]
-      }
-    }
+      prefix: "vampire",
+      keyNs: "vampire",
+      bgDir: "assets/img/backgrounds",
+      msgDir: "assets/img/ui",
+      choiceDir: "assets/img/ui",
+      bgCount: 3,
+      msgCount: 3,
+      choiceCount: 3,
+      bgPrice: 400,
+      uiPrice: 300
+    })
   ];
 
   function t(key, fallback) {
@@ -152,11 +187,16 @@
   }
 
   function isShopPage() {
-    try { return document.body && document.body.getAttribute("data-page") === "shop"; }
-    catch { return false; }
+    try {
+      return document.body && document.body.getAttribute("data-page") === "shop";
+    } catch (_) {
+      return false;
+    }
   }
 
-  function $(id) { return document.getElementById(id); }
+  function $(id) {
+    return document.getElementById(id);
+  }
 
   function setStatus(id, text) {
     const el = $(id);
@@ -166,6 +206,7 @@
 
   function ensureStyles() {
     if (document.getElementById("vr-cosmetics-inline-style")) return;
+
     const style = document.createElement("style");
     style.id = "vr-cosmetics-inline-style";
     style.textContent = `
@@ -207,39 +248,48 @@
     if (root) return root;
 
     const storeStatus = $("store-status");
-    const parent = storeStatus?.parentElement || $("view-shop") || document.body;
+    const parent = (storeStatus && storeStatus.parentElement) || $("view-shop") || document.body;
+
     root = document.createElement("div");
     root.id = "cosmetics-block";
     root.className = "vr-cosmetics";
     parent.appendChild(root);
+
     return root;
   }
 
   function getUniverse(universeId) {
-    return COSMETICS_DATA.find((u) => u.id === universeId) || null;
+    return COSMETICS_DATA.find(function (u) {
+      return u.id === universeId;
+    }) || null;
   }
 
   function getItem(universeId, category, itemId) {
     const universe = getUniverse(universeId);
-    const items = universe?.categories?.[category] || [];
-    return items.find((item) => item.id === itemId) || null;
+    const items = (universe && universe.categories && universe.categories[category]) || [];
+
+    return items.find(function (item) {
+      return item.id === itemId;
+    }) || null;
   }
 
   window.VRCosmeticsCatalog = {
-    CATEGORY_KEYS,
+    CATEGORY_KEYS: CATEGORY_KEYS,
     DATA: COSMETICS_DATA,
-    getUniverse,
-    getItem
+    getUniverse: getUniverse,
+    getItem: getItem
   };
 
   function updateCarousel(row, index) {
     if (!row) return;
+
     const track = row.querySelector(".vr-cos-track");
     const slides = row.querySelectorAll(".vr-cos-slide");
     const dots = row.querySelectorAll(".vr-cos-dot");
     const prev = row.querySelector(".vr-cos-prev");
     const next = row.querySelector(".vr-cos-next");
     const total = slides.length;
+
     if (!track || !total) return;
 
     let safeIndex = Number(index) || 0;
@@ -247,51 +297,67 @@
     if (safeIndex > total - 1) safeIndex = total - 1;
 
     row.dataset.index = String(safeIndex);
-    track.style.transform = `translateX(-${safeIndex * 100}%)`;
+    track.style.transform = "translateX(-" + (safeIndex * 100) + "%)";
 
-    dots.forEach((dot, i) => dot.classList.toggle("active", i === safeIndex));
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle("active", i === safeIndex);
+    });
+
     if (prev) prev.disabled = safeIndex <= 0;
     if (next) next.disabled = safeIndex >= total - 1;
   }
 
   function wireCarousels(root) {
-    root.querySelectorAll(".vr-cos-row").forEach((row) => {
+    root.querySelectorAll(".vr-cos-row").forEach(function (row) {
       updateCarousel(row, Number(row.dataset.index || 0));
 
       const prev = row.querySelector(".vr-cos-prev");
       const next = row.querySelector(".vr-cos-next");
       const viewport = row.querySelector(".vr-cos-viewport");
 
-      if (prev) prev.onclick = () => updateCarousel(row, Number(row.dataset.index || 0) - 1);
-      if (next) next.onclick = () => updateCarousel(row, Number(row.dataset.index || 0) + 1);
+      if (prev) {
+        prev.onclick = function () {
+          updateCarousel(row, Number(row.dataset.index || 0) - 1);
+        };
+      }
+
+      if (next) {
+        next.onclick = function () {
+          updateCarousel(row, Number(row.dataset.index || 0) + 1);
+        };
+      }
 
       if (viewport) {
         let startX = 0;
         let endX = 0;
         let touching = false;
 
-        viewport.addEventListener("touchstart", (e) => {
+        viewport.addEventListener("touchstart", function (e) {
           const t0 = e.changedTouches && e.changedTouches[0];
           if (!t0) return;
+
           touching = true;
           startX = t0.clientX;
           endX = t0.clientX;
         }, { passive: true });
 
-        viewport.addEventListener("touchmove", (e) => {
+        viewport.addEventListener("touchmove", function (e) {
           const t0 = e.changedTouches && e.changedTouches[0];
           if (!t0 || !touching) return;
           endX = t0.clientX;
         }, { passive: true });
 
-        viewport.addEventListener("touchend", () => {
+        viewport.addEventListener("touchend", function () {
           if (!touching) return;
+
           const delta = endX - startX;
           const current = Number(row.dataset.index || 0);
+
           if (Math.abs(delta) > 35) {
             if (delta < 0) updateCarousel(row, current + 1);
             else updateCarousel(row, current - 1);
           }
+
           touching = false;
           startX = 0;
           endX = 0;
@@ -304,30 +370,33 @@
     const universeId = String(item.universeId || "").trim();
     const category = String(item.category || "").trim();
     const itemId = String(item.id || "").trim();
+
     const owned = !!window.VUserData?.isCosmeticOwned?.(universeId, category, itemId);
     const equippedId = String(window.VUserData?.getEquippedCosmetic?.(universeId, category) || "");
     const equipped = owned && equippedId === itemId;
 
     if (equipped) {
       return {
-        owned,
-        equipped,
+        owned: owned,
+        equipped: equipped,
         text: t("common.equipped", "Équipé"),
         className: "vr-cos-action is-equipped"
       };
     }
+
     if (owned) {
       return {
-        owned,
-        equipped,
+        owned: owned,
+        equipped: equipped,
         text: t("common.use", "Équiper"),
         className: "vr-cos-action is-owned"
       };
     }
+
     return {
-      owned,
-      equipped,
-      text: `${t("common.buy", "Acheter")} · ${item.price}`,
+      owned: owned,
+      equipped: equipped,
+      text: t("common.buy", "Acheter") + " · " + item.price,
       className: "vr-cos-action"
     };
   }
@@ -336,69 +405,75 @@
     const root = ensureCosmeticsRoot();
     if (!root) return;
 
-    root.innerHTML = COSMETICS_DATA.map((universe) => `
-      <section class="vr-universe-block" data-universe="${universe.id}">
-        <h4 class="vr-universe-title">${t(universe.labelKey, universe.id)}</h4>
+    root.innerHTML = COSMETICS_DATA.map(function (universe) {
+      return `
+        <section class="vr-universe-block" data-universe="${universe.id}">
+          <h4 class="vr-universe-title">${t(universe.labelKey, universe.id)}</h4>
 
-        ${["background", "message", "choice"].map((category) => {
-          const items = (universe.categories[category] || []).map((it) => ({
-            ...it,
-            universeId: universe.id,
-            category
-          }));
+          ${["background", "message", "choice"].map(function (category) {
+            const items = (universe.categories[category] || []).map(function (it) {
+              return Object.assign({}, it, {
+                universeId: universe.id,
+                category: category
+              });
+            });
 
-          return `
-            <div class="vr-cos-row" data-category="${category}" data-index="0">
-              <div class="vr-cos-subtitle">${t(CATEGORY_KEYS[category], category)}</div>
+            return `
+              <div class="vr-cos-row" data-category="${category}" data-index="0">
+                <div class="vr-cos-subtitle">${t(CATEGORY_KEYS[category], category)}</div>
 
-              <div class="vr-cos-carousel">
-                <button class="vr-cos-arrow vr-cos-prev" type="button" aria-label="${t("shop.carousel.prev", "Précédent")}">‹</button>
+                <div class="vr-cos-carousel">
+                  <button class="vr-cos-arrow vr-cos-prev" type="button" aria-label="${t("shop.carousel.prev", "Précédent")}">‹</button>
 
-                <div class="vr-cos-viewport">
-                  <div class="vr-cos-track">
-                    ${items.map((item, index) => {
-                      const action = getActionMeta(item);
-                      return `
-                        <div class="vr-cos-slide" data-index="${index}">
-                          <div class="vr-cos-card ${item.kind === "ui" ? "is-ui" : ""}" data-item="${item.id}">
-                            <img src="${item.img}" alt="" draggable="false">
-                            <div class="vr-cos-overlay">
-                              <div class="vr-cos-name">${t(item.nameKey, item.id)}</div>
-                              <div class="vr-cos-bottom">
-                                <div class="vr-cos-price">
-                                  <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
-                                  <span>${item.price}</span>
+                  <div class="vr-cos-viewport">
+                    <div class="vr-cos-track">
+                      ${items.map(function (item, index) {
+                        const action = getActionMeta(item);
+
+                        return `
+                          <div class="vr-cos-slide" data-index="${index}">
+                            <div class="vr-cos-card ${item.kind === "ui" ? "is-ui" : ""}" data-item="${item.id}">
+                              <img src="${item.img}" alt="" draggable="false">
+                              <div class="vr-cos-overlay">
+                                <div class="vr-cos-name">${t(item.nameKey, item.id)}</div>
+                                <div class="vr-cos-bottom">
+                                  <div class="vr-cos-price">
+                                    <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
+                                    <span>${item.price}</span>
+                                  </div>
+                                  <div class="vr-cos-count">${index + 1} / ${items.length}</div>
                                 </div>
-                                <div class="vr-cos-count">${index + 1} / ${items.length}</div>
+                                <button
+                                  class="${action.className}"
+                                  type="button"
+                                  data-cosmetic-action="1"
+                                  data-universe="${item.universeId}"
+                                  data-category="${item.category}"
+                                  data-item-id="${item.id}"
+                                  data-price="${item.price}"
+                                >${action.text}</button>
                               </div>
-                              <button
-                                class="${action.className}"
-                                type="button"
-                                data-cosmetic-action="1"
-                                data-universe="${item.universeId}"
-                                data-category="${item.category}"
-                                data-item-id="${item.id}"
-                                data-price="${item.price}"
-                              >${action.text}</button>
                             </div>
                           </div>
-                        </div>
-                      `;
-                    }).join("")}
+                        `;
+                      }).join("")}
+                    </div>
                   </div>
+
+                  <button class="vr-cos-arrow vr-cos-next" type="button" aria-label="${t("shop.carousel.next", "Suivant")}">›</button>
                 </div>
 
-                <button class="vr-cos-arrow vr-cos-next" type="button" aria-label="${t("shop.carousel.next", "Suivant")}">›</button>
+                <div class="vr-cos-dots">
+                  ${items.map(function (_, index) {
+                    return `<span class="vr-cos-dot${index === 0 ? " active" : ""}"></span>`;
+                  }).join("")}
+                </div>
               </div>
-
-              <div class="vr-cos-dots">
-                ${items.map((_, index) => `<span class="vr-cos-dot${index === 0 ? " active" : ""}"></span>`).join("")}
-              </div>
-            </div>
-          `;
-        }).join("")}
-      </section>
-    `).join("");
+            `;
+          }).join("")}
+        </section>
+      `;
+    }).join("");
 
     wireCarousels(root);
   }
@@ -417,12 +492,13 @@
       const owned = !!window.VUserData?.isCosmeticOwned?.(universeId, category, itemId);
 
       let res = null;
+
       if (!owned) {
         res = await window.VUserData?.buyCosmetic?.({
-          universeId,
-          category,
-          itemId,
-          price
+          universeId: universeId,
+          category: category,
+          itemId: itemId,
+          price: price
         }, { autoEquip: true });
       } else {
         res = await window.VUserData?.equipCosmetic?.(universeId, category, itemId);
@@ -461,7 +537,7 @@
     const profile = $("btn-profile");
 
     if (back) {
-      back.addEventListener("click", () => {
+      back.addEventListener("click", function () {
         try {
           const ref = document.referrer || "";
           if (ref && ref.includes(location.origin)) history.back();
@@ -473,7 +549,7 @@
     }
 
     if (profile) {
-      profile.addEventListener("click", () => {
+      profile.addEventListener("click", function () {
         location.href = "profile.html";
       });
     }
@@ -482,13 +558,13 @@
     setStatus("store-status", "");
     renderCosmetics();
 
-    document.addEventListener("click", async (e) => {
+    document.addEventListener("click", async function (e) {
       const btn = e.target && e.target.closest ? e.target.closest("[data-cosmetic-action]") : null;
       if (!btn) return;
       await handleCosmeticAction(btn);
     });
 
-    window.addEventListener("vr:profile", () => {
+    window.addEventListener("vr:profile", function () {
       if (!isShopPage()) return;
       renderCosmetics();
     });
