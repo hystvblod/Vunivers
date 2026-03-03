@@ -1413,30 +1413,44 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-card-w: clamp(460px, 100vw, 1240px);
 
   /* ✅ moins d'espace entre les cartouches */
---vr-game-gap:   clamp(0px, 0.06svh, 1px);
---vr-stack-gap:  clamp(1px, 0.14svh, 3px);
---vr-choices-gap:clamp(2px, 0.18svh, 4px);
+  --vr-game-gap: clamp(0px, 0.06svh, 1px);
+  --vr-stack-gap: clamp(1px, 0.14svh, 3px);
+  --vr-choices-gap: clamp(2px, 0.18svh, 4px);
 
   /* ✅ tailles (choix plus grands) */
   --vr-scn-h: clamp(170px, 21svh, 360px);
   --vr-choice-h: clamp(120px, 16.6svh, 290px);
 
-  /* ✅ SAFE ZONES Heaven (en %) — TU MODIFIES ICI */
+  /* ✅ SAFE ZONES Heaven */
   --vr-scn-inset-top: 16%;
-  --vr-scn-inset-right: 12%;
+  --vr-scn-inset-right: 13%;
   --vr-scn-inset-bottom: 14%;
-  --vr-scn-inset-left: 12%;
+  --vr-scn-inset-left: 13%;
 
   --vr-choice-inset-top: 22%;
   --vr-choice-inset-right: 12%;
   --vr-choice-inset-bottom: 20%;
   --vr-choice-inset-left: 12%;
 
-  /* ✅ typo Heaven (responsive) */
---vr-font-scn-title: clamp(19px, 3.2vmin, 38px);
---vr-font-scn-text:  clamp(15px, 2.7vmin, 30px);
---vr-font-choice:    clamp(16px, 2.9vmin, 32px);
+  /* ✅ typo Heaven un peu mieux contenue */
+  --vr-font-scn-title: clamp(18px, 2.9vmin, 34px);
+  --vr-font-scn-text:  clamp(14px, 2.35vmin, 26px);
+  --vr-font-choice:    clamp(16px, 2.8vmin, 30px);
+}
+body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-title{
+  line-height: 1.08 !important;
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
 
+body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-text{
+  line-height: 1.22 !important;
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
 }
 
 /* ✅ Heaven : scénario */
