@@ -38,14 +38,20 @@
     return window.sb;
   }
 
-  async function getUid(sb) {
-    try {
-      const r = await sb.auth.getUser();
-      return r?.data?.user?.id || null;
-    } catch (_) {
-      return null;
-    }
+async function getUid(sb) {
+  try {
+    const s = await sb.auth.getSession();
+    const uid = s?.data?.session?.user?.id || null;
+    if (uid) return uid;
+  } catch (_) {}
+
+  try {
+    const r = await sb.auth.getUser();
+    return r?.data?.user?.id || null;
+  } catch (_) {
+    return null;
   }
+}
 
   // --- Bootstrap global ---
   window.bootstrapAuthAndProfile = async function bootstrapAuthAndProfile() {

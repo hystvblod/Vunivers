@@ -2,6 +2,7 @@
 // Boutique rewarded / store via purchases.js
 // Boutique cosmétiques branchée sur VUserData
 // Popup personnalisation aussi exploitable depuis game.html
+// ✅ Lightbox propre avec vraie preview via iframe game.html?preview=1
 
 (function () {
   "use strict";
@@ -19,41 +20,6 @@
     category: "",
     itemId: "",
     slideIndex: 0
-  };
-
-  // ✅ Assets gris “par défaut” utilisés pour la mise en situation
-  // NOTE: adapte les chemins si besoin (mais je garde ta base actuelle).
-  const LIGHTBOX_GRAY_ASSETS = {
-    hell_king: {
-      background: "assets/img/backgrounds/hell_default_gray.webp",
-      message: "assets/img/ui/hell_msg_default_gray.webp",
-      choice: "assets/img/ui/hell_choice_default_gray.webp"
-    },
-    heaven_king: {
-      background: "assets/img/backgrounds/heaven_default_gray.webp",
-      message: "assets/img/ui/heaven_msg_default_gray.webp",
-      choice: "assets/img/ui/heaven_choice_default_gray.webp"
-    },
-    western_president: {
-      background: "assets/img/backgrounds/west_default_gray.webp",
-      message: "assets/img/ui/western_card.webp",
-      choice: "assets/img/ui/western_choice.webp"
-    },
-    mega_corp_ceo: {
-      background: "assets/img/backgrounds/corp_default_gray.webp",
-      message: "assets/img/ui/corp_msg_default_gray.webp",
-      choice: "assets/img/ui/corp_choice_default_gray.webp"
-    },
-    new_world_explorer: {
-      background: "assets/img/backgrounds/explorer_default_gray.webp",
-      message: "assets/img/ui/western_card.webp",
-      choice: "assets/img/ui/western_choice.webp"
-    },
-    vampire_lord: {
-      background: "assets/img/backgrounds/vampire_default_gray.webp",
-      message: "assets/img/ui/hell_msg_default_gray.webp",
-      choice: "assets/img/ui/hell_choice_default_gray.webp"
-    }
   };
 
   function pad2(n) {
@@ -324,22 +290,20 @@
     if (jetonsEl) jetonsEl.textContent = String(balances.jetons);
   }
 
-  function getLightboxGrayAsset(universeId, category) {
-    return LIGHTBOX_GRAY_ASSETS?.[universeId]?.[category] || "";
-  }
-
-  function buildLightboxPreviewAssets(universeId, category, src) {
-    return {
-      background: category === "background" ? src : getLightboxGrayAsset(universeId, "background"),
-      message: category === "message" ? src : getLightboxGrayAsset(universeId, "message"),
-      choice: category === "choice" ? src : getLightboxGrayAsset(universeId, "choice")
-    };
-  }
-
   function normalizeCarouselIndex(index, total) {
     if (!total) return 0;
     const n = Number(index) || 0;
     return ((n % total) + total) % total;
+  }
+
+  function buildPreviewUrl(opts) {
+    const params = new URLSearchParams();
+    params.set("preview", "1");
+    params.set("universe", String(opts?.universeId || "").trim());
+    params.set("category", String(opts?.category || "").trim());
+    params.set("itemId", String(opts?.itemId || "").trim());
+    params.set("src", String(opts?.src || "").trim());
+    return "game.html?" + params.toString();
   }
 
   function ensureStyles() {
@@ -375,65 +339,47 @@
       .vr-cos-action.is-equipped{background:rgba(138,197,95,.22);border-color:rgba(138,197,95,.55)}
       .vr-cos-owned-mark{display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;font-weight:1000;color:#79f18b;text-shadow:0 2px 10px rgba(0,0,0,.45)}
 
-      /* =========================
-         LIGHTBOX (PRO)
-      ========================== */
       .vr-cos-lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:99999}
       .vr-cos-lightbox.is-open{display:flex}
       .vr-cos-lightbox-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.80);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
       .vr-cos-lightbox-close{
-        position:absolute;top:14px;right:14px;z-index:5;
+        position:absolute;top:14px;right:14px;z-index:6;
         width:44px;height:44px;border-radius:999px;
         border:1px solid rgba(255,255,255,.18);
-        background:rgba(0,0,0,.26);
-        color:#fff;font-size:22px;font-weight:900;
-        display:inline-flex;align-items:center;justify-content:center;
-        cursor:pointer;
-        box-shadow:0 10px 22px rgba(0,0,0,.28);
+        background:rgba(0,0,0,.26);color:#fff;font-size:22px;font-weight:900;
+        display:inline-flex;align-items:center;justify-content:center;cursor:pointer;
+        box-shadow:0 10px 22px rgba(0,0,0,.28)
       }
 
       .vr-cos-lightbox-shell{
-        position:relative;
-        z-index:2;
+        position:relative;z-index:2;
         width:min(96vw,980px);
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        gap:18px;
-        padding:18px 12px 10px;
-        box-sizing:border-box;
+        display:flex;align-items:center;justify-content:center;
+        gap:18px;padding:18px 12px 10px;box-sizing:border-box
       }
 
-      /* ✅ flèches SANS ronds */
+      /* flèches simples, sans ronds */
       .vr-cos-lightbox-arrow{
         appearance:none;border:none;background:transparent;
-        color:rgba(255,255,255,.92);
-        font-size:42px;
-        font-weight:900;
-        line-height:1;
-        padding:0 10px;
-        cursor:pointer;
-        text-shadow:0 10px 26px rgba(0,0,0,.55);
-        user-select:none;
+        color:rgba(255,255,255,.92);font-size:42px;font-weight:900;line-height:1;
+        padding:0 10px;cursor:pointer;text-shadow:0 10px 26px rgba(0,0,0,.55);user-select:none
       }
       .vr-cos-lightbox-arrow:active{transform:scale(.98)}
       .vr-cos-lightbox-arrow:focus{outline:none}
 
-      /* ✅ viewport qui coupe vraiment -> plus de “collé” */
       .vr-cos-lightbox-viewport{
         width:min(92vw,460px);
         overflow:hidden;
         border-radius:26px;
-        box-shadow:0 26px 60px rgba(0,0,0,.55);
+        box-shadow:0 26px 60px rgba(0,0,0,.55)
       }
 
-      /* ✅ cadre 9:16 unique pour les 2 slides (harmonieux) */
       .vr-cos-phone{
         width:100%;
         aspect-ratio:9/16;
         position:relative;
         overflow:hidden;
-        background:#0b1220;
+        background:#0b1220
       }
 
       .vr-cos-lightbox-track{
@@ -442,12 +388,13 @@
         height:100%;
         transform:translateX(0%);
         transition:transform .28s ease;
-        will-change:transform;
+        will-change:transform
       }
+
       .vr-cos-lightbox-slide{
         width:50%;
         height:100%;
-        flex:0 0 50%;
+        flex:0 0 50%
       }
 
       .vr-cos-slide-inner{
@@ -457,197 +404,41 @@
         display:flex;
         align-items:center;
         justify-content:center;
-        padding:12px;
-        box-sizing:border-box;
+        padding:0;
+        box-sizing:border-box
       }
 
-      /* slide 1 : image seule mais dans le même cadre */
       .vr-cos-hero-img{
         width:100%;
         height:100%;
         object-fit:contain;
-        border-radius:18px;
-        box-shadow:0 18px 40px rgba(0,0,0,.45);
-        background:rgba(0,0,0,.08);
-      }
-
-      /* slide 2 : preview “game-like” */
-      .vr-prev-view{
-        position:absolute;
-        inset:0;
-        background-size:100% 100%;
-        background-position:center center;
-        background-repeat:no-repeat;
-      }
-      .vr-prev-shade{
-        position:absolute;inset:0;
-        background:linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.20));
-        pointer-events:none;
-      }
-
-      .vr-prev-top{
-        position:absolute;
-        top:10px;left:10px;right:10px;
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        z-index:4;
-      }
-      .vr-prev-ico-btn{
-        width:40px;height:40px;border-radius:999px;
-        border:1px solid rgba(255,255,255,.16);
-        background:rgba(0,0,0,.22);
-        box-shadow:0 10px 22px rgba(0,0,0,.22);
-        display:inline-flex;align-items:center;justify-content:center;
-      }
-      .vr-prev-ico-btn img{
-        width:26px;height:26px;object-fit:contain;display:block;
-        filter:drop-shadow(0 2px 8px rgba(0,0,0,.6));
-      }
-
-      .vr-prev-top-actions{
-        position:absolute;
-        top:58px;left:0;right:0;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        gap:10px;
-        z-index:4;
-      }
-      .vr-prev-top-actions a{
-        width:40px;height:40px;border-radius:999px;
-        border:1px solid rgba(255,255,255,.16);
-        background:rgba(0,0,0,.20);
-        box-shadow:0 10px 22px rgba(0,0,0,.20);
-        display:inline-flex;align-items:center;justify-content:center;
-        text-decoration:none;
-      }
-      .vr-prev-top-actions img{
-        width:26px;height:26px;object-fit:contain;display:block;
-        filter:drop-shadow(0 2px 8px rgba(0,0,0,.6));
-      }
-
-      .vr-prev-hud{
-        position:absolute;
-        top:110px;left:12px;right:12px;
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        gap:10px;
-        z-index:4;
-      }
-      .vr-prev-pill{
-        display:inline-flex;
-        align-items:center;
-        gap:6px;
-        padding:8px 10px;
-        border-radius:999px;
-        border:1px solid rgba(255,255,255,.16);
-        background:rgba(0,0,0,.22);
-        box-shadow:0 10px 22px rgba(0,0,0,.20);
-        color:rgba(255,255,255,.96);
-        font-weight:950;
-        font-size:12px;
-        line-height:1;
-        backdrop-filter:blur(10px);
-        -webkit-backdrop-filter:blur(10px);
-        min-width:82px;
-        justify-content:center;
-      }
-      .vr-prev-pill img{width:16px;height:16px;object-fit:contain;display:block}
-      .vr-prev-center{
-        min-width:0;
-        flex:1 1 auto;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        gap:4px;
-        color:#fff;
-        text-shadow:0 8px 18px rgba(0,0,0,.45);
-        font-weight:950;
-        font-size:12px;
-      }
-      .vr-prev-center .nm{opacity:.95}
-      .vr-prev-center .yr{opacity:.85}
-
-      .vr-prev-gauges{
-        position:absolute;
-        top:160px;left:12px;right:12px;
-        display:grid;
-        grid-template-columns:repeat(4,1fr);
-        gap:6px;
-        z-index:4;
-      }
-      .vr-prev-g{
-        height:12px;
-        border-radius:999px;
-        border:1px solid rgba(255,255,255,.16);
-        background:rgba(0,0,0,.18);
-        overflow:hidden;
-        box-shadow:0 10px 18px rgba(0,0,0,.18);
-      }
-      .vr-prev-g::after{
-        content:"";
         display:block;
+        background:rgba(0,0,0,.08)
+      }
+
+      .vr-cos-preview-frame{
+        width:100%;
         height:100%;
-        width:60%;
-        background:linear-gradient(90deg, rgba(255,255,255,.20), rgba(255,255,255,.06));
-      }
-
-      .vr-prev-stack{
-        position:absolute;
-        left:12px;right:12px;
-        bottom:16px;
-        z-index:4;
-      }
-
-      .vr-prev-card{
-        width:100%;
-        height:150px;
-        border-radius:18px;
-        background-size:100% 100%;
-        background-position:center center;
-        background-repeat:no-repeat;
-        box-shadow:0 18px 34px rgba(0,0,0,.30);
-        border:1px solid rgba(255,255,255,.10);
-        background-color:rgba(0,0,0,.14);
-      }
-
-      .vr-prev-choices{
-        margin-top:10px;
-        display:flex;
-        flex-direction:column;
-        gap:10px;
-      }
-      .vr-prev-choice{
-        width:100%;
-        height:64px;
-        border-radius:16px;
-        background-size:100% 100%;
-        background-position:center center;
-        background-repeat:no-repeat;
-        box-shadow:0 14px 26px rgba(0,0,0,.22);
-        border:1px solid rgba(255,255,255,.10);
-        background-color:rgba(0,0,0,.14);
+        border:0;
+        display:block;
+        background:#0b1220
       }
 
       .vr-cos-lightbox-dots{
         position:absolute;
         bottom:14px;
         left:0;right:0;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        gap:8px;
-        z-index:6;
-        pointer-events:auto;
+        display:flex;align-items:center;justify-content:center;gap:8px;
+        z-index:6
       }
+
       .vr-cos-lightbox-dot{
         width:8px;height:8px;border-radius:999px;
         background:rgba(255,255,255,.28);
         box-shadow:0 4px 10px rgba(0,0,0,.22);
-        cursor:pointer;
+        cursor:pointer
       }
+
       .vr-cos-lightbox-dot.active{background:rgba(255,255,255,.92)}
 
       body.vr-lightbox-open{overflow:hidden}
@@ -695,78 +486,25 @@
         <div class="vr-cos-lightbox-viewport">
           <div class="vr-cos-phone">
             <div class="vr-cos-lightbox-track">
-              <!-- SLIDE 0 -->
               <div class="vr-cos-lightbox-slide">
                 <div class="vr-cos-slide-inner">
                   <img class="vr-cos-hero-img" src="" alt="" draggable="false">
                 </div>
               </div>
 
-              <!-- SLIDE 1 -->
               <div class="vr-cos-lightbox-slide">
                 <div class="vr-cos-slide-inner">
-                  <div class="vr-prev-view"></div>
-                  <div class="vr-prev-shade"></div>
-
-                  <div class="vr-prev-top">
-                    <div class="vr-prev-ico-btn" aria-hidden="true">
-                      <img src="assets/img/ui/btn_home.webp" alt="" draggable="false">
-                    </div>
-                    <div class="vr-prev-ico-btn" aria-hidden="true">
-                      <img src="assets/img/ui/btn_customize.webp" alt="" draggable="false">
-                    </div>
-                  </div>
-
-                  <div class="vr-prev-top-actions" aria-hidden="true">
-                    <a href="javascript:void(0)">
-                      <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false">
-                    </a>
-                    <a href="javascript:void(0)">
-                      <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false">
-                    </a>
-                    <a href="javascript:void(0)">
-                      <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false">
-                    </a>
-                  </div>
-
-                  <div class="vr-prev-hud" aria-hidden="true">
-                    <div class="vr-prev-pill">
-                      <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
-                      <span>0</span>
-                    </div>
-
-                    <div class="vr-prev-center">
-                      <div class="nm">—</div>
-                      <div class="yr">0</div>
-                    </div>
-
-                    <div class="vr-prev-pill">
-                      <img src="assets/img/ui/jeton.webp" alt="" draggable="false">
-                      <span>0</span>
-                    </div>
-                  </div>
-
-                  <div class="vr-prev-gauges" aria-hidden="true">
-                    <div class="vr-prev-g"></div>
-                    <div class="vr-prev-g"></div>
-                    <div class="vr-prev-g"></div>
-                    <div class="vr-prev-g"></div>
-                  </div>
-
-                  <div class="vr-prev-stack" aria-hidden="true">
-                    <div class="vr-prev-card" id="vr-prev-card-main"></div>
-                    <div class="vr-prev-choices">
-                      <div class="vr-prev-choice"></div>
-                      <div class="vr-prev-choice"></div>
-                      <div class="vr-prev-choice"></div>
-                    </div>
-                  </div>
+                  <iframe
+                    class="vr-cos-preview-frame"
+                    src="about:blank"
+                    loading="eager"
+                    referrerpolicy="same-origin"
+                  ></iframe>
                 </div>
               </div>
-              <!-- /SLIDE 1 -->
             </div>
 
-            <div class="vr-cos-lightbox-dots" aria-hidden="false">
+            <div class="vr-cos-lightbox-dots">
               <span class="vr-cos-lightbox-dot active" data-lightbox-dot="0"></span>
               <span class="vr-cos-lightbox-dot" data-lightbox-dot="1"></span>
             </div>
@@ -831,30 +569,10 @@
 
     const safeIndex = normalizeCarouselIndex(index, 2);
     _lightboxState.slideIndex = safeIndex;
-
-    // ✅ slide 0 => 0%, slide 1 => -50%
     track.style.transform = "translateX(-" + (safeIndex * 50) + "%)";
 
     dots.forEach(function (dot, i) {
       dot.classList.toggle("active", i === safeIndex);
-    });
-  }
-
-  function fillLightboxPreview(universeId, category, src) {
-    const root = $("vr-cos-lightbox");
-    if (!root) return;
-
-    const assets = buildLightboxPreviewAssets(universeId, category, src);
-
-    const bg = root.querySelector(".vr-prev-view");
-    const card = root.querySelector("#vr-prev-card-main");
-    const choices = root.querySelectorAll(".vr-prev-choice");
-
-    if (bg) bg.style.backgroundImage = assets.background ? `url("${assets.background}")` : "";
-    if (card) card.style.backgroundImage = assets.message ? `url("${assets.message}")` : "";
-
-    choices.forEach(function (el) {
-      el.style.backgroundImage = assets.choice ? `url("${assets.choice}")` : "";
     });
   }
 
@@ -863,7 +581,8 @@
     if (!root || !opts?.src) return;
 
     const heroImg = root.querySelector(".vr-cos-hero-img");
-    if (!heroImg) return;
+    const frame = root.querySelector(".vr-cos-preview-frame");
+    if (!heroImg || !frame) return;
 
     _lightboxState.open = true;
     _lightboxState.src = String(opts.src || "");
@@ -873,8 +592,8 @@
     _lightboxState.slideIndex = 0;
 
     heroImg.src = _lightboxState.src;
+    frame.src = buildPreviewUrl(opts);
 
-    fillLightboxPreview(_lightboxState.universeId, _lightboxState.category, _lightboxState.src);
     updateLightboxSlide(0);
 
     root.classList.add("is-open");
@@ -887,7 +606,10 @@
     if (!root) return;
 
     const heroImg = root.querySelector(".vr-cos-hero-img");
+    const frame = root.querySelector(".vr-cos-preview-frame");
+
     if (heroImg) heroImg.src = "";
+    if (frame) frame.src = "about:blank";
 
     _lightboxState.open = false;
     _lightboxState.src = "";

@@ -83,23 +83,35 @@
   window.VRIAP.getPrice = function (productId) { return PRICES_BY_ID[String(productId || "")] || ""; };
   window.VRIAP.order = function (productId) { return safeOrder(productId); };
 
+  function sbReady() {
+    return !!(window.sb && window.sb.auth);
+  }
+
+  // ✅ PATCH: session locale d’abord (getSession), fallback getUser ensuite
   async function ensureAuthStrict() {
     try {
       try { await window.vrWaitBootstrap?.(); } catch (_) {}
+
       const uid = await window.VRRemoteStore?.ensureAuth?.();
       if (uid) return uid;
 
       const sb = window.sb;
-      if (sb?.auth?.getUser) {
+      if (!sb?.auth) return null;
+
+      try {
+        const s = await sb.auth.getSession();
+        const uid2 = s?.data?.session?.user?.id || null;
+        if (uid2) return uid2;
+      } catch (_) {}
+
+      try {
         const r = await sb.auth.getUser();
         return r?.data?.user?.id || null;
-      }
-    } catch (_) {}
-    return null;
-  }
+      } catch (_) {}
 
-  function sbReady() {
-    return !!(window.sb && window.sb.auth);
+    } catch (_) {}
+
+    return null;
   }
 
   async function refreshNoAdsUI() {
@@ -145,17 +157,22 @@
       if (!uid) throw new Error("no_session");
       const r = await window.VRRemoteStore?.addVcoins?.(cfg.amount);
       if (r === null || r === undefined) throw new Error("credit_vcoins_failed");
+
     } else if (cfg.kind === "jetons") {
       const uid = await ensureAuthStrict();
       if (!uid) throw new Error("no_session");
       const r = await window.VRRemoteStore?.addJetons?.(cfg.amount);
       if (r === null || r === undefined) throw new Error("credit_jetons_failed");
+
     } else if (cfg.kind === "noads") {
       await applyNoAdsEntitlement();
+
     } else if (cfg.kind === "universe") {
       await applyUniverseEntitlement(cfg.universe);
+
     } else if (cfg.kind === "diamond") {
       await applyDiamondEntitlement();
+
     } else {
       throw new Error("unknown_kind");
     }
@@ -428,7 +445,49 @@
     }
   }
 
+  // ✅ Boutons robustes : priorités data-product-id/data-reward-placement, sinon fallback IDs actuels
+  function getProductIdFromButton(btn) {
+    try {
+      const pid = btn?.getAttribute?.("data-product-id");
+      return pid ? String(pid).trim() : "";
+    } catch (_) {
+      return "";
+    }
+  }
+
+  function getRewardPlacementFromButton(btn) {
+    try {
+      const pl = btn?.getAttribute?.("data-reward-placement");
+      return pl ? String(pl).trim() : "";
+    } catch (_) {
+      return "";
+    }
+  }
+
   function wireShopButtons() {
+    // 1) wiring générique via data-product-id
+    try {
+      document.querySelectorAll("[data-product-id]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const pid = getProductIdFromButton(btn);
+          if (!pid) return;
+          safeOrder(pid);
+        });
+      });
+    } catch (_) {}
+
+    // 2) wiring générique rewarded via data-reward-placement
+    try {
+      document.querySelectorAll("[data-reward-placement]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const placement = getRewardPlacementFromButton(btn);
+          if (!placement) return;
+          doRewarded(placement);
+        });
+      });
+    } catch (_) {}
+
+    // 3) fallback : tes IDs actuels (si tu n’as pas encore mis les data-*)
     const bRJ = $("btn-reward-jeton");
     const bRC = $("btn-reward-coins");
     const bNoAds = $("btn-buy-noads");

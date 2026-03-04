@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- ✅ Fond blanc de base UNIQUEMENT sur game.html -->
   <style>
     html, body.vr-body-game {
       background: #fff !important;
@@ -17,21 +16,18 @@
   </style>
 </head>
 
-<body class="vr-body vr-body-game">
+<body class="vr-body vr-body-game" data-page="game">
 
-  <!-- ✅ Bouton Accueil (tout en haut à gauche) -->
   <a class="vr-icon-button" href="index.html" aria-label="Accueil"
      style="position:fixed; top:calc(10px + env(safe-area-inset-top)); left:14px; z-index:100002; pointer-events:auto;">
     <img class="vr-top-icon" src="assets/img/ui/btn_home.webp" alt="Accueil" draggable="false" />
   </a>
 
-  <!-- ✅ Bouton personnalisation (en haut à droite, opposé à la flèche) -->
   <button id="btn-customize" class="vr-icon-button" type="button" aria-label="" data-i18n-aria="game.customize.aria"
      style="position:fixed; top:calc(10px + env(safe-area-inset-top)); right:14px; z-index:100002; pointer-events:auto;">
     <img class="vr-top-icon" src="assets/img/ui/btn_customize.webp" alt="" draggable="false" />
   </button>
 
-  <!-- ✅ Icônes DIRECTEMENT dans la page (comme index) -->
   <div class="vr-top-actions vr-top-actions-game" aria-label="Top actions">
     <a class="vr-icon-button" href="profile.html" aria-label="Profil">
       <img class="vr-top-icon" src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
@@ -54,10 +50,7 @@
         <p class="vr-main-text" data-i18n="game.subtitle"></p>
       </div>
 
-      <!-- ✅ HUD : VCoins gauche / Identité centre / Jetons droite -->
       <div class="vr-hud" aria-label="HUD">
-
-        <!-- Gauche: VCoins (✅ bouton + popup) -->
         <div class="vr-hud-left">
           <div class="vr-hud-item">
             <button id="btn-vcoins" type="button"
@@ -71,7 +64,6 @@
           </div>
         </div>
 
-        <!-- Centre: Nom + Années -->
         <div class="vr-hud-center">
           <div class="vr-hud-identity">
             <span class="vr-hud-name" id="meta-king-name">—</span>
@@ -79,7 +71,6 @@
           </div>
         </div>
 
-        <!-- Droite: Jeton -->
         <div class="vr-hud-right">
           <div class="vr-hud-item">
             <button id="btn-jeton" type="button"
@@ -92,10 +83,8 @@
             <span class="vr-hud-value" id="meta-tokens">0</span>
           </div>
         </div>
-
       </div>
 
-      <!-- ✅ IMPORTANT: ton JS attend l'ID vr-gauges-row -->
       <div class="vr-gauges-row" id="vr-gauges-row">
         <div class="vr-gauge">
           <span class="vr-gauge-label"></span>
@@ -153,10 +142,8 @@
         </div>
       </div>
 
-      <!-- ✅ Popup Jeton (menu) -->
       <div class="vr-popup" id="vr-token-popup" role="dialog" aria-modal="true" aria-hidden="true" inert>
         <div class="vr-popup-inner">
-
           <div class="vr-token-view" data-token-view="menu">
             <h3 class="vr-popup-title" data-i18n="token.popup.title"></h3>
 
@@ -188,14 +175,11 @@
               </div>
             </button>
           </div>
-
         </div>
       </div>
 
-      <!-- ✅ Popup VCoins (menu) -->
       <div class="vr-popup" id="vr-coins-popup" role="dialog" aria-modal="true" aria-hidden="true" inert>
         <div class="vr-popup-inner">
-
           <div class="vr-token-view" data-coins-view="menu">
             <h3 class="vr-popup-title" data-i18n="coins.popup.title"></h3>
 
@@ -220,11 +204,9 @@
               </div>
             </button>
           </div>
-
         </div>
       </div>
 
-      <!-- ✅ Overlay sélection jauge (ton JS l'attend) -->
       <div class="vr-token-gauge-overlay" id="vr-token-gauge-overlay" aria-hidden="true" inert>
         <div class="vr-token-gauge-card" role="dialog" aria-modal="true" aria-label="Choisir une jauge">
           <h3 class="vr-popup-title" data-i18n="token.popup.pickGauge.title"></h3>
@@ -239,7 +221,6 @@
         </div>
       </div>
 
-      <!-- ✅ Popup Personnalisation -->
       <div class="vr-popup" id="vr-customize-popup" role="dialog" aria-modal="true" aria-hidden="true" inert>
         <div class="vr-popup-inner">
           <div class="vr-token-view" data-customize-view="menu">
@@ -256,7 +237,6 @@
         </div>
       </div>
 
-      <!-- ✅ FIN (overlay) — Restart / Revive / Retour -->
       <div class="vr-ending-overlay" id="vr-ending-overlay" aria-hidden="true">
         <div class="vr-ending-card" role="dialog" aria-modal="true">
           <h3 class="vr-ending-title" id="ending-title"></h3>
@@ -276,7 +256,6 @@
         </div>
       </div>
 
-      <!-- ✅ Popup Revivre -->
       <div class="vr-popup" id="vr-revive-popup" role="dialog" aria-modal="true" aria-hidden="true" inert>
         <div class="vr-popup-inner">
           <div class="vr-token-view" data-revive-view="menu">
@@ -310,7 +289,6 @@
     </section>
   </main>
 
-  <!-- ✅ Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="js/supabaseBootstrap.js"></script>
 
@@ -320,23 +298,35 @@
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
 
-  <!-- ✅ Boot global : on expose une promesse ready pour game.js -->
   <script>
     (function () {
+      function isPreviewMode() {
+        try {
+          return new URLSearchParams(location.search).get("preview") === "1";
+        } catch (_) {
+          return false;
+        }
+      }
+
       async function boot() {
-        try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
-        try { await window.VUserData?.init?.(); } catch (_) {}
+        const preview = isPreviewMode();
+        window.__VR_PREVIEW_MODE = preview;
+
+        if (!preview) {
+          try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
+          try { await window.VUserData?.init?.(); } catch (_) {}
+        }
 
         try {
-          const lang = window.VUserData?.getLang?.() || "fr";
+          const lang = (!preview && window.VUserData?.getLang?.()) || "fr";
           if (window.VRI18n && typeof window.VRI18n.initI18n === "function") {
             await window.VRI18n.initI18n(lang);
           }
         } catch (_) {}
+
         return true;
       }
 
-      // ✅ IMPORTANT: game.js attendra ça
       window.__VR_BOOT_READY = boot();
     })();
   </script>
