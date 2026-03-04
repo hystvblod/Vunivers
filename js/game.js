@@ -15,6 +15,7 @@
 // - ✅ FIX(3): events jetons: UI ne bouge que si DB ok + refresh soft après event
 // - ✅ FIX(5): i18n overlay event (Continuer / Événement) avec fallback
 // - ✅ COSMETICS: fallback gris + popup perso + application live
+// - ✅ FIX POPUP COSMETICS: une seule ligne rerender au scroll, plus de flash global
 // ===============================================
 
 
@@ -2232,38 +2233,39 @@ body.vr-peek-mode .vr-gauge-preview{
 (function () {
   "use strict";
 
-const DEFAULT_GRAY_ASSETS = {
-  hell_king: {
-    background: "assets/img/backgrounds/hell_default_gray.webp",
-    message: "assets/img/ui/hell_msg_default_gray.webp",
-    choice: "assets/img/ui/hell_choice_default_gray.webp"
-  },
-  heaven_king: {
-    background: "assets/img/backgrounds/heaven_default_gray.webp",
-    message: "assets/img/ui/heaven_msg_default_gray.webp",
-    choice: "assets/img/ui/heaven_choice_default_gray.webp"
-  },
-  western_president: {
-    background: "assets/img/backgrounds/west_default_gray.webp",
-    message: "assets/img/ui/western_card.webp",
-    choice: "assets/img/ui/western_choice.webp"
-  },
-  mega_corp_ceo: {
-    background: "assets/img/backgrounds/corp_default_gray.webp",
-    message: "assets/img/ui/corp_msg_default_gray.webp",
-    choice: "assets/img/ui/corp_choice_default_gray.webp"
-  },
-  new_world_explorer: {
-    background: "assets/img/backgrounds/explorer_default_gray.webp",
-    message: "assets/img/ui/western_card.webp",
-    choice: "assets/img/ui/western_choice.webp"
-  },
-  vampire_lord: {
-    background: "assets/img/backgrounds/vampire_default_gray.webp",
-    message: "assets/img/ui/hell_msg_default_gray.webp",
-    choice: "assets/img/ui/hell_choice_default_gray.webp"
-  }
-};
+  const DEFAULT_GRAY_ASSETS = {
+    hell_king: {
+      background: "assets/img/backgrounds/hell_default_gray.webp",
+      message: "assets/img/ui/hell_msg_default_gray.webp",
+      choice: "assets/img/ui/hell_choice_default_gray.webp"
+    },
+    heaven_king: {
+      background: "assets/img/backgrounds/heaven_default_gray.webp",
+      message: "assets/img/ui/heaven_msg_default_gray.webp",
+      choice: "assets/img/ui/heaven_choice_default_gray.webp"
+    },
+    western_president: {
+      background: "assets/img/backgrounds/west_default_gray.webp",
+      message: "assets/img/ui/western_card.webp",
+      choice: "assets/img/ui/western_choice.webp"
+    },
+    mega_corp_ceo: {
+      background: "assets/img/backgrounds/corp_default_gray.webp",
+      message: "assets/img/ui/corp_msg_default_gray.webp",
+      choice: "assets/img/ui/corp_choice_default_gray.webp"
+    },
+    new_world_explorer: {
+      background: "assets/img/backgrounds/explorer_default_gray.webp",
+      message: "assets/img/ui/western_card.webp",
+      choice: "assets/img/ui/western_choice.webp"
+    },
+    vampire_lord: {
+      background: "assets/img/backgrounds/vampire_default_gray.webp",
+      message: "assets/img/ui/hell_msg_default_gray.webp",
+      choice: "assets/img/ui/hell_choice_default_gray.webp"
+    }
+  };
+
   const _state = {
     open: false,
     universeId: "",
@@ -2344,16 +2346,19 @@ const DEFAULT_GRAY_ASSETS = {
         align-items:center;
         gap:8px;
       }
+      /* ✅ flèches popup perso sans rond */
       .vr-customize-arrow{
         width:36px;
         height:36px;
-        border-radius:999px;
-        border:1px solid rgba(255,255,255,.14);
-        background:rgba(255,255,255,.08);
+        border:none;
+        background:transparent;
+        box-shadow:none;
+        border-radius:0;
         color:#fff;
-        font-size:18px;
+        font-size:28px;
         font-weight:900;
         cursor:pointer;
+        text-shadow:0 10px 22px rgba(0,0,0,.45);
       }
       .vr-customize-arrow[disabled]{
         opacity:.4;
@@ -2515,11 +2520,11 @@ const DEFAULT_GRAY_ASSETS = {
     const choice = resolveAppliedAsset(universeId, "choice");
 
     if (bg) {
-  viewGame.style.backgroundImage = `url("${bg}")`;
-  viewGame.style.backgroundSize = "100% 100%";
-  viewGame.style.backgroundPosition = "center center";
-  viewGame.style.backgroundRepeat = "no-repeat";
-}
+      viewGame.style.backgroundImage = `url("${bg}")`;
+      viewGame.style.backgroundSize = "100% 100%";
+      viewGame.style.backgroundPosition = "center center";
+      viewGame.style.backgroundRepeat = "no-repeat";
+    }
 
     if (cardMain && message) {
       cardMain.style.backgroundImage = `url("${message}")`;
@@ -2575,7 +2580,7 @@ const DEFAULT_GRAY_ASSETS = {
 
     if (!items.length) {
       return `
-        <div class="vr-customize-row">
+        <div class="vr-customize-row" data-category="${category}">
           <div class="vr-customize-subtitle">${t(subtitleKey, category)}</div>
           <div class="vr-customize-note">${t("common.unavailable", "Indisponible")}</div>
         </div>
@@ -2621,19 +2626,59 @@ const DEFAULT_GRAY_ASSETS = {
     `;
   }
 
-  function renderPopup() {
+  function ensurePopupShell(universeId) {
     const content = getContent();
-    if (!content) return;
+    if (!content) return null;
 
-    const universeId = _state.universeId || window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "hell_king";
+    if (!content.querySelector("#vr-customize-title")) {
+      content.innerHTML = `
+        <div class="vr-customize-universe-title" id="vr-customize-title"></div>
+        <div id="vr-customize-rows"></div>
+      `;
+    }
+
     const universe = getUniverse(universeId);
+    const titleEl = content.querySelector("#vr-customize-title");
+    if (titleEl) {
+      titleEl.textContent = t(universe?.labelKey || universeId, universeId);
+    }
 
-    content.innerHTML = `
-      <div class="vr-customize-universe-title">${t(universe?.labelKey || universeId, universeId)}</div>
-      ${renderRow(universeId, "background")}
-      ${renderRow(universeId, "message")}
-      ${renderRow(universeId, "choice")}
-    `;
+    return content.querySelector("#vr-customize-rows");
+  }
+
+  function renderRowOnly(category) {
+    const universeId = _state.universeId || window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "hell_king";
+    const rowsRoot = ensurePopupShell(universeId);
+    if (!rowsRoot) return;
+
+    const html = renderRow(universeId, category);
+    const holder = document.createElement("div");
+    holder.innerHTML = html.trim();
+    const freshRow = holder.firstElementChild;
+    if (!freshRow) return;
+
+    const existing = rowsRoot.querySelector(`.vr-customize-row[data-category="${category}"]`);
+    if (existing) {
+      existing.replaceWith(freshRow);
+    } else {
+      const order = ["background", "message", "choice"];
+      const idx = order.indexOf(category);
+      if (idx < 0 || idx >= rowsRoot.children.length) {
+        rowsRoot.appendChild(freshRow);
+      } else {
+        const ref = rowsRoot.children[idx];
+        if (ref) rowsRoot.insertBefore(freshRow, ref);
+        else rowsRoot.appendChild(freshRow);
+      }
+    }
+  }
+
+  function renderPopup() {
+    const universeId = _state.universeId || window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "hell_king";
+    ensurePopupShell(universeId);
+    renderRowOnly("background");
+    renderRowOnly("message");
+    renderRowOnly("choice");
   }
 
   function showDialog(el, focusEl) {
@@ -2706,7 +2751,7 @@ const DEFAULT_GRAY_ASSETS = {
         }
       } else {
         applyUniverseCosmetics(universeId);
-        renderPopup();
+        renderRowOnly(category);
       }
     } catch (_) {
       toast(t("common.error_generic", "Erreur"));
@@ -2748,7 +2793,9 @@ const DEFAULT_GRAY_ASSETS = {
         if (dir === "prev") next -= 1;
         if (dir === "next") next += 1;
         _state.index[category] = Math.max(0, Math.min(items.length - 1, next));
-        renderPopup();
+
+        /* ✅ ici on rerender UNE seule ligne */
+        renderRowOnly(category);
         return;
       }
 
@@ -2763,9 +2810,12 @@ const DEFAULT_GRAY_ASSETS = {
     });
 
     window.addEventListener("vr:profile", () => {
-      if (_state.open) renderPopup();
       const universeId = window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "hell_king";
       applyUniverseCosmetics(universeId);
+
+      if (_state.open) {
+        renderPopup();
+      }
     });
   }
 
@@ -2774,9 +2824,11 @@ const DEFAULT_GRAY_ASSETS = {
     open: openPopup,
     close: closePopup,
     render: renderPopup,
+    renderRowOnly,
     apply: applyUniverseCosmetics
   };
 })();
+
 
 // -------------------------------------------------------
 // PREVIEW MODE (iframe depuis la boutique)
@@ -2926,14 +2978,14 @@ const DEFAULT_GRAY_ASSETS = {
     const fills = document.querySelectorAll(".vr-gauge-fill");
     const previews = document.querySelectorAll(".vr-gauge-preview");
 
-    fills.forEach(function (el, i) {
-      const widths = ["62%", "48%", "71%", "55%"];
-      el.style.width = widths[i] || "60%";
+    fills.forEach(function (el) {
+      el.style.setProperty("--vr-pct", "60%");
+      el.style.width = "";
     });
 
-    previews.forEach(function (el, i) {
-      const widths = ["70%", "55%", "78%", "63%"];
-      el.style.width = widths[i] || "68%";
+    previews.forEach(function (el) {
+      el.style.setProperty("--vr-pct", "68%");
+      el.style.width = "";
       el.style.opacity = "0.22";
     });
   }
@@ -2983,6 +3035,8 @@ const DEFAULT_GRAY_ASSETS = {
     init: initPreviewMode
   };
 })();
+
+
 // -------------------------------------------------------
 // VRGame
 // -------------------------------------------------------
@@ -3104,7 +3158,6 @@ window.VRGame = {
     }
   }
 };
-
 
 
 // -------------------------------------------------------
