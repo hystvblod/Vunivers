@@ -14,7 +14,44 @@
 
   const _lightboxState = {
     open: false,
-    src: ""
+    src: "",
+    universeId: "",
+    category: "",
+    itemId: "",
+    slideIndex: 0
+  };
+
+  const LIGHTBOX_GRAY_ASSETS = {
+    hell_king: {
+      background: "assets/img/backgrounds/hell_default_gray.webp",
+      message: "assets/img/ui/hell_msg_default_gray.webp",
+      choice: "assets/img/ui/hell_choice_default_gray.webp"
+    },
+    heaven_king: {
+      background: "assets/img/backgrounds/heaven_default_gray.webp",
+      message: "assets/img/ui/heaven_msg_default_gray.webp",
+      choice: "assets/img/ui/heaven_choice_default_gray.webp"
+    },
+    western_president: {
+      background: "assets/img/backgrounds/west_default_gray.webp",
+      message: "assets/img/ui/western_card.webp",
+      choice: "assets/img/ui/western_choice.webp"
+    },
+    mega_corp_ceo: {
+      background: "assets/img/backgrounds/corp_default_gray.webp",
+      message: "assets/img/ui/corp_msg_default_gray.webp",
+      choice: "assets/img/ui/corp_choice_default_gray.webp"
+    },
+    new_world_explorer: {
+      background: "assets/img/backgrounds/explorer_default_gray.webp",
+      message: "assets/img/ui/western_card.webp",
+      choice: "assets/img/ui/western_choice.webp"
+    },
+    vampire_lord: {
+      background: "assets/img/backgrounds/vampire_default_gray.webp",
+      message: "assets/img/ui/hell_msg_default_gray.webp",
+      choice: "assets/img/ui/hell_choice_default_gray.webp"
+    }
   };
 
   function pad2(n) {
@@ -285,6 +322,18 @@
     if (jetonsEl) jetonsEl.textContent = String(balances.jetons);
   }
 
+  function getLightboxGrayAsset(universeId, category) {
+    return LIGHTBOX_GRAY_ASSETS?.[universeId]?.[category] || "";
+  }
+
+  function buildLightboxPreviewAssets(universeId, category, src) {
+    return {
+      background: category === "background" ? src : getLightboxGrayAsset(universeId, "background"),
+      message: category === "message" ? src : getLightboxGrayAsset(universeId, "message"),
+      choice: category === "choice" ? src : getLightboxGrayAsset(universeId, "choice")
+    };
+  }
+
   function ensureStyles() {
     if (document.getElementById("vr-cosmetics-inline-style")) return;
 
@@ -317,16 +366,222 @@
       .vr-cos-action.is-owned{background:rgba(255,255,255,.10)}
       .vr-cos-action.is-equipped{background:rgba(138,197,95,.22);border-color:rgba(138,197,95,.55)}
       .vr-cos-owned-mark{display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;font-weight:1000;color:#79f18b;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+
       .vr-cos-lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:99999}
       .vr-cos-lightbox.is-open{display:flex}
       .vr-cos-lightbox-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-      .vr-cos-lightbox-panel{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;max-width:min(92vw,760px);max-height:86vh;padding:12px}
-      .vr-cos-lightbox-img{display:block;max-width:100%;max-height:82vh;object-fit:contain;border-radius:18px;box-shadow:0 22px 48px rgba(0,0,0,.45)}
-      .vr-cos-lightbox-close{position:absolute;top:12px;right:12px;z-index:3;width:42px;height:42px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.32);color:#fff;font-size:24px;line-height:1;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 22px rgba(0,0,0,.22)}
+      .vr-cos-lightbox-close{position:absolute;top:12px;right:12px;z-index:5;width:42px;height:42px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.32);color:#fff;font-size:24px;line-height:1;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 22px rgba(0,0,0,.22)}
+
+      .vr-cos-lightbox-shell{
+        position:relative;
+        z-index:2;
+        display:grid;
+        grid-template-columns:44px minmax(0,1fr) 44px;
+        align-items:center;
+        gap:12px;
+        width:min(94vw,860px);
+      }
+
+      .vr-cos-lightbox-arrow{
+        width:44px;
+        height:44px;
+        border-radius:999px;
+        border:1px solid rgba(255,255,255,.16);
+        background:rgba(0,0,0,.28);
+        color:#fff;
+        font-size:22px;
+        font-weight:900;
+        line-height:1;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        cursor:pointer;
+        box-shadow:0 10px 22px rgba(0,0,0,.22);
+      }
+
+      .vr-cos-lightbox-stage{
+        min-width:0;
+        overflow:hidden;
+      }
+
+      .vr-cos-lightbox-track{
+        display:flex;
+        transition:transform .26s ease;
+        will-change:transform;
+      }
+
+      .vr-cos-lightbox-slide{
+        min-width:100%;
+        width:100%;
+        box-sizing:border-box;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      }
+
+      .vr-cos-lightbox-panel{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        padding:12px;
+        box-sizing:border-box;
+      }
+
+      .vr-cos-lightbox-img{
+        display:block;
+        max-width:100%;
+        max-height:82vh;
+        object-fit:contain;
+        border-radius:18px;
+        box-shadow:0 22px 48px rgba(0,0,0,.45);
+      }
+
+      .vr-cos-lightbox-dots{
+        display:flex;
+        justify-content:center;
+        gap:8px;
+        margin-top:10px;
+        position:relative;
+        z-index:2;
+      }
+
+      .vr-cos-lightbox-dot{
+        width:8px;
+        height:8px;
+        border-radius:999px;
+        background:rgba(255,255,255,.28);
+        box-shadow:0 4px 10px rgba(0,0,0,.22);
+        cursor:pointer;
+      }
+
+      .vr-cos-lightbox-dot.active{
+        background:rgba(255,255,255,.92);
+      }
+
+      .vr-cos-preview{
+        position:relative;
+        width:min(86vw,420px);
+        aspect-ratio:9/16;
+        border-radius:22px;
+        overflow:hidden;
+        background:#0d1420;
+        box-shadow:0 22px 48px rgba(0,0,0,.45);
+      }
+
+      .vr-cos-preview-bg{
+        position:absolute;
+        inset:0;
+        background-size:100% 100%;
+        background-position:center center;
+        background-repeat:no-repeat;
+        z-index:0;
+      }
+
+      .vr-cos-preview-shade{
+        position:absolute;
+        inset:0;
+        background:linear-gradient(180deg, rgba(7,10,18,.18), rgba(7,10,18,.28));
+        z-index:1;
+        pointer-events:none;
+      }
+
+      .vr-cos-preview-top{
+        position:absolute;
+        top:12px;
+        left:12px;
+        right:12px;
+        z-index:2;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+      }
+
+      .vr-cos-preview-mini-btn{
+        width:34px;
+        height:34px;
+        border-radius:999px;
+        border:1px solid rgba(255,255,255,.16);
+        background:rgba(0,0,0,.22);
+        box-shadow:0 8px 18px rgba(0,0,0,.22);
+      }
+
+      .vr-cos-preview-mini-balances{
+        display:flex;
+        align-items:center;
+        gap:10px;
+      }
+
+      .vr-cos-preview-mini-balance{
+        display:inline-flex;
+        align-items:center;
+        gap:4px;
+        color:#fff;
+        font-size:11px;
+        font-weight:900;
+        text-shadow:0 4px 10px rgba(0,0,0,.28);
+      }
+
+      .vr-cos-preview-mini-balance img{
+        width:12px;
+        height:12px;
+        object-fit:contain;
+        display:block;
+        filter:drop-shadow(0 2px 4px rgba(0,0,0,.35));
+      }
+
+      .vr-cos-preview-center{
+        position:absolute;
+        left:0;
+        right:0;
+        top:72px;
+        bottom:18px;
+        z-index:2;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        gap:14px;
+        padding:0 14px;
+        box-sizing:border-box;
+      }
+
+      .vr-cos-preview-message{
+        width:100%;
+        height:132px;
+        border-radius:18px;
+        background-position:center center;
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+        box-shadow:0 14px 28px rgba(0,0,0,.28);
+      }
+
+      .vr-cos-preview-choices{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        margin-top:auto;
+      }
+
+      .vr-cos-preview-choice{
+        width:100%;
+        height:68px;
+        border-radius:16px;
+        background-position:center center;
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+        box-shadow:0 12px 22px rgba(0,0,0,.22);
+      }
+
       body.vr-lightbox-open{overflow:hidden}
+
       @media (max-width:390px){
         .vr-cos-action-ico{width:13px;height:13px;min-width:13px;min-height:13px}
         .vr-cos-owned-mark{font-size:18px}
+        .vr-cos-lightbox-shell{grid-template-columns:38px minmax(0,1fr) 38px;gap:8px}
+        .vr-cos-lightbox-arrow{width:38px;height:38px;font-size:20px}
       }
     `;
     document.head.appendChild(style);
@@ -347,6 +602,46 @@
     return root;
   }
 
+  function updateLightboxSlide(index) {
+    const root = $("vr-cos-lightbox");
+    if (!root) return;
+
+    const track = root.querySelector(".vr-cos-lightbox-track");
+    const dots = root.querySelectorAll(".vr-cos-lightbox-dot");
+    if (!track) return;
+
+    const safeIndex = normalizeCarouselIndex(index, 2);
+    _lightboxState.slideIndex = safeIndex;
+    track.style.transform = "translateX(-" + (safeIndex * 100) + "%)";
+
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle("active", i === safeIndex);
+    });
+  }
+
+  function fillLightboxPreview(universeId, category, src) {
+    const root = $("vr-cos-lightbox");
+    if (!root) return;
+
+    const assets = buildLightboxPreviewAssets(universeId, category, src);
+
+    const bg = root.querySelector(".vr-cos-preview-bg");
+    const message = root.querySelector(".vr-cos-preview-message");
+    const choices = root.querySelectorAll(".vr-cos-preview-choice");
+
+    if (bg) {
+      bg.style.backgroundImage = assets.background ? `url("${assets.background}")` : "";
+    }
+
+    if (message) {
+      message.style.backgroundImage = assets.message ? `url("${assets.message}")` : "";
+    }
+
+    choices.forEach(function (choiceEl) {
+      choiceEl.style.backgroundImage = assets.choice ? `url("${assets.choice}")` : "";
+    });
+  }
+
   function ensureLightboxRoot() {
     let root = $("vr-cos-lightbox");
     if (root) return root;
@@ -358,33 +653,129 @@
     root.innerHTML = `
       <div class="vr-cos-lightbox-backdrop" data-lightbox-close="1"></div>
       <button class="vr-cos-lightbox-close" type="button" data-lightbox-close="1">×</button>
-      <div class="vr-cos-lightbox-panel">
-        <img class="vr-cos-lightbox-img" src="" alt="" draggable="false">
+
+      <div class="vr-cos-lightbox-shell">
+        <button class="vr-cos-lightbox-arrow" type="button" data-lightbox-nav="-1">‹</button>
+
+        <div class="vr-cos-lightbox-stage">
+          <div class="vr-cos-lightbox-track">
+            <div class="vr-cos-lightbox-slide">
+              <div class="vr-cos-lightbox-panel">
+                <img class="vr-cos-lightbox-img" src="" alt="" draggable="false">
+                <div class="vr-cos-lightbox-dots">
+                  <span class="vr-cos-lightbox-dot active" data-lightbox-dot="0"></span>
+                  <span class="vr-cos-lightbox-dot" data-lightbox-dot="1"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="vr-cos-lightbox-slide">
+              <div class="vr-cos-lightbox-panel">
+                <div class="vr-cos-preview">
+                  <div class="vr-cos-preview-bg"></div>
+                  <div class="vr-cos-preview-shade"></div>
+
+                  <div class="vr-cos-preview-top">
+                    <div class="vr-cos-preview-mini-btn"></div>
+
+                    <div class="vr-cos-preview-mini-balances">
+                      <div class="vr-cos-preview-mini-balance">
+                        <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
+                        <span>0</span>
+                      </div>
+                      <div class="vr-cos-preview-mini-balance">
+                        <img src="assets/img/ui/jeton.webp" alt="" draggable="false">
+                        <span>0</span>
+                      </div>
+                    </div>
+
+                    <div class="vr-cos-preview-mini-btn"></div>
+                  </div>
+
+                  <div class="vr-cos-preview-center">
+                    <div class="vr-cos-preview-message"></div>
+
+                    <div class="vr-cos-preview-choices">
+                      <div class="vr-cos-preview-choice"></div>
+                      <div class="vr-cos-preview-choice"></div>
+                      <div class="vr-cos-preview-choice"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="vr-cos-lightbox-dots">
+                  <span class="vr-cos-lightbox-dot active" data-lightbox-dot="0"></span>
+                  <span class="vr-cos-lightbox-dot" data-lightbox-dot="1"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="vr-cos-lightbox-arrow" type="button" data-lightbox-nav="1">›</button>
       </div>
     `;
     document.body.appendChild(root);
 
     root.addEventListener("click", function (e) {
       const closeBtn = e.target && e.target.closest ? e.target.closest("[data-lightbox-close]") : null;
-      if (closeBtn) closeLightbox();
+      if (closeBtn) {
+        closeLightbox();
+        return;
+      }
+
+      const navBtn = e.target && e.target.closest ? e.target.closest("[data-lightbox-nav]") : null;
+      if (navBtn) {
+        const step = Number(navBtn.getAttribute("data-lightbox-nav") || 0);
+        updateLightboxSlide(_lightboxState.slideIndex + step);
+        return;
+      }
+
+      const dotBtn = e.target && e.target.closest ? e.target.closest("[data-lightbox-dot]") : null;
+      if (dotBtn) {
+        const idx = Number(dotBtn.getAttribute("data-lightbox-dot") || 0);
+        updateLightboxSlide(idx);
+      }
     });
 
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closeLightbox();
+      if (!_lightboxState.open) return;
+
+      if (e.key === "Escape") {
+        closeLightbox();
+        return;
+      }
+
+      if (e.key === "ArrowLeft") {
+        updateLightboxSlide(_lightboxState.slideIndex - 1);
+        return;
+      }
+
+      if (e.key === "ArrowRight") {
+        updateLightboxSlide(_lightboxState.slideIndex + 1);
+      }
     });
 
     return root;
   }
 
-  function openLightbox(src) {
+  function openLightbox(opts) {
     const root = ensureLightboxRoot();
     const img = root.querySelector(".vr-cos-lightbox-img");
-    if (!root || !img || !src) return;
+    if (!root || !img || !opts?.src) return;
 
     _lightboxState.open = true;
-    _lightboxState.src = src;
+    _lightboxState.src = String(opts.src || "");
+    _lightboxState.universeId = String(opts.universeId || "");
+    _lightboxState.category = String(opts.category || "");
+    _lightboxState.itemId = String(opts.itemId || "");
+    _lightboxState.slideIndex = 0;
 
-    img.src = src;
+    img.src = _lightboxState.src;
+
+    fillLightboxPreview(_lightboxState.universeId, _lightboxState.category, _lightboxState.src);
+    updateLightboxSlide(0);
+
     root.classList.add("is-open");
     root.setAttribute("aria-hidden", "false");
     document.body.classList.add("vr-lightbox-open");
@@ -396,6 +787,10 @@
 
     _lightboxState.open = false;
     _lightboxState.src = "";
+    _lightboxState.universeId = "";
+    _lightboxState.category = "";
+    _lightboxState.itemId = "";
+    _lightboxState.slideIndex = 0;
 
     if (img) img.src = "";
     if (root) {
@@ -590,6 +985,9 @@
                               class="vr-cos-card ${item.kind === "ui" ? "is-ui" : ""}"
                               data-item="${item.id}"
                               data-lightbox-src="${item.img}"
+                              data-lightbox-universe="${item.universeId}"
+                              data-lightbox-category="${item.category}"
+                              data-lightbox-item-id="${item.id}"
                             >
                               <img src="${item.img}" alt="" draggable="false">
                               <div class="vr-cos-overlay">
@@ -727,7 +1125,18 @@
       const lightboxCard = e.target && e.target.closest ? e.target.closest(".vr-cos-card[data-lightbox-src]") : null;
       if (lightboxCard) {
         const src = String(lightboxCard.getAttribute("data-lightbox-src") || "").trim();
-        if (src) openLightbox(src);
+        const universeId = String(lightboxCard.getAttribute("data-lightbox-universe") || "").trim();
+        const category = String(lightboxCard.getAttribute("data-lightbox-category") || "").trim();
+        const itemId = String(lightboxCard.getAttribute("data-lightbox-item-id") || "").trim();
+
+        if (src) {
+          openLightbox({
+            src: src,
+            universeId: universeId,
+            category: category,
+            itemId: itemId
+          });
+        }
       }
     });
 
