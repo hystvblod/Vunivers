@@ -2778,7 +2778,211 @@ const DEFAULT_GRAY_ASSETS = {
   };
 })();
 
+// -------------------------------------------------------
+// PREVIEW MODE (iframe depuis la boutique)
+// -------------------------------------------------------
+(function () {
+  "use strict";
 
+  const PREVIEW_DEFAULT_ASSETS = {
+    hell_king: {
+      background: "assets/img/backgrounds/hell_default_gray.webp",
+      message: "assets/img/ui/hell_msg_default_gray.webp",
+      choice: "assets/img/ui/hell_choice_default_gray.webp"
+    },
+    heaven_king: {
+      background: "assets/img/backgrounds/heaven_default_gray.webp",
+      message: "assets/img/ui/heaven_msg_default_gray.webp",
+      choice: "assets/img/ui/heaven_choice_default_gray.webp"
+    },
+    western_president: {
+      background: "assets/img/backgrounds/west_default_gray.webp",
+      message: "assets/img/ui/western_card.webp",
+      choice: "assets/img/ui/western_choice.webp"
+    },
+    mega_corp_ceo: {
+      background: "assets/img/backgrounds/corp_default_gray.webp",
+      message: "assets/img/ui/corp_msg_default_gray.webp",
+      choice: "assets/img/ui/corp_choice_default_gray.webp"
+    },
+    new_world_explorer: {
+      background: "assets/img/backgrounds/explorer_default_gray.webp",
+      message: "assets/img/ui/western_card.webp",
+      choice: "assets/img/ui/western_choice.webp"
+    },
+    vampire_lord: {
+      background: "assets/img/backgrounds/vampire_default_gray.webp",
+      message: "assets/img/ui/hell_msg_default_gray.webp",
+      choice: "assets/img/ui/hell_choice_default_gray.webp"
+    }
+  };
+
+  function getPreviewConfig() {
+    try {
+      const params = new URLSearchParams(window.location.search || "");
+      return {
+        enabled: params.get("preview") === "1" || window.__VR_PREVIEW_MODE === true,
+        universeId: String(params.get("universe") || localStorage.getItem("vrealms_universe") || "hell_king").trim(),
+        category: String(params.get("category") || "").trim(),
+        itemId: String(params.get("itemId") || "").trim(),
+        src: String(params.get("src") || "").trim()
+      };
+    } catch (_) {
+      return {
+        enabled: false,
+        universeId: "hell_king",
+        category: "",
+        itemId: "",
+        src: ""
+      };
+    }
+  }
+
+  function getDefaultPreviewAsset(universeId, category) {
+    return PREVIEW_DEFAULT_ASSETS?.[universeId]?.[category] || "";
+  }
+
+  function resolvePreviewAssets(cfg) {
+    return {
+      background: cfg.category === "background" ? cfg.src : getDefaultPreviewAsset(cfg.universeId, "background"),
+      message: cfg.category === "message" ? cfg.src : getDefaultPreviewAsset(cfg.universeId, "message"),
+      choice: cfg.category === "choice" ? cfg.src : getDefaultPreviewAsset(cfg.universeId, "choice")
+    };
+  }
+
+  function setBgImage(el, src) {
+    if (!el || !src) return;
+    el.style.backgroundImage = `url("${src}")`;
+    el.style.backgroundSize = "100% 100%";
+    el.style.backgroundPosition = "center center";
+    el.style.backgroundRepeat = "no-repeat";
+  }
+
+  function ensurePreviewStyles() {
+    if (document.getElementById("vr-preview-inline-style")) return;
+
+    const style = document.createElement("style");
+    style.id = "vr-preview-inline-style";
+    style.textContent = `
+      html.vr-preview-mode,
+      body.vr-preview-mode{
+        overflow:hidden !important;
+        overscroll-behavior:none !important;
+      }
+
+      body.vr-preview-mode .vr-game-header,
+      body.vr-preview-mode .vr-popup,
+      body.vr-preview-mode #vr-ending-overlay,
+      body.vr-preview-mode #vr-token-gauge-overlay{
+        display:none !important;
+      }
+
+      body.vr-preview-mode .vr-card-title,
+      body.vr-preview-mode .vr-card-text,
+      body.vr-preview-mode .vr-choice-label,
+      body.vr-preview-mode .vr-gauge-label{
+        display:none !important;
+      }
+
+      body.vr-preview-mode a,
+      body.vr-preview-mode button{
+        pointer-events:none !important;
+      }
+
+      body.vr-preview-mode #view-game{
+        min-height:100vh !important;
+      }
+
+      body.vr-preview-mode .vr-card-container{
+        margin-top: 8px !important;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function fillPreviewStaticUi() {
+    const coins = document.getElementById("meta-coins");
+    const tokens = document.getElementById("meta-tokens");
+    const name = document.getElementById("meta-king-name");
+    const years = document.getElementById("meta-years");
+
+    if (coins) coins.textContent = "0";
+    if (tokens) tokens.textContent = "0";
+    if (name) name.textContent = "—";
+    if (years) years.textContent = "0";
+
+    const title = document.getElementById("card-title");
+    const text = document.getElementById("card-text");
+    const a = document.getElementById("choice-A");
+    const b = document.getElementById("choice-B");
+    const c = document.getElementById("choice-C");
+
+    if (title) title.textContent = "";
+    if (text) text.textContent = "";
+    if (a) a.textContent = "";
+    if (b) b.textContent = "";
+    if (c) c.textContent = "";
+
+    const fills = document.querySelectorAll(".vr-gauge-fill");
+    const previews = document.querySelectorAll(".vr-gauge-preview");
+
+    fills.forEach(function (el, i) {
+      const widths = ["62%", "48%", "71%", "55%"];
+      el.style.width = widths[i] || "60%";
+    });
+
+    previews.forEach(function (el, i) {
+      const widths = ["70%", "55%", "78%", "63%"];
+      el.style.width = widths[i] || "68%";
+      el.style.opacity = "0.22";
+    });
+  }
+
+  function applyPreviewCosmetics(cfg) {
+    const viewGame = document.getElementById("view-game");
+    const cardMain = document.getElementById("vr-card-main");
+    const choiceBtns = document.querySelectorAll(".vr-choice-button[data-choice]");
+
+    if (!viewGame) return;
+
+    try {
+      document.body.dataset.universe = cfg.universeId;
+    } catch (_) {}
+
+    try {
+      window.VRGame?.applyUniverseBackground?.(cfg.universeId);
+    } catch (_) {}
+
+    const assets = resolvePreviewAssets(cfg);
+
+    setBgImage(viewGame, assets.background);
+    setBgImage(cardMain, assets.message);
+
+    choiceBtns.forEach(function (btn) {
+      setBgImage(btn, assets.choice);
+    });
+  }
+
+  async function initPreviewMode() {
+    const cfg = getPreviewConfig();
+    if (!cfg.enabled) return false;
+
+    ensurePreviewStyles();
+
+    document.documentElement.classList.add("vr-preview-mode");
+    document.body.classList.add("vr-preview-mode");
+
+    fillPreviewStaticUi();
+    applyPreviewCosmetics(cfg);
+
+    return true;
+  }
+
+  window.VRPreviewMode = {
+    getConfig: getPreviewConfig,
+    init: initPreviewMode
+  };
+})();
 // -------------------------------------------------------
 // VRGame
 // -------------------------------------------------------
@@ -2902,6 +3106,7 @@ window.VRGame = {
 };
 
 
+
 // -------------------------------------------------------
 // Init page jeu seule
 // -------------------------------------------------------
@@ -2953,6 +3158,21 @@ window.VRGame = {
     setupNavigationGuards();
     setupSaveGuards();
 
+    try { await window.__VR_BOOT_READY; } catch (_) {}
+
+    const hasGameView = !!document.getElementById("view-game");
+    if (!hasGameView) return;
+
+    const previewCfg = window.VRPreviewMode?.getConfig?.() || { enabled: false };
+    if (previewCfg.enabled) {
+      try {
+        await window.VRPreviewMode.init();
+      } catch (e) {
+        console.error("[VRealms] preview mode error:", e);
+      }
+      return;
+    }
+
     try {
       if (window.VRI18n && typeof window.VRI18n.initI18n === "function") {
         await window.VRI18n.initI18n();
@@ -2966,9 +3186,6 @@ window.VRGame = {
         await window.VUserData.init();
       }
     } catch (_) {}
-
-    const hasGameView = !!document.getElementById("view-game");
-    if (!hasGameView) return;
 
     try { window.VRTokenUI?.init?.(); } catch (_) {}
     try { window.VRCoinUI?.init?.(); } catch (_) {}

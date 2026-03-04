@@ -398,17 +398,26 @@
       return await this._getUid();
     },
 
-    async _getUid() {
-      const sb = window.sb;
-      if (!sb || !sb.auth) return null;
-      try {
-        const r = await sb.auth.getUser();
-        return r?.data?.user?.id || null;
-      } catch (e) {
-        _reportRemoteError("_getUid", e);
-        return null;
-      }
-    },
+async _getUid() {
+  const sb = window.sb;
+  if (!sb || !sb.auth) return null;
+
+  try {
+    const s = await sb.auth.getSession();
+    const uid = s?.data?.session?.user?.id || null;
+    if (uid) return uid;
+  } catch (e) {
+    _reportRemoteError("_getUid.getSession", e);
+  }
+
+  try {
+    const r = await sb.auth.getUser();
+    return r?.data?.user?.id || null;
+  } catch (e) {
+    _reportRemoteError("_getUid.getUser", e);
+    return null;
+  }
+},
 
     async getMe() {
       const sb = window.sb;
