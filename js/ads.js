@@ -25,12 +25,42 @@
           : ((Capacitor.Plugins && Capacitor.Plugins.App) ? Capacitor.Plugins.App : null);
 
   // ------- STRICT PROD -------
-  var __DEV_ADS__ = false;      // true pour tests locaux
+  var __DEV_ADS__ = false;      // ✅ mets TRUE pour tests (Ad Units TEST + initializeForTesting)
   var SHOW_DIAG_PANEL = false;  // overlay debug (laisse false en prod)
 
   // ✅ Tes Ad Units (PROD)
-  var AD_UNIT_ID_INTERSTITIEL = "ca-app-pub-6837328794080297/8465879302";
-  var AD_UNIT_ID_REWARDED     = "ca-app-pub-6837328794080297/8202263221";
+  var AD_UNIT_ID_INTERSTITIEL_PROD = "ca-app-pub-6837328794080297/8465879302";
+  var AD_UNIT_ID_REWARDED_PROD     = "ca-app-pub-6837328794080297/8202263221";
+
+  // ✅ Ad Units TEST officiels Google (samples)
+  // Interstitial:
+  // - Android: ca-app-pub-3940256099942544/1033173712
+  // - iOS:     ca-app-pub-3940256099942544/4411468910
+  // Rewarded:
+  // - Android: ca-app-pub-3940256099942544/5224354917
+  // - iOS:     ca-app-pub-3940256099942544/1712485313
+  var AD_UNIT_ID_INTERSTITIEL_TEST_ANDROID = "ca-app-pub-3940256099942544/1033173712";
+  var AD_UNIT_ID_INTERSTITIEL_TEST_IOS     = "ca-app-pub-3940256099942544/4411468910";
+  var AD_UNIT_ID_REWARDED_TEST_ANDROID     = "ca-app-pub-3940256099942544/5224354917";
+  var AD_UNIT_ID_REWARDED_TEST_IOS         = "ca-app-pub-3940256099942544/1712485313";
+
+  function getPlatform() {
+    try {
+      if (Capacitor && typeof Capacitor.getPlatform === "function") return Capacitor.getPlatform();
+      if (Capacitor && typeof Capacitor.platform === "string") return Capacitor.platform;
+    } catch (_) {}
+    return "";
+  }
+  function isIOSPlatform() { return getPlatform() === "ios"; }
+
+  function getInterstitialUnitId() {
+    if (__DEV_ADS__) return isIOSPlatform() ? AD_UNIT_ID_INTERSTITIEL_TEST_IOS : AD_UNIT_ID_INTERSTITIEL_TEST_ANDROID;
+    return AD_UNIT_ID_INTERSTITIEL_PROD;
+  }
+  function getRewardedUnitId() {
+    if (__DEV_ADS__) return isIOSPlatform() ? AD_UNIT_ID_REWARDED_TEST_IOS : AD_UNIT_ID_REWARDED_TEST_ANDROID;
+    return AD_UNIT_ID_REWARDED_PROD;
+  }
 
   // ✅ Règle interstitiel : 1 pub tous les X choix (cumul global)
   var INTERSTITIEL_EVERY_X_ACTIONS = 8;
@@ -447,7 +477,7 @@
       currentAdKind = "interstitial";
 
       await AdMob.prepareInterstitial({
-        adId: AD_UNIT_ID_INTERSTITIEL,
+        adId: getInterstitialUnitId(),
         requestOptions: buildAdMobRequestOptions()
       });
 
@@ -479,7 +509,7 @@
         setTimeout(function () {
           try {
             AdMob.prepareInterstitial({
-              adId: AD_UNIT_ID_INTERSTITIEL,
+              adId: getInterstitialUnitId(),
               requestOptions: buildAdMobRequestOptions()
             }).catch(function () {});
           } catch (_) {}
@@ -492,7 +522,7 @@
     } catch (_) {
       try {
         AdMob.prepareInterstitial({
-          adId: AD_UNIT_ID_INTERSTITIEL,
+          adId: getInterstitialUnitId(),
           requestOptions: buildAdMobRequestOptions()
         }).catch(function () {});
       } catch (_) {}
@@ -520,7 +550,7 @@
       currentAdKind = "rewarded";
 
       await AdMob.prepareRewardVideoAd({
-        adId: AD_UNIT_ID_REWARDED,
+        adId: getRewardedUnitId(),
         requestOptions: buildAdMobRequestOptions()
       });
 
