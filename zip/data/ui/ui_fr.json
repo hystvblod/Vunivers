@@ -262,7 +262,7 @@
     "pack_jetons_12": "12",
     "pack_jetons_30": "30",
     "pack_vcoins_500": "500",
-    "pack_vcoins_1200": "1 200 VCoins",
+    "pack_vcoins_1200": "1200",
     "pack_vcoins_3000": "3000",
     "pack_no_ads": "No Ads",
     "pack_diamond": "Diamond",
@@ -325,9 +325,13 @@
         "message_1": "Carte lumière pure",
         "message_2": "Carte marbre divin",
         "message_3": "Carte aile céleste",
+        "message_4": "Carte soleil",
+        "message_5": "Carte lumière",
         "choice_1": "Choix grâce suprême",
         "choice_2": "Choix jugement céleste",
-        "choice_3": "Choix serment angélique"
+        "choice_3": "Choix marbre",
+        "choice_4": "Choix lumière",
+        "choice_5": "Choix serment angélique"
       },
       "president": {
         "background_1": "Fond salle de crise",

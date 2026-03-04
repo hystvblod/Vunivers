@@ -1,7 +1,7 @@
 // VUniverse — shop.js
-// ✅ Boutique rewarded / store via purchases.js
-// ✅ Boutique cosmétiques branchée sur VUserData (achat + équipement)
-// ✅ Catalogue aussi disponible dans game.html pour la popup de personnalisation
+// Boutique rewarded / store via purchases.js
+// Boutique cosmétiques branchée sur VUserData
+// Popup personnalisation aussi exploitable depuis game.html
 
 (function () {
   "use strict";
@@ -12,134 +12,214 @@
     choice: "shop.cosmetics.choice"
   };
 
+  const _lightboxState = {
+    open: false,
+    src: "",
+    universeId: "",
+    category: "",
+    itemId: "",
+    slideIndex: 0
+  };
+
+  // ✅ Assets gris “par défaut” utilisés pour la mise en situation
+  // NOTE: adapte les chemins si besoin (mais je garde ta base actuelle).
+  const LIGHTBOX_GRAY_ASSETS = {
+    hell_king: {
+      background: "assets/img/backgrounds/hell_default_gray.webp",
+      message: "assets/img/ui/hell_msg_default_gray.webp",
+      choice: "assets/img/ui/hell_choice_default_gray.webp"
+    },
+    heaven_king: {
+      background: "assets/img/backgrounds/heaven_default_gray.webp",
+      message: "assets/img/ui/heaven_msg_default_gray.webp",
+      choice: "assets/img/ui/heaven_choice_default_gray.webp"
+    },
+    western_president: {
+      background: "assets/img/backgrounds/west_default_gray.webp",
+      message: "assets/img/ui/western_card.webp",
+      choice: "assets/img/ui/western_choice.webp"
+    },
+    mega_corp_ceo: {
+      background: "assets/img/backgrounds/corp_default_gray.webp",
+      message: "assets/img/ui/corp_msg_default_gray.webp",
+      choice: "assets/img/ui/corp_choice_default_gray.webp"
+    },
+    new_world_explorer: {
+      background: "assets/img/backgrounds/explorer_default_gray.webp",
+      message: "assets/img/ui/western_card.webp",
+      choice: "assets/img/ui/western_choice.webp"
+    },
+    vampire_lord: {
+      background: "assets/img/backgrounds/vampire_default_gray.webp",
+      message: "assets/img/ui/hell_msg_default_gray.webp",
+      choice: "assets/img/ui/hell_choice_default_gray.webp"
+    }
+  };
+
+  function pad2(n) {
+    return String(n).padStart(2, "0");
+  }
+
+  function normalizePath(value) {
+    return String(value || "").replace(/\/+$/, "").trim();
+  }
+
+  function buildCosmeticItems(opts) {
+    const prefix = String(opts?.prefix || "").trim();
+    const keyNs = String(opts?.keyNs || "").trim();
+    const category = String(opts?.category || "").trim();
+    const price = Number(opts?.price || 0);
+    const count = Number(opts?.count || 0);
+    const dir = normalizePath(opts?.dir || "");
+
+    const filePart =
+      category === "background" ? "bg" :
+      category === "message" ? "msg" :
+      "choice";
+
+    const keyPart =
+      category === "background" ? "background" :
+      category === "message" ? "message" :
+      "choice";
+
+    const kind = category === "background" ? "bg" : "ui";
+
+    return Array.from({ length: count }, function (_, index) {
+      const n = pad2(index + 1);
+      const base = prefix + "_" + filePart + "_" + n;
+
+      return {
+        id: base,
+        nameKey: "shop.cosmetics." + keyNs + "." + keyPart + "_" + (index + 1),
+        price: price,
+        img: dir + "/" + base + ".webp",
+        kind: kind
+      };
+    });
+  }
+
+  function buildUniverseCatalog(opts) {
+    const bgDir = normalizePath(opts.bgDir || "assets/img/backgrounds");
+    const uiBaseDir = normalizePath(opts.uiDir || ("assets/img/ui/" + String(opts.prefix || "").trim()));
+    const msgDir = normalizePath(opts.msgDir || (uiBaseDir + "/msg"));
+    const choiceDir = normalizePath(opts.choiceDir || (uiBaseDir + "/choice"));
+
+    return {
+      id: String(opts?.id || "").trim(),
+      labelKey: String(opts?.labelKey || "").trim(),
+      categories: {
+        background: buildCosmeticItems({
+          prefix: opts.prefix,
+          keyNs: opts.keyNs,
+          category: "background",
+          price: Number(opts.bgPrice || 400),
+          count: Number(opts.bgCount || 0),
+          dir: bgDir
+        }),
+        message: buildCosmeticItems({
+          prefix: opts.prefix,
+          keyNs: opts.keyNs,
+          category: "message",
+          price: Number(opts.uiPrice || 300),
+          count: Number(opts.msgCount || 0),
+          dir: msgDir
+        }),
+        choice: buildCosmeticItems({
+          prefix: opts.prefix,
+          keyNs: opts.keyNs,
+          category: "choice",
+          price: Number(opts.uiPrice || 300),
+          count: Number(opts.choiceCount || 0),
+          dir: choiceDir
+        })
+      }
+    };
+  }
+
   const COSMETICS_DATA = [
-    {
+    buildUniverseCatalog({
       id: "hell_king",
       labelKey: "shop.universe.hell_king",
-      categories: {
-        background: [
-          { id: "hell_bg_01", nameKey: "shop.cosmetics.hell.background_1", price: 400, img: "assets/img/backgrounds/hell_king_bg.webp", kind: "bg" },
-          { id: "hell_bg_02", nameKey: "shop.cosmetics.hell.background_2", price: 400, img: "assets/img/backgrounds/hell_king_bg.webp", kind: "bg" },
-          { id: "hell_bg_03", nameKey: "shop.cosmetics.hell.background_3", price: 400, img: "assets/img/backgrounds/hell_king_bg.webp", kind: "bg" },
-          { id: "hell_bg_04", nameKey: "shop.cosmetics.hell.background_4", price: 400, img: "assets/img/backgrounds/hell_king_bg.webp", kind: "bg" }
-        ],
-        message: [
-          { id: "hell_msg_01", nameKey: "shop.cosmetics.hell.message_1", price: 300, img: "assets/img/ui/hell_card.webp", kind: "ui" },
-          { id: "hell_msg_02", nameKey: "shop.cosmetics.hell.message_2", price: 300, img: "assets/img/ui/hell_card.webp", kind: "ui" },
-          { id: "hell_msg_03", nameKey: "shop.cosmetics.hell.message_3", price: 300, img: "assets/img/ui/hell_card.webp", kind: "ui" }
-        ],
-        choice: [
-          { id: "hell_choice_01", nameKey: "shop.cosmetics.hell.choice_1", price: 300, img: "assets/img/ui/hell_choice.webp", kind: "ui" },
-          { id: "hell_choice_02", nameKey: "shop.cosmetics.hell.choice_2", price: 300, img: "assets/img/ui/hell_choice.webp", kind: "ui" },
-          { id: "hell_choice_03", nameKey: "shop.cosmetics.hell.choice_3", price: 300, img: "assets/img/ui/hell_choice.webp", kind: "ui" }
-        ]
-      }
-    },
-    {
+      prefix: "hell",
+      keyNs: "hell",
+      bgDir: "assets/img/backgrounds",
+      uiDir: "assets/img/ui/hell",
+      bgCount: 6,
+      msgCount: 7,
+      choiceCount: 7,
+      bgPrice: 400,
+      uiPrice: 300
+    }),
+
+    buildUniverseCatalog({
       id: "heaven_king",
       labelKey: "shop.universe.heaven_king",
-      categories: {
-        background: [
-          { id: "heaven_bg_01", nameKey: "shop.cosmetics.heaven.background_1", price: 400, img: "assets/img/backgrounds/heaven_king_bg.png", kind: "bg" },
-          { id: "heaven_bg_02", nameKey: "shop.cosmetics.heaven.background_2", price: 400, img: "assets/img/backgrounds/heaven_king_bg.png", kind: "bg" },
-          { id: "heaven_bg_03", nameKey: "shop.cosmetics.heaven.background_3", price: 400, img: "assets/img/backgrounds/heaven_king_bg.png", kind: "bg" }
-        ],
-        message: [
-          { id: "heaven_msg_01", nameKey: "shop.cosmetics.heaven.message_1", price: 300, img: "assets/img/ui/heaven_card.webp", kind: "ui" },
-          { id: "heaven_msg_02", nameKey: "shop.cosmetics.heaven.message_2", price: 300, img: "assets/img/ui/heaven_card.webp", kind: "ui" },
-          { id: "heaven_msg_03", nameKey: "shop.cosmetics.heaven.message_3", price: 300, img: "assets/img/ui/heaven_card.webp", kind: "ui" }
-        ],
-        choice: [
-          { id: "heaven_choice_01", nameKey: "shop.cosmetics.heaven.choice_1", price: 300, img: "assets/img/ui/heaven_choice.webp", kind: "ui" },
-          { id: "heaven_choice_02", nameKey: "shop.cosmetics.heaven.choice_2", price: 300, img: "assets/img/ui/heaven_choice.webp", kind: "ui" },
-          { id: "heaven_choice_03", nameKey: "shop.cosmetics.heaven.choice_3", price: 300, img: "assets/img/ui/heaven_choice.webp", kind: "ui" }
-        ]
-      }
-    },
-    {
+      prefix: "heaven",
+      keyNs: "heaven",
+      bgDir: "assets/img/backgrounds",
+      uiDir: "assets/img/ui/heaven",
+      bgCount: 3,
+      msgCount: 5,
+      choiceCount: 5,
+      bgPrice: 400,
+      uiPrice: 300
+    }),
+
+    buildUniverseCatalog({
       id: "western_president",
       labelKey: "shop.universe.western_president",
-      categories: {
-        background: [
-          { id: "west_bg_01", nameKey: "shop.cosmetics.president.background_1", price: 400, img: "assets/img/backgrounds/western_president_bg.webp", kind: "bg" },
-          { id: "west_bg_02", nameKey: "shop.cosmetics.president.background_2", price: 400, img: "assets/img/backgrounds/western_president_bg.webp", kind: "bg" },
-          { id: "west_bg_03", nameKey: "shop.cosmetics.president.background_3", price: 400, img: "assets/img/backgrounds/western_president_bg.webp", kind: "bg" }
-        ],
-        message: [
-          { id: "west_msg_01", nameKey: "shop.cosmetics.president.message_1", price: 300, img: "assets/img/ui/western_card.webp", kind: "ui" },
-          { id: "west_msg_02", nameKey: "shop.cosmetics.president.message_2", price: 300, img: "assets/img/ui/western_card.webp", kind: "ui" },
-          { id: "west_msg_03", nameKey: "shop.cosmetics.president.message_3", price: 300, img: "assets/img/ui/western_card.webp", kind: "ui" }
-        ],
-        choice: [
-          { id: "west_choice_01", nameKey: "shop.cosmetics.president.choice_1", price: 300, img: "assets/img/ui/western_choice.webp", kind: "ui" },
-          { id: "west_choice_02", nameKey: "shop.cosmetics.president.choice_2", price: 300, img: "assets/img/ui/western_choice.webp", kind: "ui" },
-          { id: "west_choice_03", nameKey: "shop.cosmetics.president.choice_3", price: 300, img: "assets/img/ui/western_choice.webp", kind: "ui" }
-        ]
-      }
-    },
-    {
+      prefix: "west",
+      keyNs: "president",
+      bgDir: "assets/img/backgrounds",
+      uiDir: "assets/img/ui/west",
+      bgCount: 3,
+      msgCount: 3,
+      choiceCount: 3,
+      bgPrice: 400,
+      uiPrice: 300
+    }),
+
+    buildUniverseCatalog({
       id: "mega_corp_ceo",
       labelKey: "shop.universe.mega_corp_ceo",
-      categories: {
-        background: [
-          { id: "corp_bg_01", nameKey: "shop.cosmetics.ceo.background_1", price: 400, img: "assets/img/backgrounds/mega_corp_ceo_bg.webp", kind: "bg" },
-          { id: "corp_bg_02", nameKey: "shop.cosmetics.ceo.background_2", price: 400, img: "assets/img/backgrounds/mega_corp_ceo_bg.webp", kind: "bg" },
-          { id: "corp_bg_03", nameKey: "shop.cosmetics.ceo.background_3", price: 400, img: "assets/img/backgrounds/mega_corp_ceo_bg.webp", kind: "bg" }
-        ],
-        message: [
-          { id: "corp_msg_01", nameKey: "shop.cosmetics.ceo.message_1", price: 300, img: "assets/img/ui/corp_card.webp", kind: "ui" },
-          { id: "corp_msg_02", nameKey: "shop.cosmetics.ceo.message_2", price: 300, img: "assets/img/ui/corp_card.webp", kind: "ui" },
-          { id: "corp_msg_03", nameKey: "shop.cosmetics.ceo.message_3", price: 300, img: "assets/img/ui/corp_card.webp", kind: "ui" }
-        ],
-        choice: [
-          { id: "corp_choice_01", nameKey: "shop.cosmetics.ceo.choice_1", price: 300, img: "assets/img/ui/corp_choice.webp", kind: "ui" },
-          { id: "corp_choice_02", nameKey: "shop.cosmetics.ceo.choice_2", price: 300, img: "assets/img/ui/corp_choice.webp", kind: "ui" },
-          { id: "corp_choice_03", nameKey: "shop.cosmetics.ceo.choice_3", price: 300, img: "assets/img/ui/corp_choice.webp", kind: "ui" }
-        ]
-      }
-    },
-    {
+      prefix: "corp",
+      keyNs: "ceo",
+      bgDir: "assets/img/backgrounds",
+      uiDir: "assets/img/ui/corp",
+      bgCount: 3,
+      msgCount: 3,
+      choiceCount: 3,
+      bgPrice: 400,
+      uiPrice: 300
+    }),
+
+    buildUniverseCatalog({
       id: "new_world_explorer",
       labelKey: "shop.universe.new_world_explorer",
-      categories: {
-        background: [
-          { id: "explorer_bg_01", nameKey: "shop.cosmetics.explorer.background_1", price: 400, img: "assets/img/backgrounds/new_world_explorer_bg.webp", kind: "bg" },
-          { id: "explorer_bg_02", nameKey: "shop.cosmetics.explorer.background_2", price: 400, img: "assets/img/backgrounds/new_world_explorer_bg.webp", kind: "bg" },
-          { id: "explorer_bg_03", nameKey: "shop.cosmetics.explorer.background_3", price: 400, img: "assets/img/backgrounds/new_world_explorer_bg.webp", kind: "bg" }
-        ],
-        message: [
-          { id: "explorer_msg_01", nameKey: "shop.cosmetics.explorer.message_1", price: 300, img: "assets/img/ui/western_card.webp", kind: "ui" },
-          { id: "explorer_msg_02", nameKey: "shop.cosmetics.explorer.message_2", price: 300, img: "assets/img/ui/western_card.webp", kind: "ui" },
-          { id: "explorer_msg_03", nameKey: "shop.cosmetics.explorer.message_3", price: 300, img: "assets/img/ui/western_card.webp", kind: "ui" }
-        ],
-        choice: [
-          { id: "explorer_choice_01", nameKey: "shop.cosmetics.explorer.choice_1", price: 300, img: "assets/img/ui/western_choice.webp", kind: "ui" },
-          { id: "explorer_choice_02", nameKey: "shop.cosmetics.explorer.choice_2", price: 300, img: "assets/img/ui/western_choice.webp", kind: "ui" },
-          { id: "explorer_choice_03", nameKey: "shop.cosmetics.explorer.choice_3", price: 300, img: "assets/img/ui/western_choice.webp", kind: "ui" }
-        ]
-      }
-    },
-    {
+      prefix: "explorer",
+      keyNs: "explorer",
+      bgDir: "assets/img/backgrounds",
+      uiDir: "assets/img/ui/explorer",
+      bgCount: 3,
+      msgCount: 3,
+      choiceCount: 3,
+      bgPrice: 400,
+      uiPrice: 300
+    }),
+
+    buildUniverseCatalog({
       id: "vampire_lord",
       labelKey: "shop.universe.vampire_lord",
-      categories: {
-        background: [
-          { id: "vampire_bg_01", nameKey: "shop.cosmetics.vampire.background_1", price: 400, img: "assets/img/backgrounds/vampire_lord_bg.webp", kind: "bg" },
-          { id: "vampire_bg_02", nameKey: "shop.cosmetics.vampire.background_2", price: 400, img: "assets/img/backgrounds/vampire_lord_bg.webp", kind: "bg" },
-          { id: "vampire_bg_03", nameKey: "shop.cosmetics.vampire.background_3", price: 400, img: "assets/img/backgrounds/vampire_lord_bg.webp", kind: "bg" }
-        ],
-        message: [
-          { id: "vampire_msg_01", nameKey: "shop.cosmetics.vampire.message_1", price: 300, img: "assets/img/ui/hell_card.webp", kind: "ui" },
-          { id: "vampire_msg_02", nameKey: "shop.cosmetics.vampire.message_2", price: 300, img: "assets/img/ui/hell_card.webp", kind: "ui" },
-          { id: "vampire_msg_03", nameKey: "shop.cosmetics.vampire.message_3", price: 300, img: "assets/img/ui/hell_card.webp", kind: "ui" }
-        ],
-        choice: [
-          { id: "vampire_choice_01", nameKey: "shop.cosmetics.vampire.choice_1", price: 300, img: "assets/img/ui/hell_choice.webp", kind: "ui" },
-          { id: "vampire_choice_02", nameKey: "shop.cosmetics.vampire.choice_2", price: 300, img: "assets/img/ui/hell_choice.webp", kind: "ui" },
-          { id: "vampire_choice_03", nameKey: "shop.cosmetics.vampire.choice_3", price: 300, img: "assets/img/ui/hell_choice.webp", kind: "ui" }
-        ]
-      }
-    }
+      prefix: "vampire",
+      keyNs: "vampire",
+      bgDir: "assets/img/backgrounds",
+      uiDir: "assets/img/ui/vampire",
+      bgCount: 3,
+      msgCount: 3,
+      choiceCount: 3,
+      bgPrice: 400,
+      uiPrice: 300
+    })
   ];
 
   function t(key, fallback) {
@@ -152,11 +232,16 @@
   }
 
   function isShopPage() {
-    try { return document.body && document.body.getAttribute("data-page") === "shop"; }
-    catch { return false; }
+    try {
+      return document.body && document.body.getAttribute("data-page") === "shop";
+    } catch (_) {
+      return false;
+    }
   }
 
-  function $(id) { return document.getElementById(id); }
+  function $(id) {
+    return document.getElementById(id);
+  }
 
   function setStatus(id, text) {
     const el = $(id);
@@ -164,8 +249,102 @@
     el.textContent = text || "";
   }
 
+  function toSafeNumber(value) {
+    const n = Number(value);
+    return Number.isFinite(n) && n >= 0 ? Math.floor(n) : null;
+  }
+
+  function readStoredUserData() {
+    const keys = ["vuniverse_user_data", "vrealms_user_data"];
+
+    for (let i = 0; i < keys.length; i++) {
+      try {
+        const raw = localStorage.getItem(keys[i]);
+        if (!raw) continue;
+
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === "object") {
+          return parsed;
+        }
+      } catch (_) {}
+    }
+
+    return {};
+  }
+
+  function pickBalance(values) {
+    for (let i = 0; i < values.length; i++) {
+      const n = toSafeNumber(values[i]);
+      if (n !== null) return n;
+    }
+    return 0;
+  }
+
+  function getLiveBalances() {
+    const store = readStoredUserData();
+    const live = window.VUserData || {};
+    const liveData = typeof live.getData === "function" ? (live.getData() || {}) : {};
+
+    return {
+      vcoins: pickBalance([
+        typeof live.getVCoins === "function" ? live.getVCoins() : null,
+        typeof live.getBalance === "function" ? live.getBalance("vcoins") : null,
+        liveData.vcoins,
+        liveData.coins,
+        store.vcoins,
+        store.coins,
+        store.balance && store.balance.vcoins,
+        store.wallet && store.wallet.vcoins,
+        store.profile && store.profile.vcoins,
+        store.user && store.user.vcoins
+      ]),
+      jetons: pickBalance([
+        typeof live.getJetons === "function" ? live.getJetons() : null,
+        typeof live.getBalance === "function" ? live.getBalance("jetons") : null,
+        liveData.jetons,
+        liveData.tokens,
+        store.jetons,
+        store.tokens,
+        store.balance && store.balance.jetons,
+        store.wallet && store.wallet.jetons,
+        store.profile && store.profile.jetons,
+        store.user && store.user.jetons
+      ])
+    };
+  }
+
+  function renderTopBalances() {
+    const coinsEl = $("top-vcoins-balance");
+    const jetonsEl = $("top-jetons-balance");
+    if (!coinsEl && !jetonsEl) return;
+
+    const balances = getLiveBalances();
+
+    if (coinsEl) coinsEl.textContent = String(balances.vcoins);
+    if (jetonsEl) jetonsEl.textContent = String(balances.jetons);
+  }
+
+  function getLightboxGrayAsset(universeId, category) {
+    return LIGHTBOX_GRAY_ASSETS?.[universeId]?.[category] || "";
+  }
+
+  function buildLightboxPreviewAssets(universeId, category, src) {
+    return {
+      background: category === "background" ? src : getLightboxGrayAsset(universeId, "background"),
+      message: category === "message" ? src : getLightboxGrayAsset(universeId, "message"),
+      choice: category === "choice" ? src : getLightboxGrayAsset(universeId, "choice")
+    };
+  }
+
+  function normalizeCarouselIndex(index, total) {
+    if (!total) return 0;
+    const n = Number(index) || 0;
+    return ((n % total) + total) % total;
+  }
+
   function ensureStyles() {
     if (document.getElementById("vr-cosmetics-inline-style")) return;
+
     const style = document.createElement("style");
     style.id = "vr-cosmetics-inline-style";
     style.textContent = `
@@ -175,29 +354,309 @@
       .vr-universe-title{position:relative;z-index:1;text-align:center;font-weight:950;font-size:19px;line-height:1.1;color:rgba(255,255,255,.96);margin:0 0 12px;text-shadow:0 12px 24px rgba(0,0,0,.55)}
       .vr-cos-row{position:relative;z-index:1;margin:0 0 14px}
       .vr-cos-row:last-child{margin-bottom:0}
-      .vr-cos-subtitle{text-align:center;font-weight:900;font-size:13px;color:rgba(255,255,255,.92);margin:0 0 8px;letter-spacing:.15px}
       .vr-cos-carousel{display:grid;grid-template-columns:36px minmax(0,1fr) 36px;align-items:center;gap:8px}
       .vr-cos-arrow{width:36px;height:36px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);box-shadow:0 10px 18px rgba(0,0,0,.22);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:rgba(255,255,255,.96);font-size:18px;font-weight:900;line-height:1}
-      .vr-cos-arrow[disabled]{opacity:.42;cursor:default}
       .vr-cos-viewport{min-width:0;overflow:hidden;touch-action:pan-y}
       .vr-cos-track{display:flex;transition:transform .24s ease;will-change:transform}
       .vr-cos-slide{min-width:100%;width:100%;box-sizing:border-box}
-      .vr-cos-card{position:relative;overflow:hidden;border-radius:18px;height:132px;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.24);box-shadow:0 16px 28px rgba(0,0,0,.28)}
-      .vr-cos-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0;user-select:none;pointer-events:none}
-      .vr-cos-card.is-ui img{object-fit:contain;padding:14px;background:radial-gradient(circle at 50% 40%, rgba(255,255,255,.10), transparent 46%),linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.08))}
+      .vr-cos-card{position:relative;overflow:hidden;border-radius:18px;height:132px;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.24);box-shadow:0 16px 28px rgba(0,0,0,.28);cursor:pointer}
+      .vr-cos-card > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0;user-select:none;pointer-events:none}
+      .vr-cos-card.is-ui > img{object-fit:contain;padding:14px;background:radial-gradient(circle at 50% 40%, rgba(255,255,255,.10), transparent 46%),linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.08))}
       .vr-cos-overlay{position:absolute;inset:auto 0 0 0;z-index:2;padding:32px 10px 10px;background:linear-gradient(180deg, transparent, rgba(0,0,0,.78))}
-      .vr-cos-name{text-align:center;font-weight:900;font-size:13px;color:rgba(255,255,255,.96);line-height:1.15;margin-bottom:8px;text-shadow:0 8px 18px rgba(0,0,0,.45)}
-      .vr-cos-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}
-      .vr-cos-price{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.30);box-shadow:0 10px 18px rgba(0,0,0,.22);color:rgba(255,255,255,.96);font-weight:950;font-size:12px;line-height:1}
-      .vr-cos-price img{position:static;width:16px;height:16px;object-fit:contain;padding:0;background:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}
+      .vr-cos-bottom{display:flex;align-items:center;justify-content:flex-end;gap:8px}
       .vr-cos-count{color:rgba(255,255,255,.86);font-size:12px;font-weight:900;text-shadow:0 8px 18px rgba(0,0,0,.45)}
       .vr-cos-dots{display:flex;justify-content:center;gap:6px;margin-top:8px}
       .vr-cos-dot{width:7px;height:7px;border-radius:999px;background:rgba(255,255,255,.28);box-shadow:0 4px 10px rgba(0,0,0,.22)}
       .vr-cos-dot.active{background:rgba(255,255,255,.92)}
-      .vr-cos-action{width:100%;margin-top:8px;display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);color:#fff;font-weight:900;cursor:pointer}
+      .vr-cos-action{width:100%;margin-top:8px;display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);color:#fff;font-weight:900;cursor:pointer;position:relative;z-index:3}
+      .vr-cos-action-content{display:inline-flex;align-items:center;justify-content:center;gap:6px;line-height:1}
+      .vr-cos-action-ico{width:14px;height:14px;min-width:14px;min-height:14px;object-fit:contain;display:block;flex:0 0 auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}
       .vr-cos-action.is-owned{background:rgba(255,255,255,.10)}
       .vr-cos-action.is-equipped{background:rgba(138,197,95,.22);border-color:rgba(138,197,95,.55)}
-      .vr-cos-note{text-align:center;color:rgba(255,255,255,.84);font-size:12px;margin-top:6px}
+      .vr-cos-owned-mark{display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;font-weight:1000;color:#79f18b;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+
+      /* =========================
+         LIGHTBOX (PRO)
+      ========================== */
+      .vr-cos-lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:99999}
+      .vr-cos-lightbox.is-open{display:flex}
+      .vr-cos-lightbox-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.80);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+      .vr-cos-lightbox-close{
+        position:absolute;top:14px;right:14px;z-index:5;
+        width:44px;height:44px;border-radius:999px;
+        border:1px solid rgba(255,255,255,.18);
+        background:rgba(0,0,0,.26);
+        color:#fff;font-size:22px;font-weight:900;
+        display:inline-flex;align-items:center;justify-content:center;
+        cursor:pointer;
+        box-shadow:0 10px 22px rgba(0,0,0,.28);
+      }
+
+      .vr-cos-lightbox-shell{
+        position:relative;
+        z-index:2;
+        width:min(96vw,980px);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:18px;
+        padding:18px 12px 10px;
+        box-sizing:border-box;
+      }
+
+      /* ✅ flèches SANS ronds */
+      .vr-cos-lightbox-arrow{
+        appearance:none;border:none;background:transparent;
+        color:rgba(255,255,255,.92);
+        font-size:42px;
+        font-weight:900;
+        line-height:1;
+        padding:0 10px;
+        cursor:pointer;
+        text-shadow:0 10px 26px rgba(0,0,0,.55);
+        user-select:none;
+      }
+      .vr-cos-lightbox-arrow:active{transform:scale(.98)}
+      .vr-cos-lightbox-arrow:focus{outline:none}
+
+      /* ✅ viewport qui coupe vraiment -> plus de “collé” */
+      .vr-cos-lightbox-viewport{
+        width:min(92vw,460px);
+        overflow:hidden;
+        border-radius:26px;
+        box-shadow:0 26px 60px rgba(0,0,0,.55);
+      }
+
+      /* ✅ cadre 9:16 unique pour les 2 slides (harmonieux) */
+      .vr-cos-phone{
+        width:100%;
+        aspect-ratio:9/16;
+        position:relative;
+        overflow:hidden;
+        background:#0b1220;
+      }
+
+      .vr-cos-lightbox-track{
+        display:flex;
+        width:200%;
+        height:100%;
+        transform:translateX(0%);
+        transition:transform .28s ease;
+        will-change:transform;
+      }
+      .vr-cos-lightbox-slide{
+        width:50%;
+        height:100%;
+        flex:0 0 50%;
+      }
+
+      .vr-cos-slide-inner{
+        width:100%;
+        height:100%;
+        position:relative;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:12px;
+        box-sizing:border-box;
+      }
+
+      /* slide 1 : image seule mais dans le même cadre */
+      .vr-cos-hero-img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+        border-radius:18px;
+        box-shadow:0 18px 40px rgba(0,0,0,.45);
+        background:rgba(0,0,0,.08);
+      }
+
+      /* slide 2 : preview “game-like” */
+      .vr-prev-view{
+        position:absolute;
+        inset:0;
+        background-size:100% 100%;
+        background-position:center center;
+        background-repeat:no-repeat;
+      }
+      .vr-prev-shade{
+        position:absolute;inset:0;
+        background:linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.20));
+        pointer-events:none;
+      }
+
+      .vr-prev-top{
+        position:absolute;
+        top:10px;left:10px;right:10px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        z-index:4;
+      }
+      .vr-prev-ico-btn{
+        width:40px;height:40px;border-radius:999px;
+        border:1px solid rgba(255,255,255,.16);
+        background:rgba(0,0,0,.22);
+        box-shadow:0 10px 22px rgba(0,0,0,.22);
+        display:inline-flex;align-items:center;justify-content:center;
+      }
+      .vr-prev-ico-btn img{
+        width:26px;height:26px;object-fit:contain;display:block;
+        filter:drop-shadow(0 2px 8px rgba(0,0,0,.6));
+      }
+
+      .vr-prev-top-actions{
+        position:absolute;
+        top:58px;left:0;right:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:10px;
+        z-index:4;
+      }
+      .vr-prev-top-actions a{
+        width:40px;height:40px;border-radius:999px;
+        border:1px solid rgba(255,255,255,.16);
+        background:rgba(0,0,0,.20);
+        box-shadow:0 10px 22px rgba(0,0,0,.20);
+        display:inline-flex;align-items:center;justify-content:center;
+        text-decoration:none;
+      }
+      .vr-prev-top-actions img{
+        width:26px;height:26px;object-fit:contain;display:block;
+        filter:drop-shadow(0 2px 8px rgba(0,0,0,.6));
+      }
+
+      .vr-prev-hud{
+        position:absolute;
+        top:110px;left:12px;right:12px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:10px;
+        z-index:4;
+      }
+      .vr-prev-pill{
+        display:inline-flex;
+        align-items:center;
+        gap:6px;
+        padding:8px 10px;
+        border-radius:999px;
+        border:1px solid rgba(255,255,255,.16);
+        background:rgba(0,0,0,.22);
+        box-shadow:0 10px 22px rgba(0,0,0,.20);
+        color:rgba(255,255,255,.96);
+        font-weight:950;
+        font-size:12px;
+        line-height:1;
+        backdrop-filter:blur(10px);
+        -webkit-backdrop-filter:blur(10px);
+        min-width:82px;
+        justify-content:center;
+      }
+      .vr-prev-pill img{width:16px;height:16px;object-fit:contain;display:block}
+      .vr-prev-center{
+        min-width:0;
+        flex:1 1 auto;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:4px;
+        color:#fff;
+        text-shadow:0 8px 18px rgba(0,0,0,.45);
+        font-weight:950;
+        font-size:12px;
+      }
+      .vr-prev-center .nm{opacity:.95}
+      .vr-prev-center .yr{opacity:.85}
+
+      .vr-prev-gauges{
+        position:absolute;
+        top:160px;left:12px;right:12px;
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:6px;
+        z-index:4;
+      }
+      .vr-prev-g{
+        height:12px;
+        border-radius:999px;
+        border:1px solid rgba(255,255,255,.16);
+        background:rgba(0,0,0,.18);
+        overflow:hidden;
+        box-shadow:0 10px 18px rgba(0,0,0,.18);
+      }
+      .vr-prev-g::after{
+        content:"";
+        display:block;
+        height:100%;
+        width:60%;
+        background:linear-gradient(90deg, rgba(255,255,255,.20), rgba(255,255,255,.06));
+      }
+
+      .vr-prev-stack{
+        position:absolute;
+        left:12px;right:12px;
+        bottom:16px;
+        z-index:4;
+      }
+
+      .vr-prev-card{
+        width:100%;
+        height:150px;
+        border-radius:18px;
+        background-size:100% 100%;
+        background-position:center center;
+        background-repeat:no-repeat;
+        box-shadow:0 18px 34px rgba(0,0,0,.30);
+        border:1px solid rgba(255,255,255,.10);
+        background-color:rgba(0,0,0,.14);
+      }
+
+      .vr-prev-choices{
+        margin-top:10px;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+      }
+      .vr-prev-choice{
+        width:100%;
+        height:64px;
+        border-radius:16px;
+        background-size:100% 100%;
+        background-position:center center;
+        background-repeat:no-repeat;
+        box-shadow:0 14px 26px rgba(0,0,0,.22);
+        border:1px solid rgba(255,255,255,.10);
+        background-color:rgba(0,0,0,.14);
+      }
+
+      .vr-cos-lightbox-dots{
+        position:absolute;
+        bottom:14px;
+        left:0;right:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:8px;
+        z-index:6;
+        pointer-events:auto;
+      }
+      .vr-cos-lightbox-dot{
+        width:8px;height:8px;border-radius:999px;
+        background:rgba(255,255,255,.28);
+        box-shadow:0 4px 10px rgba(0,0,0,.22);
+        cursor:pointer;
+      }
+      .vr-cos-lightbox-dot.active{background:rgba(255,255,255,.92)}
+
+      body.vr-lightbox-open{overflow:hidden}
+
+      @media (max-width:420px){
+        .vr-cos-lightbox-arrow{font-size:36px}
+        .vr-cos-lightbox-shell{gap:10px}
+        .vr-cos-lightbox-close{width:40px;height:40px;font-size:20px}
+      }
     `;
     document.head.appendChild(style);
   }
@@ -207,91 +666,339 @@
     if (root) return root;
 
     const storeStatus = $("store-status");
-    const parent = storeStatus?.parentElement || $("view-shop") || document.body;
+    const parent = (storeStatus && storeStatus.parentElement) || $("view-shop") || document.body;
+
     root = document.createElement("div");
     root.id = "cosmetics-block";
     root.className = "vr-cosmetics";
     parent.appendChild(root);
+
     return root;
   }
 
+  function ensureLightboxRoot() {
+    let root = $("vr-cos-lightbox");
+    if (root) return root;
+
+    root = document.createElement("div");
+    root.id = "vr-cos-lightbox";
+    root.className = "vr-cos-lightbox";
+    root.setAttribute("aria-hidden", "true");
+
+    root.innerHTML = `
+      <div class="vr-cos-lightbox-backdrop" data-lightbox-close="1"></div>
+      <button class="vr-cos-lightbox-close" type="button" data-lightbox-close="1">×</button>
+
+      <div class="vr-cos-lightbox-shell">
+        <button class="vr-cos-lightbox-arrow" type="button" data-lightbox-nav="-1">‹</button>
+
+        <div class="vr-cos-lightbox-viewport">
+          <div class="vr-cos-phone">
+            <div class="vr-cos-lightbox-track">
+              <!-- SLIDE 0 -->
+              <div class="vr-cos-lightbox-slide">
+                <div class="vr-cos-slide-inner">
+                  <img class="vr-cos-hero-img" src="" alt="" draggable="false">
+                </div>
+              </div>
+
+              <!-- SLIDE 1 -->
+              <div class="vr-cos-lightbox-slide">
+                <div class="vr-cos-slide-inner">
+                  <div class="vr-prev-view"></div>
+                  <div class="vr-prev-shade"></div>
+
+                  <div class="vr-prev-top">
+                    <div class="vr-prev-ico-btn" aria-hidden="true">
+                      <img src="assets/img/ui/btn_home.webp" alt="" draggable="false">
+                    </div>
+                    <div class="vr-prev-ico-btn" aria-hidden="true">
+                      <img src="assets/img/ui/btn_customize.webp" alt="" draggable="false">
+                    </div>
+                  </div>
+
+                  <div class="vr-prev-top-actions" aria-hidden="true">
+                    <a href="javascript:void(0)">
+                      <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false">
+                    </a>
+                    <a href="javascript:void(0)">
+                      <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false">
+                    </a>
+                    <a href="javascript:void(0)">
+                      <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false">
+                    </a>
+                  </div>
+
+                  <div class="vr-prev-hud" aria-hidden="true">
+                    <div class="vr-prev-pill">
+                      <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
+                      <span>0</span>
+                    </div>
+
+                    <div class="vr-prev-center">
+                      <div class="nm">—</div>
+                      <div class="yr">0</div>
+                    </div>
+
+                    <div class="vr-prev-pill">
+                      <img src="assets/img/ui/jeton.webp" alt="" draggable="false">
+                      <span>0</span>
+                    </div>
+                  </div>
+
+                  <div class="vr-prev-gauges" aria-hidden="true">
+                    <div class="vr-prev-g"></div>
+                    <div class="vr-prev-g"></div>
+                    <div class="vr-prev-g"></div>
+                    <div class="vr-prev-g"></div>
+                  </div>
+
+                  <div class="vr-prev-stack" aria-hidden="true">
+                    <div class="vr-prev-card" id="vr-prev-card-main"></div>
+                    <div class="vr-prev-choices">
+                      <div class="vr-prev-choice"></div>
+                      <div class="vr-prev-choice"></div>
+                      <div class="vr-prev-choice"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /SLIDE 1 -->
+            </div>
+
+            <div class="vr-cos-lightbox-dots" aria-hidden="false">
+              <span class="vr-cos-lightbox-dot active" data-lightbox-dot="0"></span>
+              <span class="vr-cos-lightbox-dot" data-lightbox-dot="1"></span>
+            </div>
+          </div>
+        </div>
+
+        <button class="vr-cos-lightbox-arrow" type="button" data-lightbox-nav="1">›</button>
+      </div>
+    `;
+
+    document.body.appendChild(root);
+
+    root.addEventListener("click", function (e) {
+      const closeBtn = e.target && e.target.closest ? e.target.closest("[data-lightbox-close]") : null;
+      if (closeBtn) {
+        closeLightbox();
+        return;
+      }
+
+      const navBtn = e.target && e.target.closest ? e.target.closest("[data-lightbox-nav]") : null;
+      if (navBtn) {
+        const step = Number(navBtn.getAttribute("data-lightbox-nav") || 0);
+        updateLightboxSlide(_lightboxState.slideIndex + step);
+        return;
+      }
+
+      const dotBtn = e.target && e.target.closest ? e.target.closest("[data-lightbox-dot]") : null;
+      if (dotBtn) {
+        const idx = Number(dotBtn.getAttribute("data-lightbox-dot") || 0);
+        updateLightboxSlide(idx);
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (!_lightboxState.open) return;
+
+      if (e.key === "Escape") {
+        closeLightbox();
+        return;
+      }
+
+      if (e.key === "ArrowLeft") {
+        updateLightboxSlide(_lightboxState.slideIndex - 1);
+        return;
+      }
+
+      if (e.key === "ArrowRight") {
+        updateLightboxSlide(_lightboxState.slideIndex + 1);
+      }
+    });
+
+    return root;
+  }
+
+  function updateLightboxSlide(index) {
+    const root = $("vr-cos-lightbox");
+    if (!root) return;
+
+    const track = root.querySelector(".vr-cos-lightbox-track");
+    const dots = root.querySelectorAll(".vr-cos-lightbox-dot");
+    if (!track) return;
+
+    const safeIndex = normalizeCarouselIndex(index, 2);
+    _lightboxState.slideIndex = safeIndex;
+
+    // ✅ slide 0 => 0%, slide 1 => -50%
+    track.style.transform = "translateX(-" + (safeIndex * 50) + "%)";
+
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle("active", i === safeIndex);
+    });
+  }
+
+  function fillLightboxPreview(universeId, category, src) {
+    const root = $("vr-cos-lightbox");
+    if (!root) return;
+
+    const assets = buildLightboxPreviewAssets(universeId, category, src);
+
+    const bg = root.querySelector(".vr-prev-view");
+    const card = root.querySelector("#vr-prev-card-main");
+    const choices = root.querySelectorAll(".vr-prev-choice");
+
+    if (bg) bg.style.backgroundImage = assets.background ? `url("${assets.background}")` : "";
+    if (card) card.style.backgroundImage = assets.message ? `url("${assets.message}")` : "";
+
+    choices.forEach(function (el) {
+      el.style.backgroundImage = assets.choice ? `url("${assets.choice}")` : "";
+    });
+  }
+
+  function openLightbox(opts) {
+    const root = ensureLightboxRoot();
+    if (!root || !opts?.src) return;
+
+    const heroImg = root.querySelector(".vr-cos-hero-img");
+    if (!heroImg) return;
+
+    _lightboxState.open = true;
+    _lightboxState.src = String(opts.src || "");
+    _lightboxState.universeId = String(opts.universeId || "");
+    _lightboxState.category = String(opts.category || "");
+    _lightboxState.itemId = String(opts.itemId || "");
+    _lightboxState.slideIndex = 0;
+
+    heroImg.src = _lightboxState.src;
+
+    fillLightboxPreview(_lightboxState.universeId, _lightboxState.category, _lightboxState.src);
+    updateLightboxSlide(0);
+
+    root.classList.add("is-open");
+    root.setAttribute("aria-hidden", "false");
+    document.body.classList.add("vr-lightbox-open");
+  }
+
+  function closeLightbox() {
+    const root = $("vr-cos-lightbox");
+    if (!root) return;
+
+    const heroImg = root.querySelector(".vr-cos-hero-img");
+    if (heroImg) heroImg.src = "";
+
+    _lightboxState.open = false;
+    _lightboxState.src = "";
+    _lightboxState.universeId = "";
+    _lightboxState.category = "";
+    _lightboxState.itemId = "";
+    _lightboxState.slideIndex = 0;
+
+    root.classList.remove("is-open");
+    root.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("vr-lightbox-open");
+  }
+
   function getUniverse(universeId) {
-    return COSMETICS_DATA.find((u) => u.id === universeId) || null;
+    return COSMETICS_DATA.find(function (u) {
+      return u.id === universeId;
+    }) || null;
   }
 
   function getItem(universeId, category, itemId) {
     const universe = getUniverse(universeId);
-    const items = universe?.categories?.[category] || [];
-    return items.find((item) => item.id === itemId) || null;
+    const items = (universe && universe.categories && universe.categories[category]) || [];
+
+    return items.find(function (item) {
+      return item.id === itemId;
+    }) || null;
   }
 
   window.VRCosmeticsCatalog = {
-    CATEGORY_KEYS,
+    CATEGORY_KEYS: CATEGORY_KEYS,
     DATA: COSMETICS_DATA,
-    getUniverse,
-    getItem
+    getUniverse: getUniverse,
+    getItem: getItem
   };
 
   function updateCarousel(row, index) {
     if (!row) return;
+
     const track = row.querySelector(".vr-cos-track");
     const slides = row.querySelectorAll(".vr-cos-slide");
     const dots = row.querySelectorAll(".vr-cos-dot");
     const prev = row.querySelector(".vr-cos-prev");
     const next = row.querySelector(".vr-cos-next");
     const total = slides.length;
+
     if (!track || !total) return;
 
-    let safeIndex = Number(index) || 0;
-    if (safeIndex < 0) safeIndex = 0;
-    if (safeIndex > total - 1) safeIndex = total - 1;
+    const safeIndex = normalizeCarouselIndex(index, total);
 
     row.dataset.index = String(safeIndex);
-    track.style.transform = `translateX(-${safeIndex * 100}%)`;
+    track.style.transform = "translateX(-" + (safeIndex * 100) + "%)";
 
-    dots.forEach((dot, i) => dot.classList.toggle("active", i === safeIndex));
-    if (prev) prev.disabled = safeIndex <= 0;
-    if (next) next.disabled = safeIndex >= total - 1;
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle("active", i === safeIndex);
+    });
+
+    if (prev) prev.disabled = false;
+    if (next) next.disabled = false;
   }
 
   function wireCarousels(root) {
-    root.querySelectorAll(".vr-cos-row").forEach((row) => {
+    root.querySelectorAll(".vr-cos-row").forEach(function (row) {
       updateCarousel(row, Number(row.dataset.index || 0));
 
       const prev = row.querySelector(".vr-cos-prev");
       const next = row.querySelector(".vr-cos-next");
       const viewport = row.querySelector(".vr-cos-viewport");
 
-      if (prev) prev.onclick = () => updateCarousel(row, Number(row.dataset.index || 0) - 1);
-      if (next) next.onclick = () => updateCarousel(row, Number(row.dataset.index || 0) + 1);
+      if (prev) {
+        prev.onclick = function () {
+          updateCarousel(row, Number(row.dataset.index || 0) - 1);
+        };
+      }
+
+      if (next) {
+        next.onclick = function () {
+          updateCarousel(row, Number(row.dataset.index || 0) + 1);
+        };
+      }
 
       if (viewport) {
         let startX = 0;
         let endX = 0;
         let touching = false;
 
-        viewport.addEventListener("touchstart", (e) => {
+        viewport.addEventListener("touchstart", function (e) {
           const t0 = e.changedTouches && e.changedTouches[0];
           if (!t0) return;
+
           touching = true;
           startX = t0.clientX;
           endX = t0.clientX;
         }, { passive: true });
 
-        viewport.addEventListener("touchmove", (e) => {
+        viewport.addEventListener("touchmove", function (e) {
           const t0 = e.changedTouches && e.changedTouches[0];
           if (!t0 || !touching) return;
           endX = t0.clientX;
         }, { passive: true });
 
-        viewport.addEventListener("touchend", () => {
+        viewport.addEventListener("touchend", function () {
           if (!touching) return;
+
           const delta = endX - startX;
           const current = Number(row.dataset.index || 0);
+
           if (Math.abs(delta) > 35) {
             if (delta < 0) updateCarousel(row, current + 1);
             else updateCarousel(row, current - 1);
           }
+
           touching = false;
           startX = 0;
           endX = 0;
@@ -304,30 +1011,32 @@
     const universeId = String(item.universeId || "").trim();
     const category = String(item.category || "").trim();
     const itemId = String(item.id || "").trim();
+
     const owned = !!window.VUserData?.isCosmeticOwned?.(universeId, category, itemId);
     const equippedId = String(window.VUserData?.getEquippedCosmetic?.(universeId, category) || "");
     const equipped = owned && equippedId === itemId;
 
     if (equipped) {
       return {
-        owned,
-        equipped,
-        text: t("common.equipped", "Équipé"),
+        html: `<span class="vr-cos-owned-mark">V</span>`,
         className: "vr-cos-action is-equipped"
       };
     }
+
     if (owned) {
       return {
-        owned,
-        equipped,
-        text: t("common.use", "Équiper"),
+        html: `<span class="vr-cos-owned-mark">V</span>`,
         className: "vr-cos-action is-owned"
       };
     }
+
     return {
-      owned,
-      equipped,
-      text: `${t("common.buy", "Acheter")} · ${item.price}`,
+      html:
+        `<span class="vr-cos-action-content">` +
+          `<span>${t("common.buy", "Acheter")}</span>` +
+          `<img class="vr-cos-action-ico" src="assets/img/ui/vcoins.webp" alt="" draggable="false">` +
+          `<span>${item.price}</span>` +
+        `</span>`,
       className: "vr-cos-action"
     };
   }
@@ -336,69 +1045,75 @@
     const root = ensureCosmeticsRoot();
     if (!root) return;
 
-    root.innerHTML = COSMETICS_DATA.map((universe) => `
-      <section class="vr-universe-block" data-universe="${universe.id}">
-        <h4 class="vr-universe-title">${t(universe.labelKey, universe.id)}</h4>
+    root.innerHTML = COSMETICS_DATA.map(function (universe) {
+      return `
+        <section class="vr-universe-block" data-universe="${universe.id}">
+          <h4 class="vr-universe-title">${t(universe.labelKey, universe.id)}</h4>
 
-        ${["background", "message", "choice"].map((category) => {
-          const items = (universe.categories[category] || []).map((it) => ({
-            ...it,
-            universeId: universe.id,
-            category
-          }));
+          ${["background", "message", "choice"].map(function (category) {
+            const items = (universe.categories[category] || []).map(function (it) {
+              return Object.assign({}, it, {
+                universeId: universe.id,
+                category: category
+              });
+            });
 
-          return `
-            <div class="vr-cos-row" data-category="${category}" data-index="0">
-              <div class="vr-cos-subtitle">${t(CATEGORY_KEYS[category], category)}</div>
+            return `
+              <div class="vr-cos-row" data-category="${category}" data-index="0">
+                <div class="vr-cos-carousel">
+                  <button class="vr-cos-arrow vr-cos-prev" type="button" aria-label="${t("shop.carousel.prev", "Précédent")}">‹</button>
 
-              <div class="vr-cos-carousel">
-                <button class="vr-cos-arrow vr-cos-prev" type="button" aria-label="${t("shop.carousel.prev", "Précédent")}">‹</button>
+                  <div class="vr-cos-viewport">
+                    <div class="vr-cos-track">
+                      ${items.map(function (item, index) {
+                        const action = getActionMeta(item);
 
-                <div class="vr-cos-viewport">
-                  <div class="vr-cos-track">
-                    ${items.map((item, index) => {
-                      const action = getActionMeta(item);
-                      return `
-                        <div class="vr-cos-slide" data-index="${index}">
-                          <div class="vr-cos-card ${item.kind === "ui" ? "is-ui" : ""}" data-item="${item.id}">
-                            <img src="${item.img}" alt="" draggable="false">
-                            <div class="vr-cos-overlay">
-                              <div class="vr-cos-name">${t(item.nameKey, item.id)}</div>
-                              <div class="vr-cos-bottom">
-                                <div class="vr-cos-price">
-                                  <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
-                                  <span>${item.price}</span>
+                        return `
+                          <div class="vr-cos-slide" data-index="${index}">
+                            <div
+                              class="vr-cos-card ${item.kind === "ui" ? "is-ui" : ""}"
+                              data-item="${item.id}"
+                              data-lightbox-src="${item.img}"
+                              data-lightbox-universe="${item.universeId}"
+                              data-lightbox-category="${item.category}"
+                              data-lightbox-item-id="${item.id}"
+                            >
+                              <img src="${item.img}" alt="" draggable="false">
+                              <div class="vr-cos-overlay">
+                                <div class="vr-cos-bottom">
+                                  <div class="vr-cos-count">${index + 1} / ${items.length}</div>
                                 </div>
-                                <div class="vr-cos-count">${index + 1} / ${items.length}</div>
+                                <button
+                                  class="${action.className}"
+                                  type="button"
+                                  data-cosmetic-action="1"
+                                  data-universe="${item.universeId}"
+                                  data-category="${item.category}"
+                                  data-item-id="${item.id}"
+                                  data-price="${item.price}"
+                                >${action.html}</button>
                               </div>
-                              <button
-                                class="${action.className}"
-                                type="button"
-                                data-cosmetic-action="1"
-                                data-universe="${item.universeId}"
-                                data-category="${item.category}"
-                                data-item-id="${item.id}"
-                                data-price="${item.price}"
-                              >${action.text}</button>
                             </div>
                           </div>
-                        </div>
-                      `;
-                    }).join("")}
+                        `;
+                      }).join("")}
+                    </div>
                   </div>
+
+                  <button class="vr-cos-arrow vr-cos-next" type="button" aria-label="${t("shop.carousel.next", "Suivant")}">›</button>
                 </div>
 
-                <button class="vr-cos-arrow vr-cos-next" type="button" aria-label="${t("shop.carousel.next", "Suivant")}">›</button>
+                <div class="vr-cos-dots">
+                  ${items.map(function (_, index) {
+                    return `<span class="vr-cos-dot${index === 0 ? " active" : ""}"></span>`;
+                  }).join("")}
+                </div>
               </div>
-
-              <div class="vr-cos-dots">
-                ${items.map((_, index) => `<span class="vr-cos-dot${index === 0 ? " active" : ""}"></span>`).join("")}
-              </div>
-            </div>
-          `;
-        }).join("")}
-      </section>
-    `).join("");
+            `;
+          }).join("")}
+        </section>
+      `;
+    }).join("");
 
     wireCarousels(root);
   }
@@ -417,12 +1132,13 @@
       const owned = !!window.VUserData?.isCosmeticOwned?.(universeId, category, itemId);
 
       let res = null;
+
       if (!owned) {
         res = await window.VUserData?.buyCosmetic?.({
-          universeId,
-          category,
-          itemId,
-          price
+          universeId: universeId,
+          category: category,
+          itemId: itemId,
+          price: price
         }, { autoEquip: true });
       } else {
         res = await window.VUserData?.equipCosmetic?.(universeId, category, itemId);
@@ -440,6 +1156,7 @@
         setStatus("store-status", "");
       }
 
+      renderTopBalances();
       renderCosmetics();
     } catch (_) {
       setStatus("store-status", t("common.error_generic", "Erreur"));
@@ -456,12 +1173,14 @@
     try { await window.VUserData?.refresh?.(); } catch (_) {}
 
     ensureStyles();
+    ensureLightboxRoot();
 
     const back = $("btn-back");
     const profile = $("btn-profile");
 
     if (back) {
-      back.addEventListener("click", () => {
+      back.addEventListener("click", function (e) {
+        e.preventDefault();
         try {
           const ref = document.referrer || "";
           if (ref && ref.includes(location.origin)) history.back();
@@ -473,25 +1192,66 @@
     }
 
     if (profile) {
-      profile.addEventListener("click", () => {
+      profile.addEventListener("click", function (e) {
+        e.preventDefault();
         location.href = "profile.html";
       });
     }
 
     setStatus("shop-status", "");
     setStatus("store-status", "");
+    renderTopBalances();
     renderCosmetics();
 
-    document.addEventListener("click", async (e) => {
-      const btn = e.target && e.target.closest ? e.target.closest("[data-cosmetic-action]") : null;
-      if (!btn) return;
-      await handleCosmeticAction(btn);
+    document.addEventListener("click", async function (e) {
+      const actionBtn = e.target && e.target.closest ? e.target.closest("[data-cosmetic-action]") : null;
+      if (actionBtn) {
+        await handleCosmeticAction(actionBtn);
+        renderTopBalances();
+        return;
+      }
+
+      const lightboxCard = e.target && e.target.closest ? e.target.closest(".vr-cos-card[data-lightbox-src]") : null;
+      if (lightboxCard) {
+        const src = String(lightboxCard.getAttribute("data-lightbox-src") || "").trim();
+        const universeId = String(lightboxCard.getAttribute("data-lightbox-universe") || "").trim();
+        const category = String(lightboxCard.getAttribute("data-lightbox-category") || "").trim();
+        const itemId = String(lightboxCard.getAttribute("data-lightbox-item-id") || "").trim();
+
+        if (src) {
+          openLightbox({
+            src: src,
+            universeId: universeId,
+            category: category,
+            itemId: itemId
+          });
+        }
+      }
     });
 
-    window.addEventListener("vr:profile", () => {
+    window.addEventListener("vr:profile", function () {
       if (!isShopPage()) return;
+      renderTopBalances();
       renderCosmetics();
     });
+
+    window.addEventListener("focus", function () {
+      renderTopBalances();
+    });
+
+    window.addEventListener("storage", function () {
+      renderTopBalances();
+    });
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) return;
+      renderTopBalances();
+    });
+
+    setInterval(function () {
+      if (!isShopPage()) return;
+      renderTopBalances();
+    }, 800);
   }
 
   document.addEventListener("DOMContentLoaded", boot);
