@@ -1,8 +1,7 @@
 // VUniverse — shop.js
-// ✅ Boutique rewarded / store via purchases.js
-// ✅ Boutique cosmétiques branchée sur VUserData (achat + équipement)
-// ✅ Catalogue aussi disponible dans game.html pour la popup de personnalisation
-// ✅ Tous les univers utilisent maintenant la même structure de chemins
+// Boutique rewarded / store via purchases.js
+// Boutique cosmétiques branchée sur VUserData
+// Popup personnalisation aussi exploitable depuis game.html
 
 (function () {
   "use strict";
@@ -11,6 +10,11 @@
     background: "shop.cosmetics.background",
     message: "shop.cosmetics.message",
     choice: "shop.cosmetics.choice"
+  };
+
+  const _lightboxState = {
+    open: false,
+    src: ""
   };
 
   function pad2(n) {
@@ -293,29 +297,37 @@
       .vr-universe-title{position:relative;z-index:1;text-align:center;font-weight:950;font-size:19px;line-height:1.1;color:rgba(255,255,255,.96);margin:0 0 12px;text-shadow:0 12px 24px rgba(0,0,0,.55)}
       .vr-cos-row{position:relative;z-index:1;margin:0 0 14px}
       .vr-cos-row:last-child{margin-bottom:0}
-      .vr-cos-subtitle{text-align:center;font-weight:900;font-size:13px;color:rgba(255,255,255,.92);margin:0 0 8px;letter-spacing:.15px}
       .vr-cos-carousel{display:grid;grid-template-columns:36px minmax(0,1fr) 36px;align-items:center;gap:8px}
       .vr-cos-arrow{width:36px;height:36px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);box-shadow:0 10px 18px rgba(0,0,0,.22);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:rgba(255,255,255,.96);font-size:18px;font-weight:900;line-height:1}
-      .vr-cos-arrow[disabled]{opacity:.42;cursor:default}
       .vr-cos-viewport{min-width:0;overflow:hidden;touch-action:pan-y}
       .vr-cos-track{display:flex;transition:transform .24s ease;will-change:transform}
       .vr-cos-slide{min-width:100%;width:100%;box-sizing:border-box}
-      .vr-cos-card{position:relative;overflow:hidden;border-radius:18px;height:132px;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.24);box-shadow:0 16px 28px rgba(0,0,0,.28)}
+      .vr-cos-card{position:relative;overflow:hidden;border-radius:18px;height:132px;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.24);box-shadow:0 16px 28px rgba(0,0,0,.28);cursor:pointer}
       .vr-cos-card > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0;user-select:none;pointer-events:none}
       .vr-cos-card.is-ui > img{object-fit:contain;padding:14px;background:radial-gradient(circle at 50% 40%, rgba(255,255,255,.10), transparent 46%),linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.08))}
       .vr-cos-overlay{position:absolute;inset:auto 0 0 0;z-index:2;padding:32px 10px 10px;background:linear-gradient(180deg, transparent, rgba(0,0,0,.78))}
-      .vr-cos-name{text-align:center;font-weight:900;font-size:13px;color:rgba(255,255,255,.96);line-height:1.15;margin-bottom:8px;text-shadow:0 8px 18px rgba(0,0,0,.45)}
       .vr-cos-bottom{display:flex;align-items:center;justify-content:flex-end;gap:8px}
       .vr-cos-count{color:rgba(255,255,255,.86);font-size:12px;font-weight:900;text-shadow:0 8px 18px rgba(0,0,0,.45)}
       .vr-cos-dots{display:flex;justify-content:center;gap:6px;margin-top:8px}
       .vr-cos-dot{width:7px;height:7px;border-radius:999px;background:rgba(255,255,255,.28);box-shadow:0 4px 10px rgba(0,0,0,.22)}
       .vr-cos-dot.active{background:rgba(255,255,255,.92)}
-      .vr-cos-action{width:100%;margin-top:8px;display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);color:#fff;font-weight:900;cursor:pointer}
-      .vr-cos-action-content{display:inline-flex;align-items:center;justify-content:center;gap:8px;line-height:1}
-      .vr-cos-action-ico{width:16px;height:16px;object-fit:contain;display:block;flex:0 0 auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}
+      .vr-cos-action{width:100%;margin-top:8px;display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);color:#fff;font-weight:900;cursor:pointer;position:relative;z-index:3}
+      .vr-cos-action-content{display:inline-flex;align-items:center;justify-content:center;gap:6px;line-height:1}
+      .vr-cos-action-ico{width:14px;height:14px;min-width:14px;min-height:14px;object-fit:contain;display:block;flex:0 0 auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}
       .vr-cos-action.is-owned{background:rgba(255,255,255,.10)}
       .vr-cos-action.is-equipped{background:rgba(138,197,95,.22);border-color:rgba(138,197,95,.55)}
-      .vr-cos-note{text-align:center;color:rgba(255,255,255,.84);font-size:12px;margin-top:6px}
+      .vr-cos-owned-mark{display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;font-weight:1000;color:#79f18b;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+      .vr-cos-lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:99999}
+      .vr-cos-lightbox.is-open{display:flex}
+      .vr-cos-lightbox-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+      .vr-cos-lightbox-panel{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;max-width:min(92vw,760px);max-height:86vh;padding:12px}
+      .vr-cos-lightbox-img{display:block;max-width:100%;max-height:82vh;object-fit:contain;border-radius:18px;box-shadow:0 22px 48px rgba(0,0,0,.45)}
+      .vr-cos-lightbox-close{position:absolute;top:12px;right:12px;z-index:3;width:42px;height:42px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.32);color:#fff;font-size:24px;line-height:1;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 22px rgba(0,0,0,.22)}
+      body.vr-lightbox-open{overflow:hidden}
+      @media (max-width:390px){
+        .vr-cos-action-ico{width:13px;height:13px;min-width:13px;min-height:13px}
+        .vr-cos-owned-mark{font-size:18px}
+      }
     `;
     document.head.appendChild(style);
   }
@@ -333,6 +345,64 @@
     parent.appendChild(root);
 
     return root;
+  }
+
+  function ensureLightboxRoot() {
+    let root = $("vr-cos-lightbox");
+    if (root) return root;
+
+    root = document.createElement("div");
+    root.id = "vr-cos-lightbox";
+    root.className = "vr-cos-lightbox";
+    root.setAttribute("aria-hidden", "true");
+    root.innerHTML = `
+      <div class="vr-cos-lightbox-backdrop" data-lightbox-close="1"></div>
+      <button class="vr-cos-lightbox-close" type="button" data-lightbox-close="1">×</button>
+      <div class="vr-cos-lightbox-panel">
+        <img class="vr-cos-lightbox-img" src="" alt="" draggable="false">
+      </div>
+    `;
+    document.body.appendChild(root);
+
+    root.addEventListener("click", function (e) {
+      const closeBtn = e.target && e.target.closest ? e.target.closest("[data-lightbox-close]") : null;
+      if (closeBtn) closeLightbox();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeLightbox();
+    });
+
+    return root;
+  }
+
+  function openLightbox(src) {
+    const root = ensureLightboxRoot();
+    const img = root.querySelector(".vr-cos-lightbox-img");
+    if (!root || !img || !src) return;
+
+    _lightboxState.open = true;
+    _lightboxState.src = src;
+
+    img.src = src;
+    root.classList.add("is-open");
+    root.setAttribute("aria-hidden", "false");
+    document.body.classList.add("vr-lightbox-open");
+  }
+
+  function closeLightbox() {
+    const root = $("vr-cos-lightbox");
+    const img = root ? root.querySelector(".vr-cos-lightbox-img") : null;
+
+    _lightboxState.open = false;
+    _lightboxState.src = "";
+
+    if (img) img.src = "";
+    if (root) {
+      root.classList.remove("is-open");
+      root.setAttribute("aria-hidden", "true");
+    }
+    document.body.classList.remove("vr-lightbox-open");
   }
 
   function getUniverse(universeId) {
@@ -357,6 +427,12 @@
     getItem: getItem
   };
 
+  function normalizeCarouselIndex(index, total) {
+    if (!total) return 0;
+    const n = Number(index) || 0;
+    return ((n % total) + total) % total;
+  }
+
   function updateCarousel(row, index) {
     if (!row) return;
 
@@ -369,9 +445,7 @@
 
     if (!track || !total) return;
 
-    let safeIndex = Number(index) || 0;
-    if (safeIndex < 0) safeIndex = 0;
-    if (safeIndex > total - 1) safeIndex = total - 1;
+    const safeIndex = normalizeCarouselIndex(index, total);
 
     row.dataset.index = String(safeIndex);
     track.style.transform = "translateX(-" + (safeIndex * 100) + "%)";
@@ -380,8 +454,8 @@
       dot.classList.toggle("active", i === safeIndex);
     });
 
-    if (prev) prev.disabled = safeIndex <= 0;
-    if (next) next.disabled = safeIndex >= total - 1;
+    if (prev) prev.disabled = false;
+    if (next) next.disabled = false;
   }
 
   function wireCarousels(root) {
@@ -456,7 +530,7 @@
       return {
         owned: owned,
         equipped: equipped,
-        html: `<span class="vr-cos-action-content">${t("common.equipped", "Équipé")}</span>`,
+        html: `<span class="vr-cos-owned-mark">V</span>`,
         className: "vr-cos-action is-equipped"
       };
     }
@@ -465,7 +539,7 @@
       return {
         owned: owned,
         equipped: equipped,
-        html: `<span class="vr-cos-action-content">${t("common.use", "Équiper")}</span>`,
+        html: `<span class="vr-cos-owned-mark">V</span>`,
         className: "vr-cos-action is-owned"
       };
     }
@@ -502,8 +576,6 @@
 
             return `
               <div class="vr-cos-row" data-category="${category}" data-index="0">
-                <div class="vr-cos-subtitle">${t(CATEGORY_KEYS[category], category)}</div>
-
                 <div class="vr-cos-carousel">
                   <button class="vr-cos-arrow vr-cos-prev" type="button" aria-label="${t("shop.carousel.prev", "Précédent")}">‹</button>
 
@@ -514,10 +586,13 @@
 
                         return `
                           <div class="vr-cos-slide" data-index="${index}">
-                            <div class="vr-cos-card ${item.kind === "ui" ? "is-ui" : ""}" data-item="${item.id}">
+                            <div
+                              class="vr-cos-card ${item.kind === "ui" ? "is-ui" : ""}"
+                              data-item="${item.id}"
+                              data-lightbox-src="${item.img}"
+                            >
                               <img src="${item.img}" alt="" draggable="false">
                               <div class="vr-cos-overlay">
-                                <div class="vr-cos-name">${t(item.nameKey, item.id)}</div>
                                 <div class="vr-cos-bottom">
                                   <div class="vr-cos-count">${index + 1} / ${items.length}</div>
                                 </div>
@@ -611,6 +686,7 @@
     try { await window.VUserData?.refresh?.(); } catch (_) {}
 
     ensureStyles();
+    ensureLightboxRoot();
 
     const back = $("btn-back");
     const profile = $("btn-profile");
@@ -641,10 +717,18 @@
     renderCosmetics();
 
     document.addEventListener("click", async function (e) {
-      const btn = e.target && e.target.closest ? e.target.closest("[data-cosmetic-action]") : null;
-      if (!btn) return;
-      await handleCosmeticAction(btn);
-      renderTopBalances();
+      const actionBtn = e.target && e.target.closest ? e.target.closest("[data-cosmetic-action]") : null;
+      if (actionBtn) {
+        await handleCosmeticAction(actionBtn);
+        renderTopBalances();
+        return;
+      }
+
+      const lightboxCard = e.target && e.target.closest ? e.target.closest(".vr-cos-card[data-lightbox-src]") : null;
+      if (lightboxCard) {
+        const src = String(lightboxCard.getAttribute("data-lightbox-src") || "").trim();
+        if (src) openLightbox(src);
+      }
     });
 
     window.addEventListener("vr:profile", function () {
