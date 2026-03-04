@@ -319,7 +319,8 @@
       .vr-cos-row{position:relative;z-index:1;margin:0 0 14px}
       .vr-cos-row:last-child{margin-bottom:0}
       .vr-cos-carousel{display:grid;grid-template-columns:36px minmax(0,1fr) 36px;align-items:center;gap:8px}
-      .vr-cos-arrow{width:36px;height:36px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);box-shadow:0 10px 18px rgba(0,0,0,.22);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:rgba(255,255,255,.96);font-size:18px;font-weight:900;line-height:1}
+      /* ✅ flèches shop sans ronds */
+      .vr-cos-arrow{width:36px;height:36px;border:none;background:transparent;box-shadow:none;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:rgba(255,255,255,.96);font-size:28px;font-weight:900;line-height:1;text-shadow:0 10px 22px rgba(0,0,0,.45)}
       .vr-cos-viewport{min-width:0;overflow:hidden;touch-action:pan-y}
       .vr-cos-track{display:flex;transition:transform .24s ease;will-change:transform}
       .vr-cos-slide{min-width:100%;width:100%;box-sizing:border-box}
@@ -358,7 +359,6 @@
         gap:18px;padding:18px 12px 10px;box-sizing:border-box
       }
 
-      /* flèches simples, sans ronds */
       .vr-cos-lightbox-arrow{
         appearance:none;border:none;background:transparent;
         color:rgba(255,255,255,.92);font-size:42px;font-weight:900;line-height:1;
@@ -900,16 +900,11 @@
     const back = $("btn-back");
     const profile = $("btn-profile");
 
+    /* ✅ FIX: retour shop -> index toujours */
     if (back) {
       back.addEventListener("click", function (e) {
         e.preventDefault();
-        try {
-          const ref = document.referrer || "";
-          if (ref && ref.includes(location.origin)) history.back();
-          else location.href = "index.html";
-        } catch (_) {
-          location.href = "index.html";
-        }
+        location.href = "index.html";
       });
     }
 

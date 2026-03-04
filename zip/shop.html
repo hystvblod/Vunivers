@@ -34,20 +34,20 @@
       display:block !important;
     }
 
-  .vr-top-actions{
-  width:100%;
-  display:grid;
-  grid-template-columns: 44px minmax(0,1fr) 44px;
-  align-items:center;
-  gap:12px;
-  padding: calc(8px + env(safe-area-inset-top)) 12px 6px;
-}
+    .vr-top-actions{
+      width:100%;
+      display:grid;
+      grid-template-columns: 44px minmax(0,1fr) 44px;
+      align-items:center;
+      gap:12px;
+      padding: calc(8px + env(safe-area-inset-top)) 12px 6px;
+    }
 
-.vr-top-slot{
-  display:flex;
-  align-items:center;
-  min-width:0;
-}
+    .vr-top-slot{
+      display:flex;
+      align-items:center;
+      min-width:0;
+    }
 
     .vr-top-left{ justify-content:flex-start; }
     .vr-top-center{ justify-content:center; }
@@ -330,23 +330,25 @@
       gap: 8px;
     }
 
+    /* ✅ flèches SANS encadré rond */
     .vr-cos-arrow{
       width: var(--cos-arrow);
       height: var(--cos-arrow);
-      border-radius:999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.22);
-      box-shadow: 0 10px 18px rgba(0,0,0,.22);
+      border:none;
+      background: transparent;
+      box-shadow:none;
+      border-radius:0;
       display:flex;
       align-items:center;
       justify-content:center;
       cursor:pointer;
       padding:0;
       color: rgba(255,255,255,.96);
-      font-size: 18px;
+      font-size: 28px;
       font-weight: 900;
       line-height:1;
       user-select:none;
+      text-shadow: 0 10px 22px rgba(0,0,0,.45);
       -webkit-tap-highlight-color: transparent;
     }
 
@@ -590,7 +592,11 @@
               <img class="vr-shop-icon" src="assets/img/ui/jeton.webp" alt="" draggable="false">
               <div class="vr-shop-qty" data-i18n="shop.reward_jeton_x1"></div>
             </div>
-            <button class="vr-choice-button" id="btn-reward-jeton" type="button">
+            <button
+              class="vr-choice-button"
+              id="btn-reward-jeton"
+              type="button"
+              data-reward-placement="shop_jeton">
               <span data-i18n="shop.watch"></span>
             </button>
           </div>
@@ -600,7 +606,11 @@
               <img class="vr-shop-icon" src="assets/img/ui/vcoins.webp" alt="" draggable="false">
               <div class="vr-shop-qty" data-i18n="shop.reward_vcoins_x100"></div>
             </div>
-            <button class="vr-choice-button" id="btn-reward-coins" type="button">
+            <button
+              class="vr-choice-button"
+              id="btn-reward-coins"
+              type="button"
+              data-reward-placement="shop_coins">
               <span data-i18n="shop.watch"></span>
             </button>
           </div>
@@ -620,7 +630,12 @@
               <img class="vr-shop-icon" src="assets/img/ui/jeton.webp" alt="" draggable="false">
               <div class="vr-shop-qty" data-i18n="shop.pack_jetons_12"></div>
             </div>
-            <button class="vr-choice-button vr-iap-button" type="button" data-iap="vuniverse_jetons_12">
+            <button
+              class="vr-choice-button vr-iap-button"
+              id="btn-buy-jetons-12"
+              type="button"
+              data-iap="vuniverse_jetons_12"
+              data-product-id="vuniverse_jetons_12">
               <span class="vr-iap-label" data-i18n="shop.loading"></span>
             </button>
           </div>
@@ -630,7 +645,12 @@
               <img class="vr-shop-icon" src="assets/img/ui/jeton.webp" alt="" draggable="false">
               <div class="vr-shop-qty" data-i18n="shop.pack_jetons_30"></div>
             </div>
-            <button class="vr-choice-button vr-iap-button" type="button" data-iap="vuniverse_jetons_30">
+            <button
+              class="vr-choice-button vr-iap-button"
+              id="btn-buy-jetons-30"
+              type="button"
+              data-iap="vuniverse_jetons_30"
+              data-product-id="vuniverse_jetons_30">
               <span class="vr-iap-label" data-i18n="shop.loading"></span>
             </button>
           </div>
@@ -640,7 +660,12 @@
               <img class="vr-shop-icon" src="assets/img/ui/vcoins.webp" alt="" draggable="false">
               <div class="vr-shop-qty" data-i18n="shop.pack_vcoins_1200"></div>
             </div>
-            <button class="vr-choice-button vr-iap-button" type="button" data-iap="vuniverse_coins_1200">
+            <button
+              class="vr-choice-button vr-iap-button"
+              id="btn-buy-coins-1200"
+              type="button"
+              data-iap="vuniverse_coins_1200"
+              data-product-id="vuniverse_coins_1200">
               <span class="vr-iap-label" data-i18n="shop.unavailable"></span>
             </button>
           </div>
@@ -650,7 +675,12 @@
               <img class="vr-shop-icon" src="assets/img/ui/vcoins.webp" alt="" draggable="false">
               <div class="vr-shop-qty" data-i18n="shop.pack_vcoins_3000"></div>
             </div>
-            <button class="vr-choice-button vr-iap-button" type="button" data-iap="vuniverse_coins_3000">
+            <button
+              class="vr-choice-button vr-iap-button"
+              id="btn-buy-coins-3000"
+              type="button"
+              data-iap="vuniverse_coins_3000"
+              data-product-id="vuniverse_coins_3000">
               <span class="vr-iap-label" data-i18n="shop.loading"></span>
             </button>
           </div>
@@ -659,7 +689,12 @@
             <div class="vr-shop-top">
               <img class="vr-shop-icon" src="assets/img/ui/noads.webp" alt="" draggable="false">
             </div>
-            <button class="vr-choice-button vr-iap-button" type="button" data-iap="vuniverse_no_ads">
+            <button
+              class="vr-choice-button vr-iap-button"
+              id="btn-buy-noads"
+              type="button"
+              data-iap="vuniverse_no_ads"
+              data-product-id="vuniverse_no_ads">
               <span class="vr-iap-label" data-i18n="shop.loading"></span>
             </button>
           </div>
@@ -668,7 +703,12 @@
             <div class="vr-shop-top">
               <img class="vr-shop-icon" src="assets/img/ui/diamond.webp" alt="" draggable="false">
             </div>
-            <button class="vr-choice-button vr-iap-button" type="button" data-iap="vuniverse_diamond">
+            <button
+              class="vr-choice-button vr-iap-button"
+              id="btn-buy-diamond"
+              type="button"
+              data-iap="vuniverse_diamond"
+              data-product-id="vuniverse_diamond">
               <span class="vr-iap-label" data-i18n="shop.loading"></span>
             </button>
           </div>

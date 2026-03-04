@@ -115,11 +115,18 @@
     } catch (_) {}
   }
 
+  // ✅ PATCH: session locale d’abord, puis fallback getUser
   async function _ensureAuth() {
     try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
 
     const sb = window.sb;
     if (!sb || !sb.auth) return null;
+
+    try {
+      const s = await sb.auth.getSession();
+      const uid = s?.data?.session?.user?.id || null;
+      if (uid) return uid;
+    } catch (_) {}
 
     try {
       const r = await sb.auth.getUser();
@@ -510,11 +517,11 @@
       badges.className = "vr-universe-badges";
 
       for (const key of ["bronze", "silver", "gold"]) {
-        const unlocked = !!st[key];
+        const unlocked2 = !!st[key];
 
         const box = document.createElement("button");
         box.type = "button";
-        box.className = "vr-badge" + (unlocked ? " unlocked" : "");
+        box.className = "vr-badge" + (unlocked2 ? " unlocked" : "");
         box.setAttribute("data-universe", uid);
         box.setAttribute("data-badge", key);
         box.setAttribute("aria-label", _t(`profile.badge_${key}_aria`, `badge ${key}`));
@@ -765,7 +772,6 @@
 
   document.addEventListener("DOMContentLoaded", boot);
 
-  // API simple pour toi / console / logique jeu
   window.VUProfileBadges = {
     async setBadge(universeId, badgeKey, unlocked) {
       return await _setBadge(universeId, badgeKey, unlocked);
