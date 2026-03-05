@@ -396,23 +396,34 @@ const VR_BADGE_GOLD_CHOICES = 100;
         const style = document.createElement("style");
         style.id = ID;
         style.textContent = `
-@keyframes vrPeekGlow {
+@keyframes vrGaugeBlinkGlow {
   0%   { filter: brightness(1); }
   50%  { filter: brightness(1.25); }
   100% { filter: brightness(1); }
 }
-@keyframes vrPeekPulse {
+@keyframes vrGaugeBlinkPulse {
   0%   { transform: translateZ(0) scale(1); }
   50%  { transform: translateZ(0) scale(1.01); }
   100% { transform: translateZ(0) scale(1); }
 }
-.vr-gauge.vr-peek-up .vr-gauge-fill,
-.vr-gauge.vr-peek-down .vr-gauge-fill{
+
+/* ✅ Mode normal (sans jeton Peek) : blink + mini zoom des jauges impactées */
+body:not(.vr-peek-mode) .vr-gauge.vr-peek-up .vr-gauge-fill,
+body:not(.vr-peek-mode) .vr-gauge.vr-peek-down .vr-gauge-fill{
   transform-origin: 50% 50%;
   animation:
-    vrPeekGlow 650ms ease-in-out infinite,
-    vrPeekPulse 650ms ease-in-out infinite;
+    vrGaugeBlinkGlow 650ms ease-in-out infinite,
+    vrGaugeBlinkPulse 650ms ease-in-out infinite;
 }
+
+/* ✅ Mode Peek (jeton “voir les effets”) : PAS de clignement */
+body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-fill,
+body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-fill{
+  animation: none !important;
+  filter: brightness(1.12) saturate(1.06);
+}
+
+/* Preview uniquement en mode peek */
 body.vr-peek-mode .vr-gauge-preview{
   position:absolute;
   inset:0;
@@ -424,7 +435,6 @@ body.vr-peek-mode .vr-gauge-preview{
         (document.head || document.documentElement).appendChild(style);
       } catch (_) {}
     },
-
     _consumePeekDecision() {
       if (this.peekRemaining <= 0) return;
       this.peekRemaining = Math.max(0, this.peekRemaining - 1);

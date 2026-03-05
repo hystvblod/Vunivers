@@ -388,6 +388,7 @@ button.vr-card:focus-visible{
 }
 
 /* ===== Jauges (WEBP) ===== */
+/* ===== Jauges (WEBP) ===== */
 .vr-gauges-row{
   display:flex;
   flex-direction:column;
@@ -396,6 +397,21 @@ button.vr-card:focus-visible{
 }
 .vr-gauge{ display:flex; align-items:center; gap:8px; }
 .vr-gauge-label{ font-size:12px; min-width:72px; }
+
+/* % actuel + delta (delta visible uniquement en mode Peek) */
+.vr-gauge-value{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  min-width:64px;
+  font-size:12px;
+  line-height:1.1;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.45);
+}
+.vr-gauge-val{ font-weight:900; letter-spacing:0.2px; }
+.vr-gauge-delta{ font-weight:900; opacity:.95; }
+body:not(.vr-peek-mode) .vr-gauge-delta{ display:none; }
 
 .vr-gauge-frame{
   position:relative;
@@ -624,9 +640,16 @@ body.vr-body-game .vr-choice-label{
   text-align:center;
 }
 
-.vr-token-card{ padding: 12px 14px; }
-.vr-token-card .vr-card-title{ font-size: 15px; margin:0 0 4px; }
-.vr-token-card .vr-card-text{ font-size: 13px; line-height: 1.35; }
+.vr-token-card{ padding: 12px 14px; text-align:center; }
+.vr-token-card .vr-card-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.vr-token-card .vr-card-title{ font-size: 15px; margin:0 0 4px; text-align:center; }
+.vr-token-card .vr-card-text{ font-size: 13px; line-height: 1.35; text-align:center; }
 
 /* overlay sélection jauge */
 .vr-token-gauge-overlay{
@@ -635,11 +658,19 @@ body.vr-body-game .vr-choice-label{
   display:none;
   align-items:center;
   justify-content:center;
-  background: rgba(0,0,0,0.62);
+  background: transparent; /* ✅ les jauges restent “devant”, pas “en arrière-plan” */
   z-index:210000;
   padding:18px;
 }
+
 .vr-token-gauge-card{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
   width: min(560px, 94vw);
   border-radius: 22px;
   padding: 16px 14px 14px;
@@ -649,7 +680,6 @@ body.vr-body-game .vr-choice-label{
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
-
 /* click-through */
 #vr-token-gauge-overlay,
 .vr-token-gauge-overlay{ pointer-events:none; }
@@ -658,8 +688,13 @@ body.vr-body-game .vr-choice-label{
 
 body.vr-token-select-mode .vr-gauge{
   cursor:pointer;
-  outline: 2px solid rgba(255,255,255,.25);
-  outline-offset:4px;
+}
+body.vr-token-select-mode .vr-gauge-frame{
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,0.38));
+}
+body.vr-token-select-mode .vr-gauge:hover .vr-gauge-frame,
+body.vr-token-select-mode .vr-gauge:active .vr-gauge-frame{
+  filter: drop-shadow(0 18px 34px rgba(0,0,0,0.45));
 }
 
 /* ===== Profil / Shop / Settings ===== */
