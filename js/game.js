@@ -244,95 +244,6 @@ const VR_BADGE_GOLD_CHOICES = 100;
 
 
 // -------------------------------------------------------
-// Event Overlay
-// -------------------------------------------------------
-(function () {
-  "use strict";
-
-  const tt = (k, fb) => {
-    try {
-      const v = window.VRI18n?.t?.(k);
-      if (v && v !== k) return v;
-    } catch (_) {}
-    return fb;
-  };
-
-  function ensureOverlay() {
-    const ID = "vr-event-overlay";
-    let root = document.getElementById(ID);
-    if (root) return root;
-
-    root = document.createElement("div");
-    root.id = ID;
-    root.setAttribute("aria-hidden", "true");
-    root.style.cssText =
-      "position:fixed;inset:0;display:none;align-items:center;justify-content:center;" +
-      "background:rgba(0,0,0,.58);z-index:2147483000;padding:16px;";
-
-    const card = document.createElement("div");
-    card.style.cssText =
-      "width:min(720px, 94vw);border-radius:18px;padding:18px 18px 14px;" +
-      "background:rgba(18,20,26,.94);color:#fff;box-shadow:0 18px 60px rgba(0,0,0,.55);" +
-      "border:1px solid rgba(255,255,255,.14);";
-
-    const title = document.createElement("div");
-    title.id = "vr-event-title";
-    title.style.cssText = "font:700 18px/1.2 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0 0 10px;";
-
-    const body = document.createElement("div");
-    body.id = "vr-event-body";
-    body.style.cssText = "font:14.5px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;opacity:.95;white-space:pre-wrap;";
-
-    const row = document.createElement("div");
-    row.style.cssText = "display:flex;justify-content:flex-end;gap:10px;margin-top:14px;";
-
-    const btn = document.createElement("button");
-    btn.id = "vr-event-continue";
-    btn.type = "button";
-    btn.textContent = tt("event.continue", "Continuer");
-    btn.style.cssText =
-      "border:0;border-radius:14px;padding:10px 14px;cursor:pointer;" +
-      "background:rgba(255,255,255,.14);color:#fff;font:600 14px/1 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;";
-
-    row.appendChild(btn);
-    card.appendChild(title);
-    card.appendChild(body);
-    card.appendChild(row);
-    root.appendChild(card);
-
-    document.body.appendChild(root);
-    return root;
-  }
-
-  async function showEvent(title, bodyText) {
-    const root = ensureOverlay();
-    const tEl = document.getElementById("vr-event-title");
-    const bEl = document.getElementById("vr-event-body");
-    const btn = document.getElementById("vr-event-continue");
-
-    if (btn) btn.textContent = tt("event.continue", "Continuer");
-    if (tEl) tEl.textContent = title || tt("event.title", "Événement");
-    if (bEl) bEl.textContent = bodyText || "";
-
-    return new Promise((resolve) => {
-      const close = () => {
-        root.setAttribute("aria-hidden", "true");
-        root.style.display = "none";
-        try { btn.removeEventListener("click", close); } catch (_) {}
-        resolve(true);
-      };
-      try { btn.addEventListener("click", close); } catch (_) {}
-      root.setAttribute("aria-hidden", "false");
-      root.style.display = "flex";
-      try { btn.focus?.({ preventScroll: true }); } catch (_) {}
-    });
-  }
-
-  window.VREventOverlay = { showEvent };
-})();
-
-
-// -------------------------------------------------------
 // UI binding + swipe
 // -------------------------------------------------------
 (function () {
@@ -372,7 +283,7 @@ const VR_BADGE_GOLD_CHOICES = 100;
 
       this._ensurePeekStyles();
       this._setupGaugeLabels();
-      this._ensureGaugePreviewBars();
+      this._ensureGaugePreviewBars(); // ✅ ajoute aussi les labels sous jauge (val + delta)
       this.updateGauges();
       this._setupChoiceButtons();
     },
@@ -387,6 +298,9 @@ const VR_BADGE_GOLD_CHOICES = 100;
         if (n > 0) document.body.classList.add("vr-peek-mode");
         else document.body.classList.remove("vr-peek-mode");
       } catch (_) {}
+
+      // ✅ quand on active peek, on force update pour afficher les % tout de suite
+      this.updateGauges();
     },
 
     _ensurePeekStyles() {
@@ -408,7 +322,7 @@ const VR_BADGE_GOLD_CHOICES = 100;
   100% { transform: translateZ(0) scale(1); }
 }
 
-/* ✅ Mode normal (sans jeton Peek) : blink + mini zoom des jauges impactées */
+/* ✅ Hors Peek : blink + mini-zoom sur jauges impactées */
 body:not(.vr-peek-mode) .vr-gauge.vr-peek-up .vr-gauge-fill,
 body:not(.vr-peek-mode) .vr-gauge.vr-peek-down .vr-gauge-fill{
   transform-origin: 50% 50%;
@@ -417,14 +331,14 @@ body:not(.vr-peek-mode) .vr-gauge.vr-peek-down .vr-gauge-fill{
     vrGaugeBlinkPulse 650ms ease-in-out infinite;
 }
 
-/* ✅ Mode Peek (jeton “voir les effets”) : PAS de clignement */
+/* ✅ En Peek : PAS de clignotement */
 body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-fill,
 body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-fill{
   animation: none !important;
   filter: brightness(1.12) saturate(1.06);
 }
 
-/* Preview uniquement en mode peek */
+/* Preview seulement en Peek */
 body:not(.vr-peek-mode) .vr-gauge-preview{ opacity:0 !important; }
 body.vr-peek-mode .vr-gauge-preview{
   position:absolute;
@@ -433,6 +347,32 @@ body.vr-peek-mode .vr-gauge-preview{
   opacity:.55;
   clip-path: inset(calc(100% - var(--vr-pct, 0%)) 0 0 0);
 }
+
+/* ✅ Labels sous jauge : visibles UNIQUEMENT en Peek */
+.vr-gauge-frame{ position:relative; }
+.vr-gauge-under{
+  position:absolute;
+  left:50%;
+  bottom:-26px;
+  transform:translateX(-50%);
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  gap:2px;
+  pointer-events:none;
+  font: 900 12px/1 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  text-shadow: 0 2px 12px rgba(0,0,0,.55);
+  letter-spacing:.2px;
+  white-space:nowrap;
+}
+body.vr-peek-mode .vr-gauge-under{ display:flex; }
+
+.vr-gauge-under-val{ opacity:.95; }
+.vr-gauge-under-delta{ opacity:.95; }
+
+/* couleurs +/− (seulement en Peek) */
+body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-under-delta{ color: rgba(170, 255, 210, .95); }
+body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-under-delta{ color: rgba(255, 190, 190, .95); }
 `;
         (document.head || document.documentElement).appendChild(style);
       } catch (_) {}
@@ -445,6 +385,8 @@ body.vr-peek-mode .vr-gauge-preview{
         this.peekRemaining = 0;
         this._clearPeek();
         try { document.body.classList.remove("vr-peek-mode"); } catch (_) {}
+        // ✅ on purge les textes sous jauge (même si cachés)
+        this.updateGauges();
       }
     },
 
@@ -483,28 +425,39 @@ body.vr-peek-mode .vr-gauge-preview{
     _ensureGaugePreviewBars() {
       const gaugeEls = document.querySelectorAll(".vr-gauge");
       gaugeEls.forEach((el) => {
+        const frame = el.querySelector(".vr-gauge-frame");
+        if (!frame) return;
+
+        // preview
         let preview = el.querySelector(".vr-gauge-preview");
         if (!preview) {
           preview = document.createElement("div");
           preview.className = "vr-gauge-preview";
           preview.style.setProperty("--vr-pct", "0%");
-
           try {
-            preview.style.position = "absolute";
-            preview.style.inset = "0";
-            preview.style.pointerEvents = "none";
-            preview.style.opacity = "0.55";
-            preview.style.clipPath = "inset(calc(100% - var(--vr-pct, 0%)) 0 0 0)";
+            const pos = getComputedStyle(frame).position;
+            if (pos === "static") frame.style.position = "relative";
           } catch (_) {}
+          frame.appendChild(preview);
+        }
 
-          const frame = el.querySelector(".vr-gauge-frame");
-          if (frame) {
-            try {
-              const pos = getComputedStyle(frame).position;
-              if (pos === "static") frame.style.position = "relative";
-            } catch (_) {}
-            frame.appendChild(preview);
-          }
+        // ✅ sous jauge (val + delta) — injecté une seule fois
+        let under = frame.querySelector(".vr-gauge-under");
+        if (!under) {
+          under = document.createElement("div");
+          under.className = "vr-gauge-under";
+
+          const val = document.createElement("div");
+          val.className = "vr-gauge-under-val";
+          val.textContent = "";
+
+          const delta = document.createElement("div");
+          delta.className = "vr-gauge-under-delta";
+          delta.textContent = "";
+
+          under.appendChild(val);
+          under.appendChild(delta);
+          frame.appendChild(under);
         }
       });
     },
@@ -512,6 +465,10 @@ body.vr-peek-mode .vr-gauge-preview{
     updateGauges() {
       const gaugesCfg = this.universeConfig?.gauges || [];
       const gaugeEls = document.querySelectorAll(".vr-gauge");
+
+      const isPeek = (() => {
+        try { return document.body.classList.contains("vr-peek-mode"); } catch (_) { return false; }
+      })();
 
       gaugeEls.forEach((gEl, idx) => {
         const cfg = gaugesCfg[idx];
@@ -532,12 +489,15 @@ body.vr-peek-mode .vr-gauge-preview{
           fillEl.style.setProperty("--vr-pct", `${safeVal}%`);
         }
 
-        const valEl = gEl.querySelector(".vr-gauge-val");
-        if (valEl) valEl.textContent = `${Math.round(safeVal)}%`;
+        // ✅ % uniquement en Peek : texte présent seulement quand peek actif
+        const underVal = gEl.querySelector(".vr-gauge-under-val");
+        if (underVal) underVal.textContent = isPeek ? `${Math.round(safeVal)}%` : "";
 
-        const deltaEl = gEl.querySelector(".vr-gauge-delta");
-        if (deltaEl) deltaEl.textContent = "";
+        // delta reset (sera rempli en peek preview)
+        const underDelta = gEl.querySelector(".vr-gauge-under-delta");
+        if (underDelta) underDelta.textContent = "";
 
+        // preview reset
         const previewEl = gEl.querySelector(".vr-gauge-preview");
         if (previewEl) previewEl.style.setProperty("--vr-pct", "0%");
       });
@@ -594,7 +554,7 @@ body.vr-peek-mode .vr-gauge-preview{
     _setupSwipeOnChoiceCard(btn) {
       const TH = 62;
       const ROT_MAX = 12;
-      const PREVIEW_TH = 12; // à partir de ~12px, on prévient (clignote)
+      const PREVIEW_TH = 12;
       let startX = 0;
       let startY = 0;
       let lastX = 0;
@@ -675,8 +635,8 @@ body.vr-peek-mode .vr-gauge-preview{
         if (Math.abs(dx) >= PREVIEW_TH) {
           const choiceId = btn.getAttribute("data-choice");
           if (choiceId) {
-            if (this.peekRemaining > 0) this._showPeekForChoice(choiceId);  // peek = preview OK
-            else this._showBlinkOnlyForChoice(choiceId);                     // normal = blink only
+            if (this.peekRemaining > 0) this._showPeekForChoice(choiceId);
+            else this._showBlinkOnlyForChoice(choiceId);
           }
         } else {
           this._clearPeek();
@@ -690,15 +650,11 @@ body.vr-peek-mode .vr-gauge-preview{
         dragging = false;
 
         const dx = lastX - startX;
-
         this._clearPeek();
 
         if (Math.abs(dx) >= TH && this.currentCardLogic) {
           const choiceId = btn.getAttribute("data-choice");
-          if (!choiceId) {
-            animateBack();
-            return;
-          }
+          if (!choiceId) { animateBack(); return; }
 
           animateFlyOut(dx, () => {
             try { window.VREngine.applyChoice(this.currentCardLogic, choiceId); } catch (_) {}
@@ -737,7 +693,7 @@ body.vr-peek-mode .vr-gauge-preview{
         document.querySelectorAll(".vr-gauge-preview").forEach((previewEl) => {
           previewEl.style.setProperty("--vr-pct", "0%");
         });
-        document.querySelectorAll(".vr-gauge-delta").forEach((dEl) => {
+        document.querySelectorAll(".vr-gauge-under-delta").forEach((dEl) => {
           dEl.textContent = "";
         });
       } catch (_) {}
@@ -749,7 +705,7 @@ body.vr-peek-mode .vr-gauge-preview{
       if (!this.currentCardLogic?.choices?.[choiceId]) return;
 
       this._clearPeekClasses();
-      try { document.querySelectorAll(".vr-gauge-delta").forEach((dEl) => (dEl.textContent = "")); } catch (_) {}
+      try { document.querySelectorAll(".vr-gauge-under-delta").forEach((dEl) => (dEl.textContent = "")); } catch (_) {}
 
       const deltas = this.currentCardLogic.choices[choiceId]?.gaugeDelta || {};
       for (const [gaugeId, delta] of Object.entries(deltas)) {
@@ -774,7 +730,7 @@ body.vr-peek-mode .vr-gauge-preview{
       gaugeEls.forEach((g) => {
         g.classList.remove("vr-peek-up");
         g.classList.remove("vr-peek-down");
-        try { g.querySelector(".vr-gauge-delta").textContent = ""; } catch (_) {}
+        try { g.querySelector(".vr-gauge-under-delta").textContent = ""; } catch (_) {}
       });
 
       previewEls.forEach((previewEl, idx) => {
@@ -801,12 +757,15 @@ body.vr-peek-mode .vr-gauge-preview{
         if (delta > 0) gaugeEl.classList.add("vr-peek-up");
         else if (delta < 0) gaugeEl.classList.add("vr-peek-down");
 
-        const deltaEl = gaugeEl.querySelector(".vr-gauge-delta");
-        if (deltaEl) {
-          if (delta > 0) deltaEl.textContent = `+${Math.round(delta)}%`;
-          else if (delta < 0) deltaEl.textContent = `-${Math.round(Math.abs(delta))}%`;
-          else deltaEl.textContent = "";
+        // ✅ indication sous jauge : +/−XX% (delta)
+        const underDelta = gaugeEl.querySelector(".vr-gauge-under-delta");
+        if (underDelta) {
+          if (delta > 0) underDelta.textContent = `+${Math.round(delta)}%`;
+          else if (delta < 0) underDelta.textContent = `-${Math.round(Math.abs(delta))}%`;
+          else underDelta.textContent = "";
         }
+
+        // ✅ % sous jauge (val) doit rester affiché en Peek -> déjà géré par updateGauges()
       });
     }
   };
