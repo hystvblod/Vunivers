@@ -406,13 +406,9 @@ const VR_BADGE_GOLD_CHOICES = 100;
   50%  { transform: translateZ(0) scale(1.01); }
   100% { transform: translateZ(0) scale(1); }
 }
-.vr-gauge.vr-peek-up,
-.vr-gauge.vr-peek-down{
+.vr-gauge.vr-peek-up .vr-gauge-fill,
+.vr-gauge.vr-peek-down .vr-gauge-fill{
   animation: vrPeekGlow 650ms ease-in-out infinite;
-}
-.vr-gauge.vr-peek-up .vr-gauge-frame,
-.vr-gauge.vr-peek-down .vr-gauge-frame{
-  box-shadow: 0 0 0 2px rgba(255,255,255,.18), 0 10px 24px rgba(0,0,0,.22);
 }
 body.vr-peek-mode .vr-gauge-preview{
   position:absolute;
@@ -643,17 +639,20 @@ body.vr-peek-mode .vr-gauge-preview{
         const dx = lastX - startX;
         const dy = lastY - startY;
 
-   if (Math.abs(dy) > Math.abs(dx) * 1.25) {
-  this._clearPeek();         // coupe le clignotement si scroll vertical
+if (Math.abs(dy) > Math.abs(dx) * 1.25) {
+  this._clearPeek();
   setTransform(dx * 0.25);
   return;
 }
 
 if (Math.abs(dx) >= PREVIEW_TH) {
   const choiceId = btn.getAttribute("data-choice");
-  if (choiceId) this._showPeekForChoice(choiceId); // pose vr-peek-up/down => clignote
+  if (choiceId) {
+    if (this.peekRemaining > 0) this._showPeekForChoice(choiceId);  // peek = preview OK
+    else this._showBlinkOnlyForChoice(choiceId);                     // normal = blink only
+  }
 } else {
-  this._clearPeek(); // revient au centre => stop clignote
+  this._clearPeek();
 }
 
 setTransform(dx);
@@ -704,14 +703,30 @@ setTransform(dx);
       } catch (_) {}
     },
 
-    _clearPeek() {
-      this._peekChoiceActive = null;
+_clearPeek() {
+  this._peekChoiceActive = null;
 
-      const previewEls = document.querySelectorAll(".vr-gauge-preview");
-      previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-pct", "0%"));
+  const previewEls = document.querySelectorAll(".vr-gauge-preview");
+  previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-pct", "0%"));
 
-      this._clearPeekClasses();
-    },
+  this._clearPeekClasses();
+},
+
+_showBlinkOnlyForChoice(choiceId) {
+  if (!this.currentCardLogic?.choices?.[choiceId]) return;
+
+  this._clearPeekClasses();
+
+  const deltas = this.currentCardLogic.choices[choiceId]?.gaugeDelta || {};
+  for (const [gaugeId, delta] of Object.entries(deltas)) {
+    if (typeof delta !== "number" || delta === 0) continue;
+
+    const el = document.querySelector(`.vr-gauge[data-gauge-id="${gaugeId}"]`);
+    if (!el) continue;
+
+    el.classList.add(delta > 0 ? "vr-peek-up" : "vr-peek-down");
+  }
+},
 
     _showPeekForChoice(choiceId) {
       if (!this.currentCardLogic?.choices?.[choiceId]) return;
