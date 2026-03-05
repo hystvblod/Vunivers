@@ -183,7 +183,7 @@ body.vr-body-game .vr-hud-right{
 body.vr-body-game .vr-hud-identity{
   justify-self:center;
   display:inline-flex;
-  gap: clamp(6px, 1.2vw, 12px);
+    gap: var(--vr-hud-name-years-gap, clamp(10px, 1.8vw, 18px));
   align-items: baseline;
   justify-content:center;
   font-weight: 900;
@@ -1333,7 +1333,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-identity{
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: clamp(4px, 0.7vw, 10px) !important;
+    gap: var(--vr-hud-name-years-gap, clamp(14px, 2.4vw, 24px)) !important;
 
   white-space: nowrap !important;
   text-align: center !important;
@@ -1717,7 +1717,7 @@ body.vr-body-game[data-universe="heaven_king"] .vr-hud-identity{
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: clamp(4px, 0.7vw, 10px) !important;
+    gap: var(--vr-hud-name-years-gap, clamp(14px, 2.4vw, 24px)) !important;
 
   white-space: nowrap !important;
   text-align: center !important;
@@ -2804,4 +2804,462 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 .vr-shop-item svg{
   max-width: 100%;
   height: auto;
+}
+
+/* =================================================================================================
+   🟩🟩🟩 VREALMS — PANNEAU DE CONTRÔLE PAR UNIVERS (EDIT ICI) 🟩🟩🟩
+   - BUT: te laisser TOUT bouger sans courir dans 200 règles
+   - Ce bloc OVERRIDE les positions via variables CSS
+   - Tu modifies UNIQUEMENT les variables dans chaque univers + son @media
+   ================================================================================================= */
+
+/* =========================
+   BASES VARIABLES (si un univers ne définit rien)
+   ========================= */
+body.vr-body-game{
+  /* Espace entre Nom et Années */
+  --vr-hud-name-years-gap: clamp(14px, 2.4vw, 24px);
+
+  /* HUD: positions des 3 zones sur les HUD webp sculptés (en %) */
+  --vr-hud-left-x: 3.3%;
+  --vr-hud-left-w: 17.8%;
+  --vr-hud-center-l: 20.2%;
+  --vr-hud-center-r: 20.2%;
+  --vr-hud-right-r: 5.3%;
+  --vr-hud-right-w: 17.8%;
+
+  /* Décalage vertical du contenu HUD (px) */
+  --vr-hud-item-ty: -11px;
+
+  /* Icône VCoins (petit rond) — HUD gauche (en %) */
+  --vr-hud-coin-top: 11%;
+  --vr-hud-coin-left: 77%;
+
+  /* Icône Jeton (petit rond) — HUD droit (en %) */
+  --vr-hud-jeton-top: 11%;
+  --vr-hud-jeton-left: 23%;
+
+  /* Taille des petites icônes flottantes */
+  --vr-hud-float-ico: clamp(20px, 3.2vw, 34px);
+
+  /* Safe zones (texte dans les WEBP) */
+  --vr-scn-inset-top: 14%;
+  --vr-scn-inset-right: 10%;
+  --vr-scn-inset-bottom: 14%;
+  --vr-scn-inset-left: 10%;
+
+  --vr-choice-inset-top: 18%;
+  --vr-choice-inset-right: 10%;
+  --vr-choice-inset-bottom: 18%;
+  --vr-choice-inset-left: 10%;
+
+  /* Topbar / Back / Customize — offsets (px) */
+  --vr-topbar-top: 14px;
+  --vr-back-top: 18px;
+  --vr-back-left: 20px;
+  --vr-customize-top: 18px;
+  --vr-customize-right: 20px;
+}
+
+/* =========================
+   OVERRIDES TECHNIQUES (ne touche pas)
+   ========================= */
+
+/* 1) Applique les 3 zones HUD (sur univers sculptés) */
+body.vr-body-game[data-universe="hell_king"] .vr-hud-left,
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-left,
+body.vr-body-game[data-universe="western_president"] .vr-hud-left,
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left,
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left,
+body.vr-body-game[data-universe="vampire_lord"] .vr-hud-left{
+  left: var(--vr-hud-left-x) !important;
+  width: var(--vr-hud-left-w) !important;
+}
+
+body.vr-body-game[data-universe="hell_king"] .vr-hud-center,
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-center,
+body.vr-body-game[data-universe="western_president"] .vr-hud-center,
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-center,
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-center,
+body.vr-body-game[data-universe="vampire_lord"] .vr-hud-center{
+  left: var(--vr-hud-center-l) !important;
+  right: var(--vr-hud-center-r) !important;
+}
+
+body.vr-body-game[data-universe="hell_king"] .vr-hud-right,
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-right,
+body.vr-body-game[data-universe="western_president"] .vr-hud-right,
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right,
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right,
+body.vr-body-game[data-universe="vampire_lord"] .vr-hud-right{
+  right: var(--vr-hud-right-r) !important;
+  width: var(--vr-hud-right-w) !important;
+}
+
+/* 2) Remonte/descend le contenu dans le HUD (tous univers sculptés) */
+body.vr-body-game[data-universe="hell_king"] .vr-hud-item,
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-item,
+body.vr-body-game[data-universe="western_president"] .vr-hud-item,
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-item,
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-item,
+body.vr-body-game[data-universe="vampire_lord"] .vr-hud-item{
+  transform: translateY(var(--vr-hud-item-ty)) !important;
+}
+
+/* 3) Position des petites icônes VCoins / Jeton */
+body.vr-body-game[data-universe="hell_king"] .vr-hud-left .vr-hud-icon-btn,
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-left .vr-hud-icon-btn,
+body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-icon-btn,
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left .vr-hud-icon-btn,
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left .vr-hud-icon-btn,
+body.vr-body-game[data-universe="vampire_lord"] .vr-hud-left .vr-hud-icon-btn{
+  top: var(--vr-hud-coin-top) !important;
+  left: var(--vr-hud-coin-left) !important;
+  width: var(--vr-hud-float-ico) !important;
+  height: var(--vr-hud-float-ico) !important;
+  min-width: var(--vr-hud-float-ico) !important;
+  min-height: var(--vr-hud-float-ico) !important;
+}
+
+body.vr-body-game[data-universe="hell_king"] .vr-hud-right .vr-hud-icon-btn,
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-right .vr-hud-icon-btn,
+body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-icon-btn,
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right .vr-hud-icon-btn,
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right .vr-hud-icon-btn,
+body.vr-body-game[data-universe="vampire_lord"] .vr-hud-right .vr-hud-icon-btn{
+  top: var(--vr-hud-jeton-top) !important;
+  left: var(--vr-hud-jeton-left) !important;
+  width: var(--vr-hud-float-ico) !important;
+  height: var(--vr-hud-float-ico) !important;
+  min-width: var(--vr-hud-float-ico) !important;
+  min-height: var(--vr-hud-float-ico) !important;
+}
+
+/* 4) Safe zones (texte dans scénarios/choix) — déjà basé sur variables mais on force ici */
+body.vr-body-game .vr-card-main{
+  padding:
+    var(--vr-scn-inset-top)
+    var(--vr-scn-inset-right)
+    var(--vr-scn-inset-bottom)
+    var(--vr-scn-inset-left) !important;
+}
+body.vr-body-game .vr-choice-label{
+  inset:
+    var(--vr-choice-inset-top)
+    var(--vr-choice-inset-right)
+    var(--vr-choice-inset-bottom)
+    var(--vr-choice-inset-left) !important;
+}
+
+/* 5) Positions topbar / back / customize (univers à topbar webp) */
+body.vr-body-game[data-universe="hell_king"] .vr-top-actions-game,
+body.vr-body-game[data-universe="heaven_king"] .vr-top-actions-game,
+body.vr-body-game[data-universe="western_president"] .vr-top-actions-game,
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-top-actions-game,
+body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game,
+body.vr-body-game[data-universe="vampire_lord"] .vr-top-actions-game{
+  top: calc(var(--vr-topbar-top) + env(safe-area-inset-top)) !important;
+}
+
+body.vr-body-game[data-universe="hell_king"] > a.vr-icon-button[aria-label="Accueil"],
+body.vr-body-game[data-universe="heaven_king"] > a.vr-icon-button[aria-label="Accueil"],
+body.vr-body-game[data-universe="western_president"] > a.vr-icon-button[aria-label="Accueil"],
+body.vr-body-game[data-universe="mega_corp_ceo"] > a.vr-icon-button[aria-label="Accueil"],
+body.vr-body-game[data-universe="new_world_explorer"] > a.vr-icon-button[aria-label="Accueil"],
+body.vr-body-game[data-universe="vampire_lord"] > a.vr-icon-button[aria-label="Accueil"]{
+  top: calc(var(--vr-back-top) + env(safe-area-inset-top)) !important;
+  left: var(--vr-back-left) !important;
+}
+
+body.vr-body-game[data-universe="hell_king"] #btn-customize,
+body.vr-body-game[data-universe="heaven_king"] #btn-customize,
+body.vr-body-game[data-universe="western_president"] #btn-customize,
+body.vr-body-game[data-universe="mega_corp_ceo"] #btn-customize,
+body.vr-body-game[data-universe="new_world_explorer"] #btn-customize,
+body.vr-body-game[data-universe="vampire_lord"] #btn-customize{
+  top: calc(var(--vr-customize-top) + env(safe-area-inset-top)) !important;
+  right: var(--vr-customize-right) !important;
+}
+
+/* =========================
+   🟩 PARAMÈTRES PAR UNIVERS
+   - Tu touches UNIQUEMENT ici
+   ========================= */
+
+/* -------------------------
+   🟩 HELL
+   ------------------------- */
+body.vr-body-game[data-universe="hell_king"]{
+  --vr-hud-name-years-gap: clamp(16px, 2.8vw, 30px);
+
+  /* HUD slots (si tu veux bouger les zones) */
+  --vr-hud-left-x: 3.5%;
+  --vr-hud-left-w: 17.8%;
+  --vr-hud-center-l: 20.2%;
+  --vr-hud-center-r: 20.2%;
+  --vr-hud-right-r: 5.3%;
+  --vr-hud-right-w: 17.8%;
+
+  /* remonter/descendre le contenu */
+  --vr-hud-item-ty: -11px;
+
+  /* icônes */
+  --vr-hud-coin-top: 11%;
+  --vr-hud-coin-left: 77%;
+  --vr-hud-jeton-top: 11%;
+  --vr-hud-jeton-left: 23%;
+  --vr-hud-float-ico: clamp(20px, 3.2vw, 34px);
+
+  /* safe zones */
+  --vr-scn-inset-top: 12%;
+  --vr-scn-inset-right: 14%;
+  --vr-scn-inset-bottom: 16%;
+  --vr-scn-inset-left: 14%;
+
+  --vr-choice-inset-top: 24%;
+  --vr-choice-inset-right: 14%;
+  --vr-choice-inset-bottom: 22%;
+  --vr-choice-inset-left: 14%;
+
+  /* top/back/customize */
+  --vr-topbar-top: 14px;
+  --vr-back-top: 18px;
+  --vr-back-left: 20px;
+  --vr-customize-top: 18px;
+  --vr-customize-right: 20px;
+}
+
+@media (max-width:480px){
+  body.vr-body-game[data-universe="hell_king"]{
+    --vr-topbar-top: 12px;
+    --vr-back-top: 16px;
+    --vr-back-left: 16px;
+    --vr-customize-top: 16px;
+    --vr-customize-right: 16px;
+    --vr-hud-item-ty: -4px;
+    --vr-hud-float-ico: 22px;
+  }
+}
+
+/* -------------------------
+   🟩 HEAVEN
+   ------------------------- */
+body.vr-body-game[data-universe="heaven_king"]{
+  --vr-hud-name-years-gap: clamp(16px, 2.8vw, 30px);
+
+  --vr-hud-left-x: 3.3%;
+  --vr-hud-left-w: 17.8%;
+  --vr-hud-center-l: 20.2%;
+  --vr-hud-center-r: 20.2%;
+  --vr-hud-right-r: 5.3%;
+  --vr-hud-right-w: 17.8%;
+
+  --vr-hud-item-ty: -11px;
+
+  --vr-hud-coin-top: 11%;
+  --vr-hud-coin-left: 77%;
+  --vr-hud-jeton-top: 11%;
+  --vr-hud-jeton-left: 23%;
+  --vr-hud-float-ico: clamp(20px, 3.2vw, 34px);
+
+  --vr-scn-inset-top: 12%;
+  --vr-scn-inset-right: 13%;
+  --vr-scn-inset-bottom: 18%;
+  --vr-scn-inset-left: 13%;
+
+  --vr-choice-inset-top: 20%;
+  --vr-choice-inset-right: 12%;
+  --vr-choice-inset-bottom: 18%;
+  --vr-choice-inset-left: 12%;
+
+  --vr-topbar-top: 14px;
+  --vr-back-top: 18px;
+  --vr-back-left: 20px;
+  --vr-customize-top: 18px;
+  --vr-customize-right: 20px;
+}
+
+@media (max-width:480px){
+  body.vr-body-game[data-universe="heaven_king"]{
+    --vr-topbar-top: 12px;
+    --vr-back-top: 16px;
+    --vr-back-left: 16px;
+    --vr-customize-top: 16px;
+    --vr-customize-right: 16px;
+    --vr-hud-item-ty: -4px;
+    --vr-hud-float-ico: 22px;
+  }
+}
+
+/* -------------------------
+   🟩 WESTERN
+   ------------------------- */
+body.vr-body-game[data-universe="western_president"]{
+  --vr-hud-name-years-gap: clamp(18px, 3vw, 32px);
+
+  --vr-hud-left-x: 3.3%;
+  --vr-hud-left-w: 17.8%;
+  --vr-hud-center-l: 20.2%;
+  --vr-hud-center-r: 20.2%;
+  --vr-hud-right-r: 5.3%;
+  --vr-hud-right-w: 17.8%;
+
+  --vr-hud-item-ty: -11px;
+
+  --vr-hud-coin-top: 11%;
+  --vr-hud-coin-left: 77%;
+  --vr-hud-jeton-top: 11%;
+  --vr-hud-jeton-left: 23%;
+  --vr-hud-float-ico: clamp(20px, 3.2vw, 34px);
+
+  --vr-topbar-top: 14px;
+  --vr-back-top: 18px;
+  --vr-back-left: 20px;
+  --vr-customize-top: 18px;
+  --vr-customize-right: 20px;
+}
+
+@media (max-width:480px){
+  body.vr-body-game[data-universe="western_president"]{
+    --vr-topbar-top: 12px;
+    --vr-back-top: 16px;
+    --vr-back-left: 16px;
+    --vr-customize-top: 16px;
+    --vr-customize-right: 16px;
+    --vr-hud-item-ty: -4px;
+    --vr-hud-float-ico: 22px;
+  }
+}
+
+/* -------------------------
+   🟩 CEO
+   ------------------------- */
+body.vr-body-game[data-universe="mega_corp_ceo"]{
+  --vr-hud-name-years-gap: clamp(18px, 3vw, 32px);
+
+  --vr-hud-left-x: 3.3%;
+  --vr-hud-left-w: 17.8%;
+  --vr-hud-center-l: 20.2%;
+  --vr-hud-center-r: 20.2%;
+  --vr-hud-right-r: 5.3%;
+  --vr-hud-right-w: 17.8%;
+
+  --vr-hud-item-ty: -11px;
+
+  --vr-hud-coin-top: 11%;
+  --vr-hud-coin-left: 77%;
+  --vr-hud-jeton-top: 11%;
+  --vr-hud-jeton-left: 23%;
+  --vr-hud-float-ico: clamp(20px, 3.2vw, 34px);
+
+  --vr-topbar-top: 14px;
+  --vr-back-top: 18px;
+  --vr-back-left: 20px;
+  --vr-customize-top: 18px;
+  --vr-customize-right: 20px;
+}
+
+@media (max-width:480px){
+  body.vr-body-game[data-universe="mega_corp_ceo"]{
+    --vr-topbar-top: 12px;
+    --vr-back-top: 16px;
+    --vr-back-left: 16px;
+    --vr-customize-top: 16px;
+    --vr-customize-right: 16px;
+    --vr-hud-item-ty: -4px;
+    --vr-hud-float-ico: 22px;
+  }
+}
+
+/* -------------------------
+   🟩 EXPLORER
+   ------------------------- */
+body.vr-body-game[data-universe="new_world_explorer"]{
+  --vr-hud-name-years-gap: clamp(18px, 3vw, 32px);
+
+  --vr-hud-left-x: 3.3%;
+  --vr-hud-left-w: 17.8%;
+  --vr-hud-center-l: 20.2%;
+  --vr-hud-center-r: 20.2%;
+  --vr-hud-right-r: 5.3%;
+  --vr-hud-right-w: 17.8%;
+
+  --vr-hud-item-ty: -11px;
+
+  --vr-hud-coin-top: 11%;
+  --vr-hud-coin-left: 77%;
+  --vr-hud-jeton-top: 11%;
+  --vr-hud-jeton-left: 23%;
+  --vr-hud-float-ico: clamp(20px, 3.2vw, 34px);
+
+  --vr-topbar-top: 14px;
+  --vr-back-top: 18px;
+  --vr-back-left: 20px;
+  --vr-customize-top: 18px;
+  --vr-customize-right: 20px;
+}
+
+@media (max-width:480px){
+  body.vr-body-game[data-universe="new_world_explorer"]{
+    --vr-topbar-top: 12px;
+    --vr-back-top: 16px;
+    --vr-back-left: 16px;
+    --vr-customize-top: 16px;
+    --vr-customize-right: 16px;
+    --vr-hud-item-ty: -4px;
+    --vr-hud-float-ico: 22px;
+  }
+}
+
+/* -------------------------
+   🟩 VAMPIRE
+   ------------------------- */
+body.vr-body-game[data-universe="vampire_lord"]{
+  --vr-hud-name-years-gap: clamp(18px, 3vw, 32px);
+
+  --vr-hud-left-x: 3.3%;
+  --vr-hud-left-w: 17.8%;
+  --vr-hud-center-l: 20.2%;
+  --vr-hud-center-r: 20.2%;
+  --vr-hud-right-r: 5.3%;
+  --vr-hud-right-w: 17.8%;
+
+  --vr-hud-item-ty: -11px;
+
+  --vr-hud-coin-top: 11%;
+  --vr-hud-coin-left: 77%;
+  --vr-hud-jeton-top: 11%;
+  --vr-hud-jeton-left: 23%;
+  --vr-hud-float-ico: clamp(20px, 3.2vw, 34px);
+
+  --vr-topbar-top: 14px;
+  --vr-back-top: 18px;
+  --vr-back-left: 20px;
+  --vr-customize-top: 18px;
+  --vr-customize-right: 20px;
+}
+
+@media (max-width:480px){
+  body.vr-body-game[data-universe="vampire_lord"]{
+    --vr-topbar-top: 12px;
+    --vr-back-top: 16px;
+    --vr-back-left: 16px;
+    --vr-customize-top: 16px;
+    --vr-customize-right: 16px;
+    --vr-hud-item-ty: -4px;
+    --vr-hud-float-ico: 22px;
+  }
+}
+
+/* -------------------------
+   🟩 MEDIEVAL (prêt pour ton futur HUD/topbar)
+   ------------------------- */
+body.vr-body-game[data-universe="medieval_king"]{
+  --vr-hud-name-years-gap: clamp(18px, 3vw, 32px);
+}
+
+@media (max-width:480px){
+  body.vr-body-game[data-universe="medieval_king"]{
+    --vr-hud-name-years-gap: clamp(16px, 3vw, 28px);
+  }
 }
