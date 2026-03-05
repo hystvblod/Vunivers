@@ -2159,22 +2159,24 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
    - chiffre conservé dans le médaillon
    - appliqué à tous les univers custom
    ========================================================== */
-body.vr-body-game[data-universe="hell_king"] .vr-hud-item,
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-item,
-body.vr-body-game[data-universe="western_president"] .vr-hud-item,
-body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-item,
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-item,
-body.vr-body-game[data-universe="vampire_lord"] .vr-hud-item{
+/* ==========================================================
+   ICÔNES MONNAIE / JETON EN HAUT DES PETITS RONDS
+   - 1 bloc par univers
+   - chiffre conservé dans le médaillon
+   - change seulement les 4 valeurs :
+     LEFT coin  = top + left
+     RIGHT jeton = top + left
+   ========================================================== */
+
+/* ==========================================================
+   HELL
+   ========================================================== */
+body.vr-body-game[data-universe="hell_king"] .vr-hud-item{
   position: relative !important;
   overflow: visible !important;
 }
 
-body.vr-body-game[data-universe="hell_king"] .vr-hud-left .vr-hud-icon-btn,
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-left .vr-hud-icon-btn,
-body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-icon-btn,
-body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left .vr-hud-icon-btn,
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left .vr-hud-icon-btn,
-body.vr-body-game[data-universe="vampire_lord"] .vr-hud-left .vr-hud-icon-btn{
+body.vr-body-game[data-universe="hell_king"] .vr-hud-left .vr-hud-icon-btn{
   position: absolute !important;
   top: 11% !important;
   left: 77% !important;
@@ -2190,12 +2192,7 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-left .vr-hud-icon-btn{
   pointer-events: auto !important;
 }
 
-body.vr-body-game[data-universe="hell_king"] .vr-hud-right .vr-hud-icon-btn,
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-right .vr-hud-icon-btn,
-body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-icon-btn,
-body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right .vr-hud-icon-btn,
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right .vr-hud-icon-btn,
-body.vr-body-game[data-universe="vampire_lord"] .vr-hud-right .vr-hud-icon-btn{
+body.vr-body-game[data-universe="hell_king"] .vr-hud-right .vr-hud-icon-btn{
   position: absolute !important;
   top: 11% !important;
   left: 23% !important;
@@ -2212,15 +2209,250 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-right .vr-hud-icon-btn{
 }
 
 body.vr-body-game[data-universe="hell_king"] .vr-hud-left .vr-hud-icon,
-body.vr-body-game[data-universe="hell_king"] .vr-hud-right .vr-hud-icon,
+body.vr-body-game[data-universe="hell_king"] .vr-hud-right .vr-hud-icon{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35)) !important;
+}
+
+/* ==========================================================
+   HEAVEN
+   ========================================================== */
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-item{
+  position: relative !important;
+  overflow: visible !important;
+}
+
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-left .vr-hud-icon-btn{
+  position: absolute !important;
+  top: 11% !important;
+  left: 77% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 5 !important;
+  width: clamp(20px, 3.2vw, 34px) !important;
+  height: clamp(20px, 3.2vw, 34px) !important;
+  min-width: clamp(20px, 3.2vw, 34px) !important;
+  min-height: clamp(20px, 3.2vw, 34px) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  pointer-events: auto !important;
+}
+
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-right .vr-hud-icon-btn{
+  position: absolute !important;
+  top: 11% !important;
+  left: 23% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 5 !important;
+  width: clamp(20px, 3.2vw, 34px) !important;
+  height: clamp(20px, 3.2vw, 34px) !important;
+  min-width: clamp(20px, 3.2vw, 34px) !important;
+  min-height: clamp(20px, 3.2vw, 34px) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  pointer-events: auto !important;
+}
+
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-left .vr-hud-icon,
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-right .vr-hud-icon,
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-right .vr-hud-icon{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35)) !important;
+}
+
+/* ==========================================================
+   WESTERN
+   ========================================================== */
+body.vr-body-game[data-universe="western_president"] .vr-hud-item{
+  position: relative !important;
+  overflow: visible !important;
+}
+
+body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-icon-btn{
+  position: absolute !important;
+  top: 11% !important;
+  left: 77% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 5 !important;
+  width: clamp(20px, 3.2vw, 34px) !important;
+  height: clamp(20px, 3.2vw, 34px) !important;
+  min-width: clamp(20px, 3.2vw, 34px) !important;
+  min-height: clamp(20px, 3.2vw, 34px) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  pointer-events: auto !important;
+}
+
+body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-icon-btn{
+  position: absolute !important;
+  top: 11% !important;
+  left: 23% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 5 !important;
+  width: clamp(20px, 3.2vw, 34px) !important;
+  height: clamp(20px, 3.2vw, 34px) !important;
+  min-width: clamp(20px, 3.2vw, 34px) !important;
+  min-height: clamp(20px, 3.2vw, 34px) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  pointer-events: auto !important;
+}
+
 body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-icon,
-body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-icon,
+body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-icon{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35)) !important;
+}
+
+/* ==========================================================
+   CEO
+   ========================================================== */
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-item{
+  position: relative !important;
+  overflow: visible !important;
+}
+
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left .vr-hud-icon-btn{
+  position: absolute !important;
+  top: 11% !important;
+  left: 77% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 5 !important;
+  width: clamp(20px, 3.2vw, 34px) !important;
+  height: clamp(20px, 3.2vw, 34px) !important;
+  min-width: clamp(20px, 3.2vw, 34px) !important;
+  min-height: clamp(20px, 3.2vw, 34px) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  pointer-events: auto !important;
+}
+
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right .vr-hud-icon-btn{
+  position: absolute !important;
+  top: 11% !important;
+  left: 23% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 5 !important;
+  width: clamp(20px, 3.2vw, 34px) !important;
+  height: clamp(20px, 3.2vw, 34px) !important;
+  min-width: clamp(20px, 3.2vw, 34px) !important;
+  min-height: clamp(20px, 3.2vw, 34px) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  pointer-events: auto !important;
+}
+
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left .vr-hud-icon,
-body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right .vr-hud-icon,
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right .vr-hud-icon{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35)) !important;
+}
+
+/* ==========================================================
+   EXPLORER
+   ========================================================== */
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-item{
+  position: relative !important;
+  overflow: visible !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left .vr-hud-icon-btn{
+  position: absolute !important;
+  top: 11% !important;
+  left: 77% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 5 !important;
+  width: clamp(20px, 3.2vw, 34px) !important;
+  height: clamp(20px, 3.2vw, 34px) !important;
+  min-width: clamp(20px, 3.2vw, 34px) !important;
+  min-height: clamp(20px, 3.2vw, 34px) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  pointer-events: auto !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right .vr-hud-icon-btn{
+  position: absolute !important;
+  top: 11% !important;
+  left: 23% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 5 !important;
+  width: clamp(20px, 3.2vw, 34px) !important;
+  height: clamp(20px, 3.2vw, 34px) !important;
+  min-width: clamp(20px, 3.2vw, 34px) !important;
+  min-height: clamp(20px, 3.2vw, 34px) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  pointer-events: auto !important;
+}
+
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left .vr-hud-icon,
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right .vr-hud-icon,
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right .vr-hud-icon{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35)) !important;
+}
+
+/* ==========================================================
+   VAMPIRE
+   ========================================================== */
+body.vr-body-game[data-universe="vampire_lord"] .vr-hud-item{
+  position: relative !important;
+  overflow: visible !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-hud-left .vr-hud-icon-btn{
+  position: absolute !important;
+  top: 11% !important;
+  left: 77% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 5 !important;
+  width: clamp(20px, 3.2vw, 34px) !important;
+  height: clamp(20px, 3.2vw, 34px) !important;
+  min-width: clamp(20px, 3.2vw, 34px) !important;
+  min-height: clamp(20px, 3.2vw, 34px) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  pointer-events: auto !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-hud-right .vr-hud-icon-btn{
+  position: absolute !important;
+  top: 11% !important;
+  left: 23% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 5 !important;
+  width: clamp(20px, 3.2vw, 34px) !important;
+  height: clamp(20px, 3.2vw, 34px) !important;
+  min-width: clamp(20px, 3.2vw, 34px) !important;
+  min-height: clamp(20px, 3.2vw, 34px) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  pointer-events: auto !important;
+}
+
 body.vr-body-game[data-universe="vampire_lord"] .vr-hud-left .vr-hud-icon,
 body.vr-body-game[data-universe="vampire_lord"] .vr-hud-right .vr-hud-icon{
   width: 100% !important;
@@ -2230,18 +2462,21 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-right .vr-hud-icon{
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35)) !important;
 }
 
+/* ==========================================================
+   MOBILE
+   ========================================================== */
 @media (max-width: 480px){
   body.vr-body-game[data-universe="hell_king"] .vr-hud-left .vr-hud-icon-btn,
-  body.vr-body-game[data-universe="heaven_king"] .vr-hud-left .vr-hud-icon-btn,
-  body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-icon-btn,
-  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left .vr-hud-icon-btn,
-  body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left .vr-hud-icon-btn,
-  body.vr-body-game[data-universe="vampire_lord"] .vr-hud-left .vr-hud-icon-btn,
   body.vr-body-game[data-universe="hell_king"] .vr-hud-right .vr-hud-icon-btn,
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-left .vr-hud-icon-btn,
   body.vr-body-game[data-universe="heaven_king"] .vr-hud-right .vr-hud-icon-btn,
+  body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-icon-btn,
   body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-icon-btn,
+  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left .vr-hud-icon-btn,
   body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right .vr-hud-icon-btn,
+  body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left .vr-hud-icon-btn,
   body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right .vr-hud-icon-btn,
+  body.vr-body-game[data-universe="vampire_lord"] .vr-hud-left .vr-hud-icon-btn,
   body.vr-body-game[data-universe="vampire_lord"] .vr-hud-right .vr-hud-icon-btn{
     width: 22px !important;
     height: 22px !important;
@@ -2250,7 +2485,6 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-right .vr-hud-icon{
     top: 12% !important;
   }
 }
-
 /* ==========================================================
    UNIVERS -> fond / cartes / choix
    BLOCS CORRIGÉS SELON LES FICHIERS QUI EXISTENT VRAIMENT
