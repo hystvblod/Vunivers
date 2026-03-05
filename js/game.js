@@ -16,6 +16,7 @@
 // - ✅ FIX(5): i18n overlay event (Continuer / Événement) avec fallback
 // - ✅ COSMETICS: fallback gris + popup perso + application live
 // - ✅ FIX POPUP COSMETICS: une seule ligne rerender au scroll, plus de flash global
+// - ✅ JETON PEEK: blink/zoom seulement hors-peek + delta +/−% affiché en peek + % jauges mis à jour
 // ===============================================
 
 
@@ -424,6 +425,7 @@ body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-fill{
 }
 
 /* Preview uniquement en mode peek */
+body:not(.vr-peek-mode) .vr-gauge-preview{ opacity:0 !important; }
 body.vr-peek-mode .vr-gauge-preview{
   position:absolute;
   inset:0;
@@ -435,6 +437,7 @@ body.vr-peek-mode .vr-gauge-preview{
         (document.head || document.documentElement).appendChild(style);
       } catch (_) {}
     },
+
     _consumePeekDecision() {
       if (this.peekRemaining <= 0) return;
       this.peekRemaining = Math.max(0, this.peekRemaining - 1);
@@ -508,23 +511,36 @@ body.vr-peek-mode .vr-gauge-preview{
 
     updateGauges() {
       const gaugesCfg = this.universeConfig?.gauges || [];
-      const fillEls = document.querySelectorAll(".vr-gauge-fill");
+      const gaugeEls = document.querySelectorAll(".vr-gauge");
 
-      fillEls.forEach((fillEl, idx) => {
-        const gaugeId = fillEl.dataset.gaugeId || gaugesCfg[idx]?.id || null;
+      gaugeEls.forEach((gEl, idx) => {
+        const cfg = gaugesCfg[idx];
+        const gaugeId = gEl?.dataset?.gaugeId || cfg?.id || null;
         if (!gaugeId) return;
 
         const val =
-          window.VRState.getGaugeValue(gaugeId) ??
-          this.universeConfig?.initialGauges?.[gaugeId] ??
-          gaugesCfg[idx]?.start ??
-          50;
+          (window.VRState?.getGaugeValue?.(gaugeId) ??
+            this.universeConfig?.initialGauges?.[gaugeId] ??
+            cfg?.start ??
+            50);
 
-        fillEl.style.setProperty("--vr-pct", `${val}%`);
+        const safeVal = clamp(Number(val) || 0, 0, 100);
+
+        const fillEl = gEl.querySelector(".vr-gauge-fill");
+        if (fillEl) {
+          fillEl.dataset.gaugeId = gaugeId;
+          fillEl.style.setProperty("--vr-pct", `${safeVal}%`);
+        }
+
+        const valEl = gEl.querySelector(".vr-gauge-val");
+        if (valEl) valEl.textContent = `${Math.round(safeVal)}%`;
+
+        const deltaEl = gEl.querySelector(".vr-gauge-delta");
+        if (deltaEl) deltaEl.textContent = "";
+
+        const previewEl = gEl.querySelector(".vr-gauge-preview");
+        if (previewEl) previewEl.style.setProperty("--vr-pct", "0%");
       });
-
-      const previewEls = document.querySelectorAll(".vr-gauge-preview");
-      previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-pct", "0%"));
 
       this._clearPeekClasses();
     },
@@ -635,8 +651,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
         pointerId = e.pointerId ?? null;
         try { if (pointerId != null) btn.setPointerCapture(pointerId); } catch (_) {}
-
-    
       };
 
       const onMove = (e) => {
@@ -652,23 +666,23 @@ body.vr-peek-mode .vr-gauge-preview{
         const dx = lastX - startX;
         const dy = lastY - startY;
 
-if (Math.abs(dy) > Math.abs(dx) * 1.25) {
-  this._clearPeek();
-  setTransform(dx * 0.25);
-  return;
-}
+        if (Math.abs(dy) > Math.abs(dx) * 1.25) {
+          this._clearPeek();
+          setTransform(dx * 0.25);
+          return;
+        }
 
-if (Math.abs(dx) >= PREVIEW_TH) {
-  const choiceId = btn.getAttribute("data-choice");
-  if (choiceId) {
-    if (this.peekRemaining > 0) this._showPeekForChoice(choiceId);  // peek = preview OK
-    else this._showBlinkOnlyForChoice(choiceId);                     // normal = blink only
-  }
-} else {
-  this._clearPeek();
-}
+        if (Math.abs(dx) >= PREVIEW_TH) {
+          const choiceId = btn.getAttribute("data-choice");
+          if (choiceId) {
+            if (this.peekRemaining > 0) this._showPeekForChoice(choiceId);  // peek = preview OK
+            else this._showBlinkOnlyForChoice(choiceId);                     // normal = blink only
+          }
+        } else {
+          this._clearPeek();
+        }
 
-setTransform(dx);
+        setTransform(dx);
       };
 
       const onUp = () => {
@@ -716,30 +730,37 @@ setTransform(dx);
       } catch (_) {}
     },
 
-_clearPeek() {
-  this._peekChoiceActive = null;
+    _clearPeek() {
+      this._peekChoiceActive = null;
 
-  const previewEls = document.querySelectorAll(".vr-gauge-preview");
-  previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-pct", "0%"));
+      try {
+        document.querySelectorAll(".vr-gauge-preview").forEach((previewEl) => {
+          previewEl.style.setProperty("--vr-pct", "0%");
+        });
+        document.querySelectorAll(".vr-gauge-delta").forEach((dEl) => {
+          dEl.textContent = "";
+        });
+      } catch (_) {}
 
-  this._clearPeekClasses();
-},
+      this._clearPeekClasses();
+    },
 
-_showBlinkOnlyForChoice(choiceId) {
-  if (!this.currentCardLogic?.choices?.[choiceId]) return;
+    _showBlinkOnlyForChoice(choiceId) {
+      if (!this.currentCardLogic?.choices?.[choiceId]) return;
 
-  this._clearPeekClasses();
+      this._clearPeekClasses();
+      try { document.querySelectorAll(".vr-gauge-delta").forEach((dEl) => (dEl.textContent = "")); } catch (_) {}
 
-  const deltas = this.currentCardLogic.choices[choiceId]?.gaugeDelta || {};
-  for (const [gaugeId, delta] of Object.entries(deltas)) {
-    if (typeof delta !== "number" || delta === 0) continue;
+      const deltas = this.currentCardLogic.choices[choiceId]?.gaugeDelta || {};
+      for (const [gaugeId, delta] of Object.entries(deltas)) {
+        if (typeof delta !== "number" || delta === 0) continue;
 
-    const el = document.querySelector(`.vr-gauge[data-gauge-id="${gaugeId}"]`);
-    if (!el) continue;
+        const el = document.querySelector(`.vr-gauge[data-gauge-id="${gaugeId}"]`);
+        if (!el) continue;
 
-    el.classList.add(delta > 0 ? "vr-peek-up" : "vr-peek-down");
-  }
-},
+        el.classList.add(delta > 0 ? "vr-peek-up" : "vr-peek-down");
+      }
+    },
 
     _showPeekForChoice(choiceId) {
       if (!this.currentCardLogic?.choices?.[choiceId]) return;
@@ -753,6 +774,7 @@ _showBlinkOnlyForChoice(choiceId) {
       gaugeEls.forEach((g) => {
         g.classList.remove("vr-peek-up");
         g.classList.remove("vr-peek-down");
+        try { g.querySelector(".vr-gauge-delta").textContent = ""; } catch (_) {}
       });
 
       previewEls.forEach((previewEl, idx) => {
@@ -762,21 +784,28 @@ _showBlinkOnlyForChoice(choiceId) {
         const gaugeId = cfg.id;
 
         const baseVal =
-          window.VRState.getGaugeValue(gaugeId) ??
-          this.universeConfig?.initialGauges?.[gaugeId] ??
-          cfg.start ??
-          50;
+          (window.VRState?.getGaugeValue?.(gaugeId) ??
+            this.universeConfig?.initialGauges?.[gaugeId] ??
+            cfg?.start ??
+            50);
 
         const d = this.currentCardLogic.choices[choiceId]?.gaugeDelta?.[gaugeId];
         const delta = (typeof d === "number") ? d : 0;
 
-        const previewVal = clamp(baseVal + delta, 0, 100);
+        const previewVal = clamp((Number(baseVal) || 0) + delta, 0, 100);
         previewEl.style.setProperty("--vr-pct", `${previewVal}%`);
 
         const gaugeEl = gaugeEls[idx];
-        if (gaugeEl) {
-          if (delta > 0) gaugeEl.classList.add("vr-peek-up");
-          else if (delta < 0) gaugeEl.classList.add("vr-peek-down");
+        if (!gaugeEl) return;
+
+        if (delta > 0) gaugeEl.classList.add("vr-peek-up");
+        else if (delta < 0) gaugeEl.classList.add("vr-peek-down");
+
+        const deltaEl = gaugeEl.querySelector(".vr-gauge-delta");
+        if (deltaEl) {
+          if (delta > 0) deltaEl.textContent = `+${Math.round(delta)}%`;
+          else if (delta < 0) deltaEl.textContent = `-${Math.round(Math.abs(delta))}%`;
+          else deltaEl.textContent = "";
         }
       });
     }
@@ -1928,28 +1957,31 @@ _showBlinkOnlyForChoice(choiceId) {
       try {
         const host = (popup.querySelector("[data-token-action]")?.parentElement) || popup;
 
+        // ✅ Fallback : si le bouton Peek n'est pas présent, on le recrée
+        // avec exactement le même style/structure que les autres cartes (pas de style inline).
         if (host && !host.querySelector('[data-token-action="peek15"]')) {
           const btn = document.createElement("button");
           btn.type = "button";
+          btn.className = "vr-card vr-token-card";
           btn.setAttribute("data-token-action", "peek15");
-          btn.style.cssText =
-            "display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;" +
-            "padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.14);" +
-            "background:rgba(255,255,255,.08);color:inherit;font:inherit;text-align:left;cursor:pointer;";
 
-          const title = document.createElement("div");
-          title.style.cssText = "font-weight:700;font-size:14px;line-height:1.2;";
+          const content = document.createElement("div");
+          content.className = "vr-card-content";
+
+          const title = document.createElement("h4");
+          title.className = "vr-card-title";
           title.textContent = t("token.popup.peek.title", "Voir les effets (15)");
 
-          const desc = document.createElement("div");
-          desc.style.cssText = "opacity:.85;font-size:12.5px;line-height:1.25;";
+          const desc = document.createElement("p");
+          desc.className = "vr-card-text";
           desc.textContent = t(
             "token.popup.peek.text",
             "Pendant 15 choix, les jauges concernées clignotent et affichent un aperçu."
           );
 
-          btn.appendChild(title);
-          btn.appendChild(desc);
+          content.appendChild(title);
+          content.appendChild(desc);
+          btn.appendChild(content);
 
           const before =
             host.querySelector('[data-token-action="gauge50"]') ||
@@ -2037,8 +2069,20 @@ _showBlinkOnlyForChoice(choiceId) {
             if (!ok) {
               try { await window.VUserData?.addJetons?.(1); } catch (_) {}
               toast(t("token.toast.undo_fail", "Impossible de revenir en arrière"));
+              try {
+                await window.VREventOverlay?.showEvent?.(
+                  t("token.undo.fail.title", "Retour arrière"),
+                  t("token.undo.fail.body", "Impossible de revenir en arrière. Rien n’a été modifié.")
+                );
+              } catch (_) {}
             } else {
               toast(t("token.toast.undo_done", "Retour -3 effectué"));
+              try {
+                await window.VREventOverlay?.showEvent?.(
+                  t("token.undo.ok.title", "Retour arrière"),
+                  t("token.undo.ok.body", "3 choix annulés. Tu peux continuer.")
+                );
+              } catch (_) {}
             }
 
             try {
@@ -2842,24 +2886,24 @@ _showBlinkOnlyForChoice(choiceId) {
 
     if (!btn || !popup) return;
     function ensureCloseX() {
-  const inner = popup.querySelector(".vr-popup-inner");
-  if (!inner) return;
+      const inner = popup.querySelector(".vr-popup-inner");
+      if (!inner) return;
 
-  if (inner.querySelector(".vr-customize-x")) return;
+      if (inner.querySelector(".vr-customize-x")) return;
 
-  const x = document.createElement("button");
-  x.type = "button";
-  x.className = "vr-customize-x";
+      const x = document.createElement("button");
+      x.type = "button";
+      x.className = "vr-customize-x";
 
-  /* IMPORTANT: on réutilise ton système existant */
-  x.setAttribute("data-customize-action", "close");
-  x.setAttribute("aria-label", "");
-  x.setAttribute("data-i18n-aria", "common.close");
+      /* IMPORTANT: on réutilise ton système existant */
+      x.setAttribute("data-customize-action", "close");
+      x.setAttribute("aria-label", "");
+      x.setAttribute("data-i18n-aria", "common.close");
 
-  inner.insertBefore(x, inner.firstChild);
-}
+      inner.insertBefore(x, inner.firstChild);
+    }
 
-ensureCloseX();
+    ensureCloseX();
 
     btn.addEventListener("click", () => openPopup());
 
