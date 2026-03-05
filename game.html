@@ -58,7 +58,7 @@
                     aria-label="VCoins"
                     aria-haspopup="dialog"
                     aria-controls="vr-coins-popup">
-              <img class="vr-hud-icon" src="assets/img/ui/vcoins.webp" alt="" draggable="false" />
+            
             </button>
             <span class="vr-hud-value" id="meta-coins">0</span>
           </div>
@@ -78,16 +78,21 @@
                     aria-label="Jeton"
                     aria-haspopup="dialog"
                     aria-controls="vr-token-popup">
-              <img class="vr-hud-icon" src="assets/img/ui/jeton.webp" alt="Jeton" draggable="false" />
+             
             </button>
             <span class="vr-hud-value" id="meta-tokens">0</span>
           </div>
         </div>
       </div>
 
+      <!-- ✅ JAUGES : label + % + delta + frame -->
       <div class="vr-gauges-row" id="vr-gauges-row">
         <div class="vr-gauge">
           <span class="vr-gauge-label"></span>
+          <span class="vr-gauge-value">
+            <span class="vr-gauge-val">0%</span>
+            <span class="vr-gauge-delta"></span>
+          </span>
           <div class="vr-gauge-frame">
             <div class="vr-gauge-preview"></div>
             <div class="vr-gauge-fill"></div>
@@ -96,6 +101,10 @@
 
         <div class="vr-gauge">
           <span class="vr-gauge-label"></span>
+          <span class="vr-gauge-value">
+            <span class="vr-gauge-val">0%</span>
+            <span class="vr-gauge-delta"></span>
+          </span>
           <div class="vr-gauge-frame">
             <div class="vr-gauge-preview"></div>
             <div class="vr-gauge-fill"></div>
@@ -104,6 +113,10 @@
 
         <div class="vr-gauge">
           <span class="vr-gauge-label"></span>
+          <span class="vr-gauge-value">
+            <span class="vr-gauge-val">0%</span>
+            <span class="vr-gauge-delta"></span>
+          </span>
           <div class="vr-gauge-frame">
             <div class="vr-gauge-preview"></div>
             <div class="vr-gauge-fill"></div>
@@ -112,6 +125,10 @@
 
         <div class="vr-gauge">
           <span class="vr-gauge-label"></span>
+          <span class="vr-gauge-value">
+            <span class="vr-gauge-val">0%</span>
+            <span class="vr-gauge-delta"></span>
+          </span>
           <div class="vr-gauge-frame">
             <div class="vr-gauge-preview"></div>
             <div class="vr-gauge-fill"></div>
@@ -151,6 +168,14 @@
               <div class="vr-card-content">
                 <h4 class="vr-card-title" data-i18n="token.popup.ad.title"></h4>
                 <p class="vr-card-text" data-i18n="token.popup.ad.text"></p>
+              </div>
+            </button>
+
+            <!-- ✅ VOIR LES EFFETS (même style/couleur que les autres) -->
+            <button class="vr-card vr-token-card" type="button" data-token-action="peek15">
+              <div class="vr-card-content">
+                <h4 class="vr-card-title" data-i18n="token.popup.peek.title"></h4>
+                <p class="vr-card-text" data-i18n="token.popup.peek.text"></p>
               </div>
             </button>
 
