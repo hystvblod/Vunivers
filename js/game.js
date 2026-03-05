@@ -408,7 +408,10 @@ const VR_BADGE_GOLD_CHOICES = 100;
 }
 .vr-gauge.vr-peek-up .vr-gauge-fill,
 .vr-gauge.vr-peek-down .vr-gauge-fill{
-  animation: vrPeekGlow 650ms ease-in-out infinite;
+  transform-origin: 50% 50%;
+  animation:
+    vrPeekGlow 650ms ease-in-out infinite,
+    vrPeekPulse 650ms ease-in-out infinite;
 }
 body.vr-peek-mode .vr-gauge-preview{
   position:absolute;
