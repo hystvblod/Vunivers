@@ -2201,26 +2201,58 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
    ✅ PATCH FINAL — HUD SOLDES SANS ICÔNES + SOLDES CLIQUABLES
    (ce bloc doit rester tout en bas, et maintenant il gagne)
    ========================================================== */
+/* ==========================================================
+   ✅ PATCH FINAL V2 — SOLDES CLIQUABLES SANS ICÔNES
+   - Fix “tache sombre” sur HUD sculptés : fonds = transparent par défaut
+   - Réglage position du CHIFFRE par univers via variables (tx/ty)
+   ========================================================== */
 
-/* Valeurs par défaut (fallback) */
+/* Defaults (fallback) */
 body.vr-body-game{
+  /* couleurs */
   --vr-vcoins-color: #FFD166;
   --vr-vcoins-glow:  rgba(255, 209, 102, .62);
-  --vr-vcoins-bg:    rgba(15, 23, 42, 0.30);
-
   --vr-jetons-color: #F3F4F6;
   --vr-jetons-glow:  rgba(243, 244, 246, .18);
-  --vr-jetons-bg:    rgba(15, 23, 42, 0.30);
+
+  /* ✅ IMPORTANT : sur HUD sculptés -> PAS de fond (sinon “sombre”) */
+  --vr-vcoins-bg: transparent;
+  --vr-jetons-bg: transparent;
+
+  /* ✅ Réglage FIN position du chiffre (px) */
+  --vr-vcoins-tx: 0px;
+  --vr-vcoins-ty: -2px;
+  --vr-jetons-tx: 0px;
+  --vr-jetons-ty: -2px;
 }
 
-/* Par univers: VCoins à gauche en "or" */
-body.vr-body-game[data-universe="hell_king"]{ --vr-vcoins-color:#FFCC4D; --vr-vcoins-glow:rgba(255,160,60,.58); }
-body.vr-body-game[data-universe="heaven_king"]{ --vr-vcoins-color:#FFE8A6; --vr-vcoins-glow:rgba(255,255,255,.42); }
-body.vr-body-game[data-universe="mega_corp_ceo"]{ --vr-vcoins-color:#F5D76E; --vr-vcoins-glow:rgba(200,200,200,.30); }
-body.vr-body-game[data-universe="western_president"]{ --vr-vcoins-color:#FFD24A; --vr-vcoins-glow:rgba(255,210,74,.50); }
-body.vr-body-game[data-universe="new_world_explorer"]{ --vr-vcoins-color:#E6C37A; --vr-vcoins-glow:rgba(230,195,122,.42); }
-body.vr-body-game[data-universe="medieval_king"]{ --vr-vcoins-color:#F2C14E; --vr-vcoins-glow:rgba(242,193,78,.50); }
-body.vr-body-game[data-universe="vampire_lord"]{ --vr-vcoins-color:#F7D06B; --vr-vcoins-glow:rgba(210,60,60,.28); }
+/* Couleurs par univers (tu peux ajuster) */
+body.vr-body-game[data-universe="hell_king"]{
+  --vr-vcoins-color:#FFCC4D; --vr-vcoins-glow:rgba(255,160,60,.58);
+}
+body.vr-body-game[data-universe="heaven_king"]{
+  --vr-vcoins-color:#FFE8A6; --vr-vcoins-glow:rgba(255,255,255,.42);
+}
+body.vr-body-game[data-universe="mega_corp_ceo"]{
+  --vr-vcoins-color:#F5D76E; --vr-vcoins-glow:rgba(200,200,200,.30);
+}
+body.vr-body-game[data-universe="western_president"]{
+  --vr-vcoins-color:#FFD24A; --vr-vcoins-glow:rgba(255,210,74,.50);
+}
+body.vr-body-game[data-universe="new_world_explorer"]{
+  --vr-vcoins-color:#E6C37A; --vr-vcoins-glow:rgba(230,195,122,.42);
+}
+body.vr-body-game[data-universe="medieval_king"]{
+  --vr-vcoins-color:#F2C14E; --vr-vcoins-glow:rgba(242,193,78,.50);
+
+  /* si un jour Medieval n’a PAS de HUD sculpté, tu peux remettre un fond :
+  --vr-vcoins-bg: rgba(15,23,42,0.30);
+  --vr-jetons-bg: rgba(15,23,42,0.30);
+  */
+}
+body.vr-body-game[data-universe="vampire_lord"]{
+  --vr-vcoins-color:#F7D06B; --vr-vcoins-glow:rgba(210,60,60,.28);
+}
 
 /* HUD item: clic plein + chiffre centré */
 body.vr-body-game .vr-hud-item{
@@ -2245,6 +2277,7 @@ body.vr-body-game .vr-hud-item .vr-hud-icon-btn{
 
   transform: none !important;
   background: transparent !important;
+  border: 0 !important;
   border-radius: 999px !important;
 
   z-index: 50 !important;
@@ -2268,24 +2301,34 @@ body.vr-body-game .vr-hud-item .vr-hud-value{
   text-align: center !important;
 }
 
-/* Style VCoins (gauche) */
+/* ✅ IMPORTANT : on évite TOUT effet sombre sur HUD sculptés */
 body.vr-body-game .vr-hud-left .vr-hud-item{
   background: var(--vr-vcoins-bg) !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
+body.vr-body-game .vr-hud-right .vr-hud-item{
+  background: var(--vr-jetons-bg) !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* VCoins (gauche) */
 body.vr-body-game .vr-hud-left .vr-hud-value{
   color: var(--vr-vcoins-color) !important;
   text-shadow:
     0 2px 10px rgba(0,0,0,.55),
     0 0 14px var(--vr-vcoins-glow) !important;
+  transform: translate(var(--vr-vcoins-tx), var(--vr-vcoins-ty)) !important;
 }
 
-/* Style Jetons (droite) */
-body.vr-body-game .vr-hud-right .vr-hud-item{
-  background: var(--vr-jetons-bg) !important;
-}
+/* Jetons (droite) */
 body.vr-body-game .vr-hud-right .vr-hud-value{
   color: var(--vr-jetons-color) !important;
   text-shadow:
     0 2px 10px rgba(0,0,0,.55),
     0 0 14px var(--vr-jetons-glow) !important;
+  transform: translate(var(--vr-jetons-tx), var(--vr-jetons-ty)) !important;
 }
