@@ -246,9 +246,6 @@ const VR_BADGE_GOLD_CHOICES = 100;
 // -------------------------------------------------------
 // UI binding + swipe
 // -------------------------------------------------------
-// -------------------------------------------------------
-// UI binding + swipe
-// -------------------------------------------------------
 (function () {
   "use strict";
 
@@ -282,7 +279,6 @@ const VR_BADGE_GOLD_CHOICES = 100;
 
       this.peekRemaining = 0;
       this._peekChoiceActive = null;
-
       try { document.body?.classList?.remove("vr-peek-mode"); } catch (_) {}
 
       this._ensurePeekStyles();
@@ -303,7 +299,6 @@ const VR_BADGE_GOLD_CHOICES = 100;
         else document.body.classList.remove("vr-peek-mode");
       } catch (_) {}
 
-      // ✅ au moment d’activer Peek, on affiche les % actuels AU-DESSUS
       this.updateGauges();
     },
 
@@ -326,7 +321,7 @@ const VR_BADGE_GOLD_CHOICES = 100;
   100% { transform: translateZ(0) scale(1); }
 }
 
-/* ✅ zone texte au-dessus des jauges */
+/* ✅ zone AU-DESSUS des jauges */
 .vr-gauge-value{
   display:inline-flex;
   align-items:center;
@@ -334,12 +329,12 @@ const VR_BADGE_GOLD_CHOICES = 100;
   gap:6px;
   min-width:64px;
   line-height:1.05;
-  font: 900 12px/1 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  font:900 12px/1 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   letter-spacing:.2px;
-  text-shadow: 0 2px 10px rgba(0,0,0,.45);
+  text-shadow:0 2px 10px rgba(0,0,0,.45);
 }
 
-/* ✅ hors Peek : on cache complètement les % */
+/* ✅ hors Peek : on cache complètement les % au-dessus */
 body:not(.vr-peek-mode) .vr-gauge-value{
   opacity:0 !important;
   visibility:hidden !important;
@@ -355,28 +350,28 @@ body.vr-peek-mode .vr-gauge-value{
   display:none !important;
 }
 
-/* ✅ couleurs du delta au-dessus */
+/* ✅ delta au-dessus */
 body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-delta{
-  color: rgba(170, 255, 210, .98);
+  color:rgba(170,255,210,.98);
 }
 body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-delta{
-  color: rgba(255, 190, 190, .98);
+  color:rgba(255,190,190,.98);
 }
 
 /* ✅ hors Peek : blink + mini zoom */
 body:not(.vr-peek-mode) .vr-gauge.vr-peek-up .vr-gauge-fill,
 body:not(.vr-peek-mode) .vr-gauge.vr-peek-down .vr-gauge-fill{
-  transform-origin: 50% 50%;
+  transform-origin:50% 50%;
   animation:
     vrGaugeBlinkGlow 650ms ease-in-out infinite,
     vrGaugeBlinkPulse 650ms ease-in-out infinite;
 }
 
-/* ✅ en Peek : plus de clignotement */
+/* ✅ en Peek : PAS de clignotement */
 body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-fill,
 body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-fill{
-  animation: none !important;
-  filter: brightness(1.12) saturate(1.06);
+  animation:none !important;
+  filter:brightness(1.12) saturate(1.06);
 }
 
 /* ✅ preview visuel seulement en Peek */
@@ -388,7 +383,7 @@ body.vr-peek-mode .vr-gauge-preview{
   inset:0;
   pointer-events:none;
   opacity:.55;
-  clip-path: inset(calc(100% - var(--vr-pct, 0%)) 0 0 0);
+  clip-path:inset(calc(100% - var(--vr-pct, 0%)) 0 0 0);
 }
 `;
         (document.head || document.documentElement).appendChild(style);
@@ -403,10 +398,7 @@ body.vr-peek-mode .vr-gauge-preview{
       if (this.peekRemaining <= 0) {
         this.peekRemaining = 0;
         this._clearPeek();
-
         try { document.body.classList.remove("vr-peek-mode"); } catch (_) {}
-
-        // ✅ quand Peek finit, on vide et cache les % du dessus
         this.updateGauges();
       }
     },
@@ -432,7 +424,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
         const label =
           (translated && translated !== i18nKey ? translated : null) ||
-          cfg?.[\`label_\${this.lang}\`] ||
+          cfg?.[`label_${this.lang}`] ||
           cfg?.label ||
           cfg?.id;
 
@@ -447,7 +439,7 @@ body.vr-peek-mode .vr-gauge-preview{
       const gaugeEls = document.querySelectorAll(".vr-gauge");
 
       gaugeEls.forEach((el) => {
-        // ✅ si un ancien mauvais JS avait injecté ça dessous, on le supprime
+        // ✅ supprime les vieux blocs injectés en dessous par l’ancien code
         try {
           el.querySelectorAll(".vr-gauge-under").forEach((n) => n.remove());
         } catch (_) {}
@@ -498,11 +490,11 @@ body.vr-peek-mode .vr-gauge-preview{
           fillEl.style.setProperty("--vr-pct", `${safeVal}%`);
         }
 
-        // ✅ % ACTUEL au-dessus : visible uniquement si Peek actif
+        // ✅ % actuel AU-DESSUS
         const valEl = gEl.querySelector(".vr-gauge-val");
         if (valEl) valEl.textContent = isPeek ? `${Math.round(safeVal)}%` : "";
 
-        // ✅ delta au-dessus : vidé ici, rempli seulement pendant preview d’un choix
+        // ✅ delta AU-DESSUS
         const deltaEl = gEl.querySelector(".vr-gauge-delta");
         if (deltaEl) deltaEl.textContent = "";
 
@@ -535,9 +527,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
       this._resetChoiceCards();
       this._clearPeek();
-
-      // ✅ si Peek est encore actif quand une nouvelle carte arrive,
-      // on garde les % actuels visibles au-dessus
       this.updateGauges();
     },
 
@@ -666,10 +655,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
         if (Math.abs(dx) >= TH && this.currentCardLogic) {
           const choiceId = btn.getAttribute("data-choice");
-          if (!choiceId) {
-            animateBack();
-            return;
-          }
+          if (!choiceId) { animateBack(); return; }
 
           animateFlyOut(dx, () => {
             try { window.VREngine.applyChoice(this.currentCardLogic, choiceId); } catch (_) {}
@@ -709,8 +695,7 @@ body.vr-peek-mode .vr-gauge-preview{
           previewEl.style.setProperty("--vr-pct", "0%");
         });
 
-        // ✅ on ne vide QUE le delta temporaire,
-        // pas le % actuel quand Peek est actif
+        // ✅ on efface seulement le delta temporaire
         document.querySelectorAll(".vr-gauge-delta").forEach((dEl) => {
           dEl.textContent = "";
         });
@@ -795,7 +780,7 @@ body.vr-peek-mode .vr-gauge-preview{
         if (delta > 0) gaugeEl.classList.add("vr-peek-up");
         else if (delta < 0) gaugeEl.classList.add("vr-peek-down");
 
-        // ✅ effet AU-DESSUS de la jauge, à côté du % actuel
+        // ✅ + / - XX% AU-DESSUS, à côté du % actuel
         const deltaEl = gaugeEl.querySelector(".vr-gauge-delta");
         if (deltaEl) {
           if (delta > 0) deltaEl.textContent = `+${Math.round(delta)}%`;
@@ -808,6 +793,8 @@ body.vr-peek-mode .vr-gauge-preview{
 
   window.VRUIBinding = VRUIBinding;
 })();
+
+
 // -------------------------------------------------------
 // State
 // -------------------------------------------------------
