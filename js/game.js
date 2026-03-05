@@ -406,12 +406,12 @@ const VR_BADGE_GOLD_CHOICES = 100;
   50%  { transform: translateZ(0) scale(1.01); }
   100% { transform: translateZ(0) scale(1); }
 }
-body.vr-peek-mode .vr-gauge.vr-peek-up,
-body.vr-peek-mode .vr-gauge.vr-peek-down{
+.vr-gauge.vr-peek-up,
+.vr-gauge.vr-peek-down{
   animation: vrPeekGlow 650ms ease-in-out infinite;
 }
-body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-frame,
-body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-frame{
+.vr-gauge.vr-peek-up .vr-gauge-frame,
+.vr-gauge.vr-peek-down .vr-gauge-frame{
   box-shadow: 0 0 0 2px rgba(255,255,255,.18), 0 10px 24px rgba(0,0,0,.22);
 }
 body.vr-peek-mode .vr-gauge-preview{
@@ -569,6 +569,7 @@ body.vr-peek-mode .vr-gauge-preview{
     _setupSwipeOnChoiceCard(btn) {
       const TH = 62;
       const ROT_MAX = 12;
+      const PREVIEW_TH = 12; // à partir de ~12px, on prévient (clignote)
       let startX = 0;
       let startY = 0;
       let lastX = 0;
@@ -626,10 +627,7 @@ body.vr-peek-mode .vr-gauge-preview{
         pointerId = e.pointerId ?? null;
         try { if (pointerId != null) btn.setPointerCapture(pointerId); } catch (_) {}
 
-        const choiceId = btn.getAttribute("data-choice");
-        if (choiceId && this.peekRemaining > 0) {
-          this._showPeekForChoice(choiceId);
-        }
+    
       };
 
       const onMove = (e) => {
@@ -645,12 +643,20 @@ body.vr-peek-mode .vr-gauge-preview{
         const dx = lastX - startX;
         const dy = lastY - startY;
 
-        if (Math.abs(dy) > Math.abs(dx) * 1.25) {
-          setTransform(dx * 0.25);
-          return;
-        }
+   if (Math.abs(dy) > Math.abs(dx) * 1.25) {
+  this._clearPeek();         // coupe le clignotement si scroll vertical
+  setTransform(dx * 0.25);
+  return;
+}
 
-        setTransform(dx);
+if (Math.abs(dx) >= PREVIEW_TH) {
+  const choiceId = btn.getAttribute("data-choice");
+  if (choiceId) this._showPeekForChoice(choiceId); // pose vr-peek-up/down => clignote
+} else {
+  this._clearPeek(); // revient au centre => stop clignote
+}
+
+setTransform(dx);
       };
 
       const onUp = () => {
