@@ -2003,7 +2003,7 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
 
     --vr-identity-tx: 0px;
     --vr-identity-ty: 3px;
-    --vr-hud-name-years-gap: 40px;
+    --vr-hud-name-years-gap: 30px;
   }
 
   body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3.6% !important; width: 18.0% !important; }

@@ -982,13 +982,64 @@ body.vr-peek-mode .vr-gauge-preview{
   const EVENT_NO_REPEAT_UNTIL = 25;
   const EVENT_EXCLUDE_LAST = 5;
 
-  const HELL_KING_DYNASTIES = ["Lucifer","Belzebuth","Lilith","Asmodée","Mammon","Baal","Astaroth","Abaddon"];
+function toRoman(num) {
+  const n = Math.max(1, Number(num || 1));
+  const map = [
+    [1000, "M"], [900, "CM"], [500, "D"], [400, "CD"],
+    [100, "C"], [90, "XC"], [50, "L"], [40, "XL"],
+    [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]
+  ];
 
-  function getDynastyName(reignIndex) {
-    const baseName = HELL_KING_DYNASTIES[reignIndex % HELL_KING_DYNASTIES.length];
-    const number = Math.floor(reignIndex / HELL_KING_DYNASTIES.length) + 1;
-    return `${baseName} ${number}`;
+  let rest = n;
+  let out = "";
+
+  for (const [value, symbol] of map) {
+    while (rest >= value) {
+      out += symbol;
+      rest -= value;
+    }
   }
+
+  return out || "I";
+}
+
+function getProfilePseudo() {
+  try {
+    const raw =
+      window.VUserData?.getUsername?.() ||
+      window.VUserData?.load?.()?.username ||
+      "";
+
+    const clean = String(raw || "").trim();
+    return clean || "—";
+  } catch (_) {
+    return "—";
+  }
+}
+
+function getDisplayedYearIndex() {
+  try {
+    const choices = Math.max(0, Number(window.VRGame?.session?.reignLength || 0));
+    return Math.floor(choices / 4) + 1;
+  } catch (_) {
+    return 1;
+  }
+}
+
+function getYearLabel() {
+  let label = "Année";
+
+  try {
+    const t = window.VRI18n?.t?.("game.year_label");
+    if (t && t !== "game.year_label") label = t;
+  } catch (_) {}
+
+  return `${label} ${toRoman(getDisplayedYearIndex())}`;
+}
+
+function getDynastyName() {
+  return `${getProfilePseudo()} ${toRoman(getDisplayedYearIndex())}`;
+}
 
   function deepClone(obj) {
     try { return JSON.parse(JSON.stringify(obj)); } catch (_) { return obj; }
@@ -1286,13 +1337,13 @@ body.vr-peek-mode .vr-gauge-preview{
       }
 
       const kingName = getDynastyName(this.reignIndex - 1);
-      const years = window.VRState.getReignYears();
+const years = getYearLabel();
 
-      window.VRUIBinding.updateMeta(kingName, years, this._uiCoins, this._uiTokens);
+window.VRUIBinding.updateMeta(kingName, years, this._uiCoins, this._uiTokens);
 
-      this._refreshUIBalancesSoft().then(() => {
-        window.VRUIBinding.updateMeta(kingName, years, this._uiCoins, this._uiTokens);
-      });
+this._refreshUIBalancesSoft().then(() => {
+  window.VRUIBinding.updateMeta(getDynastyName(), getYearLabel(), this._uiCoins, this._uiTokens);
+});
 
       this._nextCard();
       this._saveRunSoft();
@@ -1439,13 +1490,12 @@ body.vr-peek-mode .vr-gauge-preview{
       window.VRUIBinding.updateGauges();
 
       const kingName = getDynastyName(this.reignIndex - 1);
-      window.VRUIBinding.updateMeta(
-        kingName,
-        window.VRState.getReignYears(),
-        this._uiCoins,
-        this._uiTokens
-      );
-
+    window.VRUIBinding.updateMeta(
+  kingName,
+  getYearLabel(),
+  this._uiCoins,
+  this._uiTokens
+);
       this._saveRunSoft();
       return true;
     },
@@ -1554,7 +1604,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
       await this._refreshUIBalancesSoft();
 
-      const kingName = document.getElementById("meta-king-name")?.textContent || getDynastyName(this.reignIndex - 1);
+      const kingName = getDynastyName();
       window.VRUIBinding.updateGauges();
       window.VRUIBinding.updateMeta(kingName, window.VRState.getReignYears(), this._uiCoins, this._uiTokens);
 
@@ -1992,7 +2042,7 @@ body.vr-peek-mode .vr-gauge-preview{
                 }
               } catch (_) {}
 
-              const kingName = document.getElementById("meta-king-name")?.textContent || "—";
+              const kingName = getDynastyName();
               window.VRUIBinding?.updateMeta?.(
                 kingName,
                 window.VRState?.getReignYears?.() || 0,
@@ -2070,7 +2120,7 @@ body.vr-peek-mode .vr-gauge-preview{
               }
             } catch (_) {}
 
-            const kingName = document.getElementById("meta-king-name")?.textContent || "—";
+            const kingName = getDynastyName();
             window.VRUIBinding?.updateMeta?.(
               kingName,
               window.VRState?.getReignYears?.() || 0,
@@ -2122,7 +2172,7 @@ body.vr-peek-mode .vr-gauge-preview{
             }
           } catch (_) {}
 
-          const kingName = document.getElementById("meta-king-name")?.textContent || "—";
+          const kingName = getDynastyName();
           window.VRUIBinding?.updateMeta?.(
             kingName,
             window.VRState?.getReignYears?.() || 0,
@@ -2259,7 +2309,7 @@ body.vr-peek-mode .vr-gauge-preview{
                 }
               } catch (_) {}
 
-              const kingName = document.getElementById("meta-king-name")?.textContent || "—";
+              const kingName = getDynastyName();
               window.VRUIBinding?.updateMeta?.(
                 kingName,
                 window.VRState?.getReignYears?.() || 0,

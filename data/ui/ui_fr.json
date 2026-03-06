@@ -200,20 +200,23 @@
     }
   },
   "game": {
-    "title": "Partie en cours",
-    "subtitle": "Faites vos choix.",
-    "restart": "Recommencer",
-    "revive": "Revivre",
-    "return": "Retour",
-    "customize": {
-      "aria": "Personnalisation",
-      "title": "Personnalisation",
-      "close_text": "Revenir à la partie"
-    },
-    "ending": {
-      "title": "Fin du règne",
-      "body": "Votre règne s’achève ici."
-    }
+"game": {
+  "title": "Partie en cours",
+  "subtitle": "Faites vos choix.",
+  "restart": "Recommencer",
+  "revive": "Revivre",
+  "return": "Retour",
+  "year_label": "Année",
+  "customize": {
+    "aria": "Personnalisation",
+    "title": "Personnalisation",
+    "close_text": "Revenir à la partie"
+  },
+  "ending": {
+    "title": "Fin du règne",
+    "body": "Votre règne s’achève ici."
+  }
+}
   },
   "profile": {
     "title": "Profil",
