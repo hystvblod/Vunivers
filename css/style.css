@@ -2101,7 +2101,7 @@ body.vr-body-game[data-universe="western_president"]{
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
-  ----vr-west-hud-w: min(88vw, 980px);
+  --vr-west-hud-w: min(88vw, 980px);
   --vr-west-topbar-w: clamp(220px, 54vw, 420px);
   --vr-west-topbar-h: calc(var(--vr-west-topbar-w) * 0.275);
   --vr-west-back-size: clamp(46px, 11vw, 76px);
