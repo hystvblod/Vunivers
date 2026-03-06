@@ -1059,7 +1059,7 @@ body.vr-peek-mode .vr-gauge-preview{
           #vr-ending-overlay .vr-ending-card{
             text-align:center;
             align-items:stretch;
-            gap:12px;
+            gap:18px;
           }
           #vr-ending-overlay .vr-ending-title,
           #vr-ending-overlay .vr-ending-text{
@@ -1105,6 +1105,7 @@ body.vr-peek-mode .vr-gauge-preview{
             color:#fff;
             font:inherit;
             cursor:pointer;
+            margin-top: 6px;
           }
           .vr-ending-double::before{
             content:"";
