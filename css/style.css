@@ -1707,8 +1707,9 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-ui-back-img: url("../assets/img/ui/heaven_back.webp");
   --vr-ui-customize-img: url("../assets/img/ui/heaven_customize.webp");
 
-  --vr-identity-tx: 0px;
-  --vr-identity-ty: -2px;
+ --vr-identity-tx: 0px;
+--vr-identity-ty: 2px;
+--vr-hud-name-years-gap: 20px;
 
   --vr-vcoins-tx: 0px;
   --vr-vcoins-ty: -2px;
@@ -1899,17 +1900,23 @@ body.vr-body-game[data-universe="heaven_king"] .vr-hud-item{
   transform: translateY(-11px) !important;
 }
 
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-value{
-  font-size: var(--vr-heaven-hud-value-size) !important;
-  font-family: "VR_Cinzel", serif !important;
-  font-weight: 700 !important;
-  line-height: 1 !important;
-  letter-spacing: 0 !important;
-  color: #3f2f0a !important;
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-left .vr-hud-value{
+  color: #FFD166 !important;
   text-shadow:
     0 1px 0 rgba(255,255,255,0.35),
-    0 0 8px rgba(0,0,0,0.12) !important;
-  transform: translateY(-2px) !important;
+    0 0 10px rgba(255, 209, 102, 0.55) !important;
+  transform: translate(0px, 0px) !important;
+}
+
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-right .vr-hud-value{
+  transform: translate(0px, 0px) !important;
+}
+
+body.vr-body-game[data-universe="heaven_king"] .vr-gauge-label{
+  color: #FFD166 !important;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.25),
+    0 0 8px rgba(255, 209, 102, 0.35) !important;
 }
 
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-identity{
