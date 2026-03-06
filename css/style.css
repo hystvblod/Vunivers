@@ -1713,8 +1713,8 @@ body.vr-body-game[data-universe="heaven_king"]{
 
   /* centre nom + année */
   --vr-identity-tx: 0px;
-  --vr-identity-ty: 1px;
-  --vr-hud-name-years-gap: 8px;
+  --vr-identity-ty: 3px;
+  --vr-hud-name-years-gap: 40px;
 
   /* balances : noirs */
   --vr-vcoins-tx: 0px;
@@ -1887,9 +1887,9 @@ body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{
 }
 
 /* zones soldes : largeur et centrage des ronds */
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3.8% !important; width: 16.8% !important; }
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3.5% !important; width: 16.8% !important; }
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-center{ left: 20.6% !important; right: 20.6% !important; }
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 3.8% !important; width: 16.8% !important; }
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 3.5% !important; width: 16.8% !important; }
 
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-item{
   width: 100% !important;
