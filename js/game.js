@@ -982,64 +982,74 @@ body.vr-peek-mode .vr-gauge-preview{
   const EVENT_NO_REPEAT_UNTIL = 25;
   const EVENT_EXCLUDE_LAST = 5;
 
-function toRoman(num) {
-  const n = Math.max(1, Number(num || 1));
-  const map = [
-    [1000, "M"], [900, "CM"], [500, "D"], [400, "CD"],
-    [100, "C"], [90, "XC"], [50, "L"], [40, "XL"],
-    [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]
-  ];
+  const CHOICES_PER_YEAR = 4;
+  const VCOINS_PER_YEAR = 10;
 
-  let rest = n;
-  let out = "";
+  function toRoman(num) {
+    const n = Math.max(1, Number(num || 1));
+    const map = [
+      [1000, "M"], [900, "CM"], [500, "D"], [400, "CD"],
+      [100, "C"], [90, "XC"], [50, "L"], [40, "XL"],
+      [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]
+    ];
 
-  for (const [value, symbol] of map) {
-    while (rest >= value) {
-      out += symbol;
-      rest -= value;
+    let rest = n;
+    let out = "";
+
+    for (const [value, symbol] of map) {
+      while (rest >= value) {
+        out += symbol;
+        rest -= value;
+      }
+    }
+
+    return out || "I";
+  }
+
+  function getProfilePseudo() {
+    try {
+      const raw =
+        window.VUserData?.getUsername?.() ||
+        window.VUserData?.load?.()?.username ||
+        "";
+
+      const clean = String(raw || "").trim();
+      return clean || "—";
+    } catch (_) {
+      return "—";
     }
   }
 
-  return out || "I";
-}
-
-function getProfilePseudo() {
-  try {
-    const raw =
-      window.VUserData?.getUsername?.() ||
-      window.VUserData?.load?.()?.username ||
-      "";
-
-    const clean = String(raw || "").trim();
-    return clean || "—";
-  } catch (_) {
-    return "—";
+  function getResolvedChoicesCount() {
+    try {
+      return Math.max(0, Number(window.VRGame?.session?.reignLength || 0));
+    } catch (_) {
+      return 0;
+    }
   }
-}
 
-function getDisplayedYearIndex() {
-  try {
-    const choices = Math.max(0, Number(window.VRGame?.session?.reignLength || 0));
-    return Math.floor(choices / 4) + 1;
-  } catch (_) {
-    return 1;
+  function getCompletedYearsCount() {
+    return Math.floor(getResolvedChoicesCount() / CHOICES_PER_YEAR);
   }
-}
 
-function getYearLabel() {
-  let label = "Année";
+  function getDisplayedYearIndex() {
+    return getCompletedYearsCount() + 1;
+  }
 
-  try {
-    const t = window.VRI18n?.t?.("game.year_label");
-    if (t && t !== "game.year_label") label = t;
-  } catch (_) {}
+  function getYearLabel() {
+    let label = "Année";
 
-  return `${label} ${toRoman(getDisplayedYearIndex())}`;
-}
+    try {
+      const out = window.VRI18n?.t?.("game.year_label");
+      if (out && out !== "game.year_label") label = out;
+    } catch (_) {}
 
-function getDynastyName() {
-  return `${getProfilePseudo()} ${toRoman(getDisplayedYearIndex())}`;
-}
+    return `${label} ${toRoman(getDisplayedYearIndex())}`;
+  }
+
+  function getDynastyName() {
+    return `${getProfilePseudo()} ${toRoman(getDisplayedYearIndex())}`;
+  }
 
   function deepClone(obj) {
     try { return JSON.parse(JSON.stringify(obj)); } catch (_) { return obj; }
@@ -1048,6 +1058,170 @@ function getDynastyName() {
   function asInt(x, fallback) {
     const n = Number(x);
     return Number.isFinite(n) ? Math.trunc(n) : (fallback || 0);
+  }
+
+  function ensureEndingEnhancements() {
+    try {
+      if (!document.getElementById("vr-ending-inline-style")) {
+        const style = document.createElement("style");
+        style.id = "vr-ending-inline-style";
+        style.textContent = `
+          #vr-ending-overlay .vr-ending-card{
+            text-align:center;
+            align-items:stretch;
+            gap:12px;
+          }
+          #vr-ending-overlay .vr-ending-title,
+          #vr-ending-overlay .vr-ending-text{
+            text-align:center !important;
+          }
+          .vr-ending-reward{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:10px;
+            padding:10px 14px;
+            border-radius:16px;
+            background:rgba(255,255,255,.08);
+            border:1px solid rgba(255,255,255,.12);
+            box-shadow:0 14px 26px rgba(0,0,0,.24);
+          }
+          .vr-ending-reward img{
+            width:24px;
+            height:24px;
+            object-fit:contain;
+            filter:drop-shadow(0 6px 12px rgba(0,0,0,.32));
+          }
+          .vr-ending-reward strong{
+            font-size:20px;
+            font-weight:950;
+            letter-spacing:.2px;
+          }
+          .vr-ending-double{
+            position:relative;
+            overflow:hidden;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            gap:4px;
+            width:100%;
+            min-height:92px;
+            border:1px solid rgba(255,255,255,.14);
+            border-radius:22px;
+            padding:14px 16px;
+            background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+            box-shadow:0 18px 34px rgba(0,0,0,.28);
+            color:#fff;
+            font:inherit;
+            cursor:pointer;
+          }
+          .vr-ending-double::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:radial-gradient(circle at 50% 18%, rgba(255,255,255,.20), transparent 55%);
+            pointer-events:none;
+          }
+          .vr-ending-double.is-glow{
+            animation:vrEndingPulse 1.35s ease-in-out infinite;
+          }
+          .vr-ending-double[disabled]{
+            opacity:.65;
+            cursor:default;
+            animation:none !important;
+          }
+          .vr-ending-double-title{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:10px;
+            font-size:20px;
+            font-weight:950;
+            line-height:1.05;
+          }
+          .vr-ending-double-title img{
+            width:28px;
+            height:28px;
+            object-fit:contain;
+            filter:drop-shadow(0 6px 12px rgba(0,0,0,.34));
+          }
+          .vr-ending-double-sub{
+            font-size:13px;
+            font-weight:800;
+            opacity:.92;
+          }
+          .vr-ending-actions{
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+          }
+          .vr-ending-actions .vr-choice-button{
+            width:100%;
+          }
+          .vr-ending-actions-bottom{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:10px;
+          }
+          @keyframes vrEndingPulse{
+            0%,100%{ transform:translateY(0) scale(1); filter:brightness(1); }
+            50%{ transform:translateY(-1px) scale(1.01); filter:brightness(1.10); }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+
+      const card = document.querySelector("#vr-ending-overlay .vr-ending-card");
+      const textEl = document.getElementById("ending-text");
+      const restartBtn = document.getElementById("ending-restart-btn");
+      const reviveBtn = document.getElementById("ending-revive-btn");
+      const returnBtn = document.getElementById("ending-return-btn");
+      if (!card || !textEl || !restartBtn || !reviveBtn || !returnBtn) return;
+
+      let reward = document.getElementById("ending-reward-row");
+      if (!reward) {
+        reward = document.createElement("div");
+        reward.id = "ending-reward-row";
+        reward.className = "vr-ending-reward";
+        reward.innerHTML = `
+          <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
+          <strong id="ending-reward-value">+0</strong>
+        `;
+        textEl.insertAdjacentElement("afterend", reward);
+      }
+
+      let doubleBtn = document.getElementById("ending-double-btn");
+      if (!doubleBtn) {
+        doubleBtn = document.createElement("button");
+        doubleBtn.id = "ending-double-btn";
+        doubleBtn.type = "button";
+        doubleBtn.className = "vr-ending-double is-glow";
+        doubleBtn.innerHTML = `
+          <span class="vr-ending-double-title">
+            <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
+            <span id="ending-double-title">Doubler ton gain</span>
+          </span>
+          <span class="vr-ending-double-sub" id="ending-double-sub">Regarder une pub récompensée</span>
+        `;
+        reward.insertAdjacentElement("afterend", doubleBtn);
+      }
+
+      let actions = document.getElementById("ending-actions-wrap");
+      if (!actions) {
+        actions = document.createElement("div");
+        actions.id = "ending-actions-wrap";
+        actions.className = "vr-ending-actions";
+        doubleBtn.insertAdjacentElement("afterend", actions);
+        actions.appendChild(reviveBtn);
+
+        const bottom = document.createElement("div");
+        bottom.className = "vr-ending-actions-bottom";
+        bottom.appendChild(restartBtn);
+        bottom.appendChild(returnBtn);
+        actions.appendChild(bottom);
+      }
+    } catch (_) {}
   }
 
   const VREngine = {
@@ -1074,6 +1248,91 @@ function getDynastyName() {
     _cardsSinceEventRoll: 0,
     _eventShowing: false,
     _deathUiBound: false,
+    _pendingRunBonusCoins: 0,
+    _pendingEndReward: 0,
+    _pendingEndChoices: 0,
+    _pendingEndYears: 0,
+    _pendingEndClaimed: false,
+    _pendingEndClaimMultiplier: 1,
+    _pendingEndFinalized: false,
+
+    _clearPendingEndState() {
+      this._pendingEndReward = 0;
+      this._pendingEndChoices = 0;
+      this._pendingEndYears = 0;
+      this._pendingEndClaimed = false;
+      this._pendingEndClaimMultiplier = 1;
+      this._pendingEndFinalized = false;
+    },
+
+    _preparePendingEndReward() {
+      this._pendingEndChoices = getResolvedChoicesCount();
+      this._pendingEndYears = getCompletedYearsCount();
+      this._pendingEndReward = Math.max(0, (this._pendingEndYears * VCOINS_PER_YEAR) + asInt(this._pendingRunBonusCoins, 0));
+      this._pendingEndClaimed = false;
+      this._pendingEndClaimMultiplier = 1;
+      this._pendingEndFinalized = false;
+      return {
+        choices: this._pendingEndChoices,
+        years: this._pendingEndYears,
+        reward: this._pendingEndReward
+      };
+    },
+
+    async _claimPendingEndReward(multiplier) {
+      const base = Math.max(0, asInt(this._pendingEndReward, 0));
+      const mult = Math.max(1, asInt(multiplier, 1));
+
+      if (this._pendingEndClaimed) {
+        return { ok: true, amount: Math.max(0, base * asInt(this._pendingEndClaimMultiplier, 1)), already: true };
+      }
+
+      const amount = Math.max(0, base * mult);
+
+      if (amount > 0) {
+        const ok = await (window.VUserData?.addVcoins?.(amount) || Promise.resolve(true));
+        if (ok === false) return { ok: false, amount: 0 };
+      }
+
+      this._pendingEndClaimed = true;
+      this._pendingEndClaimMultiplier = mult;
+
+      try {
+        const me = await window.VRProfile?.getMe?.(0);
+        if (me) {
+          this._uiCoins = window.VRProfile._n(me.vcoins);
+          this._uiTokens = window.VRProfile._n(me.jetons);
+        } else if (amount > 0) {
+          this._uiCoins += amount;
+        }
+      } catch (_) {
+        if (amount > 0) this._uiCoins += amount;
+      }
+
+      try {
+        window.VRUIBinding?.updateMeta?.(getDynastyName(), getYearLabel(), this._uiCoins, this._uiTokens);
+      } catch (_) {}
+
+      this._saveRunSoft();
+      return { ok: true, amount, already: false };
+    },
+
+    async _finalizeEndedRun(multiplier) {
+      if (!this._pendingEndFinalized) {
+        const claimed = await this._claimPendingEndReward(multiplier || 1);
+        if (!claimed?.ok) return { ok: false, amount: 0 };
+
+        await window.VRGame?.onRunEnded?.();
+        this._pendingEndFinalized = true;
+        this._saveRunSoft();
+        return { ok: true, amount: claimed.amount || 0 };
+      }
+
+      return {
+        ok: true,
+        amount: Math.max(0, asInt(this._pendingEndReward, 0) * Math.max(1, asInt(this._pendingEndClaimMultiplier, 1)))
+      };
+    },
 
     _distinctSeenCount() {
       try { return new Set(Array.isArray(this._seenEvents) ? this._seenEvents : []).size; }
@@ -1127,6 +1386,15 @@ function getDynastyName() {
             ui: {
               coins: asInt(this._uiCoins, 0),
               tokens: asInt(this._uiTokens, 0)
+            },
+            pending: {
+              runBonusCoins: asInt(this._pendingRunBonusCoins, 0),
+              endReward: asInt(this._pendingEndReward, 0),
+              endChoices: asInt(this._pendingEndChoices, 0),
+              endYears: asInt(this._pendingEndYears, 0),
+              endClaimed: !!this._pendingEndClaimed,
+              endClaimMultiplier: asInt(this._pendingEndClaimMultiplier, 1),
+              endFinalized: !!this._pendingEndFinalized
             }
           },
           session: {
@@ -1188,6 +1456,15 @@ function getDynastyName() {
         if (Number.isFinite(Number(ui.coins))) this._uiCoins = asInt(ui.coins, this._uiCoins);
         if (Number.isFinite(Number(ui.tokens))) this._uiTokens = asInt(ui.tokens, this._uiTokens);
 
+        const pending = e.pending || {};
+        this._pendingRunBonusCoins = asInt(pending.runBonusCoins, 0);
+        this._pendingEndReward = asInt(pending.endReward, 0);
+        this._pendingEndChoices = asInt(pending.endChoices, 0);
+        this._pendingEndYears = asInt(pending.endYears, 0);
+        this._pendingEndClaimed = !!pending.endClaimed;
+        this._pendingEndClaimMultiplier = Math.max(1, asInt(pending.endClaimMultiplier, 1));
+        this._pendingEndFinalized = !!pending.endFinalized;
+
         if (window.VRGame?.session) {
           window.VRGame.session.reignLength = Number(sess.reignLength || 0);
         }
@@ -1213,10 +1490,10 @@ function getDynastyName() {
 
         window.VRUIBinding.updateGauges();
 
-        const kingName = getDynastyName(Math.max(0, this.reignIndex - 1));
+        const kingName = getDynastyName();
         window.VRUIBinding.updateMeta(
           kingName,
-          window.VRState.getReignYears(),
+          getYearLabel(),
           this._uiCoins,
           this._uiTokens
         );
@@ -1251,13 +1528,15 @@ function getDynastyName() {
 
       this.universeConfig = config;
       this.deck = Array.isArray(deck) ? deck : [];
-      this.cardTextsDict = cardTexts || {};
-      this.recentCards = [];
-      this.reignIndex = 0;
-      this.coinsStreak = 0;
-      this.history = [];
-      this.currentCardLogic = null;
-      this._restored = false;
+      this.eventsLogic = eventsLogic || { events: [] };
+      this.eventsTexts = eventsTexts || {};
+      this._eventPool = [];
+      this._seenEvents = [];
+      this._cardsSinceEventRoll = 0;
+      this._eventShowing = false;
+      this._pendingRunBonusCoins = 0;
+      this._clearPendingEndState();
+      this._rebuildEventIndex();
       this._reviveUsed = false;
 
       this.eventsLogic = eventsLogic || { events: [] };
@@ -1331,19 +1610,21 @@ function getDynastyName() {
       this.currentCardLogic = null;
       this._reviveUsed = false;
       this._cardsSinceEventRoll = 0;
+      this._pendingRunBonusCoins = 0;
+      this._clearPendingEndState();
 
       if (!this._eventPool.length && this._allEventIds.length) {
         this._eventPool = this._allEventIds.slice();
       }
 
-      const kingName = getDynastyName(this.reignIndex - 1);
-const years = getYearLabel();
+      const kingName = getDynastyName();
+      const years = getYearLabel();
 
-window.VRUIBinding.updateMeta(kingName, years, this._uiCoins, this._uiTokens);
+      window.VRUIBinding.updateMeta(kingName, years, this._uiCoins, this._uiTokens);
 
-this._refreshUIBalancesSoft().then(() => {
-  window.VRUIBinding.updateMeta(getDynastyName(), getYearLabel(), this._uiCoins, this._uiTokens);
-});
+      this._refreshUIBalancesSoft().then(() => {
+        window.VRUIBinding.updateMeta(getDynastyName(), getYearLabel(), this._uiCoins, this._uiTokens);
+      });
 
       this._nextCard();
       this._saveRunSoft();
@@ -1382,6 +1663,7 @@ this._refreshUIBalancesSoft().then(() => {
     reviveSecondChance() {
       if (this._reviveUsed) return false;
       this._reviveUsed = true;
+      this._clearPendingEndState();
 
       this._resetGaugesToInitial();
       try {
@@ -1490,12 +1772,13 @@ this._refreshUIBalancesSoft().then(() => {
       window.VRUIBinding.updateGauges();
 
       const kingName = getDynastyName(this.reignIndex - 1);
-    window.VRUIBinding.updateMeta(
-  kingName,
-  getYearLabel(),
-  this._uiCoins,
-  this._uiTokens
-);
+      window.VRUIBinding.updateMeta(
+        kingName,
+        window.VRState.getReignYears(),
+        this._uiCoins,
+        this._uiTokens
+      );
+
       this._saveRunSoft();
       return true;
     },
@@ -1579,8 +1862,7 @@ this._refreshUIBalancesSoft().then(() => {
           0;
 
         if (dv) {
-          this._uiCoins += dv;
-          try { window.VUserData?.addVcoins?.(dv); } catch (_) {}
+          this._pendingRunBonusCoins += asInt(dv, 0);
         }
 
         const dj =
@@ -1606,7 +1888,7 @@ this._refreshUIBalancesSoft().then(() => {
 
       const kingName = getDynastyName();
       window.VRUIBinding.updateGauges();
-      window.VRUIBinding.updateMeta(kingName, window.VRState.getReignYears(), this._uiCoins, this._uiTokens);
+      window.VRUIBinding.updateMeta(kingName, getYearLabel(), this._uiCoins, this._uiTokens);
 
       this._eventShowing = true;
       this._saveRunSoft();
@@ -1649,14 +1931,11 @@ this._refreshUIBalancesSoft().then(() => {
 
       this.coinsStreak += 1;
 
-      this._uiCoins += BASE_COINS_PER_CARD;
-      try { window.VUserData?.addVcoins?.(BASE_COINS_PER_CARD); } catch (_) {}
-
       window.VRGame?.onCardResolved?.();
-      window.VRState.tickYear();
+      window.VRState.reignYears = getCompletedYearsCount();
 
-      const years = window.VRState.getReignYears();
-      const kingName = getDynastyName(this.reignIndex - 1);
+      const years = getYearLabel();
+      const kingName = getDynastyName();
       window.VRUIBinding.updateMeta(kingName, years, this._uiCoins, this._uiTokens);
       window.VRUIBinding.updateGauges();
 
@@ -1667,8 +1946,8 @@ this._refreshUIBalancesSoft().then(() => {
 
       this._refreshUIBalancesSoft().then(() => {
         window.VRUIBinding.updateMeta(
-          kingName,
-          window.VRState.getReignYears(),
+          getDynastyName(),
+          getYearLabel(),
           this._uiCoins,
           this._uiTokens
         );
@@ -1728,15 +2007,15 @@ this._refreshUIBalancesSoft().then(() => {
 
     async _handleDeath() {
       const lastDeath = window.VRState.getLastDeath();
-      await window.VRGame?.onRunEnded?.();
+      this._preparePendingEndReward();
       await window.VREndings.showEnding(this.universeConfig, lastDeath);
+      ensureEndingEnhancements();
 
-      this._saveRunSoft();
-
-      const btn = document.getElementById("ending-restart-btn");
+      const restartBtn = document.getElementById("ending-restart-btn");
       const reviveBtn = document.getElementById("ending-revive-btn");
       const returnBtn = document.getElementById("ending-return-btn");
-      const revivePopup = document.getElementById("vr-revive-popup");
+      const doubleBtn = document.getElementById("ending-double-btn");
+      const rewardValueEl = document.getElementById("ending-reward-value");
 
       const t = (key, fallback) => {
         try {
@@ -1746,102 +2025,112 @@ this._refreshUIBalancesSoft().then(() => {
         return fallback || key;
       };
 
-      const showDialog = (el, focusEl) => {
-        if (!el) return;
-        try { el.removeAttribute("inert"); } catch (_) {}
-        el.setAttribute("aria-hidden", "false");
-        el.style.display = "flex";
-        try { focusEl?.focus?.({ preventScroll: true }); } catch (_) {}
+      const renderEndingReward = (displayAmount) => {
+        if (rewardValueEl) rewardValueEl.textContent = `+${Math.max(0, asInt(displayAmount, 0))}`;
       };
 
-      const hideDialog = (el, focusBackEl) => {
-        if (!el) return;
-        const active = document.activeElement;
-        if (active && el.contains(active)) {
-          try { active.blur(); } catch (_) {}
-          try { focusBackEl?.focus?.({ preventScroll: true }); } catch (_) {}
+      const syncEndingButtons = () => {
+        if (doubleBtn) {
+          doubleBtn.classList.toggle("is-glow", !this._pendingEndClaimed);
+          doubleBtn.disabled = !!this._pendingEndClaimed;
+          const title = doubleBtn.querySelector("#ending-double-title");
+          const sub = doubleBtn.querySelector("#ending-double-sub");
+          if (title) title.textContent = this._pendingEndClaimed
+            ? t("game.ending.reward_claimed", "Gain doublé crédité")
+            : t("game.ending.double_gain", "Doubler ton gain");
+          if (sub) sub.textContent = this._pendingEndClaimed
+            ? t("game.ending.reward_claimed_sub", "Tu peux maintenant recommencer ou revenir")
+            : t("game.ending.double_gain_sub", "Regarder une pub récompensée");
         }
-        try { el.setAttribute("inert", ""); } catch (_) {}
-        el.setAttribute("aria-hidden", "true");
-        el.style.display = "none";
+
+        if (reviveBtn) {
+          reviveBtn.textContent = t("game.ending.revive_token", "Revivre avec 1 jeton");
+          reviveBtn.disabled = !!this._reviveUsed || !!this._pendingEndClaimed;
+        }
+
+        if (restartBtn) restartBtn.textContent = t("game.restart", "Recommencer");
+        if (returnBtn) returnBtn.textContent = t("game.return", "Retour");
       };
 
-      const openRevivePopup = () => {
-        if (!revivePopup) return;
-        const first = revivePopup?.querySelector?.("[data-revive-action]");
-        showDialog(revivePopup, first || reviveBtn || btn);
-      };
+      renderEndingReward(this._pendingEndReward);
+      syncEndingButtons();
+      this._saveRunSoft();
 
-      const closeRevivePopup = () => hideDialog(revivePopup, reviveBtn || btn);
+      if (doubleBtn) {
+        doubleBtn.onclick = async () => {
+          if (this._pendingEndClaimed) return;
 
-      if (btn) {
-        btn.onclick = () => {
+          try { doubleBtn.disabled = true; } catch (_) {}
+
+          const okAd = await (window.VRAds?.showRewardedAd?.({ placement: "end_reward_x2" }) || Promise.resolve(false));
+          if (!okAd) {
+            try { window.showToast?.(t("coins.toast.reward_fail", "Pub indisponible")); } catch (_) {}
+            syncEndingButtons();
+            return;
+          }
+
+          const out = await this._finalizeEndedRun(2);
+          if (!out?.ok) {
+            try { window.showToast?.(t("common.error_generic", "Erreur")); } catch (_) {}
+            syncEndingButtons();
+            return;
+          }
+
+          renderEndingReward(out.amount);
+          syncEndingButtons();
+        };
+      }
+
+      if (reviveBtn) {
+        reviveBtn.onclick = async () => {
+          if (this._reviveUsed || this._pendingEndClaimed) return;
+
+          try { reviveBtn.disabled = true; } catch (_) {}
+
+          const ok = await (window.VUserData?.spendJetons?.(1) || Promise.resolve(false));
+          if (!ok) {
+            try { window.showToast?.(t("token.toast.no_tokens", "Tu n'as pas de jeton")); } catch (_) {}
+            syncEndingButtons();
+            return;
+          }
+
+          this._clearPendingEndState();
+          window.VREndings.hideEnding();
+
+          const did = this.reviveSecondChance();
+          if (!did) this.restartRun();
+        };
+      }
+
+      if (restartBtn) {
+        restartBtn.onclick = async () => {
+          if (!this._pendingEndFinalized) {
+            const out = await this._finalizeEndedRun(1);
+            if (!out?.ok) {
+              try { window.showToast?.(t("common.error_generic", "Erreur")); } catch (_) {}
+              return;
+            }
+            renderEndingReward(out.amount);
+          }
+
           window.VREndings.hideEnding();
           this.restartRun();
         };
       }
 
       if (returnBtn) {
-        returnBtn.onclick = () => {
+        returnBtn.onclick = async () => {
+          if (!this._pendingEndFinalized) {
+            const out = await this._finalizeEndedRun(1);
+            if (!out?.ok) {
+              try { window.showToast?.(t("common.error_generic", "Erreur")); } catch (_) {}
+              return;
+            }
+            renderEndingReward(out.amount);
+          }
+
           try { this._clearRunSave(); } catch (_) {}
           try { window.location.href = "index.html"; } catch (_) {}
-        };
-      }
-
-      if (reviveBtn) {
-        reviveBtn.disabled = !!this._reviveUsed;
-        reviveBtn.onclick = () => {
-          if (this._reviveUsed) return;
-          openRevivePopup();
-        };
-      }
-
-      this._bindDeathUIOnce();
-
-      if (revivePopup) {
-        revivePopup.__close = closeRevivePopup;
-
-        revivePopup.__act = async (action, clickedEl) => {
-          if (action === "cancel") {
-            closeRevivePopup();
-            return;
-          }
-
-          try { if (clickedEl) clickedEl.disabled = true; } catch (_) {}
-          try { if (reviveBtn) reviveBtn.disabled = true; } catch (_) {}
-
-          try {
-            let ok = false;
-
-            if (action === "token") {
-              ok = await (window.VUserData?.spendJetons?.(1) || Promise.resolve(false));
-              if (!ok) {
-                try { window.showToast?.(t("token.toast.no_tokens", "Tu n'as pas de jeton")); } catch (_) {}
-              }
-            }
-
-            if (action === "ad") {
-              ok = await (window.VRAds?.showRewardedAd?.({ placement: "revive" }) || Promise.resolve(false));
-              if (!ok) {
-                try { window.showToast?.(t("revive.toast.ad_fail", "Pub indisponible")); } catch (_) {}
-              }
-            }
-
-            if (ok) {
-              closeRevivePopup();
-              window.VREndings.hideEnding();
-
-              const did = this.reviveSecondChance();
-              if (!did) this.restartRun();
-            } else {
-              try { if (reviveBtn) reviveBtn.disabled = !!this._reviveUsed; } catch (_) {}
-            }
-          } catch (e) {
-            console.error("[VREngine] revive popup error:", e);
-            try { if (reviveBtn) reviveBtn.disabled = !!this._reviveUsed; } catch (_) {}
-          } finally {
-            try { if (clickedEl) clickedEl.disabled = false; } catch (_) {}
-          }
         };
       }
 
@@ -2045,7 +2334,7 @@ this._refreshUIBalancesSoft().then(() => {
               const kingName = getDynastyName();
               window.VRUIBinding?.updateMeta?.(
                 kingName,
-                window.VRState?.getReignYears?.() || 0,
+                getYearLabel(),
                 window.VREngine?._uiCoins || 0,
                 window.VREngine?._uiTokens || 0
               );
@@ -2123,7 +2412,7 @@ this._refreshUIBalancesSoft().then(() => {
             const kingName = getDynastyName();
             window.VRUIBinding?.updateMeta?.(
               kingName,
-              window.VRState?.getReignYears?.() || 0,
+              getYearLabel(),
               window.VREngine?._uiCoins || 0,
               window.VREngine?._uiTokens || 0
             );
@@ -2175,7 +2464,7 @@ this._refreshUIBalancesSoft().then(() => {
           const kingName = getDynastyName();
           window.VRUIBinding?.updateMeta?.(
             kingName,
-            window.VRState?.getReignYears?.() || 0,
+            getYearLabel(),
             window.VREngine?._uiCoins || 0,
             window.VREngine?._uiTokens || 0
           );
@@ -2312,7 +2601,7 @@ this._refreshUIBalancesSoft().then(() => {
               const kingName = getDynastyName();
               window.VRUIBinding?.updateMeta?.(
                 kingName,
-                window.VRState?.getReignYears?.() || 0,
+                getYearLabel(),
                 window.VREngine?._uiCoins || 0,
                 window.VREngine?._uiTokens || 0
               );
@@ -2370,6 +2659,7 @@ this._refreshUIBalancesSoft().then(() => {
       choice: "assets/img/ui/vampire_choice_default_gray.webp"
     }
   };
+
   const _state = {
     open: false,
     universeId: "",
@@ -3012,8 +3302,8 @@ this._refreshUIBalancesSoft().then(() => {
     },
     western_president: {
       background: "assets/img/backgrounds/west_default_gray.webp",
-      message: "assets/img/ui/western_card.webp",
-      choice: "assets/img/ui/western_choice.webp"
+      message: "assets/img/ui/west_msg_default_grey.webp",
+      choice: "assets/img/ui/west_choice_default_grey.webp"
     },
     mega_corp_ceo: {
       background: "assets/img/backgrounds/corp_default_gray.webp",
@@ -3022,13 +3312,13 @@ this._refreshUIBalancesSoft().then(() => {
     },
     new_world_explorer: {
       background: "assets/img/backgrounds/explorer_default_gray.webp",
-      message: "assets/img/ui/western_card.webp",
-      choice: "assets/img/ui/western_choice.webp"
+      message: "assets/img/ui/explorer_msg_default_gray.webp",
+      choice: "assets/img/ui/explorer_choice_default_gray.webp"
     },
     vampire_lord: {
       background: "assets/img/backgrounds/vampire_default_gray.webp",
-      message: "assets/img/ui/hell_msg_default_gray.webp",
-      choice: "assets/img/ui/hell_choice_default_gray.webp"
+      message: "assets/img/ui/vampire_msg_default_gray.webp",
+      choice: "assets/img/ui/vampire_choice_default_gray.webp"
     }
   };
 
@@ -3313,11 +3603,8 @@ window.VRGame = {
           window.VREngine._uiTokens = window.VRProfile._n(me.jetons);
         }
       } catch (_) {}
-
-      this.session.reignLength = 0;
     } catch (e) {
       console.error("[VRGame] onRunEnded error:", e);
-      this.session.reignLength = 0;
     }
   }
 };

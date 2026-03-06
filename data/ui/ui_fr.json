@@ -200,23 +200,26 @@
     }
   },
   "game": {
-"game": {
-  "title": "Partie en cours",
-  "subtitle": "Faites vos choix.",
-  "restart": "Recommencer",
-  "revive": "Revivre",
-  "return": "Retour",
-  "year_label": "Année",
-  "customize": {
-    "aria": "Personnalisation",
-    "title": "Personnalisation",
-    "close_text": "Revenir à la partie"
-  },
-  "ending": {
-    "title": "Fin du règne",
-    "body": "Votre règne s’achève ici."
-  }
-}
+    "title": "Partie en cours",
+    "subtitle": "Faites vos choix.",
+    "restart": "Recommencer",
+    "revive": "Revivre",
+    "return": "Retour",
+    "customize": {
+      "aria": "Personnalisation",
+      "title": "Personnalisation",
+      "close_text": "Revenir à la partie"
+    },
+    "ending": {
+      "title": "Fin du règne",
+      "body": "Votre règne s’achève ici.",
+      "double_gain": "Doubler ton gain",
+      "double_gain_sub": "Regarder une pub récompensée",
+      "reward_claimed": "Gain doublé crédité",
+      "reward_claimed_sub": "Tu peux maintenant recommencer ou revenir",
+      "revive_token": "Revivre avec 1 jeton"
+    },
+    "year_label": "Année"
   },
   "profile": {
     "title": "Profil",
