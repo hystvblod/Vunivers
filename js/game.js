@@ -1069,7 +1069,7 @@ body.vr-peek-mode .vr-gauge-preview{
             display:flex;
             align-items:center;
             justify-content:center;
-            gap:10px;
+            gap:16px;
             padding:10px 14px;
             border-radius:16px;
             background:rgba(255,255,255,.08);
@@ -1077,8 +1077,8 @@ body.vr-peek-mode .vr-gauge-preview{
             box-shadow:0 14px 26px rgba(0,0,0,.24);
           }
           .vr-ending-reward img{
-            width:24px;
-            height:24px;
+            width:30px;
+            height:30px;
             object-fit:contain;
             filter:drop-shadow(0 6px 12px rgba(0,0,0,.32));
           }
