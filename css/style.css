@@ -2337,7 +2337,7 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
   white-space:nowrap !important;
   text-align:center !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.20), 0 0 6px rgba(0,0,0,0.08) !important;
-  transform: translate(0px, 14px) !important;
+  transform: translate(0px, 13px) !important;
 }
 
 body.vr-body-game[data-universe="western_president"] .vr-hud-name{
