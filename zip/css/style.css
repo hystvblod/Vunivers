@@ -1647,7 +1647,8 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-pre
   body.vr-body-game[data-universe="hell_king"] .vr-hud-value{ transform: translateY(-1px) !important; }
 }
 
-/* ==========================================================
+
+   /* ==========================================================
    UNIVERS — HEAVEN
    ========================================================== */
 body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-title{
@@ -1667,33 +1668,37 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
 body.vr-body-game[data-universe="heaven_king"]{
   --vr-card-w: clamp(460px, 100vw, 1240px);
 
-  --vr-game-gap: clamp(0px, 0.06svh, 1px);
-  --vr-stack-gap: clamp(1px, 0.14svh, 3px);
-  --vr-choices-gap: clamp(2px, 0.14svh, 3px);
+  /* espace général plus serré */
+  --vr-game-gap: clamp(0px, 0.04svh, 1px);
+  --vr-stack-gap: clamp(0px, 0.10svh, 2px);
+  --vr-choices-gap: clamp(1px, 0.12svh, 2px);
 
-  --vr-scn-h: clamp(160px, 20svh, 330px);
-  --vr-choice-h: clamp(112px, 15.5svh, 270px);
+  /* cartes choix plus basses pour éviter le débordement */
+  --vr-scn-h: clamp(150px, 19.2svh, 320px);
+  --vr-choice-h: clamp(96px, 13.6svh, 180px);
 
   --vr-scn-inset-top: 12%;
   --vr-scn-inset-right: 13%;
   --vr-scn-inset-bottom: 18%;
   --vr-scn-inset-left: 13%;
 
-  --vr-choice-inset-top: 20%;
-  --vr-choice-inset-right: 12%;
-  --vr-choice-inset-bottom: 18%;
-  --vr-choice-inset-left: 12%;
+  /* texte des choix plus rentré dans les cadres */
+  --vr-choice-inset-top: 17%;
+  --vr-choice-inset-right: 9%;
+  --vr-choice-inset-bottom: 17%;
+  --vr-choice-inset-left: 9%;
+  --vr-choice-safe: 84%;
 
   --vr-font-scn-title: clamp(18px, 2.9vmin, 34px);
   --vr-font-scn-text:  clamp(14px, 2.35vmin, 26px);
-  --vr-font-choice:    clamp(16px, 2.8vmin, 30px);
+  --vr-font-choice:    clamp(13px, 2.25vmin, 22px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 2px);
 
   --vr-heaven-hud-w: min(90vw, 920px);
-  --vr-heaven-hud-value-size: clamp(13px, 2vw, 24px);
-  --vr-heaven-hud-name-size: clamp(13px, 2vw, 28px);
-  --vr-heaven-hud-years-size: clamp(10px, 1.25vw, 16px);
+  --vr-heaven-hud-value-size: clamp(13px, 2vw, 22px);
+  --vr-heaven-hud-name-size: clamp(13px, 2vw, 24px);
+  --vr-heaven-hud-years-size: clamp(13px, 2vw, 24px);
 
   --vr-heaven-topbar-w: clamp(220px, 54vw, 420px);
   --vr-heaven-topbar-h: calc(var(--vr-heaven-topbar-w) * 0.275);
@@ -1701,24 +1706,28 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-heaven-back-size: clamp(46px, 11vw, 76px);
   --vr-heaven-customize-size: clamp(46px, 11vw, 76px);
 
-  /* nouveau bloc variables */
   --vr-ui-topbar-img: url("../assets/img/ui/heaven_topbar.webp");
   --vr-ui-hud-img: url("../assets/img/ui/heaven_hud_bar.webp");
   --vr-ui-back-img: url("../assets/img/ui/heaven_back.webp");
   --vr-ui-customize-img: url("../assets/img/ui/heaven_customize.webp");
 
- --vr-identity-tx: 0px;
---vr-identity-ty: 2px;
---vr-hud-name-years-gap: 20px;
+  /* centre nom + année */
+  --vr-identity-tx: 0px;
+  --vr-identity-ty: 3px;
+  --vr-hud-name-years-gap: 50px;
 
+  /* balances : noirs */
   --vr-vcoins-tx: 0px;
-  --vr-vcoins-ty: -2px;
+  --vr-vcoins-ty: 0px;
   --vr-jetons-tx: 0px;
-  --vr-jetons-ty: -2px;
+  --vr-jetons-ty: 0px;
 
-  --vr-vcoins-color:#FFE8A6;
-  --vr-vcoins-glow:rgba(255,255,255,.42);
+  --vr-vcoins-color: #000000;
+  --vr-vcoins-glow: rgba(255,255,255,.08);
   --vr-vcoins-bg: transparent;
+
+  --vr-jetons-color: #000000;
+  --vr-jetons-glow: rgba(255,255,255,.08);
   --vr-jetons-bg: transparent;
 }
 
@@ -1743,7 +1752,7 @@ body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main{
   background-position: center !important;
 }
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-choice-button{
-  background-size: 110% 100% !important;
+  background-size: 106% 100% !important;
   background-position: center !important;
 }
 body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main .vr-card-text{
@@ -1854,7 +1863,7 @@ body.vr-body-game[data-universe="heaven_king"] .vr-hud{
   position: relative !important;
   width: var(--vr-heaven-hud-w) !important;
   max-width: none !important;
- margin: 4px auto 0 !important;
+  margin: 4px auto 0 !important;
   padding: 0 !important;
   display: block !important;
   white-space: normal !important;
@@ -1876,9 +1885,11 @@ body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{
   transform: none !important;
   justify-self: auto !important;
 }
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3% !important; width: 17.8% !important; }
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-center{ left: 20.2% !important; right: 20.2% !important; }
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 5% !important; width: 17.8% !important; }
+
+/* zones soldes : largeur et centrage des ronds */
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3.2% !important; width: 16.8% !important; }
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-center{ left: 20.6% !important; right: 20.6% !important; }
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 3.2% !important; width: 16.8% !important; }
 
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-item{
   width: 100% !important;
@@ -1897,26 +1908,32 @@ body.vr-body-game[data-universe="heaven_king"] .vr-hud-item{
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 
-  transform: translateY(-11px) !important;
+  transform: translateY(-7px) !important;
 }
 
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-left .vr-hud-value{
-  color: #FFD166 !important;
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-value{
+  font-size: var(--vr-heaven-hud-value-size) !important;
+  font-family: "VR_Cinzel", serif !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  color: #000000 !important;
   text-shadow:
-    0 1px 0 rgba(255,255,255,0.35),
-    0 0 10px rgba(255, 209, 102, 0.55) !important;
+    0 1px 0 rgba(255,255,255,0.20),
+    0 0 6px rgba(0,0,0,0.08) !important;
+  transform: translateY(0px) !important;
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+/* laisser 0px ici pour que le chiffre grandisse depuis le centre */
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-left .vr-hud-value{
   transform: translate(0px, 0px) !important;
 }
-
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-right .vr-hud-value{
   transform: translate(0px, 0px) !important;
-}
-
-body.vr-body-game[data-universe="heaven_king"] .vr-gauge-label{
-  color: #FFD166 !important;
-  text-shadow:
-    0 1px 0 rgba(255,255,255,0.25),
-    0 0 8px rgba(255, 209, 102, 0.35) !important;
 }
 
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-identity{
@@ -1927,32 +1944,32 @@ body.vr-body-game[data-universe="heaven_king"] .vr-hud-identity{
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: var(--vr-hud-name-years-gap, clamp(14px, 2.4vw, 24px)) !important;
+  gap: var(--vr-hud-name-years-gap, 8px) !important;
 
   white-space: nowrap !important;
   text-align: center !important;
   text-shadow:
-    0 1px 0 rgba(255,255,255,0.32),
-    0 2px 10px rgba(0,0,0,0.16) !important;
+    0 1px 0 rgba(255,255,255,0.20),
+    0 0 6px rgba(0,0,0,0.08) !important;
 }
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-name{
   font-family: "VR_Cinzel", serif !important;
   font-size: var(--vr-heaven-hud-name-size) !important;
   font-weight: 700 !important;
-  color: #b8860b !important;
+  color: #000000 !important;
   line-height: 1 !important;
-  max-width: 75% !important;
+  max-width: 72% !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
 }
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-years{
-  font-family: "VR_Cormorant", serif !important;
-  font-size: var(--vr-heaven-hud-years-size) !important;
+  font-family: "VR_Cinzel", serif !important;
+  font-size: var(--vr-heaven-hud-name-size) !important;
   font-weight: 700 !important;
-  color: rgba(90,66,15,0.95) !important;
+  color: #000000 !important;
   line-height: 1 !important;
-  transform: translateY(1px) !important;
-  opacity: 0.95 !important;
+  transform: translateY(0px) !important;
+  opacity: 1 !important;
   flex: 0 0 auto !important;
 }
 
@@ -1982,8 +1999,8 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
   body.vr-body-game[data-universe="heaven_king"]{
     --vr-heaven-hud-w: 92vw;
     --vr-heaven-hud-value-size: clamp(11px, 2.8vw, 14px);
-    --vr-heaven-hud-name-size: clamp(11px, 3.1vw, 16px);
-    --vr-heaven-hud-years-size: clamp(9px, 2vw, 12px);
+    --vr-heaven-hud-name-size: clamp(11px, 3vw, 15px);
+    --vr-heaven-hud-years-size: clamp(11px, 3vw, 15px);
 
     --vr-heaven-topbar-w: clamp(210px, 58vw, 300px);
     --vr-heaven-back-size: clamp(40px, 12vw, 60px);
@@ -1996,14 +2013,60 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
     --vr-ui-customize-top: 16px;
     --vr-ui-customize-right: 16px;
     --vr-hud-item-ty: -4px;
+
+    --vr-identity-tx: 0px;
+    --vr-identity-ty: 3px;
+    --vr-hud-name-years-gap: 40px;
+
+    --vr-font-choice: clamp(12px, 3.0vw, 16px);
+    --vr-choice-h: clamp(84px, 12.0svh, 128px);
+    --vr-stack-gap: 0px;
+    --vr-choices-gap: 0px;
+    --vr-choice-safe: 82%;
+    --vr-choice-inset-top: 16%;
+    --vr-choice-inset-right: 8%;
+    --vr-choice-inset-bottom: 16%;
+    --vr-choice-inset-left: 8%;
   }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3.2% !important; width: 17.2% !important; }
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 3.2% !important; width: 17.2% !important; }
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-center{ left: 21.0% !important; right: 21.0% !important; }
 
   body.vr-body-game[data-universe="heaven_king"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
   body.vr-body-game[data-universe="heaven_king"] > a.vr-icon-button[aria-label="Accueil"]{ top: calc(16px + env(safe-area-inset-top)) !important; left: 16px !important; }
   body.vr-body-game[data-universe="heaven_king"] #btn-customize{ top: calc(16px + env(safe-area-inset-top)) !important; right: 16px !important; }
 
-  body.vr-body-game[data-universe="heaven_king"] .vr-hud-item{ transform: translateY(-4px) !important; }
-  body.vr-body-game[data-universe="heaven_king"] .vr-hud-value{ transform: translateY(-1px) !important; }
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-item{
+    transform: translateY(-4px) !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-value{
+    transform: translateY(0px) !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-left .vr-hud-value{
+    transform: translate(0px, 0px) !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-right .vr-hud-value{
+    transform: translate(0px, 0px) !important;
+  }
+}
+
+/* HEAVEN ultra petit écran */
+@media (max-width: 390px), (max-height: 740px){
+  body.vr-body-game[data-universe="heaven_king"]{
+    --vr-font-choice: clamp(11px, 2.8vw, 14px);
+    --vr-choice-h: clamp(80px, 11.2svh, 118px);
+    --vr-stack-gap: 0px;
+    --vr-choices-gap: 0px;
+    --vr-choice-safe: 80%;
+    --vr-choice-inset-top: 15%;
+    --vr-choice-inset-right: 7%;
+    --vr-choice-inset-bottom: 15%;
+    --vr-choice-inset-left: 7%;
+  }
 }
 
 /* ==========================================================
