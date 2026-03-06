@@ -1505,73 +1505,73 @@ body.vr-peek-mode .vr-gauge-preview{
       }
     },
 
-async init(universeId, lang) {
-  this.universeId = universeId;
+    async init(universeId, lang) {
+      this.universeId = universeId;
 
-  let finalLang = (lang || "fr").toString();
-  try {
-    const me = await window.VRProfile?.getMe?.(4000);
-    finalLang = (me?.lang || finalLang || "fr").toString();
-  } catch (_) {}
-  this.lang = finalLang;
+      let finalLang = (lang || "fr").toString();
+      try {
+        const me = await window.VRProfile?.getMe?.(4000);
+        finalLang = (me?.lang || finalLang || "fr").toString();
+      } catch (_) {}
+      this.lang = finalLang;
 
-  const { config, deck, cardTexts } =
-    await window.VREventsLoader.loadUniverseData(universeId, this.lang);
+      const { config, deck, cardTexts } =
+        await window.VREventsLoader.loadUniverseData(universeId, this.lang);
 
-  let eventsLogic = { events: [] };
-  let eventsTexts = {};
-  try {
-    const ev = await window.VREventsLoader.loadUniverseEvents(universeId, this.lang);
-    eventsLogic = ev?.eventsLogic || { events: [] };
-    eventsTexts = ev?.eventsTexts || {};
-  } catch (_) {}
+      let eventsLogic = { events: [] };
+      let eventsTexts = {};
+      try {
+        const ev = await window.VREventsLoader.loadUniverseEvents(universeId, this.lang);
+        eventsLogic = ev?.eventsLogic || { events: [] };
+        eventsTexts = ev?.eventsTexts || {};
+      } catch (_) {}
 
-  this.universeConfig = config;
-  this.deck = Array.isArray(deck) ? deck : [];
-  this.cardTextsDict = cardTexts || {};
-  this.recentCards = [];
-  this.reignIndex = 0;
-  this.coinsStreak = 0;
-  this.history = [];
-  this.currentCardLogic = null;
-  this._restored = false;
-  this._reviveUsed = false;
+      this.universeConfig = config;
+      this.deck = Array.isArray(deck) ? deck : [];
+      this.eventsLogic = eventsLogic || { events: [] };
+      this.eventsTexts = eventsTexts || {};
+      this._eventPool = [];
+      this._seenEvents = [];
+      this._cardsSinceEventRoll = 0;
+      this._eventShowing = false;
+      this._pendingRunBonusCoins = 0;
+      this._clearPendingEndState();
+      this._rebuildEventIndex();
+      this._reviveUsed = false;
 
-  this.eventsLogic = eventsLogic || { events: [] };
-  this.eventsTexts = eventsTexts || {};
-  this._eventPool = [];
-  this._seenEvents = [];
-  this._cardsSinceEventRoll = 0;
-  this._eventShowing = false;
-  this._pendingRunBonusCoins = 0;
-  this._clearPendingEndState();
-  this._rebuildEventIndex();
+      this.eventsLogic = eventsLogic || { events: [] };
+      this.eventsTexts = eventsTexts || {};
+      this._eventPool = [];
+      this._seenEvents = [];
+      this._cardsSinceEventRoll = 0;
+      this._eventShowing = false;
+      this._rebuildEventIndex();
 
-  try {
-    const me = await window.VRProfile?.getMe?.(0);
-    this._uiCoins = window.VRProfile._n(me?.vcoins);
-    this._uiTokens = window.VRProfile._n(me?.jetons);
-  } catch (_) {
-    this._uiCoins = 0;
-    this._uiTokens = 0;
-  }
+      try {
+        const me = await window.VRProfile?.getMe?.(0);
+        this._uiCoins = window.VRProfile._n(me?.vcoins);
+        this._uiTokens = window.VRProfile._n(me?.jetons);
+      } catch (_) {
+        this._uiCoins = 0;
+        this._uiTokens = 0;
+      }
 
-  window.VRState.initUniverse(this.universeConfig);
-  window.VRUIBinding.init(this.universeConfig, this.lang, this.cardTextsDict);
+      window.VRState.initUniverse(this.universeConfig);
+      window.VRUIBinding.init(this.universeConfig, this.lang, this.cardTextsDict);
 
-  const restored = this._restoreFromSaveIfAny();
-  this._rebuildEventIndex();
+      const restored = this._restoreFromSaveIfAny();
+      this._rebuildEventIndex();
 
-  if (!restored) {
-    this._startNewReign();
-    this._saveRunSoft();
-  } else {
-    if (!this._eventPool.length && this._allEventIds.length) {
-      this._eventPool = this._allEventIds.slice();
-    }
-    this._saveRunSoft();
-  }
-}
+      if (!restored) {
+        this._startNewReign();
+        this._saveRunSoft();
+      } else {
+        if (!this._eventPool.length && this._allEventIds.length) {
+          this._eventPool = this._allEventIds.slice();
+        }
+        this._saveRunSoft();
+      }
+    },
 
     async _refreshUIBalancesSoft() {
       try {
