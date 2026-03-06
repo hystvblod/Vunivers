@@ -1887,9 +1887,9 @@ body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{
 }
 
 /* zones soldes : largeur et centrage des ronds */
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 2.9% !important; width: 16.8% !important; }
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 2.8% !important; width: 16.8% !important; }
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-center{ left: 20.6% !important; right: 20.6% !important; }
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 2.9% !important; width: 16.8% !important; }
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 2.8% !important; width: 16.8% !important; }
 
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-item{
   width: 100% !important;
