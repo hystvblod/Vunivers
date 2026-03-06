@@ -1878,7 +1878,7 @@ body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{
 }
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3% !important; width: 17.8% !important; }
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-center{ left: 20.2% !important; right: 20.2% !important; }
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 5.3% !important; width: 17.8% !important; }
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 5% !important; width: 17.8% !important; }
 
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-item{
   width: 100% !important;
