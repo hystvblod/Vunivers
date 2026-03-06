@@ -1713,8 +1713,8 @@ body.vr-body-game[data-universe="heaven_king"]{
 
   /* centre nom + année */
   --vr-identity-tx: 0px;
-  --vr-identity-ty: 5px;
-  --vr-hud-name-years-gap: 56px;
+  --vr-identity-ty: 3px;
+  --vr-hud-name-years-gap: 50px;
 
   /* balances : noirs */
   --vr-vcoins-tx: 0px;
@@ -2015,8 +2015,8 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
     --vr-hud-item-ty: -4px;
 
     --vr-identity-tx: 0px;
-    --vr-identity-ty: 1px;
-    --vr-hud-name-years-gap: 8px;
+    --vr-identity-ty: 3px;
+    --vr-hud-name-years-gap: 40px;
 
     --vr-font-choice: clamp(12px, 3.0vw, 16px);
     --vr-choice-h: clamp(84px, 12.0svh, 128px);
@@ -2029,8 +2029,8 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
     --vr-choice-inset-left: 8%;
   }
 
-  body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 4.0% !important; width: 17.2% !important; }
-  body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 4.0% !important; width: 17.2% !important; }
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3.5% !important; width: 17.2% !important; }
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 3.5% !important; width: 17.2% !important; }
   body.vr-body-game[data-universe="heaven_king"] .vr-hud-center{ left: 21.0% !important; right: 21.0% !important; }
 
   body.vr-body-game[data-universe="heaven_king"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
