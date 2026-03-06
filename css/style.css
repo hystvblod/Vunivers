@@ -2029,8 +2029,8 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
     --vr-choice-inset-left: 8%;
   }
 
-  body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3% !important; width: 17.2% !important; }
-  body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 3% !important; width: 17.2% !important; }
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3.1% !important; width: 17.2% !important; }
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 3.1% !important; width: 17.2% !important; }
   body.vr-body-game[data-universe="heaven_king"] .vr-hud-center{ left: 21.0% !important; right: 21.0% !important; }
 
   body.vr-body-game[data-universe="heaven_king"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
@@ -2095,13 +2095,13 @@ body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main{
 }
 body.vr-body-game[data-universe="western_president"]{
   --vr-card-w: clamp(460px, 100vw, 1240px);
-  --vr-game-gap:   clamp(6px, 0.8svh, 14px);
+  --vr-game-gap:   clamp(6px, 0.8svh, 12px);
   --vr-stack-gap:  clamp(10px, 1.2svh, 22px);
   --vr-choices-gap:clamp(10px, 1.2svh, 22px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
-  --vr-west-hud-w: min(94vw, 980px);
+  ----vr-west-hud-w: min(88vw, 980px);
   --vr-west-topbar-w: clamp(220px, 54vw, 420px);
   --vr-west-topbar-h: calc(var(--vr-west-topbar-w) * 0.275);
   --vr-west-back-size: clamp(46px, 11vw, 76px);
