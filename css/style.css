@@ -1708,8 +1708,8 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-ui-customize-img: url("../assets/img/ui/heaven_customize.webp");
 
  --vr-identity-tx: 0px;
---vr-identity-ty: 2px;
---vr-hud-name-years-gap: 20px;
+--vr-identity-ty: 6px;
+--vr-hud-name-years-gap: 60px;
 
   --vr-vcoins-tx: 0px;
   --vr-vcoins-ty: -2px;

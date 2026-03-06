@@ -16,6 +16,7 @@
 // - ✅ FIX(5): i18n overlay event (Continuer / Événement) avec fallback
 // - ✅ COSMETICS: fallback gris + popup perso + application live
 // - ✅ FIX POPUP COSMETICS: une seule ligne rerender au scroll, plus de flash global
+// - ✅ JETON PEEK: blink/zoom seulement hors-peek + delta +/−% affiché en peek + % jauges mis à jour
 // ===============================================
 
 
@@ -242,98 +243,6 @@ const VR_BADGE_GOLD_CHOICES = 100;
 })();
 
 
-// -------------------------------------------------------
-// Event Overlay
-// -------------------------------------------------------
-(function () {
-  "use strict";
-
-  const tt = (k, fb) => {
-    try {
-      const v = window.VRI18n?.t?.(k);
-      if (v && v !== k) return v;
-    } catch (_) {}
-    return fb;
-  };
-
-  function ensureOverlay() {
-    const ID = "vr-event-overlay";
-    let root = document.getElementById(ID);
-    if (root) return root;
-
-    root = document.createElement("div");
-    root.id = ID;
-    root.setAttribute("aria-hidden", "true");
-    root.style.cssText =
-      "position:fixed;inset:0;display:none;align-items:center;justify-content:center;" +
-      "background:rgba(0,0,0,.58);z-index:2147483000;padding:16px;";
-
-    const card = document.createElement("div");
-    card.style.cssText =
-      "width:min(720px, 94vw);border-radius:18px;padding:18px 18px 14px;" +
-      "background:rgba(18,20,26,.94);color:#fff;box-shadow:0 18px 60px rgba(0,0,0,.55);" +
-      "border:1px solid rgba(255,255,255,.14);";
-
-    const title = document.createElement("div");
-    title.id = "vr-event-title";
-    title.style.cssText = "font:700 18px/1.2 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0 0 10px;";
-
-    const body = document.createElement("div");
-    body.id = "vr-event-body";
-    body.style.cssText = "font:14.5px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;opacity:.95;white-space:pre-wrap;";
-
-    const row = document.createElement("div");
-    row.style.cssText = "display:flex;justify-content:flex-end;gap:10px;margin-top:14px;";
-
-    const btn = document.createElement("button");
-    btn.id = "vr-event-continue";
-    btn.type = "button";
-    btn.textContent = tt("event.continue", "Continuer");
-    btn.style.cssText =
-      "border:0;border-radius:14px;padding:10px 14px;cursor:pointer;" +
-      "background:rgba(255,255,255,.14);color:#fff;font:600 14px/1 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;";
-
-    row.appendChild(btn);
-    card.appendChild(title);
-    card.appendChild(body);
-    card.appendChild(row);
-    root.appendChild(card);
-
-    document.body.appendChild(root);
-    return root;
-  }
-
-  async function showEvent(title, bodyText) {
-    const root = ensureOverlay();
-    const tEl = document.getElementById("vr-event-title");
-    const bEl = document.getElementById("vr-event-body");
-    const btn = document.getElementById("vr-event-continue");
-
-    if (btn) btn.textContent = tt("event.continue", "Continuer");
-    if (tEl) tEl.textContent = title || tt("event.title", "Événement");
-    if (bEl) bEl.textContent = bodyText || "";
-
-    return new Promise((resolve) => {
-      const close = () => {
-        root.setAttribute("aria-hidden", "true");
-        root.style.display = "none";
-        try { btn.removeEventListener("click", close); } catch (_) {}
-        resolve(true);
-      };
-      try { btn.addEventListener("click", close); } catch (_) {}
-      root.setAttribute("aria-hidden", "false");
-      root.style.display = "flex";
-      try { btn.focus?.({ preventScroll: true }); } catch (_) {}
-    });
-  }
-
-  window.VREventOverlay = { showEvent };
-})();
-
-
-// -------------------------------------------------------
-// UI binding + swipe
-// -------------------------------------------------------
 (function () {
   "use strict";
 
@@ -386,6 +295,8 @@ const VR_BADGE_GOLD_CHOICES = 100;
         if (n > 0) document.body.classList.add("vr-peek-mode");
         else document.body.classList.remove("vr-peek-mode");
       } catch (_) {}
+
+      this.updateGauges();
     },
 
     _ensurePeekStyles() {
@@ -396,30 +307,80 @@ const VR_BADGE_GOLD_CHOICES = 100;
         const style = document.createElement("style");
         style.id = ID;
         style.textContent = `
-@keyframes vrPeekGlow {
+@keyframes vrGaugeBlinkGlow {
   0%   { filter: brightness(1); }
   50%  { filter: brightness(1.25); }
   100% { filter: brightness(1); }
 }
-@keyframes vrPeekPulse {
+@keyframes vrGaugeBlinkPulse {
   0%   { transform: translateZ(0) scale(1); }
   50%  { transform: translateZ(0) scale(1.01); }
   100% { transform: translateZ(0) scale(1); }
 }
-body.vr-peek-mode .vr-gauge.vr-peek-up,
-body.vr-peek-mode .vr-gauge.vr-peek-down{
-  animation: vrPeekGlow 650ms ease-in-out infinite;
+
+/* ✅ zone AU-DESSUS des jauges */
+.vr-gauge-value{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  min-width:64px;
+  line-height:1.05;
+  font:900 12px/1 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  letter-spacing:.2px;
+  text-shadow:0 2px 10px rgba(0,0,0,.45);
 }
-body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-frame,
-body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-frame{
-  box-shadow: 0 0 0 2px rgba(255,255,255,.18), 0 10px 24px rgba(0,0,0,.22);
+
+/* ✅ hors Peek : on cache complètement les % au-dessus */
+body:not(.vr-peek-mode) .vr-gauge-value{
+  opacity:0 !important;
+  visibility:hidden !important;
+}
+
+/* ✅ en Peek : on montre les % au-dessus */
+body.vr-peek-mode .vr-gauge-value{
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.vr-gauge-delta:empty{
+  display:none !important;
+}
+
+/* ✅ delta au-dessus */
+body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-delta{
+  color:rgba(170,255,210,.98);
+}
+body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-delta{
+  color:rgba(255,190,190,.98);
+}
+
+/* ✅ hors Peek : blink + mini zoom */
+body:not(.vr-peek-mode) .vr-gauge.vr-peek-up .vr-gauge-fill,
+body:not(.vr-peek-mode) .vr-gauge.vr-peek-down .vr-gauge-fill{
+  transform-origin:50% 50%;
+  animation:
+    vrGaugeBlinkGlow 650ms ease-in-out infinite,
+    vrGaugeBlinkPulse 650ms ease-in-out infinite;
+}
+
+/* ✅ en Peek : PAS de clignotement */
+body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-fill,
+body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-fill{
+  animation:none !important;
+  filter:brightness(1.12) saturate(1.06);
+}
+
+/* ✅ preview visuel seulement en Peek */
+body:not(.vr-peek-mode) .vr-gauge-preview{
+  opacity:0 !important;
 }
 body.vr-peek-mode .vr-gauge-preview{
   position:absolute;
   inset:0;
   pointer-events:none;
   opacity:.55;
-  clip-path: inset(calc(100% - var(--vr-pct, 0%)) 0 0 0);
+  clip-path:inset(calc(100% - var(--vr-pct, 0%)) 0 0 0);
 }
 `;
         (document.head || document.documentElement).appendChild(style);
@@ -428,11 +389,14 @@ body.vr-peek-mode .vr-gauge-preview{
 
     _consumePeekDecision() {
       if (this.peekRemaining <= 0) return;
+
       this.peekRemaining = Math.max(0, this.peekRemaining - 1);
+
       if (this.peekRemaining <= 0) {
         this.peekRemaining = 0;
         this._clearPeek();
         try { document.body.classList.remove("vr-peek-mode"); } catch (_) {}
+        this.updateGauges();
       }
     },
 
@@ -470,20 +434,18 @@ body.vr-peek-mode .vr-gauge-preview{
 
     _ensureGaugePreviewBars() {
       const gaugeEls = document.querySelectorAll(".vr-gauge");
+
       gaugeEls.forEach((el) => {
+        // ✅ supprime les vieux blocs injectés en dessous par l’ancien code
+        try {
+          el.querySelectorAll(".vr-gauge-under").forEach((n) => n.remove());
+        } catch (_) {}
+
         let preview = el.querySelector(".vr-gauge-preview");
         if (!preview) {
           preview = document.createElement("div");
           preview.className = "vr-gauge-preview";
           preview.style.setProperty("--vr-pct", "0%");
-
-          try {
-            preview.style.position = "absolute";
-            preview.style.inset = "0";
-            preview.style.pointerEvents = "none";
-            preview.style.opacity = "0.55";
-            preview.style.clipPath = "inset(calc(100% - var(--vr-pct, 0%)) 0 0 0)";
-          } catch (_) {}
 
           const frame = el.querySelector(".vr-gauge-frame");
           if (frame) {
@@ -499,23 +461,43 @@ body.vr-peek-mode .vr-gauge-preview{
 
     updateGauges() {
       const gaugesCfg = this.universeConfig?.gauges || [];
-      const fillEls = document.querySelectorAll(".vr-gauge-fill");
+      const gaugeEls = document.querySelectorAll(".vr-gauge");
 
-      fillEls.forEach((fillEl, idx) => {
-        const gaugeId = fillEl.dataset.gaugeId || gaugesCfg[idx]?.id || null;
+      const isPeek = (() => {
+        try { return document.body.classList.contains("vr-peek-mode"); }
+        catch (_) { return false; }
+      })();
+
+      gaugeEls.forEach((gEl, idx) => {
+        const cfg = gaugesCfg[idx];
+        const gaugeId = gEl?.dataset?.gaugeId || cfg?.id || null;
         if (!gaugeId) return;
 
         const val =
-          window.VRState.getGaugeValue(gaugeId) ??
-          this.universeConfig?.initialGauges?.[gaugeId] ??
-          gaugesCfg[idx]?.start ??
-          50;
+          (window.VRState?.getGaugeValue?.(gaugeId) ??
+            this.universeConfig?.initialGauges?.[gaugeId] ??
+            cfg?.start ??
+            50);
 
-        fillEl.style.setProperty("--vr-pct", `${val}%`);
+        const safeVal = clamp(Number(val) || 0, 0, 100);
+
+        const fillEl = gEl.querySelector(".vr-gauge-fill");
+        if (fillEl) {
+          fillEl.dataset.gaugeId = gaugeId;
+          fillEl.style.setProperty("--vr-pct", `${safeVal}%`);
+        }
+
+        // ✅ % actuel AU-DESSUS
+        const valEl = gEl.querySelector(".vr-gauge-val");
+        if (valEl) valEl.textContent = isPeek ? `${Math.round(safeVal)}%` : "";
+
+        // ✅ delta AU-DESSUS
+        const deltaEl = gEl.querySelector(".vr-gauge-delta");
+        if (deltaEl) deltaEl.textContent = "";
+
+        const previewEl = gEl.querySelector(".vr-gauge-preview");
+        if (previewEl) previewEl.style.setProperty("--vr-pct", "0%");
       });
-
-      const previewEls = document.querySelectorAll(".vr-gauge-preview");
-      previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-pct", "0%"));
 
       this._clearPeekClasses();
     },
@@ -542,6 +524,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
       this._resetChoiceCards();
       this._clearPeek();
+      this.updateGauges();
     },
 
     _resetChoiceCards() {
@@ -569,6 +552,7 @@ body.vr-peek-mode .vr-gauge-preview{
     _setupSwipeOnChoiceCard(btn) {
       const TH = 62;
       const ROT_MAX = 12;
+      const PREVIEW_TH = 12;
       let startX = 0;
       let startY = 0;
       let lastX = 0;
@@ -625,11 +609,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
         pointerId = e.pointerId ?? null;
         try { if (pointerId != null) btn.setPointerCapture(pointerId); } catch (_) {}
-
-        const choiceId = btn.getAttribute("data-choice");
-        if (choiceId && this.peekRemaining > 0) {
-          this._showPeekForChoice(choiceId);
-        }
       };
 
       const onMove = (e) => {
@@ -646,8 +625,19 @@ body.vr-peek-mode .vr-gauge-preview{
         const dy = lastY - startY;
 
         if (Math.abs(dy) > Math.abs(dx) * 1.25) {
+          this._clearPeek();
           setTransform(dx * 0.25);
           return;
+        }
+
+        if (Math.abs(dx) >= PREVIEW_TH) {
+          const choiceId = btn.getAttribute("data-choice");
+          if (choiceId) {
+            if (this.peekRemaining > 0) this._showPeekForChoice(choiceId);
+            else this._showBlinkOnlyForChoice(choiceId);
+          }
+        } else {
+          this._clearPeek();
         }
 
         setTransform(dx);
@@ -658,15 +648,11 @@ body.vr-peek-mode .vr-gauge-preview{
         dragging = false;
 
         const dx = lastX - startX;
-
         this._clearPeek();
 
         if (Math.abs(dx) >= TH && this.currentCardLogic) {
           const choiceId = btn.getAttribute("data-choice");
-          if (!choiceId) {
-            animateBack();
-            return;
-          }
+          if (!choiceId) { animateBack(); return; }
 
           animateFlyOut(dx, () => {
             try { window.VREngine.applyChoice(this.currentCardLogic, choiceId); } catch (_) {}
@@ -701,10 +687,39 @@ body.vr-peek-mode .vr-gauge-preview{
     _clearPeek() {
       this._peekChoiceActive = null;
 
-      const previewEls = document.querySelectorAll(".vr-gauge-preview");
-      previewEls.forEach((previewEl) => previewEl.style.setProperty("--vr-pct", "0%"));
+      try {
+        document.querySelectorAll(".vr-gauge-preview").forEach((previewEl) => {
+          previewEl.style.setProperty("--vr-pct", "0%");
+        });
+
+        // ✅ on efface seulement le delta temporaire
+        document.querySelectorAll(".vr-gauge-delta").forEach((dEl) => {
+          dEl.textContent = "";
+        });
+      } catch (_) {}
 
       this._clearPeekClasses();
+    },
+
+    _showBlinkOnlyForChoice(choiceId) {
+      if (!this.currentCardLogic?.choices?.[choiceId]) return;
+
+      this._clearPeekClasses();
+      try {
+        document.querySelectorAll(".vr-gauge-delta").forEach((dEl) => {
+          dEl.textContent = "";
+        });
+      } catch (_) {}
+
+      const deltas = this.currentCardLogic.choices[choiceId]?.gaugeDelta || {};
+      for (const [gaugeId, delta] of Object.entries(deltas)) {
+        if (typeof delta !== "number" || delta === 0) continue;
+
+        const el = document.querySelector(`.vr-gauge[data-gauge-id="${gaugeId}"]`);
+        if (!el) continue;
+
+        el.classList.add(delta > 0 ? "vr-peek-up" : "vr-peek-down");
+      }
     },
 
     _showPeekForChoice(choiceId) {
@@ -716,9 +731,26 @@ body.vr-peek-mode .vr-gauge-preview{
       const gaugeEls = document.querySelectorAll(".vr-gauge");
       const previewEls = document.querySelectorAll(".vr-gauge-preview");
 
-      gaugeEls.forEach((g) => {
+      gaugeEls.forEach((g, idx) => {
         g.classList.remove("vr-peek-up");
         g.classList.remove("vr-peek-down");
+
+        const cfg = gaugesCfg[idx];
+        const gaugeId = g?.dataset?.gaugeId || cfg?.id || null;
+
+        const currentVal =
+          (gaugeId != null)
+            ? (window.VRState?.getGaugeValue?.(gaugeId) ??
+              this.universeConfig?.initialGauges?.[gaugeId] ??
+              cfg?.start ??
+              50)
+            : 50;
+
+        const valEl = g.querySelector(".vr-gauge-val");
+        if (valEl) valEl.textContent = `${Math.round(Number(currentVal) || 0)}%`;
+
+        const deltaEl = g.querySelector(".vr-gauge-delta");
+        if (deltaEl) deltaEl.textContent = "";
       });
 
       previewEls.forEach((previewEl, idx) => {
@@ -728,28 +760,36 @@ body.vr-peek-mode .vr-gauge-preview{
         const gaugeId = cfg.id;
 
         const baseVal =
-          window.VRState.getGaugeValue(gaugeId) ??
-          this.universeConfig?.initialGauges?.[gaugeId] ??
-          cfg.start ??
-          50;
+          (window.VRState?.getGaugeValue?.(gaugeId) ??
+            this.universeConfig?.initialGauges?.[gaugeId] ??
+            cfg?.start ??
+            50);
 
         const d = this.currentCardLogic.choices[choiceId]?.gaugeDelta?.[gaugeId];
         const delta = (typeof d === "number") ? d : 0;
 
-        const previewVal = clamp(baseVal + delta, 0, 100);
+        const previewVal = clamp((Number(baseVal) || 0) + delta, 0, 100);
         previewEl.style.setProperty("--vr-pct", `${previewVal}%`);
 
         const gaugeEl = gaugeEls[idx];
-        if (gaugeEl) {
-          if (delta > 0) gaugeEl.classList.add("vr-peek-up");
-          else if (delta < 0) gaugeEl.classList.add("vr-peek-down");
+        if (!gaugeEl) return;
+
+        if (delta > 0) gaugeEl.classList.add("vr-peek-up");
+        else if (delta < 0) gaugeEl.classList.add("vr-peek-down");
+
+        // ✅ + / - XX% AU-DESSUS, à côté du % actuel
+        const deltaEl = gaugeEl.querySelector(".vr-gauge-delta");
+        if (deltaEl) {
+          if (delta > 0) deltaEl.textContent = `+${Math.round(delta)}%`;
+          else if (delta < 0) deltaEl.textContent = `-${Math.round(Math.abs(delta))}%`;
+          else deltaEl.textContent = "";
         }
       });
     }
   };
 
   window.VRUIBinding = VRUIBinding;
-})();
+})(); 
 
 
 // -------------------------------------------------------
@@ -1894,28 +1934,31 @@ body.vr-peek-mode .vr-gauge-preview{
       try {
         const host = (popup.querySelector("[data-token-action]")?.parentElement) || popup;
 
+        // ✅ Fallback : si le bouton Peek n'est pas présent, on le recrée
+        // avec exactement le même style/structure que les autres cartes (pas de style inline).
         if (host && !host.querySelector('[data-token-action="peek15"]')) {
           const btn = document.createElement("button");
           btn.type = "button";
+          btn.className = "vr-card vr-token-card";
           btn.setAttribute("data-token-action", "peek15");
-          btn.style.cssText =
-            "display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;" +
-            "padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.14);" +
-            "background:rgba(255,255,255,.08);color:inherit;font:inherit;text-align:left;cursor:pointer;";
 
-          const title = document.createElement("div");
-          title.style.cssText = "font-weight:700;font-size:14px;line-height:1.2;";
+          const content = document.createElement("div");
+          content.className = "vr-card-content";
+
+          const title = document.createElement("h4");
+          title.className = "vr-card-title";
           title.textContent = t("token.popup.peek.title", "Voir les effets (15)");
 
-          const desc = document.createElement("div");
-          desc.style.cssText = "opacity:.85;font-size:12.5px;line-height:1.25;";
+          const desc = document.createElement("p");
+          desc.className = "vr-card-text";
           desc.textContent = t(
             "token.popup.peek.text",
             "Pendant 15 choix, les jauges concernées clignotent et affichent un aperçu."
           );
 
-          btn.appendChild(title);
-          btn.appendChild(desc);
+          content.appendChild(title);
+          content.appendChild(desc);
+          btn.appendChild(content);
 
           const before =
             host.querySelector('[data-token-action="gauge50"]') ||
@@ -2003,8 +2046,20 @@ body.vr-peek-mode .vr-gauge-preview{
             if (!ok) {
               try { await window.VUserData?.addJetons?.(1); } catch (_) {}
               toast(t("token.toast.undo_fail", "Impossible de revenir en arrière"));
+              try {
+                await window.VREventOverlay?.showEvent?.(
+                  t("token.undo.fail.title", "Retour arrière"),
+                  t("token.undo.fail.body", "Impossible de revenir en arrière. Rien n’a été modifié.")
+                );
+              } catch (_) {}
             } else {
               toast(t("token.toast.undo_done", "Retour -3 effectué"));
+              try {
+                await window.VREventOverlay?.showEvent?.(
+                  t("token.undo.ok.title", "Retour arrière"),
+                  t("token.undo.ok.body", "3 choix annulés. Tu peux continuer.")
+                );
+              } catch (_) {}
             }
 
             try {
@@ -2808,24 +2863,24 @@ body.vr-peek-mode .vr-gauge-preview{
 
     if (!btn || !popup) return;
     function ensureCloseX() {
-  const inner = popup.querySelector(".vr-popup-inner");
-  if (!inner) return;
+      const inner = popup.querySelector(".vr-popup-inner");
+      if (!inner) return;
 
-  if (inner.querySelector(".vr-customize-x")) return;
+      if (inner.querySelector(".vr-customize-x")) return;
 
-  const x = document.createElement("button");
-  x.type = "button";
-  x.className = "vr-customize-x";
+      const x = document.createElement("button");
+      x.type = "button";
+      x.className = "vr-customize-x";
 
-  /* IMPORTANT: on réutilise ton système existant */
-  x.setAttribute("data-customize-action", "close");
-  x.setAttribute("aria-label", "");
-  x.setAttribute("data-i18n-aria", "common.close");
+      /* IMPORTANT: on réutilise ton système existant */
+      x.setAttribute("data-customize-action", "close");
+      x.setAttribute("aria-label", "");
+      x.setAttribute("data-i18n-aria", "common.close");
 
-  inner.insertBefore(x, inner.firstChild);
-}
+      inner.insertBefore(x, inner.firstChild);
+    }
 
-ensureCloseX();
+    ensureCloseX();
 
     btn.addEventListener("click", () => openPopup());
 
