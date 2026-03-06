@@ -2029,8 +2029,8 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
     --vr-choice-inset-left: 8%;
   }
 
-  body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3.2% !important; width: 17.2% !important; }
-  body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 3.2% !important; width: 17.2% !important; }
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3% !important; width: 17.2% !important; }
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 3% !important; width: 17.2% !important; }
   body.vr-body-game[data-universe="heaven_king"] .vr-hud-center{ left: 21.0% !important; right: 21.0% !important; }
 
   body.vr-body-game[data-universe="heaven_king"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
