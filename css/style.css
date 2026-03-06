@@ -1887,9 +1887,9 @@ body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{
 }
 
 /* zones soldes : largeur et centrage des ronds */
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3.0% !important; width: 16.8% !important; }
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 2.9% !important; width: 16.8% !important; }
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-center{ left: 20.6% !important; right: 20.6% !important; }
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 3.0% !important; width: 16.8% !important; }
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 2.9% !important; width: 16.8% !important; }
 
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-item{
   width: 100% !important;
@@ -2117,6 +2117,10 @@ body.vr-body-game[data-universe="western_president"]{
   --vr-vcoins-glow:rgba(255,210,74,.50);
   --vr-vcoins-bg: transparent;
   --vr-jetons-bg: transparent;
+
+   --vr-identity-tx: 0px;
+  --vr-identity-ty: 6px;
+  --vr-hud-name-years-gap: 40px;
 }
 
 body.vr-body-game[data-universe="western_president"] .vr-top-actions-game .vr-top-icon,
@@ -2262,6 +2266,11 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-value{
   color:#000 !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.35), 0 0 8px rgba(0,0,0,0.12) !important;
   transform: translateY(-2px) !important;
+}
+
+body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value,
+body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
+  transform: translateY(4px) !important;
 }
 body.vr-body-game[data-universe="western_president"] .vr-hud-name{
   font-size: clamp(13px, 2vw, 28px) !important;
