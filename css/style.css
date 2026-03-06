@@ -1713,8 +1713,8 @@ body.vr-body-game[data-universe="heaven_king"]{
 
   /* centre nom + année */
   --vr-identity-tx: 0px;
-  --vr-identity-ty: 4px;
-  --vr-hud-name-years-gap: 50px;
+  --vr-identity-ty: 5px;
+  --vr-hud-name-years-gap: 56px;
 
   /* balances : noirs */
   --vr-vcoins-tx: 0px;
