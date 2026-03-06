@@ -2344,7 +2344,7 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value{
 
 /* Jetons plus bas + légèrement à droite */
 body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
-  transform: translate(10px, 18px) !important;
+  transform: translate(10px, 17px) !important;
 }
 
 /* bloc central plus bas */

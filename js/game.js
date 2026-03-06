@@ -1069,7 +1069,7 @@ body.vr-peek-mode .vr-gauge-preview{
             display:flex;
             align-items:center;
             justify-content:center;
-            gap:16px;
+            gap:12px;
             padding:10px 14px;
             border-radius:16px;
             background:rgba(255,255,255,.08);
@@ -1077,8 +1077,8 @@ body.vr-peek-mode .vr-gauge-preview{
             box-shadow:0 14px 26px rgba(0,0,0,.24);
           }
           .vr-ending-reward img{
-            width:30px;
-            height:30px;
+            width:36px;
+            height:36px;
             object-fit:contain;
             filter:drop-shadow(0 6px 12px rgba(0,0,0,.32));
           }
@@ -1131,8 +1131,8 @@ body.vr-peek-mode .vr-gauge-preview{
             line-height:1.05;
           }
           .vr-ending-double-title img{
-            width:28px;
-            height:28px;
+            width:32px;
+            height:32px;
             object-fit:contain;
             filter:drop-shadow(0 6px 12px rgba(0,0,0,.34));
           }
