@@ -243,9 +243,6 @@ const VR_BADGE_GOLD_CHOICES = 100;
 })();
 
 
-// -------------------------------------------------------
-// UI binding + swipe
-// -------------------------------------------------------
 (function () {
   "use strict";
 
@@ -792,7 +789,7 @@ body.vr-peek-mode .vr-gauge-preview{
   };
 
   window.VRUIBinding = VRUIBinding;
-})();
+})(); 
 
 
 // -------------------------------------------------------
