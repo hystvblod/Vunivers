@@ -1669,7 +1669,7 @@ body.vr-body-game[data-universe="heaven_king"]{
 
   --vr-game-gap: clamp(0px, 0.06svh, 1px);
   --vr-stack-gap: clamp(1px, 0.14svh, 3px);
-  --vr-choices-gap: clamp(2px, 0.18svh, 4px);
+  --vr-choices-gap: clamp(2px, 0.14svh, 3px);
 
   --vr-scn-h: clamp(160px, 20svh, 330px);
   --vr-choice-h: clamp(112px, 15.5svh, 270px);
@@ -1690,7 +1690,7 @@ body.vr-body-game[data-universe="heaven_king"]{
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 2px);
 
-  --vr-heaven-hud-w: min(94vw, 980px);
+  --vr-heaven-hud-w: min(90vw, 920px);
   --vr-heaven-hud-value-size: clamp(13px, 2vw, 24px);
   --vr-heaven-hud-name-size: clamp(13px, 2vw, 28px);
   --vr-heaven-hud-years-size: clamp(10px, 1.25vw, 16px);
@@ -1853,7 +1853,7 @@ body.vr-body-game[data-universe="heaven_king"] .vr-hud{
   position: relative !important;
   width: var(--vr-heaven-hud-w) !important;
   max-width: none !important;
-  margin: 0 auto !important;
+ margin: 4px auto 0 !important;
   padding: 0 !important;
   display: block !important;
   white-space: normal !important;
@@ -1973,7 +1973,7 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
 
 @media (max-width: 480px){
   body.vr-body-game[data-universe="heaven_king"]{
-    --vr-heaven-hud-w: 96vw;
+    --vr-heaven-hud-w: 92vw;
     --vr-heaven-hud-value-size: clamp(11px, 2.8vw, 14px);
     --vr-heaven-hud-name-size: clamp(11px, 3.1vw, 16px);
     --vr-heaven-hud-years-size: clamp(9px, 2vw, 12px);
