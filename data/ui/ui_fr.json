@@ -13,7 +13,9 @@
     "buy": "Acheter",
     "owned": "Possédé",
     "locked": "À débloquer",
-    "equipped": "Équipé"
+    "equipped": "Équipé",
+    "error_generic": "Erreur",
+    "unavailable": "Indisponible"
   },
   "auth": {
     "username": {
@@ -157,8 +159,8 @@
         "text": "Annule tes 3 derniers choix"
       },
       "peek": {
-        "title": "Voir les effets",
-        "text": "Pendant 15 choix, affiche un aperçu des effets sur les jauges."
+        "title": "Voir les effets 15",
+        "text": "Pendant 15 choix, les jauges concernées clignotent et affichent un aperçu."
       },
       "close": {
         "text": "Fermer ce menu"
@@ -176,7 +178,17 @@
       "undo_fail": "Impossible de revenir en arrière",
       "undo_done": "Retour -3 effectué",
       "gauge_set_50": "Jauge remise à 50%",
-      "peek_on": "Aperçu activé pour les 15 prochaines décisions"
+      "peek_on": "Peek activé : 15 prochaines décisions"
+    },
+    "undo": {
+      "fail": {
+        "title": "Retour arrière",
+        "body": "Impossible de revenir en arrière. Rien n’a été modifié."
+      },
+      "ok": {
+        "title": "Retour arrière",
+        "body": "3 choix annulés. Tu peux continuer."
+      }
     }
   },
   "coins": {
@@ -232,7 +244,7 @@
     },
     "ending": {
       "title": "Fin du règne",
-      "body": "Votre règne s’achève ici.",
+      "body": "Votre règne s'achève ici.",
       "double_gain": "Doubler ton gain",
       "double_gain_sub": "Regarder une pub récompensée",
       "reward_claimed": "Gain doublé crédité",
@@ -240,6 +252,9 @@
       "revive_token": "Revivre avec 1 jeton"
     },
     "year_label": "Année"
+  },
+  "event": {
+    "title": "Événement"
   },
   "profile": {
     "title": "Profil",

@@ -2327,7 +2327,7 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-item{
 body.vr-body-game[data-universe="western_president"] .vr-hud-value{
   font-family: "VR_InterExtraLight", sans-serif !important;
   font-size: clamp(12px, 1.85vw, 22px) !important;
-  font-weight: 400 !important;
+  font-weight: 300 !important;
   line-height: 1 !important;
   color: #000 !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.18), 0 0 3px rgba(0,0,0,0.06) !important;

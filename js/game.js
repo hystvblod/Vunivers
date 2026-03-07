@@ -1,5 +1,5 @@
 // ===============================================
-// VRealms - js/game.js (bundle complet) — VERSION RÉPARÉE
+// VRealms - js/game.js (bundle complet) — VERSION RÉPARÉE + I18N CLEAN
 // - Loader univers/decks/i18n
 // - UI binding + swipe animé sur les choix (A/B/C)
 // - State / Endings / Engine core
@@ -13,12 +13,13 @@
 // - ✅ FIX(1): swipe = PointerEvents only (+ fallback touch si pas PointerEvent)
 // - ✅ FIX(2): _handleDeath() n’empile plus de listeners (bind once + delegation)
 // - ✅ FIX(3): events jetons: UI ne bouge que si DB ok + refresh soft après event
-// - ✅ FIX(5): i18n overlay event (Continuer / Événement) avec fallback
+// - ✅ FIX(5): i18n overlay event (Continuer / Événement)
 // - ✅ COSMETICS: fallback gris + popup perso + application live
 // - ✅ FIX POPUP COSMETICS: une seule ligne rerender au scroll, plus de flash global
 // - ✅ JETON PEEK: blink/zoom seulement hors-peek + delta +/−% affiché en peek + % jauges mis à jour
 // - ✅ FIX CRITIQUE: ne restaure plus une save morte/corrompue
 // - ✅ FIX UI: popups jetons/vcoins en cartouches basiques, sans images du jeu
+// - ✅ FIX I18N: plus aucun texte visible en dur dans ce fichier
 // ===============================================
 
 
@@ -937,12 +938,12 @@ body.vr-peek-mode .vr-gauge-preview{
         const out = window.VRI18n?.t?.(key);
         if (out && out !== key) return out;
       } catch (_) {}
-      return null;
+      return "";
     };
 
-    titleEl.textContent = ending?.title || t("game.ending.title") || "Fin du règne";
+    titleEl.textContent = ending?.title || t("game.ending.title");
     textEl.textContent =
-      ending?.text || ending?.body || t("game.ending.body") || "Votre règne s'achève ici.";
+      ending?.text || ending?.body || t("game.ending.body");
 
     overlay.classList.add("vr-ending-visible");
   }
@@ -1027,14 +1028,14 @@ body.vr-peek-mode .vr-gauge-preview{
   }
 
   function getYearLabel() {
-    let label = "Année";
+    let label = "";
 
     try {
       const out = window.VRI18n?.t?.("game.year_label");
       if (out && out !== "game.year_label") label = out;
     } catch (_) {}
 
-    return `${label} ${toRoman(getDisplayedYearIndex())}`;
+    return label ? `${label} ${toRoman(getDisplayedYearIndex())}` : `${toRoman(getDisplayedYearIndex())}`;
   }
 
   function getDynastyName() {
@@ -1105,7 +1106,7 @@ body.vr-peek-mode .vr-gauge-preview{
             color:#fff;
             font:inherit;
             cursor:pointer;
-            margin-top: 6px;
+            margin-top:6px;
           }
           .vr-ending-double::before{
             content:"";
@@ -1191,9 +1192,9 @@ body.vr-peek-mode .vr-gauge-preview{
         doubleBtn.innerHTML = `
           <span class="vr-ending-double-title">
             <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
-            <span id="ending-double-title">Doubler ton gain</span>
+            <span id="ending-double-title"></span>
           </span>
-          <span class="vr-ending-double-sub" id="ending-double-sub">Regarder une pub récompensée</span>
+          <span class="vr-ending-double-sub" id="ending-double-sub"></span>
         `;
         reward.insertAdjacentElement("afterend", doubleBtn);
       }
@@ -1447,7 +1448,6 @@ body.vr-peek-mode .vr-gauge-preview{
         const e = saved.engine || {};
         const sess = saved.session || {};
 
-        // ✅ si la save est morte/cassée, on la jette
         if (!s || typeof s !== "object" || !s.gauges || typeof s.gauges !== "object") {
           this._clearBrokenRunSave();
           return false;
@@ -1927,15 +1927,15 @@ body.vr-peek-mode .vr-gauge-preview{
       this._eventShowing = true;
       this._saveRunSoft();
 
-      const t = (k, fb) => {
+      const t = (k, fallback) => {
         try {
           const out = window.VRI18n?.t?.(k);
           if (out && out !== k) return out;
         } catch (_) {}
-        return fb;
+        return typeof fallback === "string" ? fallback : "";
       };
 
-      const title = texts?.title || t("event.title", "Événement");
+      const title = texts?.title || t("event.title", "");
       const body = texts?.body || texts?.text || "";
 
       try {
@@ -2056,7 +2056,7 @@ body.vr-peek-mode .vr-gauge-preview{
           const out = window.VRI18n?.t?.(key);
           if (out && out !== key) return out;
         } catch (_) {}
-        return fallback || key;
+        return typeof fallback === "string" ? fallback : "";
       };
 
       const renderEndingReward = (displayAmount) => {
@@ -2070,20 +2070,20 @@ body.vr-peek-mode .vr-gauge-preview{
           const title = doubleBtn.querySelector("#ending-double-title");
           const sub = doubleBtn.querySelector("#ending-double-sub");
           if (title) title.textContent = this._pendingEndClaimed
-            ? t("game.ending.reward_claimed", "Gain doublé crédité")
-            : t("game.ending.double_gain", "Doubler ton gain");
+            ? t("game.ending.reward_claimed", "")
+            : t("game.ending.double_gain", "");
           if (sub) sub.textContent = this._pendingEndClaimed
-            ? t("game.ending.reward_claimed_sub", "Tu peux maintenant recommencer ou revenir")
-            : t("game.ending.double_gain_sub", "Regarder une pub récompensée");
+            ? t("game.ending.reward_claimed_sub", "")
+            : t("game.ending.double_gain_sub", "");
         }
 
         if (reviveBtn) {
-          reviveBtn.textContent = t("game.ending.revive_token", "Revivre avec 1 jeton");
+          reviveBtn.textContent = t("game.ending.revive_token", "");
           reviveBtn.disabled = !!this._reviveUsed || !!this._pendingEndClaimed;
         }
 
-        if (restartBtn) restartBtn.textContent = t("game.restart", "Recommencer");
-        if (returnBtn) returnBtn.textContent = t("game.return", "Retour");
+        if (restartBtn) restartBtn.textContent = t("game.restart", "");
+        if (returnBtn) returnBtn.textContent = t("game.return", "");
       };
 
       renderEndingReward(this._pendingEndReward);
@@ -2098,14 +2098,14 @@ body.vr-peek-mode .vr-gauge-preview{
 
           const okAd = await (window.VRAds?.showRewardedAd?.({ placement: "end_reward_x2" }) || Promise.resolve(false));
           if (!okAd) {
-            try { window.showToast?.(t("coins.toast.reward_fail", "Pub indisponible")); } catch (_) {}
+            try { window.showToast?.(t("coins.toast.reward_fail", "")); } catch (_) {}
             syncEndingButtons();
             return;
           }
 
           const out = await this._finalizeEndedRun(2);
           if (!out?.ok) {
-            try { window.showToast?.(t("common.error_generic", "Erreur")); } catch (_) {}
+            try { window.showToast?.(t("common.error_generic", "")); } catch (_) {}
             syncEndingButtons();
             return;
           }
@@ -2123,7 +2123,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
           const ok = await (window.VUserData?.spendJetons?.(1) || Promise.resolve(false));
           if (!ok) {
-            try { window.showToast?.(t("token.toast.no_tokens", "Tu n'as pas de jeton")); } catch (_) {}
+            try { window.showToast?.(t("token.toast.no_tokens", "")); } catch (_) {}
             syncEndingButtons();
             return;
           }
@@ -2141,7 +2141,7 @@ body.vr-peek-mode .vr-gauge-preview{
           if (!this._pendingEndFinalized) {
             const out = await this._finalizeEndedRun(1);
             if (!out?.ok) {
-              try { window.showToast?.(t("common.error_generic", "Erreur")); } catch (_) {}
+              try { window.showToast?.(t("common.error_generic", "")); } catch (_) {}
               return;
             }
             renderEndingReward(out.amount);
@@ -2157,7 +2157,7 @@ body.vr-peek-mode .vr-gauge-preview{
           if (!this._pendingEndFinalized) {
             const out = await this._finalizeEndedRun(1);
             if (!out?.ok) {
-              try { window.showToast?.(t("common.error_generic", "Erreur")); } catch (_) {}
+              try { window.showToast?.(t("common.error_generic", "")); } catch (_) {}
               return;
             }
             renderEndingReward(out.amount);
@@ -2188,7 +2188,7 @@ body.vr-peek-mode .vr-gauge-preview{
       const out = window.VRI18n?.t?.(key);
       if (out && out !== key) return out;
     } catch (_) {}
-    return fallback || key;
+    return typeof fallback === "string" ? fallback : "";
   }
 
   function toast(msg) {
@@ -2349,7 +2349,7 @@ body.vr-peek-mode .vr-gauge-preview{
         document.body.classList.add("vr-token-select-mode");
         closePopup();
         openGaugeOverlay();
-        toast(t("token.toast.select_gauge", "Choisis une jauge à remettre à 50%"));
+        toast(t("token.toast.select_gauge", ""));
       };
 
       const stopSelectGauge50 = () => {
@@ -2385,14 +2385,11 @@ body.vr-peek-mode .vr-gauge-preview{
 
           const title = document.createElement("h4");
           title.className = "vr-card-title";
-          title.textContent = t("token.popup.peek.title", "Voir les effets 15");
+          title.textContent = t("token.popup.peek.title", "");
 
           const desc = document.createElement("p");
           desc.className = "vr-card-text";
-          desc.textContent = t(
-            "token.popup.peek.text",
-            "Pendant 15 choix, les jauges concernées clignotent et affichent un aperçu."
-          );
+          desc.textContent = t("token.popup.peek.text", "");
 
           content.appendChild(title);
           content.appendChild(desc);
@@ -2438,9 +2435,9 @@ body.vr-peek-mode .vr-gauge-preview{
                 window.VREngine?._uiTokens || 0
               );
 
-              toast(t("token.toast.reward_ok", "+1 jeton ajouté"));
+              toast(t("token.toast.reward_ok", ""));
             } else {
-              toast(t("token.toast.reward_fail", "Pub indisponible"));
+              toast(t("token.toast.reward_fail", ""));
             }
             return;
           }
@@ -2448,21 +2445,21 @@ body.vr-peek-mode .vr-gauge-preview{
           if (action === "peek15") {
             const okSpend = await window.VUserData?.spendJetons?.(1);
             if (!okSpend) {
-              toast(t("token.toast.no_tokens", "Tu n'as pas de jeton"));
+              toast(t("token.toast.no_tokens", ""));
               closePopup();
               return;
             }
 
             closePopup();
             try { window.VRUIBinding?.enablePeek?.(15); } catch (_) {}
-            toast(t("token.toast.peek_on", "Peek activé : 15 prochaines décisions"));
+            toast(t("token.toast.peek_on", ""));
             return;
           }
 
           if (action === "gauge50") {
             const me = await window.VRProfile?.getMe?.(0);
             if (window.VRProfile._n(me?.jetons) <= 0) {
-              toast(t("token.toast.no_tokens", "Tu n'as pas de jeton"));
+              toast(t("token.toast.no_tokens", ""));
               closePopup();
               return;
             }
@@ -2473,7 +2470,7 @@ body.vr-peek-mode .vr-gauge-preview{
           if (action === "back3") {
             const okSpend = await window.VUserData?.spendJetons?.(1);
             if (!okSpend) {
-              toast(t("token.toast.no_tokens", "Tu n'as pas de jeton"));
+              toast(t("token.toast.no_tokens", ""));
               closePopup();
               return;
             }
@@ -2483,19 +2480,19 @@ body.vr-peek-mode .vr-gauge-preview{
             const ok = window.VREngine?.undoChoices?.(3);
             if (!ok) {
               try { await window.VUserData?.addJetons?.(1); } catch (_) {}
-              toast(t("token.toast.undo_fail", "Impossible de revenir en arrière"));
+              toast(t("token.toast.undo_fail", ""));
               try {
                 await window.VREventOverlay?.showEvent?.(
-                  t("token.undo.fail.title", "Retour arrière"),
-                  t("token.undo.fail.body", "Impossible de revenir en arrière. Rien n’a été modifié.")
+                  t("token.undo.fail.title", ""),
+                  t("token.undo.fail.body", "")
                 );
               } catch (_) {}
             } else {
-              toast(t("token.toast.undo_done", "Retour -3 effectué"));
+              toast(t("token.toast.undo_done", ""));
               try {
                 await window.VREventOverlay?.showEvent?.(
-                  t("token.undo.ok.title", "Retour arrière"),
-                  t("token.undo.ok.body", "3 choix annulés. Tu peux continuer.")
+                  t("token.undo.ok.title", ""),
+                  t("token.undo.ok.body", "")
                 );
               } catch (_) {}
             }
@@ -2542,7 +2539,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
           const spent = await window.VUserData?.spendJetons?.(1);
           if (!spent) {
-            toast(t("token.toast.no_tokens", "Tu n'as pas de jeton"));
+            toast(t("token.toast.no_tokens", ""));
             stopSelectGauge50();
             return;
           }
@@ -2568,7 +2565,7 @@ body.vr-peek-mode .vr-gauge-preview{
             window.VREngine?._uiTokens || 0
           );
 
-          toast(t("token.toast.gauge_set_50", "Jauge remise à 50%"));
+          toast(t("token.toast.gauge_set_50", ""));
           stopSelectGauge50();
         });
       }
@@ -2590,7 +2587,7 @@ body.vr-peek-mode .vr-gauge-preview{
       const out = window.VRI18n?.t?.(key);
       if (out && out !== key) return out;
     } catch (_) {}
-    return fallback || key;
+    return typeof fallback === "string" ? fallback : "";
   }
 
   function toast(msg) {
@@ -2705,9 +2702,9 @@ body.vr-peek-mode .vr-gauge-preview{
                 window.VREngine?._uiTokens || 0
               );
 
-              toast(t("coins.toast.reward_ok", "+500 pièces ajoutées"));
+              toast(t("coins.toast.reward_ok", ""));
             } else {
-              toast(t("coins.toast.reward_fail", "Pub indisponible"));
+              toast(t("coins.toast.reward_fail", ""));
             }
             return;
           }
@@ -2774,7 +2771,7 @@ body.vr-peek-mode .vr-gauge-preview{
       const out = window.VRI18n?.t?.(key);
       if (out && out !== key) return out;
     } catch (_) {}
-    return fallback || key;
+    return typeof fallback === "string" ? fallback : "";
   }
 
   function toast(msg) {
@@ -3077,18 +3074,18 @@ body.vr-peek-mode .vr-gauge-preview{
 
     if (equipped) {
       return {
-        text: t("common.equipped", "Équipé"),
+        text: t("common.equipped", ""),
         className: "vr-customize-action is-equipped"
       };
     }
     if (owned) {
       return {
-        text: t("common.use", "Équiper"),
+        text: t("common.use", ""),
         className: "vr-customize-action is-owned"
       };
     }
     return {
-      text: `${t("common.buy", "Acheter")} · ${item.price}`,
+      text: `${t("common.buy", "")} · ${item.price}`,
       className: "vr-customize-action"
     };
   }
@@ -3109,8 +3106,8 @@ body.vr-peek-mode .vr-gauge-preview{
     if (!items.length) {
       return `
         <div class="vr-customize-row" data-category="${category}">
-          <div class="vr-customize-subtitle">${t(subtitleKey, category)}</div>
-          <div class="vr-customize-note">${t("common.unavailable", "Indisponible")}</div>
+          <div class="vr-customize-subtitle">${t(subtitleKey, "")}</div>
+          <div class="vr-customize-note">${t("common.unavailable", "")}</div>
         </div>
       `;
     }
@@ -3120,7 +3117,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
     return `
       <div class="vr-customize-row" data-category="${category}">
-        <div class="vr-customize-subtitle">${t(subtitleKey, category)}</div>
+        <div class="vr-customize-subtitle">${t(subtitleKey, "")}</div>
 
         <div class="vr-customize-carousel">
           <button class="vr-customize-arrow" type="button" data-cus-nav="prev" data-category="${category}" ${idx <= 0 ? "disabled" : ""}>‹</button>
@@ -3128,7 +3125,7 @@ body.vr-peek-mode .vr-gauge-preview{
           <div class="vr-customize-card ${item.kind === "ui" ? "is-ui" : ""}">
             <img src="${item.img}" alt="" draggable="false">
             <div class="vr-customize-overlay">
-              <div class="vr-customize-name">${t(item.nameKey, item.id)}</div>
+              <div class="vr-customize-name">${t(item.nameKey, "")}</div>
               <div class="vr-customize-bottom">
                 <div class="vr-customize-price">
                   <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
@@ -3168,7 +3165,7 @@ body.vr-peek-mode .vr-gauge-preview{
     const universe = getUniverse(universeId);
     const titleEl = content.querySelector("#vr-customize-title");
     if (titleEl) {
-      titleEl.textContent = t(universe?.labelKey || universeId, universeId);
+      titleEl.textContent = t(universe?.labelKey || "", "");
     }
 
     return content.querySelector("#vr-customize-rows");
@@ -3271,18 +3268,18 @@ body.vr-peek-mode .vr-gauge-preview{
 
       if (!res?.ok) {
         if (res?.reason === "insufficient_vcoins") {
-          toast(t("shop.toast.insufficient_vcoins", "Pas assez de VCoins"));
+          toast(t("shop.toast.insufficient_vcoins", ""));
         } else if (res?.reason === "not_owned") {
-          toast(t("shop.toast.not_owned", "Objet non possédé"));
+          toast(t("shop.toast.not_owned", ""));
         } else {
-          toast(t("common.error_generic", "Erreur"));
+          toast(t("common.error_generic", ""));
         }
       } else {
         applyUniverseCosmetics(universeId);
         renderRowOnly(category);
       }
     } catch (_) {
-      toast(t("common.error_generic", "Erreur"));
+      toast(t("common.error_generic", ""));
     } finally {
       btn.disabled = false;
     }
