@@ -14,14 +14,14 @@
   "heaven_002": {
     "id": "heaven_002",
     "universe": "heaven_king",
-    "title": "Prophète autoproclamé",
-    "description": "Un humain charismatique prétend parler en ton nom et attire des foules dans les rues et sur les réseaux.",
+    "title": "Faux prophète",
+    "description": "Un homme dit parler en ton nom et attire beaucoup de monde dans la rue et sur les réseaux.",
     "choices": {
-      "A": "Le soutenir discrètement",
-      "B": "Le laisser parler sans intervenir",
-      "C": "Démentir clairement ses paroles"
+      "A": "Lui donner un signe discret pour l’adoucir",
+      "B": "Le laisser parler sans agir",
+      "C": "Montrer clairement qu’il se trompe"
     },
-    "body": "Un humain charismatique prétend parler en ton nom et attire des foules dans les rues et sur les réseaux."
+    "body": "Un homme dit parler en ton nom et attire beaucoup de monde dans la rue et sur les réseaux."
   },
   "heaven_003": {
     "id": "heaven_003",
@@ -170,14 +170,14 @@
   "heaven_015": {
     "id": "heaven_015",
     "universe": "heaven_king",
-    "title": "Festival interreligieux",
-    "description": "Un festival réunit plusieurs religions pour prôner la paix et le dialogue.",
+    "title": "Festival entre religions",
+    "description": "Un festival réunit plusieurs croyants pour parler de paix et mieux se comprendre.",
     "choices": {
-      "A": "Renforcer l’ambiance de paix par une présence douce",
-      "B": "Ne pas intervenir, laisser la discussion humaine",
-      "C": "Favoriser subtilement un culte plus que les autres"
+      "A": "Renforcer cette ambiance de paix",
+      "B": "Laisser les échanges se faire seuls",
+      "C": "Favoriser discrètement un groupe plus que les autres"
     },
-    "body": "Un festival réunit plusieurs religions pour prôner la paix et le dialogue."
+    "body": "Un festival réunit plusieurs croyants pour parler de paix et mieux se comprendre."
   },
   "heaven_016": {
     "id": "heaven_016",
@@ -257,9 +257,9 @@
     "title": "Sauver les animaux",
     "description": "Un mouvement spirituel défend les animaux comme créatures sacrées.",
     "choices": {
-      "A": "Renforcer leur cause par quelques synchronicités",
-      "B": "Laisser le mouvement rester marginal",
-      "C": "Transformer ce mouvement en culte rigide"
+      "A": "Aider leur cause par quelques signes discrets",
+      "B": "Laisser ce mouvement rester petit",
+      "C": "Laisser ce mouvement devenir trop rigide"
     },
     "body": "Un mouvement spirituel défend les animaux comme créatures sacrées."
   },
@@ -278,26 +278,26 @@
   "heaven_024": {
     "id": "heaven_024",
     "universe": "heaven_king",
-    "title": "Livre sacré réinterprété",
-    "description": "Des théologiens proposent une nouvelle lecture d’un texte sacré pour le rendre plus inclusif.",
+    "title": "Texte sacré relu autrement",
+    "description": "Des penseurs proposent une nouvelle lecture d’un texte sacré pour le rendre plus ouvert.",
     "choices": {
-      "A": "Soutenir cette réinterprétation par une douce clarté intérieure",
-      "B": "Ne pas influencer les débats",
-      "C": "Encourager les lectures les plus littérales"
+      "A": "Soutenir cette nouvelle lecture par une lumière intérieure",
+      "B": "Ne pas influencer le débat",
+      "C": "Encourager les lectures les plus dures"
     },
-    "body": "Des théologiens proposent une nouvelle lecture d’un texte sacré pour le rendre plus inclusif."
+    "body": "Des penseurs proposent une nouvelle lecture d’un texte sacré pour le rendre plus ouvert."
   },
   "heaven_025": {
     "id": "heaven_025",
     "universe": "heaven_king",
-    "title": "Prière au bord du gouffre",
-    "description": "Une personne désespérée hésite entre la prière et un geste irréversible.",
+    "title": "Prière dans une grande détresse",
+    "description": "Une personne en grande détresse lance une prière et cherche un point d’appui.",
     "choices": {
-      "A": "Lui offrir une sensation immédiate de réconfort",
-      "B": "L’orienter vers une aide humaine (ami, thérapeute)",
-      "C": "Ne pas intervenir du tout"
+      "A": "Lui offrir un apaisement immédiat",
+      "B": "La guider vers une aide humaine proche",
+      "C": "Rester en retrait"
     },
-    "body": "Une personne désespérée hésite entre la prière et un geste irréversible."
+    "body": "Une personne en grande détresse lance une prière et cherche un point d’appui."
   },
   "heaven_026": {
     "id": "heaven_026",
@@ -602,14 +602,14 @@
   "heaven_051": {
     "id": "heaven_051",
     "universe": "heaven_king",
-    "title": "Portail instable vers les Enfers",
-    "description": "Un portail se fissure entre le Paradis et les Enfers, laissant passer des visions sombres chez certains mortels.",
+    "title": "Portail instable vers le monde d’en bas",
+    "description": "Un passage se fissure entre le Paradis et le monde d’en bas, et certains mortels voient des images sombres.",
     "choices": {
-      "A": "Sceller le portail par une intervention directe",
-      "B": "Laisser les mortels gérer ces visions par leur propre foi",
-      "C": "Utiliser ce portail pour rappeler la réalité du Bien et du Mal"
+      "A": "Sceller ce passage immédiatement",
+      "B": "Laisser les mortels chercher du sens par eux-mêmes",
+      "C": "Utiliser ce passage pour rappeler qu’il existe un vrai choix entre lumière et noirceur"
     },
-    "body": "Un portail se fissure entre le Paradis et les Enfers, laissant passer des visions sombres chez certains mortels."
+    "body": "Un passage se fissure entre le Paradis et le monde d’en bas, et certains mortels voient des images sombres."
   },
   "heaven_052": {
     "id": "heaven_052",
@@ -830,14 +830,14 @@
   "heaven_070": {
     "id": "heaven_070",
     "universe": "heaven_king",
-    "title": "Pont aérien d’âmes",
-    "description": "Une guerre augmente brutalement le flux d’âmes vers le Paradis et les Enfers.",
+    "title": "Flux d’âmes en temps de guerre",
+    "description": "Une guerre fait arriver brutalement beaucoup d’âmes vers le Paradis et le monde d’en bas.",
     "choices": {
       "A": "Envoyer plus d’anges pour accueillir les âmes perdues",
-      "B": "Laisser les équilibres se faire seuls",
-      "C": "Autoriser les Enfers à prendre l’avantage sur certaines âmes"
+      "B": "Laisser l’équilibre se faire sans agir",
+      "C": "Laisser le monde d’en bas attirer davantage d’âmes fragiles"
     },
-    "body": "Une guerre augmente brutalement le flux d’âmes vers le Paradis et les Enfers."
+    "body": "Une guerre fait arriver brutalement beaucoup d’âmes vers le Paradis et le monde d’en bas."
   },
   "heaven_071": {
     "id": "heaven_071",
@@ -1058,14 +1058,14 @@
   "heaven_089": {
     "id": "heaven_089",
     "universe": "heaven_king",
-    "title": "Enfer personnel",
-    "description": "Un thérapeute parle d’'enfer intérieur' plutôt que d’Enfer réel, et aide de nombreuses personnes.",
+    "title": "Douleur intérieure",
+    "description": "Un soignant parle de souffrance intérieure plutôt que d’un lieu réel, et aide beaucoup de personnes.",
     "choices": {
-      "A": "Lui inspirer des mots qui rapprochent du vrai apaisement",
-      "B": "Le laisser travailler sans vision métaphysique",
-      "C": "Laisser certains patients croire que tout est purement psychologique"
+      "A": "Lui inspirer des mots qui apaisent vraiment",
+      "B": "Le laisser aider sans intervenir",
+      "C": "Laisser certains réduire toute souffrance à une simple idée"
     },
-    "body": "Un thérapeute parle d’'enfer intérieur' plutôt que d’Enfer réel, et aide de nombreuses personnes."
+    "body": "Un soignant parle de souffrance intérieure plutôt que d’un lieu réel, et aide beaucoup de personnes."
   },
   "heaven_090": {
     "id": "heaven_090",
@@ -1121,9 +1121,9 @@
     "title": "Tournoi de compassion",
     "description": "Un contre-mouvement propose de répondre à la haine infernale par des défis de gentillesse.",
     "choices": {
-      "A": "Renforcer ces initiatives par des synchronicités positives",
-      "B": "Les laisser funcouler naturellement",
-      "C": "Laisser certains transformer la compassion en compétition d’ego"
+      "A": "Renforcer ces initiatives par des signes positifs",
+      "B": "Les laisser avancer naturellement",
+      "C": "Laisser certains transformer la compassion en concours d’image"
     },
     "body": "Un contre-mouvement propose de répondre à la haine infernale par des défis de gentillesse."
   },
@@ -1286,14 +1286,14 @@
   "heaven_108": {
     "id": "heaven_108",
     "universe": "heaven_king",
-    "title": "Rêve de tribunal céleste",
-    "description": "Des milliers de personnes rêvent d’une salle de jugement où un ange distribue des punitions spectaculaires.",
+    "title": "Rêve de grand tribunal",
+    "description": "Des milliers de personnes rêvent d’une salle de jugement très dure et très froide.",
     "choices": {
-      "A": "Modifier les rêves pour y ajouter un lieu de guérison",
+      "A": "Ajouter dans ces rêves un lieu de réparation",
       "B": "Ne pas toucher à ce symbole",
-      "C": "Rendre le juge encore plus sévère dans les rêves suivants"
+      "C": "Rendre ces rêves encore plus sévères"
     },
-    "body": "Des milliers de personnes rêvent d’une salle de jugement où un ange distribue des punitions spectaculaires."
+    "body": "Des milliers de personnes rêvent d’une salle de jugement très dure et très froide."
   },
   "heaven_109": {
     "id": "heaven_109",
@@ -1310,14 +1310,14 @@
   "heaven_110": {
     "id": "heaven_110",
     "universe": "heaven_king",
-    "title": "Famille qui punit par religion",
-    "description": "Une famille utilise le Paradis et l’Enfer pour justifier des punitions très dures envers les enfants.",
+    "title": "Famille trop dure au nom de la foi",
+    "description": "Une famille se sert de la foi pour justifier une éducation très dure envers les enfants.",
     "choices": {
-      "A": "Inspirer un professionnel bienveillant qui leur montre une autre voie",
-      "B": "Ne pas interférer dans leur éducation",
-      "C": "Renforcer leurs culpabilités en leur envoyant des signes interprétés comme des sanctions divines"
+      "A": "Inspirer un adulte bienveillant qui montre une autre voie",
+      "B": "Ne pas intervenir",
+      "C": "Laisser leur dureté se renforcer"
     },
-    "body": "Une famille utilise le Paradis et l’Enfer pour justifier des punitions très dures envers les enfants."
+    "body": "Une famille se sert de la foi pour justifier une éducation très dure envers les enfants."
   },
   "heaven_111": {
     "id": "heaven_111",
@@ -1418,14 +1418,14 @@
   "heaven_119": {
     "id": "heaven_119",
     "universe": "heaven_king",
-    "title": "Prières par peur du hasard",
-    "description": "Des gens prient uniquement pour éviter le 'mauvais karma' ou la malchance.",
+    "title": "Prières guidées par la peur",
+    "description": "Des gens prient seulement pour éviter la malchance ou un mauvais retour de bâton.",
     "choices": {
-      "A": "Leur envoyer de petites expériences de gratuité et de joie",
-      "B": "Laisser cette vision comptable se maintenir",
-      "C": "Rendre leurs 'punitions' très visibles quand ils oublient de prier"
+      "A": "Leur faire vivre de petits moments de joie gratuite",
+      "B": "Laisser cette vision rester en place",
+      "C": "Laisser leur peur grandir encore"
     },
-    "body": "Des gens prient uniquement pour éviter le 'mauvais karma' ou la malchance."
+    "body": "Des gens prient seulement pour éviter la malchance ou un mauvais retour de bâton."
   },
   "heaven_120": {
     "id": "heaven_120",
@@ -1454,14 +1454,14 @@
   "heaven_122": {
     "id": "heaven_122",
     "universe": "heaven_king",
-    "title": "Jeu pour enfants sur l’Enfer",
-    "description": "Un jeu de plateau pour enfants représente l’Enfer comme une punition instantanée dès qu’on fait une bêtise.",
+    "title": "Jeu pour enfants trop dur",
+    "description": "Un jeu pour enfants présente chaque petite faute comme une condamnation immédiate.",
     "choices": {
-      "A": "Inspirer une version révisée plus nuancée",
+      "A": "Inspirer une version plus douce et plus juste",
       "B": "Laisser le jeu tel quel",
-      "C": "Laisser un enfant croire qu’il mérite vraiment ces punitions"
+      "C": "Laisser ce message devenir encore plus dur"
     },
-    "body": "Un jeu de plateau pour enfants représente l’Enfer comme une punition instantanée dès qu’on fait une bêtise."
+    "body": "Un jeu pour enfants présente chaque petite faute comme une condamnation immédiate."
   },
   "heaven_123": {
     "id": "heaven_123",
@@ -1538,14 +1538,14 @@
   "heaven_129": {
     "id": "heaven_129",
     "universe": "heaven_king",
-    "title": "Influenceur de la sanction divine",
-    "description": "Un commentateur sur les réseaux se spécialise dans l’annonce de catastrophes comme punitions de tel ou tel groupe.",
+    "title": "Influenceur de la peur",
+    "description": "Un commentateur sur les réseaux explique chaque drame par une punition venue d’en haut.",
     "choices": {
-      "A": "Semer des doutes dans son cœur sur cette vision",
+      "A": "Semer le doute dans son discours",
       "B": "Laisser ses messages circuler",
-      "C": "Laisser coïncider un événement tragique avec l’une de ses prédictions"
+      "C": "Laisser sa peur gagner encore du terrain"
     },
-    "body": "Un commentateur sur les réseaux se spécialise dans l’annonce de catastrophes comme punitions de tel ou tel groupe."
+    "body": "Un commentateur sur les réseaux explique chaque drame par une punition venue d’en haut."
   },
   "heaven_130": {
     "id": "heaven_130",
@@ -1598,14 +1598,14 @@
   "heaven_134": {
     "id": "heaven_134",
     "universe": "heaven_king",
-    "title": "Châtiment par maladie",
-    "description": "Certains affirment que toute maladie grave est une sanction méritée.",
+    "title": "Maladie vue comme sanction",
+    "description": "Certaines personnes disent qu’une maladie grave est toujours méritée.",
     "choices": {
-      "A": "Inspirer des soignants qui apportent une autre vision",
+      "A": "Inspirer des soignants qui portent une autre parole",
       "B": "Ne pas intervenir dans ce débat",
-      "C": "Laisser une guérison spectaculaire ne toucher que les 'vertueux', renforçant l’idée de sanction"
+      "C": "Laisser cette idée se répandre encore"
     },
-    "body": "Certains affirment que toute maladie grave est une sanction méritée."
+    "body": "Certaines personnes disent qu’une maladie grave est toujours méritée."
   },
   "heaven_135": {
     "id": "heaven_135",
@@ -1718,14 +1718,14 @@
   "heaven_144": {
     "id": "heaven_144",
     "universe": "heaven_king",
-    "title": "Loi de la faute irréversible",
-    "description": "Certains enseignent qu’une seule faute grave annule toute chance de Paradis.",
+    "title": "Faute sans retour",
+    "description": "Certains enseignent qu’une seule faute grave ferme toute chance de retour vers la lumière.",
     "choices": {
-      "A": "Inspirer la notion de seconde chance",
+      "A": "Inspirer l’idée d’une seconde chance",
       "B": "Ne pas toucher à cette doctrine",
-      "C": "Laisser un cas extrême être présenté comme exemple de sanction définitive"
+      "C": "Laisser un exemple extrême durcir encore cette idée"
     },
-    "body": "Certains enseignent qu’une seule faute grave annule toute chance de Paradis."
+    "body": "Certains enseignent qu’une seule faute grave ferme toute chance de retour vers la lumière."
   },
   "heaven_145": {
     "id": "heaven_145",
@@ -1742,14 +1742,14 @@
   "heaven_146": {
     "id": "heaven_146",
     "universe": "heaven_king",
-    "title": "Ange de la punition",
-    "description": "Une figure d’ange vengeur devient très populaire dans les livres et les films.",
+    "title": "Ange vengeur populaire",
+    "description": "Une image d’ange dur et vengeur devient très populaire dans les livres et les films.",
     "choices": {
-      "A": "Rééquilibrer en inspirant des histoires d’anges consolateurs",
+      "A": "Rééquilibrer avec des histoires d’anges qui consolent",
       "B": "Laisser cette image se répandre",
-      "C": "Permettre un 'miracle dur' qui ressemble à une sanction de cet ange"
+      "C": "Laisser un signe dur renforcer ce mythe"
     },
-    "body": "Une figure d’ange vengeur devient très populaire dans les livres et les films."
+    "body": "Une image d’ange dur et vengeur devient très populaire dans les livres et les films."
   },
   "heaven_147": {
     "id": "heaven_147",
@@ -2045,9 +2045,9 @@
     "title": "Rêves de Paradis sucré",
     "description": "Beaucoup d’enfants imaginent le Paradis comme un parc d’attractions infini.",
     "choices": {
-      "A": "Laisser ce symbole joyeux exister sans le corriger",
-      "B": "Faire peu à peu évoluer leurs rêves vers plus de relation et de douceur",
-      "C": "Laisser certains adultes ridiculiser ces rêves en parlant de punition à la place"
+      "A": "Laisser ce symbole joyeux exister",
+      "B": "Faire évoluer ces rêves vers plus de douceur",
+      "C": "Laisser certains adultes casser ces rêves avec un discours très dur"
     },
     "body": "Beaucoup d’enfants imaginent le Paradis comme un parc d’attractions infini."
   },
@@ -2066,14 +2066,14 @@
   "heaven_173": {
     "id": "heaven_173",
     "universe": "heaven_king",
-    "title": "Guerre des prophètes",
-    "description": "Plusieurs guides autoproclamés prétendent parler en ton nom, avec des messages contradictoires.",
+    "title": "Guerre des faux prophètes",
+    "description": "Plusieurs guides improvisés disent parler en ton nom avec des messages opposés.",
     "choices": {
-      "A": "Inspirer quelques personnes à vérifier les fruits plutôt que les menaces",
-      "B": "Laisser la confusion se développer",
-      "C": "Laisser le plus agressif prospérer grâce à un discours de sanctions"
+      "A": "Inspirer les gens à juger les actes plutôt que les menaces",
+      "B": "Laisser la confusion grandir",
+      "C": "Laisser le plus agressif prendre le dessus"
     },
-    "body": "Plusieurs guides autoproclamés prétendent parler en ton nom, avec des messages contradictoires."
+    "body": "Plusieurs guides improvisés disent parler en ton nom avec des messages opposés."
   },
   "heaven_174": {
     "id": "heaven_174",
@@ -3435,13 +3435,13 @@
     "id": "heaven_287",
     "universe": "heaven_king",
     "title": "Couloir d’hôpital",
-    "description": "Dans un couloir d’hôpital, des familles prient, d’autres insultent le ciel.",
+    "description": "Dans un couloir d’hôpital, des familles prient, d’autres crient leur colère vers le ciel.",
     "choices": {
-      "A": "Laisser un moment inattendu de douceur circuler entre eux",
-      "B": "Laisser chaque famille rester enfermée dans sa douleur",
-      "C": "Laisser quelqu’un expliquer que la maladie est une sanction personnelle"
+      "A": "Faire circuler un moment de douceur entre eux",
+      "B": "Laisser chaque famille dans sa douleur",
+      "C": "Laisser quelqu’un imposer une lecture injuste de la souffrance"
     },
-    "body": "Dans un couloir d’hôpital, des familles prient, d’autres insultent le ciel."
+    "body": "Dans un couloir d’hôpital, des familles prient, d’autres crient leur colère vers le ciel."
   },
   "heaven_288": {
     "id": "heaven_288",
@@ -4646,14 +4646,14 @@
   "heaven_388": {
     "id": "heaven_388",
     "universe": "heaven_king",
-    "title": "Groupe de marche trash day",
-    "description": "Des habitants combinent jogging et ramassage de déchets ('plogging').",
+    "title": "Groupe de marche propre",
+    "description": "Des habitants courent et ramassent les déchets en même temps.",
     "choices": {
-      "A": "Laisser ce groupe ressentir la ville comme un lieu dont ils prennent soin",
+      "A": "Leur faire sentir que la ville est un lieu à protéger",
       "B": "Laisser l’activité rester un sport original",
-      "C": "Encourager une grande marque à sponsoriser et structurer fortement le mouvement"
+      "C": "Encourager une grande marque à structurer fortement le mouvement"
     },
-    "body": "Des habitants combinent jogging et ramassage de déchets ('plogging')."
+    "body": "Des habitants courent et ramassent les déchets en même temps."
   },
   "heaven_389": {
     "id": "heaven_389",
