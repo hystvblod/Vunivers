@@ -2,7 +2,7 @@
 // Boutique rewarded / store via purchases.js
 // Boutique cosmétiques branchée sur VUserData
 // Popup personnalisation aussi exploitable depuis game.html
-// ✅ Lightbox propre avec vraie preview via iframe game.html?preview=1
+// ✅ Preview popup fidèle avec iframe game.html?preview=1
 
 (function () {
   "use strict";
@@ -18,8 +18,7 @@
     src: "",
     universeId: "",
     category: "",
-    itemId: "",
-    slideIndex: 0
+    itemId: ""
   };
 
   function pad2(n) {
@@ -290,12 +289,6 @@
     if (jetonsEl) jetonsEl.textContent = String(balances.jetons);
   }
 
-  function normalizeCarouselIndex(index, total) {
-    if (!total) return 0;
-    const n = Number(index) || 0;
-    return ((n % total) + total) % total;
-  }
-
   function buildPreviewUrl(opts) {
     const params = new URLSearchParams();
     params.set("preview", "1");
@@ -319,7 +312,6 @@
       .vr-cos-row{position:relative;z-index:1;margin:0 0 14px}
       .vr-cos-row:last-child{margin-bottom:0}
       .vr-cos-carousel{display:grid;grid-template-columns:36px minmax(0,1fr) 36px;align-items:center;gap:8px}
-      /* ✅ flèches shop sans ronds */
       .vr-cos-arrow{width:36px;height:36px;border:none;background:transparent;box-shadow:none;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:rgba(255,255,255,.96);font-size:28px;font-weight:900;line-height:1;text-shadow:0 10px 22px rgba(0,0,0,.45)}
       .vr-cos-viewport{min-width:0;overflow:hidden;touch-action:pan-y}
       .vr-cos-track{display:flex;transition:transform .24s ease;will-change:transform}
@@ -340,80 +332,101 @@
       .vr-cos-action.is-equipped{background:rgba(138,197,95,.22);border-color:rgba(138,197,95,.55)}
       .vr-cos-owned-mark{display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1;font-weight:1000;color:#79f18b;text-shadow:0 2px 10px rgba(0,0,0,.45)}
 
-      .vr-cos-lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:99999}
-      .vr-cos-lightbox.is-open{display:flex}
-      .vr-cos-lightbox-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.80);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-      .vr-cos-lightbox-close{
-        position:absolute;top:14px;right:14px;z-index:6;
-        width:44px;height:44px;border-radius:999px;
-        border:1px solid rgba(255,255,255,.18);
-        background:rgba(0,0,0,.26);color:#fff;font-size:22px;font-weight:900;
-        display:inline-flex;align-items:center;justify-content:center;cursor:pointer;
-        box-shadow:0 10px 22px rgba(0,0,0,.28)
+      .vr-cos-lightbox{
+        position:fixed;
+        inset:0;
+        display:none;
+        align-items:center;
+        justify-content:center;
+        z-index:99999;
+        padding:18px;
+        box-sizing:border-box;
+        background:rgba(0,0,0,.62);
+        backdrop-filter:blur(10px);
+        -webkit-backdrop-filter:blur(10px);
       }
 
-      .vr-cos-lightbox-shell{
-        position:relative;z-index:2;
-        width:min(96vw,980px);
-        display:flex;align-items:center;justify-content:center;
-        gap:18px;padding:18px 12px 10px;box-sizing:border-box
-      }
-
-      .vr-cos-lightbox-arrow{
-        appearance:none;border:none;background:transparent;
-        color:rgba(255,255,255,.92);font-size:42px;font-weight:900;line-height:1;
-        padding:0 10px;cursor:pointer;text-shadow:0 10px 26px rgba(0,0,0,.55);user-select:none
-      }
-      .vr-cos-lightbox-arrow:active{transform:scale(.98)}
-      .vr-cos-lightbox-arrow:focus{outline:none}
-
-      .vr-cos-lightbox-viewport{
-        width:min(92vw,460px);
-        overflow:hidden;
-        border-radius:26px;
-        box-shadow:0 26px 60px rgba(0,0,0,.55)
-      }
-
-      .vr-cos-phone{
-        width:100%;
-        aspect-ratio:9/16;
-        position:relative;
-        overflow:hidden;
-        background:#0b1220
-      }
-
-      .vr-cos-lightbox-track{
+      .vr-cos-lightbox.is-open{
         display:flex;
-        width:200%;
-        height:100%;
-        transform:translateX(0%);
-        transition:transform .28s ease;
-        will-change:transform
       }
 
-      .vr-cos-lightbox-slide{
-        width:50%;
-        height:100%;
-        flex:0 0 50%
+      .vr-cos-lightbox[aria-hidden="true"]{
+        display:none;
       }
 
-      .vr-cos-slide-inner{
-        width:100%;
-        height:100%;
+      .vr-cos-popup{
+        position:relative;
+        width:min(92vw, 470px);
+        max-height:min(90vh, 940px);
+        border-radius:28px;
+        overflow:hidden;
+        box-shadow:0 26px 70px rgba(0,0,0,.50);
+        background:rgba(10,12,18,.92);
+        border:1px solid rgba(255,255,255,.10);
+      }
+
+      .vr-cos-popup-top{
         position:relative;
         display:flex;
         align-items:center;
         justify-content:center;
-        padding:0;
-        box-sizing:border-box
+        min-height:56px;
+        padding:14px 56px 10px;
+        border-bottom:1px solid rgba(255,255,255,.08);
+        background:
+          linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+          rgba(0,0,0,.16);
       }
 
-      .vr-cos-hero-img{
+      .vr-cos-popup-title{
+        margin:0;
+        color:#fff;
+        font-size:18px;
+        font-weight:900;
+        text-align:center;
+        letter-spacing:.01em;
+        text-shadow:0 6px 18px rgba(0,0,0,.35);
+      }
+
+      .vr-cos-lightbox-close{
+        position:absolute;
+        top:10px;
+        right:10px;
+        z-index:3;
+        width:38px;
+        height:38px;
+        border:none;
+        border-radius:999px;
+        background:rgba(255,255,255,.10);
+        color:#fff;
+        font-size:24px;
+        line-height:1;
+        font-weight:900;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        cursor:pointer;
+        box-shadow:0 8px 22px rgba(0,0,0,.24);
+      }
+
+      .vr-cos-lightbox-close:active{
+        transform:scale(.98);
+      }
+
+      .vr-cos-popup-body{
+        padding:14px;
+        box-sizing:border-box;
+      }
+
+      .vr-cos-preview-shell{
         width:100%;
-        height:100%;
-        object-fit:contain;
-        display:block;
-        background:rgba(0,0,0,.08)
+        aspect-ratio:9/16;
+        border-radius:22px;
+        overflow:hidden;
+        background:#0b1220;
+        box-shadow:
+          inset 0 0 0 1px rgba(255,255,255,.06),
+          0 18px 42px rgba(0,0,0,.34);
       }
 
       .vr-cos-preview-frame{
@@ -421,32 +434,31 @@
         height:100%;
         border:0;
         display:block;
-        background:#0b1220
+        background:#0b1220;
       }
 
-      .vr-cos-lightbox-dots{
-        position:absolute;
-        bottom:14px;
-        left:0;right:0;
-        display:flex;align-items:center;justify-content:center;gap:8px;
-        z-index:6
+      body.vr-lightbox-open{
+        overflow:hidden;
       }
 
-      .vr-cos-lightbox-dot{
-        width:8px;height:8px;border-radius:999px;
-        background:rgba(255,255,255,.28);
-        box-shadow:0 4px 10px rgba(0,0,0,.22);
-        cursor:pointer
-      }
+      @media (max-width:520px){
+        .vr-cos-popup{
+          width:min(96vw, 470px);
+          border-radius:24px;
+        }
 
-      .vr-cos-lightbox-dot.active{background:rgba(255,255,255,.92)}
+        .vr-cos-popup-top{
+          min-height:52px;
+          padding:12px 52px 10px;
+        }
 
-      body.vr-lightbox-open{overflow:hidden}
+        .vr-cos-popup-title{
+          font-size:16px;
+        }
 
-      @media (max-width:420px){
-        .vr-cos-lightbox-arrow{font-size:36px}
-        .vr-cos-lightbox-shell{gap:10px}
-        .vr-cos-lightbox-close{width:40px;height:40px;font-size:20px}
+        .vr-cos-popup-body{
+          padding:10px;
+        }
       }
     `;
     document.head.appendChild(style);
@@ -477,41 +489,27 @@
     root.setAttribute("aria-hidden", "true");
 
     root.innerHTML = `
-      <div class="vr-cos-lightbox-backdrop" data-lightbox-close="1"></div>
-      <button class="vr-cos-lightbox-close" type="button" data-lightbox-close="1">×</button>
-
-      <div class="vr-cos-lightbox-shell">
-        <button class="vr-cos-lightbox-arrow" type="button" data-lightbox-nav="-1">‹</button>
-
-        <div class="vr-cos-lightbox-viewport">
-          <div class="vr-cos-phone">
-            <div class="vr-cos-lightbox-track">
-              <div class="vr-cos-lightbox-slide">
-                <div class="vr-cos-slide-inner">
-                  <img class="vr-cos-hero-img" src="" alt="" draggable="false">
-                </div>
-              </div>
-
-              <div class="vr-cos-lightbox-slide">
-                <div class="vr-cos-slide-inner">
-                  <iframe
-                    class="vr-cos-preview-frame"
-                    src="about:blank"
-                    loading="eager"
-                    referrerpolicy="same-origin"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-
-            <div class="vr-cos-lightbox-dots">
-              <span class="vr-cos-lightbox-dot active" data-lightbox-dot="0"></span>
-              <span class="vr-cos-lightbox-dot" data-lightbox-dot="1"></span>
-            </div>
-          </div>
+      <div class="vr-cos-popup" role="dialog" aria-modal="true" aria-label="${t("shop.preview.title", "Aperçu")}">
+        <div class="vr-cos-popup-top">
+          <h3 class="vr-cos-popup-title">${t("shop.preview.title", "Aperçu en situation")}</h3>
+          <button
+            class="vr-cos-lightbox-close"
+            type="button"
+            data-lightbox-close="1"
+            aria-label="${t("common.close", "Fermer")}"
+          >×</button>
         </div>
 
-        <button class="vr-cos-lightbox-arrow" type="button" data-lightbox-nav="1">›</button>
+        <div class="vr-cos-popup-body">
+          <div class="vr-cos-preview-shell">
+            <iframe
+              class="vr-cos-preview-frame"
+              src="about:blank"
+              loading="eager"
+              referrerpolicy="same-origin"
+            ></iframe>
+          </div>
+        </div>
       </div>
     `;
 
@@ -524,77 +522,35 @@
         return;
       }
 
-      const navBtn = e.target && e.target.closest ? e.target.closest("[data-lightbox-nav]") : null;
-      if (navBtn) {
-        const step = Number(navBtn.getAttribute("data-lightbox-nav") || 0);
-        updateLightboxSlide(_lightboxState.slideIndex + step);
-        return;
-      }
-
-      const dotBtn = e.target && e.target.closest ? e.target.closest("[data-lightbox-dot]") : null;
-      if (dotBtn) {
-        const idx = Number(dotBtn.getAttribute("data-lightbox-dot") || 0);
-        updateLightboxSlide(idx);
+      if (e.target === root) {
+        closeLightbox();
       }
     });
 
     document.addEventListener("keydown", function (e) {
       if (!_lightboxState.open) return;
-
       if (e.key === "Escape") {
         closeLightbox();
-        return;
-      }
-
-      if (e.key === "ArrowLeft") {
-        updateLightboxSlide(_lightboxState.slideIndex - 1);
-        return;
-      }
-
-      if (e.key === "ArrowRight") {
-        updateLightboxSlide(_lightboxState.slideIndex + 1);
       }
     });
 
     return root;
   }
 
-  function updateLightboxSlide(index) {
-    const root = $("vr-cos-lightbox");
-    if (!root) return;
-
-    const track = root.querySelector(".vr-cos-lightbox-track");
-    const dots = root.querySelectorAll(".vr-cos-lightbox-dot");
-    if (!track) return;
-
-    const safeIndex = normalizeCarouselIndex(index, 2);
-    _lightboxState.slideIndex = safeIndex;
-    track.style.transform = "translateX(-" + (safeIndex * 50) + "%)";
-
-    dots.forEach(function (dot, i) {
-      dot.classList.toggle("active", i === safeIndex);
-    });
-  }
-
   function openLightbox(opts) {
     const root = ensureLightboxRoot();
     if (!root || !opts?.src) return;
 
-    const heroImg = root.querySelector(".vr-cos-hero-img");
     const frame = root.querySelector(".vr-cos-preview-frame");
-    if (!heroImg || !frame) return;
+    if (!frame) return;
 
     _lightboxState.open = true;
     _lightboxState.src = String(opts.src || "");
     _lightboxState.universeId = String(opts.universeId || "");
     _lightboxState.category = String(opts.category || "");
     _lightboxState.itemId = String(opts.itemId || "");
-    _lightboxState.slideIndex = 0;
 
-    heroImg.src = _lightboxState.src;
     frame.src = buildPreviewUrl(opts);
-
-    updateLightboxSlide(0);
 
     root.classList.add("is-open");
     root.setAttribute("aria-hidden", "false");
@@ -605,10 +561,7 @@
     const root = $("vr-cos-lightbox");
     if (!root) return;
 
-    const heroImg = root.querySelector(".vr-cos-hero-img");
     const frame = root.querySelector(".vr-cos-preview-frame");
-
-    if (heroImg) heroImg.src = "";
     if (frame) frame.src = "about:blank";
 
     _lightboxState.open = false;
@@ -616,7 +569,6 @@
     _lightboxState.universeId = "";
     _lightboxState.category = "";
     _lightboxState.itemId = "";
-    _lightboxState.slideIndex = 0;
 
     root.classList.remove("is-open");
     root.setAttribute("aria-hidden", "true");
@@ -657,7 +609,8 @@
 
     if (!track || !total) return;
 
-    const safeIndex = normalizeCarouselIndex(index, total);
+    const n = Number(index) || 0;
+    const safeIndex = ((n % total) + total) % total;
 
     row.dataset.index = String(safeIndex);
     track.style.transform = "translateX(-" + (safeIndex * 100) + "%)";
@@ -900,7 +853,6 @@
     const back = $("btn-back");
     const profile = $("btn-profile");
 
-    /* ✅ FIX: retour shop -> index toujours */
     if (back) {
       back.addEventListener("click", function (e) {
         e.preventDefault();
