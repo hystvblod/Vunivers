@@ -275,6 +275,49 @@
       transform: translateX(22px);
     }
 
+    /* ===== FAQ LINK ===== */
+    .vr-navRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 0;
+      border:0;
+      background:transparent;
+      text-decoration:none;
+      color:inherit;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .vr-navRow:active{
+      transform: scale(.995);
+    }
+
+    .vr-navText{
+      min-width:0;
+    }
+
+    .vr-navLabel{
+      font-weight:950;
+      line-height:1.2;
+      margin:0;
+    }
+
+    .vr-navDesc{
+      margin:6px 0 0 0;
+      opacity:.78;
+      font-size:12px;
+      line-height:1.25;
+    }
+
+    .vr-navArrow{
+      flex:0 0 auto;
+      font-size:18px;
+      font-weight:900;
+      opacity:.82;
+      line-height:1;
+    }
+
     /* ===== HELP ===== */
     .vr-helpLine{
       display:flex;
@@ -301,6 +344,13 @@
       overflow:hidden;
       text-overflow:ellipsis;
       max-width:100%;
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .vr-helpMail:hover,
+    .vr-helpMail:focus-visible{
+      text-decoration:underline;
     }
 
     #settingsMsg{
@@ -364,11 +414,24 @@
           </div>
 
           <div class="vr-settingsSection">
+            <div id="settingsFaqTitle" class="vr-settingsSectionTitle"></div>
+
+            <a id="btnOpenFaq" class="vr-navRow" href="faq.html" aria-label="">
+              <div class="vr-navText">
+                <p id="settingsFaqLabel" class="vr-navLabel"></p>
+                <p id="settingsFaqDesc" class="vr-navDesc"></p>
+              </div>
+
+              <span class="vr-navArrow" aria-hidden="true">›</span>
+            </a>
+          </div>
+
+          <div class="vr-settingsSection">
             <div id="settingsHelpTitle" class="vr-settingsSectionTitle"></div>
 
             <div class="vr-helpLine">
               <span id="helpEmailLabel" class="vr-helpLabel"></span>
-              <span id="helpEmailValue" class="vr-helpMail"></span>
+              <a id="helpEmailValue" class="vr-helpMail" href=""></a>
             </div>
           </div>
 
@@ -529,6 +592,10 @@
       const adsLabel = $("adsLabel");
       const adsDesc = $("adsDesc");
       const adsSw = $("adsSwitch");
+      const faqTitle = $("settingsFaqTitle");
+      const faqBtn = $("btnOpenFaq");
+      const faqLabel = $("settingsFaqLabel");
+      const faqDesc = $("settingsFaqDesc");
       const helpTitle = $("settingsHelpTitle");
       const helpLab = $("helpEmailLabel");
       const helpVal = $("helpEmailValue");
@@ -540,9 +607,18 @@
       if(adsLabel) adsLabel.textContent = t("ui.settings_ads_personalized_label");
       if(adsDesc) adsDesc.textContent = t("ui.settings_ads_personalized_desc");
       if(adsSw) adsSw.setAttribute("aria-label", t("ui.settings_ads_personalized_label"));
+      if(faqTitle) faqTitle.textContent = t("ui.settings_faq_title");
+      if(faqBtn) faqBtn.setAttribute("aria-label", t("ui.settings_open_faq_aria"));
+      if(faqLabel) faqLabel.textContent = t("ui.settings_faq_label");
+      if(faqDesc) faqDesc.textContent = t("ui.settings_faq_desc");
       if(helpTitle) helpTitle.textContent = t("ui.settings_help_title");
       if(helpLab) helpLab.textContent = t("ui.settings_help_email_label");
-      if(helpVal) helpVal.textContent = t("ui.settings_help_email");
+
+      if(helpVal){
+        const mail = t("ui.settings_help_email");
+        helpVal.textContent = mail;
+        helpVal.setAttribute("href", mail ? `mailto:${mail}` : "#");
+      }
     }
 
     function buildGrid(){
