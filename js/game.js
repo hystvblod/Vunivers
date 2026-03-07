@@ -3411,6 +3411,14 @@ body.vr-peek-mode .vr-gauge-preview{
     }
   };
 
+  function tt(key, fallback) {
+    try {
+      const out = window.VRI18n?.t?.(key);
+      if (out && out !== key) return out;
+    } catch (_) {}
+    return typeof fallback === "string" ? fallback : "";
+  }
+
   function getPreviewConfig() {
     try {
       const params = new URLSearchParams(window.location.search || "");
@@ -3430,6 +3438,20 @@ body.vr-peek-mode .vr-gauge-preview{
         src: ""
       };
     }
+  }
+
+  function getPreviewLang() {
+    try {
+      const l = window.VRI18n?.getLang?.();
+      if (l) return String(l).trim();
+    } catch (_) {}
+
+    try {
+      const l = localStorage.getItem("vrealms_lang");
+      if (l) return String(l).trim();
+    } catch (_) {}
+
+    return "fr";
   }
 
   function getDefaultPreviewAsset(universeId, category) {
@@ -3475,37 +3497,50 @@ body.vr-peek-mode .vr-gauge-preview{
         display:none !important;
       }
 
-      body.vr-preview-mode a,
-      body.vr-preview-mode button{
-        pointer-events:none !important;
-      }
-
       body.vr-preview-mode .vr-main{
         height:100vh !important;
         min-height:100vh !important;
         overflow:hidden !important;
-        padding-top:0 !important;
+        padding:0 !important;
       }
 
       body.vr-preview-mode #view-game{
         min-height:100vh !important;
         height:100vh !important;
         overflow:hidden !important;
+        padding:8px 10px 10px !important;
+      }
+
+      body.vr-preview-mode .vr-hud{
+        margin-bottom:0 !important;
+      }
+
+      body.vr-preview-mode .vr-gauges-row{
+        margin-bottom:2px !important;
       }
 
       body.vr-preview-mode .vr-card-container{
         margin-top:0 !important;
       }
 
+      body.vr-preview-mode .vr-card-stack{
+        gap:8px !important;
+      }
+
       body.vr-preview-mode .vr-gauge-value,
       body.vr-preview-mode .vr-gauge-delta{
         display:none !important;
+      }
+
+      body.vr-preview-mode a,
+      body.vr-preview-mode button{
+        pointer-events:none !important;
       }
     `;
     document.head.appendChild(style);
   }
 
-  function fillPreviewStaticUi() {
+  function resetPreviewMeta() {
     const coins = document.getElementById("meta-coins");
     const tokens = document.getElementById("meta-tokens");
     const name = document.getElementById("meta-king-name");
@@ -3514,55 +3549,39 @@ body.vr-peek-mode .vr-gauge-preview{
     if (coins) coins.textContent = "0";
     if (tokens) tokens.textContent = "0";
     if (name) name.textContent = "—";
-    if (years) years.textContent = "0";
+    if (years) years.textContent = "";
+  }
 
+  function fillPreviewFallbackTexts() {
     const title = document.getElementById("card-title");
     const text = document.getElementById("card-text");
     const a = document.getElementById("choice-A");
     const b = document.getElementById("choice-B");
     const c = document.getElementById("choice-C");
 
-    if (title) title.textContent = t("shop.preview.sample_title", "Décision");
-    if (text) text.textContent = t("shop.preview.sample_text", "Aperçu en situation du cosmétique sélectionné.");
-    if (a) a.textContent = t("shop.preview.sample_choice_a", "Accepter");
-    if (b) b.textContent = t("shop.preview.sample_choice_b", "Refuser");
-    if (c) c.textContent = t("shop.preview.sample_choice_c", "Reporter");
+    if (title) title.textContent = tt("shop.preview.sample_title", "Décision");
+    if (text) text.textContent = tt("shop.preview.sample_text", "Aperçu en situation du cosmétique sélectionné.");
+    if (a) a.textContent = tt("shop.preview.sample_choice_a", "Accepter");
+    if (b) b.textContent = tt("shop.preview.sample_choice_b", "Refuser");
+    if (c) c.textContent = tt("shop.preview.sample_choice_c", "Reporter");
+  }
 
-    const fills = document.querySelectorAll(".vr-gauge-fill");
-    const previews = document.querySelectorAll(".vr-gauge-preview");
-    const labels = document.querySelectorAll(".vr-gauge-label");
-    const vals = document.querySelectorAll(".vr-gauge-val");
-    const deltas = document.querySelectorAll(".vr-gauge-delta");
+  function pickSampleCard(deck, cardTexts) {
+    if (!Array.isArray(deck) || !deck.length) return null;
 
-    labels.forEach(function (el) {
-      el.textContent = "";
-    });
+    for (const card of deck) {
+      if (card && card.id && cardTexts && cardTexts[card.id]) {
+        return card;
+      }
+    }
 
-    vals.forEach(function (el) {
-      el.textContent = "";
-    });
-
-    deltas.forEach(function (el) {
-      el.textContent = "";
-    });
-
-    fills.forEach(function (el) {
-      el.style.setProperty("--vr-pct", "58%");
-      el.style.width = "";
-    });
-
-    previews.forEach(function (el) {
-      el.style.setProperty("--vr-pct", "0%");
-      el.style.width = "";
-      el.style.opacity = "0";
-    });
+    return deck[0] || null;
   }
 
   function applyPreviewCosmetics(cfg) {
     const viewGame = document.getElementById("view-game");
     const cardMain = document.getElementById("vr-card-main");
     const choiceBtns = document.querySelectorAll(".vr-choice-button[data-choice]");
-
     if (!viewGame) return;
 
     try {
@@ -3570,16 +3589,24 @@ body.vr-peek-mode .vr-gauge-preview{
     } catch (_) {}
 
     try {
+      window.VRGame.currentUniverse = cfg.universeId;
+    } catch (_) {}
+
+    try {
       window.VRGame?.applyUniverseBackground?.(cfg.universeId);
+    } catch (_) {}
+
+    try {
+      window.VRCosmeticsGame?.apply?.(cfg.universeId);
     } catch (_) {}
 
     const assets = resolvePreviewAssets(cfg);
 
-    setBgImage(viewGame, assets.background);
-    setBgImage(cardMain, assets.message);
+    if (assets.background) setBgImage(viewGame, assets.background);
+    if (assets.message) setBgImage(cardMain, assets.message);
 
     choiceBtns.forEach(function (btn) {
-      setBgImage(btn, assets.choice);
+      if (assets.choice) setBgImage(btn, assets.choice);
     });
   }
 
@@ -3592,8 +3619,42 @@ body.vr-peek-mode .vr-gauge-preview{
     document.documentElement.classList.add("vr-preview-mode");
     document.body.classList.add("vr-preview-mode");
 
-    fillPreviewStaticUi();
+    try { await window.VUserData?.init?.(); } catch (_) {}
+
+    const lang = getPreviewLang();
+
+    resetPreviewMeta();
+
+    try {
+      const loaded = await window.VREventsLoader.loadUniverseData(cfg.universeId, lang);
+      const config = loaded?.config || null;
+      const deck = loaded?.deck || [];
+      const cardTexts = loaded?.cardTexts || {};
+
+      if (config) {
+        try { window.VRState?.initUniverse?.(config); } catch (_) {}
+        try { window.VRUIBinding?.init?.(config, lang, cardTexts); } catch (_) {}
+
+        const sampleCard = pickSampleCard(deck, cardTexts);
+        if (sampleCard) {
+          try { window.VRUIBinding?.showCard?.(sampleCard); } catch (_) {
+            fillPreviewFallbackTexts();
+          }
+        } else {
+          fillPreviewFallbackTexts();
+        }
+
+        try { window.VRUIBinding?.updateGauges?.(); } catch (_) {}
+      } else {
+        fillPreviewFallbackTexts();
+      }
+    } catch (e) {
+      console.error("[VRPreview] init error:", e);
+      fillPreviewFallbackTexts();
+    }
+
     applyPreviewCosmetics(cfg);
+    resetPreviewMeta();
 
     return true;
   }
