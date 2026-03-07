@@ -2406,7 +2406,7 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="defense"] .vr-g
 body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/western_president/g4_frame.webp"); }
 body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-fill,
 body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/western_president/g4_fill.webp"); }
-/* ==========================================================
+/*/* ==========================================================
    UNIVERS — CEO
    ========================================================== */
 body[data-universe="mega_corp_ceo"].vr-body-game #view-game .vr-card-title,
@@ -2421,20 +2421,11 @@ body[data-universe="mega_corp_ceo"].vr-body-game #view-game .vr-choice-label{
   text-shadow: none !important;
 }
 
-body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-button{
-  background-size: 115% 130% !important;
-  background-position: center !important;
-}
-body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
-  overflow: hidden;
-  background-size: 100% 110% !important;
-  background-position: center !important;
-}
 body.vr-body-game[data-universe="mega_corp_ceo"]{
-  --vr-card-w: clamp(460px, 100vw, 1240px);
-  --vr-game-gap:   clamp(6px, 0.8svh, 14px);
-  --vr-stack-gap:  clamp(10px, 1svh, 22px);
-  --vr-choices-gap:clamp(12px, 1.4svh, 24px);
+  --vr-card-w: clamp(330px, 92vw, 760px);
+  --vr-game-gap: clamp(6px, 0.8svh, 14px);
+  --vr-stack-gap: clamp(8px, 1svh, 18px);
+  --vr-choices-gap: clamp(10px, 1.2svh, 18px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
@@ -2476,6 +2467,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-top-actions-game{
   pointer-events: none !important;
   z-index: 100000 !important;
 }
+
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-top-actions-game::before{
   content:"";
   position:absolute;
@@ -2484,6 +2476,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-top-actions-game::before{
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.22));
   pointer-events:none;
 }
+
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-top-actions-game .vr-icon-button{
   position:absolute !important;
   top:16% !important;
@@ -2496,6 +2489,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-top-actions-game .vr-icon-b
   pointer-events:auto !important;
   z-index:1 !important;
 }
+
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-top-actions-game .vr-icon-button:nth-child(1){ left:16% !important; }
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-top-actions-game .vr-icon-button:nth-child(2){ left:41% !important; }
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-top-actions-game .vr-icon-button:nth-child(3){ left:66% !important; }
@@ -2513,6 +2507,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] > a.vr-icon-button[aria-label="
   z-index:100002 !important;
   pointer-events:auto !important;
 }
+
 body.vr-body-game[data-universe="mega_corp_ceo"] > a.vr-icon-button[aria-label="Accueil"]::before{
   content:"";
   position:absolute;
@@ -2535,6 +2530,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #btn-customize{
   z-index:100002 !important;
   pointer-events:auto !important;
 }
+
 body.vr-body-game[data-universe="mega_corp_ceo"] #btn-customize::before{
   content:"";
   position:absolute;
@@ -2570,9 +2566,10 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right{
   transform:none !important;
   justify-self:auto !important;
 }
-body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left{ left:3.3% !important;width:17.8% !important; }
-body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-center{ left:20.2% !important;right:20.2% !important; }
-body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right{ right:5.3% !important;width:17.8% !important; }
+
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left{ left:3.3% !important; width:17.8% !important; }
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-center{ left:20.2% !important; right:20.2% !important; }
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right{ right:5.3% !important; width:17.8% !important; }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-item{
   width:100% !important;
@@ -2599,6 +2596,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-value{
   text-shadow: 0 1px 0 rgba(255,255,255,0.35), 0 0 8px rgba(0,0,0,0.12) !important;
   transform: translateY(-2px) !important;
 }
+
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-name{
   font-size: clamp(13px, 2vw, 28px) !important;
   font-weight: 800 !important;
@@ -2608,6 +2606,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-name{
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
 }
+
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-years{
   font-size: clamp(10px, 1.25vw, 16px) !important;
   font-weight: 800 !important;
@@ -2622,25 +2621,110 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-years{
   --vr-universe-choice: url("../assets/img/ui/corp_choice_default_gray.webp");
 }
 
-body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="investors"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/mega_corp_ceo/g1_frame.webp"); }
+/* =========================
+   FIX CARTES MESSAGE + CHOIX
+   ========================= */
+
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
+  overflow: hidden !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  box-sizing: border-box !important;
+  width: min(90vw, 760px) !important;
+  min-height: clamp(150px, 24vw, 230px) !important;
+  padding: clamp(18px, 3.6vw, 28px) clamp(18px, 4.8vw, 34px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-title{
+  width: min(78%, 560px) !important;
+  max-width: min(78%, 560px) !important;
+  margin: 0 auto clamp(6px, 1vw, 10px) auto !important;
+  text-align: center !important;
+  font-size: clamp(16px, 2.7vw, 28px) !important;
+  line-height: 1.16 !important;
+  font-weight: 700 !important;
+  overflow-wrap: break-word !important;
+}
+
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-text{
+  width: min(78%, 560px) !important;
+  max-width: min(78%, 560px) !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  font-size: clamp(11px, 1.85vw, 19px) !important;
+  line-height: 1.24 !important;
+  font-weight: 600 !important;
+  overflow-wrap: break-word !important;
+}
+
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-stack,
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choices{
+  gap: clamp(10px, 1.2svh, 16px) !important;
+}
+
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-button{
+  background-size: 100% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  box-sizing: border-box !important;
+  min-height: clamp(82px, 13vw, 118px) !important;
+  height: auto !important;
+  padding: clamp(12px, 2.2vw, 18px) clamp(16px, 4.2vw, 28px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
+  width: min(84%, 680px) !important;
+  max-width: min(84%, 680px) !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  font-size: clamp(13px, 2vw, 22px) !important;
+  line-height: 1.22 !important;
+  font-weight: 600 !important;
+  overflow-wrap: break-word !important;
+}
+
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="investors"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g1_frame.webp");
+}
 body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="investors"] .vr-gauge-fill,
-body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="investors"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/mega_corp_ceo/g1_fill.webp"); }
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="investors"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g1_fill.webp");
+}
 
-body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="employees"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/mega_corp_ceo/g2_frame.webp"); }
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="employees"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g2_frame.webp");
+}
 body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="employees"] .vr-gauge-fill,
-body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="employees"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/mega_corp_ceo/g2_fill.webp"); }
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="employees"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g2_fill.webp");
+}
 
-body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="regulators"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/mega_corp_ceo/g3_frame.webp"); }
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="regulators"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g3_frame.webp");
+}
 body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="regulators"] .vr-gauge-fill,
-body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="regulators"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/mega_corp_ceo/g3_fill.webp"); }
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="regulators"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g3_fill.webp");
+}
 
-body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/mega_corp_ceo/g4_frame.webp"); }
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g4_frame.webp");
+}
 body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-gauge-fill,
-body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/mega_corp_ceo/g4_fill.webp"); }
-
-/* ==========================================================
+body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/mega_corp_ceo/g4_fill.webp");
+}
+/* ========================================================== */
    UNIVERS — EXPLORER
-   ========================================================== */
+/* ========================================================== */
 body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 

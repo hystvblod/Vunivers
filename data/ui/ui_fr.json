@@ -196,7 +196,7 @@
       "title": "Pièces",
       "ad": {
         "title": "Regarder une pub",
-        "text": "Gagne 500 pièces"
+        "text": "Gagne 100 pièces"
       },
       "shop": {
         "title": "Aller à la boutique",
@@ -207,7 +207,7 @@
       }
     },
     "toast": {
-      "reward_ok": "+500 pièces ajoutées",
+      "reward_ok": "+100 pièces ajoutées",
       "reward_fail": "Pub indisponible"
     }
   },
@@ -302,7 +302,7 @@
     "reward_vcoins_x100": "x100",
     "pack_jetons_12": "12",
     "pack_jetons_30": "30",
-    "pack_vcoins_500": "500",
+    "pack_vcoins_100": "100",
     "pack_vcoins_1200": "1200",
     "pack_vcoins_3000": "3000",
     "pack_no_ads": "No Ads",
