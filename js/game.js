@@ -2679,35 +2679,35 @@ body.vr-peek-mode .vr-gauge-preview{
             return;
           }
 
-          if (action === "adcoins") {
-            closePopup();
+    if (action === "adcoins") {
+  closePopup();
 
-            const ok = await (window.VRAds?.showRewardedAd?.({ placement: "coins_500" }) || Promise.resolve(false));
-            if (ok) {
-              try { await window.VUserData?.addVcoins?.(500); } catch (_) {}
+  const ok = await (window.VRAds?.showRewardedAd?.({ placement: "coins_100" }) || Promise.resolve(false));
+  if (ok) {
+    try { await window.VUserData?.addVcoins?.(100); } catch (_) {}
 
-              try {
-                const me = await window.VRProfile?.getMe?.(0);
-                if (me) {
-                  window.VREngine._uiCoins = window.VRProfile._n(me.vcoins);
-                  window.VREngine._uiTokens = window.VRProfile._n(me.jetons);
-                }
-              } catch (_) {}
+    try {
+      const me = await window.VRProfile?.getMe?.(0);
+      if (me) {
+        window.VREngine._uiCoins = window.VRProfile._n(me.vcoins);
+        window.VREngine._uiTokens = window.VRProfile._n(me.jetons);
+      }
+    } catch (_) {}
 
-              const kingName = getDynastyName();
-              window.VRUIBinding?.updateMeta?.(
-                kingName,
-                getYearLabel(),
-                window.VREngine?._uiCoins || 0,
-                window.VREngine?._uiTokens || 0
-              );
+    const kingName = getDynastyName();
+    window.VRUIBinding?.updateMeta?.(
+      kingName,
+      getYearLabel(),
+      window.VREngine?._uiCoins || 0,
+      window.VREngine?._uiTokens || 0
+    );
 
-              toast(t("coins.toast.reward_ok", ""));
-            } else {
-              toast(t("coins.toast.reward_fail", ""));
-            }
-            return;
-          }
+    toast(t("coins.toast.reward_ok", "+100 pièces ajoutées"));
+  } else {
+    toast(t("coins.toast.reward_fail", "Pub indisponible"));
+  }
+  return;
+}
         });
       });
     }
