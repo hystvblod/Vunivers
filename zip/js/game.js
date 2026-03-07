@@ -1,5 +1,5 @@
 // ===============================================
-// VRealms - js/game.js (bundle complet) — VERSION À JOUR (PATCH FIXES + COSMETICS)
+// VRealms - js/game.js (bundle complet) — VERSION RÉPARÉE
 // - Loader univers/decks/i18n
 // - UI binding + swipe animé sur les choix (A/B/C)
 // - State / Endings / Engine core
@@ -17,6 +17,8 @@
 // - ✅ COSMETICS: fallback gris + popup perso + application live
 // - ✅ FIX POPUP COSMETICS: une seule ligne rerender au scroll, plus de flash global
 // - ✅ JETON PEEK: blink/zoom seulement hors-peek + delta +/−% affiché en peek + % jauges mis à jour
+// - ✅ FIX CRITIQUE: ne restaure plus une save morte/corrompue
+// - ✅ FIX UI: popups jetons/vcoins en cartouches basiques, sans images du jeu
 // ===============================================
 
 
@@ -318,7 +320,6 @@ const VR_BADGE_GOLD_CHOICES = 100;
   100% { transform: translateZ(0) scale(1); }
 }
 
-/* ✅ zone AU-DESSUS des jauges */
 .vr-gauge-value{
   display:inline-flex;
   align-items:center;
@@ -331,13 +332,11 @@ const VR_BADGE_GOLD_CHOICES = 100;
   text-shadow:0 2px 10px rgba(0,0,0,.45);
 }
 
-/* ✅ hors Peek : on cache complètement les % au-dessus */
 body:not(.vr-peek-mode) .vr-gauge-value{
   opacity:0 !important;
   visibility:hidden !important;
 }
 
-/* ✅ en Peek : on montre les % au-dessus */
 body.vr-peek-mode .vr-gauge-value{
   opacity:1 !important;
   visibility:visible !important;
@@ -347,7 +346,6 @@ body.vr-peek-mode .vr-gauge-value{
   display:none !important;
 }
 
-/* ✅ delta au-dessus */
 body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-delta{
   color:rgba(170,255,210,.98);
 }
@@ -355,7 +353,6 @@ body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-delta{
   color:rgba(255,190,190,.98);
 }
 
-/* ✅ hors Peek : blink + mini zoom */
 body:not(.vr-peek-mode) .vr-gauge.vr-peek-up .vr-gauge-fill,
 body:not(.vr-peek-mode) .vr-gauge.vr-peek-down .vr-gauge-fill{
   transform-origin:50% 50%;
@@ -364,14 +361,12 @@ body:not(.vr-peek-mode) .vr-gauge.vr-peek-down .vr-gauge-fill{
     vrGaugeBlinkPulse 650ms ease-in-out infinite;
 }
 
-/* ✅ en Peek : PAS de clignotement */
 body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-fill,
 body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-fill{
   animation:none !important;
   filter:brightness(1.12) saturate(1.06);
 }
 
-/* ✅ preview visuel seulement en Peek */
 body:not(.vr-peek-mode) .vr-gauge-preview{
   opacity:0 !important;
 }
@@ -436,7 +431,6 @@ body.vr-peek-mode .vr-gauge-preview{
       const gaugeEls = document.querySelectorAll(".vr-gauge");
 
       gaugeEls.forEach((el) => {
-        // ✅ supprime les vieux blocs injectés en dessous par l’ancien code
         try {
           el.querySelectorAll(".vr-gauge-under").forEach((n) => n.remove());
         } catch (_) {}
@@ -487,11 +481,9 @@ body.vr-peek-mode .vr-gauge-preview{
           fillEl.style.setProperty("--vr-pct", `${safeVal}%`);
         }
 
-        // ✅ % actuel AU-DESSUS
         const valEl = gEl.querySelector(".vr-gauge-val");
         if (valEl) valEl.textContent = isPeek ? `${Math.round(safeVal)}%` : "";
 
-        // ✅ delta AU-DESSUS
         const deltaEl = gEl.querySelector(".vr-gauge-delta");
         if (deltaEl) deltaEl.textContent = "";
 
@@ -692,7 +684,6 @@ body.vr-peek-mode .vr-gauge-preview{
           previewEl.style.setProperty("--vr-pct", "0%");
         });
 
-        // ✅ on efface seulement le delta temporaire
         document.querySelectorAll(".vr-gauge-delta").forEach((dEl) => {
           dEl.textContent = "";
         });
@@ -777,7 +768,6 @@ body.vr-peek-mode .vr-gauge-preview{
         if (delta > 0) gaugeEl.classList.add("vr-peek-up");
         else if (delta < 0) gaugeEl.classList.add("vr-peek-down");
 
-        // ✅ + / - XX% AU-DESSUS, à côté du % actuel
         const deltaEl = gaugeEl.querySelector(".vr-gauge-delta");
         if (deltaEl) {
           if (delta > 0) deltaEl.textContent = `+${Math.round(delta)}%`;
@@ -789,7 +779,7 @@ body.vr-peek-mode .vr-gauge-preview{
   };
 
   window.VRUIBinding = VRUIBinding;
-})(); 
+})();
 
 
 // -------------------------------------------------------
@@ -1069,7 +1059,7 @@ body.vr-peek-mode .vr-gauge-preview{
           #vr-ending-overlay .vr-ending-card{
             text-align:center;
             align-items:stretch;
-            gap:12px;
+            gap:18px;
           }
           #vr-ending-overlay .vr-ending-title,
           #vr-ending-overlay .vr-ending-text{
@@ -1079,7 +1069,7 @@ body.vr-peek-mode .vr-gauge-preview{
             display:flex;
             align-items:center;
             justify-content:center;
-            gap:10px;
+            gap:12px;
             padding:10px 14px;
             border-radius:16px;
             background:rgba(255,255,255,.08);
@@ -1087,8 +1077,8 @@ body.vr-peek-mode .vr-gauge-preview{
             box-shadow:0 14px 26px rgba(0,0,0,.24);
           }
           .vr-ending-reward img{
-            width:24px;
-            height:24px;
+            width:36px;
+            height:36px;
             object-fit:contain;
             filter:drop-shadow(0 6px 12px rgba(0,0,0,.32));
           }
@@ -1115,6 +1105,7 @@ body.vr-peek-mode .vr-gauge-preview{
             color:#fff;
             font:inherit;
             cursor:pointer;
+            margin-top: 6px;
           }
           .vr-ending-double::before{
             content:"";
@@ -1141,8 +1132,8 @@ body.vr-peek-mode .vr-gauge-preview{
             line-height:1.05;
           }
           .vr-ending-double-title img{
-            width:28px;
-            height:28px;
+            width:32px;
+            height:32px;
             object-fit:contain;
             filter:drop-shadow(0 6px 12px rgba(0,0,0,.34));
           }
@@ -1420,6 +1411,30 @@ body.vr-peek-mode .vr-gauge-preview{
       } catch (_) {}
     },
 
+    _clearBrokenRunSave() {
+      try {
+        const universeId =
+          this.universeId ||
+          window.VRState?.universeId ||
+          localStorage.getItem("vrealms_universe") ||
+          "unknown";
+        window.VRSave?.clear?.(universeId);
+      } catch (_) {}
+    },
+
+    _isTerminalGaugeState(gauges) {
+      try {
+        for (const v of Object.values(gauges || {})) {
+          const n = Number(v);
+          if (!Number.isFinite(n)) return true;
+          if (n <= 0 || n >= 100) return true;
+        }
+      } catch (_) {
+        return true;
+      }
+      return false;
+    },
+
     _restoreFromSaveIfAny() {
       try {
         const universeId = this.universeId;
@@ -1432,15 +1447,27 @@ body.vr-peek-mode .vr-gauge-preview{
         const e = saved.engine || {};
         const sess = saved.session || {};
 
-        if (s && typeof s === "object") {
-          if (s.gauges && typeof s.gauges === "object") {
-            window.VRState.gauges = deepClone(s.gauges) || window.VRState.gauges;
-          }
-          window.VRState.alive = (s.alive !== false);
-          window.VRState.lastDeath = s.lastDeath || null;
-          window.VRState.reignYears = Number(s.reignYears || 0);
-          window.VRState.cardsPlayed = Number(s.cardsPlayed || 0);
+        // ✅ si la save est morte/cassée, on la jette
+        if (!s || typeof s !== "object" || !s.gauges || typeof s.gauges !== "object") {
+          this._clearBrokenRunSave();
+          return false;
         }
+
+        if (s.alive === false) {
+          this._clearBrokenRunSave();
+          return false;
+        }
+
+        if (this._isTerminalGaugeState(s.gauges)) {
+          this._clearBrokenRunSave();
+          return false;
+        }
+
+        window.VRState.gauges = deepClone(s.gauges) || window.VRState.gauges;
+        window.VRState.alive = true;
+        window.VRState.lastDeath = null;
+        window.VRState.reignYears = Number(s.reignYears || 0);
+        window.VRState.cardsPlayed = Number(s.cardsPlayed || 0);
 
         this.reignIndex = Math.max(0, Number(e.reignIndex || 0));
         this.recentCards = Array.isArray(e.recentCards) ? deepClone(e.recentCards) : [];
@@ -1477,12 +1504,18 @@ body.vr-peek-mode .vr-gauge-preview{
           window.VRUIBinding.showCard(card);
         } else {
           const deck = this.deck || [];
-          if (!deck.length) return false;
+          if (!deck.length) {
+            this._clearBrokenRunSave();
+            return false;
+          }
 
           const candidates = deck.filter(c => c && !this.recentCards.includes(c.id));
           const pool = candidates.length ? candidates : deck;
           const picked = pool[Math.floor(Math.random() * pool.length)];
-          if (!picked) return false;
+          if (!picked) {
+            this._clearBrokenRunSave();
+            return false;
+          }
 
           this.currentCardLogic = picked;
           window.VRUIBinding.showCard(picked);
@@ -1501,77 +1534,78 @@ body.vr-peek-mode .vr-gauge-preview{
         this._restored = true;
         return true;
       } catch (_) {
+        this._clearBrokenRunSave();
         return false;
       }
     },
 
-   async init(universeId, lang) {
-  this.universeId = universeId;
+    async init(universeId, lang) {
+      this.universeId = universeId;
 
-  let finalLang = (lang || "fr").toString();
-  try {
-    const me = await window.VRProfile?.getMe?.(4000);
-    finalLang = (me?.lang || finalLang || "fr").toString();
-  } catch (_) {}
-  this.lang = finalLang;
+      let finalLang = (lang || "fr").toString();
+      try {
+        const me = await window.VRProfile?.getMe?.(4000);
+        finalLang = (me?.lang || finalLang || "fr").toString();
+      } catch (_) {}
+      this.lang = finalLang;
 
-  const { config, deck, cardTexts } =
-    await window.VREventsLoader.loadUniverseData(universeId, this.lang);
+      const { config, deck, cardTexts } =
+        await window.VREventsLoader.loadUniverseData(universeId, this.lang);
 
-  let eventsLogic = { events: [] };
-  let eventsTexts = {};
-  try {
-    const ev = await window.VREventsLoader.loadUniverseEvents(universeId, this.lang);
-    eventsLogic = ev?.eventsLogic || { events: [] };
-    eventsTexts = ev?.eventsTexts || {};
-  } catch (_) {}
+      let eventsLogic = { events: [] };
+      let eventsTexts = {};
+      try {
+        const ev = await window.VREventsLoader.loadUniverseEvents(universeId, this.lang);
+        eventsLogic = ev?.eventsLogic || { events: [] };
+        eventsTexts = ev?.eventsTexts || {};
+      } catch (_) {}
 
-  this.universeConfig = config;
-  this.deck = Array.isArray(deck) ? deck : [];
-  this.cardTextsDict = cardTexts || {};
-  this.recentCards = [];
-  this.reignIndex = 0;
-  this.coinsStreak = 0;
-  this.history = [];
-  this.currentCardLogic = null;
-  this._restored = false;
-  this._reviveUsed = false;
+      this.universeConfig = config;
+      this.deck = Array.isArray(deck) ? deck : [];
+      this.cardTextsDict = cardTexts || {};
+      this.recentCards = [];
+      this.reignIndex = 0;
+      this.coinsStreak = 0;
+      this.history = [];
+      this.currentCardLogic = null;
+      this._restored = false;
+      this._reviveUsed = false;
 
-  this.eventsLogic = eventsLogic || { events: [] };
-  this.eventsTexts = eventsTexts || {};
-  this._eventPool = [];
-  this._seenEvents = [];
-  this._cardsSinceEventRoll = 0;
-  this._eventShowing = false;
-  this._pendingRunBonusCoins = 0;
-  this._clearPendingEndState();
-  this._rebuildEventIndex();
+      this.eventsLogic = eventsLogic || { events: [] };
+      this.eventsTexts = eventsTexts || {};
+      this._eventPool = [];
+      this._seenEvents = [];
+      this._cardsSinceEventRoll = 0;
+      this._eventShowing = false;
+      this._pendingRunBonusCoins = 0;
+      this._clearPendingEndState();
+      this._rebuildEventIndex();
 
-  try {
-    const me = await window.VRProfile?.getMe?.(0);
-    this._uiCoins = window.VRProfile._n(me?.vcoins);
-    this._uiTokens = window.VRProfile._n(me?.jetons);
-  } catch (_) {
-    this._uiCoins = 0;
-    this._uiTokens = 0;
-  }
+      try {
+        const me = await window.VRProfile?.getMe?.(0);
+        this._uiCoins = window.VRProfile._n(me?.vcoins);
+        this._uiTokens = window.VRProfile._n(me?.jetons);
+      } catch (_) {
+        this._uiCoins = 0;
+        this._uiTokens = 0;
+      }
 
-  window.VRState.initUniverse(this.universeConfig);
-  window.VRUIBinding.init(this.universeConfig, this.lang, this.cardTextsDict);
+      window.VRState.initUniverse(this.universeConfig);
+      window.VRUIBinding.init(this.universeConfig, this.lang, this.cardTextsDict);
 
-  const restored = this._restoreFromSaveIfAny();
-  this._rebuildEventIndex();
+      const restored = this._restoreFromSaveIfAny();
+      this._rebuildEventIndex();
 
-  if (!restored) {
-    this._startNewReign();
-    this._saveRunSoft();
-  } else {
-    if (!this._eventPool.length && this._allEventIds.length) {
-      this._eventPool = this._allEventIds.slice();
-    }
-    this._saveRunSoft();
-  }
-},
+      if (!restored) {
+        this._startNewReign();
+        this._saveRunSoft();
+      } else {
+        if (!this._eventPool.length && this._allEventIds.length) {
+          this._eventPool = this._allEventIds.slice();
+        }
+        this._saveRunSoft();
+      }
+    },
 
     async _refreshUIBalancesSoft() {
       try {
@@ -1771,10 +1805,10 @@ body.vr-peek-mode .vr-gauge-preview{
 
       window.VRUIBinding.updateGauges();
 
-      const kingName = getDynastyName(this.reignIndex - 1);
+      const kingName = getDynastyName();
       window.VRUIBinding.updateMeta(
         kingName,
-        window.VRState.getReignYears(),
+        getYearLabel(),
         this._uiCoins,
         this._uiTokens
       );
@@ -2183,10 +2217,77 @@ body.vr-peek-mode .vr-gauge-preview{
     } catch (_) {}
   }
 
+  function ensureBasicPopupCardStyles() {
+    try {
+      const ID = "vr-basic-popup-card-style";
+      if (document.getElementById(ID)) return;
+
+      const style = document.createElement("style");
+      style.id = ID;
+      style.textContent = `
+#vr-token-popup [data-token-action],
+#vr-coins-popup [data-coins-action]{
+  background-image:none !important;
+}
+
+#vr-token-popup .vr-card,
+#vr-token-popup .vr-token-card,
+#vr-token-popup .vr-token-basic-card,
+#vr-coins-popup .vr-card,
+#vr-coins-popup .vr-coins-basic-card{
+  position:relative;
+  display:block;
+  width:100%;
+  padding:0;
+  border:none;
+  background:none !important;
+  box-shadow:none !important;
+}
+
+#vr-token-popup .vr-card-content,
+#vr-token-popup .vr-token-basic-card .vr-card-content,
+#vr-coins-popup .vr-card-content{
+  background:linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.06)) !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  border-radius:18px !important;
+  padding:14px 14px !important;
+  box-shadow:0 16px 30px rgba(0,0,0,.24) !important;
+  backdrop-filter:blur(2px);
+}
+
+#vr-token-popup .vr-card-title,
+#vr-token-popup .vr-token-basic-card .vr-card-title,
+#vr-coins-popup .vr-card-title{
+  margin:0 0 6px 0 !important;
+  color:#fff !important;
+  font:900 16px/1.15 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
+  text-shadow:none !important;
+}
+
+#vr-token-popup .vr-card-text,
+#vr-token-popup .vr-token-basic-card .vr-card-text,
+#vr-coins-popup .vr-card-text{
+  margin:0 !important;
+  color:rgba(255,255,255,.88) !important;
+  font:700 13px/1.35 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
+  text-shadow:none !important;
+}
+
+#vr-token-popup img,
+#vr-coins-popup img{
+  object-fit:contain !important;
+}
+`;
+      document.head.appendChild(style);
+    } catch (_) {}
+  }
+
   const VRTokenUI = {
     selectMode: false,
 
     init() {
+      ensureBasicPopupCardStyles();
+
       const btnJeton = document.getElementById("btn-jeton");
       const popup = document.getElementById("vr-token-popup");
       const overlay = document.getElementById("vr-token-gauge-overlay");
@@ -2273,12 +2374,10 @@ body.vr-peek-mode .vr-gauge-preview{
       try {
         const host = (popup.querySelector("[data-token-action]")?.parentElement) || popup;
 
-        // ✅ Fallback : si le bouton Peek n'est pas présent, on le recrée
-        // avec exactement le même style/structure que les autres cartes (pas de style inline).
         if (host && !host.querySelector('[data-token-action="peek15"]')) {
           const btn = document.createElement("button");
           btn.type = "button";
-          btn.className = "vr-card vr-token-card";
+          btn.className = "vr-token-basic-card";
           btn.setAttribute("data-token-action", "peek15");
 
           const content = document.createElement("div");
@@ -2286,7 +2385,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
           const title = document.createElement("h4");
           title.className = "vr-card-title";
-          title.textContent = t("token.popup.peek.title", "Voir les effets (15)");
+          title.textContent = t("token.popup.peek.title", "Voir les effets 15");
 
           const desc = document.createElement("p");
           desc.className = "vr-card-text";
@@ -2740,7 +2839,6 @@ body.vr-peek-mode .vr-gauge-preview{
         align-items:center;
         gap:8px;
       }
-      /* ✅ flèches popup perso sans rond */
       .vr-customize-arrow{
         width:36px;
         height:36px;
@@ -2854,46 +2952,42 @@ body.vr-peek-mode .vr-gauge-preview{
         font-size:12px;
         margin-top:6px;
       }
-        /* ✅ croix de fermeture en haut à droite */
-#vr-customize-popup .vr-popup-inner{
-  position: relative;
-}
-  #vr-customize-popup .vr-popup-title{
-  padding-right: 46px;
-}
-  #vr-customize-popup .vr-customize-x{
-  z-index: 2;
-}
-
-#vr-customize-popup .vr-customize-x{
-  position:absolute;
-  top: 10px;
-  right: 10px;
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.16);
-  background: rgba(0,0,0,.25);
-  cursor: pointer;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow: 0 14px 26px rgba(0,0,0,.35);
-}
-
-#vr-customize-popup .vr-customize-x::before{
-  content:"×";
-  font-size: 24px;
-  font-weight: 900;
-  line-height: 1;
-  color: #fff;
-  text-shadow: 0 10px 20px rgba(0,0,0,.55);
-  transform: translateY(-1px);
-}
-
-#vr-customize-popup .vr-customize-x:active{
-  transform: scale(.97);
-}
+      #vr-customize-popup .vr-popup-inner{
+        position: relative;
+      }
+      #vr-customize-popup .vr-popup-title{
+        padding-right: 46px;
+      }
+      #vr-customize-popup .vr-customize-x{
+        z-index: 2;
+      }
+      #vr-customize-popup .vr-customize-x{
+        position:absolute;
+        top: 10px;
+        right: 10px;
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,.16);
+        background: rgba(0,0,0,.25);
+        cursor: pointer;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        box-shadow: 0 14px 26px rgba(0,0,0,.35);
+      }
+      #vr-customize-popup .vr-customize-x::before{
+        content:"×";
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 1;
+        color: #fff;
+        text-shadow: 0 10px 20px rgba(0,0,0,.55);
+        transform: translateY(-1px);
+      }
+      #vr-customize-popup .vr-customize-x:active{
+        transform: scale(.97);
+      }
     `;
     document.head.appendChild(style);
   }
@@ -3211,7 +3305,6 @@ body.vr-peek-mode .vr-gauge-preview{
       x.type = "button";
       x.className = "vr-customize-x";
 
-      /* IMPORTANT: on réutilise ton système existant */
       x.setAttribute("data-customize-action", "close");
       x.setAttribute("aria-label", "");
       x.setAttribute("data-i18n-aria", "common.close");
@@ -3247,7 +3340,6 @@ body.vr-peek-mode .vr-gauge-preview{
         if (dir === "next") next += 1;
         _state.index[category] = Math.max(0, Math.min(items.length - 1, next));
 
-        /* ✅ ici on rerender UNE seule ligne */
         renderRowOnly(category);
         return;
       }

@@ -607,6 +607,66 @@ body.vr-body-game .vr-choice-label{
 }
 .vr-ending-title{ margin:0 0 8px; font-size:18px; }
 .vr-ending-text{ margin:0 0 14px; font-size:14px; color: var(--vr-text-muted); }
+/* ==========================================================
+   FIN DE REGNE — boutons en cartouches basiques
+   ========================================================== */
+#vr-ending-overlay .vr-choice-button{
+  background-image: none !important;
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.14) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 14px 26px rgba(0,0,0,0.24) !important;
+
+  min-height: 56px !important;
+  padding: 12px 16px !important;
+
+  width: 100% !important;
+  max-width: none !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+
+  color: #ffffff !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.35) !important;
+}
+
+#vr-ending-overlay .vr-choice-button span{
+  position: static !important;
+  inset: auto !important;
+  width: auto !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: block !important;
+  text-align: inherit !important;
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  text-shadow: inherit !important;
+}
+#vr-ending-overlay .vr-ending-actions{
+  gap: 10px !important;
+  margin-top: 10px !important;
+}
+
+#vr-ending-overlay .vr-ending-actions-bottom{
+  gap: 10px !important;
+  margin-top: 0 !important;
+}
+
+#vr-ending-overlay #ending-revive-btn{
+  margin-bottom: 0 !important;
+}
 
 /* ==========================================================
    POPUP JETON — police de base forcée
@@ -1887,9 +1947,9 @@ body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{
 }
 
 /* zones soldes : largeur et centrage des ronds */
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3.2% !important; width: 16.8% !important; }
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 2.8% !important; width: 16.8% !important; }
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-center{ left: 20.6% !important; right: 20.6% !important; }
-body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 3.2% !important; width: 16.8% !important; }
+body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 2.8% !important; width: 16.8% !important; }
 
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-item{
   width: 100% !important;
@@ -2015,7 +2075,7 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
     --vr-hud-item-ty: -4px;
 
     --vr-identity-tx: 0px;
-    --vr-identity-ty: 3px;
+    --vr-identity-ty: 4px;
     --vr-hud-name-years-gap: 40px;
 
     --vr-font-choice: clamp(12px, 3.0vw, 16px);
@@ -2029,8 +2089,8 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
     --vr-choice-inset-left: 8%;
   }
 
-  body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3.2% !important; width: 17.2% !important; }
-  body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 3.2% !important; width: 17.2% !important; }
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3% !important; width: 17.2% !important; }
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 3% !important; width: 17.2% !important; }
   body.vr-body-game[data-universe="heaven_king"] .vr-hud-center{ left: 21.0% !important; right: 21.0% !important; }
 
   body.vr-body-game[data-universe="heaven_king"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
@@ -2093,36 +2153,45 @@ body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main{
   background-size: 90% 105% !important;
   background-position: center !important;
 }
+
 body.vr-body-game[data-universe="western_president"]{
   --vr-card-w: clamp(460px, 100vw, 1240px);
-  --vr-game-gap:   clamp(6px, 0.8svh, 14px);
-  --vr-stack-gap:  clamp(10px, 1.2svh, 22px);
-  --vr-choices-gap:clamp(10px, 1.2svh, 22px);
+  --vr-game-gap: clamp(6px, 0.8svh, 12px);
+  --vr-stack-gap: clamp(10px, 1.2svh, 22px);
+  --vr-choices-gap: clamp(10px, 1.2svh, 22px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
-  --vr-west-hud-w: min(94vw, 980px);
+  --vr-west-hud-w: min(88vw, 980px);
+  --vr-ui-hud-w: min(88vw, 980px);
+
   --vr-west-topbar-w: clamp(220px, 54vw, 420px);
   --vr-west-topbar-h: calc(var(--vr-west-topbar-w) * 0.275);
   --vr-west-back-size: clamp(46px, 11vw, 76px);
   --vr-west-customize-size: clamp(46px, 11vw, 76px);
 
-  /* nouveau bloc variables */
   --vr-ui-topbar-img: url("../assets/img/ui/west_topbar.webp");
   --vr-ui-hud-img: url("../assets/img/ui/west_hud_bar.webp");
   --vr-ui-back-img: url("../assets/img/ui/west_back.webp");
   --vr-ui-customize-img: url("../assets/img/ui/west_customize.webp");
 
-  --vr-vcoins-color:#FFD24A;
-  --vr-vcoins-glow:rgba(255,210,74,.50);
+  --vr-vcoins-color: #000000;
+  --vr-vcoins-glow: rgba(255,255,255,.08);
   --vr-vcoins-bg: transparent;
+
+  --vr-jetons-color: #000000;
+  --vr-jetons-glow: rgba(255,255,255,.08);
   --vr-jetons-bg: transparent;
+
+  --vr-identity-tx: 0px;
+  --vr-identity-ty: 14px;
+  --vr-hud-name-years-gap: 52px;
 }
 
 body.vr-body-game[data-universe="western_president"] .vr-top-actions-game .vr-top-icon,
 body.vr-body-game[data-universe="western_president"] > a.vr-icon-button[aria-label="Accueil"] .vr-top-icon,
 body.vr-body-game[data-universe="western_president"] #btn-customize .vr-top-icon{
-  display:none !important;
+  display: none !important;
 }
 
 body.vr-body-game[data-universe="western_president"] .vr-top-actions-game{
@@ -2168,8 +2237,8 @@ body.vr-body-game[data-universe="western_president"] > a.vr-icon-button[aria-lab
   position: fixed !important;
   top: calc(18px + env(safe-area-inset-top)) !important;
   left: 20px !important;
-  width:var(--vr-west-back-size) !important;
-  height:var(--vr-west-back-size) !important;
+  width: var(--vr-west-back-size) !important;
+  height: var(--vr-west-back-size) !important;
   padding:0 !important;
   margin:0 !important;
   border:none !important;
@@ -2190,8 +2259,8 @@ body.vr-body-game[data-universe="western_president"] #btn-customize{
   position: fixed !important;
   top: calc(18px + env(safe-area-inset-top)) !important;
   right: 20px !important;
-  width:var(--vr-west-customize-size) !important;
-  height:var(--vr-west-customize-size) !important;
+  width: var(--vr-west-customize-size) !important;
+  height: var(--vr-west-customize-size) !important;
   padding:0 !important;
   margin:0 !important;
   border:none !important;
@@ -2210,14 +2279,14 @@ body.vr-body-game[data-universe="western_president"] #btn-customize::before{
 
 body.vr-body-game[data-universe="western_president"] .vr-hud{
   position: relative !important;
-  width:var(--vr-west-hud-w) !important;
-  max-width:none !important;
-  margin:0 auto !important;
-  padding:0 !important;
-  display:block !important;
+  width: var(--vr-ui-hud-w) !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: block !important;
   white-space: normal !important;
   aspect-ratio: 1024 / 269;
-  background:url("../assets/img/ui/west_hud_bar.webp") center/100% 100% no-repeat;
+  background: url("../assets/img/ui/west_hud_bar.webp") center/100% 100% no-repeat;
   filter: drop-shadow(0 10px 18px rgba(0,0,0,0.20));
 }
 
@@ -2234,9 +2303,9 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-right{
   transform:none !important;
   justify-self:auto !important;
 }
-body.vr-body-game[data-universe="western_president"] .vr-hud-left{ left:3.3% !important;width:17.8% !important; }
-body.vr-body-game[data-universe="western_president"] .vr-hud-center{ left:20.2% !important;right:20.2% !important; }
-body.vr-body-game[data-universe="western_president"] .vr-hud-right{ right:5.3% !important;width:17.8% !important; }
+body.vr-body-game[data-universe="western_president"] .vr-hud-left{ left:3.3% !important; width:17.8% !important; }
+body.vr-body-game[data-universe="western_president"] .vr-hud-center{ left:20.2% !important; right:20.2% !important; }
+body.vr-body-game[data-universe="western_president"] .vr-hud-right{ right:5.3% !important; width:17.8% !important; }
 
 body.vr-body-game[data-universe="western_president"] .vr-hud-item{
   width:100% !important;
@@ -2262,22 +2331,58 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-value{
   color:#000 !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.35), 0 0 8px rgba(0,0,0,0.12) !important;
   transform: translateY(-2px) !important;
+  display:block !important;
+  width:100% !important;
+  text-align:center !important;
+  font-variant-numeric: tabular-nums !important;
 }
+
+/* VCoins plus bas + légèrement à gauche */
+body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value{
+  transform: translate(-8px, 16px) !important;
+}
+
+/* Jetons plus bas + légèrement à droite */
+body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
+  transform: translate(10px, 17px) !important;
+}
+
+/* bloc central plus bas */
+body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
+  width:100% !important;
+  max-width:none !important;
+  overflow:hidden !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:52px !important;
+  white-space:nowrap !important;
+  text-align:center !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.20), 0 0 6px rgba(0,0,0,0.08) !important;
+  transform: translate(0px, 13px) !important;
+}
+
 body.vr-body-game[data-universe="western_president"] .vr-hud-name{
-  font-size: clamp(13px, 2vw, 28px) !important;
+  font-family: "VR_InterExtraLight", sans-serif !important;
+  font-size: clamp(14px, 2.05vw, 26px) !important;
   font-weight: 800 !important;
   line-height:1 !important;
-  max-width:75% !important;
+  color:#000 !important;
+  max-width:72% !important;
   overflow:hidden !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
 }
+
 body.vr-body-game[data-universe="western_president"] .vr-hud-years{
-  font-size: clamp(10px, 1.25vw, 16px) !important;
+  font-family: "VR_InterExtraLight", sans-serif !important;
+  font-size: clamp(12px, 1.65vw, 20px) !important;
   font-weight: 800 !important;
   line-height:1 !important;
-  transform: translateY(1px) !important;
-  opacity: .95 !important;
+  color:#000 !important;
+  transform: translateY(0px) !important;
+  opacity: 1 !important;
+  flex: 0 0 auto !important;
 }
 
 #view-game.vr-bg-western_president{
@@ -2301,7 +2406,6 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="defense"] .vr-g
 body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/western_president/g4_frame.webp"); }
 body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-fill,
 body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/western_president/g4_fill.webp"); }
-
 /* ==========================================================
    UNIVERS — CEO
    ========================================================== */

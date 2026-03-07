@@ -2325,18 +2325,18 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-item{
 }
 
 body.vr-body-game[data-universe="western_president"] .vr-hud-value{
-  font-size: clamp(13px, 2vw, 24px) !important;
-  font-weight: 800 !important;
-  line-height:1 !important;
-  color:#000 !important;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.35), 0 0 8px rgba(0,0,0,0.12) !important;
+  font-family: "VR_InterExtraLight", sans-serif !important;
+  font-size: clamp(12px, 1.85vw, 22px) !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  color: #000 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.18), 0 0 3px rgba(0,0,0,0.06) !important;
   transform: translateY(-2px) !important;
-  display:block !important;
-  width:100% !important;
-  text-align:center !important;
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
   font-variant-numeric: tabular-nums !important;
 }
-
 /* VCoins plus bas + légèrement à gauche */
 body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value{
   transform: translate(-8px, 16px) !important;
