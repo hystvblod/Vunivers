@@ -2591,8 +2591,8 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-item{
   width:100% !important;
   height:100% !important;
   min-height:0 !important;
-  padding:0 clamp(2px,0.3vw,6px) !important;
-  gap:clamp(2px,0.22vw,6px) !important;
+  padding:0 clamp(2px,0.25vw,5px) !important;
+  gap:clamp(2px,0.2vw,5px) !important;
   display:flex !important;
   align-items:center !important;
   justify-content:center !important;
@@ -2601,41 +2601,48 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-item{
   box-shadow:none !important;
   backdrop-filter:none !important;
   -webkit-backdrop-filter:none !important;
-  transform: translateY(4px) !important;
+  transform: translateY(-3px) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-value{
-  font-size: clamp(18px, 2.6vw, 31px) !important;
+  font-size: clamp(15px, 2.05vw, 24px) !important;
   font-weight: 900 !important;
   line-height:1 !important;
   color:#111 !important;
   text-align:center !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.18) !important;
-  transform: translateY(8px) !important;
-  letter-spacing: -0.02em !important;
+  transform: translateY(-1px) !important;
+  letter-spacing: -0.03em !important;
   white-space: nowrap !important;
 }
 
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left .vr-hud-value,
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right .vr-hud-value{
+  width:100% !important;
+  max-width:100% !important;
+  text-align:center !important;
+}
+
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-name{
-  font-size: clamp(15px, 2.1vw, 27px) !important;
+  font-size: clamp(14px, 1.9vw, 23px) !important;
   font-weight: 900 !important;
   line-height:1 !important;
   color:#111 !important;
-  max-width:68% !important;
+  max-width:60% !important;
   overflow:hidden !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
   text-align:center !important;
-  transform: translateY(9px) !important;
+  transform: translateY(0px) !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.18) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-years{
-  font-size: clamp(11px, 1.2vw, 15px) !important;
+  font-size: clamp(10px, 1.05vw, 13px) !important;
   font-weight: 800 !important;
   line-height:1 !important;
   color:#222 !important;
-  transform: translateY(10px) !important;
+  transform: translateY(1px) !important;
   opacity: 1 !important;
   text-shadow: none !important;
   white-space: nowrap !important;
@@ -2643,7 +2650,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-years{
 
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-center .vr-hud-item{
   flex-direction: row !important;
-  gap: clamp(8px, 1vw, 16px) !important;
+  gap: clamp(6px, 0.8vw, 12px) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left .vr-hud-item,
@@ -2668,13 +2675,13 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-center .vr-hud-years{
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
   overflow: hidden !important;
-  background-size: 103% 114% !important;
-  background-position: center 26% !important;
+  background-size: 104% 116% !important;
+  background-position: center 23% !important;
   background-repeat: no-repeat !important;
   box-sizing: border-box !important;
   width: min(92vw, 780px) !important;
-  min-height: clamp(178px, 28vw, 260px) !important;
-  padding: clamp(16px, 3.2vw, 24px) clamp(18px, 4.2vw, 30px) !important;
+  min-height: clamp(190px, 29vw, 272px) !important;
+  padding: clamp(14px, 2.4vw, 18px) clamp(18px, 4.2vw, 30px) clamp(24px, 4.8vw, 34px) !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -2682,27 +2689,29 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-title{
-  width: min(70%, 500px) !important;
-  max-width: min(70%, 500px) !important;
-  margin: 0 auto clamp(4px, 0.8vw, 8px) auto !important;
+  width: min(72%, 520px) !important;
+  max-width: min(72%, 520px) !important;
+  margin: 0 auto clamp(6px, 1vw, 10px) auto !important;
   text-align: center !important;
-  font-size: clamp(13px, 2.1vw, 23px) !important;
+  font-size: clamp(15px, 2.35vw, 26px) !important;
   line-height: 1.08 !important;
   font-weight: 700 !important;
   overflow-wrap: break-word !important;
   word-break: break-word !important;
+  transform: translateY(-10px) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-text{
-  width: min(70%, 500px) !important;
-  max-width: min(70%, 500px) !important;
+  width: min(72%, 520px) !important;
+  max-width: min(72%, 520px) !important;
   margin: 0 auto !important;
   text-align: center !important;
-  font-size: clamp(9px, 1.42vw, 15px) !important;
-  line-height: 1.14 !important;
+  font-size: clamp(10px, 1.62vw, 17px) !important;
+  line-height: 1.18 !important;
   font-weight: 600 !important;
   overflow-wrap: break-word !important;
   word-break: break-word !important;
+  transform: translateY(-10px) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-stack,
@@ -2766,7 +2775,11 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-gauge-preview{
   background-image: url("../assets/img/gauges/mega_corp_ceo/g4_fill.webp");
 }
-/* ========================================================== */
+
+
+
+
+
 /* ========================================================== */
    UNIVERS — EXPLORER
 /* ========================================================== */
