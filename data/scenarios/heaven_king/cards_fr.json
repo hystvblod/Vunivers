@@ -303,13 +303,13 @@
     "id": "heaven_026",
     "universe": "heaven_king",
     "title": "Tourisme spirituel",
-    "description": "Des agences vendent des voyages 'clé en main' pour vivre des expériences mystiques.",
+    "description": "Des agences vendent des voyages tout prêts pour vivre des moments spirituels forts.",
     "choices": {
       "A": "Offrir parfois de vrais moments de grâce",
       "B": "Laisser ces voyages rester surtout commerciaux",
       "C": "Attirer à ces voyages des personnes très influençables"
     },
-    "body": "Des agences vendent des voyages 'clé en main' pour vivre des expériences mystiques."
+    "body": "Des agences vendent des voyages tout prêts pour vivre des moments spirituels forts."
   },
   "heaven_027": {
     "id": "heaven_027",
@@ -638,14 +638,14 @@
   "heaven_054": {
     "id": "heaven_054",
     "universe": "heaven_king",
-    "title": "Rêves de damnation",
-    "description": "Une vague de cauchemars montrant les Enfers touche des enfants et des adultes qui n’ont pourtant rien fait de grave.",
+    "title": "Rêves très sombres",
+    "description": "Une vague de rêves très sombres touche des enfants et des adultes qui se sentent déjà fragiles.",
     "choices": {
-      "A": "Apaiser les rêves en y ajoutant une lumière protectrice",
-      "B": "Laisser ces rêves comme un avertissement brut",
-      "C": "Accuser explicitement les Enfers dans ces rêves"
+      "A": "Apaiser ces rêves avec une présence rassurante",
+      "B": "Laisser ces rêves passer sans agir",
+      "C": "Laisser certains y voir un signe de peur"
     },
-    "body": "Une vague de cauchemars montrant les Enfers touche des enfants et des adultes qui n’ont pourtant rien fait de grave."
+    "body": "Une vague de rêves très sombres touche des enfants et des adultes qui se sentent déjà fragiles."
   },
   "heaven_055": {
     "id": "heaven_055",
@@ -878,14 +878,14 @@
   "heaven_074": {
     "id": "heaven_074",
     "universe": "heaven_king",
-    "title": "Tourisme de l’horreur infernale",
-    "description": "Des films et attractions décrivent les Enfers de façon spectaculaire et glamour.",
+    "title": "Tourisme de la peur",
+    "description": "Des films et attractions montrent un monde de peur de façon spectaculaire.",
     "choices": {
-      "A": "Laisser la fiction jouer son rôle de catharsis",
+      "A": "Laisser la fiction jouer son rôle de soulagement",
       "B": "Insuffler un malaise profond chez ceux qui banalisent l’Enfer",
       "C": "Ignorer totalement ce phénomène"
     },
-    "body": "Des films et attractions décrivent les Enfers de façon spectaculaire et glamour."
+    "body": "Des films et attractions montrent un monde de peur de façon spectaculaire."
   },
   "heaven_075": {
     "id": "heaven_075",
@@ -902,14 +902,14 @@
   "heaven_076": {
     "id": "heaven_076",
     "universe": "heaven_king",
-    "title": "Pont de prières vers les damnés",
-    "description": "Des groupes prient spécifiquement pour ceux qu’ils imaginent déjà en Enfer.",
+    "title": "Prières pour les âmes perdues",
+    "description": "Des groupes prient spécialement pour ceux qu’ils pensent déjà perdus.",
     "choices": {
-      "A": "Faire sentir que ces prières ont un effet de miséricorde",
+      "A": "Faire sentir que ces prières ont un effet de bonté",
       "B": "Laisser ces prières comme un geste symbolique",
       "C": "Renforcer l’idée que certains sont irrémédiablement perdus"
     },
-    "body": "Des groupes prient spécifiquement pour ceux qu’ils imaginent déjà en Enfer."
+    "body": "Des groupes prient spécialement pour ceux qu’ils pensent déjà perdus."
   },
   "heaven_077": {
     "id": "heaven_077",
@@ -1143,13 +1143,13 @@
     "id": "heaven_096",
     "universe": "heaven_king",
     "title": "École des vertus",
-    "description": "Une école veut enseigner les vertus célestes en opposition explicite aux vices infernaux.",
+    "description": "Une école veut enseigner les valeurs du bien en les opposant clairement aux mauvais comportements.",
     "choices": {
-      "A": "Inspirer des méthodes pédagogiques bienveillantes",
+      "A": "Inspirer des méthodes d’apprentissage bienveillantes",
       "B": "Laisser cette école suivre sa route",
-      "C": "Laisser la peur de l’Enfer devenir l’outil principal"
+      "C": "Laisser la peur devenir l’outil principal"
     },
-    "body": "Une école veut enseigner les vertus célestes en opposition explicite aux vices infernaux."
+    "body": "Une école veut enseigner les valeurs du bien en les opposant clairement aux mauvais comportements."
   },
   "heaven_097": {
     "id": "heaven_097",
@@ -1178,14 +1178,14 @@
   "heaven_099": {
     "id": "heaven_099",
     "universe": "heaven_king",
-    "title": "Miracle de réconciliation",
-    "description": "Deux familles en conflit profond utilisent l’image de l’Enfer pour se menacer mutuellement.",
+    "title": "Tentative de rapprochement",
+    "description": "Deux familles en grand conflit utilisent des mots très durs pour se blesser.",
     "choices": {
       "A": "Inspirer un geste de pardon inattendu",
       "B": "Laisser le conflit suivre son cours",
-      "C": "Laisser la peur de l’Enfer alimenter encore plus le ressentiment"
+      "C": "Laisser la peur nourrir encore plus le conflit"
     },
-    "body": "Deux familles en conflit profond utilisent l’image de l’Enfer pour se menacer mutuellement."
+    "body": "Deux familles en grand conflit utilisent des mots très durs pour se blesser."
   },
   "heaven_100": {
     "id": "heaven_100",
@@ -1226,14 +1226,14 @@
   "heaven_103": {
     "id": "heaven_103",
     "universe": "heaven_king",
-    "title": "Enfants terrorisés par les sermons",
-    "description": "Dans une petite ville, des enfants font des cauchemars à cause de sermons très violents sur l’Enfer.",
+    "title": "Enfants troublés par des sermons",
+    "description": "Dans une petite ville, des enfants font des cauchemars après des sermons très durs.",
     "choices": {
-      "A": "Adoucir les rêves par des images de lumière et de sécurité",
+      "A": "Adoucir leurs rêves avec des images de lumière et de sécurité",
       "B": "Ne pas intervenir dans leurs rêves",
-      "C": "Renforcer la voix des prédicateurs qui parlent de châtiments"
+      "C": "Renforcer la voix des prédicateurs les plus sévères"
     },
-    "body": "Dans une petite ville, des enfants font des cauchemars à cause de sermons très violents sur l’Enfer."
+    "body": "Dans une petite ville, des enfants font des cauchemars après des sermons très durs."
   },
   "heaven_104": {
     "id": "heaven_104",
@@ -1250,14 +1250,14 @@
   "heaven_105": {
     "id": "heaven_105",
     "universe": "heaven_king",
-    "title": "Village qui a peur de l’Enfer",
-    "description": "Dans un village, on éduque les enfants en répétant que le moindre faux pas mène aux flammes éternelles.",
+    "title": "Village élevé dans la peur",
+    "description": "Dans un village, on élève les enfants avec des discours très sévères sur les fautes et leurs conséquences.",
     "choices": {
-      "A": "Inspirer un ancien qui parle enfin de miséricorde",
-      "B": "Laisser cette culture de la peur se perpétuer",
-      "C": "Envoyer une suite de malheurs pour donner l’impression que leur sévérité est validée"
+      "A": "Inspirer un ancien qui parle enfin de bonté",
+      "B": "Laisser cette culture de la peur continuer",
+      "C": "Laisser croire que leur sévérité est validée"
     },
-    "body": "Dans un village, on éduque les enfants en répétant que le moindre faux pas mène aux flammes éternelles."
+    "body": "Dans un village, on élève les enfants avec des discours très sévères sur les fautes et leurs conséquences."
   },
   "heaven_106": {
     "id": "heaven_106",
@@ -1358,14 +1358,14 @@
   "heaven_114": {
     "id": "heaven_114",
     "universe": "heaven_king",
-    "title": "École de la peur sacrée",
-    "description": "Dans une école, les cours de religion insistent surtout sur les sanctions divines.",
+    "title": "École centrée sur la crainte",
+    "description": "Dans une école, les cours de religion parlent surtout des fautes et des sanctions.",
     "choices": {
-      "A": "Inspirer un professeur qui parle d’amour, pas seulement de peur",
-      "B": "Laisser la pédagogie rester centrée sur la crainte",
-      "C": "Créer un examen final où l’échec est présenté comme un signe de damnation"
+      "A": "Inspirer un professeur qui parle d’amour et de confiance",
+      "B": "Laisser cette pédagogie rester centrée sur la crainte",
+      "C": "Créer un test final présenté comme une faute morale"
     },
-    "body": "Dans une école, les cours de religion insistent surtout sur les sanctions divines."
+    "body": "Dans une école, les cours de religion parlent surtout des fautes et des sanctions."
   },
   "heaven_115": {
     "id": "heaven_115",
@@ -1383,13 +1383,13 @@
     "id": "heaven_116",
     "universe": "heaven_king",
     "title": "Contrat moral avec l’au-delà",
-    "description": "Un groupe de croyants invente un contrat très détaillé listant toutes les sanctions possibles après la mort.",
+    "description": "Un groupe de croyants écrit un contrat très détaillé sur les fautes et leurs conséquences après la mort.",
     "choices": {
-      "A": "Les inspirer à ajouter une clause de miséricorde",
+      "A": "Les inspirer à ajouter une clause de bonté",
       "B": "Laisser leur imagination juridique se déployer",
       "C": "Les laisser croire que ce contrat engage vraiment le Ciel à punir"
     },
-    "body": "Un groupe de croyants invente un contrat très détaillé listant toutes les sanctions possibles après la mort."
+    "body": "Un groupe de croyants écrit un contrat très détaillé sur les fautes et leurs conséquences après la mort."
   },
   "heaven_117": {
     "id": "heaven_117",
@@ -1490,14 +1490,14 @@
   "heaven_125": {
     "id": "heaven_125",
     "universe": "heaven_king",
-    "title": "Mariage sous menace d’Enfer",
-    "description": "Un couple reste ensemble uniquement parce qu’on leur a répété qu’un divorce mènerait droit en Enfer.",
+    "title": "Couple retenu par la peur",
+    "description": "Un couple reste ensemble surtout par peur d’une lourde faute morale.",
     "choices": {
       "A": "Inspirer autour d’eux des paroles de soutien nuancées",
       "B": "Ne pas intervenir dans leur histoire",
-      "C": "Laisser un guide spirituel confirmer que toute séparation sera lourdement punie"
+      "C": "Laisser un guide confirmer qu’une séparation serait gravement fautive"
     },
-    "body": "Un couple reste ensemble uniquement parce qu’on leur a répété qu’un divorce mènerait droit en Enfer."
+    "body": "Un couple reste ensemble surtout par peur d’une lourde faute morale."
   },
   "heaven_126": {
     "id": "heaven_126",
@@ -1574,14 +1574,14 @@
   "heaven_132": {
     "id": "heaven_132",
     "universe": "heaven_king",
-    "title": "Mariage forcé 'pour éviter l’Enfer'",
-    "description": "Deux personnes sont forcées à se marier parce que leur histoire est jugée 'indigne du Paradis'.",
+    "title": "Union imposée au nom du bien",
+    "description": "Deux personnes sont poussées à se marier parce que leur histoire est jugée indigne.",
     "choices": {
       "A": "Placer un allié qui les écoute et les aide à choisir",
       "B": "Ne pas intervenir",
-      "C": "Laisser croire que toute révolte de leur part attirera une sanction éternelle"
+      "C": "Laisser croire que toute révolte attirera une lourde faute morale"
     },
-    "body": "Deux personnes sont forcées à se marier parce que leur histoire est jugée 'indigne du Paradis'."
+    "body": "Deux personnes sont poussées à se marier parce que leur histoire est jugée indigne."
   },
   "heaven_133": {
     "id": "heaven_133",
@@ -1682,14 +1682,14 @@
   "heaven_141": {
     "id": "heaven_141",
     "universe": "heaven_king",
-    "title": "École de la punition créative",
-    "description": "Des éducateurs inventent des 'punitions spirituelles' originales pour chaque faute.",
+    "title": "École de la punition",
+    "description": "Des éducateurs inventent des punitions dites spirituelles pour chaque faute.",
     "choices": {
       "A": "Inspirer une prise de conscience sur les dégâts de ces pratiques",
       "B": "Laisser leurs idées se multiplier",
-      "C": "Laisser certains enfants croire que ces punitions viennent directement du Ciel"
+      "C": "Laisser certains enfants croire que ces punitions viennent du Ciel"
     },
-    "body": "Des éducateurs inventent des 'punitions spirituelles' originales pour chaque faute."
+    "body": "Des éducateurs inventent des punitions dites spirituelles pour chaque faute."
   },
   "heaven_142": {
     "id": "heaven_142",
@@ -1791,13 +1791,13 @@
     "id": "heaven_150",
     "universe": "heaven_king",
     "title": "Dernier sermon avant la nuit",
-    "description": "Un grand prédicateur mondial prépare son dernier discours : soit sur l’amour inconditionnel, soit sur la peur de l’Enfer.",
+    "description": "Un grand prédicateur mondial prépare son dernier discours : soit sur l’amour sans condition, soit sur la peur.",
     "choices": {
-      "A": "Lui inspirer un message centré sur la miséricorde",
+      "A": "Lui inspirer un message centré sur la bonté",
       "B": "Le laisser choisir sans influence",
       "C": "Le pousser à insister sur la sanction pour marquer les esprits"
     },
-    "body": "Un grand prédicateur mondial prépare son dernier discours : soit sur l’amour inconditionnel, soit sur la peur de l’Enfer."
+    "body": "Un grand prédicateur mondial prépare son dernier discours : soit sur l’amour sans condition, soit sur la peur."
   },
   "heaven_151": {
     "id": "heaven_151",
@@ -1838,7 +1838,7 @@
   "heaven_154": {
     "id": "heaven_154",
     "universe": "heaven_king",
-    "title": "Culte de la réussite",
+    "title": "Richesse vue comme bénédiction",
     "description": "Une communauté affirme que la richesse est la preuve d’être aimé du Paradis.",
     "choices": {
       "A": "Toucher quelques riches pour qu’ils découvrent la générosité",
@@ -1877,9 +1877,9 @@
     "title": "Maison où l’on prie pour tout",
     "description": "Une famille prie pour chaque petite décision du quotidien.",
     "choices": {
-      "A": "Les encourager à aussi écouter leur propre discernement",
-      "B": "Laisser cette dépendance permanente continuer",
-      "C": "Laisser croire que tout choix non prié sera forcément sanctionné"
+      "A": "Les encourager à aussi écouter leur propre jugement",
+      "B": "Laisser cette dépendance continuer",
+      "C": "Laisser croire que tout choix non prié sera forcément mal vu"
     },
     "body": "Une famille prie pour chaque petite décision du quotidien."
   },
@@ -1923,13 +1923,13 @@
     "id": "heaven_161",
     "universe": "heaven_king",
     "title": "Village partagé entre deux prêtres",
-    "description": "Un prêtre parle surtout de miséricorde, l’autre surtout de lois et de sanctions.",
+    "description": "Un prêtre parle surtout de bonté, l’autre surtout de lois et de sanctions.",
     "choices": {
-      "A": "Renforcer la voix de celui qui parle de miséricorde",
+      "A": "Renforcer la voix de celui qui parle de bonté",
       "B": "Laisser le village se diviser entre les deux visions",
       "C": "Donner brièvement plus de succès au prêtre le plus punitif"
     },
-    "body": "Un prêtre parle surtout de miséricorde, l’autre surtout de lois et de sanctions."
+    "body": "Un prêtre parle surtout de bonté, l’autre surtout de lois et de sanctions."
   },
   "heaven_162": {
     "id": "heaven_162",
@@ -2175,13 +2175,13 @@
     "id": "heaven_182",
     "universe": "heaven_king",
     "title": "Lien avec les morts",
-    "description": "Des familles parlent à leurs défunts en t’imaginant comme intermédiaire.",
+    "description": "Des familles parlent à leurs proches disparus en t’imaginant comme messager.",
     "choices": {
-      "A": "Laisser naître un sentiment de consolation réelle",
-      "B": "Ne pas intervenir, ce dialogue reste unilatéral",
-      "C": "Laisser certains médiums menacer de sanctions ceux qui ne suivent pas leurs messages"
+      "A": "Laisser naître un vrai sentiment de consolation",
+      "B": "Ne pas intervenir, ce dialogue reste à sens unique",
+      "C": "Laisser certains médiums faire peur à ceux qui doutent"
     },
-    "body": "Des familles parlent à leurs défunts en t’imaginant comme intermédiaire."
+    "body": "Des familles parlent à leurs proches disparus en t’imaginant comme messager."
   },
   "heaven_183": {
     "id": "heaven_183",
@@ -2299,7 +2299,7 @@
     "choices": {
       "A": "Renforcer en lui la capacité à voir la beauté simple",
       "B": "Laisser cette perception s’estomper en grandissant",
-      "C": "Laisser certains adultes se moquer et menacer de sanction s’il 'parle mal du sacré'"
+      "C": "Laisser certains adultes se moquer de lui au nom du sacré"
     },
     "body": "Un enfant voit un événement banal comme un miracle personnel."
   },
@@ -2343,13 +2343,13 @@
     "id": "heaven_196",
     "universe": "heaven_king",
     "title": "École d’anges gardiens",
-    "description": "Des histoires pour enfants enseignent que chaque geste est surveillé par un ange juge.",
+    "description": "Des histoires pour enfants disent que chaque geste est observé par un ange très sévère.",
     "choices": {
-      "A": "Faire naître des histoires où l’ange console autant qu’il surveille",
-      "B": "Laisser la vision du juge rester dominante",
-      "C": "Laisser certains adultes menacer d’Enfer au nom de ces anges gardiens"
+      "A": "Faire naître des histoires où l’ange console autant qu’il observe",
+      "B": "Laisser cette vision sévère rester dominante",
+      "C": "Laisser certains adultes utiliser ces histoires pour faire peur"
     },
-    "body": "Des histoires pour enfants enseignent que chaque geste est surveillé par un ange juge."
+    "body": "Des histoires pour enfants disent que chaque geste est observé par un ange très sévère."
   },
   "heaven_197": {
     "id": "heaven_197",
@@ -2426,14 +2426,14 @@
   "heaven_203": {
     "id": "heaven_203",
     "universe": "heaven_king",
-    "title": "Pont entre Paradis et Enfer",
-    "description": "Un théologien décrit le monde comme un pont fragile entre Paradis et Enfer, où chaque choix pèse lourd.",
+    "title": "Pont entre le Ciel et le bas",
+    "description": "Un penseur religieux décrit le monde comme un pont fragile entre le Ciel et le bas, où chaque choix compte beaucoup.",
     "choices": {
-      "A": "Lui inspirer un discours nuancé sur la miséricorde",
+      "A": "Lui inspirer un discours nuancé sur la bonté",
       "B": "Le laisser insister sur le risque de chute sans nuance",
-      "C": "Laisser des rumeurs dire que certains peuples sont déjà 'condamnés' en bas"
+      "C": "Laisser des rumeurs dire que certains peuples sont déjà 'déjà jugés' en bas"
     },
-    "body": "Un théologien décrit le monde comme un pont fragile entre Paradis et Enfer, où chaque choix pèse lourd."
+    "body": "Un penseur religieux décrit le monde comme un pont fragile entre le Ciel et le bas, où chaque choix compte beaucoup."
   },
   "heaven_204": {
     "id": "heaven_204",
@@ -2450,14 +2450,14 @@
   "heaven_205": {
     "id": "heaven_205",
     "universe": "heaven_king",
-    "title": "Alliance avec les exilés d’en bas",
-    "description": "Une légende raconte que certaines âmes échappées de l’Enfer peuvent être accueillies au Paradis.",
+    "title": "Accueil des âmes rejetées",
+    "description": "Une légende raconte que certaines âmes rejetées peuvent encore être accueillies dans un lieu de paix.",
     "choices": {
-      "A": "Inspirer une théologie de seconde chance et de réconciliation",
+      "A": "Inspirer une vision religieuse de seconde chance et de rapprochement",
       "B": "Laisser cette histoire rester une rumeur marginale",
-      "C": "Laisser des groupes condamner cette idée comme hérésie passible de lourdes sanctions"
+      "C": "Laisser des groupes condamner cette idée comme idée interdite passible de lourdes sanctions"
     },
-    "body": "Une légende raconte que certaines âmes échappées de l’Enfer peuvent être accueillies au Paradis."
+    "body": "Une légende raconte que certaines âmes rejetées peuvent encore être accueillies dans un lieu de paix."
   },
   "heaven_206": {
     "id": "heaven_206",
@@ -2534,14 +2534,14 @@
   "heaven_212": {
     "id": "heaven_212",
     "universe": "heaven_king",
-    "title": "Pont de réconciliation",
-    "description": "Des victimes de violences, justifiées autrefois au nom du Ciel, cherchent à reconstruire une foi apaisée.",
+    "title": "Marchand de pardons",
+    "description": "Un homme vend des messages promettant le pardon total à ceux qui paient.",
     "choices": {
       "A": "Offrir une expérience intime de douceur qui les aide à croire à nouveau",
       "B": "Laisser la méfiance rester dominante",
       "C": "Laisser certains bourreaux se présenter comme repentis et réclamer l’absence totale de sanctions"
     },
-    "body": "Des victimes de violences, justifiées autrefois au nom du Ciel, cherchent à reconstruire une foi apaisée."
+    "body": "Un homme vend des messages promettant le pardon total à ceux qui paient."
   },
   "heaven_213": {
     "id": "heaven_213",
@@ -2607,37 +2607,37 @@
     "id": "heaven_218",
     "universe": "heaven_king",
     "title": "École qui parle de liberté",
-    "description": "Une école enseigne le libre arbitre sans mentionner le Paradis ni l’Enfer.",
+    "description": "Une école enseigne le libre arbitre sans parler directement du Paradis ou de l’Enfer.",
     "choices": {
-      "A": "Faire éclore chez certains élèves une soif de sens plus profonde",
-      "B": "Laisser le discours rester purement philosophique",
-      "C": "Laisser des groupes extérieurs accuser l’école de préparer les enfants à l’Enfer et exiger des sanctions"
+      "A": "Faire éclore chez certains élèves une recherche de sens plus profonde",
+      "B": "Laisser le discours rester surtout philosophique",
+      "C": "Laisser des groupes extérieurs accuser l’école et réclamer des sanctions"
     },
-    "body": "Une école enseigne le libre arbitre sans mentionner le Paradis ni l’Enfer."
+    "body": "Une école enseigne le libre arbitre sans parler directement du Paradis ou de l’Enfer."
   },
   "heaven_219": {
     "id": "heaven_219",
     "universe": "heaven_king",
-    "title": "Pont de lumière vers les enfers",
-    "description": "Certains mystiques disent descendre en prière dans les zones les plus sombres pour y apporter un peu de lumière.",
+    "title": "Attraction sur l’au-delà",
+    "description": "Un parc lance une attraction spectaculaire sur le jugement après la mort.",
     "choices": {
       "A": "Autoriser quelques expériences de compassion réelle pour les plus perdus",
       "B": "Laisser ces récits rester symboliques et incompris",
-      "C": "Laisser des autorités religieuses condamner ces mystiques comme alliés des Enfers et les sanctionner"
+      "C": "Laisser des autorités religieuses condamner ces spirituelles comme alliés des Enfers et les sanctionner"
     },
-    "body": "Certains mystiques disent descendre en prière dans les zones les plus sombres pour y apporter un peu de lumière."
+    "body": "Un parc lance une attraction spectaculaire sur le jugement après la mort."
   },
   "heaven_220": {
     "id": "heaven_220",
     "universe": "heaven_king",
     "title": "Jeu pour enfants sur le jugement",
-    "description": "Un jeu éducatif montre un juge céleste qui envoie des personnages en haut ou en bas selon des fautes simplifiées.",
+    "description": "Un jeu éducatif montre un juge céleste qui classe les personnages de façon très simple selon leurs fautes.",
     "choices": {
-      "A": "Inspirer une version plus nuancée, avec pardon et réparation",
+      "A": "Inspirer une version plus nuancée avec pardon et réparation",
       "B": "Laisser le jeu rester très binaire",
-      "C": "Laisser certains adultes se servir de ce jeu pour menacer les enfants de sanctions éternelles"
+      "C": "Laisser certains adultes s’en servir pour faire peur aux enfants"
     },
-    "body": "Un jeu éducatif montre un juge céleste qui envoie des personnages en haut ou en bas selon des fautes simplifiées."
+    "body": "Un jeu éducatif montre un juge céleste qui classe les personnages de façon très simple selon leurs fautes."
   },
   "heaven_221": {
     "id": "heaven_221",
@@ -2714,14 +2714,14 @@
   "heaven_227": {
     "id": "heaven_227",
     "universe": "heaven_king",
-    "title": "Chroniqueur de l’au-delà",
-    "description": "Un écrivain à succès décrit le Paradis comme un tribunal froid et l’Enfer comme un chaos total.",
+    "title": "Pleurs au seuil du Ciel",
+    "description": "Des proches imaginent voir leurs disparus au bord d’un lieu de paix et pleurent de soulagement.",
     "choices": {
-      "A": "Lui inspirer un personnage qui découvre une miséricorde inattendue",
+      "A": "Lui inspirer un personnage qui découvre une bonté inattendue",
       "B": "Laisser ses livres nourrir cette vision anxieuse",
       "C": "Laisser certains lecteurs prendre ses descriptions au pied de la lettre et vivre dans la peur de sanctions"
     },
-    "body": "Un écrivain à succès décrit le Paradis comme un tribunal froid et l’Enfer comme un chaos total."
+    "body": "Des proches imaginent voir leurs disparus au bord d’un lieu de paix et pleurent de soulagement."
   },
   "heaven_228": {
     "id": "heaven_228",
@@ -2798,14 +2798,14 @@
   "heaven_234": {
     "id": "heaven_234",
     "universe": "heaven_king",
-    "title": "Décision d’un juge humain",
-    "description": "Un juge doit prononcer une lourde peine et dit qu’il sent sur lui le regard du Ciel.",
+    "title": "Procès d’une idée interdite",
+    "description": "Un groupe religieux organise un procès public contre une idée jugée dangereuse.",
     "choices": {
-      "A": "Lui souffler un mélange de justice et de miséricorde",
+      "A": "Lui souffler un mélange de justice et de bonté",
       "B": "Laisser sa décision reposer uniquement sur la loi humaine",
       "C": "Laisser le juge croire qu’il est ton bras de sanction sur Terre"
     },
-    "body": "Un juge doit prononcer une lourde peine et dit qu’il sent sur lui le regard du Ciel."
+    "body": "Un groupe religieux organise un procès public contre une idée jugée dangereuse."
   },
   "heaven_235": {
     "id": "heaven_235",
@@ -2822,7 +2822,7 @@
   "heaven_236": {
     "id": "heaven_236",
     "universe": "heaven_king",
-    "title": "Tourisme spirituel",
+    "title": "Voyages en lieux sacrés",
     "description": "Des voyages organisés promettent de 'se rapprocher du Paradis' en visitant des lieux sacrés.",
     "choices": {
       "A": "Permettre à certains voyageurs de vivre une vraie expérience intérieure",
@@ -2870,14 +2870,14 @@
   "heaven_240": {
     "id": "heaven_240",
     "universe": "heaven_king",
-    "title": "Paradis ou enfer dans les écoles",
-    "description": "Des programmes scolaires se disputent : faut-il parler du Paradis et de l’Enfer ou rester neutre ?",
+    "title": "Valeurs spirituelles à l’école",
+    "description": "Des programmes scolaires se disputent : faut-il parler de spiritualité ou rester neutre ?",
     "choices": {
-      "A": "Inspirer quelques enseignants à parler de liberté et de respect avant tout",
+      "A": "Inspirer quelques enseignants à parler surtout de liberté et de respect",
       "B": "Laisser le débat rester technique et administratif",
-      "C": "Laisser des groupes menacer d’Enfer les écoles jugées trop neutres"
+      "C": "Laisser des groupes faire pression sur les écoles jugées trop neutres"
     },
-    "body": "Des programmes scolaires se disputent : faut-il parler du Paradis et de l’Enfer ou rester neutre ?"
+    "body": "Des programmes scolaires se disputent : faut-il parler de spiritualité ou rester neutre ?"
   },
   "heaven_241": {
     "id": "heaven_241",
@@ -2930,26 +2930,26 @@
   "heaven_245": {
     "id": "heaven_245",
     "universe": "heaven_king",
-    "title": "Réconciliation impossible",
-    "description": "Deux villages s’accusent mutuellement d’être 'du côté de l’Enfer' après des décennies de conflit.",
+    "title": "Série sur les élus",
+    "description": "Une série raconte que seuls quelques humains seraient vraiment choisis.",
     "choices": {
       "A": "Inspirer quelques artisans de paix capables d’écouter les deux côtés",
       "B": "Laisser la haine religieuse se transmettre de génération en génération",
       "C": "Laisser des leaders promettre des sanctions célestes pour tout accord de paix"
     },
-    "body": "Deux villages s’accusent mutuellement d’être 'du côté de l’Enfer' après des décennies de conflit."
+    "body": "Une série raconte que seuls quelques humains seraient vraiment choisis."
   },
   "heaven_246": {
     "id": "heaven_246",
     "universe": "heaven_king",
-    "title": "Jeu de société sur le Paradis",
-    "description": "Un jeu de plateau très populaire met en scène des anges, des démons, des sanctions et des récompenses.",
+    "title": "Jeu de société sur le Ciel",
+    "description": "Un jeu de plateau populaire met en scène des anges, des démons, des règles dures et des récompenses.",
     "choices": {
-      "A": "Laisser certains joueurs y découvrir le goût de la coopération plutôt que la peur",
+      "A": "Laisser certains joueurs y découvrir surtout la coopération",
       "B": "Laisser le jeu rester un simple divertissement",
-      "C": "Laisser des groupes l’utiliser en classe pour menacer les enfants de sanctions réelles"
+      "C": "Laisser des groupes l’utiliser en classe pour faire peur aux enfants"
     },
-    "body": "Un jeu de plateau très populaire met en scène des anges, des démons, des sanctions et des récompenses."
+    "body": "Un jeu de plateau populaire met en scène des anges, des démons, des règles dures et des récompenses."
   },
   "heaven_247": {
     "id": "heaven_247",
@@ -3014,26 +3014,26 @@
   "heaven_252": {
     "id": "heaven_252",
     "universe": "heaven_king",
-    "title": "Podcast sur l’au-delà",
-    "description": "Un podcast très suivi parle chaque semaine de Paradis, d’Enfer et de jugement dernier.",
+    "title": "Bureau des regrets",
+    "description": "Un lieu symbolique propose d’écrire ses regrets pour trouver un peu de soulagement.",
     "choices": {
-      "A": "Inspirer des épisodes centrés sur la miséricorde et la responsabilité personnelle",
+      "A": "Inspirer des épisodes centrés sur la bonté et la responsabilité personnelle",
       "B": "Laisser le podcast surfer sur la peur pour faire de l’audience",
       "C": "Laisser certains auditeurs organiser des 'campagnes de sanction' contre ceux qu’ils jugent impies"
     },
-    "body": "Un podcast très suivi parle chaque semaine de Paradis, d’Enfer et de jugement dernier."
+    "body": "Un lieu symbolique propose d’écrire ses regrets pour trouver un peu de soulagement."
   },
   "heaven_253": {
     "id": "heaven_253",
     "universe": "heaven_king",
     "title": "Enfants qui jouent au jugement",
-    "description": "Dans une cour d’école, des enfants jouent à envoyer les autres au Paradis ou en Enfer selon leurs notes.",
+    "description": "Dans une cour d’école, des enfants jouent à classer les autres en haut ou en bas selon leurs notes.",
     "choices": {
-      "A": "Glisser une idée de jeu où l’on se soutient plutôt que se condamner",
+      "A": "Glisser une idée de jeu où l’on se soutient plutôt que se juger",
       "B": "Laisser ce jeu rester une simple moquerie d’enfants",
-      "C": "Laisser des adultes reprendre le même langage de sanction dans leurs discours"
+      "C": "Laisser des adultes reprendre ce langage de jugement dans leurs discours"
     },
-    "body": "Dans une cour d’école, des enfants jouent à envoyer les autres au Paradis ou en Enfer selon leurs notes."
+    "body": "Dans une cour d’école, des enfants jouent à classer les autres en haut ou en bas selon leurs notes."
   },
   "heaven_254": {
     "id": "heaven_254",
@@ -3159,13 +3159,13 @@
     "id": "heaven_264",
     "universe": "heaven_king",
     "title": "École de la peur",
-    "description": "Une école religieuse enseigne surtout la peur du feu éternel pour 'tenir' les élèves.",
+    "description": "Une école religieuse enseigne surtout la peur pour tenir les élèves tranquilles.",
     "choices": {
-      "A": "Inspirer un ou une prof à parler d’amour et de responsabilité plutôt que de sanctions",
+      "A": "Inspirer un ou une prof à parler d’amour et de responsabilité",
       "B": "Laisser cette pédagogie fonctionner par la peur",
-      "C": "Laisser l’administration menacer de l’Enfer les parents contestataires"
+      "C": "Laisser l’administration intimider les parents contestataires"
     },
-    "body": "Une école religieuse enseigne surtout la peur du feu éternel pour 'tenir' les élèves."
+    "body": "Une école religieuse enseigne surtout la peur pour tenir les élèves tranquilles."
   },
   "heaven_265": {
     "id": "heaven_265",
@@ -3175,7 +3175,7 @@
     "choices": {
       "A": "Laisser ce geste renforcer un lien confiant et simple",
       "B": "Ne pas intervenir, que cela reste une habitude d’enfance",
-      "C": "Laisser certains adultes affirmer que les enfants qui oublient seront sanctionnés"
+      "C": "Laisser certains adultes dire que les enfants qui oublient seront punis"
     },
     "body": "Des enfants déposent chaque soir des dessins et petits objets pour leurs anges gardiens."
   },
@@ -3254,14 +3254,14 @@
   "heaven_272": {
     "id": "heaven_272",
     "universe": "heaven_king",
-    "title": "Pont de lumière sur l’Enfer",
-    "description": "Des mystiques affirment pouvoir 'descendre' en prière jusqu’aux plus basses profondeurs.",
+    "title": "Place des idées interdites",
+    "description": "Une grande place devient le lieu de débats sur des idées religieuses jugées interdites.",
     "choices": {
       "A": "Autoriser quelques expériences d’amour désintéressé vers les plus perdus",
       "B": "Laisser ces récits passer pour des métaphores étranges",
       "C": "Laisser des autorités les dénoncer comme pactisant avec l’Enfer et les sanctionner"
     },
-    "body": "Des mystiques affirment pouvoir 'descendre' en prière jusqu’aux plus basses profondeurs."
+    "body": "Une grande place devient le lieu de débats sur des idées religieuses jugées interdites."
   },
   "heaven_273": {
     "id": "heaven_273",
@@ -3314,14 +3314,14 @@
   "heaven_277": {
     "id": "heaven_277",
     "universe": "heaven_king",
-    "title": "Enfants de l’Enfer",
-    "description": "Dans une ville marquée par le crime, certains enfants sont appelés 'enfants de l’Enfer'.",
+    "title": "Enfants mal étiquetés",
+    "description": "Dans une ville marquée par le crime, certains enfants reçoivent des étiquettes très dures.",
     "choices": {
       "A": "Mettre sur leur route des adultes capables de croire en eux",
-      "B": "Laisser ces étiquettes coller à leur peau",
-      "C": "Laisser des autorités religieuses valider ce langage de sanction"
+      "B": "Laisser ces étiquettes leur coller à la peau",
+      "C": "Laisser des autorités religieuses valider ce langage de rejet"
     },
-    "body": "Dans une ville marquée par le crime, certains enfants sont appelés 'enfants de l’Enfer'."
+    "body": "Dans une ville marquée par le crime, certains enfants reçoivent des étiquettes très dures."
   },
   "heaven_278": {
     "id": "heaven_278",
@@ -3338,14 +3338,14 @@
   "heaven_279": {
     "id": "heaven_279",
     "universe": "heaven_king",
-    "title": "Écrivain des enfers",
-    "description": "Un auteur décrit l’Enfer avec un réalisme glaçant et fascine autant qu’il terrorise.",
+    "title": "Écrivain de l’horreur",
+    "description": "Un auteur décrit un monde de peur avec un réalisme glaçant et fascine autant qu’il inquiète.",
     "choices": {
-      "A": "Lui souffler un personnage qui découvre une échappatoire inattendue",
+      "A": "Lui souffler un personnage qui découvre une issue inattendue",
       "B": "Laisser la fascination pour l’horreur grandir",
-      "C": "Laisser des groupes utiliser ses livres pour effrayer les enfants avec des sanctions"
+      "C": "Laisser des groupes utiliser ses livres pour effrayer les enfants"
     },
-    "body": "Un auteur décrit l’Enfer avec un réalisme glaçant et fascine autant qu’il terrorise."
+    "body": "Un auteur décrit un monde de peur avec un réalisme glaçant et fascine autant qu’il inquiète."
   },
   "heaven_280": {
     "id": "heaven_280",
@@ -3410,7 +3410,7 @@
   "heaven_285": {
     "id": "heaven_285",
     "universe": "heaven_king",
-    "title": "Marché des reliques",
+    "title": "Commerce d’objets sacrés",
     "description": "Un marché noir vend des reliques supposées garantir un accès prioritaire au Paradis.",
     "choices": {
       "A": "Faire émerger quelques enquêtes qui dévoilent l’arnaque",
@@ -3506,14 +3506,14 @@
   "heaven_293": {
     "id": "heaven_293",
     "universe": "heaven_king",
-    "title": "Paradis pour les animaux",
-    "description": "Une enfant demande si ses animaux iront eux aussi au Paradis.",
+    "title": "Les animaux au Ciel",
+    "description": "Une enfant demande si ses animaux pourront eux aussi rejoindre un lieu de paix après la mort.",
     "choices": {
-      "A": "Laisser naître chez elle une vision du Paradis comme lieu de douceur pour toute création",
+      "A": "Laisser naître chez elle une vision douce pour toute création",
       "B": "Laisser la question sans réponse nette",
-      "C": "Laisser un adulte lui dire que ses animaux sont perdus et qu’elle doit accepter cette sanction"
+      "C": "Laisser un adulte lui répondre de façon froide et blessante"
     },
-    "body": "Une enfant demande si ses animaux iront eux aussi au Paradis."
+    "body": "Une enfant demande si ses animaux pourront eux aussi rejoindre un lieu de paix après la mort."
   },
   "heaven_294": {
     "id": "heaven_294",
@@ -3530,7 +3530,7 @@
   "heaven_295": {
     "id": "heaven_295",
     "universe": "heaven_king",
-    "title": "Paradis d’entreprise",
+    "title": "Entreprise comme religion",
     "description": "Une grande entreprise parle de 'paradis fiscal' et de 'collaborateurs damnés' pour rire.",
     "choices": {
       "A": "Faire naître une réflexion plus honnête sur la justice sociale",
@@ -4130,14 +4130,14 @@
   "heaven_345": {
     "id": "heaven_345",
     "universe": "heaven_king",
-    "title": "Cercles de forgiveness",
-    "description": "Des cercles se créent pour apprendre à demander pardon et à pardonner.",
+    "title": "Guide des chemins spirituels",
+    "description": "Un guide tente d’expliquer les différents chemins spirituels avec des mots très savants.",
     "choices": {
-      "A": "Laisser naître de vraies réconciliations intérieures",
+      "A": "Laisser naître de vraies rapprochements intérieures",
       "B": "Laisser ces cercles rester expérimentaux et limités",
       "C": "Encourager une institution à récupérer l’idée et en établir un protocole fixe"
     },
-    "body": "Des cercles se créent pour apprendre à demander pardon et à pardonner."
+    "body": "Un guide tente d’expliquer les différents chemins spirituels avec des mots très savants."
   },
   "heaven_346": {
     "id": "heaven_346",
