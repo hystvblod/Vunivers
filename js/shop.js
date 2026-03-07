@@ -2,7 +2,7 @@
 // Boutique rewarded / store via purchases.js
 // Boutique cosmétiques branchée sur VUserData
 // Popup personnalisation aussi exploitable depuis game.html
-// ✅ Lightbox propre avec vraie preview via iframe game.html?preview=1
+// ✅ Lightbox 2 slides : visuel cosmétique + mise en situation preview
 
 (function () {
   "use strict";
@@ -250,13 +250,28 @@
     const store = readStoredUserData();
     const live = window.VUserData || {};
     const liveData = typeof live.getData === "function" ? (live.getData() || {}) : {};
+    const liveLoad = typeof live.load === "function" ? (live.load() || {}) : {};
+
+    const liveVcoins =
+      typeof live.getVcoins === "function" ? live.getVcoins() :
+      typeof live.getVCoins === "function" ? live.getVCoins() :
+      null;
+
+    const liveJetons =
+      typeof live.getJetons === "function" ? live.getJetons() :
+      null;
 
     return {
       vcoins: pickBalance([
-        typeof live.getVCoins === "function" ? live.getVCoins() : null,
-        typeof live.getBalance === "function" ? live.getBalance("vcoins") : null,
+        liveVcoins,
         liveData.vcoins,
         liveData.coins,
+        liveLoad.vcoins,
+        liveLoad.coins,
+        liveLoad.balance && liveLoad.balance.vcoins,
+        liveLoad.wallet && liveLoad.wallet.vcoins,
+        liveLoad.profile && liveLoad.profile.vcoins,
+        liveLoad.user && liveLoad.user.vcoins,
         store.vcoins,
         store.coins,
         store.balance && store.balance.vcoins,
@@ -265,10 +280,15 @@
         store.user && store.user.vcoins
       ]),
       jetons: pickBalance([
-        typeof live.getJetons === "function" ? live.getJetons() : null,
-        typeof live.getBalance === "function" ? live.getBalance("jetons") : null,
+        liveJetons,
         liveData.jetons,
         liveData.tokens,
+        liveLoad.jetons,
+        liveLoad.tokens,
+        liveLoad.balance && liveLoad.balance.jetons,
+        liveLoad.wallet && liveLoad.wallet.jetons,
+        liveLoad.profile && liveLoad.profile.jetons,
+        liveLoad.user && liveLoad.user.jetons,
         store.jetons,
         store.tokens,
         store.balance && store.balance.jetons,
@@ -288,6 +308,13 @@
 
     if (coinsEl) coinsEl.textContent = String(balances.vcoins);
     if (jetonsEl) jetonsEl.textContent = String(balances.jetons);
+  }
+
+  async function refreshLiveBalancesHard() {
+    try {
+      await window.VUserData?.refresh?.();
+    } catch (_) {}
+    renderTopBalances();
   }
 
   function normalizeCarouselIndex(index, total) {
@@ -312,6 +339,29 @@
     const style = document.createElement("style");
     style.id = "vr-cosmetics-inline-style";
     style.textContent = `
+      .vr-shop-top{
+        flex-direction:row !important;
+        align-items:center !important;
+        justify-content:center !important;
+        gap:10px !important;
+        min-height:48px !important;
+        margin-bottom:10px !important;
+      }
+
+      .vr-shop-qty{
+        width:auto !important;
+        margin:0 !important;
+        text-align:left !important;
+        display:inline-flex !important;
+        align-items:center !important;
+        justify-content:flex-start !important;
+      }
+
+      .vr-shop-item[data-sku="vuniverse_no_ads"] .vr-shop-top,
+      .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-top{
+        justify-content:center !important;
+      }
+
       .vr-cosmetics{display:flex;flex-direction:column;gap:14px;margin-top:14px;padding-bottom:10px}
       .vr-universe-block{position:relative;overflow:hidden;border-radius:20px;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.18);box-shadow:0 18px 34px rgba(0,0,0,.26);padding:14px 12px 12px}
       .vr-universe-block::before{content:"";position:absolute;inset:-2px;pointer-events:none;background:radial-gradient(520px 220px at 15% 12%, rgba(255,255,255,.08), transparent 60%),radial-gradient(520px 260px at 85% 18%, rgba(255,214,156,.08), transparent 60%),linear-gradient(180deg, rgba(255,255,255,.03), transparent 40%);opacity:.9}
@@ -319,7 +369,6 @@
       .vr-cos-row{position:relative;z-index:1;margin:0 0 14px}
       .vr-cos-row:last-child{margin-bottom:0}
       .vr-cos-carousel{display:grid;grid-template-columns:36px minmax(0,1fr) 36px;align-items:center;gap:8px}
-      /* ✅ flèches shop sans ronds */
       .vr-cos-arrow{width:36px;height:36px;border:none;background:transparent;box-shadow:none;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:rgba(255,255,255,.96);font-size:28px;font-weight:900;line-height:1;text-shadow:0 10px 22px rgba(0,0,0,.45)}
       .vr-cos-viewport{min-width:0;overflow:hidden;touch-action:pan-y}
       .vr-cos-track{display:flex;transition:transform .24s ease;will-change:transform}
@@ -878,7 +927,7 @@
         setStatus("store-status", "");
       }
 
-      renderTopBalances();
+      await refreshLiveBalancesHard();
       renderCosmetics();
     } catch (_) {
       setStatus("store-status", t("common.error_generic", "Erreur"));
@@ -900,7 +949,6 @@
     const back = $("btn-back");
     const profile = $("btn-profile");
 
-    /* ✅ FIX: retour shop -> index toujours */
     if (back) {
       back.addEventListener("click", function (e) {
         e.preventDefault();
@@ -948,21 +996,21 @@
 
     window.addEventListener("vr:profile", function () {
       if (!isShopPage()) return;
-      renderTopBalances();
+      refreshLiveBalancesHard();
       renderCosmetics();
     });
 
     window.addEventListener("focus", function () {
-      renderTopBalances();
+      refreshLiveBalancesHard();
     });
 
     window.addEventListener("storage", function () {
-      renderTopBalances();
+      refreshLiveBalancesHard();
     });
 
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) return;
-      renderTopBalances();
+      refreshLiveBalancesHard();
     });
 
     setInterval(function () {

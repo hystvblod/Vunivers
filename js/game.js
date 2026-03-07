@@ -3462,19 +3462,16 @@ body.vr-peek-mode .vr-gauge-preview{
       body.vr-preview-mode{
         overflow:hidden !important;
         overscroll-behavior:none !important;
+        height:100% !important;
       }
 
+      body.vr-preview-mode > a.vr-icon-button,
+      body.vr-preview-mode > button#btn-customize,
+      body.vr-preview-mode .vr-top-actions-game,
       body.vr-preview-mode .vr-game-header,
       body.vr-preview-mode .vr-popup,
       body.vr-preview-mode #vr-ending-overlay,
       body.vr-preview-mode #vr-token-gauge-overlay{
-        display:none !important;
-      }
-
-      body.vr-preview-mode .vr-card-title,
-      body.vr-preview-mode .vr-card-text,
-      body.vr-preview-mode .vr-choice-label,
-      body.vr-preview-mode .vr-gauge-label{
         display:none !important;
       }
 
@@ -3483,12 +3480,26 @@ body.vr-peek-mode .vr-gauge-preview{
         pointer-events:none !important;
       }
 
+      body.vr-preview-mode .vr-main{
+        height:100vh !important;
+        min-height:100vh !important;
+        overflow:hidden !important;
+        padding-top:0 !important;
+      }
+
       body.vr-preview-mode #view-game{
         min-height:100vh !important;
+        height:100vh !important;
+        overflow:hidden !important;
       }
 
       body.vr-preview-mode .vr-card-container{
-        margin-top: 8px !important;
+        margin-top:0 !important;
+      }
+
+      body.vr-preview-mode .vr-gauge-value,
+      body.vr-preview-mode .vr-gauge-delta{
+        display:none !important;
       }
     `;
     document.head.appendChild(style);
@@ -3511,24 +3522,39 @@ body.vr-peek-mode .vr-gauge-preview{
     const b = document.getElementById("choice-B");
     const c = document.getElementById("choice-C");
 
-    if (title) title.textContent = "";
-    if (text) text.textContent = "";
-    if (a) a.textContent = "";
-    if (b) b.textContent = "";
-    if (c) c.textContent = "";
+    if (title) title.textContent = t("shop.preview.sample_title", "Décision");
+    if (text) text.textContent = t("shop.preview.sample_text", "Aperçu en situation du cosmétique sélectionné.");
+    if (a) a.textContent = t("shop.preview.sample_choice_a", "Accepter");
+    if (b) b.textContent = t("shop.preview.sample_choice_b", "Refuser");
+    if (c) c.textContent = t("shop.preview.sample_choice_c", "Reporter");
 
     const fills = document.querySelectorAll(".vr-gauge-fill");
     const previews = document.querySelectorAll(".vr-gauge-preview");
+    const labels = document.querySelectorAll(".vr-gauge-label");
+    const vals = document.querySelectorAll(".vr-gauge-val");
+    const deltas = document.querySelectorAll(".vr-gauge-delta");
+
+    labels.forEach(function (el) {
+      el.textContent = "";
+    });
+
+    vals.forEach(function (el) {
+      el.textContent = "";
+    });
+
+    deltas.forEach(function (el) {
+      el.textContent = "";
+    });
 
     fills.forEach(function (el) {
-      el.style.setProperty("--vr-pct", "60%");
+      el.style.setProperty("--vr-pct", "58%");
       el.style.width = "";
     });
 
     previews.forEach(function (el) {
-      el.style.setProperty("--vr-pct", "68%");
+      el.style.setProperty("--vr-pct", "0%");
       el.style.width = "";
-      el.style.opacity = "0.22";
+      el.style.opacity = "0";
     });
   }
 
@@ -3757,6 +3783,12 @@ window.VRGame = {
 
     const previewCfg = window.VRPreviewMode?.getConfig?.() || { enabled: false };
     if (previewCfg.enabled) {
+      try {
+        if (window.VRI18n && typeof window.VRI18n.initI18n === "function") {
+          await window.VRI18n.initI18n();
+        }
+      } catch (_) {}
+
       try {
         await window.VRPreviewMode.init();
       } catch (e) {
