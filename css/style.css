@@ -2146,6 +2146,9 @@ body[data-universe="western_president"].vr-body-game #view-game .vr-choice-label
 
 body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-button{
   overflow: hidden !important;
+  width: 120% !important;
+  max-width: 120% !important;
+  margin-inline: auto !important;
   background-size: contain !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
@@ -2153,11 +2156,13 @@ body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-butto
 
 body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main{
   overflow: hidden !important;
+  width: 86% !important;
+  max-width: 86% !important;
+  margin-inline: auto !important;
   background-size: contain !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
 }
-
 body.vr-body-game[data-universe="western_president"]{
   --vr-card-w: clamp(460px, 100vw, 1240px);
   --vr-game-gap: clamp(6px, 0.8svh, 12px);
