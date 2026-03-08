@@ -2168,6 +2168,9 @@ body.vr-body-game[data-universe="western_president"]{
   --vr-game-gap: clamp(6px, 0.8svh, 12px);
   --vr-stack-gap: clamp(10px, 1.2svh, 22px);
   --vr-choices-gap: clamp(10px, 1.2svh, 22px);
+  
+    --vr-scn-h: clamp(190px, 24svh, 360px);
+  --vr-choice-h: clamp(120px, 17svh, 210px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
