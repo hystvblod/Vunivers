@@ -2728,7 +2728,6 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choices{
   gap: clamp(8px, 1svh, 14px) !important;
 }
 
-body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-button{
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
   width: min(72%, 620px) !important;
