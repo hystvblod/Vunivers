@@ -2677,7 +2677,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-center .vr-hud-years{
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
   overflow: hidden !important;
-  background-size: 90% 90% !important;
+  background-size: 100% 110% !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   box-sizing: border-box !important;
@@ -2723,7 +2723,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choices{
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-button{
   overflow: hidden !important;
-  background-size: 80% 80% !important;
+  background-size: 100% 110% !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   box-sizing: border-box !important;
