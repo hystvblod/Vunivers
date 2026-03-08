@@ -722,10 +722,24 @@
         lsSet(LEGACY_PREFIX + "_shop_focus_universe", universeId);
       }
 
-      function isUnlocked(id) {
+          function isUnlocked(id) {
         try {
           if (window.VUserData && typeof window.VUserData.isUniverseUnlocked === "function") {
             return !!window.VUserData.isUniverseUnlocked(id);
+          }
+        } catch (_) {}
+
+        try {
+          const raw =
+            localStorage.getItem("vuniverse_user_data") ||
+            localStorage.getItem("vrealms_user_data");
+
+          if (raw) {
+            const data = JSON.parse(raw);
+            const list = Array.isArray(data?.unlocked_universes)
+              ? data.unlocked_universes
+              : [];
+            if (list.includes(id)) return true;
           }
         } catch (_) {}
 
@@ -1027,11 +1041,13 @@
         });
       });
 
+       let __vrIndexInitPromise = null;
+      try { __vrIndexInitPromise = window.VUserData?.init?.() || null; } catch (_) {}
+
       applyLocks();
 
       (async function refreshLater(){
-        try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
-        try { await window.VUserData?.init?.(); } catch (_) {}
+        try { await __vrIndexInitPromise; } catch (_) {}
         try { applyLocks(); } catch (_) {}
       })();
 
