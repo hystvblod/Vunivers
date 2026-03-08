@@ -3458,12 +3458,35 @@ body.vr-peek-mode .vr-gauge-preview{
     return PREVIEW_DEFAULT_ASSETS?.[universeId]?.[category] || "";
   }
 
-  function resolvePreviewAssets(cfg) {
-    return {
-      background: cfg.category === "background" ? cfg.src : getDefaultPreviewAsset(cfg.universeId, "background"),
-      message: cfg.category === "message" ? cfg.src : getDefaultPreviewAsset(cfg.universeId, "message"),
-      choice: cfg.category === "choice" ? cfg.src : getDefaultPreviewAsset(cfg.universeId, "choice")
-    };
+function resolvePreviewAssets(cfg) {
+  function getEquippedOrDefault(category) {
+    try {
+      const equippedId = String(window.VUserData?.getEquippedCosmetic?.(cfg.universeId, category) || "");
+      if (equippedId) {
+        const item = window.VRCosmeticsCatalog?.getItem?.(cfg.universeId, category, equippedId);
+        if (item?.img) return item.img;
+      }
+    } catch (_) {}
+
+    return getDefaultPreviewAsset(cfg.universeId, category);
+  }
+
+  return {
+    background:
+      cfg.category === "background" && cfg.src
+        ? cfg.src
+        : getEquippedOrDefault("background"),
+
+    message:
+      cfg.category === "message" && cfg.src
+        ? cfg.src
+        : getEquippedOrDefault("message"),
+
+    choice:
+      cfg.category === "choice" && cfg.src
+        ? cfg.src
+        : getEquippedOrDefault("choice")
+  };
   }
 
   function setBgImage(el, src) {

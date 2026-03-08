@@ -2633,7 +2633,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-name{
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
   text-align:center !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-1px) !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.18) !important;
 }
 
@@ -2642,7 +2642,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-years{
   font-weight: 900 !important;
   line-height:1 !important;
   color:#111 !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-1px) !important;
   opacity: 1 !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.18) !important;
   white-space: nowrap !important;
@@ -2723,7 +2723,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choices{
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-button{
   overflow: hidden !important;
-  background-size: 100% 120% !important;
+  background-size: 100% 90% !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   box-sizing: border-box !important;
