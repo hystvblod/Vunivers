@@ -86,7 +86,7 @@
   "heaven_008": {
     "id": "heaven_008",
     "universe": "heaven_king",
-    "title": "Expérience scientifique sur la prière",
+    "title": "Étude sur la prière",
     "description": "Des chercheurs testent si la prière a un effet mesurable sur la réalité à grande échelle.",
     "choices": {
       "A": "Influencer l’expérience pour montrer un léger effet",
@@ -351,13 +351,13 @@
     "id": "heaven_030",
     "universe": "heaven_king",
     "title": "Mariage inter-croyances",
-    "description": "Deux personnes de traditions spirituelles opposées veulent se marier malgré l’opposition de leurs familles.",
+    "description": "Deux personnes de traditions opposées veulent se marier malgré leurs familles.",
     "choices": {
       "A": "Renforcer leur amour et leur patience",
       "B": "Rester neutre et observer",
       "C": "Laisser les familles gagner pour préserver l’harmonie des cultes"
     },
-    "body": "Deux personnes de traditions spirituelles opposées veulent se marier malgré l’opposition de leurs familles."
+    "body": "Deux personnes de traditions opposées veulent se marier malgré leurs familles."
   },
   "heaven_031": {
     "id": "heaven_031",
@@ -459,13 +459,13 @@
     "id": "heaven_039",
     "universe": "heaven_king",
     "title": "Réveil nocturne",
-    "description": "Des milliers de personnes se réveillent la nuit avec la même question intérieure : 'Est-ce qu’il y a quelqu’un ?'",
+    "description": "La nuit, des milliers de personnes se demandent s’il y a quelqu’un.",
     "choices": {
       "A": "Répondre par une sensation de présence aimante",
       "B": "Laisser chacun interpréter ce moment comme il veut",
       "C": "Se manifester par un phénomène cosmique visible"
     },
-    "body": "Des milliers de personnes se réveillent la nuit avec la même question intérieure : 'Est-ce qu’il y a quelqu’un ?'"
+    "body": "La nuit, des milliers de personnes se demandent s’il y a quelqu’un."
   },
   "heaven_040": {
     "id": "heaven_040",
@@ -602,7 +602,7 @@
   "heaven_051": {
     "id": "heaven_051",
     "universe": "heaven_king",
-    "title": "Portail instable vers le monde d’en bas",
+    "title": "Portail vers le monde d’en bas",
     "description": "Un passage se fissure entre le Paradis et le monde d’en bas, et certains mortels voient des images sombres.",
     "choices": {
       "A": "Sceller ce passage immédiatement",
@@ -662,7 +662,7 @@
   "heaven_056": {
     "id": "heaven_056",
     "universe": "heaven_king",
-    "title": "Église bâtie sur un ancien portail infernal",
+    "title": "Église sur un portail infernal",
     "description": "Une communauté paroissiale a construit son lieu de prière sur un ancien point d’accès aux Enfers.",
     "choices": {
       "A": "Sanctifier profondément ce lieu",
@@ -674,7 +674,7 @@
   "heaven_057": {
     "id": "heaven_057",
     "universe": "heaven_king",
-    "title": "Musique des sphères et cris des Enfers",
+    "title": "Sphères et cris des Enfers",
     "description": "Quelques personnes entendent parfois une musique céleste, d’autres un écho lointain des Enfers.",
     "choices": {
       "A": "Renforcer la musique du Paradis pour couvrir les cris",
@@ -698,7 +698,7 @@
   "heaven_059": {
     "id": "heaven_059",
     "universe": "heaven_king",
-    "title": "Pont fragile entre Paradis et Enfers",
+    "title": "Pont entre Paradis et Enfers",
     "description": "Une âme coincée entre Paradis et Enfers hésite encore sur ses choix de vie.",
     "choices": {
       "A": "Lui montrer clairement la douceur du Paradis",
@@ -1010,7 +1010,7 @@
   "heaven_085": {
     "id": "heaven_085",
     "universe": "heaven_king",
-    "title": "Centre de réhabilitation des tentateurs",
+    "title": "Centre pour tentateurs",
     "description": "Quelques anges proposent un programme expérimental pour réhabiliter certains démons mineurs.",
     "choices": {
       "A": "Autoriser ce programme avec une stricte surveillance",
@@ -1310,7 +1310,7 @@
   "heaven_110": {
     "id": "heaven_110",
     "universe": "heaven_king",
-    "title": "Famille trop dure au nom de la foi",
+    "title": "Famille dure au nom de la foi",
     "description": "Une famille se sert de la foi pour justifier une éducation très dure envers les enfants.",
     "choices": {
       "A": "Inspirer un adulte bienveillant qui montre une autre voie",
@@ -1347,13 +1347,13 @@
     "id": "heaven_113",
     "universe": "heaven_king",
     "title": "Appli de prière punitive",
-    "description": "Une application promet des points de 'paradis' mais retire des points et affiche des flammes d’Enfer dès qu’un jour de prière est manqué.",
+    "description": "Une appli retire des points de paradis si une prière est manquée.",
     "choices": {
       "A": "Transformer doucement l’appli pour valoriser la sincérité plutôt que la peur",
       "B": "Laisser l’appli suivre sa logique de gamification",
       "C": "Renforcer le système de pénalités quand un utilisateur 'faillit'"
     },
-    "body": "Une application promet des points de 'paradis' mais retire des points et affiche des flammes d’Enfer dès qu’un jour de prière est manqué."
+    "body": "Une appli retire des points de paradis si une prière est manquée."
   },
   "heaven_114": {
     "id": "heaven_114",
@@ -1731,13 +1731,13 @@
     "id": "heaven_145",
     "universe": "heaven_king",
     "title": "Géographie punitive du Paradis",
-    "description": "Un prédicateur décrit le Paradis avec des quartiers de prestige et des zones 'limites Enfer' pour les 'moins bons'.",
+    "description": "Un prédicateur imagine un Paradis à étages, proche de l’Enfer pour les moins bons.",
     "choices": {
       "A": "Inspirer des fidèles pour se moquer doucement de cette idée",
       "B": "Laisser ce modèle se diffuser",
       "C": "Laisser les gens croire que leurs voisins seront 'relégués' plus loin de toi comme sanction"
     },
-    "body": "Un prédicateur décrit le Paradis avec des quartiers de prestige et des zones 'limites Enfer' pour les 'moins bons'."
+    "body": "Un prédicateur imagine un Paradis à étages, proche de l’Enfer pour les moins bons."
   },
   "heaven_146": {
     "id": "heaven_146",
@@ -1922,7 +1922,7 @@
   "heaven_161": {
     "id": "heaven_161",
     "universe": "heaven_king",
-    "title": "Village partagé entre deux prêtres",
+    "title": "Village entre deux prêtres",
     "description": "Un prêtre parle surtout de bonté, l’autre surtout de lois et de sanctions.",
     "choices": {
       "A": "Renforcer la voix de celui qui parle de bonté",
@@ -2018,7 +2018,7 @@
   "heaven_169": {
     "id": "heaven_169",
     "universe": "heaven_king",
-    "title": "Petit sanctuaire au bord de la route",
+    "title": "Sanctuaire au bord de route",
     "description": "Un petit autel au bord de la route subsiste, entretenu par une seule personne âgée.",
     "choices": {
       "A": "Lui donner parfois un sentiment fort de présence",
@@ -2306,7 +2306,7 @@
   "heaven_193": {
     "id": "heaven_193",
     "universe": "heaven_king",
-    "title": "Conférence sur la peur et l’amour",
+    "title": "Conférence peur et amour",
     "description": "Une grande conférence débat : vaut-il mieux prêcher par amour ou par peur ?",
     "choices": {
       "A": "Donner de la force aux intervenants qui parlent de compassion",
@@ -2582,7 +2582,7 @@
   "heaven_216": {
     "id": "heaven_216",
     "universe": "heaven_king",
-    "title": "Ville qui discute avec les démons",
+    "title": "Ville qui parle aux démons",
     "description": "Des cercles occultes prétendent négocier avec les forces infernales pour obtenir pouvoir et protection.",
     "choices": {
       "A": "Inspirer des personnes à proposer un autre chemin que cette fascination sombre",
@@ -2691,13 +2691,13 @@
     "id": "heaven_225",
     "universe": "heaven_king",
     "title": "Pont final avant la mort",
-    "description": "Dans un hôpital, une équipe veut accompagner spirituellement les mourants, sans imposer ni Paradis ni Enfer.",
+    "description": "À l’hôpital, une équipe accompagne les mourants sans imposer de croyance.",
     "choices": {
       "A": "Faire passer à travers eux une vraie douceur qui apaise les peurs",
       "B": "Laisser cet accompagnement rester neutre et protocolaire",
       "C": "Laisser des visiteurs extérieurs venir annoncer des sanctions de dernière minute"
     },
-    "body": "Dans un hôpital, une équipe veut accompagner spirituellement les mourants, sans imposer ni Paradis ni Enfer."
+    "body": "À l’hôpital, une équipe accompagne les mourants sans imposer de croyance."
   },
   "heaven_226": {
     "id": "heaven_226",
@@ -4454,7 +4454,7 @@
   "heaven_372": {
     "id": "heaven_372",
     "universe": "heaven_king",
-    "title": "Atelier de communication non violente",
+    "title": "Atelier de parole apaisée",
     "description": "Un formateur propose des séances pour apprendre à dialoguer sans agressivité.",
     "choices": {
       "A": "Laisser certains découvrir une vraie manière de parler avec le cœur",
@@ -4634,7 +4634,7 @@
   "heaven_387": {
     "id": "heaven_387",
     "universe": "heaven_king",
-    "title": "Cartes postales pour les soignants",
+    "title": "Cartes pour les soignants",
     "description": "Des habitants écrivent des cartes de remerciement aux soignants de l’hôpital.",
     "choices": {
       "A": "Laisser ces mots toucher vraiment le cœur de ceux qui les reçoivent",
@@ -4706,7 +4706,7 @@
   "heaven_393": {
     "id": "heaven_393",
     "universe": "heaven_king",
-    "title": "Podcast 'une bonne nouvelle par jour'",
+    "title": "Podcast bonne nouvelle du jour",
     "description": "Un podcast partage chaque jour une petite bonne nouvelle vraie.",
     "choices": {
       "A": "Souffler des histoires qui redonnent vraiment confiance en l’humanité",
