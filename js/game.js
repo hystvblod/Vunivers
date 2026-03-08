@@ -3482,9 +3482,18 @@ body.vr-peek-mode .vr-gauge-preview{
     style.textContent = `
       html.vr-preview-mode,
       body.vr-preview-mode{
+        width:100% !important;
+        height:100% !important;
+        margin:0 !important;
         overflow:hidden !important;
         overscroll-behavior:none !important;
-        height:100% !important;
+        background:#0b1220 !important;
+      }
+
+      body.vr-preview-mode{
+        --vr-preview-base-w: 430;
+        --vr-preview-base-h: 932;
+        --vr-preview-scale: 1;
       }
 
       body.vr-preview-mode > a.vr-icon-button,
@@ -3498,33 +3507,27 @@ body.vr-peek-mode .vr-gauge-preview{
       }
 
       body.vr-preview-mode .vr-main{
-        height:100vh !important;
-        min-height:100vh !important;
-        overflow:hidden !important;
+        position:fixed !important;
+        left:50% !important;
+        top:50% !important;
+        width:calc(var(--vr-preview-base-w) * 1px) !important;
+        min-width:calc(var(--vr-preview-base-w) * 1px) !important;
+        max-width:none !important;
+        height:calc(var(--vr-preview-base-h) * 1px) !important;
+        min-height:calc(var(--vr-preview-base-h) * 1px) !important;
+        max-height:none !important;
         padding:0 !important;
+        margin:0 !important;
+        overflow:hidden !important;
+        transform:translate(-50%, -50%) scale(var(--vr-preview-scale)) !important;
+        transform-origin:center center !important;
       }
 
       body.vr-preview-mode #view-game{
-        min-height:100vh !important;
-        height:100vh !important;
+        width:100% !important;
+        height:100% !important;
+        min-height:100% !important;
         overflow:hidden !important;
-        padding:8px 10px 10px !important;
-      }
-
-      body.vr-preview-mode .vr-hud{
-        margin-bottom:0 !important;
-      }
-
-      body.vr-preview-mode .vr-gauges-row{
-        margin-bottom:2px !important;
-      }
-
-      body.vr-preview-mode .vr-card-container{
-        margin-top:0 !important;
-      }
-
-      body.vr-preview-mode .vr-card-stack{
-        gap:8px !important;
       }
 
       body.vr-preview-mode .vr-gauge-value,
@@ -3538,6 +3541,21 @@ body.vr-peek-mode .vr-gauge-preview{
       }
     `;
     document.head.appendChild(style);
+  }
+
+    function updatePreviewScale() {
+    if (!document.body.classList.contains("vr-preview-mode")) return;
+
+    const baseW = 430;
+    const baseH = 932;
+    const pad = 8;
+
+    const availW = Math.max(0, window.innerWidth - (pad * 2));
+    const availH = Math.max(0, window.innerHeight - (pad * 2));
+
+    const scale = Math.min(availW / baseW, availH / baseH);
+
+    document.body.style.setProperty("--vr-preview-scale", String(Math.max(0.1, scale)));
   }
 
   function resetPreviewMeta() {
@@ -3618,6 +3636,12 @@ body.vr-peek-mode .vr-gauge-preview{
 
     document.documentElement.classList.add("vr-preview-mode");
     document.body.classList.add("vr-preview-mode");
+
+    updatePreviewScale();
+    try { window.addEventListener("resize", updatePreviewScale, { passive: true }); } catch (_) {}
+    try { requestAnimationFrame(updatePreviewScale); } catch (_) {}
+    try { setTimeout(updatePreviewScale, 80); } catch (_) {}
+    try { setTimeout(updatePreviewScale, 250); } catch (_) {}
 
     try { await window.VUserData?.init?.(); } catch (_) {}
 
