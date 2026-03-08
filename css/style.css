@@ -2145,13 +2145,17 @@ body[data-universe="western_president"].vr-body-game #view-game .vr-choice-label
 }
 
 body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-button{
-  background-size: 100% 110% !important;
-  background-position: center !important;
+  overflow: hidden !important;
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
 }
+
 body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main{
-  overflow: hidden;
-  background-size: 90% 105% !important;
-  background-position: center !important;
+  overflow: hidden !important;
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
 }
 
 body.vr-body-game[data-universe="western_president"]{
