@@ -2723,7 +2723,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choices{
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-button{
   overflow: hidden !important;
-  background-size: 100% 110% !important;
+  background-size: 100% 120% !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   box-sizing: border-box !important;
