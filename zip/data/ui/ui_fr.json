@@ -13,7 +13,9 @@
     "buy": "Acheter",
     "owned": "Possédé",
     "locked": "À débloquer",
-    "equipped": "Équipé"
+    "equipped": "Équipé",
+    "error_generic": "Erreur",
+    "unavailable": "Indisponible"
   },
   "auth": {
     "username": {
@@ -56,11 +58,31 @@
     "settings_ads_personalized_label": "Publicités personnalisées",
     "settings_ads_personalized_desc": "Autoriser des publicités plus pertinentes. Tu peux changer à tout moment.",
     "settings_ads_saved": "Préférence publicitaire enregistrée.",
+    "settings_faq_title": "FAQ",
+    "settings_faq_label": "Ouvrir la FAQ",
+    "settings_faq_desc": "Réponses sur les pièces, années, jetons, badges et pseudo.",
+    "settings_open_faq_aria": "Ouvrir la FAQ",
     "settings_help_title": "Aide",
     "settings_help_email_label": "Contact :",
     "settings_help_email": "help.vboldstudio@gmail.com",
     "settings_msg_saved": "Langue enregistrée.",
     "settings_msg_saved_local": "Langue enregistrée sur l’appareil. Synchronisation serveur plus tard.",
+    "faq_title": "FAQ",
+    "faq_subtitle": "Retrouve ici les réponses aux questions les plus fréquentes.",
+    "faq_back_settings_aria": "Retour aux paramètres",
+    "faq_open_profile_aria": "Ouvrir le profil",
+    "faq_q1": "Comment gagner des pièces ?",
+    "faq_a1": "À la fin d’une partie, tu gagnes 10 VCoins par année complète. Une année correspond à 4 choix, donc 1 choix représente environ 3 mois. Tu peux aussi doubler le gain de fin avec une pub récompensée.",
+    "faq_q2": "Comment fonctionnent les années ?",
+    "faq_a2": "Le jeu compte 4 choix pour valider 1 année complète. Tant que tu n’as pas atteint 4 choix, tu restes dans la même année affichée.",
+    "faq_q3": "À quoi servent les jetons ?",
+    "faq_a3": "Les jetons servent aux actions spéciales du jeu. Selon la situation, ils peuvent permettre de revivre, voir les 15 prochaines décisions, revenir de 3 choix en arrière ou remettre une jauge à 50%.",
+    "faq_q4": "Comment doubler mon gain de fin ?",
+    "faq_a4": "Quand une partie se termine, un bouton permet de regarder une pub récompensée pour doubler le gain final en VCoins. Si la pub n’est pas disponible, le gain reste normal.",
+    "faq_q5": "Comment fonctionnent les badges du profil ?",
+    "faq_a5": "Les badges sont séparés par univers. Ils se débloquent pendant une partie si tu es encore en vie au bon moment : bronze à 40 choix, argent à 60 choix et or à 100 choix.",
+    "faq_q6": "Comment changer mon pseudo ?",
+    "faq_a6": "Va dans Profil, appuie sur le bouton pour modifier le pseudo, entre ton nouveau nom puis enregistre. Le pseudo doit contenir entre 3 et 20 caractères et utiliser seulement des lettres, chiffres, tirets bas (_) ou tirets (-).",
     "lang_name": {
       "en": "Anglais",
       "fr": "Français",
@@ -137,8 +159,8 @@
         "text": "Annule tes 3 derniers choix"
       },
       "peek": {
-        "title": "Voir les effets",
-        "text": "Pendant 15 choix, affiche un aperçu des effets sur les jauges."
+        "title": "Voir les effets 15",
+        "text": "Pendant 15 choix, les jauges concernées clignotent et affichent un aperçu."
       },
       "close": {
         "text": "Fermer ce menu"
@@ -156,7 +178,17 @@
       "undo_fail": "Impossible de revenir en arrière",
       "undo_done": "Retour -3 effectué",
       "gauge_set_50": "Jauge remise à 50%",
-      "peek_on": "Aperçu activé pour les 15 prochaines décisions"
+      "peek_on": "Peek activé : 15 prochaines décisions"
+    },
+    "undo": {
+      "fail": {
+        "title": "Retour arrière",
+        "body": "Impossible de revenir en arrière. Rien n’a été modifié."
+      },
+      "ok": {
+        "title": "Retour arrière",
+        "body": "3 choix annulés. Tu peux continuer."
+      }
     }
   },
   "coins": {
@@ -164,7 +196,7 @@
       "title": "Pièces",
       "ad": {
         "title": "Regarder une pub",
-        "text": "Gagne 500 pièces"
+        "text": "Gagne 100 pièces"
       },
       "shop": {
         "title": "Aller à la boutique",
@@ -175,7 +207,7 @@
       }
     },
     "toast": {
-      "reward_ok": "+500 pièces ajoutées",
+      "reward_ok": "+100 pièces ajoutées",
       "reward_fail": "Pub indisponible"
     }
   },
@@ -212,7 +244,7 @@
     },
     "ending": {
       "title": "Fin du règne",
-      "body": "Votre règne s’achève ici.",
+      "body": "Votre règne s'achève ici.",
       "double_gain": "Doubler ton gain",
       "double_gain_sub": "Regarder une pub récompensée",
       "reward_claimed": "Gain doublé crédité",
@@ -220,6 +252,9 @@
       "revive_token": "Revivre avec 1 jeton"
     },
     "year_label": "Année"
+  },
+  "event": {
+    "title": "Événement"
   },
   "profile": {
     "title": "Profil",
@@ -267,7 +302,7 @@
     "reward_vcoins_x100": "x100",
     "pack_jetons_12": "12",
     "pack_jetons_30": "30",
-    "pack_vcoins_500": "500",
+    "pack_vcoins_100": "100",
     "pack_vcoins_1200": "1200",
     "pack_vcoins_3000": "3000",
     "pack_no_ads": "No Ads",
@@ -404,6 +439,10 @@
     "ads_personalized_label": "Publicités personnalisées",
     "ads_personalized_desc": "Autoriser des publicités plus pertinentes. Tu peux changer à tout moment.",
     "ads_saved": "Préférence publicitaire enregistrée.",
+    "faq_title": "FAQ",
+    "faq_label": "Ouvrir la FAQ",
+    "faq_desc": "Réponses sur les pièces, années, jetons, badges et pseudo.",
+    "open_faq_aria": "Ouvrir la FAQ",
     "help_title": "Aide",
     "help_email_label": "Contact :",
     "help_email": "help.vboldstudio@gmail.com",
