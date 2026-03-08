@@ -603,13 +603,13 @@
     "id": "heaven_051",
     "universe": "heaven_king",
     "title": "Portail vers le monde d’en bas",
-    "description": "Un passage se fissure entre le Paradis et le monde d’en bas, et certains mortels voient des images sombres.",
+    "description": "Un passage s’ouvre entre le Paradis et le monde d’en bas, et des mortels voient des images sombres.",
     "choices": {
       "A": "Sceller ce passage immédiatement",
       "B": "Laisser les mortels chercher du sens par eux-mêmes",
       "C": "Utiliser ce passage pour rappeler qu’il existe un vrai choix entre lumière et noirceur"
     },
-    "body": "Un passage se fissure entre le Paradis et le monde d’en bas, et certains mortels voient des images sombres."
+    "body": "Un passage s’ouvre entre le Paradis et le monde d’en bas, et des mortels voient des images sombres."
   },
   "heaven_052": {
     "id": "heaven_052",
@@ -627,13 +627,13 @@
     "id": "heaven_053",
     "universe": "heaven_king",
     "title": "Concours de miracles",
-    "description": "Des démons se vantent devant les mortels de pouvoir exaucer des désirs immédiats plus vite que le Paradis.",
+    "description": "Des démons promettent aux mortels des désirs exaucés plus vite que le Paradis.",
     "choices": {
       "A": "Répondre par quelques miracles sobres mais profonds",
       "B": "Laisser les mortels découvrir seuls le prix de ces pactes",
       "C": "Ignorer complètement cette provocation infernale"
     },
-    "body": "Des démons se vantent devant les mortels de pouvoir exaucer des désirs immédiats plus vite que le Paradis."
+    "body": "Des démons promettent aux mortels des désirs exaucés plus vite que le Paradis."
   },
   "heaven_054": {
     "id": "heaven_054",
@@ -747,13 +747,13 @@
     "id": "heaven_063",
     "universe": "heaven_king",
     "title": "Paradis low cost, Enfers premium",
-    "description": "Une campagne de pub humoristique compare le Paradis à une offre gratuite et les Enfers à une expérience 'premium'.",
+    "description": "Une pub compare le Paradis à une offre gratuite et les Enfers à une offre premium.",
     "choices": {
       "A": "Laisser l’humour détendre la peur de l’au-delà",
       "B": "Inspirer une critique profonde derrière la blague",
       "C": "Provoquer un incident qui fait tout arrêter"
     },
-    "body": "Une campagne de pub humoristique compare le Paradis à une offre gratuite et les Enfers à une expérience 'premium'."
+    "body": "Une pub compare le Paradis à une offre gratuite et les Enfers à une offre premium."
   },
   "heaven_064": {
     "id": "heaven_064",
@@ -771,13 +771,13 @@
     "id": "heaven_065",
     "universe": "heaven_king",
     "title": "Festival des lanternes",
-    "description": "Une ville organise une fête où chaque lanterne envoyée dans le ciel est censée guider une âme hors des Enfers.",
+    "description": "Une ville lance des lanternes censées guider une âme hors des Enfers.",
     "choices": {
       "A": "Relier réellement quelques lanternes à des libérations d’âmes",
       "B": "Laisser le symbole agir sans miracle particulier",
       "C": "Faire apparaître aussi des flammes sombres entre les lanternes"
     },
-    "body": "Une ville organise une fête où chaque lanterne envoyée dans le ciel est censée guider une âme hors des Enfers."
+    "body": "Une ville lance des lanternes censées guider une âme hors des Enfers."
   },
   "heaven_066": {
     "id": "heaven_066",
@@ -891,13 +891,13 @@
     "id": "heaven_075",
     "universe": "heaven_king",
     "title": "Paradis VIP",
-    "description": "Un culte prétend qu’il existe un 'Paradis supérieur' seulement pour ses membres, les autres allant dans une zone grise proche de l’Enfer.",
+    "description": "Un culte réserve un 'Paradis supérieur' à ses membres et relègue les autres près de l’Enfer.",
     "choices": {
       "A": "Démasquer ce mensonge par quelques révélations",
       "B": "Laisser ce culte se ridiculiser avec le temps",
       "C": "Laisser leurs membres se croire réellement supérieurs"
     },
-    "body": "Un culte prétend qu’il existe un 'Paradis supérieur' seulement pour ses membres, les autres allant dans une zone grise proche de l’Enfer."
+    "body": "Un culte réserve un 'Paradis supérieur' à ses membres et relègue les autres près de l’Enfer."
   },
   "heaven_076": {
     "id": "heaven_076",
@@ -915,25 +915,25 @@
     "id": "heaven_077",
     "universe": "heaven_king",
     "title": "Jeu mobile Enfers vs Paradis",
-    "description": "Un jeu vidéo oppose des armées célestes et infernales, avec microtransactions pour 'acheter des bénédictions'.",
+    "description": "Un jeu vidéo oppose le Ciel et l’Enfer, avec achats pour obtenir des bénédictions.",
     "choices": {
       "A": "Glisser quelques messages de compassion dans le jeu",
       "B": "Laisser le jeu rester un simple divertissement",
       "C": "Laisser les joueurs confondre bénédictions et argent réel"
     },
-    "body": "Un jeu vidéo oppose des armées célestes et infernales, avec microtransactions pour 'acheter des bénédictions'."
+    "body": "Un jeu vidéo oppose le Ciel et l’Enfer, avec achats pour obtenir des bénédictions."
   },
   "heaven_078": {
     "id": "heaven_078",
     "universe": "heaven_king",
     "title": "Traité de non-agression",
-    "description": "Certains anges proposent un pacte symbolique pour limiter les confrontations ouvertes avec les forces infernales.",
+    "description": "Certains anges veulent un pacte symbolique pour limiter les affrontements avec les forces d’en bas.",
     "choices": {
       "A": "Encourager la prudence tout en restant vigilant",
       "B": "Refuser l’idée de compromis avec les Enfers",
       "C": "Laisser les Enfers profiter de cette faiblesse"
     },
-    "body": "Certains anges proposent un pacte symbolique pour limiter les confrontations ouvertes avec les forces infernales."
+    "body": "Certains anges veulent un pacte symbolique pour limiter les affrontements avec les forces d’en bas."
   },
   "heaven_079": {
     "id": "heaven_079",
@@ -975,13 +975,13 @@
     "id": "heaven_082",
     "universe": "heaven_king",
     "title": "Échange scolaire Ciel-Enfers",
-    "description": "Pour mieux comprendre leurs adversaires, quelques anges proposent d’observer brièvement les Enfers, et vice versa.",
+    "description": "Quelques anges veulent observer brièvement les Enfers pour mieux comprendre l’adversaire.",
     "choices": {
       "A": "Encourager la compréhension sans compromis moral",
       "B": "Interdire tout échange formel avec les Enfers",
       "C": "Laisser certains anges être réellement influencés par le cynisme infernal"
     },
-    "body": "Pour mieux comprendre leurs adversaires, quelques anges proposent d’observer brièvement les Enfers, et vice versa."
+    "body": "Quelques anges veulent observer brièvement les Enfers pour mieux comprendre l’adversaire."
   },
   "heaven_083": {
     "id": "heaven_083",
@@ -1047,13 +1047,13 @@
     "id": "heaven_088",
     "universe": "heaven_king",
     "title": "Paradis d’entreprise",
-    "description": "Une société promet à ses employés un 'petit paradis' au travail et traite ses concurrents comme des damnés.",
+    "description": "Une société promet un 'petit paradis' au travail et traite ses rivaux comme des damnés.",
     "choices": {
       "A": "Inspirer une vraie bienveillance dans cette entreprise",
       "B": "Ne pas intervenir dans ce langage marketing",
       "C": "Laisser naître un culte toxique autour de la performance"
     },
-    "body": "Une société promet à ses employés un 'petit paradis' au travail et traite ses concurrents comme des damnés."
+    "body": "Une société promet un 'petit paradis' au travail et traite ses rivaux comme des damnés."
   },
   "heaven_089": {
     "id": "heaven_089",
@@ -1083,13 +1083,13 @@
     "id": "heaven_091",
     "universe": "heaven_king",
     "title": "Séminaire sur les tentations",
-    "description": "Des responsables religieux organisent des formations pour apprendre à 'repérer les influences infernales'.",
+    "description": "Des responsables religieux apprennent à 'repérer les influences infernales'.",
     "choices": {
       "A": "Les inspirer à rester humbles et bienveillants",
       "B": "Laisser certains devenir paranoïaques",
       "C": "Laisser ces séminaires se transformer en chasse aux sorcières"
     },
-    "body": "Des responsables religieux organisent des formations pour apprendre à 'repérer les influences infernales'."
+    "body": "Des responsables religieux apprennent à 'repérer les influences infernales'."
   },
   "heaven_092": {
     "id": "heaven_092",
@@ -1107,13 +1107,13 @@
     "id": "heaven_093",
     "universe": "heaven_king",
     "title": "Influenceurs des Enfers",
-    "description": "Certains créateurs de contenu glorifient la méchanceté et la cruauté, en citant les Enfers pour faire rire.",
+    "description": "Des créateurs glorifient la cruauté et citent l’Enfer pour faire rire.",
     "choices": {
       "A": "Toucher leur cœur par une crise de conscience",
       "B": "Laisser leur public se lasser progressivement",
       "C": "Les laisser gagner encore plus de visibilité"
     },
-    "body": "Certains créateurs de contenu glorifient la méchanceté et la cruauté, en citant les Enfers pour faire rire."
+    "body": "Des créateurs glorifient la cruauté et citent l’Enfer pour faire rire."
   },
   "heaven_094": {
     "id": "heaven_094",
@@ -1191,13 +1191,13 @@
     "id": "heaven_100",
     "universe": "heaven_king",
     "title": "Silence après la tempête",
-    "description": "Après une longue période de confrontations entre Paradis et Enfers, un calme étrange s’installe sur Terre.",
+    "description": "Après de longs conflits entre Paradis et Enfers, un calme étrange tombe sur Terre.",
     "choices": {
       "A": "Envoyer un souffle de paix pour reconstruire",
       "B": "Observer simplement comment les mortels réagissent à ce calme",
       "C": "Préparer discrètement la prochaine grande épreuve"
     },
-    "body": "Après une longue période de confrontations entre Paradis et Enfers, un calme étrange s’installe sur Terre."
+    "body": "Après de longs conflits entre Paradis et Enfers, un calme étrange tombe sur Terre."
   },
   "heaven_101": {
     "id": "heaven_101",
@@ -1215,13 +1215,13 @@
     "id": "heaven_102",
     "universe": "heaven_king",
     "title": "Influenceur spirituel hésitant",
-    "description": "Un influenceur parle de bonté et de compassion, mais il est tenté de choquer en utilisant le thème de l’Enfer.",
+    "description": "Un influenceur parle de bonté, mais veut choquer en utilisant le thème de l’Enfer.",
     "choices": {
       "A": "Lui inspirer des témoignages doux et authentiques",
       "B": "Laisser son public décider ce qu’il veut entendre",
       "C": "Lui faire croire que s’il n’effraie pas les gens, il sera puni lui-même"
     },
-    "body": "Un influenceur parle de bonté et de compassion, mais il est tenté de choquer en utilisant le thème de l’Enfer."
+    "body": "Un influenceur parle de bonté, mais veut choquer en utilisant le thème de l’Enfer."
   },
   "heaven_103": {
     "id": "heaven_103",
@@ -1239,37 +1239,37 @@
     "id": "heaven_104",
     "universe": "heaven_king",
     "title": "Culte de la perfection morale",
-    "description": "Un mouvement religieux exige de ses membres une pureté absolue, au moindre écart vient la menace de l’Enfer.",
+    "description": "Un mouvement exige une pureté totale et menace d’Enfer au moindre écart.",
     "choices": {
       "A": "Placer au milieu d’eux une personne qui incarne un pardon désarmant",
       "B": "Observer jusqu’où ils iront",
       "C": "Envoyer des signes qui semblent confirmer leurs sanctions sévères"
     },
-    "body": "Un mouvement religieux exige de ses membres une pureté absolue, au moindre écart vient la menace de l’Enfer."
+    "body": "Un mouvement exige une pureté totale et menace d’Enfer au moindre écart."
   },
   "heaven_105": {
     "id": "heaven_105",
     "universe": "heaven_king",
     "title": "Village élevé dans la peur",
-    "description": "Dans un village, on élève les enfants avec des discours très sévères sur les fautes et leurs conséquences.",
+    "description": "Dans un village, des enfants grandissent avec des discours très durs sur les fautes.",
     "choices": {
       "A": "Inspirer un ancien qui parle enfin de bonté",
       "B": "Laisser cette culture de la peur continuer",
       "C": "Laisser croire que leur sévérité est validée"
     },
-    "body": "Dans un village, on élève les enfants avec des discours très sévères sur les fautes et leurs conséquences."
+    "body": "Dans un village, des enfants grandissent avec des discours très durs sur les fautes."
   },
   "heaven_106": {
     "id": "heaven_106",
     "universe": "heaven_king",
     "title": "Miracle refusé",
-    "description": "Une personne prie pour un miracle spectaculaire, mais ses motivations sont surtout la gloire et le pouvoir.",
+    "description": "Une personne prie pour un miracle spectaculaire, surtout par soif de gloire et de pouvoir.",
     "choices": {
       "A": "Offrir un petit signe discret qui touche son cœur",
       "B": "Ne rien accorder, qu’elle apprenne dans le silence",
       "C": "Lui faire croire qu’elle est punie pour avoir osé demander"
     },
-    "body": "Une personne prie pour un miracle spectaculaire, mais ses motivations sont surtout la gloire et le pouvoir."
+    "body": "Une personne prie pour un miracle spectaculaire, surtout par soif de gloire et de pouvoir."
   },
   "heaven_107": {
     "id": "heaven_107",
@@ -1335,13 +1335,13 @@
     "id": "heaven_112",
     "universe": "heaven_king",
     "title": "Ville sans prière",
-    "description": "Une grande ville vit sans aucune forme de prière ni de rituel, mais les habitants se respectent plutôt bien.",
+    "description": "Une grande ville vit sans prière ni rituel, mais ses habitants se respectent assez bien.",
     "choices": {
       "A": "Semer doucement des élans de gratitude sans parler de sanctions",
       "B": "Observer ce laboratoire sans influence spirituelle explicite",
       "C": "Provoquer une catastrophe pour rappeler qu’il y a un prix à vivre sans prière"
     },
-    "body": "Une grande ville vit sans aucune forme de prière ni de rituel, mais les habitants se respectent plutôt bien."
+    "body": "Une grande ville vit sans prière ni rituel, mais ses habitants se respectent assez bien."
   },
   "heaven_113": {
     "id": "heaven_113",
@@ -1431,25 +1431,25 @@
     "id": "heaven_120",
     "universe": "heaven_king",
     "title": "Concours de piété punitive",
-    "description": "Une communauté organise un concours pour élire : 'le plus pieux', et critique publiquement les 'moins pieux'.",
+    "description": "Une communauté élit 'le plus pieux' et humilie publiquement les autres.",
     "choices": {
       "A": "Faire naître un malaise intérieur chez ceux qui jugent",
       "B": "Ne pas intervenir dans ce concours",
       "C": "Laisser croire que les perdants seront punis dans l’au-delà"
     },
-    "body": "Une communauté organise un concours pour élire : 'le plus pieux', et critique publiquement les 'moins pieux'."
+    "body": "Une communauté élit 'le plus pieux' et humilie publiquement les autres."
   },
   "heaven_121": {
     "id": "heaven_121",
     "universe": "heaven_king",
     "title": "Politique de la peur divine",
-    "description": "Des responsables politiques utilisent le Paradis et l’Enfer pour contrôler le comportement de la population.",
+    "description": "Des politiques utilisent le Paradis et l’Enfer pour contrôler la population.",
     "choices": {
       "A": "Inspirer des voix qui défendent la liberté de conscience",
       "B": "Laisser la stratégie fonctionner un temps",
       "C": "Permettre que leurs menaces semblent se réaliser pour renforcer leur pouvoir"
     },
-    "body": "Des responsables politiques utilisent le Paradis et l’Enfer pour contrôler le comportement de la population."
+    "body": "Des politiques utilisent le Paradis et l’Enfer pour contrôler la population."
   },
   "heaven_122": {
     "id": "heaven_122",
@@ -1467,13 +1467,13 @@
     "id": "heaven_123",
     "universe": "heaven_king",
     "title": "Confession monnayée",
-    "description": "Un groupe crée un service payant pour 'effacer les péchés' et promet que ceux qui ne paient pas seront punis.",
+    "description": "Un groupe vend l’effacement des péchés et menace les autres de punition.",
     "choices": {
       "A": "Réveiller la conscience de quelques fidèles qui dénoncent ce système",
       "B": "Ne pas interférer dans ce commerce",
       "C": "Laisser croire que les pauvres non payants attirent des sanctions"
     },
-    "body": "Un groupe crée un service payant pour 'effacer les péchés' et promet que ceux qui ne paient pas seront punis."
+    "body": "Un groupe vend l’effacement des péchés et menace les autres de punition."
   },
   "heaven_124": {
     "id": "heaven_124",
@@ -1503,13 +1503,13 @@
     "id": "heaven_126",
     "universe": "heaven_king",
     "title": "Pèlerinage de la peur",
-    "description": "Des pèlerins marchent avec l’angoisse constante de mal faire le rituel et d’être rejetés au profit des Enfers.",
+    "description": "Des pèlerins vivent leur rituel dans la peur d’être rejetés vers les Enfers.",
     "choices": {
       "A": "Leur envoyer un moment de paix profonde pendant le trajet",
       "B": "Laisser la peur continuer à les motiver",
       "C": "Faire qu’un petit détail raté soit interprété comme une sanction sacrée"
     },
-    "body": "Des pèlerins marchent avec l’angoisse constante de mal faire le rituel et d’être rejetés au profit des Enfers."
+    "body": "Des pèlerins vivent leur rituel dans la peur d’être rejetés vers les Enfers."
   },
   "heaven_127": {
     "id": "heaven_127",
@@ -1587,13 +1587,13 @@
     "id": "heaven_133",
     "universe": "heaven_king",
     "title": "Système de points de vertu",
-    "description": "Une communauté note chaque geste 'vertueux' ou 'mauvais' et promet une sanction spirituelle en dessous d’un certain score.",
+    "description": "Une communauté note chaque acte et promet une sanction sous un certain score.",
     "choices": {
       "A": "Les inspirer à valoriser aussi l’intention",
       "B": "Laisser le système tourner",
       "C": "Faire qu’un accident soit interprété comme punition pour ceux qui ont un mauvais score"
     },
-    "body": "Une communauté note chaque geste 'vertueux' ou 'mauvais' et promet une sanction spirituelle en dessous d’un certain score."
+    "body": "Une communauté note chaque acte et promet une sanction sous un certain score."
   },
   "heaven_134": {
     "id": "heaven_134",
@@ -1767,13 +1767,13 @@
     "id": "heaven_148",
     "universe": "heaven_king",
     "title": "Assurance contre l’Enfer",
-    "description": "Une compagnie propose une 'assurance spirituelle' : des dons réguliers garantiraient un statut au Paradis.",
+    "description": "Une compagnie vend une 'assurance spirituelle' censée garantir une place au Paradis.",
     "choices": {
       "A": "Inspirer des lanceurs d’alerte pour dénoncer ce système",
       "B": "Ne pas intervenir",
       "C": "Laisser croire que ceux qui ne paient pas subissent des sanctions dans leur vie"
     },
-    "body": "Une compagnie propose une 'assurance spirituelle' : des dons réguliers garantiraient un statut au Paradis."
+    "body": "Une compagnie vend une 'assurance spirituelle' censée garantir une place au Paradis."
   },
   "heaven_149": {
     "id": "heaven_149",
@@ -1791,13 +1791,13 @@
     "id": "heaven_150",
     "universe": "heaven_king",
     "title": "Dernier sermon avant la nuit",
-    "description": "Un grand prédicateur mondial prépare son dernier discours : soit sur l’amour sans condition, soit sur la peur.",
+    "description": "Un grand prédicateur prépare son dernier discours, entre amour sans condition et peur.",
     "choices": {
       "A": "Lui inspirer un message centré sur la bonté",
       "B": "Le laisser choisir sans influence",
       "C": "Le pousser à insister sur la sanction pour marquer les esprits"
     },
-    "body": "Un grand prédicateur mondial prépare son dernier discours : soit sur l’amour sans condition, soit sur la peur."
+    "body": "Un grand prédicateur prépare son dernier discours, entre amour sans condition et peur."
   },
   "heaven_151": {
     "id": "heaven_151",
@@ -2163,13 +2163,13 @@
     "id": "heaven_181",
     "universe": "heaven_king",
     "title": "Village au bord d’un volcan",
-    "description": "Un village vit au pied d’un volcan et voit chaque grondement comme un avertissement du Ciel ou de l’Enfer.",
+    "description": "Un village au pied d’un volcan voit chaque grondement comme un signe du Ciel ou de l’Enfer.",
     "choices": {
       "A": "Inspirer quelques habitants à se préparer sans panique religieuse",
       "B": "Laisser les interprétations extrêmes continuer",
       "C": "Laisser un petit épisode explosif être vécu comme sanction pour leurs fautes"
     },
-    "body": "Un village vit au pied d’un volcan et voit chaque grondement comme un avertissement du Ciel ou de l’Enfer."
+    "body": "Un village au pied d’un volcan voit chaque grondement comme un signe du Ciel ou de l’Enfer."
   },
   "heaven_182": {
     "id": "heaven_182",
@@ -2367,13 +2367,13 @@
     "id": "heaven_198",
     "universe": "heaven_king",
     "title": "Chants venus d’en bas",
-    "description": "Des chants sombres inspirés de l’Enfer deviennent à la mode, même dans des lieux habituellement paisibles.",
+    "description": "Des chants sombres inspirés de l’Enfer deviennent populaires, même dans des lieux paisibles.",
     "choices": {
       "A": "Inspirer aussi des chants doux qui touchent les cœurs",
       "B": "Laisser cette mode passer ou s’installer",
       "C": "Laisser certains mouvements annoncer des sanctions sévères contre ceux qui les écoutent"
     },
-    "body": "Des chants sombres inspirés de l’Enfer deviennent à la mode, même dans des lieux habituellement paisibles."
+    "body": "Des chants sombres inspirés de l’Enfer deviennent populaires, même dans des lieux paisibles."
   },
   "heaven_199": {
     "id": "heaven_199",
@@ -2427,13 +2427,13 @@
     "id": "heaven_203",
     "universe": "heaven_king",
     "title": "Pont entre le Ciel et le bas",
-    "description": "Un penseur religieux décrit le monde comme un pont fragile entre le Ciel et le bas, où chaque choix compte beaucoup.",
+    "description": "Un penseur décrit le monde comme un pont fragile entre le Ciel et le bas.",
     "choices": {
       "A": "Lui inspirer un discours nuancé sur la bonté",
       "B": "Le laisser insister sur le risque de chute sans nuance",
       "C": "Laisser des rumeurs dire que certains peuples sont déjà 'déjà jugés' en bas"
     },
-    "body": "Un penseur religieux décrit le monde comme un pont fragile entre le Ciel et le bas, où chaque choix compte beaucoup."
+    "body": "Un penseur décrit le monde comme un pont fragile entre le Ciel et le bas."
   },
   "heaven_204": {
     "id": "heaven_204",
@@ -2631,13 +2631,13 @@
     "id": "heaven_220",
     "universe": "heaven_king",
     "title": "Jeu pour enfants sur le jugement",
-    "description": "Un jeu éducatif montre un juge céleste qui classe les personnages de façon très simple selon leurs fautes.",
+    "description": "Un jeu éducatif montre un juge céleste qui classe trop simplement selon les fautes.",
     "choices": {
       "A": "Inspirer une version plus nuancée avec pardon et réparation",
       "B": "Laisser le jeu rester très binaire",
       "C": "Laisser certains adultes s’en servir pour faire peur aux enfants"
     },
-    "body": "Un jeu éducatif montre un juge céleste qui classe les personnages de façon très simple selon leurs fautes."
+    "body": "Un jeu éducatif montre un juge céleste qui classe trop simplement selon les fautes."
   },
   "heaven_221": {
     "id": "heaven_221",
@@ -2967,13 +2967,13 @@
     "id": "heaven_248",
     "universe": "heaven_king",
     "title": "Temple partagé",
-    "description": "Un lieu ancien est revendiqué à la fois par un culte tourné vers le Paradis et un groupe dédié aux forces d’en bas.",
+    "description": "Un lieu ancien est revendiqué par un culte du Paradis et un groupe tourné vers le bas.",
     "choices": {
       "A": "Inspirer un usage partagé centré sur la paix et l’écoute",
       "B": "Laisser le conflit symbolique se transformer en simple tourisme",
       "C": "Laisser des extrémistes imposer une fermeture violente, au nom de la sanction divine"
     },
-    "body": "Un lieu ancien est revendiqué à la fois par un culte tourné vers le Paradis et un groupe dédié aux forces d’en bas."
+    "body": "Un lieu ancien est revendiqué par un culte du Paradis et un groupe tourné vers le bas."
   },
   "heaven_249": {
     "id": "heaven_249",
@@ -2991,13 +2991,13 @@
     "id": "heaven_250",
     "universe": "heaven_king",
     "title": "Dernier chant",
-    "description": "Un ancien chante pour la dernière fois dans un chœur, persuadé que sa voix ne vaut plus rien pour le Ciel.",
+    "description": "Un ancien chante une dernière fois, persuadé que sa voix ne vaut plus rien pour le Ciel.",
     "choices": {
       "A": "Lui offrir un moment de paix intérieure où il se sent accueilli",
       "B": "Laisser cette dernière répétition se terminer dans la banalité",
       "C": "Laisser quelqu’un lui dire qu’il paie maintenant des fautes passées et que sa voix est sanctionnée"
     },
-    "body": "Un ancien chante pour la dernière fois dans un chœur, persuadé que sa voix ne vaut plus rien pour le Ciel."
+    "body": "Un ancien chante une dernière fois, persuadé que sa voix ne vaut plus rien pour le Ciel."
   },
   "heaven_251": {
     "id": "heaven_251",
