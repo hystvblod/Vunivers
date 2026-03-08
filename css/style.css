@@ -2146,8 +2146,8 @@ body[data-universe="western_president"].vr-body-game #view-game .vr-choice-label
 
 body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-button{
   overflow: hidden !important;
-  width: 120% !important;
-  max-width: 120% !important;
+  width: 96% !important;
+  max-width: 96% !important;
   margin-inline: auto !important;
   background-size: contain !important;
   background-position: center center !important;
