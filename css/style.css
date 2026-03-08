@@ -2145,32 +2145,20 @@ body[data-universe="western_president"].vr-body-game #view-game .vr-choice-label
 }
 
 body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-button{
-  overflow: hidden !important;
-  width: 96% !important;
-  max-width: 96% !important;
-  margin-inline: auto !important;
-  background-size: contain !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
+  background-size: 100% 110% !important;
+  background-position: center !important;
+}
+body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main{
+  overflow: hidden;
+  background-size: 90% 105% !important;
+  background-position: center !important;
 }
 
-body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main{
-  overflow: hidden !important;
-  width: 86% !important;
-  max-width: 86% !important;
-  margin-inline: auto !important;
-  background-size: contain !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-}
 body.vr-body-game[data-universe="western_president"]{
   --vr-card-w: clamp(460px, 100vw, 1240px);
   --vr-game-gap: clamp(6px, 0.8svh, 12px);
   --vr-stack-gap: clamp(10px, 1.2svh, 22px);
   --vr-choices-gap: clamp(10px, 1.2svh, 22px);
-  
-    --vr-scn-h: clamp(190px, 24svh, 360px);
-  --vr-choice-h: clamp(120px, 17svh, 210px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
