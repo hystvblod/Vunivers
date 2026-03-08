@@ -722,7 +722,7 @@
         lsSet(LEGACY_PREFIX + "_shop_focus_universe", universeId);
       }
 
-          function isUnlocked(id) {
+      function isUnlocked(id) {
         try {
           if (window.VUserData && typeof window.VUserData.isUniverseUnlocked === "function") {
             return !!window.VUserData.isUniverseUnlocked(id);
@@ -1041,13 +1041,17 @@
         });
       });
 
-       let __vrIndexInitPromise = null;
-      try { __vrIndexInitPromise = window.VUserData?.init?.() || null; } catch (_) {}
+      window.__vrIndexInitPromise = window.__vrIndexInitPromise || null;
+      try {
+        if (!window.__vrIndexInitPromise) {
+          window.__vrIndexInitPromise = window.VUserData?.init?.() || null;
+        }
+      } catch (_) {}
 
       applyLocks();
 
       (async function refreshLater(){
-        try { await __vrIndexInitPromise; } catch (_) {}
+        try { await window.__vrIndexInitPromise; } catch (_) {}
         try { applyLocks(); } catch (_) {}
       })();
 
@@ -1126,7 +1130,11 @@
 
       (async function boot() {
         try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
-        try { await window.VUserData?.init?.(); } catch (_) {}
+
+        try {
+          window.__vrIndexInitPromise = window.__vrIndexInitPromise || window.VUserData?.init?.() || null;
+          await window.__vrIndexInitPromise;
+        } catch (_) {}
 
         try {
           const lang = window.VUserData?.getLang?.() || "fr";
