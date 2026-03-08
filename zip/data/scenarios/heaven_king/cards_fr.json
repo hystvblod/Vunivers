@@ -607,7 +607,7 @@
     "choices": {
       "A": "Sceller ce passage immédiatement",
       "B": "Laisser les mortels chercher du sens par eux-mêmes",
-      "C": "Utiliser ce passage pour rappeler qu’il existe un vrai choix entre lumière et noirceur"
+      "C": "Utiliser ce passage pour rappeler le choix entre lumière et noirceur"
     },
     "body": "Un passage s’ouvre entre le Paradis et le monde d’en bas, et des mortels voient des images sombres."
   },
@@ -979,7 +979,7 @@
     "choices": {
       "A": "Encourager la compréhension sans compromis moral",
       "B": "Interdire tout échange formel avec les Enfers",
-      "C": "Laisser certains anges être réellement influencés par le cynisme infernal"
+      "C": "Laisser des anges être gagnés par le cynisme infernal"
     },
     "body": "Quelques anges veulent observer brièvement les Enfers pour mieux comprendre l’adversaire."
   },
@@ -1039,7 +1039,7 @@
     "choices": {
       "A": "Susciter chez les spectateurs des questions profondes",
       "B": "Laisser la fiction rester ambiguë",
-      "C": "Laisser les Enfers inspirer les aspects les plus violents du scénario"
+      "C": "Laisser les Enfers inspirer la violence du scénario"
     },
     "body": "Une série TV décrit Paradis et Enfers avec une précision troublante, proche de la réalité."
   },
@@ -1207,7 +1207,7 @@
     "choices": {
       "A": "Inspirer une nouvelle prière plus personnelle",
       "B": "Ne pas intervenir, la routine est déjà un lien",
-      "C": "Envoyer un prêtre sévère qui menace de l’Enfer ceux qui ne prient pas assez"
+      "C": "Envoyer un prêtre sévère menacer de l’Enfer"
     },
     "body": "Un village entier récite les mêmes prières chaque soir, mais sans émotion ni réflexion."
   },
@@ -1219,7 +1219,7 @@
     "choices": {
       "A": "Lui inspirer des témoignages doux et authentiques",
       "B": "Laisser son public décider ce qu’il veut entendre",
-      "C": "Lui faire croire que s’il n’effraie pas les gens, il sera puni lui-même"
+      "C": "Lui faire croire qu’il doit faire peur pour éviter d’être puni"
     },
     "body": "Un influenceur parle de bonté, mais veut choquer en utilisant le thème de l’Enfer."
   },
@@ -1303,7 +1303,7 @@
     "choices": {
       "A": "Le toucher par une expérience intime de douceur",
       "B": "Laisser son succès monter et retomber de lui-même",
-      "C": "Permettre que ses menaces se réalisent sur un événement, pour lui donner raison aux yeux des foules"
+      "C": "Faire croire que ses menaces se réalisent"
     },
     "body": "Un prédicateur gagne de l’audience en criant sans cesse que tout le monde mérite l’Enfer."
   },
@@ -1327,7 +1327,7 @@
     "choices": {
       "A": "Inspirer une voix interne qui rappelle la dignité de chaque personne",
       "B": "Laisser le groupe se renforcer quelques temps",
-      "C": "Laisser émerger un leader encore plus radical qui durcit les sanctions"
+      "C": "Faire émerger un leader encore plus radical et plus dur"
     },
     "body": "Un groupe religieux oblige tout le monde à avouer publiquement chaque faute sous menace d’Enfer."
   },
@@ -1339,7 +1339,7 @@
     "choices": {
       "A": "Semer doucement des élans de gratitude sans parler de sanctions",
       "B": "Observer ce laboratoire sans influence spirituelle explicite",
-      "C": "Provoquer une catastrophe pour rappeler qu’il y a un prix à vivre sans prière"
+      "C": "Créer une catastrophe pour punir l’oubli de la prière"
     },
     "body": "Une grande ville vit sans prière ni rituel, mais ses habitants se respectent assez bien."
   },
@@ -1349,7 +1349,7 @@
     "title": "Appli de prière punitive",
     "description": "Une application promet des points de 'paradis' mais retire des points et affiche des flammes d’Enfer dès qu’un jour de prière est manqué.",
     "choices": {
-      "A": "Transformer doucement l’appli pour valoriser la sincérité plutôt que la peur",
+      "A": "Transformer doucement l’appli pour mettre la sincérité avant la peur",
       "B": "Laisser l’appli suivre sa logique de gamification",
       "C": "Renforcer le système de pénalités quand un utilisateur 'faillit'"
     },
@@ -1375,7 +1375,7 @@
     "choices": {
       "A": "Faire naître peu à peu des paroles de réconfort dans ce rituel",
       "B": "Ne pas modifier ce rituel",
-      "C": "Ajouter la croyance que toute faute oubliée sera punie deux fois plus"
+      "C": "Ajouter la croyance qu’une faute oubliée sera punie double"
     },
     "body": "Une communauté impose un rituel hebdomadaire où chacun liste ses fautes en public."
   },
@@ -1399,7 +1399,7 @@
     "choices": {
       "A": "Souffler à certains parents l’idée de refuser ces méthodes",
       "B": "Ne rien faire, ils expérimentent",
-      "C": "Laisser les organisateurs croire qu’ils ont une mission sacrée punitive"
+      "C": "Laisser les organisateurs croire qu’ils ont une mission punitive"
     },
     "body": "Un camp propose de 'corriger' les adolescents jugés trop libres par des méthodes humiliantes."
   },
@@ -1409,9 +1409,9 @@
     "title": "Livre de menaces sacrées",
     "description": "Un auteur écrit un best-seller rempli de menaces d’Enfer pour 'ramener les gens sur le droit chemin'.",
     "choices": {
-      "A": "Inspirer un autre auteur qui lui répond par un livre sur la compassion",
+      "A": "Inspirer un autre auteur qui répond par un livre de compassion",
       "B": "Laisser le livre vivre son succès",
-      "C": "Laisser l’auteur croire que chaque lecteur qui ne change pas sera sanctionné doublement"
+      "C": "Laisser l’auteur croire que résister sera puni deux fois"
     },
     "body": "Un auteur écrit un best-seller rempli de menaces d’Enfer pour 'ramener les gens sur le droit chemin'."
   },
@@ -1447,7 +1447,7 @@
     "choices": {
       "A": "Inspirer des voix qui défendent la liberté de conscience",
       "B": "Laisser la stratégie fonctionner un temps",
-      "C": "Permettre que leurs menaces semblent se réaliser pour renforcer leur pouvoir"
+      "C": "Faire sembler vraies leurs menaces"
     },
     "body": "Des politiques utilisent le Paradis et l’Enfer pour contrôler la population."
   },
@@ -1483,7 +1483,7 @@
     "choices": {
       "A": "Semer une révolte douce contre cette humiliation",
       "B": "Laisser la plateforme prospérer",
-      "C": "Renforcer l’idée que la honte publique est une sanction voulue par le Ciel"
+      "C": "Faire croire que la honte publique vient du Ciel"
     },
     "body": "Un réseau spirituel affiche publiquement les 'fautes' de chacun sous prétexte de les corriger."
   },
@@ -1495,7 +1495,7 @@
     "choices": {
       "A": "Inspirer autour d’eux des paroles de soutien nuancées",
       "B": "Ne pas intervenir dans leur histoire",
-      "C": "Laisser un guide confirmer qu’une séparation serait gravement fautive"
+      "C": "Faire confirmer qu’une séparation serait une faute grave"
     },
     "body": "Un couple reste ensemble surtout par peur d’une lourde faute morale."
   },
@@ -1507,7 +1507,7 @@
     "choices": {
       "A": "Leur envoyer un moment de paix profonde pendant le trajet",
       "B": "Laisser la peur continuer à les motiver",
-      "C": "Faire qu’un petit détail raté soit interprété comme une sanction sacrée"
+      "C": "Faire qu’un petit détail raté soit vu comme une punition sacrée"
     },
     "body": "Des pèlerins vivent leur rituel dans la peur d’être rejetés vers les Enfers."
   },
@@ -1531,7 +1531,7 @@
     "choices": {
       "A": "Le toucher par un événement personnel qui l’adoucit",
       "B": "Le laisser continuer comme cela",
-      "C": "Lui accorder un 'signe' qu’il interprète comme validation de ses menaces"
+      "C": "Lui donner un signe qui valide ses menaces"
     },
     "body": "Un enseignant ne parle jamais d’amour ou de sagesse, seulement de fautes et de châtiments divins."
   },
@@ -1555,7 +1555,7 @@
     "choices": {
       "A": "Inspirer une candidate à dénoncer ce concept en direct",
       "B": "Laisser le show faire son buzz",
-      "C": "Permettre qu’une 'malchance' touche un gagnant pour donner du poids aux menaces"
+      "C": "Faire qu’une malchance touche un gagnant pour appuyer les menaces"
     },
     "body": "Un show de téléréalité pointe du doigt les comportements jugés immoraux en les liant à l’Enfer."
   },
@@ -1567,7 +1567,7 @@
     "choices": {
       "A": "Supporter discrètement ceux qui osent encore réfléchir",
       "B": "Laisser ce climat s’installer",
-      "C": "Laisser le bannissement de quelques membres être interprété comme sanction divine"
+      "C": "Faire passer ce bannissement pour une punition divine"
     },
     "body": "Un groupe interdit toute question sur la foi et menace d’Enfer ceux qui doutent."
   },
@@ -1591,7 +1591,7 @@
     "choices": {
       "A": "Les inspirer à valoriser aussi l’intention",
       "B": "Laisser le système tourner",
-      "C": "Faire qu’un accident soit interprété comme punition pour ceux qui ont un mauvais score"
+      "C": "Faire passer un accident pour une punition des mauvais scores"
     },
     "body": "Une communauté note chaque acte et promet une sanction sous un certain score."
   },
@@ -1615,7 +1615,7 @@
     "choices": {
       "A": "Inspirer des œuvres qui parlent de conscience et d’empathie",
       "B": "Laisser l’opposition entre art et sanction se durcir",
-      "C": "Laisser un scandale éclater et être présenté comme punition divine contre un artiste"
+      "C": "Faire passer ce scandale pour une punition divine"
     },
     "body": "Des artistes entendent que leur liberté de création les conduira tout droit en Enfer."
   },
@@ -1627,7 +1627,7 @@
     "choices": {
       "A": "Inspirer quelques lecteurs à réfléchir par eux-mêmes",
       "B": "Ne pas intervenir dans ces censures",
-      "C": "Laisser coïncider un drame avec la lecture d’un livre interdit, pour valider la sanction"
+      "C": "Faire coïncider ce drame avec ce livre interdit"
     },
     "body": "On interdit des livres en affirmant qu’ils ouvrent la porte aux Enfers."
   },
@@ -1639,7 +1639,7 @@
     "choices": {
       "A": "Toucher la conscience d’un membre clé qui doute de ces exclusions",
       "B": "Laisser les exclusions continuer",
-      "C": "Laisser les membres croire que la souffrance des exclus est une sanction directe du Paradis"
+      "C": "Faire croire que les exclus souffrent par punition divine"
     },
     "body": "Un groupe expulse publiquement ceux qui ne respectent pas leurs règles, en parlant de punition du Ciel."
   },
@@ -1651,7 +1651,7 @@
     "choices": {
       "A": "Inspirer des fidèles à revendiquer une part de liberté",
       "B": "Laisser ce contrôle se déployer",
-      "C": "Donner à leurs discours une aura de 'protection' qui justifie les sanctions"
+      "C": "Faire passer leurs discours pour une protection légitime"
     },
     "body": "Un courant religieux veut régenter tous les aspects de la vie quotidienne sous peine d’Enfer."
   },
@@ -1663,7 +1663,7 @@
     "choices": {
       "A": "Inspirer une autre manière de gérer les fautes",
       "B": "Observer cette stratégie",
-      "C": "Laisser penser que cette punition extrême a sauvé le village de l’Enfer"
+      "C": "Faire croire que cette punition a sauvé le village"
     },
     "body": "Une communauté croit qu’il faut punir très fort un seul fautif pour éviter la contagion du mal."
   },
@@ -1675,7 +1675,7 @@
     "choices": {
       "A": "Inspirer des membres à réécrire certaines règles",
       "B": "Laisser ce règlement s’appliquer tel quel",
-      "C": "Laisser croire que chaque écart par rapport au règlement déclenche une sanction spirituelle"
+      "C": "Faire croire que chaque écart déclenche une punition"
     },
     "body": "Une institution religieuse publie un règlement où chaque article est associé à une menace d’Enfer."
   },
@@ -1699,7 +1699,7 @@
     "choices": {
       "A": "Inspirer des voix qui rappellent la complexité de la vie",
       "B": "Ne pas intervenir dans cette communication",
-      "C": "Laisser quelques coïncidences renforcer l’idée d’un Dieu sanctionneur"
+      "C": "Renforcer l’idée d’un Dieu qui punit"
     },
     "body": "Une campagne d’affichage annonce que chaque catastrophe est une sanction divine."
   },
@@ -1711,7 +1711,7 @@
     "choices": {
       "A": "Inspirer la compassion plutôt que la délation",
       "B": "Laisser ce système fonctionner",
-      "C": "Laisser les délateurs croire qu’ils perdent des points de Paradis s’ils ne signalent pas tout"
+      "C": "Faire croire qu’ils perdent du Paradis s’ils se taisent"
     },
     "body": "On encourage les fidèles à dénoncer les 'péchés' des autres avec promesse de récompense au Paradis."
   },
@@ -1735,7 +1735,7 @@
     "choices": {
       "A": "Inspirer des fidèles pour se moquer doucement de cette idée",
       "B": "Laisser ce modèle se diffuser",
-      "C": "Laisser les gens croire que leurs voisins seront 'relégués' plus loin de toi comme sanction"
+      "C": "Faire croire que les voisins seront punis et relégués"
     },
     "body": "Un prédicateur décrit le Paradis avec des quartiers de prestige et des zones 'limites Enfer' pour les 'moins bons'."
   },
@@ -1759,7 +1759,7 @@
     "choices": {
       "A": "Inspirer un scandale qui révèle leurs contradictions",
       "B": "Laisser ces jugements se banaliser",
-      "C": "Laisser le public croire que ces juges parlent vraiment en ton nom pour annoncer des sanctions"
+      "C": "Faire croire que ces juges annoncent tes punitions"
     },
     "body": "Un réseau de 'juges spirituels' s’autoproclame chargé d’indiquer qui mérite le Paradis ou l’Enfer."
   },
@@ -1771,7 +1771,7 @@
     "choices": {
       "A": "Inspirer des lanceurs d’alerte pour dénoncer ce système",
       "B": "Ne pas intervenir",
-      "C": "Laisser croire que ceux qui ne paient pas subissent des sanctions dans leur vie"
+      "C": "Faire croire que ne pas payer attire des punitions"
     },
     "body": "Une compagnie vend une 'assurance spirituelle' censée garantir une place au Paradis."
   },
@@ -1781,9 +1781,9 @@
     "title": "Paradis réservé",
     "description": "Un groupe affirme qu’il y a une liste fermée de 'vrais élus' et que les autres méritent l’Enfer.",
     "choices": {
-      "A": "Inspirer à certains membres la certitude que l’amour dépasse ces listes",
+      "A": "Inspirer l’idée que l’amour dépasse ces listes",
       "B": "Laisser le groupe se durcir",
-      "C": "Laisser des coïncidences favorables arriver seulement aux 'élus' pour valider leur sanctionnisme"
+      "C": "Réserver les signes aux 'élus' pour valider leur discours"
     },
     "body": "Un groupe affirme qu’il y a une liste fermée de 'vrais élus' et que les autres méritent l’Enfer."
   },
@@ -1807,7 +1807,7 @@
     "choices": {
       "A": "Souffler quelques élans de gratitude au quotidien",
       "B": "Respecter totalement leur silence spirituel",
-      "C": "Laisser se produire une série de malchances interprétées comme sanction"
+      "C": "Laisser des malchances passer pour une punition"
     },
     "body": "Un quartier autrefois très croyant a peu à peu abandonné toute forme de prière."
   },
@@ -1819,7 +1819,7 @@
     "choices": {
       "A": "Y laisser parfois une atmosphère de paix qui touche les visiteurs",
       "B": "Laisser ce lieu devenir purement culturel",
-      "C": "Faire circuler des rumeurs disant que négliger ce lieu attire une malédiction"
+      "C": "Faire courir la rumeur qu’ignorer ce lieu attire une malédiction"
     },
     "body": "Un ancien temple est devenu un musée, plus personne n’y vient pour prier."
   },
@@ -1843,7 +1843,7 @@
     "choices": {
       "A": "Toucher quelques riches pour qu’ils découvrent la générosité",
       "B": "Laisser cette équation entre argent et bénédiction continuer",
-      "C": "Laisser croire que les pauvres sont sanctionnés pour leur manque de foi"
+      "C": "Faire croire que les pauvres sont punis pour leur manque de foi"
     },
     "body": "Une communauté affirme que la richesse est la preuve d’être aimé du Paradis."
   },
@@ -1855,7 +1855,7 @@
     "choices": {
       "A": "Autoriser quelques vrais élans d’intuition et d’entraide",
       "B": "Les laisser interpréter librement les coïncidences",
-      "C": "Laisser certains croire que tout écart sera aussitôt sanctionné par ces anges"
+      "C": "Faire croire que les anges punissent tout écart"
     },
     "body": "Un village entier croit recevoir chaque jour des signes d’anges."
   },
@@ -1867,7 +1867,7 @@
     "choices": {
       "A": "Faire vraiment circuler un peu de réconfort entre les utilisateurs",
       "B": "Laisser la plateforme être surtout un réseau social de plus",
-      "C": "Créer l’idée que les prières non publiées seront ignorées voire sanctionnées"
+      "C": "Faire croire que les prières cachées seront ignorées"
     },
     "body": "Une plateforme en ligne permet de déposer des intentions de prière du monde entier."
   },
@@ -1903,7 +1903,7 @@
     "choices": {
       "A": "Les soutenir intérieurement sans signe extérieur",
       "B": "Laisser leur petit cercle rester discret et fragile",
-      "C": "Laisser croire qu’ils seront punis s’ils osent inviter des gens différents d’eux"
+      "C": "Faire croire qu’inviter des gens différents sera puni"
     },
     "body": "Dans une ville hostile à la religion, un petit groupe continue de prier en secret."
   },
@@ -1915,7 +1915,7 @@
     "choices": {
       "A": "Y faire ressentir une joie profonde proche de ta lumière",
       "B": "Laisser ce festival rester purement humain",
-      "C": "Laisser des voix le condamner comme 'anti-Paradis' et prédire des sanctions"
+      "C": "Le faire passer pour 'anti-Paradis' et annoncer des punitions"
     },
     "body": "Un festival célèbre la paix et la tolérance, sans référence directe au Paradis."
   },
@@ -1937,9 +1937,9 @@
     "title": "Jeune qui doute",
     "description": "Un jeune croyant n’ose plus prier par peur d’être hypocrite.",
     "choices": {
-      "A": "Lui envoyer une intuition simple : le droit d’être sincère même dans le doute",
+      "A": "Lui souffler qu’il peut rester sincère même dans le doute",
       "B": "Ne rien faire, le laisser traverser sa crise",
-      "C": "Laisser s’enraciner en lui la conviction qu’il sera puni pour avoir douté"
+      "C": "Laisser grandir l’idée qu’il sera puni pour son doute"
     },
     "body": "Un jeune croyant n’ose plus prier par peur d’être hypocrite."
   },
@@ -1951,7 +1951,7 @@
     "choices": {
       "A": "Inspirer quelques bénévoles à revenir",
       "B": "Laisser la solitude spirituelle se prolonger",
-      "C": "Laisser certains pensionnaires croire qu’ils paient des fautes anciennes"
+      "C": "Faire croire à d’anciens péchés à payer"
     },
     "body": "Dans une maison de retraite, plus personne ne vient faire de visites spirituelles."
   },
@@ -1963,7 +1963,7 @@
     "choices": {
       "A": "Y glisser une expérience de paix profonde sans étiquette",
       "B": "Les laisser rester purement techniques",
-      "C": "Laisser des voix les accuser de trahir la vraie foi et promettre des sanctions"
+      "C": "Les faire accuser de trahir la vraie foi"
     },
     "body": "Un atelier de méditation hésite à parler de toi ou à rester neutre et laïque."
   },
@@ -1975,7 +1975,7 @@
     "choices": {
       "A": "Rendre certaines lectures particulièrement lumineuses pour eux",
       "B": "Les laisser simplement discuter",
-      "C": "Laisser un leader leur dire que toute autre lecture que la sienne sera punie"
+      "C": "Faire dire qu’une autre lecture sera punie"
     },
     "body": "Un groupe lit des textes spirituels variés et bienveillants."
   },
@@ -2011,7 +2011,7 @@
     "choices": {
       "A": "Glisser quelques rencontres inattendues qui réveillent la solidarité",
       "B": "Laisser la fête rester vide de sens",
-      "C": "Laisser certains prêcheurs annoncer des sanctions pour ceux qui ne respectent pas les anciens rites"
+      "C": "Laisser annoncer des punitions contre ceux qui changent les rites"
     },
     "body": "Une fête religieuse est devenue un simple jour férié de consommation."
   },
@@ -2023,7 +2023,7 @@
     "choices": {
       "A": "Lui donner parfois un sentiment fort de présence",
       "B": "Laisser l’autel se dégrader doucement",
-      "C": "Laisser certains automobilistes croire qu’un accident est une sanction pour l’avoir ignoré"
+      "C": "Faire passer cet accident pour une punition"
     },
     "body": "Un petit autel au bord de la route subsiste, entretenu par une seule personne âgée."
   },
@@ -2035,7 +2035,7 @@
     "choices": {
       "A": "Encourager un projet centré sur l’aide désintéressée",
       "B": "Les laisser conditionner l’aide à l’adhésion à leurs rites",
-      "C": "Laisser croire que ceux qui n’adhèrent pas au culte méritent de souffrir"
+      "C": "Faire croire que refuser le culte mérite la souffrance"
     },
     "body": "Une communauté veut lancer un grand projet de solidarité, mais hésite à le lier à un culte strict."
   },
@@ -2059,7 +2059,7 @@
     "choices": {
       "A": "Accepter leur colère et envoyer des personnes capables d’écouter",
       "B": "Laisser leur silence et leur colère durer",
-      "C": "Laisser d’autres voix leur dire qu’ils ont été sanctionnés pour leurs fautes"
+      "C": "Faire dire qu’ils sont punis pour leurs fautes"
     },
     "body": "Après une catastrophe, des survivants t’en veulent et cessent toute prière."
   },
@@ -2083,7 +2083,7 @@
     "choices": {
       "A": "Inspirer quelques voix pour nuancer cette vision",
       "B": "Laisser cette lecture simpliste dominer",
-      "C": "Laisser un événement coïncider avec ces accusations, comme une sanction venue d’en bas"
+      "C": "Faire passer cet événement pour une punition venue d’en bas"
     },
     "body": "Certains groupes affirment que chaque malheur vient directement d’un pacte avec les forces infernales."
   },
@@ -2095,7 +2095,7 @@
     "choices": {
       "A": "Laisser chacun goûter un peu de liberté intérieure",
       "B": "Ne pas intervenir, le débat reste théorique",
-      "C": "Laisser certains parler d’un Ciel qui sanctionne tout usage 'mauvais' du libre arbitre"
+      "C": "Faire parler d’un Ciel qui punit le mauvais libre arbitre"
     },
     "body": "Des croyants débattent pour savoir si tout est déjà écrit ou non."
   },
@@ -2107,7 +2107,7 @@
     "choices": {
       "A": "Inspirer des personnes capables de tenir les deux ensemble",
       "B": "Laisser le conflit se durcir",
-      "C": "Laisser des prédicateurs annoncer des sanctions pour ceux qui étudient trop"
+      "C": "Laisser annoncer des punitions pour ceux qui étudient trop"
     },
     "body": "Certains disent qu’aimer la science, c’est renier le Paradis."
   },
@@ -2131,7 +2131,7 @@
     "choices": {
       "A": "Renforcer cette discrétion lumineuse",
       "B": "Laisser ce réseau rester très petit",
-      "C": "Laisser certains chefs religieux les critiquer et menacer de sanctions pour manque de visibilité"
+      "C": "Les critiquer et menacer de punitions"
     },
     "body": "Des croyants agissent dans l’ombre, sans discours, en aidant les plus fragiles."
   },
@@ -2143,7 +2143,7 @@
     "choices": {
       "A": "Inspirer quelques personnes à voir la santé avant la punition",
       "B": "Laisser ces règles se multiplier",
-      "C": "Laisser un incident de santé être vu comme sanction divine pour ceux qui mangent 'mal'"
+      "C": "Faire passer cet incident de santé pour une punition divine"
     },
     "body": "Un groupe affirme que certains aliments envoient directement en Enfer."
   },
@@ -2155,7 +2155,7 @@
     "choices": {
       "A": "Faire naître de vrais moments de paix et de responsabilité",
       "B": "Laisser les cours rester superficiels",
-      "C": "Renforcer l’idée qu’ils sont enfermés comme sanction éternelle du Ciel"
+      "C": "Faire croire qu’ils sont enfermés par punition du Ciel"
     },
     "body": "En prison, des détenus suivent des cours spirituels pour tenir debout."
   },
@@ -2167,7 +2167,7 @@
     "choices": {
       "A": "Inspirer quelques habitants à se préparer sans panique religieuse",
       "B": "Laisser les interprétations extrêmes continuer",
-      "C": "Laisser un petit épisode explosif être vécu comme sanction pour leurs fautes"
+      "C": "Faire passer l’explosion pour une punition de leurs fautes"
     },
     "body": "Un village au pied d’un volcan voit chaque grondement comme un signe du Ciel ou de l’Enfer."
   },
@@ -2191,7 +2191,7 @@
     "choices": {
       "A": "Accorder plutôt un petit signe discret à ceux qui souffrent le plus",
       "B": "Laisser le show se dérouler sans miracle évident",
-      "C": "Laisser une guérison spectaculaire être interprétée comme sanction contre ceux qui doutent"
+      "C": "Faire lire cette guérison comme une punition des sceptiques"
     },
     "body": "Un rassemblement promet un miracle spectaculaire à ceux qui ont une foi parfaite."
   },
@@ -2203,7 +2203,7 @@
     "choices": {
       "A": "Inspirer aussi des œuvres qui parlent de lumière et de guérison",
       "B": "Laisser la mode infernale passer ou s’installer",
-      "C": "Laisser certains prédicateurs annoncer des sanctions terribles à cause de cette fascination"
+      "C": "Laisser annoncer des punitions terribles"
     },
     "body": "Dans certaines villes, la fascination pour l’Enfer grandit à travers films et musiques."
   },
@@ -2215,7 +2215,7 @@
     "choices": {
       "A": "Semer le doute chez certains membres sur cette vision exclusive",
       "B": "Laisser ce groupe se refermer sur lui-même",
-      "C": "Laisser des coïncidences positives renforcer leur discours de sanction"
+      "C": "Laisser des signes valider leur discours punitif"
     },
     "body": "Un groupe affirme qu’ils seront seuls au Paradis et que tous les autres iront en bas."
   },
@@ -2227,7 +2227,7 @@
     "choices": {
       "A": "Envoyer parfois une sensation de paix au milieu de ces prières",
       "B": "Laisser ce climat anxieux persister",
-      "C": "Laisser certains prédicateurs confirmer que le moindre oubli sera sanctionné"
+      "C": "Laisser dire que le moindre oubli sera puni"
     },
     "body": "De nombreuses prières ne sont plus que des listes anxieuses pour 'éviter le pire'."
   },
@@ -2251,7 +2251,7 @@
     "choices": {
       "A": "Glisser une petite expérience intérieure chez certains moines",
       "B": "Laisser ce désert spirituel durer",
-      "C": "Laisser croire à certains qu’ils sont sanctionnés pour leurs doutes secrets"
+      "C": "Faire croire qu’ils sont punis pour leurs doutes"
     },
     "body": "Un monastère vit un temps de silence extrême où plus personne ne ressent ta présence."
   },
@@ -2263,7 +2263,7 @@
     "choices": {
       "A": "Laisser quelques joueurs ressentir néanmoins une question profonde",
       "B": "Laisser le jeu rester un simple divertissement",
-      "C": "Laisser certains groupes le condamner comme porte directe vers l’Enfer et agiter des sanctions"
+      "C": "Le faire passer pour une porte vers l’Enfer"
     },
     "body": "Un jeu vidéo populaire représente le Paradis et l’Enfer de manière caricaturale."
   },
@@ -2287,7 +2287,7 @@
     "choices": {
       "A": "Les aider à découvrir que tout ne repose pas sur le marchandage",
       "B": "Laisser ces pactes naïfs se multiplier",
-      "C": "Laisser certains croire qu’ils seront sanctionnés pour n’avoir pas tenu un vœu impossible"
+      "C": "Faire croire qu’un vœu brisé sera puni"
     },
     "body": "Des personnes font des promesses irréalistes en échange d’un miracle."
   },
@@ -2323,7 +2323,7 @@
     "choices": {
       "A": "Inspirer quelques personnes à voir la force dans la douceur",
       "B": "Laisser cette opposition nourrir les deux extrêmes",
-      "C": "Laisser l’idée se répandre qu’il faut donc plus de sanctions pour contenir l’Enfer"
+      "C": "Faire croire qu’il faut plus de punitions contre l’Enfer"
     },
     "body": "Certains racontent que l’Enfer gagne du terrain parce que le Paradis serait trop 'mou'."
   },
@@ -2335,7 +2335,7 @@
     "choices": {
       "A": "Transformer certains rêves en parcours de guérison",
       "B": "Laisser ces rêves rester déroutants",
-      "C": "Laisser des interprètes affirmer que ces rêves annoncent des sanctions réelles"
+      "C": "Faire dire que ces rêves annoncent de vraies punitions"
     },
     "body": "Beaucoup de gens rêvent de lieux où le Paradis et l’Enfer semblent se toucher."
   },
@@ -2359,7 +2359,7 @@
     "choices": {
       "A": "Inspirer l’idée qu’aucun texte ne remplace le cœur",
       "B": "Laisser ce travail juridique se poursuivre",
-      "C": "Laisser croire que toute petite entorse à ce règlement sera sanctionnée doublement"
+      "C": "Faire croire qu’une petite entorse sera punie deux fois"
     },
     "body": "Un groupe cherche à écrire le règlement parfait pour 'mériter' le Paradis."
   },
@@ -2371,7 +2371,7 @@
     "choices": {
       "A": "Inspirer aussi des chants doux qui touchent les cœurs",
       "B": "Laisser cette mode passer ou s’installer",
-      "C": "Laisser certains mouvements annoncer des sanctions sévères contre ceux qui les écoutent"
+      "C": "Laisser annoncer des punitions contre leurs auditeurs"
     },
     "body": "Des chants sombres inspirés de l’Enfer deviennent populaires, même dans des lieux paisibles."
   },
@@ -2383,7 +2383,7 @@
     "choices": {
       "A": "Lui offrir une ultime paix intérieure, même sans mots",
       "B": "Laisser ce départ se faire dans le doute",
-      "C": "Laisser des proches lui dire qu’il paie ici les fautes qui le mèneront en bas"
+      "C": "Faire dire qu’il paie déjà ses fautes"
     },
     "body": "Une personne à l’agonie n’arrive plus à croire qu’elle mérite le Paradis."
   },
@@ -2395,7 +2395,7 @@
     "choices": {
       "A": "Souffler un élan commun vers plus de compassion et de liberté",
       "B": "Laisser chaque tradition rester enfermée dans ses frontières",
-      "C": "Laisser une fraction imposer une vision très punitive en parlant de sanctions éternelles"
+      "C": "Laisser imposer une vision très punitive du Paradis"
     },
     "body": "Des représentants de multiples traditions se réunissent pour redéfinir l’image du Paradis."
   },
@@ -2407,7 +2407,7 @@
     "choices": {
       "A": "Inspirer quelques mélodies simples dans le cœur des enfants",
       "B": "Laisser la ville rester silencieuse sur le plan spirituel",
-      "C": "Laisser des prêcheurs annoncer qu’un tel silence sera sévèrement sanctionné"
+      "C": "Laisser annoncer que ce silence sera sévèrement puni"
     },
     "body": "Une grande ville a peu à peu perdu toute forme de chants sacrés, même lors des cérémonies."
   },
@@ -2419,7 +2419,7 @@
     "choices": {
       "A": "L’aider à transmettre parfois un vrai message de compassion",
       "B": "Le laisser poursuivre son show sans intervention",
-      "C": "Laisser certains le menacer publiquement d’aller en Enfer comme sanction"
+      "C": "Le menacer publiquement d’aller en Enfer"
     },
     "body": "Un influenceur populaire parle du Paradis avec humour, mais mélange vérité et spectacle."
   },
@@ -2431,7 +2431,7 @@
     "choices": {
       "A": "Lui inspirer un discours nuancé sur la bonté",
       "B": "Le laisser insister sur le risque de chute sans nuance",
-      "C": "Laisser des rumeurs dire que certains peuples sont déjà 'déjà jugés' en bas"
+      "C": "Faire dire que certains peuples sont déjà jugés en bas"
     },
     "body": "Un penseur décrit le monde comme un pont fragile entre le Ciel et le bas."
   },
@@ -2443,7 +2443,7 @@
     "choices": {
       "A": "Souffler discrètement que la sincérité compte plus que la visibilité",
       "B": "Laisser ce système de popularité se renforcer",
-      "C": "Laisser certains croire que les prières non publiées seront ignorées voire punies"
+      "C": "Faire croire que les prières cachées seront punies"
     },
     "body": "Une plateforme classe les prières par nombre de likes et de partages."
   },
@@ -2455,7 +2455,7 @@
     "choices": {
       "A": "Inspirer une vision religieuse de seconde chance et de rapprochement",
       "B": "Laisser cette histoire rester une rumeur marginale",
-      "C": "Laisser des groupes condamner cette idée comme idée interdite passible de lourdes sanctions"
+      "C": "Faire condamner cette idée comme faute interdite"
     },
     "body": "Une légende raconte que certaines âmes rejetées peuvent encore être accueillies dans un lieu de paix."
   },
@@ -2465,9 +2465,9 @@
     "title": "Miracle demandé à la carte",
     "description": "Un service payant prétend garantir des 'miracles express' contre don important.",
     "choices": {
-      "A": "Faire discrètement échouer quelques promesses pour éveiller les consciences",
+      "A": "Faire échouer quelques promesses pour réveiller les consciences",
       "B": "Laisser ce commerce spirituel prospérer",
-      "C": "Laisser certains utilisateurs penser qu’ils seront punis s’ils arrêtent de payer"
+      "C": "Faire croire qu’arrêter de payer sera puni"
     },
     "body": "Un service payant prétend garantir des 'miracles express' contre don important."
   },
@@ -2479,7 +2479,7 @@
     "choices": {
       "A": "Inspirer des voix qui rappellent la valeur de chaque vie ordinaire",
       "B": "Laisser l’idéal héroïque écraser les autres",
-      "C": "Laisser se propager l’idée que les personnes 'banales' iront en bas par sanction"
+      "C": "Faire croire que les gens ordinaires seront punis"
     },
     "body": "Une doctrine se répand : seuls les héros ou martyrs auront accès au Paradis."
   },
@@ -2491,7 +2491,7 @@
     "choices": {
       "A": "Inspirer quelques garde-fous éthiques à ses créateurs",
       "B": "Laisser l’IA produire des oracles froids et mécaniques",
-      "C": "Laisser certains prendre chaque output comme sanction ou récompense directement envoyée du Ciel"
+      "C": "Faire lire chaque réponse comme punition ou récompense divine"
     },
     "body": "Une intelligence artificielle est programmée pour 'interpréter' la volonté du Ciel à partir de données."
   },
@@ -2503,7 +2503,7 @@
     "choices": {
       "A": "Orienter ces marches vers plus d’aide concrète aux habitants",
       "B": "Laisser les processions rester symboliques seulement",
-      "C": "Laisser les habitants être stigmatisés comme 'amis de l’Enfer' et menacés de sanctions"
+      "C": "Faire traiter ces habitants d’amis de l’Enfer"
     },
     "body": "Des processions nocturnes sont organisées pour 'repousser l’Enfer' des quartiers pauvres."
   },
@@ -2515,7 +2515,7 @@
     "choices": {
       "A": "Souffler que l’amour compte plus que l’exactitude maniaque",
       "B": "Laisser la liste de règles s’allonger encore",
-      "C": "Laisser croire que la moindre infraction fera chuter directement en Enfer"
+      "C": "Faire croire qu’un petit écart mène à l’Enfer"
     },
     "body": "Une communauté détaille jusqu’au moindre geste autorisé pour 'mériter' le Paradis."
   },
@@ -2527,7 +2527,7 @@
     "choices": {
       "A": "Encourager une vision plus intérieure et moins paranoïaque",
       "B": "Laisser cette dramatisation continuer",
-      "C": "Laisser certains groupes utiliser cette image pour justifier des sanctions sociales"
+      "C": "Laisser utiliser cette image pour justifier des punitions"
     },
     "body": "Des croyants imaginent chaque rue comme un champ de bataille entre anges et démons."
   },
@@ -2537,9 +2537,9 @@
     "title": "Marchand de pardons",
     "description": "Un homme vend des messages promettant le pardon total à ceux qui paient.",
     "choices": {
-      "A": "Offrir une expérience intime de douceur qui les aide à croire à nouveau",
+      "A": "Offrir une douceur intime qui rouvre la foi",
       "B": "Laisser la méfiance rester dominante",
-      "C": "Laisser certains bourreaux se présenter comme repentis et réclamer l’absence totale de sanctions"
+      "C": "Laisser des bourreaux réclamer zéro punition"
     },
     "body": "Un homme vend des messages promettant le pardon total à ceux qui paient."
   },
@@ -2551,7 +2551,7 @@
     "choices": {
       "A": "Inspirer des œuvres qui montrent la liberté de choisir la lumière",
       "B": "Laisser le festival se perdre dans le sensationnalisme",
-      "C": "Laisser des groupes extrêmes menacer d’attaques ou de sanctions au nom du Ciel"
+      "C": "Laisser menacer au nom du Ciel"
     },
     "body": "Une ville veut organiser un festival artistique qui représente à la fois le Paradis et l’Enfer."
   },
@@ -2563,7 +2563,7 @@
     "choices": {
       "A": "Éveiller chez certains un malaise qui les pousse à arrêter ce jeu",
       "B": "Laisser ce pari blasphématoire se banaliser",
-      "C": "Laisser un événement dramatique survenir et être interprété comme sanction directe du Ciel"
+      "C": "Faire passer ce drame pour une punition du Ciel"
     },
     "body": "Des joueurs parient de l’argent sur qui 'ira en bas' ou 'en haut' dans leur entourage."
   },
@@ -2575,7 +2575,7 @@
     "choices": {
       "A": "Allumer une petite flamme intérieure chez quelques participants",
       "B": "Laisser la liturgie rester un spectacle",
-      "C": "Laisser certains prêtres utiliser la peur de l’Enfer pour remplir les bancs"
+      "C": "Laisser utiliser la peur de l’Enfer pour remplir l’église"
     },
     "body": "Dans une grande ville, les offices sont splendides mais les cœurs restent fermés."
   },
@@ -2585,9 +2585,9 @@
     "title": "Ville qui discute avec les démons",
     "description": "Des cercles occultes prétendent négocier avec les forces infernales pour obtenir pouvoir et protection.",
     "choices": {
-      "A": "Inspirer des personnes à proposer un autre chemin que cette fascination sombre",
+      "A": "Inspirer un autre chemin que cette fascination sombre",
       "B": "Laisser ces cercles rester marginaux",
-      "C": "Laisser certains religieux exiger des sanctions extrêmes contre tous les participants, sans nuance"
+      "C": "Laisser exiger des punitions extrêmes contre tous"
     },
     "body": "Des cercles occultes prétendent négocier avec les forces infernales pour obtenir pouvoir et protection."
   },
@@ -2599,7 +2599,7 @@
     "choices": {
       "A": "Glisser au cœur de ses rêves une porte de lumière possible",
       "B": "Laisser ces rêves continuer sans changement",
-      "C": "Laisser des prédicateurs lui confirmer qu’il est déjà sanctionné à jamais"
+      "C": "Faire dire qu’il est déjà puni à jamais"
     },
     "body": "Une personne ayant vécu une vie de violence rêve de couloirs d’Enfer chaque nuit."
   },
@@ -2609,9 +2609,9 @@
     "title": "École qui parle de liberté",
     "description": "Une école enseigne le libre arbitre sans parler directement du Paradis ou de l’Enfer.",
     "choices": {
-      "A": "Faire éclore chez certains élèves une recherche de sens plus profonde",
+      "A": "Éveiller chez certains élèves une vraie quête de sens",
       "B": "Laisser le discours rester surtout philosophique",
-      "C": "Laisser des groupes extérieurs accuser l’école et réclamer des sanctions"
+      "C": "Laisser réclamer des punitions contre l’école"
     },
     "body": "Une école enseigne le libre arbitre sans parler directement du Paradis ou de l’Enfer."
   },
@@ -2621,9 +2621,9 @@
     "title": "Attraction sur l’au-delà",
     "description": "Un parc lance une attraction spectaculaire sur le jugement après la mort.",
     "choices": {
-      "A": "Autoriser quelques expériences de compassion réelle pour les plus perdus",
+      "A": "Permettre une compassion réelle pour les plus perdus",
       "B": "Laisser ces récits rester symboliques et incompris",
-      "C": "Laisser des autorités religieuses condamner ces spirituelles comme alliés des Enfers et les sanctionner"
+      "C": "Faire condamner ces spirituels comme alliés des Enfers"
     },
     "body": "Un parc lance une attraction spectaculaire sur le jugement après la mort."
   },
@@ -2647,7 +2647,7 @@
     "choices": {
       "A": "Éveiller quelques doutes chez des membres clés du mouvement",
       "B": "Laisser ce mouvement prospérer par la peur",
-      "C": "Laisser leur nombre exploser en promettant des sanctions à tous ceux qui les quittent"
+      "C": "Laisser promettre des punitions à ceux qui partent"
     },
     "body": "Un mouvement religieux proclame que seule la peur permanente de l’Enfer permet d’entrer au Paradis."
   },
@@ -2669,9 +2669,9 @@
     "title": "Ville d’indifférence",
     "description": "Une grande métropole se montre polie mais totalement indifférente à toute idée de Paradis ou d’Enfer.",
     "choices": {
-      "A": "Glisser des rencontres qui éveillent discrètement des questions profondes",
+      "A": "Glisser des rencontres qui réveillent des questions",
       "B": "Laisser l’indifférence rester la norme",
-      "C": "Laisser des groupes radicaux surgir en criant à la sanction imminente pour réveiller les foules"
+      "C": "Laisser surgir des radicaux criant à la punition"
     },
     "body": "Une grande métropole se montre polie mais totalement indifférente à toute idée de Paradis ou d’Enfer."
   },
@@ -2683,7 +2683,7 @@
     "choices": {
       "A": "Inspirer une compréhension plus large du pardon et de la guérison",
       "B": "Laisser la pression psychologique monter",
-      "C": "Laisser les confesseurs menacer de sanctions ceux qui oublient un détail"
+      "C": "Faire menacer de punition pour un oubli"
     },
     "body": "Un rituel enseigne qu’il faut tout avouer en détail pour être pardonné, sinon c’est l’Enfer."
   },
@@ -2695,7 +2695,7 @@
     "choices": {
       "A": "Faire passer à travers eux une vraie douceur qui apaise les peurs",
       "B": "Laisser cet accompagnement rester neutre et protocolaire",
-      "C": "Laisser des visiteurs extérieurs venir annoncer des sanctions de dernière minute"
+      "C": "Laisser annoncer des punitions de dernière minute"
     },
     "body": "Dans un hôpital, une équipe veut accompagner spirituellement les mourants, sans imposer ni Paradis ni Enfer."
   },
@@ -2707,7 +2707,7 @@
     "choices": {
       "A": "Laisser naître une petite habitude de prière silencieuse",
       "B": "Ne pas intervenir, que cela reste un simple geste esthétique",
-      "C": "Laisser des groupes revendiquer ce rituel comme obligatoire sous peine de sanction"
+      "C": "Faire dire que ce rituel est obligatoire"
     },
     "body": "Un quartier commence à allumer des bougies aux fenêtres chaque soir 'pour la paix'."
   },
@@ -2719,7 +2719,7 @@
     "choices": {
       "A": "Lui inspirer un personnage qui découvre une bonté inattendue",
       "B": "Laisser ses livres nourrir cette vision anxieuse",
-      "C": "Laisser certains lecteurs prendre ses descriptions au pied de la lettre et vivre dans la peur de sanctions"
+      "C": "Faire vivre ces récits dans la peur des punitions"
     },
     "body": "Des proches imaginent voir leurs disparus au bord d’un lieu de paix et pleurent de soulagement."
   },
@@ -2731,7 +2731,7 @@
     "choices": {
       "A": "Faire surgir un petit signe de tendresse dans sa vie quotidienne",
       "B": "Laisser ses larmes continuer sans réponse apparente",
-      "C": "Laisser quelqu’un lui dire qu’elle est punie pour des fautes oubliées"
+      "C": "Faire dire qu’elle est punie pour de vieilles fautes"
     },
     "body": "Une femme regarde le ciel chaque soir et pleure, persuadée que tu l’as abandonnée."
   },
@@ -2743,7 +2743,7 @@
     "choices": {
       "A": "Renforcer les lieux où la prière est simple et confiante",
       "B": "Laisser les deux attitudes coexister sans se toucher",
-      "C": "Laisser les marchands d’amulettes promettre d’éviter des sanctions infernales"
+      "C": "Laisser promettre d’éviter les punitions infernales"
     },
     "body": "Dans une même ville, certains prient sincèrement, d’autres accumulent les amulettes par peur des enfers."
   },
@@ -2755,7 +2755,7 @@
     "choices": {
       "A": "L’aider à voir aussi les réponses discrètes et intérieures",
       "B": "Laisser son cahier devenir un tableau de statistiques",
-      "C": "Laisser naître l’idée que chaque demande ignorée est une sanction contre elle"
+      "C": "Faire croire qu’un refus est une punition contre elle"
     },
     "body": "Une jeune fille tient un journal de prières où elle note toutes ses demandes et leurs résultats."
   },
@@ -2767,7 +2767,7 @@
     "choices": {
       "A": "Inspirer quelques voix pour rappeler l’importance des soins humains",
       "B": "Laisser ces pratiques se multiplier",
-      "C": "Laisser ces faux exorcistes menacer les malades de lourdes sanctions spirituelles"
+      "C": "Laisser ces faux exorcistes menacer les malades"
     },
     "body": "Des gens se proclament exorcistes et voient l’Enfer derrière chaque souffrance psychologique."
   },
@@ -2779,7 +2779,7 @@
     "choices": {
       "A": "Semer l’idée que la bonté de cœur compte autant que les rites",
       "B": "Laisser ce groupe rester fermé et sûr de lui",
-      "C": "Laisser leurs prédicateurs amplifier les menaces d’Enfer pour tous les autres"
+      "C": "Laisser amplifier les menaces d’Enfer"
     },
     "body": "Un groupe enseigne que seules les personnes très pratiquantes seront sauvées."
   },
@@ -2791,7 +2791,7 @@
     "choices": {
       "A": "Laisser ces rêves devenir de doux rappels du Paradis",
       "B": "Ne rien changer, que ces rêves restent juste agréables",
-      "C": "Laisser certains gourous prétendre que seuls leurs disciples accéderont à ces jardins, les autres étant sanctionnés"
+      "C": "Faire croire que seuls leurs disciples entreront ici"
     },
     "body": "De nombreuses personnes rêvent de jardins lumineux où elles se sentent enfin en sécurité."
   },
@@ -2825,9 +2825,9 @@
     "title": "Voyages en lieux sacrés",
     "description": "Des voyages organisés promettent de 'se rapprocher du Paradis' en visitant des lieux sacrés.",
     "choices": {
-      "A": "Permettre à certains voyageurs de vivre une vraie expérience intérieure",
+      "A": "Permettre une vraie expérience intérieure à certains voyageurs",
       "B": "Laisser ces voyages rester une consommation d’images",
-      "C": "Laisser des guides affirmer que ceux qui n’y participent pas risquent la sanction divine"
+      "C": "Faire dire que refuser ce lieu attire la punition divine"
     },
     "body": "Des voyages organisés promettent de 'se rapprocher du Paradis' en visitant des lieux sacrés."
   },
@@ -2849,9 +2849,9 @@
     "title": "Musique des deux royaumes",
     "description": "Des artistes composent un album partagé en deux : une face Paradis, une face Enfer.",
     "choices": {
-      "A": "Inspirer des paroles qui montrent la possibilité de choisir la lumière",
+      "A": "Inspirer des paroles sur le choix de la lumière",
       "B": "Laisser l’album jouer sur le choc sans profondeur",
-      "C": "Laisser certains groupes le diaboliser et prophétiser des sanctions contre ceux qui l’écoutent"
+      "C": "Laisser prophétiser des punitions contre son public"
     },
     "body": "Des artistes composent un album partagé en deux : une face Paradis, une face Enfer."
   },
@@ -2863,7 +2863,7 @@
     "choices": {
       "A": "Faire naître de vrais élans de gratitude en lisant ces messages",
       "B": "Laisser le mur devenir une attraction touristique",
-      "C": "Laisser certains exiger que chaque remerciement suive une formule stricte sous peine de sanction"
+      "C": "Faire imposer une formule stricte à chaque merci"
     },
     "body": "Dans une ville, un grand mur est dédié aux remerciements anonymes adressés au Ciel."
   },
@@ -2873,9 +2873,9 @@
     "title": "Valeurs spirituelles à l’école",
     "description": "Des programmes scolaires se disputent : faut-il parler de spiritualité ou rester neutre ?",
     "choices": {
-      "A": "Inspirer quelques enseignants à parler surtout de liberté et de respect",
+      "A": "Inspirer des profs à parler de liberté et de respect",
       "B": "Laisser le débat rester technique et administratif",
-      "C": "Laisser des groupes faire pression sur les écoles jugées trop neutres"
+      "C": "Laisser faire pression sur les écoles trop neutres"
     },
     "body": "Des programmes scolaires se disputent : faut-il parler de spiritualité ou rester neutre ?"
   },
@@ -2887,7 +2887,7 @@
     "choices": {
       "A": "Lui offrir une perception fugace de ta présence accueillante",
       "B": "Laisser sa peur se déployer sans signe particulier",
-      "C": "Laisser un proche lui dire qu’il est trop tard et qu’il est sanctionné"
+      "C": "Faire dire qu’il est déjà puni"
     },
     "body": "Un homme qui a toujours ignoré les questions spirituelles panique sur son lit de mort."
   },
@@ -2899,7 +2899,7 @@
     "choices": {
       "A": "Inspirer quelques membres à se détacher de ces chiffres",
       "B": "Laisser ces scores devenir une obsession collective",
-      "C": "Laisser l’idée s’imposer que tout score en baisse entraîne une sanction du Ciel"
+      "C": "Faire croire qu’un score bas attire la punition du Ciel"
     },
     "body": "Une communauté affiche ses 'scores de sainteté' en pourcentage de réussite morale."
   },
@@ -2911,7 +2911,7 @@
     "choices": {
       "A": "Laisser cette prière élargir leur compassion",
       "B": "Ne pas intervenir, que cela reste une pratique minoritaire",
-      "C": "Laisser des autorités condamner ces prières comme offensantes et les sanctionner"
+      "C": "Faire sanctionner ces prières comme offensantes"
     },
     "body": "Des personnes prient explicitement pour ceux qui, selon les doctrines, seraient déjà perdus en bas."
   },
@@ -2923,7 +2923,7 @@
     "choices": {
       "A": "Faire naître chez certains un vrai désir de sens",
       "B": "Laisser la façade bien rangée continuer",
-      "C": "Laisser des élites religieuses menacer de sanctions ceux qui se montrent moins présents"
+      "C": "Laisser menacer les moins présents de punitions"
     },
     "body": "Dans une région, les gens participent aux rites par pression sociale plus que par conviction."
   },
@@ -2934,8 +2934,8 @@
     "description": "Une série raconte que seuls quelques humains seraient vraiment choisis.",
     "choices": {
       "A": "Inspirer quelques artisans de paix capables d’écouter les deux côtés",
-      "B": "Laisser la haine religieuse se transmettre de génération en génération",
-      "C": "Laisser des leaders promettre des sanctions célestes pour tout accord de paix"
+      "B": "Laisser la haine religieuse se transmettre",
+      "C": "Laisser promettre des punitions contre tout accord de paix"
     },
     "body": "Une série raconte que seuls quelques humains seraient vraiment choisis."
   },
@@ -2957,9 +2957,9 @@
     "title": "Silence après une catastrophe",
     "description": "Après un tremblement de terre, les survivants prient, mais n’ont l’impression de recevoir aucune réponse.",
     "choices": {
-      "A": "Faire naître une solidarité inattendue qui devienne ta réponse silencieuse",
+      "A": "Faire naître une solidarité qui devienne ta réponse",
       "B": "Laisser le sentiment d’abandon s’installer",
-      "C": "Laisser certains prédicateurs affirmer que le séisme était déjà une sanction"
+      "C": "Faire passer ce séisme pour une punition"
     },
     "body": "Après un tremblement de terre, les survivants prient, mais n’ont l’impression de recevoir aucune réponse."
   },
@@ -2971,7 +2971,7 @@
     "choices": {
       "A": "Inspirer un usage partagé centré sur la paix et l’écoute",
       "B": "Laisser le conflit symbolique se transformer en simple tourisme",
-      "C": "Laisser des extrémistes imposer une fermeture violente, au nom de la sanction divine"
+      "C": "Laisser des extrémistes fermer le lieu par violence"
     },
     "body": "Un lieu ancien est revendiqué par un culte du Paradis et un groupe tourné vers le bas."
   },
@@ -2983,7 +2983,7 @@
     "choices": {
       "A": "Lui donner le courage de partir et d’aider d’autres à sortir",
       "B": "Laisser son doute grandir sans action concrète",
-      "C": "Laisser les dirigeants renforcer les sanctions spirituelles annoncées contre les 'traîtres'"
+      "C": "Laisser renforcer les punitions contre les 'traîtres'"
     },
     "body": "Un adepte se rend compte que son groupe utilise la peur de l’Enfer pour tout contrôler."
   },
@@ -2995,7 +2995,7 @@
     "choices": {
       "A": "Lui offrir un moment de paix intérieure où il se sent accueilli",
       "B": "Laisser cette dernière répétition se terminer dans la banalité",
-      "C": "Laisser quelqu’un lui dire qu’il paie maintenant des fautes passées et que sa voix est sanctionnée"
+      "C": "Faire dire qu’il paie ses fautes et que sa voix est punie"
     },
     "body": "Un ancien chante une dernière fois, persuadé que sa voix ne vaut plus rien pour le Ciel."
   },
@@ -3005,9 +3005,9 @@
     "title": "Ville sans clochers",
     "description": "Une grande ville a rasé ses anciens clochers pour construire des tours de verre.",
     "choices": {
-      "A": "Souffler à certains habitants l’idée d’inventer de nouveaux signes discrets vers le ciel",
+      "A": "Souffler de nouveaux signes discrets vers le ciel",
       "B": "Laisser la ville assumer totalement ce choix moderne",
-      "C": "Laisser des groupes annoncer que cette ville sera sévèrement sanctionnée"
+      "C": "Laisser annoncer que cette ville sera sévèrement punie"
     },
     "body": "Une grande ville a rasé ses anciens clochers pour construire des tours de verre."
   },
@@ -3017,9 +3017,9 @@
     "title": "Bureau des regrets",
     "description": "Un lieu symbolique propose d’écrire ses regrets pour trouver un peu de soulagement.",
     "choices": {
-      "A": "Inspirer des épisodes centrés sur la bonté et la responsabilité personnelle",
+      "A": "Inspirer des épisodes sur la bonté et la responsabilité",
       "B": "Laisser le podcast surfer sur la peur pour faire de l’audience",
-      "C": "Laisser certains auditeurs organiser des 'campagnes de sanction' contre ceux qu’ils jugent impies"
+      "C": "Laisser lancer des campagnes de punition contre les impies"
     },
     "body": "Un lieu symbolique propose d’écrire ses regrets pour trouver un peu de soulagement."
   },
@@ -3031,7 +3031,7 @@
     "choices": {
       "A": "Glisser une idée de jeu où l’on se soutient plutôt que se juger",
       "B": "Laisser ce jeu rester une simple moquerie d’enfants",
-      "C": "Laisser des adultes reprendre ce langage de jugement dans leurs discours"
+      "C": "Laisser des adultes reprendre ce langage de jugement"
     },
     "body": "Dans une cour d’école, des enfants jouent à classer les autres en haut ou en bas selon leurs notes."
   },
@@ -3041,9 +3041,9 @@
     "title": "Influenceur de miracles",
     "description": "Un influenceur diffuse des vidéos prétendument miraculeuses en ton nom.",
     "choices": {
-      "A": "Faire apparaître quelques témoignages sobres mais authentiques de guérison intérieure",
+      "A": "Faire naître quelques récits sobres de guérison intérieure",
       "B": "Laisser les vidéos spectaculaires se multiplier",
-      "C": "Laisser naître l’idée que ceux qui ne croient pas à ces vidéos seront sanctionnés en bas"
+      "C": "Faire croire que douter de ces vidéos sera puni en bas"
     },
     "body": "Un influenceur diffuse des vidéos prétendument miraculeuses en ton nom."
   },
@@ -3055,7 +3055,7 @@
     "choices": {
       "A": "Inspirer quelques croyants à aller y vivre une solidarité simple",
       "B": "Laisser ce quartier rester dans l’ombre",
-      "C": "Laisser certains dire que s’ils sont pauvres, c’est une sanction méritée"
+      "C": "Faire dire que la pauvreté est une punition méritée"
     },
     "body": "Un quartier pauvre est ignoré par les grandes institutions religieuses de la ville."
   },
@@ -3067,7 +3067,7 @@
     "choices": {
       "A": "Inspirer une fin où la compassion surprend les spectateurs",
       "B": "Laisser la pièce rester un divertissement sombre",
-      "C": "Laisser certains groupes crier au blasphème et promettre des sanctions"
+      "C": "Laisser crier au blasphème et promettre des punitions"
     },
     "body": "Une compagnie de théâtre met en scène des damnés qui négocient leur sortie de l’Enfer."
   },
@@ -3077,7 +3077,7 @@
     "title": "Pèlerinage en ligne",
     "description": "Un site propose un 'pèlerinage virtuel' avec prières pré-écrites et dons automatiques.",
     "choices": {
-      "A": "Permettre à certains de vivre malgré tout un vrai moment de recueillement",
+      "A": "Permettre un vrai moment de recueillement à certains",
       "B": "Laisser cette pratique rester très commerciale",
       "C": "Laisser le site menacer de malédictions ceux qui arrêtent de payer"
     },
@@ -3089,7 +3089,7 @@
     "title": "Livre des fautes",
     "description": "Un prédicateur tient un registre public des 'fautes' de la ville, prétendant lire ton jugement.",
     "choices": {
-      "A": "Inspirer des citoyens à contester ce registre au nom de la dignité humaine",
+      "A": "Inspirer des citoyens à contester ce registre",
       "B": "Laisser le registre devenir un spectacle malsain",
       "C": "Laisser le prédicateur menacer d’Enfer ceux dont le nom y apparaît"
     },
@@ -3101,9 +3101,9 @@
     "title": "Culte de la prospérité",
     "description": "Un mouvement enseigne que la richesse matérielle prouve la faveur du Paradis.",
     "choices": {
-      "A": "Éveiller des témoins qui rappellent la valeur des pauvres et des fragiles",
+      "A": "Éveiller des témoins qui défendent les plus fragiles",
       "B": "Laisser ce message séduisant se répandre",
-      "C": "Laisser ce culte décrire la pauvreté comme une sanction directe de ta part"
+      "C": "Faire dire que la pauvreté vient d’une punition divine"
     },
     "body": "Un mouvement enseigne que la richesse matérielle prouve la faveur du Paradis."
   },
@@ -3113,9 +3113,9 @@
     "title": "Ligne directe avec les anges",
     "description": "Un service téléphonique payant prétend transmettre les messages des anges gardiens.",
     "choices": {
-      "A": "Faire sentir à certains appelants que la vraie consolation vient d’ailleurs",
+      "A": "Faire sentir que la vraie consolation vient d’ailleurs",
       "B": "Laisser cette entreprise prospérer",
-      "C": "Laisser croire que ne pas appeler coupe la protection céleste et attire la sanction"
+      "C": "Faire croire qu’ignorer l’appel attire une punition"
     },
     "body": "Un service téléphonique payant prétend transmettre les messages des anges gardiens."
   },
@@ -3125,7 +3125,7 @@
     "title": "Ville des promesses non tenues",
     "description": "Une ville multiplie les vœux et promesses religieuses jamais respectées.",
     "choices": {
-      "A": "Inspirer une campagne locale axée sur de petits engagements réalistes",
+      "A": "Inspirer une campagne locale de petits engagements",
       "B": "Laisser cette hypocrisie rester un folklore",
       "C": "Laisser des voix annoncer une sanction collective imminente"
     },
@@ -3137,9 +3137,9 @@
     "title": "Réveil d’un ancien culte",
     "description": "Dans une région reculée, un culte ancien mélange ton nom avec des forces plus sombres venues d’en bas.",
     "choices": {
-      "A": "Éveiller quelques personnes à la manipulation dont elles sont victimes",
+      "A": "Éveiller quelques personnes à cette manipulation",
       "B": "Laisser ce culte rester marginal",
-      "C": "Laisser des extrémistes vouloir tout brûler en parlant de sanction céleste"
+      "C": "Laisser vouloir tout brûler au nom d’une punition céleste"
     },
     "body": "Dans une région reculée, un culte ancien mélange ton nom avec des forces plus sombres venues d’en bas."
   },
@@ -3151,7 +3151,7 @@
     "choices": {
       "A": "Transformer parfois ce silence en sensation d’être aimé malgré tout",
       "B": "Laisser ces rêves rester mystérieux",
-      "C": "Laisser certains gourous interpréter chaque rêve comme menace de sanction"
+      "C": "Laisser lire chaque rêve comme menace de punition"
     },
     "body": "Beaucoup de personnes rêvent d’anges qui les regardent sans parler."
   },
@@ -3175,7 +3175,7 @@
     "choices": {
       "A": "Laisser ce geste renforcer un lien confiant et simple",
       "B": "Ne pas intervenir, que cela reste une habitude d’enfance",
-      "C": "Laisser certains adultes dire que les enfants qui oublient seront punis"
+      "C": "Laisser dire que les enfants distraits seront punis"
     },
     "body": "Des enfants déposent chaque soir des dessins et petits objets pour leurs anges gardiens."
   },
@@ -3187,7 +3187,7 @@
     "choices": {
       "A": "Inspirer de vrais lieux de parole pour les endeuillés",
       "B": "Laisser ce livre faire fortune",
-      "C": "Laisser des mouvements utiliser ce livre pour menacer de sanctions démoniaques"
+      "C": "Laisser ce livre servir à menacer de punitions démoniaques"
     },
     "body": "Un best-seller prétend expliquer comment contacter les morts, certains parlant de portes sur l’Enfer."
   },
@@ -3209,9 +3209,9 @@
     "title": "Culte du sacrifice absolu",
     "description": "Un mouvement prêche que plus la vie est dure ici, plus la place au Paradis sera élevée.",
     "choices": {
-      "A": "Inspirer quelques membres à chercher aussi la joie et la justice dès maintenant",
+      "A": "Inspirer la recherche de joie et de justice maintenant",
       "B": "Laisser ce culte glorifier la souffrance",
-      "C": "Laisser les chefs traiter toute recherche de bien-être comme faute sanctionnée"
+      "C": "Faire traiter le bien-être comme une faute punie"
     },
     "body": "Un mouvement prêche que plus la vie est dure ici, plus la place au Paradis sera élevée."
   },
@@ -3221,9 +3221,9 @@
     "title": "Mur de prières refusées",
     "description": "Sur un forum, des gens racontent leurs prières 'non exaucées' et concluent que tu n’existes pas.",
     "choices": {
-      "A": "Orienter certains vers une compréhension plus profonde de ce qu’est une réponse",
+      "A": "Orienter certains vers une réponse plus profonde",
       "B": "Laisser ce mur de déception grandir",
-      "C": "Laisser des fondamentalistes accuser ces personnes d’être déjà promises à l’Enfer"
+      "C": "Faire accuser ces personnes d’être promises à l’Enfer"
     },
     "body": "Sur un forum, des gens racontent leurs prières 'non exaucées' et concluent que tu n’existes pas."
   },
@@ -3235,7 +3235,7 @@
     "choices": {
       "A": "Lui inspirer aussi des scènes de consolation et de réparation",
       "B": "Laisser ses fresques rester centrées sur la peur",
-      "C": "Laisser des prêcheurs utiliser ces fresques pour menacer la population de sanctions"
+      "C": "Laisser utiliser ces fresques pour menacer la ville"
     },
     "body": "Un artiste peint des fresques géantes du jugement dernier au cœur d’une ville."
   },
@@ -3247,7 +3247,7 @@
     "choices": {
       "A": "Semer une ou deux conversations sincères derrière ces blagues",
       "B": "Laisser l’ironie masquer toute profondeur",
-      "C": "Laisser des extrémistes condamner ces moqueries comme méritant une sanction immédiate"
+      "C": "Laisser punir ces moqueries sans attendre"
     },
     "body": "Les habitants plaisantent sans cesse sur l’Enfer et le Paradis pour ne pas en parler sérieusement."
   },
@@ -3257,9 +3257,9 @@
     "title": "Place des idées interdites",
     "description": "Une grande place devient le lieu de débats sur des idées religieuses jugées interdites.",
     "choices": {
-      "A": "Autoriser quelques expériences d’amour désintéressé vers les plus perdus",
+      "A": "Permettre un amour désintéressé envers les plus perdus",
       "B": "Laisser ces récits passer pour des métaphores étranges",
-      "C": "Laisser des autorités les dénoncer comme pactisant avec l’Enfer et les sanctionner"
+      "C": "Les faire dénoncer comme alliés de l’Enfer"
     },
     "body": "Une grande place devient le lieu de débats sur des idées religieuses jugées interdites."
   },
@@ -3271,7 +3271,7 @@
     "choices": {
       "A": "Inspirer un recentrage sur l’écoute et l’accompagnement réel",
       "B": "Laisser la logique des chiffres dominer",
-      "C": "Laisser cette organisation menacer tous ceux qui refusent de les suivre"
+      "C": "Laisser menacer ceux qui refusent de suivre"
     },
     "body": "Une organisation se vante de 'sauver' un certain nombre d’âmes par jour, avec statistiques détaillées."
   },
@@ -3283,7 +3283,7 @@
     "choices": {
       "A": "Encourager une réflexion profonde sur justice et responsabilité",
       "B": "Laisser la ville rester dans un optimisme parfois naïf",
-      "C": "Laisser des prédicateurs extérieurs promettre une sanction d’autant plus dure"
+      "C": "Laisser promettre une punition encore plus dure"
     },
     "body": "Une ville entière refuse le concept d’Enfer et ne parle que de soin et de réparation."
   },
@@ -3293,9 +3293,9 @@
     "title": "Paradis réservé à une élite",
     "description": "Un groupe affirme qu’un petit nombre d’initiés seulement verra le Paradis.",
     "choices": {
-      "A": "Éveiller la jalousie des exclus pour qu’ils cherchent une autre voie plus saine",
+      "A": "Éveiller les exclus à chercher une voie plus saine",
       "B": "Laisser ce groupe se refermer sur lui-même",
-      "C": "Laisser ce groupe menacer tous les 'non-initiés' d’une sanction éternelle"
+      "C": "Laisser menacer les non-initiés d’une punition éternelle"
     },
     "body": "Un groupe affirme qu’un petit nombre d’initiés seulement verra le Paradis."
   },
@@ -3331,7 +3331,7 @@
     "choices": {
       "A": "Inspirer des pratiques plus équilibrées et respectueuses du corps",
       "B": "Laisser ces jeûnes extrêmes se répandre",
-      "C": "Laisser les leaders présenter toute faiblesse comme faute sanctionnée"
+      "C": "Faire passer toute faiblesse pour une faute punie"
     },
     "body": "Un groupe promet que de longs jeûnes forcés peuvent 'forcer' les portes du Paradis."
   },
@@ -3355,7 +3355,7 @@
     "choices": {
       "A": "Laisser cette prière silencieuse irriguer certains cœurs au loin",
       "B": "Laisser ce silence rester ignoré",
-      "C": "Laisser certains moines valoriser leur rôle au point de mépriser le reste du monde"
+      "C": "Laisser ces moines mépriser le reste du monde"
     },
     "body": "Des monastères prient jour et nuit, sans que le monde extérieur le remarque."
   },
@@ -3365,9 +3365,9 @@
     "title": "Tournoi de débats théologiques",
     "description": "Un grand tournoi oppose des orateurs sur la question Paradis vs Enfer.",
     "choices": {
-      "A": "Inspirer quelques discours qui ramènent à la vie réelle et aux plus fragiles",
+      "A": "Inspirer des discours tournés vers les plus fragiles",
       "B": "Laisser le tournoi devenir un sport intellectuel",
-      "C": "Laisser certains orateurs menacer de sanctions ceux qui ne pensent pas comme eux"
+      "C": "Laisser menacer ceux qui pensent autrement"
     },
     "body": "Un grand tournoi oppose des orateurs sur la question Paradis vs Enfer."
   },
@@ -3391,7 +3391,7 @@
     "choices": {
       "A": "Laisser cette entraide devenir une parabole vivante du Paradis",
       "B": "Ne pas intervenir, que cela reste discret",
-      "C": "Laisser certains groupes religieux dénoncer ce réseau comme 'dangereux' et le sanctionner"
+      "C": "Faire dénoncer ce réseau comme dangereux"
     },
     "body": "Un réseau secret offre une aide matérielle et psychologique sans prêcher directement."
   },
@@ -3403,7 +3403,7 @@
     "choices": {
       "A": "Inspirer en cachette des membres pour soutenir les exclus",
       "B": "Laisser ce mouvement se durcir",
-      "C": "Laisser les leaders brandir l’Enfer comme sanction pour le moindre écart"
+      "C": "Laisser brandir l’Enfer au moindre écart"
     },
     "body": "Un mouvement exige une pureté absolue et bannit toute personne jugée 'impure'."
   },
@@ -3427,7 +3427,7 @@
     "choices": {
       "A": "Glisser quelques événements qui réveillent la question du sens",
       "B": "Laisser cette indifférence se poursuivre",
-      "C": "Laisser des fanatiques venir menacer la ville de sanctions spectaculaires"
+      "C": "Laisser venir menacer la ville de grandes punitions"
     },
     "body": "Une ville s’en moque : ni Paradis, ni Enfer, ni justice ultime ne les intéressent."
   },
@@ -3451,7 +3451,7 @@
     "choices": {
       "A": "Insérer dans ses rêves un guide qui lui montre une autre route",
       "B": "Laisser ce cauchemar la hanter",
-      "C": "Laisser un prédicateur lui dire qu’elle est déjà sanctionnée et sans retour"
+      "C": "Faire dire qu’elle est déjà punie sans retour"
     },
     "body": "Une personne rêve souvent d’un pont entre Paradis et Enfer qui s’effondre sous ses pas."
   },
@@ -3461,9 +3461,9 @@
     "title": "Réalité virtuelle du Ciel",
     "description": "Un studio crée une expérience VR 'Paradis' très réaliste, payante et addictive.",
     "choices": {
-      "A": "Permettre à certains utilisateurs d’y ressentir une vraie soif de profondeur",
+      "A": "Permettre une vraie soif de profondeur chez certains",
       "B": "Laisser cette VR remplacer toute quête spirituelle réelle",
-      "C": "Laisser des groupes affirmer que ne pas y participer t’expose à une sanction céleste"
+      "C": "Faire croire que refuser expose à une punition céleste"
     },
     "body": "Un studio crée une expérience VR 'Paradis' très réaliste, payante et addictive."
   },
@@ -3485,7 +3485,7 @@
     "title": "Courriel venu d’en bas",
     "description": "Une campagne de spam affirme provenir des enfers et menace ceux qui ne transfèrent pas le message.",
     "choices": {
-      "A": "Inspirer la dérision et la prudence chez la plupart des destinataires",
+      "A": "Inspirer prudence et dérision chez la plupart",
       "B": "Laisser la rumeur numérique se répandre",
       "C": "Laisser des personnes angoissées y voir une vraie sanction"
     },
@@ -3497,7 +3497,7 @@
     "title": "Culte des martyrs forcés",
     "description": "Un groupe pousse des jeunes à se sacrifier pour 'garantir' leur place au Paradis.",
     "choices": {
-      "A": "Éveiller chez certains un sursaut de peur saine de cette manipulation",
+      "A": "Éveiller une peur saine face à cette manipulation",
       "B": "Laisser cette idéologie se propager",
       "C": "Laisser les leaders promettre l’Enfer à ceux qui refusent de mourir"
     },
@@ -3523,7 +3523,7 @@
     "choices": {
       "A": "Inspirer un travail de mémoire et de demande de pardon",
       "B": "Laisser ces histoires rester des murmures amers",
-      "C": "Laisser certains nostalgique rêver de restaurer ce système de sanctions"
+      "C": "Laisser rêver au retour de ce système punitif"
     },
     "body": "Une communauté se souvient d’époque où les 'impurs' étaient humiliés au nom du Ciel."
   },
@@ -3535,7 +3535,7 @@
     "choices": {
       "A": "Faire naître une réflexion plus honnête sur la justice sociale",
       "B": "Laisser ce langage cynique se banaliser",
-      "C": "Laisser certains responsables croire qu’ils peuvent traiter les employés comme des âmes sanctionnées"
+      "C": "Faire traiter les employés comme des âmes punies"
     },
     "body": "Une grande entreprise parle de 'paradis fiscal' et de 'collaborateurs damnés' pour rire."
   },
@@ -3545,9 +3545,9 @@
     "title": "Village qui se croit maudit",
     "description": "Un village cumule les malheurs et se persuade que tu l’as maudit.",
     "choices": {
-      "A": "Envoyer des personnes de l’extérieur pour soutenir et contredire ce récit",
+      "A": "Envoyer du soutien extérieur pour briser ce récit",
       "B": "Laisser le village se replier sur son sentiment de sanction",
-      "C": "Laisser des prédicateurs confirmer qu’ils sont punis pour de vieux péchés"
+      "C": "Laisser dire qu’ils sont punis pour de vieux péchés"
     },
     "body": "Un village cumule les malheurs et se persuade que tu l’as maudit."
   },
@@ -3559,7 +3559,7 @@
     "choices": {
       "A": "Faire de ces petites communautés de vrais noyaux de reconstruction",
       "B": "Laisser ces prières rester isolées",
-      "C": "Laisser des factions revendiquer le monopole du Paradis et menacer les autres de sanctions"
+      "C": "Laisser menacer les autres de punitions"
     },
     "body": "Après une guerre civile, des ruines abritent encore des petites communautés de prière."
   },
@@ -3571,7 +3571,7 @@
     "choices": {
       "A": "Inspirer des critiques sur la violence de ces humiliations",
       "B": "Laisser la pratique devenir à la mode",
-      "C": "Laisser les organisateurs brandir l’Enfer pour ceux qui refusent d’avouer"
+      "C": "Laisser brandir l’Enfer contre ceux qui se taisent"
     },
     "body": "Un mouvement exige que les fautes soient avouées publiquement sur les réseaux sociaux."
   },
@@ -3583,7 +3583,7 @@
     "choices": {
       "A": "Éveiller quelques consciences locales à ces injustices",
       "B": "Laisser ce slogan marketing prospérer",
-      "C": "Laisser des habitants croire qu’ils sont sanctionnés d’y travailler sans pouvoir en profiter"
+      "C": "Faire croire qu’ils sont punis d’y travailler"
     },
     "body": "Une région touristique se vend comme 'petit paradis sur Terre', oubliant ses habitants précaires."
   },
@@ -3595,7 +3595,7 @@
     "choices": {
       "A": "Lui offrir une dernière paix intérieure douce et confiante",
       "B": "Laisser ce doute flotter sans réponse claire",
-      "C": "Laisser un proche lui parler de sanction et de peur au lieu d’apaisement"
+      "C": "Laisser parler de punition et de peur"
     },
     "body": "Une personne mourante regarde le ciel par la fenêtre et se demande où elle va aller."
   },
@@ -3607,7 +3607,7 @@
     "choices": {
       "A": "Souffler l’idée d’accompagner chaque lanterne d’une pensée sincère",
       "B": "Laisser la fête rester surtout esthétique",
-      "C": "Encourager les autorités religieuses à encadrer la fête par des rites officiels"
+      "C": "Encadrer la fête par des rites officiels"
     },
     "body": "Une ville prépare une fête où chacun déposera une lanterne pour ses souhaits."
   },
@@ -3619,7 +3619,7 @@
     "choices": {
       "A": "Les aider à ressentir que chanter est déjà une forme de prière",
       "B": "Laisser la chorale s’arrêter doucement",
-      "C": "Encourager la paroisse à organiser de grands concerts pour attirer du monde"
+      "C": "Faire organiser de grands concerts par la paroisse"
     },
     "body": "Une petite chorale hésite à continuer car peu de gens viennent écouter."
   },
@@ -3629,7 +3629,7 @@
     "title": "Pause au bureau",
     "description": "Dans une entreprise, quelques collègues suggèrent un temps de silence quotidien.",
     "choices": {
-      "A": "Laisser ce temps de silence devenir un moment libre de prière pour certains",
+      "A": "Faire de ce silence un temps libre de prière",
       "B": "Laisser chacun gérer ses pauses comme il veut",
       "C": "Encourager la direction à formaliser ce moment avec un rituel fixe"
     },
@@ -3653,7 +3653,7 @@
     "title": "Montagne silencieuse",
     "description": "Des randonneurs montent chaque année sur une montagne et y observent le lever du soleil.",
     "choices": {
-      "A": "Faire de ce moment un espace de contemplation intérieure pour certains",
+      "A": "Faire de ce moment un espace de contemplation",
       "B": "Laisser l’ascension rester surtout sportive",
       "C": "Encourager la création d’un petit sanctuaire organisé au sommet"
     },
@@ -3667,7 +3667,7 @@
     "choices": {
       "A": "Orienter certains vers des lettres silencieusement adressées au ciel",
       "B": "Laisser l’atelier rester un simple exercice littéraire",
-      "C": "Encourager l’animatrice à y introduire des textes religieux canoniques"
+      "C": "Ajouter des textes religieux reconnus"
     },
     "body": "Un groupe se réunit pour écrire des lettres qu’ils n’enverront jamais."
   },
@@ -3679,7 +3679,7 @@
     "choices": {
       "A": "Faire naître une habitude de remercier pour chaque récolte",
       "B": "Laisser le jardin rester un projet écologique neutre",
-      "C": "Encourager l’installation d’un petit oratoire central géré par une association"
+      "C": "Installer un petit oratoire central"
     },
     "body": "Un terrain vague est transformé en jardin potager collectif."
   },
@@ -3691,7 +3691,7 @@
     "choices": {
       "A": "Laisser certains se sentir reliés au mystère en silence",
       "B": "Laisser l’événement rester purement scientifique",
-      "C": "Encourager une communauté locale à distribuer des brochures spirituelles"
+      "C": "Faire distribuer des brochures spirituelles"
     },
     "body": "Une ville organise une nuit d’observation du ciel avec des télescopes."
   },
@@ -3701,7 +3701,7 @@
     "title": "Petite statue",
     "description": "Une vieille statue au coin d’une rue devient un point de rendez-vous pour les habitants.",
     "choices": {
-      "A": "Laisser certains y déposer des fleurs comme un geste de prière muette",
+      "A": "Laisser y déposer des fleurs comme un geste de prière muette",
       "B": "Laisser la statue rester un simple repère urbain",
       "C": "Encourager un comité à organiser des cérémonies officielles autour"
     },
@@ -3727,7 +3727,7 @@
     "choices": {
       "A": "Souffler quelques symboles qui invitent à la gratitude",
       "B": "Laisser le jeu rester purement artistique",
-      "C": "Encourager les développeurs à intégrer un système de 'temples' et de rituels codifiés"
+      "C": "Ajouter un système de temples et rites codifiés"
     },
     "body": "Un studio développe un jeu sans combat, centré sur la lumière, la musique et l’exploration."
   },
@@ -3739,7 +3739,7 @@
     "choices": {
       "A": "L’aider à percevoir son écoute comme un service discret au ciel",
       "B": "Laisser ce geste rester simplement humain",
-      "C": "L’encourager à rejoindre officiellement une structure d’entraide religieuse"
+      "C": "L’orienter vers une entraide religieuse"
     },
     "body": "Un voisin se met à écouter discrètement les gens en détresse sur le palier."
   },
@@ -3751,7 +3751,7 @@
     "choices": {
       "A": "Faire émerger de petites histoires de vocation et de sens",
       "B": "Laisser cela rester une simple activité ludique",
-      "C": "Encourager certains à lier les prénoms aux traditions rituelles officielles"
+      "C": "Lier les prénoms à des rites officiels"
     },
     "body": "Une école décide de célébrer chaque prénom et son histoire."
   },
@@ -3761,7 +3761,7 @@
     "title": "Bibliothèque de silence",
     "description": "Une bibliothèque ouvre une salle dédiée au silence complet.",
     "choices": {
-      "A": "Permettre que ce lieu devienne un refuge de prière intérieure pour quelques-uns",
+      "A": "Faire de ce lieu un refuge de prière",
       "B": "Laisser la salle rester un espace neutre pour lire et se concentrer",
       "C": "Encourager l’affichage de textes spirituels officiels sur les murs"
     },
@@ -3775,7 +3775,7 @@
     "choices": {
       "A": "Laisser cette phrase devenir une forme de prière tendre",
       "B": "Laisser ce rituel s’estomper avec le temps",
-      "C": "Encourager les parents à y ajouter des formules issues d’un livre de prières officiel"
+      "C": "Ajouter des prières officielles au rituel du soir"
     },
     "body": "Des parents inventent une petite phrase apaisante à dire chaque soir à leurs enfants."
   },
@@ -3785,9 +3785,9 @@
     "title": "Art de rue lumineux",
     "description": "Un artiste peint des fresques de lumière et d’ailes sur les murs de la ville.",
     "choices": {
-      "A": "Faire que certains passants se sentent simplement relevés en les voyant",
+      "A": "Faire relever certains passants par ces fresques",
       "B": "Laisser ces fresques devenir juste une mode visuelle",
-      "C": "Encourager la municipalité à y ajouter des panneaux explicatifs religieux"
+      "C": "Ajouter des panneaux religieux"
     },
     "body": "Un artiste peint des fresques de lumière et d’ailes sur les murs de la ville."
   },
@@ -3799,7 +3799,7 @@
     "choices": {
       "A": "Faire naître une dimension de respect profond du mystère de chacun",
       "B": "Laisser le cercle rester un simple outil de médiation",
-      "C": "Encourager l’animateur à y ajouter des lectures spirituelles communes"
+      "C": "Ajouter des lectures spirituelles communes"
     },
     "body": "Dans un centre social, un cercle de parole se met en place chaque semaine."
   },
@@ -3811,7 +3811,7 @@
     "choices": {
       "A": "Lui inspirer des morceaux qui ouvrent à la paix intérieure",
       "B": "Laisser la musique être un simple fond sonore",
-      "C": "Encourager une association à en faire un programme culturel labellisé"
+      "C": "En faire un programme culturel reconnu"
     },
     "body": "Un musicien joue chaque matin des mélodies apaisantes dans le métro."
   },
@@ -3821,9 +3821,9 @@
     "title": "Carnet des bons gestes",
     "description": "Une classe d’école tient un carnet des gestes de gentillesse observés chaque jour.",
     "choices": {
-      "A": "Encourager les enfants à voir ces gestes comme des 'petites lumières'",
+      "A": "Faire voir ces gestes comme de petites lumières",
       "B": "Laisser le carnet rester une activité pédagogique",
-      "C": "Inciter les enseignants à relier ces gestes à des règles morales plus codifiées"
+      "C": "Relier ces gestes à des règles morales codifiées"
     },
     "body": "Une classe d’école tient un carnet des gestes de gentillesse observés chaque jour."
   },
@@ -3845,9 +3845,9 @@
     "title": "Atelier d’icônes modernes",
     "description": "Des artistes réinventent des symboles spirituels dans un style très contemporain.",
     "choices": {
-      "A": "Laisser ces icônes toucher ceux qui en ont besoin sans trop d’explications",
+      "A": "Laisser ces icônes toucher sans trop expliquer",
       "B": "Laisser l’atelier rester une expérimentation artistique",
-      "C": "Encourager une institution à valider certains modèles comme 'officiels'"
+      "C": "Faire valider certains modèles comme officiels"
     },
     "body": "Des artistes réinventent des symboles spirituels dans un style très contemporain."
   },
@@ -3857,9 +3857,9 @@
     "title": "Temps d’écran limité",
     "description": "Une famille décide de couper les écrans une heure par jour.",
     "choices": {
-      "A": "Laisser certains profiter de ce temps pour réfléchir ou prier en silence",
+      "A": "Laisser profiter de ce temps pour réfléchir ou prier en silence",
       "B": "Laisser cette heure devenir un simple moment de jeu de société",
-      "C": "Encourager le parent à y instaurer un petit moment de lecture spirituelle commune"
+      "C": "Ajouter un temps de lecture spirituelle en famille"
     },
     "body": "Une famille décide de couper les écrans une heure par jour."
   },
@@ -3893,9 +3893,9 @@
     "title": "Application de méditation",
     "description": "Une application de méditation guidée devient très populaire.",
     "choices": {
-      "A": "Laisser quelques séances inviter discrètement à la gratitude et à l’ouverture",
+      "A": "Inviter discrètement à la gratitude",
       "B": "Laisser l’app rester centrée sur la gestion du stress",
-      "C": "Encourager les créateurs à y ajouter une section de méditations inspirées des grandes traditions"
+      "C": "Ajouter une section de méditations issues des traditions"
     },
     "body": "Une application de méditation guidée devient très populaire."
   },
@@ -3907,7 +3907,7 @@
     "choices": {
       "A": "Inspirer un rituel simple, ouvert à tous et libre d’interprétation",
       "B": "Laisser le projet rester à l’état d’idée",
-      "C": "Encourager la mairie à structurer fortement la cérémonie avec un programme fixe"
+      "C": "Structurer fortement la cérémonie"
     },
     "body": "Un village veut instaurer une petite cérémonie à l’aube au bord de l’eau."
   },
@@ -3919,7 +3919,7 @@
     "choices": {
       "A": "Faire naître chez certains élèves une vraie profondeur intérieure",
       "B": "Laisser la musique rester une discipline technique",
-      "C": "Encourager l’école à devenir une institution reconnue et très codifiée"
+      "C": "Faire de l’école une institution très codifiée"
     },
     "body": "Une école de musique se spécialise dans les chants traditionnels."
   },
@@ -3929,8 +3929,8 @@
     "title": "Repas solidaire",
     "description": "Une association organise un repas hebdomadaire pour toute personne isolée.",
     "choices": {
-      "A": "Laisser ces repas être vécus comme une expérience de fraternité quasi sacrée",
-      "B": "Laisser l’association faire son travail sans référence explicite au spirituel",
+      "A": "Faire vivre ces repas comme une vraie fraternité",
+      "B": "Laisser l’association agir sans cadre spirituel",
       "C": "Encourager l’ajout d’un court temps de parole spirituelle au début"
     },
     "body": "Une association organise un repas hebdomadaire pour toute personne isolée."
@@ -3941,9 +3941,9 @@
     "title": "Journal local",
     "description": "Un journal local ouvre une rubrique 'histoires de bonté ordinaire'.",
     "choices": {
-      "A": "Inspirer des témoignages qui laissent deviner une lumière plus grande",
+      "A": "Inspirer des récits qui laissent voir une grande lumière",
       "B": "Laisser la rubrique rester un simple rayon de soleil médiatique",
-      "C": "Encourager le journal à inviter des responsables religieux à commenter ces histoires"
+      "C": "Faire commenter ces récits par des religieux"
     },
     "body": "Un journal local ouvre une rubrique 'histoires de bonté ordinaire'."
   },
@@ -3953,7 +3953,7 @@
     "title": "Balcon fleuri",
     "description": "Une personne fleurit son balcon de manière spectaculaire, attirant les regards des passants.",
     "choices": {
-      "A": "Lui souffler qu’offrir de la beauté est déjà une forme de service silencieux",
+      "A": "Lui souffler que la beauté sert déjà en silence",
       "B": "Laisser cela rester un simple hobby",
       "C": "Encourager un groupe de quartier à en faire un concours structuré"
     },
@@ -3977,9 +3977,9 @@
     "title": "Studio de danse",
     "description": "Un studio de danse propose un cours 'danse et intériorité'.",
     "choices": {
-      "A": "Permettre à certains de ressentir une vraie connexion à quelque chose de plus grand",
+      "A": "Faire ressentir un lien à plus grand que soi",
       "B": "Laisser le cours rester une discipline corporelle",
-      "C": "Encourager l’enseignant à y intégrer des symboles plus explicitement religieux"
+      "C": "Ajouter des symboles plus religieux"
     },
     "body": "Un studio de danse propose un cours 'danse et intériorité'."
   },
@@ -3991,7 +3991,7 @@
     "choices": {
       "A": "Laisser ce jeu devenir une parabole de coopération pour certains",
       "B": "Laisser le jeu être un simple divertissement convivial",
-      "C": "Encourager un groupe à l’utiliser dans un cadre de formation spirituelle"
+      "C": "L’utiliser dans une formation spirituelle"
     },
     "body": "Un jeu de société sans compétitivité devient à la mode dans une ville."
   },
@@ -4003,7 +4003,7 @@
     "choices": {
       "A": "L’aider à transformer ses pensées en dialogue intérieur apaisant",
       "B": "Laisser ses réflexions rester vagues",
-      "C": "Encourager la mairie à installer une plaque avec une citation spirituelle"
+      "C": "Installer une plaque à citation spirituelle"
     },
     "body": "Un vieux banc sous un grand arbre devient le lieu favori d’un retraité pour réfléchir."
   },
@@ -4015,7 +4015,7 @@
     "choices": {
       "A": "Laisser ces vacances devenir un temps de recentrage et de gratitude",
       "B": "Laisser cette simplicité être surtout un choix économique",
-      "C": "Encourager un proche à leur proposer un programme d’activités spirituelles structurées"
+      "C": "Proposer un programme spirituel structuré"
     },
     "body": "Une famille choisit des vacances très simples, loin des écrans et du luxe."
   },
@@ -4037,9 +4037,9 @@
     "title": "Appel de la mer",
     "description": "Des habitants d’une ville côtière aiment marcher au bord de l’eau au crépuscule.",
     "choices": {
-      "A": "Faire ressentir à certains une présence bienveillante dans ce paysage",
+      "A": "Faire sentir une présence bienveillante dans ce paysage",
       "B": "Laisser ces promenades rester un simple loisir",
-      "C": "Encourager la construction d’un petit lieu de recueillement officiel face à la mer"
+      "C": "Construire un lieu officiel de recueillement"
     },
     "body": "Des habitants d’une ville côtière aiment marcher au bord de l’eau au crépuscule."
   },
@@ -4049,9 +4049,9 @@
     "title": "Livre d’images",
     "description": "Un illustrateur crée un livre sans texte, seulement des scènes de lumière et d’ombre.",
     "choices": {
-      "A": "Laisser certains lecteurs y projeter spontanément leur quête intérieure",
+      "A": "Laisser lecteurs y projeter spontanément leur quête intérieure",
       "B": "Laisser le livre être perçu comme un objet d’art",
-      "C": "Encourager un éditeur à ajouter une préface spirituelle très explicite"
+      "C": "Ajouter une préface spirituelle très claire"
     },
     "body": "Un illustrateur crée un livre sans texte, seulement des scènes de lumière et d’ombre."
   },
@@ -4061,9 +4061,9 @@
     "title": "Boutique de thé",
     "description": "Une petite boutique de thé propose un coin tranquille où personne ne parle fort.",
     "choices": {
-      "A": "Laisser certains clients y vivre des moments de vraie pause intérieure",
+      "A": "Laisser clients y vivre des moments de vraie pause intérieure",
       "B": "Laisser cet espace être simplement apprécié pour son calme",
-      "C": "Encourager le propriétaire à afficher des sentences de sagesse sur les murs"
+      "C": "Afficher des phrases de sagesse sur les murs"
     },
     "body": "Une petite boutique de thé propose un coin tranquille où personne ne parle fort."
   },
@@ -4073,9 +4073,9 @@
     "title": "Atelier d’écoute des rêves",
     "description": "Un petit groupe se réunit pour partager ses rêves nocturnes.",
     "choices": {
-      "A": "Laisser émerger l’idée que certains rêves encouragent à plus de bonté",
+      "A": "Faire émerger l’idée que certains rêves encouragent à plus de bonté",
       "B": "Laisser l’atelier rester une simple exploration psychologique",
-      "C": "Encourager l’animatrice à relier certains symboles à des traditions anciennes"
+      "C": "Relier ces symboles à des traditions anciennes"
     },
     "body": "Un petit groupe se réunit pour partager ses rêves nocturnes."
   },
@@ -4085,9 +4085,9 @@
     "title": "Route des pèlerins",
     "description": "Une ancienne route de pèlerinage est redécouverte par des marcheurs modernes.",
     "choices": {
-      "A": "Laisser quelques marcheurs la vivre comme un chemin de transformation intérieure",
+      "A": "Faire vivre cette marche comme une vraie transformation",
       "B": "Laisser cette route devenir un simple parcours touristique",
-      "C": "Encourager une organisation à y remettre des étapes rituelles structurées"
+      "C": "Ajouter des étapes rituelles"
     },
     "body": "Une ancienne route de pèlerinage est redécouverte par des marcheurs modernes."
   },
@@ -4097,9 +4097,9 @@
     "title": "Atelier de cuisine",
     "description": "Un atelier de cuisine invite les gens à préparer un repas ensemble pour le partager.",
     "choices": {
-      "A": "Laisser certains ressentir la table comme un lieu de communion profonde",
+      "A": "Laisser ressentir la table comme un lieu de communion profonde",
       "B": "Laisser l’atelier rester un moment convivial sans plus",
-      "C": "Encourager les organisateurs à ajouter une petite bénédiction commune avant de manger"
+      "C": "Ajouter une bénédiction avant le repas"
     },
     "body": "Un atelier de cuisine invite les gens à préparer un repas ensemble pour le partager."
   },
@@ -4111,7 +4111,7 @@
     "choices": {
       "A": "Laisser ce projet éveiller la conscience d’une création à respecter",
       "B": "Laisser la forêt être vue comme une simple amélioration écologique",
-      "C": "Encourager une communauté locale à y célébrer régulièrement des temps de recueillement"
+      "C": "Y tenir souvent des temps de recueillement"
     },
     "body": "Une ville veut planter une mini-forêt au cœur des immeubles."
   },
@@ -4123,7 +4123,7 @@
     "choices": {
       "A": "Laisser le groupe devenir un espace de partage libre et profond",
       "B": "Laisser cela rester un exercice intellectuel",
-      "C": "Encourager certains à structurer le club autour d’une seule tradition"
+      "C": "Structurer le club autour d’une seule tradition"
     },
     "body": "Un club de lecture se consacre aux textes philosophiques et spirituels."
   },
@@ -4135,7 +4135,7 @@
     "choices": {
       "A": "Laisser naître de vraies rapprochements intérieures",
       "B": "Laisser ces cercles rester expérimentaux et limités",
-      "C": "Encourager une institution à récupérer l’idée et en établir un protocole fixe"
+      "C": "Établir un protocole fixe autour de l’idée"
     },
     "body": "Un guide tente d’expliquer les différents chemins spirituels avec des mots très savants."
   },
@@ -4147,7 +4147,7 @@
     "choices": {
       "A": "Laisser ces messages nourrir une culture de gratitude discrète",
       "B": "Laisser cette initiative rester marginale",
-      "C": "Encourager une association à transformer l’idée en campagne officielle"
+      "C": "Transformer l’idée en campagne publique"
     },
     "body": "Une boîte aux lettres reçoit des cartes postales anonymes de remerciements pour la vie."
   },
@@ -4159,7 +4159,7 @@
     "choices": {
       "A": "Laisser certains habitants y voir un signe d’espérance",
       "B": "Laisser le festival rester un événement touristique",
-      "C": "Encourager l’ajout d’un grand discours institutionnel au cœur du festival"
+      "C": "Ajouter un grand discours officiel au festival"
     },
     "body": "Un festival d’hiver illumine une ville entière de milliers de petites lumières."
   },
@@ -4171,7 +4171,7 @@
     "choices": {
       "A": "L’aider à trouver dans ce silence un espace de présence intérieure",
       "B": "Laisser cette retraite rester une simple pause loin du bruit",
-      "C": "Encourager un monastère à récupérer la cabane comme lieu d’accueil officiel"
+      "C": "Faire du lieu un accueil officiel du monastère"
     },
     "body": "Une petite cabane isolée devient le refuge d’une personne en quête de silence."
   },
@@ -4181,9 +4181,9 @@
     "title": "Podcast de douceur",
     "description": "Un petit podcast diffuse chaque jour une pensée bienveillante et apaisante.",
     "choices": {
-      "A": "Laisser certains auditeurs y percevoir une voix profondément rassurante",
+      "A": "Laisser auditeurs y percevoir une voix profondément rassurante",
       "B": "Laisser le podcast rester confidentiel",
-      "C": "Encourager une organisation à en faire un programme structuré dans son réseau"
+      "C": "En faire un programme structuré du réseau"
     },
     "body": "Un petit podcast diffuse chaque jour une pensée bienveillante et apaisante."
   },
@@ -4195,7 +4195,7 @@
     "choices": {
       "A": "Laisser ce geste devenir un réflexe de confiance muette",
       "B": "Laisser l’enfant grandir et oublier peu à peu ce geste",
-      "C": "Encourager un adulte à lui apprendre quelques mots simples à dire quand il regarde le ciel"
+      "C": "Lui apprendre quelques mots à dire au ciel"
     },
     "body": "Un enfant lève souvent les yeux vers le ciel sans vraiment savoir pourquoi."
   },
@@ -4207,7 +4207,7 @@
     "choices": {
       "A": "Inspirer les habitants à y voir un geste de respect pour la création",
       "B": "Laisser le défi rester un simple jeu écologique",
-      "C": "Encourager une association à structurer le défi avec règles et engagements publics"
+      "C": "Structurer ce défi avec règles et engagements publics"
     },
     "body": "Un quartier lance un défi 'zéro déchet' pendant un mois."
   },
@@ -4219,7 +4219,7 @@
     "choices": {
       "A": "Souffler à certains le plaisir d’un mode de vie plus simple et doux",
       "B": "Laisser l’initiative être vue comme une mesure pratique",
-      "C": "Encourager un collectif à transformer le lieu en point de rassemblement militant"
+      "C": "Transformer ce lieu en point militant"
     },
     "body": "Une ville installe un immense parking à vélos près de la gare."
   },
@@ -4229,9 +4229,9 @@
     "title": "Cantine végétarienne",
     "description": "Une école teste un jour de repas végétarien par semaine.",
     "choices": {
-      "A": "Encourager la découverte d’une alimentation plus respectueuse du vivant",
+      "A": "Encourager une alimentation plus respectueuse du vivant",
       "B": "Laisser l’expérience être vécue comme un simple changement de menu",
-      "C": "Inciter l’administration à imposer fortement cette pratique à long terme"
+      "C": "Imposer cette pratique sur le long terme"
     },
     "body": "Une école teste un jour de repas végétarien par semaine."
   },
@@ -4243,7 +4243,7 @@
     "choices": {
       "A": "Laisser naître un sentiment de solidarité joyeuse autour de ces dons",
       "B": "Laisser l’appli être vue comme un bon plan économique",
-      "C": "Encourager une grande structure à reprendre l’idée et à la normer fortement"
+      "C": "Faire reprendre l’idée par une grande structure"
     },
     "body": "Une application permet aux commerces de donner leurs invendus le soir."
   },
@@ -4253,9 +4253,9 @@
     "title": "Forêt nettoyée",
     "description": "Des habitants organisent une journée de ramassage des déchets en forêt.",
     "choices": {
-      "A": "Transformer ce geste en véritable action de gratitude envers la nature",
+      "A": "Faire de ce geste une gratitude envers la nature",
       "B": "Laisser l’événement être une simple opération de nettoyage",
-      "C": "Encourager la municipalité à en faire un événement officiel avec programme précis"
+      "C": "En faire un événement officiel bien programmé"
     },
     "body": "Des habitants organisent une journée de ramassage des déchets en forêt."
   },
@@ -4267,7 +4267,7 @@
     "choices": {
       "A": "Souffler l’idée de remercier intérieurement pour chaque récolte",
       "B": "Laisser cette mode potagère rester un hobby",
-      "C": "Encourager des influenceurs à en faire presque une nouvelle norme sociale"
+      "C": "En faire presque une nouvelle norme sociale"
     },
     "body": "De plus en plus de gens cultivent des légumes sur leur balcon."
   },
@@ -4277,7 +4277,7 @@
     "title": "Plage sans mégots",
     "description": "Une campagne locale vise à rendre la plage entièrement propre.",
     "choices": {
-      "A": "Laisser certains promeneurs ressentir la beauté comme un cadeau à préserver",
+      "A": "Faire ressentir cette beauté comme un cadeau",
       "B": "Laisser la campagne se limiter à des affiches de prévention",
       "C": "Encourager des patrouilles de bénévoles très organisées"
     },
@@ -4291,7 +4291,7 @@
     "choices": {
       "A": "Inspirer certains ingénieurs à se sentir gardiens d’un bien commun",
       "B": "Laisser la décision rester guidée par la réglementation",
-      "C": "Encourager le groupe industriel à communiquer fortement sur sa 'vertu'"
+      "C": "Valoriser fortement leur prétendue vertu"
     },
     "body": "Une usine installe une technologie plus propre pour réduire ses émissions."
   },
@@ -4301,7 +4301,7 @@
     "title": "Jeu vidéo coop écologie",
     "description": "Un studio prépare un jeu coopératif sur la protection d’une planète imaginaire.",
     "choices": {
-      "A": "Souffler une histoire qui donne envie de prendre soin de la vraie Terre",
+      "A": "Souffler une histoire qui fait aimer la vraie Terre",
       "B": "Laisser le jeu rester un divertissement fun",
       "C": "Encourager le studio à lier le jeu à une campagne très encadrée"
     },
@@ -4315,7 +4315,7 @@
     "choices": {
       "A": "Laisser naître des liens de confiance et de reconnaissance mutuelle",
       "B": "Laisser le changement être surtout vu comme un choix économique",
-      "C": "Encourager la mairie à transformer ce marché en événement officiel très codifié"
+      "C": "Faire de ce marché un événement très codifié"
     },
     "body": "Un marché de producteurs locaux remplace petit à petit un supermarché."
   },
@@ -4327,7 +4327,7 @@
     "choices": {
       "A": "Faire ressentir un air plus respirable comme une bénédiction",
       "B": "Laisser l’événement être perçu comme une contrainte passagère",
-      "C": "Encourager les organisateurs à en faire un rendez-vous annuel très structuré"
+      "C": "En faire un rendez-vous annuel structuré"
     },
     "body": "Une métropole teste une grande journée sans voiture dans son centre."
   },
@@ -4339,7 +4339,7 @@
     "choices": {
       "A": "Souffler des mots qui vraiment apaisent et relèvent ceux qui lisent",
       "B": "Laisser la page trouver son public ou non",
-      "C": "Encourager une organisation à s’approprier le concept et à le baliser"
+      "C": "Faire récupérer ce concept par une organisation"
     },
     "body": "Un créateur lance une page dédiée uniquement à des messages encourageants."
   },
@@ -4351,7 +4351,7 @@
     "choices": {
       "A": "Aider certains participants à découvrir un vrai silence intérieur",
       "B": "Laisser le défi être vu comme une mode passagère",
-      "C": "Encourager des groupes à transformer le défi en programme rigide hebdomadaire"
+      "C": "Transformer ce défi en programme rigide"
     },
     "body": "Un défi en ligne invite à passer une journée entière sans téléphone."
   },
@@ -4363,7 +4363,7 @@
     "choices": {
       "A": "Laisser certains y vivre une forme de prière ou méditation libre",
       "B": "Laisser la zone être utilisée surtout pour faire une petite sieste",
-      "C": "Encourager une institution à y proposer des activités spirituelles programmées"
+      "C": "Y ajouter des activités spirituelles prévues"
     },
     "body": "Une ville crée une 'zone de silence' où les gens peuvent se reposer du bruit."
   },
@@ -4375,7 +4375,7 @@
     "choices": {
       "A": "Aider à créer de vrais liens chaleureux et respectueux",
       "B": "Laisser les rencontres rester un simple moment convivial",
-      "C": "Encourager l’ajout de rituels d’ouverture et de clôture très structurés"
+      "C": "Ajouter des rituels d’ouverture et de fin"
     },
     "body": "Un centre social propose des rencontres pour rompre l’isolement."
   },
@@ -4385,7 +4385,7 @@
     "title": "Boîte à livres",
     "description": "Une petite boîte à livres est installée au coin d’une rue.",
     "choices": {
-      "A": "Souffler que certains déposent des livres qui ouvrent au sens et à la bonté",
+      "A": "Faire déposer des livres sur le sens et la bonté",
       "B": "Laisser la boîte servir à tout type de lecture",
       "C": "Encourager un groupe à y placer surtout des textes spirituels"
     },
@@ -4411,7 +4411,7 @@
     "choices": {
       "A": "Aider à faire naître de la compassion envers soi-même et ses enfants",
       "B": "Laisser le groupe rester un espace d’échange d’astuces",
-      "C": "Encourager un animateur à introduire des règles et un cadre plus strict"
+      "C": "Ajouter des règles plus strictes au groupe"
     },
     "body": "Des parents se réunissent pour parler des difficultés éducatives."
   },
@@ -4435,7 +4435,7 @@
     "choices": {
       "A": "Aider certains à utiliser ce coin pour se recentrer intérieurement",
       "B": "Laisser l’espace être un simple coin café amélioré",
-      "C": "Encourager l’entreprise à y organiser des temps de méditation encadrés"
+      "C": "Y organiser des temps de méditation guidés"
     },
     "body": "Un bureau installe des plantes et un coin détente avec vue sur le ciel."
   },
@@ -4445,7 +4445,7 @@
     "title": "Festival du recyclage créatif",
     "description": "Des artistes transforment des déchets en œuvres surprenantes.",
     "choices": {
-      "A": "Laisser certains visiteurs ressentir une forme de renaissance dans ces objets",
+      "A": "Faire ressentir une renaissance dans ces objets",
       "B": "Laisser le festival être un événement culturel amusant",
       "C": "Encourager des structures à en faire un concours avec jury officiel"
     },
@@ -4459,7 +4459,7 @@
     "choices": {
       "A": "Laisser certains découvrir une vraie manière de parler avec le cœur",
       "B": "Laisser la formation rester un outil de développement personnel",
-      "C": "Encourager une institution à rendre cette formation quasi obligatoire"
+      "C": "Rendre cette formation presque obligatoire"
     },
     "body": "Un formateur propose des séances pour apprendre à dialoguer sans agressivité."
   },
@@ -4481,9 +4481,9 @@
     "title": "Atelier de réparation",
     "description": "Un atelier répare gratuitement de petits objets pour éviter de jeter.",
     "choices": {
-      "A": "Laisser émerger l’idée que réparer, c’est aussi prendre soin des gens",
+      "A": "Faire émerger l’idée que réparer, c’est aussi prendre soin des gens",
       "B": "Laisser l’atelier rester une activité pratique",
-      "C": "Encourager une grande association à structurer un réseau de ces ateliers"
+      "C": "Structurer un réseau autour de ces ateliers"
     },
     "body": "Un atelier répare gratuitement de petits objets pour éviter de jeter."
   },
@@ -4493,7 +4493,7 @@
     "title": "Train de nuit",
     "description": "Les trains de nuit reviennent à la mode pour voyager autrement.",
     "choices": {
-      "A": "Souffler à certains voyageurs une forme de contemplation en regardant par la fenêtre",
+      "A": "Souffler une vraie contemplation en voyage",
       "B": "Laisser le train de nuit être une option de transport parmi d’autres",
       "C": "Encourager une compagnie à y proposer des animations très encadrées"
     },
@@ -4505,9 +4505,9 @@
     "title": "Chien visiteur",
     "description": "Un chien et son maître rendent visite à des personnes âgées en maison de retraite.",
     "choices": {
-      "A": "Laisser ces visites devenir de vrais moments de douceur presque sacrés",
+      "A": "Faire de ces visites un vrai moment de douceur",
       "B": "Laisser les visites être vues comme une animation amusante",
-      "C": "Encourager la direction à intégrer ces visites dans un programme thérapeutique rigide"
+      "C": "Intégrer ces visites à un cadre thérapeutique rigide"
     },
     "body": "Un chien et son maître rendent visite à des personnes âgées en maison de retraite."
   },
@@ -4529,9 +4529,9 @@
     "title": "Groupe de marche lente",
     "description": "Un groupe se forme pour pratiquer la marche lente en ville.",
     "choices": {
-      "A": "Aider certains à vivre la ville comme un lieu de présence et d’écoute",
+      "A": "Faire vivre la ville comme un lieu d’écoute",
       "B": "Laisser l’activité être vue comme une mode bien-être",
-      "C": "Encourager un coach à structurer la marche comme un programme complet"
+      "C": "Transformer la marche en programme complet"
     },
     "body": "Un groupe se forme pour pratiquer la marche lente en ville."
   },
@@ -4543,7 +4543,7 @@
     "choices": {
       "A": "Laisser certains sentir une vraie communion à travers les sons",
       "B": "Laisser le cercle rester une expérience musicale amusante",
-      "C": "Encourager l’animateur à imposer une structure et des règles strictes"
+      "C": "Encourager l’animateur imposer une structure et des règles strictes"
     },
     "body": "Un groupe se réunit pour improviser des sons ensemble sans jugement."
   },
@@ -4553,7 +4553,7 @@
     "title": "Coin lecture dans le métro",
     "description": "Un wagon de métro est redécoré avec des extraits de textes apaisants.",
     "choices": {
-      "A": "Faire en sorte que certains passagers se sentent vraiment apaisés en les lisant",
+      "A": "Faire lire ces mots comme un vrai apaisement",
       "B": "Laisser ces textes passer inaperçus pour la plupart",
       "C": "Encourager la régie à réserver ce wagon à un usage très règlementé"
     },
@@ -4567,7 +4567,7 @@
     "choices": {
       "A": "Laisser naître une fierté tranquille de prendre soin du lieu commun",
       "B": "Laisser ces gestes rester marginaux",
-      "C": "Encourager la mairie à formaliser ces initiatives avec un règlement strict"
+      "C": "Formaliser ces initiatives par un règlement strict"
     },
     "body": "Des habitants s’occupent spontanément des parterres publics laissés à l’abandon."
   },
@@ -4579,7 +4579,7 @@
     "choices": {
       "A": "Souffler des phrases qui ouvrent réellement le cœur",
       "B": "Laisser le live être un rendez-vous sympa mais superficiel",
-      "C": "Encourager l’animatrice à définir un parcours précis de plusieurs semaines"
+      "C": "Définir un parcours précis sur plusieurs semaines"
     },
     "body": "Une animatrice anime chaque semaine un live pour partager des gratitudes."
   },
@@ -4603,7 +4603,7 @@
     "choices": {
       "A": "Laisser certains goûter un vrai lâcher-prise proche de la prière",
       "B": "Laisser la sieste guidée rester un simple service bien-être",
-      "C": "Encourager le centre à décliner un programme complet avec étapes obligatoires"
+      "C": "Créer un programme complet avec étapes obligatoires"
     },
     "body": "Un centre de bien-être propose une sieste guidée pour se reposer au milieu de la journée."
   },
@@ -4613,7 +4613,7 @@
     "title": "Festival de films inspirants",
     "description": "Un festival de cinéma met à l’affiche des films qui donnent envie d’être meilleur.",
     "choices": {
-      "A": "Souffler quelques histoires qui touchent profondément les spectateurs",
+      "A": "Souffler des histoires qui touchent les spectateurs",
       "B": "Laisser le festival être perçu comme un événement culturel classique",
       "C": "Encourager l’ajout de débats très encadrés après chaque projection"
     },
@@ -4626,8 +4626,8 @@
     "description": "Un lycée met en place un coin où un adulte est là pour écouter les élèves.",
     "choices": {
       "A": "Laisser certains y trouver un vrai espace de parole et de réconfort",
-      "B": "Laisser le coin être utilisé surtout pour parler de cours et d’orientation",
-      "C": "Encourager l’administration à entourer ce dispositif de procédures très strictes"
+      "B": "Laisser ce coin parler surtout de cours et d’avenir",
+      "C": "Entourer ce dispositif de règles très strictes"
     },
     "body": "Un lycée met en place un coin où un adulte est là pour écouter les élèves."
   },
@@ -4639,7 +4639,7 @@
     "choices": {
       "A": "Laisser ces mots toucher vraiment le cœur de ceux qui les reçoivent",
       "B": "Laisser l’initiative rester ponctuelle",
-      "C": "Encourager la direction à institutionnaliser ces remerciements dans un protocole"
+      "C": "Transformer ces mercis en protocole officiel"
     },
     "body": "Des habitants écrivent des cartes de remerciement aux soignants de l’hôpital."
   },
@@ -4675,7 +4675,7 @@
     "choices": {
       "A": "Faire émerger une vraie conscience de la chance qu’ils ont",
       "B": "Laisser le dessin rester un exercice d’arts plastiques",
-      "C": "Encourager l’enseignant à afficher ces dessins comme règlement moral de la classe"
+      "C": "Afficher ces dessins comme règle morale"
     },
     "body": "Des enfants dessinent ce pour quoi ils sont reconnaissants."
   },
@@ -4687,7 +4687,7 @@
     "choices": {
       "A": "Laisser naître des échanges plus profonds entre inconnus",
       "B": "Laisser le lieu être simplement apprécié pour son ambiance rétro",
-      "C": "Encourager le propriétaire à poser beaucoup de règles sur la façon de discuter"
+      "C": "Poser trop de règles sur la façon de parler"
     },
     "body": "Un café choisit d’éteindre le wifi pour encourager les conversations."
   },
@@ -4709,7 +4709,7 @@
     "title": "Podcast 'une bonne nouvelle par jour'",
     "description": "Un podcast partage chaque jour une petite bonne nouvelle vraie.",
     "choices": {
-      "A": "Souffler des histoires qui redonnent vraiment confiance en l’humanité",
+      "A": "Souffler des histoires qui rendent confiance",
       "B": "Laisser le podcast rester une bulle optimiste",
       "C": "Encourager un réseau à en faire un outil de communication très cadré"
     },
@@ -4723,7 +4723,7 @@
     "choices": {
       "A": "Laisser ces galets agir comme de petites surprises de réconfort",
       "B": "Laisser l’atelier être une activité créative",
-      "C": "Encourager l’école à planifier une grande opération annuelle très organisée"
+      "C": "Planifier une grande opération annuelle"
     },
     "body": "Des enfants peignent des galets avec des mots doux et les laissent dans la ville."
   },
@@ -4735,7 +4735,7 @@
     "choices": {
       "A": "Aider ces partages à nourrir la confiance intérieure de chacun",
       "B": "Laisser le cercle rester un moment convivial d’échanges",
-      "C": "Encourager un animateur à imposer une méthode rigide de prise de parole"
+      "C": "Imposer une méthode stricte de prise de parole"
     },
     "body": "Un groupe se réunit pour partager chaque semaine une petite victoire personnelle."
   },
@@ -4745,7 +4745,7 @@
     "title": "Atelier de compost",
     "description": "Un immeuble installe un compost partagé pour ses habitants.",
     "choices": {
-      "A": "Laisser certains y voir le cycle de la vie comme quelque chose de précieux",
+      "A": "Faire voir ici le cycle précieux de la vie",
       "B": "Laisser le compost être géré comme une simple poubelle spéciale",
       "C": "Encourager le syndic à poser un règlement détaillé et des contrôles"
     },
@@ -4759,7 +4759,7 @@
     "choices": {
       "A": "Faire naître chez certains élèves une vraie habitude de gratitude",
       "B": "Laisser la journée être vécue comme un projet pédagogique",
-      "C": "Encourager l’établissement à en faire un événement très scénarisé chaque année"
+      "C": "En faire un grand rituel annuel"
     },
     "body": "Une école organise une journée pour remercier pour les petites choses du quotidien."
   },
@@ -4783,7 +4783,7 @@
     "choices": {
       "A": "Souffler des mots de bienveillance et d’espoir dans ces lettres",
       "B": "Laisser l’atelier rester un exercice introspectif neutre",
-      "C": "Encourager l’animateur à bâtir une méthode très structurée autour de ces lettres"
+      "C": "Structurer fortement cet atelier de lettres"
     },
     "body": "Des participants écrivent une lettre à la personne qu’ils seront dans dix ans."
   },
@@ -4793,9 +4793,9 @@
     "title": "Quartier des lucioles",
     "description": "Un quartier décide d’éteindre l’éclairage superflu pour mieux voir les étoiles.",
     "choices": {
-      "A": "Laisser certains habitants ressentir une forme de communion sous le ciel sombre",
+      "A": "Faire ressentir une communion sous ce ciel sombre",
       "B": "Laisser la mesure être vue comme un geste écologique pratique",
-      "C": "Encourager la création d’un grand événement officiel autour de cette nuit"
+      "C": "Créer un grand événement autour de cette nuit"
     },
     "body": "Un quartier décide d’éteindre l’éclairage superflu pour mieux voir les étoiles."
   }
