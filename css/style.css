@@ -2729,22 +2729,10 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choices{
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-button{
-  overflow: hidden !important;
-  background-size: 100% 90% !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  box-sizing: border-box !important;
-  min-height: clamp(86px, 13.5vw, 124px) !important;
-  height: auto !important;
-  padding: clamp(10px, 1.8vw, 16px) clamp(16px, 4vw, 28px) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
-  width: min(80%, 620px) !important;
-  max-width: min(80%, 620px) !important;
+  width: min(72%, 620px) !important;
+  max-width: min(72%, 620px) !important;
   margin: 0 auto !important;
   text-align: center !important;
   font-size: clamp(12px, 1.7vw, 19px) !important;
