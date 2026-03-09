@@ -645,7 +645,6 @@
         '    </div>',
         '    <div class="vr-crosspromo-actions">',
         '      <button class="vr-crosspromo-btn primary" type="button" data-crosspromo-action="' + escapeHtml(id) + '">' + escapeHtml(actionLabel) + '</button>',
-        '      <button class="vr-crosspromo-btn" type="button" data-crosspromo-later="' + escapeHtml(id) + '">' + escapeHtml(t("crosspromo.cta_later", "")) + '</button>',
         '    </div>',
         '  </div>',
         '</article>'
@@ -670,12 +669,6 @@
 
         setPendingStoreClick(id);
         openStore(app);
-      });
-    });
-
-    host.querySelectorAll("[data-crosspromo-later]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        history.back();
       });
     });
   }

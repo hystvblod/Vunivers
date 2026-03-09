@@ -14,7 +14,7 @@
 
     body.vr-crosspromo-body{
       min-height:100vh;
-      background: var(--vr-bg);
+      background:var(--vr-bg);
     }
 
     .vr-crosspromo-shell{
@@ -31,7 +31,7 @@
       margin-bottom:14px;
       padding:10px 12px;
       border-radius:18px;
-      background:linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.10));
+      background:linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,.12));
       backdrop-filter:blur(4px);
       -webkit-backdrop-filter:blur(4px);
     }
@@ -70,18 +70,18 @@
       font-size:22px;
       font-weight:900;
       text-shadow:
-        0 2px 6px rgba(0,0,0,.55),
-        0 6px 18px rgba(0,0,0,.38);
+        0 2px 6px rgba(0,0,0,.58),
+        0 6px 18px rgba(0,0,0,.40);
     }
 
     .vr-crosspromo-subtitle{
       margin:6px 0 0;
-      color:rgba(255,255,255,.98);
+      color:rgba(255,255,255,.99);
       font-size:13px;
       line-height:1.35;
       text-shadow:
-        0 2px 6px rgba(0,0,0,.50),
-        0 4px 12px rgba(0,0,0,.30);
+        0 2px 6px rgba(0,0,0,.54),
+        0 4px 12px rgba(0,0,0,.32);
     }
 
     .vr-crosspromo-spacer{
@@ -206,25 +206,29 @@
     .vr-crosspromo-shot{
       width:100%;
       aspect-ratio:9 / 16;
-      border-radius:16px;
-      overflow:hidden;
       border:none;
+      border-radius:18px;
+      overflow:hidden;
       background:transparent;
-      display:block;
       padding:0;
       box-shadow:none;
       cursor:pointer;
-      -webkit-tap-highlight-color:transparent;
+      appearance:none;
+      -webkit-appearance:none;
+      display:block;
+      line-height:0;
     }
 
-.vr-crosspromo-shot img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  object-position:center;
-  display:block;
-  border-radius:16px;
-}
+    .vr-crosspromo-shot img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:contain;
+      object-position:center;
+      border-radius:18px;
+      overflow:hidden;
+      background:transparent;
+    }
 
     .vr-crosspromo-actions{
       display:grid;
@@ -258,7 +262,6 @@
       transform:scale(.99);
     }
 
-    /* viewer image */
     .vr-shot-viewer{
       position:fixed;
       inset:0;
@@ -369,7 +372,6 @@
     </div>
 
     <section class="vr-crosspromo-grid" id="vr-crosspromo-grid"></section>
-
   </main>
 
   <div class="vr-shot-viewer" id="vr-shot-viewer" aria-hidden="true">
