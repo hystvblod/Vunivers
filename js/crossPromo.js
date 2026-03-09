@@ -2,10 +2,10 @@
   "use strict";
 
   const STORAGE_KEY = "vuniverse_crosspromo_state";
-  const MAX_SHOW_PER_GAME = 3;
-  const GLOBAL_COOLDOWN_MS = 24 * 60 * 60 * 1000;
   const SESSION_POPUP_KEY = "vuniverse_crosspromo_session_shown";
   const REWARD_AMOUNT = 400;
+
+  const MAX_DISMISS_PER_GAME = 2;
 
   const APPS = {
     vblocks: {
@@ -94,21 +94,29 @@
     return getPlatform() === "ios";
   }
 
+  function getTodayKey() {
+    const d = new Date();
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${y}-${m}-${day}`;
+  }
+
   function defaultGameState() {
     return {
-      shownCount: 0,
       dismissedCount: 0,
       rewardClaimed: false,
       installedDetected: false,
       clickedStore: false,
       pendingInstallCheck: false,
-      lastShownAt: 0
+      lastShownDayKey: "",
+      dailyShowCount: 0
     };
   }
 
   function defaultState() {
     return {
-      globalLastShownAt: 0,
+      lowVcoinsNextApp: "vblocks",
       apps: {
         vblocks: defaultGameState(),
         vchronicles: defaultGameState()
@@ -123,13 +131,13 @@
   function normalizeGameState(src) {
     const s = src && typeof src === "object" ? src : {};
     return {
-      shownCount: Math.max(0, Number(s.shownCount || 0) || 0),
       dismissedCount: Math.max(0, Number(s.dismissedCount || 0) || 0),
       rewardClaimed: !!s.rewardClaimed,
       installedDetected: !!s.installedDetected,
       clickedStore: !!s.clickedStore,
       pendingInstallCheck: !!s.pendingInstallCheck,
-      lastShownAt: Math.max(0, Number(s.lastShownAt || 0) || 0)
+      lastShownDayKey: String(s.lastShownDayKey || ""),
+      dailyShowCount: Math.max(0, Number(s.dailyShowCount || 0) || 0)
     };
   }
 
@@ -142,7 +150,7 @@
       if (!parsed || typeof parsed !== "object") return defaultState();
 
       return {
-        globalLastShownAt: Math.max(0, Number(parsed.globalLastShownAt || 0) || 0),
+        lowVcoinsNextApp: parsed.lowVcoinsNextApp === "vchronicles" ? "vchronicles" : "vblocks",
         apps: {
           vblocks: normalizeGameState(parsed.apps?.vblocks),
           vchronicles: normalizeGameState(parsed.apps?.vchronicles)
@@ -157,27 +165,41 @@
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (_) {}
   }
 
-  function markSessionPopupShown() {
-    try { sessionStorage.setItem(SESSION_POPUP_KEY, "1"); } catch (_) {}
-  }
-
   function hasSessionPopupShown() {
-    try { return sessionStorage.getItem(SESSION_POPUP_KEY) === "1"; } catch (_) { return false; }
+    try {
+      return sessionStorage.getItem(SESSION_POPUP_KEY) === "1";
+    } catch (_) {
+      return false;
+    }
   }
 
-  function now() {
-    return Date.now();
+  function markSessionPopupShown() {
+    try {
+      sessionStorage.setItem(SESSION_POPUP_KEY, "1");
+    } catch (_) {}
   }
 
-  function hasGlobalCooldownPassed(state) {
-    return (now() - (state.globalLastShownAt || 0)) >= GLOBAL_COOLDOWN_MS;
+  function syncDailyWindow(row) {
+    const today = getTodayKey();
+    if (row.lastShownDayKey !== today) {
+      row.lastShownDayKey = today;
+      row.dailyShowCount = 0;
+    }
   }
 
-  function canStillShowForGame(gameState) {
-    if (gameState.rewardClaimed) return false;
-    if (gameState.installedDetected) return false;
-    if (gameState.dismissedCount >= MAX_SHOW_PER_GAME) return false;
-    if (gameState.shownCount >= MAX_SHOW_PER_GAME) return false;
+  function canShowToday(row) {
+    syncDailyWindow(row);
+    return row.dailyShowCount < 1;
+  }
+
+  function canStillShowForGame(row) {
+    syncDailyWindow(row);
+
+    if (row.rewardClaimed) return false;
+    if (row.installedDetected) return false;
+    if (row.dismissedCount >= MAX_DISMISS_PER_GAME) return false;
+    if (row.dailyShowCount >= 1) return false;
+
     return true;
   }
 
@@ -331,9 +353,9 @@
     const row = state.apps[appId];
     if (!row) return;
 
-    row.shownCount += 1;
-    row.lastShownAt = now();
-    state.globalLastShownAt = now();
+    syncDailyWindow(row);
+    row.dailyShowCount += 1;
+    row.lastShownDayKey = getTodayKey();
     writeState(state);
     markSessionPopupShown();
   }
@@ -420,7 +442,6 @@
 
     if (!canStillShowForGame(row)) return false;
     if (hasSessionPopupShown()) return false;
-    if (!hasGlobalCooldownPassed(state)) return false;
 
     const isInstalled = await refreshInstalledStatus(appId);
     if (isInstalled) return false;
@@ -477,38 +498,31 @@
     return true;
   }
 
-  function chooseLowVcoinsOffer() {
-    const state = readState();
-    const vb = state.apps.vblocks;
-    const vc = state.apps.vchronicles;
-
-    const vbOk = canStillShowForGame(vb);
-    const vcOk = canStillShowForGame(vc);
-
-    if (!vbOk && !vcOk) return null;
-    if (vbOk && !vcOk) return { appId: "vblocks", popupIndex: 1 };
-    if (!vbOk && vcOk) return { appId: "vchronicles", popupIndex: 1 };
-
-    return vb.shownCount <= vc.shownCount
-      ? { appId: "vblocks", popupIndex: 1 }
-      : { appId: "vchronicles", popupIndex: 1 };
+  function getOtherAppId(appId) {
+    return appId === "vblocks" ? "vchronicles" : "vblocks";
   }
 
-  function chooseIdleOffer() {
+  function chooseLowVcoinsOffer() {
     const state = readState();
-    const vb = state.apps.vblocks;
-    const vc = state.apps.vchronicles;
+    const firstChoice = state.lowVcoinsNextApp === "vchronicles" ? "vchronicles" : "vblocks";
+    const secondChoice = getOtherAppId(firstChoice);
 
-    const vbOk = canStillShowForGame(vb);
-    const vcOk = canStillShowForGame(vc);
+    const firstRow = state.apps[firstChoice];
+    const secondRow = state.apps[secondChoice];
 
-    if (!vbOk && !vcOk) return null;
-    if (vbOk && !vcOk) return { appId: "vblocks", popupIndex: 3 };
-    if (!vbOk && vcOk) return { appId: "vchronicles", popupIndex: 3 };
+    if (canStillShowForGame(firstRow)) {
+      state.lowVcoinsNextApp = secondChoice;
+      writeState(state);
+      return { appId: firstChoice, popupIndex: 1 };
+    }
 
-    return vb.shownCount <= vc.shownCount
-      ? { appId: "vblocks", popupIndex: 3 }
-      : { appId: "vchronicles", popupIndex: 3 };
+    if (canStillShowForGame(secondRow)) {
+      state.lowVcoinsNextApp = firstChoice;
+      writeState(state);
+      return { appId: secondChoice, popupIndex: 1 };
+    }
+
+    return null;
   }
 
   async function maybeShowPopupFromContext(context) {
@@ -520,18 +534,12 @@
       return openPromoPopup(offer.appId, offer.popupIndex);
     }
 
-    if (context === "post_game_stress") {
+    if (context === "offer_vblocks_after_loss") {
       return openPromoPopup("vblocks", 2);
     }
 
-    if (context === "post_game_dark") {
+    if (context === "offer_vchronicles_after_story") {
       return openPromoPopup("vchronicles", 2);
-    }
-
-    if (context === "idle_index") {
-      const offer = chooseIdleOffer();
-      if (!offer) return false;
-      return openPromoPopup(offer.appId, offer.popupIndex);
     }
 
     return false;
@@ -615,13 +623,10 @@
 
   async function bootIndexPopupFlow() {
     const context = sessionStorage.getItem("vr_crosspromo_context") || "";
-    if (context) {
-      sessionStorage.removeItem("vr_crosspromo_context");
-      await maybeShowPopupFromContext(context);
-      return;
-    }
+    if (!context) return;
 
-    await maybeShowPopupFromContext("idle_index");
+    sessionStorage.removeItem("vr_crosspromo_context");
+    await maybeShowPopupFromContext(context);
   }
 
   function exposeApi() {
@@ -659,7 +664,12 @@
     await renderStorePage();
 
     const pathname = String(window.location.pathname || "");
-    const isIndex = pathname.endsWith("/index.html") || pathname.endsWith("index.html") || pathname === "/" || pathname === "";
+    const isIndex =
+      pathname.endsWith("/index.html") ||
+      pathname.endsWith("index.html") ||
+      pathname === "/" ||
+      pathname === "";
+
     if (isIndex) {
       await bootIndexPopupFlow();
     }
