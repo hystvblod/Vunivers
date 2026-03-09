@@ -2610,11 +2610,11 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-item{
 
 /* recentrage léger uniquement des soldes */
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left .vr-hud-item{
-  transform: translate(5px, -0.50px) !important;
+  transform: translate(5px, 0px) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right .vr-hud-item{
-  transform: translate(-5px, -0.50px) !important;
+  transform: translate(-5px, 0px) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-value{
@@ -2635,14 +2635,14 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left .vr-hud-value{
   width:100% !important;
   max-width:100% !important;
   text-align:center !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-1px) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right .vr-hud-value{
   width:100% !important;
   max-width:100% !important;
   text-align:center !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-1px) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-name{
