@@ -2407,9 +2407,6 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
 body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-fill,
 body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/western_president/g4_fill.webp"); }
 
-
-
-
 /* ==========================================================
    UNIVERS — CEO
    ========================================================== */
@@ -2704,37 +2701,40 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
   box-sizing: border-box !important;
   width: 100% !important;
   min-height: clamp(224px, 33vw, 308px) !important;
-  padding: clamp(10px, 1.7vw, 14px) clamp(11px, 2.3vw, 18px) clamp(16px, 3vw, 22px) !important;
+  padding:
+    clamp(28px, 4.8vw, 40px)
+    clamp(14px, 2.6vw, 22px)
+    clamp(18px, 3.2vw, 26px) !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-title{
-  width: min(80%, 620px) !important;
-  max-width: min(80%, 620px) !important;
-  margin: 0 auto clamp(4px, 0.8vw, 8px) auto !important;
+  width: min(74%, 520px) !important;
+  max-width: min(74%, 520px) !important;
+  margin: 0 auto clamp(6px, 1vw, 10px) auto !important;
   text-align: center !important;
-  font-size: clamp(17.5px, 2.82vw, 29px) !important;
-  line-height: 1.04 !important;
+  font-size: clamp(15px, 2.2vw, 24px) !important;
+  line-height: 1.08 !important;
   font-weight: 700 !important;
   overflow-wrap: break-word !important;
   word-break: break-word !important;
-  transform: translateY(-22px) !important;
+  transform: none !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-text{
-  width: min(80%, 620px) !important;
-  max-width: min(80%, 620px) !important;
+  width: min(72%, 500px) !important;
+  max-width: min(72%, 500px) !important;
   margin: 0 auto !important;
   text-align: center !important;
-  font-size: clamp(12.5px, 2.08vw, 19.5px) !important;
-  line-height: 1.14 !important;
+  font-size: clamp(11px, 1.6vw, 15px) !important;
+  line-height: 1.18 !important;
   font-weight: 600 !important;
   overflow-wrap: break-word !important;
   word-break: break-word !important;
-  transform: translateY(-18px) !important;
+  transform: none !important;
   color: #000 !important;
   text-shadow: none !important;
 }
@@ -2788,7 +2788,6 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-gauge-preview{
   background-image: url("../assets/img/gauges/mega_corp_ceo/g4_fill.webp");
 }
-
 
 /* ========================================================== */
    UNIVERS — EXPLORER
