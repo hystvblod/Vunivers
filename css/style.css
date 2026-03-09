@@ -2410,8 +2410,7 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
 
 
 
-
-/* /* ==========================================================
+/* ==========================================================
    UNIVERS — CEO
    ========================================================== */
 body[data-universe="mega_corp_ceo"].vr-body-game #view-game .vr-card-title,
@@ -2694,7 +2693,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-center .vr-hud-years{
 }
 
 /* =========================
-   FIX CARTES MESSAGE + CHOIX
+   FIX CARTE MESSAGE UNIQUEMENT
    ========================= */
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
@@ -2713,29 +2712,29 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-title{
-  width: min(86%, 680px) !important;
-  max-width: min(86%, 680px) !important;
-  margin: 0 auto clamp(6px, 1vw, 10px) auto !important;
+  width: min(80%, 620px) !important;
+  max-width: min(80%, 620px) !important;
+  margin: 0 auto clamp(4px, 0.8vw, 8px) auto !important;
   text-align: center !important;
   font-size: clamp(17.5px, 2.82vw, 29px) !important;
-  line-height: 1.07 !important;
+  line-height: 1.04 !important;
   font-weight: 700 !important;
   overflow-wrap: break-word !important;
   word-break: break-word !important;
-  transform: translateY(-1px) !important;
+  transform: translateY(-10px) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-text{
-  width: min(86%, 680px) !important;
-  max-width: min(86%, 680px) !important;
+  width: min(80%, 620px) !important;
+  max-width: min(80%, 620px) !important;
   margin: 0 auto !important;
   text-align: center !important;
   font-size: clamp(12.5px, 2.08vw, 19.5px) !important;
-  line-height: 1.17 !important;
+  line-height: 1.14 !important;
   font-weight: 600 !important;
   overflow-wrap: break-word !important;
   word-break: break-word !important;
-  transform: translateY(-1px) !important;
+  transform: translateY(-7px) !important;
   color: #000 !important;
   text-shadow: none !important;
 }
