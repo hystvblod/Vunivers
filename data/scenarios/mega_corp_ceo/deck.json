@@ -1163,8 +1163,8 @@
         "C": {
           "gaugeDelta": {
             "investors": 5,
-            "regulators": -5,
-            "brand_image": 0,
+            "brand_image": -5,
+            "regulators": 0,
             "employees": 0
           }
         }
@@ -1672,10 +1672,10 @@
         },
         "C": {
           "gaugeDelta": {
-            "brand_image": 0,
             "investors": 5,
+            "brand_image": -5,
             "regulators": 0,
-            "employees": -5
+            "employees": 0
           }
         }
       }
@@ -12555,9 +12555,9 @@
         "B": {
           "gaugeDelta": {
             "investors": 5,
-            "brand_image": -5,
-            "employees": 0,
-            "regulators": 0
+            "regulators": -10,
+            "brand_image": 0,
+            "employees": 0
           }
         },
         "C": {
