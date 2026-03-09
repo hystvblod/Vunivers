@@ -1936,7 +1936,7 @@
   },
   "mcc_216": {
     "title": "Débat sur le local",
-    "body": "Un élu te demande: \"Pourquoi pas 100% local?\". Ta supply chain rigole nerveusement.",
+    "body": "Un élu te demande: \"Pourquoi pas 100% local?\". Ta chaîne logistique est sous pression.",
     "choices": {
       "A": "Augmenter le local progressivement avec objectifs.",
       "B": "Promettre 100% local, et improviser après.",
@@ -2026,7 +2026,7 @@
   },
   "mcc_226": {
     "title": "Décarbonation en 3 slides",
-    "body": "On te demande un plan décarbonation. Le conseil veut une présentation en 3 slides. La planète, elle, voulait un roman.",
+    "body": "On te demande un plan décarbonation en 3 slides. Le conseil veut du court. Le sujet demande du concret.",
     "choices": {
       "A": "Plan simple mais sérieux avec étapes chiffrées.",
       "B": "3 slides vagues, et on verra.",
@@ -2938,7 +2938,7 @@
     "body": "Une subvention innovation est possible, mais il faut prouver que tu innoves.",
     "choices": {
       "A": "Vrai projet R&D et dossier solide.",
-      "B": "Renommer un bouton et tenter le dossier, lol.",
+      "B": "Renommer un bouton et tenter le dossier sans vrai projet.",
       "C": "Projet pilote modeste mais réel."
     }
   },
@@ -3307,7 +3307,7 @@
     "body": "Des pigeons s’installent sur ton siège et deviennent \"symbole de résistance urbaine\".",
     "choices": {
       "A": "Installer solutions douces + nettoyage + communication.",
-      "B": "Les chasser brutalement, bad PR.",
+      "B": "Les chasser brutalement, au risque d’un retour négatif.",
       "C": "Créer un \"toit biodiversité\" et déplacer le problème."
     }
   },
@@ -3712,13 +3712,13 @@
     "body": "Un député veut tester ton service en direct au Parlement. Il ne sait pas cliquer. L’écran est à l’envers.",
     "choices": {
       "A": "L’aider gentiment + guide ultra simple.",
-      "B": "Le laisser galérer, bad PR.",
+      "B": "Le laisser se débrouiller, très mauvais signal.",
       "C": "Proposer une démo pré-enregistrée claire."
     }
   },
   "mcc_414": {
     "title": "Badge Entreprise qui écoute",
-    "body": "Une asso propose un badge \"Entreprise qui écoute\"… si tu payes. Ton CEO intérieur crie \"non\".",
+    "body": "Une asso propose un badge \"Entreprise qui écoute\"… si tu payes. Tu sens le piège d’image.",
     "choices": {
       "A": "Refuser et investir dans de vraies mesures internes.",
       "B": "Payer: badge immédiat.",
@@ -3727,7 +3727,7 @@
   },
   "mcc_415": {
     "title": "Débat sur les mails de relance",
-    "body": "Un projet veut limiter les mails de relance. Ton CRM en envoie 14 par jour. Par personne. Par minute.",
+    "body": "Un projet veut limiter les mails de relance. Ton outil en envoie 14 par jour à chaque client.",
     "choices": {
       "A": "Réduire drastiquement + préférences utilisateur.",
       "B": "Ignorer: ventes d’abord.",
@@ -3766,7 +3766,7 @@
     "body": "Une loi interdit les files prioritaires payantes. Ton service VIP est… exactement ça.",
     "choices": {
       "A": "Supprimer VIP et renforcer le support global.",
-      "B": "Renommer VIP en \"confort\", lol.",
+      "B": "Renommer VIP en \"confort\" pour contourner la loi.",
       "C": "Garder VIP mais créer un support standard rapide aussi."
     }
   },
@@ -3835,11 +3835,11 @@
   },
   "mcc_427": {
     "title": "Jour sans jargon",
-    "body": "Une journée nationale sans jargon arrive. Ton équipe dit \"on fait comment sans dire roadmap?\". Panique.",
+    "body": "Une journée nationale sans jargon arrive. Ton équipe se demande comment parler plus simplement.",
     "choices": {
       "A": "Former à parler simple: succès.",
       "B": "Ignorer: jargon à vie.",
-      "C": "Autoriser 3 mots de jargon max, lol."
+      "C": "Tolérer un peu de jargon, mais avec explications simples."
     }
   },
   "mcc_428": {
