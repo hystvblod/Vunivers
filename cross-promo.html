@@ -90,7 +90,6 @@
       box-shadow:0 16px 40px rgba(0,0,0,.28);
     }
 
-    /* COVER PLUS PETIT + CENTRÉ */
     .vr-crosspromo-hero{
       position:relative;
       min-height:150px;
@@ -153,7 +152,6 @@
       color:#fff;
     }
 
-    /* BLOC RÉCOMPENSE */
     .vr-crosspromo-reward{
       display:inline-flex;
       align-items:center;
@@ -190,7 +188,6 @@
       font-weight:950;
     }
 
-    /* TEXTE CENTRÉ */
     .vr-crosspromo-desc{
       margin:0 auto 14px auto;
       color:rgba(255,255,255,.92);
@@ -200,26 +197,25 @@
       max-width:34ch;
     }
 
-    /* IMAGES 9:16 */
-.vr-crosspromo-gallery{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(0, 1fr));
-  gap:10px;
-  margin-bottom:12px;
-  justify-items:center;
-  align-items:start;
-}
+    /* 3 IMAGES PAR APP */
+    .vr-crosspromo-gallery{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:10px;
+      margin-bottom:12px;
+      justify-items:center;
+      align-items:start;
+    }
 
-.vr-crosspromo-shot{
-  width:100%;
-  max-width:110px;
-  aspect-ratio: 9 / 16;
-  border-radius:16px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.06);
-}
-
+    .vr-crosspromo-shot{
+      width:100%;
+      max-width:110px;
+      aspect-ratio: 9 / 16;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+    }
 
     .vr-crosspromo-shot img{
       width:100%;
@@ -265,9 +261,9 @@
         grid-template-columns:1fr 1fr;
       }
 
-    .vr-crosspromo-shot{
-  max-width:96px;
-}
+      .vr-crosspromo-shot{
+        max-width:120px;
+      }
     }
 
     @media (max-width: 520px){
@@ -295,7 +291,7 @@
       }
 
       .vr-crosspromo-shot{
-        max-width:126px;
+        max-width:96px;
       }
 
       .vr-crosspromo-actions{
