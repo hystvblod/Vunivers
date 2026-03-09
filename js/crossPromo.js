@@ -615,7 +615,7 @@
     const host = document.getElementById("vr-crosspromo-grid");
     if (!host) return;
 
-    const ids = ["vblocks", "vchronicles"];
+   const ids = ["vchronicles", "vblocks"];
     const rows = [];
 
     for (const id of ids) {
