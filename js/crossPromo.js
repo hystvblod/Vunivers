@@ -418,7 +418,7 @@
       '  <div id="vr-crosspromo-body" style="font-size:14px;line-height:1.42;color:rgba(255,255,255,.92);margin-bottom:14px;"></div>',
       '  <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);width:max-content;">',
       '    <span id="vr-crosspromo-reward-prefix" style="font-size:13px;font-weight:900;color:#fff;"></span>',
-      '    <img src="assets/img/ui/vcoins.webp" alt="" style="width:18px;height:18px;object-fit:contain;" />',
+      '    <img src="assets/img/ui/vcoins.webp" alt="" style="width:28px;height:28px;object-fit:contain;" />',
       '    <span id="vr-crosspromo-reward-value" style="font-size:13px;font-weight:900;color:#fff;"></span>',
       '  </div>',
       '  <div style="display:grid;grid-template-columns:1fr;gap:10px;">',
