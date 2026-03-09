@@ -845,8 +845,7 @@
         },
         "B": {
           "gaugeDelta": {
-            "legions": 8,
-            "surface": -5
+            "surface": 8
           }
         },
         "C": {
@@ -1678,7 +1677,7 @@
         },
         "B": {
           "gaugeDelta": {
-            "surface": 8,
+            "order": 8,
             "souls": -5
           }
         },
@@ -1767,14 +1766,14 @@
         },
         "B": {
           "gaugeDelta": {
-            "surface": 8,
+            "order": 8,
             "souls": -5
           }
         },
         "C": {
           "gaugeDelta": {
-            "order": 8,
-            "surface": -5
+            "surface": 8,
+            "souls": -5
           }
         }
       }
@@ -2386,7 +2385,7 @@
         },
         "B": {
           "gaugeDelta": {
-            "surface": 8,
+            "order": 8,
             "souls": -5
           }
         },
@@ -3303,7 +3302,6 @@
         },
         "B": {
           "gaugeDelta": {
-            "surface": 8,
             "order": 8
           }
         },
@@ -4300,13 +4298,13 @@
         },
         "B": {
           "gaugeDelta": {
-            "legions": 8,
+            "order": 8,
             "surface": -5
           }
         },
         "C": {
           "gaugeDelta": {
-            "order": 5,
+            "surface": 8,
             "souls": -5
           }
         }
@@ -4318,20 +4316,20 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "surface": 8,
-            "souls": -5
+            "souls": 8,
+            "order": -5
           }
         },
         "B": {
           "gaugeDelta": {
-            "souls": 8,
-            "surface": 8
+            "order": 8,
+            "souls": -5
           }
         },
         "C": {
           "gaugeDelta": {
-            "legions": 5,
-            "surface": -5
+            "surface": 8,
+            "order": -5
           }
         }
       }
@@ -4688,14 +4686,14 @@
         },
         "B": {
           "gaugeDelta": {
-            "souls": 8,
+            "order": 8,
             "surface": -5
           }
         },
         "C": {
           "gaugeDelta": {
-            "order": 5,
-            "souls": -5
+            "surface": 8,
+            "order": -5
           }
         }
       }
@@ -4807,8 +4805,8 @@
         },
         "B": {
           "gaugeDelta": {
-            "legions": 8,
-            "order": -5
+            "order": 8,
+            "surface": -5
           }
         },
         "C": {
@@ -5493,7 +5491,7 @@
         },
         "B": {
           "gaugeDelta": {
-            "surface": 8,
+            "order": 8,
             "souls": -5
           }
         },
@@ -7004,8 +7002,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "legions": 5,
-            "order": -5
+            "surface": 8
           }
         }
       }
@@ -7546,8 +7543,8 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "legions": 10,
-            "souls": -8
+            "souls": 10,
+            "order": -8
           }
         },
         "B": {
@@ -8740,8 +8737,8 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "order": 10,
-            "surface": -8
+            "souls": 8,
+            "order": -5
           }
         },
         "B": {
