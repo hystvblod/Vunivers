@@ -2407,6 +2407,14 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
 body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-fill,
 body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/western_president/g4_fill.webp"); }
 
+
+
+
+
+
+
+
+
 /* ==========================================================
    UNIVERS — CEO
    ========================================================== */
@@ -2702,19 +2710,20 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
   width: 100% !important;
   min-height: clamp(224px, 33vw, 308px) !important;
   padding:
-    clamp(18px, 3.4vw, 28px)
+    clamp(62px, 9vw, 88px)
     clamp(14px, 2.6vw, 22px)
-    clamp(18px, 3.2vw, 26px) !important;
+    clamp(14px, 2.2vw, 18px) !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: flex-start !important;
+  gap: clamp(4px, 0.8vw, 8px) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-title{
   width: min(74%, 520px) !important;
   max-width: min(74%, 520px) !important;
-  margin: 0 auto clamp(6px, 1vw, 10px) auto !important;
+  margin: 0 auto !important;
   text-align: center !important;
   font-size: clamp(15px, 2.2vw, 24px) !important;
   line-height: 1.08 !important;
@@ -2788,6 +2797,13 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-gauge-preview{
   background-image: url("../assets/img/gauges/mega_corp_ceo/g4_fill.webp");
 }
+
+
+
+
+
+
+
 
 /* ========================================================== */
    UNIVERS — EXPLORER
