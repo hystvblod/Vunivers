@@ -4,7 +4,6 @@
   const STORAGE_KEY = "vuniverse_crosspromo_state";
   const SESSION_POPUP_KEY = "vuniverse_crosspromo_session_shown";
   const REWARD_AMOUNT = 400;
-
   const MAX_DISMISS_PER_GAME = 2;
 
   const APPS = {
@@ -14,10 +13,11 @@
       iosScheme: "vblocks://",
       storeUrlAndroid: "https://play.google.com/store/apps/details?id=com.vboldstudio.vblocks",
       storeUrlIOS: "https://apps.apple.com/app/idXXXXXXXXXX",
-      icon: "assets/img/crosspromo/vblocks_cover.webp",
+      cover: "assets/img/crosspromo/vblocks_cover.webp",
       shots: [
         "assets/img/crosspromo/vblocks_01.webp",
-        "assets/img/crosspromo/vblocks_02.webp"
+        "assets/img/crosspromo/vblocks_02.webp",
+        "assets/img/crosspromo/vblocks_03.webp"
       ],
       titleKey: "crosspromo.apps.vblocks.name",
       descKey: "crosspromo.apps.vblocks.store_desc",
@@ -34,10 +34,11 @@
       iosScheme: "vchronicles://",
       storeUrlAndroid: "https://play.google.com/store/apps/details?id=com.vboldstudio.vchronicles",
       storeUrlIOS: "https://apps.apple.com/app/idYYYYYYYYYY",
-      icon: "assets/img/crosspromo/vchronicles_cover.webp",
+      cover: "assets/img/crosspromo/vchronicles_cover.webp",
       shots: [
         "assets/img/crosspromo/vchronicles_01.webp",
-        "assets/img/crosspromo/vchronicles_02.webp"
+        "assets/img/crosspromo/vchronicles_02.webp",
+        "assets/img/crosspromo/vchronicles_03.webp"
       ],
       titleKey: "crosspromo.apps.vchronicles.name",
       descKey: "crosspromo.apps.vchronicles.store_desc",
@@ -125,7 +126,11 @@
   }
 
   function safeParse(raw) {
-    try { return JSON.parse(raw); } catch (_) { return null; }
+    try {
+      return JSON.parse(raw);
+    } catch (_) {
+      return null;
+    }
   }
 
   function normalizeGameState(src) {
@@ -162,7 +167,9 @@
   }
 
   function writeState(state) {
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (_) {}
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (_) {}
   }
 
   function hasSessionPopupShown() {
@@ -185,11 +192,6 @@
       row.lastShownDayKey = today;
       row.dailyShowCount = 0;
     }
-  }
-
-  function canShowToday(row) {
-    syncDailyWindow(row);
-    return row.dailyShowCount < 1;
   }
 
   function canStillShowForGame(row) {
@@ -325,7 +327,9 @@
     document.body.appendChild(el);
 
     setTimeout(() => {
-      try { el.remove(); } catch (_) {}
+      try {
+        el.remove();
+      } catch (_) {}
     }, 2800);
   }
 
@@ -369,6 +373,19 @@
       .replaceAll("'", "&#039;");
   }
 
+  function getValidShots(app) {
+    return (Array.isArray(app.shots) ? app.shots : [])
+      .filter(Boolean)
+      .slice(0, 3);
+  }
+
+  function buildShotsHtml(app) {
+    const shots = getValidShots(app);
+    return shots.map((src) => {
+      return '<div class="vr-crosspromo-shot"><img src="' + escapeHtml(src) + '" alt="" draggable="false" /></div>';
+    }).join("");
+  }
+
   function buildPopupRoot() {
     let root = document.getElementById("vr-crosspromo-popup");
     if (root) return root;
@@ -400,6 +417,7 @@
       '  </div>',
       '  <div id="vr-crosspromo-body" style="font-size:14px;line-height:1.42;color:rgba(255,255,255,.92);margin-bottom:14px;"></div>',
       '  <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);width:max-content;">',
+      '    <span id="vr-crosspromo-reward-prefix" style="font-size:13px;font-weight:900;color:#fff;"></span>',
       '    <img src="assets/img/ui/vcoins.webp" alt="" style="width:18px;height:18px;object-fit:contain;" />',
       '    <span id="vr-crosspromo-reward-value" style="font-size:13px;font-weight:900;color:#fff;"></span>',
       '  </div>',
@@ -454,15 +472,17 @@
     const appName = document.getElementById("vr-crosspromo-appname");
     const title = document.getElementById("vr-crosspromo-title");
     const body = document.getElementById("vr-crosspromo-body");
+    const rewardPrefix = document.getElementById("vr-crosspromo-reward-prefix");
     const rewardValue = document.getElementById("vr-crosspromo-reward-value");
     const primary = document.getElementById("vr-crosspromo-primary");
     const secondary = document.getElementById("vr-crosspromo-secondary");
     const closeBtn = document.getElementById("vr-crosspromo-close");
 
-    cover.src = app.icon;
+    cover.src = app.cover;
     appName.textContent = t(app.titleKey, "");
     title.textContent = popupText.title;
     body.textContent = popupText.body;
+    rewardPrefix.textContent = t("crosspromo.reward_prefix", "GAGNER :");
     rewardValue.textContent = String(REWARD_AMOUNT);
     primary.textContent = t("crosspromo.cta_install", "");
     secondary.textContent = t("crosspromo.cta_later", "");
@@ -570,21 +590,20 @@
       rows.push([
         '<article class="vr-crosspromo-card">',
         '  <div class="vr-crosspromo-hero">',
-        '    <span class="vr-crosspromo-badge">' + escapeHtml(t("crosspromo.badge", "")) + '</span>',
-        '    <img src="' + escapeHtml(app.icon) + '" alt="" draggable="false" />',
+        '    <img src="' + escapeHtml(app.cover) + '" alt="" draggable="false" />',
         '  </div>',
         '  <div class="vr-crosspromo-content">',
         '    <div class="vr-crosspromo-head">',
         '      <h2 class="vr-crosspromo-name">' + escapeHtml(t(app.titleKey, "")) + '</h2>',
         '      <div class="vr-crosspromo-reward">',
+        '        <span class="vr-crosspromo-reward-label">' + escapeHtml(t("crosspromo.reward_prefix", "GAGNER :")) + '</span>',
         '        <img src="assets/img/ui/vcoins.webp" alt="" draggable="false" />',
-        '        <span>' + escapeHtml(String(REWARD_AMOUNT)) + '</span>',
+        '        <span class="vr-crosspromo-reward-value">' + escapeHtml(String(REWARD_AMOUNT)) + '</span>',
         '      </div>',
         '    </div>',
         '    <p class="vr-crosspromo-desc">' + escapeHtml(t(app.descKey, "")) + '</p>',
         '    <div class="vr-crosspromo-gallery">',
-        '      <div class="vr-crosspromo-shot"><img src="' + escapeHtml(app.shots[0]) + '" alt="" draggable="false" /></div>',
-        '      <div class="vr-crosspromo-shot"><img src="' + escapeHtml(app.shots[1]) + '" alt="" draggable="false" /></div>',
+               buildShotsHtml(app),
         '    </div>',
         '    <div class="vr-crosspromo-actions">',
         '      <button class="vr-crosspromo-btn primary" type="button" data-crosspromo-action="' + escapeHtml(id) + '">' + escapeHtml(actionLabel) + '</button>',
