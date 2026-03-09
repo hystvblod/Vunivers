@@ -19,11 +19,11 @@
   },
   "hk_003": {
     "title": "Influence sur les vivants",
-    "body": "Une secte veut répandre ton culte sur Terre. Certains démons craignent d’attirer l’attention.",
+    "body": "Un groupe dévoué veut répandre ton influence sur Terre. Certains démons craignent d’attirer l’attention.",
     "choices": {
       "A": "Encourage le culte, le pouvoir d'abord.",
       "B": "Limite les rituels aux endroits isolés.",
-      "C": "Dissous la secte avant qu'elle ne devienne incontrôlable."
+      "C": "Dissous ce groupe dévoué avant qu'il ne devienne incontrôlable."
     }
   },
   "hk_004": {
@@ -217,7 +217,7 @@
   },
   "hk_025": {
     "title": "Chant étrange en profondeur",
-    "body": "Un chant venu des tréfonds résonne. Même les démons les plus anciens sont mal à l'aise.",
+    "body": "Un chant venu des profondeurs résonne. Même les démons les plus anciens sont mal à l'aise.",
     "choices": {
       "A": "Enquêter personnellement, entouré de tes gardes.",
       "B": "Sceller la zone et déclarer l'accès interdit.",
@@ -396,7 +396,7 @@
     }
   },
   "hk_045": {
-    "title": "Conclave des tentateurs",
+    "title": "Grand conseil des tentateurs",
     "body": "Les tentateurs qui œuvrent à la surface veulent une voix plus importante dans la stratégie globale.",
     "choices": {
       "A": "Leur donner plus de liberté pour récolter des âmes.",
@@ -864,7 +864,7 @@
     }
   },
   "hk_097": {
-    "title": "Conclave des rires déments",
+    "title": "Grand conseil des rires déments",
     "body": "Un groupe de démons ne prend plus rien au sérieux et transforme chaque supplice en farce cruelle.",
     "choices": {
       "A": "Les laisser attirer les âmes par le grotesque.",
@@ -1071,7 +1071,7 @@
     }
   },
   "hk_120": {
-    "title": "Conclave des illusionnistes",
+    "title": "Grand conseil des illusionnistes",
     "body": "Les maîtres illusionnistes exigent un rôle plus important dans ton règne.",
     "choices": {
       "A": "Les laisser manipuler les perceptions de masse.",
@@ -1117,7 +1117,7 @@
   },
   "hk_125": {
     "title": "Délégation des dévots fanatiques",
-    "body": "Des âmes de fanatiques religieux veulent te prouver qu’ils méritent un traitement spécial.",
+    "body": "Des âmes de dévots extrêmes veulent te prouver qu’ils méritent un traitement spécial.",
     "choices": {
       "A": "Les utiliser comme vitrine pour attirer d’autres croyants.",
       "B": "Les intégrer dans un cercle très normé.",
@@ -1431,12 +1431,12 @@
     }
   },
   "hk_160": {
-    "title": "Convocation au conclave",
-    "body": "Plusieurs royaumes infernaux, dont le Nord, convoquent un conclave exceptionnel.",
+    "title": "Convocation au grand conseil",
+    "body": "Plusieurs royaumes infernaux, dont le Nord, convoquent un grand conseil exceptionnel.",
     "choices": {
       "A": "Y envoyer une délégation martiale impressionnante.",
       "B": "N’y aller qu’avec tes plus sévères administrateurs.",
-      "C": "Profiter du conclave pour nouer des alliances concernant la surface."
+      "C": "Profiter du grand conseil pour nouer des alliances concernant la surface."
     }
   },
   "hk_161": {
@@ -1701,8 +1701,8 @@
     }
   },
   "hk_190": {
-    "title": "Conclave des flammes croisées",
-    "body": "Un conclave spécial réunit tes flammes et celles du Nord dans une même salle.",
+    "title": "Grand conseil des flammes croisées",
+    "body": "Un grand conseil spécial réunit tes flammes et celles du Nord dans une même salle.",
     "choices": {
       "A": "Chercher à dominer complètement l’assemblée.",
       "B": "Fixer des règles strictes pour chaque intervention.",
@@ -2125,7 +2125,7 @@
   },
   "hk_237": {
     "title": "Trafic de remèdes maudits",
-    "body": "Un trafic de remèdes rares et de chairs maudites prospère dans l’ombre.",
+    "body": "Un trafic de remèdes rares et de produits maudits prospère dans l’ombre.",
     "choices": {
       "A": "Encourager le cynisme : tout a un prix, même le corps.",
       "B": "Soutenir des opérations de police très visibles mais peu profondes.",
@@ -2260,7 +2260,7 @@
   },
   "hk_252": {
     "title": "Messager aux ailes trop blanches",
-    "body": "Un ange messager descend avec un parchemin : le Paradis exige une renégociation des frontières.",
+    "body": "Un ange messager descend avec un parchemin : le Paradis exige un nouvel accord des frontières.",
     "choices": {
       "A": "Déchirer le parchemin sous ses yeux et affirmer ta souveraineté.",
       "B": "Accepter un protocole de discussion extrêmement rigide.",
@@ -2637,8 +2637,8 @@
     }
   },
   "hk_294": {
-    "title": "Échange de liturgies",
-    "body": "On propose un échange d’études sur les liturgies : prières d’en haut, rituels d’en bas.",
+    "title": "Échange de rituel officiels",
+    "body": "On propose un échange d’études sur les rituel officiels : prières d’en haut, rituels d’en bas.",
     "choices": {
       "A": "Refuser de laisser tes secrets remonter.",
       "B": "Accepter mais censurer tout ce qui te mettrait trop en cause.",
@@ -2911,7 +2911,7 @@
     "body": "Un rituel oublié se réactive spontanément dans un coin reculé de l’Enfer.",
     "choices": {
       "A": "Le laisser se dérouler et observer.",
-      "B": "L’intégrer à ton système après l’avoir décortiqué.",
+      "B": "L’intégrer à ton système après l’avoir analysé.",
       "C": "Faire remonter ce rituel dans des grimoires humains."
     }
   },
@@ -2965,7 +2965,7 @@
     "body": "Un petit culte de damnés vénère tes cendres comme des reliques.",
     "choices": {
       "A": "Les encourager : la vénération est toujours utile.",
-      "B": "Intégrer ce culte dans la liturgie officielle.",
+      "B": "Intégrer ce culte dans le rituel officiel.",
       "C": "Laisser cette idée séduire des humains attirés par la destruction."
     }
   },
@@ -3171,7 +3171,7 @@
     "title": "Mur des serments brisés",
     "body": "Un mur infini porte chaque serment jamais tenu, gravé dans la pierre noire.",
     "choices": {
-      "A": "Y coller de force tous les nouveaux parjures.",
+      "A": "Y coller de force tous ceux qui brisent leurs serments.",
       "B": "Organiser les serments par catégories dans une stricte hiérarchie.",
       "C": "Projeter ce mur dans les cauchemars des futurs menteurs."
     }
