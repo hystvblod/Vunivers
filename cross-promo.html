@@ -90,13 +90,11 @@
       box-shadow:0 16px 40px rgba(0,0,0,.28);
     }
 
+    /* GRAND VISUEL QUI PREND TOUT L’ENCADRÉ */
     .vr-crosspromo-hero{
       position:relative;
-      min-height:150px;
-      padding:18px 16px 12px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      height:220px;
+      overflow:hidden;
       background:
         linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0)),
         radial-gradient(circle at top right, rgba(255,255,255,.16), transparent 45%),
@@ -104,31 +102,15 @@
     }
 
     .vr-crosspromo-hero img{
-      width:min(58%, 260px);
-      max-width:100%;
-      max-height:100px;
-      height:auto;
-      min-height:0;
-      object-fit:contain;
+      width:100%;
+      height:100%;
+      object-fit:cover;
       display:block;
-      margin:0 auto;
     }
 
+    /* badge supprimé */
     .vr-crosspromo-badge{
-      position:absolute;
-      top:12px;
-      left:12px;
-      z-index:2;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(0,0,0,.34);
-      color:#fff;
-      font-size:12px;
-      font-weight:900;
-      letter-spacing:.2px;
-      backdrop-filter:blur(6px);
-      -webkit-backdrop-filter:blur(6px);
+      display:none !important;
     }
 
     .vr-crosspromo-content{
@@ -164,15 +146,14 @@
       font-size:13px;
       font-weight:900;
       white-space:nowrap;
-      flex-wrap:wrap;
       text-align:center;
     }
 
     .vr-crosspromo-reward-label{
-      font-size:11px;
+      font-size:12px;
       font-weight:900;
       letter-spacing:.2px;
-      opacity:.95;
+      opacity:1;
     }
 
     .vr-crosspromo-reward img{
@@ -197,20 +178,18 @@
       max-width:34ch;
     }
 
-    /* 3 IMAGES PAR APP */
+    /* 3 IMAGES SUR LA MÊME LIGNE */
     .vr-crosspromo-gallery{
       display:grid;
       grid-template-columns:repeat(3, minmax(0, 1fr));
       gap:10px;
       margin-bottom:12px;
-      justify-items:center;
       align-items:start;
     }
 
     .vr-crosspromo-shot{
       width:100%;
-      max-width:110px;
-      aspect-ratio: 9 / 16;
+      aspect-ratio:9 / 16;
       border-radius:16px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.12);
@@ -261,8 +240,8 @@
         grid-template-columns:1fr 1fr;
       }
 
-      .vr-crosspromo-shot{
-        max-width:120px;
+      .vr-crosspromo-hero{
+        height:240px;
       }
     }
 
@@ -281,17 +260,11 @@
       }
 
       .vr-crosspromo-hero{
-        min-height:126px;
-        padding:16px 14px 10px;
+        height:190px;
       }
 
-      .vr-crosspromo-hero img{
-        width:min(54%, 210px);
-        max-height:84px;
-      }
-
-      .vr-crosspromo-shot{
-        max-width:96px;
+      .vr-crosspromo-gallery{
+        gap:8px;
       }
 
       .vr-crosspromo-actions{
