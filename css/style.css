@@ -2721,7 +2721,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-title{
   font-weight: 700 !important;
   overflow-wrap: break-word !important;
   word-break: break-word !important;
-  transform: translateY(-10px) !important;
+  transform: translateY(-22px) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-text{
@@ -2734,7 +2734,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-text{
   font-weight: 600 !important;
   overflow-wrap: break-word !important;
   word-break: break-word !important;
-  transform: translateY(-7px) !important;
+  transform: translateY(-18px) !important;
   color: #000 !important;
   text-shadow: none !important;
 }
