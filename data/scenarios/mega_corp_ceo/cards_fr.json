@@ -81,12 +81,12 @@
     }
   },
   "mcc_010": {
-    "title": "Bonus ou R&D",
-    "body": "Le conseil veut une annonce forte: bonus actionnarial ou gros investissement R&D. Il faut choisir.",
+    "title": "Bonus ou recherche",
+    "body": "Le conseil veut une annonce forte: bonus actionnarial ou gros investissement recherche et développement. Il faut choisir.",
     "choices": {
       "A": "Bonus actionnarial immédiat.",
-      "B": "Investir massivement en R&D, bénéfices plus tard.",
-      "C": "Compromis: petit bonus + R&D ciblée."
+      "B": "Investir massivement en recherche et développement, bénéfices plus tard.",
+      "C": "Compromis: petit bonus + recherche et développement ciblée."
     }
   },
   "mcc_011": {
@@ -154,7 +154,7 @@
   },
   "mcc_018": {
     "title": "Programme de formation",
-    "body": "Les RH demandent un budget massif pour former tout le monde aux nouveaux outils. Le CFO grimace.",
+    "body": "Les RH demandent un budget massif pour former tout le monde aux nouveaux outils. Le directeur financier grimace.",
     "choices": {
       "A": "Valider: montée en compétences générale.",
       "B": "Refuser: formation ciblée au strict minimum.",
@@ -325,7 +325,7 @@
   },
   "mcc_037": {
     "title": "Plan de licenciements",
-    "body": "Le CFO propose un plan de licenciements pour \"rassurer le marché\". Les équipes sont à cran.",
+    "body": "Le directeur financier propose un plan de licenciements pour \"rassurer le marché\". Les équipes sont à cran.",
     "choices": {
       "A": "Accepter: objectif rentabilité.",
       "B": "Refuser: miser sur la croissance et la rétention.",
@@ -390,7 +390,7 @@
     "title": "Réunion avec le conseil",
     "body": "Le conseil veut un plan à 12 mois. Ils veulent \"simple, rentable, et sexy\".",
     "choices": {
-      "A": "Plan rentable: coupes et focus sur le cœur de métier.",
+      "A": "Plan rentable: coupes et priorité sur le cœur de métier.",
       "B": "Plan ambitieux: innovation et expansion.",
       "C": "Plan équilibré: rentabilité + innovation ciblée."
     }
@@ -418,7 +418,7 @@
     "body": "Les employés veulent un concours d’idées avec budget dédié. Les investisseurs demandent: \"ROI?\".",
     "choices": {
       "A": "Lancer le concours avec un vrai budget.",
-      "B": "Refuser: focus sur l’exécution.",
+      "B": "Refuser: priorité sur l’exécution.",
       "C": "Lancer un concours sans budget, juste de la reconnaissance."
     }
   },
@@ -513,7 +513,7 @@
     }
   },
   "mcc_058": {
-    "title": "R&D contre court terme",
+    "title": "Recherche ou gain rapide",
     "body": "Ton nouveau labo coûte cher et ne rapportera pas avant 18 mois. Le marché veut du résultat.",
     "choices": {
       "A": "Réduire le labo, sécuriser le court terme.",
@@ -820,7 +820,7 @@
   },
   "mcc_092": {
     "title": "Chasse aux coûts",
-    "body": "Le CFO propose de couper les budgets \"non essentiels\", événements, outils, petites dépenses.",
+    "body": "Le directeur financier propose de couper les budgets \"non essentiels\", événements, outils, petites dépenses.",
     "choices": {
       "A": "Couper fort, rapide.",
       "B": "Couper légèrement, préserver le moral.",
@@ -876,8 +876,8 @@
     "title": "Innovation gadget",
     "body": "Une fonctionnalité fun est demandée. Elle ne sert pas à grand-chose… mais fait parler.",
     "choices": {
-      "A": "La lancer: buzz.",
-      "B": "Refuser: focus utile.",
+      "A": "La lancer: bruit médiatique.",
+      "B": "Refuser: priorité utile.",
       "C": "La lancer en option, sans perturber le cœur."
     }
   },
@@ -918,8 +918,8 @@
     }
   },
   "mcc_103": {
-    "title": "KPI du bonheur",
-    "body": "Un manager propose un KPI \"sourires par minute\". Les équipes ne savent pas si c’est une blague.",
+    "title": "Indicateur du bonheur",
+    "body": "Un manager propose un indicateur \"sourires par minute\". Les équipes ne savent pas si c’est une blague.",
     "choices": {
       "A": "Refuser et lancer un vrai baromètre bien-être.",
       "B": "Accepter pour l’image, sans le mesurer.",
@@ -963,8 +963,8 @@
     }
   },
   "mcc_108": {
-    "title": "Dress code surprise",
-    "body": "Un directeur veut imposer une tenue \"corporate\". Les équipes répondent en pyjama coordonné.",
+    "title": "Tenue imposée surprise",
+    "body": "Un directeur veut imposer une tenue plus formelle.",
     "choices": {
       "A": "Annuler le dress code: confort et confiance.",
       "B": "Imposer quand même: image d’abord.",
@@ -981,12 +981,12 @@
     }
   },
   "mcc_110": {
-    "title": "Team building extrême",
-    "body": "On te propose un team building \"survie en forêt\". Les RH demandent si c’est légal… et utile.",
+    "title": "Activité d’équipe extrême",
+    "body": "On te propose une activité d’équipe \"survie en forêt\".",
     "choices": {
       "A": "Faire quelque chose de simple et inclusif.",
       "B": "Valider: \"on sort de la zone de confort\".",
-      "C": "Valider mais optionnel + version soft."
+      "C": "Valider, mais en option avec une version plus légère."
     }
   },
   "mcc_111": {
@@ -995,7 +995,7 @@
     "choices": {
       "A": "Remplacer + standardiser le matériel.",
       "B": "Réduire l’usage: zéro papier.",
-      "C": "Garder, mais avec support IT dédié, et prières."
+      "C": "Former des ambassadeurs sur chaque étage + support informatique dédié."
     }
   },
   "mcc_112": {
@@ -1057,7 +1057,7 @@
     "body": "Le marketing veut une édition collector inutile mais \"instagrammable\".",
     "choices": {
       "A": "Refuser: utilité d’abord.",
-      "B": "Valider: buzz et ventes rapides.",
+      "B": "Valider: bruit médiatique et ventes rapides.",
       "C": "Valider en petite quantité, sans perturber la prod."
     }
   },
@@ -1282,7 +1282,7 @@
     "body": "Un post officiel est publié avec un emoji étrange. Personne ne sait ce que ça signifie, mais ça trend.",
     "choices": {
       "A": "Clarifier et reprendre le contrôle éditorial.",
-      "B": "Surfer: plus d’emojis, plus de buzz.",
+      "B": "Surfer: plus d’emojis, plus de bruit médiatique.",
       "C": "Laisser mais encadrer avec une charte."
     }
   },
@@ -1328,7 +1328,7 @@
     "choices": {
       "A": "Associer ça à une vraie baisse de charge.",
       "B": "Faire l’événement sans rien changer.",
-      "C": "Faire un pilote + feedback anonyme + ajuster."
+      "C": "Faire un essai + retours anonymes + ajuster."
     }
   },
   "mcc_149": {
@@ -1369,7 +1369,7 @@
   },
   "mcc_153": {
     "title": "Énergie qui flambe",
-    "body": "La facture énergétique explose. Le CFO veut des coupes, la marque veut une transition propre.",
+    "body": "La facture énergétique explose. Le directeur financier veut des coupes, la marque veut une transition propre.",
     "choices": {
       "A": "Accélérer les économies d’énergie et l’efficacité.",
       "B": "Couper partout, même dans les projets verts.",
@@ -1702,7 +1702,7 @@
   },
   "mcc_190": {
     "title": "Réparabilité",
-    "body": "On demande que tes produits soient plus réparables. Ça rallonge la R&D, mais améliore la confiance.",
+    "body": "On demande que tes produits soient plus réparables. Ça rallonge la recherche et développement, mais améliore la confiance.",
     "choices": {
       "A": "Investir dans la réparabilité et le support.",
       "B": "Ne pas bouger: coût trop élevé.",
@@ -1828,7 +1828,7 @@
   },
   "mcc_204": {
     "title": "Subvention verte, paperasse",
-    "body": "Une subvention existe pour verdir un site, mais le dossier fait 84 pages. Le CFO demande un café.",
+    "body": "Une subvention existe pour verdir un site, mais le dossier fait 84 pages. Le directeur financier demande un café.",
     "choices": {
       "A": "Monter le dossier proprement et investir.",
       "B": "Laisser tomber: trop long.",
@@ -1974,7 +1974,7 @@
     "title": "Loi réparabilité arrive",
     "body": "Une loi impose plus de réparabilité. Tes ingénieurs disent: \"On peut… mais pas demain matin.\"",
     "choices": {
-      "A": "Investir et anticiper, roadmap claire.",
+      "A": "Investir et anticiper, avec un plan clair.",
       "B": "Faire le strict minimum.",
       "C": "Commencer par les produits phares."
     }
@@ -2080,7 +2080,7 @@
   },
   "mcc_232": {
     "title": "Débat politique sur salaires",
-    "body": "Un débat politique sur les salaires explose. Tes employés demandent un geste. Ton CFO demande… du calme.",
+    "body": "Un débat politique sur les salaires explose. Tes employés demandent un geste. Ton directeur financier demande… du calme.",
     "choices": {
       "A": "Revaloriser ciblé + transparence.",
       "B": "Refuser: \"contexte difficile\".",
@@ -2088,8 +2088,8 @@
     }
   },
   "mcc_233": {
-    "title": "Rapport ESG qui endort",
-    "body": "Ton rapport ESG fait 120 pages. Personne ne le lit, mais tout le monde le cite comme preuve d’effort.",
+    "title": "Rapport extra-financier trop long",
+    "body": "Ton rapport extra-financier fait 120 pages.",
     "choices": {
       "A": "Raccourcir + rendre concret, indicateurs.",
       "B": "Garder long: \"ça fait sérieux\".",
@@ -2208,7 +2208,7 @@
     "title": "Nouvelle règle anti-fraude",
     "body": "Une règle anti-fraude exige plus de contrôles. Tes équipes produit disent: \"ça va ajouter 3 clics\".",
     "choices": {
-      "A": "Renforcer contrôles et améliorer l’UX.",
+      "A": "Renforcer les contrôles et simplifier l’usage.",
       "B": "Faire le strict minimum.",
       "C": "Contrôles progressifs selon risque."
     }
@@ -2422,7 +2422,7 @@
   },
   "mcc_270": {
     "title": "Contrôle anti-fraude renforcé",
-    "body": "Le régulateur veut plus de contrôles sur tes ventes. Ton produit craint une UX plus lourde.",
+    "body": "Le régulateur veut plus de contrôles sur tes ventes. Ton produit craint une expérience utilisateur plus lourde.",
     "choices": {
       "A": "Renforcer et simplifier l’expérience en parallèle.",
       "B": "Faire le minimum légal.",
@@ -2467,7 +2467,7 @@
   },
   "mcc_275": {
     "title": "Député veut un simulateur",
-    "body": "Un député veut un simulateur pour expliquer ton prix au public. Ton CFO: \"On peut simuler la douleur?\".",
+    "body": "Un député veut un simulateur pour expliquer ton prix au public. Ton directeur financier: \"On peut simuler la douleur?\".",
     "choices": {
       "A": "Faire un simulateur pédagogique simple.",
       "B": "Refuser: trop exposant.",
@@ -2485,7 +2485,7 @@
   },
   "mcc_277": {
     "title": "Débat sur la semaine de 4 jours",
-    "body": "La semaine de 4 jours revient dans le débat public. Les employés applaudissent, le CFO transpire.",
+    "body": "La semaine de 4 jours revient dans le débat public. Les employés applaudissent, le directeur financier transpire.",
     "choices": {
       "A": "Tester sur certains services avec objectifs clairs.",
       "B": "Refuser: impossible.",
@@ -2575,7 +2575,7 @@
   },
   "mcc_287": {
     "title": "Débat sur les marges cachées",
-    "body": "Un élu affirme que tu as des marges cachées. Ton CFO: \"si seulement…\".",
+    "body": "Un élu affirme que tu as des marges cachées. Ton directeur financier: \"si seulement…\".",
     "choices": {
       "A": "Ouvrir tes coûts sur une gamme, transparence.",
       "B": "Attaquer l’élu: \"mensonge\".",
@@ -2809,7 +2809,7 @@
   },
   "mcc_313": {
     "title": "Scandale du badge visiteur",
-    "body": "Un influenceur s’est fait passer pour un visiteur et filme tes locaux. Un député s’indigne… en story.",
+    "body": "Un député s’indigne sur les réseaux.",
     "choices": {
       "A": "Renforcer sécurité + excuses + correctifs publics.",
       "B": "Menacer juridiquement immédiatement.",
@@ -2844,8 +2844,8 @@
     }
   },
   "mcc_317": {
-    "title": "Une loi sur la clarté des CGU",
-    "body": "Les CGU doivent être claires. Les tiennes font 40 pages. Même ton juriste ne les lit plus.",
+    "title": "Une loi sur la clarté des conditions d’utilisation",
+    "body": "Les conditions d’utilisation doivent être claires. Les tiennes font 40 pages. Même ton juriste ne les lit plus.",
     "choices": {
       "A": "Résumé 1 page + icônes + langage simple.",
       "B": "Laisser comme ça: c’est légal.",
@@ -2865,7 +2865,7 @@
     "title": "L’amendement cantine locale",
     "body": "Un amendement veut rendre la cantine plus locale. Tes employés veulent surtout que ce soit bon.",
     "choices": {
-      "A": "Plus local + menu varié, test & feedback.",
+      "A": "Plus local + menu varié, avec essai et retours.",
       "B": "Refuser: ça coûte trop.",
       "C": "Local sur certains produits seulement."
     }
@@ -2937,7 +2937,7 @@
     "title": "Subvention innovation",
     "body": "Une subvention innovation est possible, mais il faut prouver que tu innoves.",
     "choices": {
-      "A": "Vrai projet R&D et dossier solide.",
+      "A": "Vrai projet recherche et développement et dossier solide.",
       "B": "Renommer un bouton et tenter le dossier sans vrai projet.",
       "C": "Projet pilote modeste mais réel."
     }
@@ -2953,7 +2953,7 @@
   },
   "mcc_329": {
     "title": "L’émission Cash & Clash",
-    "body": "Une émission d’investigation veut \"te suivre une semaine\". Ta com’ s’évanouit. Ton CFO aussi.",
+    "body": "Une émission d’investigation veut \"te suivre une semaine\". Ta com’ s’évanouit. Ton directeur financier aussi.",
     "choices": {
       "A": "Accepter avec transparence, et préparation.",
       "B": "Refuser net.",
@@ -2998,7 +2998,7 @@
   },
   "mcc_334": {
     "title": "Débat sur la sobriété",
-    "body": "On te demande de réduire l’énergie. Ton siège est éclairé comme un sapin de Noël corporate.",
+    "body": "Le stand de ta marque est décoré comme un sapin de Noël d’entreprise.",
     "choices": {
       "A": "Plan sobriété réel + mesures visibles.",
       "B": "Mesure symbolique 1 semaine.",
@@ -3160,7 +3160,7 @@
   },
   "mcc_352": {
     "title": "L’audit des chaussettes",
-    "body": "Un régulateur demande un audit… sur tes chaussettes corporate.",
+    "body": "Un régulateur demande un audit… sur tes chaussettes d’entreprise.",
     "choices": {
       "A": "Coopérer et publier un \"rapport chaussette\".",
       "B": "Se moquer et ignorer, mauvaise idée.",
@@ -3173,7 +3173,7 @@
     "choices": {
       "A": "Capitaliser: campagne humoristique maîtrisée.",
       "B": "Couper la machine: fin du chaos, et début de la colère.",
-      "C": "Faire une vraie action anti-stress et calmer le buzz."
+      "C": "Faire une vraie action anti-stress et calmer le bruit médiatique."
     }
   },
   "mcc_354": {
@@ -3222,17 +3222,17 @@
     }
   },
   "mcc_359": {
-    "title": "Taxe sur les buzz",
-    "body": "Un élu propose une taxe sur les buzz inutiles. Ton marketing: \"On est ruinés\".",
+    "title": "Taxe sur le bruit médiatique",
+    "body": "Un élu propose une taxe sur les bruit médiatique inutiles. Ton marketing: \"On est ruinés\".",
     "choices": {
-      "A": "Réduire les campagnes buzz, focus utilité.",
-      "B": "Doubler les buzz avant la loi.",
-      "C": "Transformer le buzz en éducation, transparence, impact."
+      "A": "Réduire les campagnes tape-à-l’œil, priorité à l’utilité.",
+      "B": "Doubler les bruit médiatique avant la loi.",
+      "C": "Transformer le bruit médiatique en éducation, transparence, impact."
     }
   },
   "mcc_360": {
     "title": "Communiqué en poésie",
-    "body": "Ton équipe com’ veut répondre à une controverse par un poème. Ton CFO veut répondre par un tableau Excel.",
+    "body": "Ton équipe com’ veut répondre à une controverse par un poème. Ton directeur financier veut répondre par un tableau Excel.",
     "choices": {
       "A": "Excel + langage simple, safe.",
       "B": "Poème, risqué, mais mémorable.",
@@ -3295,7 +3295,7 @@
   },
   "mcc_367": {
     "title": "Loi anti-jargon",
-    "body": "Un député veut interdire le jargon corporate. Tes slides contiennent 47 fois \"synergie\".",
+    "body": "En réunion, tout le monde parle en jargon d’entreprise.",
     "choices": {
       "A": "Réécrire tout en langage simple, bien.",
       "B": "Ignorer: c’est la culture.",
@@ -3312,8 +3312,8 @@
     }
   },
   "mcc_369": {
-    "title": "Stress test du micro",
-    "body": "On te met un micro en réunion publique. Il reste ouvert. Tu entends ton CFO murmurer: \"on est foutus\".",
+    "title": "Test du micro en direct",
+    "body": "On te met un micro en réunion publique. Il reste ouvert. Tu entends ton directeur financier murmurer: \"on est foutus\".",
     "choices": {
       "A": "Transparence + blague + clarifier le contexte.",
       "B": "Couper le live et nier, catastrophe.",
@@ -3333,7 +3333,7 @@
     "title": "Candidat en cosplay",
     "body": "Un candidat arrive à ton usine en cosplay \"ouvrier du futur\".",
     "choices": {
-      "A": "Rester neutre + focus sur les faits.",
+      "A": "Rester neutre + priorité sur les faits.",
       "B": "Te moquer publiquement, risque.",
       "C": "Proposer une visite technique sérieuse pour recadrer."
     }
@@ -3348,17 +3348,17 @@
     }
   },
   "mcc_373": {
-    "title": "Loi anti-dark patterns",
+    "title": "Loi contre les interfaces pièges",
     "body": "Une loi vise les interfaces pièges. Tes designers ont littéralement nommé un bouton \"piège final\".",
     "choices": {
-      "A": "Refondre l’UX en mode clean et fair.",
+      "A": "Refondre l’interface pour la rendre simple et honnête.",
       "B": "Renommer \"piège final\" en \"option avancée\".",
       "C": "Refondre seulement les points les plus visibles."
     }
   },
   "mcc_374": {
-    "title": "QG de campagne dans ton parking",
-    "body": "Un parti politique installe un QG de campagne… par erreur dans ton parking. Ils ont mis des affiches.",
+    "title": "local de campagne de campagne dans ton parking",
+    "body": "Un parti politique installe un local de campagne de campagne… par erreur dans ton parking. Ils ont mis des affiches.",
     "choices": {
       "A": "Demander poliment de partir + neutralité.",
       "B": "Les laisser: ça fait du monde, non.",
@@ -3492,8 +3492,8 @@
     }
   },
   "mcc_389": {
-    "title": "Loi anti-bullshit corporate",
-    "body": "Une loi veut interdire le bullshit corporate.",
+    "title": "Loi anti-bullshit d’entreprise",
+    "body": "Une loi veut interdire le bullshit d’entreprise.",
     "choices": {
       "A": "Revenir à des objectifs simples et mesurables.",
       "B": "Changer juste quelques mots.",
@@ -3556,7 +3556,7 @@
   },
   "mcc_396": {
     "title": "Débat sur les mots interdits",
-    "body": "Un parti propose d’interdire le mot \"rentabilité\" à la TV. Ton CFO devient muet.",
+    "body": "Un parti propose d’interdire le mot \"rentabilité\" à la TV. Ton directeur financier devient muet.",
     "choices": {
       "A": "Parler de durabilité économique et d’investissement.",
       "B": "Continuer à dire rentabilité, et assumer.",
@@ -3655,7 +3655,7 @@
   },
   "mcc_407": {
     "title": "Plan moustache",
-    "body": "Pour soutenir une cause, on te propose un plan moustache corporate. Ton image de marque tremble.",
+    "body": "Pour soutenir une cause, on te propose un plan moustache d’entreprise. Ton image de marque tremble.",
     "choices": {
       "A": "Soutenir via dons et actions, pas par moustaches.",
       "B": "Moustaches pour tous: viral assuré.",
@@ -3785,7 +3785,7 @@
     "choices": {
       "A": "Position équilibrée: croissance + sobriété + preuves.",
       "B": "Croissance infinie assumée.",
-      "C": "Croissance limitée et focus stabilité."
+      "C": "Croissance limitée et priorité à la stabilité."
     }
   },
   "mcc_422": {
@@ -3808,7 +3808,7 @@
   },
   "mcc_424": {
     "title": "Débat sur le droit à la pause",
-    "body": "On veut imposer 10 minutes de pause toutes les heures. Ton support dit \"merci\", ton CFO dit \"non\".",
+    "body": "On veut imposer 10 minutes de pause toutes les heures. Ton support dit \"merci\", ton directeur financier dit \"non\".",
     "choices": {
       "A": "Appliquer + réorganiser les plannings.",
       "B": "Refuser: productivité d’abord.",
@@ -3844,7 +3844,7 @@
   },
   "mcc_428": {
     "title": "Député veut un bouton",
-    "body": "Un député veut que les sites aient un bouton \"anti-stress\" qui affiche un chat. Ton UX dit \"ça se fait\".",
+    "body": "Ton équipe produit dit que c’est faisable.",
     "choices": {
       "A": "Ajouter un bouton bien-être optionnel.",
       "B": "Refuser: hors sujet.",
@@ -3857,7 +3857,7 @@
     "choices": {
       "A": "Rester neutre et ne pas changer.",
       "B": "Changer de couleur, risque d’autre polémique.",
-      "C": "Rappeler la neutralité + focus sur produit."
+      "C": "Rappeler la neutralité + recentrer sur le produit."
     }
   },
   "mcc_430": {
@@ -3875,7 +3875,7 @@
     "choices": {
       "A": "Audit et réduction des données collectées.",
       "B": "Répondre flou, mauvais.",
-      "C": "Transparence + opt-in clair."
+      "C": "Transparence + accord clair avant collecte."
     }
   },
   "mcc_432": {
@@ -3990,17 +3990,17 @@
     "title": "Débat sur la productivité",
     "body": "Un élu parle de productivité émotionnelle.",
     "choices": {
-      "A": "Pas de KPI bonheur: vrai soutien bien-être.",
-      "B": "Mettre des KPI bonheur, bad.",
+      "A": "Pas d’indicateur de bonheur: vrai soutien au bien-être.",
+      "B": "Mettre des indicateurs de bonheur, mauvaise idée.",
       "C": "Sondage anonyme léger + actions concrètes."
     }
   },
   "mcc_445": {
     "title": "Loi anti-surcharge cognitive",
-    "body": "Une loi veut limiter les écrans trop chargés. Ton dashboard ressemble à un cockpit d’avion en 1997.",
+    "body": "Ton tableau de bord ressemble à un cockpit: trop d’infos, trop de boutons.",
     "choices": {
-      "A": "Simplifier UI: moins mais mieux.",
-      "B": "Garder: power users d’abord.",
+      "A": "Simplifier l’interface: moins d’éléments, mais mieux.",
+      "B": "Garder: les utilisateurs avancés d’abord.",
       "C": "Ajouter un mode \"simple\" pour tous."
     }
   },
@@ -4010,7 +4010,7 @@
     "choices": {
       "A": "Réunions debout courtes: ok.",
       "B": "Refuser: trop pénible.",
-      "C": "Mix: debout pour daily, assis pour sujets lourds."
+      "C": "Mélange: debout pour les points rapides, assis pour les sujets lourds."
     }
   },
   "mcc_447": {
@@ -4026,7 +4026,7 @@
     "title": "Scandale du stylo connecté",
     "body": "Ton stylo connecté envoie des données.",
     "choices": {
-      "A": "Transparence + opt-in + stopper la collecte inutile.",
+      "A": "Transparence + accord clair + arrêt de la collecte inutile.",
       "B": "Ignorer: \"personne n’utilise un stylo\".",
       "C": "Retirer le produit du marché."
     }
@@ -4035,17 +4035,17 @@
     "title": "Débat sur le droit de râler",
     "body": "Un parti propose un droit de râler officiel. Ton support reçoit 10 000 râleries/jour. Ça change quoi?",
     "choices": {
-      "A": "Améliorer support + canal feedback propre.",
+      "A": "Améliorer le support + créer un canal de retour clair.",
       "B": "Ignorer: c’est juste du bruit.",
       "C": "Créer un bouton \"râler\" qui ouvre un formulaire court."
     }
   },
   "mcc_450": {
-    "title": "Parlement veut ton GIF officiel",
-    "body": "Le Parlement te demande un GIF officiel pour annoncer une réforme.",
+    "title": "Le Parlement veut ton image animée",
+    "body": "Le Parlement te demande une image animée officielle pour sa campagne de com.",
     "choices": {
       "A": "Refuser: rester sobre.",
-      "B": "Accepter: lama dance, buzz énorme.",
+      "B": "Accepter: danse du lama, énorme bruit médiatique.",
       "C": "Proposer un visuel simple et pro, sans lama."
     }
   }
