@@ -37,7 +37,7 @@
   },
   "hk_005": {
     "title": "Tribunal infernal débordé",
-    "body": "Les juges infernaux se plaignent de ne plus suivre le rythme. Des âmes attendent leur sentence depuis des siècles.",
+    "body": "Les juges infernaux n'arrivent plus à suivre. Des âmes attendent leur jugement depuis trop longtemps.",
     "choices": {
       "A": "Impose des quotas quotidiens de jugements.",
       "B": "Recrute de nouveaux juges parmi les damnés.",
@@ -91,7 +91,7 @@
   },
   "hk_011": {
     "title": "Grève des tortionnaires",
-    "body": "Les tortionnaires réclament de meilleures conditions : chaînes plus solides, flammes plus stables, horaires clairs.",
+    "body": "Les tortionnaires réclament de meilleures chaînes, des flammes stables et des règles plus claires.",
     "choices": {
       "A": "Cède à quelques demandes pour éviter le blocage.",
       "B": "Réprime la grève, personne ne négocie avec toi.",
@@ -901,7 +901,7 @@
   },
   "hk_101": {
     "title": "Banque des damnés",
-    "body": "Une banque infernale propose aux damnés de « prêter » des fragments de leur âme contre des faveurs temporaires.",
+    "body": "Une banque infernale veut prêter des fragments d'âme contre des faveurs de courte durée.",
     "choices": {
       "A": "Encourager ces prêts pour gonfler tes réserves d’âmes.",
       "B": "Réglementer sévèrement pour éviter le chaos.",
@@ -1863,10 +1863,10 @@
     }
   },
   "hk_208": {
-    "title": "Effondrement d’un système de santé",
+    "title": "Dispensaires infernaux saturés",
     "body": "Un pays voit son système de santé saturé, les plus faibles sont abandonnés.",
     "choices": {
-      "A": "Laisser les dirigeants minimiser la crise pour envenimer la situation.",
+      "A": "Laisser les dirigeants minimiser la crise pour l'aggraver.",
       "B": "Inspirer une réforme rigide, insuffisante mais structurante.",
       "C": "Orienter la colère vers des mouvements extrémistes."
     }
@@ -1899,7 +1899,7 @@
     }
   },
   "hk_212": {
-    "title": "Prolifération d’armes autonomes",
+    "title": "Machines de guerre sans maître",
     "body": "Les mortels créent des armes capables de tuer sans pitié humaine.",
     "choices": {
       "A": "Les pousser à déléguer toujours plus de décisions à ces machines.",
@@ -1908,7 +1908,7 @@
     }
   },
   "hk_213": {
-    "title": "Surveillance de masse",
+    "title": "Surveillance totale",
     "body": "Des systèmes de surveillance scrutent chaque geste, chaque mot.",
     "choices": {
       "A": "Faire accepter la surveillance au nom de la sécurité.",
@@ -1953,7 +1953,7 @@
     }
   },
   "hk_218": {
-    "title": "Hospitalité refusée",
+    "title": "Refuge refusé aux errants",
     "body": "Des foules déplacées par la guerre ou le climat se heurtent à des frontières fermées.",
     "choices": {
       "A": "Attiser la peur de l’autre et le repli.",
@@ -1980,7 +1980,7 @@
     }
   },
   "hk_221": {
-    "title": "Crise de confiance envers la science",
+    "title": "Crise de confiance dans le savoir",
     "body": "Les mortels doutent de tout, même des connaissances les mieux établies.",
     "choices": {
       "A": "Encourager les théories les plus absurdes mais séduisantes.",
@@ -1989,7 +1989,7 @@
     }
   },
   "hk_222": {
-    "title": "Spectacle permanent de la violence",
+    "title": "Cruauté en spectacle",
     "body": "La violence est filmée, relayée, commentée en direct partout.",
     "choices": {
       "A": "Pousser les mortels à se désensibiliser complètement.",
@@ -2124,7 +2124,7 @@
     }
   },
   "hk_237": {
-    "title": "Marché noir d’organes",
+    "title": "Trafic de remèdes maudits",
     "body": "Une économie souterraine d’organes se développe à grande échelle.",
     "choices": {
       "A": "Encourager le cynisme : tout a un prix, même le corps.",
@@ -2169,7 +2169,7 @@
     }
   },
   "hk_242": {
-    "title": "Justice spectacle",
+    "title": "Justice théâtrale",
     "body": "Les procès deviennent surtout des shows médiatiques, plus que des lieux de vérité.",
     "choices": {
       "A": "Encourager les jugements expéditifs et spectaculaires.",
@@ -2187,7 +2187,7 @@
     }
   },
   "hk_244": {
-    "title": "Explosion des psychotropes",
+    "title": "Brouillard chimique",
     "body": "Entre médicaments, drogues et substituts, la surface flotte dans un brouillard chimique.",
     "choices": {
       "A": "Normaliser l’usage quotidien pour éviter toute vraie réflexion sur soi.",
@@ -2232,7 +2232,7 @@
     }
   },
   "hk_249": {
-    "title": "Torture mentale banalisée",
+    "title": "Cruauté mentale ordinaire",
     "body": "Harcèlement au travail, en ligne, à l’école : la torture est surtout mentale, et tolérée.",
     "choices": {
       "A": "Faire de cette violence silencieuse une norme culturelle.",
@@ -2503,9 +2503,9 @@
   },
   "hk_279": {
     "title": "Dispute sur les prières d’enfants",
-    "body": "Le Paradis affirme que toutes les prières d’enfants doivent lui revenir.",
+    "body": "Le Paradis affirme que toutes les prières de jeunes mortels doivent lui revenir.",
     "choices": {
-      "A": "Contester : certains enfants sont déjà tes créatures potentielles.",
+      "A": "Contester : certains jeunes mortels sont déjà tes créatures potentielles.",
       "B": "Concéder officiellement… tout en jouant sur les adultes qui les entourent.",
       "C": "Transformer certaines prières en cauchemars qui marqueront leur vie."
     }
@@ -3029,7 +3029,7 @@
     "choices": {
       "A": "Encourager la créativité pour renforcer la peur.",
       "B": "Standardiser les meilleurs masques pour tes légions.",
-      "C": "Projeter ces figures dans les cauchemars des enfants humains."
+      "C": "Projeter ces figures dans les cauchemars des mortels."
     }
   },
   "hk_338": {
@@ -3285,12 +3285,12 @@
     }
   },
   "hk_366": {
-    "title": "Enfants de la colère",
-    "body": "Un groupe d'âmes d'enfants développe une rage froide et intelligente.",
+    "title": "Âmes de rancœur",
+    "body": "Un groupe d'âmes récentes développe une rage froide et très structurée.",
     "choices": {
-      "A": "Les utiliser comme armes imprévisibles contre d'autres damnés.",
+      "A": "Les canaliser comme éclaireurs imprévisibles contre d'autres damnés.",
       "B": "Les étudier pour comprendre cette colère et l'ordonner.",
-      "C": "Laisser leur haine déborder dans les rêves de familles humaines."
+      "C": "Laisser leur haine déborder dans les rêves de mortels isolés."
     }
   },
   "hk_367": {
