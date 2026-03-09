@@ -591,10 +591,10 @@
   <script src="js/supabaseBootstrap.js"></script>
   <script src="js/userData.js"></script>
   <script src="js/ads.js"></script>
-  <script src="js/crossPromo.js"></script>
   <script src="js/purchases.js"></script>
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/crossPromo.js"></script>
 
   <script>
     function _t(key, fallback, vars) {
@@ -917,27 +917,26 @@
   return;
 }
         const res = await window.VUserData?.unlockUniverseWithVcoins?.(universeId, PRICE);
-        if (!res?.ok) {
-          if (String(res?.reason || "") === "insufficient_vcoins") {
-  showBuyError(
-    _t(
-      "ui.universe_buy.err_unlock_insufficient",
-      "",
-      { balance: Number(res?.balance || 0), price: PRICE }
-    )
-  );
+if (!res?.ok) {
+  if (String(res?.reason || "") === "insufficient_vcoins") {
+    showBuyError(
+      _t(
+        "ui.universe_buy.err_unlock_insufficient",
+        "",
+        { balance: Number(res?.balance || 0), price: PRICE }
+      )
+    );
 
-  try {
-    sessionStorage.setItem("vr_crosspromo_context", "low_vcoins");
-  } catch (_) {}
+    try {
+      sessionStorage.setItem("vr_crosspromo_context", "low_vcoins");
+    } catch (_) {}
 
+    return;
+  }
+
+  showBuyError(_t("ui.universe_buy.err_unlock", ""));
   return;
-
-          }
-          showBuyError(_t("ui.universe_buy.err_unlock", ""));
-          return;
-        }
-
+}
         refreshPopupTexts();
         applyLocks();
         closeBuyPopup();
