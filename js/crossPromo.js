@@ -381,9 +381,9 @@
 
   function buildShotsHtml(app) {
     const shots = getValidShots(app);
-    return shots
-      .map((src) => '<div class="vr-crosspromo-shot"><img src="' + escapeHtml(src) + '" alt="" draggable="false" /></div>')
-      .join("");
+    return shots.map((src) => {
+      return '<button class="vr-crosspromo-shot" type="button" data-shot-open="' + escapeHtml(src) + '" aria-label="Ouvrir l’image"><img src="' + escapeHtml(src) + '" alt="" draggable="false" /></button>';
+    }).join("");
   }
 
   function buildPopupRoot() {
@@ -573,6 +573,44 @@
     await claimRewardIfEligible("vchronicles");
   }
 
+  function bindShotViewer(host) {
+    const viewer = document.getElementById("vr-shot-viewer");
+    const viewerImg = document.getElementById("vr-shot-viewer-img");
+    const viewerClose = document.getElementById("vr-shot-viewer-close");
+
+    if (!viewer || !viewerImg || !viewerClose || !host) return;
+
+    function closeViewer() {
+      viewer.classList.remove("is-open");
+      viewer.setAttribute("aria-hidden", "true");
+      viewerImg.src = "";
+    }
+
+    host.querySelectorAll("[data-shot-open]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const src = btn.getAttribute("data-shot-open") || "";
+        if (!src) return;
+        viewerImg.src = src;
+        viewer.classList.add("is-open");
+        viewer.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    viewerClose.onclick = closeViewer;
+
+    viewer.onclick = function (e) {
+      if (e.target === viewer) {
+        closeViewer();
+      }
+    };
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && viewer.classList.contains("is-open")) {
+        closeViewer();
+      }
+    });
+  }
+
   async function renderStorePage() {
     const host = document.getElementById("vr-crosspromo-grid");
     if (!host) return;
@@ -603,7 +641,7 @@
         '    </div>',
         '    <p class="vr-crosspromo-desc">' + escapeHtml(t(app.descKey, "")) + '</p>',
         '    <div class="vr-crosspromo-gallery">',
-             buildShotsHtml(app),
+               buildShotsHtml(app),
         '    </div>',
         '    <div class="vr-crosspromo-actions">',
         '      <button class="vr-crosspromo-btn primary" type="button" data-crosspromo-action="' + escapeHtml(id) + '">' + escapeHtml(actionLabel) + '</button>',
@@ -615,6 +653,8 @@
     }
 
     host.innerHTML = rows.join("");
+
+    bindShotViewer(host);
 
     host.querySelectorAll("[data-crosspromo-action]").forEach((btn) => {
       btn.addEventListener("click", async () => {
