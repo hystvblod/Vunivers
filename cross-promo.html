@@ -29,6 +29,11 @@
       justify-content:space-between;
       gap:10px;
       margin-bottom:14px;
+      padding:10px 12px;
+      border-radius:18px;
+      background:linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.10));
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
     }
 
     .vr-crosspromo-back{
@@ -50,7 +55,7 @@
       height:44px;
       object-fit:contain;
       display:block;
-      filter:drop-shadow(0 4px 10px rgba(0,0,0,.28));
+      filter:drop-shadow(0 4px 10px rgba(0,0,0,.35));
     }
 
     .vr-crosspromo-title-wrap{
@@ -65,18 +70,18 @@
       font-size:22px;
       font-weight:900;
       text-shadow:
-        0 2px 6px rgba(0,0,0,.28),
-        0 6px 16px rgba(0,0,0,.18);
+        0 2px 6px rgba(0,0,0,.55),
+        0 6px 18px rgba(0,0,0,.38);
     }
 
     .vr-crosspromo-subtitle{
       margin:6px 0 0;
-      color:rgba(255,255,255,.96);
+      color:rgba(255,255,255,.98);
       font-size:13px;
       line-height:1.35;
       text-shadow:
-        0 2px 6px rgba(0,0,0,.24),
-        0 4px 10px rgba(0,0,0,.14);
+        0 2px 6px rgba(0,0,0,.50),
+        0 4px 12px rgba(0,0,0,.30);
     }
 
     .vr-crosspromo-spacer{
@@ -182,11 +187,12 @@
 
     .vr-crosspromo-desc{
       margin:0 auto 14px auto;
-      color:rgba(255,255,255,.92);
+      color:rgba(255,255,255,.96);
       font-size:14px;
       line-height:1.45;
       text-align:center;
       max-width:28ch;
+      text-shadow:0 2px 8px rgba(0,0,0,.18);
     }
 
     .vr-crosspromo-gallery{
@@ -203,14 +209,23 @@
       border-radius:16px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+        rgba(7,17,32,.55);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:6px;
     }
 
     .vr-crosspromo-shot img{
       width:100%;
       height:100%;
-      object-fit:cover;
+      object-fit:contain;
+      object-position:center;
       display:block;
+      border-radius:12px;
+      background:transparent;
     }
 
     .vr-crosspromo-actions{
@@ -271,6 +286,10 @@
 
       .vr-crosspromo-hero{
         height:170px;
+      }
+
+      .vr-crosspromo-top{
+        padding:8px 10px;
       }
     }
   </style>
