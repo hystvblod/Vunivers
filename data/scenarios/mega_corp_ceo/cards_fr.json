@@ -50,7 +50,7 @@
     "choices": {
       "A": "Modèle hybride flexible, par équipe.",
       "B": "Retour obligatoire 4 jours/semaine.",
-      "C": "Télétravail quasi total + bureaux en \"hot desk\"."
+      "C": "Télétravail quasi total + bureaux partagés."
     }
   },
   "mcc_007": {
@@ -118,7 +118,7 @@
   },
   "mcc_014": {
     "title": "Lancement précipité",
-    "body": "Ton équipe produit veut lancer un service \"beta\" dès demain.",
+    "body": "Ton équipe produit veut lancer une version test dès demain.",
     "choices": {
       "A": "Lancer demain et corriger au fur et à mesure.",
       "B": "Retarder: qualité d’abord.",
@@ -297,10 +297,10 @@
     }
   },
   "mcc_034": {
-    "title": "Talent poached",
+    "title": "Talent débauché",
     "body": "Un concurrent tente de débaucher ton équipe la plus performante, en bloc.",
     "choices": {
-      "A": "Augmenter les salaires et donner des stock-options.",
+      "A": "Augmenter les salaires et offrir des actions.",
       "B": "Laisser partir: on recrutera de nouveaux talents.",
       "C": "Offrir plus d’autonomie et un projet motivant, sans gros bonus."
     }
@@ -352,7 +352,7 @@
   },
   "mcc_040": {
     "title": "Cadeau aux employés",
-    "body": "C’est la fin d’année. Les équipes attendent un geste. Le board préfère un message \"inspirant\".",
+    "body": "C’est la fin d’année. Les équipes attendent un geste. Le conseil préfère un message \"inspirant\".",
     "choices": {
       "A": "Prime spéciale pour tous.",
       "B": "Discours inspirant + mug du groupe, collector.",
@@ -387,8 +387,8 @@
     }
   },
   "mcc_044": {
-    "title": "Réunion avec le board",
-    "body": "Le board veut un plan à 12 mois. Ils veulent \"simple, rentable, et sexy\".",
+    "title": "Réunion avec le conseil",
+    "body": "Le conseil veut un plan à 12 mois. Ils veulent \"simple, rentable, et sexy\".",
     "choices": {
       "A": "Plan rentable: coupes et focus sur le cœur de métier.",
       "B": "Plan ambitieux: innovation et expansion.",
@@ -508,7 +508,7 @@
     "body": "Un bug de paie menace de retarder les salaires d’une partie des employés. Panique.",
     "choices": {
       "A": "Payer en avance via un virement exceptionnel.",
-      "B": "Attendre le fix technique, \"désolé\".",
+      "B": "Attendre la correction technique, \"désolé\".",
       "C": "Proposer une avance sur salaire sur demande."
     }
   },
@@ -1255,7 +1255,7 @@
     "body": "On te propose un \"guru\" du management. Il facture cher et parle en énigmes.",
     "choices": {
       "A": "Refuser: investir dans formations concrètes.",
-      "B": "Accepter: ça impressionne le board.",
+      "B": "Accepter: ça impressionne le conseil.",
       "C": "Accepter une session test, puis décision."
     }
   },
@@ -1409,7 +1409,7 @@
     "choices": {
       "A": "Augmenter les stocks locaux pour sécuriser.",
       "B": "Continuer comme avant et gérer au cas par cas.",
-      "C": "Revoir la supply chain: plus proche, plus flexible."
+      "C": "Revoir la chaîne logistique: plus proche, plus flexible."
     }
   },
   "mcc_158": {
@@ -1783,7 +1783,7 @@
   },
   "mcc_199": {
     "title": "Résultats vs impact",
-    "body": "Le board veut de meilleurs résultats. Les équipes RSE veulent plus d’impact social et écologique.",
+    "body": "Le conseil veut de meilleurs résultats. Les équipes RSE veulent plus d’impact social et écologique.",
     "choices": {
       "A": "Objectifs mixtes: résultat + impact mesurable.",
       "B": "Résultat d’abord, l’impact après.",
@@ -2026,7 +2026,7 @@
   },
   "mcc_226": {
     "title": "Décarbonation en 3 slides",
-    "body": "On te demande un plan décarbonation. Le board veut 3 slides. La planète, elle, voulait un roman.",
+    "body": "On te demande un plan décarbonation. Le conseil veut une présentation en 3 slides. La planète, elle, voulait un roman.",
     "choices": {
       "A": "Plan simple mais sérieux avec étapes chiffrées.",
       "B": "3 slides vagues, et on verra.",
@@ -2628,7 +2628,7 @@
     }
   },
   "mcc_293": {
-    "title": "Débat sur l’empreinte des",
+    "title": "Empreinte des livraisons",
     "body": "Les livraisons rapides sont critiquées. Tes clients adorent. La planète, moins.",
     "choices": {
       "A": "Proposer une option lente \"verte\" par défaut.",
@@ -2818,10 +2818,10 @@
   },
   "mcc_314": {
     "title": "Débat sur les prix ronds",
-    "body": "Un élu veut interdire les prix en. 99 \"manipulateurs\". Ton pricing est en deuil.",
+    "body": "Un élu veut interdire les prix en .99, jugés \"manipulateurs\". Ta politique de prix vacille.",
     "choices": {
       "A": "Passer à des prix ronds + expliquer.",
-      "B": "Garder. 99 et assumer.",
+      "B": "Garder le .99 et assumer.",
       "C": "Tester prix ronds sur une gamme seulement."
     }
   },
@@ -2835,8 +2835,8 @@
     }
   },
   "mcc_316": {
-    "title": "Débat sur le made local",
-    "body": "Un débat télé réclame du 100% local. Ton supply chain répond: \"100% local… sur quelle planète?\".",
+    "title": "Débat sur le local",
+    "body": "Un débat télé réclame du 100% local. Ta chaîne logistique répond: \"100% local… sur quelle planète?\".",
     "choices": {
       "A": "Objectifs progressifs + indicateurs publics.",
       "B": "Promettre 100% local, et croiser les doigts.",
@@ -2925,7 +2925,7 @@
     }
   },
   "mcc_326": {
-    "title": "Débat sur la sécurité des",
+    "title": "Sécurité des données",
     "body": "Après une fuite médiatisée ailleurs, le régulateur veut des garanties.",
     "choices": {
       "A": "Investir fort + audit externe + transparence.",
@@ -3015,7 +3015,7 @@
     }
   },
   "mcc_336": {
-    "title": "Fonds souverain s’intéresse à",
+    "title": "Entrée d’un fonds souverain",
     "body": "Un fonds souverain veut investir.",
     "choices": {
       "A": "Accepter avec garde-fous et transparence.",
@@ -3070,7 +3070,7 @@
   },
   "mcc_342": {
     "title": "Débat sur les parachutes dorés",
-    "body": "On reparle des parachutes dorés. Ton board propose un \"parachute beige, plus discret\".",
+    "body": "On reparle des parachutes dorés. Ton conseil propose un \"parachute beige, plus discret\".",
     "choices": {
       "A": "Réduire et publier une politique raisonnable.",
       "B": "Garder: attirer les talents.",
@@ -3096,7 +3096,7 @@
     }
   },
   "mcc_345": {
-    "title": "Élections internes des",
+    "title": "Élections internes",
     "body": "Des élections internes agitent l’entreprise. Des tracts circulent. Même la machine à café a un avis.",
     "choices": {
       "A": "Faciliter un débat sain et neutre.",
@@ -3114,7 +3114,7 @@
     }
   },
   "mcc_347": {
-    "title": "Débat sur la puissance des",
+    "title": "Puissance des plateformes",
     "body": "On veut réguler les plateformes.",
     "choices": {
       "A": "Coopérer: transparence + règles claires.",
@@ -3448,7 +3448,7 @@
   },
   "mcc_384": {
     "title": "Débat taxe sur la réussite",
-    "body": "Un débat propose une \"taxe sur la réussite\". Ton board propose une \"taxe sur l’échec\" à la place. Non.",
+    "body": "Un débat propose une \"taxe sur la réussite\". Ton conseil propose une \"taxe sur l’échec\" à la place. Non.",
     "choices": {
       "A": "Participer au débat avec données et propositions.",
       "B": "Attaquer le débat frontalement.",
@@ -3591,7 +3591,7 @@
     }
   },
   "mcc_400": {
-    "title": "Débat sur les clowns du",
+    "title": "Clown du capitalisme",
     "body": "Un chroniqueur te traite de \"clown du capitalisme\".",
     "choices": {
       "A": "Répondre sobrement avec faits et actions.",
@@ -3663,7 +3663,7 @@
     }
   },
   "mcc_408": {
-    "title": "Débat sur le silence des",
+    "title": "Silence des notifications",
     "body": "Une loi veut imposer une heure quotidienne sans notifications.",
     "choices": {
       "A": "Mode calme par défaut + respect utilisateur.",
@@ -3946,8 +3946,8 @@
     "body": "On t’accuse de \"manipuler\" avec des prix.",
     "choices": {
       "A": "Passer à des prix simples et transparents.",
-      "B": "Garder les. 99 et assumer.",
-      "C": "A/B test: certains marchés en prix ronds."
+      "B": "Garder les prix en .99 et assumer.",
+      "C": "Test comparatif: certains marchés en prix ronds."
     }
   },
   "mcc_440": {
