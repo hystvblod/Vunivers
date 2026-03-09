@@ -2702,7 +2702,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
   width: 100% !important;
   min-height: clamp(224px, 33vw, 308px) !important;
   padding:
-    clamp(28px, 4.8vw, 40px)
+    clamp(18px, 3.4vw, 28px)
     clamp(14px, 2.6vw, 22px)
     clamp(18px, 3.2vw, 26px) !important;
   display: flex !important;
