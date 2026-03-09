@@ -559,7 +559,7 @@
     "choices": {
       "A": "Lui inspirer des mots profondément apaisants",
       "B": "Laisser la famille gérer seule ses émotions",
-      "C": "Provoquer un malentendu autour de ce message"
+      "C": "Laisser ce message être mal compris"
     },
     "body": "Une personne mourante veut envoyer un dernier message de paix à sa famille."
   },
@@ -583,7 +583,7 @@
     "choices": {
       "A": "Lui offrir parfois une intuition de ta présence",
       "B": "Respecter totalement sa position",
-      "C": "Le confronter à des événements difficiles pour le pousser à prier"
+      "C": "Le laisser traverser sa vie sans signe particulier"
     },
     "body": "Une personne se dit athée mais agit avec une grande bonté et beaucoup de justice."
   },
@@ -1227,13 +1227,13 @@
     "id": "heaven_103",
     "universe": "heaven_king",
     "title": "Enfants troublés par des sermons",
-    "description": "Dans une petite ville, des enfants font des cauchemars après des sermons très durs.",
+    "description": "Dans une petite ville, des enfants deviennent anxieux après des sermons très alarmistes.",
     "choices": {
       "A": "Adoucir leurs rêves avec des images de lumière et de sécurité",
       "B": "Ne pas intervenir dans leurs rêves",
       "C": "Renforcer la voix des prédicateurs les plus sévères"
     },
-    "body": "Dans une petite ville, des enfants font des cauchemars après des sermons très durs."
+    "body": "Dans une petite ville, des enfants deviennent anxieux après des sermons très alarmistes."
   },
   "heaven_104": {
     "id": "heaven_104",
@@ -1394,14 +1394,14 @@
   "heaven_117": {
     "id": "heaven_117",
     "universe": "heaven_king",
-    "title": "Camp de 'redressement spirituel'",
-    "description": "Un camp propose de 'corriger' les adolescents jugés trop libres par des méthodes humiliantes.",
+    "title": "Camp de discipline spirituelle",
+    "description": "Un camp propose de recadrer des adolescents jugés trop libres via des pratiques dévalorisantes.",
     "choices": {
       "A": "Souffler à certains parents l’idée de refuser ces méthodes",
       "B": "Ne rien faire, ils expérimentent",
       "C": "Laisser les organisateurs croire qu’ils ont une mission punitive"
     },
-    "body": "Un camp propose de 'corriger' les adolescents jugés trop libres par des méthodes humiliantes."
+    "body": "Un camp propose de recadrer des adolescents jugés trop libres via des pratiques dévalorisantes."
   },
   "heaven_118": {
     "id": "heaven_118",
@@ -1455,13 +1455,13 @@
     "id": "heaven_122",
     "universe": "heaven_king",
     "title": "Jeu pour enfants trop dur",
-    "description": "Un jeu pour enfants présente chaque petite faute comme une condamnation immédiate.",
+    "description": "Un jeu pour enfants présente chaque erreur comme une faute grave et définitive.",
     "choices": {
       "A": "Inspirer une version plus douce et plus juste",
       "B": "Laisser le jeu tel quel",
       "C": "Laisser ce message devenir encore plus dur"
     },
-    "body": "Un jeu pour enfants présente chaque petite faute comme une condamnation immédiate."
+    "body": "Un jeu pour enfants présente chaque erreur comme une faute grave et définitive."
   },
   "heaven_123": {
     "id": "heaven_123",
@@ -1515,13 +1515,13 @@
     "id": "heaven_127",
     "universe": "heaven_king",
     "title": "Cours en ligne sur les punitions",
-    "description": "Une plateforme de cours spirituels propose surtout des modules sur les punitions après la mort.",
+    "description": "Une plateforme de cours spirituels insiste presque uniquement sur des conséquences post-mortem punitives.",
     "choices": {
       "A": "Inspirer un nouveau module sur la guérison intérieure",
       "B": "Ne pas influencer le contenu",
       "C": "Laisser le module le plus vendu être celui des sanctions éternelles"
     },
-    "body": "Une plateforme de cours spirituels propose surtout des modules sur les punitions après la mort."
+    "body": "Une plateforme de cours spirituels insiste presque uniquement sur des conséquences post-mortem punitives."
   },
   "heaven_128": {
     "id": "heaven_128",
@@ -1539,13 +1539,13 @@
     "id": "heaven_129",
     "universe": "heaven_king",
     "title": "Influenceur de la peur",
-    "description": "Un commentateur sur les réseaux explique chaque drame par une punition venue d’en haut.",
+    "description": "Un commentateur sur les réseaux relie presque chaque drame à une sanction venue d’en haut.",
     "choices": {
       "A": "Semer le doute dans son discours",
       "B": "Laisser ses messages circuler",
       "C": "Laisser sa peur gagner encore du terrain"
     },
-    "body": "Un commentateur sur les réseaux explique chaque drame par une punition venue d’en haut."
+    "body": "Un commentateur sur les réseaux relie presque chaque drame à une sanction venue d’en haut."
   },
   "heaven_130": {
     "id": "heaven_130",
@@ -1563,13 +1563,13 @@
     "id": "heaven_131",
     "universe": "heaven_king",
     "title": "Bannissement du doute",
-    "description": "Un groupe interdit toute question sur la foi et menace d’Enfer ceux qui doutent.",
+    "description": "Un groupe interdit toute question sur la foi et menace de damnation ceux qui doutent.",
     "choices": {
       "A": "Supporter discrètement ceux qui osent encore réfléchir",
       "B": "Laisser ce climat s’installer",
       "C": "Faire passer ce bannissement pour une punition divine"
     },
-    "body": "Un groupe interdit toute question sur la foi et menace d’Enfer ceux qui doutent."
+    "body": "Un groupe interdit toute question sur la foi et menace de damnation ceux qui doutent."
   },
   "heaven_132": {
     "id": "heaven_132",
