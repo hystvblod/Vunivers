@@ -381,9 +381,9 @@
 
   function buildShotsHtml(app) {
     const shots = getValidShots(app);
-    return shots.map((src) => {
-      return '<div class="vr-crosspromo-shot"><img src="' + escapeHtml(src) + '" alt="" draggable="false" /></div>';
-    }).join("");
+    return shots
+      .map((src) => '<div class="vr-crosspromo-shot"><img src="' + escapeHtml(src) + '" alt="" draggable="false" /></div>')
+      .join("");
   }
 
   function buildPopupRoot() {
@@ -411,7 +411,7 @@
       '  <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">',
       '    <img id="vr-crosspromo-cover" src="" alt="" style="width:72px;height:72px;border-radius:18px;object-fit:cover;border:1px solid rgba(255,255,255,.14);" />',
       '    <div>',
-      '      <div id="vr-crosspromo-appname" style="font-size:13px;font-weight:900;opacity:.86;"></div>',
+      '      <div id="vr-crosspromo-appname" style="font-size:13px;font-weight:900;opacity:.86;color:#fff;"></div>',
       '      <div id="vr-crosspromo-title" style="margin-top:4px;font-size:20px;line-height:1.1;font-weight:950;color:#fff;"></div>',
       '    </div>',
       '  </div>',
@@ -482,7 +482,7 @@
     appName.textContent = t(app.titleKey, "");
     title.textContent = popupText.title;
     body.textContent = popupText.body;
-    rewardPrefix.textContent = t("crosspromo.reward_prefix", "GAGNER :");
+    rewardPrefix.textContent = t("crosspromo.reward_prefix", "");
     rewardValue.textContent = String(REWARD_AMOUNT);
     primary.textContent = t("crosspromo.cta_install", "");
     secondary.textContent = t("crosspromo.cta_later", "");
@@ -596,14 +596,14 @@
         '    <div class="vr-crosspromo-head">',
         '      <h2 class="vr-crosspromo-name">' + escapeHtml(t(app.titleKey, "")) + '</h2>',
         '      <div class="vr-crosspromo-reward">',
-        '        <span class="vr-crosspromo-reward-label">' + escapeHtml(t("crosspromo.reward_prefix", "GAGNER :")) + '</span>',
+        '        <span class="vr-crosspromo-reward-label">' + escapeHtml(t("crosspromo.reward_prefix", "")) + '</span>',
         '        <img src="assets/img/ui/vcoins.webp" alt="" draggable="false" />',
         '        <span class="vr-crosspromo-reward-value">' + escapeHtml(String(REWARD_AMOUNT)) + '</span>',
         '      </div>',
         '    </div>',
         '    <p class="vr-crosspromo-desc">' + escapeHtml(t(app.descKey, "")) + '</p>',
         '    <div class="vr-crosspromo-gallery">',
-               buildShotsHtml(app),
+             buildShotsHtml(app),
         '    </div>',
         '    <div class="vr-crosspromo-actions">',
         '      <button class="vr-crosspromo-btn primary" type="button" data-crosspromo-action="' + escapeHtml(id) + '">' + escapeHtml(actionLabel) + '</button>',

@@ -34,16 +34,23 @@
     .vr-crosspromo-back{
       width:44px;
       height:44px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.22);
-      background:rgba(0,0,0,.22);
+      border:none;
+      background:transparent;
+      padding:0;
       display:inline-flex;
       align-items:center;
       justify-content:center;
       text-decoration:none;
-      color:#fff;
-      font-size:20px;
-      box-shadow:0 10px 24px rgba(0,0,0,.24);
+      box-shadow:none;
+      flex:0 0 44px;
+    }
+
+    .vr-crosspromo-back img{
+      width:44px;
+      height:44px;
+      object-fit:contain;
+      display:block;
+      filter:drop-shadow(0 4px 10px rgba(0,0,0,.28));
     }
 
     .vr-crosspromo-title-wrap{
@@ -57,14 +64,19 @@
       color:#fff;
       font-size:22px;
       font-weight:900;
-      text-shadow:0 8px 20px rgba(0,0,0,.32);
+      text-shadow:
+        0 2px 6px rgba(0,0,0,.28),
+        0 6px 16px rgba(0,0,0,.18);
     }
 
     .vr-crosspromo-subtitle{
       margin:6px 0 0;
-      color:rgba(255,255,255,.9);
+      color:rgba(255,255,255,.96);
       font-size:13px;
       line-height:1.35;
+      text-shadow:
+        0 2px 6px rgba(0,0,0,.24),
+        0 4px 10px rgba(0,0,0,.14);
     }
 
     .vr-crosspromo-spacer{
@@ -90,10 +102,9 @@
       box-shadow:0 16px 40px rgba(0,0,0,.28);
     }
 
-    /* GRAND VISUEL QUI PREND TOUT L’ENCADRÉ */
     .vr-crosspromo-hero{
       position:relative;
-      height:220px;
+      height:190px;
       overflow:hidden;
       background:
         linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0)),
@@ -108,27 +119,26 @@
       display:block;
     }
 
-    /* badge supprimé */
     .vr-crosspromo-badge{
       display:none !important;
     }
 
     .vr-crosspromo-content{
-      padding:14px;
+      padding:12px;
       color:#fff;
     }
 
     .vr-crosspromo-head{
       display:flex;
-      align-items:flex-start;
+      align-items:center;
       justify-content:space-between;
-      gap:10px;
+      gap:8px;
       margin-bottom:10px;
     }
 
     .vr-crosspromo-name{
       margin:0;
-      font-size:22px;
+      font-size:18px;
       line-height:1.05;
       font-weight:950;
       color:#fff;
@@ -138,34 +148,35 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:6px;
-      padding:8px 12px;
+      gap:5px;
+      padding:7px 10px;
       border-radius:999px;
       border:1px solid rgba(255,255,255,.14);
       background:rgba(255,255,255,.08);
-      font-size:13px;
+      font-size:12px;
       font-weight:900;
       white-space:nowrap;
       text-align:center;
+      flex-shrink:0;
     }
 
     .vr-crosspromo-reward-label{
-      font-size:12px;
+      font-size:11px;
       font-weight:900;
-      letter-spacing:.2px;
+      letter-spacing:.15px;
       opacity:1;
     }
 
     .vr-crosspromo-reward img{
-      width:18px;
-      height:18px;
+      width:16px;
+      height:16px;
       object-fit:contain;
       display:block;
-      flex:0 0 18px;
+      flex:0 0 16px;
     }
 
     .vr-crosspromo-reward-value{
-      font-size:13px;
+      font-size:12px;
       font-weight:950;
     }
 
@@ -175,14 +186,13 @@
       font-size:14px;
       line-height:1.45;
       text-align:center;
-      max-width:34ch;
+      max-width:28ch;
     }
 
-    /* 3 IMAGES SUR LA MÊME LIGNE */
     .vr-crosspromo-gallery{
       display:grid;
       grid-template-columns:repeat(3, minmax(0, 1fr));
-      gap:10px;
+      gap:8px;
       margin-bottom:12px;
       align-items:start;
     }
@@ -205,7 +215,7 @@
 
     .vr-crosspromo-actions{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:1fr;
       gap:10px;
     }
 
@@ -241,7 +251,7 @@
       }
 
       .vr-crosspromo-hero{
-        height:240px;
+        height:220px;
       }
     }
 
@@ -256,19 +266,11 @@
       }
 
       .vr-crosspromo-name{
-        font-size:20px;
+        font-size:17px;
       }
 
       .vr-crosspromo-hero{
-        height:190px;
-      }
-
-      .vr-crosspromo-gallery{
-        gap:8px;
-      }
-
-      .vr-crosspromo-actions{
-        grid-template-columns:1fr;
+        height:170px;
       }
     }
   </style>
@@ -283,7 +285,9 @@
         href="index.html"
         aria-label=""
         data-i18n-aria="ui.aria_back"
-      >←</a>
+      >
+        <img src="assets/img/ui/btn_home.webp" alt="" draggable="false" />
+      </a>
 
       <div class="vr-crosspromo-title-wrap">
         <h1 class="vr-crosspromo-title" data-i18n="crosspromo.page_title"></h1>
