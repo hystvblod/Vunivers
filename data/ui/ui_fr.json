@@ -211,6 +211,50 @@
       "reward_fail": "Pub indisponible"
     }
   },
+  "crosspromo": {
+    "open_page_aria": "Ouvrir la page cross promo",
+    "page_title": "Découvre d'autres jeux",
+    "page_subtitle": "Télécharge un autre jeu du studio et gagne une récompense.",
+    "badge": "Jeu du studio",
+    "cta_install": "Télécharger",
+    "cta_open": "Ouvrir",
+    "cta_later": "Plus tard",
+    "reward_granted": "{app} détecté. +{amount} crédités.",
+    "apps": {
+      "vblocks": {
+        "name": "VBlocks",
+        "store_desc": "Un jeu plus calme et plus léger pour souffler entre deux décisions.",
+        "popup1": {
+          "title": "À court de pièces ?",
+          "body": "Télécharge VBlocks et reçois une récompense."
+        },
+        "popup2": {
+          "title": "Trop de pression ?",
+          "body": "Trop de stress et un poids trop lourd avec les décisions ? Détends-toi avec VBlocks."
+        },
+        "popup3": {
+          "title": "Envie de changer d’air ?",
+          "body": "Découvre un autre univers avec VBlocks."
+        }
+      },
+      "vchronicles": {
+        "name": "VChronicles",
+        "store_desc": "Explore un univers plus sombre et plus narratif.",
+        "popup1": {
+          "title": "À court de pièces ?",
+          "body": "Télécharge VChronicles et reçois une récompense."
+        },
+        "popup2": {
+          "title": "Envie d’explorer des univers plus sombres ?",
+          "body": "Joue à VChronicles."
+        },
+        "popup3": {
+          "title": "Saura-tu t’en sortir ?",
+          "body": "VChronicles t’attend."
+        }
+      }
+    }
+  },
   "revive": {
     "popup": {
       "title": "Revivre",

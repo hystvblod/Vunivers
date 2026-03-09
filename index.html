@@ -409,6 +409,21 @@
       color: rgba(255, 220, 220, 0.95);
       text-align:center;
     }
+    .vr-top-actions-4{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:12px !important;
+  padding:10px 12px 8px !important;
+  width:100% !important;
+}
+
+.vr-top-slot-4{
+  flex:1 1 0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
   </style>
 </head>
 
@@ -416,27 +431,33 @@
 
   <main class="vr-main">
 
-    <div class="vr-top-actions">
+<div class="vr-top-actions vr-top-actions-4">
 
-      <div class="vr-top-slot vr-top-left">
-        <a class="vr-icon-button" href="profile.html" aria-label="" data-i18n-aria="ui.profile_title">
-          <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
-        </a>
-      </div>
+  <div class="vr-top-slot vr-top-slot-4">
+    <a class="vr-icon-button" href="profile.html" aria-label="" data-i18n-aria="ui.profile_title">
+      <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
+    </a>
+  </div>
 
-      <div class="vr-top-slot vr-top-center">
-        <a class="vr-icon-button" href="settings.html" aria-label="" data-i18n-aria="ui.settings_title">
-          <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
-        </a>
-      </div>
+  <div class="vr-top-slot vr-top-slot-4">
+    <a class="vr-icon-button" href="settings.html" aria-label="" data-i18n-aria="ui.settings_title">
+      <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
+    </a>
+  </div>
 
-      <div class="vr-top-slot vr-top-right">
-        <a class="vr-icon-button" href="shop.html" aria-label="" data-i18n-aria="ui.shop_title">
-          <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
-        </a>
-      </div>
+  <div class="vr-top-slot vr-top-slot-4">
+    <a class="vr-icon-button" href="shop.html" aria-label="" data-i18n-aria="ui.shop_title">
+      <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
+    </a>
+  </div>
 
-    </div>
+  <div class="vr-top-slot vr-top-slot-4">
+    <a class="vr-icon-button" href="cross-promo.html" aria-label="" data-i18n-aria="crosspromo.open_page_aria">
+      <img src="assets/img/ui/btn_crosspromo.webp" alt="" draggable="false" />
+    </a>
+  </div>
+
+</div>
 
     <section class="vr-intro">
       <img
@@ -570,6 +591,7 @@
   <script src="js/supabaseBootstrap.js"></script>
   <script src="js/userData.js"></script>
   <script src="js/ads.js"></script>
+  <script src="js/crossPromo.js"></script>
   <script src="js/purchases.js"></script>
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
@@ -879,28 +901,38 @@
         showBuyError("");
 
         const balance = getCurrentVCoins();
-        if (balance < PRICE) {
-          showBuyError(
-            _t(
-              "ui.universe_buy.err_unlock_insufficient",
-              "",
-              { balance: balance, price: PRICE }
-            )
-          );
-          return;
-        }
+   if (balance < PRICE) {
+  showBuyError(
+    _t(
+      "ui.universe_buy.err_unlock_insufficient",
+      "",
+      { balance: balance, price: PRICE }
+    )
+  );
 
+  try {
+    sessionStorage.setItem("vr_crosspromo_context", "low_vcoins");
+  } catch (_) {}
+
+  return;
+}
         const res = await window.VUserData?.unlockUniverseWithVcoins?.(universeId, PRICE);
         if (!res?.ok) {
           if (String(res?.reason || "") === "insufficient_vcoins") {
-            showBuyError(
-              _t(
-                "ui.universe_buy.err_unlock_insufficient",
-                "",
-                { balance: Number(res?.balance || 0), price: PRICE }
-              )
-            );
-            return;
+  showBuyError(
+    _t(
+      "ui.universe_buy.err_unlock_insufficient",
+      "",
+      { balance: Number(res?.balance || 0), price: PRICE }
+    )
+  );
+
+  try {
+    sessionStorage.setItem("vr_crosspromo_context", "low_vcoins");
+  } catch (_) {}
+
+  return;
+
           }
           showBuyError(_t("ui.universe_buy.err_unlock", ""));
           return;

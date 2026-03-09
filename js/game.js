@@ -2163,8 +2163,11 @@ body.vr-peek-mode .vr-gauge-preview{
             renderEndingReward(out.amount);
           }
 
-          try { this._clearRunSave(); } catch (_) {}
-          try { window.location.href = "index.html"; } catch (_) {}
+         try { this._clearRunSave(); } catch (_) {}
+try {
+  sessionStorage.setItem("vr_crosspromo_context", "post_game_stress");
+} catch (_) {}
+try { window.location.href = "index.html"; } catch (_) {}
         };
       }
 
@@ -2517,9 +2520,12 @@ body.vr-peek-mode .vr-gauge-preview{
           }
 
           if (action === "back_menu") {
-            closePopup();
-            try { window.location.href = "index.html"; } catch (_) {}
-            return;
+      closePopup();
+try {
+  sessionStorage.setItem("vr_crosspromo_context", "post_game_dark");
+} catch (_) {}
+try { window.location.href = "index.html"; } catch (_) {}
+return;
           }
         });
       });
@@ -3266,15 +3272,18 @@ body.vr-peek-mode .vr-gauge-preview{
         res = await window.VUserData?.equipCosmetic?.(universeId, category, itemId);
       }
 
-      if (!res?.ok) {
-        if (res?.reason === "insufficient_vcoins") {
-          toast(t("shop.toast.insufficient_vcoins", ""));
-        } else if (res?.reason === "not_owned") {
-          toast(t("shop.toast.not_owned", ""));
-        } else {
-          toast(t("common.error_generic", ""));
-        }
-      } else {
+   if (!res?.ok) {
+  if (res?.reason === "insufficient_vcoins") {
+    toast(t("shop.toast.insufficient_vcoins", ""));
+    try {
+      sessionStorage.setItem("vr_crosspromo_context", "low_vcoins");
+    } catch (_) {}
+  } else if (res?.reason === "not_owned") {
+    toast(t("shop.toast.not_owned", ""));
+  } else {
+    toast(t("common.error_generic", ""));
+  }
+} else {
         applyUniverseCosmetics(universeId);
         renderRowOnly(category);
       }
