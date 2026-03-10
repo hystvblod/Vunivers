@@ -237,7 +237,7 @@
     "title": "Championne scientifique",
     "body": "Une chercheuse nationale remporte un prix mondial. On te demande d’augmenter le budget de la recherche.",
     "choices": {
-      "A": "Augmenter fortement : bourses + labos.",
+      "A": "Augmenter fortement : bourses + laboratoires.",
       "B": "Augmenter un peu, mais communiquer beaucoup.",
       "C": "Féliciter et passer à autre chose."
     }
@@ -400,7 +400,7 @@
     "body": "Un projet ferroviaire relie deux régions en difficulté. Cher, mais symbolique.",
     "choices": {
       "A": "Lancer le projet, financement public.",
-      "B": "Lancer en PPP avec investisseurs privés.",
+      "B": "Lancer avec partenariat public-privé.",
       "C": "Annuler et rénover seulement l’existant."
     }
   },
@@ -451,7 +451,7 @@
   },
   "wp_051": {
     "title": "Scandale de micro",
-    "body": "En sortant d’une réunion, ton micro reste ouvert. Une phrase maladroite sur ’les réunions inutiles’.",
+    "body": "En sortant d’une réunion, ton micro reste ouvert. Une phrase maladroite sur 'les réunions inutiles' est captée.",
     "choices": {
       "A": "Assumer et rire de toi-même publiquement.",
       "B": "Dire que c’était hors contexte et attaquer les médias.",
@@ -586,7 +586,7 @@
   },
   "wp_066": {
     "title": "Crise du rail",
-    "body": "Le réseau ferroviaire tombe en panne à répétition. Les memes parlent de 'train fantôme'.",
+    "body": "Le réseau ferroviaire tombe en panne à répétition. Les mèmes parlent de 'train fantôme'.",
     "choices": {
       "A": "Grand plan de modernisation.",
       "B": "Privatiser partiellement pour accélérer.",
@@ -613,7 +613,7 @@
   },
   "wp_069": {
     "title": "Fuite d’un rapport secret",
-    "body": "Un rapport interne critique ta stratégie. Il fuite. Ton opposition jubile.",
+    "body": "Un rapport interne critique ta stratégie. Il a fuité. Ton opposition jubile.",
     "choices": {
       "A": "Transparence : reconnaître et ajuster.",
       "B": "Chasse à la taupe et fermeté.",
@@ -640,7 +640,7 @@
   },
   "wp_072": {
     "title": "Accord de défense régionale",
-    "body": "On te propose un accord de défense régionale renforcé. Certains disent ’provocation’, d’autres.",
+    "body": "On te propose un accord de défense régionale renforcé. Certains parlent de provocation, d’autres de protection.",
     "choices": {
       "A": "Signer : dissuasion renforcée.",
       "B": "Signer mais avec clauses de désescalade.",
@@ -667,7 +667,7 @@
   },
   "wp_075": {
     "title": "Tournoi e-sport mondial",
-    "body": "Un tournoi e-sport veut s’installer dans ta capitale. Certains crient au génie, d’autres au ’jeu vidéo.",
+    "body": "Un tournoi e-sport veut s’installer dans ta capitale. Certains crient au génie, d’autres au gaspillage.",
     "choices": {
       "A": "Soutenir et promouvoir l’innovation numérique.",
       "B": "Soutien privé uniquement, pas d’argent public.",
@@ -982,7 +982,7 @@
   },
   "wp_110": {
     "title": "Fuite d’un plan de défense",
-    "body": "Un document interne sur la défense fuite. Rien de classifié, mais l’image de maîtrise prend un coup.",
+    "body": "Un document interne sur la défense a fuité. Rien de classifié, mais l’image de maîtrise prend un coup.",
     "choices": {
       "A": "Enquête + modernisation des procédures.",
       "B": "Accuser un acteur étranger sans preuve publique.",
@@ -1812,7 +1812,7 @@
     "title": "Exercice trop réaliste",
     "body": "Un exercice militaire a semé la panique. La pression monte.",
     "choices": {
-      "A": "S’excuser + améliorer l’alerte civile et la com’.",
+      "A": "S’excuser + améliorer l’alerte civile et la communication.",
       "B": "Assumer : 'c’est la preuve qu’on est prêts'.",
       "C": "Réduire ces exercices et investir dans la diplomatie."
     }
@@ -1828,7 +1828,7 @@
   },
   "wp_204": {
     "title": "Budget défense ou chaises",
-    "body": "Le ministère de la Défense demande plus de budget mais une fuite révèle qu’ils ont commandé 4 000.",
+    "body": "Le ministère de la Défense demande plus de budget, mais une fuite révèle qu’ils ont commandé 4 000 chaises de bureau.",
     "choices": {
       "A": "Accorder une hausse, mais audit public strict.",
       "B": "Geler le budget et réorienter vers l’économie.",
@@ -1855,7 +1855,7 @@
   },
   "wp_207": {
     "title": "Cyber-guerre des photocopieurs",
-    "body": "Une cyber-attaque bloque les photocopieurs des administrations. Le chaos est total, surtout pour les.",
+    "body": "Une cyber-attaque bloque les photocopieurs des administrations. Le chaos est total, surtout pour les services les plus dépendants du papier.",
     "choices": {
       "A": "Plan cyber national + budget sécurité.",
       "B": "Accuser publiquement un acteur étranger et sanctionner.",
@@ -2053,11 +2053,11 @@
   },
   "wp_229": {
     "title": "Propagande trop kitsch",
-    "body": "Une campagne de propagande fuite. Le public se moque.",
+    "body": "Une campagne de propagande a fuité. Le public se moque.",
     "choices": {
       "A": "Annuler et adopter une communication honnête.",
       "B": "Assumer : 'c’est pour le moral'.",
-      "C": "Créer une cellule com’ moderne et transparente."
+      "C": "Créer une cellule de communication moderne et transparente."
     }
   },
   "wp_230": {
@@ -2251,7 +2251,7 @@
   },
   "wp_251": {
     "title": "La carte au trésor militaire",
-    "body": "Un plan d’opération fictif fuite et ressemble à une carte au trésor avec des croix rouges.",
+    "body": "Un plan d’opération fictif a fuité et ressemble à une carte au trésor avec des croix rouges.",
     "choices": {
       "A": "Transparence + enquête + correction des procédures.",
       "B": "Crier à la manipulation et serrer la vis.",
