@@ -2906,10 +2906,10 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   /* ===== Réglages soldes ===== */
 
 --vr-vcoins-tx: 4px;
---vr-vcoins-ty: 8px;
+--vr-vcoins-ty: 9px;
 
 --vr-jetons-tx: 0px;
---vr-jetons-ty: 8px;
+--vr-jetons-ty: 9px;
 
   /* ===== Zones texte plus étroites ===== */
   --vr-scn-inset-left: 16%;
