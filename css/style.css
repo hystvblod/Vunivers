@@ -2802,20 +2802,50 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 
 
 
-
-
-
 /* =========================
    EXPLORER
    ========================= */
 body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
+  /* ===== Images source =====
+     Mets ici les vraies proportions d’origine de tes fichiers.
+     Si tu changes l’asset plus tard, tu modifies juste ces valeurs. */
+  --vr-explorer-topbar-ratio: 1000 / 275;
+  --vr-explorer-hud-ratio: 1024 / 269;
+
+  /* ===== Tailles affichées ===== */
+  --vr-explorer-topbar-w: clamp(240px, 54vw, 420px);
   --vr-explorer-hud-w: min(94vw, 980px);
-  --vr-explorer-topbar-w: clamp(220px, 54vw, 420px);
-  --vr-explorer-topbar-h: calc(var(--vr-explorer-topbar-w) * 0.275);
   --vr-explorer-back-size: clamp(46px, 11vw, 76px);
   --vr-explorer-customize-size: clamp(46px, 11vw, 76px);
+
+  /* ===== Positions générales ===== */
+  --vr-explorer-topbar-top: calc(14px + env(safe-area-inset-top));
+  --vr-explorer-side-btn-top: calc(18px + env(safe-area-inset-top));
+  --vr-explorer-side-btn-side: clamp(12px, 3vw, 20px);
+
+  /* ===== Zones cliquables topbar ===== */
+  --vr-explorer-topbar-btn-top: 16%;
+  --vr-explorer-topbar-btn-h: 72%;
+  --vr-explorer-topbar-btn-w: 17%;
+  --vr-explorer-topbar-btn-1-left: 16%;
+  --vr-explorer-topbar-btn-2-left: 41%;
+  --vr-explorer-topbar-btn-3-left: 66%;
+
+  /* ===== Placement du HUD ===== */
+  --vr-explorer-hud-left-x: 3.3%;
+  --vr-explorer-hud-left-w: 17.8%;
+  --vr-explorer-hud-center-left: 20.2%;
+  --vr-explorer-hud-center-right: 20.2%;
+  --vr-explorer-hud-right-x: 5.3%;
+  --vr-explorer-hud-right-w: 17.8%;
+
+  /* ===== Réglages fins verticaux =====
+     C’est ici que tu ajustes visuellement si un texte est trop haut ou trop bas. */
+  --vr-explorer-hud-item-y: -11px;
+  --vr-explorer-hud-value-y: -2px;
+  --vr-explorer-hud-years-y: 1px;
 
   --vr-ui-topbar-img: url("../assets/img/ui/explorer_topbar.webp");
   --vr-ui-hud-img: url("../assets/img/ui/explorer_hud_bar.webp");
@@ -2834,14 +2864,15 @@ body.vr-body-game[data-universe="new_world_explorer"] #btn-customize .vr-top-ico
   display:none !important;
 }
 
+/* ===== Topbar centrale ===== */
 body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game{
   position: fixed !important;
-  top: calc(14px + env(safe-area-inset-top)) !important;
+  top: var(--vr-explorer-topbar-top) !important;
   left: 50% !important;
   right: auto !important;
   transform: translateX(-50%) !important;
   width: var(--vr-explorer-topbar-w) !important;
-  height: var(--vr-explorer-topbar-h) !important;
+  aspect-ratio: var(--vr-explorer-topbar-ratio) !important;
   padding: 0 !important;
   margin: 0 !important;
   gap: 0 !important;
@@ -2849,19 +2880,21 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game{
   pointer-events: none !important;
   z-index: 100000 !important;
 }
+
 body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game::before{
   content:"";
   position:absolute;
   inset:0;
-  background:url("../assets/img/ui/explorer_topbar.webp") center/100% 100% no-repeat;
+  background: var(--vr-ui-topbar-img) center / 100% 100% no-repeat;
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.22));
   pointer-events:none;
 }
+
 body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button{
   position:absolute !important;
-  top:16% !important;
-  width:17% !important;
-  height:72% !important;
+  top: var(--vr-explorer-topbar-btn-top) !important;
+  width: var(--vr-explorer-topbar-btn-w) !important;
+  height: var(--vr-explorer-topbar-btn-h) !important;
   padding:0 !important;
   margin:0 !important;
   border:none !important;
@@ -2869,16 +2902,24 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-i
   pointer-events:auto !important;
   z-index:1 !important;
 }
-body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button:nth-child(1){ left:16% !important; }
-body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button:nth-child(2){ left:41% !important; }
-body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button:nth-child(3){ left:66% !important; }
 
+body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button:nth-child(1){
+  left: var(--vr-explorer-topbar-btn-1-left) !important;
+}
+body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button:nth-child(2){
+  left: var(--vr-explorer-topbar-btn-2-left) !important;
+}
+body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button:nth-child(3){
+  left: var(--vr-explorer-topbar-btn-3-left) !important;
+}
+
+/* ===== Bouton retour ===== */
 body.vr-body-game[data-universe="new_world_explorer"] > a.vr-icon-button[aria-label="Accueil"]{
   position: fixed !important;
-  top: calc(18px + env(safe-area-inset-top)) !important;
-  left: 20px !important;
-  width:var(--vr-explorer-back-size) !important;
-  height:var(--vr-explorer-back-size) !important;
+  top: var(--vr-explorer-side-btn-top) !important;
+  left: var(--vr-explorer-side-btn-side) !important;
+  width: var(--vr-explorer-back-size) !important;
+  height: var(--vr-explorer-back-size) !important;
   padding:0 !important;
   margin:0 !important;
   border:none !important;
@@ -2886,21 +2927,23 @@ body.vr-body-game[data-universe="new_world_explorer"] > a.vr-icon-button[aria-la
   z-index:100002 !important;
   pointer-events:auto !important;
 }
+
 body.vr-body-game[data-universe="new_world_explorer"] > a.vr-icon-button[aria-label="Accueil"]::before{
   content:"";
   position:absolute;
   inset:0;
-  background:url("../assets/img/ui/explorer_back.webp") center/100% 100% no-repeat;
+  background: var(--vr-ui-back-img) center / 100% 100% no-repeat;
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.22));
   pointer-events:none;
 }
 
+/* ===== Bouton customize ===== */
 body.vr-body-game[data-universe="new_world_explorer"] #btn-customize{
   position: fixed !important;
-  top: calc(18px + env(safe-area-inset-top)) !important;
-  right: 20px !important;
-  width:var(--vr-explorer-customize-size) !important;
-  height:var(--vr-explorer-customize-size) !important;
+  top: var(--vr-explorer-side-btn-top) !important;
+  right: var(--vr-explorer-side-btn-side) !important;
+  width: var(--vr-explorer-customize-size) !important;
+  height: var(--vr-explorer-customize-size) !important;
   padding:0 !important;
   margin:0 !important;
   border:none !important;
@@ -2908,25 +2951,27 @@ body.vr-body-game[data-universe="new_world_explorer"] #btn-customize{
   z-index:100002 !important;
   pointer-events:auto !important;
 }
+
 body.vr-body-game[data-universe="new_world_explorer"] #btn-customize::before{
   content:"";
   position:absolute;
   inset:0;
-  background:url("../assets/img/ui/explorer_customize.webp") center/100% 100% no-repeat;
+  background: var(--vr-ui-customize-img) center / 100% 100% no-repeat;
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.22));
   pointer-events:none;
 }
 
+/* ===== HUD ===== */
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud{
   position: relative !important;
-  width:var(--vr-explorer-hud-w) !important;
+  width: var(--vr-explorer-hud-w) !important;
   max-width:none !important;
   margin:0 auto !important;
   padding:0 !important;
   display:block !important;
   white-space: normal !important;
-  aspect-ratio: 1024 / 269;
-  background:url("../assets/img/ui/explorer_hud_bar.webp") center/100% 100% no-repeat;
+  aspect-ratio: var(--vr-explorer-hud-ratio) !important;
+  background: var(--vr-ui-hud-img) center / 100% 100% no-repeat;
   filter: drop-shadow(0 10px 18px rgba(0,0,0,0.20));
 }
 
@@ -2943,9 +2988,21 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right{
   transform:none !important;
   justify-self:auto !important;
 }
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left{ left:3.3% !important;width:17.8% !important; }
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-center{ left:20.2% !important;right:20.2% !important; }
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right{ right:5.3% !important;width:17.8% !important; }
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left{
+  left: var(--vr-explorer-hud-left-x) !important;
+  width: var(--vr-explorer-hud-left-w) !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-center{
+  left: var(--vr-explorer-hud-center-left) !important;
+  right: var(--vr-explorer-hud-center-right) !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right{
+  right: var(--vr-explorer-hud-right-x) !important;
+  width: var(--vr-explorer-hud-right-w) !important;
+}
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-item{
   width:100% !important;
@@ -2961,7 +3018,7 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-item{
   box-shadow:none !important;
   backdrop-filter:none !important;
   -webkit-backdrop-filter:none !important;
-  transform: translateY(-11px) !important;
+  transform: translateY(var(--vr-explorer-hud-item-y)) !important;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-value{
@@ -2970,8 +3027,9 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-value{
   line-height:1 !important;
   color:#000 !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.35), 0 0 8px rgba(0,0,0,0.12) !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(var(--vr-explorer-hud-value-y)) !important;
 }
+
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-name{
   font-size: clamp(13px, 2vw, 28px) !important;
   font-weight: 800 !important;
@@ -2981,11 +3039,12 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-name{
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
 }
+
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-years{
   font-size: clamp(10px, 1.25vw, 16px) !important;
   font-weight: 800 !important;
   line-height:1 !important;
-  transform: translateY(1px) !important;
+  transform: translateY(var(--vr-explorer-hud-years-y)) !important;
   opacity: .95 !important;
 }
 
@@ -2994,6 +3053,31 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-years{
   --vr-universe-card: url("../assets/img/ui/explorer_msg_default_gray.webp");
   --vr-universe-choice: url("../assets/img/ui/explorer_choice_default_gray.webp");
 }
+
+/* ===== Ajustements petits écrans ===== */
+@media (max-width: 680px){
+  body.vr-body-game[data-universe="new_world_explorer"]{
+    --vr-explorer-topbar-w: clamp(220px, 58vw, 360px);
+    --vr-explorer-hud-w: min(96vw, 760px);
+    --vr-explorer-back-size: clamp(42px, 10vw, 64px);
+    --vr-explorer-customize-size: clamp(42px, 10vw, 64px);
+    --vr-explorer-hud-item-y: -8px;
+    --vr-explorer-hud-value-y: -1px;
+    --vr-explorer-hud-years-y: 0px;
+  }
+}
+
+@media (max-width: 420px){
+  body.vr-body-game[data-universe="new_world_explorer"]{
+    --vr-explorer-topbar-w: min(62vw, 300px);
+    --vr-explorer-hud-w: 96vw;
+    --vr-explorer-side-btn-side: 10px;
+    --vr-explorer-hud-item-y: -6px;
+  }
+}
+
+
+
 
 /* ==========================================================
    UNIVERS — VAMPIRE
@@ -3185,18 +3269,9 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
   --vr-universe-choice: url("../assets/img/ui/vampire_choice_default_gray.webp");
 }
 
-/* ==========================================================
-   UNIVERS — MEDIEVAL
-   ========================================================== */
-body.vr-body-game[data-universe="medieval_king"]{
-  --vr-vcoins-color:#F2C14E;
-  --vr-vcoins-glow:rgba(242,193,78,.50);
-}
-#view-game.vr-bg-medieval_king{
-  --vr-universe-bg: none;
-  --vr-universe-card: none;
-  --vr-universe-choice: none;
-}
+
+
+
 
 /* ==========================================================
    MOBILE (TOUS UNIVERS) — bloc demandé
