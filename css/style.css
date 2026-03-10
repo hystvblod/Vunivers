@@ -3123,11 +3123,11 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-center .vr-hud-ite
 
 /* ===== Soldes un peu plus bas + décalés ===== */
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left .vr-hud-value{
-  transform: translate(0px, 3px) !important;
+  transform: translate(4px, 5px) !important;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right .vr-hud-value{
-  transform: translate(0px, 3px) !important;
+  transform: translate(4px, 5px) !important;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-value{
