@@ -2847,7 +2847,6 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 
 
 
-
 /* =========================
    EXPLORER
    ========================= */
@@ -2900,6 +2899,17 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-explorer-hud-right-x: 5.3%;
   --vr-explorer-hud-right-w: 17.8%;
 
+  /* ===== Centre nom / année ===== */
+  --vr-identity-tx: 0px;
+  --vr-identity-ty: 8px;
+  --vr-hud-name-years-gap: 18px;
+
+  /* ===== Réglages soldes ===== */
+  --vr-vcoins-tx: 4px;
+  --vr-vcoins-ty: 5px;
+  --vr-jetons-tx: -4px;
+  --vr-jetons-ty: 6px;
+
   /* ===== Réglages fins verticaux ===== */
   --vr-explorer-hud-item-y: -9px;
   --vr-explorer-hud-value-y: -2px;
@@ -2910,9 +2920,13 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-ui-back-img: url("../assets/img/ui/explorer_back.webp");
   --vr-ui-customize-img: url("../assets/img/ui/explorer_customize.webp");
 
-  --vr-vcoins-color:#E6C37A;
-  --vr-vcoins-glow:rgba(230,195,122,.42);
+  /* ===== Couleurs HUD ===== */
+  --vr-vcoins-color:#000000;
+  --vr-vcoins-glow:rgba(255,255,255,.08);
   --vr-vcoins-bg: transparent;
+
+  --vr-jetons-color:#000000;
+  --vr-jetons-glow:rgba(255,255,255,.08);
   --vr-jetons-bg: transparent;
 
   font-family: var(--vr-explorer-font-ui);
@@ -3122,18 +3136,10 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-item{
   font-family: var(--vr-explorer-font-ui) !important;
 }
 
-/* ===== Centre plus bas ===== */
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-center .vr-hud-item{
-  transform: translateY(2px) !important;
-}
-
-/* ===== Soldes un peu plus bas + décalés ===== */
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left .vr-hud-value{
-  transform: translate(4px, 5px) !important;
-}
-
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right .vr-hud-value{
-  transform: translate(5px, 6px) !important;
+/* ===== ICI le vrai levier du nom + année ===== */
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-identity{
+  transform: translate(var(--vr-identity-tx), var(--vr-identity-ty)) !important;
+  gap: var(--vr-hud-name-years-gap) !important;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-value{
