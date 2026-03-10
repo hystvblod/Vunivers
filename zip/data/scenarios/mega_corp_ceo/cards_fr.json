@@ -820,7 +820,7 @@
   },
   "mcc_092": {
     "title": "Chasse aux coûts",
-    "body": "Le directeur financier propose de couper les budgets “non essentiels” (événements, outils, petites dépenses).",
+    "body": "Le directeur financier veut couper les budgets \"non essentiels\": événements, outils et petites dépenses.",
     "choices": {
       "A": "Couper fort, rapide.",
       "B": "Couper légèrement, préserver le moral.",
@@ -1639,7 +1639,7 @@
   },
   "mcc_183": {
     "title": "Régulation pub enfants",
-    "body": "Une nouvelle règle limite la pub pour certains publics. Ton marketing doit s’adapter vite.",
+    "body": "Une nouvelle règle limite la pub pour certains publics. Ton équipe pub doit s’adapter vite.",
     "choices": {
       "A": "Se mettre en conformité et revoir la stratégie.",
       "B": "Tester la limite du légal.",
@@ -2182,7 +2182,7 @@
     "body": "Une association te félicite publiquement pour une action verte. C’est rare. Tes équipes ne savent pas où se mettre.",
     "choices": {
       "A": "Remercier humblement et continuer.",
-      "B": "Transformer en grande campagne marketing.",
+      "B": "Transformer ça en grande campagne de pub.",
       "C": "Rester discret pour éviter le retour de bâton."
     }
   },
@@ -2323,7 +2323,7 @@
   },
   "mcc_259": {
     "title": "La loi sur la transparence des salaires",
-    "body": "Une loi renforce la transparence salariale. Ton HR dit : “On va recevoir… des mails.”",
+    "body": "Une loi renforce la transparence salariale. Les RH disent: \"On va recevoir… des courriels.\"",
     "choices": {
       "A": "Anticiper : grilles claires + explications.",
       "B": "Faire le minimum légal.",
@@ -2467,7 +2467,7 @@
   },
   "mcc_275": {
     "title": "Le député veut un “simulateur”",
-    "body": "Un député veut un simulateur pour expliquer ton prix au public. Ton directeur financier : “On peut simuler la douleur ?”.",
+    "body": "Un député veut un simulateur pour expliquer ton prix au public. Ton directeur financier grimace.",
     "choices": {
       "A": "Faire un simulateur pédagogique simple.",
       "B": "Refuser : trop exposant.",
@@ -2485,7 +2485,7 @@
   },
   "mcc_277": {
     "title": "Débat sur la semaine de 4 jours",
-    "body": "La semaine de 4 jours revient dans le débat public. Les employés applaudissent, le directeur financier transpire.",
+    "body": "La semaine de 4 jours revient dans le débat public. Les employés applaudissent. La finance transpire.",
     "choices": {
       "A": "Tester sur certains services avec objectifs clairs.",
       "B": "Refuser : impossible.",
@@ -2775,14 +2775,14 @@
     "title": "L’audit des contrats publics",
     "body": "Un audit examine les contrats publics de ton secteur. Ils veulent “tout”, y compris les mails de 2014.",
     "choices": {
-      "A": "Coopérer à fond, clean et organisé.",
+      "A": "Coopérer à fond, proprement et avec ordre.",
       "B": "Résister et fournir au strict minimum.",
       "C": "Mandater un audit externe et livrer un dossier clair."
     }
   },
   "mcc_310": {
     "title": "Le débat sur la “taxe pubs”",
-    "body": "On parle d’une taxe sur la publicité. Ton marketing demande si un sticker sur un mug compte comme pub.",
+    "body": "On parle d’une taxe sur la publicité. Ton équipe pub demande si un sticker sur un mug compte.",
     "choices": {
       "A": "Réduire la pub et renforcer la qualité/service.",
       "B": "Déplacer vers influenceurs à fond.",
@@ -2953,7 +2953,7 @@
   },
   "mcc_329": {
     "title": "L’émission “Cash & Clash”",
-    "body": "Une émission d’investigation veut “te suivre une semaine”. Ta com’ s’évanouit. Ton directeur financier aussi.",
+    "body": "Une émission veut te suivre une semaine. Ton équipe communication panique. La finance aussi.",
     "choices": {
       "A": "Accepter avec transparence (et préparation).",
       "B": "Refuser net.",
@@ -2971,10 +2971,10 @@
   },
   "mcc_331": {
     "title": "La campagne “achetez moins”",
-    "body": "Une campagne publique encourage à acheter moins. Ton marketing demande si c’est une attaque personnelle.",
+    "body": "Une campagne publique encourage à acheter moins. Ton équipe pub le prend pour une attaque.",
     "choices": {
       "A": "Proposer réparation, seconde main, durabilité.",
-      "B": "Push agressif : acheter plus.",
+      "B": "Forcer la vente: acheter plus.",
       "C": "Faire une gamme plus durable (prix un peu plus élevé)."
     }
   },
@@ -3313,7 +3313,7 @@
   },
   "mcc_369": {
     "title": "Test du micro en direct",
-    "body": "On te met un micro en réunion publique. Il reste ouvert. Tu entends ton directeur financier murmurer : “on est foutus”.",
+    "body": "En réunion publique, le micro reste ouvert. Tu entends ton directeur financier murmurer: \"on est foutus\".",
     "choices": {
       "A": "Transparence + blague + clarifier le contexte.",
       "B": "Couper le live et nier (catastrophe).",
@@ -3565,10 +3565,10 @@
   },
   "mcc_397": {
     "title": "Le stagiaire devient porte-parole",
-    "body": "Ton stagiaire com’ répond par erreur à un ministre sur X. Il signe “Cordialement, le stagiaire”. Ça explose.",
+    "body": "Ton stagiaire communication répond par erreur à un ministre en ligne.",
     "choices": {
       "A": "Assumer : excuses + encadrement + formation.",
-      "B": "Virer le stagiaire (bad PR).",
+      "B": "Virer le stagiaire, très mauvaise image.",
       "C": "Dire que c’était voulu (mensonge)."
     }
   },
@@ -3628,7 +3628,7 @@
   },
   "mcc_404": {
     "title": "Le QR code sur le front",
-    "body": "Le service com’ veut imprimer un QR code sur le front des employés pour “l’esprit startup”. Les RH hurlent.",
+    "body": "L’équipe communication veut imprimer un QR code sur le front des employés. Les RH hurlent.",
     "choices": {
       "A": "Interdire direct : respect et bon sens.",
       "B": "Autoriser sur des stickers… volontaires.",
@@ -3808,7 +3808,7 @@
   },
   "mcc_424": {
     "title": "Le débat sur le “droit à la pause”",
-    "body": "On veut imposer 10 minutes de pause toutes les heures. Ton service client dit “merci”, ton directeur financier dit “non”.",
+    "body": "On veut imposer 10 minutes de pause par heure. Le support dit \"merci\", la finance dit \"non\".",
     "choices": {
       "A": "Appliquer + réorganiser les plannings.",
       "B": "Refuser : productivité d’abord.",
