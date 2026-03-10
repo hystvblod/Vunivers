@@ -2321,6 +2321,2310 @@
           }
         }
       }
+    },
+
+    {
+      "id": "nw_101",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "found_wealth": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_102",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_103",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "royal_treasury": -5,
+            "converted_population": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_104",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_105",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "royal_treasury": -5,
+            "converted_population": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_106",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "royal_treasury": -5,
+            "converted_population": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": -10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_107",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_108",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_109",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "royal_treasury": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "found_wealth": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_110",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_111",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_112",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "found_wealth": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_113",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_114",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "found_wealth": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_115",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_116",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_117",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_118",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_119",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_120",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "conquered_territory": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_121",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_122",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 10,
+            "converted_population": -10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_123",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_124",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_125",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "found_wealth": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_126",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "conquered_territory": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_127",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_128",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_129",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_130",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "conquered_territory": 10,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_131",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "conquered_territory": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_132",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_133",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_134",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "found_wealth": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "conquered_territory": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_135",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_136",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "royal_treasury": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_137",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_138",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "found_wealth": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "conquered_territory": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_139",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "found_wealth": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_140",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_141",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_142",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "conquered_territory": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_143",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "conquered_territory": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_144",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "found_wealth": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_145",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_146",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "found_wealth": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_147",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "conquered_territory": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_148",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "converted_population": -10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_149",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "found_wealth": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_150",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "royal_treasury": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_151",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "found_wealth": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_152",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_153",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "conquered_territory": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "conquered_territory": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_154",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_155",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 10,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "conquered_territory": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_156",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_157",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "found_wealth": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_158",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "conquered_territory": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_159",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 10,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_160",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_161",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_162",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "found_wealth": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_163",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_164",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_165",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "royal_treasury": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_166",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "royal_treasury": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_167",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "found_wealth": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "found_wealth": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_168",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_169",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_170",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "conquered_territory": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_171",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "conquered_territory": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_172",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_173",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "converted_population": -10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_174",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_175",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_176",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_177",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_178",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_179",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "found_wealth": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_180",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_181",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_182",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_183",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_184",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_185",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_186",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "found_wealth": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_187",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_188",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_189",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_190",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "converted_population": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_191",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_192",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "found_wealth": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_193",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "royal_treasury": -5,
+            "conquered_territory": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_194",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_195",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_196",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "converted_population": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_197",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_198",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 5,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "converted_population": 5,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "royal_treasury": 5,
+            "conquered_territory": -5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_199",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "converted_population": -5
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "conquered_territory": 5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "found_wealth": 5,
+            "converted_population": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "nw_200",
+      "universe": "new_world_explorer",
+      "choices": {
+        "A": {
+          "gaugeDelta": {
+            "conquered_territory": 10,
+            "royal_treasury": -10
+          }
+        },
+        "B": {
+          "gaugeDelta": {
+            "found_wealth": 10,
+            "royal_treasury": -5
+          }
+        },
+        "C": {
+          "gaugeDelta": {
+            "converted_population": 10,
+            "royal_treasury": -5
+          }
+        }
+      }
     }
+  
+
   ]
 }
