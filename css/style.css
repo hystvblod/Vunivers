@@ -2905,9 +2905,9 @@ body.vr-body-game[data-universe="new_world_explorer"]{
 
   /* ===== Réglages soldes ===== */
   --vr-vcoins-tx: 4px;
-  --vr-vcoins-ty: 5px;
-  --vr-jetons-tx: -4px;
-  --vr-jetons-ty: 6px;
+  --vr-vcoins-ty: 3px;
+  --vr-jetons-tx: -6px;
+  --vr-jetons-ty: 3px;
 
   /* ===== Zones texte plus étroites ===== */
   --vr-scn-inset-left: 16%;
