@@ -581,7 +581,7 @@
     "choices": {
       "A": "Plan concret : recrutement + promotion + suivi chiffré.",
       "B": "Déclaration vague : “on fera mieux”.",
-      "C": "Ignorer : priorité business."
+      "C": "Ignorer : priorité activité."
     }
   },
   "mcc_066": {
@@ -1156,7 +1156,7 @@
     "body": "Le siège déménage. Les cartons restent 3 mois dans le couloir. Tout le monde vit dans Tetris.",
     "choices": {
       "A": "Plan de rangement et responsabilisation des équipes.",
-      "B": "Ignorer : “priorité business”.",
+      "B": "Ignorer : “priorité activité”.",
       "C": "Faire venir une équipe pro + tri."
     }
   },
@@ -1876,7 +1876,7 @@
     "body": "Une mairie propose un badge “citoyen” si tu finances un événement local. Tes équipes demandent si ça se mange.",
     "choices": {
       "A": "Soutenir l’événement, sans en faire trop.",
-      "B": "Refuser : pas de mélange business/politique locale.",
+      "B": "Refuser : pas de mélange activité économique/politique locale.",
       "C": "Soutenir mais exiger transparence totale."
     }
   },
@@ -1909,7 +1909,7 @@
   },
   "mcc_213": {
     "title": "Le débat sur la publicité",
-    "body": "Un projet de loi limite certaines pubs. Tes équipes marketing demandent si “les mèmes” comptent comme pub.",
+    "body": "Un projet de loi limite certaines pubs. Ton équipe pub demande si “les mèmes” comptent comme pub.",
     "choices": {
       "A": "Adapter et jouer la transparence.",
       "B": "Tester la limite du cadre.",
@@ -2164,7 +2164,7 @@
     "body": "Ton entreprise fait de bons profits. Un élu demande si tu peux “partager un peu”. Tes actionnaires font une grimace.",
     "choices": {
       "A": "Investir davantage localement (emploi, formation).",
-      "B": "Refuser : business = business.",
+      "B": "Refuser : monde des affaires = monde des affaires.",
       "C": "Faire un fonds social modeste + communication sobre."
     }
   },
@@ -3322,7 +3322,7 @@
   },
   "mcc_370": {
     "title": "Le costume réglementaire",
-    "body": "Un régulateur propose un dress code “sobriété” : costume gris obligatoire. Ton marketing crie “mort du branding”.",
+    "body": "Un régulateur propose un dress code “sobriété” : costume gris obligatoire. Ton équipe pub crie “mort du branding”.",
     "choices": {
       "A": "Respecter en rendez-vous officiels uniquement.",
       "B": "Refuser : liberté totale.",
@@ -3466,7 +3466,7 @@
   },
   "mcc_386": {
     "title": "Le ministre veut un “escape game”",
-    "body": "Un ministre veut comprendre ton business via un escape game. Il veut “sortir de la bureaucratie”.",
+    "body": "Un ministre veut comprendre ton activité via un escape game. Il veut “sortir de la bureaucratie”.",
     "choices": {
       "A": "Créer un escape game pédagogique (pro).",
       "B": "Refuser : pas le temps.",
@@ -3664,7 +3664,7 @@
   },
   "mcc_408": {
     "title": "Silence des notifications",
-    "body": "Une loi veut imposer une heure quotidienne sans notifications. Ton produit vit de notifications. Ton marketing pleure.",
+    "body": "Une loi veut imposer une heure quotidienne sans notifications. Ton produit vit de notifications. Ton équipe pub pleure.",
     "choices": {
       "A": "Mode calme par défaut + respect utilisateur.",
       "B": "Contourner : notifications “essentielles” partout.",
@@ -3694,7 +3694,7 @@
     "body": "Un élu critique l’anglais au travail. Ton entreprise parle en acronyms : KPI, OKR, ROI. Même ton chien comprend.",
     "choices": {
       "A": "Revenir à un vocabulaire simple en français (en interne).",
-      "B": "Ignorer : business global.",
+      "B": "Ignorer : activité globale.",
       "C": "Bilingue propre : termes expliqués et accessibles."
     }
   },
@@ -3961,7 +3961,7 @@
   },
   "mcc_441": {
     "title": "Le débat sur la “pudeur des logos”",
-    "body": "On propose de cacher les logos trop visibles en public. Ton marketing demande des “logos discrets mais énormes”.",
+    "body": "On propose de cacher les logos trop visibles en public. Ton équipe pub demande des “logos discrets mais énormes”.",
     "choices": {
       "A": "Branding discret, qualité d’abord.",
       "B": "Contourner avec logo géant “discret”.",
