@@ -27,12 +27,12 @@
     }
   },
   "mcc_004": {
-    "title": "Packaging trop cher",
-    "body": "Le nouveau packaging \"premium\" plaît… mais il coûte une fortune et ralentit la production.",
+    "title": "Emballage trop cher",
+    "body": "Le nouvel emballage haut de gamme plaît, mais il coûte très cher et ralentit la production.",
     "choices": {
-      "A": "Revenir au packaging standard, tant pis pour le style.",
+      "A": "Revenir à un emballage standard, tant pis pour le style.",
       "B": "Augmenter légèrement les prix pour absorber le coût.",
-      "C": "Garder le packaging et automatiser la ligne d’emballage."
+      "C": "Garder l’emballage et automatiser la ligne."
     }
   },
   "mcc_005": {
@@ -82,11 +82,11 @@
   },
   "mcc_010": {
     "title": "Bonus ou recherche",
-    "body": "Le conseil veut une annonce forte: bonus actionnarial ou gros investissement recherche et développement. Il faut choisir.",
+    "body": "Le conseil veut un choix clair: bonus actionnarial ou gros investissement en recherche. Il faut trancher.",
     "choices": {
       "A": "Bonus actionnarial immédiat.",
-      "B": "Investir massivement en recherche et développement, bénéfices plus tard.",
-      "C": "Compromis: petit bonus + recherche et développement ciblée."
+      "B": "Investir massivement en recherche, bénéfices plus tard.",
+      "C": "Compromis: petit bonus + recherche ciblée."
     }
   },
   "mcc_011": {
@@ -108,11 +108,11 @@
     }
   },
   "mcc_013": {
-    "title": "Accusation de greenwashing",
+    "title": "Accusation d’écologie de façade",
     "body": "Ton dernier rapport \"durable\" est attaqué: \"beaux mots, peu de preuves\".",
     "choices": {
       "A": "Publier les chiffres bruts et accepter les critiques.",
-      "B": "Lancer une campagne marketing pour noyer le poisson.",
+      "B": "Lancer une campagne de pub pour noyer le poisson.",
       "C": "Mandater un audit indépendant et mettre à jour le rapport."
     }
   },
@@ -154,7 +154,7 @@
   },
   "mcc_018": {
     "title": "Programme de formation",
-    "body": "Les RH demandent un budget massif pour former tout le monde aux nouveaux outils. Le directeur financier grimace.",
+    "body": "Les RH demandent un gros budget pour former tout le monde. Le directeur financier grimace.",
     "choices": {
       "A": "Valider: montée en compétences générale.",
       "B": "Refuser: formation ciblée au strict minimum.",
@@ -325,7 +325,7 @@
   },
   "mcc_037": {
     "title": "Plan de licenciements",
-    "body": "Le directeur financier propose un plan de licenciements pour \"rassurer le marché\". Les équipes sont à cran.",
+    "body": "Le directeur financier propose des licenciements pour rassurer le marché. Les équipes sont à cran.",
     "choices": {
       "A": "Accepter: objectif rentabilité.",
       "B": "Refuser: miser sur la croissance et la rétention.",
@@ -415,7 +415,7 @@
   },
   "mcc_047": {
     "title": "Concours d’idées",
-    "body": "Les employés veulent un concours d’idées avec budget dédié. Les investisseurs demandent: \"ROI?\".",
+    "body": "Les employés veulent un concours d’idées avec budget. Les investisseurs demandent: \"ça rapporte quoi?\".",
     "choices": {
       "A": "Lancer le concours avec un vrai budget.",
       "B": "Refuser: priorité sur l’exécution.",
@@ -477,10 +477,10 @@
     }
   },
   "mcc_054": {
-    "title": "Interdiction d’email",
-    "body": "Un audit interne montre que l’email est devenu un cimetière de décisions. Tout le monde se plaint.",
+    "title": "Interdiction du courriel",
+    "body": "Un audit interne montre que le courriel est devenu un cimetière de décisions. Tout le monde se plaint.",
     "choices": {
-      "A": "Imposer des règles strictes: moins d’emails",
+      "A": "Imposer des règles strictes: moins de courriels.",
       "B": "Laisser faire: c’est la culture de la boîte.",
       "C": "Lancer un outil interne de décisions + formation."
     }
@@ -522,8 +522,8 @@
     }
   },
   "mcc_059": {
-    "title": "Badge Top Employer",
-    "body": "On te propose un label \"Top Employer\"… contre un gros budget communication. Ça sent le badge acheté.",
+    "title": "Label employeur exemplaire",
+    "body": "On te propose un label employeur contre un gros budget communication. Ça sent le label acheté.",
     "choices": {
       "A": "Refuser: on améliore d’abord le réel.",
       "B": "Accepter: ça aide le recrutement.",
@@ -549,8 +549,8 @@
     }
   },
   "mcc_062": {
-    "title": "Équipe marketing en roue libre",
-    "body": "Le marketing veut un slogan agressif: \"On écrase la concurrence.\" Le juridique soupire.",
+    "title": "Équipe pub en roue libre",
+    "body": "L’équipe pub veut un slogan agressif: \"On écrase la concurrence.\" Le juridique soupire.",
     "choices": {
       "A": "Valider: guerre psychologique.",
       "B": "Refuser: ton sobre et fiable.",
@@ -954,7 +954,7 @@
     }
   },
   "mcc_107": {
-    "title": "Mail à tous",
+    "title": "Courriel à tous",
     "body": "Un employé envoie un message privé… à toute l’entreprise. C’est gênant. Et drôle. Pour les autres.",
     "choices": {
       "A": "Former aux outils + règles simples de communication.",
@@ -995,12 +995,12 @@
     "choices": {
       "A": "Remplacer + standardiser le matériel.",
       "B": "Réduire l’usage: zéro papier.",
-      "C": "Former des ambassadeurs sur chaque étage + support informatique dédié."
+      "C": "Former des relais sur chaque étage + aide informatique dédiée."
     }
   },
   "mcc_112": {
-    "title": "Badge Innovation",
-    "body": "Un cabinet propose un badge \"Entreprise Innovante\" contre une facture salée. Ça sent le sticker cher.",
+    "title": "Label innovation",
+    "body": "Un cabinet propose un label \"Entreprise innovante\" contre une facture salée. Ça sent le sticker cher.",
     "choices": {
       "A": "Refuser et investir dans un vrai projet innovation.",
       "B": "Accepter: ça rassure le marché.",
@@ -1054,7 +1054,7 @@
   },
   "mcc_118": {
     "title": "Produit collector",
-    "body": "Le marketing veut une édition collector inutile mais \"instagrammable\".",
+    "body": "L’équipe pub veut une édition collector inutile mais parfaite pour les réseaux.",
     "choices": {
       "A": "Refuser: utilité d’abord.",
       "B": "Valider: bruit médiatique et ventes rapides.",
@@ -1171,11 +1171,11 @@
   },
   "mcc_131": {
     "title": "Logo sur tout",
-    "body": "Marketing colle le logo partout: mugs, chaises, ascenseurs.",
+    "body": "L’équipe pub colle le logo partout: mugs, chaises, ascenseurs.",
     "choices": {
       "A": "Stopper: sobriété et élégance.",
       "B": "Continuer: visibilité maximale.",
-      "C": "Garder sur quelques éléments premium seulement."
+      "C": "Garder le logo sur quelques éléments haut de gamme seulement."
     }
   },
   "mcc_132": {
@@ -1215,8 +1215,8 @@
     }
   },
   "mcc_136": {
-    "title": "Toilettes premium",
-    "body": "Une rumeur dit que l’étage direction a des toilettes \"premium\".",
+    "title": "Toilettes de luxe",
+    "body": "Une rumeur dit que l’étage direction a des toilettes de luxe.",
     "choices": {
       "A": "Rendre tout équivalent, point.",
       "B": "Ignorer: \"rumeur\".",
@@ -1224,12 +1224,12 @@
     }
   },
   "mcc_137": {
-    "title": "Jour sans mail",
-    "body": "Un jour sans mail est proposé. Certains pensent que c’est impossible, comme un lundi sans lundi.",
+    "title": "Jour sans courriel",
+    "body": "Un jour sans courriel est proposé. Certains pensent que c’est impossible.",
     "choices": {
       "A": "Tester: un jour/semaine, règles claires.",
       "B": "Refuser: \"trop risqué\".",
-      "C": "Faire une demi-journée sans mail."
+      "C": "Faire une demi-journée sans courriel."
     }
   },
   "mcc_138": {
@@ -1369,7 +1369,7 @@
   },
   "mcc_153": {
     "title": "Énergie qui flambe",
-    "body": "La facture énergétique explose. Le directeur financier veut des coupes, la marque veut une transition propre.",
+    "body": "La facture d’énergie explose. Le directeur financier veut couper, la marque veut une transition propre.",
     "choices": {
       "A": "Accélérer les économies d’énergie et l’efficacité.",
       "B": "Couper partout, même dans les projets verts.",
@@ -1377,8 +1377,8 @@
     }
   },
   "mcc_154": {
-    "title": "Packaging et plastique",
-    "body": "On critique ton packaging trop plastique. Tes équipes disent que changer coûte cher et prend du temps.",
+    "title": "Emballage et plastique",
+    "body": "On critique ton emballage trop plastique. Tes équipes disent que changer coûte cher et prend du temps.",
     "choices": {
       "A": "Passer à des emballages plus propres, progressivement.",
       "B": "Ne rien changer: priorité au prix bas.",
@@ -1441,7 +1441,7 @@
   },
   "mcc_161": {
     "title": "Nouveau marché, nouvelle culture",
-    "body": "Tu ouvres dans un nouveau pays. Une campagne marketing \"globale\" risque de mal passer localement.",
+    "body": "Tu ouvres dans un nouveau pays. Une campagne mondiale risque de mal passer localement.",
     "choices": {
       "A": "Adapter la campagne avec des équipes locales.",
       "B": "Garder une campagne unique mondiale.",
@@ -1458,7 +1458,7 @@
     }
   },
   "mcc_163": {
-    "title": "Greenwashing?",
+    "title": "Écologie de façade ?",
     "body": "On t’accuse de \"faire du vert en pub\" sans assez d’actions concrètes. La marque prend un coup.",
     "choices": {
       "A": "Publier des preuves et un plan chiffré.",
@@ -1702,11 +1702,11 @@
   },
   "mcc_190": {
     "title": "Réparabilité",
-    "body": "On demande que tes produits soient plus réparables. Ça rallonge la recherche et développement, mais améliore la confiance.",
+    "body": "On demande des produits plus réparables. Ça rallonge la recherche, mais renforce la confiance.",
     "choices": {
       "A": "Investir dans la réparabilité et le support.",
       "B": "Ne pas bouger: coût trop élevé.",
-      "C": "Rendre réparables les produits premium d’abord."
+      "C": "Rendre réparables les produits haut de gamme d’abord."
     }
   },
   "mcc_191": {
@@ -1828,7 +1828,7 @@
   },
   "mcc_204": {
     "title": "Subvention verte, paperasse",
-    "body": "Une subvention existe pour verdir un site, mais le dossier fait 84 pages. Le directeur financier demande un café.",
+    "body": "Une aide existe pour verdir un site, mais le dossier fait 84 pages. Le directeur financier soupire.",
     "choices": {
       "A": "Monter le dossier proprement et investir.",
       "B": "Laisser tomber: trop long.",
@@ -1863,16 +1863,16 @@
     }
   },
   "mcc_208": {
-    "title": "L’audit surprise du régulateur",
-    "body": "Un mail arrive: \"contrôle sur site demain\". Ton équipe compliance court partout, même dans les couloirs.",
+    "title": "Audit surprise du régulateur",
+    "body": "Un courriel arrive: \"contrôle sur site demain\". Ton équipe conformité court partout.",
     "choices": {
       "A": "Coopérer à fond et corriger tout ce qui manque.",
       "B": "Répondre au strict nécessaire.",
-      "C": "Demander un délai officiel et lancer un audit interne express."
+      "C": "Demander un délai officiel et lancer un audit interne rapide."
     }
   },
   "mcc_209": {
-    "title": "Badge Entreprise citoyenne",
+    "title": "Label entreprise citoyenne",
     "body": "Une mairie propose un badge \"citoyen\" si tu finances un événement local.",
     "choices": {
       "A": "Soutenir l’événement, sans en faire trop.",
@@ -1890,8 +1890,8 @@
     }
   },
   "mcc_211": {
-    "title": "Campagne d’affichage trop",
-    "body": "Marketing propose une campagne \"Made Here, Made Proud\". Dans certains pays, ça fait grincer.",
+    "title": "Campagne d’affichage trop forte",
+    "body": "L’équipe pub propose \"Fabriqué ici, avec fierté\". Dans certains pays, ça fait grincer.",
     "choices": {
       "A": "Adapter par pays pour éviter les malentendus.",
       "B": "Garder partout: message unique.",
@@ -1935,7 +1935,7 @@
     }
   },
   "mcc_216": {
-    "title": "Débat sur le local",
+    "title": "Pression pour le local",
     "body": "Un élu te demande: \"Pourquoi pas 100% local?\". Ta chaîne logistique est sous pression.",
     "choices": {
       "A": "Augmenter le local progressivement avec objectifs.",
@@ -2080,7 +2080,7 @@
   },
   "mcc_232": {
     "title": "Débat politique sur salaires",
-    "body": "Un débat politique sur les salaires explose. Tes employés demandent un geste. Ton directeur financier demande… du calme.",
+    "body": "Le débat sur les salaires explose. Tes employés demandent un geste. Le directeur financier veut du calme.",
     "choices": {
       "A": "Revaloriser ciblé + transparence.",
       "B": "Refuser: \"contexte difficile\".",
@@ -2088,10 +2088,10 @@
     }
   },
   "mcc_233": {
-    "title": "Rapport extra-financier trop long",
+    "title": "Rapport extra-financier long",
     "body": "Ton rapport extra-financier fait 120 pages.",
     "choices": {
-      "A": "Raccourcir + rendre concret, indicateurs.",
+      "A": "Raccourcir et rendre concret, avec indicateurs.",
       "B": "Garder long: \"ça fait sérieux\".",
       "C": "Garder long + résumé 1 page obligatoire."
     }
@@ -2152,7 +2152,7 @@
   },
   "mcc_240": {
     "title": "L’étiquette origine",
-    "body": "Une règle impose plus de clarté sur l’origine. Ton packaging va ressembler à un passeport.",
+    "body": "Une règle impose plus de clarté sur l’origine. Ton emballage va ressembler à un passeport.",
     "choices": {
       "A": "Mettre l’origine clairement et assumer.",
       "B": "Faire le minimum en tout petit.",
@@ -2268,8 +2268,8 @@
     }
   },
   "mcc_253": {
-    "title": "Grève zéro mail le week-end",
-    "body": "Un mouvement interne réclame \"zéro mail le week-end\". Un élu tweete: \"Enfin une vraie réforme\".",
+    "title": "Grève zéro courriel le week-end",
+    "body": "Un mouvement interne réclame zéro courriel le week-end. Un élu applaudit.",
     "choices": {
       "A": "Mettre une charte stricte et des règles claires.",
       "B": "Refuser: \"c’est la mondialisation\".",
@@ -2331,7 +2331,7 @@
     }
   },
   "mcc_260": {
-    "title": "Député et le packaging",
+    "title": "Député et l’emballage",
     "body": "Un député montre ton emballage au Parlement: \"Regardez ce plastique!\". Tes ingénieurs soupirent fort.",
     "choices": {
       "A": "Accélérer la transition emballage et le dire clairement.",
@@ -2341,9 +2341,9 @@
   },
   "mcc_261": {
     "title": "Débat sur les pubs trop",
-    "body": "Un projet de loi vise les pubs trop intrusives. Ton marketing demande si \"un pop-up qui hurle\" compte.",
+    "body": "Un projet de loi vise les pubs trop intrusives. L’équipe pub demande si un pop-up qui hurle compte.",
     "choices": {
-      "A": "Passer à un marketing plus doux et transparent.",
+      "A": "Passer à une pub plus douce et plus claire.",
       "B": "Garder le modèle: conversion d’abord.",
       "C": "Garder mais réduire les formats les plus agressifs."
     }
@@ -2367,7 +2367,7 @@
     }
   },
   "mcc_264": {
-    "title": "Badge entreprise exemplaire",
+    "title": "Label entreprise exemplaire",
     "body": "Un label public propose un badge \"exemplaire\". Tes équipes disent: \"Ça sent le tampon pour la vitrine\".",
     "choices": {
       "A": "Accepter si les critères sont stricts et auditables.",
@@ -2413,7 +2413,7 @@
   },
   "mcc_269": {
     "title": "Débat sur l’emploi des jeunes",
-    "body": "Un ministre annonce un plan emploi jeunes. On te demande de \"prendre ta part\". Tes RH ouvrent Excel.",
+    "body": "Un ministre annonce un plan pour l’emploi des jeunes. Tes RH ouvrent leur tableau.",
     "choices": {
       "A": "Lancer un programme d’alternance massif.",
       "B": "Faire le minimum.",
@@ -2422,7 +2422,7 @@
   },
   "mcc_270": {
     "title": "Contrôle anti-fraude renforcé",
-    "body": "Le régulateur veut plus de contrôles sur tes ventes. Ton produit craint une expérience utilisateur plus lourde.",
+    "body": "Le régulateur veut plus de contrôles sur tes ventes. Ton produit craint un parcours plus lourd.",
     "choices": {
       "A": "Renforcer et simplifier l’expérience en parallèle.",
       "B": "Faire le minimum légal.",
@@ -2440,7 +2440,7 @@
   },
   "mcc_272": {
     "title": "Jour sans clim",
-    "body": "Une campagne publique propose un jour sans clim. Tes bureaux répondent: \"On va fondre en Excel\".",
+    "body": "Une campagne publique propose un jour sans clim. Tes bureaux disent: \"On va fondre\".",
     "choices": {
       "A": "Participer: réglage température + communication.",
       "B": "Refuser: confort et productivité.",
@@ -2638,7 +2638,7 @@
   },
   "mcc_294": {
     "title": "Débat anti-pub",
-    "body": "Une réforme vise à réduire la pub. Ton marketing panique: \"et nos jingles?\".",
+    "body": "Une réforme vise à réduire la pub. L’équipe pub panique: \"et nos jingles?\".",
     "choices": {
       "A": "Réduire pub et renforcer bouche-à-oreille/qualité.",
       "B": "Garder pub et contourner via influence.",
@@ -2754,8 +2754,8 @@
     }
   },
   "mcc_307": {
-    "title": "Plan patriotique du marketing",
-    "body": "Marketing propose une pub avec drapeau, fanfare et slogan \"Chez nous!\".",
+    "title": "Plan patriotique de la pub",
+    "body": "L’équipe pub propose une campagne avec drapeau, fanfare et slogan \"Chez nous!\".",
     "choices": {
       "A": "Adapter: valoriser l’emploi sans chauvinisme.",
       "B": "Garder la fanfare: ça marque.",
@@ -2835,8 +2835,8 @@
     }
   },
   "mcc_316": {
-    "title": "Débat sur le local",
-    "body": "Un débat télé réclame du 100% local. Ta chaîne logistique répond: \"100% local… sur quelle planète?\".",
+    "title": "100% local au débat télé",
+    "body": "Un débat télé réclame du 100% local. Ta chaîne logistique dit que c’est irréaliste.",
     "choices": {
       "A": "Objectifs progressifs + indicateurs publics.",
       "B": "Promettre 100% local, et croiser les doigts.",
@@ -2844,10 +2844,10 @@
     }
   },
   "mcc_317": {
-    "title": "Une loi sur la clarté des conditions d’utilisation",
-    "body": "Les conditions d’utilisation doivent être claires. Les tiennes font 40 pages. Même ton juriste ne les lit plus.",
+    "title": "Conditions plus claires",
+    "body": "Tes conditions d’utilisation font 40 pages. Même ton juriste ne les lit plus.",
     "choices": {
-      "A": "Résumé 1 page + icônes + langage simple.",
+      "A": "Résumé 1 page + icônes + mots simples.",
       "B": "Laisser comme ça: c’est légal.",
       "C": "Simplifier, mais garder les gros paragraphes."
     }
@@ -2907,8 +2907,8 @@
     }
   },
   "mcc_324": {
-    "title": "Loi anti-greenwashing",
-    "body": "Une loi anti-greenwashing arrive. Ton marketing a mis \"éco\" sur tout, même sur la souris d’ordinateur.",
+    "title": "Loi contre l’écologie de façade",
+    "body": "Une loi contre l’écologie de façade arrive. L’équipe pub a mis \"éco\" partout.",
     "choices": {
       "A": "Nettoyer les messages + preuves + audits.",
       "B": "Garder: tout le monde le fait.",
@@ -3153,7 +3153,7 @@
     "title": "Hamster syndiqué",
     "body": "La mascotte de ton com’, un hamster est \"élue\" représentant du personnel après un vote troll.",
     "choices": {
-      "A": "Accepter: roue premium + communiqué sérieux, aïe.",
+      "A": "Accepter: roue de luxe + communiqué sérieux, aïe.",
       "B": "Refuser: \"un hamster n’est pas un salarié\".",
       "C": "Créer un programme bien-être… pour humains, et hamster aussi."
     }
@@ -3223,20 +3223,20 @@
   },
   "mcc_359": {
     "title": "Taxe sur le bruit médiatique",
-    "body": "Un élu propose une taxe sur les bruit médiatique inutiles. Ton marketing: \"On est ruinés\".",
+    "body": "Un élu propose une taxe sur le bruit médiatique inutile. L’équipe pub panique.",
     "choices": {
       "A": "Réduire les campagnes tape-à-l’œil, priorité à l’utilité.",
-      "B": "Doubler les bruit médiatique avant la loi.",
+      "B": "Doubler le bruit médiatique avant la loi.",
       "C": "Transformer le bruit médiatique en éducation, transparence, impact."
     }
   },
   "mcc_360": {
     "title": "Communiqué en poésie",
-    "body": "Ton équipe com’ veut répondre à une controverse par un poème. Ton directeur financier veut répondre par un tableau Excel.",
+    "body": "Ton équipe com’ veut répondre par un poème. Ton directeur financier veut un tableau.",
     "choices": {
-      "A": "Excel + langage simple, safe.",
+      "A": "Tableau + langage simple, prudent.",
       "B": "Poème, risqué, mais mémorable.",
-      "C": "Poème… + annexe Excel, le meilleur des deux mondes."
+      "C": "Poème + tableau en annexe."
     }
   },
   "mcc_361": {
@@ -3267,10 +3267,10 @@
     }
   },
   "mcc_364": {
-    "title": "Badge citoyen du mois",
-    "body": "Un ministère te propose un badge \"citoyen du mois\" si tu fais une vidéo TikTok sur la fiscalité.",
+    "title": "Label citoyen du mois",
+    "body": "Un ministère te propose un label citoyen du mois si tu fais une vidéo sur la fiscalité.",
     "choices": {
-      "A": "Faire une vidéo pédagogique simple, sans cringe.",
+      "A": "Faire une vidéo pédagogique simple, sans gêne.",
       "B": "Refuser: trop gênant.",
       "C": "Faire un article clair + infographies, pas TikTok."
     }
@@ -3357,8 +3357,8 @@
     }
   },
   "mcc_374": {
-    "title": "local de campagne de campagne dans ton parking",
-    "body": "Un parti politique installe un local de campagne de campagne… par erreur dans ton parking. Ils ont mis des affiches.",
+    "title": "Local électoral dans ton parking",
+    "body": "Un parti politique installe un local de campagne par erreur dans ton parking.",
     "choices": {
       "A": "Demander poliment de partir + neutralité.",
       "B": "Les laisser: ça fait du monde, non.",
@@ -3488,7 +3488,7 @@
     "choices": {
       "A": "Renforcer support + objectifs de délai publics.",
       "B": "Mettre un robot qui répond \"patientez\".",
-      "C": "Créer un support premium payant, risqué."
+      "C": "Créer un support prioritaire payant, risqué."
     }
   },
   "mcc_389": {
@@ -3632,7 +3632,7 @@
     "choices": {
       "A": "Interdire direct: respect et bon sens.",
       "B": "Autoriser sur des stickers… volontaires.",
-      "C": "Remplacer par un badge digital optionnel."
+      "C": "Remplacer par un badge numérique optionnel."
     }
   },
   "mcc_405": {
@@ -3717,12 +3717,12 @@
     }
   },
   "mcc_414": {
-    "title": "Badge Entreprise qui écoute",
-    "body": "Une asso propose un badge \"Entreprise qui écoute\"… si tu payes. Tu sens le piège d’image.",
+    "title": "Label entreprise à l’écoute",
+    "body": "Une asso propose un label \"Entreprise à l’écoute\" si tu payes. Tu sens le piège.",
     "choices": {
       "A": "Refuser et investir dans de vraies mesures internes.",
-      "B": "Payer: badge immédiat.",
-      "C": "Négocier: audit réel, badge seulement si résultats."
+      "B": "Payer: label immédiat.",
+      "C": "Négocier: audit réel, label seulement si résultats."
     }
   },
   "mcc_415": {
@@ -3817,10 +3817,10 @@
   },
   "mcc_425": {
     "title": "Budget confettis",
-    "body": "Ton marketing demande un budget confettis \"pour la visibilité\".",
+    "body": "L’équipe pub demande un budget confettis pour la visibilité.",
     "choices": {
       "A": "Refuser et investir dans produit/service.",
-      "B": "Accepter: confettis = hype.",
+      "B": "Accepter: confettis = effet immédiat.",
       "C": "Micro budget confettis + gros budget qualité."
     }
   },
@@ -3972,8 +3972,8 @@
     "title": "Crise des cartons trop solides",
     "body": "Tes cartons sont si solides qu’ils ne se plient pas.",
     "choices": {
-      "A": "Changer packaging + excuses + test.",
-      "B": "Assumer: \"carton premium\".",
+      "A": "Changer l’emballage + excuses + test.",
+      "B": "Assumer: \"carton haut de gamme\".",
       "C": "Ajouter un guide simple \"comment plier\"."
     }
   },
@@ -4010,7 +4010,7 @@
     "choices": {
       "A": "Réunions debout courtes: ok.",
       "B": "Refuser: trop pénible.",
-      "C": "Mélange: debout pour les points rapides, assis pour les sujets lourds."
+      "C": "Mixte: debout pour points rapides, assis pour sujets lourds."
     }
   },
   "mcc_447": {
@@ -4041,8 +4041,8 @@
     }
   },
   "mcc_450": {
-    "title": "Le Parlement veut ton image animée",
-    "body": "Le Parlement te demande une image animée officielle pour sa campagne de com.",
+    "title": "Le Parlement veut ton animation",
+    "body": "Le Parlement te demande un visuel animé officiel pour sa campagne.",
     "choices": {
       "A": "Refuser: rester sobre.",
       "B": "Accepter: danse du lama, énorme bruit médiatique.",
