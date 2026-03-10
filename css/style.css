@@ -2842,7 +2842,6 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 
 
 
-
 /* =========================
    EXPLORER
    ========================= */
@@ -2851,8 +2850,7 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-explorer-font-title: "AlegreyaSCExplorer", serif;
   --vr-explorer-font-ui: "MerriweatherExplorer", serif;
 
-  /* ===== Tailles source RÉELLES des fichiers =====
-     Remplace ces 4 valeurs par les vraies dimensions de tes assets */
+  /* ===== Tailles source RÉELLES des fichiers ===== */
   --vr-explorer-topbar-src-w: 1000;
   --vr-explorer-topbar-src-h: 275;
   --vr-explorer-hud-src-w: 1024;
@@ -2868,7 +2866,7 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-explorer-hud-shift-x: -6px;
   --vr-explorer-hud-shift-y: -6px;
 
-  /* ===== Réserve haute calculée avec la vraie proportion ===== */
+  /* ===== Réserve haute calculée ===== */
   --vr-topbar-h: calc(
     (var(--vr-explorer-topbar-w) * var(--vr-explorer-topbar-src-h) / var(--vr-explorer-topbar-src-w))
     + env(safe-area-inset-top)
@@ -2876,7 +2874,7 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   );
 
   /* ===== Positions générales ===== */
-  --vr-explorer-topbar-top: calc(4px + env(safe-area-inset-top));
+  --vr-explorer-topbar-top: calc(5px + env(safe-area-inset-top));
   --vr-explorer-side-btn-top: calc(10px + env(safe-area-inset-top));
   --vr-explorer-side-btn-side: clamp(12px, 3vw, 20px);
 
@@ -2911,7 +2909,6 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-vcoins-bg: transparent;
   --vr-jetons-bg: transparent;
 
-  /* Police par défaut de l’univers */
   font-family: var(--vr-explorer-font-ui);
 }
 
@@ -3095,16 +3092,18 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-value{
   transform: translateY(var(--vr-explorer-hud-value-y)) !important;
 }
 
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-years{
-  font-family: var(--vr-explorer-font-ui) !important;
-  font-size: clamp(10px, 1.25vw, 16px) !important;
-  font-weight: 800 !important;
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-name{
+  font-family: var(--vr-explorer-font-title) !important;
+  font-size: clamp(13px, 2vw, 28px) !important;
+  font-weight: 400 !important;
   line-height:1 !important;
   letter-spacing: .02em !important;
-  transform: translateY(var(--vr-explorer-hud-years-y)) !important;
-  opacity: .95 !important;
-  color:#2a1b0d !important;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.2) !important;
+  max-width:75% !important;
+  overflow:hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  color:#000 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.18) !important;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-years{
@@ -3115,8 +3114,8 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-years{
   letter-spacing: .02em !important;
   transform: translateY(var(--vr-explorer-hud-years-y)) !important;
   opacity: .95 !important;
-  color:#2a1b0d !important;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.2) !important;
+  color:#000 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.18) !important;
 }
 
 /* ===== JAUGES EXPLORER ===== */
@@ -3152,7 +3151,7 @@ body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(4) .
   background-image: url("../assets/img/gauges/new_world_explorer/g4_fill.webp");
 }
 
-/* Optionnel mais propre si pas déjà géré globalement */
+/* Optionnel */
 body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-frame,
 body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-fill,
 body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
@@ -3163,8 +3162,8 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
 
 #view-game.vr-bg-new_world_explorer{
   --vr-universe-bg: url("../assets/img/backgrounds/explorer_default_gray.webp");
-  --vr-universe-card: url("../assets/img/ui/explorer_msg_default_gray.webp");
-  --vr-universe-choice: url("../assets/img/ui/explorer_choice_default_gray.webp");
+  --vr-universe-card: url("../assets/img/ui/explorer_msg_default_grey.webp");
+  --vr-universe-choice: url("../assets/img/ui/explorer_choice_default_grey.webp");
 }
 
 @media (max-width: 420px){
