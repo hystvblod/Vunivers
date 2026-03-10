@@ -2805,7 +2805,9 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 
 
 
-
+/* =========================
+   EXPLORER
+   ========================= */
 body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
