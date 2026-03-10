@@ -3127,7 +3127,7 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left .vr-hud-value
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right .vr-hud-value{
-  transform: translate(4px, 5px) !important;
+  transform: translate(5px, 5px) !important;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-value{
