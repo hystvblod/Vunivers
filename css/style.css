@@ -2799,6 +2799,11 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 }
 
 
+
+
+
+
+
 /* =========================
    EXPLORER
    ========================= */
@@ -3106,19 +3111,6 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
   --vr-universe-choice: url("../assets/img/ui/explorer_choice_default_gray.webp");
 }
 
-/* ===== Ajustements petits écrans ===== */
-@media (max-width: 680px){
-  body.vr-body-game[data-universe="new_world_explorer"]{
-    --vr-explorer-topbar-w: clamp(220px, 58vw, 360px);
-    --vr-explorer-hud-w: min(92vw, 760px);
-    --vr-explorer-back-size: clamp(42px, 10vw, 64px);
-    --vr-explorer-customize-size: clamp(42px, 10vw, 64px);
-    --vr-explorer-hud-shift-x: -4px;
-    --vr-explorer-hud-item-y: -8px;
-    --vr-explorer-hud-value-y: -1px;
-    --vr-explorer-hud-years-y: 0px;
-  }
-}
 
 @media (max-width: 420px){
   body.vr-body-game[data-universe="new_world_explorer"]{
