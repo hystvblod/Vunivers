@@ -2904,10 +2904,12 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-hud-name-years-gap: 18px;
 
   /* ===== Réglages soldes ===== */
-  --vr-vcoins-tx: 4px;
-  --vr-vcoins-ty: 3px;
-  --vr-jetons-tx: -6px;
-  --vr-jetons-ty: 3px;
+
+--vr-vcoins-tx: 4px;
+--vr-vcoins-ty: 8px;
+
+--vr-jetons-tx: 0px;
+--vr-jetons-ty: 8px;
 
   /* ===== Zones texte plus étroites ===== */
   --vr-scn-inset-left: 16%;
