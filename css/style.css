@@ -2840,7 +2840,6 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 
 
 
-
 /* =========================
    EXPLORER
    ========================= */
@@ -2937,6 +2936,19 @@ body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-choice-labe
   color:#000 !important;
   text-shadow:none !important;
   text-align:center !important;
+}
+
+/* ===== Réduction légère des cadres message / choix ===== */
+body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-card-main{
+  background-size: 90% 90% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-choice-button{
+  background-size: 90% 90% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 /* ===== Topbar centrale ===== */
@@ -3102,6 +3114,20 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-item{
   font-family: var(--vr-explorer-font-ui) !important;
 }
 
+/* ===== Centre plus bas ===== */
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-center .vr-hud-item{
+  transform: translateY(-2px) !important;
+}
+
+/* ===== Soldes un peu plus bas + décalés ===== */
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left .vr-hud-value{
+  transform: translate(-3px, 2px) !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right .vr-hud-value{
+  transform: translate(3px, 2px) !important;
+}
+
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-value{
   font-family: var(--vr-explorer-font-ui) !important;
   font-size: clamp(13px, 2vw, 24px) !important;
@@ -3201,7 +3227,6 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     letter-spacing: .01em !important;
   }
 }
-
 
 
 
