@@ -374,8 +374,8 @@ body:not(.vr-peek-mode) .vr-gauge.vr-peek-up .vr-gauge-fill,
 body:not(.vr-peek-mode) .vr-gauge.vr-peek-down .vr-gauge-fill{
   transform-origin:50% 50%;
   animation:
-    vrGaugeBlinkGlow 420ms ease-in-out infinite,
-    vrGaugeBlinkPulse 420ms ease-in-out infinite;
+    vrGaugeBlinkGlow 620ms ease-in-out infinite,
+    vrGaugeBlinkPulse 620ms ease-in-out infinite;
 }
 
 body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-fill,
