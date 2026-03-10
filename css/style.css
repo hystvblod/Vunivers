@@ -2900,7 +2900,7 @@ body.vr-body-game[data-universe="new_world_explorer"]{
 
   /* ===== Centre nom / année ===== */
   --vr-identity-tx: 0px;
-  --vr-identity-ty: 8px;
+--vr-identity-ty: 12px;
   --vr-hud-name-years-gap: 18px;
 
   /* ===== Réglages soldes ===== */
@@ -2918,7 +2918,7 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   /* ===== Réglages fins verticaux ===== */
   --vr-explorer-hud-item-y: -9px;
   --vr-explorer-hud-value-y: -2px;
-  --vr-explorer-hud-years-y: 1px;
+  --vr-explorer-hud-years-y: 0px;
 
   --vr-ui-topbar-img: url("../assets/img/ui/explorer_topbar.webp");
   --vr-ui-hud-img: url("../assets/img/ui/explorer_hud_bar.webp");
