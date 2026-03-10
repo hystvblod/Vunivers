@@ -361,7 +361,7 @@
   },
   "wp_041": {
     "title": "Salon mondial de l’armement",
-    "body": "Un salon mondial de l’armement veut venir dans ta capitale. L’économie peut y gagner, l’image aussi en souffrir.",
+    "body": "Un salon mondial de l’armement veut venir chez toi. L’économie y gagne, mais l’image peut souffrir.",
     "choices": {
       "A": "Accueillir avec charte éthique stricte.",
       "B": "Accueillir sans conditions : gros contrats.",
@@ -1866,7 +1866,7 @@
     "title": "Soldats en bottes… de pluie",
     "body": "Une photo officielle montre des soldats équipés de bottes de pluie. Le public rit, l’opposition jubile.",
     "choices": {
-      "A": "Moderniser vite l’équipement, malgré le coût, puis présenter des excuses.",
+      "A": "Moderniser vite l’équipement, malgré le coût, puis s’excuser.",
       "B": "Assumer : 'pragmatisme' et redorer l’image par une action.",
       "C": "Mutualiser achats avec alliés pour baisser les coûts."
     }
@@ -2584,7 +2584,7 @@
   },
   "wp_288": {
     "title": "Frontière et drone-journaliste",
-    "body": "Un drone-journaliste survole une zone tendue fictive. Un soldat lui fait coucou. C’est viral mais dangereux.",
+    "body": "Un drone-journaliste survole une zone tendue. Un soldat lui fait coucou. C’est viral mais risqué.",
     "choices": {
       "A": "Encadrer presse et sécurité sans censure.",
       "B": "Interdire survol et sanctionner.",
@@ -2629,7 +2629,7 @@
   },
   "wp_293": {
     "title": "Rival près de la frontière",
-    "body": "Un rival déploie des troupes près de ta frontière dans un scénario fictif. Ton ministre propose une réponse absurde.",
+    "body": "Un rival déploie des troupes près de ta frontière. Ton ministre propose une réponse absurde.",
     "choices": {
       "A": "Renforcer défense + garder un canal de dialogue.",
       "B": "Réponse agressive : mobilisation et ultimatum.",
@@ -2701,7 +2701,7 @@
   },
   "wp_301": {
     "title": "Sécheresse prolongée",
-    "body": "Une cyberattaque touche les transports. Les experts veulent agir vite.",
+    "body": "Une sécheresse durable vide les réserves. Les experts veulent agir vite.",
     "choices": {
       "A": "Restrictions nationales + aides aux secteurs touchés.",
       "B": "Investir massivement dans l’eau : réseaux, retenues et recyclage.",
@@ -2800,7 +2800,7 @@
   },
   "wp_312": {
     "title": "Restrictions technologiques",
-    "body": "Des restrictions apparaissent sur l’export de technologies sensibles. Tes entreprises craignent de perdre des marchés.",
+    "body": "L’export de technologies sensibles se durcit. Tes entreprises craignent de perdre des marchés.",
     "choices": {
       "A": "Investir dans la R&D nationale pour réduire la dépendance.",
       "B": "Négocier des exemptions et garanties avec partenaires.",
@@ -2890,7 +2890,7 @@
   },
   "wp_322": {
     "title": "Concurrence sur les ports",
-    "body": "Des ports étrangers attirent le trafic en baissant les coûts. Les logisticiens disent que ton pays perd des parts.",
+    "body": "Des ports étrangers baissent leurs coûts. Les logisticiens disent que ton pays perd du trafic.",
     "choices": {
       "A": "Investir dans les ports et fluidifier les procédures.",
       "B": "Baisser des charges pour rester compétitif.",
@@ -2917,7 +2917,7 @@
   },
   "wp_325": {
     "title": "Conflit sur les normes",
-    "body": "Un partenaire veut imposer des normes techniques qui désavantagent tes entreprises. Elles parlent de barrière déguisée.",
+    "body": "Un partenaire impose des normes qui pénalisent tes entreprises. Elles parlent de barrière cachée.",
     "choices": {
       "A": "Négociation ferme + harmonisation équilibrée.",
       "B": "Riposte : normes nationales renforcées et contrôle importations.",
@@ -2935,7 +2935,7 @@
   },
   "wp_327": {
     "title": "Tension sur la monnaie",
-    "body": "La monnaie se déprécie. Les importations coûtent plus cher, mais les exportateurs y voient une opportunité.",
+    "body": "La monnaie baisse. Les importations coûtent plus cher, mais les exportateurs y voient une chance.",
     "choices": {
       "A": "Stabiliser via mesures budgétaires et message crédible.",
       "B": "Soutenir les exportations et amortir l’inflation ciblée.",
@@ -2953,7 +2953,7 @@
   },
   "wp_329": {
     "title": "Conflit sur la pêche",
-    "body": "Un désaccord sur des quotas de pêche crée des tensions commerciales. Les professionnels veulent un arbitrage rapide.",
+    "body": "Un conflit sur les quotas de pêche crée des tensions. Les professionnels veulent trancher vite.",
     "choices": {
       "A": "Négocier un compromis et renforcer les contrôles.",
       "B": "Mesures de rétorsion commerciales ciblées.",
@@ -2962,7 +2962,7 @@
   },
   "wp_330": {
     "title": "Pénurie de main-d'œuvre",
-    "body": "Certains secteurs manquent de main-d’œuvre. Les entreprises demandent des solutions sans hausse brutale des coûts.",
+    "body": "Des secteurs manquent de main-d’œuvre. Les entreprises veulent agir sans forte hausse des coûts.",
     "choices": {
       "A": "Formation accélérée + incitations à l’emploi.",
       "B": "Ouvrir des voies de recrutement international encadrées.",
@@ -2980,7 +2980,7 @@
   },
   "wp_332": {
     "title": "Tension sur les terres rares",
-    "body": "Les terres rares deviennent plus difficiles à obtenir. Tes industries vertes et électroniques s’inquiètent.",
+    "body": "Les terres rares deviennent plus dures à obtenir. Tes industries vertes et tech s’inquiètent.",
     "choices": {
       "A": "Stratégie recyclage et substitution, avec R&D.",
       "B": "Accords d’approvisionnement long terme diversifiés.",
@@ -2989,7 +2989,7 @@
   },
   "wp_333": {
     "title": "Risque sur le réseau d’eau",
-    "body": "Des fuites massives sur le réseau d’eau font perdre une partie de la ressource. Les citoyens réclament des travaux.",
+    "body": "De grosses fuites d’eau font perdre la ressource. Les citoyens réclament des travaux.",
     "choices": {
       "A": "Plan choc de réparation et transparence des résultats.",
       "B": "Prioriser les zones critiques et étaler le reste.",
@@ -3007,7 +3007,7 @@
   },
   "wp_335": {
     "title": "Séisme et normes",
-    "body": "Un séisme met en évidence la fragilité de certains bâtiments. Les collectivités demandent un plan normes et rénovation.",
+    "body": "Un séisme révèle des bâtiments fragiles. Les élus veulent un plan normes et rénovation.",
     "choices": {
       "A": "Renforcer les normes et financer la rénovation prioritaire.",
       "B": "Aides limitées, laisser les collectivités piloter.",
@@ -3034,7 +3034,7 @@
   },
   "wp_338": {
     "title": "Crise des transports maritimes",
-    "body": "Le coût du transport maritime grimpe. Les importateurs demandent un plan pour éviter une inflation en cascade.",
+    "body": "Le transport maritime coûte plus cher. Les importateurs veulent éviter une hausse en chaîne.",
     "choices": {
       "A": "Soutien temporaire + réduction de certaines charges logistiques.",
       "B": "Relocalisation ciblée de productions et stocks stratégiques.",
@@ -3043,7 +3043,7 @@
   },
   "wp_339": {
     "title": "Tensions sur l’agroalimentaire",
-    "body": "Un partenaire bloque des produits agroalimentaires pour raisons administratives. Tes producteurs s’inquiètent.",
+    "body": "Un partenaire bloque des produits agroalimentaires. Tes producteurs s’inquiètent.",
     "choices": {
       "A": "Négocier et débloquer via diplomatie économique.",
       "B": "Mesures de rétorsion ciblées.",
@@ -3061,7 +3061,7 @@
   },
   "wp_341": {
     "title": "Conflit sur la taxe carbone",
-    "body": "Un partenaire menace de taxer tes produits selon leur empreinte carbone. Tes exportateurs demandent un plan.",
+    "body": "Un partenaire veut taxer tes produits selon leur empreinte carbone. Tes exportateurs veulent agir.",
     "choices": {
       "A": "Accélérer la décarbonation industrielle.",
       "B": "Négocier des exemptions et un calendrier réaliste.",
@@ -3070,7 +3070,7 @@
   },
   "wp_342": {
     "title": "Tension sur l’aviation",
-    "body": "Les coûts de carburant et les contraintes environnementales pèsent sur l’aviation. Le secteur demande un cap.",
+    "body": "Le carburant cher et les règles vertes pèsent sur l’aviation. Le secteur veut un cap.",
     "choices": {
       "A": "Soutenir la transition sur les carburants durables avec conditions.",
       "B": "Réduire les aides et laisser le marché s’ajuster.",
@@ -3088,7 +3088,7 @@
   },
   "wp_344": {
     "title": "Tension sur les marchés publics",
-    "body": "Un partenaire exclut tes entreprises de certains marchés publics. Les secteurs concernés demandent une riposte.",
+    "body": "Un partenaire exclut tes entreprises de marchés publics. Les secteurs touchés veulent riposter.",
     "choices": {
       "A": "Recours et négociation dans les cadres existants.",
       "B": "Réciprocité stricte sur tes marchés publics.",
@@ -3097,7 +3097,7 @@
   },
   "wp_345": {
     "title": "Eaux de baignade",
-    "body": "La qualité des eaux se dégrade sur plusieurs zones touristiques. Les collectivités demandent aide et normes claires.",
+    "body": "La qualité des eaux baisse dans des zones touristiques. Les élus veulent aide et règles claires.",
     "choices": {
       "A": "Plan d’assainissement rapide et contrôles renforcés.",
       "B": "Investissements lourds sur plusieurs années.",
@@ -3106,7 +3106,7 @@
   },
   "wp_346": {
     "title": "Tempêtes et agriculture",
-    "body": "Des tempêtes répétées fragilisent les récoltes et les serres. Les agriculteurs demandent un plan de résilience.",
+    "body": "Des tempêtes fragilisent récoltes et serres. Les agriculteurs veulent un plan.",
     "choices": {
       "A": "Aides ciblées + assurance et prévention.",
       "B": "Modernisation agricole et infrastructures de protection.",
@@ -3115,7 +3115,7 @@
   },
   "wp_347": {
     "title": "Tensions sur les minerais",
-    "body": "Un pays producteur de minerais change ses règles d’exportation. Les industriels craignent des arrêts de production.",
+    "body": "Un pays producteur change ses règles d’export. Les industriels craignent des arrêts.",
     "choices": {
       "A": "Négocier sécurisation et contrats stables.",
       "B": "Développer recyclage et économie circulaire rapidement.",
@@ -3124,7 +3124,7 @@
   },
   "wp_348": {
     "title": "Taux de fret ferroviaire",
-    "body": "Le fret ferroviaire manque de capacités. Les entreprises veulent transférer plus de marchandises du camion au rail.",
+    "body": "Le fret ferroviaire manque de capacité. Les entreprises veulent transférer plus de flux vers le rail.",
     "choices": {
       "A": "Investir dans le rail et incitations au report modal.",
       "B": "Privatiser certains services pour accélérer.",
@@ -3133,7 +3133,7 @@
   },
   "wp_349": {
     "title": "Litige sur les brevets",
-    "body": "Un partenaire accuse tes entreprises de ne pas respecter la propriété intellectuelle. Il menace des sanctions.",
+    "body": "Un partenaire accuse tes entreprises de violer des brevets. Il menace de sanctions.",
     "choices": {
       "A": "Renforcer contrôles et coopération judiciaire.",
       "B": "Contester et préparer une riposte commerciale.",
@@ -3142,7 +3142,7 @@
   },
   "wp_350": {
     "title": "Épisode de gel tardif",
-    "body": "Un gel tardif impacte certaines productions agricoles. Les prix et la chaîne alimentaire risquent de bouger.",
+    "body": "Un gel tardif touche des cultures. Les prix et la chaîne alimentaire peuvent bouger.",
     "choices": {
       "A": "Aides ciblées + soutien aux filières touchées.",
       "B": "Plan agricole sur variétés, protection et calendrier.",
@@ -3151,7 +3151,7 @@
   },
   "wp_351": {
     "title": "Pénurie d’eau régionale",
-    "body": "Une région signale une baisse critique des réserves. Les élus demandent des mesures rapides, les entreprises redoutent l’arrêt de certaines activités.",
+    "body": "Une région manque d’eau. Les élus veulent agir vite, les entreprises craignent des arrêts.",
     "choices": {
       "A": "Déclencher un plan d’urgence avec restrictions ciblées.",
       "B": "Financer en priorité la modernisation des réseaux et fuites.",
@@ -3160,7 +3160,7 @@
   },
   "wp_352": {
     "title": "Pic de consommation électrique",
-    "body": "Un épisode de chaleur provoque un pic de consommation. Le réseau tient, mais au prix d’une tension maximale.",
+    "body": "La chaleur crée un pic de consommation. Le réseau tient, mais reste sous forte tension.",
     "choices": {
       "A": "Lancer un plan sobriété avec incitations immédiates.",
       "B": "Accélérer investissements stockage et renforcement du réseau.",
@@ -3169,7 +3169,7 @@
   },
   "wp_353": {
     "title": "Fumées d’incendies",
-    "body": "Des fumées d’incendies dégradent fortement la qualité de l’air sur plusieurs villes. Les services publics sont saturés d’appels.",
+    "body": "Des fumées d’incendies dégradent l’air dans plusieurs villes. Les services publics saturent.",
     "choices": {
       "A": "Mesures temporaires sur circulation et télétravail, plus soutien.",
       "B": "Plan prévention et gestion forestière renforcé sur 3 ans.",
@@ -3178,7 +3178,7 @@
   },
   "wp_354": {
     "title": "Érosion du littoral",
-    "body": "Des zones côtières perdent du terrain. Les collectivités demandent des protections, les assureurs s’inquiètent.",
+    "body": "Le littoral recule. Les élus veulent des protections et les assureurs s’inquiètent.",
     "choices": {
       "A": "Financer protections immédiates sur les zones les plus exposées.",
       "B": "Plan d’adaptation : relocalisation progressive et nouvelles normes.",
@@ -3196,7 +3196,7 @@
   },
   "wp_356": {
     "title": "Tempête et coupures",
-    "body": "Une tempête endommage des lignes électriques et télécoms. Les entreprises réclament des garanties de continuité.",
+    "body": "Une tempête touche lignes électriques et télécoms. Les entreprises veulent des garanties.",
     "choices": {
       "A": "Mobiliser renforts et réparations express.",
       "B": "Investir dans l’enfouissement et la redondance des réseaux.",
@@ -3205,7 +3205,7 @@
   },
   "wp_357": {
     "title": "Grêle sur les cultures",
-    "body": "Un épisode de grêle abîme fortement certaines cultures. Les filières demandent un soutien et une stratégie d’adaptation.",
+    "body": "La grêle abîme des cultures. Les filières veulent aide et adaptation.",
     "choices": {
       "A": "Aides immédiates + dispositifs d’assurance améliorés.",
       "B": "Plan agricole sur filets, variétés et serres.",
@@ -3214,7 +3214,7 @@
   },
   "wp_358": {
     "title": "Niveau des rivières trop bas",
-    "body": "Le niveau des rivières gêne le transport fluvial. La logistique se reporte sur la route et augmente les coûts.",
+    "body": "Le niveau des rivières gêne le transport fluvial. Le trafic passe sur la route et coûte plus cher.",
     "choices": {
       "A": "Soutenir les entreprises impactées + organisation alternative.",
       "B": "Investir dans infrastructures fluviales et gestion de l’eau.",
@@ -3223,7 +3223,7 @@
   },
   "wp_359": {
     "title": "Qualité de l’eau dégradée",
-    "body": "Une prolifération d’algues dégrade l’eau dans plusieurs zones. Les collectivités demandent un plan de traitement durable.",
+    "body": "Des algues dégradent l’eau dans plusieurs zones. Les élus veulent un plan durable.",
     "choices": {
       "A": "Traitements et contrôles renforcés immédiatement.",
       "B": "Plan long terme sur agriculture, rejets et assainissement.",
@@ -3241,7 +3241,7 @@
   },
   "wp_361": {
     "title": "Cendres et trafic aérien",
-    "body": "Un nuage de cendres perturbe le trafic aérien régional. Le tourisme et les échanges professionnels en pâtissent.",
+    "body": "Un nuage de cendres perturbe l’aérien régional. Tourisme et affaires en souffrent.",
     "choices": {
       "A": "Prioriser sécurité + plan de continuité sur le train et les routes.",
       "B": "Aides ciblées au secteur + plan résilience transport.",
@@ -3259,7 +3259,7 @@
   },
   "wp_363": {
     "title": "Assurances sous pression",
-    "body": "Les coûts d’assurance montent fortement sur certains territoires. Les ménages et PME demandent un cadre plus stable.",
+    "body": "Le coût des assurances grimpe sur certains territoires. Ménages et PME veulent un cadre stable.",
     "choices": {
       "A": "Réguler certains tarifs + renforcer la prévention.",
       "B": "Créer un fonds de réassurance public-privé.",
@@ -3268,7 +3268,7 @@
   },
   "wp_364": {
     "title": "Droits de douane sectoriels",
-    "body": "Un partenaire annonce des droits de douane sur un secteur exportateur clé. Les entreprises demandent une riposte.",
+    "body": "Un partenaire lance des droits de douane sur un secteur clé. Les entreprises veulent riposter.",
     "choices": {
       "A": "Riposte proportionnée + recours dans les cadres internationaux.",
       "B": "Soutien interne temporaire aux exportateurs.",
@@ -3277,7 +3277,7 @@
   },
   "wp_365": {
     "title": "Boycott de produits",
-    "body": "Une campagne de boycott vise certains produits nationaux à l’étranger. Les ventes chutent et l’image se dégrade.",
+    "body": "Une campagne de boycott vise des produits nationaux. Les ventes baissent et l’image chute.",
     "choices": {
       "A": "Diplomatie économique active + communication apaisée.",
       "B": "Mesures de rétorsion commerciales ciblées.",
@@ -3295,7 +3295,7 @@
   },
   "wp_367": {
     "title": "Faillite d’un sous-traitant clé",
-    "body": "Un sous-traitant clé de l’industrie tombe en difficulté. Une partie de la production nationale est menacée.",
+    "body": "Un sous-traitant clé tombe en difficulté. Une partie de la production est menacée.",
     "choices": {
       "A": "Sauvetage conditionnel et rapide.",
       "B": "Remplacement par concurrence : marché et réorganisation.",
@@ -3304,7 +3304,7 @@
   },
   "wp_368": {
     "title": "Tension sur les data centers",
-    "body": "Les centres de données consomment davantage d’énergie et d’eau. Les collectivités demandent un encadrement.",
+    "body": "Les data centers consomment plus d’énergie et d’eau. Les élus demandent un encadrement.",
     "choices": {
       "A": "Régulation stricte et obligations d’efficacité.",
       "B": "Incitations à l’innovation sur refroidissement et chaleur recyclée.",
@@ -3376,7 +3376,7 @@
   },
   "wp_376": {
     "title": "Litige de brevets",
-    "body": "Un litige de brevets bloque l’accès à une technologie utilisée par un secteur entier. Les entreprises veulent une solution rapide.",
+    "body": "Un litige de brevets bloque une technologie clé. Les entreprises veulent une solution rapide.",
     "choices": {
       "A": "Médiation et accord de licence encadré.",
       "B": "Soutenir une alternative nationale en accélérant la R&D.",
@@ -3385,7 +3385,7 @@
   },
   "wp_377": {
     "title": "Vague de contrefaçons",
-    "body": "Une vague de contrefaçons nuit à plusieurs marques nationales. Les industriels demandent plus de contrôles.",
+    "body": "Une vague de contrefaçons nuit à plusieurs marques. Les industriels veulent plus de contrôles.",
     "choices": {
       "A": "Renforcer douanes et sanctions, opérations ciblées.",
       "B": "Approche diplomatique : accord de coopération avec pays sources.",
@@ -3394,7 +3394,7 @@
   },
   "wp_378": {
     "title": "Baisse du tourisme",
-    "body": "Le tourisme recule à cause d’incertitudes logistiques et de prix. Les régions touristiques demandent un plan.",
+    "body": "Le tourisme recule à cause des prix et de soucis logistiques. Les régions veulent un plan.",
     "choices": {
       "A": "Campagne de relance + amélioration transports.",
       "B": "Soutien ciblé aux acteurs fragiles du secteur.",
@@ -3412,7 +3412,7 @@
   },
   "wp_380": {
     "title": "Fonds de pension secoués",
-    "body": "Des pertes sur les marchés fragilisent des fonds d’épargne long terme. Les citoyens exigent des garanties.",
+    "body": "Des pertes de marché fragilisent des fonds d’épargne long terme. Les citoyens veulent des garanties.",
     "choices": {
       "A": "Renforcer supervision et transparence immédiatement.",
       "B": "Garanties publiques limitées, ciblées sur les plus exposés.",
@@ -3439,7 +3439,7 @@
   },
   "wp_383": {
     "title": "Pénurie de chauffeurs",
-    "body": "Le transport manque de chauffeurs et les délais s’allongent. Les entreprises veulent une solution durable.",
+    "body": "Le transport manque de chauffeurs et les délais s’allongent. Les entreprises veulent durer.",
     "choices": {
       "A": "Formation accélérée et amélioration des conditions du métier.",
       "B": "Recrutement international encadré pour combler rapidement.",
@@ -3448,7 +3448,7 @@
   },
   "wp_384": {
     "title": "Chantiers portuaires bloqués",
-    "body": "Des travaux portuaires prennent du retard. Les importateurs dénoncent un manque de capacité et de fluidité.",
+    "body": "Des travaux portuaires prennent du retard. Les importateurs dénoncent un manque de capacité.",
     "choices": {
       "A": "Accélérer procédures et financer des équipements clés.",
       "B": "Confier au privé sous contrat de performance strict.",
@@ -3619,7 +3619,7 @@
   },
   "wp_403": {
     "title": "Approvisionnement bloqué",
-    "body": "Un incident sur un nœud logistique ralentit les importations. Les prix de certains produits montent légèrement.",
+    "body": "Un incident logistique ralentit les importations. Certains prix montent.",
     "choices": {
       "A": "Plan de déblocage immédiat + priorités pour biens essentiels.",
       "B": "Investir dans la redondance avec rail, ports et entrepôts.",
@@ -3628,7 +3628,7 @@
   },
   "wp_404": {
     "title": "Corridor commercial sous tension",
-    "body": "Un corridor commercial international devient instable. Les acteurs économiques demandent une stratégie de sécurisation.",
+    "body": "Un corridor commercial se tend. Les acteurs économiques veulent le sécuriser.",
     "choices": {
       "A": "Renforcer la protection des convois et la surveillance.",
       "B": "Diversifier rapidement les routes et fournisseurs, même plus chers.",
@@ -3637,7 +3637,7 @@
   },
   "wp_405": {
     "title": "Blocage aux frontières",
-    "body": "De nouvelles formalités à l’étranger ralentissent les passages. Les camions s’accumulent et les entreprises s’énervent.",
+    "body": "De nouvelles formalités ralentissent les passages. Les camions s’accumulent.",
     "choices": {
       "A": "Négociation express pour simplifier les procédures.",
       "B": "Mesures de réciprocité : contrôles renforcés côté national.",
@@ -3664,7 +3664,7 @@
   },
   "wp_408": {
     "title": "Sécheresse et agriculture",
-    "body": "La sécheresse réduit certains rendements. Les prix restent stables pour l’instant, mais la filière s’inquiète.",
+    "body": "La sécheresse baisse certains rendements. Les prix tiennent, mais la filière s’inquiète.",
     "choices": {
       "A": "Aides d’adaptation sur irrigation, stockage et variétés.",
       "B": "Arbitrage de l’eau : quotas temporaires et contrôles renforcés.",
@@ -3673,7 +3673,7 @@
   },
   "wp_409": {
     "title": "Risque sur une digue",
-    "body": "Un rapport signale un risque sur une digue importante. Pas d’alerte immédiate, mais la fenêtre d’action est courte.",
+    "body": "Un rapport signale un risque sur une digue majeure. Il faut agir vite.",
     "choices": {
       "A": "Travaux d’urgence immédiats, priorité sécurité.",
       "B": "Plan de consolidation complet avec financement pluriannuel.",
@@ -3682,7 +3682,7 @@
   },
   "wp_410": {
     "title": "Tension sur les marchés",
-    "body": "Une volatilité durable inquiète les ménages et les entreprises. Les investisseurs veulent un message de stabilité.",
+    "body": "Une forte volatilité inquiète ménages et entreprises. Les investisseurs veulent être rassurés.",
     "choices": {
       "A": "Annonce d’un cadre budgétaire stable et prévisible.",
       "B": "Mesures temporaires de protection de l’épargne la plus exposée.",
@@ -3691,7 +3691,7 @@
   },
   "wp_411": {
     "title": "Conflit fiscal sur le numérique",
-    "body": "Un partenaire critique ton approche fiscale sur le numérique et menace de contre-mesures. Le secteur craint l’escalade.",
+    "body": "Un partenaire critique ta fiscalité numérique et menace. Le secteur craint l’escalade.",
     "choices": {
       "A": "Négocier un compromis international et harmoniser partiellement.",
       "B": "Rester ferme et assumer une réponse de réciprocité.",
@@ -3700,7 +3700,7 @@
   },
   "wp_412": {
     "title": "Rupture de stock pharmaceutique",
-    "body": "Certains médicaments manquent temporairement. Les acteurs demandent une sécurisation de la chaîne d’approvisionnement.",
+    "body": "Des médicaments manquent temporairement. Les acteurs veulent sécuriser la chaîne logistique.",
     "choices": {
       "A": "Achats d’urgence et priorisation des usages essentiels.",
       "B": "Relocalisation partielle et stocks stratégiques.",
@@ -3718,7 +3718,7 @@
   },
   "wp_414": {
     "title": "Inondations localisées",
-    "body": "Plusieurs zones urbaines subissent des inondations localisées. Les services municipaux réclament un soutien national.",
+    "body": "Des zones urbaines subissent des inondations. Les services locaux veulent un soutien national.",
     "choices": {
       "A": "Soutien d’urgence + fonds de réparation rapide.",
       "B": "Plan d’adaptation des villes avec drainage, sols et alertes.",
@@ -3727,7 +3727,7 @@
   },
   "wp_415": {
     "title": "Concurrence agressive",
-    "body": "Un pays subventionne massivement un secteur où tes entreprises sont fortes. Les parts de marché sont menacées.",
+    "body": "Un pays subventionne un secteur où tes entreprises sont fortes. Tes parts de marché sont menacées.",
     "choices": {
       "A": "Soutien temporaire ciblé + plainte dans les cadres internationaux.",
       "B": "Accélérer innovation et montée en gamme pour moins dépendre du prix.",
@@ -3871,7 +3871,7 @@
   },
   "wp_431": {
     "title": "Litige agroalimentaire",
-    "body": "Un partenaire bloque temporairement certains produits agroalimentaires. Les filières demandent une réaction.",
+    "body": "Un partenaire bloque des produits agroalimentaires. Les filières veulent une réaction.",
     "choices": {
       "A": "Négociation immédiate + garanties sanitaires et techniques.",
       "B": "Rétorsion ciblée sur un secteur équivalent.",
@@ -3889,7 +3889,7 @@
   },
   "wp_433": {
     "title": "Blocage d’un projet stratégique",
-    "body": "Un projet industriel stratégique est retardé par des procédures et recours. Les investisseurs demandent un arbitrage.",
+    "body": "Un projet industriel stratégique est retardé par des recours. Les investisseurs veulent trancher.",
     "choices": {
       "A": "Accélérer procédures tout en gardant un cadre de contrôle.",
       "B": "Maintenir la procédure complète, priorité à l’acceptabilité.",
@@ -3898,7 +3898,7 @@
   },
   "wp_434": {
     "title": "Conflit sur les licences export",
-    "body": "Un partenaire limite la délivrance de licences d’export pour certains équipements. Tes entreprises sont bloquées.",
+    "body": "Un partenaire limite les licences d’export sur certains équipements. Tes entreprises sont bloquées.",
     "choices": {
       "A": "Négocier et obtenir des exemptions ciblées.",
       "B": "Réduire la dépendance : développer une alternative nationale.",
@@ -3907,7 +3907,7 @@
   },
   "wp_435": {
     "title": "Crise de stockage alimentaire",
-    "body": "Des entrepôts manquent de capacité à cause de perturbations logistiques. Certains produits sont plus rares en rayon.",
+    "body": "Des entrepôts manquent de capacité après des perturbations. Des produits deviennent rares.",
     "choices": {
       "A": "Plan d’urgence : priorisation + logistique temporaire.",
       "B": "Investir dans stocks stratégiques et capacités de stockage.",
@@ -3925,7 +3925,7 @@
   },
   "wp_437": {
     "title": "Hausse des coûts de construction",
-    "body": "Les matériaux de construction augmentent. Les chantiers ralentissent et les collectivités demandent un soutien.",
+    "body": "Les matériaux de construction grimpent. Les chantiers ralentissent et les élus veulent un soutien.",
     "choices": {
       "A": "Aides ciblées sur projets prioritaires et rénovation.",
       "B": "Relocaliser une partie des filières matériaux via investissement.",
@@ -3943,7 +3943,7 @@
   },
   "wp_439": {
     "title": "Déséquilibre régional",
-    "body": "Des régions se plaignent d’être moins soutenues après plusieurs chocs climatiques. Elles demandent un mécanisme équitable.",
+    "body": "Des régions se disent moins aidées après des chocs climatiques. Elles veulent un mécanisme juste.",
     "choices": {
       "A": "Créer un fonds de solidarité territoriale stable.",
       "B": "Répartir au cas par cas selon l’impact économique mesuré.",
@@ -3952,7 +3952,7 @@
   },
   "wp_440": {
     "title": "Coopération économique tendue",
-    "body": "Un partenaire veut renégocier un grand accord économique. Il exige plus, sinon il menace de réduire la coopération.",
+    "body": "Un partenaire veut renégocier un grand accord économique. Il veut plus, sinon il réduit la coopération.",
     "choices": {
       "A": "Renégocier en gardant des lignes rouges claires.",
       "B": "Refuser et préparer un plan de substitution économique.",
@@ -3979,7 +3979,7 @@
   },
   "wp_443": {
     "title": "Incertitude sur le chantier",
-    "body": "Un grand chantier d’infrastructure prend du retard. Les coûts augmentent et l’opinion exige des explications.",
+    "body": "Un grand chantier prend du retard. Les coûts grimpent et l’opinion veut des réponses.",
     "choices": {
       "A": "Transparence + calendrier révisé et contrôle renforcé.",
       "B": "Accélérer en mobilisant moyens exceptionnels.",
@@ -3988,7 +3988,7 @@
   },
   "wp_444": {
     "title": "Pression sur l’eau",
-    "body": "Plusieurs industries consommatrices d’eau demandent des garanties. Les citoyens veulent priorité aux usages essentiels.",
+    "body": "Des industries très gourmandes en eau veulent des garanties. Les citoyens veulent l’essentiel d’abord.",
     "choices": {
       "A": "Prioriser usages essentiels + quotas temporaires pour l’industrie.",
       "B": "Investir dans réutilisation et technologies d’économie d’eau.",
@@ -3997,7 +3997,7 @@
   },
   "wp_445": {
     "title": "Marchés agricoles bloqués",
-    "body": "Un partenaire limite l’accès de certains produits agricoles. Les filières exportatrices demandent une solution.",
+    "body": "Un partenaire limite l’accès de produits agricoles. Les filières export veulent une solution.",
     "choices": {
       "A": "Négocier standards et contrôles communs pour lever la restriction.",
       "B": "Rétorsion ciblée sur un secteur économique équivalent.",
@@ -4006,7 +4006,7 @@
   },
   "wp_446": {
     "title": "Tension sur les prix de l’eau",
-    "body": "Le coût de traitement et distribution de l’eau augmente. Les collectivités demandent un soutien, les usagers s’inquiètent.",
+    "body": "Le coût du traitement et de la distribution d’eau grimpe. Les usagers s’inquiètent.",
     "choices": {
       "A": "Aide ciblée aux collectivités + plan anti-fuites.",
       "B": "Réforme tarifaire progressive avec protections sociales.",
@@ -4015,7 +4015,7 @@
   },
   "wp_447": {
     "title": "Choc sur le fret routier",
-    "body": "Des contraintes internationales et des coûts augmentent le fret routier. Les entreprises demandent une alternative.",
+    "body": "Le fret routier grimpe sous l’effet des coûts externes. Les entreprises veulent une alternative.",
     "choices": {
       "A": "Aides temporaires + plan d’optimisation logistique.",
       "B": "Accélérer transfert vers rail/fluvial et hubs multimodaux.",
@@ -4024,7 +4024,7 @@
   },
   "wp_448": {
     "title": "Doute sur les exports techno",
-    "body": "Un partenaire envisage de restreindre l’export de technologies clés. Tes industriels craignent des ruptures.",
+    "body": "Un partenaire veut restreindre l’export de technologies clés. Tes industriels craignent des pénuries.",
     "choices": {
       "A": "Négocier exemptions et garanties d’approvisionnement.",
       "B": "Créer une filière alternative nationale/alliée.",
@@ -4033,7 +4033,7 @@
   },
   "wp_449": {
     "title": "Pression sur les budgets locaux",
-    "body": "Après plusieurs chocs climatiques, des villes demandent un soutien budgétaire. Les finances publiques sont déjà tendues.",
+    "body": "Après plusieurs chocs climatiques, des villes veulent un soutien budgétaire. Les finances sont serrées.",
     "choices": {
       "A": "Fonds de soutien ciblé avec critères stricts.",
       "B": "Prêts bonifiés et accompagnement technique plutôt que subventions.",
