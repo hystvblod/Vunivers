@@ -2846,7 +2846,6 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 
 
 
-
 /* =========================
    EXPLORER
    ========================= */
@@ -2909,6 +2908,12 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-vcoins-ty: 5px;
   --vr-jetons-tx: -4px;
   --vr-jetons-ty: 6px;
+
+  /* ===== Zones texte plus étroites ===== */
+  --vr-scn-inset-left: 16%;
+  --vr-scn-inset-right: 16%;
+  --vr-choice-inset-left: 14%;
+  --vr-choice-inset-right: 14%;
 
   /* ===== Réglages fins verticaux ===== */
   --vr-explorer-hud-item-y: -9px;
@@ -3136,10 +3141,19 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-item{
   font-family: var(--vr-explorer-font-ui) !important;
 }
 
-/* ===== ICI le vrai levier du nom + année ===== */
+/* ===== vrai levier du nom + année ===== */
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-identity{
   transform: translate(var(--vr-identity-tx), var(--vr-identity-ty)) !important;
   gap: var(--vr-hud-name-years-gap) !important;
+}
+
+/* ===== soldes gauche / droite / bas ===== */
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left .vr-hud-value{
+  transform: translate(var(--vr-vcoins-tx), var(--vr-vcoins-ty)) !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right .vr-hud-value{
+  transform: translate(var(--vr-jetons-tx), var(--vr-jetons-ty)) !important;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-value{
@@ -3150,7 +3164,6 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-value{
   letter-spacing: .01em !important;
   color:#000 !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.35), 0 0 8px rgba(0,0,0,0.12) !important;
-  transform: translateY(var(--vr-explorer-hud-value-y)) !important;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-name{
@@ -3225,21 +3238,6 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
   --vr-universe-bg: url("../assets/img/backgrounds/explorer_default_gray.webp");
   --vr-universe-card: url("../assets/img/ui/explorer_msg_default_grey.webp");
   --vr-universe-choice: url("../assets/img/ui/explorer_choice_default_grey.webp");
-}
-
-@media (max-width: 420px){
-  body.vr-body-game[data-universe="new_world_explorer"]{
-    --vr-explorer-topbar-w: min(60vw, 290px);
-    --vr-explorer-hud-w: 94vw;
-    --vr-explorer-side-btn-side: 10px;
-    --vr-explorer-hud-shift-x: -2px;
-    --vr-explorer-hud-shift-y: -4px;
-    --vr-explorer-hud-item-y: -5px;
-  }
-
-  body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-name{
-    letter-spacing: .01em !important;
-  }
 }
 
 
