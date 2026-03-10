@@ -3610,31 +3610,3 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
   }
 }
 
-
-/* ==========================================================
-   PATCH ULTRA SIMPLE — tailles responsive seulement
-   TOUS LES UNIVERS SAUF HELL / HEAVEN
-   Ne change pas l’agencement
-   ========================================================== */
-
-@media (min-width: 700px) and (max-width: 1024px){
-  body.vr-body-game:not([data-universe="hell_king"]):not([data-universe="heaven_king"]){
-    --vr-scn-h: clamp(100px, 13.8svh, 180px);
-    --vr-choice-h: clamp(52px, 7.8svh, 92px);
-
-    --vr-font-scn-title: clamp(12px, 1.9vmin, 20px);
-    --vr-font-scn-text:  clamp(9px, 1.5vmin, 14px);
-    --vr-font-choice:    clamp(10px, 1.6vmin, 14px);
-  }
-}
-
-@media (max-width: 480px), (max-height: 780px){
-  body.vr-body-game:not([data-universe="hell_king"]):not([data-universe="heaven_king"]){
-    --vr-scn-h: clamp(86px, 13.8svh, 140px);
-    --vr-choice-h: clamp(46px, 8.2svh, 76px);
-
-    --vr-font-scn-title: clamp(11px, 3.6vw, 16px);
-    --vr-font-scn-text:  clamp(8px, 2.8vw, 12px);
-    --vr-font-choice:    clamp(9px, 3vw, 13px);
-  }
-}
