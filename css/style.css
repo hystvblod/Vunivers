@@ -1762,7 +1762,9 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-text{
 body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
   font-family: "VR_Cormorant", serif !important;
   color: #000 !important;
+  font-weight: 700 !important;
 }
+
 
 body.vr-body-game[data-universe="heaven_king"]{
   --vr-card-w: clamp(460px, 100vw, 1240px);
