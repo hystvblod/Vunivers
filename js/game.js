@@ -309,16 +309,69 @@ const VR_BADGE_GOLD_CHOICES = 100;
 
         const style = document.createElement("style");
         style.id = ID;
-        style.textContent = `
-@keyframes vrGaugeBlinkGlow {
-  0%   { filter: brightness(1); }
-  50%  { filter: brightness(1.25); }
-  100% { filter: brightness(1); }
+style.textContent = `
+@keyframes vrGaugeBlinkGlowUp {
+  0% {
+    filter:
+      brightness(1)
+      saturate(1)
+      drop-shadow(0 0 0 rgba(120,255,180,0));
+  }
+  50% {
+    filter:
+      brightness(1.9)
+      saturate(1.9)
+      drop-shadow(0 0 14px rgba(120,255,180,.95))
+      drop-shadow(0 0 28px rgba(120,255,180,.75));
+  }
+  100% {
+    filter:
+      brightness(1)
+      saturate(1)
+      drop-shadow(0 0 0 rgba(120,255,180,0));
+  }
 }
-@keyframes vrGaugeBlinkPulse {
-  0%   { transform: translateZ(0) scale(1); }
-  50%  { transform: translateZ(0) scale(1.01); }
-  100% { transform: translateZ(0) scale(1); }
+
+@keyframes vrGaugeBlinkGlowDown {
+  0% {
+    filter:
+      brightness(1)
+      saturate(1)
+      drop-shadow(0 0 0 rgba(255,120,120,0));
+  }
+  50% {
+    filter:
+      brightness(1.9)
+      saturate(1.9)
+      drop-shadow(0 0 14px rgba(255,120,120,.95))
+      drop-shadow(0 0 28px rgba(255,120,120,.75));
+  }
+  100% {
+    filter:
+      brightness(1)
+      saturate(1)
+      drop-shadow(0 0 0 rgba(255,120,120,0));
+  }
+}
+
+@keyframes vrGaugeBlinkPulseStrong {
+  0% {
+    transform: translateZ(0) scale(1);
+  }
+  50% {
+    transform: translateZ(0) scale(1.08);
+  }
+  100% {
+    transform: translateZ(0) scale(1);
+  }
+}
+
+@keyframes vrGaugeBlinkShake {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-1px); }
+  50%  { transform: translateX(1px); }
+  75%  { transform: translateX(-1px); }
+  100% { transform: translateX(0); }
 }
 
 .vr-gauge-value{
@@ -354,18 +407,55 @@ body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-delta{
   color:rgba(255,190,190,.98);
 }
 
-body:not(.vr-peek-mode) .vr-gauge.vr-peek-up .vr-gauge-fill,
+body:not(.vr-peek-mode) .vr-gauge.vr-peek-up{
+  animation: vrGaugeBlinkShake 260ms linear infinite;
+}
+body:not(.vr-peek-mode) .vr-gauge.vr-peek-down{
+  animation: vrGaugeBlinkShake 260ms linear infinite;
+}
+
+body:not(.vr-peek-mode) .vr-gauge.vr-peek-up .vr-gauge-fill{
+  transform-origin:50% 50%;
+  animation:
+    vrGaugeBlinkGlowUp 420ms ease-in-out infinite,
+    vrGaugeBlinkPulseStrong 420ms ease-in-out infinite;
+}
+
 body:not(.vr-peek-mode) .vr-gauge.vr-peek-down .vr-gauge-fill{
   transform-origin:50% 50%;
   animation:
-    vrGaugeBlinkGlow 650ms ease-in-out infinite,
-    vrGaugeBlinkPulse 650ms ease-in-out infinite;
+    vrGaugeBlinkGlowDown 420ms ease-in-out infinite,
+    vrGaugeBlinkPulseStrong 420ms ease-in-out infinite;
+}
+
+body:not(.vr-peek-mode) .vr-gauge.vr-peek-up .vr-gauge-frame{
+  box-shadow:
+    0 0 0 2px rgba(120,255,180,.35),
+    0 0 18px rgba(120,255,180,.35);
+  border-radius:999px;
+}
+
+body:not(.vr-peek-mode) .vr-gauge.vr-peek-down .vr-gauge-frame{
+  box-shadow:
+    0 0 0 2px rgba(255,120,120,.35),
+    0 0 18px rgba(255,120,120,.35);
+  border-radius:999px;
+}
+
+body.vr-peek-mode .vr-gauge.vr-peek-up,
+body.vr-peek-mode .vr-gauge.vr-peek-down{
+  animation:none !important;
 }
 
 body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-fill,
 body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-fill{
   animation:none !important;
-  filter:brightness(1.12) saturate(1.06);
+  filter:brightness(1.16) saturate(1.12);
+}
+
+body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-frame,
+body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-frame{
+  box-shadow:none !important;
 }
 
 body:not(.vr-peek-mode) .vr-gauge-preview{
@@ -375,7 +465,7 @@ body.vr-peek-mode .vr-gauge-preview{
   position:absolute;
   inset:0;
   pointer-events:none;
-  opacity:.55;
+  opacity:.62;
   clip-path:inset(calc(100% - var(--vr-pct, 0%)) 0 0 0);
 }
 `;
