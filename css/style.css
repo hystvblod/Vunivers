@@ -2799,7 +2799,6 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 }
 
 
-
 /* =========================
    EXPLORER
    ========================= */
@@ -2811,12 +2810,14 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-explorer-hud-src-w: 1024;
   --vr-explorer-hud-src-h: 269;
 
-  /* ===== Largeurs affichées =====
-     C’est surtout ça que tu modifies ensuite */
+  /* ===== Largeurs affichées ===== */
   --vr-explorer-topbar-w: clamp(240px, 54vw, 420px);
-  --vr-explorer-hud-w: min(94vw, 980px);
+  --vr-explorer-hud-w: min(89vw, 930px);
   --vr-explorer-back-size: clamp(46px, 11vw, 76px);
   --vr-explorer-customize-size: clamp(46px, 11vw, 76px);
+
+  /* ===== Décalage visuel HUD ===== */
+  --vr-explorer-hud-shift-x: -6px;
 
   /* ===== Réserve haute calculée avec la vraie proportion ===== */
   --vr-topbar-h: calc(
@@ -2981,6 +2982,7 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud{
   white-space: normal !important;
   background: var(--vr-ui-hud-img) center / 100% 100% no-repeat;
   filter: drop-shadow(0 10px 18px rgba(0,0,0,0.20));
+  transform: translateX(var(--vr-explorer-hud-shift-x)) !important;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left,
@@ -3108,9 +3110,10 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
 @media (max-width: 680px){
   body.vr-body-game[data-universe="new_world_explorer"]{
     --vr-explorer-topbar-w: clamp(220px, 58vw, 360px);
-    --vr-explorer-hud-w: min(96vw, 760px);
+    --vr-explorer-hud-w: min(92vw, 760px);
     --vr-explorer-back-size: clamp(42px, 10vw, 64px);
     --vr-explorer-customize-size: clamp(42px, 10vw, 64px);
+    --vr-explorer-hud-shift-x: -4px;
     --vr-explorer-hud-item-y: -8px;
     --vr-explorer-hud-value-y: -1px;
     --vr-explorer-hud-years-y: 0px;
@@ -3120,11 +3123,19 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
 @media (max-width: 420px){
   body.vr-body-game[data-universe="new_world_explorer"]{
     --vr-explorer-topbar-w: min(62vw, 300px);
-    --vr-explorer-hud-w: 96vw;
+    --vr-explorer-hud-w: 94vw;
     --vr-explorer-side-btn-side: 10px;
+    --vr-explorer-hud-shift-x: -2px;
     --vr-explorer-hud-item-y: -6px;
   }
 }
+
+
+
+
+
+
+
 /* ==========================================================
    UNIVERS — VAMPIRE
    ========================================================== */
