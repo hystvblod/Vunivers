@@ -2986,7 +2986,7 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud{
   position: relative !important;
   width: var(--vr-explorer-hud-w) !important;
   height: calc(
-    var(--vr-explorer-hud-w) * var(--vr-explorer-hud-src-h) / var(--vr-explorer-hud-src-w) * 1.06
+    var(--vr-explorer-hud-w) * var(--vr-explorer-hud-src-h) / var(--vr-explorer-hud-src-w) * 1.15
   ) !important;
   max-width:none !important;
   margin:0 auto !important;
