@@ -943,8 +943,7 @@
         "A": {
           "gaugeDelta": {
             "defense": 10,
-            "opinion": -5,
-            "diplomacy": 5
+            "opinion": -5
           }
         },
         "B": {
@@ -1770,8 +1769,7 @@
         "B": {
           "gaugeDelta": {
             "economy": 5,
-            "opinion": 5,
-            "diplomacy": 5
+            "opinion": 5
           }
         },
         "C": {
@@ -1839,8 +1837,7 @@
         "A": {
           "gaugeDelta": {
             "diplomacy": 15,
-            "opinion": 5,
-            "economy": -5
+            "opinion": 5
           }
         },
         "B": {
@@ -2057,7 +2054,6 @@
         "A": {
           "gaugeDelta": {
             "opinion": 10,
-            "economy": -5,
             "diplomacy": 5
           }
         },
@@ -2112,14 +2108,12 @@
         "B": {
           "gaugeDelta": {
             "economy": -10,
-            "opinion": 5,
             "diplomacy": -5
           }
         },
         "C": {
           "gaugeDelta": {
             "defense": 5,
-            "opinion": -5,
             "economy": 5
           }
         }
@@ -2138,8 +2132,7 @@
         "B": {
           "gaugeDelta": {
             "economy": 5,
-            "opinion": 5,
-            "diplomacy": 5
+            "opinion": 5
           }
         },
         "C": {
@@ -2308,7 +2301,6 @@
         "B": {
           "gaugeDelta": {
             "economy": 10,
-            "diplomacy": 5,
             "opinion": -5
           }
         },
@@ -2477,8 +2469,7 @@
         "B": {
           "gaugeDelta": {
             "defense": 10,
-            "opinion": -5,
-            "economy": -5
+            "opinion": -5
           }
         },
         "C": {
@@ -2508,8 +2499,7 @@
         "C": {
           "gaugeDelta": {
             "economy": 5,
-            "opinion": -10,
-            "diplomacy": 5
+            "opinion": -10
           }
         }
       }
@@ -2521,8 +2511,7 @@
         "A": {
           "gaugeDelta": {
             "economy": 5,
-            "opinion": 5,
-            "diplomacy": 5
+            "opinion": 5
           }
         },
         "B": {
@@ -2594,7 +2583,6 @@
         "A": {
           "gaugeDelta": {
             "defense": 15,
-            "economy": 5,
             "diplomacy": -10
           }
         },
@@ -2649,15 +2637,13 @@
         "B": {
           "gaugeDelta": {
             "diplomacy": -10,
-            "defense": 5,
-            "opinion": -5
+            "defense": 5
           }
         },
         "C": {
           "gaugeDelta": {
             "opinion": -10,
-            "economy": 5,
-            "diplomacy": 5
+            "economy": 5
           }
         }
       }
@@ -2693,8 +2679,7 @@
         "A": {
           "gaugeDelta": {
             "diplomacy": 10,
-            "opinion": 5,
-            "defense": -5
+            "opinion": 5
           }
         },
         "B": {
@@ -2730,8 +2715,7 @@
         "C": {
           "gaugeDelta": {
             "economy": 10,
-            "opinion": -5,
-            "defense": -5
+            "opinion": -5
           }
         }
       }
@@ -2755,8 +2739,7 @@
         "C": {
           "gaugeDelta": {
             "opinion": -5,
-            "economy": -10,
-            "defense": 5
+            "economy": -10
           }
         }
       }
@@ -2798,8 +2781,7 @@
         "B": {
           "gaugeDelta": {
             "economy": 15,
-            "opinion": -15,
-            "diplomacy": 5
+            "opinion": -15
           }
         },
         "C": {
@@ -2853,8 +2835,7 @@
         "C": {
           "gaugeDelta": {
             "opinion": 5,
-            "diplomacy": 5,
-            "economy": -5
+            "diplomacy": 5
           }
         }
       }
@@ -2866,7 +2847,6 @@
         "A": {
           "gaugeDelta": {
             "opinion": 5,
-            "economy": -5,
             "diplomacy": 5
           }
         },
@@ -2903,8 +2883,7 @@
         "C": {
           "gaugeDelta": {
             "defense": 5,
-            "diplomacy": -10,
-            "economy": 5
+            "diplomacy": -10
           }
         }
       }
@@ -2922,8 +2901,7 @@
         "B": {
           "gaugeDelta": {
             "economy": -5,
-            "opinion": 5,
-            "diplomacy": 5
+            "opinion": 5
           }
         },
         "C": {
@@ -3043,8 +3021,7 @@
         "B": {
           "gaugeDelta": {
             "economy": 5,
-            "opinion": -10,
-            "defense": 5
+            "opinion": -10
           }
         },
         "C": {
@@ -3068,8 +3045,7 @@
         "B": {
           "gaugeDelta": {
             "economy": 10,
-            "diplomacy": -10,
-            "opinion": -10
+            "diplomacy": -10
           }
         },
         "C": {
@@ -3087,7 +3063,6 @@
         "A": {
           "gaugeDelta": {
             "diplomacy": 10,
-            "opinion": 5,
             "economy": -10
           }
         },
@@ -3118,8 +3093,7 @@
         "B": {
           "gaugeDelta": {
             "defense": 15,
-            "opinion": -10,
-            "economy": 5
+            "opinion": -10
           }
         },
         "C": {
@@ -3167,8 +3141,7 @@
         "B": {
           "gaugeDelta": {
             "economy": 10,
-            "opinion": 5,
-            "diplomacy": 5
+            "opinion": 5
           }
         },
         "C": {
@@ -3186,7 +3159,6 @@
         "A": {
           "gaugeDelta": {
             "diplomacy": 15,
-            "defense": 5,
             "economy": 5
           }
         },
@@ -3217,7 +3189,6 @@
         "B": {
           "gaugeDelta": {
             "defense": 15,
-            "economy": -5,
             "opinion": -5
           }
         },
@@ -3242,8 +3213,7 @@
         "B": {
           "gaugeDelta": {
             "economy": 10,
-            "opinion": -10,
-            "diplomacy": 5
+            "opinion": -10
           }
         },
         "C": {
@@ -3297,8 +3267,7 @@
         "C": {
           "gaugeDelta": {
             "economy": -10,
-            "diplomacy": -5,
-            "opinion": 5
+            "diplomacy": -5
           }
         }
       }
@@ -3334,8 +3303,7 @@
         "A": {
           "gaugeDelta": {
             "diplomacy": 10,
-            "economy": 5,
-            "defense": 5
+            "economy": 5
           }
         },
         "B": {
@@ -3347,7 +3315,6 @@
         "C": {
           "gaugeDelta": {
             "opinion": 5,
-            "defense": 5,
             "economy": -10
           }
         }
@@ -3438,8 +3405,7 @@
         "B": {
           "gaugeDelta": {
             "opinion": 5,
-            "economy": -5,
-            "diplomacy": 5
+            "economy": -5
           }
         },
         "C": {
@@ -3463,8 +3429,7 @@
         "B": {
           "gaugeDelta": {
             "defense": 10,
-            "diplomacy": -10,
-            "opinion": 5
+            "diplomacy": -10
           }
         },
         "C": {
@@ -3488,7 +3453,6 @@
         "B": {
           "gaugeDelta": {
             "opinion": 5,
-            "diplomacy": 5,
             "economy": -5
           }
         },
@@ -3513,7 +3477,6 @@
         "B": {
           "gaugeDelta": {
             "opinion": 5,
-            "economy": -5,
             "diplomacy": 5
           }
         },
@@ -3532,8 +3495,7 @@
         "A": {
           "gaugeDelta": {
             "defense": 10,
-            "opinion": 5,
-            "diplomacy": 5
+            "opinion": 5
           }
         },
         "B": {
@@ -3545,8 +3507,7 @@
         "C": {
           "gaugeDelta": {
             "opinion": 10,
-            "defense": -5,
-            "economy": -5
+            "defense": -5
           }
         }
       }
@@ -3588,7 +3549,6 @@
         "B": {
           "gaugeDelta": {
             "diplomacy": -10,
-            "opinion": -5,
             "economy": 5
           }
         },
@@ -3607,8 +3567,7 @@
         "A": {
           "gaugeDelta": {
             "opinion": 10,
-            "economy": -5,
-            "diplomacy": 5
+            "economy": -5
           }
         },
         "B": {
@@ -3686,7 +3645,6 @@
         "B": {
           "gaugeDelta": {
             "economy": 5,
-            "opinion": -5,
             "diplomacy": -5
           }
         },
@@ -3718,7 +3676,6 @@
         "C": {
           "gaugeDelta": {
             "economy": 10,
-            "opinion": 5,
             "defense": -5
           }
         }
@@ -3803,7 +3760,6 @@
         "A": {
           "gaugeDelta": {
             "opinion": 10,
-            "diplomacy": 5,
             "economy": -5
           }
         },
@@ -3890,8 +3846,7 @@
         "C": {
           "gaugeDelta": {
             "diplomacy": 5,
-            "defense": 5,
-            "opinion": -5
+            "defense": 5
           }
         }
       }
@@ -3909,7 +3864,6 @@
         "B": {
           "gaugeDelta": {
             "economy": 10,
-            "diplomacy": 5,
             "opinion": -5
           }
         },
@@ -4007,15 +3961,13 @@
         "B": {
           "gaugeDelta": {
             "diplomacy": 10,
-            "defense": -5,
-            "opinion": 5
+            "defense": -5
           }
         },
         "C": {
           "gaugeDelta": {
             "defense": 10,
-            "diplomacy": 5,
-            "economy": 5
+            "diplomacy": 5
           }
         }
       }
@@ -4034,8 +3986,7 @@
         "B": {
           "gaugeDelta": {
             "opinion": -5,
-            "defense": 5,
-            "economy": 5
+            "defense": 5
           }
         },
         "C": {
@@ -4059,7 +4010,6 @@
         "B": {
           "gaugeDelta": {
             "economy": 5,
-            "defense": 5,
             "diplomacy": -5
           }
         },
@@ -4307,8 +4257,7 @@
         "C": {
           "gaugeDelta": {
             "economy": 10,
-            "defense": -5,
-            "opinion": 5
+            "defense": -5
           }
         }
       }
@@ -4326,15 +4275,13 @@
         "B": {
           "gaugeDelta": {
             "defense": 10,
-            "economy": -5,
-            "diplomacy": -5
+            "economy": -5
           }
         },
         "C": {
           "gaugeDelta": {
             "diplomacy": 10,
-            "economy": 5,
-            "defense": -5
+            "economy": 5
           }
         }
       }
@@ -4400,8 +4347,7 @@
         "B": {
           "gaugeDelta": {
             "diplomacy": 10,
-            "economy": 5,
-            "opinion": -5
+            "economy": 5
           }
         },
         "C": {
@@ -4766,15 +4712,13 @@
         "B": {
           "gaugeDelta": {
             "opinion": 10,
-            "defense": -10,
-            "economy": -5
+            "defense": -10
           }
         },
         "C": {
           "gaugeDelta": {
             "diplomacy": 5,
-            "defense": 5,
-            "economy": -5
+            "defense": 5
           }
         }
       }
@@ -4841,8 +4785,7 @@
         "B": {
           "gaugeDelta": {
             "diplomacy": -10,
-            "defense": 10,
-            "opinion": -5
+            "defense": 10
           }
         },
         "C": {
@@ -4885,8 +4828,7 @@
         "A": {
           "gaugeDelta": {
             "diplomacy": 10,
-            "opinion": 5,
-            "defense": -5
+            "opinion": 5
           }
         },
         "B": {
@@ -4935,7 +4877,6 @@
         "A": {
           "gaugeDelta": {
             "diplomacy": 5,
-            "economy": -5,
             "opinion": 5
           }
         },
@@ -5009,8 +4950,7 @@
         "A": {
           "gaugeDelta": {
             "opinion": 10,
-            "defense": 5,
-            "economy": -5
+            "defense": 5
           }
         },
         "B": {
@@ -5040,8 +4980,7 @@
         "B": {
           "gaugeDelta": {
             "diplomacy": -10,
-            "defense": 10,
-            "opinion": -5
+            "defense": 10
           }
         },
         "C": {
@@ -5059,7 +4998,6 @@
         "A": {
           "gaugeDelta": {
             "defense": 10,
-            "opinion": 5,
             "economy": -10
           }
         },
@@ -5181,8 +5119,7 @@
         "A": {
           "gaugeDelta": {
             "diplomacy": 5,
-            "defense": 5,
-            "economy": -5
+            "defense": 5
           }
         },
         "B": {
@@ -5495,8 +5432,7 @@
         "C": {
           "gaugeDelta": {
             "economy": 5,
-            "diplomacy": 5,
-            "opinion": -5
+            "diplomacy": 5
           }
         }
       }
@@ -5572,8 +5508,7 @@
         "C": {
           "gaugeDelta": {
             "economy": 10,
-            "diplomacy": 5,
-            "defense": -5
+            "diplomacy": 5
           }
         }
       }
@@ -5622,8 +5557,7 @@
         "C": {
           "gaugeDelta": {
             "diplomacy": 10,
-            "defense": -5,
-            "opinion": 5
+            "defense": -5
           }
         }
       }
@@ -5641,8 +5575,7 @@
         "B": {
           "gaugeDelta": {
             "defense": 10,
-            "economy": -5,
-            "diplomacy": -5
+            "economy": -5
           }
         },
         "C": {
@@ -5767,7 +5700,6 @@
         "B": {
           "gaugeDelta": {
             "diplomacy": -10,
-            "economy": -5,
             "defense": 5
           }
         },
@@ -6157,8 +6089,7 @@
         "B": {
           "gaugeDelta": {
             "defense": 5,
-            "opinion": -10,
-            "diplomacy": -5
+            "opinion": -10
           }
         },
         "C": {
@@ -6182,15 +6113,13 @@
         "B": {
           "gaugeDelta": {
             "economy": -10,
-            "diplomacy": -5,
             "defense": 5
           }
         },
         "C": {
           "gaugeDelta": {
             "diplomacy": 10,
-            "economy": 5,
-            "opinion": -5
+            "economy": 5
           }
         }
       }
@@ -6208,8 +6137,7 @@
         "B": {
           "gaugeDelta": {
             "defense": 10,
-            "economy": -5,
-            "diplomacy": -5
+            "economy": -5
           }
         },
         "C": {
@@ -6293,8 +6221,7 @@
         "C": {
           "gaugeDelta": {
             "defense": 10,
-            "diplomacy": -10,
-            "opinion": -5
+            "diplomacy": -10
           }
         }
       }
@@ -6306,15 +6233,13 @@
         "A": {
           "gaugeDelta": {
             "defense": 10,
-            "economy": -5,
             "opinion": 5
           }
         },
         "B": {
           "gaugeDelta": {
             "diplomacy": -10,
-            "defense": 5,
-            "opinion": -5
+            "defense": 5
           }
         },
         "C": {
@@ -6332,14 +6257,12 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "diplomacy": 0,
-            "defense": 0
+            "opinion": 5
           }
         },
         "B": {
           "gaugeDelta": {
-            "opinion": 0,
-            "diplomacy": 0
+            "opinion": -5
           }
         },
         "C": {
@@ -6390,8 +6313,7 @@
         "B": {
           "gaugeDelta": {
             "defense": 10,
-            "diplomacy": -10,
-            "opinion": -5
+            "diplomacy": -10
           }
         },
         "C": {
@@ -6449,8 +6371,7 @@
         "C": {
           "gaugeDelta": {
             "opinion": 5,
-            "economy": -5,
-            "defense": 5
+            "economy": -5
           }
         }
       }
@@ -6495,8 +6416,7 @@
         "B": {
           "gaugeDelta": {
             "defense": 10,
-            "diplomacy": -5,
-            "opinion": -5
+            "diplomacy": -5
           }
         },
         "C": {
@@ -6549,8 +6469,7 @@
         "B": {
           "gaugeDelta": {
             "defense": 10,
-            "diplomacy": -10,
-            "opinion": -5
+            "diplomacy": -10
           }
         },
         "C": {
@@ -6645,7 +6564,6 @@
         "A": {
           "gaugeDelta": {
             "defense": 5,
-            "opinion": 5,
             "economy": -5
           }
         },
@@ -6782,8 +6700,7 @@
         "B": {
           "gaugeDelta": {
             "diplomacy": -10,
-            "defense": 5,
-            "opinion": -5
+            "defense": 5
           }
         },
         "C": {
@@ -6815,8 +6732,7 @@
         "C": {
           "gaugeDelta": {
             "defense": 5,
-            "opinion": 5,
-            "diplomacy": 5
+            "opinion": 5
           }
         }
       }
@@ -6861,8 +6777,7 @@
         "B": {
           "gaugeDelta": {
             "defense": 5,
-            "diplomacy": -5,
-            "opinion": -5
+            "diplomacy": -5
           }
         },
         "C": {
@@ -6893,8 +6808,7 @@
         "C": {
           "gaugeDelta": {
             "diplomacy": 5,
-            "defense": 5,
-            "economy": -5
+            "defense": 5
           }
         }
       }
@@ -6938,8 +6852,7 @@
         "B": {
           "gaugeDelta": {
             "defense": 10,
-            "opinion": -5,
-            "economy": -5
+            "opinion": -5
           }
         },
         "C": {
@@ -6984,8 +6897,7 @@
         "A": {
           "gaugeDelta": {
             "opinion": 10,
-            "diplomacy": 5,
-            "economy": -5
+            "diplomacy": 5
           }
         },
         "B": {
@@ -6998,7 +6910,6 @@
         "C": {
           "gaugeDelta": {
             "diplomacy": 10,
-            "opinion": 5,
             "economy": -5
           }
         }
@@ -7010,8 +6921,8 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "diplomacy": 0,
-            "defense": 0
+            "opinion": 5,
+            "diplomacy": 5
           }
         },
         "B": {
@@ -7036,8 +6947,7 @@
         "A": {
           "gaugeDelta": {
             "diplomacy": 10,
-            "opinion": 5,
-            "economy": -5
+            "opinion": 5
           }
         },
         "B": {
@@ -7113,8 +7023,8 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "diplomacy": 0,
-            "defense": 0
+            "defense": 5,
+            "opinion": 5
           }
         },
         "B": {
@@ -7222,8 +7132,7 @@
         "B": {
           "gaugeDelta": {
             "defense": 10,
-            "economy": -10,
-            "diplomacy": -5
+            "economy": -10
           }
         },
         "C": {
@@ -7241,15 +7150,14 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "diplomacy": 0,
-            "opinion": 0
+            "defense": 5,
+            "diplomacy": 5
           }
         },
         "B": {
           "gaugeDelta": {
             "defense": 10,
-            "diplomacy": -10,
-            "opinion": -5
+            "diplomacy": -10
           }
         },
         "C": {
@@ -7556,7 +7464,6 @@
         "A": {
           "gaugeDelta": {
             "defense": 5,
-            "economy": -5,
             "opinion": 5
           }
         },
@@ -8421,8 +8328,7 @@
         "A": {
           "gaugeDelta": {
             "defense": 5,
-            "economy": -5,
-            "opinion": 5
+            "economy": -5
           }
         },
         "B": {
@@ -10151,7 +10057,6 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "opinion": 5,
             "defense": 5,
             "economy": -5
           }
@@ -10368,7 +10273,6 @@
         "A": {
           "gaugeDelta": {
             "defense": 5,
-            "opinion": 5,
             "economy": -5
           }
         },
@@ -10935,8 +10839,7 @@
         "A": {
           "gaugeDelta": {
             "opinion": 5,
-            "defense": 5,
-            "economy": -5
+            "defense": 5
           }
         },
         "B": {
@@ -11022,9 +10925,8 @@
         },
         "B": {
           "gaugeDelta": {
-            "opinion": 0,
-            "economy": 0,
-            "diplomacy": 0
+            "opinion": 5,
+            "economy": -5
           }
         },
         "C": {
@@ -11083,9 +10985,8 @@
         },
         "C": {
           "gaugeDelta": {
-            "opinion": 0,
-            "economy": 0,
-            "diplomacy": 0
+            "economy": 5,
+            "opinion": 5
           }
         }
       }
@@ -11137,9 +11038,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "economy": 0,
-            "opinion": 0,
-            "diplomacy": 0
+            "economy": 5
           }
         }
       }
@@ -11157,9 +11056,8 @@
         },
         "B": {
           "gaugeDelta": {
-            "economy": 0,
-            "opinion": 0,
-            "diplomacy": 0
+            "economy": 5,
+            "opinion": 5
           }
         },
         "C": {
@@ -11184,16 +11082,14 @@
         },
         "B": {
           "gaugeDelta": {
-            "economy": 0,
-            "opinion": 0,
-            "defense": 0
+            "economy": 5,
+            "opinion": -5
           }
         },
         "C": {
           "gaugeDelta": {
-            "opinion": 0,
-            "economy": 0,
-            "diplomacy": 0
+            "opinion": 5,
+            "economy": -5
           }
         }
       }
@@ -11286,23 +11182,18 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "opinion": 0,
-            "economy": 0,
-            "diplomacy": 0
+            "opinion": 5
           }
         },
         "B": {
           "gaugeDelta": {
-            "defense": 0,
-            "opinion": 0,
-            "economy": 0
+            "economy": -5
           }
         },
         "C": {
           "gaugeDelta": {
-            "economy": 0,
-            "opinion": 0,
-            "diplomacy": 0
+            "economy": 5,
+            "opinion": -5
           }
         }
       }
@@ -11313,9 +11204,8 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "opinion": 0,
-            "defense": 0,
-            "economy": 0
+            "opinion": 5,
+            "economy": -5
           }
         },
         "B": {
@@ -11327,9 +11217,8 @@
         },
         "C": {
           "gaugeDelta": {
-            "diplomacy": 0,
-            "economy": 0,
-            "opinion": 0
+            "diplomacy": 5,
+            "economy": 5
           }
         }
       }
@@ -11354,9 +11243,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "economy": 0,
-            "opinion": 0,
-            "diplomacy": 0
+            "economy": 5
           }
         }
       }
@@ -11374,9 +11261,8 @@
         },
         "B": {
           "gaugeDelta": {
-            "opinion": 0,
-            "economy": 0,
-            "diplomacy": 0
+            "opinion": 5,
+            "economy": -5
           }
         },
         "C": {
@@ -11455,16 +11341,13 @@
         },
         "B": {
           "gaugeDelta": {
-            "economy": 0,
-            "opinion": 0,
-            "diplomacy": 0
+            "economy": 5
           }
         },
         "C": {
           "gaugeDelta": {
-            "opinion": 0,
-            "economy": 0,
-            "diplomacy": 0
+            "opinion": 5,
+            "economy": 5
           }
         }
       }
@@ -11482,9 +11365,8 @@
         },
         "B": {
           "gaugeDelta": {
-            "economy": 0,
-            "opinion": 0,
-            "diplomacy": 0
+            "economy": 5,
+            "diplomacy": -5
           }
         },
         "C": {
