@@ -2800,22 +2800,30 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 
 
 
-
 /* =========================
    EXPLORER
    ========================= */
 body.vr-body-game[data-universe="new_world_explorer"]{
-  --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
+  /* ===== Tailles source RÉELLES des fichiers =====
+     Remplace ces 4 valeurs par les vraies dimensions de tes assets */
+  --vr-explorer-topbar-src-w: 1000;
+  --vr-explorer-topbar-src-h: 275;
+  --vr-explorer-hud-src-w: 1024;
+  --vr-explorer-hud-src-h: 269;
 
-  /* ===== Ratios images source ===== */
-  --vr-explorer-topbar-ratio: 1000 / 275;
-  --vr-explorer-hud-ratio: 1024 / 269;
-
-  /* ===== Largeurs affichées ===== */
+  /* ===== Largeurs affichées =====
+     C’est surtout ça que tu modifies ensuite */
   --vr-explorer-topbar-w: clamp(240px, 54vw, 420px);
   --vr-explorer-hud-w: min(94vw, 980px);
   --vr-explorer-back-size: clamp(46px, 11vw, 76px);
   --vr-explorer-customize-size: clamp(46px, 11vw, 76px);
+
+  /* ===== Réserve haute calculée avec la vraie proportion ===== */
+  --vr-topbar-h: calc(
+    (var(--vr-explorer-topbar-w) * var(--vr-explorer-topbar-src-h) / var(--vr-explorer-topbar-src-w))
+    + env(safe-area-inset-top)
+    + 8px
+  );
 
   /* ===== Positions générales ===== */
   --vr-explorer-topbar-top: calc(14px + env(safe-area-inset-top));
@@ -2868,7 +2876,9 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game{
   right: auto !important;
   transform: translateX(-50%) !important;
   width: var(--vr-explorer-topbar-w) !important;
-  aspect-ratio: var(--vr-explorer-topbar-ratio) !important;
+  height: calc(
+    var(--vr-explorer-topbar-w) * var(--vr-explorer-topbar-src-h) / var(--vr-explorer-topbar-src-w)
+  ) !important;
   padding: 0 !important;
   margin: 0 !important;
   gap: 0 !important;
@@ -2961,12 +2971,14 @@ body.vr-body-game[data-universe="new_world_explorer"] #btn-customize::before{
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud{
   position: relative !important;
   width: var(--vr-explorer-hud-w) !important;
+  height: calc(
+    var(--vr-explorer-hud-w) * var(--vr-explorer-hud-src-h) / var(--vr-explorer-hud-src-w)
+  ) !important;
   max-width:none !important;
   margin:0 auto !important;
   padding:0 !important;
   display:block !important;
   white-space: normal !important;
-  aspect-ratio: var(--vr-explorer-hud-ratio) !important;
   background: var(--vr-ui-hud-img) center / 100% 100% no-repeat;
   filter: drop-shadow(0 10px 18px rgba(0,0,0,0.20));
 }
@@ -3045,7 +3057,6 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-years{
 }
 
 /* ===== JAUGES EXPLORER ===== */
-
 body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-frame{
   background-image: url("../assets/img/gauges/new_world_explorer/g1_frame.webp");
 }
@@ -3114,8 +3125,6 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     --vr-explorer-hud-item-y: -6px;
   }
 }
-
-
 /* ==========================================================
    UNIVERS — VAMPIRE
    ========================================================== */
