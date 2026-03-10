@@ -1,290 +1,1005 @@
 {
-  "nw_001": {
-    "id": "nw_001",
-    "universe": "new_world_explorer",
-    "title": "La carte… approximative",
-    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
-    "choices": {
-      "A": "Questionner le cartographe",
-      "B": "Improviser à l’instinct",
-      "C": "Tirer au sort"
+  "count": 100,
+  "items": [
+    {
+      "id": "nw_001",
+      "title": "Carte mouillée",
+      "body": "La carte a bu plus d eau que l équipage. Le nord flotte un peu.",
+      "choices": {
+        "a": "Faire refaire la carte",
+        "b": "Suivre la côte",
+        "c": "Laisser le mousse choisir"
+      }
     },
-    "body": "La carte indique ‘ici des dragons’. Très rassurant."
-  },
-  "nw_002": {
-    "id": "nw_002",
-    "universe": "new_world_explorer",
-    "title": "Le prix du sel",
-    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
-    "choices": {
-      "A": "Vendre des babioles",
-      "B": "Chercher un vrai trésor",
-      "C": "Investir dans la logistique"
+    {
+      "id": "nw_002",
+      "title": "Sel hors de prix",
+      "body": "Le sel vaut soudain plus que les bottes du capitaine.",
+      "choices": {
+        "a": "Négocier sec",
+        "b": "Acheter vite",
+        "c": "Échanger des bibelots"
+      }
     },
-    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
-  },
-  "nw_003": {
-    "id": "nw_003",
-    "universe": "new_world_explorer",
-    "title": "Le tonneau fuyant",
-    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
-    "choices": {
-      "A": "Renforcer la discipline",
-      "B": "Remonter le moral",
-      "C": "Chercher un meilleur endroit"
+    {
+      "id": "nw_003",
+      "title": "Tonneau troué",
+      "body": "Un tonneau fuit. Le cuisinier pleure déjà.",
+      "choices": {
+        "a": "Réparer maintenant",
+        "b": "Rationner calmement",
+        "c": "Vider et repartir"
+      }
     },
-    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
-  },
-  "nw_004": {
-    "id": "nw_004",
-    "universe": "new_world_explorer",
-    "title": "Fête locale",
-    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
-    "choices": {
-      "A": "Signer un accord",
-      "B": "Demander un guide",
-      "C": "Rebrousser chemin"
+    {
+      "id": "nw_004",
+      "title": "Bal du rivage",
+      "body": "Les locaux dansent. Notre tambour répond avec retard.",
+      "choices": {
+        "a": "Offrir des cadeaux",
+        "b": "Danser avec eux",
+        "c": "Regarder de loin"
+      }
     },
-    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
-  },
-  "nw_005": {
-    "id": "nw_005",
-    "universe": "new_world_explorer",
-    "title": "Grotte étincelante",
-    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
-    "choices": {
-      "A": "Installer un poste",
-      "B": "Continuer la route",
-      "C": "Faire un détour"
+    {
+      "id": "nw_005",
+      "title": "Grotte brillante",
+      "body": "Une grotte luit comme un coffre qui a de l ego.",
+      "choices": {
+        "a": "Prélever un peu",
+        "b": "Tout marquer pour plus tard",
+        "c": "Passer sans toucher"
+      }
     },
-    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
-  },
-  "nw_006": {
-    "id": "nw_006",
-    "universe": "new_world_explorer",
-    "title": "Médailles pour tous",
-    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
-    "choices": {
-      "A": "Envoyer de l’or",
-      "B": "Envoyer une lettre brillante",
-      "C": "Envoyer une carte (jolie)"
+    {
+      "id": "nw_006",
+      "title": "Médailles partout",
+      "body": "Le roi demande du panache. Même le chien veut une médaille.",
+      "choices": {
+        "a": "Envoyer de l or",
+        "b": "Envoyer une lettre noble",
+        "c": "Promettre une cérémonie"
+      }
     },
-    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
-  },
-  "nw_007": {
-    "id": "nw_007",
-    "universe": "new_world_explorer",
-    "title": "Fête partagée",
-    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
-    "choices": {
-      "A": "Former des interprètes",
-      "B": "Laisser faire naturellement",
-      "C": "Faire discret"
+    {
+      "id": "nw_007",
+      "title": "Livre froissé",
+      "body": "Le livre des coutumes a pris la pluie et l orgueil.",
+      "choices": {
+        "a": "Former des traducteurs",
+        "b": "Parler simplement",
+        "c": "Le ranger au sec"
+      }
     },
-    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
-  },
-  "nw_008": {
-    "id": "nw_008",
-    "universe": "new_world_explorer",
-    "title": "Orage têtu",
-    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
-    "choices": {
-      "A": "Attendre",
-      "B": "Accélérer",
-      "C": "Démonter le camp"
+    {
+      "id": "nw_008",
+      "title": "Orage têtu",
+      "body": "Le ciel grogne. Le mat fait semblant d être brave.",
+      "choices": {
+        "a": "Attendre",
+        "b": "Courir avant la pluie",
+        "c": "Plier le camp"
+      }
     },
-    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
-  },
-  "nw_009": {
-    "id": "nw_009",
-    "universe": "new_world_explorer",
-    "title": "La carte… approximative",
-    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
-    "choices": {
-      "A": "Forcer le cap",
-      "B": "Faire une pause et recalculer",
-      "C": "Suivre les oiseaux"
+    {
+      "id": "nw_009",
+      "title": "Boussole fâchée",
+      "body": "La boussole pointe le fromage ou la gloire, on hésite.",
+      "choices": {
+        "a": "La réparer",
+        "b": "Suivre les étoiles",
+        "c": "Faire confiance au perroquet"
+      }
     },
-    "body": "La carte indique ‘ici des dragons’. Très rassurant."
-  },
-  "nw_010": {
-    "id": "nw_010",
-    "universe": "new_world_explorer",
-    "title": "Le prix du sel",
-    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
-    "choices": {
-      "A": "Ouvrir un comptoir",
-      "B": "Rester discret",
-      "C": "Taxer à la couronne"
+    {
+      "id": "nw_010",
+      "title": "Marchand souriant",
+      "body": "Un marchand sourit trop. C est rarement gratuit.",
+      "choices": {
+        "a": "Marchander longtemps",
+        "b": "Payer et partir",
+        "c": "L inviter à bord"
+      }
     },
-    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
-  },
-  "nw_011": {
-    "id": "nw_011",
-    "universe": "new_world_explorer",
-    "title": "Le tonneau fuyant",
-    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
-    "choices": {
-      "A": "Réparer tout de suite",
-      "B": "Reporter à demain",
-      "C": "Nommer un responsable"
+    {
+      "id": "nw_011",
+      "title": "Riz collant",
+      "body": "Le riz colle aux caisses, aux mains et aux plans.",
+      "choices": {
+        "a": "Sécher les stocks",
+        "b": "Distribuer une part",
+        "c": "Vendre ce qui reste"
+      }
     },
-    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
-  },
-  "nw_012": {
-    "id": "nw_012",
-    "universe": "new_world_explorer",
-    "title": "Fête locale",
-    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
-    "choices": {
-      "A": "Offrir des présents",
-      "B": "Proposer un échange de services",
-      "C": "Rester à distance"
+    {
+      "id": "nw_012",
+      "title": "Pont grinçant",
+      "body": "Le pont crie à chaque pas. Même les mouettes jugent.",
+      "choices": {
+        "a": "Le renforcer",
+        "b": "Passer un par un",
+        "c": "Contourner"
+      }
     },
-    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
-  },
-  "nw_013": {
-    "id": "nw_013",
-    "universe": "new_world_explorer",
-    "title": "Grotte étincelante",
-    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
-    "choices": {
-      "A": "Prélever des échantillons",
-      "B": "Laisser intact",
-      "C": "Montrer à tout le monde"
+    {
+      "id": "nw_013",
+      "title": "Statue étrange",
+      "body": "Une statue locale nous regarde comme un douanier de pierre.",
+      "choices": {
+        "a": "Nettoyer la place",
+        "b": "Laisser une offrande",
+        "c": "Dessiner la statue"
+      }
     },
-    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
-  },
-  "nw_014": {
-    "id": "nw_014",
-    "universe": "new_world_explorer",
-    "title": "Médailles pour tous",
-    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
-    "choices": {
-      "A": "Faire un show",
-      "B": "Rester sobre",
-      "C": "Blâmer l’intendant"
+    {
+      "id": "nw_014",
+      "title": "Perles timides",
+      "body": "Des perles brillent à marée basse puis font les timides.",
+      "choices": {
+        "a": "Plonger vite",
+        "b": "Attendre la marée",
+        "c": "Échanger l info"
+      }
     },
-    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
-  },
-  "nw_015": {
-    "id": "nw_015",
-    "universe": "new_world_explorer",
-    "title": "Fête partagée",
-    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
-    "choices": {
-      "A": "Organiser une cérémonie",
-      "B": "Privilégier le dialogue",
-      "C": "Remettre à plus tard"
+    {
+      "id": "nw_015",
+      "title": "Capitaine enrhumé",
+      "body": "Le capitaine éternue si fort que les cartes bougent.",
+      "choices": {
+        "a": "Le laisser dormir",
+        "b": "Le faire parler quand même",
+        "c": "Confier la route à son second"
+      }
     },
-    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
-  },
-  "nw_016": {
-    "id": "nw_016",
-    "universe": "new_world_explorer",
-    "title": "Orage têtu",
-    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
-    "choices": {
-      "A": "Sécuriser les stocks",
-      "B": "Sauver les cartes",
-      "C": "Sauver le rhum"
+    {
+      "id": "nw_016",
+      "title": "Cabane bancale",
+      "body": "Une cabane penche comme si le vent payait le loyer.",
+      "choices": {
+        "a": "La réparer",
+        "b": "La démonter",
+        "c": "Y planter un drapeau"
+      }
     },
-    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
-  },
-  "nw_017": {
-    "id": "nw_017",
-    "universe": "new_world_explorer",
-    "title": "La carte… approximative",
-    "description": "La carte indique ‘ici des dragons’. Très rassurant.",
-    "choices": {
-      "A": "Réparer le compas",
-      "B": "Naviguer aux étoiles",
-      "C": "Demander au mousse"
+    {
+      "id": "nw_017",
+      "title": "Brochettes locales",
+      "body": "Ça sent bon. L équipage oublie soudain la discipline.",
+      "choices": {
+        "a": "Acheter pour tous",
+        "b": "Goûter avec les hôtes",
+        "c": "Interdire le festin"
+      }
     },
-    "body": "La carte indique ‘ici des dragons’. Très rassurant."
-  },
-  "nw_018": {
-    "id": "nw_018",
-    "universe": "new_world_explorer",
-    "title": "Le prix du sel",
-    "description": "Ton intendant adore les taxes. Même celles qu’il invente.",
-    "choices": {
-      "A": "Négocier fermement",
-      "B": "Surpayer pour aller vite",
-      "C": "Faire un échange malin"
+    {
+      "id": "nw_018",
+      "title": "Sable qui chante",
+      "body": "Le sable siffle sous les bottes. Le mousse applaudit.",
+      "choices": {
+        "a": "Explorer la dune",
+        "b": "Planter un repère",
+        "c": "Quitter ce coin bizarre"
+      }
     },
-    "body": "Ton intendant adore les taxes. Même celles qu’il invente."
-  },
-  "nw_019": {
-    "id": "nw_019",
-    "universe": "new_world_explorer",
-    "title": "Le tonneau fuyant",
-    "description": "Ton tonneau d’eau fuit. Lentement. Comme ta patience.",
-    "choices": {
-      "A": "Améliorer les rations",
-      "B": "Faire un festin",
-      "C": "Rationner strictement"
+    {
+      "id": "nw_019",
+      "title": "Canot pressé",
+      "body": "Le petit canot veut partir avant tout le monde.",
+      "choices": {
+        "a": "Le charger d or",
+        "b": "Le charger de vivres",
+        "c": "Le garder vide"
+      }
     },
-    "body": "Ton tonneau d’eau fuit. Lentement. Comme ta patience."
-  },
-  "nw_020": {
-    "id": "nw_020",
-    "universe": "new_world_explorer",
-    "title": "Fête locale",
-    "description": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli.",
-    "choices": {
-      "A": "Inviter à bord",
-      "B": "Participer à leur fête",
-      "C": "Observer en silence"
+    {
+      "id": "nw_020",
+      "title": "Pluie de crabes",
+      "body": "Des crabes tombent d une falaise. Personne ne comprend.",
+      "choices": {
+        "a": "En faire un repas",
+        "b": "Étudier la falaise",
+        "c": "Partir dignement"
+      }
     },
-    "body": "Tu rencontres un groupe local curieux. Tout le monde observe… et personne ne veut être impoli."
-  },
-  "nw_021": {
-    "id": "nw_021",
-    "universe": "new_world_explorer",
-    "title": "Grotte étincelante",
-    "description": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques.",
-    "choices": {
-      "A": "Explorer plus loin",
-      "B": "Cartographier et sécuriser",
-      "C": "Revenir avec renfort"
+    {
+      "id": "nw_021",
+      "title": "Miel nerveux",
+      "body": "Le miel local attire les abeilles et les idées commerciales.",
+      "choices": {
+        "a": "Acheter des ruches",
+        "b": "Goûter avec prudence",
+        "c": "Taxer le vendeur"
+      }
     },
-    "body": "Une plante rare pourrait valoir une fortune… ou provoquer des éternuements historiques."
-  },
-  "nw_022": {
-    "id": "nw_022",
-    "universe": "new_world_explorer",
-    "title": "Médailles pour tous",
-    "description": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment.",
-    "choices": {
-      "A": "Couper les dépenses",
-      "B": "Demander plus de fonds",
-      "C": "Optimiser via taxes"
+    {
+      "id": "nw_022",
+      "title": "Bateau coincé",
+      "body": "Le bateau s est posé sur un banc de sable très fier.",
+      "choices": {
+        "a": "Alléger la cale",
+        "b": "Attendre la marée",
+        "c": "Payer des bras en plus"
+      }
     },
-    "body": "Le trésorier dit que ton budget est ‘poétique’. Ce n’est pas un compliment."
-  },
-  "nw_023": {
-    "id": "nw_023",
-    "universe": "new_world_explorer",
-    "title": "Fête partagée",
-    "description": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait.",
-    "choices": {
-      "A": "Célébrer ensemble",
-      "B": "Célébrer à bord",
-      "C": "Annuler (pluie)"
+    {
+      "id": "nw_023",
+      "title": "Cochon diplomate",
+      "body": "Un cochon local suit le chef de village partout.",
+      "choices": {
+        "a": "Offrir des restes",
+        "b": "Acheter le cochon",
+        "c": "Complimenter le cochon"
+      }
     },
-    "body": "Ton livre sacré a pris l’eau. Il devient… un livre d’art abstrait."
-  },
-  "nw_024": {
-    "id": "nw_024",
-    "universe": "new_world_explorer",
-    "title": "Orage têtu",
-    "description": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel.",
-    "choices": {
-      "A": "S’abriter",
-      "B": "Continuer quand même",
-      "C": "Faire un détour"
+    {
+      "id": "nw_024",
+      "title": "Rumeur d or",
+      "body": "Tout le monde parle d un filon. Personne ne montre la route.",
+      "choices": {
+        "a": "Payer un guide",
+        "b": "Chercher seul",
+        "c": "Promettre une prime"
+      }
     },
-    "body": "La météo te teste. Ton équipage aussi. Et ton chapeau perd le duel."
-  }
+    {
+      "id": "nw_025",
+      "title": "Parasol royal",
+      "body": "Le soleil tape. Le noble de bord fond presque.",
+      "choices": {
+        "a": "Monter un abri",
+        "b": "Le renvoyer en cabine",
+        "c": "Faire rire l équipage"
+      }
+    },
+    {
+      "id": "nw_026",
+      "title": "Rivière paresseuse",
+      "body": "La rivière avance moins vite qu une réunion de cour.",
+      "choices": {
+        "a": "Creuser un passage",
+        "b": "Contourner en marche",
+        "c": "Tenter le radeau"
+      }
+    },
+    {
+      "id": "nw_027",
+      "title": "Coquillage bavard",
+      "body": "Un coquillage géant fait du bruit dès qu on le touche.",
+      "choices": {
+        "a": "Le vendre",
+        "b": "L offrir au village",
+        "c": "Le laisser hurler seul"
+      }
+    },
+    {
+      "id": "nw_028",
+      "title": "Filets vides",
+      "body": "Les pêcheurs reviennent avec de l eau et peu d honneur.",
+      "choices": {
+        "a": "Changer de zone",
+        "b": "Acheter au village",
+        "c": "Réduire les portions"
+      }
+    },
+    {
+      "id": "nw_029",
+      "title": "Roche qui brille",
+      "body": "Une roche luit. Le trésorier l aime déjà trop.",
+      "choices": {
+        "a": "Casser un morceau",
+        "b": "Marquer la zone",
+        "c": "Dire que c est joli et partir"
+      }
+    },
+    {
+      "id": "nw_030",
+      "title": "Deux traducteurs",
+      "body": "Nos deux traducteurs traduisent chacun leur propre vérité.",
+      "choices": {
+        "a": "Choisir le plus calme",
+        "b": "Les faire travailler ensemble",
+        "c": "Parler par gestes"
+      }
+    },
+    {
+      "id": "nw_031",
+      "title": "Soupe trop noble",
+      "body": "Le cuisinier a mis nos épices dans la soupe locale.",
+      "choices": {
+        "a": "Servir au village",
+        "b": "Garder pour la cour",
+        "c": "Demander pardon avec du pain"
+      }
+    },
+    {
+      "id": "nw_032",
+      "title": "Phare en bois",
+      "body": "Un petit phare penche mais il voit encore loin.",
+      "choices": {
+        "a": "Le réparer",
+        "b": "Le prendre pour nous",
+        "c": "Construire un phare neuf"
+      }
+    },
+    {
+      "id": "nw_033",
+      "title": "Piste de chèvres",
+      "body": "La piste grimpe sec. Les chèvres nous regardent de haut.",
+      "choices": {
+        "a": "Suivre la piste",
+        "b": "Acheter une mule",
+        "c": "Faire demi tour"
+      }
+    },
+    {
+      "id": "nw_034",
+      "title": "Trésor de vase",
+      "body": "Quelque chose brille dans la boue. Ou alors c est très sale.",
+      "choices": {
+        "a": "Creuser",
+        "b": "Faire sonder la zone",
+        "c": "Rire et continuer"
+      }
+    },
+    {
+      "id": "nw_035",
+      "title": "Cloche perdue",
+      "body": "Une vieille cloche traîne seule près des palmiers.",
+      "choices": {
+        "a": "La sonner",
+        "b": "La vendre",
+        "c": "La rendre au village"
+      }
+    },
+    {
+      "id": "nw_036",
+      "title": "Voiles fatiguées",
+      "body": "Les voiles ont l air de demander leur retraite.",
+      "choices": {
+        "a": "Les réparer",
+        "b": "Avancer doucement",
+        "c": "Acheter une toile locale"
+      }
+    },
+    {
+      "id": "nw_037",
+      "title": "Marché en pente",
+      "body": "Le marché monte si fort que même les prix glissent.",
+      "choices": {
+        "a": "Ouvrir un étal",
+        "b": "Acheter sans discuter",
+        "c": "Aider à ranger les stands"
+      }
+    },
+    {
+      "id": "nw_038",
+      "title": "Tambour nocturne",
+      "body": "Un tambour sonne au loin. Le mousse y entend son prénom.",
+      "choices": {
+        "a": "Envoyer une visite polie",
+        "b": "Répondre par nos tambours",
+        "c": "Rester silencieux"
+      }
+    },
+    {
+      "id": "nw_039",
+      "title": "Falaise courte",
+      "body": "Le chemin s arrête net. La falaise, elle, continue.",
+      "choices": {
+        "a": "Chercher un passage",
+        "b": "Construire une corde",
+        "c": "Revenir au camp"
+      }
+    },
+    {
+      "id": "nw_040",
+      "title": "Jarre suspecte",
+      "body": "Une jarre scellée dort dans un coin. Le trésorier salive.",
+      "choices": {
+        "a": "L ouvrir",
+        "b": "La revendre fermée",
+        "c": "La rendre sans toucher"
+      }
+    },
+    {
+      "id": "nw_041",
+      "title": "Puits bavard",
+      "body": "Le puits répète nos mots avec un accent moqueur.",
+      "choices": {
+        "a": "Le couvrir",
+        "b": "Y jeter une pièce",
+        "c": "Le déclarer sacré"
+      }
+    },
+    {
+      "id": "nw_042",
+      "title": "Rhum disparu",
+      "body": "Trois bouteilles manquent. Quatre marins sont trop joyeux.",
+      "choices": {
+        "a": "Fouiller les sacs",
+        "b": "Fermer la réserve",
+        "c": "Rire et partager le reste"
+      }
+    },
+    {
+      "id": "nw_043",
+      "title": "Colline ronde",
+      "body": "Une colline parfaite attend un drapeau comme un front vide.",
+      "choices": {
+        "a": "La prendre",
+        "b": "Observer avant",
+        "c": "L offrir au village voisin"
+      }
+    },
+    {
+      "id": "nw_044",
+      "title": "Huîtres royales",
+      "body": "Des huîtres énormes brillent comme des coffres timides.",
+      "choices": {
+        "a": "Les ouvrir",
+        "b": "Les élever",
+        "c": "Les laisser aux locaux"
+      }
+    },
+    {
+      "id": "nw_045",
+      "title": "Feu trop grand",
+      "body": "Le feu de camp devient un projet d architecture.",
+      "choices": {
+        "a": "L éteindre vite",
+        "b": "En profiter pour cuisiner",
+        "c": "Inviter les voisins"
+      }
+    },
+    {
+      "id": "nw_046",
+      "title": "Boue noble",
+      "body": "La botte du noble est coincée. Le noble aussi.",
+      "choices": {
+        "a": "Le tirer tout de suite",
+        "b": "Laisser apprendre",
+        "c": "Faire payer un pari"
+      }
+    },
+    {
+      "id": "nw_047",
+      "title": "Palmier penché",
+      "body": "Un palmier charge de fruits vise déjà notre réserve.",
+      "choices": {
+        "a": "Le secouer",
+        "b": "Monter un filet",
+        "c": "Le vendre avec le terrain"
+      }
+    },
+    {
+      "id": "nw_048",
+      "title": "Ponton libre",
+      "body": "Un vieux ponton attend des bottes, des caisses et des ennuis.",
+      "choices": {
+        "a": "Le prendre",
+        "b": "Le réparer et partager",
+        "c": "Le démonter pour le bois"
+      }
+    },
+    {
+      "id": "nw_049",
+      "title": "Papier officiel",
+      "body": "Un ordre du roi est illisible. L encre a préféré voyager.",
+      "choices": {
+        "a": "Obéir au ton",
+        "b": "Attendre confirmation",
+        "c": "Faire au plus utile"
+      }
+    },
+    {
+      "id": "nw_050",
+      "title": "Pagaies cassées",
+      "body": "Deux pagaies ont fini leur carrière dans un rocher.",
+      "choices": {
+        "a": "En tailler d autres",
+        "b": "Acheter des pagaies",
+        "c": "Réduire les sorties"
+      }
+    },
+    {
+      "id": "nw_051",
+      "title": "Moustiques motivés",
+      "body": "Les moustiques ont trouvé notre camp très accueillant.",
+      "choices": {
+        "a": "Fumer le camp",
+        "b": "Changer de rive",
+        "c": "Offrir des voiles fines"
+      }
+    },
+    {
+      "id": "nw_052",
+      "title": "Perroquet témoin",
+      "body": "Le perroquet répète des secrets qui coûtent cher.",
+      "choices": {
+        "a": "Le soudoyer en fruits",
+        "b": "Le vendre",
+        "c": "Le nommer mascotte"
+      }
+    },
+    {
+      "id": "nw_053",
+      "title": "Source claire",
+      "body": "Une source fraîche mérite une carte et une file d attente.",
+      "choices": {
+        "a": "La sécuriser",
+        "b": "La partager",
+        "c": "La garder secrète"
+      }
+    },
+    {
+      "id": "nw_054",
+      "title": "Moulin minuscule",
+      "body": "Un moulin tourne si lentement qu il médite sans doute.",
+      "choices": {
+        "a": "Le réparer",
+        "b": "L acheter",
+        "c": "Le copier en plus grand"
+      }
+    },
+    {
+      "id": "nw_055",
+      "title": "Dent de requin",
+      "body": "Une dent géante amuse les enfants et les marchands.",
+      "choices": {
+        "a": "La vendre",
+        "b": "En faire un symbole",
+        "c": "L offrir au chef"
+      }
+    },
+    {
+      "id": "nw_056",
+      "title": "Portes ouvertes",
+      "body": "Le village garde ses portes grandes ouvertes. C est rare.",
+      "choices": {
+        "a": "Entrer poliment",
+        "b": "Installer un poste",
+        "c": "Passer plus tard"
+      }
+    },
+    {
+      "id": "nw_057",
+      "title": "File indienne",
+      "body": "Une longue file avance vers une petite cabane de bois.",
+      "choices": {
+        "a": "Observer la raison",
+        "b": "Ouvrir une seconde file",
+        "c": "Taxer le passage"
+      }
+    },
+    {
+      "id": "nw_058",
+      "title": "Canne sucrée",
+      "body": "La canne est bonne. Le trésorier mâche déjà les profits.",
+      "choices": {
+        "a": "Planter plus",
+        "b": "Acheter la récolte",
+        "c": "Laisser la terre respirer"
+      }
+    },
+    {
+      "id": "nw_059",
+      "title": "Sifflet perdu",
+      "body": "Un sifflet local dirige les porteurs mieux que nos cris.",
+      "choices": {
+        "a": "L acheter",
+        "b": "Le copier",
+        "c": "Dire bravo et noter l idée"
+      }
+    },
+    {
+      "id": "nw_060",
+      "title": "Lanterne rouge",
+      "body": "Une lanterne indique un passage sûr ou un très bon piège.",
+      "choices": {
+        "a": "Tester de jour",
+        "b": "Suivre de nuit",
+        "c": "Demander au village"
+      }
+    },
+    {
+      "id": "nw_061",
+      "title": "Boîte à épices",
+      "body": "La boîte du bord parfume le camp et les négociations.",
+      "choices": {
+        "a": "Vendre un peu",
+        "b": "Offrir un repas",
+        "c": "Tout garder pour la route"
+      }
+    },
+    {
+      "id": "nw_062",
+      "title": "Bananes glissantes",
+      "body": "Le quai est devenu une leçon de prudence jaune.",
+      "choices": {
+        "a": "Nettoyer le quai",
+        "b": "Vendre les bananes",
+        "c": "Faire un dessert public"
+      }
+    },
+    {
+      "id": "nw_063",
+      "title": "Sceau royal",
+      "body": "Le sceau du roi a disparu. Le papier panique déjà.",
+      "choices": {
+        "a": "Le chercher partout",
+        "b": "Commander une copie",
+        "c": "Signer à la main"
+      }
+    },
+    {
+      "id": "nw_064",
+      "title": "Crique tranquille",
+      "body": "Une petite crique semble parfaite pour souffler et compter.",
+      "choices": {
+        "a": "En faire une base",
+        "b": "Y cacher le trésor",
+        "c": "Laisser le lieu secret"
+      }
+    },
+    {
+      "id": "nw_065",
+      "title": "Paniers rapides",
+      "body": "Des paniers locaux portent plus que nos caisses orgueilleuses.",
+      "choices": {
+        "a": "Les acheter",
+        "b": "Copier le modèle",
+        "c": "Faire semblant de ne rien voir"
+      }
+    },
+    {
+      "id": "nw_066",
+      "title": "Poisson géant",
+      "body": "Un poisson énorme fixe le bateau comme un contrôleur.",
+      "choices": {
+        "a": "Le pêcher",
+        "b": "Le nourrir",
+        "c": "Le suivre à distance"
+      }
+    },
+    {
+      "id": "nw_067",
+      "title": "Chapeau envolé",
+      "body": "Le chapeau du noble file vers la place du village.",
+      "choices": {
+        "a": "Le récupérer vite",
+        "b": "Laisser un enfant le rendre",
+        "c": "Offrir un nouveau chapeau"
+      }
+    },
+    {
+      "id": "nw_068",
+      "title": "Pont de lianes",
+      "body": "Le pont tient surtout grâce à la confiance collective.",
+      "choices": {
+        "a": "Le tester léger",
+        "b": "Le refaire en bois",
+        "c": "Payer un guide local"
+      }
+    },
+    {
+      "id": "nw_069",
+      "title": "Poudre dorée",
+      "body": "Une poussière brillante couvre les bottes et les rêves.",
+      "choices": {
+        "a": "Faire analyser",
+        "b": "Vendre tout de suite",
+        "c": "Marquer le lieu"
+      }
+    },
+    {
+      "id": "nw_070",
+      "title": "Tabouret royal",
+      "body": "Le trône portable du noble a perdu un pied.",
+      "choices": {
+        "a": "Le réparer",
+        "b": "Le vendre discret",
+        "c": "Le remplacer par une caisse"
+      }
+    },
+    {
+      "id": "nw_071",
+      "title": "Chèvre mascotte",
+      "body": "Une chèvre suit le camp et mange les registres.",
+      "choices": {
+        "a": "L adopter",
+        "b": "La rendre au village",
+        "c": "La vendre au marché"
+      }
+    },
+    {
+      "id": "nw_072",
+      "title": "Jetée vide",
+      "body": "Une jetée sans maître attend un usage ou un conflit.",
+      "choices": {
+        "a": "L occuper",
+        "b": "La partager",
+        "c": "La contourner"
+      }
+    },
+    {
+      "id": "nw_073",
+      "title": "Couverture trouée",
+      "body": "Les nuits fraîches rendent tout le monde philosophe et grognon.",
+      "choices": {
+        "a": "Acheter des couvertures",
+        "b": "Coudre les anciennes",
+        "c": "Dormir plus près du feu"
+      }
+    },
+    {
+      "id": "nw_074",
+      "title": "Plume locale",
+      "body": "Une plume rare vaut soit un traité soit un bon prix.",
+      "choices": {
+        "a": "L offrir au chef",
+        "b": "La vendre",
+        "c": "En faire un symbole de bord"
+      }
+    },
+    {
+      "id": "nw_075",
+      "title": "Courant malin",
+      "body": "Le courant nous pousse vers une baie non prévue.",
+      "choices": {
+        "a": "Le suivre",
+        "b": "Lutter contre",
+        "c": "Observer avant d entrer"
+      }
+    },
+    {
+      "id": "nw_076",
+      "title": "Panier de noix",
+      "body": "Un panier de noix circule. Les affaires aussi.",
+      "choices": {
+        "a": "Acheter le stock",
+        "b": "Échanger du tissu",
+        "c": "Offrir un banquet"
+      }
+    },
+    {
+      "id": "nw_077",
+      "title": "Sentier peint",
+      "body": "Des pierres peintes montrent une route très soignée.",
+      "choices": {
+        "a": "Suivre le sentier",
+        "b": "Reproduire les marques",
+        "c": "Ignorer les signes"
+      }
+    },
+    {
+      "id": "nw_078",
+      "title": "Canard du port",
+      "body": "Un canard garde le quai avec plus d autorité que nous.",
+      "choices": {
+        "a": "Le nourrir",
+        "b": "Le déplacer",
+        "c": "Le nommer gardien"
+      }
+    },
+    {
+      "id": "nw_079",
+      "title": "Soute serrée",
+      "body": "La soute déborde. Une caisse menace déjà une cheville.",
+      "choices": {
+        "a": "Vendre une part",
+        "b": "Construire des étagères",
+        "c": "Donner aux voisins"
+      }
+    },
+    {
+      "id": "nw_080",
+      "title": "Brume polie",
+      "body": "Une brume douce cache tout avec beaucoup de courtoisie.",
+      "choices": {
+        "a": "Attendre qu elle passe",
+        "b": "Avancer au son",
+        "c": "Allumer des feux repères"
+      }
+    },
+    {
+      "id": "nw_081",
+      "title": "Grand tambour",
+      "body": "Un grand tambour arrive au camp avant son propriétaire.",
+      "choices": {
+        "a": "Le rendre avec respect",
+        "b": "L utiliser pour la parade",
+        "c": "Le garder au dépôt"
+      }
+    },
+    {
+      "id": "nw_082",
+      "title": "Auberge de toile",
+      "body": "Une auberge de toile pousse près du quai comme un champignon.",
+      "choices": {
+        "a": "Prendre une table",
+        "b": "Monter la nôtre",
+        "c": "Taxer les tables"
+      }
+    },
+    {
+      "id": "nw_083",
+      "title": "Pierre chaude",
+      "body": "Une pierre chaude sort du sol. Le camp débat très mal.",
+      "choices": {
+        "a": "Marquer le lieu",
+        "b": "Faire venir un expert",
+        "c": "S en servir pour cuire"
+      }
+    },
+    {
+      "id": "nw_084",
+      "title": "Rameur vexé",
+      "body": "Un rameur jure qu on l a compté deux fois dans les corvées.",
+      "choices": {
+        "a": "L écouter",
+        "b": "Le punir",
+        "c": "Répartir mieux les tâches"
+      }
+    },
+    {
+      "id": "nw_085",
+      "title": "Bateau voisin",
+      "body": "Un autre bateau cherche un coin calme et des infos.",
+      "choices": {
+        "a": "Partager le quai",
+        "b": "Vendre nos cartes",
+        "c": "Prendre la meilleure place"
+      }
+    },
+    {
+      "id": "nw_086",
+      "title": "Coffre léger",
+      "body": "Le coffre officiel semble soudain très léger et très vide.",
+      "choices": {
+        "a": "Compter devant tous",
+        "b": "Chercher le voleur",
+        "c": "Fermer les yeux pour ce soir"
+      }
+    },
+    {
+      "id": "nw_087",
+      "title": "Récif discret",
+      "body": "Le récif cache une eau calme que la mer vend mal.",
+      "choices": {
+        "a": "Le noter sur carte",
+        "b": "Y cacher un dépôt",
+        "c": "Le laisser aux pêcheurs"
+      }
+    },
+    {
+      "id": "nw_088",
+      "title": "Poivre partout",
+      "body": "Le poivre renversé fait éternuer jusqu au drapeau.",
+      "choices": {
+        "a": "Le récupérer",
+        "b": "Le vendre soldé",
+        "c": "L offrir en excuse"
+      }
+    },
+    {
+      "id": "nw_089",
+      "title": "Clairière ronde",
+      "body": "Une clairière parfaite appelle une décision trop rapide.",
+      "choices": {
+        "a": "Y bâtir un poste",
+        "b": "Y tenir un marché",
+        "c": "La préserver"
+      }
+    },
+    {
+      "id": "nw_090",
+      "title": "Feuille géante",
+      "body": "Une feuille immense couvre trois hommes et un secret.",
+      "choices": {
+        "a": "La vendre aux curieux",
+        "b": "En faire un toit",
+        "c": "L offrir au chef"
+      }
+    },
+    {
+      "id": "nw_091",
+      "title": "Corde neuve",
+      "body": "Une corde locale résiste mieux que nos grandes promesses.",
+      "choices": {
+        "a": "En acheter",
+        "b": "Copier la méthode",
+        "c": "Féliciter puis repartir"
+      }
+    },
+    {
+      "id": "nw_092",
+      "title": "Bord de falaise",
+      "body": "Le point de vue est superbe. Le faux pas aussi.",
+      "choices": {
+        "a": "Poser une balise",
+        "b": "Creuser un escalier",
+        "c": "S éloigner du vide"
+      }
+    },
+    {
+      "id": "nw_093",
+      "title": "Cargaison molle",
+      "body": "Les fruits arrivent trop mûrs pour rester sérieux.",
+      "choices": {
+        "a": "Vendre vite",
+        "b": "Sécher une partie",
+        "c": "Offrir au village"
+      }
+    },
+    {
+      "id": "nw_094",
+      "title": "Petit temple",
+      "body": "Un petit temple veille sur le port en silence.",
+      "choices": {
+        "a": "Saluer et passer",
+        "b": "Offrir de l huile",
+        "c": "Mesurer le terrain autour"
+      }
+    },
+    {
+      "id": "nw_095",
+      "title": "Monnaie locale",
+      "body": "La monnaie locale a plus de trous que notre budget.",
+      "choices": {
+        "a": "L accepter",
+        "b": "Imposer la nôtre",
+        "c": "Faire du troc"
+      }
+    },
+    {
+      "id": "nw_096",
+      "title": "Vent parfait",
+      "body": "Le vent pousse enfin dans le bon sens. L équipage doute.",
+      "choices": {
+        "a": "Lever l ancre",
+        "b": "Tester une nouvelle route",
+        "c": "Rester pour commercer"
+      }
+    },
+    {
+      "id": "nw_097",
+      "title": "Huile rare",
+      "body": "Une huile locale sent fort mais soigne bien le bois.",
+      "choices": {
+        "a": "Acheter des flacons",
+        "b": "Échanger nos clous",
+        "c": "Demander la recette"
+      }
+    },
+    {
+      "id": "nw_098",
+      "title": "Marteau perdu",
+      "body": "Le charpentier a perdu son marteau et sa dignité.",
+      "choices": {
+        "a": "Chercher partout",
+        "b": "En acheter un autre",
+        "c": "Le prêter au voisin contre service"
+      }
+    },
+    {
+      "id": "nw_099",
+      "title": "Pigeon marin",
+      "body": "Un pigeon du port adore notre navire et nos biscuits.",
+      "choices": {
+        "a": "Le garder",
+        "b": "Le vendre à un enfant",
+        "c": "Suivre son vol"
+      }
+    },
+    {
+      "id": "nw_100",
+      "title": "Baie tranquille",
+      "body": "La baie est calme, belle et presque trop pratique.",
+      "choices": {
+        "a": "Y fonder un poste",
+        "b": "Y tenir une foire",
+        "c": "La garder secrète"
+      }
+    }
+  ]
 }
