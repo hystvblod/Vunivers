@@ -581,7 +581,7 @@
     "choices": {
       "A": "Plan concret: recrutement + promotion + suivi chiffré.",
       "B": "Déclaration vague: \"on fera mieux\".",
-      "C": "Ignorer: priorité business."
+      "C": "Ignorer: priorité activité."
     }
   },
   "mcc_066": {
@@ -1156,7 +1156,7 @@
     "body": "Le siège déménage. Les cartons restent 3 mois dans le couloir. Tout le monde vit dans Tetris.",
     "choices": {
       "A": "Plan de rangement et responsabilisation des équipes.",
-      "B": "Ignorer: \"priorité business\".",
+      "B": "Ignorer: \"priorité activité\".",
       "C": "Faire venir une équipe pro + tri."
     }
   },
@@ -1876,7 +1876,7 @@
     "body": "Une mairie propose un badge \"citoyen\" si tu finances un événement local.",
     "choices": {
       "A": "Soutenir l’événement, sans en faire trop.",
-      "B": "Refuser: pas de mélange business/politique locale.",
+      "B": "Refuser: pas de mélange activité économique/politique locale.",
       "C": "Soutenir mais exiger transparence totale."
     }
   },
@@ -2164,7 +2164,7 @@
     "body": "Ton entreprise fait de bons profits.",
     "choices": {
       "A": "Investir davantage localement, emploi, formation.",
-      "B": "Refuser: business = business.",
+      "B": "Refuser: monde des affaires = monde des affaires.",
       "C": "Faire un fonds social modeste + communication sobre."
     }
   },
@@ -3466,7 +3466,7 @@
   },
   "mcc_386": {
     "title": "Ministre veut un escape game",
-    "body": "Un ministre veut comprendre ton business via un escape game. Il veut \"sortir de la bureaucratie\".",
+    "body": "Un ministre veut comprendre ton activité via un escape game. Il veut \"sortir de la bureaucratie\".",
     "choices": {
       "A": "Créer un escape game pédagogique, pro.",
       "B": "Refuser: pas le temps.",
@@ -3694,7 +3694,7 @@
     "body": "Un élu critique l’anglais au travail.",
     "choices": {
       "A": "Revenir à un vocabulaire simple en français, en interne.",
-      "B": "Ignorer: business global.",
+      "B": "Ignorer: activité globale.",
       "C": "Bilingue propre: termes expliqués et accessibles."
     }
   },
