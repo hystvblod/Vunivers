@@ -1348,6 +1348,45 @@ body.vr-body-game .vr-choice-label{
   font-style: normal;
   font-display: swap;
 }
+@font-face{
+  font-family: "AlegreyaSCExplorer";
+  src:
+    url("../assets/fronts/AlegreyaSC-Regular.woff2") format("woff2"),
+    url("assets/fronts/AlegreyaSC-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "MerriweatherExplorer";
+  src:
+    url("../assets/fronts/Merriweather-24pt-Regular.woff2") format("woff2"),
+    url("assets/fronts/Merriweather-24pt-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "MerriweatherExplorer";
+  src:
+    url("../assets/fronts/Merriweather-96pt-Bold.woff2") format("woff2"),
+    url("assets/fronts/Merriweather-96pt-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "MerriweatherExplorer";
+  src:
+    url("../assets/fronts/Merriweather-96pt-Bold.woff2") format("woff2"),
+    url("assets/fronts/Merriweather-96pt-Bold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ==========================================================
    UNIVERS — HELL
@@ -2986,7 +3025,7 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud{
   position: relative !important;
   width: var(--vr-explorer-hud-w) !important;
   height: calc(
-    var(--vr-explorer-hud-w) * var(--vr-explorer-hud-src-h) / var(--vr-explorer-hud-src-w) * 1.15
+    var(--vr-explorer-hud-w) * var(--vr-explorer-hud-src-h) / var(--vr-explorer-hud-src-w) * 1.25
   ) !important;
   max-width:none !important;
   margin:0 auto !important;
