@@ -3095,18 +3095,16 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-value{
   transform: translateY(var(--vr-explorer-hud-value-y)) !important;
 }
 
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-name{
-  font-family: var(--vr-explorer-font-title) !important;
-  font-size: clamp(13px, 2vw, 28px) !important;
-  font-weight: 400 !important;
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-years{
+  font-family: var(--vr-explorer-font-ui) !important;
+  font-size: clamp(10px, 1.25vw, 16px) !important;
+  font-weight: 800 !important;
   line-height:1 !important;
   letter-spacing: .02em !important;
-  max-width:75% !important;
-  overflow:hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
-  color:#1f1408 !important;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.22) !important;
+  transform: translateY(var(--vr-explorer-hud-years-y)) !important;
+  opacity: .95 !important;
+  color:#2a1b0d !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2) !important;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-years{

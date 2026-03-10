@@ -169,8 +169,8 @@
       bgDir: "assets/img/backgrounds",
       uiDir: "assets/img/ui/explorer",
       bgCount: 4,
-      msgCount: 3,
-      choiceCount: 3,
+      msgCount: 8,
+      choiceCount: 8,
       bgPrice: 400,
       uiPrice: 300
     }),
