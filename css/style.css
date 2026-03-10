@@ -3612,69 +3612,29 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
 
 
 /* ==========================================================
-   PATCH SIMPLE — CARTOUCHES RESPONSIVE
+   PATCH ULTRA SIMPLE — tailles responsive seulement
    TOUS LES UNIVERS SAUF HELL / HEAVEN
-   Ne touche qu'aux cartouches + texte
+   Ne change pas l’agencement
    ========================================================== */
 
-body.vr-body-game:not([data-universe="hell_king"]):not([data-universe="heaven_king"]){
-  --vr-auto-scn-h: clamp(96px, 16.5svh, 220px);
-  --vr-auto-choice-h: clamp(54px, 10svh, 118px);
-
-  --vr-auto-title-size: clamp(12px, 2.2vmin, 24px);
-  --vr-auto-text-size: clamp(9px, 1.8vmin, 16px);
-  --vr-auto-choice-size: clamp(10px, 1.9vmin, 16px);
-}
-
-/* cartouche message */
-body.vr-body-game:not([data-universe="hell_king"]):not([data-universe="heaven_king"]) #view-game .vr-card-main{
-  min-height: var(--vr-auto-scn-h) !important;
-  height: auto !important;
-}
-
-/* cartouches choix */
-body.vr-body-game:not([data-universe="hell_king"]):not([data-universe="heaven_king"]) #view-game .vr-choice-button{
-  min-height: var(--vr-auto-choice-h) !important;
-  height: auto !important;
-}
-
-/* texte message */
-body.vr-body-game:not([data-universe="hell_king"]):not([data-universe="heaven_king"]) #view-game .vr-card-title{
-  font-size: var(--vr-auto-title-size) !important;
-  line-height: 1.08 !important;
-}
-
-body.vr-body-game:not([data-universe="hell_king"]):not([data-universe="heaven_king"]) #view-game .vr-card-text{
-  font-size: var(--vr-auto-text-size) !important;
-  line-height: 1.15 !important;
-}
-
-/* texte choix */
-body.vr-body-game:not([data-universe="hell_king"]):not([data-universe="heaven_king"]) #view-game .vr-choice-label{
-  font-size: var(--vr-auto-choice-size) !important;
-  line-height: 1.12 !important;
-}
-
-/* tablette */
 @media (min-width: 700px) and (max-width: 1024px){
   body.vr-body-game:not([data-universe="hell_king"]):not([data-universe="heaven_king"]){
-    --vr-auto-scn-h: clamp(90px, 13.5svh, 180px);
-    --vr-auto-choice-h: clamp(48px, 7.8svh, 90px);
+    --vr-scn-h: clamp(100px, 13.8svh, 180px);
+    --vr-choice-h: clamp(52px, 7.8svh, 92px);
 
-    --vr-auto-title-size: clamp(12px, 1.8vmin, 20px);
-    --vr-auto-text-size: clamp(9px, 1.4vmin, 14px);
-    --vr-auto-choice-size: clamp(10px, 1.5vmin, 14px);
+    --vr-font-scn-title: clamp(12px, 1.9vmin, 20px);
+    --vr-font-scn-text:  clamp(9px, 1.5vmin, 14px);
+    --vr-font-choice:    clamp(10px, 1.6vmin, 14px);
   }
 }
 
-/* téléphone */
 @media (max-width: 480px), (max-height: 780px){
   body.vr-body-game:not([data-universe="hell_king"]):not([data-universe="heaven_king"]){
-    --vr-auto-scn-h: clamp(84px, 13.8svh, 140px);
-    --vr-auto-choice-h: clamp(46px, 8.2svh, 76px);
+    --vr-scn-h: clamp(86px, 13.8svh, 140px);
+    --vr-choice-h: clamp(46px, 8.2svh, 76px);
 
-    --vr-auto-title-size: clamp(11px, 3.6vw, 16px);
-    --vr-auto-text-size: clamp(8px, 2.8vw, 12px);
-    --vr-auto-choice-size: clamp(9px, 3vw, 13px);
+    --vr-font-scn-title: clamp(11px, 3.6vw, 16px);
+    --vr-font-scn-text:  clamp(8px, 2.8vw, 12px);
+    --vr-font-choice:    clamp(9px, 3vw, 13px);
   }
 }
