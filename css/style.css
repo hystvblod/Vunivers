@@ -3045,35 +3045,36 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-years{
 }
 
 /* ===== JAUGES EXPLORER ===== */
-body[data-universe="new_world_explorer"] .vr-gauge[data-gauge-id="territory"] .vr-gauge-frame{
+
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-frame{
   background-image: url("../assets/img/gauges/new_world_explorer/g1_frame.webp");
 }
-body[data-universe="new_world_explorer"] .vr-gauge[data-gauge-id="territory"] .vr-gauge-fill,
-body[data-universe="new_world_explorer"] .vr-gauge[data-gauge-id="territory"] .vr-gauge-preview{
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-fill,
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-preview{
   background-image: url("../assets/img/gauges/new_world_explorer/g1_fill.webp");
 }
 
-body[data-universe="new_world_explorer"] .vr-gauge[data-gauge-id="wealth"] .vr-gauge-frame{
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-frame{
   background-image: url("../assets/img/gauges/new_world_explorer/g2_frame.webp");
 }
-body[data-universe="new_world_explorer"] .vr-gauge[data-gauge-id="wealth"] .vr-gauge-fill,
-body[data-universe="new_world_explorer"] .vr-gauge[data-gauge-id="wealth"] .vr-gauge-preview{
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-fill,
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-preview{
   background-image: url("../assets/img/gauges/new_world_explorer/g2_fill.webp");
 }
 
-body[data-universe="new_world_explorer"] .vr-gauge[data-gauge-id="population"] .vr-gauge-frame{
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-frame{
   background-image: url("../assets/img/gauges/new_world_explorer/g3_frame.webp");
 }
-body[data-universe="new_world_explorer"] .vr-gauge[data-gauge-id="population"] .vr-gauge-fill,
-body[data-universe="new_world_explorer"] .vr-gauge[data-gauge-id="population"] .vr-gauge-preview{
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-fill,
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-preview{
   background-image: url("../assets/img/gauges/new_world_explorer/g3_fill.webp");
 }
 
-body[data-universe="new_world_explorer"] .vr-gauge[data-gauge-id="crown"] .vr-gauge-frame{
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-frame{
   background-image: url("../assets/img/gauges/new_world_explorer/g4_frame.webp");
 }
-body[data-universe="new_world_explorer"] .vr-gauge[data-gauge-id="crown"] .vr-gauge-fill,
-body[data-universe="new_world_explorer"] .vr-gauge[data-gauge-id="crown"] .vr-gauge-preview{
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-fill,
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-preview{
   background-image: url("../assets/img/gauges/new_world_explorer/g4_fill.webp");
 }
 
