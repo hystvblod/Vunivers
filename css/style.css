@@ -3118,7 +3118,7 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-item{
 
 /* ===== Centre plus bas ===== */
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-center .vr-hud-item{
-  transform: translateY(0px) !important;
+  transform: translateY(2px) !important;
 }
 
 /* ===== Soldes un peu plus bas + décalés ===== */
