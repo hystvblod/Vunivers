@@ -2841,7 +2841,6 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 
 
 
-
 /* =========================
    EXPLORER
    ========================= */
@@ -2916,6 +2915,28 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-t
 body.vr-body-game[data-universe="new_world_explorer"] > a.vr-icon-button[aria-label="Accueil"] .vr-top-icon,
 body.vr-body-game[data-universe="new_world_explorer"] #btn-customize .vr-top-icon{
   display:none !important;
+}
+
+/* ===== Texte cartes / choix en noir ===== */
+body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-title{
+  font-family: var(--vr-explorer-font-title) !important;
+  color:#000 !important;
+  text-shadow:none !important;
+  text-align:center !important;
+}
+
+body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-text{
+  font-family: var(--vr-explorer-font-ui) !important;
+  color:#000 !important;
+  text-shadow:none !important;
+  text-align:center !important;
+}
+
+body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-choice-label{
+  font-family: var(--vr-explorer-font-ui) !important;
+  color:#000 !important;
+  text-shadow:none !important;
+  text-align:center !important;
 }
 
 /* ===== Topbar centrale ===== */
@@ -3180,8 +3201,6 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     letter-spacing: .01em !important;
   }
 }
-
-
 
 
 
