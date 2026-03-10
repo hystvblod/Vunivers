@@ -1,7 +1,7 @@
 {
   "wp_001": {
     "title": "Grève des transports",
-    "body": "Les syndicats annoncent une grève nationale des transports dès lundi. Les caméras sont déjà braquées sur toi.",
+    "body": "Les syndicats annoncent une grève nationale des transports dès lundi. caméras sont déjà braquées sur toi.",
     "choices": {
       "A": "Négocier et lâcher du lest.",
       "B": "Tenir bon : service minimum et fermeté.",
@@ -28,7 +28,7 @@
   },
   "wp_004": {
     "title": "Match historique",
-    "body": "L’équipe nationale atteint une finale historique. Le pays est en transe, et on t’invite à prendre la parole.",
+    "body": "L’équipe nationale atteint une finale historique. pays est en transe, et on t’invite à prendre la parole.",
     "choices": {
       "A": "Soutenir la fête et investir dans le sport amateur.",
       "B": "Rester sobre : discours court, pas de dépense.",
@@ -37,7 +37,7 @@
   },
   "wp_005": {
     "title": "Grippe saisonnière sévère",
-    "body": "Une grippe particulièrement virulente surcharge les urgences. Les experts recommandent des mesures rapides.",
+    "body": "Une grippe particulièrement virulente surcharge les urgences. experts recommandent une réponse rapide.",
     "choices": {
       "A": "Lancer une campagne de vaccination et prévention.",
       "B": "Attendre : 'on ne panique pas'.",
@@ -63,7 +63,7 @@
     }
   },
   "wp_008": {
-    "title": "Scandale de corruption (mineur mais viral)",
+    "title": "Scandale de corruption",
     "body": "Une vidéo montre un conseiller accepter un 'cadeau'. Les réseaux s’enflamment.",
     "choices": {
       "A": "Le renvoyer immédiatement et ouvrir une enquête.",
@@ -72,7 +72,7 @@
     }
   },
   "wp_009": {
-    "title": "Demande d’adhésion à une alliance",
+    "title": "Adhésion à une alliance",
     "body": "Un petit État voisin demande à rejoindre ton alliance de défense. Cela peut fâcher certains partenaires.",
     "choices": {
       "A": "Soutenir l’adhésion rapidement.",
@@ -162,7 +162,7 @@
     }
   },
   "wp_019": {
-    "title": "Afflux de réfugiés climatiques (fictionnel)",
+    "title": "Arrivée de réfugiés climatiques",
     "body": "Une île lointaine est ravagée par une montée des eaux. Des réfugiés demandent asile. Sujet sensible.",
     "choices": {
       "A": "Accueillir avec plan d’intégration et aides.",
@@ -189,7 +189,7 @@
     }
   },
   "wp_022": {
-    "title": "Incident diplomatique au dîner d’État",
+    "title": "Incident au dîner d’État",
     "body": "Lors d’un dîner d’État, ton ministre plaisante mal et froisse un invité. C’est déjà en une des journaux.",
     "choices": {
       "A": "Excuses officielles immédiates.",
@@ -217,7 +217,7 @@
   },
   "wp_025": {
     "title": "IA dans l’administration",
-    "body": "On te propose d’utiliser une IA pour accélérer les démarches administratives. Efficace, mais inquiétudes sur les erreurs.",
+    "body": "On te propose d’utiliser une IA pour accélérer les démarches administratives. Efficace, mais inquiétudes.",
     "choices": {
       "A": "Déployer en pilote avec contrôle humain obligatoire.",
       "B": "Déployer à grande échelle pour gagner du temps.",
@@ -244,7 +244,7 @@
   },
   "wp_028": {
     "title": "Crise des déchets",
-    "body": "Les décharges saturent. Les maires menacent de fermer les sites. Tout le monde veut une solution… ailleurs.",
+    "body": "Les décharges saturent. Les maires menacent de fermer les sites. Tous veulent une solution ailleurs.",
     "choices": {
       "A": "Investir dans recyclage et centres modernes.",
       "B": "Exporter temporairement les déchets via accord.",
@@ -280,7 +280,7 @@
   },
   "wp_032": {
     "title": "Scandale du stade",
-    "body": "Un nouveau stade est accusé d’avoir coûté le double. Les photos de fauteuils 'en or' font rire tout le pays.",
+    "body": "Un nouveau stade est accusé d’avoir coûté le double. photos de fauteuils ’en or’ font rire tout le pays.",
     "choices": {
       "A": "Audit public et sanctions.",
       "B": "Assumer : 'c’est un investissement'.",
@@ -288,7 +288,7 @@
     }
   },
   "wp_033": {
-    "title": "Tension sur les chaînes d’approvisionnement",
+    "title": "Tension sur l’approvisionnement",
     "body": "Un composant essentiel manque. Plusieurs usines risquent l’arrêt.",
     "choices": {
       "A": "Subventionner une production locale.",
@@ -352,7 +352,7 @@
   },
   "wp_040": {
     "title": "Débat sur la surveillance",
-    "body": "Les services demandent plus de moyens de surveillance contre des menaces floues. Les citoyens craignent une dérive.",
+    "body": "Les services demandent plus de moyens de surveillance contre des menaces floues. Les citoyens craignent.",
     "choices": {
       "A": "Augmenter les moyens avec contrôle indépendant.",
       "B": "Augmenter sans contrôle : efficacité d’abord.",
@@ -361,7 +361,7 @@
   },
   "wp_041": {
     "title": "Salon mondial de l’armement",
-    "body": "Un salon mondial de l’armement veut s’installer dans ta capitale. Économie + défense… mais image délicate.",
+    "body": "Un salon mondial de l’armement veut s’installer dans ta capitale. Économie + défense mais image délicate.",
     "choices": {
       "A": "Accueillir avec charte éthique stricte.",
       "B": "Accueillir sans conditions : gros contrats.",
@@ -379,7 +379,7 @@
   },
   "wp_043": {
     "title": "Épidémie de fausses infos",
-    "body": "Une vague de fausses infos sème la confusion avant une grande annonce. Certains demandent des restrictions.",
+    "body": "Une vague de fausses infos sème la confusion avant une grande annonce. Certains veulent des restrictions.",
     "choices": {
       "A": "Créer une cellule de vérification publique indépendante.",
       "B": "Loi rapide contre la désinformation (forte).",
@@ -387,7 +387,7 @@
     }
   },
   "wp_044": {
-    "title": "Coupure d’électricité à l’ambassade",
+    "title": "Panne à l’ambassade",
     "body": "Une ambassade amie subit une coupure étrange chez toi. L’allié demande des garanties.",
     "choices": {
       "A": "Enquête immédiate + protection renforcée.",
@@ -451,7 +451,7 @@
   },
   "wp_051": {
     "title": "Scandale de micro",
-    "body": "En sortant d’une réunion, ton micro reste ouvert. Une phrase maladroite sur 'les réunions inutiles' devient virale.",
+    "body": "En sortant d’une réunion, ton micro reste ouvert. Une phrase maladroite sur ’les réunions inutiles’.",
     "choices": {
       "A": "Assumer et rire de toi-même publiquement.",
       "B": "Dire que c’était hors contexte et attaquer les médias.",
@@ -477,8 +477,8 @@
     }
   },
   "wp_054": {
-    "title": "Conférence internationale de paix",
-    "body": "On te demande d’accueillir une conférence de paix entre deux pays qui se détestent cordialement… et bruyamment.",
+    "title": "Conférence de paix",
+    "body": "On te demande d’accueillir une conférence de paix entre deux pays qui se détestent ouvertement.",
     "choices": {
       "A": "Accepter et proposer une médiation active.",
       "B": "Accepter mais rester neutre et discret.",
@@ -487,7 +487,7 @@
   },
   "wp_055": {
     "title": "Prix des carburants",
-    "body": "Les carburants montent. Les automobilistes menacent de bloquer les routes. Les transports applaudissent… en silence.",
+    "body": "Les carburants montent. automobilistes menacent de bloquer les routes.",
     "choices": {
       "A": "Baisser temporairement les taxes.",
       "B": "Aides ciblées + plan transports publics.",
@@ -505,7 +505,7 @@
   },
   "wp_057": {
     "title": "Crise des visas",
-    "body": "Les délais de visas explosent. Les entreprises se plaignent, les touristes aussi, les diplomates soupirent.",
+    "body": "Les délais de visas explosent. entreprises se plaignent, les touristes aussi, les diplomates soupirent.",
     "choices": {
       "A": "Simplifier les procédures avec un portail numérique.",
       "B": "Durcir : 'sécurité d’abord'.",
@@ -541,7 +541,7 @@
   },
   "wp_061": {
     "title": "Censure d’un humoriste",
-    "body": "Un humoriste se moque du gouvernement et la TV publique veut annuler son passage. Tout le monde attend ta réaction.",
+    "body": "Un humoriste se moque du gouvernement et la TV publique veut annuler son passage. Tous attendent ta.",
     "choices": {
       "A": "Laisser faire : liberté d’expression.",
       "B": "Annuler : préserver l’autorité.",
@@ -559,7 +559,7 @@
   },
   "wp_063": {
     "title": "Équipement des policiers",
-    "body": "Les forces de l’ordre demandent du matériel moderne. Les associations s’inquiètent d’un 'virage sécuritaire'.",
+    "body": "Les forces de l’ordre demandent du matériel moderne. associations s’inquiètent d’un ’virage sécuritaire’.",
     "choices": {
       "A": "Moderniser avec formation et contrôle indépendant.",
       "B": "Moderniser à fond, sans débat : efficacité.",
@@ -576,7 +576,7 @@
     }
   },
   "wp_065": {
-    "title": "Alerte sur une technologie importée",
+    "title": "Alerte sur une techno importée",
     "body": "Des experts signalent qu’un équipement importé pourrait contenir des failles. Peur d’espionnage.",
     "choices": {
       "A": "Remplacer par une solution nationale.",
@@ -594,7 +594,7 @@
     }
   },
   "wp_067": {
-    "title": "Débat sur la conscription (fiction)",
+    "title": "Débat sur le service obligatoire",
     "body": "Certains proposent une conscription courte 'citoyenne'. D’autres crient à l’archaïsme.",
     "choices": {
       "A": "Version volontaire avec avantages.",
@@ -640,7 +640,7 @@
   },
   "wp_072": {
     "title": "Accord de défense régionale",
-    "body": "On te propose un accord de défense régionale renforcé. Certains disent 'provocation', d’autres 'nécessité'.",
+    "body": "On te propose un accord de défense régionale renforcé. Certains disent ’provocation’, d’autres.",
     "choices": {
       "A": "Signer : dissuasion renforcée.",
       "B": "Signer mais avec clauses de désescalade.",
@@ -648,7 +648,7 @@
     }
   },
   "wp_073": {
-    "title": "Fuite radioactive mineure (fiction)",
+    "title": "Petite fuite radioactive",
     "body": "Une fuite mineure est signalée sur un site énergétique. Rien de dramatique… mais l’opinion panique.",
     "choices": {
       "A": "Transparence totale + inspections renforcées.",
@@ -667,7 +667,7 @@
   },
   "wp_075": {
     "title": "Tournoi e-sport mondial",
-    "body": "Un tournoi e-sport veut s’installer dans ta capitale. Certains crient au génie, d’autres au 'jeu vidéo d’État'.",
+    "body": "Un tournoi e-sport veut s’installer dans ta capitale. Certains crient au génie, d’autres au ’jeu vidéo.",
     "choices": {
       "A": "Soutenir et promouvoir l’innovation numérique.",
       "B": "Soutien privé uniquement, pas d’argent public.",
@@ -711,7 +711,7 @@
     }
   },
   "wp_080": {
-    "title": "Proposition de pacte technologique",
+    "title": "Pacte technologique",
     "body": "Un pays partenaire propose un pacte technologique : échanges de brevets et recherche commune.",
     "choices": {
       "A": "Signer : accélérer l’innovation.",
@@ -721,7 +721,7 @@
   },
   "wp_081": {
     "title": "Crise des compagnies aériennes",
-    "body": "Une compagnie aérienne nationale est en difficulté. Sauver = coûteux. Laisser tomber = symbolique terrible.",
+    "body": "Une compagnie aérienne nationale est en difficulté. Sauver = coûteux.",
     "choices": {
       "A": "Sauver avec contreparties strictes.",
       "B": "Laisser tomber : concurrence.",
@@ -775,7 +775,7 @@
   },
   "wp_087": {
     "title": "Boycott culturel",
-    "body": "Un mouvement appelle au boycott d’un événement culturel lié à un partenaire étranger. Dilemme diplomatique.",
+    "body": "Un mouvement appelle au boycott d’un événement culturel lié à un partenaire étranger. Dilemme.",
     "choices": {
       "A": "Maintenir l’événement : culture au-dessus des tensions.",
       "B": "Annuler : éviter les polémiques.",
@@ -829,7 +829,7 @@
   },
   "wp_093": {
     "title": "Crise de confiance scientifique",
-    "body": "Une polémique sur un médicament (pas mortelle) fait chuter la confiance. Les experts s’énervent, le public doute.",
+    "body": "Une polémique sur un médicament pas mortelle fait chuter la confiance. Les experts s’énervent, le public.",
     "choices": {
       "A": "Créer une commission indépendante publique.",
       "B": "Défendre les institutions sans concession.",
@@ -837,7 +837,7 @@
     }
   },
   "wp_094": {
-    "title": "Une île veut l’autonomie (fiction)",
+    "title": "Une île veut plus d’autonomie",
     "body": "Une île du pays réclame plus d’autonomie. Les débats s’enflamment, mais tu veux éviter la fracture.",
     "choices": {
       "A": "Négocier un statut plus autonome.",
@@ -847,7 +847,7 @@
   },
   "wp_095": {
     "title": "Diplomatie du sport",
-    "body": "Un match amical avec un rival pourrait détendre les relations. Ou déclencher un scandale au premier tacle.",
+    "body": "Un match amical avec un rival pourrait détendre les relations. Ou déclencher un scandale au premier.",
     "choices": {
       "A": "Organiser le match et encadrer la sécurité.",
       "B": "Refuser : trop risqué.",
@@ -874,7 +874,7 @@
   },
   "wp_098": {
     "title": "Sommet économique",
-    "body": "Un sommet économique mondial veut que tu annonces une direction claire : croissance, redistribution, ou prudence.",
+    "body": "Un sommet économique mondial veut une direction claire: croissance, redistribution ou prudence.",
     "choices": {
       "A": "Annoncer un plan pro-investissement massif.",
       "B": "Annoncer une discipline budgétaire ferme.",
@@ -882,8 +882,8 @@
     }
   },
   "wp_099": {
-    "title": "Programme nucléaire civil (fiction)",
-    "body": "Un programme nucléaire civil est proposé pour l’indépendance énergétique. Sujet sensible mais stratégique.",
+    "title": "Nucléaire civil",
+    "body": "Un programme nucléaire civil est proposé pour l’indépendance énergétique. Sujet sensible mais.",
     "choices": {
       "A": "Lancer avec transparence et contrôles stricts.",
       "B": "Lancer vite et fort : souveraineté d’abord.",
@@ -892,17 +892,16 @@
   },
   "wp_100": {
     "title": "Cadeau diplomatique maladroit",
-    "body": "Un partenaire t’offre un cadeau gigantesque. L’opinion crie à la propagande, mais refuser serait insultant.",
+    "body": "Un partenaire t’offre un cadeau gigantesque. L’opinion crie à la propagande, mais refuser serait.",
     "choices": {
       "A": "Accepter et offrir un cadeau culturel en retour.",
       "B": "Refuser poliment : 'merci, mais non'.",
       "C": "Accepter et exposer le cadeau au public."
     }
   },
-  
   "wp_101": {
     "title": "Panne des cartes bancaires",
-    "body": "Les paiements par carte tombent en panne pendant des heures. Les files s’allongent, les commerçants fulminent.",
+    "body": "Les paiements par carte tombent en panne pendant des heures. Les files s’allongent, les commerçants.",
     "choices": {
       "A": "Garantir des compensations aux commerçants.",
       "B": "Réquisitionner l’opérateur pour rétablir en urgence.",
@@ -956,7 +955,7 @@
   },
   "wp_107": {
     "title": "Débat sur la langue officielle",
-    "body": "Un mouvement veut renforcer l’usage de la langue nationale dans les administrations. D’autres parlent d’exclusion.",
+    "body": "Un mouvement veut renforcer l’usage de la langue nationale dans les administrations. D’autres parlent.",
     "choices": {
       "A": "Renforcer avec pédagogie et exceptions.",
       "B": "Imposer strictement, sans exceptions.",
@@ -1037,7 +1036,7 @@
   },
   "wp_116": {
     "title": "Réforme du service public",
-    "body": "On te propose de fusionner plusieurs agences publiques pour économiser. Les syndicats préparent déjà les pancartes.",
+    "body": "On te propose de fusionner plusieurs agences publiques pour économiser. Les syndicats protestent déjà.",
     "choices": {
       "A": "Fusion progressive avec garanties sociales.",
       "B": "Fusion rapide et stricte.",
@@ -1054,7 +1053,7 @@
     }
   },
   "wp_118": {
-    "title": "Fuite d’un scandale de favoritisme",
+    "title": "Scandale de favoritisme",
     "body": "Un appel d’offres public semble avoir favorisé un ami d’un ministre. Ça sent le feuilleton.",
     "choices": {
       "A": "Annuler l’appel d’offres + enquête.",
@@ -1063,7 +1062,7 @@
     }
   },
   "wp_119": {
-    "title": "Débat sur les uniformes scolaires",
+    "title": "Débat sur l’uniforme scolaire",
     "body": "Des écoles veulent imposer l’uniforme. On parle d’égalité… ou de nostalgie.",
     "choices": {
       "A": "Autoriser localement, expérimentation.",
@@ -1073,7 +1072,7 @@
   },
   "wp_120": {
     "title": "Accord sur l’espace",
-    "body": "Un partenaire propose un accord spatial : partage de données, missions communes. Les militaires veulent leur mot à dire.",
+    "body": "Un partenaire propose un accord spatial: partage de données, missions communes. Les militaires veulent.",
     "choices": {
       "A": "Signer : coopération ouverte.",
       "B": "Signer mais classer une partie stratégique.",
@@ -1108,7 +1107,7 @@
     }
   },
   "wp_124": {
-    "title": "Traité de coopération scientifique",
+    "title": "Traité scientifique",
     "body": "Un traité scientifique promet des avancées, mais implique de partager des données sensibles.",
     "choices": {
       "A": "Signer avec garde-fous stricts.",
@@ -1136,7 +1135,7 @@
   },
   "wp_127": {
     "title": "Conflit sur les quotas d’import",
-    "body": "Des industriels veulent limiter des importations jugées 'déloyales'. Tes partenaires menacent de riposter.",
+    "body": "Des industriels veulent limiter des importations jugées déloyales. Tes partenaires menacent de riposter.",
     "choices": {
       "A": "Limiter avec exceptions et négociations.",
       "B": "Limiter brutalement.",
@@ -1144,7 +1143,7 @@
     }
   },
   "wp_128": {
-    "title": "Festival national de la gastronomie",
+    "title": "Festival de gastronomie",
     "body": "Un grand festival gastronomique pourrait doper le tourisme. Mais il coûte une fortune… en beurre.",
     "choices": {
       "A": "Financer : vitrine mondiale.",
@@ -1190,7 +1189,7 @@
   },
   "wp_133": {
     "title": "Réforme des douanes",
-    "body": "Les douanes sont accusées d’être trop lentes. Les entreprises parlent de pertes, les citoyens de contrebande.",
+    "body": "Les douanes sont accusées d’être trop lentes. entreprises parlent de pertes, les citoyens de contrebande.",
     "choices": {
       "A": "Moderniser avec technologies et recrutement.",
       "B": "Durcir les contrôles au maximum.",
@@ -1217,7 +1216,7 @@
   },
   "wp_136": {
     "title": "Incident en mer",
-    "body": "Un navire national est contrôlé de manière agressive par une puissance étrangère. Les images tournent en boucle.",
+    "body": "Un navire national est contrôlé de manière agressive par une puissance étrangère. Les images tournent en.",
     "choices": {
       "A": "Protester et envoyer une escorte.",
       "B": "Négocier calmement par voie diplomatique.",
@@ -1234,8 +1233,8 @@
     }
   },
   "wp_138": {
-    "title": "Tourisme spatial (fiction)",
-    "body": "Une entreprise veut lancer du tourisme spatial depuis ton territoire. Prestige énorme, risques et débats aussi.",
+    "title": "Tourisme spatial",
+    "body": "Une entreprise veut lancer du tourisme spatial depuis ton territoire. Prestige énorme, risques et débats.",
     "choices": {
       "A": "Autoriser avec normes ultra strictes.",
       "B": "Autoriser pour attirer investissements.",
@@ -1279,8 +1278,8 @@
     }
   },
   "wp_143": {
-    "title": "Échange de prisonniers (fiction)",
-    "body": "Un partenaire propose un échange de prisonniers dans une affaire sensible. Humanitaire ou faiblesse ?",
+    "title": "Échange de prisonniers",
+    "body": "Un échange de prisonniers est proposé avec un rival. L’opinion est divisée, les diplomates insistent.",
     "choices": {
       "A": "Accepter avec discrétion et garanties.",
       "B": "Refuser : principe d’autorité.",
@@ -1289,7 +1288,7 @@
   },
   "wp_144": {
     "title": "Grand plan de reforestation",
-    "body": "Un plan de reforestation peut améliorer l’image du pays et l’environnement, mais certains industriels râlent.",
+    "body": "Un plan de reforestation peut améliorer l’image du pays et l’environnement, mais certains industriels.",
     "choices": {
       "A": "Plan ambitieux + emplois verts.",
       "B": "Plan modéré et volontaire.",
@@ -1297,7 +1296,7 @@
     }
   },
   "wp_145": {
-    "title": "Crise des embauches dans la santé",
+    "title": "Embauches en crise dans la santé",
     "body": "Les hôpitaux peinent à recruter. Les soignants demandent du concret, pas des applaudissements.",
     "choices": {
       "A": "Augmenter salaires et conditions.",
@@ -1350,10 +1349,9 @@
       "C": "Mettre l’accent sur l’économie et l’innovation."
     }
   },
-
   "wp_151": {
     "title": "Discours trop long",
-    "body": "Ton discours dure tellement que le prompteur affiche 'mode veille'. Les memes parlent de 'sieste nationale'.",
+    "body": "Ton discours dure tellement que le prompteur affiche ’mode veille’. memes parlent de ’sieste nationale’.",
     "choices": {
       "A": "Faire un discours court et auto-dérisoire le lendemain.",
       "B": "Accuser le prompteur : 'sabotage technique'.",
@@ -1478,7 +1476,7 @@
     }
   },
   "wp_165": {
-    "title": "Incident en mer",
+    "title": "Navire trop proche",
     "body": "Un navire militaire étranger s’approche trop près. Les marins se saluent… un peu trop froidement.",
     "choices": {
       "A": "Renforcer la présence navale et la dissuasion.",
@@ -1551,7 +1549,7 @@
   },
   "wp_173": {
     "title": "Sommet sur la paix… virtuelle",
-    "body": "Une plateforme propose un sommet diplomatique en réalité virtuelle. Avantages : pas de jetlag. Risque : avatars ridicules.",
+    "body": "Une plateforme propose un sommet diplomatique en réalité virtuelle. Avantages: pas de jetlag.",
     "choices": {
       "A": "Tester : innovation diplomatique.",
       "B": "Refuser : trop gadget, trop risqué en image.",
@@ -1613,7 +1611,7 @@
     }
   },
   "wp_180": {
-    "title": "Accident de satellite (fiction)",
+    "title": "Accident de satellite",
     "body": "Un petit satellite national tombe en panne. Les médias : 'défaite spatiale'.",
     "choices": {
       "A": "Relancer le programme spatial (cher).",
@@ -1658,7 +1656,7 @@
     }
   },
   "wp_185": {
-    "title": "Crise des embouteillages",
+    "title": "Embouteillages records",
     "body": "Les embouteillages deviennent légendaires. Un maire dit : 'on va ouvrir un musée de la voiture immobile'.",
     "choices": {
       "A": "Investir transports publics + incitations.",
@@ -1794,17 +1792,16 @@
   },
   "wp_200": {
     "title": "Le chien du palais",
-    "body": "Le chien du palais s’échappe et entre dans une réunion officielle. Il s’assoit sur un dossier secret. Très calme.",
+    "body": "Le chien du palais s’échappe et entre dans une réunion officielle. Il s’assoit sur un dossier secret.",
     "choices": {
       "A": "En rire et en faire un moment de communication humain.",
       "B": "Réagir sévèrement : protocole renforcé.",
       "C": "Transformer l’incident en campagne 'sécurité et discipline'."
     }
   },
-
   "wp_201": {
     "title": "Incident du drone perdu",
-    "body": "Un drone de surveillance s’est 'égaré' et a fini sa course… sur le toit d’un barbecue d’ambassade. Photos partout.",
+    "body": "Un drone de surveillance s’est ’égaré’ et a fini sa course sur le toit d’un barbecue d’ambassade. Photos.",
     "choices": {
       "A": "Présenter des excuses + lancer une enquête transparente.",
       "B": "Dire que c’était un drone météo et passer à autre chose.",
@@ -1812,8 +1809,8 @@
     }
   },
   "wp_202": {
-    "title": "Exercice militaire… trop réaliste",
-    "body": "Un exercice militaire a été si réaliste que la population a cru à une invasion. Les supermarchés sont vides.",
+    "title": "Exercice trop réaliste",
+    "body": "Un exercice militaire a été si réaliste que la population a cru à une invasion. supermarchés sont vides.",
     "choices": {
       "A": "S’excuser + améliorer l’alerte civile et la com’.",
       "B": "Assumer : 'c’est la preuve qu’on est prêts'.",
@@ -1822,7 +1819,7 @@
   },
   "wp_203": {
     "title": "Le voisin fait 'boum'",
-    "body": "Un pays voisin teste une nouvelle arme (fiction). Ton peuple veut une réponse… et ton ministre veut un café.",
+    "body": "Un pays voisin teste une nouvelle arme. Ton peuple veut une réponse et ton ministre veut un café.",
     "choices": {
       "A": "Sanctions + coalition diplomatique.",
       "B": "Renforcer la défense et montrer les muscles.",
@@ -1830,8 +1827,8 @@
     }
   },
   "wp_204": {
-    "title": "Budget défense vs. chaises de bureau",
-    "body": "Le ministère de la Défense demande plus de budget… mais une fuite révèle qu’ils ont commandé 4 000 chaises 'anti-stress'.",
+    "title": "Budget défense ou chaises",
+    "body": "Le ministère de la Défense demande plus de budget mais une fuite révèle qu’ils ont commandé 4 000.",
     "choices": {
       "A": "Accorder une hausse, mais audit public strict.",
       "B": "Geler le budget et réorienter vers l’économie.",
@@ -1848,8 +1845,8 @@
     }
   },
   "wp_206": {
-    "title": "Manœuvre navale… et mouette héroïque",
-    "body": "Une mouette se pose sur un radar durant une manœuvre navale. Les médias titrent : 'défaite face à l’oiseau'.",
+    "title": "Manœuvre navale et mouette",
+    "body": "Une mouette se pose sur un radar durant une manœuvre navale. médias titrent: ’défaite face à l’oiseau’.",
     "choices": {
       "A": "Rire et renforcer la maintenance (sérieusement).",
       "B": "Communiquer ferme : 'capacité intacte' + exercice renforcé.",
@@ -1858,7 +1855,7 @@
   },
   "wp_207": {
     "title": "Cyber-guerre des photocopieurs",
-    "body": "Une cyber-attaque (fiction) bloque… les photocopieurs des administrations. Le chaos est total, surtout pour les tampons.",
+    "body": "Une cyber-attaque bloque les photocopieurs des administrations. Le chaos est total, surtout pour les.",
     "choices": {
       "A": "Plan cyber national + budget sécurité.",
       "B": "Accuser publiquement un acteur étranger et sanctionner.",
@@ -1875,8 +1872,8 @@
     }
   },
   "wp_209": {
-    "title": "Sommet de paix et buffet trop bon",
-    "body": "Tu accueilles un sommet de paix. Tout se passe bien… jusqu’à une guerre froide pour le dernier canapé du buffet.",
+    "title": "Sommet de paix et buffet",
+    "body": "Tu accueilles un sommet de paix. Tout se tend autour du dernier canapé du buffet.",
     "choices": {
       "A": "Médiation active et engagement public.",
       "B": "Neutralité totale : tu offres la salle, pas le sermon.",
@@ -1894,7 +1891,7 @@
   },
   "wp_211": {
     "title": "Frontière et tournoi de pétanque",
-    "body": "Une zone frontalière s’échauffe. Un maire propose une 'pétanque de la paix' avec les gardes des deux côtés.",
+    "body": "Une zone frontalière s’échauffe. maire propose une ’pétanque de la paix’ avec les gardes des deux côtés.",
     "choices": {
       "A": "Soutenir l’initiative + dialogue local officiel.",
       "B": "Refuser : renforcer contrôles et présence militaire.",
@@ -1992,7 +1989,7 @@
     }
   },
   "wp_222": {
-    "title": "Conférence de presse en camouflage",
+    "title": "Presse en camouflage",
     "body": "Ton ministre de la Défense arrive en conférence de presse… en camouflage. Il oublie qu’on est en salle blanche.",
     "choices": {
       "A": "Recadrer : sobriété + stratégie claire.",
@@ -2010,7 +2007,7 @@
     }
   },
   "wp_224": {
-    "title": "Incident à la frontière… de drones-livraison",
+    "title": "Drones à la frontière",
     "body": "Des drones-livraison se trompent de GPS et déposent des colis de l’autre côté. Une crise… de pizza froide.",
     "choices": {
       "A": "Accord technique + coopération transfrontalière.",
@@ -2055,7 +2052,7 @@
     }
   },
   "wp_229": {
-    "title": "Campagne de propagande… trop kitsch",
+    "title": "Propagande trop kitsch",
     "body": "Une campagne de propagande (fiction) fuit : slogans ringards, musique épique, montage de dauphins. Le public se moque.",
     "choices": {
       "A": "Annuler et adopter une communication honnête.",
@@ -2073,7 +2070,7 @@
     }
   },
   "wp_231": {
-    "title": "Course aux missiles… de rhétorique",
+    "title": "Course aux missiles verbale",
     "body": "Les discours s’enveniment. Tout le monde menace… mais surtout avec des mots très longs.",
     "choices": {
       "A": "Désescalade : appels et médiation.",
@@ -2091,7 +2088,7 @@
     }
   },
   "wp_233": {
-    "title": "Incident lors d’une visite d’État",
+    "title": "Incident en visite d’État",
     "body": "Lors d’une visite d’État, l’hymne est lancé en version… karaoké. Les paroles défilent. Personne ne suit.",
     "choices": {
       "A": "Désamorcer avec humour + gestes diplomatiques.",
@@ -2100,7 +2097,7 @@
     }
   },
   "wp_234": {
-    "title": "Chasse aux sous-marins… imaginaires",
+    "title": "Chasse aux sous-marins",
     "body": "Des rumeurs parlent de sous-marins ennemis. Personne n’a rien vu, mais tout le monde a 'un avis'.",
     "choices": {
       "A": "Enquête et surveillance renforcée.",
@@ -2109,7 +2106,7 @@
     }
   },
   "wp_235": {
-    "title": "Réfugiés de guerre (fiction)",
+    "title": "Réfugiés de guerre",
     "body": "Un conflit (fiction) provoque un afflux de réfugiés. Le pays veut être humain… et organisé.",
     "choices": {
       "A": "Accueil structuré + aide internationale.",
@@ -2217,7 +2214,7 @@
     }
   },
   "wp_247": {
-    "title": "Conférence de paix sabotée par la météo",
+    "title": "Paix sabotée par la météo",
     "body": "Une tempête bloque les délégations. Les négociations se font par visioconférence… avec coupures.",
     "choices": {
       "A": "Continuer en ligne, patience et diplomatie.",
@@ -2334,7 +2331,7 @@
     }
   },
   "wp_260": {
-    "title": "Sommet de crise en visioconférence",
+    "title": "Sommet de crise en visio",
     "body": "Sommet de crise (fiction) en visio. La moitié des chefs d’État sont en sourdine. L’autre moitié parle en même temps.",
     "choices": {
       "A": "Coordonner une position commune et apaiser.",
@@ -2397,7 +2394,7 @@
     }
   },
   "wp_267": {
-    "title": "L’exercice qui fait peur aux touristes",
+    "title": "Exercice qui gêne les touristes",
     "body": "Un exercice (fiction) effraie les touristes : annulations en chaîne. Les hôteliers te supplient.",
     "choices": {
       "A": "Adapter exercices + communication rassurante.",
@@ -2442,7 +2439,7 @@
     }
   },
   "wp_272": {
-    "title": "Incident maritime et poisson géant",
+    "title": "Incident maritime",
     "body": "Un incident maritime (fiction) est causé… par un poisson géant dans un sonar. Le rival parle d’attaque.",
     "choices": {
       "A": "Transparence + enquête conjointe.",
@@ -2514,7 +2511,7 @@
     }
   },
   "wp_280": {
-    "title": "Incident dans la zone démilitarisée",
+    "title": "Incident en zone démilitarisée",
     "body": "Un incident (fiction) dans une zone démilitarisée : un soldat s’est perdu en cherchant… des toilettes.",
     "choices": {
       "A": "Excuses + protocole commun, désescalade.",
@@ -2541,7 +2538,7 @@
     }
   },
   "wp_283": {
-    "title": "Guerre de l’eau (fiction)",
+    "title": "Guerre de l’eau",
     "body": "Une région manque d’eau. Des tensions montent. Un maire propose : 'On échange de l’eau contre des sourires'.",
     "choices": {
       "A": "Accord régional + investissements hydrauliques.",
@@ -2595,7 +2592,7 @@
     }
   },
   "wp_289": {
-    "title": "Guerre des visas (soft)",
+    "title": "Guerre des visas",
     "body": "Un rival limite les visas. Ton peuple veut répondre : 'Qu’ils gardent leurs touristes !' Les hôtels pleurent.",
     "choices": {
       "A": "Négocier réciprocité et apaiser.",
@@ -2649,7 +2646,7 @@
     }
   },
   "wp_295": {
-    "title": "La radio d’urgence diffuse… du jazz",
+    "title": "La radio d’urgence joue du jazz",
     "body": "La radio d’urgence se déclenche (fiction) et diffuse… du jazz. Le public panique puis danse. Très confus.",
     "choices": {
       "A": "Corriger le système + campagne d’info.",
@@ -2829,7 +2826,7 @@
     }
   },
   "wp_315": {
-    "title": "Pénurie de médicaments",
+    "title": "Rupture de médicaments",
     "body": "Des médicaments essentiels deviennent difficiles à obtenir. Le système de santé demande une réponse structurelle.",
     "choices": {
       "A": "Plan urgence d’approvisionnement + transparence et priorisation.",
@@ -2883,7 +2880,7 @@
     }
   },
   "wp_321": {
-    "title": "Tensions sur les semi-conducteurs",
+    "title": "Tension sur les semi-conducteurs",
     "body": "Les semi-conducteurs manquent. L’automobile et l’électronique demandent un plan de souveraineté.",
     "choices": {
       "A": "Aides à court terme + allocation prioritaire aux secteurs clés.",
@@ -3135,7 +3132,7 @@
     }
   },
   "wp_349": {
-    "title": "Conflit sur la propriété intellectuelle",
+    "title": "Litige sur les brevets",
     "body": "Un partenaire accuse tes entreprises de ne pas respecter la propriété intellectuelle. Il menace des sanctions.",
     "choices": {
       "A": "Renforcer contrôles et coopération judiciaire.",
@@ -3288,7 +3285,7 @@
     }
   },
   "wp_366": {
-    "title": "Accusation de manipulation monétaire",
+    "title": "Soupçon monétaire",
     "body": "Un pays t’accuse de favoriser ta monnaie pour doper tes exportations. Le ton monte dans les négociations.",
     "choices": {
       "A": "Transparence + discussion technique et audits partagés.",
@@ -3297,7 +3294,7 @@
     }
   },
   "wp_367": {
-    "title": "Faillite d’un sous-traitant critique",
+    "title": "Faillite d’un sous-traitant clé",
     "body": "Un sous-traitant clé de l’industrie tombe en difficulté. Une partie de la production nationale est menacée.",
     "choices": {
       "A": "Sauvetage conditionnel et rapide.",
@@ -3306,7 +3303,7 @@
     }
   },
   "wp_368": {
-    "title": "Tension sur les centres de données",
+    "title": "Tension sur les data centers",
     "body": "Les centres de données consomment davantage d’énergie et d’eau. Les collectivités demandent un encadrement.",
     "choices": {
       "A": "Régulation stricte et obligations d’efficacité.",
@@ -3315,7 +3312,7 @@
     }
   },
   "wp_369": {
-    "title": "Attaque sur le système de paiement",
+    "title": "Attaque du système de paiement",
     "body": "Une attaque perturbe temporairement certains paiements numériques. La confiance des consommateurs vacille.",
     "choices": {
       "A": "Communication transparente + renfort cybersécurité immédiat.",
@@ -3459,7 +3456,7 @@
     }
   },
   "wp_385": {
-    "title": "Course aux subventions industrielles",
+    "title": "Course aux aides industrielles",
     "body": "Plusieurs pays subventionnent massivement une industrie stratégique. Tes entreprises demandent une réponse.",
     "choices": {
       "A": "Soutien ciblé et temporaire aux projets stratégiques.",
@@ -3495,7 +3492,7 @@
     }
   },
   "wp_389": {
-    "title": "Renégociation d’un traité fluvial",
+    "title": "Traité fluvial à renégocier",
     "body": "Un pays voisin veut renégocier un traité sur un fleuve partagé. Tes régions veulent sécuriser leurs besoins.",
     "choices": {
       "A": "Négocier un compromis et des mécanismes de crise.",
@@ -3504,7 +3501,7 @@
     }
   },
   "wp_390": {
-    "title": "Perturbations de navigation satellite",
+    "title": "Pannes de navigation satellite",
     "body": "Des perturbations de navigation satellite touchent transport et aviation. Les experts demandent une réponse rapide.",
     "choices": {
       "A": "Renforcer capacités de secours et procédures de sécurité.",
@@ -3531,7 +3528,7 @@
     }
   },
   "wp_393": {
-    "title": "Grand événement sous météo extrême",
+    "title": "Grand événement sous météo dure",
     "body": "Un grand événement international risque d’être perturbé par une météo extrême. Les organisateurs demandent ton arbitrage.",
     "choices": {
       "A": "Maintenir avec plan logistique renforcé et adaptation.",
@@ -3558,7 +3555,7 @@
     }
   },
   "wp_396": {
-    "title": "Contribution à un fonds international",
+    "title": "Contribution à un fonds mondial",
     "body": "Un fonds international d’adaptation climatique sollicite une contribution plus élevée. Certains veulent être exemplaires, d’autres prudents.",
     "choices": {
       "A": "Augmenter la contribution et gagner en influence diplomatique.",
@@ -3567,7 +3564,7 @@
     }
   },
   "wp_397": {
-    "title": "Renégociation d’un accord commercial",
+    "title": "Accord commercial à renégocier",
     "body": "Un accord commercial doit être renégocié. Les industriels veulent ouverture, certains secteurs craignent la concurrence.",
     "choices": {
       "A": "Renégocier pour ouvrir davantage avec protections ciblées.",
@@ -3585,7 +3582,7 @@
     }
   },
   "wp_399": {
-    "title": "Chaîne d’approvisionnement humanitaire",
+    "title": "Approvisionnement humanitaire",
     "body": "Des organisations demandent une aide logistique pour acheminer des fournitures en zone difficile d’accès.",
     "choices": {
       "A": "Soutien logistique national (transport, coordination).",
@@ -3594,7 +3591,7 @@
     }
   },
   "wp_400": {
-    "title": "Arbitrage international défavorable",
+    "title": "Arbitrage international perdu",
     "body": "Une décision d’arbitrage international pénalise un grand acteur national à l’étranger. Le secteur demande ton soutien.",
     "choices": {
       "A": "Respecter la décision et négocier des conditions de sortie.",
@@ -3621,7 +3618,7 @@
     }
   },
   "wp_403": {
-    "title": "Chaîne d’approvisionnement bloquée",
+    "title": "Approvisionnement bloqué",
     "body": "Un incident sur un nœud logistique ralentit les importations. Les prix de certains produits montent légèrement.",
     "choices": {
       "A": "Plan de déblocage immédiat + priorités pour biens essentiels.",
@@ -3630,7 +3627,7 @@
     }
   },
   "wp_404": {
-    "title": "Tensions sur un corridor commercial",
+    "title": "Corridor commercial sous tension",
     "body": "Un corridor commercial international devient instable. Les acteurs économiques demandent une stratégie de sécurisation.",
     "choices": {
       "A": "Renforcer la protection des convois et la surveillance.",
@@ -3639,7 +3636,7 @@
     }
   },
   "wp_405": {
-    "title": "Blocus administratif aux frontières",
+    "title": "Blocage aux frontières",
     "body": "De nouvelles formalités à l’étranger ralentissent les passages. Les camions s’accumulent et les entreprises s’énervent.",
     "choices": {
       "A": "Négociation express pour simplifier les procédures.",
@@ -3684,7 +3681,7 @@
     }
   },
   "wp_410": {
-    "title": "Tension sur les marchés financiers",
+    "title": "Tension sur les marchés",
     "body": "Une volatilité durable inquiète les ménages et les entreprises. Les investisseurs veulent un message de stabilité.",
     "choices": {
       "A": "Annonce d’un cadre budgétaire stable et prévisible.",
@@ -3729,7 +3726,7 @@
     }
   },
   "wp_415": {
-    "title": "Concurrence agressive sur un secteur",
+    "title": "Concurrence agressive",
     "body": "Un pays subventionne massivement un secteur où tes entreprises sont fortes. Les parts de marché sont menacées.",
     "choices": {
       "A": "Soutien temporaire ciblé + plainte dans les cadres internationaux.",
@@ -3756,7 +3753,7 @@
     }
   },
   "wp_418": {
-    "title": "Accès aux marchés publics contesté",
+    "title": "Marchés publics contestés",
     "body": "Un partenaire restreint l’accès de tes entreprises à ses marchés publics. Le secteur exportateur demande une réponse.",
     "choices": {
       "A": "Négociation diplomatique et juridique, sans escalade.",
@@ -3774,7 +3771,7 @@
     }
   },
   "wp_420": {
-    "title": "Incident sur une plateforme d’export",
+    "title": "Incident plateforme export",
     "body": "Un incident technique réduit la capacité d’une plateforme d’exportation. Les contrats internationaux sont sous pression.",
     "choices": {
       "A": "Réparation rapide + plan provisoire de continuité.",
@@ -3801,7 +3798,7 @@
     }
   },
   "wp_423": {
-    "title": "Pression sur l’industrie énergétique",
+    "title": "Pression sur l’énergie",
     "body": "Plusieurs installations doivent être modernisées. Les opérateurs demandent un cadre accéléré, les citoyens veulent des garanties.",
     "choices": {
       "A": "Accélérer les travaux avec contrôles renforcés et transparence.",
@@ -3810,7 +3807,7 @@
     }
   },
   "wp_424": {
-    "title": "Stabilité des prix des transports",
+    "title": "Prix des transports instables",
     "body": "Les prix des transports restent instables. Les entreprises demandent un plan de stabilisation sur 12 mois.",
     "choices": {
       "A": "Aides ciblées temporaires + objectifs de baisse des coûts.",
@@ -3819,7 +3816,7 @@
     }
   },
   "wp_425": {
-    "title": "Choc sur les assurances agricoles",
+    "title": "Choc sur l’assurance agricole",
     "body": "Les primes d’assurance agricole augmentent fortement. Les exploitants demandent un dispositif plus soutenable.",
     "choices": {
       "A": "Subventionner une partie des primes, temporairement.",
@@ -3828,7 +3825,7 @@
     }
   },
   "wp_426": {
-    "title": "Économie : hausse des importations",
+    "title": "Économie: hausse des importations",
     "body": "Les importations augmentent plus vite que les exportations. Les industriels veulent un plan de compétitivité.",
     "choices": {
       "A": "Plan compétitivité (innovation, énergie, simplification) sur 2 ans.",
@@ -3837,7 +3834,7 @@
     }
   },
   "wp_427": {
-    "title": "Crise de confiance des entreprises",
+    "title": "Confiance des entreprises faible",
     "body": "Les entreprises reportent des investissements, faute de visibilité. Elles demandent un cap clair et stable.",
     "choices": {
       "A": "Annonce d’une trajectoire fiscale et réglementaire stable.",
@@ -3864,7 +3861,7 @@
     }
   },
   "wp_430": {
-    "title": "Catastrophe : dégâts sur infrastructures",
+    "title": "Catastrophe: dégâts sur infrastructures",
     "body": "Un événement météo endommage des infrastructures (routes, réseaux). Les régions demandent un fonds de remise en état rapide.",
     "choices": {
       "A": "Débloquer un fonds d’urgence et prioriser les réparations.",
@@ -3873,7 +3870,7 @@
     }
   },
   "wp_431": {
-    "title": "Conflit commercial sur l’agroalimentaire",
+    "title": "Litige agroalimentaire",
     "body": "Un partenaire bloque temporairement certains produits agroalimentaires. Les filières demandent une réaction.",
     "choices": {
       "A": "Négociation immédiate + garanties sanitaires et techniques.",
@@ -3882,7 +3879,7 @@
     }
   },
   "wp_432": {
-    "title": "Tension sur les quotas d’importation",
+    "title": "Tension sur les quotas",
     "body": "Des quotas d’importation sont réduits à l’étranger. Tes entreprises perdent un accès clé.",
     "choices": {
       "A": "Recours juridique et diplomatique dans les cadres existants.",
@@ -3900,7 +3897,7 @@
     }
   },
   "wp_434": {
-    "title": "Conflit sur les licences d’export",
+    "title": "Conflit sur les licences export",
     "body": "Un partenaire limite la délivrance de licences d’export pour certains équipements. Tes entreprises sont bloquées.",
     "choices": {
       "A": "Négocier et obtenir des exemptions ciblées.",
@@ -3918,7 +3915,7 @@
     }
   },
   "wp_436": {
-    "title": "Conflit sur la propriété industrielle",
+    "title": "Litige de propriété industrielle",
     "body": "Un partenaire accuse tes entreprises de violer des brevets. La menace de sanctions commerciales plane.",
     "choices": {
       "A": "Médiation et accord de licence encadré.",
@@ -3954,7 +3951,7 @@
     }
   },
   "wp_440": {
-    "title": "Coopération économique sous tension",
+    "title": "Coopération économique tendue",
     "body": "Un partenaire veut renégocier un grand accord économique. Il exige plus, sinon il menace de réduire la coopération.",
     "choices": {
       "A": "Renégocier en gardant des lignes rouges claires.",
@@ -3972,7 +3969,7 @@
     }
   },
   "wp_442": {
-    "title": "Tension sur les échanges scientifiques",
+    "title": "Tension sur la recherche",
     "body": "Un partenaire veut limiter les échanges scientifiques sur certains domaines. Tes chercheurs s’inquiètent.",
     "choices": {
       "A": "Négocier un cadre sécurisé pour maintenir les échanges.",
@@ -3981,7 +3978,7 @@
     }
   },
   "wp_443": {
-    "title": "Incertitude sur un grand chantier",
+    "title": "Incertitude sur le chantier",
     "body": "Un grand chantier d’infrastructure prend du retard. Les coûts augmentent et l’opinion exige des explications.",
     "choices": {
       "A": "Transparence + calendrier révisé et contrôle renforcé.",
@@ -3990,7 +3987,7 @@
     }
   },
   "wp_444": {
-    "title": "Pression sur l’approvisionnement en eau",
+    "title": "Pression sur l’eau",
     "body": "Plusieurs industries consommatrices d’eau demandent des garanties. Les citoyens veulent priorité aux usages essentiels.",
     "choices": {
       "A": "Prioriser usages essentiels + quotas temporaires pour l’industrie.",
@@ -3999,7 +3996,7 @@
     }
   },
   "wp_445": {
-    "title": "Conflit sur l’accès aux marchés agricoles",
+    "title": "Marchés agricoles bloqués",
     "body": "Un partenaire limite l’accès de certains produits agricoles. Les filières exportatrices demandent une solution.",
     "choices": {
       "A": "Négocier standards et contrôles communs pour lever la restriction.",
@@ -4026,7 +4023,7 @@
     }
   },
   "wp_448": {
-    "title": "Incertitude sur les exportations technologiques",
+    "title": "Doute sur les exports techno",
     "body": "Un partenaire envisage de restreindre l’export de technologies clés. Tes industriels craignent des ruptures.",
     "choices": {
       "A": "Négocier exemptions et garanties d’approvisionnement.",
@@ -4035,7 +4032,7 @@
     }
   },
   "wp_449": {
-    "title": "Pression sur les finances locales",
+    "title": "Pression sur les budgets locaux",
     "body": "Après plusieurs chocs climatiques, des villes demandent un soutien budgétaire. Les finances publiques sont déjà tendues.",
     "choices": {
       "A": "Fonds de soutien ciblé avec critères stricts.",
@@ -4044,7 +4041,7 @@
     }
   },
   "wp_450": {
-    "title": "Accord économique de dernier moment",
+    "title": "Accord économique urgent",
     "body": "Un partenaire propose un accord économique rapide pour éviter des restrictions. Tu dois décider sans trop de marge.",
     "choices": {
       "A": "Signer avec garanties minimales et clause de révision rapide.",
@@ -4053,5 +4050,3 @@
     }
   }
 }
-
-
