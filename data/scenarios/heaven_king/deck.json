@@ -1148,7 +1148,7 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
+            "interventions": 5,
             "free_will": 0
           }
         },
@@ -1358,7 +1358,7 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
+            "interventions": 5,
             "free_will": 0
           }
         },
@@ -2078,7 +2078,7 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
+            "interventions": 5,
             "free_will": 0
           }
         },
@@ -2138,7 +2138,7 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
+            "interventions": 5,
             "free_will": 0
           }
         },
@@ -2408,7 +2408,7 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
+            "interventions": 5,
             "free_will": 0
           }
         },
@@ -2498,7 +2498,7 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
+            "interventions": 5,
             "free_will": 0
           }
         },
@@ -2678,7 +2678,7 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
+            "interventions": 5,
             "free_will": 0
           }
         },
@@ -9435,7 +9435,7 @@
         "B": {
           "gaugeDelta": {
             "prayers": 0,
-            "cults": 0,
+            "cults": -5,
             "interventions": 0,
             "free_will": 5
           }
