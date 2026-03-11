@@ -683,7 +683,7 @@ body.vr-body-game .vr-choice-label{
   gap: 8px !important;
 
   padding: 0 !important;
-  margin: 2px 0 4px !important;
+  margin: 2px 0 6px !important;
 
   background: transparent !important;
   border: none !important;
@@ -2703,7 +2703,6 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
 
 
 
-
 /* ==========================================================
    UNIVERS — CEO
    ========================================================== */
@@ -2717,22 +2716,28 @@ body[data-universe="mega_corp_ceo"].vr-body-game #view-game .vr-choice-label{
   font-family: "VR_OutfitMedium", sans-serif !important;
   color: #000 !important;
   text-shadow: none !important;
+  opacity: 1 !important;
+  line-height: 1.12 !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"]{
   --vr-card-w: clamp(360px, 96vw, 820px);
 
   --vr-scn-h: clamp(156px, 20.4svh, 292px);
-  --vr-choice-h: clamp(80px, 10.6svh, 132px);
+  --vr-choice-h: clamp(86px, 11.4svh, 142px);
 
   --vr-game-gap: clamp(1px, 0.12svh, 3px);
-  --vr-stack-gap: clamp(2px, 0.28svh, 6px);
-  --vr-choices-gap: clamp(3px, 0.36svh, 7px);
+  --vr-stack-gap: clamp(3px, 0.34svh, 8px);
+  --vr-choices-gap: clamp(4px, 0.46svh, 9px);
 
-  --vr-choice-safe: 80%;
+  --vr-choice-safe: 84%;
   --vr-font-scn-title: clamp(15px, 2.1vmin, 24px);
   --vr-font-scn-text:  clamp(11px, 1.6vmin, 15px);
-  --vr-font-choice:    clamp(12px, 1.72vmin, 19px);
+  --vr-font-choice:    clamp(11px, 1.55vmin, 17px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
@@ -3012,49 +3017,59 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-title{
-  width: min(74%, 520px) !important;
-  max-width: min(74%, 520px) !important;
+  width: min(78%, 560px) !important;
+  max-width: min(78%, 560px) !important;
   margin: 0 auto !important;
   text-align: center !important;
-  font-size: clamp(15px, 2.2vw, 24px) !important;
-  line-height: 1.08 !important;
+  font-size: clamp(15px, 2.1vw, 23px) !important;
+  line-height: 1.06 !important;
   font-weight: 700 !important;
   overflow-wrap: break-word !important;
-  word-break: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
   transform: none !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-text{
-  width: min(72%, 500px) !important;
-  max-width: min(72%, 500px) !important;
+  width: min(76%, 540px) !important;
+  max-width: min(76%, 540px) !important;
   margin: 0 auto !important;
   text-align: center !important;
-  font-size: clamp(11px, 1.6vw, 15px) !important;
-  line-height: 1.18 !important;
+  font-size: clamp(11px, 1.5vw, 14px) !important;
+  line-height: 1.16 !important;
   font-weight: 600 !important;
   overflow-wrap: break-word !important;
-  word-break: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
   transform: none !important;
   color: #000 !important;
   text-shadow: none !important;
 }
 
-body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-stack,
-body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choices{
-  gap: clamp(3px, 0.45svh, 7px) !important;
-  margin-top: -2px !important;
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-choices{
+  gap: clamp(4px, 0.45svh, 8px) !important;
+}
+
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-button{
+  background-size: 104% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
-  width: min(72%, 620px) !important;
-  max-width: min(72%, 620px) !important;
+  width: min(78%, 640px) !important;
+  max-width: min(78%, 640px) !important;
   margin: 0 auto !important;
   text-align: center !important;
-  font-size: clamp(12px, 1.7vw, 19px) !important;
-  line-height: 1.16 !important;
+  font-size: clamp(11px, 1.5vw, 16px) !important;
+  line-height: 1.12 !important;
   font-weight: 600 !important;
   overflow-wrap: break-word !important;
-  word-break: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
 }
 
 body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="investors"] .vr-gauge-frame{
@@ -3106,8 +3121,9 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 
     --vr-card-w: clamp(320px, 96vw, 700px);
     --vr-scn-h: clamp(148px, 19.6svh, 230px);
-    --vr-choice-h: clamp(74px, 10.0svh, 110px);
-    --vr-choice-safe: 78%;
+    --vr-choice-h: clamp(82px, 11.0svh, 120px);
+    --vr-choice-safe: 82%;
+    --vr-font-choice: clamp(10.8px, 2.45vw, 14px);
   }
 
   body.vr-body-game[data-universe="mega_corp_ceo"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
@@ -3115,25 +3131,47 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
   body.vr-body-game[data-universe="mega_corp_ceo"] #btn-customize{ top: calc(16px + env(safe-area-inset-top)) !important; right: 16px !important; }
 
   body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-title{
-    width: min(78%, 520px) !important;
-    max-width: min(78%, 520px) !important;
-    font-size: clamp(14px, 3.6vw, 20px) !important;
+    width: min(82%, 560px) !important;
+    max-width: min(82%, 560px) !important;
+    font-size: clamp(14px, 3.2vw, 20px) !important;
+    line-height: 1.04 !important;
   }
 
   body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-text{
-    width: min(76%, 500px) !important;
-    max-width: min(76%, 500px) !important;
-    font-size: clamp(10px, 2.6vw, 13px) !important;
-    line-height: 1.15 !important;
+    width: min(80%, 540px) !important;
+    max-width: min(80%, 540px) !important;
+    font-size: clamp(10px, 2.25vw, 13px) !important;
+    line-height: 1.12 !important;
   }
 
   body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
-    width: min(76%, 620px) !important;
-    max-width: min(76%, 620px) !important;
-    font-size: clamp(11px, 2.8vw, 15px) !important;
-    line-height: 1.14 !important;
+    width: min(82%, 640px) !important;
+    max-width: min(82%, 640px) !important;
+    font-size: clamp(10.5px, 2.35vw, 13.5px) !important;
+    line-height: 1.10 !important;
   }
 }
+
+@media (max-width: 390px), (max-height: 740px){
+  body.vr-body-game[data-universe="mega_corp_ceo"]{
+    --vr-choice-h: clamp(78px, 10.4svh, 112px);
+    --vr-font-choice: clamp(10px, 2.3vw, 13px);
+    --vr-choice-safe: 80%;
+  }
+
+  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
+    width: min(84%, 640px) !important;
+    max-width: min(84%, 640px) !important;
+    font-size: clamp(10px, 2.25vw, 12.8px) !important;
+    line-height: 1.08 !important;
+  }
+}
+
+
+
+
+
+
 
 /* =========================
    EXPLORER
@@ -3578,7 +3616,6 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
   }
 }
 
-
 /* ==========================================================
    UNIVERS — VAMPIRE
    ========================================================== */
@@ -3590,17 +3627,23 @@ body[data-universe="vampire_lord"].vr-body-game #view-game .vr-card-text{
 body[data-universe="vampire_lord"].vr-body-game #view-game .vr-choice-label{
   color: #000 !important;
   text-shadow: none !important;
+  opacity: 1 !important;
+  line-height: 1.12 !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
 }
 
 body.vr-body-game[data-universe="vampire_lord"]{
   --vr-card-w: clamp(390px, 98vw, 1080px);
 
   --vr-scn-h: clamp(132px, 17.6svh, 236px);
-  --vr-choice-h: clamp(76px, 10.6svh, 134px);
+  --vr-choice-h: clamp(82px, 11.2svh, 142px);
 
   --vr-game-gap: clamp(1px, 0.18svh, 4px);
-  --vr-stack-gap: clamp(3px, 0.40svh, 8px);
-  --vr-choices-gap: clamp(4px, 0.50svh, 9px);
+  --vr-stack-gap: clamp(4px, 0.50svh, 9px);
+  --vr-choices-gap: clamp(5px, 0.60svh, 10px);
 
   --vr-scn-inset-top: 13%;
   --vr-scn-inset-right: 11%;
@@ -3608,14 +3651,14 @@ body.vr-body-game[data-universe="vampire_lord"]{
   --vr-scn-inset-left: 11%;
 
   --vr-choice-inset-top: 16%;
-  --vr-choice-inset-right: 10%;
+  --vr-choice-inset-right: 9%;
   --vr-choice-inset-bottom: 16%;
-  --vr-choice-inset-left: 10%;
+  --vr-choice-inset-left: 9%;
   --vr-choice-safe: 84%;
 
   --vr-font-scn-title: clamp(15px, 2.5vmin, 28px);
   --vr-font-scn-text:  clamp(13px, 2.0vmin, 21px);
-  --vr-font-choice:    clamp(13px, 2.0vmin, 20px);
+  --vr-font-choice:    clamp(12px, 1.85vmin, 18px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
@@ -3639,7 +3682,7 @@ body.vr-body-game[data-universe="vampire_lord"]{
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title,
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text,
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
-  max-width: 92% !important;
+  max-width: 94% !important;
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center !important;
@@ -3649,11 +3692,13 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-main{
   overflow: hidden;
   background-size: 96% 98% !important;
   background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-button{
-  background-size: 96% 98% !important;
+  background-size: 104% 100% !important;
   background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 body.vr-body-game[data-universe="vampire_lord"] .vr-top-actions-game .vr-top-icon,
@@ -3800,6 +3845,7 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-value{
   text-shadow: 0 1px 0 rgba(255,255,255,0.35), 0 0 8px rgba(0,0,0,0.12) !important;
   transform: translateY(-2px) !important;
 }
+
 body.vr-body-game[data-universe="vampire_lord"] .vr-hud-name{
   font-size: clamp(13px, 2vw, 28px) !important;
   font-weight: 800 !important;
@@ -3809,12 +3855,31 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-name{
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
 }
+
 body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
   font-size: clamp(10px, 1.25vw, 16px) !important;
   font-weight: 800 !important;
   line-height:1 !important;
   transform: translateY(1px) !important;
   opacity: .95 !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
+  line-height: 1.06 !important;
+  max-width: 94% !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
+  line-height: 1.16 !important;
+  max-width: 94% !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
 }
 
 #view-game.vr-bg-vampire_lord{
@@ -3840,10 +3905,10 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
 
     --vr-card-w: clamp(320px, 96vw, 760px);
     --vr-scn-h: clamp(120px, 16.2svh, 198px);
-    --vr-choice-h: clamp(70px, 9.8svh, 114px);
+    --vr-choice-h: clamp(76px, 10.4svh, 120px);
 
-    --vr-stack-gap: 1px;
-    --vr-choices-gap: 2px;
+    --vr-stack-gap: 2px;
+    --vr-choices-gap: 3px;
 
     --vr-choice-safe: 82%;
     --vr-choice-inset-top: 15%;
@@ -3851,7 +3916,7 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
     --vr-choice-inset-bottom: 15%;
     --vr-choice-inset-left: 8%;
 
-    --vr-font-choice: clamp(12px, 3vw, 16px);
+    --vr-font-choice: clamp(11px, 2.65vw, 14px);
   }
 
   body.vr-body-game[data-universe="vampire_lord"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
@@ -3864,12 +3929,27 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
   body.vr-body-game[data-universe="vampire_lord"] .vr-hud-value{
     transform: translateY(0px) !important;
   }
+
+  body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
+    line-height: 1.04 !important;
+    max-width: 94% !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
+    line-height: 1.12 !important;
+    max-width: 94% !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
+    line-height: 1.10 !important;
+    max-width: 100% !important;
+  }
 }
 
 @media (max-width: 390px), (max-height: 740px){
   body.vr-body-game[data-universe="vampire_lord"]{
-    --vr-choice-h: clamp(68px, 9.2svh, 102px);
-    --vr-font-choice: clamp(11px, 2.8vw, 14px);
+    --vr-choice-h: clamp(72px, 9.8svh, 108px);
+    --vr-font-choice: clamp(10.5px, 2.45vw, 13px);
     --vr-choice-safe: 80%;
     --vr-choice-inset-top: 14%;
     --vr-choice-inset-right: 7%;
