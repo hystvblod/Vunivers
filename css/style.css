@@ -4152,63 +4152,36 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
    - on scale tout le mode jeu tel quel
    - aucun réglage univers à refaire
    ========================================================== */
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
+  body.vr-body-game[data-universe="western_president"]{
+    --vr-scn-h: clamp(148px, 17.2svh, 220px);
+    --vr-choice-h: clamp(92px, 10.8svh, 138px);
 
-:root{
-  --vr-ref-w: 412;
-  --vr-ref-h: 914;
-  --vr-stage-scale: 1;
+    --vr-stack-gap: clamp(6px, 0.7svh, 10px);
+    --vr-choices-gap: clamp(6px, 0.7svh, 10px);
+
+    --vr-font-scn-title: clamp(15px, 1.9vmin, 24px);
+    --vr-font-scn-text: clamp(12px, 1.45vmin, 16px);
+    --vr-font-choice: clamp(12px, 1.5vmin, 16px);
+
+    --vr-identity-ty: 10px;
+    --vr-hud-name-years-gap: 34px;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud{
+    margin: 0 auto !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value{
+    transform: translate(-8px, 10px) !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
+    transform: translate(8px, 10px) !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
+    transform: translate(0px, 12px) !important;
+    gap: 34px !important;
+  }
 }
-
-#vr-stage-viewport[hidden]{
-  display: none !important;
-}
-
-body.vr-body-game #vr-stage-viewport{
-  position: fixed !important;
-  inset: 0 !important;
-  overflow: hidden !important;
-  z-index: 1 !important;
-  pointer-events: none !important;
-}
-
-body.vr-body-game #vr-stage{
-  position: absolute !important;
-  left: 50% !important;
-  top: 50% !important;
-
-  width: calc(var(--vr-ref-w) * 1px) !important;
-  height: calc(var(--vr-ref-h) * 1px) !important;
-
-  transform: translate(-50%, -50%) scale(var(--vr-stage-scale)) !important;
-  transform-origin: center center !important;
-
-  pointer-events: auto !important;
-}
-
-/* la base de ton jeu garde sa taille de référence */
-body.vr-body-game #vr-stage .vr-main{
-  width: calc(var(--vr-ref-w) * 1px) !important;
-  height: calc(var(--vr-ref-h) * 1px) !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  position: relative !important;
-}
-
-/* ton écran jeu remplit le stage, pas le viewport réel */
-body.vr-body-game #vr-stage #view-game{
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  min-height: 0 !important;
-}
-
-/* on force les éléments hors .vr-main à vivre dans le stage aussi */
-body.vr-body-game #vr-stage .vr-top-actions-game,
-body.vr-body-game #vr-stage a.vr-icon-button[aria-label="Accueil"],
-body.vr-body-game #vr-stage #btn-customize{
-  position: absolute !important;
-}
-
