@@ -4211,3 +4211,31 @@ body.vr-body-game #vr-stage a.vr-icon-button[aria-label="Accueil"],
 body.vr-body-game #vr-stage #btn-customize{
   position: absolute !important;
 }
+
+@media (min-width: 700px) and (max-width: 900px) and (orientation: portrait){
+  body.vr-body-game[data-universe="western_president"]{
+    --vr-scn-h: 182px;
+    --vr-choice-h: 118px;
+    --vr-stack-gap: 6px;
+    --vr-choices-gap: 6px;
+    --vr-identity-ty: 10px;
+    --vr-hud-name-years-gap: 34px;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud{
+    margin: 0 auto !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value{
+    transform: translate(-8px, 10px) !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
+    transform: translate(8px, 10px) !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
+    transform: translate(0px, 12px) !important;
+    gap: 34px !important;
+  }
+}
