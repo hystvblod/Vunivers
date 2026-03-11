@@ -578,9 +578,9 @@ body.vr-body-game .vr-choice-label{
   position: fixed !important;
   inset: 0 !important;
   background: rgba(15, 23, 42, 0.85) !important;
-  display: none;
-  align-items: center;
-  justify-content: center;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
   z-index: 250000 !important;
   padding:
     max(12px, env(safe-area-inset-top))
@@ -588,7 +588,7 @@ body.vr-body-game .vr-choice-label{
     max(12px, env(safe-area-inset-bottom))
     12px !important;
   overflow-y: auto !important;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch !important;
 }
 
 .vr-ending-overlay.vr-ending-visible{
@@ -768,20 +768,7 @@ body.vr-body-game .vr-choice-label{
   margin-bottom: 0 !important;
 }
 
-@media (max-width: 480px), (max-height: 720px){
-  #vr-ending-overlay{
-    align-items: flex-start !important;
-  }
-
-  #vr-ending-overlay .vr-ending-card{
-    margin:
-      max(10px, env(safe-area-inset-top))
-      0
-      max(10px, env(safe-area-inset-bottom))
-      0 !important;
-    max-height: calc(100svh - 20px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
-  }
-
+@media (max-width: 480px){
   #vr-ending-overlay .vr-ending-actions-bottom{
     grid-template-columns: 1fr !important;
   }
