@@ -2319,7 +2319,7 @@ body.vr-body-game[data-universe="western_president"] .vr-hud{
   position: relative !important;
   width: var(--vr-ui-hud-w) !important;
   max-width: none !important;
-  margin: 0 auto !important;
+  margin: clamp(8px, 1.2svh, 18px) auto 0 auto !important;
   padding: 0 !important;
   display: block !important;
   white-space: normal !important;
