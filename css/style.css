@@ -4144,3 +4144,70 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
 .vr-shop-item img,
 .vr-shop-item svg{ max-width: 100%; height: auto; }
 
+
+
+/* ==========================================================
+   STAGE PROPORTIONNEL GLOBAL
+   - ton CSS actuel devient la référence
+   - on scale tout le mode jeu tel quel
+   - aucun réglage univers à refaire
+   ========================================================== */
+
+:root{
+  --vr-ref-w: 412;
+  --vr-ref-h: 914;
+  --vr-stage-scale: 1;
+}
+
+#vr-stage-viewport[hidden]{
+  display: none !important;
+}
+
+body.vr-body-game #vr-stage-viewport{
+  position: fixed !important;
+  inset: 0 !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+body.vr-body-game #vr-stage{
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+
+  width: calc(var(--vr-ref-w) * 1px) !important;
+  height: calc(var(--vr-ref-h) * 1px) !important;
+
+  transform: translate(-50%, -50%) scale(var(--vr-stage-scale)) !important;
+  transform-origin: center center !important;
+
+  pointer-events: auto !important;
+}
+
+/* la base de ton jeu garde sa taille de référence */
+body.vr-body-game #vr-stage .vr-main{
+  width: calc(var(--vr-ref-w) * 1px) !important;
+  height: calc(var(--vr-ref-h) * 1px) !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+/* ton écran jeu remplit le stage, pas le viewport réel */
+body.vr-body-game #vr-stage #view-game{
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+/* on force les éléments hors .vr-main à vivre dans le stage aussi */
+body.vr-body-game #vr-stage .vr-top-actions-game,
+body.vr-body-game #vr-stage a.vr-icon-button[aria-label="Accueil"],
+body.vr-body-game #vr-stage #btn-customize{
+  position: absolute !important;
+}
