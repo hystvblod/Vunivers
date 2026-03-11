@@ -2136,42 +2136,53 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
 /* ==========================================================
    UNIVERS — WESTERN
    ========================================================== */
-body[data-universe="western_president"].vr-body-game #view-game .vr-card-title,
-body[data-universe="western_president"].vr-body-game #view-game .vr-card-text{
+body[data-universe="western_president"].vr-body-game #view-game .vr-card-title{
   font-family: "VR_InterExtraLight", serif !important;
   color: #000 !important;
+  font-weight: 900 !important;
+  text-shadow: none !important;
+}
+
+body[data-universe="western_president"].vr-body-game #view-game .vr-card-text{
+  font-family: "VR_InterExtraLight", serif !important;
+  color: #111 !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
 }
 
 body[data-universe="western_president"].vr-body-game #view-game .vr-choice-label{
-  font-family: "VR_RobotoThin", sans-serif !important;
+  font-family: "VR_InterExtraLight", sans-serif !important;
   color: #000 !important;
+  font-weight: 900 !important;
   text-shadow: none !important;
+  opacity: 1 !important;
+  line-height: 1.18 !important;
 }
 
 body.vr-body-game[data-universe="western_president"]{
   --vr-card-w: clamp(390px, 98vw, 1120px);
 
   --vr-scn-h: clamp(155px, 20.5svh, 285px);
-  --vr-choice-h: clamp(92px, 12.6svh, 165px);
+  --vr-choice-h: clamp(102px, 13.8svh, 178px);
 
   --vr-game-gap: clamp(1px, 0.18svh, 4px);
-  --vr-stack-gap: clamp(3px, 0.42svh, 8px);
-  --vr-choices-gap: clamp(4px, 0.52svh, 9px);
+  --vr-stack-gap: clamp(8px, 0.95svh, 16px);
+  --vr-choices-gap: clamp(6px, 0.72svh, 12px);
 
   --vr-scn-inset-top: 18%;
   --vr-scn-inset-right: 12%;
   --vr-scn-inset-bottom: 10%;
   --vr-scn-inset-left: 12%;
 
-  --vr-choice-inset-top: 22%;
-  --vr-choice-inset-right: 10%;
-  --vr-choice-inset-bottom: 12%;
-  --vr-choice-inset-left: 10%;
-  --vr-choice-safe: 84%;
+  --vr-choice-inset-top: 24%;
+  --vr-choice-inset-right: 9%;
+  --vr-choice-inset-bottom: 11%;
+  --vr-choice-inset-left: 9%;
+  --vr-choice-safe: 86%;
 
   --vr-font-scn-title: clamp(16px, 2.7vmin, 30px);
   --vr-font-scn-text:  clamp(14px, 2.15vmin, 22px);
-  --vr-font-choice:    clamp(14px, 2.1vmin, 21px);
+  --vr-font-choice:    clamp(15px, 2.2vmin, 22px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
@@ -2198,7 +2209,7 @@ body.vr-body-game[data-universe="western_president"]{
 
   --vr-identity-tx: 0px;
   --vr-identity-ty: 14px;
-  --vr-hud-name-years-gap: 52px;
+  --vr-hud-name-years-gap: 48px;
 }
 
 body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-button{
@@ -2366,7 +2377,7 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-item{
 body.vr-body-game[data-universe="western_president"] .vr-hud-value{
   font-family: "VR_InterExtraLight", sans-serif !important;
   font-size: clamp(13px, 2.05vw, 24px) !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   line-height: 1 !important;
   color: #000 !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.18), 0 0 3px rgba(0,0,0,0.06) !important;
@@ -2378,7 +2389,7 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-value{
 }
 
 body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value{
-  transform: translate(-8px, 22px) !important;
+  transform: translate(-10px, 22px) !important;
 }
 
 body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
@@ -2390,13 +2401,13 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
   max-width:none !important;
   overflow:hidden !important;
   display:inline-flex !important;
-  align-items:center !important;
+  align-items:baseline !important;
   justify-content:center !important;
-  gap:52px !important;
+  gap:48px !important;
   white-space:nowrap !important;
   text-align:center !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.20), 0 0 6px rgba(0,0,0,0.08) !important;
-  transform: translate(0px, 20px) !important;
+  transform: translate(0px, 22px) !important;
 }
 
 body.vr-body-game[data-universe="western_president"] .vr-hud-name{
@@ -2413,7 +2424,7 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-name{
 
 body.vr-body-game[data-universe="western_president"] .vr-hud-years{
   font-family: "VR_InterExtraLight", sans-serif !important;
-  font-size: clamp(13px, 1.85vw, 22px) !important;
+  font-size: clamp(14px, 1.95vw, 23px) !important;
   font-weight: 900 !important;
   line-height:1 !important;
   color:#000 !important;
@@ -2462,24 +2473,24 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
     --vr-ui-customize-right: 16px;
 
     --vr-scn-h: clamp(136px, 18.5svh, 220px);
-    --vr-choice-h: clamp(78px, 10.8svh, 128px);
+    --vr-choice-h: clamp(88px, 11.8svh, 140px);
 
-    --vr-stack-gap: 1px;
-    --vr-choices-gap: 2px;
+    --vr-stack-gap: clamp(6px, 0.7svh, 12px);
+    --vr-choices-gap: clamp(5px, 0.55svh, 10px);
 
     --vr-scn-inset-top: 17%;
     --vr-scn-inset-right: 12%;
     --vr-scn-inset-bottom: 11%;
     --vr-scn-inset-left: 12%;
 
-    --vr-choice-safe: 82%;
-    --vr-choice-inset-top: 20%;
+    --vr-choice-safe: 84%;
+    --vr-choice-inset-top: 22%;
     --vr-choice-inset-right: 8%;
-    --vr-choice-inset-bottom: 12%;
+    --vr-choice-inset-bottom: 11%;
     --vr-choice-inset-left: 8%;
 
-    --vr-font-choice: clamp(12px, 3vw, 16px);
-    --vr-hud-name-years-gap: 42px;
+    --vr-font-choice: clamp(13px, 3.15vw, 17px);
+    --vr-hud-name-years-gap: 30px;
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-hud-left{ left: 3.1% !important; width: 18.0% !important; }
@@ -2495,7 +2506,7 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value{
-    transform: translate(-4px, 12px) !important;
+    transform: translate(-5px, 12px) !important;
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
@@ -2503,22 +2514,26 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
-    transform: translate(0px, 10px) !important;
-    gap: 34px !important;
+    transform: translate(0px, 12px) !important;
+    gap: 30px !important;
   }
 }
 
 @media (max-width: 390px), (max-height: 740px){
   body.vr-body-game[data-universe="western_president"]{
-    --vr-choice-h: clamp(74px, 10.2svh, 112px);
-    --vr-font-choice: clamp(11px, 2.8vw, 14px);
-    --vr-choice-safe: 80%;
-    --vr-choice-inset-top: 18%;
+    --vr-choice-h: clamp(80px, 10.8svh, 122px);
+    --vr-font-choice: clamp(12px, 2.95vw, 15px);
+    --vr-choice-safe: 82%;
+    --vr-choice-inset-top: 21%;
     --vr-choice-inset-right: 7%;
-    --vr-choice-inset-bottom: 12%;
+    --vr-choice-inset-bottom: 11%;
     --vr-choice-inset-left: 7%;
   }
 }
+
+
+
+
 
 
 

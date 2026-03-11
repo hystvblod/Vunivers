@@ -2700,7 +2700,909 @@
       "B": "Faire une demi journée",
       "C": "Garder le régime normal"
     }
+  },
+
+  "nw_301": {
+    "title": "Brouette royale",
+    "body": "La vieille brouette du quai grince plus fort que le commandant.",
+    "choices": {
+      "A": "Acheter deux brouettes",
+      "B": "Réparer l ancienne",
+      "C": "Louer au village"
+    }
+  },
+  "nw_302": {
+    "title": "Pluie sur les registres",
+    "body": "Les papiers du bureau boivent la pluie avec trop d enthousiasme.",
+    "choices": {
+      "A": "Copier au sec",
+      "B": "Déplacer le bureau",
+      "C": "Réduire les papiers"
+    }
+  },
+  "nw_303": {
+    "title": "Crique tranquille",
+    "body": "Une crique calme pourrait servir mieux qu elle ne dort.",
+    "choices": {
+      "A": "Y faire un petit quai",
+      "B": "La garder militaire",
+      "C": "L ouvrir aux pêcheurs"
+    }
+  },
+  "nw_304": {
+    "title": "Haricots trop fiers",
+    "body": "Les haricots du camp poussent si bien qu ils regardent le marché de haut.",
+    "choices": {
+      "A": "Les vendre vite",
+      "B": "Les garder au camp",
+      "C": "En offrir au village"
+    }
+  },
+  "nw_305": {
+    "title": "Corde de secours",
+    "body": "La dernière bonne corde du dépôt a déjà trop vécu.",
+    "choices": {
+      "A": "Acheter un gros rouleau",
+      "B": "Tresser sur place",
+      "C": "Attendre la livraison"
+    }
+  },
+  "nw_306": {
+    "title": "Marchand pressant",
+    "body": "Un marchand veut signer avant même de s asseoir.",
+    "choices": {
+      "A": "Signer un accord court",
+      "B": "Le tester un mois",
+      "C": "Le faire patienter"
+    }
+  },
+  "nw_307": {
+    "title": "Sable noir",
+    "body": "Un sable sombre attire les regards autant que les idées de profit.",
+    "choices": {
+      "A": "Le vendre au loin",
+      "B": "Le garder pour nos travaux",
+      "C": "En offrir aux chefs"
+    }
+  },
+  "nw_308": {
+    "title": "Fenêtre du bureau",
+    "body": "Le bureau manque d air et les comptes aussi.",
+    "choices": {
+      "A": "L agrandir",
+      "B": "Ouvrir le matin",
+      "C": "La laisser telle quelle"
+    }
+  },
+  "nw_309": {
+    "title": "Arbre penché",
+    "body": "Un arbre du quai penche comme s il écoutait tout.",
+    "choices": {
+      "A": "Le couper",
+      "B": "Le soutenir",
+      "C": "En faire un banc"
+    }
+  },
+  "nw_310": {
+    "title": "Bassines vides",
+    "body": "Les bassines du camp ont disparu plus vite que les excuses.",
+    "choices": {
+      "A": "En acheter",
+      "B": "Demander au potier local",
+      "C": "Réduire la distribution"
+    }
+  },
+  "nw_311": {
+    "title": "Savates locales",
+    "body": "Les savates locales tiennent mieux la boue que nos bottes fières.",
+    "choices": {
+      "A": "En acheter pour le camp",
+      "B": "Laisser chacun choisir",
+      "C": "En offrir aux ouvriers"
+    }
+  },
+  "nw_312": {
+    "title": "Rocher utile",
+    "body": "Un gros rocher au rivage semble vouloir travailler pour nous.",
+    "choices": {
+      "A": "Y tailler des marches",
+      "B": "Y poser un poste",
+      "C": "Le laisser aux pêcheurs"
+    }
+  },
+  "nw_313": {
+    "title": "Nuit trop claire",
+    "body": "Les feux du camp brillent tant que même les crabes nous voient venir.",
+    "choices": {
+      "A": "Réduire les feux",
+      "B": "Déplacer les rondes",
+      "C": "Garder la lumière"
+    }
+  },
+  "nw_314": {
+    "title": "Table des comptes",
+    "body": "La table du bureau vacille comme une promesse de marchand.",
+    "choices": {
+      "A": "La remplacer",
+      "B": "La caler mieux",
+      "C": "Compter dehors"
+    }
+  },
+  "nw_315": {
+    "title": "Pêche de nuit",
+    "body": "Des pêcheurs veulent sortir après le coucher du soleil.",
+    "choices": {
+      "A": "L autoriser",
+      "B": "Taxer les prises",
+      "C": "L interdire"
+    }
+  },
+  "nw_316": {
+    "title": "Étal brillant",
+    "body": "Un étal neuf attire tout le marché et beaucoup de jalousie.",
+    "choices": {
+      "A": "Le louer cher",
+      "B": "Le réserver au fort",
+      "C": "Laisser le vendeur briller"
+    }
+  },
+  "nw_317": {
+    "title": "Coq du camp",
+    "body": "Le coq réveille tout le monde sauf les plus utiles.",
+    "choices": {
+      "A": "Le garder",
+      "B": "Le vendre",
+      "C": "L offrir au village"
+    }
+  },
+  "nw_318": {
+    "title": "Tapis de jonc",
+    "body": "Des tapis de jonc rendent les sols moins tristes et moins glissants.",
+    "choices": {
+      "A": "En acheter",
+      "B": "Laisser le marché en vendre",
+      "C": "Les mettre au bureau"
+    }
+  },
+  "nw_319": {
+    "title": "Barque fuyarde",
+    "body": "Une barque prend l eau avec une régularité exemplaire.",
+    "choices": {
+      "A": "La réparer",
+      "B": "La revendre",
+      "C": "La prêter aux pêcheurs"
+    }
+  },
+  "nw_320": {
+    "title": "Bouquet officiel",
+    "body": "La salle du fort sent la poussière plus que la visite à venir.",
+    "choices": {
+      "A": "Acheter des fleurs",
+      "B": "Demander au village",
+      "C": "Garder la salle nue"
+    }
+  },
+  "nw_321": {
+    "title": "Crabes du chemin",
+    "body": "Le sentier du quai grouille de crabes très peu coopératifs.",
+    "choices": {
+      "A": "Nettoyer le passage",
+      "B": "Faire un détour",
+      "C": "Vendre les crabes"
+    }
+  },
+  "nw_322": {
+    "title": "Pierre chaude",
+    "body": "Une pierre plate garde la chaleur mieux que nos foyers.",
+    "choices": {
+      "A": "Cuire avec la pierre",
+      "B": "Construire un foyer",
+      "C": "Laisser la pierre"
+    }
+  },
+  "nw_323": {
+    "title": "Porte du marché",
+    "body": "La porte du marché coince les caisses et les humeurs.",
+    "choices": {
+      "A": "L élargir",
+      "B": "Mettre un gardien",
+      "C": "Laisser l entrée libre"
+    }
+  },
+  "nw_324": {
+    "title": "Source discrète",
+    "body": "Une petite source coule derrière les herbes sans faire la fière.",
+    "choices": {
+      "A": "La protéger",
+      "B": "Y conduire le camp",
+      "C": "La partager"
+    }
+  },
+  "nw_325": {
+    "title": "Pirogue peinte",
+    "body": "Une pirogue colorée fait parler plus qu un traité.",
+    "choices": {
+      "A": "La louer",
+      "B": "Copier la déco",
+      "C": "L acheter"
+    }
+  },
+  "nw_326": {
+    "title": "Chariot de sel",
+    "body": "Le chariot de sel menace de finir en tas blanc sur le chemin.",
+    "choices": {
+      "A": "Le renforcer",
+      "B": "Répartir la charge",
+      "C": "Le faire passer après"
+    }
+  },
+  "nw_327": {
+    "title": "Toit d atelier",
+    "body": "Le toit de l atelier fuit sur les outils les plus chers.",
+    "choices": {
+      "A": "Le refaire",
+      "B": "Poser une bâche",
+      "C": "Déplacer les outils"
+    }
+  },
+  "nw_328": {
+    "title": "Sentinelle malade",
+    "body": "La sentinelle tousse plus qu elle ne surveille.",
+    "choices": {
+      "A": "Lui donner repos",
+      "B": "Chercher un remplaçant",
+      "C": "Réduire la ronde"
+    }
+  },
+  "nw_329": {
+    "title": "Feu trop grand",
+    "body": "Le grand feu du soir impressionne mais dévore le bois.",
+    "choices": {
+      "A": "Le réduire",
+      "B": "Cuire plus pour vendre",
+      "C": "Le montrer aux chefs"
+    }
+  },
+  "nw_330": {
+    "title": "Jarres alignées",
+    "body": "Une rangée de jarres donne envie d en remplir encore dix.",
+    "choices": {
+      "A": "En stocker plus",
+      "B": "Les vendre",
+      "C": "Les donner au camp"
+    }
+  },
+  "nw_331": {
+    "title": "Verre coloré",
+    "body": "Des morceaux de verre brillant font tourner toutes les têtes.",
+    "choices": {
+      "A": "En acheter",
+      "B": "L offrir au bureau",
+      "C": "Le laisser au marché"
+    }
+  },
+  "nw_332": {
+    "title": "Mât de parade",
+    "body": "Un grand mât donnerait au port des airs très officiels.",
+    "choices": {
+      "A": "Le dresser",
+      "B": "Faire plus simple",
+      "C": "Annuler la parade"
+    }
+  },
+  "nw_333": {
+    "title": "Bureau de bois",
+    "body": "Le quai manque d un vrai coin sec pour signer sans drame.",
+    "choices": {
+      "A": "Le faire bâtir",
+      "B": "Louer une pièce locale",
+      "C": "Garder le bureau actuel"
+    }
+  },
+  "nw_334": {
+    "title": "Herbes médicinales",
+    "body": "Un guérisseur vante des herbes qui sentent fort et rassurent bien.",
+    "choices": {
+      "A": "En acheter",
+      "B": "Les cultiver",
+      "C": "Les offrir aux guérisseurs"
+    }
+  },
+  "nw_335": {
+    "title": "Tourte salée",
+    "body": "Une tourte du port se vendrait presque toute seule.",
+    "choices": {
+      "A": "La vendre",
+      "B": "La servir aux invités",
+      "C": "Garder la recette"
+    }
+  },
+  "nw_336": {
+    "title": "Pluie fine",
+    "body": "Une pluie légère gêne un peu tout sans rien arrêter vraiment.",
+    "choices": {
+      "A": "Continuer le travail",
+      "B": "Rentrer les hommes",
+      "C": "Poser des toiles"
+    }
+  },
+  "nw_337": {
+    "title": "Corde rouge",
+    "body": "Une corde teinte en rouge attire plus les yeux que les bras.",
+    "choices": {
+      "A": "La garder pour le quai",
+      "B": "La vendre",
+      "C": "L offrir à la place"
+    }
+  },
+  "nw_338": {
+    "title": "Rade profonde",
+    "body": "Une zone profonde peut accueillir plus gros que nos habitudes.",
+    "choices": {
+      "A": "Y accueillir de gros navires",
+      "B": "La garder secrète",
+      "C": "L ouvrir à tous"
+    }
+  },
+  "nw_339": {
+    "title": "Sacs mal fermés",
+    "body": "Les sacs du dépôt laissent filer leur contenu comme des bavards.",
+    "choices": {
+      "A": "Acheter de bons liens",
+      "B": "Former les porteurs",
+      "C": "Vendre vite le stock"
+    }
+  },
+  "nw_340": {
+    "title": "Allée boueuse",
+    "body": "Une allée du camp avale les sandales comme une bête molle.",
+    "choices": {
+      "A": "Poser du gravier",
+      "B": "Fermer l allée",
+      "C": "Utiliser un autre chemin"
+    }
+  },
+  "nw_341": {
+    "title": "Fruit star",
+    "body": "Un fruit local plaît tant qu on en parle plus que du roi.",
+    "choices": {
+      "A": "Le vendre loin",
+      "B": "Le réserver au fort",
+      "C": "Le partager"
+    }
+  },
+  "nw_342": {
+    "title": "Tambour mouillé",
+    "body": "Le tambour du port sonne comme une chaussette triste.",
+    "choices": {
+      "A": "Le faire sécher",
+      "B": "En acheter un autre",
+      "C": "Revenir à la cloche"
+    }
+  },
+  "nw_343": {
+    "title": "Table tordue",
+    "body": "Une table de tri penche si fort que les sacs choisissent un camp.",
+    "choices": {
+      "A": "La redresser",
+      "B": "En commander une neuve",
+      "C": "Trier debout"
+    }
+  },
+  "nw_344": {
+    "title": "Petit moulin",
+    "body": "Un petit moulin pourrait épargner bien des bras.",
+    "choices": {
+      "A": "Le construire",
+      "B": "Le tester petit",
+      "C": "Acheter la farine"
+    }
+  },
+  "nw_345": {
+    "title": "Droit du quai",
+    "body": "Une taxe légère ferait grincer juste ce qu il faut.",
+    "choices": {
+      "A": "Le fixer",
+      "B": "Le baisser un peu",
+      "C": "Le supprimer"
+    }
+  },
+  "nw_346": {
+    "title": "Hamacs publics",
+    "body": "Des hamacs au port feraient moins tomber les hommes fatigués.",
+    "choices": {
+      "A": "En installer",
+      "B": "En réserver au camp",
+      "C": "Les louer"
+    }
+  },
+  "nw_347": {
+    "title": "Marché couvert",
+    "body": "Le marché rêve d un toit depuis des lunes humides.",
+    "choices": {
+      "A": "Le bâtir",
+      "B": "Commencer petit",
+      "C": "Le laisser dehors"
+    }
+  },
+  "nw_348": {
+    "title": "Échelle perdue",
+    "body": "Une échelle manque toujours quand la hauteur devient urgente.",
+    "choices": {
+      "A": "En acheter une",
+      "B": "Fabriquer sur place",
+      "C": "Reporter les travaux hauts"
+    }
+  },
+  "nw_349": {
+    "title": "Miel fumé",
+    "body": "Un miel fumé surprend tout le monde et plaît trop vite.",
+    "choices": {
+      "A": "Le vendre",
+      "B": "L offrir",
+      "C": "En garder pour le fort"
+    }
+  },
+  "nw_350": {
+    "title": "Chemin du phare",
+    "body": "Le chemin du phare casse les chevilles et l envie de monter.",
+    "choices": {
+      "A": "Le réparer",
+      "B": "Le faire entretenir localement",
+      "C": "Le fermer la nuit"
+    }
+  },
+  "nw_351": {
+    "title": "Gants de travail",
+    "body": "Les mains du chantier ressemblent trop à de vieux filets.",
+    "choices": {
+      "A": "En distribuer",
+      "B": "Les vendre au prix coûtant",
+      "C": "Laisser chacun faire"
+    }
+  },
+  "nw_352": {
+    "title": "Épi doré",
+    "body": "Un épi très solide donne des idées de grandeur au grenier.",
+    "choices": {
+      "A": "Le montrer au roi",
+      "B": "Le semer partout",
+      "C": "Le partager"
+    }
+  },
+  "nw_353": {
+    "title": "Chien du chef",
+    "body": "Le chien du chef voisin adore notre cuisine et nos couloirs.",
+    "choices": {
+      "A": "Le nourrir",
+      "B": "Le tenir loin du quai",
+      "C": "Le promener au camp"
+    }
+  },
+  "nw_354": {
+    "title": "Réserve de bois",
+    "body": "La pile de bois baisse plus vite que les plaintes du cuisinier.",
+    "choices": {
+      "A": "L agrandir",
+      "B": "La vendre un peu",
+      "C": "La partager"
+    }
+  },
+  "nw_355": {
+    "title": "Porte étroite",
+    "body": "La petite porte du dépôt déteste les grosses caisses.",
+    "choices": {
+      "A": "L ouvrir plus large",
+      "B": "Faire passer par ordre",
+      "C": "Garder ainsi"
+    }
+  },
+  "nw_356": {
+    "title": "Vendeur bavard",
+    "body": "Un vendeur attire tant de monde qu on entend moins le port que lui.",
+    "choices": {
+      "A": "Le mettre au centre",
+      "B": "Le taxer",
+      "C": "L embaucher"
+    }
+  },
+  "nw_357": {
+    "title": "Cabane à outils",
+    "body": "Les marteaux voyagent trop et reviennent peu.",
+    "choices": {
+      "A": "La bâtir",
+      "B": "Utiliser une salle du fort",
+      "C": "Laisser les outils au dépôt"
+    }
+  },
+  "nw_358": {
+    "title": "Grand miroir",
+    "body": "Un miroir énorme arrive au quai avec plus d orgueil que de prudence.",
+    "choices": {
+      "A": "L acheter",
+      "B": "Le louer pour la visite",
+      "C": "Le laisser partir"
+    }
+  },
+  "nw_359": {
+    "title": "Patrouille lente",
+    "body": "La patrouille du soir avance comme une soupe froide.",
+    "choices": {
+      "A": "Donner un bonus",
+      "B": "Changer le trajet",
+      "C": "Réduire la tournée"
+    }
+  },
+  "nw_360": {
+    "title": "Rive abrupte",
+    "body": "Une rive utile est trop raide pour les bottes du camp.",
+    "choices": {
+      "A": "Tailler un passage",
+      "B": "Interdire l accès",
+      "C": "Utiliser des cordes"
+    }
+  },
+  "nw_361": {
+    "title": "Lanterne bleue",
+    "body": "Une lanterne bleue éclaire mieux que tout notre sérieux.",
+    "choices": {
+      "A": "L adopter au quai",
+      "B": "La vendre comme curiosité",
+      "C": "L offrir aux chefs"
+    }
+  },
+  "nw_362": {
+    "title": "Four du port",
+    "body": "Le four du quai chauffe mal et fâche bien.",
+    "choices": {
+      "A": "Le réparer",
+      "B": "En construire un autre",
+      "C": "Acheter au village"
+    }
+  },
+  "nw_363": {
+    "title": "Linge au vent",
+    "body": "Le linge des marins transforme le quai en forêt de draps.",
+    "choices": {
+      "A": "Créer un espace dédié",
+      "B": "Interdire au quai",
+      "C": "Faire payer la place"
+    }
+  },
+  "nw_364": {
+    "title": "Rame neuve",
+    "body": "Une rame bien faite donne envie de changer tout le stock.",
+    "choices": {
+      "A": "En acheter dix",
+      "B": "En tester deux",
+      "C": "Garder les anciennes"
+    }
+  },
+  "nw_365": {
+    "title": "Fête du poisson",
+    "body": "Une fête du poisson remplirait le port d odeurs et de pièces.",
+    "choices": {
+      "A": "La lancer",
+      "B": "La limiter au port",
+      "C": "L annuler"
+    }
+  },
+  "nw_366": {
+    "title": "Docks silencieux",
+    "body": "Le quai semble si calme qu on croit presque avoir raté quelque chose.",
+    "choices": {
+      "A": "Envoyer des musiciens",
+      "B": "Baisser les taxes un jour",
+      "C": "Laisser le calme"
+    }
+  },
+  "nw_367": {
+    "title": "Pierre lisse",
+    "body": "Une pierre polie glisse peu et coûte encore moins qu une chute.",
+    "choices": {
+      "A": "Paver l entrée",
+      "B": "La vendre en blocs",
+      "C": "Décorer la place"
+    }
+  },
+  "nw_368": {
+    "title": "Habit de pluie",
+    "body": "La garde finit trempée avant même le milieu du jour.",
+    "choices": {
+      "A": "En acheter pour la garde",
+      "B": "Les vendre aux ouvriers",
+      "C": "Attendre le soleil"
+    }
+  },
+  "nw_369": {
+    "title": "Sentier des chèvres",
+    "body": "Un petit sentier de chèvres grimpe mieux que notre grande route.",
+    "choices": {
+      "A": "Le suivre",
+      "B": "Le baliser",
+      "C": "Le fermer"
+    }
+  },
+  "nw_370": {
+    "title": "Bureau annexe",
+    "body": "Le bureau principal déborde déjà sur les bancs et les nerfs.",
+    "choices": {
+      "A": "L ouvrir",
+      "B": "Le tenir un jour sur deux",
+      "C": "Garder un seul bureau"
+    }
+  },
+  "nw_371": {
+    "title": "Filets secs",
+    "body": "Des filets bien secs valent presque mieux qu un bon discours.",
+    "choices": {
+      "A": "Les stocker",
+      "B": "Les vendre",
+      "C": "Les prêter"
+    }
+  },
+  "nw_372": {
+    "title": "Mur peint",
+    "body": "Un mur coloré attire la foule bien plus qu un mur très droit.",
+    "choices": {
+      "A": "Laisser la fresque",
+      "B": "Peindre le signe du roi",
+      "C": "Effacer le mur"
+    }
+  },
+  "nw_373": {
+    "title": "Pain rond",
+    "body": "Un pain nouveau circule déjà plus vite que les nouvelles du port.",
+    "choices": {
+      "A": "En vendre partout",
+      "B": "En garder pour le camp",
+      "C": "En offrir aux voisins"
+    }
+  },
+  "nw_374": {
+    "title": "Colis fragile",
+    "body": "Le colis tremble presque tout seul quand on le regarde.",
+    "choices": {
+      "A": "Le porter à la main",
+      "B": "Le stocker au fort",
+      "C": "Le revendre"
+    }
+  },
+  "nw_375": {
+    "title": "Cage vide",
+    "body": "Une cage reste vide au dépôt comme une idée en attente.",
+    "choices": {
+      "A": "La remplir avec des poules",
+      "B": "La vendre",
+      "C": "La donner"
+    }
+  },
+  "nw_376": {
+    "title": "Vieux canot",
+    "body": "Un vieux canot tient encore par habitude plus que par bois.",
+    "choices": {
+      "A": "Le réparer",
+      "B": "Le démonter",
+      "C": "Le prêter"
+    }
+  },
+  "nw_377": {
+    "title": "Récif proche",
+    "body": "Un récif tout proche pourrait être utile ou très vexant.",
+    "choices": {
+      "A": "Le signaler",
+      "B": "Le garder secret",
+      "C": "L exploiter pour la pêche"
+    }
+  },
+  "nw_378": {
+    "title": "Draps du camp",
+    "body": "Les draps du camp ont la couleur de la fatigue.",
+    "choices": {
+      "A": "En changer",
+      "B": "Les laver au village",
+      "C": "Réserver les neufs aux blessés"
+    }
+  },
+  "nw_379": {
+    "title": "Sceau royal",
+    "body": "Le grand sceau donne du poids aux papiers et du temps aux files.",
+    "choices": {
+      "A": "Tout marquer",
+      "B": "Marquer juste les contrats",
+      "C": "Garder le sceau au coffre"
+    }
+  },
+  "nw_380": {
+    "title": "Jardin d épices",
+    "body": "Le jardin derrière le fort sent déjà l argent.",
+    "choices": {
+      "A": "L agrandir",
+      "B": "Le vendre en sachets",
+      "C": "Le partager"
+    }
+  },
+  "nw_381": {
+    "title": "Planche cassée",
+    "body": "Une planche brisée choisit toujours le pire moment.",
+    "choices": {
+      "A": "La changer",
+      "B": "Réparer vite",
+      "C": "Fermer le passage"
+    }
+  },
+  "nw_382": {
+    "title": "Scribe rapide",
+    "body": "Un scribe copie si vite qu on lui trouverait bien un autre paquet.",
+    "choices": {
+      "A": "Lui donner plus de travail",
+      "B": "Lui trouver un aide",
+      "C": "Le laisser à son rythme"
+    }
+  },
+  "nw_383": {
+    "title": "Ponton privé",
+    "body": "Un marchand a construit son petit ponton sans attendre notre humeur.",
+    "choices": {
+      "A": "L interdire",
+      "B": "Le taxer",
+      "C": "Le louer"
+    }
+  },
+  "nw_384": {
+    "title": "Tonneau sucré",
+    "body": "Un tonneau très sucré attire les langues et les idées.",
+    "choices": {
+      "A": "Le vendre",
+      "B": "Le servir à la table",
+      "C": "Le garder pour l hiver"
+    }
+  },
+  "nw_385": {
+    "title": "Caisse de savon",
+    "body": "Une caisse de savon sent la propreté et le commerce.",
+    "choices": {
+      "A": "L acheter",
+      "B": "La revendre",
+      "C": "En donner au camp"
+    }
+  },
+  "nw_386": {
+    "title": "Terrain plat",
+    "body": "Un terrain bien plat fait rêver le stockage et les marchés.",
+    "choices": {
+      "A": "Y faire un dépôt",
+      "B": "Y tenir marché",
+      "C": "Le laisser libre"
+    }
+  },
+  "nw_387": {
+    "title": "Ombre du figuier",
+    "body": "L ombre d un grand figuier vaut déjà trois bancs.",
+    "choices": {
+      "A": "Mettre un banc",
+      "B": "Réserver l ombre au bureau",
+      "C": "Laisser tout le monde venir"
+    }
+  },
+  "nw_388": {
+    "title": "Garde trempé",
+    "body": "Le garde de la porte ressemble à une éponge armée.",
+    "choices": {
+      "A": "Lui donner une cape",
+      "B": "Changer le poste",
+      "C": "Le laisser finir"
+    }
+  },
+  "nw_389": {
+    "title": "Borne du chemin",
+    "body": "Une seule borne guide le chemin alors qu il en faudrait cinq.",
+    "choices": {
+      "A": "En poser d autres",
+      "B": "Faire peindre les bornes",
+      "C": "Laisser les guides"
+    }
+  },
+  "nw_390": {
+    "title": "Marché du matin",
+    "body": "Le marché veut ouvrir plus tôt que le soleil du bureau.",
+    "choices": {
+      "A": "Ouvrir plus tôt",
+      "B": "Tester un jour",
+      "C": "Garder l heure actuelle"
+    }
+  },
+  "nw_391": {
+    "title": "Pierre marquée",
+    "body": "Une pierre gravée attire des regards que nous n avons pas commandés.",
+    "choices": {
+      "A": "La montrer",
+      "B": "La garder au fort",
+      "C": "La laisser sur place"
+    }
+  },
+  "nw_392": {
+    "title": "Vague haute",
+    "body": "Une vague plus haute que d habitude frappe le quai avec assurance.",
+    "choices": {
+      "A": "Rehausser le quai",
+      "B": "Décharger plus loin",
+      "C": "Attendre la mer calme"
+    }
+  },
+  "nw_393": {
+    "title": "Bureau des plaintes",
+    "body": "Les plaintes s entassent comme des sacs mal rangés.",
+    "choices": {
+      "A": "L ouvrir",
+      "B": "Faire un jour par semaine",
+      "C": "Ignorer les plaintes"
+    }
+  },
+  "nw_394": {
+    "title": "Paille fraîche",
+    "body": "Une paille neuve ferait du bien aux bêtes et aux nez.",
+    "choices": {
+      "A": "En acheter",
+      "B": "La vendre",
+      "C": "En donner aux écuries"
+    }
+  },
+  "nw_395": {
+    "title": "Navire voisin",
+    "body": "Un navire venu d un port voisin hésite à commercer avec nous.",
+    "choices": {
+      "A": "Faire commerce",
+      "B": "Le surveiller",
+      "C": "L inviter au port"
+    }
+  },
+  "nw_396": {
+    "title": "Tonnelle publique",
+    "body": "Une tonnelle donnerait de l ombre à la place et du calme aux files.",
+    "choices": {
+      "A": "La bâtir",
+      "B": "La faire payer",
+      "C": "La confier au village"
+    }
+  },
+  "nw_397": {
+    "title": "Piquet manquant",
+    "body": "Un trou dans la barrière suffit à rendre tout le quai nerveux.",
+    "choices": {
+      "A": "Le remplacer",
+      "B": "Renforcer tout le bord",
+      "C": "Fermer la zone"
+    }
+  },
+  "nw_398": {
+    "title": "Coiffe locale",
+    "body": "Une coiffe locale plaît tant qu on veut déjà la porter au fort.",
+    "choices": {
+      "A": "En acheter pour la visite",
+      "B": "En offrir aux chefs",
+      "C": "Laisser la mode"
+    }
+  },
+  "nw_399": {
+    "title": "Sacs de farine",
+    "body": "Les sacs de farine n aiment ni l eau ni les retards.",
+    "choices": {
+      "A": "Les mettre au sec",
+      "B": "Les vendre vite",
+      "C": "Les distribuer"
+    }
+  },
+  "nw_400": {
+    "title": "Tour du rivage",
+    "body": "Une tour au bord de l eau verrait tout et coûterait aussi tout.",
+    "choices": {
+      "A": "La bâtir",
+      "B": "Monter une plate forme",
+      "C": "Utiliser la colline"
+    }
   }
+
 
 }
 
