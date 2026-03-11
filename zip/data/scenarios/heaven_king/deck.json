@@ -16,8 +16,8 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
-            "free_will": 5
+            "interventions": 5,
+            "free_will": 0
           }
         },
         "C": {
@@ -114,8 +114,8 @@
           "gaugeDelta": {
             "prayers": 0,
             "cults": 5,
-            "interventions": 0,
-            "free_will": -5
+            "interventions": 5,
+            "free_will": 0
           }
         }
       }
@@ -128,7 +128,7 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
+            "interventions": 5,
             "free_will": 0
           }
         },
@@ -188,7 +188,7 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
+            "interventions": 5,
             "free_will": 0
           }
         },
@@ -256,8 +256,8 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
-            "free_will": 5
+            "interventions": 5,
+            "free_will": 0
           }
         },
         "C": {
@@ -825,7 +825,7 @@
         "B": {
           "gaugeDelta": {
             "prayers": 0,
-            "cults": 0,
+            "cults": -5,
             "interventions": 0,
             "free_will": 5
           }
@@ -1013,8 +1013,8 @@
         "C": {
           "gaugeDelta": {
             "prayers": 5,
-            "cults": 0,
-            "interventions": 5,
+            "cults": 5,
+            "interventions": 0,
             "free_will": 0
           }
         }
@@ -1268,8 +1268,8 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
-            "free_will": 5
+            "interventions": 5,
+            "free_will": 0
           }
         },
         "B": {
@@ -1824,7 +1824,7 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
+            "interventions": 5,
             "free_will": 0
           }
         }
@@ -2016,7 +2016,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": 5,
             "cults": 0,
             "interventions": 5,
             "free_will": 0
@@ -2264,7 +2264,7 @@
         },
         "B": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": 5,
             "cults": 0,
             "interventions": 0,
             "free_will": 5
@@ -2797,9 +2797,9 @@
         "A": {
           "gaugeDelta": {
             "prayers": 0,
-            "cults": 5,
-            "interventions": 0,
-            "free_will": -5
+            "cults": 0,
+            "interventions": 5,
+            "free_will": 5
           }
         },
         "B": {
@@ -3158,7 +3158,7 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
+            "interventions": 5,
             "free_will": 0
           }
         },
@@ -3427,7 +3427,7 @@
         "A": {
           "gaugeDelta": {
             "prayers": 0,
-            "cults": 0,
+            "cults": -5,
             "interventions": 5,
             "free_will": 0
           }
@@ -4464,8 +4464,8 @@
           "gaugeDelta": {
             "prayers": 0,
             "cults": 5,
-            "interventions": 0,
-            "free_will": -5
+            "interventions": 5,
+            "free_will": 0
           }
         }
       }
@@ -4672,10 +4672,10 @@
         },
         "C": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": -5,
             "cults": 5,
             "interventions": 0,
-            "free_will": -5
+            "free_will": 0
           }
         }
       }
@@ -4725,7 +4725,7 @@
         "B": {
           "gaugeDelta": {
             "prayers": 0,
-            "cults": 0,
+            "cults": 5,
             "interventions": 0,
             "free_will": 5
           }
@@ -5294,7 +5294,7 @@
         },
         "B": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": 5,
             "cults": 0,
             "interventions": 0,
             "free_will": 5
@@ -5468,7 +5468,7 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
+            "interventions": 5,
             "free_will": 0
           }
         },
@@ -6112,10 +6112,10 @@
         },
         "C": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": -5,
             "cults": 5,
             "interventions": 0,
-            "free_will": -5
+            "free_will": 0
           }
         }
       }
@@ -6756,7 +6756,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": 5,
             "cults": 0,
             "interventions": 0,
             "free_will": 5
@@ -6818,7 +6818,7 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
+            "interventions": 5,
             "free_will": 0
           }
         },
@@ -7217,7 +7217,7 @@
             "prayers": 0,
             "cults": 0,
             "interventions": 0,
-            "free_will": -5
+            "free_will": 5
           }
         },
         "C": {
@@ -7282,10 +7282,10 @@
         },
         "C": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": -5,
             "cults": 5,
             "interventions": 0,
-            "free_will": -5
+            "free_will": 0
           }
         }
       }
@@ -7508,7 +7508,7 @@
           "gaugeDelta": {
             "prayers": 5,
             "cults": 0,
-            "interventions": 0,
+            "interventions": 5,
             "free_will": 0
           }
         },
@@ -8376,7 +8376,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": 5,
             "cults": 0,
             "interventions": 0,
             "free_will": 5
@@ -8676,7 +8676,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": 5,
             "cults": 0,
             "interventions": 0,
             "free_will": 5
@@ -8894,7 +8894,7 @@
         },
         "B": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": -5,
             "cults": 0,
             "interventions": 0,
             "free_will": 5
@@ -9066,7 +9066,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": 5,
             "cults": 0,
             "interventions": 0,
             "free_will": 5
@@ -9246,7 +9246,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": 5,
             "cults": 0,
             "interventions": 0,
             "free_will": 5
@@ -9426,7 +9426,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": 5,
             "cults": 0,
             "interventions": 0,
             "free_will": 5
@@ -9443,7 +9443,7 @@
         "C": {
           "gaugeDelta": {
             "prayers": 5,
-            "cults": 0,
+            "cults": 5,
             "interventions": 0,
             "free_will": 0
           }
@@ -9696,7 +9696,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": 5,
             "cults": 0,
             "interventions": 0,
             "free_will": 5
@@ -9757,7 +9757,7 @@
         "A": {
           "gaugeDelta": {
             "prayers": 0,
-            "cults": 0,
+            "cults": 5,
             "interventions": 5,
             "free_will": 0
           }
@@ -10896,7 +10896,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "prayers": 0,
+            "prayers": 5,
             "cults": 0,
             "interventions": 0,
             "free_will": 5
