@@ -1082,27 +1082,29 @@ body.vr-peek-mode .vr-gauge-preview{
           #vr-ending-overlay .vr-ending-text{
             text-align:center !important;
           }
-          .vr-ending-reward{
+               .vr-ending-reward{
             display:flex;
             align-items:center;
             justify-content:center;
-            gap:12px;
-            padding:10px 14px;
-            border-radius:16px;
-            background:rgba(255,255,255,.08);
-            border:1px solid rgba(255,255,255,.12);
-            box-shadow:0 14px 26px rgba(0,0,0,.24);
+            gap:8px;
+            padding:0;
+            margin:2px 0 4px;
+            background:transparent;
+            border:none;
+            box-shadow:none;
           }
           .vr-ending-reward img{
-            width:36px;
-            height:36px;
+            width:30px;
+            height:30px;
             object-fit:contain;
-            filter:drop-shadow(0 6px 12px rgba(0,0,0,.32));
+            filter:drop-shadow(0 4px 8px rgba(0,0,0,.28));
+            transform:translateY(3px);
           }
           .vr-ending-reward strong{
             font-size:20px;
             font-weight:950;
             letter-spacing:.2px;
+            line-height:1;
           }
           .vr-ending-double{
             position:relative;

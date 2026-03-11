@@ -575,29 +575,58 @@ body.vr-body-game .vr-choice-label{
    FIN
    ========================================================== */
 .vr-ending-overlay{
-  position: fixed;
-  inset:0;
-  background: rgba(15, 23, 42, 0.85);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:10;
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(15, 23, 42, 0.85) !important;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 250000 !important;
+  padding:
+    max(12px, env(safe-area-inset-top))
+    12px
+    max(12px, env(safe-area-inset-bottom))
+    12px !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
 }
-.vr-ending-overlay.vr-ending-visible{ display:flex; }
+
+.vr-ending-overlay.vr-ending-visible{
+  display: flex !important;
+}
 
 .vr-ending-card{
-  max-width: 360px;
-  width: 100%;
-  padding: 20px 18px;
-  border-radius: 18px;
+  width: min(420px, calc(100vw - 24px)) !important;
+  max-width: 100% !important;
+  max-height: calc(100svh - 24px) !important;
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
+
+  padding: clamp(14px, 3.6vw, 20px) !important;
+  border-radius: clamp(16px, 4vw, 22px) !important;
   background: rgba(15, 23, 42, 0.98);
   border: 1px solid rgba(209,213,219,0.5);
   box-shadow: var(--vr-shadow-soft);
-  text-align:left;
+  text-align: center !important;
 }
-.vr-ending-title{ margin:0 0 8px; font-size:18px; }
-.vr-ending-text{ margin:0 0 14px; font-size:14px; color: var(--vr-text-muted); }
 
+.vr-ending-title{
+  margin: 0 0 8px !important;
+  font-size: clamp(18px, 4.8vw, 24px) !important;
+  text-align: center !important;
+}
+
+.vr-ending-text{
+  margin: 0 0 12px !important;
+  font-size: clamp(12px, 3.4vw, 14px) !important;
+  line-height: 1.35 !important;
+  text-align: center !important;
+  color: var(--vr-text-muted);
+}
+
+/* ==========================================================
+   FIN DE REGNE — boutons en cartouches basiques
+   ========================================================== */
 #vr-ending-overlay .vr-choice-button{
   background-image: none !important;
   background: rgba(255,255,255,0.08) !important;
@@ -605,8 +634,8 @@ body.vr-body-game .vr-choice-label{
   border-radius: 16px !important;
   box-shadow: 0 14px 26px rgba(0,0,0,0.24) !important;
 
-  min-height: 56px !important;
-  padding: 12px 16px !important;
+  min-height: clamp(48px, 12vw, 56px) !important;
+  padding: 10px 12px !important;
 
   width: 100% !important;
   max-width: none !important;
@@ -618,7 +647,7 @@ body.vr-body-game .vr-choice-label{
 
   color: #ffffff !important;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  font-size: 16px !important;
+  font-size: clamp(13px, 3.8vw, 16px) !important;
   font-weight: 800 !important;
   line-height: 1.2 !important;
   text-align: center !important;
@@ -641,19 +670,114 @@ body.vr-body-game .vr-choice-label{
   font-weight: inherit !important;
   line-height: inherit !important;
   text-shadow: inherit !important;
+
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
 }
+
+#vr-ending-overlay .vr-ending-reward{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 10px 12px !important;
+  border-radius: 16px !important;
+  background: rgba(255,255,255,.08) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  box-shadow: 0 14px 26px rgba(0,0,0,.24) !important;
+}
+
+#vr-ending-overlay .vr-ending-reward img{
+  width: clamp(24px, 7vw, 36px) !important;
+  height: clamp(24px, 7vw, 36px) !important;
+  object-fit: contain !important;
+}
+
+#vr-ending-overlay .vr-ending-reward strong{
+  font-size: clamp(18px, 4.8vw, 22px) !important;
+  font-weight: 950 !important;
+  letter-spacing: .2px !important;
+}
+
+#vr-ending-overlay .vr-ending-double{
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  width: 100% !important;
+  min-height: clamp(72px, 14vw, 92px) !important;
+  padding: 12px 14px !important;
+  margin-top: 4px !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05)) !important;
+  box-shadow: 0 18px 34px rgba(0,0,0,.28) !important;
+  color: #fff !important;
+  font: inherit !important;
+  cursor: pointer !important;
+}
+
+#vr-ending-overlay .vr-ending-double-title{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  font-size: clamp(16px, 4.5vw, 20px) !important;
+  font-weight: 950 !important;
+  line-height: 1.05 !important;
+}
+
+#vr-ending-overlay .vr-ending-double-title img{
+  width: clamp(24px, 6.5vw, 32px) !important;
+  height: clamp(24px, 6.5vw, 32px) !important;
+  object-fit: contain !important;
+}
+
+#vr-ending-overlay .vr-ending-double-sub{
+  font-size: clamp(11px, 3vw, 13px) !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  opacity: .92 !important;
+}
+
 #vr-ending-overlay .vr-ending-actions{
+  display: flex !important;
+  flex-direction: column !important;
   gap: 10px !important;
   margin-top: 10px !important;
 }
 
 #vr-ending-overlay .vr-ending-actions-bottom{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
   gap: 10px !important;
   margin-top: 0 !important;
 }
 
 #vr-ending-overlay #ending-revive-btn{
   margin-bottom: 0 !important;
+}
+
+@media (max-width: 480px), (max-height: 720px){
+  #vr-ending-overlay{
+    align-items: flex-start !important;
+  }
+
+  #vr-ending-overlay .vr-ending-card{
+    margin:
+      max(10px, env(safe-area-inset-top))
+      0
+      max(10px, env(safe-area-inset-bottom))
+      0 !important;
+    max-height: calc(100svh - 20px - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
+  }
+
+  #vr-ending-overlay .vr-ending-actions-bottom{
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ==========================================================
@@ -2142,6 +2266,13 @@ body[data-universe="western_president"].vr-body-game #view-game .vr-card-title{
   color: #000 !important;
   font-weight: 900 !important;
   text-shadow: none !important;
+  line-height: 1.06 !important;
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
 }
 
 body[data-universe="western_president"].vr-body-game #view-game .vr-card-text{
@@ -2149,6 +2280,13 @@ body[data-universe="western_president"].vr-body-game #view-game .vr-card-text{
   color: #111 !important;
   font-weight: 800 !important;
   text-shadow: none !important;
+  line-height: 1.18 !important;
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
 }
 
 body[data-universe="western_president"].vr-body-game #view-game .vr-choice-label{
@@ -2157,33 +2295,38 @@ body[data-universe="western_president"].vr-body-game #view-game .vr-choice-label
   font-weight: 900 !important;
   text-shadow: none !important;
   opacity: 1 !important;
-  line-height: 1.18 !important;
+  line-height: 1.12 !important;
+  text-align: center !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
 }
 
 body.vr-body-game[data-universe="western_president"]{
   --vr-card-w: clamp(390px, 98vw, 1120px);
 
-  --vr-scn-h: clamp(155px, 20.5svh, 285px);
-  --vr-choice-h: clamp(110px, 14.6svh, 186px);
+  --vr-scn-h: clamp(158px, 20.8svh, 290px);
+  --vr-choice-h: clamp(116px, 15.2svh, 194px);
 
   --vr-game-gap: clamp(1px, 0.18svh, 4px);
-  --vr-stack-gap: clamp(14px, 1.6svh, 26px);
-  --vr-choices-gap: clamp(7px, 0.85svh, 14px);
+  --vr-stack-gap: clamp(16px, 1.8svh, 28px);
+  --vr-choices-gap: clamp(8px, 0.95svh, 15px);
 
   --vr-scn-inset-top: 18%;
   --vr-scn-inset-right: 12%;
   --vr-scn-inset-bottom: 10%;
   --vr-scn-inset-left: 12%;
 
-  --vr-choice-inset-top: 24%;
+  --vr-choice-inset-top: 17%;
   --vr-choice-inset-right: 9%;
-  --vr-choice-inset-bottom: 11%;
+  --vr-choice-inset-bottom: 17%;
   --vr-choice-inset-left: 9%;
-  --vr-choice-safe: 86%;
+  --vr-choice-safe: 84%;
 
-  --vr-font-scn-title: clamp(16px, 2.7vmin, 30px);
-  --vr-font-scn-text:  clamp(14px, 2.15vmin, 22px);
-  --vr-font-choice:    clamp(15px, 2.2vmin, 22px);
+  --vr-font-scn-title: clamp(16px, 2.6vmin, 30px);
+  --vr-font-scn-text:  clamp(13px, 2.0vmin, 21px);
+  --vr-font-choice:    clamp(13px, 2.0vmin, 20px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
@@ -2214,20 +2357,28 @@ body.vr-body-game[data-universe="western_president"]{
 }
 
 body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-button{
-  background-size: 100% 100% !important;
+  background-size: 106% 100% !important;
   background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main{
-  overflow: hidden;
+  overflow: hidden !important;
   background-size: 96% 100% !important;
   background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main .vr-card-text{
+  max-height: none !important;
+  overflow: visible !important;
+  padding-right: 0 !important;
 }
 
 body.vr-body-game[data-universe="western_president"] #view-game .vr-card-title,
 body.vr-body-game[data-universe="western_president"] #view-game .vr-card-text,
 body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-label{
-  max-width: 92% !important;
+  max-width: 94% !important;
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center !important;
@@ -2473,24 +2624,27 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
     --vr-ui-customize-top: 16px;
     --vr-ui-customize-right: 16px;
 
-    --vr-scn-h: clamp(136px, 18.5svh, 220px);
-    --vr-choice-h: clamp(94px, 12.6svh, 148px);
+    --vr-scn-h: clamp(138px, 18.8svh, 224px);
+    --vr-choice-h: clamp(90px, 12.0svh, 142px);
 
     --vr-stack-gap: clamp(12px, 1.35svh, 22px);
-    --vr-choices-gap: clamp(6px, 0.7svh, 12px);
+    --vr-choices-gap: clamp(6px, 0.70svh, 12px);
 
     --vr-scn-inset-top: 17%;
     --vr-scn-inset-right: 12%;
     --vr-scn-inset-bottom: 11%;
     --vr-scn-inset-left: 12%;
 
-    --vr-choice-safe: 84%;
-    --vr-choice-inset-top: 22%;
+    --vr-choice-safe: 82%;
+    --vr-choice-inset-top: 16%;
     --vr-choice-inset-right: 8%;
-    --vr-choice-inset-bottom: 11%;
+    --vr-choice-inset-bottom: 16%;
     --vr-choice-inset-left: 8%;
 
-    --vr-font-choice: clamp(13px, 3.15vw, 17px);
+    --vr-font-scn-title: clamp(15px, 3.5vw, 24px);
+    --vr-font-scn-text: clamp(12px, 2.7vw, 16px);
+    --vr-font-choice: clamp(12px, 3.0vw, 16px);
+
     --vr-hud-name-years-gap: 30px;
   }
 
@@ -2518,16 +2672,34 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
     transform: translate(0px, 14px) !important;
     gap: 30px !important;
   }
+
+  body.vr-body-game[data-universe="western_president"] #view-game .vr-card-title{
+    line-height: 1.05 !important;
+    max-width: 94% !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] #view-game .vr-card-text{
+    line-height: 1.14 !important;
+    max-width: 94% !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-label{
+    line-height: 1.10 !important;
+    max-width: 100% !important;
+  }
 }
 
 @media (max-width: 390px), (max-height: 740px){
   body.vr-body-game[data-universe="western_president"]{
-    --vr-choice-h: clamp(86px, 11.6svh, 128px);
-    --vr-font-choice: clamp(12px, 2.95vw, 15px);
-    --vr-choice-safe: 82%;
-    --vr-choice-inset-top: 21%;
+    --vr-scn-h: clamp(132px, 18.0svh, 210px);
+    --vr-choice-h: clamp(84px, 11.3svh, 130px);
+    --vr-font-scn-title: clamp(14px, 3.3vw, 20px);
+    --vr-font-scn-text: clamp(11px, 2.55vw, 14px);
+    --vr-font-choice: clamp(11px, 2.8vw, 14px);
+    --vr-choice-safe: 80%;
+    --vr-choice-inset-top: 15%;
     --vr-choice-inset-right: 7%;
-    --vr-choice-inset-bottom: 11%;
+    --vr-choice-inset-bottom: 15%;
     --vr-choice-inset-left: 7%;
   }
 }
