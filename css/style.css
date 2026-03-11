@@ -4151,8 +4151,7 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
    - ton CSS actuel devient la référence
    - on scale tout le mode jeu tel quel
    - aucun réglage univers à refaire
-   ========================================================== */
-@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
+   ========================================================== */@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
   body.vr-body-game[data-universe="western_president"]{
     --vr-scn-h: clamp(148px, 17.2svh, 220px);
     --vr-choice-h: clamp(92px, 10.8svh, 138px);
@@ -4163,6 +4162,17 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
     --vr-font-scn-title: clamp(15px, 1.9vmin, 24px);
     --vr-font-scn-text: clamp(12px, 1.45vmin, 16px);
     --vr-font-choice: clamp(12px, 1.5vmin, 16px);
+
+    --vr-scn-inset-top: 16%;
+    --vr-scn-inset-right: 13%;
+    --vr-scn-inset-bottom: 12%;
+    --vr-scn-inset-left: 13%;
+
+    --vr-choice-inset-top: 16%;
+    --vr-choice-inset-right: 10%;
+    --vr-choice-inset-bottom: 16%;
+    --vr-choice-inset-left: 10%;
+    --vr-choice-safe: 82%;
 
     --vr-identity-ty: 10px;
     --vr-hud-name-years-gap: 34px;
@@ -4183,5 +4193,14 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
   body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
     transform: translate(0px, 12px) !important;
     gap: 34px !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] #view-game .vr-card-title,
+  body.vr-body-game[data-universe="western_president"] #view-game .vr-card-text{
+    max-width: 88% !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-label{
+    line-height: 1.08 !important;
   }
 }
