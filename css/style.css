@@ -3172,19 +3172,18 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 
 
 
-
 /* =========================
    EXPLORER
    ========================= */
 body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-card-w: clamp(390px, 98vw, 1100px);
 
-  --vr-scn-h: clamp(134px, 17.8svh, 240px);
-  --vr-choice-h: clamp(78px, 10.8svh, 138px);
+  --vr-scn-h: clamp(136px, 18.0svh, 244px);
+  --vr-choice-h: clamp(84px, 11.5svh, 146px);
 
   --vr-game-gap: clamp(1px, 0.18svh, 4px);
-  --vr-stack-gap: clamp(3px, 0.40svh, 8px);
-  --vr-choices-gap: clamp(4px, 0.50svh, 9px);
+  --vr-stack-gap: clamp(4px, 0.52svh, 10px);
+  --vr-choices-gap: clamp(5px, 0.62svh, 11px);
 
   --vr-scn-inset-top: 13%;
   --vr-scn-inset-right: 16%;
@@ -3192,14 +3191,14 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-scn-inset-left: 16%;
 
   --vr-choice-inset-top: 16%;
-  --vr-choice-inset-right: 14%;
+  --vr-choice-inset-right: 10%;
   --vr-choice-inset-bottom: 16%;
-  --vr-choice-inset-left: 14%;
+  --vr-choice-inset-left: 10%;
   --vr-choice-safe: 84%;
 
-  --vr-font-scn-title: clamp(15px, 2.5vmin, 28px);
-  --vr-font-scn-text:  clamp(13px, 2.0vmin, 21px);
-  --vr-font-choice:    clamp(13px, 2.0vmin, 20px);
+  --vr-font-scn-title: clamp(15px, 2.4vmin, 27px);
+  --vr-font-scn-text:  clamp(12px, 1.9vmin, 20px);
+  --vr-font-choice:    clamp(12px, 1.85vmin, 18px);
 
   /* ===== Polices ===== */
   --vr-explorer-font-title: "AlegreyaSCExplorer", serif;
@@ -3294,6 +3293,14 @@ body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-title{
   color:#000 !important;
   text-shadow:none !important;
   text-align:center !important;
+  line-height: 1.06 !important;
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
 }
 
 body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-text{
@@ -3301,6 +3308,14 @@ body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-text{
   color:#000 !important;
   text-shadow:none !important;
   text-align:center !important;
+  line-height: 1.16 !important;
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
 }
 
 body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-choice-label{
@@ -3308,6 +3323,12 @@ body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-choice-labe
   color:#000 !important;
   text-shadow:none !important;
   text-align:center !important;
+  line-height: 1.12 !important;
+  opacity: 1 !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-card-main{
@@ -3317,7 +3338,7 @@ body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-card-main{
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-choice-button{
-  background-size: 94% 96% !important;
+  background-size: 104% 100% !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
 }
@@ -3590,11 +3611,11 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     );
 
     --vr-card-w: clamp(320px, 96vw, 760px);
-    --vr-scn-h: clamp(122px, 16.6svh, 204px);
-    --vr-choice-h: clamp(72px, 10.0svh, 116px);
+    --vr-scn-h: clamp(124px, 16.9svh, 208px);
+    --vr-choice-h: clamp(76px, 10.5svh, 122px);
 
-    --vr-stack-gap: 1px;
-    --vr-choices-gap: 2px;
+    --vr-stack-gap: 2px;
+    --vr-choices-gap: 3px;
 
     --vr-choice-safe: 82%;
     --vr-choice-inset-top: 15%;
@@ -3602,7 +3623,9 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     --vr-choice-inset-bottom: 15%;
     --vr-choice-inset-left: 8%;
 
-    --vr-font-choice: clamp(12px, 3vw, 16px);
+    --vr-font-scn-title: clamp(14px, 3.3vw, 22px);
+    --vr-font-scn-text: clamp(11px, 2.55vw, 15px);
+    --vr-font-choice: clamp(11px, 2.65vw, 14px);
 
     --vr-explorer-topbar-top: calc(6px + env(safe-area-inset-top));
     --vr-explorer-side-btn-top: calc(10px + env(safe-area-inset-top));
@@ -3613,6 +3636,36 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     --vr-hud-name-years-gap: 14px;
     --vr-vcoins-ty: 6px;
     --vr-jetons-ty: 6px;
+  }
+
+  body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-card-title{
+    line-height: 1.04 !important;
+    max-width: 94% !important;
+  }
+
+  body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-card-text{
+    line-height: 1.12 !important;
+    max-width: 94% !important;
+  }
+
+  body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-choice-label{
+    line-height: 1.10 !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 390px), (max-height: 740px){
+  body.vr-body-game[data-universe="new_world_explorer"]{
+    --vr-scn-h: clamp(118px, 16.2svh, 196px);
+    --vr-choice-h: clamp(72px, 9.9svh, 112px);
+    --vr-font-scn-title: clamp(13px, 3.1vw, 19px);
+    --vr-font-scn-text: clamp(10.5px, 2.35vw, 13.5px);
+    --vr-font-choice: clamp(10.5px, 2.4vw, 13px);
+    --vr-choice-safe: 80%;
+    --vr-choice-inset-top: 14%;
+    --vr-choice-inset-right: 7%;
+    --vr-choice-inset-bottom: 14%;
+    --vr-choice-inset-left: 7%;
   }
 }
 
