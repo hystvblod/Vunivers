@@ -117,11 +117,11 @@
     }
   },
   "hk_014": {
-    "title": "Rumeur de rédemption",
+    "title": "Rumeur de retour au bien",
     "body": "Une rumeur circule : certaines âmes pourraient se purifier même ici. Tes conseillers sont divisés.",
     "choices": {
       "A": "Étouffe la rumeur, l'Enfer n'est pas un spa.",
-      "B": "Crée une zone spéciale pour tester cette « rédemption ».",
+      "B": "Crée une zone spéciale pour tester ce « retour au bien ».",
       "C": "Laisse courir, si certains s'apaisent ce sera plus simple à gérer."
     }
   },
@@ -648,8 +648,8 @@
     }
   },
   "hk_073": {
-    "title": "Cercle des blasphémateurs créatifs",
-    "body": "Un cercle invente de nouveaux blasphèmes. Leurs idées peuvent servir ou tout dérégler.",
+    "title": "Cercle des profanateurs",
+    "body": "Un cercle invente de nouvelles profanations. Leurs idées peuvent servir ou tout dérégler.",
     "choices": {
       "A": "Exploiter leur inventivité pour attirer plus d'âmes.",
       "B": "Les isoler strictement pour préserver l'ordre.",
@@ -688,7 +688,7 @@
     "body": "Un groupe de damnés tente un « pèlerinage » improvisé pour demander une atténuation de leurs peines.",
     "choices": {
       "A": "Les punir sévèrement et faire un exemple.",
-      "B": "Créer un rituel officiel de fausse rédemption très contrôlé.",
+      "B": "Créer un faux rituel de retour au bien, très contrôlé.",
       "C": "Les renvoyer un court instant vers la surface, marqués à jamais."
     }
   },
@@ -1773,7 +1773,7 @@
     }
   },
   "hk_198": {
-    "title": "Ultimatum du Nord",
+    "title": "Dernier avertissement du Nord",
     "body": "Le Nord te présente un ultimatum : céder certains territoires ou risquer la guerre ouverte.",
     "choices": {
       "A": "Refuser et préparer tes légions.",
@@ -1859,7 +1859,7 @@
     "choices": {
       "A": "Booster leur audience pour récolter plus d’âmes brisées.",
       "B": "Encadrer leur message pour éviter un effondrement total de l’ordre.",
-      "C": "Les pousser à guider leurs adeptes vers des actes irréversibles."
+      "C": "Les pousser à guider leurs adeptes vers des choix destructeurs."
     }
   },
   "hk_208": {
@@ -2044,9 +2044,9 @@
   },
   "hk_228": {
     "title": "Crise de la famille",
-    "body": "Les liens familiaux se déchirent entre violence, silence et fuite.",
+    "body": "Les liens familiaux se brisent entre tensions, silence et fuite.",
     "choices": {
-      "A": "Nourrir les rancœurs, les non-dits, les ruptures brutales.",
+      "A": "Nourrir les rancœurs, les non-dits et les ruptures dures.",
       "B": "Promouvoir des modèles familiaux rigides, parfois étouffants.",
       "C": "Utiliser ces fractures pour recruter des âmes en manque d’appartenance."
     }
@@ -2880,7 +2880,7 @@
     }
   },
   "hk_321": {
-    "title": "Allégeance d’un royaume oublié",
+    "title": "Fidélité d’un royaume oublié",
     "body": "Un ancien royaume humain, presque effacé de l’histoire, renouvelle sa fidélité à ton nom.",
     "choices": {
       "A": "L’honorer en ressuscitant ses symboles dans tes armées.",
@@ -2935,16 +2935,16 @@
   },
   "hk_327": {
     "title": "Atelier de souvenirs faussés",
-    "body": "Un atelier propose de réécrire les souvenirs des damnés pour les torturer mieux.",
+    "body": "Un atelier propose de réécrire les souvenirs des damnés pour renforcer leurs tourments.",
     "choices": {
       "A": "Valider l’atelier et laisser la falsification totale.",
       "B": "Créer des protocoles pour classer chaque souvenir manipulé.",
-      "C": "Appliquer ces techniques de fausse mémoire sur les vivants."
+      "C": "Semer de faux souvenirs chez certains vivants."
     }
   },
   "hk_328": {
     "title": "Épreuve du miroir",
-    "body": "Un miroir d’obsidienne montre aux âmes ce qu’elles auraient pu être.",
+    "body": "Un miroir de pierre noire montre aux âmes ce qu’elles auraient pu être.",
     "choices": {
       "A": "Forcer chaque âme à regarder jusqu’à la folie.",
       "B": "Réserver le miroir à des cas sélectionnés, dans un rituel précis.",
@@ -3249,12 +3249,12 @@
     }
   },
   "hk_362": {
-    "title": "Tournoi de supplices innovants",
-    "body": "Un concours récompense les méthodes de torture les plus originales.",
+    "title": "Tournoi d'épreuves cruelles",
+    "body": "Un concours récompense les méthodes cruelles les plus originales.",
     "choices": {
       "A": "Donner total pouvoir aux vainqueurs sur des quartiers entiers.",
-      "B": "Standardiser les meilleurs supplices dans ton manuel officiel.",
-      "C": "Inspirer des cruautés plus discrètes chez les humains."
+      "B": "Standardiser les méthodes les plus cruelles dans ton manuel officiel.",
+      "C": "Inspirer des comportements plus durs chez les humains."
     }
   },
   "hk_363": {
@@ -3268,7 +3268,7 @@
   },
   "hk_364": {
     "title": "Juges moqueurs",
-    "body": "Un collège de juges démoniaques se met à rire de chaque plaidoyer des âmes.",
+    "body": "Un collège de juges démoniaques se met à rire de chaque défense des âmes.",
     "choices": {
       "A": "Les encourager à ridiculiser toute tentative de défense.",
       "B": "Cadencer leurs moqueries pour garder un semblant de procédure.",
@@ -3429,7 +3429,7 @@
     }
   },
   "hk_382": {
-    "title": "Serments d'allégeance forcés",
+    "title": "Serments de fidélité forcés",
     "body": "Tes scribes proposent de faire jurer chaque âme sur ton nom.",
     "choices": {
       "A": "Imposer ce serment à tous, sous la menace.",
