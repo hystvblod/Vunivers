@@ -604,9 +604,9 @@ body.vr-body-game .vr-choice-label{
 
   padding: clamp(14px, 3.6vw, 20px) !important;
   border-radius: clamp(16px, 4vw, 22px) !important;
-  background: rgba(15, 23, 42, 0.98);
-  border: 1px solid rgba(209,213,219,0.5);
-  box-shadow: var(--vr-shadow-soft);
+  background: rgba(15, 23, 42, 0.98) !important;
+  border: 1px solid rgba(209,213,219,0.5) !important;
+  box-shadow: var(--vr-shadow-soft) !important;
   text-align: center !important;
 }
 
@@ -617,15 +617,15 @@ body.vr-body-game .vr-choice-label{
 }
 
 .vr-ending-text{
-  margin: 0 0 12px !important;
+  margin: 0 0 10px !important;
   font-size: clamp(12px, 3.4vw, 14px) !important;
   line-height: 1.35 !important;
   text-align: center !important;
-  color: var(--vr-text-muted);
+  color: var(--vr-text-muted) !important;
 }
 
 /* ==========================================================
-   FIN DE REGNE — boutons en cartouches basiques
+   FIN DE REGNE — boutons
    ========================================================== */
 #vr-ending-overlay .vr-choice-button{
   background-image: none !important;
@@ -675,28 +675,35 @@ body.vr-body-game .vr-choice-label{
   overflow-wrap: anywhere !important;
 }
 
+/* ligne gain : sans cartouche */
 #vr-ending-overlay .vr-ending-reward{
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 10px !important;
-  padding: 10px 12px !important;
-  border-radius: 16px !important;
-  background: rgba(255,255,255,.08) !important;
-  border: 1px solid rgba(255,255,255,.12) !important;
-  box-shadow: 0 14px 26px rgba(0,0,0,.24) !important;
+  gap: 8px !important;
+
+  padding: 0 !important;
+  margin: 2px 0 4px !important;
+
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 #vr-ending-overlay .vr-ending-reward img{
-  width: clamp(24px, 7vw, 36px) !important;
-  height: clamp(24px, 7vw, 36px) !important;
+  width: clamp(24px, 7vw, 30px) !important;
+  height: clamp(24px, 7vw, 30px) !important;
   object-fit: contain !important;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.28)) !important;
+  transform: translateY(2px) !important;
 }
 
 #vr-ending-overlay .vr-ending-reward strong{
   font-size: clamp(18px, 4.8vw, 22px) !important;
   font-weight: 950 !important;
   letter-spacing: .2px !important;
+  line-height: 1 !important;
 }
 
 #vr-ending-overlay .vr-ending-double{
