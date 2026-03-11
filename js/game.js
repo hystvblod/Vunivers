@@ -1134,7 +1134,7 @@ body.vr-peek-mode .vr-gauge-preview{
             pointer-events:none;
           }
           .vr-ending-double.is-glow{
-            animation:vrEndingPulse 1.35s ease-in-out infinite;
+            animation:vrEndingPulse 1.15s ease-in-out infinite;
           }
           .vr-ending-double[disabled]{
             opacity:.65;
@@ -1176,7 +1176,7 @@ body.vr-peek-mode .vr-gauge-preview{
           }
           @keyframes vrEndingPulse{
             0%,100%{ transform:translateY(0) scale(1); filter:brightness(1); }
-            50%{ transform:translateY(-1px) scale(1.01); filter:brightness(1.10); }
+            50%{ transform:translateY(-1px) scale(1.015); filter:brightness(1.14); }
           }
         `;
         document.head.appendChild(style);
