@@ -1199,7 +1199,6 @@
     },
     "body": "Tout est calme. Trop calme. Même les rats se taisent. Une attaque se prépare."
   },
-
   "vampire_101": {
     "id": "vampire_101",
     "universe": "vampire_lord",
@@ -1499,18 +1498,6 @@
       "C": "Condamner la zone"
     },
     "body": "Une porte ouverte, c’est une invitation. Et toi, tu n’aimes pas les invités."
-  },
-  "vampire_126": {
-    "id": "vampire_126",
-    "universe": "vampire_lord",
-    "title": "Le contrat de nettoyage",
-    "description": "Une société de nettoyage veut accéder à tes sous-sols.",
-    "choices": {
-      "A": "Refuser et inventer une excuse",
-      "B": "Accepter avec surveillance",
-      "C": "Racheter la société"
-    },
-    "body": "Ils parlent de moisissure, de normes, de sécurité. Toi, tu entends intrusion et curiosité."
   },
   "vampire_127": {
     "id": "vampire_127",
@@ -2400,7 +2387,6 @@
     },
     "body": "La pierre est éclatée, mais il n’y a pas de débris autour comme s’ils avaient été aspirés. Tu sens une présence ancienne qui se réveille."
   },
-  
   "vampire_201": {
     "id": "vampire_201",
     "universe": "vampire_lord",
@@ -2641,7 +2627,6 @@
     },
     "body": "Un grimoire du repaire disparaît. Et le dernier à l avoir touché sourit trop."
   },
-
   "vampire_221": {
     "id": "vampire_221",
     "universe": "vampire_lord",
@@ -2762,7 +2747,6 @@
     },
     "body": "Une clinique propose du sang très cher. Ils veulent un partenariat. Louche et pratique."
   },
-
   "vampire_231": {
     "id": "vampire_231",
     "universe": "vampire_lord",
@@ -2883,7 +2867,6 @@
     },
     "body": "Un colis arrive au repaire. Trop propre. Trop bien emballé. Trop suspect."
   },
-
   "vampire_241": {
     "id": "vampire_241",
     "universe": "vampire_lord",
@@ -2895,18 +2878,6 @@
       "C": "Faire taire le chien"
     },
     "body": "Un chien aboie chaque fois que tu passes. Son maître commence à noter les horaires."
-  },
-  "vampire_242": {
-    "id": "vampire_242",
-    "universe": "vampire_lord",
-    "title": "La dette du culte",
-    "description": "Le culte a pris un prêt pour te construire un sanctuaire. Ils veulent que tu signes.",
-    "choices": {
-      "A": "Refuser net",
-      "B": "Payer pour éviter un scandale",
-      "C": "Transformer le sanctuaire en piège"
-    },
-    "body": "Le culte a pris un prêt pour te construire un sanctuaire. Ils veulent que tu signes."
   },
   "vampire_243": {
     "id": "vampire_243",
@@ -2944,30 +2915,6 @@
     },
     "body": "Un nouveau membre du culte pose des questions trop précises. Ça sent le faux fan."
   },
-  "vampire_246": {
-    "id": "vampire_246",
-    "universe": "vampire_lord",
-    "title": "Le sang rare",
-    "description": "Un sang rare apparaît sur le marché noir. Cher. Tentant. Dangereux.",
-    "choices": {
-      "A": "Acheter le lot",
-      "B": "Le saisir par la force",
-      "C": "Refuser pour rester prudent"
-    },
-    "body": "Un sang rare apparaît sur le marché noir. Cher. Tentant. Dangereux."
-  },
-  "vampire_247": {
-    "id": "vampire_247",
-    "universe": "vampire_lord",
-    "title": "Le tunnel secret",
-    "description": "Un tunnel sous le repaire est découvert. Il mène à une porte inconnue. Ça ne sent pas bon.",
-    "choices": {
-      "A": "Explorer avec une équipe",
-      "B": "Sceller le tunnel",
-      "C": "Envoyer un rival"
-    },
-    "body": "Un tunnel sous le repaire est découvert. Il mène à une porte inconnue. Ça ne sent pas bon."
-  },
   "vampire_248": {
     "id": "vampire_248",
     "universe": "vampire_lord",
@@ -2992,19 +2939,6 @@
     },
     "body": "Un parfum masque l odeur du sang. Tout le clan en met. Tu tousses. C est humiliant."
   },
-  "vampire_250": {
-    "id": "vampire_250",
-    "universe": "vampire_lord",
-    "title": "Le contrat de sécurité",
-    "description": "Une société de sécurité propose ses services. Ils sont actifs la nuit. Trop actifs.",
-    "choices": {
-      "A": "Les payer pour regarder ailleurs",
-      "B": "Les saboter",
-      "C": "Les recruter via le culte"
-    },
-    "body": "Une société de sécurité propose ses services. Ils sont actifs la nuit. Trop actifs."
-  },
-
   "vampire_251": {
     "id": "vampire_251",
     "universe": "vampire_lord",
@@ -3077,18 +3011,6 @@
     },
     "body": "Tu reçois un message. Il connaît ton repaire. Il demande une rencontre."
   },
-  "vampire_257": {
-    "id": "vampire_257",
-    "universe": "vampire_lord",
-    "title": "La fausse alerte",
-    "description": "Le culte crie au chasseur. C était un livreur de pizzas. Tout le monde a honte.",
-    "choices": {
-      "A": "Recadrer le culte",
-      "B": "Transformer en entraînement",
-      "C": "Punir un responsable"
-    },
-    "body": "Le culte crie au chasseur. C était un livreur de pizzas. Tout le monde a honte."
-  },
   "vampire_258": {
     "id": "vampire_258",
     "universe": "vampire_lord",
@@ -3125,7 +3047,6 @@
     },
     "body": "Le culte organise une collecte. Trop de monde. Trop de caméras. Trop de tentation."
   },
-
   "vampire_261": {
     "id": "vampire_261",
     "universe": "vampire_lord",
@@ -3246,19 +3167,6 @@
     },
     "body": "Un chasseur propose une trêve. Il dit vouloir le vrai chef. Il te vise."
   },
-
-  "vampire_271": {
-    "id": "vampire_271",
-    "universe": "vampire_lord",
-    "title": "Le coffre qui grince",
-    "description": "Un coffre du repaire grince la nuit. Il n est pas censé s ouvrir. Et pourtant.",
-    "choices": {
-      "A": "L ouvrir et vérifier",
-      "B": "Le sceller",
-      "C": "Le déplacer loin"
-    },
-    "body": "Un coffre du repaire grince la nuit. Il n est pas censé s ouvrir. Et pourtant."
-  },
   "vampire_272": {
     "id": "vampire_272",
     "universe": "vampire_lord",
@@ -3355,19 +3263,6 @@
     },
     "body": "Tout est trop silencieux. Même les rats. Quelque chose a changé dans les murs."
   },
-  "vampire_280": {
-    "id": "vampire_280",
-    "universe": "vampire_lord",
-    "title": "Le faux prophète",
-    "description": "Un membre du culte se dit prophète. Il prend des décisions à ta place. Inacceptable.",
-    "choices": {
-      "A": "Le punir publiquement",
-      "B": "Le retourner en allié",
-      "C": "Le faire disparaître"
-    },
-    "body": "Un membre du culte se dit prophète. Il prend des décisions à ta place. Inacceptable."
-  },
-
   "vampire_281": {
     "id": "vampire_281",
     "universe": "vampire_lord",
@@ -3428,30 +3323,6 @@
     },
     "body": "Le clan veut un banquet. Le culte veut servir. Les chasseurs adorent les grandes tables."
   },
-  "vampire_286": {
-    "id": "vampire_286",
-    "universe": "vampire_lord",
-    "title": "Le pacte des hôpitaux",
-    "description": "Un contact à l hôpital propose un deal. Sang contre protection. C est tentant.",
-    "choices": {
-      "A": "Accepter prudemment",
-      "B": "Refuser et rester libre",
-      "C": "Accepter et étendre"
-    },
-    "body": "Un contact à l hôpital propose un deal. Sang contre protection. C est tentant."
-  },
-  "vampire_287": {
-    "id": "vampire_287",
-    "universe": "vampire_lord",
-    "title": "Le chasseur blessé",
-    "description": "Un chasseur blessé demande de l aide. Il promet des infos. Il promet aussi de mentir.",
-    "choices": {
-      "A": "L aider et écouter",
-      "B": "Le capturer",
-      "C": "Le laisser partir"
-    },
-    "body": "Un chasseur blessé demande de l aide. Il promet des infos. Il promet aussi de mentir."
-  },
   "vampire_288": {
     "id": "vampire_288",
     "universe": "vampire_lord",
@@ -3488,7 +3359,6 @@
     },
     "body": "Une rumeur dit que tu as un point faible ridicule. La ville en rit. Le clan aussi."
   },
-
   "vampire_291": {
     "id": "vampire_291",
     "universe": "vampire_lord",
