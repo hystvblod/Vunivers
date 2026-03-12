@@ -3160,7 +3160,6 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 
 
 
-
 /* ========================= EXPLORER ========================= */
 body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-card-w: clamp(280px, 62vw, 720px);
@@ -3235,7 +3234,7 @@ body.vr-body-game[data-universe="new_world_explorer"]{
 
   /* ===== Centre nom / année ===== */
   --vr-identity-tx: 0px;
-  --vr-identity-ty: 12px;
+  --vr-identity-ty: 20px;
   --vr-hud-name-years-gap: 18px;
 
   /* ===== Réglages soldes ===== */
@@ -3588,6 +3587,7 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
   --vr-universe-card: url("../assets/img/ui/explorer_msg_default_grey.webp");
   --vr-universe-choice: url("../assets/img/ui/explorer_choice_default_grey.webp");
 }
+
 /* ===== Tablette portrait (600px–1100px) ===== */
 @media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
   body.vr-body-game[data-universe="new_world_explorer"]{
@@ -3639,7 +3639,7 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
 
     --vr-explorer-hud-item-y: -5px;
 
-    --vr-identity-ty: 7px;
+    --vr-identity-ty: 13px;
     --vr-hud-name-years-gap: 14px;
 
     --vr-vcoins-ty: 6px;
@@ -3685,7 +3685,6 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     --vr-choice-inset-left: 7%;
   }
 }
-
 
 
 
