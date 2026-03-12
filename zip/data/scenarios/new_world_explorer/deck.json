@@ -112,10 +112,8 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 0,
-            "found_wealth": 0,
-            "converted_population": 5,
-            "royal_treasury": 10
+            "royal_treasury": -5,
+            "found_wealth": 5
           }
         }
       }
@@ -172,10 +170,8 @@
         },
         "C": {
           "gaugeDelta": {
-            "conquered_territory": 10,
-            "found_wealth": 5,
-            "converted_population": 0,
-            "royal_treasury": 5
+            "converted_population": 10,
+            "royal_treasury": -5
           }
         }
       }
