@@ -1748,7 +1748,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-years{
   font-weight: 700 !important;
   color: rgba(244,237,229,0.95) !important;
   line-height: 1 !important;
-  transform: translateY(1px) !important;
+  transform: translateY(2px) !important;
   opacity: 0.95 !important;
   flex: 0 0 auto !important;
 }
