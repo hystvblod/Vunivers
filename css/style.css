@@ -3158,14 +3158,13 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 
 
 
-
 /* ========================= EXPLORER ========================= */
 body.vr-body-game[data-universe="new_world_explorer"]{
-  --vr-card-w: clamp(280px, 60vw, 700px);
-  --vr-scn-h: clamp(160px, 22.0svh, 310px);
-  --vr-choice-h: clamp(96px, 13.5svh, 190px);
+  --vr-card-w: clamp(280px, 62vw, 720px);
+  --vr-scn-h: clamp(180px, 24.0svh, 360px);
+  --vr-choice-h: clamp(108px, 14.5svh, 220px);
   --vr-game-gap: 0px;
-  --vr-stack-gap: clamp(20px, 2.6svh, 44px);
+  --vr-stack-gap: clamp(18px, 2.4svh, 40px);
   --vr-choices-gap: clamp(8px, 1.0svh, 18px);
   --vr-scn-inset-top: 13%;
   --vr-scn-inset-right: 16%;
@@ -3176,9 +3175,9 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-choice-inset-bottom: 16%;
   --vr-choice-inset-left: 10%;
   --vr-choice-safe: 84%;
-  --vr-font-scn-title: clamp(20px, 3.4vmin, 42px);
-  --vr-font-scn-text: clamp(17px, 2.8vmin, 34px);
-  --vr-font-choice: clamp(15px, 2.6vmin, 28px);
+  --vr-font-scn-title: clamp(22px, 3.8vmin, 50px);
+  --vr-font-scn-text: clamp(18px, 3.1vmin, 40px);
+  --vr-font-choice: clamp(16px, 2.8vmin, 34px);
   /* ===== Polices ===== */
   --vr-explorer-font-title: "AlegreyaSCExplorer", serif;
   --vr-explorer-font-ui: "MerriweatherExplorer", serif;
@@ -3527,6 +3526,22 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
   --vr-universe-card: url("../assets/img/ui/explorer_msg_default_grey.webp");
   --vr-universe-choice: url("../assets/img/ui/explorer_choice_default_grey.webp");
 }
+
+/* ===== Tablette portrait (600px–1100px) — anti-débordement ===== */
+@media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
+  body.vr-body-game[data-universe="new_world_explorer"]{
+    --vr-card-w: clamp(380px, 74vw, 700px);
+    --vr-scn-h: clamp(160px, 19.5svh, 260px);
+    --vr-choice-h: clamp(96px, 11.8svh, 160px);
+    --vr-stack-gap: clamp(12px, 1.4svh, 22px);
+    --vr-choices-gap: clamp(6px, 0.8svh, 12px);
+    --vr-font-scn-title: clamp(18px, 2.8vmin, 36px);
+    --vr-font-scn-text: clamp(15px, 2.2vmin, 28px);
+    --vr-font-choice: clamp(13px, 2.0vmin, 24px);
+  }
+}
+
+/* ===== Mobile <= 480px ===== */
 @media (max-width: 480px){
   body.vr-body-game[data-universe="new_world_explorer"]{
     --vr-explorer-hud-w: 92vw;
@@ -3537,20 +3552,20 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
       (var(--vr-explorer-topbar-w) * var(--vr-explorer-topbar-src-h) / var(--vr-explorer-topbar-src-w))
       + env(safe-area-inset-top) + 2px
     );
-    --vr-card-w: clamp(270px, 86vw, 600px);
-    --vr-scn-h: clamp(140px, 20.0svh, 260px);
-    --vr-choice-h: clamp(88px, 12.5svh, 160px);
+    --vr-card-w: clamp(270px, 88vw, 600px);
+    --vr-scn-h: clamp(150px, 20.5svh, 280px);
+    --vr-choice-h: clamp(96px, 13.0svh, 175px);
     --vr-game-gap: 0px;
-    --vr-stack-gap: clamp(14px, 1.8svh, 28px);
-    --vr-choices-gap: clamp(6px, 0.85svh, 12px);
+    --vr-stack-gap: clamp(12px, 1.6svh, 26px);
+    --vr-choices-gap: clamp(6px, 0.8svh, 12px);
     --vr-choice-safe: 82%;
     --vr-choice-inset-top: 15%;
     --vr-choice-inset-right: 8%;
     --vr-choice-inset-bottom: 15%;
     --vr-choice-inset-left: 8%;
-    --vr-font-scn-title: clamp(17px, 4.2vw, 28px);
-    --vr-font-scn-text: clamp(14px, 3.5vw, 22px);
-    --vr-font-choice: clamp(13px, 3.3vw, 19px);
+    --vr-font-scn-title: clamp(18px, 4.5vw, 30px);
+    --vr-font-scn-text: clamp(15px, 3.8vw, 24px);
+    --vr-font-choice: clamp(13px, 3.4vw, 20px);
     --vr-explorer-topbar-top: calc(6px + env(safe-area-inset-top));
     --vr-explorer-side-btn-top: calc(10px + env(safe-area-inset-top));
     --vr-explorer-side-btn-side: 16px;
@@ -3573,15 +3588,18 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     max-width: 100% !important;
   }
 }
+
+/* ===== Petits écrans / écrans courts ===== */
 @media (max-width: 390px), (max-height: 740px){
   body.vr-body-game[data-universe="new_world_explorer"]{
-    --vr-scn-h: clamp(126px, 18.5svh, 230px);
-    --vr-choice-h: clamp(80px, 11.2svh, 138px);
+    --vr-scn-h: clamp(130px, 18.0svh, 240px);
+    --vr-choice-h: clamp(84px, 11.5svh, 148px);
     --vr-game-gap: 0px;
-    --vr-stack-gap: clamp(10px, 1.4svh, 20px);
-    --vr-font-scn-title: clamp(15px, 4.0vw, 24px);
-    --vr-font-scn-text: clamp(13px, 3.2vw, 18px);
-    --vr-font-choice: clamp(12px, 3.1vw, 16px);
+    --vr-stack-gap: clamp(8px, 1.1svh, 16px);
+    --vr-choices-gap: clamp(5px, 0.6svh, 9px);
+    --vr-font-scn-title: clamp(16px, 4.2vw, 26px);
+    --vr-font-scn-text: clamp(13px, 3.4vw, 20px);
+    --vr-font-choice: clamp(12px, 3.2vw, 17px);
     --vr-choice-safe: 80%;
     --vr-choice-inset-top: 14%;
     --vr-choice-inset-right: 7%;
