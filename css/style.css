@@ -2292,8 +2292,8 @@ body.vr-body-game[data-universe="western_president"]{
   --vr-choice-h: clamp(116px, 15.2svh, 194px);
 
   --vr-game-gap: clamp(1px, 0.18svh, 4px);
-  --vr-stack-gap: clamp(16px, 1.8svh, 28px);
-  --vr-choices-gap: clamp(8px, 0.95svh, 15px);
+  --vr-stack-gap: clamp(10px, 1.15svh, 22px);
+  --vr-choices-gap: clamp(9px, 1svh, 18px);
 
   --vr-scn-inset-top: 18%;
   --vr-scn-inset-right: 12%;
@@ -3987,8 +3987,8 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
     --vr-scn-h: clamp(120px, 16.2svh, 198px);
     --vr-choice-h: clamp(76px, 10.4svh, 120px);
 
-    --vr-stack-gap: 6px;
-    --vr-choices-gap: 6px;
+    --vr-stack-gap: 9px;
+    --vr-choices-gap: 8px;
 
     --vr-choice-safe: 82%;
     --vr-choice-inset-top: 15%;
