@@ -1734,6 +1734,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-identity{
 
 body.vr-body-game[data-universe="hell_king"] .vr-hud-name{
   font-family: "VR_Quintess", serif !important;
+  transform: translateY(-2px) !important;
   font-size: var(--vr-hell-hud-name-size) !important;
   font-weight: 700 !important;
   color: #f4ede5 !important;
@@ -1748,7 +1749,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-years{
   font-weight: 700 !important;
   color: rgba(244,237,229,0.95) !important;
   line-height: 1 !important;
-  transform: translateY(px) !important;
+  transform: translateY(0px) !important;
   opacity: 0.95 !important;
   flex: 0 0 auto !important;
 }
@@ -3222,7 +3223,7 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-explorer-hud-right-w: 17.8%;
   /* ===== Centre nom / année ===== */
   --vr-identity-tx: 0px;
-  --vr-identity-ty: 6px;
+  --vr-identity-ty: 10px;
   --vr-hud-name-years-gap: 18px;
   /* ===== Réglages soldes ===== */
   --vr-vcoins-tx: 4px;
