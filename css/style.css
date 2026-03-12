@@ -1734,7 +1734,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-identity{
 
 body.vr-body-game[data-universe="hell_king"] .vr-hud-name{
   font-family: "VR_Quintess", serif !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-4px) !important;
   font-size: var(--vr-hell-hud-name-size) !important;
   font-weight: 700 !important;
   color: #f4ede5 !important;
@@ -1745,7 +1745,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-name{
 }
 body.vr-body-game[data-universe="hell_king"] .vr-hud-years{
   font-family: "VR_Quintess", serif !important;
-  font-size: var(--vr-hell-hud-years-size) !important;
+font-size: var(--vr-hell-hud-name-size) !important;
   font-weight: 700 !important;
   color: rgba(244,237,229,0.95) !important;
   line-height: 1 !important;
@@ -2334,7 +2334,7 @@ body.vr-body-game[data-universe="western_president"]{
   --vr-jetons-bg: transparent;
 
   --vr-identity-tx: 0px;
-  --vr-identity-ty: 10px;
+  --vr-identity-ty: 14px;
   --vr-hud-name-years-gap: 48px;
 }
 
@@ -3611,6 +3611,12 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     --vr-choice-inset-left: 7%;
   }
 }
+
+
+
+
+
+
 
 
 
