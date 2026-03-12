@@ -3840,7 +3840,7 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-value{
   font-size: clamp(13px, 2vw, 24px) !important;
   font-weight: 800 !important;
   line-height:1 !important;
-  color:#000 !important;
+  color:#ffffff !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.35), 0 0 8px rgba(0,0,0,0.12) !important;
   transform: translateY(-2px) !important;
 }
