@@ -10,11 +10,11 @@
   },
   "mcc_002": {
     "title": "Audit surprise",
-    "body": "Un régulateur débarque pour un audit complet de conformité. Tes équipes paniquent.",
+    "body": "Une autorité de contrôle débarque pour un audit complet de respect des règles. Tes équipes paniquent.",
     "choices": {
       "A": "Coopérer à fond, ouvrir les dossiers et corriger vite.",
       "B": "Jouer la montre avec des avocats et des délais.",
-      "C": "Annoncer un programme de conformité public avant même l’audit."
+      "C": "Annoncer un programme de respect des règles public avant même l’audit."
     }
   },
   "mcc_003": {
@@ -72,26 +72,26 @@
     }
   },
   "mcc_009": {
-    "title": "Rumeur d’OPA",
-    "body": "La rumeur d’une OPA hostile fait grimper l’action. Les investisseurs adorent. Les employés ont peur.",
+    "title": "Rumeur de tentative de rachat",
+    "body": "La rumeur d’une tentative de rachat hostile fait grimper l’action. Les investisseurs adorent. Les employés ont peur.",
     "choices": {
-      "A": "Te défendre : rachat d’actions et plan anti-OPA.",
+      "A": "Te défendre : rachat d’actions et plan anti-tentative de rachat.",
       "B": "Négocier en coulisses une fusion “amicale”.",
       "C": "Ignorer publiquement et continuer comme si de rien n’était."
     }
   },
   "mcc_010": {
     "title": "Bonus ou recherche",
-    "body": "Le conseil veut un choix clair: bonus actionnarial ou gros investissement en recherche. Il faut trancher.",
+    "body": "Le conseil veut un choix clair: bonus pour les actionnaires ou gros investissement en recherche. Il faut trancher.",
     "choices": {
-      "A": "Bonus actionnarial immédiat.",
+      "A": "Bonus pour les actionnaires immédiat.",
       "B": "Investir massivement en recherche, bénéfices plus tard.",
       "C": "Compromis: petit bonus + recherche ciblée."
     }
   },
   "mcc_011": {
     "title": "Cadeau empoisonné",
-    "body": "Un grand client propose un contrat énorme… avec une clause pénale monstrueuse si tu rates un délai.",
+    "body": "Un grand client propose un contrat énorme… avec une grosse pénalité monstrueuse si tu rates un délai.",
     "choices": {
       "A": "Signer : objectif ambitieux, tout le monde au front.",
       "B": "Refuser : trop dangereux.",
@@ -103,17 +103,17 @@
     "body": "La facture d’énergie explose sur plusieurs sites. La marge fond comme neige au soleil.",
     "choices": {
       "A": "Investir dans l’efficacité énergétique (long terme).",
-      "B": "Répercuter une partie sur les prix.",
+      "B": "Faire payer une partie aux clients une partie sur les prix.",
       "C": "Couper les coûts : chauffage minimal, éclairage réduit, restrictions strictes."
     }
   },
   "mcc_013": {
-    "title": "Accusation d’écologie de façade",
+    "title": "Accusation d’écologie surtout pour l’image",
     "body": "Ton dernier rapport “durable” est attaqué : “beaux mots, peu de preuves”.",
     "choices": {
       "A": "Publier les chiffres bruts et accepter les critiques.",
       "B": "Lancer une campagne de pub pour noyer le poisson.",
-      "C": "Mandater un audit indépendant et mettre à jour le rapport."
+      "C": "Demander à un audit indépendant et mettre à jour le rapport."
     }
   },
   "mcc_014": {
@@ -176,7 +176,7 @@
     "choices": {
       "A": "Mettre à niveau immédiatement, arrêt partiel du site.",
       "B": "Plan sur 6 mois, sans perturber la production.",
-      "C": "Externaliser la gestion sécurité à un prestataire."
+      "C": "Externaliser la gestion sécurité à une entreprise externe."
     }
   },
   "mcc_021": {
@@ -199,7 +199,7 @@
   },
   "mcc_023": {
     "title": "Réorganisation interne",
-    "body": "Ton organigramme est devenu un labyrinthe. Les décisions prennent des semaines.",
+    "body": "Ta structure de l’entreprise est devenue un labyrinthe. Les décisions prennent des semaines.",
     "choices": {
       "A": "Simplifier : moins de managers, équipes autonomes.",
       "B": "Garder la structure : stabilité avant tout.",
@@ -265,13 +265,13 @@
     "body": "Ton équipe com’ veut un coup d’éclat : promesse spectaculaire et slogan accrocheur. Le juridique transpire.",
     "choices": {
       "A": "Valider : on marque les esprits.",
-      "B": "Refuser : sobriété et preuves.",
+      "B": "Refuser : modération et preuves.",
       "C": "Valider mais avec des formulations prudentes."
     }
   },
   "mcc_031": {
     "title": "Cadeaux aux clients",
-    "body": "Ton équipe commerciale veut offrir des cadeaux “haut de gamme” aux gros clients. Les régulateurs n’aiment pas ça.",
+    "body": "Ton équipe commerciale veut offrir des cadeaux “haut de gamme” aux gros clients. Les autorités de contrôle n’aiment pas ça.",
     "choices": {
       "A": "Autoriser : c’est la règle du jeu.",
       "B": "Interdire : uniquement des cadeaux symboliques.",
@@ -284,7 +284,7 @@
     "choices": {
       "A": "Financer à fond, pas de demi-mesure.",
       "B": "Stopper : trop risqué.",
-      "C": "Financer par étapes, avec jalons stricts."
+      "C": "Financer par étapes, avec étapes de contrôle stricts."
     }
   },
   "mcc_033": {
@@ -306,8 +306,8 @@
     }
   },
   "mcc_035": {
-    "title": "Réclamation régulateur",
-    "body": "Un régulateur te demande des données détaillées sur tes pratiques commerciales, sous 10 jours.",
+    "title": "Réclamation autorité de contrôle",
+    "body": "Une autorité de contrôle te demande des données détaillées sur tes pratiques commerciales, sous 10 jours.",
     "choices": {
       "A": "Transmettre tout, même si ça révèle des faiblesses.",
       "B": "Négocier un délai et filtrer au strict légal.",
@@ -315,7 +315,7 @@
     }
   },
   "mcc_036": {
-    "title": "Appel à la sobriété",
+    "title": "Appel à la modération",
     "body": "Une partie du public critique la “surconsommation”. Ton entreprise est citée comme symbole.",
     "choices": {
       "A": "Lancer une offre de réparation et de seconde main.",
@@ -328,13 +328,13 @@
     "body": "Le directeur financier propose des licenciements pour rassurer le marché. Les équipes sont à cran.",
     "choices": {
       "A": "Accepter : objectif rentabilité.",
-      "B": "Refuser : miser sur la croissance et la rétention.",
+      "B": "Refuser : miser sur la croissance et la fidélité des équipes.",
       "C": "Geler les recrutements et réduire les dépenses sans licenciements."
     }
   },
   "mcc_038": {
     "title": "Procès de brevet",
-    "body": "Un “troll de brevets” te poursuit pour un vieux détail technique. Ça peut coûter cher, ou durer longtemps.",
+    "body": "Un “société qui attaque sur des brevets” te poursuit pour un vieux détail technique. Ça peut coûter cher, ou durer longtemps.",
     "choices": {
       "A": "Payer pour régler vite.",
       "B": "Se battre en justice jusqu’au bout.",
@@ -372,7 +372,7 @@
     "title": "Transparence salariale",
     "body": "Un mouvement interne réclame plus de transparence salariale. Les managers paniquent, les employés insistent.",
     "choices": {
-      "A": "Publier des fourchettes par poste et un plan d’alignement.",
+      "A": "Publier des plages de salaire par poste et un plan de mise à niveau.",
       "B": "Refuser : sujet “trop sensible”.",
       "C": "Tester la transparence sur une division seulement."
     }
@@ -487,11 +487,11 @@
   },
   "mcc_055": {
     "title": "Nouvelle taxe locale",
-    "body": "Une région annonce une nouvelle taxe sur ton activité. Le site local pourrait devenir déficitaire.",
+    "body": "Une région annonce une nouvelle taxe sur ton activité. Le site local pourrait devenir qui perd de l’argent.",
     "choices": {
       "A": "Négocier avec les autorités, jouer la coopération.",
       "B": "Menacer de partir si la taxe reste.",
-      "C": "Répercuter le coût sur les prix dans cette région."
+      "C": "Faire payer une partie aux clients le coût sur les prix dans cette région."
     }
   },
   "mcc_056": {
@@ -577,7 +577,7 @@
   },
   "mcc_065": {
     "title": "Critique sur la diversité",
-    "body": "On accuse l’entreprise d’être trop homogène en haut de l’organigramme. Ça commence à se voir.",
+    "body": "On accuse l’entreprise d’être trop homogène en haut de la structure de l’entreprise. Ça commence à se voir.",
     "choices": {
       "A": "Plan concret : recrutement + promotion + suivi chiffré.",
       "B": "Déclaration vague : “on fera mieux”.",
@@ -588,7 +588,7 @@
     "title": "Coupure internet",
     "body": "Une coupure internet régionale bloque un site. Les équipes ne peuvent plus travailler.",
     "choices": {
-      "A": "Investir dans une redondance réseau immédiate.",
+      "A": "Investir dans une connexion de secours immédiate.",
       "B": "Attendre : ce n’est pas “de ta faute”.",
       "C": "Donner une journée de repos payée aux équipes touchées."
     }
@@ -606,9 +606,9 @@
     "title": "Contrat public",
     "body": "Un contrat public énorme est possible, mais le dossier administratif est lourd et très contrôlé.",
     "choices": {
-      "A": "Y aller : équipe conformité dédiée.",
+      "A": "Y aller : équipe respect des règles dédiée.",
       "B": "Refuser : trop de contraintes.",
-      "C": "Y aller via un partenaire déjà habilité."
+      "C": "Y aller via un partenaire déjà déjà autorisé."
     }
   },
   "mcc_069": {
@@ -1089,8 +1089,8 @@
     }
   },
   "mcc_122": {
-    "title": "Le mail du régulateur",
-    "body": "Un régulateur envoie un mail très poli… qui se termine par “merci de répondre sous 7 jours”. Tout le monde transpire.",
+    "title": "Le mail de l’autorité de contrôle",
+    "body": "Une autorité de contrôle envoie un mail très poli… qui se termine par “merci de répondre sous 7 jours”. Tout le monde transpire.",
     "choices": {
       "A": "Répondre vite, complet, et corriger ce qui doit l’être.",
       "B": "Répondre minimalement : strict légal.",
@@ -1173,7 +1173,7 @@
     "title": "Le logo sur tout",
     "body": "L’équipe pub colle le logo partout: mugs, chaises, ascenseurs.",
     "choices": {
-      "A": "Stopper : sobriété et élégance.",
+      "A": "Stopper : modération et élégance.",
       "B": "Continuer : visibilité maximale.",
       "C": "Garder le logo sur quelques éléments haut de gamme seulement."
     }
@@ -1198,11 +1198,11 @@
   },
   "mcc_134": {
     "title": "L’ascenseur diplomatique",
-    "body": "Tu restes coincé dans un ascenseur avec un régulateur… et un investisseur… et un représentant employés. Ambiance.",
+    "body": "Tu restes coincé dans un ascenseur avec une autorité de contrôle… et un investisseur… et un représentant employés. Ambiance.",
     "choices": {
       "A": "Promettre transparence et équilibre à tous.",
       "B": "Rassurer d’abord l’investisseur : “rentabilité”.",
-      "C": "Rassurer d’abord employés + conformité."
+      "C": "Rassurer d’abord employés + respect des règles."
     }
   },
   "mcc_135": {
@@ -1296,8 +1296,8 @@
     }
   },
   "mcc_145": {
-    "title": "Le test de conformité",
-    "body": "Un quiz conformité est lancé. 40% échouent… et demandent si “c’était noté”.",
+    "title": "Le test de respect des règles",
+    "body": "Un quiz respect des règles est lancé. 40% échouent… et demandent si “c’était noté”.",
     "choices": {
       "A": "Former sérieusement, sans punir, et retester.",
       "B": "Punir : zéro tolérance.",
@@ -1398,7 +1398,7 @@
     "title": "Nouvelle règle sur la data",
     "body": "Une nouvelle règle impose plus de transparence sur les données. Tes équipes disent : “c’est lourd”.",
     "choices": {
-      "A": "Se mettre en conformité au maximum, vite.",
+      "A": "Se mettre en respect des règles au maximum, vite.",
       "B": "Faire le minimum légal.",
       "C": "Transformer ça en avantage : transparence + contrôle utilisateur."
     }
@@ -1504,7 +1504,7 @@
   },
   "mcc_168": {
     "title": "Régulateur en mode “contrôle”",
-    "body": "Les régulateurs annoncent une série de contrôles sectoriels. Ton secteur est dans la liste.",
+    "body": "Les autorités de contrôle annoncent une série de contrôles sectoriels. Ton secteur est dans la liste.",
     "choices": {
       "A": "Préparer un audit interne complet.",
       "B": "Faire le strict minimum et croiser les doigts.",
@@ -1576,9 +1576,9 @@
   },
   "mcc_176": {
     "title": "Panne de paiement",
-    "body": "Un prestataire de paiement tombe en panne. Les ventes s’arrêtent net pendant 2 heures.",
+    "body": "Une entreprise externe de paiement tombe en panne. Les ventes s’arrêtent net pendant 2 heures.",
     "choices": {
-      "A": "Ajouter un second prestataire de secours.",
+      "A": "Ajouter une seconde entreprise externe de secours.",
       "B": "Rester avec un seul : moins cher.",
       "C": "Créer un mode “commande réservée” en cas de panne."
     }
@@ -1606,7 +1606,7 @@
     "body": "Des taxes apparaissent entre deux zones. Tes produits traversent la frontière tous les jours.",
     "choices": {
       "A": "Réorganiser la production plus proche des clients.",
-      "B": "Payer et répercuter sur les prix.",
+      "B": "Payer et faire payer une partie aux clients sur les prix.",
       "C": "Négocier et chercher des exemptions."
     }
   },
@@ -1641,7 +1641,7 @@
     "title": "Régulation pub enfants",
     "body": "Une nouvelle règle limite la pub pour certains publics. Ton équipe pub doit s’adapter vite.",
     "choices": {
-      "A": "Se mettre en conformité et revoir la stratégie.",
+      "A": "Se mettre en respect des règles et revoir la stratégie.",
       "B": "Tester la limite du légal.",
       "C": "Réduire la pub et miser sur la qualité produit."
     }
@@ -1677,7 +1677,7 @@
     "title": "Plateforme mondiale",
     "body": "Ton service doit gérer des règles différentes selon les pays. Le produit veut “une seule version”.",
     "choices": {
-      "A": "Adapter par pays, conformité d’abord.",
+      "A": "Adapter par pays, respect des règles d’abord.",
       "B": "Une seule version, quitte à limiter dans certains pays.",
       "C": "Version globale + modules locaux."
     }
@@ -1767,7 +1767,7 @@
     "title": "Confusion politique locale",
     "body": "Dans un pays, une décision politique change des règles du jour au lendemain. Ton équipe locale est perdue.",
     "choices": {
-      "A": "Renforcer l’équipe conformité locale et s’adapter.",
+      "A": "Renforcer l’équipe respect des règles locale et s’adapter.",
       "B": "Suspendre temporairement certaines activités.",
       "C": "Continuer en espérant une clarification."
     }
@@ -1854,8 +1854,8 @@
     }
   },
   "mcc_207": {
-    "title": "Semaine de la sobriété énergétique",
-    "body": "Le gouvernement lance une semaine “sobriété”. Tes bureaux brillent comme un stade.",
+    "title": "Semaine de la réduction énergétique",
+    "body": "Le gouvernement lance une semaine “modération”. Tes bureaux brillent comme un stade.",
     "choices": {
       "A": "Réduire l’éclairage et afficher des gestes concrets.",
       "B": "Ne rien changer : “on paie, donc on éclaire”.",
@@ -1863,8 +1863,8 @@
     }
   },
   "mcc_208": {
-    "title": "Audit surprise du régulateur",
-    "body": "Un courriel arrive: \"contrôle sur site demain\". Ton équipe conformité court partout.",
+    "title": "Audit surprise de l’autorité de contrôle",
+    "body": "Un courriel arrive: \"contrôle sur site demain\". Ton équipe respect des règles court partout.",
     "choices": {
       "A": "Coopérer à fond et corriger tout ce qui manque.",
       "B": "Répondre au strict nécessaire.",
@@ -1922,7 +1922,7 @@
     "choices": {
       "A": "Y aller, mais rester ultra transparent sur tes échanges.",
       "B": "Refuser : trop flou.",
-      "C": "Y aller avec une équipe conformité et un agenda clair."
+      "C": "Y aller avec une équipe respect des règles et un agenda clair."
     }
   },
   "mcc_215": {
@@ -1930,7 +1930,7 @@
     "body": "Une taxe sectorielle est annoncée. Tes investisseurs grognent, tes clients ne veulent pas payer plus.",
     "choices": {
       "A": "Absorber une partie et optimiser les coûts.",
-      "B": "Répercuter tout sur les prix.",
+      "B": "Faire payer une partie aux clients tout sur les prix.",
       "C": "Adapter l’offre (entrée de gamme) pour limiter l’impact."
     }
   },
@@ -2071,9 +2071,9 @@
   },
   "mcc_231": {
     "title": "Contrat public possible",
-    "body": "Un gros contrat public est en jeu. Bonne vitrine, mais exigences de conformité très strictes.",
+    "body": "Un gros contrat public est en jeu. Bonne vitrine, mais exigences de respect des règles très strictes.",
     "choices": {
-      "A": "Y aller : conformité exemplaire.",
+      "A": "Y aller : respect des règles exemplaire.",
       "B": "Éviter : trop de contraintes.",
       "C": "Y aller via un partenariat expérimenté."
     }
@@ -2327,7 +2327,7 @@
     "choices": {
       "A": "Anticiper : grilles claires + explications.",
       "B": "Faire le minimum légal.",
-      "C": "Publier seulement des fourchettes très larges."
+      "C": "Publier seulement des plages de salaire très larges."
     }
   },
   "mcc_260": {
@@ -2354,7 +2354,7 @@
     "choices": {
       "A": "Y aller, rester factuel, proposer des engagements.",
       "B": "Refuser : trop risqué.",
-      "C": "Y aller avec une délégation “conformité + RH + RSE”."
+      "C": "Y aller avec une délégation “respect des règles + RH + RSE”."
     }
   },
   "mcc_263": {
@@ -2395,11 +2395,11 @@
   },
   "mcc_267": {
     "title": "Le débat sur la taxe carbone",
-    "body": "Une taxe carbone est discutée. Tes investisseurs veulent des marges, tes régulateurs veulent du sérieux.",
+    "body": "Une taxe carbone est discutée. Tes investisseurs veulent des marges, les autorités de contrôle veulent du sérieux.",
     "choices": {
       "A": "Accélérer transition + plan chiffré public.",
       "B": "Faire pression pour retarder la taxe.",
-      "C": "Répercuter le coût sur les prix."
+      "C": "Faire payer une partie aux clients le coût sur les prix."
     }
   },
   "mcc_268": {
@@ -2422,7 +2422,7 @@
   },
   "mcc_270": {
     "title": "Contrôle “anti-fraude” renforcé",
-    "body": "Le régulateur veut plus de contrôles sur tes ventes. Ton produit craint un parcours plus lourd.",
+    "body": "L’autorité de contrôle veut plus de contrôles sur tes ventes. Ton produit craint un parcours plus lourd.",
     "choices": {
       "A": "Renforcer et simplifier l’expérience en parallèle.",
       "B": "Faire le minimum légal.",
@@ -2503,7 +2503,7 @@
   },
   "mcc_279": {
     "title": "Le débat sur les contenus “toxiques”",
-    "body": "Un débat politique demande plus de modération en ligne. Tes équipes craignent la censure, le régulateur veut de l’action.",
+    "body": "Un débat politique demande plus de modération en ligne. Tes équipes craignent la censure, le autorité de contrôle veut de l’action.",
     "choices": {
       "A": "Renforcer modération + transparence.",
       "B": "Résister : liberté totale.",
@@ -2521,7 +2521,7 @@
   },
   "mcc_281": {
     "title": "L’alerte “rappel produit”",
-    "body": "Un régulateur signale un risque mineur sur un lot. Pas dangereux, mais ça peut faire mauvais titre.",
+    "body": "Une autorité de contrôle signale un risque mineur sur un lot. Pas dangereux, mais ça peut faire mauvais titre.",
     "choices": {
       "A": "Rappeler le lot et communiquer clairement.",
       "B": "Attendre : “c’est mineur”.",
@@ -2559,13 +2559,13 @@
     "title": "Le débat sur les “cadeaux”",
     "body": "Une règle limite les cadeaux aux décideurs. Ton équipe commercial perd son panier gourmand… et son sourire.",
     "choices": {
-      "A": "Zéro cadeau, conformité stricte.",
+      "A": "Zéro cadeau, respect des règles stricte.",
       "B": "Cadeaux “petits” seulement.",
       "C": "Remplacer cadeaux par événements publics transparents."
     }
   },
   "mcc_286": {
-    "title": "Le “grand plan sobriété numérique”",
+    "title": "Le “grand plan réduction numérique”",
     "body": "On demande aux entreprises de réduire la consommation numérique. Tes serveurs font semblant de ne pas entendre.",
     "choices": {
       "A": "Optimiser, réduire, mesurer et publier.",
@@ -2622,7 +2622,7 @@
     "title": "La “journée de la transparence”",
     "body": "Une journée nationale de transparence est lancée. Tes équipes com’ veulent un slogan. Ton juridique veut un casque.",
     "choices": {
-      "A": "Publier des données clés (prix, impacts, salaires en fourchettes).",
+      "A": "Publier des données clés (prix, impacts, salaires en plages de salaire).",
       "B": "Faire un post vague et inspirant.",
       "C": "Publier seulement ce qui est déjà obligatoire."
     }
@@ -2766,7 +2766,7 @@
     "title": "Débat sur la “semaine sans écrans”",
     "body": "Une semaine sans écrans est proposée. Ton activité est… sur écran. Tes équipes cherchent une version papier.",
     "choices": {
-      "A": "Proposer un mode “sobriété” (temps limité).",
+      "A": "Proposer un mode “modération” (temps limité).",
       "B": "Ignorer et pousser les notifications (ouch).",
       "C": "Soutenir l’initiative et proposer des pauses intégrées."
     }
@@ -2777,7 +2777,7 @@
     "choices": {
       "A": "Coopérer à fond, proprement et avec ordre.",
       "B": "Résister et fournir au strict minimum.",
-      "C": "Mandater un audit externe et livrer un dossier clair."
+      "C": "Demander à un audit externe et livrer un dossier clair."
     }
   },
   "mcc_310": {
@@ -2907,8 +2907,8 @@
     }
   },
   "mcc_324": {
-    "title": "Loi contre l’écologie de façade",
-    "body": "Une loi contre l’écologie de façade arrive. L’équipe pub a mis \"éco\" partout.",
+    "title": "Loi contre l’écologie surtout pour l’image",
+    "body": "Une loi contre l’écologie surtout pour l’image arrive. L’équipe pub a mis \"éco\" partout.",
     "choices": {
       "A": "Nettoyer les messages + preuves + audits.",
       "B": "Garder : tout le monde le fait.",
@@ -2926,7 +2926,7 @@
   },
   "mcc_326": {
     "title": "Sécurité des données",
-    "body": "Après une fuite médiatisée ailleurs, le régulateur veut des garanties. Ton équipe sécurité dit : “on veut un budget”.",
+    "body": "Après une fuite médiatisée ailleurs, le autorité de contrôle veut des garanties. Ton équipe sécurité dit : “on veut un budget”.",
     "choices": {
       "A": "Investir fort + audit externe + transparence.",
       "B": "Faire le minimum légal.",
@@ -2997,10 +2997,10 @@
     }
   },
   "mcc_334": {
-    "title": "Le débat sur la “sobriété”",
+    "title": "Le débat sur la “modération”",
     "body": "Le stand de ta marque est décoré comme un sapin de Noël d’entreprise.",
     "choices": {
-      "A": "Plan sobriété réel + mesures visibles.",
+      "A": "Plan modération réel + mesures visibles.",
       "B": "Mesure symbolique 1 semaine.",
       "C": "Ne rien faire : productivité d’abord."
     }
@@ -3160,7 +3160,7 @@
   },
   "mcc_352": {
     "title": "L’audit des chaussettes",
-    "body": "Un régulateur demande un audit… sur tes chaussettes d’entreprise. Motif : “risque de glissade institutionnelle”.",
+    "body": "Une autorité de contrôle demande un audit… sur tes chaussettes d’entreprise. Motif : “risque de glissade institutionnelle”.",
     "choices": {
       "A": "Coopérer et publier un “rapport chaussette”.",
       "B": "Se moquer et ignorer (mauvaise idée).",
@@ -3200,7 +3200,7 @@
     "choices": {
       "A": "Assumer : “logo vivant” et en faire une mascotte.",
       "B": "Retirer tout de suite : trop bizarre.",
-      "C": "Garder mais désactiver le clignement (sobriété)."
+      "C": "Garder mais désactiver le clignement (modération)."
     }
   },
   "mcc_357": {
@@ -3218,7 +3218,7 @@
     "choices": {
       "A": "S’excuser + audit logistique + humour.",
       "B": "Dire que c’était un “test” (mensonge dangereux).",
-      "C": "Offrir une démo de livraison sécurisée aux régulateurs."
+      "C": "Offrir une démo de livraison sécurisée aux autorités de contrôle."
     }
   },
   "mcc_359": {
@@ -3250,7 +3250,7 @@
   },
   "mcc_362": {
     "title": "Le tapis rouge… réglementaire",
-    "body": "Les régulateurs organisent une cérémonie “conformité exemplaire”. Il y a un tapis rouge. Oui, un tapis rouge.",
+    "body": "Les autorités de contrôle organisent une cérémonie “respect des règles exemplaire”. Il y a un tapis rouge. Oui, un tapis rouge.",
     "choices": {
       "A": "Y aller, humble, et présenter des preuves.",
       "B": "Ne pas y aller : trop bizarre.",
@@ -3322,7 +3322,7 @@
   },
   "mcc_370": {
     "title": "Le costume réglementaire",
-    "body": "Un régulateur propose un dress code “sobriété” : costume gris obligatoire. Ton équipe pub crie “mort du branding”.",
+    "body": "Une autorité de contrôle propose un dress code “modération” : costume gris obligatoire. Ton équipe pub crie “mort du branding”.",
     "choices": {
       "A": "Respecter en rendez-vous officiels uniquement.",
       "B": "Refuser : liberté totale.",
@@ -3474,8 +3474,8 @@
     }
   },
   "mcc_387": {
-    "title": "Les régulateurs demandent un jingle",
-    "body": "Un régulateur te demande un jingle de conformité “pour sensibiliser”. Ton équipe musique ressort un ukulélé.",
+    "title": "Les autorités de contrôle demandent un jingle",
+    "body": "Une autorité de contrôle te demande un jingle de respect des règles “pour sensibiliser”. Ton équipe musique ressort un ukulélé.",
     "choices": {
       "A": "Faire un jingle simple et utile (non cringe).",
       "B": "Refuser : sérieux d’abord.",
@@ -3754,7 +3754,7 @@
   },
   "mcc_418": {
     "title": "Le “plan d’urgence : stickers”",
-    "body": "En crise, ton équipe propose des stickers “On lâche rien”. Les régulateurs veulent un plan, pas des stickers.",
+    "body": "En crise, ton équipe propose des stickers “On lâche rien”. Les autorités de contrôle veulent un plan, pas des stickers.",
     "choices": {
       "A": "Plan concret + pas de stickers.",
       "B": "Stickers partout : moral boost.",
@@ -3771,8 +3771,8 @@
     }
   },
   "mcc_420": {
-    "title": "La “semaine du compliment aux régulateurs”",
-    "body": "On te suggère d’envoyer des compliments aux régulateurs. Ton juriste : “non, non, non”.",
+    "title": "La “semaine du compliment aux autorités de contrôle”",
+    "body": "On te suggère d’envoyer des compliments aux autorités de contrôle. Ton juriste : “non, non, non”.",
     "choices": {
       "A": "Rester neutre, juste coopérer correctement.",
       "B": "Envoyer des compliments (risque de malaise).",
@@ -3783,7 +3783,7 @@
     "title": "Le débat “anti-croissance infinie”",
     "body": "Une émission te demande si tu crois en la croissance infinie. Ton CFO dit “oui”. Ton responsable RSE dit “euh”.",
     "choices": {
-      "A": "Position équilibrée : croissance + sobriété + preuves.",
+      "A": "Position équilibrée : croissance + modération + preuves.",
       "B": "Croissance infinie assumée.",
       "C": "Croissance limitée et priorité à la stabilité."
     }
@@ -3801,7 +3801,7 @@
     "title": "La “réforme des ascenseurs”",
     "body": "Une loi veut des ascenseurs plus inclusifs. Ton siège a un ascenseur qui parle… en latin.",
     "choices": {
-      "A": "Moderniser : accessibilité + conformité.",
+      "A": "Moderniser : accessibilité + respect des règles.",
       "B": "Garder : “c’est du patrimoine”.",
       "C": "Moderniser partiellement (vocal + signalétique)."
     }
@@ -3880,7 +3880,7 @@
   },
   "mcc_432": {
     "title": "La “journée du bug heureux”",
-    "body": "Ton équipe veut célébrer les bugs avec des gâteaux. Les régulateurs veulent… zéro bug. Les employés veulent des gâteaux.",
+    "body": "Ton équipe veut célébrer les bugs avec des gâteaux. Les autorités de contrôle veulent… zéro bug. Les employés veulent des gâteaux.",
     "choices": {
       "A": "Gâteaux + sprint qualité (équilibre).",
       "B": "Gâteaux sans corriger (non).",
@@ -3933,8 +3933,8 @@
     }
   },
   "mcc_438": {
-    "title": "Le régulateur veut un “emoji officiel”",
-    "body": "Un régulateur demande un emoji officiel de conformité pour les applis. Ton designer propose : 🧾✨.",
+    "title": "L’autorité de contrôle veut un “emoji officiel”",
+    "body": "Une autorité de contrôle demande un emoji officiel de respect des règles pour les applis. Ton designer propose : 🧾✨.",
     "choices": {
       "A": "Coopérer : mettre un symbole clair et neutre.",
       "B": "Refuser : ridicule.",

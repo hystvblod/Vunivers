@@ -502,9 +502,9 @@
         },
         "C": {
           "gaugeDelta": {
-            "employees": -15,
-            "investors": 5,
-            "brand_image": 0,
+            "employees": -10,
+            "investors": 0,
+            "brand_image": -5,
             "regulators": 0
           }
         }
@@ -4642,8 +4642,8 @@
         },
         "C": {
           "gaugeDelta": {
-            "employees": 5,
-            "brand_image": 0,
+            "employees": 0,
+            "brand_image": 5,
             "investors": -5,
             "regulators": 0
           }
@@ -6742,10 +6742,10 @@
         },
         "C": {
           "gaugeDelta": {
-            "brand_image": 0,
+            "brand_image": -5,
             "investors": 0,
             "employees": -5,
-            "regulators": -5
+            "regulators": 0
           }
         }
       }
@@ -8752,7 +8752,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "brand_image": 0,
+            "brand_image": -5,
             "regulators": 5,
             "investors": 0,
             "employees": 0
@@ -12276,9 +12276,9 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "brand_image": 0,
+            "brand_image": 5,
             "regulators": 0,
-            "investors": 5,
+            "investors": 0,
             "employees": 0
           }
         },
