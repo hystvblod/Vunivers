@@ -38,13 +38,13 @@
       "label_id": "Klan"
     },
     {
-      "id": "cult",
-      "label_fr": "Culte vampirique",
-      "label_en": "Vampiric cult",
+      "id": "secret",
+      "label_fr": "Secret vampirique",
+      "label_en": "Vampiric secret",
       "label_de": "Vampirischer Kult",
-      "label_es": "Culto vampírico",
-      "label_pt": "Culto vampírico",
-      "label_ptbr": "Culto vampírico",
+      "label_es": "Secreto vampírico",
+      "label_pt": "Secreto vampírico",
+      "label_ptbr": "Secreto vampírico",
       "label_ko": "흡혈귀 숭배",
       "label_ja": "吸血鬼の崇拝",
       "label_id": "Kultus vampir"
@@ -54,6 +54,6 @@
     "blood": 50,
     "hunters": 50,
     "clan": 50,
-    "cult": 50
+    "secret": 50
   }
 }
