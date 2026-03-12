@@ -62,7 +62,14 @@
       filter: drop-shadow(0 2px 8px rgba(0,0,0,0.65)) contrast(1.2) brightness(1.08) !important;
     }
 
-    .vr-main{ padding-top: 12px !important; }
+    .vr-main{
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-top: clamp(8px, 2.4vw, 12px) !important;
+      padding-left: clamp(10px, 3vw, 16px) !important;
+      padding-right: clamp(10px, 3vw, 16px) !important;
+      box-sizing: border-box !important;
+    }
 
     .vr-intro{
       margin-top: 6px !important;
@@ -73,25 +80,28 @@
 
     .vr-main-logo{
       margin-top: 0 !important;
-      height: clamp(86px, 11vmin, 132px) !important;
-      max-width: clamp(260px, 72vw, 420px) !important;
+      width: min(78vw, 420px) !important;
+      height: auto !important;
+      max-height: clamp(72px, 16vw, 132px) !important;
       object-fit: contain !important;
+      display: block !important;
       filter: drop-shadow(0 12px 30px rgba(0,0,0,0.45)) !important;
     }
 
     .vr-universe-grid{
       display:grid !important;
       grid-template-columns:1fr !important;
-      gap:14px !important;
+      gap:clamp(10px, 2.8vw, 14px) !important;
+      width:100% !important;
     }
 
     .vr-card{
       position:relative !important;
       overflow:hidden !important;
       width:100% !important;
-      min-height:64px !important;
-      height:64px !important;
-      border-radius:18px !important;
+      min-height:clamp(52px, 12vw, 64px) !important;
+      height:clamp(52px, 12vw, 64px) !important;
+      border-radius:clamp(14px, 3.5vw, 18px) !important;
       cursor:pointer !important;
       border:0 !important;
       outline:0 !important;
@@ -124,7 +134,7 @@
       content:"" !important;
       position:absolute !important;
       inset:0 !important;
-      border-radius:18px !important;
+      border-radius:inherit !important;
       border: 1px solid rgba(255,255,255,.08) !important;
       pointer-events:none !important;
       z-index:2 !important;
@@ -143,29 +153,31 @@
       display:flex !important;
       align-items:center !important;
       justify-content:space-between !important;
-      gap:12px !important;
-      padding:0 14px !important;
+      gap:clamp(8px, 2vw, 12px) !important;
+      padding:0 clamp(10px, 3vw, 14px) !important;
+      box-sizing:border-box !important;
     }
 
     .vr-card-title{
       margin:0 !important;
       color:#fff !important;
       font-weight:900 !important;
-      font-size:16px !important;
+      font-size:clamp(13px, 3.7vw, 16px) !important;
       letter-spacing:.2px !important;
       line-height:1.1 !important;
       text-shadow:0 2px 10px rgba(0,0,0,.65) !important;
+      min-width:0 !important;
     }
 
     .vr-info-btn{
-      width:40px !important;
-      height:40px !important;
+      width:clamp(32px, 8.5vw, 40px) !important;
+      height:clamp(32px, 8.5vw, 40px) !important;
       border-radius:999px !important;
       background:rgba(255,255,255,.10) !important;
       border:1px solid rgba(255,255,255,.18) !important;
       color:rgba(255,255,255,.95) !important;
       font-weight:900 !important;
-      font-size:16px !important;
+      font-size:clamp(13px, 3.7vw, 16px) !important;
       display:inline-flex !important;
       align-items:center !important;
       justify-content:center !important;
@@ -190,20 +202,20 @@
     }
 
     @media (max-width: 520px){
-      .vr-main{ padding-top: 10px !important; }
-      .vr-card{ min-height:60px !important; height:60px !important; }
-      .vr-card-title{ font-size:14px !important; }
-      .vr-info-btn{ width:38px !important; height:38px !important; font-size:15px !important; }
-
-      .vr-icon-button{ width:40px !important; height:40px !important; }
-      .vr-icon-button img{ width:28px !important; height:28px !important; }
+      .vr-main{
+        padding-top:8px !important;
+        padding-left:10px !important;
+        padding-right:10px !important;
+      }
+      .vr-icon-button{ width:38px !important; height:38px !important; }
+      .vr-icon-button img{ width:26px !important; height:26px !important; }
 
       .vr-main-logo{
-        width: min(82vw, 580px) !important;
+        width: min(84vw, 340px) !important;
         height: auto !important;
-        max-height: 140px !important;
-        display: block;
-        margin: 0 auto 16px auto;
+        max-height: 110px !important;
+        display: block !important;
+        margin: 0 auto 12px auto !important;
       }
     }
 
@@ -409,21 +421,22 @@
       color: rgba(255, 220, 220, 0.95);
       text-align:center;
     }
-    .vr-top-actions-4{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:space-between !important;
-  gap:12px !important;
-  padding:10px 12px 8px !important;
-  width:100% !important;
-}
 
-.vr-top-slot-4{
-  flex:1 1 0 !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-}
+    .vr-top-actions-4{
+      display:flex !important;
+      align-items:center !important;
+      justify-content:space-between !important;
+      gap:12px !important;
+      padding:10px 12px 8px !important;
+      width:100% !important;
+    }
+
+    .vr-top-slot-4{
+      flex:1 1 0 !important;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+    }
   </style>
 </head>
 
@@ -431,33 +444,33 @@
 
   <main class="vr-main">
 
-<div class="vr-top-actions vr-top-actions-4">
+    <div class="vr-top-actions vr-top-actions-4">
 
-  <div class="vr-top-slot vr-top-slot-4">
-    <a class="vr-icon-button" href="profile.html" aria-label="" data-i18n-aria="ui.profile_title">
-      <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
-    </a>
-  </div>
+      <div class="vr-top-slot vr-top-slot-4">
+        <a class="vr-icon-button" href="profile.html" aria-label="" data-i18n-aria="ui.profile_title">
+          <img src="assets/img/ui/btn_profile.webp" alt="" draggable="false" />
+        </a>
+      </div>
 
-  <div class="vr-top-slot vr-top-slot-4">
-    <a class="vr-icon-button" href="settings.html" aria-label="" data-i18n-aria="ui.settings_title">
-      <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
-    </a>
-  </div>
+      <div class="vr-top-slot vr-top-slot-4">
+        <a class="vr-icon-button" href="settings.html" aria-label="" data-i18n-aria="ui.settings_title">
+          <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
+        </a>
+      </div>
 
-  <div class="vr-top-slot vr-top-slot-4">
-    <a class="vr-icon-button" href="shop.html" aria-label="" data-i18n-aria="ui.shop_title">
-      <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
-    </a>
-  </div>
+      <div class="vr-top-slot vr-top-slot-4">
+        <a class="vr-icon-button" href="shop.html" aria-label="" data-i18n-aria="ui.shop_title">
+          <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
+        </a>
+      </div>
 
-  <div class="vr-top-slot vr-top-slot-4">
-    <a class="vr-icon-button" href="cross-promo.html" aria-label="" data-i18n-aria="crosspromo.open_page_aria">
-      <img src="assets/img/ui/btn_crosspromo.webp" alt="" draggable="false" />
-    </a>
-  </div>
+      <div class="vr-top-slot vr-top-slot-4">
+        <a class="vr-icon-button" href="cross-promo.html" aria-label="" data-i18n-aria="crosspromo.open_page_aria">
+          <img src="assets/img/ui/btn_crosspromo.webp" alt="" draggable="false" />
+        </a>
+      </div>
 
-</div>
+    </div>
 
     <section class="vr-intro">
       <img
@@ -492,6 +505,26 @@
           </div>
         </button>
 
+        <button class="vr-card" data-universe="vampire_lord" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/vampire_lord.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.vampire_lord.desc">?</span>
+            </div>
+          </div>
+        </button>
+
+        <button class="vr-card" data-universe="new_world_explorer" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/new_world_explorer.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.new_world_explorer.desc">?</span>
+            </div>
+          </div>
+        </button>
+
         <button class="vr-card" data-universe="western_president" type="button">
           <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/western_president.webp');"></div>
           <div class="vr-card-content">
@@ -508,26 +541,6 @@
             <div class="vr-card-header-line">
               <h3 class="vr-card-title" data-i18n="universe.mega_corp_ceo.title"></h3>
               <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.mega_corp_ceo.desc">?</span>
-            </div>
-          </div>
-        </button>
-
-        <button class="vr-card" data-universe="new_world_explorer" type="button">
-          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/new_world_explorer.webp');"></div>
-          <div class="vr-card-content">
-            <div class="vr-card-header-line">
-              <h3 class="vr-card-title" data-i18n="universe.new_world_explorer.title"></h3>
-              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.new_world_explorer.desc">?</span>
-            </div>
-          </div>
-        </button>
-
-        <button class="vr-card" data-universe="vampire_lord" type="button">
-          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/vampire_lord.webp');"></div>
-          <div class="vr-card-content">
-            <div class="vr-card-header-line">
-              <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
-              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.vampire_lord.desc">?</span>
             </div>
           </div>
         </button>
@@ -901,42 +914,44 @@
         showBuyError("");
 
         const balance = getCurrentVCoins();
-   if (balance < PRICE) {
-  showBuyError(
-    _t(
-      "ui.universe_buy.err_unlock_insufficient",
-      "",
-      { balance: balance, price: PRICE }
-    )
-  );
+        if (balance < PRICE) {
+          showBuyError(
+            _t(
+              "ui.universe_buy.err_unlock_insufficient",
+              "",
+              { balance: balance, price: PRICE }
+            )
+          );
 
-  try {
-    sessionStorage.setItem("vr_crosspromo_context", "low_vcoins");
-  } catch (_) {}
+          try {
+            sessionStorage.setItem("vr_crosspromo_context", "low_vcoins");
+          } catch (_) {}
 
-  return;
-}
+          return;
+        }
+
         const res = await window.VUserData?.unlockUniverseWithVcoins?.(universeId, PRICE);
-if (!res?.ok) {
-  if (String(res?.reason || "") === "insufficient_vcoins") {
-    showBuyError(
-      _t(
-        "ui.universe_buy.err_unlock_insufficient",
-        "",
-        { balance: Number(res?.balance || 0), price: PRICE }
-      )
-    );
+        if (!res?.ok) {
+          if (String(res?.reason || "") === "insufficient_vcoins") {
+            showBuyError(
+              _t(
+                "ui.universe_buy.err_unlock_insufficient",
+                "",
+                { balance: Number(res?.balance || 0), price: PRICE }
+              )
+            );
 
-    try {
-      sessionStorage.setItem("vr_crosspromo_context", "low_vcoins");
-    } catch (_) {}
+            try {
+              sessionStorage.setItem("vr_crosspromo_context", "low_vcoins");
+            } catch (_) {}
 
-    return;
-  }
+            return;
+          }
 
-  showBuyError(_t("ui.universe_buy.err_unlock", ""));
-  return;
-}
+          showBuyError(_t("ui.universe_buy.err_unlock", ""));
+          return;
+        }
+
         refreshPopupTexts();
         applyLocks();
         closeBuyPopup();
