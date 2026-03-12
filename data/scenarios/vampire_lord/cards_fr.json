@@ -27,8 +27,8 @@
     }
   },
   "vampire_004": {
-    "title": "Influenceurs du culte",
-    "body": "Le culte vampirique grossit. Ça flatte et ça attire les problèmes.",
+    "title": "Influenceurs du secret",
+    "body": "Le secret vampirique grossit. Ça flatte et ça attire les problèmes.",
     "choices": {
       "A": "Autoriser un grand rituel",
       "B": "Limiter et encadrer",
@@ -50,7 +50,7 @@
     "choices": {
       "A": "Piller discrètement",
       "B": "Investir légalement",
-      "C": "Taxer le culte"
+      "C": "Taxer le secret"
     }
   },
   "vampire_007": {
@@ -85,7 +85,7 @@
     "body": "Un humain te fixe comme s’il connaissait ton nom et ton cercueil.",
     "choices": {
       "A": "Effacer les preuves",
-      "B": "Faire porter le chapeau au culte",
+      "B": "Faire porter le chapeau au secret",
       "C": "Soudoyer les chefs"
     }
   },
@@ -100,7 +100,7 @@
   },
   "vampire_012": {
     "title": "Le visage public",
-    "body": "Le culte vampirique grossit. Ça flatte et ça attire les problèmes.",
+    "body": "Le secret vampirique grossit. Ça flatte et ça attire les problèmes.",
     "choices": {
       "A": "Apparaître publiquement",
       "B": "Rester une légende",
@@ -131,7 +131,7 @@
     "choices": {
       "A": "Faire le rituel",
       "B": "Le repousser",
-      "C": "Le confier au culte"
+      "C": "Le confier au secret"
     }
   },
   "vampire_016": {
@@ -171,10 +171,10 @@
     }
   },
   "vampire_020": {
-    "title": "Culte en feu",
-    "body": "Le culte vampirique grossit. Ça flatte et ça attire les problèmes.",
+    "title": "Secret en feu",
+    "body": "Le secret vampirique grossit. Ça flatte et ça attire les problèmes.",
     "choices": {
-      "A": "Exploiter le culte",
+      "A": "Exploiter le secret",
       "B": "Le protéger sincèrement",
       "C": "Le dissoudre"
     }
@@ -307,7 +307,7 @@
   },
   "vampire_035": {
     "title": "La statue qui pleure",
-    "body": "Une statue de la crypte suinte du sang. Le culte adore, le clan panique.",
+    "body": "Une statue de la crypte suinte du sang. Le secret adore, le clan panique.",
     "choices": {
       "A": "Expliquer un miracle",
       "B": "Bloquer l’accès",
@@ -320,7 +320,7 @@
     "choices": {
       "A": "Former le novice",
       "B": "Le cacher au clan",
-      "C": "Le confier au culte"
+      "C": "Le confier au secret"
     }
   },
   "vampire_037": {
@@ -334,7 +334,7 @@
   },
   "vampire_038": {
     "title": "Le pactole de VCoins",
-    "body": "Le culte offre des dons énormes. Ça sent la manipulation, mais c’est tentant.",
+    "body": "Le secret offre des dons énormes. Ça sent la manipulation, mais c’est tentant.",
     "choices": {
       "A": "Accepter avec contrôle",
       "B": "Refuser",
@@ -464,7 +464,7 @@
     "choices": {
       "A": "Refermer et piéger",
       "B": "Suivre les traces",
-      "C": "Envoyer le culte"
+      "C": "Envoyer le secret"
     }
   },
   "vampire_053": {
@@ -505,11 +505,11 @@
   },
   "vampire_057": {
     "title": "La bibliothèque scellée",
-    "body": "Une bibliothèque interdit l’accès à une salle. Le culte dit que ça chante la nuit.",
+    "body": "Une bibliothèque interdit l’accès à une salle. Le secret dit que ça chante la nuit.",
     "choices": {
       "A": "Forcer l’entrée",
       "B": "Demander un permis",
-      "C": "Laisser au culte"
+      "C": "Laisser au secret"
     }
   },
   "vampire_058": {
@@ -527,14 +527,14 @@
     "choices": {
       "A": "Punir le serviteur",
       "B": "Nettoyer vite",
-      "C": "Faire porter la faute au culte"
+      "C": "Faire porter la faute au secret"
     }
   },
   "vampire_060": {
     "title": "La comète rouge",
-    "body": "Le ciel devient rouge une nuit. Le culte annonce la fin, les chasseurs se préparent.",
+    "body": "Le ciel devient rouge une nuit. Le secret annonce la fin, les chasseurs se préparent.",
     "choices": {
-      "A": "Calmer le culte",
+      "A": "Calmer le secret",
       "B": "Préparer la guerre",
       "C": "Profiter du chaos"
     }
@@ -595,9 +595,9 @@
   },
   "vampire_067": {
     "title": "La relique volée",
-    "body": "La relique du sang froid a été volée. Le coupable laisse un symbole du culte.",
+    "body": "La relique du sang froid a été volée. Le coupable laisse un symbole du secret.",
     "choices": {
-      "A": "Accuser le culte",
+      "A": "Accuser le secret",
       "B": "Traquer en silence",
       "C": "Offrir une amnistie"
     }
@@ -688,17 +688,17 @@
     "body": "Un novice a paniqué et a fui en pleine ville. Il laisse des traces partout.",
     "choices": {
       "A": "Le rattraper",
-      "B": "Le cacher chez le culte",
+      "B": "Le cacher chez le secret",
       "C": "Le sacrifier pour l’exemple"
     }
   },
   "vampire_078": {
-    "title": "Le procès du culte",
-    "body": "Le culte veut juger un humain qui t’a insulté. Ils demandent ta bénédiction.",
+    "title": "Le procès du secret",
+    "body": "Le secret veut juger un humain qui t’a insulté. Ils demandent ta bénédiction.",
     "choices": {
       "A": "Refuser le procès",
       "B": "Autoriser un jugement symbolique",
-      "C": "Laisser le culte décider"
+      "C": "Laisser le secret décider"
     }
   },
   "vampire_079": {
@@ -707,7 +707,7 @@
     "choices": {
       "A": "Sauver les réserves",
       "B": "Changer de repaire",
-      "C": "Transformer en attraction du culte"
+      "C": "Transformer en attraction du secret"
     }
   },
   "vampire_080": {
@@ -783,8 +783,8 @@
     }
   },
   "vampire_088": {
-    "title": "Le mariage du culte",
-    "body": "Le culte organise un mariage nocturne. Ils veulent que tu sois témoin.",
+    "title": "Le mariage du secret",
+    "body": "Le secret organise un mariage nocturne. Ils veulent que tu sois témoin.",
     "choices": {
       "A": "Accepter",
       "B": "Refuser",
@@ -829,7 +829,7 @@
   },
   "vampire_093": {
     "title": "La potion trop bonne",
-    "body": "Le culte invente une boisson au sang. Tout le monde en veut, même les humains.",
+    "body": "Le secret invente une boisson au sang. Tout le monde en veut, même les humains.",
     "choices": {
       "A": "Interdire",
       "B": "Vendre au marché noir",
@@ -856,11 +856,11 @@
   },
   "vampire_096": {
     "title": "Le nouveau symbole",
-    "body": "Un symbole inconnu apparaît sur tes murs. Ni clan ni culte. Autre chose.",
+    "body": "Un symbole inconnu apparaît sur tes murs. Ni clan ni secret. Autre chose.",
     "choices": {
       "A": "Enquêter",
       "B": "Effacer tout",
-      "C": "Faire croire à un rite du culte"
+      "C": "Faire croire à un rite du secret"
     }
   },
   "vampire_097": {
@@ -1044,7 +1044,7 @@
     }
   },
   "vampire_117": {
-    "title": "Le culte veut un logo",
+    "title": "Le secret veut un logo",
     "body": "Ils veulent des badges, des bannières, et une identité. Toi, tu veux surtout qu’ils arrêtent d’être visibles.",
     "choices": {
       "A": "Donner un symbole simple",
@@ -1242,7 +1242,7 @@
     }
   },
   "vampire_140": {
-    "title": "La dette du culte",
+    "title": "La dette du secret",
     "body": "Ils ont aidé à détourner une enquête. Maintenant ils se sentent importants. Les gens importants font des erreurs.",
     "choices": {
       "A": "Payer en vcoins",
@@ -1391,7 +1391,7 @@
     "choices": {
       "A": "La brûler",
       "B": "La lire avec protection",
-      "C": "La confier au culte"
+      "C": "La confier au secret"
     }
   },
   "vampire_157": {
@@ -1719,7 +1719,7 @@
     }
   },
   "vampire_193": {
-    "title": "Le banquet du culte",
+    "title": "Le banquet du secret",
     "body": "Ils ont décoré, chanté, prié, et cuisiné. Ça part d’un bon sentiment. Ça finit souvent en drame.",
     "choices": {
       "A": "Refuser poliment",
@@ -1836,8 +1836,8 @@
     }
   },
   "vampire_206": {
-    "title": "Fête du culte improvisée",
-    "body": "Le culte organise une fête en ton honneur. Avec affiches et fumigènes.",
+    "title": "Fête du secret improvisée",
+    "body": "Le secret organise une fête en ton honneur. Avec affiches et fumigènes.",
     "choices": {
       "A": "Annuler fermement",
       "B": "Encadrer et sécuriser",
@@ -1859,7 +1859,7 @@
     "choices": {
       "A": "Le calmer sévèrement",
       "B": "Le former correctement",
-      "C": "Le mettre au service du culte"
+      "C": "Le mettre au service du secret"
     }
   },
   "vampire_209": {
@@ -1890,8 +1890,8 @@
     }
   },
   "vampire_212": {
-    "title": "Coffre du culte vide",
-    "body": "Le coffre d offrandes est vide. Le culte se dispute et ça devient public.",
+    "title": "Coffre du secret vide",
+    "body": "Le coffre d offrandes est vide. Le secret se dispute et ça devient public.",
     "choices": {
       "A": "Rendre l argent et recadrer",
       "B": "Désigner un responsable",
@@ -1940,7 +1940,7 @@
     "choices": {
       "A": "Jeter le lot",
       "B": "Le couper avec du bon",
-      "C": "Le refiler au culte"
+      "C": "Le refiler au secret"
     }
   },
   "vampire_218": {
@@ -1953,8 +1953,8 @@
     }
   },
   "vampire_219": {
-    "title": "Culte trop zélé",
-    "body": "Le culte veut tatouer ton symbole. Sur eux. Sur tout. Même sur les murs.",
+    "title": "Secret trop zélé",
+    "body": "Le secret veut tatouer ton symbole. Sur eux. Sur tout. Même sur les murs.",
     "choices": {
       "A": "Interdire et punir",
       "B": "Limiter à un signe discret",
@@ -1990,7 +1990,7 @@
   },
   "vampire_223": {
     "title": "Coupure de réseau",
-    "body": "Plus de réseau dans ton secteur. Le clan panique. Le culte aussi. Mauvais signe.",
+    "body": "Plus de réseau dans ton secteur. Le clan panique. Le secret aussi. Mauvais signe.",
     "choices": {
       "A": "Envoyer des éclaireurs",
       "B": "Rester caché",
@@ -2002,7 +2002,7 @@
     "body": "Un prêtre bénit les portes du quartier. Il te regarde trop longtemps.",
     "choices": {
       "A": "Le détourner de la zone",
-      "B": "Le recruter via le culte",
+      "B": "Le recruter via le secret",
       "C": "Le faire discréditer"
     }
   },
@@ -2075,7 +2075,7 @@
     "choices": {
       "A": "Refuser et rester sobre",
       "B": "Accepter et cadrer ça",
-      "C": "Le donner au culte"
+      "C": "Le donner au secret"
     }
   },
   "vampire_233": {
@@ -2106,8 +2106,8 @@
     }
   },
   "vampire_236": {
-    "title": "Le chant du culte",
-    "body": "Le culte compose une chanson sur toi. Elle reste dans la tête. Même aux immortels.",
+    "title": "Le chant du secret",
+    "body": "Le secret compose une chanson sur toi. Elle reste dans la tête. Même aux immortels.",
     "choices": {
       "A": "Interdire la chanson",
       "B": "La rendre officielle",
@@ -2169,8 +2169,8 @@
     }
   },
   "vampire_244": {
-    "title": "Le costume du culte",
-    "body": "Le culte te fabrique une tenue officielle. C est trop brillant. Et ça attire les flashs.",
+    "title": "Le costume du secret",
+    "body": "Le secret te fabrique une tenue officielle. C est trop brillant. Et ça attire les flashs.",
     "choices": {
       "A": "Refuser la tenue",
       "B": "Accepter une version discrète",
@@ -2179,7 +2179,7 @@
   },
   "vampire_245": {
     "title": "Chasseur sous couverture",
-    "body": "Un nouveau membre du culte pose des questions trop précises. Ça sent le faux fan.",
+    "body": "Un nouveau membre du secret pose des questions trop précises. Ça sent le faux fan.",
     "choices": {
       "A": "Le tester discrètement",
       "B": "Le chasser tout de suite",
@@ -2224,7 +2224,7 @@
   },
   "vampire_253": {
     "title": "Le procès du clan",
-    "body": "Un vampire est accusé de trahison. Il demande un jugement. Le culte veut assister.",
+    "body": "Un vampire est accusé de trahison. Il demande un jugement. Le secret veut assister.",
     "choices": {
       "A": "Jugement strict",
       "B": "Pardon contre service",
@@ -2278,7 +2278,7 @@
   },
   "vampire_260": {
     "title": "Le sang de fête",
-    "body": "Le culte organise une collecte. Trop de monde. Trop de caméras. Trop de tentation.",
+    "body": "Le secret organise une collecte. Trop de monde. Trop de caméras. Trop de tentation.",
     "choices": {
       "A": "Annuler la collecte",
       "B": "Encadrer strictement",
@@ -2323,7 +2323,7 @@
   },
   "vampire_265": {
     "title": "Les pneus crevés",
-    "body": "Les véhicules du culte sont sabotés. Ils accusent les chasseurs. Le clan accuse le culte.",
+    "body": "Les véhicules du secret sont sabotés. Ils accusent les chasseurs. Le clan accuse le secret.",
     "choices": {
       "A": "Enquêter sérieusement",
       "B": "Accuser un rival",
@@ -2341,7 +2341,7 @@
   },
   "vampire_267": {
     "title": "Le rituel mal lu",
-    "body": "Le culte a mal lu un texte. Maintenant ils invoquent des choses qui tapent aux murs.",
+    "body": "Le secret a mal lu un texte. Maintenant ils invoquent des choses qui tapent aux murs.",
     "choices": {
       "A": "Arrêter le rituel",
       "B": "Finir proprement",
@@ -2421,8 +2421,8 @@
     }
   },
   "vampire_277": {
-    "title": "Le culte veut des badges",
-    "body": "Le culte veut donner des badges aux fidèles. Ils veulent aussi ton visage dessus.",
+    "title": "Le secret veut des badges",
+    "body": "Le secret veut donner des badges aux fidèles. Ils veulent aussi ton visage dessus.",
     "choices": {
       "A": "Interdire les badges",
       "B": "Autoriser sans ton visage",
@@ -2467,7 +2467,7 @@
   },
   "vampire_283": {
     "title": "Le clan veut un symbole",
-    "body": "Le clan veut un symbole officiel. Le culte propose une couronne géante. C est non.",
+    "body": "Le clan veut un symbole officiel. Le secret propose une couronne géante. C est non.",
     "choices": {
       "A": "Choisir un symbole discret",
       "B": "Imposer l ancien symbole",
@@ -2485,7 +2485,7 @@
   },
   "vampire_285": {
     "title": "Le banquet de clan",
-    "body": "Le clan veut un banquet. Le culte veut servir. Les chasseurs adorent les grandes tables.",
+    "body": "Le clan veut un banquet. Le secret veut servir. Les chasseurs adorent les grandes tables.",
     "choices": {
       "A": "Annuler le banquet",
       "B": "Organiser en secret",
@@ -2493,12 +2493,12 @@
     }
   },
   "vampire_288": {
-    "title": "Le clan contre le culte",
-    "body": "Le clan accuse le culte de trop parler. Le culte accuse le clan de trop mordre. Ambiance.",
+    "title": "Le clan contre le secret",
+    "body": "Le clan accuse le secret de trop parler. Le secret accuse le clan de trop mordre. Ambiance.",
     "choices": {
       "A": "Imposer une paix",
       "B": "Favoriser le clan",
-      "C": "Favoriser le culte"
+      "C": "Favoriser le secret"
     }
   },
   "vampire_289": {
@@ -2538,8 +2538,8 @@
     }
   },
   "vampire_293": {
-    "title": "Le culte veut un slogan",
-    "body": "Le culte veut un slogan officiel. Ils proposent Vive la nuit. Ça manque de finesse.",
+    "title": "Le secret veut un slogan",
+    "body": "Le secret veut un slogan officiel. Ils proposent Vive la nuit. Ça manque de finesse.",
     "choices": {
       "A": "Choisir un slogan discret",
       "B": "Interdire les slogans",
@@ -2561,7 +2561,7 @@
     "choices": {
       "A": "Rationner et tenir",
       "B": "Chasser plus loin",
-      "C": "Négocier avec le culte"
+      "C": "Négocier avec le secret"
     }
   },
   "vampire_296": {
@@ -2574,17 +2574,17 @@
     }
   },
   "vampire_297": {
-    "title": "Le groupe anti culte",
-    "body": "Un groupe humain lutte contre le culte. Ils affichent des tracts. Ils cherchent un chef.",
+    "title": "Le groupe anti secret",
+    "body": "Un groupe humain lutte contre le secret. Ils affichent des tracts. Ils cherchent un chef.",
     "choices": {
       "A": "Dissoudre le groupe",
       "B": "Infiltrer le groupe",
-      "C": "Déplacer le culte"
+      "C": "Déplacer le secret"
     }
   },
   "vampire_298": {
-    "title": "Le plan de secours du culte",
-    "body": "Le culte a un plan de secours au cas où tu meurs. Très gentil. Très insultant.",
+    "title": "Le plan de secours du secret",
+    "body": "Le secret a un plan de secours au cas où tu meurs. Très gentil. Très insultant.",
     "choices": {
       "A": "Punir l idée",
       "B": "Encadrer et corriger",
@@ -2602,7 +2602,7 @@
   },
   "vampire_300": {
     "title": "Le pacte final du soir",
-    "body": "Le clan veut une direction claire. Le culte veut un signe. Les chasseurs veulent ton adresse.",
+    "body": "Le clan veut une direction claire. Le secret veut un signe. Les chasseurs veulent ton adresse.",
     "choices": {
       "A": "Renforcer le territoire",
       "B": "Négocier un calme temporaire",

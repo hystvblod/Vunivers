@@ -9,7 +9,7 @@
             "blood": 15,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -17,7 +17,7 @@
             "blood": 10,
             "hunters": -5,
             "clan": 5,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -25,7 +25,7 @@
             "blood": -15,
             "hunters": 0,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -39,7 +39,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -47,7 +47,7 @@
             "blood": 5,
             "hunters": -5,
             "clan": 5,
-            "cult": 15
+            "secret": 15
           }
         },
         "C": {
@@ -55,7 +55,7 @@
             "blood": -5,
             "hunters": -15,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -69,7 +69,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 15,
-            "cult": -10
+            "secret": -10
           }
         },
         "B": {
@@ -77,7 +77,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": -10,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -85,7 +85,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -99,7 +99,7 @@
             "blood": 5,
             "hunters": 10,
             "clan": -5,
-            "cult": 15
+            "secret": 15
           }
         },
         "B": {
@@ -107,7 +107,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -15
+            "secret": -15
           }
         },
         "C": {
@@ -115,7 +115,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 5,
-            "cult": 20
+            "secret": 20
           }
         }
       }
@@ -129,7 +129,7 @@
             "blood": 0,
             "hunters": 20,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -137,7 +137,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -145,7 +145,7 @@
             "blood": -10,
             "hunters": -5,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -159,7 +159,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -167,7 +167,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 15,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -175,7 +175,7 @@
             "blood": 15,
             "hunters": 15,
             "clan": -5,
-            "cult": -10
+            "secret": -10
           }
         }
       }
@@ -189,7 +189,7 @@
             "blood": 20,
             "hunters": 10,
             "clan": 5,
-            "cult": 10
+            "secret": 10
           }
         },
         "B": {
@@ -197,7 +197,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 15,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -205,7 +205,7 @@
             "blood": 10,
             "hunters": -5,
             "clan": -10,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -219,7 +219,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -227,7 +227,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -235,7 +235,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 15
+            "secret": 15
           }
         }
       }
@@ -249,7 +249,7 @@
             "blood": 20,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -257,7 +257,7 @@
             "blood": 10,
             "hunters": 0,
             "clan": 15,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -265,7 +265,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 10,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -279,7 +279,7 @@
             "blood": 5,
             "hunters": 15,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -287,7 +287,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -295,7 +295,7 @@
             "blood": -5,
             "hunters": -20,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -309,7 +309,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 15,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -317,7 +317,7 @@
             "blood": 10,
             "hunters": 10,
             "clan": -10,
-            "cult": 15
+            "secret": 15
           }
         },
         "C": {
@@ -325,7 +325,7 @@
             "blood": -10,
             "hunters": -10,
             "clan": 10,
-            "cult": 15
+            "secret": 15
           }
         }
       }
@@ -339,7 +339,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": 0,
-            "cult": 15
+            "secret": 15
           }
         },
         "B": {
@@ -347,7 +347,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": -10
+            "secret": -10
           }
         },
         "C": {
@@ -355,7 +355,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 15,
-            "cult": 15
+            "secret": 15
           }
         }
       }
@@ -369,7 +369,7 @@
             "blood": 5,
             "hunters": 20,
             "clan": 10,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -377,7 +377,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -385,7 +385,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 0,
-            "cult": 15
+            "secret": 15
           }
         }
       }
@@ -399,7 +399,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -407,7 +407,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -415,7 +415,7 @@
             "blood": 20,
             "hunters": 10,
             "clan": -10,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -429,7 +429,7 @@
             "blood": 10,
             "hunters": 15,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "B": {
@@ -437,7 +437,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 15,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -445,7 +445,7 @@
             "blood": 10,
             "hunters": 0,
             "clan": -10,
-            "cult": 15
+            "secret": 15
           }
         }
       }
@@ -459,7 +459,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -467,7 +467,7 @@
             "blood": -5,
             "hunters": 10,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -475,7 +475,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -489,7 +489,7 @@
             "blood": 20,
             "hunters": 5,
             "clan": 10,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -497,7 +497,7 @@
             "blood": 10,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -505,7 +505,7 @@
             "blood": -15,
             "hunters": -10,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -519,7 +519,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": -5,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -527,7 +527,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 10,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -535,7 +535,7 @@
             "blood": 0,
             "hunters": -20,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -549,7 +549,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 15,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -557,7 +557,7 @@
             "blood": 10,
             "hunters": 0,
             "clan": -15,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -565,7 +565,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 5,
-            "cult": 15
+            "secret": 15
           }
         }
       }
@@ -579,7 +579,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": -5,
-            "cult": 15
+            "secret": 15
           }
         },
         "B": {
@@ -587,7 +587,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": -10
+            "secret": -10
           }
         },
         "C": {
@@ -595,7 +595,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 10,
-            "cult": 20
+            "secret": 20
           }
         }
       }
@@ -609,7 +609,7 @@
             "blood": 5,
             "hunters": 15,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -617,7 +617,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 10,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -625,7 +625,7 @@
             "blood": -10,
             "hunters": -10,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -639,7 +639,7 @@
             "blood": 5,
             "hunters": 10,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -647,7 +647,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 15,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -655,7 +655,7 @@
             "blood": 10,
             "hunters": 15,
             "clan": -5,
-            "cult": -10
+            "secret": -10
           }
         }
       }
@@ -669,7 +669,7 @@
             "blood": 15,
             "hunters": 10,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "B": {
@@ -677,7 +677,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 15,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -685,7 +685,7 @@
             "blood": 5,
             "hunters": -5,
             "clan": -10,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -699,7 +699,7 @@
             "blood": 10,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -707,7 +707,7 @@
             "blood": -10,
             "hunters": 5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -715,7 +715,7 @@
             "blood": 5,
             "hunters": -5,
             "clan": 5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -729,7 +729,7 @@
             "blood": 15,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -737,7 +737,7 @@
             "blood": 5,
             "hunters": -5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -745,7 +745,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -759,7 +759,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -767,7 +767,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -775,7 +775,7 @@
             "blood": 15,
             "hunters": 15,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -789,7 +789,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -797,7 +797,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -805,7 +805,7 @@
             "blood": -10,
             "hunters": 5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -819,7 +819,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -827,7 +827,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -835,7 +835,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -849,7 +849,7 @@
             "blood": 5,
             "hunters": 10,
             "clan": -5,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -857,7 +857,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -865,7 +865,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": -10
+            "secret": -10
           }
         }
       }
@@ -879,7 +879,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -887,7 +887,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -895,7 +895,7 @@
             "blood": 10,
             "hunters": -5,
             "clan": -5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -909,7 +909,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -917,7 +917,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -925,7 +925,7 @@
             "blood": 10,
             "hunters": -5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -939,7 +939,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -947,7 +947,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -955,7 +955,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -969,7 +969,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -977,7 +977,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -985,7 +985,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": -5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -999,7 +999,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 15,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1007,7 +1007,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -10,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -1015,7 +1015,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -1029,7 +1029,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": -5,
-            "cult": 15
+            "secret": 15
           }
         },
         "B": {
@@ -1037,7 +1037,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": -15
+            "secret": -15
           }
         },
         "C": {
@@ -1045,7 +1045,7 @@
             "blood": 10,
             "hunters": 10,
             "clan": 0,
-            "cult": 20
+            "secret": 20
           }
         }
       }
@@ -1059,7 +1059,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1067,7 +1067,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1075,7 +1075,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -10,
-            "cult": 15
+            "secret": 15
           }
         }
       }
@@ -1089,7 +1089,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1097,7 +1097,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1105,7 +1105,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": -5,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -1119,7 +1119,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": 5,
-            "cult": 10
+            "secret": 10
           }
         },
         "B": {
@@ -1127,7 +1127,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": -10
+            "secret": -10
           }
         },
         "C": {
@@ -1135,7 +1135,7 @@
             "blood": 15,
             "hunters": 10,
             "clan": -10,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -1149,7 +1149,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -1157,7 +1157,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1165,7 +1165,7 @@
             "blood": 10,
             "hunters": 10,
             "clan": -5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -1179,7 +1179,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1187,7 +1187,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1195,7 +1195,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -1209,7 +1209,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -1217,7 +1217,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1225,7 +1225,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -1239,7 +1239,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1247,7 +1247,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1255,7 +1255,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": -5,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -1269,7 +1269,7 @@
             "blood": 5,
             "hunters": 10,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "B": {
@@ -1277,7 +1277,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -1285,7 +1285,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -1299,7 +1299,7 @@
             "blood": -10,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1307,7 +1307,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1315,7 +1315,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -10,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -1329,7 +1329,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1337,7 +1337,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1345,7 +1345,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -1359,7 +1359,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1367,7 +1367,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1375,7 +1375,7 @@
             "blood": 5,
             "hunters": 10,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -1389,7 +1389,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -1397,7 +1397,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -1405,7 +1405,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -1419,7 +1419,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1427,7 +1427,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1435,7 +1435,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -1449,7 +1449,7 @@
             "blood": 15,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1457,7 +1457,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1465,7 +1465,7 @@
             "blood": 20,
             "hunters": 15,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -1479,7 +1479,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1487,7 +1487,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1495,7 +1495,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -1509,7 +1509,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1517,7 +1517,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1525,7 +1525,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -1539,7 +1539,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1547,7 +1547,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1555,7 +1555,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -1569,7 +1569,7 @@
             "blood": -10,
             "hunters": 5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -1577,7 +1577,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -1585,7 +1585,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -1599,7 +1599,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1607,7 +1607,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1615,7 +1615,7 @@
             "blood": -10,
             "hunters": -5,
             "clan": -5,
-            "cult": 15
+            "secret": 15
           }
         }
       }
@@ -1629,7 +1629,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1637,7 +1637,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -1645,7 +1645,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -1659,7 +1659,7 @@
             "blood": -10,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1667,7 +1667,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1675,7 +1675,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -1689,7 +1689,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1697,7 +1697,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1705,7 +1705,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -5,
-            "cult": 15
+            "secret": 15
           }
         }
       }
@@ -1719,7 +1719,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1727,7 +1727,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1735,7 +1735,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -1749,7 +1749,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -5,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -1757,7 +1757,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1765,7 +1765,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -1779,7 +1779,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": -10
+            "secret": -10
           }
         },
         "B": {
@@ -1787,7 +1787,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1795,7 +1795,7 @@
             "blood": 10,
             "hunters": 15,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -1809,7 +1809,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1817,7 +1817,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1825,7 +1825,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -1839,7 +1839,7 @@
             "blood": 10,
             "hunters": 10,
             "clan": -5,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -1847,7 +1847,7 @@
             "blood": 5,
             "hunters": -5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -1855,7 +1855,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -1869,7 +1869,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 10,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -1877,7 +1877,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1885,7 +1885,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -1899,7 +1899,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1907,7 +1907,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1915,7 +1915,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -1929,7 +1929,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1937,7 +1937,7 @@
             "blood": 10,
             "hunters": 10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -1945,7 +1945,7 @@
             "blood": 15,
             "hunters": 5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -1959,7 +1959,7 @@
             "blood": 10,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -1967,7 +1967,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -1975,7 +1975,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": -5,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -1989,7 +1989,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -5,
-            "cult": -10
+            "secret": -10
           }
         },
         "B": {
@@ -1997,7 +1997,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2005,7 +2005,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -2019,7 +2019,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2027,7 +2027,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2035,7 +2035,7 @@
             "blood": 5,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -2049,7 +2049,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -2057,7 +2057,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -2065,7 +2065,7 @@
             "blood": 5,
             "hunters": 10,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -2079,7 +2079,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2087,7 +2087,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -2095,7 +2095,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -2109,7 +2109,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2117,7 +2117,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -2125,7 +2125,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -2139,7 +2139,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 15,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2147,7 +2147,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2155,7 +2155,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -2169,7 +2169,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2177,7 +2177,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2185,7 +2185,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -2199,7 +2199,7 @@
             "blood": 20,
             "hunters": 15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2207,7 +2207,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2215,7 +2215,7 @@
             "blood": 5,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -2229,7 +2229,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2237,7 +2237,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -5,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -2245,7 +2245,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -2259,7 +2259,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2267,7 +2267,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2275,7 +2275,7 @@
             "blood": 10,
             "hunters": 10,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -2289,7 +2289,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2297,7 +2297,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -2305,7 +2305,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": -10,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -2319,7 +2319,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": -10
+            "secret": -10
           }
         },
         "B": {
@@ -2327,7 +2327,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -2335,7 +2335,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -5,
-            "cult": 15
+            "secret": 15
           }
         }
       }
@@ -2349,7 +2349,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2357,7 +2357,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2365,7 +2365,7 @@
             "blood": 5,
             "hunters": 10,
             "clan": -5,
-            "cult": 15
+            "secret": 15
           }
         }
       }
@@ -2379,7 +2379,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2387,7 +2387,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2395,7 +2395,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -2409,7 +2409,7 @@
             "blood": -10,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2417,7 +2417,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2425,7 +2425,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -2439,7 +2439,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "B": {
@@ -2447,7 +2447,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -2455,7 +2455,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -2469,7 +2469,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2477,7 +2477,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -2485,7 +2485,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -2499,7 +2499,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -2507,7 +2507,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2515,7 +2515,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -2529,7 +2529,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2537,7 +2537,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2545,7 +2545,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -2559,7 +2559,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2567,7 +2567,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -2575,7 +2575,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -2589,7 +2589,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2597,7 +2597,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2605,7 +2605,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -2619,7 +2619,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 15
+            "secret": 15
           }
         },
         "B": {
@@ -2627,7 +2627,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": -10
+            "secret": -10
           }
         },
         "C": {
@@ -2635,7 +2635,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -2649,7 +2649,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 15,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -2657,7 +2657,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -15,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -2665,7 +2665,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -2679,7 +2679,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2687,7 +2687,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2695,7 +2695,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -2709,7 +2709,7 @@
             "blood": 5,
             "hunters": 10,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "B": {
@@ -2717,7 +2717,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -2725,7 +2725,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": -5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -2739,7 +2739,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2747,7 +2747,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2755,7 +2755,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -2769,7 +2769,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": -10
+            "secret": -10
           }
         },
         "B": {
@@ -2777,7 +2777,7 @@
             "blood": 15,
             "hunters": 10,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -2785,7 +2785,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -2799,7 +2799,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2807,7 +2807,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2815,7 +2815,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -2829,7 +2829,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2837,7 +2837,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2845,7 +2845,7 @@
             "blood": 5,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -2859,7 +2859,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2867,7 +2867,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2875,7 +2875,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -2889,7 +2889,7 @@
             "blood": -10,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2897,7 +2897,7 @@
             "blood": 15,
             "hunters": 10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2905,7 +2905,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -2919,7 +2919,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2927,7 +2927,7 @@
             "blood": 0,
             "hunters": 20,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2935,7 +2935,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -2949,7 +2949,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 15,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -2957,7 +2957,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -2965,7 +2965,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -2979,7 +2979,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -2987,7 +2987,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -2995,7 +2995,7 @@
             "blood": 5,
             "hunters": 15,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3009,7 +3009,7 @@
             "blood": 5,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3017,7 +3017,7 @@
             "blood": 15,
             "hunters": 5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3025,7 +3025,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -3039,7 +3039,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3047,7 +3047,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3055,7 +3055,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -3069,7 +3069,7 @@
             "blood": 10,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3077,7 +3077,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3085,7 +3085,7 @@
             "blood": 10,
             "hunters": 0,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -3099,7 +3099,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3107,7 +3107,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -3115,7 +3115,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3129,7 +3129,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 15,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -3137,7 +3137,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -3145,7 +3145,7 @@
             "blood": -5,
             "hunters": 10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3159,7 +3159,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -3167,7 +3167,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -3175,7 +3175,7 @@
             "blood": 5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3189,7 +3189,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3197,7 +3197,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3205,7 +3205,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -3219,7 +3219,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3227,7 +3227,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -3235,7 +3235,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3249,7 +3249,7 @@
             "blood": -5,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3257,7 +3257,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -3265,7 +3265,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3279,7 +3279,7 @@
             "blood": 10,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3287,7 +3287,7 @@
             "blood": 5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3295,7 +3295,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3309,7 +3309,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3317,7 +3317,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3325,7 +3325,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -3339,7 +3339,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3347,7 +3347,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3355,7 +3355,7 @@
             "blood": 10,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3369,7 +3369,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3377,7 +3377,7 @@
             "blood": 5,
             "hunters": 10,
             "clan": -5,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -3385,7 +3385,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -3399,7 +3399,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3407,7 +3407,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3415,7 +3415,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3429,7 +3429,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3437,7 +3437,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3445,7 +3445,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3459,7 +3459,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3467,7 +3467,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3475,7 +3475,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -3489,7 +3489,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "B": {
@@ -3497,7 +3497,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -3505,7 +3505,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3519,7 +3519,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3527,7 +3527,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3535,7 +3535,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -3549,7 +3549,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 15,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -3557,7 +3557,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3565,7 +3565,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -3579,7 +3579,7 @@
             "blood": 5,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3587,7 +3587,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3595,7 +3595,7 @@
             "blood": 10,
             "hunters": 0,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3609,7 +3609,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3617,7 +3617,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3625,7 +3625,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -3639,7 +3639,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3647,7 +3647,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -3655,7 +3655,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3669,7 +3669,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3677,7 +3677,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3685,7 +3685,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3699,7 +3699,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3707,7 +3707,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3715,7 +3715,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -3729,7 +3729,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3737,7 +3737,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3745,7 +3745,7 @@
             "blood": -5,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3759,7 +3759,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -3767,7 +3767,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3775,7 +3775,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -3789,7 +3789,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3797,7 +3797,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3805,7 +3805,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -3819,7 +3819,7 @@
             "blood": 5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3827,7 +3827,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3835,7 +3835,7 @@
             "blood": 10,
             "hunters": 0,
             "clan": -5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -3849,7 +3849,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3857,7 +3857,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3865,7 +3865,7 @@
             "blood": 5,
             "hunters": 10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -3879,7 +3879,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3887,7 +3887,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3895,7 +3895,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -3909,7 +3909,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3917,7 +3917,7 @@
             "blood": 5,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3925,7 +3925,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3939,7 +3939,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3947,7 +3947,7 @@
             "blood": 5,
             "hunters": -5,
             "clan": 5,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -3955,7 +3955,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -3969,7 +3969,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -3977,7 +3977,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -3985,7 +3985,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -3999,7 +3999,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4007,7 +4007,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 15,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -4015,7 +4015,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4029,7 +4029,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4037,7 +4037,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4045,7 +4045,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4059,7 +4059,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4067,7 +4067,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4075,7 +4075,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 15,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4089,7 +4089,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4097,7 +4097,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4105,7 +4105,7 @@
             "blood": 5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4119,7 +4119,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4127,7 +4127,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4135,7 +4135,7 @@
             "blood": -5,
             "hunters": 15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4149,7 +4149,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "B": {
@@ -4157,7 +4157,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -4165,7 +4165,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 10,
-            "cult": -10
+            "secret": -10
           }
         }
       }
@@ -4179,7 +4179,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4187,7 +4187,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4195,7 +4195,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -4209,7 +4209,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4217,7 +4217,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4225,7 +4225,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4239,7 +4239,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4247,7 +4247,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4255,7 +4255,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -4269,7 +4269,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4277,7 +4277,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4285,7 +4285,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4299,7 +4299,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 10,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -4307,7 +4307,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4315,7 +4315,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4329,7 +4329,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -4337,7 +4337,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4345,7 +4345,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -4359,7 +4359,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4367,7 +4367,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4375,7 +4375,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4389,7 +4389,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4397,7 +4397,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4405,7 +4405,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4419,7 +4419,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4427,7 +4427,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4435,7 +4435,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -4449,7 +4449,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 10,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -4457,7 +4457,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -4465,7 +4465,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4479,7 +4479,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4487,7 +4487,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4495,7 +4495,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4509,7 +4509,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4517,7 +4517,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4525,7 +4525,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4539,7 +4539,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4547,7 +4547,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4555,7 +4555,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4569,7 +4569,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4577,7 +4577,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4585,7 +4585,7 @@
             "blood": -5,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4599,7 +4599,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4607,7 +4607,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4615,7 +4615,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4629,7 +4629,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4637,7 +4637,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4645,7 +4645,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -4659,7 +4659,7 @@
             "blood": 15,
             "hunters": 5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "B": {
@@ -4667,7 +4667,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4675,7 +4675,7 @@
             "blood": 5,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4689,7 +4689,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4697,7 +4697,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4705,7 +4705,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4719,7 +4719,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4727,7 +4727,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4735,7 +4735,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4749,7 +4749,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4757,7 +4757,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4765,7 +4765,7 @@
             "blood": -5,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4779,7 +4779,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4787,7 +4787,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4795,7 +4795,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4809,7 +4809,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 15,
-            "cult": 10
+            "secret": 10
           }
         },
         "B": {
@@ -4817,7 +4817,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4825,7 +4825,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 10,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -4839,7 +4839,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4847,7 +4847,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4855,7 +4855,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -4869,7 +4869,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4877,7 +4877,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4885,7 +4885,7 @@
             "blood": -5,
             "hunters": 15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4899,7 +4899,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4907,7 +4907,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -4915,7 +4915,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4929,7 +4929,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4937,7 +4937,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4945,7 +4945,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4959,7 +4959,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4967,7 +4967,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -4975,7 +4975,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -4989,7 +4989,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -4997,7 +4997,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5005,7 +5005,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5019,7 +5019,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 15,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5027,7 +5027,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5035,7 +5035,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5049,7 +5049,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5057,7 +5057,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5065,7 +5065,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5079,7 +5079,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5087,7 +5087,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5095,7 +5095,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5109,7 +5109,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5117,7 +5117,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5125,7 +5125,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5139,7 +5139,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5147,7 +5147,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5155,7 +5155,7 @@
             "blood": -5,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5169,7 +5169,7 @@
             "blood": 5,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5177,7 +5177,7 @@
             "blood": 10,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5185,7 +5185,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -5199,7 +5199,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5207,7 +5207,7 @@
             "blood": -10,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5215,7 +5215,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5229,7 +5229,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5237,7 +5237,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5245,7 +5245,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5259,7 +5259,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5267,7 +5267,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5275,7 +5275,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -5289,7 +5289,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5297,7 +5297,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -5305,7 +5305,7 @@
             "blood": -5,
             "hunters": 15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5319,7 +5319,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5327,7 +5327,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5335,7 +5335,7 @@
             "blood": 15,
             "hunters": 0,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -5349,7 +5349,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5357,7 +5357,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5365,7 +5365,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5379,7 +5379,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 15,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5387,7 +5387,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5395,7 +5395,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -5409,7 +5409,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 15
+            "secret": 15
           }
         },
         "B": {
@@ -5417,7 +5417,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -5425,7 +5425,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": -10
+            "secret": -10
           }
         }
       }
@@ -5439,7 +5439,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5447,7 +5447,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5455,7 +5455,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5469,7 +5469,7 @@
             "blood": -5,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5477,7 +5477,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5485,7 +5485,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5499,7 +5499,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5507,7 +5507,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5515,7 +5515,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5529,7 +5529,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -5537,7 +5537,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5545,7 +5545,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5559,7 +5559,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 15,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5567,7 +5567,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5575,7 +5575,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5589,7 +5589,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5597,7 +5597,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5605,7 +5605,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5619,7 +5619,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 10,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -5627,7 +5627,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -5635,7 +5635,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5649,7 +5649,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5657,7 +5657,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5665,7 +5665,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5679,7 +5679,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5687,7 +5687,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5695,7 +5695,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5709,7 +5709,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5717,7 +5717,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5725,7 +5725,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5739,7 +5739,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -5747,7 +5747,7 @@
             "blood": 5,
             "hunters": 10,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -5755,7 +5755,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -5769,7 +5769,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5777,7 +5777,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5785,7 +5785,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5799,7 +5799,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5807,7 +5807,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5815,7 +5815,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5829,7 +5829,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5837,7 +5837,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5845,7 +5845,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5859,7 +5859,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5867,7 +5867,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -5875,7 +5875,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5889,7 +5889,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5897,7 +5897,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -5905,7 +5905,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5919,7 +5919,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5927,7 +5927,7 @@
             "blood": -5,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5935,7 +5935,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5949,7 +5949,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5957,7 +5957,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5965,7 +5965,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -5979,7 +5979,7 @@
             "blood": 10,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -5987,7 +5987,7 @@
             "blood": 10,
             "hunters": 0,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -5995,7 +5995,7 @@
             "blood": 15,
             "hunters": 0,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6009,7 +6009,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6017,7 +6017,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -6025,7 +6025,7 @@
             "blood": -10,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6039,7 +6039,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -10,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -6047,7 +6047,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6055,7 +6055,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6069,7 +6069,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6077,7 +6077,7 @@
             "blood": 5,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6085,7 +6085,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6099,7 +6099,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6107,7 +6107,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6115,7 +6115,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6129,7 +6129,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -10
+            "secret": -10
           }
         },
         "B": {
@@ -6137,7 +6137,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -6145,7 +6145,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -6159,7 +6159,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6167,7 +6167,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6175,7 +6175,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6189,7 +6189,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6197,7 +6197,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6205,7 +6205,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -6219,7 +6219,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6227,7 +6227,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6235,7 +6235,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -15,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6249,7 +6249,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6257,7 +6257,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -6265,7 +6265,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6279,7 +6279,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6287,7 +6287,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6295,7 +6295,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6309,7 +6309,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -6317,7 +6317,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -5,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -6325,7 +6325,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": -10
+            "secret": -10
           }
         }
       }
@@ -6339,7 +6339,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6347,7 +6347,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6355,7 +6355,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6369,7 +6369,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "B": {
@@ -6377,7 +6377,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6385,7 +6385,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -6399,7 +6399,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6407,7 +6407,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6415,7 +6415,7 @@
             "blood": -5,
             "hunters": -15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6429,7 +6429,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6437,7 +6437,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -15,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6445,7 +6445,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6459,7 +6459,7 @@
             "blood": -10,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6467,7 +6467,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6475,7 +6475,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": -10
+            "secret": -10
           }
         }
       }
@@ -6489,7 +6489,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "B": {
@@ -6497,7 +6497,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -6505,7 +6505,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -6519,7 +6519,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -15
+            "secret": -15
           }
         },
         "B": {
@@ -6527,7 +6527,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -6535,7 +6535,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -6549,7 +6549,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6557,7 +6557,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6565,7 +6565,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -6579,7 +6579,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6587,7 +6587,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6595,7 +6595,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6609,7 +6609,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -6617,7 +6617,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -6625,7 +6625,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6639,7 +6639,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6647,7 +6647,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6655,7 +6655,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6669,7 +6669,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -6677,7 +6677,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -6685,7 +6685,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6699,7 +6699,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6707,7 +6707,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -6715,7 +6715,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6729,7 +6729,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6737,7 +6737,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -6745,7 +6745,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -6759,7 +6759,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6767,7 +6767,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6775,7 +6775,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6789,7 +6789,7 @@
             "blood": 5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6797,7 +6797,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6805,7 +6805,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6819,7 +6819,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6827,7 +6827,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6835,7 +6835,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6849,7 +6849,7 @@
             "blood": 15,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6857,7 +6857,7 @@
             "blood": 10,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6865,7 +6865,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6879,7 +6879,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6887,7 +6887,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6895,7 +6895,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -6909,7 +6909,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -6917,7 +6917,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -6925,7 +6925,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 0,
-            "cult": 15
+            "secret": 15
           }
         }
       }
@@ -6939,7 +6939,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6947,7 +6947,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6955,7 +6955,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -6969,7 +6969,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -6977,7 +6977,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -6985,7 +6985,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -6999,7 +6999,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7007,7 +7007,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7015,7 +7015,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7029,7 +7029,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -10
+            "secret": -10
           }
         },
         "B": {
@@ -7037,7 +7037,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 15
+            "secret": 15
           }
         },
         "C": {
@@ -7045,7 +7045,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -7059,7 +7059,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7067,7 +7067,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7075,7 +7075,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7089,7 +7089,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7097,7 +7097,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7105,7 +7105,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7119,7 +7119,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7127,7 +7127,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7135,7 +7135,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7149,7 +7149,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7157,7 +7157,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7165,7 +7165,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7179,7 +7179,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7187,7 +7187,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7195,7 +7195,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7209,7 +7209,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7217,7 +7217,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7225,7 +7225,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7239,7 +7239,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": -10
+            "secret": -10
           }
         },
         "B": {
@@ -7247,7 +7247,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -7255,7 +7255,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 15
+            "secret": 15
           }
         }
       }
@@ -7269,7 +7269,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7277,7 +7277,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -7285,7 +7285,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -7299,7 +7299,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7307,7 +7307,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -7315,7 +7315,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7329,7 +7329,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -10
+            "secret": -10
           }
         },
         "B": {
@@ -7337,7 +7337,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -7345,7 +7345,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7359,7 +7359,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7367,7 +7367,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7375,7 +7375,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7389,7 +7389,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7397,7 +7397,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7405,7 +7405,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7419,7 +7419,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -7427,7 +7427,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -7435,7 +7435,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7449,7 +7449,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -7457,7 +7457,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7465,7 +7465,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7479,7 +7479,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7487,7 +7487,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7495,7 +7495,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -7509,7 +7509,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7517,7 +7517,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7525,7 +7525,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7539,7 +7539,7 @@
             "blood": 15,
             "hunters": 0,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7547,7 +7547,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7555,7 +7555,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7569,7 +7569,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7577,7 +7577,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -7585,7 +7585,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -7599,7 +7599,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": -10
+            "secret": -10
           }
         },
         "B": {
@@ -7607,7 +7607,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -7615,7 +7615,7 @@
             "blood": 10,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7629,7 +7629,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7637,7 +7637,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7645,7 +7645,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -7659,7 +7659,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -10,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -7667,7 +7667,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7675,7 +7675,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -7689,7 +7689,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7697,7 +7697,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7705,7 +7705,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7719,7 +7719,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7727,7 +7727,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -7735,7 +7735,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -7749,7 +7749,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7757,7 +7757,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7765,7 +7765,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -10,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -7779,7 +7779,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7787,7 +7787,7 @@
             "blood": 10,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7795,7 +7795,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -7809,7 +7809,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": -10
+            "secret": -10
           }
         },
         "B": {
@@ -7817,7 +7817,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -7825,7 +7825,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7839,7 +7839,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7847,7 +7847,7 @@
             "blood": -10,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7855,7 +7855,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7869,7 +7869,7 @@
             "blood": -10,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7877,7 +7877,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7885,7 +7885,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -7899,7 +7899,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7907,7 +7907,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7915,7 +7915,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -7929,7 +7929,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7937,7 +7937,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -10
+            "secret": -10
           }
         },
         "C": {
@@ -7945,7 +7945,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7959,7 +7959,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7967,7 +7967,7 @@
             "blood": 10,
             "hunters": 0,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -7975,7 +7975,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -7989,7 +7989,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -7997,7 +7997,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8005,7 +8005,7 @@
             "blood": -5,
             "hunters": -15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -8019,7 +8019,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "B": {
@@ -8027,7 +8027,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8035,7 +8035,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -8049,7 +8049,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 15,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8057,7 +8057,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -5,
-            "cult": -5
+            "secret": -5
           }
         },
         "C": {
@@ -8065,7 +8065,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -8079,7 +8079,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -10
+            "secret": -10
           }
         },
         "B": {
@@ -8087,7 +8087,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -8095,7 +8095,7 @@
             "blood": 10,
             "hunters": 0,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -8109,7 +8109,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8117,7 +8117,7 @@
             "blood": 15,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8125,7 +8125,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -8139,7 +8139,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8147,7 +8147,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8155,7 +8155,7 @@
             "blood": -5,
             "hunters": -15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -8169,7 +8169,7 @@
             "blood": 10,
             "hunters": 0,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8177,7 +8177,7 @@
             "blood": -5,
             "hunters": -5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8185,7 +8185,7 @@
             "blood": 10,
             "hunters": 5,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -8199,7 +8199,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8207,7 +8207,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8215,7 +8215,7 @@
             "blood": -10,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -8229,7 +8229,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8237,7 +8237,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -8245,7 +8245,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -5,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -8259,7 +8259,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8267,7 +8267,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8275,7 +8275,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -8289,7 +8289,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8297,7 +8297,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8305,7 +8305,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         }
       }
@@ -8319,7 +8319,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 15,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -8327,7 +8327,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": -10
+            "secret": -10
           }
         },
         "C": {
@@ -8335,7 +8335,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -10,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -8349,7 +8349,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -8357,7 +8357,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8365,7 +8365,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -8379,7 +8379,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         },
         "B": {
@@ -8387,7 +8387,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         },
         "C": {
@@ -8395,7 +8395,7 @@
             "blood": 0,
             "hunters": 15,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -8409,7 +8409,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8417,7 +8417,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8425,7 +8425,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -8439,7 +8439,7 @@
             "blood": -5,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8447,7 +8447,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8455,7 +8455,7 @@
             "blood": 0,
             "hunters": 5,
             "clan": -15,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -8469,7 +8469,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "B": {
@@ -8477,7 +8477,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -10
+            "secret": -10
           }
         },
         "C": {
@@ -8485,7 +8485,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": 15
+            "secret": 15
           }
         }
       }
@@ -8499,7 +8499,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8507,7 +8507,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8515,7 +8515,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -8529,7 +8529,7 @@
             "blood": -10,
             "hunters": 0,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8537,7 +8537,7 @@
             "blood": 10,
             "hunters": 10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8545,7 +8545,7 @@
             "blood": 5,
             "hunters": 0,
             "clan": 0,
-            "cult": 10
+            "secret": 10
           }
         }
       }
@@ -8559,7 +8559,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8567,7 +8567,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8575,7 +8575,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": -10,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -8589,7 +8589,7 @@
             "blood": 0,
             "hunters": 10,
             "clan": 0,
-            "cult": -10
+            "secret": -10
           }
         },
         "B": {
@@ -8597,7 +8597,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -8605,7 +8605,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 0,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -8619,7 +8619,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 5,
-            "cult": -10
+            "secret": -10
           }
         },
         "B": {
@@ -8627,7 +8627,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 10,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -8635,7 +8635,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": -10,
-            "cult": -5
+            "secret": -5
           }
         }
       }
@@ -8649,7 +8649,7 @@
             "blood": -5,
             "hunters": -10,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8657,7 +8657,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 5,
-            "cult": 0
+            "secret": 0
           }
         },
         "C": {
@@ -8665,7 +8665,7 @@
             "blood": 0,
             "hunters": -15,
             "clan": -5,
-            "cult": 0
+            "secret": 0
           }
         }
       }
@@ -8679,7 +8679,7 @@
             "blood": 0,
             "hunters": -5,
             "clan": 10,
-            "cult": 0
+            "secret": 0
           }
         },
         "B": {
@@ -8687,7 +8687,7 @@
             "blood": 0,
             "hunters": -10,
             "clan": 0,
-            "cult": 5
+            "secret": 5
           }
         },
         "C": {
@@ -8695,7 +8695,7 @@
             "blood": -5,
             "hunters": -15,
             "clan": 0,
-            "cult": 0
+            "secret": 0
           }
         }
       }
