@@ -3235,7 +3235,7 @@ body.vr-body-game[data-universe="new_world_explorer"]{
 
   /* ===== Centre nom / année ===== */
   --vr-identity-tx: 0px;
-  --vr-identity-ty: 24px;
+  --vr-identity-ty: 12px;
   --vr-hud-name-years-gap: 18px;
 
   /* ===== Réglages soldes ===== */
@@ -3635,7 +3635,7 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     --vr-explorer-hud-item-y: -5px;
 
     /* ici tu as la 2e valeur pour nom/année sur mobile */
-    --vr-identity-ty: 3px;
+    --vr-identity-ty: 5px;
     --vr-hud-name-years-gap: 14px;
 
     --vr-vcoins-ty: 6px;
