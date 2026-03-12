@@ -3968,6 +3968,45 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
   --vr-universe-choice: url("../assets/img/ui/vampire_choice_default_gray.webp");
 }
 
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/vampire_lord/g1_frame.webp");
+}
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-fill,
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/vampire_lord/g1_fill.webp");
+}
+
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/vampire_lord/g2_frame.webp");
+}
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-fill,
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/vampire_lord/g2_fill.webp");
+}
+
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/vampire_lord/g3_frame.webp");
+}
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-fill,
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/vampire_lord/g3_fill.webp");
+}
+
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/vampire_lord/g4_frame.webp");
+}
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-fill,
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/vampire_lord/g4_fill.webp");
+}
+
+body[data-universe="vampire_lord"] .vr-gauge .vr-gauge-frame,
+body[data-universe="vampire_lord"] .vr-gauge .vr-gauge-fill,
+body[data-universe="vampire_lord"] .vr-gauge .vr-gauge-preview{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
 @media (max-width: 480px){
   body.vr-body-game[data-universe="vampire_lord"]{
     --vr-vampire-hud-w: 92vw;
