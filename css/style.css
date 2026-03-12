@@ -1436,7 +1436,7 @@ body.vr-body-game .vr-choice-label{
 
 @font-face{
   font-family: "MerriweatherExplorer";
-  src: url("../assets/fronts/Merriweather-24pt-Regular.woff2") format("woff2");
+  src: url("../assets/fronts/Merriweather_24pt-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -1444,7 +1444,7 @@ body.vr-body-game .vr-choice-label{
 
 @font-face{
   font-family: "MerriweatherExplorer";
-  src: url("../assets/fronts/Merriweather-96pt-Bold.woff2") format("woff2");
+  src: url("../assets/fronts/Merriweather_96pt-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -1452,7 +1452,7 @@ body.vr-body-game .vr-choice-label{
 
 @font-face{
   font-family: "MerriweatherExplorer";
-  src: url("../assets/fronts/Merriweather-96pt-Bold.woff2") format("woff2");
+  src: url("../assets/fronts/Merriweather_96pt-Bold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -3175,9 +3175,9 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-choice-inset-bottom: 16%;
   --vr-choice-inset-left: 10%;
   --vr-choice-safe: 84%;
-  --vr-font-scn-title: clamp(22px, 3.8vmin, 50px);
-  --vr-font-scn-text: clamp(18px, 3.1vmin, 40px);
-  --vr-font-choice: clamp(16px, 2.8vmin, 34px);
+--vr-font-scn-title: clamp(26px, 4.2vmin, 56px);  /* était 22px/3.8/50 */
+--vr-font-scn-text:  clamp(21px, 3.5vmin, 46px);  /* était 18px/3.1/40 */
+--vr-font-choice:    clamp(18px, 3.1vmin, 38px);   /* était 16px/2.8/34 */
   /* ===== Polices ===== */
   --vr-explorer-font-title: "AlegreyaSCExplorer", serif;
   --vr-explorer-font-ui: "MerriweatherExplorer", serif;
