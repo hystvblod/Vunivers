@@ -4661,6 +4661,86 @@ const VR_BADGE_GOLD_CHOICES = 100;
   const LEGACY_I18N_PATH = "data/i18n";
   const LEGACY_EVENTS_LOGIC_PATH = "data/events";
 
+  const HARD_CODED_SCENARIOS = {
+    hell_king: (() => {
+      const cards = [
+        {
+          id: "hk_inline_001",
+          title: "Des sorciers veulent signer",
+          body: "Trois sorciers proposent un pacte groupé. Ils veulent le pouvoir tout de suite.",
+          choices: {
+            A: { label: "Accepte les trois", gaugeDelta: { souls: 14, order: -8 } },
+            B: { label: "Accepte un seul pacte", gaugeDelta: { souls: 7, order: 3 } },
+            C: { label: "Refuse et ferme la porte", gaugeDelta: { souls: -9, order: 9 } }
+          }
+        },
+        {
+          id: "hk_inline_002",
+          title: "Les légions réclament une fête",
+          body: "Tes armées veulent boire de la lave et oublier la discipline pendant une nuit.",
+          choices: {
+            A: { label: "Accorde la fête", gaugeDelta: { legions: 12, order: -10 } },
+            B: { label: "Une pause courte", gaugeDelta: { legions: 6, order: 2 } },
+            C: { label: "Non, au travail", gaugeDelta: { legions: -11, order: 8 } }
+          }
+        },
+        {
+          id: "hk_inline_003",
+          title: "Une faille s'ouvre vers la surface",
+          body: "Tu peux lancer un raid discret ou refermer la brèche avant que les humains voient tout.",
+          choices: {
+            A: { label: "Lance un gros raid", gaugeDelta: { surface: 13, order: -6 } },
+            B: { label: "Envoie un petit groupe", gaugeDelta: { surface: 7, legions: 4 } },
+            C: { label: "Referme la faille", gaugeDelta: { surface: -10, order: 10 } }
+          }
+        }
+      ];
+
+      const deck = cards.map((card) => ({
+        id: card.id,
+        universe: "hell_king",
+        choices: {
+          A: { gaugeDelta: card.choices.A.gaugeDelta },
+          B: { gaugeDelta: card.choices.B.gaugeDelta },
+          C: { gaugeDelta: card.choices.C.gaugeDelta }
+        }
+      }));
+
+      const cardTexts = cards.reduce((acc, card) => {
+        acc[card.id] = {
+          title: card.title,
+          body: card.body,
+          choices: {
+            A: card.choices.A.label,
+            B: card.choices.B.label,
+            C: card.choices.C.label
+          }
+        };
+        return acc;
+      }, {});
+
+      return {
+        config: {
+          id: "hell_king",
+          gauges: [
+            { id: "souls", label_fr: "Âmes" },
+            { id: "legions", label_fr: "Légions" },
+            { id: "order", label_fr: "Ordre" },
+            { id: "surface", label_fr: "Surface" }
+          ],
+          initialGauges: {
+            souls: 50,
+            legions: 50,
+            order: 50,
+            surface: 50
+          }
+        },
+        deck,
+        cardTexts
+      };
+    })()
+  };
+
   const VREventsLoader = {
     async loadUniverseData(universeId, lang) {
       const configPromise = this._loadConfig(universeId);
@@ -4695,6 +4775,8 @@ const VR_BADGE_GOLD_CHOICES = 100;
       }
 
       if (!res.ok) {
+        const fallback = HARD_CODED_SCENARIOS[universeId]?.config;
+        if (fallback) return fallback;
         throw new Error(`[VREventsLoader] Impossible de charger la config univers ${universeId}`);
       }
       return res.json();
@@ -4710,6 +4792,8 @@ const VR_BADGE_GOLD_CHOICES = 100;
       }
 
       if (!res.ok) {
+        const fallbackDeck = HARD_CODED_SCENARIOS[universeId]?.deck;
+        if (Array.isArray(fallbackDeck)) return fallbackDeck;
         throw new Error(`[VREventsLoader] Impossible de charger le deck pour ${universeId}`);
       }
 
@@ -4732,6 +4816,8 @@ const VR_BADGE_GOLD_CHOICES = 100;
       if (!res.ok) res = await fetch(urlOld2, { cache: "no-cache" });
 
       if (!res.ok) {
+        const fallbackTexts = HARD_CODED_SCENARIOS[universeId]?.cardTexts;
+        if (fallbackTexts && typeof fallbackTexts === "object") return fallbackTexts;
         throw new Error(`[VREventsLoader] Impossible de charger les cartes de ${universeId} en ${lang}`);
       }
       return res.json();
