@@ -3155,6 +3155,9 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 }
 
 
+
+
+
 /* ========================= EXPLORER ========================= */
 body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-card-w: clamp(280px, 62vw, 720px);
@@ -3173,8 +3176,8 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-choice-inset-left: 10%;
   --vr-choice-safe: 84%;
   --vr-font-scn-title: clamp(22px, 3.8vmin, 50px);
-  --vr-font-scn-text:  clamp(18px, 3.1vmin, 40px);
-  --vr-font-choice:    clamp(16px, 2.8vmin, 34px);
+  --vr-font-scn-text: clamp(18px, 3.1vmin, 40px);
+  --vr-font-choice: clamp(16px, 2.8vmin, 34px);
   /* ===== Polices ===== */
   --vr-explorer-font-title: "AlegreyaSCExplorer", serif;
   --vr-explorer-font-ui: "MerriweatherExplorer", serif;
@@ -3247,7 +3250,6 @@ body.vr-body-game[data-universe="new_world_explorer"] #btn-customize .vr-top-ico
 }
 body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-title{
   font-family: var(--vr-explorer-font-title) !important;
-  font-weight: 700 !important;
   color:#000 !important;
   text-shadow:none !important;
   text-align:center !important;
@@ -3255,17 +3257,13 @@ body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-title{
   max-width: 94% !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  overflow: hidden !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 3 !important;
-  -webkit-box-orient: vertical !important;
   overflow-wrap: break-word !important;
   word-break: normal !important;
   hyphens: auto !important;
+  text-wrap: balance !important;
 }
 body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-text{
   font-family: var(--vr-explorer-font-ui) !important;
-  font-weight: 500 !important;
   color:#000 !important;
   text-shadow:none !important;
   text-align:center !important;
@@ -3273,29 +3271,22 @@ body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-text{
   max-width: 94% !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  overflow: hidden !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 4 !important;
-  -webkit-box-orient: vertical !important;
   overflow-wrap: break-word !important;
   word-break: normal !important;
   hyphens: auto !important;
+  text-wrap: balance !important;
 }
 body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-choice-label{
   font-family: var(--vr-explorer-font-ui) !important;
-  font-weight: 500 !important;
   color:#000 !important;
   text-shadow:none !important;
   text-align:center !important;
   line-height: 1.12 !important;
   opacity: 1 !important;
-  overflow: hidden !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 3 !important;
-  -webkit-box-orient: vertical !important;
   overflow-wrap: break-word !important;
   word-break: normal !important;
   hyphens: auto !important;
+  text-wrap: balance !important;
 }
 body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-card-main{
   background-size: 94% 96% !important;
@@ -3536,29 +3527,6 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
   --vr-universe-choice: url("../assets/img/ui/explorer_choice_default_grey.webp");
 }
 
-/* ===== NOUVEAU : zone morte 481px–599px (Surface Duo, etc.) ===== */
-@media (min-width: 481px) and (max-width: 599px){
-  body.vr-body-game[data-universe="new_world_explorer"]{
-    --vr-card-w: clamp(300px, 80vw, 520px);
-    --vr-scn-h: clamp(140px, 20.0svh, 230px);
-    --vr-choice-h: clamp(86px, 12.0svh, 150px);
-    --vr-stack-gap: clamp(8px, 1.1svh, 16px);
-    --vr-choices-gap: clamp(5px, 0.7svh, 10px);
-    --vr-font-scn-title: clamp(16px, 3.2vmin, 26px);
-    --vr-font-scn-text:  clamp(13px, 2.6vmin, 20px);
-    --vr-font-choice:    clamp(12px, 2.4vmin, 18px);
-    --vr-explorer-hud-w: 90vw;
-    --vr-explorer-topbar-w: clamp(220px, 52vw, 310px);
-    --vr-explorer-back-size: clamp(40px, 10vw, 58px);
-    --vr-explorer-customize-size: clamp(40px, 10vw, 58px);
-    --vr-explorer-hud-item-y: -5px;
-    --vr-identity-ty: 5px;
-    --vr-hud-name-years-gap: 14px;
-    --vr-vcoins-ty: 6px;
-    --vr-jetons-ty: 6px;
-  }
-}
-
 /* ===== Tablette portrait (600px–1100px) — anti-débordement ===== */
 @media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
   body.vr-body-game[data-universe="new_world_explorer"]{
@@ -3568,8 +3536,8 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     --vr-stack-gap: clamp(12px, 1.4svh, 22px);
     --vr-choices-gap: clamp(6px, 0.8svh, 12px);
     --vr-font-scn-title: clamp(18px, 2.8vmin, 36px);
-    --vr-font-scn-text:  clamp(15px, 2.2vmin, 28px);
-    --vr-font-choice:    clamp(13px, 2.0vmin, 24px);
+    --vr-font-scn-text: clamp(15px, 2.2vmin, 28px);
+    --vr-font-choice: clamp(13px, 2.0vmin, 24px);
   }
 }
 
@@ -3595,9 +3563,9 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     --vr-choice-inset-right: 8%;
     --vr-choice-inset-bottom: 15%;
     --vr-choice-inset-left: 8%;
-    --vr-font-scn-title: clamp(16px, 4.2vw, 26px);
-    --vr-font-scn-text:  clamp(13px, 3.6vw, 20px);
-    --vr-font-choice:    clamp(12px, 3.2vw, 18px);
+    --vr-font-scn-title: clamp(18px, 4.5vw, 30px);
+    --vr-font-scn-text: clamp(15px, 3.8vw, 24px);
+    --vr-font-choice: clamp(13px, 3.4vw, 20px);
     --vr-explorer-topbar-top: calc(6px + env(safe-area-inset-top));
     --vr-explorer-side-btn-top: calc(10px + env(safe-area-inset-top));
     --vr-explorer-side-btn-side: 16px;
@@ -3629,9 +3597,9 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     --vr-game-gap: 0px;
     --vr-stack-gap: clamp(8px, 1.1svh, 16px);
     --vr-choices-gap: clamp(5px, 0.6svh, 9px);
-    --vr-font-scn-title: clamp(15px, 4.0vw, 22px);
-    --vr-font-scn-text:  clamp(12px, 3.2vw, 18px);
-    --vr-font-choice:    clamp(11px, 3.0vw, 16px);
+    --vr-font-scn-title: clamp(16px, 4.2vw, 26px);
+    --vr-font-scn-text: clamp(13px, 3.4vw, 20px);
+    --vr-font-choice: clamp(12px, 3.2vw, 17px);
     --vr-choice-safe: 80%;
     --vr-choice-inset-top: 14%;
     --vr-choice-inset-right: 7%;
