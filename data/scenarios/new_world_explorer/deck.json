@@ -94,6 +94,7 @@
         },
         "C": {
           "gaugeDelta": {
+            "royal_treasury": -5,
             "found_wealth": 5
           }
         }
@@ -141,7 +142,7 @@
         "C": {
           "gaugeDelta": {
             "converted_population": 10,
-            "found_wealth": -5
+            "royal_treasury": -5
           }
         }
       }
@@ -1645,7 +1646,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "found_wealth": 5,
+            "royal_treasury": -5,
             "converted_population": 5
           }
         }
@@ -2322,7 +2323,6 @@
         }
       }
     },
-
     {
       "id": "nw_101",
       "universe": "new_world_explorer",
@@ -2630,7 +2630,7 @@
         },
         "B": {
           "gaugeDelta": {
-            "found_wealth": 5,
+            "royal_treasury": -5,
             "converted_population": 5
           }
         },
@@ -2823,7 +2823,8 @@
         },
         "C": {
           "gaugeDelta": {
-            "found_wealth": 10
+            "royal_treasury": -5,
+            "found_wealth": 5
           }
         }
       }
@@ -3095,8 +3096,8 @@
         },
         "B": {
           "gaugeDelta": {
-            "converted_population": 5,
-            "found_wealth": 5
+            "royal_treasury": -5,
+            "conquered_territory": 5
           }
         },
         "C": {
@@ -3790,7 +3791,8 @@
         },
         "B": {
           "gaugeDelta": {
-            "found_wealth": 10
+            "royal_treasury": -5,
+            "found_wealth": 5
           }
         },
         "C": {
@@ -4624,7 +4626,6 @@
         }
       }
     },
-
     {
       "id": "nw_201",
       "universe": "new_world_explorer",
@@ -6190,6 +6191,7 @@
         },
         "B": {
           "gaugeDelta": {
+            "royal_treasury": -5,
             "found_wealth": 5
           }
         },
@@ -6915,7 +6917,6 @@
         }
       }
     },
-
     {
       "id": "nw_301",
       "universe": "new_world_explorer",
@@ -8314,7 +8315,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "found_wealth": 5,
+            "royal_treasury": -5,
             "converted_population": 5
           }
         }
@@ -9171,7 +9172,5 @@
         }
       }
     }
- 
-
   ]
 }
