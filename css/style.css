@@ -3234,7 +3234,7 @@ body.vr-body-game[data-universe="new_world_explorer"]{
 
   /* ===== Centre nom / année ===== */
   --vr-identity-tx: 0px;
-  --vr-identity-ty: 20px;
+  --vr-identity-ty: 17px;
   --vr-hud-name-years-gap: 18px;
 
   /* ===== Réglages soldes ===== */
@@ -3639,7 +3639,7 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
 
     --vr-explorer-hud-item-y: -5px;
 
-    --vr-identity-ty: 13px;
+    --vr-identity-ty: 10px;
     --vr-hud-name-years-gap: 14px;
 
     --vr-vcoins-ty: 6px;
