@@ -242,14 +242,14 @@
   "vampire_021": {
     "id": "vampire_036",
     "universe": "vampire_lord",
-    "title": "Le bébé chauve souris",
-    "description": "Un nouveau né vampire se transforme trop tôt. Il s’accroche au plafond et crie.",
+    "title": "Le jeune chauve souris",
+    "description": "Un jeune vampire se transforme trop tôt. Il s’accroche au plafond et crie.",
     "choices": {
       "A": "Former le novice",
       "B": "Le cacher au clan",
       "C": "Le confier au secret"
     },
-    "body": "Un nouveau né vampire se transforme trop tôt. Il s’accroche au plafond et crie."
+    "body": "Un jeune vampire se transforme trop tôt. Il s’accroche au plafond et crie."
   },
   "vampire_022": {
     "id": "vampire_037",
@@ -259,7 +259,7 @@
     "choices": {
       "A": "L’écouter",
       "B": "Le piéger",
-      "C": "Le faire disparaître"
+      "C": "Le neutraliser"
     },
     "body": "Un chasseur demande un rendez-vous. Il sourit trop. Il sait quelque chose."
   },
@@ -319,7 +319,7 @@
     "choices": {
       "A": "Signer",
       "B": "Espionner l’entreprise",
-      "C": "La faire disparaître"
+      "C": "La faire fermer"
     },
     "body": "Une entreprise propose de nettoyer les traces. Trop pro pour être honnête."
   },
@@ -463,7 +463,7 @@
     "choices": {
       "A": "Trouver la source",
       "B": "Se terrer",
-      "C": "Faire un sacrifice"
+      "C": "Lancer un rituel risqué"
     },
     "body": "Il pleut une eau qui brûle un peu. Quelqu’un bénit les nuages, oui."
   },
@@ -559,7 +559,7 @@
     "choices": {
       "A": "L’accepter",
       "B": "Le manipuler",
-      "C": "Le faire disparaître"
+      "C": "L’écarter définitivement"
     },
     "body": "Un humain riche veut devenir vampire. Il paye, il insiste, il a une équipe."
   },
@@ -739,7 +739,7 @@
     "choices": {
       "A": "Le rattraper",
       "B": "Le cacher chez le secret",
-      "C": "Le sacrifier pour l’exemple"
+      "C": "Le bannir pour l’exemple"
     },
     "body": "Un novice a paniqué et a fui en pleine ville. Il laisse des traces partout."
   },
@@ -1023,37 +1023,37 @@
     "id": "vampire_101",
     "universe": "vampire_lord",
     "title": "Le frigo qui parle",
-    "description": "Le frigo du sang bippe et affiche un message inquiétant.",
+    "description": "Le frigo affiche un message seul. Le clan panique. Toi, tu détestes les surprises.",
     "choices": {
       "A": "Faire vérifier le frigo",
       "B": "Changer tout le stock",
       "C": "Accuser un sabotage"
     },
-    "body": "Le frigo s’allume tout seul et affiche un message comme si quelqu’un voulait te prévenir. Le clan a peur. Toi, tu détestes les surprises."
+    "body": "Le frigo affiche un message seul. Le clan panique. Toi, tu détestes les surprises."
   },
   "vampire_087": {
     "id": "vampire_102",
     "universe": "vampire_lord",
     "title": "Le chauffeur trop sympa",
-    "description": "Ton chauffeur humain veut devenir ton ami et il parle trop.",
+    "description": "Il raconte partout que tu ne dors jamais. C’est gentil. C’est surtout dangereux.",
     "choices": {
       "A": "Le garder mais le cadrer",
       "B": "Le remplacer vite",
       "C": "Le recruter dans le secret"
     },
-    "body": "Il t’appelle chef et raconte à tout le monde que tu ne dors jamais. C’est mignon. C’est aussi une catastrophe."
+    "body": "Il raconte partout que tu ne dors jamais. C’est gentil. C’est surtout dangereux."
   },
   "vampire_088": {
     "id": "vampire_103",
     "universe": "vampire_lord",
     "title": "La tournée des caves",
-    "description": "Un nouveau bar à vin ouvre et attire tes chasses habituelles.",
+    "description": "Les humains sortent en groupe. Facile à repérer, plus dur à approcher sans laisser de trace.",
     "choices": {
       "A": "Déplacer la chasse",
       "B": "Contrôler le bar",
       "C": "Utiliser le bar comme couverture"
     },
-    "body": "Les humains se regroupent, boivent, chantent, et sortent en groupe. Pratique pour repérer, moins pratique pour disparaître."
+    "body": "Les humains sortent en groupe. Facile à repérer, plus dur à approcher sans laisser de trace."
   },
   "vampire_089": {
     "id": "vampire_104",
@@ -1071,13 +1071,13 @@
     "id": "vampire_105",
     "universe": "vampire_lord",
     "title": "La grève des serviteurs",
-    "description": "Tes serviteurs demandent plus de respect et moins de corvées.",
+    "description": "Les serviteurs ont des demandes. Ton palais ressemble soudain à une entreprise.",
     "choices": {
       "A": "Négocier calmement",
       "B": "Imposer ton autorité",
       "C": "Remplacer tout le staff"
     },
-    "body": "Ils ont fait une liste de demandes. Une liste. Comme des humains. Ton palais ressemble soudain à une entreprise."
+    "body": "Les serviteurs ont des demandes. Ton palais ressemble soudain à une entreprise."
   },
   "vampire_091": {
     "id": "vampire_106",
@@ -1095,25 +1095,25 @@
     "id": "vampire_107",
     "universe": "vampire_lord",
     "title": "La clé disparue",
-    "description": "La clé du coffre des reliques a disparu cette nuit.",
+    "description": "La clé des anciennes protections a disparu. Quelqu’un savait où elle était.",
     "choices": {
       "A": "Interroger le clan",
       "B": "Changer toutes les serrures",
       "C": "Piéger le coffre"
     },
-    "body": "Sans cette clé, tu ne peux pas accéder aux protections les plus anciennes. Et quelqu’un sait où elle était rangée."
+    "body": "La clé des anciennes protections a disparu. Quelqu’un savait où elle était."
   },
   "vampire_093": {
     "id": "vampire_108",
     "universe": "vampire_lord",
     "title": "Le rendez-vous du notaire",
-    "description": "Un notaire exige ta présence pour une succession délicate.",
+    "description": "Le notaire aime trop les détails. Les détails menacent toujours le secret.",
     "choices": {
       "A": "Y aller en personne",
       "B": "Envoyer un faux héritier",
       "C": "Faire reporter le rendez-vous"
     },
-    "body": "Le notaire a des papiers, des questions, et une obsession pour les détails. Les détails sont l’ennemi du secret."
+    "body": "Le notaire aime trop les détails. Les détails menacent toujours le secret."
   },
   "vampire_094": {
     "id": "vampire_109",
@@ -1131,25 +1131,25 @@
     "id": "vampire_110",
     "universe": "vampire_lord",
     "title": "Le sang au goût bizarre",
-    "description": "Le sang de la semaine a un goût étrange et le clan fait la grimace.",
+    "description": "Même les immortels refusent ce sang. Le problème est donc sérieux.",
     "choices": {
       "A": "Changer de fournisseur",
       "B": "Tester le stock",
       "C": "Imposer la discipline"
     },
-    "body": "Quand même les immortels font la fine bouche, c’est que le problème est sérieux. Ou que le clan devient capricieux."
+    "body": "Même les immortels refusent ce sang. Le problème est donc sérieux."
   },
   "vampire_096": {
     "id": "vampire_111",
     "universe": "vampire_lord",
     "title": "Le faux documentaire",
-    "description": "Une chaîne sort un documentaire sur ton quartier et ça vise juste.",
+    "description": "On parle de tunnels et de disparitions. Les détails sont faux, pas l’idée.",
     "choices": {
       "A": "Faire retirer l’épisode",
       "B": "Acheter la production",
       "C": "Noyer l’affaire dans le ridicule"
     },
-    "body": "Ils parlent de tunnels, de bruits nocturnes, de disparitions. Ils se trompent sur les détails. Mais pas sur l’idée."
+    "body": "On parle de tunnels et de disparitions. Les détails sont faux, pas l’idée."
   },
   "vampire_097": {
     "id": "vampire_112",
@@ -1215,13 +1215,13 @@
     "id": "vampire_117",
     "universe": "vampire_lord",
     "title": "Le secret veut un logo",
-    "description": "Le secret réclame un symbole officiel pour se reconnaître.",
+    "description": "Ils veulent une identité visible. Toi, tu veux surtout qu’ils restent invisibles.",
     "choices": {
       "A": "Donner un symbole simple",
       "B": "Refuser et calmer",
       "C": "Créer un faux symbole piégé"
     },
-    "body": "Ils veulent des badges, des bannières, et une identité. Toi, tu veux surtout qu’ils arrêtent d’être visibles."
+    "body": "Ils veulent une identité visible. Toi, tu veux surtout qu’ils restent invisibles."
   },
   "vampire_103": {
     "id": "vampire_118",
@@ -1251,25 +1251,25 @@
     "id": "vampire_120",
     "universe": "vampire_lord",
     "title": "La plainte du quartier",
-    "description": "Les voisins se plaignent de bruits nocturnes et d’ombres bizarres.",
+    "description": "Une pétition circule. Les humains ont peur. Les regards se tournent vers toi.",
     "choices": {
       "A": "Calmer le quartier",
       "B": "Effrayer les voisins",
       "C": "Changer de repaire"
     },
-    "body": "Une pétition circule. Les humains signent tout, surtout quand ils ont peur. Ça sent le projecteur sur toi."
+    "body": "Une pétition circule. Les humains ont peur. Les regards se tournent vers toi."
   },
   "vampire_106": {
     "id": "vampire_121",
     "universe": "vampire_lord",
     "title": "Le téléphone oublié",
-    "description": "Un serviteur a oublié son téléphone dans la salle des reliques.",
+    "description": "Le téléphone contient des photos et des messages. Une vraie menace pour le secret.",
     "choices": {
       "A": "Récupérer le téléphone vite",
       "B": "Le détruire",
       "C": "Le fouiller et surveiller"
     },
-    "body": "Le téléphone contient des photos, des messages, et des applications qui écoutent. Pire que des chasseurs, parfois."
+    "body": "Le téléphone contient des photos et des messages. Une vraie menace pour le secret."
   },
   "vampire_107": {
     "id": "vampire_122",
@@ -1335,13 +1335,13 @@
     "id": "vampire_128",
     "universe": "vampire_lord",
     "title": "La rumeur du remède",
-    "description": "On murmure qu’un remède existe contre le vampirisme.",
+    "description": "Un remède fait rêver certains et paniquer les autres. Les chasseurs surveillent déjà.",
     "choices": {
       "A": "Chercher le remède",
       "B": "Détruire la rumeur",
       "C": "L’utiliser pour manipuler"
     },
-    "body": "Certains y croient, d’autres paniquent, et les chasseurs sourient déjà. Un remède attire toujours des vendeurs."
+    "body": "Un remède fait rêver certains et paniquer les autres. Les chasseurs surveillent déjà."
   },
   "vampire_113": {
     "id": "vampire_129",
@@ -1471,7 +1471,7 @@
     "choices": {
       "A": "Refuser fermement",
       "B": "Accepter mais contrôler",
-      "C": "Le faire disparaître du quartier"
+      "C": "Le faire partir du quartier"
     },
     "body": "Il dit que ton regard est unique. Il veut te peindre à la lumière. Mauvaise idée."
   },
@@ -1479,13 +1479,13 @@
     "id": "vampire_140",
     "universe": "vampire_lord",
     "title": "La dette du secret",
-    "description": "Le secret dit t’avoir rendu service et veut une récompense.",
+    "description": "Ils ont aidé une fois. Maintenant ils se croient intouchables.",
     "choices": {
       "A": "Payer en vcoins",
       "B": "Donner un privilège",
       "C": "Refuser et calmer"
     },
-    "body": "Ils ont aidé à détourner une enquête. Maintenant ils se sentent importants. Les gens importants font des erreurs."
+    "body": "Ils ont aidé une fois. Maintenant ils se croient intouchables."
   },
   "vampire_125": {
     "id": "vampire_141",
@@ -1539,13 +1539,13 @@
     "id": "vampire_145",
     "universe": "vampire_lord",
     "title": "La cantine du clan",
-    "description": "Le clan veut une cantine officielle et un menu stable.",
+    "description": "Ils veulent de l’ordre et du confort. Toi, tu veux du secret et du contrôle.",
     "choices": {
       "A": "Organiser une cantine",
       "B": "Refuser et imposer la chasse",
       "C": "Créer un système de tickets"
     },
-    "body": "Ils veulent de l’ordre, des horaires, et du confort. Tu veux du secret et du contrôle. Bonjour le conflit."
+    "body": "Ils veulent de l’ordre et du confort. Toi, tu veux du secret et du contrôle."
   },
   "vampire_130": {
     "id": "vampire_146",
@@ -1623,13 +1623,13 @@
     "id": "vampire_152",
     "universe": "vampire_lord",
     "title": "La fuite d’eau",
-    "description": "Une fuite d’eau menace de révéler une salle secrète.",
+    "description": "L’eau attire des ouvriers. Les ouvriers posent trop de questions.",
     "choices": {
       "A": "Réparer vite",
       "B": "Condamner la salle",
       "C": "Déplacer le contenu"
     },
-    "body": "L’eau s’infiltre partout et l’odeur attire des ouvriers. Les ouvriers posent des questions. Trop de questions."
+    "body": "L’eau attire des ouvriers. Les ouvriers posent trop de questions."
   },
   "vampire_137": {
     "id": "vampire_153",
@@ -1719,13 +1719,13 @@
     "id": "vampire_160",
     "universe": "vampire_lord",
     "title": "Le pacte du silence",
-    "description": "Un serviteur te demande une promesse de protection en échange de son silence.",
+    "description": "Il a peur et risque de parler. Tu dois choisir quel risque prendre.",
     "choices": {
       "A": "Accepter et protéger",
       "B": "Refuser et le surveiller",
       "C": "Le remplacer"
     },
-    "body": "Il a peur. Les gens qui ont peur parlent trop. Les gens protégés parlent aussi. Tu dois choisir le risque."
+    "body": "Il a peur et risque de parler. Tu dois choisir quel risque prendre."
   },
   "vampire_145": {
     "id": "vampire_161",
@@ -1743,13 +1743,13 @@
     "id": "vampire_162",
     "universe": "vampire_lord",
     "title": "Le banquet obligatoire",
-    "description": "Les anciens exigent un banquet pour prouver ta force.",
+    "description": "Un banquet donne du pouvoir, mais expose aussi tes faiblesses.",
     "choices": {
       "A": "Organiser un banquet grandiose",
       "B": "Refuser et assumer",
       "C": "Faire un banquet discret"
     },
-    "body": "Un banquet, c’est du pouvoir. C’est aussi une salle pleine de regards. Et les regards comptent les faiblesses."
+    "body": "Un banquet donne du pouvoir, mais expose aussi tes faiblesses."
   },
   "vampire_147": {
     "id": "vampire_163",
@@ -1899,13 +1899,13 @@
     "id": "vampire_175",
     "universe": "vampire_lord",
     "title": "Le livre interdit revient",
-    "description": "Le livre interdit volé réapparaît sur ta table, ouvert à une page précise.",
+    "description": "Quelqu’un a voulu que tu lises ça. Ce n’est jamais bon signe.",
     "choices": {
       "A": "Lire la page",
       "B": "Brûler le livre",
       "C": "Chercher qui l’a posé"
     },
-    "body": "Quelqu’un a voulu que tu lises ça. Et quand on veut que tu lises quelque chose, c’est rarement pour ton plaisir."
+    "body": "Quelqu’un a voulu que tu lises ça. Ce n’est jamais bon signe."
   },
   "vampire_160": {
     "id": "vampire_176",
@@ -1923,13 +1923,13 @@
     "id": "vampire_177",
     "universe": "vampire_lord",
     "title": "Le duel demandé",
-    "description": "Un vampire te défie en duel pour ton titre.",
+    "description": "Il veut te provoquer devant tous. Un duel attire toujours trop de regards.",
     "choices": {
       "A": "Accepter le duel",
       "B": "Refuser et punir",
       "C": "Détourner le duel vers une épreuve"
     },
-    "body": "Il veut te provoquer devant tous. Le duel est un spectacle. Et un spectacle attire toujours des yeux extérieurs."
+    "body": "Il veut te provoquer devant tous. Un duel attire toujours trop de regards."
   },
   "vampire_162": {
     "id": "vampire_178",
@@ -2187,25 +2187,25 @@
     "id": "vampire_199",
     "universe": "vampire_lord",
     "title": "La boîte verrouillée",
-    "description": "Une boîte verrouillée apparaît au centre du repaire et personne ne l’a apportée.",
+    "description": "La boîte est lourde et silencieuse. Ce silence ressemble à une menace.",
     "choices": {
       "A": "Forcer l’ouverture",
       "B": "La sceller",
       "C": "Chercher l’expéditeur"
     },
-    "body": "La boîte est lourde, froide, et elle ne fait aucun bruit. Parfois, le silence est une menace plus claire qu’un cri."
+    "body": "La boîte est lourde et silencieuse. Ce silence ressemble à une menace."
   },
   "vampire_184": {
     "id": "vampire_200",
     "universe": "vampire_lord",
     "title": "La statue brisée",
-    "description": "Une statue sacrée est brisée comme si quelqu’un l’avait frappée de l’intérieur.",
+    "description": "La pierre est brisée sans débris. Une présence ancienne semble se réveiller.",
     "choices": {
       "A": "Réparer et purifier",
       "B": "Enquêter sur la cause",
       "C": "Accuser un ennemi et riposter"
     },
-    "body": "La pierre est éclatée, mais il n’y a pas de débris autour comme s’ils avaient été aspirés. Tu sens une présence ancienne qui se réveille."
+    "body": "La pierre est brisée sans débris. Une présence ancienne semble se réveiller."
   },
   "vampire_185": {
     "id": "vampire_201",
@@ -3247,7 +3247,7 @@
     "choices": {
       "A": "Le convaincre",
       "B": "Le menacer",
-      "C": "Le faire disparaître"
+      "C": "Le faire taire"
     },
     "body": "Un ancien témoin te revoit. Il te reconnaît. Il sourit. Ça veut dire problème."
   },
