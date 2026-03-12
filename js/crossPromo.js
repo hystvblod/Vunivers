@@ -9,9 +9,9 @@
   const APPS = {
     vblocks: {
       id: "vblocks",
-      packageName: "com.vboldstudio.vblocks",
+      packageName: "com.vboldstudio.VBlocks",
       iosScheme: "vblocks://",
-      storeUrlAndroid: "https://play.google.com/store/apps/details?id=com.vboldstudio.vblocks",
+      storeUrlAndroid: "https://play.google.com/store/apps/details?id=com.vboldstudio.VBlocks",
       storeUrlIOS: "https://apps.apple.com/app/idXXXXXXXXXX",
       cover: "assets/img/crosspromo/vblocks_cover.webp",
       shots: [
@@ -228,38 +228,6 @@
     }
   }
 
-  async function openTargetApp(app) {
-    try {
-      const AppLauncher = window.Capacitor?.Plugins?.AppLauncher;
-      if (!AppLauncher || typeof AppLauncher.openUrl !== "function") return false;
-
-      if (isAndroid()) {
-        const res = await AppLauncher.openUrl({ url: app.packageName });
-        return !!res?.completed;
-      }
-
-      if (isIOS()) {
-        const res = await AppLauncher.openUrl({ url: app.iosScheme });
-        return !!res?.completed;
-      }
-
-      return false;
-    } catch (_) {
-      return false;
-    }
-  }
-
-  function getStoreUrl(app) {
-    if (isIOS()) return app.storeUrlIOS;
-    return app.storeUrlAndroid;
-  }
-
-  function openStore(app) {
-    const url = getStoreUrl(app);
-    if (!url) return;
-    window.location.href = url;
-  }
-
   async function refreshInstalledStatus(appId) {
     const app = APPS[appId];
     if (!app) return false;
@@ -271,6 +239,36 @@
     writeState(state);
 
     return installed;
+  }
+
+  function getStoreUrl(app) {
+    if (isIOS()) return app.storeUrlIOS;
+    return app.storeUrlAndroid;
+  }
+
+  async function openStore(app) {
+    const url = String(getStoreUrl(app) || "").trim();
+    if (!url) return false;
+
+    try {
+      const Browser = window.Capacitor?.Plugins?.Browser;
+      if (Browser && typeof Browser.open === "function") {
+        await Browser.open({ url: url });
+        return true;
+      }
+    } catch (_) {}
+
+    try {
+      window.location.href = url;
+      return true;
+    } catch (_) {}
+
+    try {
+      window.open(url, "_blank");
+      return true;
+    } catch (_) {
+      return false;
+    }
   }
 
   async function claimRewardIfEligible(appId) {
@@ -491,10 +489,10 @@
       root.style.display = "none";
     }
 
-    primary.onclick = function () {
+    primary.onclick = async function () {
       setPendingStoreClick(appId);
       closePopup();
-      openStore(app);
+      await openStore(app);
     };
 
     secondary.onclick = function () {
@@ -615,15 +613,12 @@
     const host = document.getElementById("vr-crosspromo-grid");
     if (!host) return;
 
-   const ids = ["vchronicles", "vblocks"];
+    const ids = ["vchronicles", "vblocks"];
     const rows = [];
 
     for (const id of ids) {
       const app = APPS[id];
-      const installed = await refreshInstalledStatus(id);
-      const actionLabel = installed
-        ? t("crosspromo.cta_open", "")
-        : t("crosspromo.cta_install", "");
+      const actionLabel = t("crosspromo.cta_install", "");
 
       rows.push([
         '<article class="vr-crosspromo-card">',
@@ -660,14 +655,8 @@
         const app = APPS[id];
         if (!app) return;
 
-        const installed = await refreshInstalledStatus(id);
-        if (installed) {
-          await openTargetApp(app);
-          return;
-        }
-
         setPendingStoreClick(id);
-        openStore(app);
+        await openStore(app);
       });
     });
   }
@@ -689,13 +678,8 @@
         const app = APPS[appId];
         if (!app) return false;
 
-        const installed = await refreshInstalledStatus(appId);
-        if (installed) {
-          return openTargetApp(app);
-        }
-
         setPendingStoreClick(appId);
-        openStore(app);
+        await openStore(app);
         return true;
       }
     };
