@@ -5462,7 +5462,7 @@ body.vr-peek-mode .vr-gauge-preview{
       candidates.push(`${gaugeId}_${value}`);
       candidates.push(`end_${gaugeId}_${value}`);
 
-      const esc = String(gaugeId).replace(/[.*+?^${}()|[\]\]/g, "\$&");
+      const esc = String(gaugeId).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       const reEnd = new RegExp(`(^|_)end_${esc}_${value}$`);
       for (const k of Object.keys(endings || {})) {
         if (reEnd.test(k)) candidates.push(k);
