@@ -3227,7 +3227,7 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-jetons-tx: 0px;
   --vr-jetons-ty: 9px;
   /* ===== Réglages fins verticaux ===== */
-  --vr-explorer-hud-item-y: -9px;
+  --vr-explorer-hud-item-y: -11px;
   --vr-explorer-hud-value-y: -2px;
   --vr-explorer-hud-years-y: 0px;
   --vr-ui-topbar-img: url("../assets/img/ui/explorer_topbar.webp");
@@ -3569,7 +3569,7 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     --vr-explorer-topbar-top: calc(6px + env(safe-area-inset-top));
     --vr-explorer-side-btn-top: calc(10px + env(safe-area-inset-top));
     --vr-explorer-side-btn-side: 16px;
-    --vr-explorer-hud-item-y: -4px;
+    --vr-explorer-hud-item-y: -5px;
     --vr-identity-ty: 5px;
     --vr-hud-name-years-gap: 14px;
     --vr-vcoins-ty: 6px;
