@@ -183,8 +183,8 @@
       bgDir: "assets/img/backgrounds",
       uiDir: "assets/img/ui/vampire",
       bgCount: 5,
-      msgCount: 3,
-      choiceCount: 3,
+      msgCount: 5,
+      choiceCount: 5,
       bgPrice: 400,
       uiPrice: 300
     })
