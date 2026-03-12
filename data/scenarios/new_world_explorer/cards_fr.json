@@ -297,8 +297,8 @@
     }
   },
   "nw_034": {
-    "title": "Épidémie légère",
-    "body": "Une fièvre fatigue le port. Rien de dramatique mais tout ralentit.",
+    "title": "Port ralenti",
+    "body": "Une fatigue générale ralentit le port. Rien de grave mais tout prend du retard.",
     "choices": {
       "A": "Payer des soins",
       "B": "Fermer le marché",
@@ -567,8 +567,8 @@
     }
   },
   "nw_064": {
-    "title": "Fosse commune",
-    "body": "Les ouvriers demandent un vrai lieu pour enterrer les morts du chantier.",
+    "title": "Lieu de repos",
+    "body": "Les ouvriers demandent un lieu digne pour honorer ceux perdus sur le chantier.",
     "choices": {
       "A": "Payer le terrain",
       "B": "Laisser le village gérer",
@@ -711,8 +711,8 @@
     }
   },
   "nw_080": {
-    "title": "Village sans chef",
-    "body": "Le chef du village voisin est mort. Tout le monde attend notre geste.",
+    "title": "Village en transition",
+    "body": "Le chef du village voisin n est plus là. Tout le monde attend notre geste.",
     "choices": {
       "A": "Soutenir un successeur",
       "B": "Laisser le village choisir",
@@ -899,7 +899,6 @@
       "C": "Signer un pacte avec les villages"
     }
   },
-  
   "nw_101": {
     "title": "Barques trop lentes",
     "body": "Nos barques avancent comme des meubles flottants et le port s en moque.",
@@ -1800,7 +1799,6 @@
       "C": "Y faire une fête commune"
     }
   },
-
   "nw_201": {
     "title": "Cloche rouillée",
     "body": "La cloche du port sonne comme une casserole vexée et personne ne sait si c est l alerte.",
@@ -2701,7 +2699,6 @@
       "C": "Garder le régime normal"
     }
   },
-
   "nw_301": {
     "title": "Brouette royale",
     "body": "La vieille brouette du quai grince plus fort que le commandant.",
@@ -3602,7 +3599,4 @@
       "C": "Utiliser la colline"
     }
   }
-
-
 }
-
