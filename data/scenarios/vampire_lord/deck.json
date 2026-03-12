@@ -38,7 +38,7 @@
           "gaugeDelta": {
             "blood": 0,
             "hunters": 10,
-            "clan": 0,
+            "clan": 5,
             "secret": 0
           }
         },
@@ -374,10 +374,10 @@
         },
         "B": {
           "gaugeDelta": {
-            "blood": -5,
-            "hunters": -5,
+            "blood": 0,
+            "hunters": 0,
             "clan": 0,
-            "secret": 0
+            "secret": 10
           }
         },
         "C": {
@@ -854,9 +854,9 @@
         },
         "B": {
           "gaugeDelta": {
-            "blood": 0,
-            "hunters": 5,
-            "clan": 10,
+            "blood": 5,
+            "hunters": 0,
+            "clan": 0,
             "secret": 0
           }
         },
@@ -1004,7 +1004,7 @@
         },
         "B": {
           "gaugeDelta": {
-            "blood": 0,
+            "blood": -5,
             "hunters": 0,
             "clan": 0,
             "secret": 0
@@ -1028,8 +1028,8 @@
           "gaugeDelta": {
             "blood": 0,
             "hunters": -5,
-            "clan": 5,
-            "secret": 0
+            "clan": 0,
+            "secret": 10
           }
         },
         "B": {
@@ -1215,8 +1215,8 @@
         "B": {
           "gaugeDelta": {
             "blood": 0,
-            "hunters": 15,
-            "clan": 5,
+            "hunters": 10,
+            "clan": 0,
             "secret": 0
           }
         },
@@ -1546,8 +1546,8 @@
           "gaugeDelta": {
             "blood": 0,
             "hunters": -5,
-            "clan": 5,
-            "secret": 0
+            "clan": 0,
+            "secret": 5
           }
         },
         "C": {
@@ -1817,7 +1817,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "secret": 0
+            "secret": 5
           }
         },
         "C": {
@@ -3167,7 +3167,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "secret": 0
+            "secret": 10
           }
         },
         "C": {
@@ -4148,7 +4148,7 @@
           "gaugeDelta": {
             "blood": 0,
             "hunters": 0,
-            "clan": 0,
+            "clan": 10,
             "secret": 0
           }
         },
@@ -5207,7 +5207,7 @@
             "blood": 0,
             "hunters": 0,
             "clan": 0,
-            "secret": 0
+            "secret": 10
           }
         },
         "C": {
