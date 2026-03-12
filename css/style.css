@@ -3635,7 +3635,7 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     --vr-explorer-hud-item-y: -5px;
 
     /* ici tu as la 2e valeur pour nom/année sur mobile */
-    --vr-identity-ty: 5px;
+    --vr-identity-ty: 7px;
     --vr-hud-name-years-gap: 14px;
 
     --vr-vcoins-ty: 6px;
