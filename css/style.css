@@ -3640,9 +3640,9 @@ body.vr-body-game[data-universe="vampire_lord"]{
   --vr-scn-h: clamp(132px, 17.6svh, 236px);
   --vr-choice-h: clamp(82px, 11.2svh, 142px);
 
-  --vr-game-gap: clamp(1px, 0.18svh, 4px);
-  --vr-stack-gap: clamp(4px, 0.50svh, 9px);
-  --vr-choices-gap: clamp(5px, 0.60svh, 10px);
+  --vr-game-gap: clamp(2px, 0.24svh, 6px);
+  --vr-stack-gap: clamp(8px, 0.95svh, 18px);
+  --vr-choices-gap: clamp(8px, 0.90svh, 16px);
 
   --vr-scn-inset-top: 13%;
   --vr-scn-inset-right: 11%;
@@ -3657,7 +3657,7 @@ body.vr-body-game[data-universe="vampire_lord"]{
 
   --vr-font-scn-title: clamp(15px, 2.5vmin, 28px);
   --vr-font-scn-text:  clamp(13px, 2.0vmin, 21px);
-  --vr-font-choice:    clamp(12px, 1.85vmin, 18px);
+  --vr-font-choice:    clamp(13.5px, 2.05vmin, 21px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
@@ -3841,7 +3841,7 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-value{
   font-weight: 800 !important;
   line-height:1 !important;
   color:#ffffff !important;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.35), 0 0 8px rgba(0,0,0,0.12) !important;
+  text-shadow: 0 1px 0 rgba(2, 2, 2, 0.35), 0 0 8px rgba(0,0,0,0.12) !important;
   transform: translateY(-2px) !important;
 }
 
@@ -3906,8 +3906,8 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
     --vr-scn-h: clamp(120px, 16.2svh, 198px);
     --vr-choice-h: clamp(76px, 10.4svh, 120px);
 
-    --vr-stack-gap: 2px;
-    --vr-choices-gap: 3px;
+    --vr-stack-gap: 6px;
+    --vr-choices-gap: 6px;
 
     --vr-choice-safe: 82%;
     --vr-choice-inset-top: 15%;
@@ -3915,7 +3915,7 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
     --vr-choice-inset-bottom: 15%;
     --vr-choice-inset-left: 8%;
 
-    --vr-font-choice: clamp(11px, 2.65vw, 14px);
+    --vr-font-choice: clamp(12px, 3vw, 15.5px);
   }
 
   body.vr-body-game[data-universe="vampire_lord"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
@@ -3956,6 +3956,14 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
     --vr-choice-inset-left: 7%;
   }
 }
+
+
+
+
+
+
+
+
 
 /* ==========================================================
    MOBILE (TOUS UNIVERS) — bloc demandé
