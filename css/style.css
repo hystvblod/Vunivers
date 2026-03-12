@@ -1364,81 +1364,71 @@ body.vr-body-game .vr-choice-label{
    ========================================================== */
 @font-face{
   font-family: "VR_Quintess";
-  src:
-    url("../assets/fronts/Quintessential-Regular.woff2") format("woff2"),
-    url("assets/fronts/Quintessential-Regular.woff2") format("woff2");
+  src: url("../assets/fronts/Quintessential-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "VR_LoveSister";
-  src:
-    url("../assets/fronts/LoveYaLikeASister-Regular.woff2") format("woff2"),
-    url("assets/fronts/LoveYaLikeASister-Regular.woff2") format("woff2");
+  src: url("../assets/fronts/LoveYaLikeASister-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "VR_Cinzel";
-  src:
-    url("../assets/fronts/Cinzel-Regular.woff2") format("woff2"),
-    url("assets/fronts/Cinzel-Regular.woff2") format("woff2");
+  src: url("../assets/fronts/Cinzel-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "VR_Cormorant";
-  src:
-    url("../assets/fronts/CormorantGaramond-Regular.woff2") format("woff2"),
-    url("assets/fronts/CormorantGaramond-Regular.woff2") format("woff2");
+  src: url("../assets/fronts/CormorantGaramond-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "VR_InterExtraLight";
-  src:
-    url("../assets/fronts/Inter_18pt-ExtraLight.woff2") format("woff2"),
-    url("assets/fronts/Inter_18pt-ExtraLight.woff2") format("woff2");
+  src: url("../assets/fronts/Inter_18pt-ExtraLight.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "VR_RobotoThin";
-  src:
-    url("../assets/fronts/RobotoCondensed-Thin.woff2") format("woff2"),
-    url("assets/fronts/RobotoCondensed-Thin.woff2") format("woff2");
+  src: url("../assets/fronts/RobotoCondensed-Thin.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "VR_DMSerifText";
-  src:
-    url("../assets/fronts/DMSerifText-Regular.woff2") format("woff2"),
-    url("assets/fronts/DMSerifText-Regular.woff2") format("woff2");
+  src: url("../assets/fronts/DMSerifText-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "VR_OutfitMedium";
-  src:
-    url("../assets/fronts/Outfit-Medium.woff2") format("woff2"),
-    url("assets/fronts/Outfit-Medium.woff2") format("woff2");
+  src: url("../assets/fronts/Outfit-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "AlegreyaSCExplorer";
-  src:
-    url("../assets/fronts/AlegreyaSC-Regular.woff2") format("woff2"),
-    url("assets/fronts/AlegreyaSC-Regular.woff2") format("woff2");
+  src: url("../assets/fronts/AlegreyaSC-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -1446,9 +1436,7 @@ body.vr-body-game .vr-choice-label{
 
 @font-face{
   font-family: "MerriweatherExplorer";
-  src:
-    url("../assets/fronts/Merriweather-24pt-Regular.woff2") format("woff2"),
-    url("assets/fronts/Merriweather-24pt-Regular.woff2") format("woff2");
+  src: url("../assets/fronts/Merriweather-24pt-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -1456,9 +1444,7 @@ body.vr-body-game .vr-choice-label{
 
 @font-face{
   font-family: "MerriweatherExplorer";
-  src:
-    url("../assets/fronts/Merriweather-96pt-Bold.woff2") format("woff2"),
-    url("assets/fronts/Merriweather-96pt-Bold.woff2") format("woff2");
+  src: url("../assets/fronts/Merriweather-96pt-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -1466,13 +1452,14 @@ body.vr-body-game .vr-choice-label{
 
 @font-face{
   font-family: "MerriweatherExplorer";
-  src:
-    url("../assets/fronts/Merriweather-96pt-Bold.woff2") format("woff2"),
-    url("assets/fronts/Merriweather-96pt-Bold.woff2") format("woff2");
+  src: url("../assets/fronts/Merriweather-96pt-Bold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
+
+
+
 
 /* ==========================================================
    UNIVERS — HELL
@@ -3172,66 +3159,51 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 
 
 
-/* =========================
-   EXPLORER
-   ========================= */
+/* ========================= EXPLORER ========================= */
 body.vr-body-game[data-universe="new_world_explorer"]{
-  --vr-card-w: clamp(390px, 98vw, 1100px);
-
-  --vr-scn-h: clamp(136px, 18.0svh, 244px);
-  --vr-choice-h: clamp(84px, 11.5svh, 146px);
-
-  --vr-game-gap: clamp(1px, 0.18svh, 4px);
-  --vr-stack-gap: clamp(4px, 0.52svh, 10px);
-  --vr-choices-gap: clamp(5px, 0.62svh, 11px);
-
+  --vr-card-w: clamp(320px, 78vw, 860px);
+  --vr-scn-h: clamp(144px, 19.5svh, 268px);
+  --vr-choice-h: clamp(88px, 12.0svh, 158px);
+  --vr-game-gap: clamp(1px, 0.08svh, 2px);
+  --vr-stack-gap: clamp(10px, 1.2svh, 22px);
+  --vr-choices-gap: clamp(6px, 0.75svh, 14px);
   --vr-scn-inset-top: 13%;
   --vr-scn-inset-right: 16%;
   --vr-scn-inset-bottom: 15%;
   --vr-scn-inset-left: 16%;
-
   --vr-choice-inset-top: 16%;
   --vr-choice-inset-right: 10%;
   --vr-choice-inset-bottom: 16%;
   --vr-choice-inset-left: 10%;
   --vr-choice-safe: 84%;
-
-  --vr-font-scn-title: clamp(15px, 2.4vmin, 27px);
-  --vr-font-scn-text:  clamp(12px, 1.9vmin, 20px);
-  --vr-font-choice:    clamp(12px, 1.85vmin, 18px);
-
+  --vr-font-scn-title: clamp(17px, 2.8vmin, 32px);
+  --vr-font-scn-text: clamp(14px, 2.25vmin, 24px);
+  --vr-font-choice: clamp(13px, 2.1vmin, 22px);
   /* ===== Polices ===== */
   --vr-explorer-font-title: "AlegreyaSCExplorer", serif;
   --vr-explorer-font-ui: "MerriweatherExplorer", serif;
-
   /* ===== Tailles source RÉELLES des fichiers ===== */
   --vr-explorer-topbar-src-w: 1000;
   --vr-explorer-topbar-src-h: 275;
   --vr-explorer-hud-src-w: 1024;
   --vr-explorer-hud-src-h: 269;
-
   /* ===== Largeurs affichées ===== */
   --vr-explorer-topbar-w: clamp(235px, 53vw, 408px);
   --vr-explorer-hud-w: min(89vw, 930px);
   --vr-explorer-back-size: clamp(46px, 11vw, 76px);
   --vr-explorer-customize-size: clamp(46px, 11vw, 76px);
-
   /* ===== Décalage visuel HUD ===== */
   --vr-explorer-hud-shift-x: -6px;
   --vr-explorer-hud-shift-y: -6px;
-
   /* ===== Réserve haute calculée ===== */
   --vr-topbar-h: calc(
     (var(--vr-explorer-topbar-w) * var(--vr-explorer-topbar-src-h) / var(--vr-explorer-topbar-src-w))
-    + env(safe-area-inset-top)
-    + 2px
+    + env(safe-area-inset-top) + 2px
   );
-
   /* ===== Positions générales ===== */
   --vr-explorer-topbar-top: calc(5px + env(safe-area-inset-top));
   --vr-explorer-side-btn-top: calc(10px + env(safe-area-inset-top));
   --vr-explorer-side-btn-side: clamp(12px, 3vw, 20px);
-
   /* ===== Zones cliquables topbar ===== */
   --vr-explorer-topbar-btn-top: 16%;
   --vr-explorer-topbar-btn-h: 72%;
@@ -3239,7 +3211,6 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-explorer-topbar-btn-1-left: 16%;
   --vr-explorer-topbar-btn-2-left: 41%;
   --vr-explorer-topbar-btn-3-left: 66%;
-
   /* ===== Placement HUD ===== */
   --vr-explorer-hud-left-x: 3.3%;
   --vr-explorer-hud-left-w: 17.8%;
@@ -3247,47 +3218,37 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-explorer-hud-center-right: 20.2%;
   --vr-explorer-hud-right-x: 5.3%;
   --vr-explorer-hud-right-w: 17.8%;
-
   /* ===== Centre nom / année ===== */
   --vr-identity-tx: 0px;
   --vr-identity-ty: 8px;
   --vr-hud-name-years-gap: 18px;
-
   /* ===== Réglages soldes ===== */
   --vr-vcoins-tx: 4px;
   --vr-vcoins-ty: 9px;
-
   --vr-jetons-tx: 0px;
   --vr-jetons-ty: 9px;
-
   /* ===== Réglages fins verticaux ===== */
   --vr-explorer-hud-item-y: -9px;
   --vr-explorer-hud-value-y: -2px;
   --vr-explorer-hud-years-y: 0px;
-
   --vr-ui-topbar-img: url("../assets/img/ui/explorer_topbar.webp");
   --vr-ui-hud-img: url("../assets/img/ui/explorer_hud_bar.webp");
   --vr-ui-back-img: url("../assets/img/ui/explorer_back.webp");
   --vr-ui-customize-img: url("../assets/img/ui/explorer_customize.webp");
-
   /* ===== Couleurs HUD ===== */
   --vr-vcoins-color:#000000;
   --vr-vcoins-glow:rgba(255,255,255,.08);
   --vr-vcoins-bg: transparent;
-
   --vr-jetons-color:#000000;
   --vr-jetons-glow:rgba(255,255,255,.08);
   --vr-jetons-bg: transparent;
-
   font-family: var(--vr-explorer-font-ui);
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-top-icon,
 body.vr-body-game[data-universe="new_world_explorer"] > a.vr-icon-button[aria-label="Accueil"] .vr-top-icon,
 body.vr-body-game[data-universe="new_world_explorer"] #btn-customize .vr-top-icon{
   display:none !important;
 }
-
 body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-title{
   font-family: var(--vr-explorer-font-title) !important;
   color:#000 !important;
@@ -3302,7 +3263,6 @@ body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-title{
   hyphens: auto !important;
   text-wrap: balance !important;
 }
-
 body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-text{
   font-family: var(--vr-explorer-font-ui) !important;
   color:#000 !important;
@@ -3317,7 +3277,6 @@ body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-text{
   hyphens: auto !important;
   text-wrap: balance !important;
 }
-
 body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-choice-label{
   font-family: var(--vr-explorer-font-ui) !important;
   color:#000 !important;
@@ -3330,19 +3289,16 @@ body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-choice-labe
   hyphens: auto !important;
   text-wrap: balance !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-card-main{
   background-size: 94% 96% !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-choice-button{
   background-size: 104% 100% !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game{
   position: fixed !important;
   top: var(--vr-explorer-topbar-top) !important;
@@ -3360,7 +3316,6 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game{
   pointer-events: none !important;
   z-index: 100000 !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game::before{
   content:"";
   position:absolute;
@@ -3369,7 +3324,6 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game::befo
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.22));
   pointer-events:none;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button{
   position:absolute !important;
   top: var(--vr-explorer-topbar-btn-top) !important;
@@ -3382,7 +3336,6 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-i
   pointer-events:auto !important;
   z-index:1 !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button:nth-child(1){
   left: var(--vr-explorer-topbar-btn-1-left) !important;
 }
@@ -3392,7 +3345,6 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-i
 body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button:nth-child(3){
   left: var(--vr-explorer-topbar-btn-3-left) !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] > a.vr-icon-button[aria-label="Accueil"]{
   position: fixed !important;
   top: var(--vr-explorer-side-btn-top) !important;
@@ -3406,7 +3358,6 @@ body.vr-body-game[data-universe="new_world_explorer"] > a.vr-icon-button[aria-la
   z-index:100002 !important;
   pointer-events:auto !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] > a.vr-icon-button[aria-label="Accueil"]::before{
   content:"";
   position:absolute;
@@ -3415,7 +3366,6 @@ body.vr-body-game[data-universe="new_world_explorer"] > a.vr-icon-button[aria-la
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.22));
   pointer-events:none;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] #btn-customize{
   position: fixed !important;
   top: var(--vr-explorer-side-btn-top) !important;
@@ -3429,7 +3379,6 @@ body.vr-body-game[data-universe="new_world_explorer"] #btn-customize{
   z-index:100002 !important;
   pointer-events:auto !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] #btn-customize::before{
   content:"";
   position:absolute;
@@ -3438,7 +3387,6 @@ body.vr-body-game[data-universe="new_world_explorer"] #btn-customize::before{
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.22));
   pointer-events:none;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud{
   position: relative !important;
   width: var(--vr-explorer-hud-w) !important;
@@ -3454,7 +3402,6 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud{
   filter: drop-shadow(0 10px 18px rgba(0,0,0,0.20));
   transform: translate(var(--vr-explorer-hud-shift-x), var(--vr-explorer-hud-shift-y)) !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left,
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-center,
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right{
@@ -3468,22 +3415,18 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right{
   transform:none !important;
   justify-self:auto !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left{
   left: var(--vr-explorer-hud-left-x) !important;
   width: var(--vr-explorer-hud-left-w) !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-center{
   left: var(--vr-explorer-hud-center-left) !important;
   right: var(--vr-explorer-hud-center-right) !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right{
   right: var(--vr-explorer-hud-right-x) !important;
   width: var(--vr-explorer-hud-right-w) !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-item{
   width:100% !important;
   height:100% !important;
@@ -3501,20 +3444,16 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-item{
   transform: translateY(var(--vr-explorer-hud-item-y)) !important;
   font-family: var(--vr-explorer-font-ui) !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-identity{
   transform: translate(var(--vr-identity-tx), var(--vr-identity-ty)) !important;
   gap: var(--vr-hud-name-years-gap) !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left .vr-hud-value{
   transform: translate(var(--vr-vcoins-tx), var(--vr-vcoins-ty)) !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right .vr-hud-value{
   transform: translate(var(--vr-jetons-tx), var(--vr-jetons-ty)) !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-value{
   font-family: var(--vr-explorer-font-ui) !important;
   font-size: clamp(13px, 2vw, 24px) !important;
@@ -3524,7 +3463,6 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-value{
   color:#000 !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.35), 0 0 8px rgba(0,0,0,0.12) !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-name{
   font-family: var(--vr-explorer-font-title) !important;
   font-size: clamp(13px, 2vw, 28px) !important;
@@ -3538,7 +3476,6 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-name{
   color:#000 !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.18) !important;
 }
-
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-years{
   font-family: var(--vr-explorer-font-ui) !important;
   font-size: clamp(10px, 1.25vw, 16px) !important;
@@ -3550,7 +3487,6 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-years{
   color:#000 !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.18) !important;
 }
-
 body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-frame{
   background-image: url("../assets/img/gauges/new_world_explorer/g1_frame.webp");
 }
@@ -3558,7 +3494,6 @@ body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(1) .
 body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-preview{
   background-image: url("../assets/img/gauges/new_world_explorer/g1_fill.webp");
 }
-
 body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-frame{
   background-image: url("../assets/img/gauges/new_world_explorer/g2_frame.webp");
 }
@@ -3566,7 +3501,6 @@ body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(2) .
 body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-preview{
   background-image: url("../assets/img/gauges/new_world_explorer/g2_fill.webp");
 }
-
 body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-frame{
   background-image: url("../assets/img/gauges/new_world_explorer/g3_frame.webp");
 }
@@ -3574,7 +3508,6 @@ body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(3) .
 body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-preview{
   background-image: url("../assets/img/gauges/new_world_explorer/g3_fill.webp");
 }
-
 body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-frame{
   background-image: url("../assets/img/gauges/new_world_explorer/g4_frame.webp");
 }
@@ -3582,7 +3515,6 @@ body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(4) .
 body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-preview{
   background-image: url("../assets/img/gauges/new_world_explorer/g4_fill.webp");
 }
-
 body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-frame,
 body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-fill,
 body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
@@ -3590,77 +3522,64 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
   background-position: center;
   background-size: 100% 100%;
 }
-
 #view-game.vr-bg-new_world_explorer{
   --vr-universe-bg: url("../assets/img/backgrounds/explorer_default_gray.webp");
   --vr-universe-card: url("../assets/img/ui/explorer_msg_default_grey.webp");
   --vr-universe-choice: url("../assets/img/ui/explorer_choice_default_grey.webp");
 }
-
 @media (max-width: 480px){
   body.vr-body-game[data-universe="new_world_explorer"]{
     --vr-explorer-hud-w: 92vw;
     --vr-explorer-topbar-w: clamp(210px, 58vw, 300px);
     --vr-explorer-back-size: clamp(40px, 12vw, 60px);
     --vr-explorer-customize-size: clamp(40px, 12vw, 60px);
-
     --vr-topbar-h: calc(
       (var(--vr-explorer-topbar-w) * var(--vr-explorer-topbar-src-h) / var(--vr-explorer-topbar-src-w))
-      + env(safe-area-inset-top)
-      + 2px
+      + env(safe-area-inset-top) + 2px
     );
-
-    --vr-card-w: clamp(320px, 96vw, 760px);
-    --vr-scn-h: clamp(124px, 16.9svh, 208px);
-    --vr-choice-h: clamp(76px, 10.5svh, 122px);
-
-    --vr-stack-gap: 2px;
-    --vr-choices-gap: 3px;
-
+    --vr-card-w: clamp(300px, 92vw, 680px);
+    --vr-scn-h: clamp(130px, 18.0svh, 224px);
+    --vr-choice-h: clamp(80px, 11.0svh, 132px);
+    --vr-game-gap: clamp(1px, 0.06svh, 1px);
+    --vr-stack-gap: clamp(8px, 0.95svh, 16px);
+    --vr-choices-gap: 4px;
     --vr-choice-safe: 82%;
     --vr-choice-inset-top: 15%;
     --vr-choice-inset-right: 8%;
     --vr-choice-inset-bottom: 15%;
     --vr-choice-inset-left: 8%;
-
-    --vr-font-scn-title: clamp(14px, 3.3vw, 22px);
-    --vr-font-scn-text: clamp(11px, 2.55vw, 15px);
-    --vr-font-choice: clamp(11px, 2.65vw, 14px);
-
+    --vr-font-scn-title: clamp(15px, 3.6vw, 24px);
+    --vr-font-scn-text: clamp(13px, 2.85vw, 17px);
+    --vr-font-choice: clamp(12px, 2.9vw, 16px);
     --vr-explorer-topbar-top: calc(6px + env(safe-area-inset-top));
     --vr-explorer-side-btn-top: calc(10px + env(safe-area-inset-top));
     --vr-explorer-side-btn-side: 16px;
-
     --vr-explorer-hud-item-y: -4px;
     --vr-identity-ty: 5px;
     --vr-hud-name-years-gap: 14px;
     --vr-vcoins-ty: 6px;
     --vr-jetons-ty: 6px;
   }
-
   body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-card-title{
     line-height: 1.04 !important;
     max-width: 94% !important;
   }
-
   body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-card-text{
     line-height: 1.12 !important;
     max-width: 94% !important;
   }
-
   body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-choice-label{
     line-height: 1.10 !important;
     max-width: 100% !important;
   }
 }
-
 @media (max-width: 390px), (max-height: 740px){
   body.vr-body-game[data-universe="new_world_explorer"]{
-    --vr-scn-h: clamp(118px, 16.2svh, 196px);
-    --vr-choice-h: clamp(72px, 9.9svh, 112px);
-    --vr-font-scn-title: clamp(13px, 3.1vw, 19px);
-    --vr-font-scn-text: clamp(10.5px, 2.35vw, 13.5px);
-    --vr-font-choice: clamp(10.5px, 2.4vw, 13px);
+    --vr-scn-h: clamp(122px, 16.8svh, 208px);
+    --vr-choice-h: clamp(76px, 10.2svh, 120px);
+    --vr-font-scn-title: clamp(14px, 3.4vw, 21px);
+    --vr-font-scn-text: clamp(12px, 2.65vw, 15.5px);
+    --vr-font-choice: clamp(11.5px, 2.6vw, 14.5px);
     --vr-choice-safe: 80%;
     --vr-choice-inset-top: 14%;
     --vr-choice-inset-right: 7%;
@@ -3668,6 +3587,13 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     --vr-choice-inset-left: 7%;
   }
 }
+
+
+
+
+
+
+
 
 /* ==========================================================
    UNIVERS — VAMPIRE
