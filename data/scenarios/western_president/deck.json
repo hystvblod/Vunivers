@@ -1950,8 +1950,8 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "opinion": 10,
-            "defense": 5
+            "defense": 5,
+            "opinion": 5
           }
         },
         "B": {
@@ -2915,8 +2915,8 @@
         },
         "B": {
           "gaugeDelta": {
-            "economy": 5,
-            "diplomacy": 5
+            "diplomacy": 10,
+            "economy": 5
           }
         },
         "C": {
@@ -2945,8 +2945,8 @@
         },
         "C": {
           "gaugeDelta": {
-            "defense": -5,
-            "opinion": 5
+            "opinion": 5,
+            "defense": -5
           }
         }
       }
@@ -6930,17 +6930,20 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "diplomacy": 10
+            "diplomacy": 10,
+            "defense": -5
           }
         },
         "B": {
           "gaugeDelta": {
+            "defense": 5,
             "diplomacy": -10
           }
         },
         "C": {
           "gaugeDelta": {
-            "diplomacy": 10
+            "diplomacy": 5,
+            "opinion": 5
           }
         }
       }
@@ -7718,17 +7721,20 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "diplomacy": 5
+            "diplomacy": 5,
+            "economy": 5
           }
         },
         "B": {
           "gaugeDelta": {
-            "diplomacy": -5
+            "diplomacy": -10,
+            "economy": -5
           }
         },
         "C": {
           "gaugeDelta": {
-            "diplomacy": 5
+            "economy": -5,
+            "opinion": 5
           }
         }
       }
@@ -8019,17 +8025,20 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "diplomacy": 5
+            "diplomacy": 10,
+            "economy": 5
           }
         },
         "B": {
           "gaugeDelta": {
-            "diplomacy": 5
+            "defense": 5,
+            "economy": -5
           }
         },
         "C": {
           "gaugeDelta": {
-            "diplomacy": 5
+            "diplomacy": 5,
+            "defense": 5
           }
         }
       }
@@ -10078,16 +10087,19 @@
       "choices": {
         "A": {
           "gaugeDelta": {
+            "opinion": 5,
             "economy": -5
           }
         },
         "B": {
           "gaugeDelta": {
-            "economy": -5
+            "economy": -10,
+            "opinion": -5
           }
         },
         "C": {
           "gaugeDelta": {
+            "diplomacy": 5,
             "economy": 5
           }
         }
