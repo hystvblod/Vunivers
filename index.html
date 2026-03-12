@@ -7,246 +7,424 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
-  :root{
-    --vr-bg: radial-gradient(circle at top, #f6e7cf 0, #1b6688 62%, #03279e 100%);
-    --vr-overlay: none;
-  }
+    :root{
+      --vr-bg: radial-gradient(circle at top, #f6e7cf 0, #1b6688 62%, #03279e 100%);
+      --vr-overlay: none;
+    }
 
-  #vr-username-popup{
-    position:fixed;
-    inset:0;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:18px;
-    z-index:9999;
-    background: rgba(0,0,0,.55);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-  }
+    .vr-header{ display:none !important; }
 
-  #vr-username-popup .vr-username-inner{
-    width: min(520px, calc(100vw - 36px));
-    border-radius: 18px;
-    padding: 16px 16px 14px 16px;
-    background: rgba(12, 16, 32, 0.92);
-    border: 1px solid rgba(255,255,255,.12);
-    box-shadow: 0 14px 40px rgba(0,0,0,.35);
-    color: #fff;
-  }
+    .vr-top-actions{
+      display:flex !important;
+      align-items:center !important;
+      justify-content:space-between !important;
+      gap:10px !important;
+      padding: 10px 12px 8px !important;
+      position: relative !important;
+      z-index: 10 !important;
+      width:100% !important;
+    }
 
-  #vr-username-title{
-    margin:0 0 8px 0;
-    font-weight:900;
-    font-size:18px;
-  }
+    .vr-top-slot{
+      flex:1 1 0 !important;
+      display:flex !important;
+      align-items:center !important;
+    }
+    .vr-top-left{ justify-content:flex-start !important; }
+    .vr-top-center{ justify-content:center !important; }
+    .vr-top-right{ justify-content:flex-end !important; }
 
-  #vr-username-desc{
-    margin:0 0 10px 0;
-    opacity:.9;
-    font-size:13px;
-    line-height:1.35;
-  }
+    .vr-icon-button{
+      width:44px !important;
+      height:44px !important;
+      border-radius:999px !important;
+      border: 1px solid rgba(255,255,255,0.28) !important;
+      background: rgba(0,0,0,0.28) !important;
+      backdrop-filter: blur(6px) !important;
+      -webkit-backdrop-filter: blur(6px) !important;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.22) !important;
+      padding:0 !important;
+      display:inline-flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      cursor:pointer !important;
+      text-decoration:none !important;
+      -webkit-tap-highlight-color: transparent !important;
+    }
 
-  #vr-username-rules{
-    margin:8px 0 0 0;
-    opacity:.85;
-    font-size:12px;
-    line-height:1.35;
-  }
+    .vr-icon-button img{
+      width:30px !important;
+      height:30px !important;
+      object-fit:contain !important;
+      display:block !important;
+      pointer-events:none !important;
+      user-select:none !important;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.65)) contrast(1.2) brightness(1.08) !important;
+    }
 
-  #vr-username-row{
-    display:flex;
-    gap:10px;
-    align-items:center;
-  }
+    .vr-main{ padding-top: 12px !important; }
 
-  #vr-username-input{
-    flex:1;
-    padding: 12px 14px;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,.16);
-    background: rgba(0,0,0,.22);
-    color:#fff;
-    outline:none;
-    font-size:14px;
-  }
+    .vr-intro{
+      margin-top: 6px !important;
+      margin-bottom: 12px !important;
+      display:flex !important;
+      justify-content:center !important;
+    }
 
-  #vr-username-save{
-    padding: 12px 14px;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,.18);
-    background: rgba(255,255,255,.12);
-    color:#fff;
-    font-weight:900;
-    cursor:pointer;
-    white-space:nowrap;
-  }
+    .vr-main-logo{
+      margin-top: 0 !important;
+      height: clamp(86px, 11vmin, 132px) !important;
+      max-width: clamp(260px, 72vw, 420px) !important;
+      object-fit: contain !important;
+      filter: drop-shadow(0 12px 30px rgba(0,0,0,0.45)) !important;
+    }
 
-  #vr-username-save:disabled{
-    opacity:.7;
-    cursor:default;
-  }
+    .vr-universe-grid{
+      display:grid !important;
+      grid-template-columns:1fr !important;
+      gap:14px !important;
+    }
 
-  #vr-username-error{
-    margin-top:10px;
-    font-size:13px;
-    opacity:.95;
-    display:none;
-    color: rgba(255, 220, 220, 0.95);
-  }
+    .vr-card{
+      position:relative !important;
+      overflow:hidden !important;
+      width:100% !important;
+      min-height:64px !important;
+      height:64px !important;
+      border-radius:18px !important;
+      cursor:pointer !important;
+      border:0 !important;
+      outline:0 !important;
+      background:transparent !important;
+      box-shadow:none !important;
+      -webkit-tap-highlight-color: transparent !important;
+    }
 
-  .vr-card.vr-card-locked::after{
-    background: rgba(0,0,0,.22) !important;
-    backdrop-filter: blur(3px) !important;
-    -webkit-backdrop-filter: blur(3px) !important;
-  }
+    .vr-card-bg{
+      position:absolute !important;
+      inset:0 !important;
+      background-size:cover !important;
+      background-position:center !important;
+      opacity:1 !important;
+      z-index:0 !important;
+    }
 
-  .vr-card.vr-card-locked .vr-card-bg{
-    filter: blur(1.2px) saturate(.92) !important;
-    transform: scale(1.02);
-  }
+    .vr-card::after{
+      content:"" !important;
+      position:absolute !important;
+      inset:0 !important;
+      background: rgba(0,0,0,.05) !important;
+      backdrop-filter: blur(2px) !important;
+      -webkit-backdrop-filter: blur(2px) !important;
+      pointer-events:none !important;
+      z-index:1 !important;
+    }
 
-  .vr-locked-overlay{
-    position:absolute;
-    inset:0;
-    z-index:6;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    pointer-events:none;
-    user-select:none;
-  }
+    .vr-card::before{
+      content:"" !important;
+      position:absolute !important;
+      inset:0 !important;
+      border-radius:18px !important;
+      border: 1px solid rgba(255,255,255,.08) !important;
+      pointer-events:none !important;
+      z-index:2 !important;
+    }
 
-  .vr-locked-bubble{
-    width:44px;
-    height:44px;
-    border-radius:999px;
-    border: 1px solid rgba(255,255,255,0.28);
-    background: rgba(0,0,0,0.28);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.22);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
+    .vr-card-content{
+      position:relative !important;
+      z-index:3 !important;
+      height:100% !important;
+      display:flex !important;
+      align-items:center !important;
+    }
 
-  .vr-locked-bubble svg{
-    width:24px;
-    height:24px;
-    display:block;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.65)) contrast(1.2) brightness(1.08);
-    opacity:.98;
-  }
+    .vr-card-header-line{
+      width:100% !important;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:space-between !important;
+      gap:12px !important;
+      padding:0 14px !important;
+    }
 
-  #vr-universe-buy-popup{
-    position:fixed;
-    inset:0;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:18px;
-    z-index:10000;
-    background: rgba(0,0,0,.55);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-  }
+    .vr-card-title{
+      margin:0 !important;
+      color:#fff !important;
+      font-weight:900 !important;
+      font-size:16px !important;
+      letter-spacing:.2px !important;
+      line-height:1.1 !important;
+      text-shadow:0 2px 10px rgba(0,0,0,.65) !important;
+    }
 
-  #vr-universe-buy-popup .vr-buy-inner{
-    width: min(520px, calc(100vw - 36px));
-    border-radius: 18px;
-    padding: 16px 16px 14px 16px;
-    background: rgba(12, 16, 32, 0.92);
-    border: 1px solid rgba(255,255,255,.12);
-    box-shadow: 0 14px 40px rgba(0,0,0,.35);
-    color: #fff;
-  }
+    .vr-info-btn{
+      width:40px !important;
+      height:40px !important;
+      border-radius:999px !important;
+      background:rgba(255,255,255,.10) !important;
+      border:1px solid rgba(255,255,255,.18) !important;
+      color:rgba(255,255,255,.95) !important;
+      font-weight:900 !important;
+      font-size:16px !important;
+      display:inline-flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      box-shadow:none !important;
+      user-select:none !important;
+      flex:0 0 auto !important;
+      cursor:pointer !important;
+      position:relative !important;
+      z-index:4 !important;
+      -webkit-tap-highlight-color: transparent !important;
+    }
+    .vr-info-btn:hover{ background:rgba(255,255,255,.14) !important; }
+    .vr-info-btn:active{ transform:scale(.96) !important; }
 
-  #vr-buy-title{
-    margin:0 0 8px 0;
-    font-weight:900;
-    font-size:18px;
-    line-height:1.15;
-    text-align:center;
-  }
+    .vr-tooltip{
+      width: min(360px, calc(100vw - 32px)) !important;
+      max-width: 360px !important;
+      padding: 12px 14px !important;
+      font-size: 13px !important;
+      line-height: 1.35 !important;
+      border-radius: 14px !important;
+    }
 
-  #vr-buy-desc{
-    margin:0 0 12px 0;
-    opacity:.92;
-    font-size:13px;
-    line-height:1.35;
-    text-align:center;
-  }
+    @media (max-width: 520px){
+      .vr-main{ padding-top: 10px !important; }
+      .vr-card{ min-height:60px !important; height:60px !important; }
+      .vr-card-title{ font-size:14px !important; }
+      .vr-info-btn{ width:38px !important; height:38px !important; font-size:15px !important; }
 
-  #vr-buy-actions{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    margin-top:12px;
-  }
+      .vr-icon-button{ width:40px !important; height:40px !important; }
+      .vr-icon-button img{ width:28px !important; height:28px !important; }
 
-  .vr-buy-btn{
-    width:100%;
-    min-height:54px;
-    padding: 12px 14px;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,.18);
-    background: rgba(255,255,255,.12);
-    color:#fff;
-    font-weight:900;
-    cursor:pointer;
-    text-align:center;
-    -webkit-tap-highlight-color: transparent;
-  }
+      .vr-main-logo{
+        width: min(82vw, 580px) !important;
+        height: auto !important;
+        max-height: 140px !important;
+        display: block;
+        margin: 0 auto 16px auto;
+      }
+    }
 
-  .vr-buy-btn.primary{
-    background: rgba(122,167,255,.22);
-    border-color: rgba(122,167,255,.35);
-  }
+    #vr-username-popup{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:9999;
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    #vr-username-popup .vr-username-inner{
+      width: min(520px, calc(100vw - 36px));
+      border-radius: 18px;
+      padding: 16px 16px 14px 16px;
+      background: rgba(12, 16, 32, 0.92);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      color: #fff;
+    }
+    #vr-username-title{ margin:0 0 8px 0; font-weight:900; font-size:18px; }
+    #vr-username-desc{ margin:0 0 10px 0; opacity:.9; font-size:13px; line-height:1.35; }
+    #vr-username-rules{ margin:8px 0 0 0; opacity:.85; font-size:12px; line-height:1.35; }
 
-  .vr-buy-btn.ghost{
-    background: rgba(0,0,0,.18);
-    border-color: rgba(255,255,255,.16);
-    font-weight:800;
-    opacity:.95;
-  }
+    #vr-username-row{ display:flex; gap:10px; align-items:center; }
+    #vr-username-input{
+      flex:1;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.22);
+      color:#fff;
+      outline:none;
+      font-size:14px;
+    }
+    #vr-username-save{
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.12);
+      color:#fff;
+      font-weight:900;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    #vr-username-save:disabled{ opacity:.7; cursor:default; }
+    #vr-username-error{
+      margin-top:10px;
+      font-size:13px;
+      opacity:.95;
+      display:none;
+      color: rgba(255, 220, 220, 0.95);
+    }
 
-  .vr-buy-btn:active{
-    transform: scale(.99);
-  }
+    .vr-card.vr-card-locked::after{
+      background: rgba(0,0,0,.22) !important;
+      backdrop-filter: blur(3px) !important;
+      -webkit-backdrop-filter: blur(3px) !important;
+    }
+    .vr-card.vr-card-locked .vr-card-bg{
+      filter: blur(1.2px) saturate(.92) !important;
+      transform: scale(1.02);
+    }
 
-  .vr-buy-btn-line{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    flex-wrap:wrap;
-    width:100%;
-    text-align:center;
-  }
+    .vr-locked-overlay{
+      position:absolute;
+      inset:0;
+      z-index:6;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      pointer-events:none;
+      user-select:none;
+    }
 
-  .vr-buy-btn-icon{
-    width:18px;
-    height:18px;
-    object-fit:contain;
-    display:block;
-    flex:0 0 auto;
-  }
+    .vr-locked-bubble{
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(0,0,0,0.28);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
 
-  .vr-buy-inline-note{
-    opacity:.92;
-  }
+    .vr-locked-bubble svg{
+      width:24px;
+      height:24px;
+      display:block;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.65)) contrast(1.2) brightness(1.08);
+      opacity:.98;
+    }
 
-  #vr-buy-error{
-    margin-top:10px;
-    font-size:13px;
-    opacity:.95;
-    display:none;
-    color: rgba(255, 220, 220, 0.95);
-    text-align:center;
-  }
-</style>
+    #vr-universe-buy-popup{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:10000;
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    #vr-universe-buy-popup .vr-buy-inner{
+      width: min(520px, calc(100vw - 36px));
+      border-radius: 18px;
+      padding: 16px 16px 14px 16px;
+      background: rgba(12, 16, 32, 0.92);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      color: #fff;
+    }
+
+    #vr-buy-title{
+      margin:0 0 8px 0;
+      font-weight:900;
+      font-size:18px;
+      line-height:1.15;
+      text-align:center;
+    }
+
+    #vr-buy-desc{
+      margin:0 0 12px 0;
+      opacity:.92;
+      font-size:13px;
+      line-height:1.35;
+      text-align:center;
+    }
+
+    #vr-buy-actions{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .vr-buy-btn{
+      width:100%;
+      min-height:54px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.12);
+      color:#fff;
+      font-weight:900;
+      cursor:pointer;
+      text-align:center;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .vr-buy-btn.primary{
+      background: rgba(122,167,255,.22);
+      border-color: rgba(122,167,255,.35);
+    }
+
+    .vr-buy-btn.ghost{
+      background: rgba(0,0,0,.18);
+      border-color: rgba(255,255,255,.16);
+      font-weight:800;
+      opacity:.95;
+    }
+
+    .vr-buy-btn:active{ transform: scale(.99); }
+
+    .vr-buy-btn-line{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      flex-wrap:wrap;
+      width:100%;
+      text-align:center;
+    }
+
+    .vr-buy-btn-icon{
+      width:18px;
+      height:18px;
+      object-fit:contain;
+      display:block;
+      flex:0 0 auto;
+    }
+
+    .vr-buy-inline-note{
+      opacity:.92;
+    }
+
+    #vr-buy-error{
+      margin-top:10px;
+      font-size:13px;
+      opacity:.95;
+      display:none;
+      color: rgba(255, 220, 220, 0.95);
+      text-align:center;
+    }
+    .vr-top-actions-4{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:12px !important;
+  padding:10px 12px 8px !important;
+  width:100% !important;
+}
+
+.vr-top-slot-4{
+  flex:1 1 0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+  </style>
 </head>
 
 <body class="vr-body">
