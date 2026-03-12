@@ -716,7 +716,7 @@
     "choices": {
       "A": "Signer : accélérer l’innovation.",
       "B": "Signer mais protéger les secteurs sensibles.",
-      "C": "Refuser : souveraineté totale."
+      "C": "Refuser pour garder la maîtrise nationale."
     }
   },
   "wp_081": {
@@ -850,7 +850,7 @@
     "body": "Un match amical avec un rival pourrait détendre les relations. Ou déclencher un scandale au premier.",
     "choices": {
       "A": "Organiser le match et encadrer la sécurité.",
-      "B": "Refuser : trop risqué.",
+      "B": "Refuser pour éviter un incident diplomatique.",
       "C": "Faire un événement culturel commun à la place."
     }
   },
@@ -1076,7 +1076,7 @@
     "choices": {
       "A": "Signer : coopération ouverte.",
       "B": "Signer mais classer une partie stratégique.",
-      "C": "Refuser : souveraineté totale."
+      "C": "Refuser pour garder le contrôle spatial."
     }
   },
   "wp_121": {
@@ -1238,7 +1238,7 @@
     "choices": {
       "A": "Autoriser avec normes ultra strictes.",
       "B": "Autoriser pour attirer investissements.",
-      "C": "Refuser : trop risqué."
+      "C": "Refuser pour éviter un accident majeur."
     }
   },
   "wp_139": {
@@ -1715,7 +1715,7 @@
     "choices": {
       "A": "Signer : sécurité renforcée.",
       "B": "Signer mais garder une autonomie nationale forte.",
-      "C": "Refuser : souveraineté totale."
+      "C": "Refuser pour préserver l’autonomie cyber."
     }
   },
   "wp_192": {
@@ -2956,7 +2956,7 @@
     "body": "Un conflit sur les quotas de pêche crée des tensions. Les professionnels veulent trancher vite.",
     "choices": {
       "A": "Négocier un compromis et renforcer les contrôles.",
-      "B": "Mesures de rétorsion commerciales ciblées.",
+      "B": "Riposter avec des mesures commerciales ciblées.",
       "C": "Plan de transition pour réduire la dépendance au secteur."
     }
   },
@@ -2983,7 +2983,7 @@
     "body": "Les terres rares deviennent plus dures à obtenir. Tes industries vertes et tech s’inquiètent.",
     "choices": {
       "A": "Stratégie recyclage et substitution, avec R&D.",
-      "B": "Accords d’approvisionnement long terme diversifiés.",
+      "B": "Sécuriser plusieurs fournisseurs sur plusieurs années.",
       "C": "Développer une filière nationale, coûteuse et longue."
     }
   },
@@ -3136,7 +3136,7 @@
     "body": "Un partenaire accuse tes entreprises de violer des brevets. Il menace de sanctions.",
     "choices": {
       "A": "Renforcer contrôles et coopération judiciaire.",
-      "B": "Contester et préparer une riposte commerciale.",
+      "B": "Contester juridiquement tout en préparant une réponse commerciale.",
       "C": "Négocier un accord de conformité et un calendrier."
     }
   },
@@ -3280,7 +3280,7 @@
     "body": "Une campagne de boycott vise des produits nationaux. Les ventes baissent et l’image chute.",
     "choices": {
       "A": "Diplomatie économique active + communication apaisée.",
-      "B": "Mesures de rétorsion commerciales ciblées.",
+      "B": "Répliquer avec des mesures commerciales ciblées.",
       "C": "Diversifier marchés et financer une montée en gamme."
     }
   },
@@ -3351,7 +3351,7 @@
     "title": "Restriction sur les terres rares",
     "body": "Un fournisseur limite l’exportation de terres rares. La pression monte.",
     "choices": {
-      "A": "Accords d’approvisionnement long terme diversifiés.",
+      "A": "Signer des accords longs avec plusieurs fournisseurs.",
       "B": "Investir massivement recyclage et substitution.",
       "C": "Développer une filière d’extraction/raffinage avec partenaires."
     }
@@ -3378,7 +3378,7 @@
     "title": "Litige de brevets",
     "body": "Un litige de brevets bloque une technologie clé. Les entreprises veulent une solution rapide.",
     "choices": {
-      "A": "Médiation et accord de licence encadré.",
+      "A": "Trouver un accord de licence provisoire et encadré.",
       "B": "Soutenir une alternative nationale en accélérant la R&D.",
       "C": "Porter l’affaire au niveau international et temporiser."
     }
@@ -3569,7 +3569,7 @@
     "choices": {
       "A": "Renégocier pour ouvrir davantage avec protections ciblées.",
       "B": "Durcir l’accord pour protéger les secteurs sensibles.",
-      "C": "Proposer un accord progressif avec clauses de révision."
+      "C": "Avancer par étapes avec révision régulière."
     }
   },
   "wp_398": {
@@ -3595,7 +3595,7 @@
     "body": "Un arbitrage international pénalise un acteur national. La pression monte.",
     "choices": {
       "A": "Respecter la décision et négocier des conditions de sortie.",
-      "B": "Contester et préparer une riposte commerciale.",
+      "B": "Faire appel et préparer des mesures commerciales ciblées.",
       "C": "Soutenir l’entreprise via diplomatie économique et diversification."
     }
   },
@@ -3918,7 +3918,7 @@
     "title": "Litige de propriété industrielle",
     "body": "Un partenaire accuse tes entreprises de violer des brevets. La menace de sanctions commerciales plane.",
     "choices": {
-      "A": "Médiation et accord de licence encadré.",
+      "A": "Lancer une médiation et fixer une licence temporaire.",
       "B": "Contester fermement et préparer contre-mesures.",
       "C": "Créer un cadre bilatéral de règlement rapide des litiges."
     }
@@ -3928,8 +3928,8 @@
     "body": "Les matériaux de construction grimpent. Les chantiers ralentissent et les élus veulent un soutien.",
     "choices": {
       "A": "Aides ciblées sur projets prioritaires et rénovation.",
-      "B": "Relocaliser une partie des filières matériaux via investissement.",
-      "C": "Accords d’achat groupé et normes pour réduire les coûts."
+      "B": "Lancer un plan industriel national sur les matériaux clés.",
+      "C": "Négocier des achats groupés avec plusieurs partenaires."
     }
   },
   "wp_438": {
@@ -3956,7 +3956,7 @@
     "choices": {
       "A": "Renégocier en gardant des lignes rouges claires.",
       "B": "Refuser et préparer un plan de substitution économique.",
-      "C": "Proposer un accord progressif avec clauses de révision."
+      "C": "Proposer un accord en plusieurs étapes avec bilan prévu."
     }
   },
   "wp_441": {
