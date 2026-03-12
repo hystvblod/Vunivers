@@ -3185,7 +3185,7 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-explorer-topbar-src-w: 1000;
   --vr-explorer-topbar-src-h: 275;
   --vr-explorer-hud-src-w: 1024;
-  --vr-explorer-hud-src-h: 269;
+  --vr-explorer-hud-src-h: 300;
   /* ===== Largeurs affichées ===== */
   --vr-explorer-topbar-w: clamp(235px, 53vw, 408px);
   --vr-explorer-hud-w: min(89vw, 930px);
