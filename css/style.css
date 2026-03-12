@@ -1748,7 +1748,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-years{
   font-weight: 700 !important;
   color: rgba(244,237,229,0.95) !important;
   line-height: 1 !important;
-  transform: translateY(2px) !important;
+  transform: translateY(px) !important;
   opacity: 0.95 !important;
   flex: 0 0 auto !important;
 }
@@ -2333,7 +2333,7 @@ body.vr-body-game[data-universe="western_president"]{
   --vr-jetons-bg: transparent;
 
   --vr-identity-tx: 0px;
-  --vr-identity-ty: 14px;
+  --vr-identity-ty: 10px;
   --vr-hud-name-years-gap: 48px;
 }
 
@@ -3158,6 +3158,10 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
 
 
 
+
+
+
+
 /* ========================= EXPLORER ========================= */
 body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-card-w: clamp(280px, 62vw, 720px);
@@ -3219,7 +3223,7 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-explorer-hud-right-w: 17.8%;
   /* ===== Centre nom / année ===== */
   --vr-identity-tx: 0px;
-  --vr-identity-ty: 8px;
+  --vr-identity-ty: 6px;
   --vr-hud-name-years-gap: 18px;
   /* ===== Réglages soldes ===== */
   --vr-vcoins-tx: 4px;
@@ -3570,7 +3574,7 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
     --vr-explorer-side-btn-top: calc(10px + env(safe-area-inset-top));
     --vr-explorer-side-btn-side: 16px;
     --vr-explorer-hud-item-y: -5px;
-    --vr-identity-ty: 5px;
+    --vr-identity-ty: 3px;
     --vr-hud-name-years-gap: 14px;
     --vr-vcoins-ty: 6px;
     --vr-jetons-ty: 6px;
