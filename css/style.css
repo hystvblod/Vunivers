@@ -1833,7 +1833,8 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-text{
 body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
   font-family: "VR_Cormorant", serif !important;
   color: #000 !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
 }
 
 body.vr-body-game[data-universe="heaven_king"]{
@@ -1859,7 +1860,7 @@ body.vr-body-game[data-universe="heaven_king"]{
 
   --vr-font-scn-title: clamp(18px, 2.9vmin, 34px);
   --vr-font-scn-text:  clamp(14px, 2.35vmin, 26px);
-  --vr-font-choice:    clamp(13px, 2.25vmin, 22px);
+  --vr-font-choice:    clamp(15px, 2.45vmin, 24px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 2px);
 
@@ -4311,5 +4312,4 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
     line-height: 1.08 !important;
   }
 }
-
 
