@@ -19,7 +19,7 @@
   },
   "vampire_003": {
     "title": "La querelle des lignées",
-    "body": "Un jeune vampire veut moderniser le clan avec des slides.",
+    "body": "Un architecte propose un repaire ultra-design avec des présentations et de larges fenêtres.",
     "choices": {
       "A": "Arbitrer fermement",
       "B": "Laisser les clans régler ça",
@@ -37,16 +37,16 @@
   },
   "vampire_005": {
     "title": "La carte de fidélité",
-    "body": "Un humain poste une photo où tu n’as pas de reflet. Ça buzz.",
+    "body": "Un humain poste une photo où tu n’as pas de reflet. La photo circule vite.",
     "choices": {
       "A": "Embaucher des experts",
-      "B": "Menacer l’internet",
+      "B": "Faire taire les relais en ligne",
       "C": "Transformer ça en mythe"
     }
   },
   "vampire_006": {
     "title": "La brasserie sanguine",
-    "body": "Le stock de sang se raréfie. Inflation. Oui, même ici.",
+    "body": "Le prix du sang monte, même ici.",
     "choices": {
       "A": "Piller discrètement",
       "B": "Investir légalement",
@@ -1090,7 +1090,7 @@
   },
   "vampire_122": {
     "title": "Le parfum des roses",
-    "body": "C’est joli. C’est aussi une torture douce. Quelqu’un a de l’imagination et de la méchanceté.",
+    "body": "Tu dois rester immobile toute une journée dans un cercueil de transport. C’est aussi une vraie épreuve.",
     "choices": {
       "A": "Faire arracher les roses",
       "B": "Se protéger et s’adapter",
@@ -1792,7 +1792,7 @@
   },
   "vampire_200": {
     "title": "Complot au sein du clan",
-    "body": "Deux anciens se murmurent des plans. Ils t’appellent le manager nocturne.",
+    "body": "Ta nièce propose de moderniser la logistique des cercueils. Ils t’appellent le chef de nuit.",
     "choices": {
       "A": "Les confronter",
       "B": "Les diviser",
@@ -2484,7 +2484,7 @@
     }
   },
   "vampire_277": {
-    "title": "Le frigo qui parle",
+    "title": "Le message du frigo",
     "body": "Le frigo du stock diffuse un message étrange. Le clan jure qu’il te parle.",
     "choices": {
       "A": "L’ouvrir seul",
@@ -2619,7 +2619,7 @@
     }
   },
   "vampire_292": {
-    "title": "La pluie de cendres",
+    "title": "La cendre sur la ville",
     "body": "Une fine cendre tombe sur la ville. Le clan y voit un signe.",
     "choices": {
       "A": "Calmer les rumeurs",
@@ -2826,7 +2826,7 @@
     }
   },
   "vampire_315": {
-    "title": "La fête des voisins",
+    "title": "La nuit des voisins",
     "body": "Les voisins organisent une fête de rue. Beaucoup de lumière. Beaucoup trop.",
     "choices": {
       "A": "Saboter l’électricité",
