@@ -73,7 +73,7 @@
   },
   "mcc_009": {
     "title": "Rumeur de tentative de rachat",
-    "body": "La rumeur d’une tentative de rachat hostile fait grimper l’action. Les investisseurs adorent. Les employés ont peur.",
+    "body": "Une rumeur de rachat hostile fait grimper l’action. Les investisseurs adorent. Les employés paniquent.",
     "choices": {
       "A": "Te défendre: rachat d’actions et plan anti-tentative de rachat.",
       "B": "Négocier en coulisses une fusion \"amicale\".",
@@ -82,7 +82,7 @@
   },
   "mcc_010": {
     "title": "Bonus ou recherche",
-    "body": "Le conseil veut un choix clair: bonus pour les actionnaires ou gros investissement en recherche. Il faut trancher.",
+    "body": "Le conseil exige un choix: bonus aux actionnaires ou gros investissement en recherche. Il faut trancher.",
     "choices": {
       "A": "Bonus pour les actionnaires immédiat.",
       "B": "Investir massivement en recherche, bénéfices plus tard.",
@@ -108,7 +108,7 @@
     }
   },
   "mcc_013": {
-    "title": "Accusation d’écologie surtout pour l’image",
+    "title": "Accusation d’écologie de façade",
     "body": "Ton dernier rapport \"durable\" est attaqué: \"beaux mots, peu de preuves\".",
     "choices": {
       "A": "Publier les chiffres bruts et accepter les critiques.",
@@ -136,7 +136,7 @@
   },
   "mcc_016": {
     "title": "Départ d’un talent clé",
-    "body": "Ton/ta directeur·rice tech annonce son départ. Les équipes paniquent. Les investisseurs surveillent.",
+    "body": "La direction tech annonce son départ. Les équipes paniquent. Les investisseurs surveillent.",
     "choices": {
       "A": "Proposer une contre-offre énorme.",
       "B": "Respecter son choix et promouvoir un talent interne.",
@@ -284,7 +284,7 @@
     "choices": {
       "A": "Financer à fond, pas de demi-mesure.",
       "B": "Stopper: trop risqué.",
-      "C": "Financer par étapes, avec étapes de contrôle stricts."
+      "C": "Financer par étapes, avec des contrôles stricts."
     }
   },
   "mcc_033": {
@@ -334,7 +334,7 @@
   },
   "mcc_038": {
     "title": "Procès de brevet",
-    "body": "Un \"société qui attaque sur des brevets\" te poursuit pour un vieux détail technique.",
+    "body": "Une société spécialisée dans les procès pour brevets te poursuit pour un vieux détail technique.",
     "choices": {
       "A": "Payer pour régler vite.",
       "B": "Se battre en justice jusqu’au bout.",
@@ -487,11 +487,11 @@
   },
   "mcc_055": {
     "title": "Nouvelle taxe locale",
-    "body": "Une région annonce une nouvelle taxe sur ton activité. Le site local pourrait devenir qui perd de l’argent.",
+    "body": "Une région annonce une nouvelle taxe sur ton activité. Le site local risque de devenir déficitaire.",
     "choices": {
       "A": "Négocier avec les autorités, jouer la coopération.",
       "B": "Menacer de partir si la taxe reste.",
-      "C": "Faire payer une partie aux clients le coût sur les prix dans cette région."
+      "C": "Répercuter une partie du coût sur les prix dans cette région."
     }
   },
   "mcc_056": {
@@ -577,7 +577,7 @@
   },
   "mcc_065": {
     "title": "Critique sur la diversité",
-    "body": "On accuse l’entreprise d’être trop homogène en haut de la structure de l’entreprise. Ça commence à se voir.",
+    "body": "On accuse l’entreprise d’être trop homogène dans sa direction. Ça commence à se voir.",
     "choices": {
       "A": "Plan concret: recrutement + promotion + suivi chiffré.",
       "B": "Déclaration vague: \"on fera mieux\".",
@@ -1036,7 +1036,7 @@
   },
   "mcc_116": {
     "title": "Chef visionnaire",
-    "body": "Un VP veut rebaptiser tous les départements avec des noms forts.",
+    "body": "Un cadre veut rebaptiser tous les départements avec des noms forts.",
     "choices": {
       "A": "Stopper: rester sérieux.",
       "B": "Valider: ça motive, peut-être.",
@@ -1198,7 +1198,7 @@
   },
   "mcc_134": {
     "title": "L’ascenseur diplomatique",
-    "body": "Tu restes coincé dans un ascenseur avec une autorité de contrôle… et un investisseur… et un représentant employés.",
+    "body": "Tu restes coincé dans un ascenseur avec une autorité, un investisseur et un représentant des employés.",
     "choices": {
       "A": "Promettre transparence et équilibre à tous.",
       "B": "Rassurer d’abord l’investisseur: \"rentabilité\".",
@@ -1306,7 +1306,7 @@
   },
   "mcc_146": {
     "title": "Stratégie sur serviette",
-    "body": "Un VP arrive avec une stratégie écrite sur une serviette. Il dit que c’est \"agile\".",
+    "body": "Un cadre arrive avec une stratégie écrite sur une serviette.",
     "choices": {
       "A": "Exiger un plan structuré avant d’agir.",
       "B": "Valider: vitesse avant paperasse.",
@@ -1863,7 +1863,7 @@
     }
   },
   "mcc_208": {
-    "title": "Audit surprise de l’autorité de contrôle",
+    "title": "Audit surprise du régulateur",
     "body": "Un courriel arrive: \"contrôle sur site demain\". Ton équipe respect des règles court partout.",
     "choices": {
       "A": "Coopérer à fond et corriger tout ce qui manque.",
@@ -1930,7 +1930,7 @@
     "body": "Une taxe sectorielle est annoncée. Tes investisseurs grognent, tes clients ne veulent pas payer plus.",
     "choices": {
       "A": "Absorber une partie et optimiser les coûts.",
-      "B": "Faire payer une partie aux clients tout sur les prix.",
+      "B": "Répercuter une partie du coût sur les prix.",
       "C": "Adapter l’offre, entrée de gamme pour limiter l’impact."
     }
   },
@@ -2395,11 +2395,11 @@
   },
   "mcc_267": {
     "title": "Débat sur la taxe carbone",
-    "body": "Une taxe carbone est discutée. Tes investisseurs veulent des marges, les autorités de contrôle veulent du sérieux.",
+    "body": "Une taxe carbone est discutée. Les investisseurs veulent des marges. Les autorités veulent du sérieux.",
     "choices": {
       "A": "Accélérer transition + plan chiffré public.",
       "B": "Faire pression pour retarder la taxe.",
-      "C": "Faire payer une partie aux clients le coût sur les prix."
+      "C": "Répercuter une partie du coût sur les prix."
     }
   },
   "mcc_268": {
@@ -2521,7 +2521,7 @@
   },
   "mcc_281": {
     "title": "L’alerte rappel produit",
-    "body": "Une autorité de contrôle signale un risque mineur sur un lot. Pas dangereux, mais ça peut faire mauvais titre.",
+    "body": "Une autorité signale un risque mineur sur un lot. Ce n’est pas grave, mais le titre peut faire mal.",
     "choices": {
       "A": "Rappeler le lot et communiquer clairement.",
       "B": "Attendre: \"c’est mineur\".",
@@ -2622,7 +2622,7 @@
     "title": "Journée de la transparence",
     "body": "Une journée nationale de transparence est lancée.",
     "choices": {
-      "A": "Publier des données clés, prix, impacts, salaires en plages de salaire.",
+      "A": "Publier des données clés sur prix, impacts et plages de salaire.",
       "B": "Faire un post vague et inspirant.",
       "C": "Publier seulement ce qui est obligatoire."
     }
@@ -2907,7 +2907,7 @@
     }
   },
   "mcc_324": {
-    "title": "Loi contre l’écologie surtout pour l’image",
+    "title": "Loi anti écologie de façade",
     "body": "Une loi contre l’écologie surtout pour l’image arrive. L’équipe pub a mis \"éco\" partout.",
     "choices": {
       "A": "Nettoyer les messages + preuves + audits.",
@@ -3934,7 +3934,7 @@
   },
   "mcc_438": {
     "title": "Régulateur veut un emoji",
-    "body": "Une autorité de contrôle demande un emoji officiel de respect des règles pour les applis. Ton designer propose: 🧾✨.",
+    "body": "Une autorité demande un emoji officiel sur le respect des règles dans les applis. Ton designer propose 🧾.",
     "choices": {
       "A": "Coopérer: mettre un symbole clair et neutre.",
       "B": "Refuser: ridicule.",
