@@ -9,7 +9,7 @@
     }
   },
   "hk_002": {
-    "title": "Caprices des généraux démoniaques",
+    "title": "Caprices des généraux",
     "body": "Tes généraux réclament plus de pouvoir et le droit de lancer leurs propres campagnes de terreur.",
     "choices": {
       "A": "Accorde-leur des légions, quitte à perdre le contrôle.",
@@ -18,17 +18,17 @@
     }
   },
   "hk_003": {
-    "title": "Influence sur le monde des vivants",
-    "body": "Une secte infernale veut répandre ton culte à la surface. Certains démons craignent que cela attire l'attention.",
+    "title": "Influence sur les vivants",
+    "body": "Un groupe dévoué veut répandre ton influence sur Terre. Certains démons craignent d’attirer l’attention.",
     "choices": {
       "A": "Encourage le culte, le pouvoir d'abord.",
       "B": "Limite les rituels aux endroits isolés.",
-      "C": "Dissous la secte avant qu'elle ne devienne incontrôlable."
+      "C": "Dissous ce groupe dévoué avant qu'il ne devienne incontrôlable."
     }
   },
   "hk_004": {
-    "title": "Embouteillage aux portes des Enfers",
-    "body": "La file d'attente des nouveaux damnés s'étend sur des kilomètres. Les plaintes s'accumulent, tout comme les dossiers.",
+    "title": "Bouchon aux portes des Enfers",
+    "body": "La file des nouveaux damnés s’étire sans fin. Les plaintes et les dossiers s’accumulent.",
     "choices": {
       "A": "Accélère le tri, quitte à être moins précis.",
       "B": "Renforce les procédures, l'ordre avant tout.",
@@ -45,8 +45,8 @@
     }
   },
   "hk_006": {
-    "title": "Révolte dans un cercle de torture",
-    "body": "Dans un cercle, les damnés ont réussi à désarmer quelques gardes et à retourner les instruments contre eux.",
+    "title": "Révolte dans un cercle",
+    "body": "Dans un cercle, des damnés ont désarmé des gardes et retourné les instruments contre eux.",
     "choices": {
       "A": "Écrase la révolte avec des légions supplémentaires.",
       "B": "Négocie un « allègement » des châtiments en échange du calme.",
@@ -54,8 +54,8 @@
     }
   },
   "hk_007": {
-    "title": "Tentative de coup d'État démoniaque",
-    "body": "Un prince démoniaque rassemble discrètement des troupes et murmure qu'il serait un meilleur roi des Enfers.",
+    "title": "Tentative de coup d'État",
+    "body": "Un prince démoniaque rassemble des troupes et laisse entendre qu’il ferait un meilleur roi.",
     "choices": {
       "A": "Laisse-le croire qu'il a ta bénédiction, puis frappe.",
       "B": "Invite-le officiellement, donne-lui un rôle très surveillé.",
@@ -73,7 +73,7 @@
   },
   "hk_009": {
     "title": "Inspection d'un archange",
-    "body": "Un archange descend observer l'état de ton royaume. Il affirme vouloir vérifier que « l'équilibre » est respecté.",
+    "body": "Un archange vient observer ton royaume. Il dit vouloir vérifier que « l’équilibre » est respecté.",
     "choices": {
       "A": "Masque le chaos et montre un Enfer discipliné.",
       "B": "Affiche fièrement les excès, c'est ton royaume.",
@@ -216,8 +216,8 @@
     }
   },
   "hk_025": {
-    "title": "Chant étrange dans les profondeurs",
-    "body": "Un chant venu des tréfonds résonne. Même les démons les plus anciens sont mal à l'aise.",
+    "title": "Chant étrange en profondeur",
+    "body": "Un chant venu des profondeurs résonne. Même les démons les plus anciens sont mal à l'aise.",
     "choices": {
       "A": "Enquêter personnellement, entouré de tes gardes.",
       "B": "Sceller la zone et déclarer l'accès interdit.",
@@ -257,12 +257,12 @@
     "choices": {
       "A": "Signer un pacte agressif, axé sur la récolte d'âmes.",
       "B": "Négocier un accord très encadré, pour garder le contrôle.",
-      "C": "Mettre en avant l'influence sur Terre, quitte à froisser tes troupes."
+      "C": "Mettre en avant ton influence sur Terre, même contre tes troupes."
     }
   },
   "hk_030": {
     "title": "Forge des armes maudites",
-    "body": "Une forge démoniaque invente un nouveau type d'arme qui rend les légions presque inarrêtables, mais instables.",
+    "body": "Une forge démoniaque crée une arme qui rend les légions presque invincibles, mais instables.",
     "choices": {
       "A": "Armer massivement tes légions avec ces armes.",
       "B": "Réserver ces armes à quelques unités d'élite.",
@@ -325,7 +325,7 @@
   },
   "hk_037": {
     "title": "Exportation de cauchemars",
-    "body": "Un département propose de systématiser l’envoi de cauchemars sur les mortels pour préparer leurs âmes à te rejoindre.",
+    "body": "Un service veut envoyer plus de cauchemars aux mortels pour préparer leurs âmes à te rejoindre.",
     "choices": {
       "A": "Inonder leurs nuits de visions infernales.",
       "B": "Cibler surtout les meneurs et dirigeants humains.",
@@ -334,7 +334,7 @@
   },
   "hk_038": {
     "title": "Révolte des scribes infernaux",
-    "body": "Les scribes qui consignent chaque faute, chaque contrat et chaque supplice se plaignent d'être ignorés malgré leur importance.",
+    "body": "Les scribes qui notent fautes, pactes et supplices se disent ignorés malgré leur rôle essentiel.",
     "choices": {
       "A": "Les récompenser avec plus de pouvoir militaire.",
       "B": "Les intégrer davantage à la chaîne de commandement.",
@@ -343,7 +343,7 @@
   },
   "hk_039": {
     "title": "Temple effondré à la surface",
-    "body": "Un ancien temple dédié à ton culte vient de s’effondrer. Certains mortels y voient un signe, d'autres une simple ruine.",
+    "body": "Un ancien temple de ton culte s’est effondré. Certains y voient un signe, d’autres une simple ruine.",
     "choices": {
       "A": "Renforcer la présence discrète de tes agents dans la zone.",
       "B": "Profiter de l’événement pour attirer de nouvelles âmes.",
@@ -379,7 +379,7 @@
   },
   "hk_043": {
     "title": "Grande éclipse infernale",
-    "body": "Une éclipse rare assombrit à la fois l'Enfer et la surface. Les frontières entre les mondes deviennent plus minces.",
+    "body": "Une rare éclipse assombrit l’Enfer et la surface. Les frontières entre les mondes s’affaiblissent.",
     "choices": {
       "A": "Profiter pour pousser plus d'âmes vers toi.",
       "B": "Renforcer les barrières pour éviter les fuites.",
@@ -387,7 +387,7 @@
     }
   },
   "hk_044": {
-    "title": "Rédaction d'un nouveau Code infernal",
+    "title": "Nouveau code infernal",
     "body": "Tes juristes souhaitent réécrire entièrement le Code des châtiments pour l'adapter aux vices modernes.",
     "choices": {
       "A": "Créer un Code plus impitoyable pour les âmes.",
@@ -396,7 +396,7 @@
     }
   },
   "hk_045": {
-    "title": "Conclave des tentateurs",
+    "title": "Grand conseil des tentateurs",
     "body": "Les tentateurs qui œuvrent à la surface veulent une voix plus importante dans la stratégie globale.",
     "choices": {
       "A": "Leur donner plus de liberté pour récolter des âmes.",
@@ -415,7 +415,7 @@
   },
   "hk_047": {
     "title": "Tour des cris déformés",
-    "body": "Une tour collecte et amplifie les cris des damnés. Récemment, les échos commencent à troubler même tes soldats.",
+    "body": "Une tour amplifie les cris des damnés. Désormais, leurs échos troublent même tes soldats.",
     "choices": {
       "A": "Redirecter ces cris vers la surface pour la hanter.",
       "B": "Isoler la tour dans une zone très contrôlée.",
@@ -424,7 +424,7 @@
   },
   "hk_048": {
     "title": "Marché des illusions damnées",
-    "body": "Un marché propose aux damnés des illusions temporaires de vie passée en échange de longues années supplémentaires de tourment.",
+    "body": "Un marché offre aux damnés de fausses vies passées contre de longues années de tourment en plus.",
     "choices": {
       "A": "Encourager ce marché, il remplit vite tes réserves.",
       "B": "Réguler les contrats pour garder un minimum d'ordre.",
@@ -442,7 +442,7 @@
   },
   "hk_050": {
     "title": "Prophétie gravée dans la lave",
-    "body": "Des inscriptions apparues dans la lave annoncent la chute d'un « roi de flammes » si l'équilibre est trop rompu.",
+    "body": "Des mots dans la lave annoncent la chute d’un « roi de flammes » si l’équilibre se brise trop.",
     "choices": {
       "A": "Ignorer la prophétie et accélérer encore la damnation.",
       "B": "Renforcer l'ordre pour éviter un basculement brutal.",
@@ -450,8 +450,8 @@
     }
   },
   "hk_051": {
-    "title": "Tunnel vers un ancien enfer oublié",
-    "body": "Des mineurs démoniaques ont percé un passage vers une zone très ancienne, abandonnée depuis des millénaires.",
+    "title": "Tunnel vers un ancien enfer",
+    "body": "Des mineurs démoniaques ont ouvert un passage vers une zone très ancienne, abandonnée depuis longtemps.",
     "choices": {
       "A": "Y envoyer aussitôt de nouvelles âmes à exploiter.",
       "B": "L'explorer prudemment avec une force disciplinée.",
@@ -459,8 +459,8 @@
     }
   },
   "hk_052": {
-    "title": "Complot des archivistes de l'ombre",
-    "body": "Les archivistes chargés de consigner les pactes et péchés menacent de révéler les erreurs de gestion de certains généraux.",
+    "title": "Complot des archivistes",
+    "body": "Les archivistes des pactes et péchés menacent de révéler les fautes de gestion de certains généraux.",
     "choices": {
       "A": "Protéger tes secrets en les alimentant en âmes.",
       "B": "Mettre ces archives sous un contrôle militaire strict.",
@@ -468,8 +468,8 @@
     }
   },
   "hk_053": {
-    "title": "Tempêtes d'étincelles sur la surface",
-    "body": "De petites pluies d'étincelles venues d'en bas tombent sur certains lieux de la surface et attisent les conflits.",
+    "title": "Tempêtes d'étincelles en surface",
+    "body": "Des pluies d’étincelles tombent sur la surface et attisent les conflits dans certains lieux.",
     "choices": {
       "A": "Intensifier ces pluies pour récolter plus d'âmes.",
       "B": "Limiter leur fréquence pour ne pas attirer trop d'attention.",
@@ -486,7 +486,7 @@
     }
   },
   "hk_055": {
-    "title": "Carnaval des illusions monstrueuses",
+    "title": "Carnaval des illusions",
     "body": "Des troupes de démons illusionnistes veulent organiser un carnaval permanent dans un cercle particulier.",
     "choices": {
       "A": "En faire un piège à âmes irrésistible.",
@@ -550,11 +550,11 @@
   },
   "hk_062": {
     "title": "Grands jeux infernaux",
-    "body": "Des jeux macabres avec épreuves, paris et défis opposent damnés, démons et parfois quelques âmes de héros.",
+    "body": "Des jeux macabres opposent damnés, démons et parfois quelques âmes de héros.",
     "choices": {
       "A": "Les orienter vers la collecte massive d'âmes.",
       "B": "En faire un outil d'entraînement pour tes légions.",
-      "C": "Les lier à des événements de la surface pour renforcer ton influence."
+      "C": "Les lier à la surface pour renforcer ton influence."
     }
   },
   "hk_063": {
@@ -567,7 +567,7 @@
     }
   },
   "hk_064": {
-    "title": "Bibliothèque des croyances brisées",
+    "title": "Bibliothèque des croyances",
     "body": "Une bibliothèque rassemble les textes, prières et espoirs trahis des mortels.",
     "choices": {
       "A": "En faire une arme psychologique pour torturer davantage.",
@@ -576,7 +576,7 @@
     }
   },
   "hk_065": {
-    "title": "Crise diplomatique avec un autre plan",
+    "title": "Crise avec un autre plan",
     "body": "Un plan voisin, ni totalement céleste ni totalement infernal, proteste contre tes incursions.",
     "choices": {
       "A": "Répondre par une démonstration brutale de force.",
@@ -585,7 +585,7 @@
     }
   },
   "hk_066": {
-    "title": "Concours de l'âme la plus irrécupérable",
+    "title": "Concours des âmes perdues",
     "body": "Tes tortionnaires se disputent le titre de « pire cas » jamais géré.",
     "choices": {
       "A": "Amplifier les châtiments pour récolter plus d'énergie.",
@@ -613,7 +613,7 @@
   },
   "hk_069": {
     "title": "Colosse de cendres",
-    "body": "Un gigantesque colosse de cendres s'est formé dans un désert infernal et attire les regards de tout le royaume.",
+    "body": "Un immense colosse de cendres est apparu dans un désert infernal et attire tous les regards.",
     "choices": {
       "A": "Le nourrir avec des âmes pour en faire une arme.",
       "B": "L'enchaîner et l'intégrer au paysage contrôlé.",
@@ -626,12 +626,12 @@
     "choices": {
       "A": "Exploiter ce chœur pour sonder la masse des âmes.",
       "B": "Canaliser ces murmures dans une structure de conseil.",
-      "C": "Laisser ces voix se répandre vers la surface pour influencer les rêveurs."
+      "C": "Laisser ces voix gagner la surface et toucher les rêveurs."
     }
   },
   "hk_071": {
     "title": "Congrès des pécheurs célèbres",
-    "body": "Plusieurs âmes très célèbres parmi les mortels se retrouvent dans un même cercle et veulent être traitées comme une élite.",
+    "body": "Plusieurs âmes célèbres se retrouvent dans le même cercle et exigent un traitement d’élite.",
     "choices": {
       "A": "Les exhiber comme trophées pour attirer plus d'âmes.",
       "B": "Les soumettre aux mêmes règles que tout le monde.",
@@ -639,7 +639,7 @@
     }
   },
   "hk_072": {
-    "title": "Manœuvres militaires aux frontières",
+    "title": "Manœuvres aux frontières",
     "body": "Tes légions s'entraînent près des limites de ton royaume, ce qui inquiète les plans voisins.",
     "choices": {
       "A": "Transformer l'exercice en vraie démonstration de force.",
@@ -721,7 +721,7 @@
   },
   "hk_081": {
     "title": "École des tentations modernes",
-    "body": "Une école propose de former des démons spécialisés dans les réseaux, les écrans et les addictions contemporaines.",
+    "body": "Une école veut former des démons experts des réseaux, des écrans et des nouvelles addictions.",
     "choices": {
       "A": "Focaliser sur le volume d'âmes récoltées.",
       "B": "Encadrer fortement les méthodes pour garder le contrôle.",
@@ -738,7 +738,7 @@
     }
   },
   "hk_083": {
-    "title": "Apparition d'une faille lumineuse",
+    "title": "Apparition d'une faille",
     "body": "Une faille lumineuse s'ouvre au fond d'un gouffre. Certains y voient une intrusion d'en haut.",
     "choices": {
       "A": "L'inonder d'âmes pour la saturer.",
@@ -810,7 +810,7 @@
     }
   },
   "hk_091": {
-    "title": "Rébellion des surveillants de ponts",
+    "title": "Rébellion des surveillants",
     "body": "Ceux qui gardent les ponts entre cercles réclament davantage de considération.",
     "choices": {
       "A": "Les gaver de nouvelles âmes à filtrer.",
@@ -864,7 +864,7 @@
     }
   },
   "hk_097": {
-    "title": "Conclave des rires déments",
+    "title": "Grand conseil des rires déments",
     "body": "Un groupe de démons ne prend plus rien au sérieux et transforme chaque supplice en farce cruelle.",
     "choices": {
       "A": "Les laisser attirer les âmes par le grotesque.",
@@ -874,7 +874,7 @@
   },
   "hk_098": {
     "title": "Nuit des miroirs inversés",
-    "body": "Des miroirs apparaissent un peu partout, montrant aux damnés ce qu'ils auraient fait s'ils avaient été encore pires.",
+    "body": "Des miroirs montrent aux damnés ce qu’ils auraient pu devenir en étant encore pires.",
     "choices": {
       "A": "Exploiter ces visions pour renforcer la douleur.",
       "B": "Ranger soigneusement ces miroirs dans des salles codifiées.",
@@ -882,7 +882,7 @@
     }
   },
   "hk_099": {
-    "title": "Processus de promotion démoniaque",
+    "title": "Promotion démoniaque",
     "body": "Tes démons demandent un système clair de promotion, avec grades, privilèges et titres.",
     "choices": {
       "A": "Valoriser ceux qui ramènent le plus d'âmes.",
@@ -946,7 +946,7 @@
   },
   "hk_106": {
     "title": "Concours de supplices innovants",
-    "body": "Tes tortionnaires organisent un concours pour inventer de nouveaux supplices adaptés aux vices contemporains.",
+    "body": "Tes tortionnaires lancent un concours pour créer des supplices adaptés aux vices actuels.",
     "choices": {
       "A": "Récompenser les supplices les plus rentables en âmes.",
       "B": "Normaliser chaque technique dans un manuel officiel.",
@@ -999,7 +999,7 @@
     }
   },
   "hk_112": {
-    "title": "Calendrier des grandes abominations",
+    "title": "Calendrier des abominations",
     "body": "On te propose un calendrier des « grandes abominations » à célébrer chaque année infernale.",
     "choices": {
       "A": "Aligner ces dates sur les pics de damnation.",
@@ -1071,7 +1071,7 @@
     }
   },
   "hk_120": {
-    "title": "Conclave des maîtres illusionnistes",
+    "title": "Grand conseil des illusionnistes",
     "body": "Les maîtres illusionnistes exigent un rôle plus important dans ton règne.",
     "choices": {
       "A": "Les laisser manipuler les perceptions de masse.",
@@ -1107,17 +1107,17 @@
     }
   },
   "hk_124": {
-    "title": "Cour des supplices administratifs",
+    "title": "Cour des supplices",
     "body": "Une cour se spécialise dans les supplices bureaucratiques interminables.",
     "choices": {
       "A": "Y envoyer un flux massif de nouvelles âmes.",
       "B": "En faire une pièce maîtresse de ton ordre interne.",
-      "C": "Utiliser ce modèle pour inspirer quelques administrations terrestres."
+      "C": "Utiliser ce modèle pour inspirer des administrations humaines."
     }
   },
   "hk_125": {
     "title": "Délégation des dévots fanatiques",
-    "body": "Des âmes de fanatiques religieux veulent te prouver qu’ils méritent un traitement spécial.",
+    "body": "Des âmes de dévots extrêmes veulent te prouver qu’ils méritent un traitement spécial.",
     "choices": {
       "A": "Les utiliser comme vitrine pour attirer d’autres croyants.",
       "B": "Les intégrer dans un cercle très normé.",
@@ -1134,7 +1134,7 @@
     }
   },
   "hk_127": {
-    "title": "Rumeur d’un traître dans tes rangs",
+    "title": "Traître dans tes rangs",
     "body": "On murmure qu’un démon haut placé prépare un coup d’État.",
     "choices": {
       "A": "Noircir la rumeur en punissant des innocents.",
@@ -1161,7 +1161,7 @@
     }
   },
   "hk_130": {
-    "title": "Banquet des illusions empoisonnées",
+    "title": "Banquet empoisonné",
     "body": "On te propose d’organiser un banquet où tout est illusion… sauf les poisons.",
     "choices": {
       "A": "Y convier un maximum d’âmes influentes.",
@@ -1197,7 +1197,7 @@
     }
   },
   "hk_134": {
-    "title": "Cimetière des promesses non tenues",
+    "title": "Cimetière des promesses",
     "body": "Chaque tombe porte le nom d’une promesse trahie.",
     "choices": {
       "A": "Y enterrer encore plus d’âmes brisées.",
@@ -1261,7 +1261,7 @@
   },
   "hk_141": {
     "title": "Crédit de souffrance",
-    "body": "On te propose un système de « crédit de souffrance » : souffrir plus maintenant pour « alléger » plus tard, en théorie.",
+    "body": "On te propose un « crédit de souffrance » : souffrir plus maintenant pour souffrir moins plus tard.",
     "choices": {
       "A": "Lancer ce système pour récupérer un maximum d’âmes.",
       "B": "L’encadrer par des règles impossibles à satisfaire.",
@@ -1296,7 +1296,7 @@
     }
   },
   "hk_145": {
-    "title": "Serre des plantes carnivores d’âmes",
+    "title": "Serre des plantes d’âmes",
     "body": "Une serre cultive des plantes qui se nourrissent directement de fragments d’âmes.",
     "choices": {
       "A": "Augmenter leur nombre pour accélérer la récolte.",
@@ -1346,7 +1346,7 @@
     "choices": {
       "A": "Mesurer surtout combien d’âmes tu peux absorber.",
       "B": "En faire un outil d’ordre et de contrôle sur les autres plans.",
-      "C": "Utiliser ces informations pour préparer une expansion sur la surface."
+      "C": "Utiliser ces infos pour préparer une expansion sur Terre."
     }
   },
   "hk_151": {
@@ -1431,12 +1431,12 @@
     }
   },
   "hk_160": {
-    "title": "Convocation à un conclave des Enfers",
-    "body": "Plusieurs royaumes infernaux, dont le Nord, convoquent un conclave exceptionnel.",
+    "title": "Convocation au grand conseil",
+    "body": "Plusieurs royaumes infernaux, dont le Nord, convoquent un grand conseil exceptionnel.",
     "choices": {
       "A": "Y envoyer une délégation martiale impressionnante.",
       "B": "N’y aller qu’avec tes plus sévères administrateurs.",
-      "C": "Profiter du conclave pour nouer des alliances sur Terre."
+      "C": "Profiter du grand conseil pour nouer des alliances sur Terre."
     }
   },
   "hk_161": {
@@ -1458,7 +1458,7 @@
     }
   },
   "hk_163": {
-    "title": "Traité sur le partage des hérésies",
+    "title": "Partage des hérésies",
     "body": "Le Nord propose de se partager différentes hérésies et cultes mortels.",
     "choices": {
       "A": "Accepter pour augmenter tes gains rapides en âmes.",
@@ -1490,7 +1490,7 @@
     "choices": {
       "A": "Y envoyer tes tortionnaires les plus inventifs.",
       "B": "N’autoriser la participation que sous un contrôle strict.",
-      "C": "Exiger que certaines techniques soient testées d’abord sur la surface."
+      "C": "Exiger que certaines techniques soient testées sur Terre."
     }
   },
   "hk_167": {
@@ -1503,7 +1503,7 @@
     }
   },
   "hk_168": {
-    "title": "Trafic de bannières blasphématoires",
+    "title": "Trafic de bannières",
     "body": "Des bannières du Nord arborant ton effigie déformée circulent dans tes cercles.",
     "choices": {
       "A": "Laisser circuler pour attiser la haine… et la peur.",
@@ -1539,7 +1539,7 @@
     }
   },
   "hk_172": {
-    "title": "Échange de prisonniers emblématiques",
+    "title": "Échange de prisonniers",
     "body": "Le Nord suggère un échange de prisonniers particulièrement symboliques.",
     "choices": {
       "A": "Accepter pour récupérer des âmes utiles.",
@@ -1557,7 +1557,7 @@
     }
   },
   "hk_174": {
-    "title": "Négociations sur les âmes de héros",
+    "title": "Négociation sur les héros",
     "body": "Le Nord réclame une part de certaines âmes de héros particulièrement rares.",
     "choices": {
       "A": "Céder quelques âmes contre d’autres concessions.",
@@ -1625,11 +1625,11 @@
     "choices": {
       "A": "Accepter pour impressionner davantage les âmes.",
       "B": "Refuser et garder un monopole sur le jugement.",
-      "C": "Utiliser ce tribunal pour condamner des figures humaines symboliques."
+      "C": "Utiliser ce tribunal pour condamner des figures humaines."
     }
   },
   "hk_182": {
-    "title": "Partage de technologies de souffrance",
+    "title": "Partage des machines de torture",
     "body": "Le Nord propose de partager certaines « technologies » d’agonie continue.",
     "choices": {
       "A": "Les adapter pour maximiser ta récolte d’âmes.",
@@ -1643,7 +1643,7 @@
     "choices": {
       "A": "Répondre en brûlant des pans entiers de leurs registres.",
       "B": "Rebâtir tes archives avec une rigueur renforcée.",
-      "C": "Profiter de la confusion pour effacer quelques traces sur la surface."
+      "C": "Profiter du chaos pour effacer des traces sur Terre."
     }
   },
   "hk_184": {
@@ -1652,7 +1652,7 @@
     "choices": {
       "A": "Fusionner pour augmenter l’attrait de vos cultes.",
       "B": "Refuser et protéger jalousement ton image.",
-      "C": "Accepter, mais orienter la fusion surtout vers des sectes terrestres."
+      "C": "Accepter, mais viser surtout des sectes humaines."
     }
   },
   "hk_185": {
@@ -1670,7 +1670,7 @@
     "choices": {
       "A": "Accepter et faire de ce duel un spectacle grandiose.",
       "B": "Refuser, jugeant cela indigne de ton rang.",
-      "C": "Accepter, mais relier les effets du duel à des catastrophes terrestres."
+      "C": "Accepter, mais lier le duel à des catastrophes sur Terre."
     }
   },
   "hk_187": {
@@ -1697,12 +1697,12 @@
     "choices": {
       "A": "Accuser le Nord de provocation et riposter.",
       "B": "Reconnaître des fautes et codifier une meilleure sécurité.",
-      "C": "Utiliser l’incident comme prétexte pour étendre ton influence sur Terre."
+      "C": "Utiliser l’incident pour étendre ton influence sur Terre."
     }
   },
   "hk_190": {
-    "title": "Conclave des flammes croisées",
-    "body": "Un conclave spécial réunit tes flammes et celles du Nord dans une même salle.",
+    "title": "Conseil des flammes croisées",
+    "body": "Un grand conseil spécial réunit tes flammes et celles du Nord dans une même salle.",
     "choices": {
       "A": "Chercher à dominer complètement l’assemblée.",
       "B": "Fixer des règles strictes pour chaque intervention.",
@@ -1715,7 +1715,7 @@
     "choices": {
       "A": "Saisir l’opportunité pour récolter plus d’âmes.",
       "B": "Imposer des limites pour préserver l’équilibre de tes cercles.",
-      "C": "Concentrer certaines catastrophes sur des lieux stratégiques humains."
+      "C": "Concentrer ces catastrophes sur des lieux humains clés."
     }
   },
   "hk_192": {
@@ -1724,7 +1724,7 @@
     "choices": {
       "A": "Accepter pour créer un choc de damnation massive.",
       "B": "Refuser, craignant le désordre total.",
-      "C": "Tester l’unification en premier lieu à travers des cauchemars humains."
+      "C": "Tester l’unification par des cauchemars humains."
     }
   },
   "hk_193": {
@@ -1746,12 +1746,12 @@
     }
   },
   "hk_195": {
-    "title": "Proposition de grand empire commun",
+    "title": "Projet d’empire commun",
     "body": "Certains conseillers suggèrent de créer un empire unique fusionnant ton royaume et le Nord.",
     "choices": {
       "A": "Soutenir l’idée pour augmenter la puissance générale.",
       "B": "La rejeter pour conserver un contrôle absolu de ton ordre.",
-      "C": "Négocier en coulisse pour orienter cet empire surtout vers la surface."
+      "C": "Négocier en secret pour tourner cet empire vers la surface."
     }
   },
   "hk_196": {
@@ -1760,7 +1760,7 @@
     "choices": {
       "A": "Les pousser à travailler davantage pour absorber plus d’âmes.",
       "B": "Simplifier certains accords afin de rétablir un ordre clair.",
-      "C": "Déléguer une partie de la gestion à des institutions humaines corrompues."
+      "C": "Confier une partie de la gestion à des institutions corrompues."
     }
   },
   "hk_197": {
@@ -1769,7 +1769,7 @@
     "choices": {
       "A": "Multiplier les compromis pour maximiser les flux d’âmes.",
       "B": "Limiter ces accords pour éviter la dilution de ton autorité.",
-      "C": "Utiliser certains compromis comme prétexte à des événements sur Terre."
+      "C": "Utiliser ces compromis pour déclencher des événements sur Terre."
     }
   },
   "hk_198": {
@@ -1796,7 +1796,7 @@
     "choices": {
       "A": "Signer et proclamer l’avènement d’un nouvel âge infernal.",
       "B": "Refuser et assumer une longue période de tension organisée.",
-      "C": "Signer tout en préparant une nouvelle ère de corruption sur la surface."
+      "C": "Signer, tout en préparant une nouvelle corruption en surface."
     }
   },
   "hk_201": {
@@ -1805,7 +1805,7 @@
     "choices": {
       "A": "Pousser à l’excès leurs comportements destructeurs.",
       "B": "Encourager quelques mesures d’ordre pour prolonger le chaos.",
-      "C": "Canaliser certaines tempêtes pour tester de nouveaux points de rupture."
+      "C": "Canaliser ces tempêtes pour tester de nouvelles failles."
     }
   },
   "hk_202": {
@@ -1849,7 +1849,7 @@
     "body": "Les réseaux de la surface se transforment en arènes de haine et d’envie.",
     "choices": {
       "A": "Amplifier les comparaisons toxiques et humiliations publiques.",
-      "B": "Soutenir des règles et modérations qui rassurent, sans agir en profondeur.",
+      "B": "Soutenir des règles rassurantes, sans agir vraiment.",
       "C": "Utiliser ces plateformes pour diffuser de nouveaux cultes déguisés."
     }
   },
@@ -1930,7 +1930,7 @@
     "body": "Jamais les mortels n’ont été autant connectés… et autant isolés.",
     "choices": {
       "A": "Les pousser à combler le vide par des excès destructeurs.",
-      "B": "Encourager quelques structures collectives pour garder un ordre social.",
+      "B": "Encourager quelques structures pour garder l’ordre social.",
       "C": "Faire naître des communautés fermées, quasi-sectaires."
     }
   },
@@ -1939,7 +1939,7 @@
     "body": "Des quartiers entiers se soulèvent, brûlent et se replient sur eux-mêmes.",
     "choices": {
       "A": "Enflammer la colère jusqu’au point de non-retour.",
-      "B": "Inspirer des forces de l’ordre à réagir selon des protocoles stricts.",
+      "B": "Inspirer les forces de l’ordre à suivre des protocoles stricts.",
       "C": "Faire émerger, au milieu du chaos, de nouveaux chefs violents."
     }
   },
@@ -1966,7 +1966,7 @@
     "body": "Les marchés s’effondrent, les richesses se volatilisent, la peur monte.",
     "choices": {
       "A": "Pousser les mortels à tout miser sur le gain immédiat.",
-      "B": "Inspirer des plans de sauvetage compliqués, conditionnés et inégalitaires.",
+      "B": "Inspirer des plans de sauvetage compliqués et inégaux.",
       "C": "Utiliser ce chaos pour lier certains puissants à tes pactes."
     }
   },
@@ -1994,7 +1994,7 @@
     "choices": {
       "A": "Pousser les mortels à se désensibiliser complètement.",
       "B": "Soutenir des règles strictes sur les images, peu appliquées.",
-      "C": "Utiliser ce spectacle pour recruter des âmes fascinées par la cruauté."
+      "C": "Utiliser ce spectacle pour recruter des âmes cruelles."
     }
   },
   "hk_223": {
@@ -2020,8 +2020,8 @@
     "body": "La surface perd ses espèces, ses forêts, ses équilibres anciens.",
     "choices": {
       "A": "Encourager le sentiment de fatalité et de « trop tard ».",
-      "B": "Soutenir des politiques de protection très encadrées, mais insuffisantes.",
-      "C": "Transformer cette perte en carburant pour des mouvements extrémistes."
+      "B": "Soutenir des protections très encadrées, mais insuffisantes.",
+      "C": "Transformer cette perte en force pour des mouvements extrêmes."
     }
   },
   "hk_226": {
@@ -2048,7 +2048,7 @@
     "choices": {
       "A": "Nourrir les rancœurs, les non-dits et les ruptures dures.",
       "B": "Promouvoir des modèles familiaux rigides, parfois étouffants.",
-      "C": "Utiliser ces fractures pour recruter des âmes en manque d’appartenance."
+      "C": "Utiliser ces fractures pour recruter des âmes isolées."
     }
   },
   "hk_229": {
@@ -2056,7 +2056,7 @@
     "body": "Des entreprises promettent de recréer ou d’effacer des souvenirs.",
     "choices": {
       "A": "Pousser les mortels à fuir la réalité dans ces illusions.",
-      "B": "Encadrer ces pratiques par des lois complexes, facilement contournées.",
+      "B": "Encadrer ces pratiques par des lois complexes mais faibles.",
       "C": "Insérer dans ces souvenirs des traces de ton influence."
     }
   },
@@ -2066,7 +2066,7 @@
     "choices": {
       "A": "Transformer ce désespoir en apathie totale et en vices solitaires.",
       "B": "Laisser surgir quelques projets communs, strictement encadrés.",
-      "C": "Proposer, via des prophètes choisis, un « salut » qui mène à tes bras."
+      "C": "Offrir, via des prophètes, un « salut » qui mène à toi."
     }
   },
   "hk_231": {
@@ -2079,7 +2079,7 @@
     }
   },
   "hk_232": {
-    "title": "Course aux ressources extraterrestres",
+    "title": "Course aux ressources spatiales",
     "body": "Les mortels convoitent les astéroïdes, les lunes, tout ce qui peut être exploité.",
     "choices": {
       "A": "Attiser la soif de profit au mépris de toute prudence.",
@@ -2101,8 +2101,8 @@
     "body": "Une technologie propose d’immortaliser la conscience des mortels dans des avatars numériques.",
     "choices": {
       "A": "Encourager cette fuite hors de la mort réelle.",
-      "B": "Encadrer l’accès à cette pseudo-immortalité par des protocoles stricts.",
-      "C": "Glisser des failles qui laissent filtrer ton influence dans ces avatars."
+      "B": "Encadrer cette pseudo-immortalité par des règles strictes.",
+      "C": "Glisser des failles pour faire passer ton influence."
     }
   },
   "hk_235": {
@@ -2120,12 +2120,12 @@
     "choices": {
       "A": "Laisser ces expériences proliférer dans le secret.",
       "B": "Laisser fuiter certaines infos pour imposer des lois spectaculaires.",
-      "C": "Marquer certains clones d’un sceau que seuls tes serviteurs reconnaissent."
+      "C": "Marquer certains clones d’un sceau connu de tes serviteurs."
     }
   },
   "hk_237": {
     "title": "Trafic de remèdes maudits",
-    "body": "Un trafic de remèdes rares et de chairs maudites prospère dans l’ombre.",
+    "body": "Un trafic de remèdes rares et de produits maudits prospère dans l’ombre.",
     "choices": {
       "A": "Encourager le cynisme : tout a un prix, même le corps.",
       "B": "Soutenir des opérations de police très visibles mais peu profondes.",
@@ -2146,17 +2146,17 @@
     "body": "Des mortels paient pour visiter des zones sinistrées, des champs de bataille, des lieux de drame.",
     "choices": {
       "A": "Banalis­er ce tourisme jusqu’à en faire un divertissement de masse.",
-      "B": "Encadrer ces pratiques avec des règles morales strictes mais symboliques.",
-      "C": "Attirer ces visiteurs vers des expériences qui brisent leur empathie."
+      "B": "Encadrer ces pratiques par des règles strictes mais symboliques.",
+      "C": "Attirer ces visiteurs vers des expériences qui cassent l’empathie."
     }
   },
   "hk_240": {
-    "title": "Industrie de la mémoire des morts",
+    "title": "Mémoire marchande des morts",
     "body": "Des entreprises gèrent les profils et messages des défunts comme une ressource qu’on peut vendre.",
     "choices": {
       "A": "Monétiser au maximum la présence des morts dans la vie des vivants.",
       "B": "Instaurer quelques limites légales sur l’utilisation de ces données.",
-      "C": "Introduire dans ces archives des messages qui orientent les vivants vers toi."
+      "C": "Glisser dans ces archives des messages qui mènent à toi."
     }
   },
   "hk_241": {
@@ -2164,7 +2164,7 @@
     "body": "Des dirigeants désignent systématiquement des groupes comme responsables de tout.",
     "choices": {
       "A": "Amplifier cette stratégie jusqu’à la persécution ouverte.",
-      "B": "Encourager des commissions officielles pour donner une forme d’ordre.",
+      "B": "Encourager des commissions pour garder une forme d’ordre.",
       "C": "Transformer ces tensions en conflits quasi religieux."
     }
   },
@@ -2174,7 +2174,7 @@
     "choices": {
       "A": "Encourager les jugements expéditifs et spectaculaires.",
       "B": "Imposer des règles très strictes, souvent détournées.",
-      "C": "Utiliser ces spectacles pour écraser tes ennemis et élever tes pions."
+      "C": "Utiliser ces spectacles pour écraser tes ennemis."
     }
   },
   "hk_243": {
@@ -2190,7 +2190,7 @@
     "title": "Brouillard chimique",
     "body": "La surface s'enfonce dans un brouillard de produits qui endorment et dérèglent.",
     "choices": {
-      "A": "Normaliser l’usage quotidien pour éviter toute vraie réflexion sur soi.",
+      "A": "Rendre cet usage banal pour éviter toute vraie réflexion.",
       "B": "Encadrer certains produits, en laissant prospérer les autres.",
       "C": "Lier certains réseaux de distribution à tes serviteurs."
     }
@@ -2199,7 +2199,7 @@
     "title": "Colonisation des rêves",
     "body": "La publicité, les écrans et la fatigue envahissent même le sommeil des mortels.",
     "choices": {
-      "A": "Brouiller définitivement la frontière entre rêve et pression sociale.",
+      "A": "Brouiller la frontière entre rêve et pression sociale.",
       "B": "Laisser émerger des discours sur le « repos sacré », peu suivis.",
       "C": "Utiliser ces rêves pour implanter des symboles qui mènent à toi."
     }
@@ -2210,14 +2210,14 @@
     "choices": {
       "A": "Encourager le zapping spirituel permanent.",
       "B": "Encadrer ces pratiques dans des institutions respectables.",
-      "C": "Déguiser certains de tes rituels en ateliers de « développement personnel »."
+      "C": "Cacher certains rituels sous du « développement personnel »."
     }
   },
   "hk_247": {
     "title": "Sacralisation de la célébrité",
     "body": "Être connu devient plus important que tout ce que l’on est vraiment.",
     "choices": {
-      "A": "Pousser les mortels à tout sacrifier pour quelques instants de gloire.",
+      "A": "Pousser les mortels à tout sacrifier pour un peu de gloire.",
       "B": "Créer des codes moraux autour de la « bonne » célébrité.",
       "C": "Utiliser cette soif pour proposer des pactes rapides et dangereux."
     }
@@ -2236,7 +2236,7 @@
     "body": "La cruauté mentale devient banale dans la vie quotidienne.",
     "choices": {
       "A": "Faire de cette violence silencieuse une norme culturelle.",
-      "B": "Imposer des chartes et procédures qui donnent une illusion de protection.",
+      "B": "Imposer des chartes qui donnent une illusion de protection.",
       "C": "Transformer certaines victimes en bourreaux, puis en serviteurs."
     }
   },
@@ -2251,7 +2251,7 @@
   },
   "hk_251": {
     "title": "Pluie de plumes",
-    "body": "Une pluie de plumes dorées tombe jusque dans tes cercles. Les damnés lèvent les yeux : le Paradis se manifeste.",
+    "body": "Une pluie de plumes dorées tombe dans tes cercles. Les damnés comprennent que le Paradis se montre.",
     "choices": {
       "A": "Profaner ces plumes en les brûlant sous les cris des âmes.",
       "B": "Les consigner comme pièces à conviction dans tes archives.",
@@ -2260,7 +2260,7 @@
   },
   "hk_252": {
     "title": "Messager aux ailes trop blanches",
-    "body": "Un ange messager descend avec un parchemin : le Paradis exige une renégociation des frontières.",
+    "body": "Un ange messager descend avec un parchemin : le Paradis exige un nouvel accord des frontières.",
     "choices": {
       "A": "Déchirer le parchemin sous ses yeux et affirmer ta souveraineté.",
       "B": "Accepter un protocole de discussion extrêmement rigide.",
@@ -2273,7 +2273,7 @@
     "choices": {
       "A": "Clamer que toute ambiguïté se règle en ta faveur.",
       "B": "Créer un tribunal d’arbitrage aux règles infernalement complexes.",
-      "C": "Laisser quelques cas se perdre dans des miracles ou visions sur Terre."
+      "C": "Laisser certains cas se perdre dans des visions sur Terre."
     }
   },
   "hk_254": {
@@ -2282,7 +2282,7 @@
     "choices": {
       "A": "Couvrir ces chants par un vacarme de lamentations.",
       "B": "Les analyser et les classer méticuleusement dans tes registres.",
-      "C": "Laisser filtrer ces mélodies dans les rêves des vivants, mais déformées."
+      "C": "Laisser ces mélodies entrer dans les rêves, mais déformées."
     }
   },
   "hk_255": {
@@ -2325,7 +2325,7 @@
     "title": "Âme fugueuse",
     "body": "Une âme promise au Paradis a réussi à glisser dans tes cercles par ruse.",
     "choices": {
-      "A": "La garder comme trophée, au risque de provoquer un incident diplomatique.",
+      "A": "La garder comme trophée, malgré le risque diplomatique.",
       "B": "La renvoyer avec un rapport détaillé prouvant ta bonne foi.",
       "C": "La renvoyer seulement après lui avoir montré l’Enfer… et la surface."
     }
@@ -2336,7 +2336,7 @@
     "choices": {
       "A": "Te vanter auprès des anges d’avoir brisé leur petit spectacle.",
       "B": "Consigner cet échec céleste dans tes archives pour plus tard.",
-      "C": "Laisser des rumeurs de « miracle raté » empoisonner la foi des mortels."
+      "C": "Laisser la rumeur d’un miracle raté empoisonner la foi."
     }
   },
   "hk_261": {
@@ -2345,7 +2345,7 @@
     "choices": {
       "A": "Multiplier les faux prophètes pour diluer toute vraie lumière.",
       "B": "Encadrer leurs mouvements par des règles infernales de contrôle.",
-      "C": "Laisser quelques élus sincères, mais sous forte pression des ténèbres."
+      "C": "Laisser quelques élus sincères, sous forte pression des ténèbres."
     }
   },
   "hk_262": {
@@ -2363,7 +2363,7 @@
     "choices": {
       "A": "Refuser : tu ne rends aucune âme en cours de route.",
       "B": "Accepter, mais imposer des règles strictes de tri.",
-      "C": "Utiliser ce purgatoire pour influencer les vivants à travers des visions."
+      "C": "Utiliser ce purgatoire pour influencer les vivants en vision."
     }
   },
   "hk_264": {
@@ -2498,15 +2498,15 @@
     "choices": {
       "A": "Dérégler le couloir pour qu’il débouche davantage chez toi.",
       "B": "Fixer des règles strictes sur l’usage de ce passage.",
-      "C": "Projeter ce choix dans les rêves de certaines personnes encore vivantes."
+      "C": "Projeter ce choix dans les rêves de certains vivants."
     }
   },
   "hk_279": {
-    "title": "Dispute sur les prières d’enfants",
+    "title": "Dispute sur les prières",
     "body": "Le Paradis affirme que bien des prières de mortels doivent lui revenir.",
     "choices": {
       "A": "Contester : certains jeunes mortels peuvent déjà te revenir.",
-      "B": "Concéder officiellement… tout en jouant sur les adultes qui les entourent.",
+      "B": "Concéder officiellement, tout en influençant les adultes.",
       "C": "Transformer certaines prières en cauchemars qui marqueront leur vie."
     }
   },
@@ -2542,7 +2542,7 @@
     "body": "Une apparition visible par des foules entières est interprétée comme un signe du Paradis.",
     "choices": {
       "A": "Provoquer aussitôt un scandale ou un drame qui en détourne le sens.",
-      "B": "Laisser les institutions religieuses se déchirer sur la signification.",
+      "B": "Laisser les institutions religieuses se déchirer sur le sens.",
       "C": "Inspirer des interprétations contradictoires menant à la division."
     }
   },
@@ -2561,7 +2561,7 @@
     "choices": {
       "A": "En faire une mode éphémère ridiculisée rapidement.",
       "B": "Laisser quelques communautés tenir bon, pour maintenir un équilibre.",
-      "C": "Détourner cette compassion vers des causes destructrices à long terme."
+      "C": "Détourner cette compassion vers des causes destructrices."
     }
   },
   "hk_286": {
@@ -2597,7 +2597,7 @@
     "choices": {
       "A": "Réclamer toutes les bêtes féroces et cruelles pour toi.",
       "B": "Proposer une zone d’archivage neutre très ordonnée.",
-      "C": "Laisser les vivants débattre, créer des religions centrées sur les animaux."
+      "C": "Laisser les vivants créer des religions autour des animaux."
     }
   },
   "hk_290": {
@@ -2606,7 +2606,7 @@
     "choices": {
       "A": "Tenter de l’éteindre par la force brute.",
       "B": "Le délimiter, l’inventorier, et l’intégrer à ton ordre.",
-      "C": "En laisser les reflets apparaître sur certains lieux sacrés terrestres."
+      "C": "En faire apparaître les reflets sur des lieux sacrés."
     }
   },
   "hk_291": {
@@ -2633,16 +2633,16 @@
     "choices": {
       "A": "Pousser les mortels à choisir l’interprétation la plus destructrice.",
       "B": "Classer la prophétie parmi les dossiers à surveiller.",
-      "C": "Faire émerger des sectes rivales se réclamant chacune du « vrai » sens."
+      "C": "Faire naître des sectes rivales autour du « vrai » sens."
     }
   },
   "hk_294": {
-    "title": "Échange de liturgies",
-    "body": "On propose un échange d’études sur les liturgies : prières d’en haut, rituels d’en bas.",
+    "title": "Échange de rituel officiels",
+    "body": "On propose un échange d’études sur les rituel officiels : prières d’en haut, rituels d’en bas.",
     "choices": {
       "A": "Refuser de laisser tes secrets remonter.",
       "B": "Accepter mais censurer tout ce qui te mettrait trop en cause.",
-      "C": "Transformer certains de tes rituels en pratiques populaires sur Terre."
+      "C": "Transformer certains rituels en pratiques populaires."
     }
   },
   "hk_295": {
@@ -2651,7 +2651,7 @@
     "choices": {
       "A": "Saboter le projet dès le début.",
       "B": "Exiger un protocole si strict que rien ne sera spontané.",
-      "C": "Laisser l’idée descendre sur Terre pour inspirer une célébration ambiguë."
+      "C": "Laisser l’idée gagner Terre et nourrir une fête ambiguë."
     }
   },
   "hk_296": {
@@ -2660,7 +2660,7 @@
     "choices": {
       "A": "La torturer jusqu’à briser cet attachement.",
       "B": "L’étudier comme cas d’école dans ton administration.",
-      "C": "Laisser son histoire filtrer jusqu’à quelques mortels… en l’exagérant."
+      "C": "Laisser son histoire atteindre des mortels, en l’exagérant."
     }
   },
   "hk_297": {
@@ -2677,7 +2677,7 @@
     "body": "Un ange est envoyé pour punir certaines de tes « exagérations » sur Terre.",
     "choices": {
       "A": "Le défier ouvertement par des prodiges infernaux.",
-      "B": "Le laisser frapper quelques cibles secondaires pour calmer le Paradis.",
+      "B": "Le laisser frapper des cibles secondaires pour calmer le Paradis.",
       "C": "Le pousser à aller trop loin, retournant les mortels contre lui."
     }
   },
@@ -2894,7 +2894,7 @@
     "choices": {
       "A": "Forcer la production en recyclant tout ce qui traîne.",
       "B": "Planifier une refonte complète des ateliers.",
-      "C": "Faire venir des idées de machines en inspirant des inventeurs humains."
+      "C": "Inspirer des inventeurs humains à créer ces machines."
     }
   },
   "hk_323": {
@@ -2911,8 +2911,8 @@
     "body": "Un rituel oublié se réactive spontanément dans un coin reculé de l’Enfer.",
     "choices": {
       "A": "Le laisser se dérouler et observer.",
-      "B": "L’intégrer à ton système après l’avoir décortiqué.",
-      "C": "Faire remonter des fragments de ce rituel dans des grimoires humains."
+      "B": "L’intégrer à ton système après l’avoir analysé.",
+      "C": "Faire remonter ce rituel dans des grimoires humains."
     }
   },
   "hk_325": {
@@ -2965,8 +2965,8 @@
     "body": "Un petit culte de damnés vénère tes cendres comme des reliques.",
     "choices": {
       "A": "Les encourager : la vénération est toujours utile.",
-      "B": "Intégrer ce culte dans la liturgie officielle.",
-      "C": "Laisser cette idée séduire quelques humains fascinés par la destruction."
+      "B": "Intégrer ce culte dans le rituel officiel.",
+      "C": "Laisser cette idée séduire des humains attirés par la destruction."
     }
   },
   "hk_331": {
@@ -3002,7 +3002,7 @@
     "choices": {
       "A": "Ridiculiser cette manie et la punir.",
       "B": "Organiser ces collections dans un musée infernal ordonné.",
-      "C": "Faire en sorte que des humains ressentent un manque sans savoir pourquoi."
+      "C": "Faire sentir à des humains un manque sans cause visible."
     }
   },
   "hk_335": {
@@ -3064,7 +3064,7 @@
     "body": "Des horloges géantes apparaissent, marquant non pas le temps, mais la souffrance accumulée.",
     "choices": {
       "A": "Les installer partout pour écraser les âmes.",
-      "B": "Les réserver à des lieux stratégiques pour garder un ordre de terreur.",
+      "B": "Les garder pour des lieux clés afin de maintenir la terreur.",
       "C": "Faire ressentir leur tic-tac dans la tête de certains vivants."
     }
   },
@@ -3146,7 +3146,7 @@
     "choices": {
       "A": "Ignorer la fissure et faire comme si de rien n’était.",
       "B": "L’étudier avec tes experts pour renforcer ton ordre.",
-      "C": "Laisser certains démons et quelques humains deviner que même toi, tu changes."
+      "C": "Laisser certains comprendre que même toi, tu changes."
     }
   },
   "hk_351": {
@@ -3164,16 +3164,16 @@
     "choices": {
       "A": "Les exhiber pour humilier encore leurs âmes.",
       "B": "Classer chaque statue par type de chute dans tes registres.",
-      "C": "Laisser quelques statues se manifester en rêves aux dirigeants actuels."
+      "C": "Laisser ces statues apparaître en rêve aux dirigeants."
     }
   },
   "hk_353": {
     "title": "Mur des serments brisés",
     "body": "Un mur infini porte chaque serment jamais tenu, gravé dans la pierre noire.",
     "choices": {
-      "A": "Y coller de force tous les nouveaux parjures.",
+      "A": "Y coller de force tous ceux qui brisent leurs serments.",
       "B": "Organiser les serments par catégories dans une stricte hiérarchie.",
-      "C": "Projeter ce mur dans les cauchemars de ceux qui s'apprêtent à mentir."
+      "C": "Projeter ce mur dans les cauchemars des futurs menteurs."
     }
   },
   "hk_354": {
@@ -3200,7 +3200,7 @@
     "choices": {
       "A": "Les donner aux damnés pour les rendre fous à force d'essayer.",
       "B": "Créer une section spécialisée pour les décrypter lentement.",
-      "C": "Laisser des fragments de ces textes s'infiltrer dans la littérature humaine."
+      "C": "Laisser des fragments de ces textes entrer dans la littérature."
     }
   },
   "hk_357": {
@@ -3225,7 +3225,7 @@
     "title": "Laboratoire des illusions",
     "body": "Un laboratoire expérimente des illusions capables de remplacer la réalité pour les damnés.",
     "choices": {
-      "A": "Plonger certaines âmes dans une fausse vie parfaite avant de tout briser.",
+      "A": "Plonger des âmes dans une fausse vie parfaite avant la chute.",
       "B": "Cataloguer chaque illusion comme un outil d'ordre.",
       "C": "Tester ces illusions dans les rêves de personnes clés sur Terre."
     }
@@ -3245,7 +3245,7 @@
     "choices": {
       "A": "Les laisser se perdre, tant que les âmes souffrent.",
       "B": "Contrôler chaque carte pour structurer encore davantage l'Enfer.",
-      "C": "Laisser quelques fragments de ces cartes arriver entre des mains humaines."
+      "C": "Laisser des fragments de ces cartes atteindre des humains."
     }
   },
   "hk_362": {
@@ -3299,7 +3299,7 @@
     "choices": {
       "A": "Les laisser souffler le désespoir et la paranoïa.",
       "B": "Rédiger un protocole pour ces armes conscientes.",
-      "C": "Projeter ces chuchotements dans les pensées de certains criminels humains."
+      "C": "Glisser ces chuchotements dans l’esprit de criminels humains."
     }
   },
   "hk_368": {
@@ -3308,7 +3308,7 @@
     "choices": {
       "A": "Forcer les âmes à revivre éternellement leurs choix manqués.",
       "B": "Indexer ces décisions pour affiner tes futures manipulations.",
-      "C": "Laisser quelques visions de cette salle hanter des dirigeants encore vivants."
+      "C": "Laisser cette salle hanter des dirigeants vivants."
     }
   },
   "hk_369": {
@@ -3326,7 +3326,7 @@
     "choices": {
       "A": "Y ajouter un écho déformé qui broie l'espoir.",
       "B": "Noter les phrases les plus utiles pour tes archives.",
-      "C": "Faire entendre ce chœur dans le silence de certaines chambres d'hôpital."
+      "C": "Faire entendre ce chœur dans certaines chambres d’hôpital."
     }
   },
   "hk_371": {
@@ -3344,7 +3344,7 @@
     "choices": {
       "A": "Y jeter les plus orgueilleux jusqu'à ce qu'ils craquent.",
       "B": "Consigner chaque aveu dans un fichier méticuleux.",
-      "C": "Faire résonner ces confessions dans l'esprit de certains vivants fragiles."
+      "C": "Faire résonner ces confessions chez des vivants fragiles."
     }
   },
   "hk_373": {
@@ -3371,7 +3371,7 @@
     "choices": {
       "A": "Amplifier le bruit pour que les damnés n'entendent plus que ça.",
       "B": "Relier chaque sonnerie à un dossier dans ton administration.",
-      "C": "Faire ressentir un malaise aux traîtres humains à chaque coup de cloche."
+      "C": "Faire sentir un malaise aux traîtres à chaque cloche."
     }
   },
   "hk_376": {
@@ -3380,7 +3380,7 @@
     "choices": {
       "A": "Y abandonner certaines âmes jusqu'à ce qu'elles se perdent.",
       "B": "Nommer un archiviste suprême pour tout organiser.",
-      "C": "Laisser des fragments de dossiers se manifester dans des enquêtes humaines."
+      "C": "Laisser des fragments de dossiers surgir dans des enquêtes."
     }
   },
   "hk_377": {
@@ -3398,7 +3398,7 @@
     "choices": {
       "A": "Laisser les plus forts dévorer les plus faibles.",
       "B": "Établir des règles, des équipes et des classements.",
-      "C": "Provoquer des copies de ces jeux dans la société du spectacle humaine."
+      "C": "Faire naître des copies de ces jeux dans le spectacle humain."
     }
   },
   "hk_379": {
@@ -3533,7 +3533,7 @@
     "choices": {
       "A": "Les pousser à une efficacité inhumaine.",
       "B": "Intégrer leurs bilans à ta stratégie globale.",
-      "C": "Inoculer cette obsession du chiffre dans certaines économies humaines."
+      "C": "Injecter cette obsession du chiffre dans certaines économies."
     }
   },
   "hk_394": {
@@ -3578,7 +3578,7 @@
     "choices": {
       "A": "Le faire sonner souvent pour affirmer ta présence.",
       "B": "Le réserver aux moments les plus critiques.",
-      "C": "Faire ressentir ce son comme une angoisse diffuse chez certains mortels."
+      "C": "Faire ressentir ce son comme une angoisse chez des mortels."
     }
   },
   "hk_399": {

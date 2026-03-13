@@ -725,17 +725,19 @@ async _getUid() {
 
       return await queueRemote(async () => {
         const me = await window.VRRemoteStore.getMe();
-        const cosmetics = await window.VRRemoteStore.getCosmeticsState();
+const cosmetics = await window.VRRemoteStore.getCosmeticsState();
 
-        let ok = false;
-        if (me) ok = _applyMergedRemote(me) || ok;
-        if (cosmetics) {
-          if (typeof cosmetics.vcoins !== "undefined") {
-            _memState.vcoins = _clampInt(cosmetics.vcoins);
-          }
-          ok = _applyMergedCosmetics(cosmetics) || ok;
-        }
-        return ok;
+let ok = false;
+
+if (me) {
+  ok = _applyMergedRemote(me) || ok;
+}
+
+if (cosmetics) {
+  ok = _applyMergedCosmetics(cosmetics) || ok;
+}
+
+return ok;
       }, "VUserData.refresh");
     },
 

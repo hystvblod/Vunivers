@@ -1,13 +1,3 @@
-/* =========================================
-   VREALMS - STYLE GLOBAL (PROPRE & UNIQUE) — CLEAN
-   - HUD sculptés OK
-   - Topbars OK
-   - SAFE ZONES OK
-   - SOLDES CLIQUABLES SANS ICÔNES
-   - BLOC UI VARIABLES/APPLY AJOUTÉ
-   - BLOCS UNIVERS REGROUPÉS
-   ========================================= */
-
 /* ==========================================================
    VARIABLES GLOBALES
    ========================================================== */
@@ -409,7 +399,7 @@ button.vr-card:focus-visible{
   margin-bottom:10px;
 }
 .vr-gauge{ display:flex; align-items:center; gap:8px; }
-.vr-gauge-label{ font-size:12px; min-width:72px; }
+.vr-gauge-label{ font-size:13px; min-width:72px; }
 
 /* % actuel + delta */
 .vr-gauge-value{
@@ -418,7 +408,7 @@ button.vr-card:focus-visible{
   justify-content:center;
   gap:6px;
   min-width:64px;
-  font-size:12px;
+  font-size:13px;
   line-height:1.1;
   text-shadow: 0 2px 10px rgba(0,0,0,0.45);
 }
@@ -585,30 +575,57 @@ body.vr-body-game .vr-choice-label{
    FIN
    ========================================================== */
 .vr-ending-overlay{
-  position: fixed;
-  inset:0;
-  background: rgba(15, 23, 42, 0.85);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:10;
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(15, 23, 42, 0.85) !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 250000 !important;
+  padding:
+    max(12px, env(safe-area-inset-top))
+    12px
+    max(12px, env(safe-area-inset-bottom))
+    12px !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
 }
-.vr-ending-overlay.vr-ending-visible{ display:flex; }
+
+.vr-ending-overlay.vr-ending-visible{
+  display: flex !important;
+}
 
 .vr-ending-card{
-  max-width: 360px;
-  width: 100%;
-  padding: 20px 18px;
-  border-radius: 18px;
-  background: rgba(15, 23, 42, 0.98);
-  border: 1px solid rgba(209,213,219,0.5);
-  box-shadow: var(--vr-shadow-soft);
-  text-align:left;
+  width: min(420px, calc(100vw - 24px)) !important;
+  max-width: 100% !important;
+  max-height: calc(100svh - 24px) !important;
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
+
+  padding: clamp(14px, 3.6vw, 20px) !important;
+  border-radius: clamp(16px, 4vw, 22px) !important;
+  background: rgba(15, 23, 42, 0.98) !important;
+  border: 1px solid rgba(209,213,219,0.5) !important;
+  box-shadow: var(--vr-shadow-soft) !important;
+  text-align: center !important;
 }
-.vr-ending-title{ margin:0 0 8px; font-size:18px; }
-.vr-ending-text{ margin:0 0 14px; font-size:14px; color: var(--vr-text-muted); }
+
+.vr-ending-title{
+  margin: 0 0 8px !important;
+  font-size: clamp(18px, 4.8vw, 24px) !important;
+  text-align: center !important;
+}
+
+.vr-ending-text{
+  margin: 0 0 10px !important;
+  font-size: clamp(12px, 3.4vw, 14px) !important;
+  line-height: 1.35 !important;
+  text-align: center !important;
+  color: var(--vr-text-muted) !important;
+}
+
 /* ==========================================================
-   FIN DE REGNE — boutons en cartouches basiques
+   FIN DE REGNE — boutons
    ========================================================== */
 #vr-ending-overlay .vr-choice-button{
   background-image: none !important;
@@ -617,8 +634,8 @@ body.vr-body-game .vr-choice-label{
   border-radius: 16px !important;
   box-shadow: 0 14px 26px rgba(0,0,0,0.24) !important;
 
-  min-height: 56px !important;
-  padding: 12px 16px !important;
+  min-height: clamp(48px, 12vw, 56px) !important;
+  padding: 10px 12px !important;
 
   width: 100% !important;
   max-width: none !important;
@@ -630,7 +647,7 @@ body.vr-body-game .vr-choice-label{
 
   color: #ffffff !important;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  font-size: 16px !important;
+  font-size: clamp(13px, 3.8vw, 16px) !important;
   font-weight: 800 !important;
   line-height: 1.2 !important;
   text-align: center !important;
@@ -653,19 +670,108 @@ body.vr-body-game .vr-choice-label{
   font-weight: inherit !important;
   line-height: inherit !important;
   text-shadow: inherit !important;
+
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
 }
+
+/* ligne gain : sans cartouche */
+#vr-ending-overlay .vr-ending-reward{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+
+  padding: 0 !important;
+  margin: 2px 0 6px !important;
+
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+#vr-ending-overlay .vr-ending-reward img{
+  width: clamp(24px, 7vw, 30px) !important;
+  height: clamp(24px, 7vw, 30px) !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.28)) !important;
+  transform: translateY(2px) !important;
+}
+
+#vr-ending-overlay .vr-ending-reward strong{
+  font-size: clamp(18px, 4.8vw, 22px) !important;
+  font-weight: 950 !important;
+  letter-spacing: .2px !important;
+  line-height: 1 !important;
+}
+
+#vr-ending-overlay .vr-ending-double{
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  width: 100% !important;
+  min-height: clamp(72px, 14vw, 92px) !important;
+  padding: 12px 14px !important;
+  margin-top: 4px !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05)) !important;
+  box-shadow: 0 18px 34px rgba(0,0,0,.28) !important;
+  color: #fff !important;
+  font: inherit !important;
+  cursor: pointer !important;
+}
+
+#vr-ending-overlay .vr-ending-double-title{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  font-size: clamp(16px, 4.5vw, 20px) !important;
+  font-weight: 950 !important;
+  line-height: 1.05 !important;
+}
+
+#vr-ending-overlay .vr-ending-double-title img{
+  width: clamp(24px, 6.5vw, 32px) !important;
+  height: clamp(24px, 6.5vw, 32px) !important;
+  object-fit: contain !important;
+}
+
+#vr-ending-overlay .vr-ending-double-sub{
+  font-size: clamp(11px, 3vw, 13px) !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  opacity: .92 !important;
+}
+
 #vr-ending-overlay .vr-ending-actions{
+  display: flex !important;
+  flex-direction: column !important;
   gap: 10px !important;
   margin-top: 10px !important;
 }
 
 #vr-ending-overlay .vr-ending-actions-bottom{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
   gap: 10px !important;
   margin-top: 0 !important;
 }
 
 #vr-ending-overlay #ending-revive-btn{
   margin-bottom: 0 !important;
+}
+
+@media (max-width: 480px){
+  #vr-ending-overlay .vr-ending-actions-bottom{
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ==========================================================
@@ -755,7 +861,6 @@ body.vr-body-game .vr-choice-label{
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* click-through */
 #vr-token-gauge-overlay,
 .vr-token-gauge-overlay{ pointer-events:none; }
 #vr-token-gauge-overlay .vr-token-gauge-card,
@@ -827,7 +932,6 @@ body.vr-body-game{
   --vr-choices-gap: clamp(6px, 0.7svh, 10px);
 }
 
-/* supprime le texte “Partie en cours …” */
 body.vr-body-game .vr-game-header{ display:none !important; }
 
 body.vr-body-game .vr-main{
@@ -867,7 +971,6 @@ body.vr-body-game #view-game .vr-hud{ grid-row: 1; }
 body.vr-body-game #view-game .vr-gauges-row{ grid-row: 2; }
 body.vr-body-game #view-game .vr-card-container{ grid-row: 3; }
 
-/* 4 jauges côte à côte */
 body.vr-body-game .vr-gauges-row{
   width:100%;
   max-width: 980px;
@@ -883,7 +986,7 @@ body.vr-body-game .vr-gauge{
   gap:6px;
 }
 body.vr-body-game .vr-gauge-label{
-  font-size: clamp(10px, 2.0vmin, 14px);
+  font-size: clamp(11px, 2.1vmin, 15px);
   min-width:0;
   text-align:center;
   min-height: 2.0em;
@@ -972,35 +1075,29 @@ body.vr-body-game .vr-top-actions-game .vr-top-icon{
 }
 
 /* =================================================================================================
-
-
    ================================================================================================= */
 
 /* =========================
    0) DEFAULTS UI CHROME (fallback)
    ========================= */
 body.vr-body-game{
-  /* ---- UI IMAGES ---- */
   --vr-ui-topbar-img: none;
   --vr-ui-hud-img: none;
   --vr-ui-back-img: none;
   --vr-ui-customize-img: none;
 
-  /* ---- UI SIZES ---- */
   --vr-ui-topbar-w: clamp(220px, 54vw, 420px);
   --vr-ui-topbar-r: 0.275;
   --vr-ui-back-size: clamp(46px, 11vw, 76px);
   --vr-ui-customize-size: clamp(46px, 11vw, 76px);
   --vr-ui-hud-w: min(94vw, 980px);
 
-  /* ---- UI OFFSETS ---- */
   --vr-ui-topbar-top: 14px;
   --vr-ui-back-top: 18px;
   --vr-ui-back-left: 20px;
   --vr-ui-customize-top: 18px;
   --vr-ui-customize-right: 20px;
 
-  /* ---- TOPBAR CLICK ZONES ---- */
   --vr-ui-topbtn-top: 16%;
   --vr-ui-topbtn-w: 17%;
   --vr-ui-topbtn-h: 72%;
@@ -1008,7 +1105,6 @@ body.vr-body-game{
   --vr-ui-topbtn-2-left: 41%;
   --vr-ui-topbtn-3-left: 66%;
 
-  /* ---- HUD SLOTS ---- */
   --vr-hud-left-x: 3.3%;
   --vr-hud-left-w: 17.8%;
   --vr-hud-center-l: 20.2%;
@@ -1017,18 +1113,15 @@ body.vr-body-game{
   --vr-hud-right-w: 17.8%;
   --vr-hud-item-ty: -11px;
 
-  /* ---- NOM + ANNÉES ---- */
   --vr-identity-tx: 0px;
   --vr-identity-ty: 0px;
   --vr-hud-name-years-gap: clamp(14px, 2.4vw, 24px);
 
-  /* ---- SOLDES ---- */
   --vr-vcoins-tx: 0px;
   --vr-vcoins-ty: -2px;
   --vr-jetons-tx: 0px;
   --vr-jetons-ty: -2px;
 
-  /* ---- STYLE SOLDES ---- */
   --vr-vcoins-color: #FFD166;
   --vr-vcoins-glow:  rgba(255, 209, 102, .62);
   --vr-vcoins-bg:    transparent;
@@ -1037,7 +1130,6 @@ body.vr-body-game{
   --vr-jetons-glow:  rgba(243, 244, 246, .18);
   --vr-jetons-bg:    transparent;
 
-  /* ---- SAFE ZONES ---- */
   --vr-scn-inset-top: 14%;
   --vr-scn-inset-right: 10%;
   --vr-scn-inset-bottom: 14%;
@@ -1050,15 +1142,12 @@ body.vr-body-game{
 }
 
 /* =========================
-   1) APPLY UI CHROME (NE TOUCHE PAS)
+   1) APPLY UI CHROME
    ========================= */
-
-/* réserve de place en haut basée sur la topbar */
 body.vr-body-game{
   --vr-topbar-h: calc((var(--vr-ui-topbar-w) * var(--vr-ui-topbar-r)) + env(safe-area-inset-top) + 8px);
 }
 
-/* TOPBAR container */
 body.vr-body-game .vr-top-actions-game{
   position: fixed !important;
   top: calc(var(--vr-ui-topbar-top) + env(safe-area-inset-top)) !important;
@@ -1105,7 +1194,6 @@ body.vr-body-game .vr-top-actions-game .vr-icon-button:nth-child(1){ left: var(-
 body.vr-body-game .vr-top-actions-game .vr-icon-button:nth-child(2){ left: var(--vr-ui-topbtn-2-left) !important; }
 body.vr-body-game .vr-top-actions-game .vr-icon-button:nth-child(3){ left: var(--vr-ui-topbtn-3-left) !important; }
 
-/* BACK */
 body.vr-body-game > a.vr-icon-button[aria-label="Accueil"]{
   position: fixed !important;
   top: calc(var(--vr-ui-back-top) + env(safe-area-inset-top)) !important;
@@ -1129,7 +1217,6 @@ body.vr-body-game > a.vr-icon-button[aria-label="Accueil"]::before{
   pointer-events:none;
 }
 
-/* CUSTOMIZE */
 body.vr-body-game #btn-customize{
   position: fixed !important;
   top: calc(var(--vr-ui-customize-top) + env(safe-area-inset-top)) !important;
@@ -1153,7 +1240,6 @@ body.vr-body-game #btn-customize::before{
   pointer-events:none;
 }
 
-/* HUD sculpté */
 body.vr-body-game .vr-hud{
   position: relative !important;
   width: var(--vr-ui-hud-w) !important;
@@ -1278,76 +1364,102 @@ body.vr-body-game .vr-choice-label{
    ========================================================== */
 @font-face{
   font-family: "VR_Quintess";
-  src:
-    url("../assets/fronts/Quintessential-Regular.woff2") format("woff2"),
-    url("assets/fronts/Quintessential-Regular.woff2") format("woff2");
+  src: url("../assets/fronts/Quintessential-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "VR_LoveSister";
-  src:
-    url("../assets/fronts/LoveYaLikeASister-Regular.woff2") format("woff2"),
-    url("assets/fronts/LoveYaLikeASister-Regular.woff2") format("woff2");
+  src: url("../assets/fronts/LoveYaLikeASister-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "VR_Cinzel";
-  src:
-    url("../assets/fronts/Cinzel-Regular.woff2") format("woff2"),
-    url("assets/fronts/Cinzel-Regular.woff2") format("woff2");
+  src: url("../assets/fronts/Cinzel-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "VR_Cormorant";
-  src:
-    url("../assets/fronts/CormorantGaramond-Regular.woff2") format("woff2"),
-    url("assets/fronts/CormorantGaramond-Regular.woff2") format("woff2");
+  src: url("../assets/fronts/CormorantGaramond-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "VR_InterExtraLight";
-  src:
-    url("../assets/fronts/Inter_18pt-ExtraLight.woff2") format("woff2"),
-    url("assets/fronts/Inter_18pt-ExtraLight.woff2") format("woff2");
+  src: url("../assets/fronts/Inter_18pt-ExtraLight.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "VR_RobotoThin";
-  src:
-    url("../assets/fronts/RobotoCondensed-Thin.woff2") format("woff2"),
-    url("assets/fronts/RobotoCondensed-Thin.woff2") format("woff2");
+  src: url("../assets/fronts/RobotoCondensed-Thin.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "VR_DMSerifText";
-  src:
-    url("../assets/fronts/DMSerifText-Regular.woff2") format("woff2"),
-    url("assets/fronts/DMSerifText-Regular.woff2") format("woff2");
+  src: url("../assets/fronts/DMSerifText-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face{
   font-family: "VR_OutfitMedium";
-  src:
-    url("../assets/fronts/Outfit-Medium.woff2") format("woff2"),
-    url("assets/fronts/Outfit-Medium.woff2") format("woff2");
+  src: url("../assets/fronts/Outfit-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
+
+@font-face{
+  font-family: "AlegreyaSCExplorer";
+  src: url("../assets/fronts/AlegreyaSC-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "MerriweatherExplorer";
+  src: url("../assets/fronts/Merriweather_24pt-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "MerriweatherExplorer";
+  src: url("../assets/fronts/Merriweather_96pt-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "MerriweatherExplorer";
+  src: url("../assets/fronts/Merriweather_96pt-Bold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 
 /* ==========================================================
    UNIVERS — HELL
@@ -1369,7 +1481,6 @@ body[data-universe="hell_king"].vr-body-game #view-game .vr-choice-label{
 }
 
 body.vr-body-game[data-universe="hell_king"]{
-  /* ancien bloc */
   --vr-card-w: clamp(380px, 98vw, 980px);
 
   --vr-scn-h: clamp(140px, 19svh, 300px);
@@ -1402,7 +1513,6 @@ body.vr-body-game[data-universe="hell_king"]{
   --vr-hell-back-size: clamp(46px, 11vw, 76px);
   --vr-hell-customize-size: clamp(46px, 11vw, 76px);
 
-  /* nouveau bloc variables */
   --vr-ui-topbar-img: url("../assets/img/ui/hell_topbar.webp");
   --vr-ui-hud-img: url("../assets/img/ui/hell_hud_bar.webp");
   --vr-ui-back-img: url("../assets/img/ui/hell_back.webp");
@@ -1624,6 +1734,7 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-identity{
 
 body.vr-body-game[data-universe="hell_king"] .vr-hud-name{
   font-family: "VR_Quintess", serif !important;
+  transform: translateY(-4px) !important;
   font-size: var(--vr-hell-hud-name-size) !important;
   font-weight: 700 !important;
   color: #f4ede5 !important;
@@ -1634,11 +1745,11 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-name{
 }
 body.vr-body-game[data-universe="hell_king"] .vr-hud-years{
   font-family: "VR_Quintess", serif !important;
-  font-size: var(--vr-hell-hud-years-size) !important;
+  font-size: var(--vr-hell-hud-name-size) !important;
   font-weight: 700 !important;
   color: rgba(244,237,229,0.95) !important;
   line-height: 1 !important;
-  transform: translateY(1px) !important;
+  transform: translateY(-4px) !important;
   opacity: 0.95 !important;
   flex: 0 0 auto !important;
 }
@@ -1707,8 +1818,7 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-pre
   body.vr-body-game[data-universe="hell_king"] .vr-hud-value{ transform: translateY(-1px) !important; }
 }
 
-
-   /* ==========================================================
+/* ==========================================================
    UNIVERS — HEAVEN
    ========================================================== */
 body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-title{
@@ -1723,17 +1833,17 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-text{
 body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
   font-family: "VR_Cormorant", serif !important;
   color: #000 !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
 }
 
 body.vr-body-game[data-universe="heaven_king"]{
   --vr-card-w: clamp(460px, 100vw, 1240px);
 
-  /* espace général plus serré */
   --vr-game-gap: clamp(0px, 0.04svh, 1px);
   --vr-stack-gap: clamp(0px, 0.10svh, 2px);
   --vr-choices-gap: clamp(1px, 0.12svh, 2px);
 
-  /* cartes choix plus basses pour éviter le débordement */
   --vr-scn-h: clamp(150px, 19.2svh, 320px);
   --vr-choice-h: clamp(96px, 13.6svh, 180px);
 
@@ -1742,7 +1852,6 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-scn-inset-bottom: 18%;
   --vr-scn-inset-left: 13%;
 
-  /* texte des choix plus rentré dans les cadres */
   --vr-choice-inset-top: 17%;
   --vr-choice-inset-right: 9%;
   --vr-choice-inset-bottom: 17%;
@@ -1751,7 +1860,7 @@ body.vr-body-game[data-universe="heaven_king"]{
 
   --vr-font-scn-title: clamp(18px, 2.9vmin, 34px);
   --vr-font-scn-text:  clamp(14px, 2.35vmin, 26px);
-  --vr-font-choice:    clamp(13px, 2.25vmin, 22px);
+  --vr-font-choice:    clamp(15px, 2.45vmin, 24px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 2px);
 
@@ -1771,12 +1880,10 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-ui-back-img: url("../assets/img/ui/heaven_back.webp");
   --vr-ui-customize-img: url("../assets/img/ui/heaven_customize.webp");
 
-  /* centre nom + année */
   --vr-identity-tx: 0px;
   --vr-identity-ty: 3px;
   --vr-hud-name-years-gap: 50px;
 
-  /* balances : noirs */
   --vr-vcoins-tx: 0px;
   --vr-vcoins-ty: 0px;
   --vr-jetons-tx: 0px;
@@ -1946,7 +2053,6 @@ body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{
   justify-self: auto !important;
 }
 
-/* zones soldes : largeur et centrage des ronds */
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 2.8% !important; width: 16.8% !important; }
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-center{ left: 20.6% !important; right: 20.6% !important; }
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-right{ right: 2.8% !important; width: 16.8% !important; }
@@ -1988,7 +2094,6 @@ body.vr-body-game[data-universe="heaven_king"] .vr-hud-value{
   font-variant-numeric: tabular-nums !important;
 }
 
-/* laisser 0px ici pour que le chiffre grandisse depuis le centre */
 body.vr-body-game[data-universe="heaven_king"] .vr-hud-left .vr-hud-value{
   transform: translate(0px, 0px) !important;
 }
@@ -2054,6 +2159,13 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="free_will"] .vr-gauge
 body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/heaven_king/g4_frame.webp"); }
 body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-gauge-fill,
 body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/heaven_king/g4_fill.webp"); }
+
+body[data-universe="heaven_king"] .vr-gauge-label,
+body[data-universe="heaven_king"] .vr-gauge-value,
+body[data-universe="heaven_king"] .vr-gauge-val,
+body[data-universe="heaven_king"] .vr-gauge-delta{
+  color: #000 !important;
+}
 
 @media (max-width: 480px){
   body.vr-body-game[data-universe="heaven_king"]{
@@ -2129,36 +2241,82 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
   }
 }
 
+
+
+
+
+
+
+
 /* ==========================================================
    UNIVERS — WESTERN
    ========================================================== */
-body[data-universe="western_president"].vr-body-game #view-game .vr-card-title,
-body[data-universe="western_president"].vr-body-game #view-game .vr-card-text{
+body[data-universe="western_president"].vr-body-game #view-game .vr-card-title{
   font-family: "VR_InterExtraLight", serif !important;
   color: #000 !important;
+  font-weight: 900 !important;
+  text-shadow: none !important;
+  line-height: 1.06 !important;
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+}
+
+body[data-universe="western_president"].vr-body-game #view-game .vr-card-text{
+  font-family: "VR_InterExtraLight", serif !important;
+  color: #111 !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+  line-height: 1.18 !important;
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
 }
 
 body[data-universe="western_president"].vr-body-game #view-game .vr-choice-label{
-  font-family: "VR_RobotoThin", sans-serif !important;
+  font-family: "VR_InterExtraLight", sans-serif !important;
   color: #000 !important;
+  font-weight: 900 !important;
   text-shadow: none !important;
-}
-
-body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-button{
-  background-size: 100% 110% !important;
-  background-position: center !important;
-}
-body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main{
-  overflow: hidden;
-  background-size: 90% 105% !important;
-  background-position: center !important;
+  opacity: 1 !important;
+  line-height: 1.12 !important;
+  text-align: center !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
 }
 
 body.vr-body-game[data-universe="western_president"]{
-  --vr-card-w: clamp(460px, 100vw, 1240px);
-  --vr-game-gap: clamp(6px, 0.8svh, 12px);
-  --vr-stack-gap: clamp(10px, 1.2svh, 22px);
-  --vr-choices-gap: clamp(10px, 1.2svh, 22px);
+  --vr-card-w: clamp(390px, 98vw, 1120px);
+
+  --vr-scn-h: clamp(158px, 20.8svh, 290px);
+  --vr-choice-h: clamp(116px, 15.2svh, 194px);
+
+  --vr-game-gap: clamp(1px, 0.18svh, 4px);
+  --vr-stack-gap: clamp(10px, 1.15svh, 22px);
+  --vr-choices-gap: clamp(9px, 1svh, 18px);
+
+  --vr-scn-inset-top: 18%;
+  --vr-scn-inset-right: 12%;
+  --vr-scn-inset-bottom: 10%;
+  --vr-scn-inset-left: 12%;
+
+  --vr-choice-inset-top: 17%;
+  --vr-choice-inset-right: 9%;
+  --vr-choice-inset-bottom: 17%;
+  --vr-choice-inset-left: 9%;
+  --vr-choice-safe: 84%;
+
+  --vr-font-scn-title: clamp(16px, 2.6vmin, 30px);
+  --vr-font-scn-text:  clamp(13px, 2.0vmin, 21px);
+  --vr-font-choice:    clamp(13px, 2.0vmin, 20px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
@@ -2185,7 +2343,35 @@ body.vr-body-game[data-universe="western_president"]{
 
   --vr-identity-tx: 0px;
   --vr-identity-ty: 14px;
-  --vr-hud-name-years-gap: 52px;
+  --vr-hud-name-years-gap: 48px;
+}
+
+body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-button{
+  background-size: 106% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main{
+  overflow: hidden !important;
+  background-size: 96% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main .vr-card-text{
+  max-height: none !important;
+  overflow: visible !important;
+  padding-right: 0 !important;
+}
+
+body.vr-body-game[data-universe="western_president"] #view-game .vr-card-title,
+body.vr-body-game[data-universe="western_president"] #view-game .vr-card-text,
+body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-label{
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
 }
 
 body.vr-body-game[data-universe="western_president"] .vr-top-actions-game .vr-top-icon,
@@ -2209,6 +2395,7 @@ body.vr-body-game[data-universe="western_president"] .vr-top-actions-game{
   pointer-events: none !important;
   z-index: 100000 !important;
 }
+
 body.vr-body-game[data-universe="western_president"] .vr-top-actions-game::before{
   content:"";
   position:absolute;
@@ -2217,6 +2404,7 @@ body.vr-body-game[data-universe="western_president"] .vr-top-actions-game::befor
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.22));
   pointer-events:none;
 }
+
 body.vr-body-game[data-universe="western_president"] .vr-top-actions-game .vr-icon-button{
   position:absolute !important;
   top:16% !important;
@@ -2229,6 +2417,7 @@ body.vr-body-game[data-universe="western_president"] .vr-top-actions-game .vr-ic
   pointer-events:auto !important;
   z-index:1 !important;
 }
+
 body.vr-body-game[data-universe="western_president"] .vr-top-actions-game .vr-icon-button:nth-child(1){ left:16% !important; }
 body.vr-body-game[data-universe="western_president"] .vr-top-actions-game .vr-icon-button:nth-child(2){ left:41% !important; }
 body.vr-body-game[data-universe="western_president"] .vr-top-actions-game .vr-icon-button:nth-child(3){ left:66% !important; }
@@ -2246,6 +2435,7 @@ body.vr-body-game[data-universe="western_president"] > a.vr-icon-button[aria-lab
   z-index:100002 !important;
   pointer-events:auto !important;
 }
+
 body.vr-body-game[data-universe="western_president"] > a.vr-icon-button[aria-label="Accueil"]::before{
   content:"";
   position:absolute;
@@ -2268,6 +2458,7 @@ body.vr-body-game[data-universe="western_president"] #btn-customize{
   z-index:100002 !important;
   pointer-events:auto !important;
 }
+
 body.vr-body-game[data-universe="western_president"] #btn-customize::before{
   content:"";
   position:absolute;
@@ -2281,7 +2472,7 @@ body.vr-body-game[data-universe="western_president"] .vr-hud{
   position: relative !important;
   width: var(--vr-ui-hud-w) !important;
   max-width: none !important;
-  margin: 0 auto !important;
+  margin: clamp(8px, 1.2svh, 18px) auto 0 auto !important;
   padding: 0 !important;
   display: block !important;
   white-space: normal !important;
@@ -2303,6 +2494,7 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-right{
   transform:none !important;
   justify-self:auto !important;
 }
+
 body.vr-body-game[data-universe="western_president"] .vr-hud-left{ left:3.3% !important; width:17.8% !important; }
 body.vr-body-game[data-universe="western_president"] .vr-hud-center{ left:20.2% !important; right:20.2% !important; }
 body.vr-body-game[data-universe="western_president"] .vr-hud-right{ right:5.3% !important; width:17.8% !important; }
@@ -2326,8 +2518,8 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-item{
 
 body.vr-body-game[data-universe="western_president"] .vr-hud-value{
   font-family: "VR_InterExtraLight", sans-serif !important;
-  font-size: clamp(12px, 1.85vw, 22px) !important;
-  font-weight: 400 !important;
+  font-size: clamp(13px, 2.05vw, 24px) !important;
+  font-weight: 800 !important;
   line-height: 1 !important;
   color: #000 !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.18), 0 0 3px rgba(0,0,0,0.06) !important;
@@ -2337,35 +2529,33 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-value{
   text-align: center !important;
   font-variant-numeric: tabular-nums !important;
 }
-/* VCoins plus bas + légèrement à gauche */
+
 body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value{
-  transform: translate(-8px, 16px) !important;
+  transform: translate(-12px, 22px) !important;
 }
 
-/* Jetons plus bas + légèrement à droite */
 body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
-  transform: translate(10px, 17px) !important;
+  transform: translate(12px, 22px) !important;
 }
 
-/* bloc central plus bas */
 body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
   width:100% !important;
   max-width:none !important;
   overflow:hidden !important;
   display:inline-flex !important;
-  align-items:center !important;
+  align-items:baseline !important;
   justify-content:center !important;
-  gap:52px !important;
+  gap:48px !important;
   white-space:nowrap !important;
   text-align:center !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.20), 0 0 6px rgba(0,0,0,0.08) !important;
-  transform: translate(0px, 13px) !important;
+  transform: translate(0px, 25px) !important;
 }
 
 body.vr-body-game[data-universe="western_president"] .vr-hud-name{
   font-family: "VR_InterExtraLight", sans-serif !important;
-  font-size: clamp(14px, 2.05vw, 26px) !important;
-  font-weight: 800 !important;
+  font-size: clamp(15px, 2.25vw, 28px) !important;
+  font-weight: 900 !important;
   line-height:1 !important;
   color:#000 !important;
   max-width:72% !important;
@@ -2376,8 +2566,8 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-name{
 
 body.vr-body-game[data-universe="western_president"] .vr-hud-years{
   font-family: "VR_InterExtraLight", sans-serif !important;
-  font-size: clamp(12px, 1.65vw, 20px) !important;
-  font-weight: 800 !important;
+  font-size: clamp(14px, 1.95vw, 23px) !important;
+  font-weight: 900 !important;
   line-height:1 !important;
   color:#000 !important;
   transform: translateY(0px) !important;
@@ -2407,6 +2597,104 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
 body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-fill,
 body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/western_president/g4_fill.webp"); }
 
+@media (max-width: 480px){
+  body.vr-body-game[data-universe="western_president"]{
+    --vr-west-hud-w: 92vw;
+    --vr-ui-hud-w: 92vw;
+
+    --vr-west-topbar-w: clamp(210px, 58vw, 300px);
+    --vr-west-back-size: clamp(40px, 12vw, 60px);
+    --vr-west-customize-size: clamp(40px, 12vw, 60px);
+
+    --vr-topbar-h: calc(clamp(50px, 12vw, 76px) + env(safe-area-inset-top) + 6px);
+
+    --vr-ui-topbar-top: 12px;
+    --vr-ui-back-top: 16px;
+    --vr-ui-back-left: 16px;
+    --vr-ui-customize-top: 16px;
+    --vr-ui-customize-right: 16px;
+
+    --vr-scn-h: clamp(138px, 18.8svh, 224px);
+    --vr-choice-h: clamp(90px, 12.0svh, 142px);
+
+    --vr-stack-gap: clamp(12px, 1.35svh, 22px);
+    --vr-choices-gap: clamp(6px, 0.70svh, 12px);
+
+    --vr-scn-inset-top: 17%;
+    --vr-scn-inset-right: 12%;
+    --vr-scn-inset-bottom: 11%;
+    --vr-scn-inset-left: 12%;
+
+    --vr-choice-safe: 82%;
+    --vr-choice-inset-top: 16%;
+    --vr-choice-inset-right: 8%;
+    --vr-choice-inset-bottom: 16%;
+    --vr-choice-inset-left: 8%;
+
+    --vr-font-scn-title: clamp(15px, 3.5vw, 24px);
+    --vr-font-scn-text: clamp(12px, 2.7vw, 16px);
+    --vr-font-choice: clamp(12px, 3.0vw, 16px);
+
+    --vr-hud-name-years-gap: 30px;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-left{ left: 3.1% !important; width: 18.0% !important; }
+  body.vr-body-game[data-universe="western_president"] .vr-hud-right{ right: 3.1% !important; width: 18.0% !important; }
+  body.vr-body-game[data-universe="western_president"] .vr-hud-center{ left: 20.8% !important; right: 20.8% !important; }
+
+  body.vr-body-game[data-universe="western_president"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
+  body.vr-body-game[data-universe="western_president"] > a.vr-icon-button[aria-label="Accueil"]{ top: calc(16px + env(safe-area-inset-top)) !important; left: 16px !important; }
+  body.vr-body-game[data-universe="western_president"] #btn-customize{ top: calc(16px + env(safe-area-inset-top)) !important; right: 16px !important; }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-item{
+    transform: translateY(-4px) !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value{
+    transform: translate(-6px, 12px) !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
+    transform: translate(6px, 12px) !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
+    transform: translate(0px, 14px) !important;
+    gap: 30px !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] #view-game .vr-card-title{
+    line-height: 1.05 !important;
+    max-width: 94% !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] #view-game .vr-card-text{
+    line-height: 1.14 !important;
+    max-width: 94% !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-label{
+    line-height: 1.10 !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 390px), (max-height: 740px){
+  body.vr-body-game[data-universe="western_president"]{
+    --vr-scn-h: clamp(132px, 18.0svh, 210px);
+    --vr-choice-h: clamp(84px, 11.3svh, 130px);
+    --vr-font-scn-title: clamp(14px, 3.3vw, 20px);
+    --vr-font-scn-text: clamp(11px, 2.55vw, 14px);
+    --vr-font-choice: clamp(11px, 2.8vw, 14px);
+    --vr-choice-safe: 80%;
+    --vr-choice-inset-top: 15%;
+    --vr-choice-inset-right: 7%;
+    --vr-choice-inset-bottom: 15%;
+    --vr-choice-inset-left: 7%;
+  }
+}
+
+
 
 
 
@@ -2424,13 +2712,28 @@ body[data-universe="mega_corp_ceo"].vr-body-game #view-game .vr-choice-label{
   font-family: "VR_OutfitMedium", sans-serif !important;
   color: #000 !important;
   text-shadow: none !important;
+  opacity: 1 !important;
+  line-height: 1.12 !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"]{
-  --vr-card-w: clamp(330px, 92vw, 760px);
-  --vr-game-gap: clamp(6px, 0.8svh, 14px);
-  --vr-stack-gap: clamp(8px, 1svh, 18px);
-  --vr-choices-gap: clamp(10px, 1.2svh, 18px);
+  --vr-card-w: clamp(360px, 96vw, 820px);
+
+  --vr-scn-h: clamp(156px, 20.4svh, 292px);
+  --vr-choice-h: clamp(86px, 11.4svh, 142px);
+
+  --vr-game-gap: clamp(1px, 0.12svh, 3px);
+  --vr-stack-gap: clamp(3px, 0.34svh, 8px);
+  --vr-choices-gap: clamp(4px, 0.46svh, 9px);
+
+  --vr-choice-safe: 84%;
+  --vr-font-scn-title: clamp(15px, 2.1vmin, 24px);
+  --vr-font-scn-text:  clamp(11px, 1.6vmin, 15px);
+  --vr-font-choice:    clamp(11px, 1.55vmin, 17px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
@@ -2573,7 +2876,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right{
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left{
-  left: 4.1% !important;
+  left: 2.6% !important;
   width:18.4% !important;
 }
 
@@ -2583,7 +2886,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-center{
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right{
-  right: 4.1% !important;
+  right: 2.6% !important;
   width:18.4% !important;
 }
 
@@ -2604,13 +2907,23 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-item{
   transform: translateY(-3px) !important;
 }
 
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-left .vr-hud-item{
+  transform: translate(5px, 0px) !important;
+}
+
+body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right .vr-hud-item{
+  transform: translate(-5px, 0px) !important;
+}
+
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-value{
   font-size: clamp(15px, 2.05vw, 24px) !important;
   font-weight: 900 !important;
   line-height:1 !important;
-  color:#111 !important;
+  color:#fff !important;
   text-align:center !important;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.18) !important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.55),
+    0 2px 6px rgba(0,0,0,0.30) !important;
   transform: translateY(-1px) !important;
   letter-spacing: -0.03em !important;
   white-space: nowrap !important;
@@ -2621,30 +2934,35 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right .vr-hud-value{
   width:100% !important;
   max-width:100% !important;
   text-align:center !important;
+  transform: translateY(-1px) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-name{
   font-size: clamp(14px, 1.9vw, 23px) !important;
   font-weight: 900 !important;
   line-height:1 !important;
-  color:#111 !important;
+  color:#fff !important;
   max-width:60% !important;
   overflow:hidden !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
   text-align:center !important;
-  transform: translateY(-2px) !important;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.18) !important;
+  transform: translateY(-1px) !important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.55),
+    0 2px 6px rgba(0,0,0,0.30) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-years{
   font-size: clamp(14px, 1.9vw, 23px) !important;
   font-weight: 900 !important;
   line-height:1 !important;
-  color:#111 !important;
-  transform: translateY(-2px) !important;
+  color:#fff !important;
+  transform: translateY(-1px) !important;
   opacity: 1 !important;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.18) !important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.55),
+    0 2px 6px rgba(0,0,0,0.30) !important;
   white-space: nowrap !important;
 }
 
@@ -2672,79 +2990,82 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-center .vr-hud-years{
 }
 
 /* =========================
-   FIX CARTES MESSAGE + CHOIX
+   FIX CARTE MESSAGE UNIQUEMENT
    ========================= */
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
   overflow: hidden !important;
-  background-size: 100% 110% !important;
+  background-size: 100% 108% !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   box-sizing: border-box !important;
-  width: min(92vw, 780px) !important;
-  min-height: clamp(190px, 29vw, 272px) !important;
-  padding: clamp(14px, 2.4vw, 18px) clamp(18px, 4.2vw, 30px) clamp(24px, 4.8vw, 34px) !important;
+  width: 100% !important;
+  min-height: var(--vr-scn-h) !important;
+  padding:
+    clamp(46px, 6.4vw, 68px)
+    clamp(14px, 2.6vw, 22px)
+    clamp(14px, 2.2vw, 18px) !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
+  gap: clamp(4px, 0.8vw, 8px) !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-title{
-  width: min(72%, 520px) !important;
-  max-width: min(72%, 520px) !important;
-  margin: 0 auto clamp(6px, 1vw, 10px) auto !important;
+  width: min(78%, 560px) !important;
+  max-width: min(78%, 560px) !important;
+  margin: 0 auto !important;
   text-align: center !important;
-  font-size: clamp(15px, 2.35vw, 26px) !important;
-  line-height: 1.08 !important;
+  font-size: clamp(15px, 2.1vw, 23px) !important;
+  line-height: 1.06 !important;
   font-weight: 700 !important;
   overflow-wrap: break-word !important;
-  word-break: break-word !important;
-  transform: translateY(-10px) !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
+  transform: none !important;
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-text{
-  width: min(72%, 520px) !important;
-  max-width: min(72%, 520px) !important;
+  width: min(76%, 540px) !important;
+  max-width: min(76%, 540px) !important;
   margin: 0 auto !important;
   text-align: center !important;
-  font-size: clamp(10px, 1.62vw, 17px) !important;
-  line-height: 1.18 !important;
-  font-weight: 600 !important;
-  overflow-wrap: break-word !important;
-  word-break: break-word !important;
-  transform: translateY(-10px) !important;
-}
-
-body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-stack,
-body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choices{
-  gap: clamp(8px, 1svh, 14px) !important;
-}
-
-body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-button{
-  overflow: hidden !important;
-  background-size: 100% 110% !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  box-sizing: border-box !important;
-  min-height: clamp(86px, 13.5vw, 124px) !important;
-  height: auto !important;
-  padding: clamp(10px, 1.8vw, 16px) clamp(16px, 4vw, 28px) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
-  width: min(80%, 620px) !important;
-  max-width: min(80%, 620px) !important;
-  margin: 0 auto !important;
-  text-align: center !important;
-  font-size: clamp(12px, 1.7vw, 19px) !important;
+  font-size: clamp(11px, 1.5vw, 14px) !important;
   line-height: 1.16 !important;
   font-weight: 600 !important;
   overflow-wrap: break-word !important;
-  word-break: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
+  transform: none !important;
+  color: #000 !important;
+  text-shadow: none !important;
+}
+
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-choices{
+  gap: clamp(4px, 0.45svh, 8px) !important;
+}
+
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-button{
+  background-size: 104% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
+  width: min(78%, 640px) !important;
+  max-width: min(78%, 640px) !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  font-size: clamp(11px, 1.5vw, 16px) !important;
+  line-height: 1.12 !important;
+  font-weight: 600 !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
 }
 
 body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="investors"] .vr-gauge-frame{
@@ -2779,31 +3100,183 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
   background-image: url("../assets/img/gauges/mega_corp_ceo/g4_fill.webp");
 }
 
+body[data-universe="mega_corp_ceo"] .vr-gauge-label,
+body[data-universe="mega_corp_ceo"] .vr-gauge-value,
+body[data-universe="mega_corp_ceo"] .vr-gauge-val,
+body[data-universe="mega_corp_ceo"] .vr-gauge-delta{
+  color: #000 !important;
+}
+
+@media (max-width: 480px){
+  body.vr-body-game[data-universe="mega_corp_ceo"]{
+    --vr-corp-hud-w: 94vw;
+    --vr-corp-topbar-w: clamp(210px, 58vw, 300px);
+    --vr-corp-back-size: clamp(40px, 12vw, 60px);
+    --vr-corp-customize-size: clamp(40px, 12vw, 60px);
+
+    --vr-topbar-h: calc(clamp(50px, 12vw, 76px) + env(safe-area-inset-top) + 6px);
+
+    --vr-ui-topbar-top: 12px;
+    --vr-ui-back-top: 16px;
+    --vr-ui-back-left: 16px;
+    --vr-ui-customize-top: 16px;
+    --vr-ui-customize-right: 16px;
+
+    --vr-card-w: clamp(320px, 96vw, 700px);
+    --vr-scn-h: clamp(148px, 19.6svh, 230px);
+    --vr-choice-h: clamp(82px, 11.0svh, 120px);
+    --vr-choice-safe: 82%;
+    --vr-font-choice: clamp(10.8px, 2.45vw, 14px);
+  }
+
+  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
+  body.vr-body-game[data-universe="mega_corp_ceo"] > a.vr-icon-button[aria-label="Accueil"]{ top: calc(16px + env(safe-area-inset-top)) !important; left: 16px !important; }
+  body.vr-body-game[data-universe="mega_corp_ceo"] #btn-customize{ top: calc(16px + env(safe-area-inset-top)) !important; right: 16px !important; }
+
+  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-title{
+    width: min(82%, 560px) !important;
+    max-width: min(82%, 560px) !important;
+    font-size: clamp(14px, 3.2vw, 20px) !important;
+    line-height: 1.04 !important;
+  }
+
+  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-text{
+    width: min(80%, 540px) !important;
+    max-width: min(80%, 540px) !important;
+    font-size: clamp(10px, 2.25vw, 13px) !important;
+    line-height: 1.12 !important;
+  }
+
+  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
+    width: min(82%, 640px) !important;
+    max-width: min(82%, 640px) !important;
+    font-size: clamp(10.5px, 2.35vw, 13.5px) !important;
+    line-height: 1.10 !important;
+  }
+}
+
+@media (max-width: 390px), (max-height: 740px){
+  body.vr-body-game[data-universe="mega_corp_ceo"]{
+    --vr-choice-h: clamp(78px, 10.4svh, 112px);
+    --vr-font-choice: clamp(10px, 2.3vw, 13px);
+    --vr-choice-safe: 80%;
+  }
+
+  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
+    width: min(84%, 640px) !important;
+    max-width: min(84%, 640px) !important;
+    font-size: clamp(10px, 2.25vw, 12.8px) !important;
+    line-height: 1.08 !important;
+  }
+}
 
 
 
 
-/* ========================================================== */
-   UNIVERS — EXPLORER
-/* ========================================================== */
+
+
+/* ========================= EXPLORER ========================= */
 body.vr-body-game[data-universe="new_world_explorer"]{
-  --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
+  --vr-card-w: clamp(280px, 62vw, 720px);
+  --vr-scn-h: clamp(180px, 24.0svh, 360px);
+  --vr-choice-h: clamp(108px, 14.5svh, 220px);
 
-  --vr-explorer-hud-w: min(94vw, 980px);
-  --vr-explorer-topbar-w: clamp(220px, 54vw, 420px);
-  --vr-explorer-topbar-h: calc(var(--vr-explorer-topbar-w) * 0.275);
+  --vr-game-gap: 0px;
+  --vr-stack-gap: clamp(18px, 2.4svh, 40px);
+  --vr-choices-gap: clamp(8px, 1.0svh, 18px);
+
+  --vr-scn-inset-top: 13%;
+  --vr-scn-inset-right: 16%;
+  --vr-scn-inset-bottom: 15%;
+  --vr-scn-inset-left: 16%;
+
+  --vr-choice-inset-top: 16%;
+  --vr-choice-inset-right: 10%;
+  --vr-choice-inset-bottom: 16%;
+  --vr-choice-inset-left: 10%;
+  --vr-choice-safe: 84%;
+
+  --vr-font-scn-title: clamp(26px, 4.2vmin, 56px);
+  --vr-font-scn-text:  clamp(21px, 3.5vmin, 46px);
+  --vr-font-choice:    clamp(18px, 3.1vmin, 38px);
+
+  /* ===== Polices ===== */
+  --vr-explorer-font-title: "AlegreyaSCExplorer", serif;
+  --vr-explorer-font-ui: "MerriweatherExplorer", serif;
+
+  /* ===== Tailles source RÉELLES des fichiers ===== */
+  --vr-explorer-topbar-src-w: 1000;
+  --vr-explorer-topbar-src-h: 275;
+  --vr-explorer-hud-src-w: 1024;
+  --vr-explorer-hud-src-h: 300;
+
+  /* ===== Largeurs affichées ===== */
+  --vr-explorer-topbar-w: clamp(235px, 53vw, 408px);
+  --vr-explorer-hud-w: min(89vw, 930px);
   --vr-explorer-back-size: clamp(46px, 11vw, 76px);
   --vr-explorer-customize-size: clamp(46px, 11vw, 76px);
+
+  /* ===== Décalage visuel HUD ===== */
+  --vr-explorer-hud-shift-x: -6px;
+  --vr-explorer-hud-shift-y: -6px;
+
+  /* ===== Réserve haute calculée ===== */
+  --vr-topbar-h: calc(
+    (var(--vr-explorer-topbar-w) * var(--vr-explorer-topbar-src-h) / var(--vr-explorer-topbar-src-w))
+    + env(safe-area-inset-top) + 2px
+  );
+
+  /* ===== Positions générales ===== */
+  --vr-explorer-topbar-top: calc(5px + env(safe-area-inset-top));
+  --vr-explorer-side-btn-top: calc(10px + env(safe-area-inset-top));
+  --vr-explorer-side-btn-side: clamp(12px, 3vw, 20px);
+
+  /* ===== Zones cliquables topbar ===== */
+  --vr-explorer-topbar-btn-top: 16%;
+  --vr-explorer-topbar-btn-h: 72%;
+  --vr-explorer-topbar-btn-w: 17%;
+  --vr-explorer-topbar-btn-1-left: 16%;
+  --vr-explorer-topbar-btn-2-left: 41%;
+  --vr-explorer-topbar-btn-3-left: 66%;
+
+  /* ===== Placement HUD ===== */
+  --vr-explorer-hud-left-x: 3.3%;
+  --vr-explorer-hud-left-w: 17.8%;
+  --vr-explorer-hud-center-left: 20.2%;
+  --vr-explorer-hud-center-right: 20.2%;
+  --vr-explorer-hud-right-x: 5.3%;
+  --vr-explorer-hud-right-w: 17.8%;
+
+  /* ===== Centre nom / année ===== */
+  --vr-identity-tx: 0px;
+  --vr-identity-ty: 17px;
+  --vr-hud-name-years-gap: 18px;
+
+  /* ===== Réglages soldes ===== */
+  --vr-vcoins-tx: 4px;
+  --vr-vcoins-ty: 9px;
+  --vr-jetons-tx: 0px;
+  --vr-jetons-ty: 9px;
+
+  /* ===== Réglages fins verticaux ===== */
+  --vr-explorer-hud-item-y: -11px;
+  --vr-explorer-hud-value-y: -2px;
 
   --vr-ui-topbar-img: url("../assets/img/ui/explorer_topbar.webp");
   --vr-ui-hud-img: url("../assets/img/ui/explorer_hud_bar.webp");
   --vr-ui-back-img: url("../assets/img/ui/explorer_back.webp");
   --vr-ui-customize-img: url("../assets/img/ui/explorer_customize.webp");
 
-  --vr-vcoins-color:#E6C37A;
-  --vr-vcoins-glow:rgba(230,195,122,.42);
+  /* ===== Couleurs HUD ===== */
+  --vr-vcoins-color: #000000;
+  --vr-vcoins-glow: rgba(255,255,255,.08);
   --vr-vcoins-bg: transparent;
+
+  --vr-jetons-color: #000000;
+  --vr-jetons-glow: rgba(255,255,255,.08);
   --vr-jetons-bg: transparent;
+
+  font-family: var(--vr-explorer-font-ui);
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-top-icon,
@@ -2812,14 +3285,71 @@ body.vr-body-game[data-universe="new_world_explorer"] #btn-customize .vr-top-ico
   display:none !important;
 }
 
+body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-title{
+  font-family: var(--vr-explorer-font-title) !important;
+  color:#000 !important;
+  text-shadow:none !important;
+  text-align:center !important;
+  line-height: 1.06 !important;
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
+}
+
+body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-card-text{
+  font-family: var(--vr-explorer-font-ui) !important;
+  color:#000 !important;
+  text-shadow:none !important;
+  text-align:center !important;
+  line-height: 1.16 !important;
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
+}
+
+body[data-universe="new_world_explorer"].vr-body-game #view-game .vr-choice-label{
+  font-family: var(--vr-explorer-font-ui) !important;
+  color:#000 !important;
+  text-shadow:none !important;
+  text-align:center !important;
+  line-height: 1.12 !important;
+  opacity: 1 !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-card-main{
+  background-size: 94% 96% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-choice-button{
+  background-size: 104% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
 body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game{
   position: fixed !important;
-  top: calc(14px + env(safe-area-inset-top)) !important;
+  top: var(--vr-explorer-topbar-top) !important;
   left: 50% !important;
   right: auto !important;
   transform: translateX(-50%) !important;
   width: var(--vr-explorer-topbar-w) !important;
-  height: var(--vr-explorer-topbar-h) !important;
+  height: calc(
+    var(--vr-explorer-topbar-w) * var(--vr-explorer-topbar-src-h) / var(--vr-explorer-topbar-src-w)
+  ) !important;
   padding: 0 !important;
   margin: 0 !important;
   gap: 0 !important;
@@ -2827,19 +3357,21 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game{
   pointer-events: none !important;
   z-index: 100000 !important;
 }
+
 body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game::before{
   content:"";
   position:absolute;
   inset:0;
-  background:url("../assets/img/ui/explorer_topbar.webp") center/100% 100% no-repeat;
+  background: var(--vr-ui-topbar-img) center / 100% 100% no-repeat;
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.22));
   pointer-events:none;
 }
+
 body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button{
   position:absolute !important;
-  top:16% !important;
-  width:17% !important;
-  height:72% !important;
+  top: var(--vr-explorer-topbar-btn-top) !important;
+  width: var(--vr-explorer-topbar-btn-w) !important;
+  height: var(--vr-explorer-topbar-btn-h) !important;
   padding:0 !important;
   margin:0 !important;
   border:none !important;
@@ -2847,16 +3379,25 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-i
   pointer-events:auto !important;
   z-index:1 !important;
 }
-body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button:nth-child(1){ left:16% !important; }
-body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button:nth-child(2){ left:41% !important; }
-body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button:nth-child(3){ left:66% !important; }
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button:nth-child(1){
+  left: var(--vr-explorer-topbar-btn-1-left) !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button:nth-child(2){
+  left: var(--vr-explorer-topbar-btn-2-left) !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-icon-button:nth-child(3){
+  left: var(--vr-explorer-topbar-btn-3-left) !important;
+}
 
 body.vr-body-game[data-universe="new_world_explorer"] > a.vr-icon-button[aria-label="Accueil"]{
   position: fixed !important;
-  top: calc(18px + env(safe-area-inset-top)) !important;
-  left: 20px !important;
-  width:var(--vr-explorer-back-size) !important;
-  height:var(--vr-explorer-back-size) !important;
+  top: var(--vr-explorer-side-btn-top) !important;
+  left: var(--vr-explorer-side-btn-side) !important;
+  width: var(--vr-explorer-back-size) !important;
+  height: var(--vr-explorer-back-size) !important;
   padding:0 !important;
   margin:0 !important;
   border:none !important;
@@ -2864,21 +3405,22 @@ body.vr-body-game[data-universe="new_world_explorer"] > a.vr-icon-button[aria-la
   z-index:100002 !important;
   pointer-events:auto !important;
 }
+
 body.vr-body-game[data-universe="new_world_explorer"] > a.vr-icon-button[aria-label="Accueil"]::before{
   content:"";
   position:absolute;
   inset:0;
-  background:url("../assets/img/ui/explorer_back.webp") center/100% 100% no-repeat;
+  background: var(--vr-ui-back-img) center / 100% 100% no-repeat;
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.22));
   pointer-events:none;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] #btn-customize{
   position: fixed !important;
-  top: calc(18px + env(safe-area-inset-top)) !important;
-  right: 20px !important;
-  width:var(--vr-explorer-customize-size) !important;
-  height:var(--vr-explorer-customize-size) !important;
+  top: var(--vr-explorer-side-btn-top) !important;
+  right: var(--vr-explorer-side-btn-side) !important;
+  width: var(--vr-explorer-customize-size) !important;
+  height: var(--vr-explorer-customize-size) !important;
   padding:0 !important;
   margin:0 !important;
   border:none !important;
@@ -2886,26 +3428,30 @@ body.vr-body-game[data-universe="new_world_explorer"] #btn-customize{
   z-index:100002 !important;
   pointer-events:auto !important;
 }
+
 body.vr-body-game[data-universe="new_world_explorer"] #btn-customize::before{
   content:"";
   position:absolute;
   inset:0;
-  background:url("../assets/img/ui/explorer_customize.webp") center/100% 100% no-repeat;
+  background: var(--vr-ui-customize-img) center / 100% 100% no-repeat;
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.22));
   pointer-events:none;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud{
   position: relative !important;
-  width:var(--vr-explorer-hud-w) !important;
+  width: var(--vr-explorer-hud-w) !important;
+  height: calc(
+    var(--vr-explorer-hud-w) * var(--vr-explorer-hud-src-h) / var(--vr-explorer-hud-src-w)
+  ) !important;
   max-width:none !important;
   margin:0 auto !important;
   padding:0 !important;
   display:block !important;
   white-space: normal !important;
-  aspect-ratio: 1024 / 269;
-  background:url("../assets/img/ui/explorer_hud_bar.webp") center/100% 100% no-repeat;
+  background: var(--vr-ui-hud-img) center / 100% 100% no-repeat;
   filter: drop-shadow(0 10px 18px rgba(0,0,0,0.20));
+  transform: translate(var(--vr-explorer-hud-shift-x), var(--vr-explorer-hud-shift-y)) !important;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left,
@@ -2921,9 +3467,21 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right{
   transform:none !important;
   justify-self:auto !important;
 }
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left{ left:3.3% !important;width:17.8% !important; }
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-center{ left:20.2% !important;right:20.2% !important; }
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right{ right:5.3% !important;width:17.8% !important; }
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left{
+  left: var(--vr-explorer-hud-left-x) !important;
+  width: var(--vr-explorer-hud-left-w) !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-center{
+  left: var(--vr-explorer-hud-center-left) !important;
+  right: var(--vr-explorer-hud-center-right) !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right{
+  right: var(--vr-explorer-hud-right-x) !important;
+  width: var(--vr-explorer-hud-right-w) !important;
+}
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-item{
   width:100% !important;
@@ -2939,44 +3497,275 @@ body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-item{
   box-shadow:none !important;
   backdrop-filter:none !important;
   -webkit-backdrop-filter:none !important;
-  transform: translateY(-11px) !important;
+  transform: translateY(var(--vr-explorer-hud-item-y)) !important;
+  font-family: var(--vr-explorer-font-ui) !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-identity{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  transform: translate(var(--vr-identity-tx), var(--vr-identity-ty)) !important;
+  gap: var(--vr-hud-name-years-gap) !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: none !important;
+  overflow: hidden !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-left .vr-hud-value{
+  transform: translate(var(--vr-vcoins-tx), var(--vr-vcoins-ty)) !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-right .vr-hud-value{
+  transform: translate(var(--vr-jetons-tx), var(--vr-jetons-ty)) !important;
 }
 
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-value{
+  font-family: var(--vr-explorer-font-ui) !important;
   font-size: clamp(13px, 2vw, 24px) !important;
   font-weight: 800 !important;
   line-height:1 !important;
+  letter-spacing: .01em !important;
   color:#000 !important;
   text-shadow: 0 1px 0 rgba(255,255,255,0.35), 0 0 8px rgba(0,0,0,0.12) !important;
-  transform: translateY(-2px) !important;
 }
-body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-name{
-  font-size: clamp(13px, 2vw, 28px) !important;
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-name,
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-years{
+  font-family: var(--vr-explorer-font-ui) !important;
+  font-size: clamp(13px, 2vw, 24px) !important;
   font-weight: 800 !important;
   line-height:1 !important;
-  max-width:75% !important;
+  letter-spacing: .01em !important;
+  color:#000 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.18) !important;
+  transform: none !important;
+}
+
+body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-name{
+  max-width:72% !important;
   overflow:hidden !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
 }
+
 body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-years{
-  font-size: clamp(10px, 1.25vw, 16px) !important;
-  font-weight: 800 !important;
-  line-height:1 !important;
-  transform: translateY(1px) !important;
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
   opacity: .95 !important;
+}
+
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/new_world_explorer/g1_frame.webp");
+}
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-fill,
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/new_world_explorer/g1_fill.webp");
+}
+
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/new_world_explorer/g2_frame.webp");
+}
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-fill,
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/new_world_explorer/g2_fill.webp");
+}
+
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/new_world_explorer/g3_frame.webp");
+}
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-fill,
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/new_world_explorer/g3_fill.webp");
+}
+
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/new_world_explorer/g4_frame.webp");
+}
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-fill,
+body[data-universe="new_world_explorer"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/new_world_explorer/g4_fill.webp");
+}
+
+body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-frame,
+body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-fill,
+body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+body[data-universe="new_world_explorer"] .vr-gauge-label,
+body[data-universe="new_world_explorer"] .vr-gauge-value,
+body[data-universe="new_world_explorer"] .vr-gauge-val,
+body[data-universe="new_world_explorer"] .vr-gauge-delta{
+  color: #000 !important;
 }
 
 #view-game.vr-bg-new_world_explorer{
   --vr-universe-bg: url("../assets/img/backgrounds/explorer_default_gray.webp");
-  --vr-universe-card: url("../assets/img/ui/explorer_msg_default_gray.webp");
-  --vr-universe-choice: url("../assets/img/ui/explorer_choice_default_gray.webp");
+  --vr-universe-card: url("../assets/img/ui/explorer_msg_default_grey.webp");
+  --vr-universe-choice: url("../assets/img/ui/explorer_choice_default_grey.webp");
 }
+
+/* ===== Tablette portrait (600px–1100px) ===== */
+@media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
+  body.vr-body-game[data-universe="new_world_explorer"]{
+    --vr-card-w: clamp(380px, 74vw, 700px);
+    --vr-scn-h: clamp(160px, 19.5svh, 260px);
+    --vr-choice-h: clamp(96px, 11.8svh, 160px);
+    --vr-stack-gap: clamp(12px, 1.4svh, 22px);
+    --vr-choices-gap: clamp(6px, 0.8svh, 12px);
+    --vr-font-scn-title: clamp(18px, 2.8vmin, 36px);
+    --vr-font-scn-text: clamp(15px, 2.2vmin, 28px);
+    --vr-font-choice: clamp(13px, 2.0vmin, 24px);
+  }
+}
+
+/* ===== Mobile <= 480px ===== */
+@media (max-width: 480px){
+  body.vr-body-game[data-universe="new_world_explorer"]{
+    --vr-explorer-hud-w: 92vw;
+    --vr-explorer-topbar-w: clamp(210px, 58vw, 300px);
+    --vr-explorer-back-size: clamp(40px, 12vw, 60px);
+    --vr-explorer-customize-size: clamp(40px, 12vw, 60px);
+
+    --vr-topbar-h: calc(
+      (var(--vr-explorer-topbar-w) * var(--vr-explorer-topbar-src-h) / var(--vr-explorer-topbar-src-w))
+      + env(safe-area-inset-top) + 2px
+    );
+
+    --vr-card-w: clamp(270px, 88vw, 600px);
+    --vr-scn-h: clamp(150px, 20.5svh, 280px);
+    --vr-choice-h: clamp(96px, 13.0svh, 175px);
+
+    --vr-game-gap: 0px;
+    --vr-stack-gap: clamp(12px, 1.6svh, 26px);
+    --vr-choices-gap: clamp(6px, 0.8svh, 12px);
+
+    --vr-choice-safe: 82%;
+    --vr-choice-inset-top: 15%;
+    --vr-choice-inset-right: 8%;
+    --vr-choice-inset-bottom: 15%;
+    --vr-choice-inset-left: 8%;
+
+    --vr-font-scn-title: clamp(18px, 4.5vw, 30px);
+    --vr-font-scn-text: clamp(15px, 3.8vw, 24px);
+    --vr-font-choice: clamp(13px, 3.4vw, 20px);
+
+    --vr-explorer-topbar-top: calc(6px + env(safe-area-inset-top));
+    --vr-explorer-side-btn-top: calc(10px + env(safe-area-inset-top));
+    --vr-explorer-side-btn-side: 16px;
+
+    --vr-explorer-hud-item-y: -5px;
+
+    --vr-identity-ty: 10px;
+    --vr-hud-name-years-gap: 14px;
+
+    --vr-vcoins-ty: 6px;
+    --vr-jetons-ty: 6px;
+  }
+
+  body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-name,
+  body.vr-body-game[data-universe="new_world_explorer"] .vr-hud-years{
+    font-size: clamp(11px, 3vw, 16px) !important;
+  }
+
+  body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-card-title{
+    line-height: 1.04 !important;
+    max-width: 94% !important;
+  }
+
+  body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-card-text{
+    line-height: 1.12 !important;
+    max-width: 94% !important;
+  }
+
+  body.vr-body-game[data-universe="new_world_explorer"] #view-game .vr-choice-label{
+    line-height: 1.10 !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ===== Petits écrans / écrans courts ===== */
+@media (max-width: 390px), (max-height: 740px){
+  body.vr-body-game[data-universe="new_world_explorer"]{
+    --vr-scn-h: clamp(130px, 18.0svh, 240px);
+    --vr-choice-h: clamp(84px, 11.5svh, 148px);
+    --vr-game-gap: 0px;
+    --vr-stack-gap: clamp(8px, 1.1svh, 16px);
+    --vr-choices-gap: clamp(5px, 0.6svh, 9px);
+    --vr-font-scn-title: clamp(16px, 4.2vw, 26px);
+    --vr-font-scn-text: clamp(13px, 3.4vw, 20px);
+    --vr-font-choice: clamp(12px, 3.2vw, 17px);
+    --vr-choice-safe: 80%;
+    --vr-choice-inset-top: 14%;
+    --vr-choice-inset-right: 7%;
+    --vr-choice-inset-bottom: 14%;
+    --vr-choice-inset-left: 7%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ==========================================================
    UNIVERS — VAMPIRE
    ========================================================== */
+body[data-universe="vampire_lord"].vr-body-game #view-game .vr-card-title,
+body[data-universe="vampire_lord"].vr-body-game #view-game .vr-card-text{
+  color: #000 !important;
+}
+
+body[data-universe="vampire_lord"].vr-body-game #view-game .vr-choice-label{
+  color: #000 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  font-size: clamp(15px, 2.35vmin, 24px) !important;
+  font-weight: 700 !important;
+  line-height: 1.16 !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
+}
+
 body.vr-body-game[data-universe="vampire_lord"]{
+  --vr-card-w: clamp(390px, 98vw, 1080px);
+
+  --vr-scn-h: clamp(132px, 17.6svh, 236px);
+  --vr-choice-h: clamp(82px, 11.2svh, 142px);
+
+  --vr-game-gap: clamp(2px, 0.24svh, 6px);
+  --vr-stack-gap: clamp(8px, 0.95svh, 18px);
+  --vr-choices-gap: clamp(8px, 0.90svh, 16px);
+
+  --vr-scn-inset-top: 13%;
+  --vr-scn-inset-right: 11%;
+  --vr-scn-inset-bottom: 15%;
+  --vr-scn-inset-left: 11%;
+
+  --vr-choice-inset-top: 16%;
+  --vr-choice-inset-right: 9%;
+  --vr-choice-inset-bottom: 16%;
+  --vr-choice-inset-left: 9%;
+  --vr-choice-safe: 84%;
+
+  --vr-font-scn-title: clamp(15px, 2.5vmin, 28px);
+  --vr-font-scn-text:  clamp(13px, 2.0vmin, 21px);
+  --vr-font-choice:    clamp(13.5px, 2.05vmin, 21px);
+
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
   --vr-vampire-hud-w: min(94vw, 980px);
@@ -2994,6 +3783,28 @@ body.vr-body-game[data-universe="vampire_lord"]{
   --vr-vcoins-glow:rgba(210,60,60,.28);
   --vr-vcoins-bg: transparent;
   --vr-jetons-bg: transparent;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title,
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text,
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-main{
+  overflow: hidden;
+  background-size: 96% 98% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-button{
+  background-size: 104% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 body.vr-body-game[data-universe="vampire_lord"] .vr-top-actions-game .vr-top-icon,
@@ -3136,10 +3947,11 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-value{
   font-size: clamp(13px, 2vw, 24px) !important;
   font-weight: 800 !important;
   line-height:1 !important;
-  color:#000 !important;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.35), 0 0 8px rgba(0,0,0,0.12) !important;
+  color:#ffffff !important;
+  text-shadow: 0 1px 0 rgba(2, 2, 2, 0.35), 0 0 8px rgba(0,0,0,0.12) !important;
   transform: translateY(-2px) !important;
 }
+
 body.vr-body-game[data-universe="vampire_lord"] .vr-hud-name{
   font-size: clamp(13px, 2vw, 28px) !important;
   font-weight: 800 !important;
@@ -3149,6 +3961,7 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-name{
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
 }
+
 body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
   font-size: clamp(10px, 1.25vw, 16px) !important;
   font-weight: 800 !important;
@@ -3157,24 +3970,154 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
   opacity: .95 !important;
 }
 
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
+  font-size: clamp(17px, 2.7vmin, 28px) !important;
+  font-weight: 800 !important;
+  line-height: 1.08 !important;
+  max-width: 94% !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
+  font-size: clamp(15px, 2.35vmin, 24px) !important;
+  font-weight: 700 !important;
+  line-height: 1.16 !important;
+  max-width: 94% !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
+}
+
 #view-game.vr-bg-vampire_lord{
   --vr-universe-bg: url("../assets/img/backgrounds/vampire_default_gray.webp");
   --vr-universe-card: url("../assets/img/ui/vampire_msg_default_gray.webp");
   --vr-universe-choice: url("../assets/img/ui/vampire_choice_default_gray.webp");
 }
 
-/* ==========================================================
-   UNIVERS — MEDIEVAL
-   ========================================================== */
-body.vr-body-game[data-universe="medieval_king"]{
-  --vr-vcoins-color:#F2C14E;
-  --vr-vcoins-glow:rgba(242,193,78,.50);
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/vampire_lord/g1_frame.webp");
 }
-#view-game.vr-bg-medieval_king{
-  --vr-universe-bg: none;
-  --vr-universe-card: none;
-  --vr-universe-choice: none;
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-fill,
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(1) .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/vampire_lord/g1_fill.webp");
 }
+
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/vampire_lord/g2_frame.webp");
+}
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-fill,
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(2) .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/vampire_lord/g2_fill.webp");
+}
+
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/vampire_lord/g3_frame.webp");
+}
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-fill,
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(3) .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/vampire_lord/g3_fill.webp");
+}
+
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/vampire_lord/g4_frame.webp");
+}
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-fill,
+body[data-universe="vampire_lord"] .vr-gauges-row .vr-gauge:nth-child(4) .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/vampire_lord/g4_fill.webp");
+}
+
+body[data-universe="vampire_lord"] .vr-gauge .vr-gauge-frame,
+body[data-universe="vampire_lord"] .vr-gauge .vr-gauge-fill,
+body[data-universe="vampire_lord"] .vr-gauge .vr-gauge-preview{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+@media (max-width: 480px){
+  body.vr-body-game[data-universe="vampire_lord"]{
+    --vr-vampire-hud-w: 92vw;
+    --vr-vampire-topbar-w: clamp(210px, 58vw, 300px);
+    --vr-vampire-back-size: clamp(40px, 12vw, 60px);
+    --vr-vampire-customize-size: clamp(40px, 12vw, 60px);
+
+    --vr-topbar-h: calc(clamp(50px, 12vw, 76px) + env(safe-area-inset-top) + 6px);
+
+    --vr-ui-topbar-top: 12px;
+    --vr-ui-back-top: 16px;
+    --vr-ui-back-left: 16px;
+    --vr-ui-customize-top: 16px;
+    --vr-ui-customize-right: 16px;
+
+    --vr-card-w: clamp(320px, 96vw, 760px);
+    --vr-scn-h: clamp(120px, 16.2svh, 198px);
+    --vr-choice-h: clamp(76px, 10.4svh, 120px);
+
+    --vr-stack-gap: 9px;
+    --vr-choices-gap: 8px;
+
+    --vr-choice-safe: 82%;
+    --vr-choice-inset-top: 15%;
+    --vr-choice-inset-right: 8%;
+    --vr-choice-inset-bottom: 15%;
+    --vr-choice-inset-left: 8%;
+
+    --vr-font-choice: clamp(12px, 3vw, 15.5px);
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
+  body.vr-body-game[data-universe="vampire_lord"] > a.vr-icon-button[aria-label="Accueil"]{ top: calc(16px + env(safe-area-inset-top)) !important; left: 16px !important; }
+  body.vr-body-game[data-universe="vampire_lord"] #btn-customize{ top: calc(16px + env(safe-area-inset-top)) !important; right: 16px !important; }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-hud-item{
+    transform: translateY(-4px) !important;
+  }
+  body.vr-body-game[data-universe="vampire_lord"] .vr-hud-value{
+    transform: translateY(0px) !important;
+  }
+
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
+  font-size: clamp(15px, 4.2vw, 20px) !important;
+  font-weight: 800 !important;
+  line-height: 1.06 !important;
+  max-width: 94% !important;
+}
+  body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
+    font-size: clamp(13.5px, 3.8vw, 18px) !important;
+    font-weight: 700 !important;
+    line-height: 1.14 !important;
+    max-width: 94% !important;
+  }
+  body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
+    font-size: clamp(13.5px, 3.8vw, 18px) !important;
+    font-weight: 700 !important;
+    line-height: 1.14 !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 390px), (max-height: 740px){
+  body.vr-body-game[data-universe="vampire_lord"]{
+    --vr-choice-h: clamp(78px, 10.4svh, 116px);
+    --vr-font-choice: clamp(12px, 2.9vw, 15px);
+    --vr-choice-safe: 80%;
+    --vr-choice-inset-top: 14%;
+    --vr-choice-inset-right: 7%;
+    --vr-choice-inset-bottom: 14%;
+    --vr-choice-inset-left: 7%;
+  }
+}
+
+
+
+
+
+
+
+
 
 /* ==========================================================
    MOBILE (TOUS UNIVERS) — bloc demandé
@@ -3308,3 +4251,65 @@ body.vr-body-game[data-universe="medieval_king"]{
 .vr-shop-item .vr-choice-button:active{ transform: translateY(1px); }
 .vr-shop-item img,
 .vr-shop-item svg{ max-width: 100%; height: auto; }
+
+
+
+/* ==========================================================
+   STAGE PROPORTIONNEL GLOBAL
+   - ton CSS actuel devient la référence
+   - on scale tout le mode jeu tel quel
+   - aucun réglage univers à refaire
+   ========================================================== */@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
+  body.vr-body-game[data-universe="western_president"]{
+    --vr-scn-h: clamp(148px, 17.2svh, 220px);
+    --vr-choice-h: clamp(92px, 10.8svh, 138px);
+
+    --vr-stack-gap: clamp(6px, 0.7svh, 10px);
+    --vr-choices-gap: clamp(6px, 0.7svh, 10px);
+
+    --vr-font-scn-title: clamp(15px, 1.9vmin, 24px);
+    --vr-font-scn-text: clamp(12px, 1.45vmin, 16px);
+    --vr-font-choice: clamp(12px, 1.5vmin, 16px);
+
+    --vr-scn-inset-top: 16%;
+    --vr-scn-inset-right: 13%;
+    --vr-scn-inset-bottom: 12%;
+    --vr-scn-inset-left: 13%;
+
+    --vr-choice-inset-top: 16%;
+    --vr-choice-inset-right: 10%;
+    --vr-choice-inset-bottom: 16%;
+    --vr-choice-inset-left: 10%;
+    --vr-choice-safe: 82%;
+
+    --vr-identity-ty: 10px;
+    --vr-hud-name-years-gap: 34px;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud{
+    margin: 0 auto !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value{
+    transform: translate(-8px, 10px) !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
+    transform: translate(8px, 10px) !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
+    transform: translate(0px, 12px) !important;
+    gap: 34px !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] #view-game .vr-card-title,
+  body.vr-body-game[data-universe="western_president"] #view-game .vr-card-text{
+    max-width: 88% !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-label{
+    line-height: 1.08 !important;
+  }
+}
+

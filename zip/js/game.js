@@ -309,16 +309,32 @@ const VR_BADGE_GOLD_CHOICES = 100;
 
         const style = document.createElement("style");
         style.id = ID;
-        style.textContent = `
+style.textContent = `
 @keyframes vrGaugeBlinkGlow {
-  0%   { filter: brightness(1); }
-  50%  { filter: brightness(1.25); }
-  100% { filter: brightness(1); }
+  0% {
+    filter: brightness(1) contrast(1);
+    opacity: 1;
+  }
+  50% {
+    filter: brightness(1.85) contrast(1.2);
+    opacity: .82;
+  }
+  100% {
+    filter: brightness(1) contrast(1);
+    opacity: 1;
+  }
 }
+
 @keyframes vrGaugeBlinkPulse {
-  0%   { transform: translateZ(0) scale(1); }
-  50%  { transform: translateZ(0) scale(1.01); }
-  100% { transform: translateZ(0) scale(1); }
+  0% {
+    transform: translateZ(0) scale(1);
+  }
+  50% {
+    transform: translateZ(0) scale(1.08);
+  }
+  100% {
+    transform: translateZ(0) scale(1);
+  }
 }
 
 .vr-gauge-value{
@@ -348,24 +364,24 @@ body.vr-peek-mode .vr-gauge-value{
 }
 
 body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-delta{
-  color:rgba(170,255,210,.98);
+  color:inherit;
 }
 body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-delta{
-  color:rgba(255,190,190,.98);
+  color:inherit;
 }
 
 body:not(.vr-peek-mode) .vr-gauge.vr-peek-up .vr-gauge-fill,
 body:not(.vr-peek-mode) .vr-gauge.vr-peek-down .vr-gauge-fill{
   transform-origin:50% 50%;
   animation:
-    vrGaugeBlinkGlow 650ms ease-in-out infinite,
-    vrGaugeBlinkPulse 650ms ease-in-out infinite;
+    vrGaugeBlinkGlow 620ms ease-in-out infinite,
+    vrGaugeBlinkPulse 620ms ease-in-out infinite;
 }
 
 body.vr-peek-mode .vr-gauge.vr-peek-up .vr-gauge-fill,
 body.vr-peek-mode .vr-gauge.vr-peek-down .vr-gauge-fill{
   animation:none !important;
-  filter:brightness(1.12) saturate(1.06);
+  filter:brightness(1.12) saturate(1.02);
 }
 
 body:not(.vr-peek-mode) .vr-gauge-preview{
@@ -1066,27 +1082,29 @@ body.vr-peek-mode .vr-gauge-preview{
           #vr-ending-overlay .vr-ending-text{
             text-align:center !important;
           }
-          .vr-ending-reward{
+               .vr-ending-reward{
             display:flex;
             align-items:center;
             justify-content:center;
-            gap:12px;
-            padding:10px 14px;
-            border-radius:16px;
-            background:rgba(255,255,255,.08);
-            border:1px solid rgba(255,255,255,.12);
-            box-shadow:0 14px 26px rgba(0,0,0,.24);
+            gap:8px;
+            padding:0;
+            margin:2px 0 4px;
+            background:transparent;
+            border:none;
+            box-shadow:none;
           }
           .vr-ending-reward img{
-            width:36px;
-            height:36px;
+            width:30px;
+            height:30px;
             object-fit:contain;
-            filter:drop-shadow(0 6px 12px rgba(0,0,0,.32));
+            filter:drop-shadow(0 4px 8px rgba(0,0,0,.28));
+            transform:translateY(3px);
           }
           .vr-ending-reward strong{
             font-size:20px;
             font-weight:950;
             letter-spacing:.2px;
+            line-height:1;
           }
           .vr-ending-double{
             position:relative;
@@ -1116,7 +1134,7 @@ body.vr-peek-mode .vr-gauge-preview{
             pointer-events:none;
           }
           .vr-ending-double.is-glow{
-            animation:vrEndingPulse 1.35s ease-in-out infinite;
+            animation:vrEndingPulse 1.15s ease-in-out infinite;
           }
           .vr-ending-double[disabled]{
             opacity:.65;
@@ -1158,7 +1176,7 @@ body.vr-peek-mode .vr-gauge-preview{
           }
           @keyframes vrEndingPulse{
             0%,100%{ transform:translateY(0) scale(1); filter:brightness(1); }
-            50%{ transform:translateY(-1px) scale(1.01); filter:brightness(1.10); }
+            50%{ transform:translateY(-1px) scale(1.015); filter:brightness(1.14); }
           }
         `;
         document.head.appendChild(style);
@@ -2163,8 +2181,11 @@ body.vr-peek-mode .vr-gauge-preview{
             renderEndingReward(out.amount);
           }
 
-          try { this._clearRunSave(); } catch (_) {}
-          try { window.location.href = "index.html"; } catch (_) {}
+         try { this._clearRunSave(); } catch (_) {}
+try {
+  sessionStorage.setItem("vr_crosspromo_context", "post_game_stress");
+} catch (_) {}
+try { window.location.href = "index.html"; } catch (_) {}
         };
       }
 
@@ -2517,9 +2538,12 @@ body.vr-peek-mode .vr-gauge-preview{
           }
 
           if (action === "back_menu") {
-            closePopup();
-            try { window.location.href = "index.html"; } catch (_) {}
-            return;
+      closePopup();
+try {
+  sessionStorage.setItem("vr_crosspromo_context", "post_game_dark");
+} catch (_) {}
+try { window.location.href = "index.html"; } catch (_) {}
+return;
           }
         });
       });
@@ -3266,15 +3290,18 @@ body.vr-peek-mode .vr-gauge-preview{
         res = await window.VUserData?.equipCosmetic?.(universeId, category, itemId);
       }
 
-      if (!res?.ok) {
-        if (res?.reason === "insufficient_vcoins") {
-          toast(t("shop.toast.insufficient_vcoins", ""));
-        } else if (res?.reason === "not_owned") {
-          toast(t("shop.toast.not_owned", ""));
-        } else {
-          toast(t("common.error_generic", ""));
-        }
-      } else {
+   if (!res?.ok) {
+  if (res?.reason === "insufficient_vcoins") {
+    toast(t("shop.toast.insufficient_vcoins", ""));
+    try {
+      sessionStorage.setItem("vr_crosspromo_context", "low_vcoins");
+    } catch (_) {}
+  } else if (res?.reason === "not_owned") {
+    toast(t("shop.toast.not_owned", ""));
+  } else {
+    toast(t("common.error_generic", ""));
+  }
+} else {
         applyUniverseCosmetics(universeId);
         renderRowOnly(category);
       }
@@ -3458,12 +3485,35 @@ body.vr-peek-mode .vr-gauge-preview{
     return PREVIEW_DEFAULT_ASSETS?.[universeId]?.[category] || "";
   }
 
-  function resolvePreviewAssets(cfg) {
-    return {
-      background: cfg.category === "background" ? cfg.src : getDefaultPreviewAsset(cfg.universeId, "background"),
-      message: cfg.category === "message" ? cfg.src : getDefaultPreviewAsset(cfg.universeId, "message"),
-      choice: cfg.category === "choice" ? cfg.src : getDefaultPreviewAsset(cfg.universeId, "choice")
-    };
+function resolvePreviewAssets(cfg) {
+  function getEquippedOrDefault(category) {
+    try {
+      const equippedId = String(window.VUserData?.getEquippedCosmetic?.(cfg.universeId, category) || "");
+      if (equippedId) {
+        const item = window.VRCosmeticsCatalog?.getItem?.(cfg.universeId, category, equippedId);
+        if (item?.img) return item.img;
+      }
+    } catch (_) {}
+
+    return getDefaultPreviewAsset(cfg.universeId, category);
+  }
+
+  return {
+    background:
+      cfg.category === "background" && cfg.src
+        ? cfg.src
+        : getEquippedOrDefault("background"),
+
+    message:
+      cfg.category === "message" && cfg.src
+        ? cfg.src
+        : getEquippedOrDefault("message"),
+
+    choice:
+      cfg.category === "choice" && cfg.src
+        ? cfg.src
+        : getEquippedOrDefault("choice")
+  };
   }
 
   function setBgImage(el, src) {
@@ -3482,9 +3532,18 @@ body.vr-peek-mode .vr-gauge-preview{
     style.textContent = `
       html.vr-preview-mode,
       body.vr-preview-mode{
+        width:100% !important;
+        height:100% !important;
+        margin:0 !important;
         overflow:hidden !important;
         overscroll-behavior:none !important;
-        height:100% !important;
+        background:#0b1220 !important;
+      }
+
+      body.vr-preview-mode{
+        --vr-preview-base-w: 430;
+        --vr-preview-base-h: 932;
+        --vr-preview-scale: 1;
       }
 
       body.vr-preview-mode > a.vr-icon-button,
@@ -3498,33 +3557,27 @@ body.vr-peek-mode .vr-gauge-preview{
       }
 
       body.vr-preview-mode .vr-main{
-        height:100vh !important;
-        min-height:100vh !important;
-        overflow:hidden !important;
+        position:fixed !important;
+        left:50% !important;
+        top:50% !important;
+        width:calc(var(--vr-preview-base-w) * 1px) !important;
+        min-width:calc(var(--vr-preview-base-w) * 1px) !important;
+        max-width:none !important;
+        height:calc(var(--vr-preview-base-h) * 1px) !important;
+        min-height:calc(var(--vr-preview-base-h) * 1px) !important;
+        max-height:none !important;
         padding:0 !important;
+        margin:0 !important;
+        overflow:hidden !important;
+        transform:translate(-50%, -50%) scale(var(--vr-preview-scale)) !important;
+        transform-origin:center center !important;
       }
 
       body.vr-preview-mode #view-game{
-        min-height:100vh !important;
-        height:100vh !important;
+        width:100% !important;
+        height:100% !important;
+        min-height:100% !important;
         overflow:hidden !important;
-        padding:8px 10px 10px !important;
-      }
-
-      body.vr-preview-mode .vr-hud{
-        margin-bottom:0 !important;
-      }
-
-      body.vr-preview-mode .vr-gauges-row{
-        margin-bottom:2px !important;
-      }
-
-      body.vr-preview-mode .vr-card-container{
-        margin-top:0 !important;
-      }
-
-      body.vr-preview-mode .vr-card-stack{
-        gap:8px !important;
       }
 
       body.vr-preview-mode .vr-gauge-value,
@@ -3538,6 +3591,21 @@ body.vr-peek-mode .vr-gauge-preview{
       }
     `;
     document.head.appendChild(style);
+  }
+
+    function updatePreviewScale() {
+    if (!document.body.classList.contains("vr-preview-mode")) return;
+
+    const baseW = 430;
+    const baseH = 932;
+    const pad = 8;
+
+    const availW = Math.max(0, window.innerWidth - (pad * 2));
+    const availH = Math.max(0, window.innerHeight - (pad * 2));
+
+    const scale = Math.min(availW / baseW, availH / baseH);
+
+    document.body.style.setProperty("--vr-preview-scale", String(Math.max(0.1, scale)));
   }
 
   function resetPreviewMeta() {
@@ -3618,6 +3686,12 @@ body.vr-peek-mode .vr-gauge-preview{
 
     document.documentElement.classList.add("vr-preview-mode");
     document.body.classList.add("vr-preview-mode");
+
+    updatePreviewScale();
+    try { window.addEventListener("resize", updatePreviewScale, { passive: true }); } catch (_) {}
+    try { requestAnimationFrame(updatePreviewScale); } catch (_) {}
+    try { setTimeout(updatePreviewScale, 80); } catch (_) {}
+    try { setTimeout(updatePreviewScale, 250); } catch (_) {}
 
     try { await window.VUserData?.init?.(); } catch (_) {}
 

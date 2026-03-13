@@ -3,27 +3,27 @@
   "gauges": [
     {
       "id": "conquered_territory",
-      "label_fr": "Territoire conquis",
-      "label_en": "Conquered territory",
-      "label_de": "Erobertes Gebiet",
-      "label_es": "Territorio conquistado",
-      "label_pt": "Território conquistado",
-      "label_ptbr": "Território conquistado",
-      "label_ko": "정복한 영토",
-      "label_ja": "征服した領土",
-      "label_id": "Wilayah yang ditaklukkan"
+      "label_fr": "Territoires",
+      "label_en": "Territories",
+      "label_de": "Gebiete",
+      "label_es": "Territorios",
+      "label_pt": "Territórios",
+      "label_ptbr": "Territórios",
+      "label_ko": "영토",
+      "label_ja": "領土",
+      "label_id": "Wilayah"
     },
     {
       "id": "found_wealth",
-      "label_fr": "Richesses trouvées",
-      "label_en": "Found wealth",
-      "label_de": "Gefundener Reichtum",
-      "label_es": "Riquezas encontradas",
-      "label_pt": "Riquezas encontradas",
-      "label_ptbr": "Riquezas encontradas",
-      "label_ko": "발견한 부",
-      "label_ja": "見つけた富",
-      "label_id": "Kekayaan yang ditemukan"
+      "label_fr": "Richesses",
+      "label_en": "Wealth",
+      "label_de": "Reichtümer",
+      "label_es": "Riquezas",
+      "label_pt": "Riquezas",
+      "label_ptbr": "Riquezas",
+      "label_ko": "부",
+      "label_ja": "富",
+      "label_id": "Kekayaan"
     },
     {
       "id": "converted_population",
@@ -39,15 +39,15 @@
     },
     {
       "id": "royal_treasury",
-      "label_fr": "Compte à la couronne",
-      "label_en": "Royal report",
-      "label_de": "Königliche Schatzkammer",
-      "label_es": "Tesoro real",
-      "label_pt": "Tesouro real",
-      "label_ptbr": "Tesouro real",
-      "label_ko": "왕실 금고",
-      "label_ja": "王室の金庫",
-      "label_id": "Kas kerajaan"
+      "label_fr": "Appui royal",
+      "label_en": "Royal support",
+      "label_de": "Königliche Unterstützung",
+      "label_es": "Apoyo real",
+      "label_pt": "Apoio real",
+      "label_ptbr": "Apoio real",
+      "label_ko": "왕실의 지원",
+      "label_ja": "王室の支援",
+      "label_id": "Dukungan kerajaan"
     }
   ],
   "initialGauges": {

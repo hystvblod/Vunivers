@@ -1831,10 +1831,10 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-card-text{
   color: #000 !important;
 }
 body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
-  font-family: "VR_Cormorant", serif !important;
+  font-family: "MerriweatherExplorer", serif !important;
   color: #000 !important;
   font-weight: 800 !important;
-  line-height: 1.15 !important;
+  line-height: 1.12 !important;
 }
 
 body.vr-body-game[data-universe="heaven_king"]{
@@ -1845,22 +1845,22 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-choices-gap: clamp(1px, 0.12svh, 2px);
 
   --vr-scn-h: clamp(150px, 19.2svh, 320px);
-  --vr-choice-h: clamp(96px, 13.6svh, 180px);
+  --vr-choice-h: clamp(112px, 15svh, 205px);
 
   --vr-scn-inset-top: 12%;
   --vr-scn-inset-right: 13%;
   --vr-scn-inset-bottom: 18%;
   --vr-scn-inset-left: 13%;
 
-  --vr-choice-inset-top: 17%;
-  --vr-choice-inset-right: 9%;
-  --vr-choice-inset-bottom: 17%;
-  --vr-choice-inset-left: 9%;
-  --vr-choice-safe: 84%;
+  --vr-choice-inset-top: 15%;
+  --vr-choice-inset-right: 8%;
+  --vr-choice-inset-bottom: 15%;
+  --vr-choice-inset-left: 8%;
+  --vr-choice-safe: 88%;
 
   --vr-font-scn-title: clamp(18px, 2.9vmin, 34px);
   --vr-font-scn-text:  clamp(14px, 2.35vmin, 26px);
-  --vr-font-choice:    clamp(15px, 2.45vmin, 24px);
+  --vr-font-choice:    clamp(18px, 2.85vmin, 30px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 2px);
 
