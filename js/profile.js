@@ -473,31 +473,24 @@
   }
 
   async function syncProfileWalletFromRemote() {
-  try {
-    const me = await window.VRRemoteStore?.getMe?.();
-    if (!me || typeof me !== "object") return false;
+    try {
+      const me = await window.VRRemoteStore?.getMe?.();
+      if (!me || typeof me !== "object") return false;
 
-    const cur = window.VUserData?.load?.() || {};
+      const cur = window.VUserData?.load?.() || {};
 
-    window.VUserData?.save?.({
-      ...cur,
-      user_id: (me.id ?? cur.user_id ?? "").toString(),
-      username: (me.username ?? cur.username ?? "").toString(),
-      vcoins: Number(me.vcoins ?? cur.vcoins ?? 0) || 0,
-      jetons: Number(me.jetons ?? cur.jetons ?? 0) || 0,
-      lang: (me.lang ?? cur.lang ?? "fr").toString(),
-      no_ads: (typeof me.no_ads !== "undefined") ? !!me.no_ads : !!cur.no_ads,
-      has_diamond: (typeof me.has_diamond !== "undefined") ? !!me.has_diamond : !!cur.has_diamond,
-      unlocked_universes: Array.isArray(me.unlocked_universes)
-        ? me.unlocked_universes
-        : (cur.unlocked_universes || [])
-    });
+      window.VUserData?.save?.({
+        ...cur,
+        vcoins: Number(me.vcoins ?? cur.vcoins ?? 0) || 0,
+        jetons: Number(me.jetons ?? cur.jetons ?? 0) || 0
+      });
 
-    return true;
-  } catch (_) {
-    return false;
+      return true;
+    } catch (_) {
+      return false;
+    }
   }
-}
+
   function renderProfileFromState() {
     const state = window.VUserData?.load?.() || {};
 
@@ -664,6 +657,7 @@
       }
 
       try { await window.VUserData?.refresh?.(); } catch (_) {}
+      try { await syncProfileWalletFromRemote(); } catch (_) {}
 
       renderProfileFromState();
       openEdit(false);
@@ -751,14 +745,14 @@
     });
   }
 
-async function refreshEverything() {
-  try { await window.VUserData?.refresh?.(); } catch (_) {}
-  try { await syncProfileWalletFromRemote(); } catch (_) {}
-  try { await _refreshBadges(); } catch (_) {}
+  async function refreshEverything() {
+    try { await window.VUserData?.refresh?.(); } catch (_) {}
+    try { await syncProfileWalletFromRemote(); } catch (_) {}
+    try { await _refreshBadges(); } catch (_) {}
 
-  renderProfileFromState();
-  renderUniverses();
-}
+    renderProfileFromState();
+    renderUniverses();
+  }
 
   async function boot() {
     try {
@@ -768,6 +762,7 @@ async function refreshEverything() {
 
     try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
     try { await window.VUserData?.init?.(); } catch (_) {}
+    try { await syncProfileWalletFromRemote(); } catch (_) {}
     try { await _initBadges(); } catch (_) {}
 
     renderProfileFromState();
