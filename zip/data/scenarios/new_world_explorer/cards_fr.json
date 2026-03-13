@@ -1,7 +1,7 @@
 {
   "nw_001": {
     "title": "Port naturel",
-    "body": "Une baie parfaite peut devenir notre porte d entrée ou un simple arrêt.",
+    "body": "Une baie parfaite peut devenir notre porte d’entrée ou un simple arrêt.",
     "choices": {
       "A": "Y bâtir un fort",
       "B": "Y ouvrir un marché",
@@ -19,7 +19,7 @@
   },
   "nw_003": {
     "title": "Interprète malin",
-    "body": "Notre interprète simplifie les traités quand cela l arrange.",
+    "body": "Notre interprète simplifie les traités quand cela l’arrange.",
     "choices": {
       "A": "Le garder car il est utile",
       "B": "Le remplacer vite",
@@ -28,10 +28,10 @@
   },
   "nw_004": {
     "title": "Mine cachée",
-    "body": "Un guide parle d une mine loin du rivage et près des ennuis.",
+    "body": "Un guide parle d’une mine loin du rivage et près des ennuis.",
     "choices": {
       "A": "Envoyer des soldats",
-      "B": "Envoyer des mineurs",
+      "B": "Envoyer une équipe d’extraction",
       "C": "Acheter le secret seulement"
     }
   },
@@ -39,7 +39,7 @@
     "title": "Village allié",
     "body": "Un village voisin propose sa paix contre des outils et du respect.",
     "choices": {
-      "A": "Accepter l alliance",
+      "A": "Accepter l’alliance",
       "B": "Prendre la zone sans attendre",
       "C": "Refuser poliment"
     }
@@ -55,11 +55,11 @@
   },
   "nw_007": {
     "title": "Fort ou marché",
-    "body": "Nous n avons ni assez d hommes ni assez d argent pour tout faire.",
+    "body": "Nous n’avons ni assez d’hommes ni assez d’argent pour tout faire.",
     "choices": {
-      "A": "Fort d abord",
-      "B": "Marché d abord",
-      "C": "Rien faire pour l instant"
+      "A": "Fort d’abord",
+      "B": "Marché d’abord",
+      "C": "Rien faire pour l’instant"
     }
   },
   "nw_008": {
@@ -91,7 +91,7 @@
   },
   "nw_011": {
     "title": "Route intérieure",
-    "body": "Une piste vers l intérieur promet terres et pièges en quantités égales.",
+    "body": "Une piste vers l’intérieur promet terres et pièges en quantités égales.",
     "choices": {
       "A": "Tracer la route",
       "B": "Envoyer un petit groupe",
@@ -118,16 +118,16 @@
   },
   "nw_014": {
     "title": "École de la cour",
-    "body": "Le gouverneur veut une école pour diffuser nos lois et nos manières.",
+    "body": "Le gouverneur veut une école pour mieux relier le port et le village.",
     "choices": {
       "A": "La financer",
       "B": "La confier au village",
-      "C": "Dire que ce n est pas urgent"
+      "C": "Dire que ce n’est pas urgent"
     }
   },
   "nw_015": {
     "title": "Monopole du sel",
-    "body": "Le sel local vaut presque autant que l or et moins que les rumeurs.",
+    "body": "Le sel local vaut presque autant que l’or et moins que les rumeurs.",
     "choices": {
       "A": "Créer un monopole",
       "B": "Laisser vendre librement",
@@ -140,16 +140,16 @@
     "choices": {
       "A": "Lui donner une escorte",
       "B": "Le faire attendre",
-      "C": "L envoyer avec le cuisinier"
+      "C": "L’envoyer avec le cuisinier"
     }
   },
   "nw_017": {
     "title": "Guide disparu",
-    "body": "Notre meilleur guide s est volatilisé avec une bourse très visible.",
+    "body": "Notre meilleur guide s’est volatilisé avec une bourse très visible.",
     "choices": {
       "A": "Le poursuivre",
       "B": "Payer un autre guide",
-      "C": "Oublier l affaire"
+      "C": "Oublier l’affaire"
     }
   },
   "nw_018": {
@@ -165,9 +165,9 @@
     "title": "Puits commun",
     "body": "Le puits du camp intéresse aussi le village voisin et ses jarres.",
     "choices": {
-      "A": "Partager l eau",
-      "B": "Réserver l eau au camp",
-      "C": "Faire payer l accès"
+      "A": "Partager l’eau",
+      "B": "Réserver l’eau au camp",
+      "C": "Faire payer l’accès"
     }
   },
   "nw_020": {
@@ -176,7 +176,7 @@
     "choices": {
       "A": "Punir en public",
       "B": "Lui laisser une chance",
-      "C": "Étouffer l histoire"
+      "C": "Étouffer l’histoire"
     }
   },
   "nw_021": {
@@ -184,8 +184,8 @@
     "body": "Un petit temple veille sur le port et sur les regards du village.",
     "choices": {
       "A": "Le respecter publiquement",
-      "B": "L utiliser comme dépôt",
-      "C": "Offrir de l huile au lieu"
+      "B": "L’utiliser comme dépôt",
+      "C": "Offrir de l’huile au lieu"
     }
   },
   "nw_022": {
@@ -244,16 +244,16 @@
   },
   "nw_028": {
     "title": "Éclaireur ambitieux",
-    "body": "Un éclaireur veut plus d hommes pour explorer très loin et revenir riche.",
+    "body": "Un éclaireur veut plus d’hommes pour explorer très loin et revenir riche.",
     "choices": {
       "A": "Lui donner des hommes",
-      "B": "Lui donner peu d hommes",
+      "B": "Lui donner peu d’hommes",
       "C": "Le garder au camp"
     }
   },
   "nw_029": {
     "title": "Marchand étranger",
-    "body": "Un marchand venu d ailleurs propose un pacte discret et rentable.",
+    "body": "Un marchand venu d’ailleurs propose un pacte discret et rentable.",
     "choices": {
       "A": "Signer vite",
       "B": "Le taxer fort",
@@ -282,7 +282,7 @@
     "title": "Carte trafiquée",
     "body": "Une nouvelle carte agrandit nos terres sans déplacer une seule pierre.",
     "choices": {
-      "A": "L envoyer au roi",
+      "A": "L’envoyer au roi",
       "B": "La corriger",
       "C": "Garder la fausse version pour nous"
     }
@@ -315,26 +315,26 @@
     }
   },
   "nw_036": {
-    "title": "Orphelin du port",
-    "body": "Un enfant malin connaît tous les quais et tous les raccourcis.",
+    "title": "Jeune guide du port",
+    "body": "Un jeune du port connaît tous les quais et tous les raccourcis.",
     "choices": {
       "A": "Le payer comme guide",
       "B": "Le laisser tranquille",
-      "C": "Le mettre au service du fort"
+      "C": "L’orienter vers un apprentissage sûr"
     }
   },
   "nw_037": {
     "title": "Cloche sans maître",
     "body": "Une vieille cloche traîne sur la place et tout le monde la réclame.",
     "choices": {
-      "A": "L offrir au fort",
+      "A": "L’offrir au fort",
       "B": "La vendre",
       "C": "La rendre au village"
     }
   },
   "nw_038": {
     "title": "Trésor enfoui",
-    "body": "Des ouvriers jurent avoir vu de l or sous une vieille pierre.",
+    "body": "Des ouvriers jurent avoir vu de l’or sous une vieille pierre.",
     "choices": {
       "A": "Creuser en force",
       "B": "Creuser discrètement",
@@ -365,21 +365,21 @@
     "choices": {
       "A": "Financer le canal",
       "B": "Faire creuser par le village",
-      "C": "Abandonner l idée"
+      "C": "Abandonner l’idée"
     }
   },
   "nw_042": {
     "title": "Perroquet indiscret",
     "body": "Le perroquet du port répète nos secrets mieux que nos scribes.",
     "choices": {
-      "A": "L acheter",
+      "A": "L’acheter",
       "B": "Le faire taire",
       "C": "Le garder comme amusement"
     }
   },
   "nw_043": {
     "title": "Marée idéale",
-    "body": "La marée parfaite peut servir un débarquement ou un convoi d épices.",
+    "body": "La marée parfaite peut servir un débarquement ou un convoi d’épices.",
     "choices": {
       "A": "Débarquer des hommes",
       "B": "Débarquer des marchandises",
@@ -390,9 +390,9 @@
     "title": "Artisan local",
     "body": "Un artisan fabrique mieux que nos ateliers et plus vite que nos plaintes.",
     "choices": {
-      "A": "L engager pour la couronne",
+      "A": "L’engager pour la couronne",
       "B": "Lui acheter sa production",
-      "C": "L aider à ouvrir boutique"
+      "C": "L’aider à ouvrir boutique"
     }
   },
   "nw_045": {
@@ -424,11 +424,11 @@
   },
   "nw_048": {
     "title": "Saison des pluies",
-    "body": "La pluie peut ruiner les routes ou laver nos erreurs, selon l humeur.",
+    "body": "La pluie peut ruiner les routes ou laver nos erreurs, selon l’humeur.",
     "choices": {
       "A": "Renforcer les routes",
       "B": "Stocker et patienter",
-      "C": "Continuer comme si de rien n était"
+      "C": "Continuer comme si de rien n’était"
     }
   },
   "nw_049": {
@@ -463,13 +463,13 @@
     "body": "Un homme parle trop bien notre langue pour être seulement marchand.",
     "choices": {
       "A": "Le retourner",
-      "B": "L expulser",
-      "C": "Le laisser parler pour l écouter"
+      "B": "L’expulser",
+      "C": "Le laisser parler pour l’écouter"
     }
   },
   "nw_053": {
     "title": "Taxe des pontons",
-    "body": "Les pontons privés poussent vite quand l or circule encore plus vite.",
+    "body": "Les pontons privés poussent vite quand l’or circule encore plus vite.",
     "choices": {
       "A": "Taxer chaque ponton",
       "B": "Acheter les pontons",
@@ -487,20 +487,20 @@
   },
   "nw_055": {
     "title": "Source salée",
-    "body": "Une source donne de l eau étrange mais utile à la conservation.",
+    "body": "Une source donne de l’eau étrange mais utile à la conservation.",
     "choices": {
-      "A": "L exploiter",
+      "A": "L’exploiter",
       "B": "La garder pour le camp",
-      "C": "L offrir au marché"
+      "C": "L’offrir au marché"
     }
   },
   "nw_056": {
     "title": "Déserteur utile",
-    "body": "Un homme d un royaume rival veut nous vendre ses plans.",
+    "body": "Un homme d’un royaume rival veut nous vendre ses plans.",
     "choices": {
       "A": "Acheter ses plans",
       "B": "Le livrer au roi",
-      "C": "L utiliser puis le cacher"
+      "C": "L’utiliser puis le cacher"
     }
   },
   "nw_057": {
@@ -559,10 +559,10 @@
   },
   "nw_063": {
     "title": "Marchand de cartes",
-    "body": "Un homme vend des cartes de lieux que nous n avons pas vus.",
+    "body": "Un homme vend des cartes de lieux que nous n’avons pas vus.",
     "choices": {
       "A": "Acheter son lot",
-      "B": "Arrêter l homme",
+      "B": "Arrêter l’homme",
       "C": "Le prendre comme éclaireur"
     }
   },
@@ -599,7 +599,7 @@
     "choices": {
       "A": "Tracer la frontière nous mêmes",
       "B": "Inviter les chefs à tracer",
-      "C": "Laisser flou pour l instant"
+      "C": "Laisser flou pour l’instant"
     }
   },
   "nw_068": {
@@ -633,7 +633,7 @@
     "title": "Chasse interdite",
     "body": "Le village interdit la chasse sur une zone riche en gibier.",
     "choices": {
-      "A": "Respecter l interdit",
+      "A": "Respecter l’interdit",
       "B": "Passer outre",
       "C": "Payer un droit limité"
     }
@@ -644,7 +644,7 @@
     "choices": {
       "A": "La taxer",
       "B": "La fermer tôt",
-      "C": "L acheter"
+      "C": "L’acheter"
     }
   },
   "nw_073": {
@@ -688,13 +688,13 @@
     "body": "Les portes du fort sont belles, lourdes et ouvertes trop souvent.",
     "choices": {
       "A": "Les renforcer",
-      "B": "Imposer un droit d entrée",
+      "B": "Imposer un droit d’entrée",
       "C": "Les laisser comme elles sont"
     }
   },
   "nw_078": {
     "title": "Sel de contrebande",
-    "body": "Le sel fuit les entrepôts plus vite que l eau fuit les tonneaux.",
+    "body": "Le sel fuit les entrepôts plus vite que l’eau fuit les tonneaux.",
     "choices": {
       "A": "Punir sévèrement",
       "B": "Baisser la taxe",
@@ -712,7 +712,7 @@
   },
   "nw_080": {
     "title": "Village en transition",
-    "body": "Le chef du village voisin n est plus là. Tout le monde attend notre geste.",
+    "body": "Le chef du village voisin n’est plus là. Tout le monde attend notre geste.",
     "choices": {
       "A": "Soutenir un successeur",
       "B": "Laisser le village choisir",
@@ -721,7 +721,7 @@
   },
   "nw_081": {
     "title": "Bureau du port",
-    "body": "Le bureau du port croule sous les papiers et peu sous l efficacité.",
+    "body": "Le bureau du port croule sous les papiers et peu sous l’efficacité.",
     "choices": {
       "A": "Payer plus de scribes",
       "B": "Simplifier les règles",
@@ -730,10 +730,10 @@
   },
   "nw_082": {
     "title": "Trésor du temple",
-    "body": "Le temple garde un coffre ancien que personne n ouvre sans trembler.",
+    "body": "Le temple garde un coffre ancien que personne n’ouvre sans trembler.",
     "choices": {
       "A": "Le laisser fermé",
-      "B": "Demander à l ouvrir ensemble",
+      "B": "Demander à l’ouvrir ensemble",
       "C": "Le saisir au nom du roi"
     }
   },
@@ -769,7 +769,7 @@
     "body": "Le mousse vise juste et veut mener des éclaireurs comme un grand.",
     "choices": {
       "A": "Lui donner sa chance",
-      "B": "Lui dire d attendre",
+      "B": "Lui dire d’attendre",
       "C": "Le mettre au service des stocks"
     }
   },
@@ -792,12 +792,12 @@
     }
   },
   "nw_089": {
-    "title": "Champ d indigo",
-    "body": "L indigo local vaut cher mais mange des terres qui nourrissent mieux.",
+    "title": "Champ d’indigo",
+    "body": "L’indigo local vaut cher mais mange des terres qui nourrissent mieux.",
     "choices": {
-      "A": "Planter plus d indigo",
+      "A": "Planter plus d’indigo",
       "B": "Garder des cultures mixtes",
-      "C": "Refuser l extension"
+      "C": "Refuser l’extension"
     }
   },
   "nw_090": {
@@ -806,7 +806,7 @@
     "choices": {
       "A": "La restaurer",
       "B": "La démonter et vendre la pierre",
-      "C": "La fermer et l oublier"
+      "C": "La fermer et l’oublier"
     }
   },
   "nw_091": {
@@ -846,12 +846,12 @@
     }
   },
   "nw_095": {
-    "title": "Atelier d armes",
+    "title": "Atelier d’armes",
     "body": "Un forgeron veut ouvrir un atelier pour nos lames et nos voisins.",
     "choices": {
-      "A": "Financer l atelier",
-      "B": "L autoriser sous taxe",
-      "C": "L interdire"
+      "A": "Financer l’atelier",
+      "B": "L’autoriser sous taxe",
+      "C": "L’interdire"
     }
   },
   "nw_096": {
@@ -859,13 +859,13 @@
     "body": "Un chef allié est blessé. Sa famille nous regarde déjà de travers.",
     "choices": {
       "A": "Envoyer un médecin",
-      "B": "Envoyer de l or",
+      "B": "Envoyer de l’or",
       "C": "Rester à distance"
     }
   },
   "nw_097": {
-    "title": "Taxe sur l or",
-    "body": "L or circule mieux quand tout le monde oublie la taxe officielle.",
+    "title": "Taxe sur l’or",
+    "body": "L’or circule mieux quand tout le monde oublie la taxe officielle.",
     "choices": {
       "A": "Monter les contrôles",
       "B": "Baisser la taxe",
@@ -878,7 +878,7 @@
     "choices": {
       "A": "Ouvrir aux marchands",
       "B": "Ouvrir aux alliés locaux",
-      "C": "N ouvrir qu aux soldats"
+      "C": "N’ouvrir qu aux soldats"
     }
   },
   "nw_099": {
@@ -892,7 +892,7 @@
   },
   "nw_100": {
     "title": "Baie sans maître",
-    "body": "La plus belle baie de la côte n appartient encore à personne.",
+    "body": "La plus belle baie de la côte n’appartient encore à personne.",
     "choices": {
       "A": "La prendre au nom du roi",
       "B": "Y créer une ville ouverte",
@@ -901,7 +901,7 @@
   },
   "nw_101": {
     "title": "Barques trop lentes",
-    "body": "Nos barques avancent comme des meubles flottants et le port s en moque.",
+    "body": "Nos barques avancent comme des meubles flottants et le port s’en moque.",
     "choices": {
       "A": "Acheter des voiles neuves",
       "B": "Former de meilleurs rameurs",
@@ -910,7 +910,7 @@
   },
   "nw_102": {
     "title": "Poisson géant",
-    "body": "Un poisson énorme bloque l entrée du port comme s il payait le loyer.",
+    "body": "Un poisson énorme bloque l’entrée du port comme s’il payait le loyer.",
     "choices": {
       "A": "Le chasser en groupe",
       "B": "Le vendre en morceaux",
@@ -959,12 +959,12 @@
     "choices": {
       "A": "Acheter son secret",
       "B": "Le laisser vendre librement",
-      "C": "L inviter au fort"
+      "C": "L’inviter au fort"
     }
   },
   "nw_108": {
     "title": "Quai encombré",
-    "body": "Le quai est plein de caisses, de chèvres et d excuses.",
+    "body": "Le quai est plein de caisses, de chèvres et d’excuses.",
     "choices": {
       "A": "Ranger avec des gardes",
       "B": "Agrandir le quai",
@@ -976,8 +976,8 @@
     "body": "Un vieux marin prédit la marée et parfois les prix.",
     "choices": {
       "A": "Le payer pour ses avis",
-      "B": "L ignorer",
-      "C": "L écouter en public"
+      "B": "L’ignorer",
+      "C": "L’écouter en public"
     }
   },
   "nw_110": {
@@ -986,7 +986,7 @@
     "choices": {
       "A": "Vendre une partie",
       "B": "Mieux nourrir les hommes",
-      "C": "Clôturer l enclos"
+      "C": "Clôturer l’enclos"
     }
   },
   "nw_111": {
@@ -1031,12 +1031,12 @@
     "choices": {
       "A": "Le hisser demain",
       "B": "Le broder avec le village",
-      "C": "Garder l ancien chiffon"
+      "C": "Garder l’ancien chiffon"
     }
   },
   "nw_116": {
     "title": "Épices perdues",
-    "body": "Une caisse d épices sent fort mais reste introuvable.",
+    "body": "Une caisse d’épices sent fort mais reste introuvable.",
     "choices": {
       "A": "Fouiller tous les docks",
       "B": "Racheter la caisse discrètement",
@@ -1090,7 +1090,7 @@
   },
   "nw_122": {
     "title": "Verger voisin",
-    "body": "Un verger voisin donne des fruits et des idées d installation.",
+    "body": "Un verger voisin donne des fruits et des idées d’installation.",
     "choices": {
       "A": "Signer un accord de récolte",
       "B": "Prendre le verger",
@@ -1101,16 +1101,16 @@
     "title": "Bateau peint",
     "body": "Un bateau local peint de couleurs vives attire tout le quai.",
     "choices": {
-      "A": "L acheter pour le fort",
+      "A": "L’acheter pour le fort",
       "B": "Le louer pour le commerce",
-      "C": "L applaudir de loin"
+      "C": "L’applaudir de loin"
     }
   },
   "nw_124": {
     "title": "Chef gourmet",
     "body": "Le chef voisin adore notre pain mais déteste nos grands discours.",
     "choices": {
-      "A": "L inviter au dîner",
+      "A": "L’inviter au dîner",
       "B": "Lui vendre le pain cher",
       "C": "Lui envoyer juste la recette"
     }
@@ -1135,7 +1135,7 @@
   },
   "nw_127": {
     "title": "Crabe sacré",
-    "body": "Des crabes envahissent le dépôt et personne n ose les toucher.",
+    "body": "Des crabes envahissent le dépôt et personne n’ose les toucher.",
     "choices": {
       "A": "Les chasser vite",
       "B": "Demander conseil au village",
@@ -1193,12 +1193,12 @@
     "choices": {
       "A": "La taxer",
       "B": "Y loger nos visiteurs",
-      "C": "L acheter"
+      "C": "L’acheter"
     }
   },
   "nw_134": {
     "title": "Carte mouillée",
-    "body": "Notre meilleure carte a pris l eau avec dignité.",
+    "body": "Notre meilleure carte a pris l’eau avec dignité.",
     "choices": {
       "A": "La recopier vite",
       "B": "Acheter une carte locale",
@@ -1218,7 +1218,7 @@
     "title": "Balade du noble",
     "body": "Un noble veut visiter les marais en bottes blanches.",
     "choices": {
-      "A": "L accompagner",
+      "A": "L’accompagner",
       "B": "Le décourager avec la vérité",
       "C": "Le promener au port seulement"
     }
@@ -1256,12 +1256,12 @@
     "choices": {
       "A": "Le suivre",
       "B": "Le taxer en secret",
-      "C": "L utiliser pour nos messages"
+      "C": "L’utiliser pour nos messages"
     }
   },
   "nw_141": {
     "title": "Puits profond",
-    "body": "Le nouveau puits donne une eau claire et beaucoup d avis.",
+    "body": "Le nouveau puits donne une eau claire et beaucoup d’avis.",
     "choices": {
       "A": "Le réserver au fort",
       "B": "Le partager",
@@ -1272,7 +1272,7 @@
     "title": "Farine rare",
     "body": "La farine manque et les boulangers regardent le ciel sans aide.",
     "choices": {
-      "A": "Acheter un stock d urgence",
+      "A": "Acheter un stock d’urgence",
       "B": "Baisser les rations des soldats",
       "C": "Négocier avec le village"
     }
@@ -1291,7 +1291,7 @@
     "body": "Un bijou trouvé sur la plage fait briller tous les regards.",
     "choices": {
       "A": "Le vendre",
-      "B": "L offrir au chef voisin",
+      "B": "L’offrir au chef voisin",
       "C": "Le garder au trésor"
     }
   },
@@ -1308,14 +1308,14 @@
     "title": "Sable utile",
     "body": "Le sable de la baie convient aux travaux mieux que nos humeurs.",
     "choices": {
-      "A": "L exploiter",
+      "A": "L’exploiter",
       "B": "Laisser le village vendre",
-      "C": "Bloquer l accès"
+      "C": "Bloquer l’accès"
     }
   },
   "nw_147": {
     "title": "Charpentier fier",
-    "body": "Le meilleur charpentier veut plus d argent et plus d éloges.",
+    "body": "Le meilleur charpentier veut plus d’argent et plus d’éloges.",
     "choices": {
       "A": "Payer la hausse",
       "B": "Former deux apprentis",
@@ -1346,7 +1346,7 @@
     "choices": {
       "A": "Poser des planches",
       "B": "Attendre le soleil",
-      "C": "Payer plus d ouvriers"
+      "C": "Payer plus d’ouvriers"
     }
   },
   "nw_151": {
@@ -1362,7 +1362,7 @@
     "title": "Chien du quai",
     "body": "Un chien local garde mieux les caisses que deux hommes éveillés.",
     "choices": {
-      "A": "L adopter pour le fort",
+      "A": "L’adopter pour le fort",
       "B": "Le laisser aux marchands",
       "C": "Le nourrir pour tout le port"
     }
@@ -1378,7 +1378,7 @@
   },
   "nw_154": {
     "title": "Poivre discret",
-    "body": "Du poivre passe sous le quai comme s il avait des jambes.",
+    "body": "Du poivre passe sous le quai comme s’il avait des jambes.",
     "choices": {
       "A": "Monter les fouilles",
       "B": "Taxer moins fort",
@@ -1390,13 +1390,13 @@
     "body": "Un mur en pierre rassurerait le camp et viderait la caisse.",
     "choices": {
       "A": "Le bâtir",
-      "B": "Renforcer seulement l entrée",
+      "B": "Renforcer seulement l’entrée",
       "C": "Reporter encore"
     }
   },
   "nw_156": {
     "title": "Foire des îles",
-    "body": "Des marchands des îles veulent une foire pleine de bruit et d odeurs.",
+    "body": "Des marchands des îles veulent une foire pleine de bruit et d’odeurs.",
     "choices": {
       "A": "Accueillir la foire",
       "B": "Taxer chaque stand",
@@ -1407,14 +1407,14 @@
     "title": "Soleil brutal",
     "body": "La chaleur vide les forces plus vite que les gourdes.",
     "choices": {
-      "A": "Acheter des toiles d ombre",
+      "A": "Acheter des toiles d’ombre",
       "B": "Raccourcir les journées",
       "C": "Faire tenir tout le monde"
     }
   },
   "nw_158": {
     "title": "Clou manquant",
-    "body": "Les travaux du quai s arrêtent pour un clou qu on ne trouve pas.",
+    "body": "Les travaux du quai s’arrêtent pour un clou qu on ne trouve pas.",
     "choices": {
       "A": "Acheter un stock entier",
       "B": "Faire forger sur place",
@@ -1426,7 +1426,7 @@
     "body": "Un bassin naturel pourrait abriter de petits navires sans drame.",
     "choices": {
       "A": "Y faire un port annexe",
-      "B": "Le garder pour l armée",
+      "B": "Le garder pour l’armée",
       "C": "Le laisser aux pêcheurs"
     }
   },
@@ -1480,7 +1480,7 @@
     "body": "Le riz local pousse si bien que même les souris grossissent.",
     "choices": {
       "A": "Acheter tout le riz",
-      "B": "Stocker pour l hiver",
+      "B": "Stocker pour l’hiver",
       "C": "Partager une part"
     }
   },
@@ -1524,7 +1524,7 @@
     "title": "Route du sel",
     "body": "Une route du sel pourrait enrichir la baie ou vider nos gardes.",
     "choices": {
-      "A": "L ouvrir et la taxer",
+      "A": "L’ouvrir et la taxer",
       "B": "La garder militaire",
       "C": "La confier à des marchands"
     }
@@ -1534,13 +1534,13 @@
     "body": "Le cordonnier sait tout du port et le dit trop bien.",
     "choices": {
       "A": "Le payer pour ses infos",
-      "B": "L embaucher au fort",
+      "B": "L’embaucher au fort",
       "C": "Le laisser parler"
     }
   },
   "nw_172": {
     "title": "Paniers cassés",
-    "body": "Les paniers du marché rendent l ananas plus rapide que le vendeur.",
+    "body": "Les paniers du marché rendent l’ananas plus rapide que le vendeur.",
     "choices": {
       "A": "Acheter des paniers neufs",
       "B": "Faire tisser sur place",
@@ -1562,12 +1562,12 @@
     "choices": {
       "A": "Commander un clairon neuf",
       "B": "Le laisser au défilé",
-      "C": "Vendre l idée au noble"
+      "C": "Vendre l’idée au noble"
     }
   },
   "nw_175": {
-    "title": "Boîte d outils",
-    "body": "Une boîte d outils complète arrive enfin sans la clé de la boîte.",
+    "title": "Boîte d’outils",
+    "body": "Une boîte d’outils complète arrive enfin sans la clé de la boîte.",
     "choices": {
       "A": "Forcer la serrure",
       "B": "Payer le serrurier local",
@@ -1580,7 +1580,7 @@
     "choices": {
       "A": "Créer un grand champ",
       "B": "Garder une petite culture",
-      "C": "Refuser l extension"
+      "C": "Refuser l’extension"
     }
   },
   "nw_177": {
@@ -1593,7 +1593,7 @@
     }
   },
   "nw_178": {
-    "title": "Pagaie d or",
+    "title": "Pagaie d’or",
     "body": "Une pagaie décorée circule comme un trophée très peu utile.",
     "choices": {
       "A": "La donner au meilleur rameur",
@@ -1603,7 +1603,7 @@
   },
   "nw_179": {
     "title": "Champ inondé",
-    "body": "Un champ proche du port boit plus d eau que prévu.",
+    "body": "Un champ proche du port boit plus d’eau que prévu.",
     "choices": {
       "A": "Creuser des fossés",
       "B": "Déplacer les cultures",
@@ -1657,7 +1657,7 @@
   },
   "nw_185": {
     "title": "Cale trop pleine",
-    "body": "La cale du navire royal avale tout sauf l ordre.",
+    "body": "La cale du navire royal avale tout sauf l’ordre.",
     "choices": {
       "A": "Décharger vite",
       "B": "Vendre une part sur place",
@@ -1684,7 +1684,7 @@
   },
   "nw_188": {
     "title": "Livres humides",
-    "body": "Les registres du port prennent l eau et perdent la mémoire.",
+    "body": "Les registres du port prennent l’eau et perdent la mémoire.",
     "choices": {
       "A": "Les recopier",
       "B": "Faire payer une copie aux marchands",
@@ -1692,7 +1692,7 @@
     }
   },
   "nw_189": {
-    "title": "Place à l ombre",
+    "title": "Place à l’ombre",
     "body": "Une place ombragée pourrait attirer les ventes et calmer les esprits.",
     "choices": {
       "A": "Y tenir le marché",
@@ -1713,14 +1713,14 @@
     "title": "Pirogue royale",
     "body": "Une pirogue offerte au roi ferait bonne impression et mal au budget.",
     "choices": {
-      "A": "L envoyer",
+      "A": "L’envoyer",
       "B": "La garder ici",
       "C": "La montrer puis la vendre"
     }
   },
   "nw_192": {
     "title": "Pavés du quai",
-    "body": "Le quai en terre avale les roues avec beaucoup d appétit.",
+    "body": "Le quai en terre avale les roues avec beaucoup d’appétit.",
     "choices": {
       "A": "Poser des pavés",
       "B": "Faire payer les gros chariots",
@@ -1738,7 +1738,7 @@
   },
   "nw_194": {
     "title": "Rue commerçante",
-    "body": "Une rue du port veut devenir riche avant même d être propre.",
+    "body": "Une rue du port veut devenir riche avant même d’être propre.",
     "choices": {
       "A": "La paver",
       "B": "Y poster des gardes",
@@ -1783,7 +1783,7 @@
   },
   "nw_199": {
     "title": "Marchands pressés",
-    "body": "Les marchands veulent ouvrir avant l aube et fermer avant nos contrôles.",
+    "body": "Les marchands veulent ouvrir avant l’aube et fermer avant nos contrôles.",
     "choices": {
       "A": "Accepter contre taxe",
       "B": "Limiter les heures",
@@ -1792,7 +1792,7 @@
   },
   "nw_200": {
     "title": "Colline du port",
-    "body": "Une colline proche voit tout le port et rêve déjà d une tour.",
+    "body": "Une colline proche voit tout le port et rêve déjà d’une tour.",
     "choices": {
       "A": "Y bâtir un poste",
       "B": "Y tenir un marché haut",
@@ -1801,7 +1801,7 @@
   },
   "nw_201": {
     "title": "Cloche rouillée",
-    "body": "La cloche du port sonne comme une casserole vexée et personne ne sait si c est l alerte.",
+    "body": "La cloche du port sonne comme une casserole vexée et personne ne sait si c’est l’alerte.",
     "choices": {
       "A": "La remplacer",
       "B": "La réparer localement",
@@ -1828,9 +1828,9 @@
   },
   "nw_204": {
     "title": "Caisse sans nom",
-    "body": "Une caisse arrive sans marque, sans papier et avec beaucoup d aplomb.",
+    "body": "Une caisse arrive sans marque, sans papier et avec beaucoup d’aplomb.",
     "choices": {
-      "A": "L ouvrir",
+      "A": "L’ouvrir",
       "B": "La taxer",
       "C": "La rendre publique"
     }
@@ -1848,7 +1848,7 @@
     "title": "Bateau verni",
     "body": "Un bateau local brille tant qu on voit son reflet avant ses voiles.",
     "choices": {
-      "A": "L acheter pour parade",
+      "A": "L’acheter pour parade",
       "B": "Le louer pour commerce",
       "C": "Copier son style"
     }
@@ -1864,7 +1864,7 @@
   },
   "nw_208": {
     "title": "Panneau tordu",
-    "body": "Le panneau du quai indique trois directions et aucune n aide.",
+    "body": "Le panneau du quai indique trois directions et aucune n’aide.",
     "choices": {
       "A": "Le refaire",
       "B": "Demander aux locaux",
@@ -1949,7 +1949,7 @@
     "choices": {
       "A": "Investir encore",
       "B": "Tester une petite parcelle",
-      "C": "L abandonner"
+      "C": "L’abandonner"
     }
   },
   "nw_218": {
@@ -1972,7 +1972,7 @@
   },
   "nw_220": {
     "title": "Récolte trop tôt",
-    "body": "Des ouvriers veulent récolter vite avant que le ciel ne change d avis.",
+    "body": "Des ouvriers veulent récolter vite avant que le ciel ne change d’avis.",
     "choices": {
       "A": "Récolter maintenant",
       "B": "Attendre deux jours",
@@ -1990,7 +1990,7 @@
   },
   "nw_222": {
     "title": "Marmite fâchée",
-    "body": "La grande marmite brûle le fond et l humeur du cuisinier.",
+    "body": "La grande marmite brûle le fond et l’humeur du cuisinier.",
     "choices": {
       "A": "La remplacer",
       "B": "Former un aide",
@@ -2029,7 +2029,7 @@
     "body": "Les ouvriers oublient leurs gourdes et finissent par râler très sec.",
     "choices": {
       "A": "Distribuer des gourdes",
-      "B": "Faire une réserve d eau",
+      "B": "Faire une réserve d’eau",
       "C": "Punir les oublis"
     }
   },
@@ -2047,7 +2047,7 @@
     "body": "Une couverture locale tient chaud et coûte moins que nos plaintes.",
     "choices": {
       "A": "En acheter beaucoup",
-      "B": "Laisser chacun s équiper",
+      "B": "Laisser chacun s’équiper",
       "C": "Offrir aux blessés"
     }
   },
@@ -2064,8 +2064,8 @@
     "title": "Queue au puits",
     "body": "La file au puits grandit chaque matin comme une liane patiente.",
     "choices": {
-      "A": "Ouvrir un second point d eau",
-      "B": "Faire passer le camp d abord",
+      "A": "Ouvrir un second point d’eau",
+      "B": "Faire passer le camp d’abord",
       "C": "Organiser des tours"
     }
   },
@@ -2082,7 +2082,7 @@
     "title": "Cadeau encombrant",
     "body": "Un chef voisin offre un grand tambour qui prend plus de place que de sens.",
     "choices": {
-      "A": "L accepter",
+      "A": "L’accepter",
       "B": "Le revendre",
       "C": "Le prêter aux fêtes"
     }
@@ -2100,7 +2100,7 @@
     "title": "Chef en retard",
     "body": "Le chef voisin arrive toujours tard mais toujours souriant.",
     "choices": {
-      "A": "L attendre",
+      "A": "L’attendre",
       "B": "Commencer sans lui",
       "C": "Lui envoyer un rappel"
     }
@@ -2110,7 +2110,7 @@
     "body": "Un vendeur local promet des cartes justes et un sourire payant.",
     "choices": {
       "A": "Lui en acheter",
-      "B": "Le tester d abord",
+      "B": "Le tester d’abord",
       "C": "Le laisser vendre"
     }
   },
@@ -2119,7 +2119,7 @@
     "body": "Le village propose une journée de pêche commune pour calmer deux querelles.",
     "choices": {
       "A": "Accepter",
-      "B": "Faire payer l usage",
+      "B": "Faire payer l’usage",
       "C": "Garder nos hommes au fort"
     }
   },
@@ -2145,14 +2145,14 @@
     "title": "Chemin partagé",
     "body": "Le camp et le village utilisent le même chemin et la même poussière.",
     "choices": {
-      "A": "L élargir",
+      "A": "L’élargir",
       "B": "Fixer des heures",
       "C": "Laisser le passage libre"
     }
   },
   "nw_240": {
     "title": "Rumeur de cadeau",
-    "body": "Une rumeur annonce un cadeau royal qui n existe pas encore.",
+    "body": "Une rumeur annonce un cadeau royal qui n’existe pas encore.",
     "choices": {
       "A": "Démentir vite",
       "B": "Laisser rêver un peu",
@@ -2170,7 +2170,7 @@
   },
   "nw_242": {
     "title": "Canards du quai",
-    "body": "Des canards occupent le quai comme s ils payaient la garde.",
+    "body": "Des canards occupent le quai comme s’ils payaient la garde.",
     "choices": {
       "A": "Les déplacer",
       "B": "Faire un petit bassin",
@@ -2192,7 +2192,7 @@
     "choices": {
       "A": "Le vendre",
       "B": "Le garder loin du bureau",
-      "C": "L offrir"
+      "C": "L’offrir"
     }
   },
   "nw_245": {
@@ -2208,7 +2208,7 @@
     "title": "Chèvre grimpeuse",
     "body": "Une chèvre grimpe sur les caisses et choisit toujours les plus chères.",
     "choices": {
-      "A": "L attacher",
+      "A": "L’attacher",
       "B": "Rendre la chèvre",
       "C": "Protéger les stocks"
     }
@@ -2260,7 +2260,7 @@
   },
   "nw_252": {
     "title": "Escalier du quai",
-    "body": "L escalier du quai perd une marche à chaque pluie sérieuse.",
+    "body": "L’escalier du quai perd une marche à chaque pluie sérieuse.",
     "choices": {
       "A": "Le refaire",
       "B": "Réparer la partie basse",
@@ -2268,7 +2268,7 @@
     }
   },
   "nw_253": {
-    "title": "Tour d observation",
+    "title": "Tour d’observation",
     "body": "Une petite tour offrirait une belle vue et de longues dépenses.",
     "choices": {
       "A": "La bâtir",
@@ -2287,7 +2287,7 @@
   },
   "nw_255": {
     "title": "Petite écluse",
-    "body": "Une petite écluse pourrait calmer l eau du bassin.",
+    "body": "Une petite écluse pourrait calmer l’eau du bassin.",
     "choices": {
       "A": "La construire",
       "B": "Tester en bois",
@@ -2296,16 +2296,16 @@
   },
   "nw_256": {
     "title": "Pieux mal plantés",
-    "body": "Des pieux bougent dans la vase comme s ils voulaient partir.",
+    "body": "Des pieux bougent dans la vase comme s’ils voulaient partir.",
     "choices": {
       "A": "Les replanter",
       "B": "Faire venir un expert local",
-      "C": "Changer d emplacement"
+      "C": "Changer d’emplacement"
     }
   },
   "nw_257": {
     "title": "Barril qui roule",
-    "body": "Un barril descend le quai seul et personne ne l a remercié.",
+    "body": "Un barril descend le quai seul et personne ne l’a remercié.",
     "choices": {
       "A": "Bloquer les pentes",
       "B": "Empiler autrement",
@@ -2352,7 +2352,7 @@
     "title": "Tissu brillant",
     "body": "Un tissu brillant attire les yeux et peut être les pièces.",
     "choices": {
-      "A": "L acheter pour revente",
+      "A": "L’acheter pour revente",
       "B": "Le réserver aux chefs",
       "C": "Laisser le village vendre"
     }
@@ -2370,7 +2370,7 @@
     "title": "Outil miracle",
     "body": "Un artisan vante un outil qui coupe tout sauf le prix.",
     "choices": {
-      "A": "L acheter",
+      "A": "L’acheter",
       "B": "Le tester",
       "C": "Former nos artisans"
     }
@@ -2388,18 +2388,18 @@
     "title": "Pierre légère",
     "body": "Une pierre claire allège les murs et les bras.",
     "choices": {
-      "A": "L exploiter",
-      "B": "Laisser les artisans l utiliser",
+      "A": "L’exploiter",
+      "B": "Laisser les artisans l’utiliser",
       "C": "Réserver la carrière"
     }
   },
   "nw_267": {
     "title": "Plume rare",
-    "body": "Une plume rare plaît tant aux scribes qu ils oublient l encre.",
+    "body": "Une plume rare plaît tant aux scribes qu ils oublient l’encre.",
     "choices": {
       "A": "Acheter le lot",
       "B": "La taxer",
-      "C": "L offrir au bureau"
+      "C": "L’offrir au bureau"
     }
   },
   "nw_268": {
@@ -2413,7 +2413,7 @@
   },
   "nw_269": {
     "title": "Seaux bien faits",
-    "body": "Des seaux locaux tiennent l eau mieux que nos vieux modèles.",
+    "body": "Des seaux locaux tiennent l’eau mieux que nos vieux modèles.",
     "choices": {
       "A": "Changer tout le stock",
       "B": "Acheter peu pour tester",
@@ -2424,7 +2424,7 @@
     "title": "Encre locale",
     "body": "Une encre locale sèche vite et salit avec talent.",
     "choices": {
-      "A": "L adopter",
+      "A": "L’adopter",
       "B": "La revendre",
       "C": "Garder notre vieille encre"
     }
@@ -2440,7 +2440,7 @@
   },
   "nw_272": {
     "title": "Dispute de marché",
-    "body": "Deux vendeurs se disputent un coin d ombre comme un trône.",
+    "body": "Deux vendeurs se disputent un coin d’ombre comme un trône.",
     "choices": {
       "A": "Tracer les places",
       "B": "Faire payer le meilleur coin",
@@ -2467,7 +2467,7 @@
   },
   "nw_275": {
     "title": "Nuit sans ronde",
-    "body": "La ronde de nuit s oublie parfois toute seule.",
+    "body": "La ronde de nuit s’oublie parfois toute seule.",
     "choices": {
       "A": "Doubler la ronde",
       "B": "Payer une prime de nuit",
@@ -2484,11 +2484,11 @@
     }
   },
   "nw_277": {
-    "title": "File d attente",
+    "title": "File d’attente",
     "body": "La file du bureau atteint presque la cuisine.",
     "choices": {
       "A": "Ouvrir un second bureau",
-      "B": "Faire payer l urgence",
+      "B": "Faire payer l’urgence",
       "C": "Simplifier les papiers"
     }
   },
@@ -2503,7 +2503,7 @@
   },
   "nw_279": {
     "title": "Bureau du sel",
-    "body": "Le sel passe par trop de mains avant d arriver aux comptes.",
+    "body": "Le sel passe par trop de mains avant d’arriver aux comptes.",
     "choices": {
       "A": "Réduire les étapes",
       "B": "Créer un bureau dédié",
@@ -2530,16 +2530,16 @@
   },
   "nw_282": {
     "title": "Mulet fatigué",
-    "body": "Le mulet du dépôt n avance plus qu à l éloge.",
+    "body": "Le mulet du dépôt n’avance plus qu à l’éloge.",
     "choices": {
       "A": "Le remplacer",
-      "B": "L alléger",
+      "B": "L’alléger",
       "C": "Le faire soigner"
     }
   },
   "nw_283": {
     "title": "Roue bancale",
-    "body": "Une roue bancale donne au chariot le style d un danseur triste.",
+    "body": "Une roue bancale donne au chariot le style d’un danseur triste.",
     "choices": {
       "A": "La changer",
       "B": "La réparer au village",
@@ -2548,7 +2548,7 @@
   },
   "nw_284": {
     "title": "Charge trop lourde",
-    "body": "Une cargaison trop lourde menace de casser plus que l humeur.",
+    "body": "Une cargaison trop lourde menace de casser plus que l’humeur.",
     "choices": {
       "A": "La diviser",
       "B": "Renforcer le chariot",
@@ -2565,8 +2565,8 @@
     }
   },
   "nw_286": {
-    "title": "Départ avant l aube",
-    "body": "Un convoi veut partir avant l aube pour gagner la fraîcheur.",
+    "title": "Départ avant l’aube",
+    "body": "Un convoi veut partir avant l’aube pour gagner la fraîcheur.",
     "choices": {
       "A": "Accepter",
       "B": "Envoyer une garde",
@@ -2578,7 +2578,7 @@
     "body": "Un navire repart presque vide et cela blesse notre orgueil.",
     "choices": {
       "A": "Le charger à bas prix",
-      "B": "Le louer à d autres",
+      "B": "Le louer à d’autres",
       "C": "Le garder au port"
     }
   },
@@ -2586,7 +2586,7 @@
     "title": "Sentier raccourci",
     "body": "Un sentier court traverse un terrain que personne ne possède vraiment.",
     "choices": {
-      "A": "L acheter",
+      "A": "L’acheter",
       "B": "Négocier le passage",
       "C": "Rester sur la vieille route"
     }
@@ -2601,7 +2601,7 @@
     }
   },
   "nw_290": {
-    "title": "Main d œuvre mobile",
+    "title": "Main d’œuvre mobile",
     "body": "Des ouvriers changent de chantier comme des poissons de courant.",
     "choices": {
       "A": "Mieux payer les fiables",
@@ -2631,7 +2631,7 @@
     "title": "Médaille locale",
     "body": "Le village propose une médaille tressée pour les plus utiles.",
     "choices": {
-      "A": "L adopter",
+      "A": "L’adopter",
       "B": "Créer la nôtre",
       "C": "Récompenser en pièces"
     }
@@ -2651,12 +2651,12 @@
     "choices": {
       "A": "La commander",
       "B": "La négocier contre aide",
-      "C": "Garder l ancienne"
+      "C": "Garder l’ancienne"
     }
   },
   "nw_296": {
-    "title": "Banc d honneur",
-    "body": "La place veut un banc d honneur pour les visiteurs importants.",
+    "title": "Banc d’honneur",
+    "body": "La place veut un banc d’honneur pour les visiteurs importants.",
     "choices": {
       "A": "Le faire construire",
       "B": "Le financer à moitié",
@@ -2669,7 +2669,7 @@
     "choices": {
       "A": "Le maintenir",
       "B": "Le rentrer au fort",
-      "C": "L annuler"
+      "C": "L’annuler"
     }
   },
   "nw_298": {
@@ -2678,7 +2678,7 @@
     "choices": {
       "A": "Suivre la mode",
       "B": "En offrir quelques unes",
-      "C": "L ignorer"
+      "C": "L’ignorer"
     }
   },
   "nw_299": {
@@ -2694,7 +2694,7 @@
     "title": "Jour du port",
     "body": "Un jour sans taxe remplirait le quai de monde et de bruit.",
     "choices": {
-      "A": "Lancer l idée",
+      "A": "Lancer l’idée",
       "B": "Faire une demi journée",
       "C": "Garder le régime normal"
     }
@@ -2704,13 +2704,13 @@
     "body": "La vieille brouette du quai grince plus fort que le commandant.",
     "choices": {
       "A": "Acheter deux brouettes",
-      "B": "Réparer l ancienne",
+      "B": "Réparer l’ancienne",
       "C": "Louer au village"
     }
   },
   "nw_302": {
     "title": "Pluie sur les registres",
-    "body": "Les papiers du bureau boivent la pluie avec trop d enthousiasme.",
+    "body": "Les papiers du bureau boivent la pluie avec trop d’enthousiasme.",
     "choices": {
       "A": "Copier au sec",
       "B": "Déplacer le bureau",
@@ -2723,7 +2723,7 @@
     "choices": {
       "A": "Y faire un petit quai",
       "B": "La garder militaire",
-      "C": "L ouvrir aux pêcheurs"
+      "C": "L’ouvrir aux pêcheurs"
     }
   },
   "nw_304": {
@@ -2746,7 +2746,7 @@
   },
   "nw_306": {
     "title": "Marchand pressant",
-    "body": "Un marchand veut signer avant même de s asseoir.",
+    "body": "Un marchand veut signer avant même de s’asseoir.",
     "choices": {
       "A": "Signer un accord court",
       "B": "Le tester un mois",
@@ -2764,16 +2764,16 @@
   },
   "nw_308": {
     "title": "Fenêtre du bureau",
-    "body": "Le bureau manque d air et les comptes aussi.",
+    "body": "Le bureau manque d’air et les comptes aussi.",
     "choices": {
-      "A": "L agrandir",
+      "A": "L’agrandir",
       "B": "Ouvrir le matin",
       "C": "La laisser telle quelle"
     }
   },
   "nw_309": {
     "title": "Arbre penché",
-    "body": "Un arbre du quai penche comme s il écoutait tout.",
+    "body": "Un arbre du quai penche comme s’il écoutait tout.",
     "choices": {
       "A": "Le couper",
       "B": "Le soutenir",
@@ -2829,9 +2829,9 @@
     "title": "Pêche de nuit",
     "body": "Des pêcheurs veulent sortir après le coucher du soleil.",
     "choices": {
-      "A": "L autoriser",
+      "A": "L’autoriser",
       "B": "Taxer les prises",
-      "C": "L interdire"
+      "C": "L’interdire"
     }
   },
   "nw_316": {
@@ -2849,7 +2849,7 @@
     "choices": {
       "A": "Le garder",
       "B": "Le vendre",
-      "C": "L offrir au village"
+      "C": "L’offrir au village"
     }
   },
   "nw_318": {
@@ -2863,7 +2863,7 @@
   },
   "nw_319": {
     "title": "Barque fuyarde",
-    "body": "Une barque prend l eau avec une régularité exemplaire.",
+    "body": "Une barque prend l’eau avec une régularité exemplaire.",
     "choices": {
       "A": "La réparer",
       "B": "La revendre",
@@ -2901,9 +2901,9 @@
     "title": "Porte du marché",
     "body": "La porte du marché coince les caisses et les humeurs.",
     "choices": {
-      "A": "L élargir",
+      "A": "L’élargir",
       "B": "Mettre un gardien",
-      "C": "Laisser l entrée libre"
+      "C": "Laisser l’entrée libre"
     }
   },
   "nw_324": {
@@ -2921,7 +2921,7 @@
     "choices": {
       "A": "La louer",
       "B": "Copier la déco",
-      "C": "L acheter"
+      "C": "L’acheter"
     }
   },
   "nw_326": {
@@ -2934,8 +2934,8 @@
     }
   },
   "nw_327": {
-    "title": "Toit d atelier",
-    "body": "Le toit de l atelier fuit sur les outils les plus chers.",
+    "title": "Toit d’atelier",
+    "body": "Le toit de l’atelier fuit sur les outils les plus chers.",
     "choices": {
       "A": "Le refaire",
       "B": "Poser une bâche",
@@ -2962,7 +2962,7 @@
   },
   "nw_330": {
     "title": "Jarres alignées",
-    "body": "Une rangée de jarres donne envie d en remplir encore dix.",
+    "body": "Une rangée de jarres donne envie d’en remplir encore dix.",
     "choices": {
       "A": "En stocker plus",
       "B": "Les vendre",
@@ -2974,7 +2974,7 @@
     "body": "Des morceaux de verre brillant font tourner toutes les têtes.",
     "choices": {
       "A": "En acheter",
-      "B": "L offrir au bureau",
+      "B": "L’offrir au bureau",
       "C": "Le laisser au marché"
     }
   },
@@ -2989,7 +2989,7 @@
   },
   "nw_333": {
     "title": "Bureau de bois",
-    "body": "Le quai manque d un vrai coin sec pour signer sans drame.",
+    "body": "Le quai manque d’un vrai coin sec pour signer sans drame.",
     "choices": {
       "A": "Le faire bâtir",
       "B": "Louer une pièce locale",
@@ -3029,7 +3029,7 @@
     "choices": {
       "A": "La garder pour le quai",
       "B": "La vendre",
-      "C": "L offrir à la place"
+      "C": "L’offrir à la place"
     }
   },
   "nw_338": {
@@ -3038,7 +3038,7 @@
     "choices": {
       "A": "Y accueillir de gros navires",
       "B": "La garder secrète",
-      "C": "L ouvrir à tous"
+      "C": "L’ouvrir à tous"
     }
   },
   "nw_339": {
@@ -3055,7 +3055,7 @@
     "body": "Une allée du camp avale les sandales comme une bête molle.",
     "choices": {
       "A": "Poser du gravier",
-      "B": "Fermer l allée",
+      "B": "Fermer l’allée",
       "C": "Utiliser un autre chemin"
     }
   },
@@ -3115,7 +3115,7 @@
   },
   "nw_347": {
     "title": "Marché couvert",
-    "body": "Le marché rêve d un toit depuis des lunes humides.",
+    "body": "Le marché rêve d’un toit depuis des lunes humides.",
     "choices": {
       "A": "Le bâtir",
       "B": "Commencer petit",
@@ -3136,13 +3136,13 @@
     "body": "Un miel fumé surprend tout le monde et plaît trop vite.",
     "choices": {
       "A": "Le vendre",
-      "B": "L offrir",
+      "B": "L’offrir",
       "C": "En garder pour le fort"
     }
   },
   "nw_350": {
     "title": "Chemin du phare",
-    "body": "Le chemin du phare casse les chevilles et l envie de monter.",
+    "body": "Le chemin du phare casse les chevilles et l’envie de monter.",
     "choices": {
       "A": "Le réparer",
       "B": "Le faire entretenir localement",
@@ -3180,7 +3180,7 @@
     "title": "Réserve de bois",
     "body": "La pile de bois baisse plus vite que les plaintes du cuisinier.",
     "choices": {
-      "A": "L agrandir",
+      "A": "L’agrandir",
       "B": "La vendre un peu",
       "C": "La partager"
     }
@@ -3189,7 +3189,7 @@
     "title": "Porte étroite",
     "body": "La petite porte du dépôt déteste les grosses caisses.",
     "choices": {
-      "A": "L ouvrir plus large",
+      "A": "L’ouvrir plus large",
       "B": "Faire passer par ordre",
       "C": "Garder ainsi"
     }
@@ -3200,7 +3200,7 @@
     "choices": {
       "A": "Le mettre au centre",
       "B": "Le taxer",
-      "C": "L embaucher"
+      "C": "L’embaucher"
     }
   },
   "nw_357": {
@@ -3214,9 +3214,9 @@
   },
   "nw_358": {
     "title": "Grand miroir",
-    "body": "Un miroir énorme arrive au quai avec plus d orgueil que de prudence.",
+    "body": "Un miroir énorme arrive au quai avec plus d’orgueil que de prudence.",
     "choices": {
-      "A": "L acheter",
+      "A": "L’acheter",
       "B": "Le louer pour la visite",
       "C": "Le laisser partir"
     }
@@ -3235,7 +3235,7 @@
     "body": "Une rive utile est trop raide pour les bottes du camp.",
     "choices": {
       "A": "Tailler un passage",
-      "B": "Interdire l accès",
+      "B": "Interdire l’accès",
       "C": "Utiliser des cordes"
     }
   },
@@ -3243,9 +3243,9 @@
     "title": "Lanterne bleue",
     "body": "Une lanterne bleue éclaire mieux que tout notre sérieux.",
     "choices": {
-      "A": "L adopter au quai",
+      "A": "L’adopter au quai",
       "B": "La vendre comme curiosité",
-      "C": "L offrir aux chefs"
+      "C": "L’offrir aux chefs"
     }
   },
   "nw_362": {
@@ -3277,11 +3277,11 @@
   },
   "nw_365": {
     "title": "Fête du poisson",
-    "body": "Une fête du poisson remplirait le port d odeurs et de pièces.",
+    "body": "Une fête du poisson remplirait le port d’odeurs et de pièces.",
     "choices": {
       "A": "La lancer",
       "B": "La limiter au port",
-      "C": "L annuler"
+      "C": "L’annuler"
     }
   },
   "nw_366": {
@@ -3297,7 +3297,7 @@
     "title": "Pierre lisse",
     "body": "Une pierre polie glisse peu et coûte encore moins qu une chute.",
     "choices": {
-      "A": "Paver l entrée",
+      "A": "Paver l’entrée",
       "B": "La vendre en blocs",
       "C": "Décorer la place"
     }
@@ -3324,7 +3324,7 @@
     "title": "Bureau annexe",
     "body": "Le bureau principal déborde déjà sur les bancs et les nerfs.",
     "choices": {
-      "A": "L ouvrir",
+      "A": "L’ouvrir",
       "B": "Le tenir un jour sur deux",
       "C": "Garder un seul bureau"
     }
@@ -3389,7 +3389,7 @@
     "choices": {
       "A": "Le signaler",
       "B": "Le garder secret",
-      "C": "L exploiter pour la pêche"
+      "C": "L’exploiter pour la pêche"
     }
   },
   "nw_378": {
@@ -3411,10 +3411,10 @@
     }
   },
   "nw_380": {
-    "title": "Jardin d épices",
-    "body": "Le jardin derrière le fort sent déjà l argent.",
+    "title": "Jardin d’épices",
+    "body": "Le jardin derrière le fort sent déjà l’argent.",
     "choices": {
-      "A": "L agrandir",
+      "A": "L’agrandir",
       "B": "Le vendre en sachets",
       "C": "Le partager"
     }
@@ -3441,7 +3441,7 @@
     "title": "Ponton privé",
     "body": "Un marchand a construit son petit ponton sans attendre notre humeur.",
     "choices": {
-      "A": "L interdire",
+      "A": "L’interdire",
       "B": "Le taxer",
       "C": "Le louer"
     }
@@ -3452,14 +3452,14 @@
     "choices": {
       "A": "Le vendre",
       "B": "Le servir à la table",
-      "C": "Le garder pour l hiver"
+      "C": "Le garder pour l’hiver"
     }
   },
   "nw_385": {
     "title": "Caisse de savon",
     "body": "Une caisse de savon sent la propreté et le commerce.",
     "choices": {
-      "A": "L acheter",
+      "A": "L’acheter",
       "B": "La revendre",
       "C": "En donner au camp"
     }
@@ -3475,10 +3475,10 @@
   },
   "nw_387": {
     "title": "Ombre du figuier",
-    "body": "L ombre d un grand figuier vaut déjà trois bancs.",
+    "body": "L’ombre d’un grand figuier vaut déjà trois bancs.",
     "choices": {
       "A": "Mettre un banc",
-      "B": "Réserver l ombre au bureau",
+      "B": "Réserver l’ombre au bureau",
       "C": "Laisser tout le monde venir"
     }
   },
@@ -3495,7 +3495,7 @@
     "title": "Borne du chemin",
     "body": "Une seule borne guide le chemin alors qu il en faudrait cinq.",
     "choices": {
-      "A": "En poser d autres",
+      "A": "En poser d’autres",
       "B": "Faire peindre les bornes",
       "C": "Laisser les guides"
     }
@@ -3506,12 +3506,12 @@
     "choices": {
       "A": "Ouvrir plus tôt",
       "B": "Tester un jour",
-      "C": "Garder l heure actuelle"
+      "C": "Garder l’heure actuelle"
     }
   },
   "nw_391": {
     "title": "Pierre marquée",
-    "body": "Une pierre gravée attire des regards que nous n avons pas commandés.",
+    "body": "Une pierre gravée attire des regards que nous n’avons pas commandés.",
     "choices": {
       "A": "La montrer",
       "B": "La garder au fort",
@@ -3520,7 +3520,7 @@
   },
   "nw_392": {
     "title": "Vague haute",
-    "body": "Une vague plus haute que d habitude frappe le quai avec assurance.",
+    "body": "Une vague plus haute que d’habitude frappe le quai avec assurance.",
     "choices": {
       "A": "Rehausser le quai",
       "B": "Décharger plus loin",
@@ -3529,9 +3529,9 @@
   },
   "nw_393": {
     "title": "Bureau des plaintes",
-    "body": "Les plaintes s entassent comme des sacs mal rangés.",
+    "body": "Les plaintes s’entassent comme des sacs mal rangés.",
     "choices": {
-      "A": "L ouvrir",
+      "A": "L’ouvrir",
       "B": "Faire un jour par semaine",
       "C": "Ignorer les plaintes"
     }
@@ -3547,16 +3547,16 @@
   },
   "nw_395": {
     "title": "Navire voisin",
-    "body": "Un navire venu d un port voisin hésite à commercer avec nous.",
+    "body": "Un navire venu d’un port voisin hésite à commercer avec nous.",
     "choices": {
       "A": "Faire commerce",
       "B": "Le surveiller",
-      "C": "L inviter au port"
+      "C": "L’inviter au port"
     }
   },
   "nw_396": {
     "title": "Tonnelle publique",
-    "body": "Une tonnelle donnerait de l ombre à la place et du calme aux files.",
+    "body": "Une tonnelle donnerait de l’ombre à la place et du calme aux files.",
     "choices": {
       "A": "La bâtir",
       "B": "La faire payer",
@@ -3583,7 +3583,7 @@
   },
   "nw_399": {
     "title": "Sacs de farine",
-    "body": "Les sacs de farine n aiment ni l eau ni les retards.",
+    "body": "Les sacs de farine n’aiment ni l’eau ni les retards.",
     "choices": {
       "A": "Les mettre au sec",
       "B": "Les vendre vite",
@@ -3592,7 +3592,7 @@
   },
   "nw_400": {
     "title": "Tour du rivage",
-    "body": "Une tour au bord de l eau verrait tout et coûterait aussi tout.",
+    "body": "Une tour au bord de l’eau verrait tout et coûterait aussi tout.",
     "choices": {
       "A": "La bâtir",
       "B": "Monter une plate forme",
