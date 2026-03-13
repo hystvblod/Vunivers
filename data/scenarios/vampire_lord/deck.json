@@ -8249,6 +8249,1134 @@
           }
         }
       }
+    },
+
+  {
+    "id": "vampire_276",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 10 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 5 } }
     }
+  },
+  {
+    "id": "vampire_277",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": -5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": -5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_278",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 10 } }
+    }
+  },
+  {
+    "id": "vampire_279",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 5, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": -5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_280",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": -5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_281",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_282",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 5, "hunters": 0, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -10, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_283",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_284",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": 5, "clan": 5, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -10, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_285",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 10 } }
+    }
+  },
+  {
+    "id": "vampire_286",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": -5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_287",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -10, "hunters": 0, "clan": 5, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": -10, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_288",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_289",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 5, "hunters": 5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 5, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_290",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_291",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 10 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_292",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_293",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_294",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 10, "hunters": 5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 5, "hunters": 10, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_295",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": -10, "hunters": 0, "clan": 5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_296",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": -5, "hunters": -10, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_297",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 5, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -10, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 10, "hunters": 0, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_298",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": 10 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_299",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 5, "hunters": 5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_300",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 10 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": -10, "hunters": 0, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_301",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_302",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 10, "hunters": 5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 10 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_303",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 10 } }
+    }
+  },
+  {
+    "id": "vampire_304",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 10, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -10, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 10, "hunters": 0, "clan": -5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_305",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_306",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 10 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_307",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 10, "hunters": 5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 5, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_308",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_309",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 5, "hunters": 5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": 10 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_310",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 10 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_311",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_312",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": -10, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_313",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_314",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 5, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 5, "hunters": 0, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_315",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_316",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_317",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_318",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_319",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_320",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 5, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 5, "hunters": 0, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_321",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": -5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_322",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": 10 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_323",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": -5 } },
+      "B": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_324",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_325",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_326",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 10 } }
+    }
+  },
+  {
+    "id": "vampire_327",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 5, "hunters": 0, "clan": 5, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_328",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": -5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_329",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": -5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_330",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_331",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": 10 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_332",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_333",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_334",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_335",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": -5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_336",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_337",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 10 } }
+    }
+  },
+  {
+    "id": "vampire_338",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_339",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 10 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_340",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_341",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_342",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_343",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_344",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_345",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -5, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -10, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_346",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": -5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_347",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_348",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_349",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_350",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 10, "hunters": 0, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_351",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_352",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 5, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_353",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 10 } }
+    }
+  },
+  {
+    "id": "vampire_354",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 5, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 5, "hunters": 0, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_355",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 5, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_356",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_357",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_358",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -5, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_359",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_360",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 5, "hunters": 5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_361",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_362",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 10 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -10, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_363",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_364",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_365",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": 10 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_366",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_367",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_368",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_369",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": -5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_370",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_371",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_372",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 10 } }
+    }
+  },
+  {
+    "id": "vampire_373",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": -5 } }
+    }
+  },
+  {
+    "id": "vampire_374",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_375",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_376",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_377",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_378",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 5, "hunters": 5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_379",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": -10, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_380",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": -5, "hunters": 0, "clan": 0, "secret": 10 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_381",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_382",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 10 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_383",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": -5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_384",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": -5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 5, "hunters": 0, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_385",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_386",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 10 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_387",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": -5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -10, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_388",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 10 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_389",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": -5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_390",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_391",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": -5, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_392",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_393",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 10, "clan": 0, "secret": -5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_394",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_395",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_396",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 5 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -10, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_397",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 5, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": -10, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_398",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 5 } }
+    }
+  },
+  {
+    "id": "vampire_399",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": 5, "clan": 0, "secret": 5 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 10, "secret": 0 } },
+      "C": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 0, "secret": 0 } }
+    }
+  },
+  {
+    "id": "vampire_400",
+    "universe": "vampire_lord",
+    "choices": {
+      "A": { "gaugeDelta": { "blood": 0, "hunters": -5, "clan": 10, "secret": 0 } },
+      "B": { "gaugeDelta": { "blood": 0, "hunters": 0, "clan": 0, "secret": 10 } },
+      "C": { "gaugeDelta": { "blood": -5, "hunters": -10, "clan": 0, "secret": 0 } }
+    }
+  }
+
+
   ]
 }

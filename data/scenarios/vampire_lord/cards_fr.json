@@ -2473,5 +2473,1130 @@
       "B": "Négocier un calme temporaire",
       "C": "Préparer une fuite organisée"
     }
+  },
+  "vampire_276": {
+    "title": "Le fleuriste nocturne",
+    "body": "Un fleuriste ouvre la nuit sous ton repaire. Il voit trop de visages pâles.",
+    "choices": {
+      "A": "Le charmer discrètement",
+      "B": "Changer de sortie",
+      "C": "Acheter sa boutique"
+    }
+  },
+  "vampire_277": {
+    "title": "Le frigo qui parle",
+    "body": "Le frigo du stock diffuse un message étrange. Le clan jure qu’il te parle.",
+    "choices": {
+      "A": "L’ouvrir seul",
+      "B": "Faire venir un ancien",
+      "C": "Le jeter dehors"
+    }
+  },
+  "vampire_278": {
+    "title": "La lune en promo",
+    "body": "Une marque vend une boisson nommée Pleine Lune. Le secret adore déjà.",
+    "choices": {
+      "A": "Sponsoriser la mode",
+      "B": "Rester loin",
+      "C": "Infiltrer la campagne"
+    }
+  },
+  "vampire_279": {
+    "title": "Le croc cassé",
+    "body": "Un vampire du clan casse un croc en chasse. Il crie plus que sa proie.",
+    "choices": {
+      "A": "Payer un spécialiste",
+      "B": "Imposer le calme",
+      "C": "En rire devant tous"
+    }
+  },
+  "vampire_280": {
+    "title": "Le tunnel oublié",
+    "body": "Un vieux tunnel relie ton repaire à une cave d’hôtel. Tentant et inquiétant.",
+    "choices": {
+      "A": "Explorer cette nuit",
+      "B": "Murer le passage",
+      "C": "Envoyer un rival"
+    }
+  },
+  "vampire_281": {
+    "title": "Le livreur fidèle",
+    "body": "Un livreur de nuit ne pose jamais de questions. C’est justement louche.",
+    "choices": {
+      "A": "Le tester",
+      "B": "Le recruter",
+      "C": "Couper le service"
+    }
+  },
+  "vampire_282": {
+    "title": "Le sous-sol humide",
+    "body": "Le sous-sol du repaire goutte partout. Même les cercueils commencent à râler.",
+    "choices": {
+      "A": "Réparer vite",
+      "B": "Déplacer le stock",
+      "C": "Accuser le clan"
+    }
+  },
+  "vampire_283": {
+    "title": "Le voisin sans rideaux",
+    "body": "Un voisin dort jamais et regarde la rue. Il collectionne les détails.",
+    "choices": {
+      "A": "Le distraire",
+      "B": "Changer d’habitudes",
+      "C": "Le faire partir"
+    }
+  },
+  "vampire_284": {
+    "title": "Le bal des ombres",
+    "body": "Un ancien veut un bal privé. Le clan veut danser. Toi, tu veux survivre.",
+    "choices": {
+      "A": "Autoriser avec règles",
+      "B": "Refuser net",
+      "C": "Le déplacer ailleurs"
+    }
+  },
+  "vampire_285": {
+    "title": "Le drone du toit",
+    "body": "Un drone tourne au-dessus du repaire chaque nuit. Ça sent la curiosité payée.",
+    "choices": {
+      "A": "Le pirater",
+      "B": "Le faire tomber",
+      "C": "Suivre le propriétaire"
+    }
+  },
+  "vampire_286": {
+    "title": "Le portrait vivant",
+    "body": "Un portrait ancien change d’expression quand tu passes devant lui.",
+    "choices": {
+      "A": "Le couvrir",
+      "B": "Le faire étudier",
+      "C": "Le brûler"
+    }
+  },
+  "vampire_287": {
+    "title": "La cave en grève",
+    "body": "Les gardiens du stock refusent de bouger sans plus de sang.",
+    "choices": {
+      "A": "Céder un peu",
+      "B": "Remplacer les gardiens",
+      "C": "Faire un exemple"
+    }
+  },
+  "vampire_288": {
+    "title": "Le curé en stories",
+    "body": "Un curé poste chaque nuit des vidéos sur le mal qui rôde près de toi.",
+    "choices": {
+      "A": "Le ridiculiser",
+      "B": "Le surveiller",
+      "C": "Le corrompre"
+    }
+  },
+  "vampire_289": {
+    "title": "Le salon rouge",
+    "body": "Un club privé veut te louer une salle secrète. Le prix est étrange.",
+    "choices": {
+      "A": "Accepter l’offre",
+      "B": "Négocier mieux",
+      "C": "Refuser et enquêter"
+    }
+  },
+  "vampire_290": {
+    "title": "Le novice trop chic",
+    "body": "Un novice arrive en costume blanc. Très beau. Très voyant. Très pénible.",
+    "choices": {
+      "A": "Le cadrer vite",
+      "B": "Le confier au clan",
+      "C": "Le cacher"
+    }
+  },
+  "vampire_291": {
+    "title": "Le marché noir",
+    "body": "Un marché vend des objets anti vampires et des souvenirs de ton quartier.",
+    "choices": {
+      "A": "Racheter les stands",
+      "B": "Le faire fermer",
+      "C": "L’observer en silence"
+    }
+  },
+  "vampire_292": {
+    "title": "La pluie de cendres",
+    "body": "Une fine cendre tombe sur la ville. Le clan y voit un signe.",
+    "choices": {
+      "A": "Calmer les rumeurs",
+      "B": "Chercher la source",
+      "C": "Exploiter le symbole"
+    }
+  },
+  "vampire_293": {
+    "title": "Le serveur bavard",
+    "body": "Un serveur reconnaît trop bien tes habitudes nocturnes. Il sourit quand tu mens.",
+    "choices": {
+      "A": "Le payer",
+      "B": "Le recruter",
+      "C": "Changer de lieu"
+    }
+  },
+  "vampire_294": {
+    "title": "Le musée fermé",
+    "body": "Un musée ferme pour travaux. Une relique du sang y dort sans gardiens.",
+    "choices": {
+      "A": "La voler",
+      "B": "Attendre encore",
+      "C": "Envoyer des humains"
+    }
+  },
+  "vampire_295": {
+    "title": "Le cercueil bloqué",
+    "body": "Ton cercueil refuse de se fermer. Le luxe a ses limites.",
+    "choices": {
+      "A": "Réparer discrètement",
+      "B": "Changer de modèle",
+      "C": "Dormir ailleurs"
+    }
+  },
+  "vampire_296": {
+    "title": "Le chien qui fixe",
+    "body": "Le chien du voisin grogne chaque fois que tu sors. Il a compris quelque chose.",
+    "choices": {
+      "A": "Éviter la zone",
+      "B": "Apprivoiser le chien",
+      "C": "Faire peur au voisin"
+    }
+  },
+  "vampire_297": {
+    "title": "Le loto du secret",
+    "body": "Le secret organise un loto pour financer tes nuits. L’idée est affreuse et rentable.",
+    "choices": {
+      "A": "Encadrer le jeu",
+      "B": "Interdire la honte",
+      "C": "Prendre la caisse"
+    }
+  },
+  "vampire_298": {
+    "title": "Le taxi sans reflet",
+    "body": "Un chauffeur montre une photo du rétro. Tu n’y apparais pas.",
+    "choices": {
+      "A": "Acheter la photo",
+      "B": "Le menacer poliment",
+      "C": "Changer de trajets"
+    }
+  },
+  "vampire_299": {
+    "title": "Le parfum solaire",
+    "body": "Un parfum promet l’odeur du soleil. Le clan veut tester. Mauvaise idée.",
+    "choices": {
+      "A": "Interdire le produit",
+      "B": "L’essayer sur un rival",
+      "C": "Le revendre"
+    }
+  },
+  "vampire_300": {
+    "title": "La crypte louée",
+    "body": "Ton ancienne crypte est proposée à la location sur internet.",
+    "choices": {
+      "A": "Supprimer l’annonce",
+      "B": "Piéger les visiteurs",
+      "C": "Racheter le lieu"
+    }
+  },
+  "vampire_301": {
+    "title": "Le violon du quai",
+    "body": "Un musicien joue chaque nuit sous tes fenêtres. Le clan devient sentimental.",
+    "choices": {
+      "A": "Le faire partir",
+      "B": "L’écouter encore",
+      "C": "Le recruter"
+    }
+  },
+  "vampire_302": {
+    "title": "Le coffre rouillé",
+    "body": "Un coffre remonte d’une cave noyée. Il porte ton vieux sceau.",
+    "choices": {
+      "A": "L’ouvrir vite",
+      "B": "Le cacher",
+      "C": "Faire venir un expert"
+    }
+  },
+  "vampire_303": {
+    "title": "Le miroir du club",
+    "body": "Un club installe des miroirs partout. Les selfies deviennent un piège.",
+    "choices": {
+      "A": "Saboter la déco",
+      "B": "Éviter le club",
+      "C": "Envoyer un sosie"
+    }
+  },
+  "vampire_304": {
+    "title": "Le banquet froid",
+    "body": "Le clan critique la température du sang. L’immortalité crée des caprices.",
+    "choices": {
+      "A": "Améliorer le service",
+      "B": "Punir les plaintes",
+      "C": "Laisser la faim parler"
+    }
+  },
+  "vampire_305": {
+    "title": "Le pasteur de nuit",
+    "body": "Un pasteur vient bénir les rues après minuit. Son timing t’agace beaucoup.",
+    "choices": {
+      "A": "Le détourner",
+      "B": "Surveiller sa route",
+      "C": "Le discréditer"
+    }
+  },
+  "vampire_306": {
+    "title": "Le salon en velours",
+    "body": "Un salon secret accueille des curieux du surnaturel. Ton nom y circule déjà.",
+    "choices": {
+      "A": "Y infiltrer un proche",
+      "B": "Faire fermer le lieu",
+      "C": "L’utiliser pour mentir"
+    }
+  },
+  "vampire_307": {
+    "title": "Le frisson du port",
+    "body": "Des caisses arrivent au port la nuit. Une odeur de sang flotte jusqu’à toi.",
+    "choices": {
+      "A": "Intercepter la cargaison",
+      "B": "Observer sans bouger",
+      "C": "Acheter les dockers"
+    }
+  },
+  "vampire_308": {
+    "title": "La clé du grenier",
+    "body": "Une clé ancienne apparaît dans ton manteau. Tu ne l’y as pas mise.",
+    "choices": {
+      "A": "Chercher la serrure",
+      "B": "La jeter loin",
+      "C": "La confier au clan"
+    }
+  },
+  "vampire_309": {
+    "title": "Le cuisinier humain",
+    "body": "Un cuisinier veut faire des plats pour vampires. C’est ridicule et intriguant.",
+    "choices": {
+      "A": "Le tester",
+      "B": "Le payer pour se taire",
+      "C": "Le laisser rêver"
+    }
+  },
+  "vampire_310": {
+    "title": "La salle sans ombre",
+    "body": "Une pièce du repaire n’a plus d’ombre. Le secret trouve ça magnifique.",
+    "choices": {
+      "A": "Fermer la salle",
+      "B": "L’étudier",
+      "C": "La montrer au clan"
+    }
+  },
+  "vampire_311": {
+    "title": "Le vigile trop calme",
+    "body": "Le vigile du parking te salue par ton prénom. Tu ne l’as jamais donné.",
+    "choices": {
+      "A": "Le questionner",
+      "B": "Changer de parking",
+      "C": "Le recruter"
+    }
+  },
+  "vampire_312": {
+    "title": "Le tableau volé",
+    "body": "Un tableau ancien du clan disparaît. Il vaut plus en symbole qu’en argent.",
+    "choices": {
+      "A": "Fouiller le repaire",
+      "B": "Offrir une prime",
+      "C": "Accuser un rival"
+    }
+  },
+  "vampire_313": {
+    "title": "Le tunnel chauffé",
+    "body": "Un tunnel secret devient trop chaud. Quelqu’un creuse près de tes murs.",
+    "choices": {
+      "A": "Piéger la zone",
+      "B": "Fermer l’accès",
+      "C": "Suivre le bruit"
+    }
+  },
+  "vampire_314": {
+    "title": "Le sommelier rouge",
+    "body": "Un sommelier propose une carte spéciale pour immortels. C’est fin et dangereux.",
+    "choices": {
+      "A": "Signer un accord",
+      "B": "Tester en secret",
+      "C": "Le faire taire"
+    }
+  },
+  "vampire_315": {
+    "title": "La fête des voisins",
+    "body": "Les voisins organisent une fête de rue. Beaucoup de lumière. Beaucoup trop.",
+    "choices": {
+      "A": "Saboter l’électricité",
+      "B": "Supporter une nuit",
+      "C": "Déplacer le clan"
+    }
+  },
+  "vampire_316": {
+    "title": "Le balcon fendu",
+    "body": "Le balcon du repaire s’effrite. Une chute là-dessus serait très publique.",
+    "choices": {
+      "A": "Réparer avant l’aube",
+      "B": "Condamner l’accès",
+      "C": "Faire travailler le clan"
+    }
+  },
+  "vampire_317": {
+    "title": "Le notaire pâle",
+    "body": "Un notaire semble déjà trop au courant de tes biens et de tes nuits.",
+    "choices": {
+      "A": "Le charmer",
+      "B": "Le surveiller",
+      "C": "Changer d’identité"
+    }
+  },
+  "vampire_318": {
+    "title": "Le graffiti mordant",
+    "body": "Ton symbole apparaît sur plusieurs murs. Le secret applaudit déjà.",
+    "choices": {
+      "A": "Effacer partout",
+      "B": "Le revendiquer",
+      "C": "Trouver l’auteur"
+    }
+  },
+  "vampire_319": {
+    "title": "Le piano du hall",
+    "body": "Un piano se met à jouer seul dans le hall. Très classe. Très mauvais signe.",
+    "choices": {
+      "A": "Couper le son",
+      "B": "Faire venir un ancien",
+      "C": "Déplacer le piano"
+    }
+  },
+  "vampire_320": {
+    "title": "Le contrat de cave",
+    "body": "Un restaurateur veut louer ta cave sans savoir qui dort au-dessus.",
+    "choices": {
+      "A": "Accepter avec règles",
+      "B": "Refuser net",
+      "C": "Faire monter le prix"
+    }
+  },
+  "vampire_321": {
+    "title": "Le masque ancien",
+    "body": "Un masque réapparaît dans le stock. Il appartenait à un vieux rival.",
+    "choices": {
+      "A": "Le détruire",
+      "B": "Le cacher",
+      "C": "Le porter une nuit"
+    }
+  },
+  "vampire_322": {
+    "title": "Le videur nerveux",
+    "body": "Un videur de club reconnaît plusieurs membres du clan. Il commence à noter.",
+    "choices": {
+      "A": "Le payer",
+      "B": "Le recruter",
+      "C": "Le faire muter"
+    }
+  },
+  "vampire_323": {
+    "title": "La serre du toit",
+    "body": "Une serre pousse sur le toit voisin. Trop de lumière. Trop de regards en haut.",
+    "choices": {
+      "A": "Saboter la serre",
+      "B": "Acheter le toit",
+      "C": "Changer de sortie"
+    }
+  },
+  "vampire_324": {
+    "title": "Le tailleur discret",
+    "body": "Un tailleur sait cacher tes habits de chasse. Utile ou louche.",
+    "choices": {
+      "A": "Le garder proche",
+      "B": "Tester sa loyauté",
+      "C": "Ne plus y aller"
+    }
+  },
+  "vampire_325": {
+    "title": "Le quai fermé",
+    "body": "Le quai de métro secret est fermé. Tes trajets tombent à l’eau.",
+    "choices": {
+      "A": "Creuser un détour",
+      "B": "Attendre l’ouverture",
+      "C": "Passer par la rue"
+    }
+  },
+  "vampire_326": {
+    "title": "La lettre sans timbre",
+    "body": "Une lettre arrive sans timbre et sans trace. Elle parle de ton premier nom.",
+    "choices": {
+      "A": "Répondre",
+      "B": "La brûler",
+      "C": "Chercher le messager"
+    }
+  },
+  "vampire_327": {
+    "title": "Le garde malade",
+    "body": "Un humain propose de nourrir les plus faibles du clan. Il sourit trop bien.",
+    "choices": {
+      "A": "Accepter sous contrôle",
+      "B": "Refuser",
+      "C": "Le tester sur place"
+    }
+  },
+  "vampire_328": {
+    "title": "Le salon de tatouage",
+    "body": "Un tatoueur copie des symboles vampiriques. Le secret fait déjà la queue.",
+    "choices": {
+      "A": "Fermer le salon",
+      "B": "Le limiter",
+      "C": "S’en servir"
+    }
+  },
+  "vampire_329": {
+    "title": "Le feu sous la porte",
+    "body": "Une lueur glisse sous la porte de la crypte. Dedans, personne ne bouge.",
+    "choices": {
+      "A": "Ouvrir vite",
+      "B": "Rester prudent",
+      "C": "Envoyer le clan"
+    }
+  },
+  "vampire_330": {
+    "title": "Le kiné du clan",
+    "body": "Le clan découvre les courbatures d’immortalité. C’est pitoyable mais réel.",
+    "choices": {
+      "A": "Aider discrètement",
+      "B": "Se moquer un peu",
+      "C": "Imposer l’entraînement"
+    }
+  },
+  "vampire_331": {
+    "title": "La terrasse filmée",
+    "body": "Une terrasse te filme sans le vouloir chaque nuit. Les angles sont terribles.",
+    "choices": {
+      "A": "Acheter les images",
+      "B": "Saboter la caméra",
+      "C": "Éviter la zone"
+    }
+  },
+  "vampire_332": {
+    "title": "Le prêche en cave",
+    "body": "Un groupe humain se réunit en cave pour traquer les ombres.",
+    "choices": {
+      "A": "Les espionner",
+      "B": "Faire fermer la cave",
+      "C": "Lancer une fausse piste"
+    }
+  },
+  "vampire_333": {
+    "title": "Le manteau disparu",
+    "body": "Ton manteau ancien disparaît du vestiaire. Sans lui, tu perds plus qu’un style.",
+    "choices": {
+      "A": "Fouiller tout",
+      "B": "Offrir une prime",
+      "C": "Changer d’image"
+    }
+  },
+  "vampire_334": {
+    "title": "Le concierge sourit",
+    "body": "Le concierge te dit bonne nuit avant même que tu ouvres la porte.",
+    "choices": {
+      "A": "Le questionner",
+      "B": "Le garder proche",
+      "C": "Changer d’entrée"
+    }
+  },
+  "vampire_335": {
+    "title": "La cave aux fleurs",
+    "body": "Des fleurs blanches poussent dans une cave du repaire. Le clan déteste ça.",
+    "choices": {
+      "A": "Arracher tout",
+      "B": "Étudier la terre",
+      "C": "Faire bénir la zone"
+    }
+  },
+  "vampire_336": {
+    "title": "Le grand inventaire",
+    "body": "Le stock ne colle plus aux comptes. Quelqu’un boit hors quota.",
+    "choices": {
+      "A": "Compter tout",
+      "B": "Poser un piège",
+      "C": "Réduire les parts"
+    }
+  },
+  "vampire_337": {
+    "title": "La radio pirate",
+    "body": "Une radio lit des noms de chasseurs. Le tien n’est pas loin.",
+    "choices": {
+      "A": "Couper l’antenne",
+      "B": "Écouter encore",
+      "C": "Retourner l’animateur"
+    }
+  },
+  "vampire_338": {
+    "title": "Le facteur de nuit",
+    "body": "Un facteur livre après minuit depuis trois soirs. Il n’a pas l’air humain.",
+    "choices": {
+      "A": "Le suivre",
+      "B": "Le recruter",
+      "C": "L’ignorer"
+    }
+  },
+  "vampire_339": {
+    "title": "La vitrine noire",
+    "body": "Une vitrine voisine devient opaque la nuit. Quelqu’un cache quelque chose.",
+    "choices": {
+      "A": "Espionner le lieu",
+      "B": "Entrer par derrière",
+      "C": "Faire fermer le commerce"
+    }
+  },
+  "vampire_340": {
+    "title": "Le mot gravé",
+    "body": "Un mot est gravé dans l’ascenseur. Il te souhaite bon réveil.",
+    "choices": {
+      "A": "Effacer la trace",
+      "B": "Poser une surveillance",
+      "C": "Changer d’immeuble"
+    }
+  },
+  "vampire_341": {
+    "title": "Le vendeur d’encens",
+    "body": "Un vendeur parfume la rue chaque nuit. Le clan tousse de dignité.",
+    "choices": {
+      "A": "Le payer pour partir",
+      "B": "Le manipuler",
+      "C": "Déplacer les sorties"
+    }
+  },
+  "vampire_342": {
+    "title": "Le grenier vivant",
+    "body": "Le grenier du repaire semble respirer la nuit. Le clan refuse d’y monter.",
+    "choices": {
+      "A": "Monter seul",
+      "B": "Y envoyer un ancien",
+      "C": "Le condamner"
+    }
+  },
+  "vampire_343": {
+    "title": "Le logo du secret",
+    "body": "Le secret te propose un vrai logo. Tu n’es pas sûr d’aimer le progrès.",
+    "choices": {
+      "A": "Valider un signe discret",
+      "B": "Refuser tout",
+      "C": "Tester sur une zone"
+    }
+  },
+  "vampire_344": {
+    "title": "Le bus de l’aube",
+    "body": "Un bus passe trop près du repaire. Les vitres reflètent tout.",
+    "choices": {
+      "A": "Changer de route",
+      "B": "Négocier l’horaire",
+      "C": "Créer un détour"
+    }
+  },
+  "vampire_345": {
+    "title": "Le mentor jaloux",
+    "body": "Un ancien supporte mal ton autorité. Il forme déjà son petit cercle.",
+    "choices": {
+      "A": "Le recadrer",
+      "B": "Le flatter",
+      "C": "Le séparer du clan"
+    }
+  },
+  "vampire_346": {
+    "title": "Le jardin de nuit",
+    "body": "Un jardin pousse au pied du repaire. Trop de passage, trop tôt le matin.",
+    "choices": {
+      "A": "Saboter le projet",
+      "B": "L’acheter",
+      "C": "Le contourner"
+    }
+  },
+  "vampire_347": {
+    "title": "Le marché des clés",
+    "body": "Des doubles de clés du quartier circulent. Mauvaise nouvelle pour ta porte.",
+    "choices": {
+      "A": "Changer les serrures",
+      "B": "Retrouver le vendeur",
+      "C": "Piéger les accès"
+    }
+  },
+  "vampire_348": {
+    "title": "Le portrait du maire",
+    "body": "Le maire veut poser de nuit dans ton quartier. Il aime trop les caméras.",
+    "choices": {
+      "A": "Le détourner ailleurs",
+      "B": "Utiliser sa visite",
+      "C": "Saboter l’événement"
+    }
+  },
+  "vampire_349": {
+    "title": "Le lampadaire neuf",
+    "body": "Un lampadaire blanc éclaire juste ton entrée. C’est presque personnel.",
+    "choices": {
+      "A": "Le casser",
+      "B": "Demander un retrait",
+      "C": "Changer d’entrée"
+    }
+  },
+  "vampire_350": {
+    "title": "Le coffre à sang",
+    "body": "Un coffre réfrigéré arrive sans commande. Dedans, trop de sang et pas de nom.",
+    "choices": {
+      "A": "Prendre le contenu",
+      "B": "Chercher l’expéditeur",
+      "C": "Le laisser fermé"
+    }
+  },
+  "vampire_351": {
+    "title": "La salle aux chaînes",
+    "body": "Une salle murée contient des chaînes anciennes encore tendues.",
+    "choices": {
+      "A": "L’ouvrir",
+      "B": "L’oublier",
+      "C": "Faire venir le clan"
+    }
+  },
+  "vampire_352": {
+    "title": "Le serveur en sueur",
+    "body": "Un serveur de bar tremble quand il te voit. Il va finir par parler.",
+    "choices": {
+      "A": "Le calmer",
+      "B": "Le recruter",
+      "C": "Ne plus revenir"
+    }
+  },
+  "vampire_353": {
+    "title": "Le pont des ombres",
+    "body": "Sous un vieux pont, des signes récents annoncent une chasse à venir.",
+    "choices": {
+      "A": "Effacer les signes",
+      "B": "Piéger le lieu",
+      "C": "Faire courir une rumeur"
+    }
+  },
+  "vampire_354": {
+    "title": "Le salon doré",
+    "body": "Le clan veut refaire la salle principale. Très chic. Très visible. Très cher.",
+    "choices": {
+      "A": "Accepter sobrement",
+      "B": "Refuser la dépense",
+      "C": "Faire payer le secret"
+    }
+  },
+  "vampire_355": {
+    "title": "Le notaire de cave",
+    "body": "Un notaire clandestin propose de blanchir tes héritages. Ça pue le piège.",
+    "choices": {
+      "A": "Tenter le coup",
+      "B": "Le surveiller",
+      "C": "Couper le contact"
+    }
+  },
+  "vampire_356": {
+    "title": "La ruelle en travaux",
+    "body": "Ta ruelle favorite est ouverte par des ouvriers. Tes habitudes ne valent plus rien.",
+    "choices": {
+      "A": "Corrompre le chantier",
+      "B": "Changer de route",
+      "C": "Travailler la nuit"
+    }
+  },
+  "vampire_357": {
+    "title": "Le piano du voisin",
+    "body": "Le voisin joue à l’aube et t’empêche de dormir. C’est presque une guerre.",
+    "choices": {
+      "A": "Le faire taire",
+      "B": "L’acheter",
+      "C": "Déplacer ta journée"
+    }
+  },
+  "vampire_358": {
+    "title": "Le tableau des dettes",
+    "body": "Quelqu’un affiche les dettes du clan dans le hall. L’ambiance devient délicieuse.",
+    "choices": {
+      "A": "Punir l’auteur",
+      "B": "Effacer le tableau",
+      "C": "Utiliser la honte"
+    }
+  },
+  "vampire_359": {
+    "title": "Le marchand de gants",
+    "body": "Un marchand propose des gants qui cachent la froideur de ta peau.",
+    "choices": {
+      "A": "En acheter beaucoup",
+      "B": "Tester sur le clan",
+      "C": "Le recruter"
+    }
+  },
+  "vampire_360": {
+    "title": "La cave du théâtre",
+    "body": "La cave d’un théâtre sent le sang frais. Quelqu’un y joue avant toi.",
+    "choices": {
+      "A": "Y descendre seul",
+      "B": "Faire surveiller le lieu",
+      "C": "Fermer le théâtre"
+    }
+  },
+  "vampire_361": {
+    "title": "Le compte anonyme",
+    "body": "Un compte en ligne raconte des détails justes sur tes nuits. Trop justes.",
+    "choices": {
+      "A": "Le pirater",
+      "B": "L’ignorer",
+      "C": "Changer tes habitudes"
+    }
+  },
+  "vampire_362": {
+    "title": "Le nouveau code",
+    "body": "Le secret change tous ses codes sans te prévenir. Belle idée idiote.",
+    "choices": {
+      "A": "Reprendre le contrôle",
+      "B": "Punir les meneurs",
+      "C": "Laisser faire un soir"
+    }
+  },
+  "vampire_363": {
+    "title": "Le marché aux roses",
+    "body": "Un marché aux roses ouvre la nuit. Très beau. Très plein de témoins.",
+    "choices": {
+      "A": "Le déplacer",
+      "B": "S’y fondre",
+      "C": "Faire couper la lumière"
+    }
+  },
+  "vampire_364": {
+    "title": "Le couloir froid",
+    "body": "Un couloir du repaire gèle soudain. Même les murs semblent attendre.",
+    "choices": {
+      "A": "Explorer au fond",
+      "B": "Fermer le passage",
+      "C": "Faire venir un ancien"
+    }
+  },
+  "vampire_365": {
+    "title": "Le chauffeur du maire",
+    "body": "Le chauffeur du maire te reconnaît d’une vieille photo. Il attend un prix.",
+    "choices": {
+      "A": "Le payer",
+      "B": "Le faire mentir",
+      "C": "Le faire suivre"
+    }
+  },
+  "vampire_366": {
+    "title": "La mode des capes",
+    "body": "Le secret relance la cape noire. Les chasseurs n’ont jamais eu autant de travail.",
+    "choices": {
+      "A": "Interdire ce cirque",
+      "B": "Lancer une version sobre",
+      "C": "S’en servir comme leurre"
+    }
+  },
+  "vampire_367": {
+    "title": "Le puits bouché",
+    "body": "Un ancien puits du repaire est bouché par quelque chose de lourd.",
+    "choices": {
+      "A": "Le rouvrir",
+      "B": "Le condamner",
+      "C": "Écouter d’abord"
+    }
+  },
+  "vampire_368": {
+    "title": "Le fleuriste curieux",
+    "body": "Le fleuriste vend maintenant des lys blancs à tous tes voisins.",
+    "choices": {
+      "A": "Acheter son stock",
+      "B": "Le surveiller",
+      "C": "Le faire partir"
+    }
+  },
+  "vampire_369": {
+    "title": "La dette du rival",
+    "body": "Un rival t’avoue une dette énorme. Le clan veut le voir tomber.",
+    "choices": {
+      "A": "L’aider cher",
+      "B": "L’écraser",
+      "C": "Acheter sa loyauté"
+    }
+  },
+  "vampire_370": {
+    "title": "Le ruban de police",
+    "body": "Du ruban de police barre une rue utile au clan. Ça sent le piège large.",
+    "choices": {
+      "A": "Contourner le secteur",
+      "B": "Tester la zone",
+      "C": "Créer un faux incident"
+    }
+  },
+  "vampire_371": {
+    "title": "La malle du portier",
+    "body": "Le portier cache une malle dans sa loge. Dedans, il y a ton symbole.",
+    "choices": {
+      "A": "L’ouvrir cette nuit",
+      "B": "Observer encore",
+      "C": "Faire parler le portier"
+    }
+  },
+  "vampire_372": {
+    "title": "Le salon sans bruit",
+    "body": "Une pièce du repaire avale tous les sons. Le secret veut en faire un temple.",
+    "choices": {
+      "A": "Fermer la pièce",
+      "B": "L’étudier sérieusement",
+      "C": "L’offrir au secret"
+    }
+  },
+  "vampire_373": {
+    "title": "Le serveur de l’aube",
+    "body": "Un café ouvre plus tôt que prévu juste face au repaire.",
+    "choices": {
+      "A": "Acheter le café",
+      "B": "Négocier l’horaire",
+      "C": "Changer de sortie"
+    }
+  },
+  "vampire_374": {
+    "title": "La lettre noire",
+    "body": "Une lettre scellée de noir annonce ton jugement. Aucun nom. Aucune date.",
+    "choices": {
+      "A": "L’ouvrir seul",
+      "B": "Réunir le clan",
+      "C": "La brûler sans lire"
+    }
+  },
+  "vampire_375": {
+    "title": "Le rire en cave",
+    "body": "Un rire remonte d’une cave fermée. Tu reconnais une voix pourtant morte.",
+    "choices": {
+      "A": "Descendre immédiatement",
+      "B": "Verrouiller encore",
+      "C": "Faire venir un ancien"
+    }
+  },
+  "vampire_376": {
+    "title": "Le fleuriste blessé",
+    "body": "Le fleuriste de nuit revient avec un bras en écharpe. Il a vu quelque chose.",
+    "choices": {
+      "A": "Le faire parler",
+      "B": "Le protéger",
+      "C": "Le tenir loin"
+    }
+  },
+  "vampire_377": {
+    "title": "La cave au néon",
+    "body": "Une cave voisine s’allume au néon rouge chaque nuit. Le clan s’inquiète.",
+    "choices": {
+      "A": "Aller voir",
+      "B": "Observer de loin",
+      "C": "Couper le courant"
+    }
+  },
+  "vampire_378": {
+    "title": "Le coffre du métro",
+    "body": "Un coffre oublié repose sous le quai fermé. Il porte une date ancienne.",
+    "choices": {
+      "A": "Le forcer",
+      "B": "Le cacher",
+      "C": "Le laisser dormir"
+    }
+  },
+  "vampire_379": {
+    "title": "Le novice affamé",
+    "body": "Un novice refuse d’attendre la règle du clan. Il veut sortir maintenant.",
+    "choices": {
+      "A": "Le retenir",
+      "B": "Le suivre",
+      "C": "Le punir"
+    }
+  },
+  "vampire_380": {
+    "title": "Le plombier discret",
+    "body": "Un plombier connaît trop bien tes sous-sols. Il travaille sans poser de questions.",
+    "choices": {
+      "A": "Le payer plus",
+      "B": "Le recruter",
+      "C": "Changer d’équipe"
+    }
+  },
+  "vampire_381": {
+    "title": "Le prêtre en blanc",
+    "body": "Un prêtre en blanc bénit une porte du quartier. Ce n’est pas un hasard.",
+    "choices": {
+      "A": "Effacer la bénédiction",
+      "B": "Surveiller le prêtre",
+      "C": "Détourner la foule"
+    }
+  },
+  "vampire_382": {
+    "title": "La panne d’alarme",
+    "body": "L’alarme du repaire se coupe seule trois fois de suite dans la semaine.",
+    "choices": {
+      "A": "Reprendre le système",
+      "B": "Poser une garde",
+      "C": "Changer d’accès"
+    }
+  },
+  "vampire_383": {
+    "title": "Le bar sans fenêtres",
+    "body": "Un bar sans fenêtres ouvre à deux rues d’ici. Le secret veut déjà y aller.",
+    "choices": {
+      "A": "Tester l’endroit",
+      "B": "Le garder sous œil",
+      "C": "Interdire le lieu"
+    }
+  },
+  "vampire_384": {
+    "title": "Le dossier du maire",
+    "body": "Un dossier sur le maire arrive sur ton bureau. Il sent le piège utile.",
+    "choices": {
+      "A": "L’utiliser vite",
+      "B": "Le vérifier d’abord",
+      "C": "Le revendre"
+    }
+  },
+  "vampire_385": {
+    "title": "La cave effondrée",
+    "body": "Une petite cave du repaire s’effondre. Un ancien couloir réapparaît dessous.",
+    "choices": {
+      "A": "Descendre seul",
+      "B": "Bloquer la zone",
+      "C": "Faire fouiller le clan"
+    }
+  },
+  "vampire_386": {
+    "title": "Le groupe du jeudi",
+    "body": "Un groupe humain se réunit chaque jeudi près de chez toi. Ils chuchotent trop.",
+    "choices": {
+      "A": "Les infiltrer",
+      "B": "Les disperser",
+      "C": "Écouter encore"
+    }
+  },
+  "vampire_387": {
+    "title": "Le tailleur insolent",
+    "body": "Le tailleur du quartier t’appelle prince devant tout le monde.",
+    "choices": {
+      "A": "Le recadrer",
+      "B": "Le payer",
+      "C": "Ne plus le voir"
+    }
+  },
+  "vampire_388": {
+    "title": "Le téléphone trouvé",
+    "body": "Un téléphone oublié contient des photos du repaire et de la rue d’en face.",
+    "choices": {
+      "A": "Le détruire",
+      "B": "Le fouiller",
+      "C": "Piéger le retour"
+    }
+  },
+  "vampire_389": {
+    "title": "Le baron muet",
+    "body": "Un ancien baron revient au repaire. Il ne parle plus, mais tout le monde tremble.",
+    "choices": {
+      "A": "Le recevoir",
+      "B": "Le garder à distance",
+      "C": "Le pousser à choisir"
+    }
+  },
+  "vampire_390": {
+    "title": "Le couloir noyé",
+    "body": "Un couloir est couvert d’eau noire. Personne ne sait d’où elle vient.",
+    "choices": {
+      "A": "Suivre la trace",
+      "B": "Pomper vite",
+      "C": "Fermer la zone"
+    }
+  },
+  "vampire_391": {
+    "title": "Le videur blessé",
+    "body": "Le videur que tu payais revient avec une lèvre ouverte. Il a parlé à quelqu’un.",
+    "choices": {
+      "A": "L’interroger",
+      "B": "Le soigner",
+      "C": "Le remplacer"
+    }
+  },
+  "vampire_392": {
+    "title": "Le marché du matin",
+    "body": "Un marché s’installe trop tôt près du repaire. Les regards arrivent avec l’aube.",
+    "choices": {
+      "A": "Le faire déplacer",
+      "B": "Acheter des stands",
+      "C": "Changer de sortie"
+    }
+  },
+  "vampire_393": {
+    "title": "Le gardien du toit",
+    "body": "Quelqu’un monte chaque nuit sur le toit voisin avec des jumelles.",
+    "choices": {
+      "A": "Le suivre",
+      "B": "Le faire fuir",
+      "C": "Créer un leurre"
+    }
+  },
+  "vampire_394": {
+    "title": "La serrure fondue",
+    "body": "La serrure d’une salle interdite est fondue de l’intérieur.",
+    "choices": {
+      "A": "Entrer maintenant",
+      "B": "Faire venir un ancien",
+      "C": "Sceller de nouveau"
+    }
+  },
+  "vampire_395": {
+    "title": "Le voisin trop poli",
+    "body": "Un voisin te tient la porte avec un sourire trop calme. Il t’attendait.",
+    "choices": {
+      "A": "Le charmer",
+      "B": "L’éviter ensuite",
+      "C": "Le surveiller"
+    }
+  },
+  "vampire_396": {
+    "title": "Le tunnel du port",
+    "body": "Un passage part du port et remonte vers ton quartier. Il est récent.",
+    "choices": {
+      "A": "Le visiter",
+      "B": "Le piéger",
+      "C": "Le faire tomber"
+    }
+  },
+  "vampire_397": {
+    "title": "Le rival charmant",
+    "body": "Un rival fait rire ton clan. C’est mauvais pour ton autorité.",
+    "choices": {
+      "A": "Le recadrer",
+      "B": "Le flatter aussi",
+      "C": "Le séparer du groupe"
+    }
+  },
+  "vampire_398": {
+    "title": "La boîte sans nom",
+    "body": "Une boîte lourde arrive sans nom. Dedans, quelque chose gratte doucement.",
+    "choices": {
+      "A": "L’ouvrir",
+      "B": "La jeter loin",
+      "C": "La garder fermée"
+    }
+  },
+  "vampire_399": {
+    "title": "Le quai désert",
+    "body": "Le quai secret est vide depuis des jours. Même les rats ont disparu.",
+    "choices": {
+      "A": "Explorer seul",
+      "B": "Envoyer le clan",
+      "C": "Abandonner le quai"
+    }
+  },
+  "vampire_400": {
+    "title": "Le pacte du matin",
+    "body": "Le clan veut une promesse. Le secret veut un signe. L’aube approche déjà.",
+    "choices": {
+      "A": "Choisir le clan",
+      "B": "Choisir le secret",
+      "C": "Choisir la fuite"
+    }
   }
 }
