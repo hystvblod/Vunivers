@@ -374,7 +374,7 @@
         "C": {
           "gaugeDelta": {
             "converted_population": -5,
-            "found_wealth": 5
+            "royal_treasury": 5
           }
         }
       }
@@ -1729,7 +1729,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "conquered_territory": 5,
+            "converted_population": 5,
             "royal_treasury": -10
           }
         },
