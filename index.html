@@ -732,7 +732,22 @@
         return noPrice || "";
       }
 
-      function getCurrentVCoins() {
+      async function getCurrentVCoins() {
+        try {
+          const me = await window.VRRemoteStore?.getMe?.();
+
+          if (me && typeof me === "object") {
+            const cur = window.VUserData?.load?.() || {};
+            window.VUserData?.save?.({
+              ...cur,
+              vcoins: Number(me.vcoins ?? cur.vcoins ?? 0) || 0,
+              jetons: Number(me.jetons ?? cur.jetons ?? 0) || 0
+            });
+
+            return Number(me.vcoins ?? 0) || 0;
+          }
+        } catch (_) {}
+
         try {
           if (window.VUserData && typeof window.VUserData.getVcoins === "function") {
             return Number(window.VUserData.getVcoins() || 0) || 0;
@@ -859,10 +874,10 @@
         }
       }
 
-      function refreshPopupTexts() {
+      async function refreshPopupTexts() {
         if (!pendingUniverseId) return;
 
-        const balance = getCurrentVCoins();
+        const balance = await getCurrentVCoins();
 
         if (buyTitle) {
           buyTitle.textContent = _t("universe." + pendingUniverseId + ".title", "");
@@ -899,9 +914,9 @@
         if (buyCancel) buyCancel.textContent = _t("common.cancel", "");
       }
 
-      function openBuyPopup(universeId) {
+      async function openBuyPopup(universeId) {
         pendingUniverseId = universeId;
-        refreshPopupTexts();
+        await refreshPopupTexts();
         showBuyError("");
 
         if (buyPopup) {
@@ -913,7 +928,7 @@
       async function tryUnlockWithVcoins(universeId) {
         showBuyError("");
 
-        const balance = getCurrentVCoins();
+        const balance = await getCurrentVCoins();
         if (balance < PRICE) {
           showBuyError(
             _t(
@@ -952,7 +967,7 @@
           return;
         }
 
-        refreshPopupTexts();
+        await refreshPopupTexts();
         applyLocks();
         closeBuyPopup();
         launchUniverse(universeId);
@@ -985,13 +1000,13 @@
 
       if (buyPay) {
         buyPay.addEventListener("click", () => {
-          if (pendingUniverseId) tryUnlockWithVcoins(pendingUniverseId);
+          if (pendingUniverseId) void tryUnlockWithVcoins(pendingUniverseId);
         });
       }
 
       if (buyIap) {
         buyIap.addEventListener("click", () => {
-          if (pendingUniverseId) buyUniverseDirect(pendingUniverseId);
+          if (pendingUniverseId) void buyUniverseDirect(pendingUniverseId);
         });
       }
 
@@ -1013,7 +1028,7 @@
       window.addEventListener("vr:iap_price", () => {
         try {
           if (buyPopup && buyPopup.style.display === "flex") {
-            refreshPopupTexts();
+            void refreshPopupTexts();
           }
         } catch (_) {}
       });
@@ -1022,7 +1037,7 @@
         try {
           applyLocks();
           if (buyPopup && buyPopup.style.display === "flex") {
-            refreshPopupTexts();
+            void refreshPopupTexts();
           }
         } catch (_) {}
       });
@@ -1040,6 +1055,7 @@
           lsDel(IAP_TARGET_KEY_LEGACY);
 
           try { await window.VUserData?.refresh?.(); } catch (_) {}
+          try { await getCurrentVCoins(); } catch (_) {}
 
           applyLocks();
           closeBuyPopup();
@@ -1082,7 +1098,7 @@
             launchUniverse(id);
           } else {
             e.preventDefault();
-            openBuyPopup(id);
+            void openBuyPopup(id);
           }
         });
       });
@@ -1098,6 +1114,7 @@
 
       (async function refreshLater(){
         try { await window.__vrIndexInitPromise; } catch (_) {}
+        try { await getCurrentVCoins(); } catch (_) {}
         try { applyLocks(); } catch (_) {}
       })();
 
