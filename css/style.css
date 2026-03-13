@@ -399,7 +399,7 @@ button.vr-card:focus-visible{
   margin-bottom:10px;
 }
 .vr-gauge{ display:flex; align-items:center; gap:8px; }
-.vr-gauge-label{ font-size:12px; min-width:72px; }
+.vr-gauge-label{ font-size:13px; min-width:72px; }
 
 /* % actuel + delta */
 .vr-gauge-value{
@@ -408,7 +408,7 @@ button.vr-card:focus-visible{
   justify-content:center;
   gap:6px;
   min-width:64px;
-  font-size:12px;
+  font-size:13px;
   line-height:1.1;
   text-shadow: 0 2px 10px rgba(0,0,0,0.45);
 }
@@ -986,7 +986,7 @@ body.vr-body-game .vr-gauge{
   gap:6px;
 }
 body.vr-body-game .vr-gauge-label{
-  font-size: clamp(10px, 2.0vmin, 14px);
+  font-size: clamp(11px, 2.1vmin, 15px);
   min-width:0;
   text-align:center;
   min-height: 2.0em;
@@ -2159,6 +2159,13 @@ body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-g
 body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-gauge-fill,
 body[data-universe="heaven_king"] .vr-gauge[data-gauge-id="interventions"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/heaven_king/g4_fill.webp"); }
 
+body[data-universe="heaven_king"] .vr-gauge-label,
+body[data-universe="heaven_king"] .vr-gauge-value,
+body[data-universe="heaven_king"] .vr-gauge-val,
+body[data-universe="heaven_king"] .vr-gauge-delta{
+  color: #000 !important;
+}
+
 @media (max-width: 480px){
   body.vr-body-game[data-universe="heaven_king"]{
     --vr-heaven-hud-w: 92vw;
@@ -3092,6 +3099,13 @@ body[data-universe="mega_corp_ceo"] .vr-gauge[data-gauge-id="brand_image"] .vr-g
   background-image: url("../assets/img/gauges/mega_corp_ceo/g4_fill.webp");
 }
 
+body[data-universe="mega_corp_ceo"] .vr-gauge-label,
+body[data-universe="mega_corp_ceo"] .vr-gauge-value,
+body[data-universe="mega_corp_ceo"] .vr-gauge-val,
+body[data-universe="mega_corp_ceo"] .vr-gauge-delta{
+  color: #000 !important;
+}
+
 @media (max-width: 480px){
   body.vr-body-game[data-universe="mega_corp_ceo"]{
     --vr-corp-hud-w: 94vw;
@@ -3580,6 +3594,13 @@ body[data-universe="new_world_explorer"] .vr-gauge .vr-gauge-preview{
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+}
+
+body[data-universe="new_world_explorer"] .vr-gauge-label,
+body[data-universe="new_world_explorer"] .vr-gauge-value,
+body[data-universe="new_world_explorer"] .vr-gauge-val,
+body[data-universe="new_world_explorer"] .vr-gauge-delta{
+  color: #000 !important;
 }
 
 #view-game.vr-bg-new_world_explorer{
@@ -4290,6 +4311,5 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
     line-height: 1.08 !important;
   }
 }
-
 
 
