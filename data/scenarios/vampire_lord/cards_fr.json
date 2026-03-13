@@ -180,8 +180,8 @@
     }
   },
   "vampire_021": {
-    "title": "Le bébé chauve souris",
-    "body": "Un nouveau né vampire se transforme trop tôt. Il s’accroche au plafond et crie.",
+    "title": "Le jeune chauve souris",
+    "body": "Un jeune vampire se transforme trop tôt. Il s’accroche au plafond et crie.",
     "choices": {
       "A": "Former le novice",
       "B": "Le cacher au clan",
@@ -194,7 +194,7 @@
     "choices": {
       "A": "L’écouter",
       "B": "Le piéger",
-      "C": "Le faire disparaître"
+      "C": "Le neutraliser"
     }
   },
   "vampire_023": {
@@ -239,7 +239,7 @@
     "choices": {
       "A": "Signer",
       "B": "Espionner l’entreprise",
-      "C": "La faire disparaître"
+      "C": "La faire fermer"
     }
   },
   "vampire_028": {
@@ -347,7 +347,7 @@
     "choices": {
       "A": "Trouver la source",
       "B": "Se terrer",
-      "C": "Faire un sacrifice"
+      "C": "Lancer un rituel risqué"
     }
   },
   "vampire_040": {
@@ -419,7 +419,7 @@
     "choices": {
       "A": "L’accepter",
       "B": "Le manipuler",
-      "C": "Le faire disparaître"
+      "C": "L’écarter définitivement"
     }
   },
   "vampire_048": {
@@ -554,7 +554,7 @@
     "choices": {
       "A": "Le rattraper",
       "B": "Le cacher chez le secret",
-      "C": "Le sacrifier pour l’exemple"
+      "C": "Le bannir pour l’exemple"
     }
   },
   "vampire_063": {
@@ -766,7 +766,7 @@
   },
   "vampire_086": {
     "title": "Le frigo qui parle",
-    "body": "Le frigo s’allume tout seul et affiche un message comme si quelqu’un voulait te prévenir. Le clan a peur. Toi, tu détestes les surprises.",
+    "body": "Le frigo affiche un message seul. Le clan panique. Toi, tu détestes les surprises.",
     "choices": {
       "A": "Faire vérifier le frigo",
       "B": "Changer tout le stock",
@@ -775,7 +775,7 @@
   },
   "vampire_087": {
     "title": "Le chauffeur trop sympa",
-    "body": "Il t’appelle chef et raconte à tout le monde que tu ne dors jamais. C’est mignon. C’est aussi une catastrophe.",
+    "body": "Il raconte partout que tu ne dors jamais. C’est gentil. C’est surtout dangereux.",
     "choices": {
       "A": "Le garder mais le cadrer",
       "B": "Le remplacer vite",
@@ -784,7 +784,7 @@
   },
   "vampire_088": {
     "title": "La tournée des caves",
-    "body": "Les humains se regroupent, boivent, chantent, et sortent en groupe. Pratique pour repérer, moins pratique pour disparaître.",
+    "body": "Les humains sortent en groupe. Facile à repérer, plus dur à approcher sans laisser de trace.",
     "choices": {
       "A": "Déplacer la chasse",
       "B": "Contrôler le bar",
@@ -802,7 +802,7 @@
   },
   "vampire_090": {
     "title": "La grève des serviteurs",
-    "body": "Ils ont fait une liste de demandes. Une liste. Comme des humains. Ton palais ressemble soudain à une entreprise.",
+    "body": "Les serviteurs ont des demandes. Ton palais ressemble soudain à une entreprise.",
     "choices": {
       "A": "Négocier calmement",
       "B": "Imposer ton autorité",
@@ -820,7 +820,7 @@
   },
   "vampire_092": {
     "title": "La clé disparue",
-    "body": "Sans cette clé, tu ne peux pas accéder aux protections les plus anciennes. Et quelqu’un sait où elle était rangée.",
+    "body": "La clé des anciennes protections a disparu. Quelqu’un savait où elle était.",
     "choices": {
       "A": "Interroger le clan",
       "B": "Changer toutes les serrures",
@@ -829,7 +829,7 @@
   },
   "vampire_093": {
     "title": "Le rendez-vous du notaire",
-    "body": "Le notaire a des papiers, des questions, et une obsession pour les détails. Les détails sont l’ennemi du secret.",
+    "body": "Le notaire aime trop les détails. Les détails menacent toujours le secret.",
     "choices": {
       "A": "Y aller en personne",
       "B": "Envoyer un faux héritier",
@@ -847,7 +847,7 @@
   },
   "vampire_095": {
     "title": "Le sang au goût bizarre",
-    "body": "Quand même les immortels font la fine bouche, c’est que le problème est sérieux. Ou que le clan devient capricieux.",
+    "body": "Même les immortels refusent ce sang. Le problème est donc sérieux.",
     "choices": {
       "A": "Changer de fournisseur",
       "B": "Tester le stock",
@@ -856,7 +856,7 @@
   },
   "vampire_096": {
     "title": "Le faux documentaire",
-    "body": "Ils parlent de tunnels, de bruits nocturnes, de disparitions. Ils se trompent sur les détails. Mais pas sur l’idée.",
+    "body": "On parle de tunnels et de disparitions. Les détails sont faux, pas l’idée.",
     "choices": {
       "A": "Faire retirer l’épisode",
       "B": "Acheter la production",
@@ -910,7 +910,7 @@
   },
   "vampire_102": {
     "title": "Le secret veut un logo",
-    "body": "Ils veulent des badges, des bannières, et une identité. Toi, tu veux surtout qu’ils arrêtent d’être visibles.",
+    "body": "Ils veulent une identité visible. Toi, tu veux surtout qu’ils restent invisibles.",
     "choices": {
       "A": "Donner un symbole simple",
       "B": "Refuser et calmer",
@@ -937,7 +937,7 @@
   },
   "vampire_105": {
     "title": "La plainte du quartier",
-    "body": "Une pétition circule. Les humains signent tout, surtout quand ils ont peur. Ça sent le projecteur sur toi.",
+    "body": "Une pétition circule. Les humains ont peur. Les regards se tournent vers toi.",
     "choices": {
       "A": "Calmer le quartier",
       "B": "Effrayer les voisins",
@@ -946,7 +946,7 @@
   },
   "vampire_106": {
     "title": "Le téléphone oublié",
-    "body": "Le téléphone contient des photos, des messages, et des applications qui écoutent. Pire que des chasseurs, parfois.",
+    "body": "Le téléphone contient des photos et des messages. Une vraie menace pour le secret.",
     "choices": {
       "A": "Récupérer le téléphone vite",
       "B": "Le détruire",
@@ -1000,7 +1000,7 @@
   },
   "vampire_112": {
     "title": "La rumeur du remède",
-    "body": "Certains y croient, d’autres paniquent, et les chasseurs sourient déjà. Un remède attire toujours des vendeurs.",
+    "body": "Un remède fait rêver certains et paniquer les autres. Les chasseurs surveillent déjà.",
     "choices": {
       "A": "Chercher le remède",
       "B": "Détruire la rumeur",
@@ -1103,12 +1103,12 @@
     "choices": {
       "A": "Refuser fermement",
       "B": "Accepter mais contrôler",
-      "C": "Le faire disparaître du quartier"
+      "C": "Le faire partir du quartier"
     }
   },
   "vampire_124": {
     "title": "La dette du secret",
-    "body": "Ils ont aidé à détourner une enquête. Maintenant ils se sentent importants. Les gens importants font des erreurs.",
+    "body": "Ils ont aidé une fois. Maintenant ils se croient intouchables.",
     "choices": {
       "A": "Payer en vcoins",
       "B": "Donner un privilège",
@@ -1153,7 +1153,7 @@
   },
   "vampire_129": {
     "title": "La cantine du clan",
-    "body": "Ils veulent de l’ordre, des horaires, et du confort. Tu veux du secret et du contrôle. Bonjour le conflit.",
+    "body": "Ils veulent de l’ordre et du confort. Toi, tu veux du secret et du contrôle.",
     "choices": {
       "A": "Organiser une cantine",
       "B": "Refuser et imposer la chasse",
@@ -1216,7 +1216,7 @@
   },
   "vampire_136": {
     "title": "La fuite d’eau",
-    "body": "L’eau s’infiltre partout et l’odeur attire des ouvriers. Les ouvriers posent des questions. Trop de questions.",
+    "body": "L’eau attire des ouvriers. Les ouvriers posent trop de questions.",
     "choices": {
       "A": "Réparer vite",
       "B": "Condamner la salle",
@@ -1288,7 +1288,7 @@
   },
   "vampire_144": {
     "title": "Le pacte du silence",
-    "body": "Il a peur. Les gens qui ont peur parlent trop. Les gens protégés parlent aussi. Tu dois choisir le risque.",
+    "body": "Il a peur et risque de parler. Tu dois choisir quel risque prendre.",
     "choices": {
       "A": "Accepter et protéger",
       "B": "Refuser et le surveiller",
@@ -1306,7 +1306,7 @@
   },
   "vampire_146": {
     "title": "Le banquet obligatoire",
-    "body": "Un banquet, c’est du pouvoir. C’est aussi une salle pleine de regards. Et les regards comptent les faiblesses.",
+    "body": "Un banquet donne du pouvoir, mais expose aussi tes faiblesses.",
     "choices": {
       "A": "Organiser un banquet grandiose",
       "B": "Refuser et assumer",
@@ -1423,7 +1423,7 @@
   },
   "vampire_159": {
     "title": "Le livre interdit revient",
-    "body": "Quelqu’un a voulu que tu lises ça. Et quand on veut que tu lises quelque chose, c’est rarement pour ton plaisir.",
+    "body": "Quelqu’un a voulu que tu lises ça. Ce n’est jamais bon signe.",
     "choices": {
       "A": "Lire la page",
       "B": "Brûler le livre",
@@ -1441,7 +1441,7 @@
   },
   "vampire_161": {
     "title": "Le duel demandé",
-    "body": "Il veut te provoquer devant tous. Le duel est un spectacle. Et un spectacle attire toujours des yeux extérieurs.",
+    "body": "Il veut te provoquer devant tous. Un duel attire toujours trop de regards.",
     "choices": {
       "A": "Accepter le duel",
       "B": "Refuser et punir",
@@ -1639,7 +1639,7 @@
   },
   "vampire_183": {
     "title": "La boîte verrouillée",
-    "body": "La boîte est lourde, froide, et elle ne fait aucun bruit. Parfois, le silence est une menace plus claire qu’un cri.",
+    "body": "La boîte est lourde et silencieuse. Ce silence ressemble à une menace.",
     "choices": {
       "A": "Forcer l’ouverture",
       "B": "La sceller",
@@ -1648,7 +1648,7 @@
   },
   "vampire_184": {
     "title": "La statue brisée",
-    "body": "La pierre est éclatée, mais il n’y a pas de débris autour comme s’ils avaient été aspirés. Tu sens une présence ancienne qui se réveille.",
+    "body": "La pierre est brisée sans débris. Une présence ancienne semble se réveiller.",
     "choices": {
       "A": "Réparer et purifier",
       "B": "Enquêter sur la cause",
@@ -2435,7 +2435,7 @@
     "choices": {
       "A": "Le convaincre",
       "B": "Le menacer",
-      "C": "Le faire disparaître"
+      "C": "Le faire taire"
     }
   },
   "vampire_272": {
