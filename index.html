@@ -732,33 +732,6 @@
         return noPrice || "";
       }
 
-      async function syncIndexWalletFromRemote() {
-        try {
-          const me = await window.VRRemoteStore?.getMe?.();
-          if (!me || typeof me !== "object") return false;
-
-          const cur = window.VUserData?.load?.() || {};
-
-          window.VUserData?.save?.({
-            ...cur,
-            user_id: (me.id ?? cur.user_id ?? "").toString(),
-            username: (me.username ?? cur.username ?? "").toString(),
-            vcoins: Number(me.vcoins ?? cur.vcoins ?? 0) || 0,
-            jetons: Number(me.jetons ?? cur.jetons ?? 0) || 0,
-            lang: (me.lang ?? cur.lang ?? "fr").toString(),
-            no_ads: (typeof me.no_ads !== "undefined") ? !!me.no_ads : !!cur.no_ads,
-            has_diamond: (typeof me.has_diamond !== "undefined") ? !!me.has_diamond : !!cur.has_diamond,
-            unlocked_universes: Array.isArray(me.unlocked_universes)
-              ? me.unlocked_universes
-              : (cur.unlocked_universes || [])
-          });
-
-          return true;
-        } catch (_) {
-          return false;
-        }
-      }
-
       function getCurrentVCoins() {
         try {
           if (window.VUserData && typeof window.VUserData.getVcoins === "function") {
@@ -926,12 +899,8 @@
         if (buyCancel) buyCancel.textContent = _t("common.cancel", "");
       }
 
-      async function openBuyPopup(universeId) {
+      function openBuyPopup(universeId) {
         pendingUniverseId = universeId;
-
-        try { await window.VUserData?.refresh?.(); } catch (_) {}
-        try { await syncIndexWalletFromRemote(); } catch (_) {}
-
         refreshPopupTexts();
         showBuyError("");
 
@@ -943,9 +912,6 @@
 
       async function tryUnlockWithVcoins(universeId) {
         showBuyError("");
-
-        try { await window.VUserData?.refresh?.(); } catch (_) {}
-        try { await syncIndexWalletFromRemote(); } catch (_) {}
 
         const balance = getCurrentVCoins();
         if (balance < PRICE) {
@@ -986,9 +952,6 @@
           return;
         }
 
-        try { await window.VUserData?.refresh?.(); } catch (_) {}
-        try { await syncIndexWalletFromRemote(); } catch (_) {}
-
         refreshPopupTexts();
         applyLocks();
         closeBuyPopup();
@@ -1022,13 +985,13 @@
 
       if (buyPay) {
         buyPay.addEventListener("click", () => {
-          if (pendingUniverseId) void tryUnlockWithVcoins(pendingUniverseId);
+          if (pendingUniverseId) tryUnlockWithVcoins(pendingUniverseId);
         });
       }
 
       if (buyIap) {
         buyIap.addEventListener("click", () => {
-          if (pendingUniverseId) void buyUniverseDirect(pendingUniverseId);
+          if (pendingUniverseId) buyUniverseDirect(pendingUniverseId);
         });
       }
 
@@ -1077,7 +1040,6 @@
           lsDel(IAP_TARGET_KEY_LEGACY);
 
           try { await window.VUserData?.refresh?.(); } catch (_) {}
-          try { await syncIndexWalletFromRemote(); } catch (_) {}
 
           applyLocks();
           closeBuyPopup();
@@ -1120,7 +1082,7 @@
             launchUniverse(id);
           } else {
             e.preventDefault();
-            void openBuyPopup(id);
+            openBuyPopup(id);
           }
         });
       });
@@ -1136,33 +1098,8 @@
 
       (async function refreshLater(){
         try { await window.__vrIndexInitPromise; } catch (_) {}
-        try { await syncIndexWalletFromRemote(); } catch (_) {}
         try { applyLocks(); } catch (_) {}
       })();
-
-      window.addEventListener("pageshow", async () => {
-        try { await window.VUserData?.refresh?.(); } catch (_) {}
-        try { await syncIndexWalletFromRemote(); } catch (_) {}
-        try { applyLocks(); } catch (_) {}
-        try {
-          if (buyPopup && buyPopup.style.display === "flex") {
-            refreshPopupTexts();
-          }
-        } catch (_) {}
-      });
-
-      document.addEventListener("visibilitychange", async () => {
-        if (document.visibilityState !== "visible") return;
-
-        try { await window.VUserData?.refresh?.(); } catch (_) {}
-        try { await syncIndexWalletFromRemote(); } catch (_) {}
-        try { applyLocks(); } catch (_) {}
-        try {
-          if (buyPopup && buyPopup.style.display === "flex") {
-            refreshPopupTexts();
-          }
-        } catch (_) {}
-      });
 
     })();
   </script>
