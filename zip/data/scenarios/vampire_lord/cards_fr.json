@@ -19,7 +19,7 @@
   },
   "vampire_003": {
     "title": "La querelle des lignées",
-    "body": "Un architecte propose un repaire ultra-design avec des présentations et de larges fenêtres.",
+    "body": "Deux lignées du clan se disputent la direction d’un repaire. La tension monte et tout le monde attend ton arbitrage.",
     "choices": {
       "A": "Arbitrer fermement",
       "B": "Laisser les clans régler ça",
@@ -198,7 +198,7 @@
     }
   },
   "vampire_023": {
-    "title": "Le pactole de VCoins",
+    "title": "Le pactole du secret",
     "body": "Le secret offre des dons énormes. Ça sent la manipulation, mais c’est tentant.",
     "choices": {
       "A": "Accepter avec contrôle",
@@ -1110,7 +1110,7 @@
     "title": "La dette du secret",
     "body": "Ils ont aidé une fois. Maintenant ils se croient intouchables.",
     "choices": {
-      "A": "Payer en vcoins",
+      "A": "Payer en dons",
       "B": "Donner un privilège",
       "C": "Refuser et calmer"
     }
@@ -1189,7 +1189,7 @@
   },
   "vampire_133": {
     "title": "Le pacte des pharmacies",
-    "body": "Ils veulent des photos, des sourires, des interviews. Tout ce que tu ne veux jamais.",
+    "body": "Des pharmacies veulent associer ton image à leur campagne. Elles demandent des photos, des interviews et une présence publique.",
     "choices": {
       "A": "Accepter pour le contrôle",
       "B": "Refuser et rester discret",
@@ -1314,7 +1314,7 @@
     }
   },
   "vampire_147": {
-    "title": "Le voleur de vcoins",
+    "title": "Le voleur de fonds",
     "body": "L’argent ne sent pas le sang, mais il fait couler des larmes. Et des larmes chez un vampire, c’est rare.",
     "choices": {
       "A": "Auditer les comptes",
