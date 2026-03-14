@@ -202,8 +202,8 @@
         },
         "C": {
           "gaugeDelta": {
-            "blood": 10,
-            "hunters": 0,
+            "blood": 0,
+            "hunters": 5,
             "clan": -10,
             "secret": 0
           }
@@ -1386,9 +1386,9 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "blood": 10,
+            "blood": 0,
             "hunters": 10,
-            "clan": 0,
+            "clan": 10,
             "secret": 0
           }
         },
