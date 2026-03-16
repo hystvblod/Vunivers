@@ -3293,9 +3293,7 @@ return;
    if (!res?.ok) {
   if (res?.reason === "insufficient_vcoins") {
     toast(t("shop.toast.insufficient_vcoins", ""));
-    try {
-      sessionStorage.setItem("vr_crosspromo_context", "low_vcoins");
-    } catch (_) {}
+    await window.VRCrossPromo?.maybeShowPopupFromContext("low_vcoins");
   } else if (res?.reason === "not_owned") {
     toast(t("shop.toast.not_owned", ""));
   } else {
