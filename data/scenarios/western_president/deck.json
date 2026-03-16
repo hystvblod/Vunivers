@@ -1110,20 +1110,17 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "opinion": 5,
-            "diplomacy": 5
+            "opinion": 5
           }
         },
         "B": {
           "gaugeDelta": {
-            "opinion": -5,
-            "diplomacy": 5
+            "opinion": -5
           }
         },
         "C": {
           "gaugeDelta": {
-            "opinion": -10,
-            "diplomacy": 5
+            "opinion": -10
           }
         }
       }
@@ -1999,13 +1996,12 @@
         "A": {
           "gaugeDelta": {
             "economy": -5,
-            "diplomacy": 5
+            "opinion": 5
           }
         },
         "B": {
           "gaugeDelta": {
-            "opinion": 5,
-            "diplomacy": 5
+            "opinion": 5
           }
         },
         "C": {
@@ -2406,8 +2402,8 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "economy": 5,
-            "diplomacy": -5
+            "economy": -5,
+            "opinion": 5
           }
         },
         "B": {
@@ -2419,7 +2415,7 @@
         "C": {
           "gaugeDelta": {
             "opinion": -10,
-            "diplomacy": 5
+            "economy": -5
           }
         }
       }
@@ -2550,7 +2546,7 @@
       "choices": {
         "A": {
           "gaugeDelta": {
-            "diplomacy": 5,
+            "opinion": 5,
             "economy": -5
           }
         },
@@ -2695,13 +2691,13 @@
         "A": {
           "gaugeDelta": {
             "opinion": 10,
-            "diplomacy": 5
+            "economy": -10
           }
         },
         "B": {
           "gaugeDelta": {
             "economy": 10,
-            "diplomacy": 5
+            "opinion": -10
           }
         },
         "C": {
@@ -2719,13 +2715,13 @@
         "A": {
           "gaugeDelta": {
             "economy": -5,
-            "diplomacy": 5
+            "opinion": 10
           }
         },
         "B": {
           "gaugeDelta": {
             "opinion": -10,
-            "diplomacy": 5
+            "economy": 5
           }
         },
         "C": {
@@ -3468,7 +3464,7 @@
         "B": {
           "gaugeDelta": {
             "opinion": 5,
-            "diplomacy": 5
+            "economy": -5
           }
         },
         "C": {
@@ -8398,7 +8394,7 @@
         },
         "C": {
           "gaugeDelta": {
-            "diplomacy": 5
+            "economy": -5
           }
         }
       }
@@ -8835,7 +8831,8 @@
         },
         "B": {
           "gaugeDelta": {
-            "diplomacy": 5
+            "economy": 5,
+            "opinion": 5
           }
         },
         "C": {
@@ -8862,7 +8859,8 @@
         },
         "C": {
           "gaugeDelta": {
-            "diplomacy": 5
+            "economy": 5,
+            "opinion": 5
           }
         }
       }
