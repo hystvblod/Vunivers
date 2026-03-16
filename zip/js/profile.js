@@ -472,6 +472,25 @@
     };
   }
 
+  async function syncProfileWalletFromRemote() {
+    try {
+      const me = await window.VRRemoteStore?.getMe?.();
+      if (!me || typeof me !== "object") return false;
+
+      const cur = window.VUserData?.load?.() || {};
+
+      window.VUserData?.save?.({
+        ...cur,
+        vcoins: Number(me.vcoins ?? cur.vcoins ?? 0) || 0,
+        jetons: Number(me.jetons ?? cur.jetons ?? 0) || 0
+      });
+
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
   function renderProfileFromState() {
     const state = window.VUserData?.load?.() || {};
 
@@ -638,6 +657,7 @@
       }
 
       try { await window.VUserData?.refresh?.(); } catch (_) {}
+      try { await syncProfileWalletFromRemote(); } catch (_) {}
 
       renderProfileFromState();
       openEdit(false);
@@ -727,6 +747,7 @@
 
   async function refreshEverything() {
     try { await window.VUserData?.refresh?.(); } catch (_) {}
+    try { await syncProfileWalletFromRemote(); } catch (_) {}
     try { await _refreshBadges(); } catch (_) {}
 
     renderProfileFromState();
@@ -741,6 +762,7 @@
 
     try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
     try { await window.VUserData?.init?.(); } catch (_) {}
+    try { await syncProfileWalletFromRemote(); } catch (_) {}
     try { await _initBadges(); } catch (_) {}
 
     renderProfileFromState();

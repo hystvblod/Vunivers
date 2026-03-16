@@ -372,31 +372,60 @@
       return !!(window.sb && window.sb.auth && typeof window.sb.rpc === "function");
     },
 
-    async ensureAuth() {
-      const sb = window.sb;
-      if (!sb || !sb.auth) return null;
+async ensureAuth() {
+  const sb = window.sb;
+  if (!sb || !sb.auth) return null;
 
-      try {
-        if (typeof window.bootstrapAuthAndProfile === "function") {
-          const p = await window.bootstrapAuthAndProfile();
-          return p?.id || (await this._getUid());
-        }
-      } catch (e) {
-        _reportRemoteError("ensureAuth.bootstrapAuthAndProfile", e);
-      }
+  try {
+    if (typeof window.bootstrapAuthAndProfile === "function") {
+      const p = await window.bootstrapAuthAndProfile();
+      const pid = p?.id || null;
+      if (pid) return pid;
+    }
+  } catch (e) {
+    _reportRemoteError("ensureAuth.bootstrapAuthAndProfile", e);
+  }
 
-      const uid = await this._getUid();
-      if (uid) return uid;
+  try {
+    const s1 = await sb.auth.getSession();
+    const uidSession = s1?.data?.session?.user?.id || null;
+    if (uidSession) return uidSession;
+  } catch (e) {
+    _reportRemoteError("ensureAuth.getSession", e);
+  }
 
-      try {
-        const r = await sb.auth.signInAnonymously();
-        if (r?.data?.user?.id) return r.data.user.id;
-      } catch (e) {
-        _reportRemoteError("ensureAuth.signInAnonymously", e);
-      }
+  try {
+    const u1 = await sb.auth.getUser();
+    const uidUser = u1?.data?.user?.id || null;
+    if (uidUser) return uidUser;
+  } catch (e) {
+    _reportRemoteError("ensureAuth.getUser", e);
+  }
 
-      return await this._getUid();
-    },
+  await new Promise((resolve) => setTimeout(resolve, 250));
+
+  try {
+    const s2 = await sb.auth.getSession();
+    const uidRetry = s2?.data?.session?.user?.id || null;
+    if (uidRetry) return uidRetry;
+  } catch (e) {
+    _reportRemoteError("ensureAuth.getSession.retry", e);
+  }
+
+  try {
+    const r = await sb.auth.signInAnonymously();
+    return r?.data?.user?.id || r?.data?.session?.user?.id || null;
+  } catch (e) {
+    _reportRemoteError("ensureAuth.signInAnonymously", e);
+  }
+
+  try {
+    const s3 = await sb.auth.getSession();
+    return s3?.data?.session?.user?.id || null;
+  } catch (_) {
+    return null;
+  }
+},
 
 async _getUid() {
   const sb = window.sb;

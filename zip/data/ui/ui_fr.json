@@ -22,7 +22,7 @@
       "title": "Choisis ton pseudo",
       "subtitle": "Il sera visible dans l’app.",
       "label": "Pseudo",
-      "placeholder": "Ex: Lucifer_7",
+      "placeholder": "Ex: Martin_7",
       "cta": "Valider",
       "skip": "Plus tard",
       "rules": "3 à 20 caractères • lettres, chiffres, _ ou -",
@@ -214,7 +214,7 @@
   "crosspromo": {
     "open_page_aria": "Ouvrir la page cross promo",
     "page_title": "Découvre d'autres jeux",
-    "page_subtitle": "Télécharge un autre jeu du studio et gagne une récompense.",
+    "page_subtitle": "Découvre nos autres univers et gagne des récompenses.",
     "cta_install": "Télécharger",
     "cta_open": "Ouvrir",
     "cta_later": "Plus tard",
@@ -239,7 +239,7 @@
       },
       "vchronicles": {
         "name": "VChronicles",
-        "store_desc": "Explore un univers plus sombre et plus narratif.",
+        "store_desc": "Explore des univers sombres, fais tes choix et essaie de survivre.",
         "popup1": {
           "title": "À court de pièces ?",
           "body": "Télécharge VChronicles et reçois une récompense."
