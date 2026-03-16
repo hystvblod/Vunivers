@@ -61,7 +61,6 @@
       "effect": "Économie : +5 par carte",
       "duration": "Durée : 6 cartes"
     },
-
     "west_president_ev_011": {
       "title": "Alerte bien gérée",
       "body": "Une menace a été détectée tôt, contenue proprement, puis classée sans drame. C’est rare. C’est beau. C’est presque élégant.",
@@ -76,7 +75,7 @@
     },
     "west_president_ev_013": {
       "title": "Mèmes présidentiels",
-      "body": "Une séquence maladroite tourne partout. Le pays rit, l’opposition jubile, et ton service com’ connaît une soirée difficile.",
+      "body": "Une séquence maladroite tourne partout. Le pays rit, l’opposition jubile, et ton service com connaît une soirée difficile.",
       "effect": "Opinion publique : -5 par carte",
       "duration": "Durée : 4 cartes"
     },
@@ -94,7 +93,7 @@
     },
     "west_president_ev_016": {
       "title": "Ambassadeur trop honnête",
-      "body": "Un diplomate dit tout haut ce qu’on garde normalement pour les couloirs. Les capitales étrangères apprécient rarement la franchise nue.",
+      "body": "Un diplomate dit tout haut ce qu’on garde normalement pour les couloirs. Les capitales étrangères apprécient rarement la franchise brute.",
       "effect": "Diplomatie : -5 par carte",
       "duration": "Durée : 5 cartes"
     },
@@ -122,7 +121,6 @@
       "effect": "Diplomatie : +5 par carte",
       "duration": "Durée : 6 cartes"
     },
-
     "west_president_ev_021": {
       "title": "Colère sociale diffuse",
       "body": "Ce n’est pas une grande explosion. C’est pire. Une accumulation de lassitude, de grogne et de regards qui n’y croient plus.",
@@ -167,13 +165,13 @@
     },
     "west_president_ev_028": {
       "title": "Apaisement international",
-      "body": "Les tensions redescendent, les tons deviennent plus mesurés, et ton ministère des affaires étrangères recommence à dormir un peu.",
+      "body": "Les tensions redescendent, les tons deviennent plus mesurés, et ton ministère des Affaires étrangères recommence à dormir un peu.",
       "effect": "Diplomatie : +5 par carte",
       "duration": "Durée : 6 cartes"
     },
     "west_president_ev_029": {
       "title": "Conférence de presse ratée",
-      "body": "Une phrase de travers, un regard mal lu, et tout le monde décide que tu voulais dire le pire. La politique est un sport cruel.",
+      "body": "Une phrase de travers, un regard mal interprété, et tout le monde décide que tu voulais dire le pire. La politique est un sport cruel.",
       "effect": "Opinion publique : -5 par carte",
       "duration": "Durée : 3 cartes"
     },
