@@ -4028,24 +4028,9 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row{
   position: relative !important;
   gap: clamp(10px, 2.4vw, 18px) !important;
   margin: 2px auto 8px !important;
-  padding: 10px 8px 12px !important;
-  border-radius: 22px !important;
+  padding: 4px 4px 6px !important;
+  border-radius: 18px !important;
   overflow: visible !important;
-}
-
-body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row::before{
-  content: "";
-  position: absolute;
-  inset: -4px -10px -6px -10px;
-  border-radius: 26px;
-  background: linear-gradient(180deg, rgba(8,10,16,0.62), rgba(8,10,16,0.34));
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  box-shadow:
-    0 12px 26px rgba(0,0,0,0.26),
-    inset 0 1px 0 rgba(255,255,255,0.05);
-  pointer-events: none;
-  z-index: 0;
 }
 
 body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row > *{
