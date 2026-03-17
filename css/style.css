@@ -4116,13 +4116,13 @@ body[data-universe="vampire_lord"] .vr-gauge .vr-gauge-preview{
     line-height: 1.14 !important;
     max-width: 94% !important;
   }
-  body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
-    font-family: "VR_CrimsonText", serif !important;
-    font-size: clamp(13.5px, 3.8vw, 18px) !important;
-    font-weight: 400 !important;
-    line-height: 1.14 !important;
-    max-width: 100% !important;
-  }
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
+  font-family: "VR_PirataOne", serif !important;
+  font-size: clamp(13.5px, 3.8vw, 18px) !important;
+  font-weight: 400 !important;
+  line-height: 1.14 !important;
+  max-width: 100% !important;
+}
 }
 
 @media (max-width: 390px), (max-height: 740px){
