@@ -3729,7 +3729,6 @@ body[data-universe="new_world_explorer"] .vr-gauge-delta{
 
 
 
-
 /* ==========================================================
    UNIVERS — VAMPIRE
    ========================================================== */
@@ -4297,6 +4296,9 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
     --vr-choice-inset-left: 7%;
   }
 }
+
+
+
 
 
 
