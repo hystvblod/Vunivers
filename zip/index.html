@@ -842,6 +842,7 @@
       function launchUniverse(universeId) {
         if (!universeId) return;
         setUniverseToLaunch(universeId);
+        try { window.VRCrossPromo?.notifySessionStart?.(); } catch (_) {}
         window.location.href = "game.html";
       }
 
@@ -939,7 +940,7 @@
           );
 
           try {
-            sessionStorage.setItem("vr_crosspromo_context", "low_vcoins");
+            await window.VRCrossPromo?.showLowVcoinsPopupNow?.();
           } catch (_) {}
 
           return;
@@ -957,7 +958,7 @@
             );
 
             try {
-              sessionStorage.setItem("vr_crosspromo_context", "low_vcoins");
+              await window.VRCrossPromo?.showLowVcoinsPopupNow?.();
             } catch (_) {}
 
             return;
