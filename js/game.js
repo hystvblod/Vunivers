@@ -1987,6 +1987,8 @@ body.vr-peek-mode .vr-gauge-preview{
 
       this.coinsStreak += 1;
 
+      try { window.VROneSignal?.markRealGamePlayed?.(); } catch (_) {}
+
       window.VRGame?.onCardResolved?.();
       window.VRState.reignYears = getCompletedYearsCount();
 
