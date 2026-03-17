@@ -58,15 +58,13 @@
     }
   };
 
-  function t(key, fallback, vars) {
+  function t(key, vars) {
     let out = "";
     try {
       if (window.VRI18n && typeof window.VRI18n.t === "function") {
         out = window.VRI18n.t(key) || "";
       }
     } catch (_) {}
-
-    if (!out) out = fallback || "";
 
     if (vars && out) {
       Object.keys(vars).forEach((k) => {
@@ -113,6 +111,7 @@
       cooldownUntilTs: 0,
       permanentlyBlocked: false,
       rewardClaimed: false,
+      rewardClaiming: false,
       installedDetected: false,
       clickedStore: false,
       pendingInstallCheck: false
@@ -148,6 +147,7 @@
       cooldownUntilTs: Math.max(0, Number(s.cooldownUntilTs || 0) || 0),
       permanentlyBlocked: !!s.permanentlyBlocked,
       rewardClaimed: !!s.rewardClaimed,
+      rewardClaiming: !!s.rewardClaiming,
       installedDetected: !!s.installedDetected,
       clickedStore: !!s.clickedStore,
       pendingInstallCheck: !!s.pendingInstallCheck
@@ -226,8 +226,10 @@
     const state = readState();
     const installed = await canOpenTargetApp(app);
 
-    state.apps[appId].installedDetected = installed;
-    writeState(state);
+    if (state.apps && state.apps[appId]) {
+      state.apps[appId].installedDetected = installed;
+      writeState(state);
+    }
 
     return installed;
   }
@@ -257,9 +259,9 @@
     try {
       window.open(url, "_blank");
       return true;
-    } catch (_) {
-      return false;
-    }
+    } catch (_) {}
+
+    return false;
   }
 
   async function claimRewardIfEligible(appId) {
@@ -267,11 +269,29 @@
     const row = state.apps[appId];
     if (!row) return false;
     if (row.rewardClaimed) return false;
-    if (!row.pendingInstallCheck) return false;
-    if (!row.installedDetected) return false;
+    if (row.rewardClaiming) return false;
+
+    if (!row.installedDetected) {
+      const installedNow = await refreshInstalledStatus(appId);
+      if (!installedNow) return false;
+    }
+
+    const freshState = readState();
+    const freshRow = freshState.apps[appId];
+    if (!freshRow) return false;
+    if (freshRow.rewardClaimed) return false;
+    if (freshRow.rewardClaiming) return false;
+    if (!freshRow.installedDetected) return false;
+
+    freshRow.rewardClaiming = true;
+    writeState(freshState);
 
     try {
-      if (!window.VUserData || typeof window.VUserData.addVcoinsAsync !== "function") return false;
+      if (!window.VUserData || typeof window.VUserData.addVcoinsAsync !== "function") {
+        freshRow.rewardClaiming = false;
+        writeState(freshState);
+        return false;
+      }
 
       await window.VUserData.addVcoinsAsync(REWARD_AMOUNT);
 
@@ -279,14 +299,17 @@
         await window.VUserData.refresh();
       }
 
-      row.rewardClaimed = true;
-      row.pendingInstallCheck = false;
-      row.clickedStore = false;
-      writeState(state);
+      freshRow.rewardClaimed = true;
+      freshRow.rewardClaiming = false;
+      freshRow.pendingInstallCheck = false;
+      freshRow.clickedStore = false;
+      writeState(freshState);
 
       showRewardToast(appId);
       return true;
     } catch (_) {
+      freshRow.rewardClaiming = false;
+      writeState(freshState);
       return false;
     }
   }
@@ -296,8 +319,8 @@
       ? "crosspromo.apps.vblocks.name"
       : "crosspromo.apps.vchronicles.name";
 
-    const appName = t(appKey, appId);
-    const msg = t("crosspromo.reward_granted", "", { app: appName, amount: REWARD_AMOUNT });
+    const appName = t(appKey);
+    const msg = t("crosspromo.reward_granted", { app: appName, amount: REWARD_AMOUNT });
 
     const el = document.createElement("div");
     el.style.cssText = [
@@ -440,8 +463,10 @@
 
   function buildShotsHtml(app) {
     const shots = getValidShots(app);
+    const openImageAria = escapeHtml(t("crosspromo.aria.open_image"));
+
     return shots.map((src) => {
-      return '<button class="vr-crosspromo-shot" type="button" data-shot-open="' + escapeHtml(src) + '" aria-label="Ouvrir l’image"><img src="' + escapeHtml(src) + '" alt="" draggable="false" /></button>';
+      return '<button class="vr-crosspromo-shot" type="button" data-shot-open="' + escapeHtml(src) + '" aria-label="' + openImageAria + '"><img src="' + escapeHtml(src) + '" alt="" draggable="false" /></button>';
     }).join("");
   }
 
@@ -466,7 +491,7 @@
 
     root.innerHTML = [
       '<div style="position:relative;width:min(520px, calc(100vw - 32px));padding:16px;border-radius:22px;background:rgba(10,16,28,.96);border:1px solid rgba(255,255,255,.12);box-shadow:0 16px 40px rgba(0,0,0,.3);">',
-      '  <button id="vr-crosspromo-close" type="button" style="position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:#fff;font-size:20px;font-weight:900;" aria-label="close">×</button>',
+      '  <button id="vr-crosspromo-close" type="button" style="position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:#fff;font-size:20px;font-weight:900;">×</button>',
       '  <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">',
       '    <img id="vr-crosspromo-cover" src="" alt="" style="width:72px;height:72px;border-radius:18px;object-fit:cover;border:1px solid rgba(255,255,255,.14);" />',
       '    <div>',
@@ -488,25 +513,32 @@
     ].join("");
 
     document.body.appendChild(root);
+
+    const closeBtn = document.getElementById("vr-crosspromo-close");
+    if (closeBtn) {
+      closeBtn.setAttribute("aria-label", t("crosspromo.aria.close"));
+      closeBtn.setAttribute("title", t("crosspromo.aria.close"));
+    }
+
     return root;
   }
 
   function getPopupText(app, popupIndex) {
     if (popupIndex === 1) {
       return {
-        title: t(app.popup1TitleKey, ""),
-        body: t(app.popup1BodyKey, "")
+        title: t(app.popup1TitleKey),
+        body: t(app.popup1BodyKey)
       };
     }
     if (popupIndex === 2) {
       return {
-        title: t(app.popup2TitleKey, ""),
-        body: t(app.popup2BodyKey, "")
+        title: t(app.popup2TitleKey),
+        body: t(app.popup2BodyKey)
       };
     }
     return {
-      title: t(app.popup3TitleKey, ""),
-      body: t(app.popup3BodyKey, "")
+      title: t(app.popup3TitleKey),
+      body: t(app.popup3BodyKey)
     };
   }
 
@@ -558,13 +590,15 @@
       }
 
       cover.src = app.cover;
-      appName.textContent = t(app.titleKey, "");
+      appName.textContent = t(app.titleKey);
       title.textContent = popupText.title;
       body.textContent = popupText.body;
-      rewardPrefix.textContent = t("crosspromo.reward_prefix", "");
+      rewardPrefix.textContent = t("crosspromo.reward_prefix");
       rewardValue.textContent = String(REWARD_AMOUNT);
-      primary.textContent = t("crosspromo.cta_install", "");
-      secondary.textContent = t("crosspromo.cta_later", "");
+      primary.textContent = t("crosspromo.cta_install");
+      secondary.textContent = t("crosspromo.cta_later");
+      closeBtn.setAttribute("aria-label", t("crosspromo.aria.close"));
+      closeBtn.setAttribute("title", t("crosspromo.aria.close"));
 
       primary.onclick = async function () {
         setPendingStoreClick(appId);
@@ -624,10 +658,81 @@
     await claimRewardIfEligible("vchronicles");
   }
 
+  async function getStoreActionState(appId) {
+    const stateBefore = readState();
+    const rowBefore = stateBefore.apps[appId];
+    if (!rowBefore) {
+      return {
+        key: "crosspromo.cta_install",
+        disabled: false
+      };
+    }
+
+    if (rowBefore.rewardClaimed) {
+      return {
+        key: "crosspromo.cta_claimed",
+        disabled: true
+      };
+    }
+
+    if (rowBefore.rewardClaiming) {
+      return {
+        key: "crosspromo.cta_claiming",
+        disabled: true
+      };
+    }
+
+    const installed = await refreshInstalledStatus(appId);
+    const stateAfter = readState();
+    const rowAfter = stateAfter.apps[appId];
+
+    if (!rowAfter) {
+      return {
+        key: "crosspromo.cta_install",
+        disabled: false
+      };
+    }
+
+    if (rowAfter.rewardClaimed) {
+      return {
+        key: "crosspromo.cta_claimed",
+        disabled: true
+      };
+    }
+
+    if (rowAfter.rewardClaiming) {
+      return {
+        key: "crosspromo.cta_claiming",
+        disabled: true
+      };
+    }
+
+    if (installed) {
+      return {
+        key: "crosspromo.cta_claim",
+        disabled: false
+      };
+    }
+
+    return {
+      key: "crosspromo.cta_install",
+      disabled: false
+    };
+  }
+
   function bindResumeChecks() {
+    async function handleResume() {
+      await bootRewardChecks();
+
+      const host = document.getElementById("vr-crosspromo-grid");
+      if (host) {
+        await renderStorePage();
+      }
+    }
+
     document.addEventListener("visibilitychange", async function () {
       if (document.visibilityState === "visible") {
-        await bootRewardChecks();
+        await handleResume();
       }
     });
 
@@ -636,7 +741,7 @@
       if (App && typeof App.addListener === "function") {
         App.addListener("appStateChange", async function (state) {
           if (state && state.isActive) {
-            await bootRewardChecks();
+            await handleResume();
           }
         });
       }
@@ -655,6 +760,9 @@
       viewer.setAttribute("aria-hidden", "true");
       viewerImg.src = "";
     }
+
+    viewerClose.setAttribute("aria-label", t("crosspromo.aria.close"));
+    viewerClose.setAttribute("title", t("crosspromo.aria.close"));
 
     host.querySelectorAll("[data-shot-open]").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -690,7 +798,7 @@
 
     for (const id of ids) {
       const app = APPS[id];
-      const actionLabel = t("crosspromo.cta_install", "");
+      const actionState = await getStoreActionState(id);
 
       rows.push([
         '<article class="vr-crosspromo-card">',
@@ -700,17 +808,17 @@
         '  <div class="vr-crosspromo-content">',
         '    <div class="vr-crosspromo-head vr-crosspromo-head--reward-only">',
         '      <div class="vr-crosspromo-reward">',
-        '        <span class="vr-crosspromo-reward-label">' + escapeHtml(t("crosspromo.reward_prefix", "")) + '</span>',
+        '        <span class="vr-crosspromo-reward-label">' + escapeHtml(t("crosspromo.reward_prefix")) + '</span>',
         '        <img src="assets/img/ui/vcoins.webp" alt="" draggable="false" />',
         '        <span class="vr-crosspromo-reward-value">' + escapeHtml(String(REWARD_AMOUNT)) + '</span>',
         '      </div>',
         '    </div>',
-        '    <p class="vr-crosspromo-desc">' + escapeHtml(t(app.descKey, "")) + '</p>',
+        '    <p class="vr-crosspromo-desc">' + escapeHtml(t(app.descKey)) + '</p>',
         '    <div class="vr-crosspromo-gallery">',
                buildShotsHtml(app),
         '    </div>',
         '    <div class="vr-crosspromo-actions">',
-        '      <button class="vr-crosspromo-btn primary" type="button" data-crosspromo-action="' + escapeHtml(id) + '">' + escapeHtml(actionLabel) + '</button>',
+        '      <button class="vr-crosspromo-btn primary" type="button" data-crosspromo-action="' + escapeHtml(id) + '"' + (actionState.disabled ? ' disabled="disabled"' : "") + '>' + escapeHtml(t(actionState.key)) + '</button>',
         '    </div>',
         '  </div>',
         '</article>'
@@ -725,6 +833,29 @@
         const id = btn.getAttribute("data-crosspromo-action");
         const app = APPS[id];
         if (!app) return;
+
+        const actionState = await getStoreActionState(id);
+        if (actionState.disabled) return;
+
+        if (actionState.key === "crosspromo.cta_claim") {
+          btn.disabled = true;
+          btn.textContent = t("crosspromo.cta_claiming");
+
+          const ok = await claimRewardIfEligible(id);
+          await renderStorePage();
+
+          if (!ok) {
+            await refreshInstalledStatus(id);
+            await renderStorePage();
+          }
+          return;
+        }
+
+        const alreadyInstalled = await refreshInstalledStatus(id);
+        if (alreadyInstalled) {
+          await renderStorePage();
+          return;
+        }
 
         setPendingStoreClick(id);
         await openStore(app);
@@ -753,6 +884,21 @@
         const app = APPS[appId];
         if (!app) return false;
 
+        const actionState = await getStoreActionState(appId);
+
+        if (actionState.key === "crosspromo.cta_claim" && !actionState.disabled) {
+          return claimRewardIfEligible(appId);
+        }
+
+        if (actionState.key === "crosspromo.cta_claimed" || actionState.key === "crosspromo.cta_claiming") {
+          return false;
+        }
+
+        const alreadyInstalled = await refreshInstalledStatus(appId);
+        if (alreadyInstalled) {
+          return claimRewardIfEligible(appId);
+        }
+
         setPendingStoreClick(appId);
         await openStore(app);
         return true;
@@ -764,9 +910,8 @@
     exposeApi();
 
     try {
-      const lang = window.VUserData && window.VUserData.getLang ? window.VUserData.getLang() : "fr";
       if (window.VRI18n && typeof window.VRI18n.initI18n === "function") {
-        await window.VRI18n.initI18n(lang);
+        await window.VRI18n.initI18n();
       }
     } catch (_) {}
 
