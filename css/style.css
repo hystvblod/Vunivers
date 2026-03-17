@@ -3732,7 +3732,6 @@ body[data-universe="new_world_explorer"] .vr-gauge-delta{
 
 
 
-
 /* ==========================================================
    UNIVERS — VAMPIRE
    ========================================================== */
@@ -3747,12 +3746,12 @@ body[data-universe="vampire_lord"].vr-body-game #view-game .vr-card-text{
 }
 
 body[data-universe="vampire_lord"].vr-body-game #view-game .vr-choice-label{
-  font-family: "VR_PirataOne", serif !important;
+  font-family: "VR_CrimsonText", serif !important;
   color: #000 !important;
   text-shadow: none !important;
   opacity: 1 !important;
   font-size: clamp(15px, 2.35vmin, 24px) !important;
-  font-weight: 400 !important;
+  font-weight: 700 !important;
   line-height: 1.16 !important;
   overflow-wrap: break-word !important;
   word-break: normal !important;
@@ -3762,6 +3761,7 @@ body[data-universe="vampire_lord"].vr-body-game #view-game .vr-choice-label{
 
 body.vr-body-game[data-universe="vampire_lord"]{
   --vr-card-w: clamp(390px, 98vw, 1080px);
+  --vr-gauge-size: clamp(76px, 17.5vw, 128px);
 
   --vr-scn-h: clamp(132px, 17.6svh, 236px);
   --vr-choice-h: clamp(82px, 11.2svh, 142px);
@@ -3804,14 +3804,25 @@ body.vr-body-game[data-universe="vampire_lord"]{
   --vr-jetons-bg: transparent;
 }
 
-body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title,
-body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text,
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
-  font-family: "VR_PirataOne", serif !important;
-  font-size: clamp(13.5px, 3.8vw, 18px) !important;
-  font-weight: 400 !important;
-  line-height: 1.14 !important;
   max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
 }
 
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-main{
@@ -3991,7 +4002,6 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
 }
 
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
-  font-family: "VR_PirataOne", serif !important;
   font-size: clamp(17px, 2.7vmin, 28px) !important;
   font-weight: 400 !important;
   line-height: 1.08 !important;
@@ -4003,7 +4013,6 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
 }
 
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
-  font-family: "VR_Cormorant", serif !important;
   font-size: clamp(15px, 2.35vmin, 24px) !important;
   font-weight: 700 !important;
   line-height: 1.16 !important;
@@ -4012,6 +4021,82 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
   word-break: normal !important;
   hyphens: auto !important;
   text-wrap: balance !important;
+}
+
+/* Fond + lisibilité des jauges */
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row{
+  position: relative !important;
+  gap: clamp(10px, 2.4vw, 18px) !important;
+  margin: 2px auto 8px !important;
+  padding: 10px 8px 12px !important;
+  border-radius: 22px !important;
+  overflow: visible !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row::before{
+  content: "";
+  position: absolute;
+  inset: -4px -10px -6px -10px;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(8,10,16,0.62), rgba(8,10,16,0.34));
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow:
+    0 12px 26px rgba(0,0,0,0.26),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row > *{
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge{
+  gap: 8px !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: auto !important;
+  padding: 5px 10px !important;
+  border-radius: 999px !important;
+  background: rgba(10, 8, 12, 0.68) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.34) !important;
+  color: #f7f1e8 !important;
+  font-size: clamp(12px, 2.05vmin, 17px) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  text-align: center !important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.98),
+    0 2px 8px rgba(0,0,0,0.92),
+    0 0 12px rgba(0,0,0,0.88) !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value{
+  padding: 3px 9px !important;
+  border-radius: 999px !important;
+  background: rgba(10, 8, 12, 0.62) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.26) !important;
+  color: #fff8ef !important;
+  font-size: clamp(12px, 2.05vmin, 17px) !important;
+  font-weight: 900 !important;
+  line-height: 1.1 !important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.98),
+    0 2px 8px rgba(0,0,0,0.92),
+    0 0 12px rgba(0,0,0,0.88) !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-val,
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-delta{
+  color: inherit !important;
 }
 
 #view-game.vr-bg-vampire_lord{
@@ -4060,12 +4145,19 @@ body[data-universe="vampire_lord"] .vr-gauge .vr-gauge-preview{
   background-size: 100% 100%;
 }
 
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
+  filter:
+    drop-shadow(0 8px 18px rgba(0,0,0,0.48))
+    drop-shadow(0 0 8px rgba(0,0,0,0.28)) !important;
+}
+
 @media (max-width: 480px){
   body.vr-body-game[data-universe="vampire_lord"]{
     --vr-vampire-hud-w: 92vw;
     --vr-vampire-topbar-w: clamp(210px, 58vw, 300px);
     --vr-vampire-back-size: clamp(40px, 12vw, 60px);
     --vr-vampire-customize-size: clamp(40px, 12vw, 60px);
+    --vr-gauge-size: clamp(68px, 18vw, 96px);
 
     --vr-topbar-h: calc(clamp(50px, 12vw, 76px) + env(safe-area-inset-top) + 6px);
 
@@ -4103,26 +4195,39 @@ body[data-universe="vampire_lord"] .vr-gauge .vr-gauge-preview{
   }
 
   body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
-    font-family: "VR_PirataOne", serif !important;
     font-size: clamp(15px, 4.2vw, 20px) !important;
     font-weight: 400 !important;
     line-height: 1.06 !important;
     max-width: 94% !important;
   }
   body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
-    font-family: "VR_Cormorant", serif !important;
     font-size: clamp(13.5px, 3.8vw, 18px) !important;
     font-weight: 700 !important;
     line-height: 1.14 !important;
     max-width: 94% !important;
   }
-body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
-  font-family: "VR_PirataOne", serif !important;
-  font-size: clamp(13.5px, 3.8vw, 18px) !important;
-  font-weight: 400 !important;
-  line-height: 1.14 !important;
-  max-width: 100% !important;
-}
+  body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
+    font-family: "VR_CrimsonText", serif !important;
+    font-size: clamp(13.5px, 3.8vw, 18px) !important;
+    font-weight: 700 !important;
+    line-height: 1.14 !important;
+    max-width: 100% !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row{
+    padding: 8px 4px 10px !important;
+    gap: 8px !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label{
+    padding: 4px 8px !important;
+    font-size: clamp(11px, 2.8vw, 14px) !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value{
+    padding: 2px 7px !important;
+    font-size: clamp(11px, 2.8vw, 14px) !important;
+  }
 }
 
 @media (max-width: 390px), (max-height: 740px){
@@ -4136,7 +4241,6 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
     --vr-choice-inset-left: 7%;
   }
 }
-
 
 
 
