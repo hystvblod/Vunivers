@@ -134,6 +134,15 @@ const VR_BADGE_GOLD_CHOICES = 100;
   const LEGACY_I18N_PATH = "data/i18n";
   const LEGACY_EVENTS_LOGIC_PATH = "data/events";
 
+  function normalizeScenarioLang(raw) {
+    const s = String(raw || "").trim().toLowerCase();
+    if (!s) return "en";
+    if (s === "pt-br" || s === "ptbr") return "ptbr";
+    if (s === "jp" || s === "ja" || s === "ja-jp") return "jp";
+    if (s === "in" || s === "id-id") return "id";
+    return s.split(/[-_]/)[0] || "en";
+  }
+
   const VREventsLoader = {
     async loadUniverseData(universeId, lang) {
       const configPromise = this._loadConfig(universeId);
@@ -196,7 +205,8 @@ const VR_BADGE_GOLD_CHOICES = 100;
     },
 
     async _loadCardTexts(universeId, lang) {
-      const urlNew = `${SCENARIOS_PATH}/${universeId}/cards_${lang}.json`;
+      const fileLang = normalizeScenarioLang(lang);
+      const urlNew = `${SCENARIOS_PATH}/${universeId}/cards_${fileLang}.json`;
       const urlOld1 = `${LEGACY_I18N_PATH}/${lang}/cards_${universeId}.json`;
       const urlOld2 = `${LEGACY_I18N_PATH}/cards_${universeId}_${lang}.json`;
 
@@ -228,7 +238,8 @@ const VR_BADGE_GOLD_CHOICES = 100;
     },
 
     async _loadEventsTexts(universeId, lang) {
-      const urlNew = `${SCENARIOS_PATH}/${universeId}/events_${lang}.json`;
+      const fileLang = normalizeScenarioLang(lang);
+      const urlNew = `${SCENARIOS_PATH}/${universeId}/events_${fileLang}.json`;
       const urlOld1 = `${LEGACY_I18N_PATH}/${lang}/events_${universeId}.json`;
       const urlOld2 = `${LEGACY_I18N_PATH}/events_${universeId}_${lang}.json`;
 
@@ -266,7 +277,7 @@ const VR_BADGE_GOLD_CHOICES = 100;
     },
 
     universeConfig: null,
-    lang: "fr",
+    lang: "en",
     currentCardLogic: null,
     cardTextsDict: null,
     peekRemaining: 0,
@@ -274,7 +285,7 @@ const VR_BADGE_GOLD_CHOICES = 100;
 
     init(universeConfig, lang, cardTextsDict) {
       this.universeConfig = universeConfig;
-      this.lang = lang || "fr";
+      this.lang = lang || "en";
       this.cardTextsDict = cardTextsDict || {};
 
       this.peekRemaining = 0;
@@ -880,7 +891,8 @@ body.vr-peek-mode .vr-gauge-preview{
     const key = `${universeId}__${lang}`;
     if (cache.has(key)) return cache.get(key);
 
-    const urlNew = `${ENDINGS_BASE_PATH}/${universeId}/endings_${lang}.json`;
+    const fileLang = normalizeScenarioLang(lang);
+    const urlNew = `${ENDINGS_BASE_PATH}/${universeId}/endings_${fileLang}.json`;
     const urlOld1 = `data/i18n/${lang}/endings_${universeId}.json`;
     const urlOld2 = `data/i18n/endings_${universeId}_${lang}.json`;
 
@@ -910,12 +922,12 @@ body.vr-peek-mode .vr-gauge-preview{
     const universeId =
       universeConfig?.id || localStorage.getItem("vrealms_universe") || "hell_king";
 
-    let lang = "fr";
+    let lang = "en";
     try {
       const me = await window.VRProfile?.getMe?.(4000);
-      lang = (me?.lang || "fr").toString();
+      lang = (me?.lang || "en").toString();
     } catch (_) {
-      lang = localStorage.getItem("vrealms_lang") || "fr";
+      lang = localStorage.getItem("vuniverse_lang") || localStorage.getItem("vrealms_lang") || "en";
     }
 
     const endings = await loadEndings(universeId, lang);
@@ -1243,7 +1255,7 @@ body.vr-peek-mode .vr-gauge-preview{
     recentCards: [],
     reignIndex: 0,
     coinsStreak: 0,
-    lang: "fr",
+    lang: "en",
     _reviveUsed: false,
     history: [],
     _uiCoins: 0,
@@ -1560,10 +1572,10 @@ body.vr-peek-mode .vr-gauge-preview{
     async init(universeId, lang) {
       this.universeId = universeId;
 
-      let finalLang = (lang || "fr").toString();
+      let finalLang = (lang || "en").toString();
       try {
         const me = await window.VRProfile?.getMe?.(4000);
-        finalLang = (me?.lang || finalLang || "fr").toString();
+        finalLang = (me?.lang || finalLang || "en").toString();
       } catch (_) {}
       this.lang = finalLang;
 
@@ -3498,11 +3510,11 @@ body.vr-peek-mode .vr-gauge-preview{
     } catch (_) {}
 
     try {
-      const l = localStorage.getItem("vrealms_lang");
+      const l = localStorage.getItem("vuniverse_lang") || localStorage.getItem("vrealms_lang");
       if (l) return String(l).trim();
     } catch (_) {}
 
-    return "fr";
+    return "en";
   }
 
   function getDefaultPreviewAsset(universeId, category) {
@@ -3778,12 +3790,12 @@ window.VRGame = {
     this.applyUniverseBackground(universeId);
     this.applyUniverseCosmetics(universeId);
 
-    let lang = "fr";
+    let lang = "en";
     try {
       const me = await window.VRProfile?.getMe?.(0);
-      lang = (me?.lang || "fr").toString();
+      lang = (me?.lang || "en").toString();
     } catch (_) {
-      lang = localStorage.getItem("vrealms_lang") || "fr";
+      lang = localStorage.getItem("vuniverse_lang") || localStorage.getItem("vrealms_lang") || "en";
     }
 
     try {
