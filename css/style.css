@@ -1458,7 +1458,21 @@ body.vr-body-game .vr-choice-label{
   font-display: swap;
 }
 
+@font-face{
+  font-family: "VR_PirataOne";
+  src: url("../assets/fronts/PirataOne-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face{
+  font-family: "VR_CrimsonText";
+  src: url("../assets/fronts/CrimsonText-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 
 /* ==========================================================
@@ -3719,21 +3733,26 @@ body[data-universe="new_world_explorer"] .vr-gauge-delta{
 
 
 
-
 /* ==========================================================
    UNIVERS — VAMPIRE
    ========================================================== */
-body[data-universe="vampire_lord"].vr-body-game #view-game .vr-card-title,
+body[data-universe="vampire_lord"].vr-body-game #view-game .vr-card-title{
+  font-family: "VR_PirataOne", serif !important;
+  color: #000 !important;
+}
+
 body[data-universe="vampire_lord"].vr-body-game #view-game .vr-card-text{
+  font-family: "VR_Cormorant", serif !important;
   color: #000 !important;
 }
 
 body[data-universe="vampire_lord"].vr-body-game #view-game .vr-choice-label{
+  font-family: "VR_CrimsonText", serif !important;
   color: #000 !important;
   text-shadow: none !important;
   opacity: 1 !important;
   font-size: clamp(15px, 2.35vmin, 24px) !important;
-  font-weight: 700 !important;
+  font-weight: 400 !important;
   line-height: 1.16 !important;
   overflow-wrap: break-word !important;
   word-break: normal !important;
@@ -3971,8 +3990,9 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
 }
 
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
+  font-family: "VR_PirataOne", serif !important;
   font-size: clamp(17px, 2.7vmin, 28px) !important;
-  font-weight: 800 !important;
+  font-weight: 400 !important;
   line-height: 1.08 !important;
   max-width: 94% !important;
   overflow-wrap: break-word !important;
@@ -3982,6 +4002,7 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
 }
 
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
+  font-family: "VR_Cormorant", serif !important;
   font-size: clamp(15px, 2.35vmin, 24px) !important;
   font-weight: 700 !important;
   line-height: 1.16 !important;
@@ -4037,6 +4058,7 @@ body[data-universe="vampire_lord"] .vr-gauge .vr-gauge-preview{
   background-position: center;
   background-size: 100% 100%;
 }
+
 @media (max-width: 480px){
   body.vr-body-game[data-universe="vampire_lord"]{
     --vr-vampire-hud-w: 92vw;
@@ -4079,21 +4101,24 @@ body[data-universe="vampire_lord"] .vr-gauge .vr-gauge-preview{
     transform: translateY(0px) !important;
   }
 
-body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
-  font-size: clamp(15px, 4.2vw, 20px) !important;
-  font-weight: 800 !important;
-  line-height: 1.06 !important;
-  max-width: 94% !important;
-}
+  body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
+    font-family: "VR_PirataOne", serif !important;
+    font-size: clamp(15px, 4.2vw, 20px) !important;
+    font-weight: 400 !important;
+    line-height: 1.06 !important;
+    max-width: 94% !important;
+  }
   body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
+    font-family: "VR_Cormorant", serif !important;
     font-size: clamp(13.5px, 3.8vw, 18px) !important;
     font-weight: 700 !important;
     line-height: 1.14 !important;
     max-width: 94% !important;
   }
   body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
+    font-family: "VR_CrimsonText", serif !important;
     font-size: clamp(13.5px, 3.8vw, 18px) !important;
-    font-weight: 700 !important;
+    font-weight: 400 !important;
     line-height: 1.14 !important;
     max-width: 100% !important;
   }
