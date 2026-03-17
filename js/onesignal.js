@@ -4,19 +4,79 @@
 
   const ONESIGNAL_APP_ID = "26703698-8c7c-46ee-9724-c22de4167a00";
 
-  let __bootStarted = false;
-  let __initialized = false;
+  const K_PROMPT_SHOWN = "vr_os_native_prompt_shown_v1";
+  const K_PENDING_INDEX_PROMPT = "vr_os_pending_index_prompt_v1";
+  const K_REAL_GAME_THIS_RUN = "vr_os_real_game_this_run_v1";
+
+  let bootStarted = false;
+  let initialized = false;
+  let indexPromptStarted = false;
 
   function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  function getOneSignalInstance() {
+  function getOS() {
     try {
-      if (window.plugins && window.plugins.OneSignal) return window.plugins.OneSignal;
       if (window.OneSignal) return window.OneSignal;
+      if (window.plugins && window.plugins.OneSignal) return window.plugins.OneSignal;
     } catch (_) {}
     return null;
+  }
+
+  function isNative() {
+    try {
+      if (window.Capacitor && typeof window.Capacitor.isNativePlatform === "function") {
+        return !!window.Capacitor.isNativePlatform();
+      }
+      if (window.cordova) return true;
+    } catch (_) {}
+    return false;
+  }
+
+  function isIndexPage() {
+    try {
+      const p = String(window.location.pathname || "").toLowerCase();
+      return p.endsWith("/index.html") || p.endsWith("index.html") || p === "/" || p === "";
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function lsGet(key) {
+    try { return localStorage.getItem(key); } catch (_) { return null; }
+  }
+
+  function lsSet(key, value) {
+    try { localStorage.setItem(key, value); } catch (_) {}
+  }
+
+  function lsDel(key) {
+    try { localStorage.removeItem(key); } catch (_) {}
+  }
+
+  function ssGet(key) {
+    try { return sessionStorage.getItem(key); } catch (_) { return null; }
+  }
+
+  function ssSet(key, value) {
+    try { sessionStorage.setItem(key, value); } catch (_) {}
+  }
+
+  function ssDel(key) {
+    try { sessionStorage.removeItem(key); } catch (_) {}
+  }
+
+  function hasShownPrompt() {
+    return lsGet(K_PROMPT_SHOWN) === "1";
+  }
+
+  function hasPendingIndexPrompt() {
+    return lsGet(K_PENDING_INDEX_PROMPT) === "1";
+  }
+
+  function hasRealGameThisRun() {
+    return ssGet(K_REAL_GAME_THIS_RUN) === "1";
   }
 
   async function getUidBestEffort() {
@@ -39,7 +99,7 @@
   }
 
   async function syncExternalId() {
-    const OS = getOneSignalInstance();
+    const OS = getOS();
     if (!OS) return false;
 
     const uid = await getUidBestEffort();
@@ -63,9 +123,9 @@
   }
 
   async function initOneSignal() {
-    if (__initialized) return true;
+    if (initialized) return true;
 
-    const OS = getOneSignalInstance();
+    const OS = getOS();
     if (!OS) return false;
 
     try {
@@ -77,7 +137,7 @@
         return false;
       }
 
-      __initialized = true;
+      initialized = true;
       await syncExternalId();
       return true;
     } catch (_) {
@@ -86,8 +146,10 @@
   }
 
   async function bootOneSignal() {
-    if (__bootStarted) return __initialized;
-    __bootStarted = true;
+    if (bootStarted) return initialized;
+    bootStarted = true;
+
+    if (!isNative()) return false;
 
     try {
       if (window.__VR_BOOT_READY) {
@@ -104,15 +166,15 @@
     return false;
   }
 
-  async function requestPushPermission(openSettingsIfDenied) {
+  async function requestNativePermission() {
     await bootOneSignal();
 
-    const OS = getOneSignalInstance();
+    const OS = getOS();
     if (!OS) return false;
 
     try {
       if (OS.Notifications && typeof OS.Notifications.requestPermission === "function") {
-        return await OS.Notifications.requestPermission(!!openSettingsIfDenied);
+        return await OS.Notifications.requestPermission(false);
       }
     } catch (_) {}
 
@@ -129,15 +191,81 @@
     return false;
   }
 
+  function markRealGamePlayed() {
+    ssSet(K_REAL_GAME_THIS_RUN, "1");
+  }
+
+  function clearRealGamePlayed() {
+    ssDel(K_REAL_GAME_THIS_RUN);
+  }
+
+  function preparePromptOnNextIndex() {
+    if (hasShownPrompt()) return false;
+    if (!hasRealGameThisRun()) return false;
+
+    lsSet(K_PENDING_INDEX_PROMPT, "1");
+    return true;
+  }
+
+  async function maybePromptOnIndexAfterGameReturn() {
+    if (indexPromptStarted) return false;
+    indexPromptStarted = true;
+
+    if (!isIndexPage()) return false;
+    if (!hasPendingIndexPrompt()) return false;
+    if (hasShownPrompt()) {
+      lsDel(K_PENDING_INDEX_PROMPT);
+      clearRealGamePlayed();
+      return false;
+    }
+
+    lsDel(K_PENDING_INDEX_PROMPT);
+    clearRealGamePlayed();
+    lsSet(K_PROMPT_SHOWN, "1");
+
+    try {
+      await requestNativePermission();
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function bindGameReturnHook() {
+    document.addEventListener("click", function (e) {
+      try {
+        const link = e.target && e.target.closest ? e.target.closest('a[href="index.html"]') : null;
+        if (!link) return;
+        preparePromptOnNextIndex();
+      } catch (_) {}
+    }, true);
+  }
+
   window.VROneSignal = {
     boot: bootOneSignal,
-    requestPushPermission: requestPushPermission,
     syncExternalId: syncExternalId,
+    requestNativePermission: requestNativePermission,
+    markRealGamePlayed: markRealGamePlayed,
+    clearRealGamePlayed: clearRealGamePlayed,
+    preparePromptOnNextIndex: preparePromptOnNextIndex,
+    maybePromptOnIndexAfterGameReturn: maybePromptOnIndexAfterGameReturn,
     isReady: function () {
-      return __initialized;
+      return initialized;
     }
   };
 
-  document.addEventListener("deviceready", bootOneSignal, false);
-  document.addEventListener("resume", syncExternalId, false);
+  document.addEventListener("deviceready", async function () {
+    await bootOneSignal();
+    bindGameReturnHook();
+    await maybePromptOnIndexAfterGameReturn();
+  }, false);
+
+  document.addEventListener("resume", function () {
+    syncExternalId();
+  }, false);
+
+  window.addEventListener("load", async function () {
+    bindGameReturnHook();
+    await maybePromptOnIndexAfterGameReturn();
+  }, false);
 })();
