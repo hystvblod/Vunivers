@@ -909,16 +909,18 @@
         res = await window.VUserData?.equipCosmetic?.(universeId, category, itemId);
       }
 
-    if (!res?.ok) {
-  if (res?.reason === "insufficient_vcoins") {
-    setStatus("store-status", t("shop.toast.insufficient_vcoins", ""));
-    await window.VRCrossPromo?.maybeShowPopupFromContext("low_vcoins");
-  } else if (res?.reason === "not_owned") {
-    setStatus("store-status", t("shop.toast.not_owned", ""));
-  } else {
-    setStatus("store-status", t("common.error_generic", ""));
-  }
-} else {
+      if (!res?.ok) {
+        if (res?.reason === "insufficient_vcoins") {
+          setStatus("store-status", t("shop.toast.insufficient_vcoins", ""));
+          try {
+            await window.VRCrossPromo?.showLowVcoinsPopupNow?.();
+          } catch (_) {}
+        } else if (res?.reason === "not_owned") {
+          setStatus("store-status", t("shop.toast.not_owned", ""));
+        } else {
+          setStatus("store-status", t("common.error_generic", ""));
+        }
+      } else {
         setStatus("store-status", "");
       }
 

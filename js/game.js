@@ -1614,6 +1614,10 @@ body.vr-peek-mode .vr-gauge-preview{
       const restored = this._restoreFromSaveIfAny();
       this._rebuildEventIndex();
 
+      if (restored) {
+        try { window.VRCrossPromo?.notifySessionStart?.(); } catch (_) {}
+      }
+
       if (!restored) {
         this._startNewReign();
         this._saveRunSoft();
@@ -2165,6 +2169,15 @@ body.vr-peek-mode .vr-gauge-preview{
             renderEndingReward(out.amount);
           }
 
+          const skipBecauseRewardAd = !!this._pendingEndClaimed;
+
+          try { window.VRCrossPromo?.notifySessionStart?.(); } catch (_) {}
+          try {
+            await window.VRCrossPromo?.maybeShowPostGamePromo?.({
+              skipBecauseRewardAd: skipBecauseRewardAd
+            });
+          } catch (_) {}
+
           window.VREndings.hideEnding();
           this.restartRun();
         };
@@ -2181,11 +2194,16 @@ body.vr-peek-mode .vr-gauge-preview{
             renderEndingReward(out.amount);
           }
 
-         try { this._clearRunSave(); } catch (_) {}
-try {
-  sessionStorage.setItem("vr_crosspromo_context", "post_game_stress");
-} catch (_) {}
-try { window.location.href = "index.html"; } catch (_) {}
+          const skipBecauseRewardAd = !!this._pendingEndClaimed;
+
+          try {
+            await window.VRCrossPromo?.maybeShowPostGamePromo?.({
+              skipBecauseRewardAd: skipBecauseRewardAd
+            });
+          } catch (_) {}
+
+          try { this._clearRunSave(); } catch (_) {}
+          try { window.location.href = "index.html"; } catch (_) {}
         };
       }
 
@@ -2538,12 +2556,16 @@ try { window.location.href = "index.html"; } catch (_) {}
           }
 
           if (action === "back_menu") {
-      closePopup();
-try {
-  sessionStorage.setItem("vr_crosspromo_context", "post_game_dark");
-} catch (_) {}
-try { window.location.href = "index.html"; } catch (_) {}
-return;
+            closePopup();
+
+            try {
+              await window.VRCrossPromo?.maybeShowPostGamePromo?.({
+                skipBecauseRewardAd: false
+              });
+            } catch (_) {}
+
+            try { window.location.href = "index.html"; } catch (_) {}
+            return;
           }
         });
       });
@@ -3290,16 +3312,18 @@ return;
         res = await window.VUserData?.equipCosmetic?.(universeId, category, itemId);
       }
 
-   if (!res?.ok) {
-  if (res?.reason === "insufficient_vcoins") {
-    toast(t("shop.toast.insufficient_vcoins", ""));
-    await window.VRCrossPromo?.maybeShowPopupFromContext("low_vcoins");
-  } else if (res?.reason === "not_owned") {
-    toast(t("shop.toast.not_owned", ""));
-  } else {
-    toast(t("common.error_generic", ""));
-  }
-} else {
+      if (!res?.ok) {
+        if (res?.reason === "insufficient_vcoins") {
+          toast(t("shop.toast.insufficient_vcoins", ""));
+          try {
+            await window.VRCrossPromo?.showLowVcoinsPopupNow?.();
+          } catch (_) {}
+        } else if (res?.reason === "not_owned") {
+          toast(t("shop.toast.not_owned", ""));
+        } else {
+          toast(t("common.error_generic", ""));
+        }
+      } else {
         applyUniverseCosmetics(universeId);
         renderRowOnly(category);
       }
