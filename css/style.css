@@ -3747,7 +3747,7 @@ body[data-universe="vampire_lord"].vr-body-game #view-game .vr-card-text{
 }
 
 body[data-universe="vampire_lord"].vr-body-game #view-game .vr-choice-label{
-  font-family: "VR_CrimsonText", serif !important;
+  font-family: "VR_PirataOne", serif !important;
   color: #000 !important;
   text-shadow: none !important;
   opacity: 1 !important;
@@ -3807,10 +3807,11 @@ body.vr-body-game[data-universe="vampire_lord"]{
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title,
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text,
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
-  max-width: 94% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  text-align: center !important;
+  font-family: "VR_PirataOne", serif !important;
+  font-size: clamp(13.5px, 3.8vw, 18px) !important;
+  font-weight: 400 !important;
+  line-height: 1.14 !important;
+  max-width: 100% !important;
 }
 
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-main{
