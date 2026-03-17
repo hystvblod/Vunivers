@@ -3730,7 +3730,6 @@ body[data-universe="new_world_explorer"] .vr-gauge-delta{
 
 
 
-
 /* ==========================================================
    UNIVERS — VAMPIRE
    ========================================================== */
@@ -4022,7 +4021,7 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
   text-wrap: balance !important;
 }
 
-/* Lisibilité jauges : voile très léger, sans vrai flou, sans contour autour du texte */
+/* Flou doux autour des jauges, sans contour visible */
 body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row{
   position: relative !important;
   gap: clamp(10px, 2.4vw, 18px) !important;
@@ -4035,12 +4034,16 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row{
 body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row::before{
   content: "";
   position: absolute;
-  inset: -2px -6px -4px -6px;
-  border-radius: 20px;
-  background: linear-gradient(180deg, rgba(8,10,16,0.18), rgba(8,10,16,0.10));
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.10);
+  inset: -6px -12px -8px -12px;
+  border-radius: 32px;
+  background:
+    radial-gradient(ellipse at center,
+      rgba(8,10,16,0.32) 0%,
+      rgba(8,10,16,0.18) 42%,
+      rgba(8,10,16,0.08) 68%,
+      rgba(8,10,16,0.00) 100%);
+  filter: blur(7px);
+  -webkit-filter: blur(7px);
   pointer-events: none;
   z-index: 0;
 }
@@ -4055,11 +4058,12 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge{
 }
 
 body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label{
+  position: relative !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   min-height: auto !important;
-  padding: 0 !important;
+  padding: 0 2px !important;
   border-radius: 0 !important;
   background: transparent !important;
   border: none !important;
@@ -4071,12 +4075,31 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label{
   text-align: center !important;
   text-shadow:
     0 1px 0 rgba(0,0,0,0.98),
-    0 2px 6px rgba(0,0,0,0.82),
-    0 0 8px rgba(0,0,0,0.60) !important;
+    0 2px 6px rgba(0,0,0,0.88),
+    0 0 10px rgba(0,0,0,0.70) !important;
+  z-index: 1 !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label::before{
+  content: "";
+  position: absolute;
+  inset: -6px -10px;
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse at center,
+      rgba(8,10,16,0.34) 0%,
+      rgba(8,10,16,0.20) 45%,
+      rgba(8,10,16,0.08) 72%,
+      rgba(8,10,16,0.00) 100%);
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+  pointer-events: none;
+  z-index: -1;
 }
 
 body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value{
-  padding: 0 !important;
+  position: relative !important;
+  padding: 0 2px !important;
   border-radius: 0 !important;
   background: transparent !important;
   border: none !important;
@@ -4087,8 +4110,26 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value{
   line-height: 1.08 !important;
   text-shadow:
     0 1px 0 rgba(0,0,0,0.98),
-    0 2px 6px rgba(0,0,0,0.82),
-    0 0 8px rgba(0,0,0,0.60) !important;
+    0 2px 6px rgba(0,0,0,0.88),
+    0 0 10px rgba(0,0,0,0.70) !important;
+  z-index: 1 !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value::before{
+  content: "";
+  position: absolute;
+  inset: -5px -8px;
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse at center,
+      rgba(8,10,16,0.30) 0%,
+      rgba(8,10,16,0.18) 46%,
+      rgba(8,10,16,0.06) 74%,
+      rgba(8,10,16,0.00) 100%);
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  pointer-events: none;
+  z-index: -1;
 }
 
 body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-val,
@@ -4217,19 +4258,31 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
   }
 
   body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label{
-    padding: 0 !important;
+    padding: 0 1px !important;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
     font-size: clamp(11px, 2.9vw, 14px) !important;
   }
 
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label::before{
+    inset: -4px -7px !important;
+    filter: blur(4px) !important;
+    -webkit-filter: blur(4px) !important;
+  }
+
   body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value{
-    padding: 0 !important;
+    padding: 0 1px !important;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
     font-size: clamp(11px, 2.9vw, 14px) !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value::before{
+    inset: -4px -6px !important;
+    filter: blur(4px) !important;
+    -webkit-filter: blur(4px) !important;
   }
 }
 
@@ -4244,7 +4297,6 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
     --vr-choice-inset-left: 7%;
   }
 }
-
 
 
 
