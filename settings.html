@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title></title>
@@ -452,7 +452,8 @@
   (async () => {
     "use strict";
 
-    const LangStorageKey = "vrealms_lang";
+    const LangStorageKey = "vuniverse_lang";
+    const LangStorageLegacyKey = "vrealms_lang";
     const AdsPrefKey = "vrealms_ads_personalized";
 
     const LANGS = [
@@ -518,6 +519,11 @@
       try{
         const v = normalizeLang(localStorage.getItem(LangStorageKey));
         if(v && supported(v)) return v;
+      }catch(_){}
+
+      try{
+        const v2 = normalizeLang(localStorage.getItem(LangStorageLegacyKey));
+        if(v2 && supported(v2)) return v2;
       }catch(_){}
 
       return null;
@@ -674,7 +680,7 @@
       const safe = supported(code) ? code : "en";
 
       try{ localStorage.setItem(LangStorageKey, safe); }catch(_){}
-      try{ localStorage.setItem("VREALMS_LANG", safe); }catch(_){}
+      try{ localStorage.setItem(LangStorageLegacyKey, safe); }catch(_){}
 
       try{
         if(window.VUserData && typeof window.VUserData.save === "function"){
@@ -696,8 +702,10 @@
       }
 
       try{
-        if(window.VRI18n && typeof window.VRI18n.initI18n === "function"){
-          await window.VRI18n.initI18n(safe);
+        if(window.VRI18n && typeof window.VRI18n.setLang === "function"){
+          await window.VRI18n.setLang(safe);
+        } else if(window.VRI18n && typeof window.VRI18n.initI18n === "function"){
+          await window.VRI18n.initI18n();
         }
       }catch(_){}
 
@@ -746,7 +754,7 @@
       if(!cur){
         const d = detectDeviceLang();
         localStorage.setItem(LangStorageKey, d);
-        localStorage.setItem("VREALMS_LANG", d);
+        localStorage.setItem(LangStorageLegacyKey, d);
       }
     }catch(_){}
 
