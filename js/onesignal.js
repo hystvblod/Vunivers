@@ -1,23 +1,25 @@
 // js/onesignal.js
-// OneSignal init (Capacitor + Cordova plugin)
-// - Compatible API v5 (global OneSignal) + fallback v3 (window.plugins.OneSignal)
-// - Links OneSignal user to Supabase uid when possible (external user id)
-// ⚠️ This file is safe to ship in www. DO NOT put Firebase service account JSON here.
-
 (function () {
   "use strict";
 
   const ONESIGNAL_APP_ID = "26703698-8c7c-46ee-9724-c22de4167a00";
 
-  function _has(obj, path) {
-    try {
-      return path.split(".").reduce((o, k) => (o && k in o ? o[k] : undefined), obj) !== undefined;
-    } catch (_) {
-      return false;
-    }
+  let __bootStarted = false;
+  let __initialized = false;
+
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  async function _getUidBestEffort() {
+  function getOneSignalInstance() {
+    try {
+      if (window.plugins && window.plugins.OneSignal) return window.plugins.OneSignal;
+      if (window.OneSignal) return window.OneSignal;
+    } catch (_) {}
+    return null;
+  }
+
+  async function getUidBestEffort() {
     try {
       if (window.VUserData && typeof window.VUserData.ensureAuth === "function") {
         const uid = await window.VUserData.ensureAuth();
@@ -27,8 +29,8 @@
 
     try {
       if (window.sb && window.sb.auth && typeof window.sb.auth.getUser === "function") {
-        const r = await window.sb.auth.getUser();
-        const uid = r?.data?.user?.id;
+        const res = await window.sb.auth.getUser();
+        const uid = res?.data?.user?.id;
         if (uid) return uid;
       }
     } catch (_) {}
@@ -36,102 +38,106 @@
     return null;
   }
 
-  async function _linkExternalUserId(setterFn) {
-    try {
-      const uid = await _getUidBestEffort();
-      if (!uid) return;
-      try {
-        await setterFn(uid);
-      } catch (_) {
-        // some SDK methods are sync
-        try { setterFn(uid); } catch (_) {}
-      }
-    } catch (_) {}
-  }
-
-  async function _initV5() {
-    // onesignal-cordova-plugin v5 exposes a global `OneSignal`
-    // Docs-style API:
-    // OneSignal.initialize(appId)
-    // OneSignal.Notifications.requestPermission(true)
-    const OS = window.OneSignal;
-    if (!OS || typeof OS.initialize !== "function") return false;
-
-    OS.initialize(ONESIGNAL_APP_ID);
-
-    if (_has(OS, "Notifications.requestPermission")) {
-      try {
-        OS.Notifications.requestPermission(true);
-      } catch (_) {}
-    }
-
-    // v5: OS.login(externalId) is preferred, fallback to setExternalUserId if present
-    await _linkExternalUserId(async (uid) => {
-      if (typeof OS.login === "function") return OS.login(uid);
-      if (typeof OS.setExternalUserId === "function") return OS.setExternalUserId(uid);
-    });
-
-    return true;
-  }
-
-  async function _initLegacyV3() {
-    // older cordova plugin exposed window.plugins.OneSignal
-    const OS = window.plugins && window.plugins.OneSignal;
+  async function syncExternalId() {
+    const OS = getOneSignalInstance();
     if (!OS) return false;
 
-    if (typeof OS.setAppId === "function") {
-      OS.setAppId(ONESIGNAL_APP_ID);
-    }
+    const uid = await getUidBestEffort();
+    if (!uid) return false;
 
-    if (typeof OS.promptForPushNotificationsWithUserResponse === "function") {
-      try {
-        OS.promptForPushNotificationsWithUserResponse(function () {});
-      } catch (_) {}
-    }
-
-    await _linkExternalUserId(async (uid) => {
-      if (typeof OS.setExternalUserId === "function") return OS.setExternalUserId(uid);
-    });
-
-    return true;
-  }
-
-  async function initOneSignal() {
-    // Only run on device (best-effort). On desktop web, cordova/OneSignal won't exist.
     try {
-      const okV5 = await _initV5();
-      if (okV5) return;
-      await _initLegacyV3();
+      if (typeof OS.login === "function") {
+        await OS.login(uid);
+        return true;
+      }
     } catch (_) {}
-  }
 
-  function _isNativeBestEffort() {
     try {
-      const C = window.Capacitor;
-      if (C && typeof C.isNativePlatform === "function") return !!C.isNativePlatform();
-      if (window.cordova) return true;
+      if (typeof OS.setExternalUserId === "function") {
+        await OS.setExternalUserId(uid);
+        return true;
+      }
     } catch (_) {}
+
     return false;
   }
 
-  function _sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
+  async function initOneSignal() {
+    if (__initialized) return true;
 
-  async function bootOneSignal() {
-    if (!_isNativeBestEffort()) return;
+    const OS = getOneSignalInstance();
+    if (!OS) return false;
 
-    // si ton app expose une promesse de boot, on attend un peu
-    try { if (window.__VR_BOOT_READY) await Promise.race([window.__VR_BOOT_READY, _sleep(2500)]); } catch (_) {}
+    try {
+      if (typeof OS.initialize === "function") {
+        OS.initialize(ONESIGNAL_APP_ID);
+      } else if (typeof OS.setAppId === "function") {
+        OS.setAppId(ONESIGNAL_APP_ID);
+      } else {
+        return false;
+      }
 
-    // retry court : attend que le SDK soit vraiment présent
-    for (let i = 0; i < 20; i++) {
-      try {
-        await initOneSignal();
-        if (window.OneSignal || (window.plugins && window.plugins.OneSignal)) break;
-      } catch (_) {}
-      await _sleep(400);
+      __initialized = true;
+      await syncExternalId();
+      return true;
+    } catch (_) {
+      return false;
     }
   }
 
-  document.addEventListener("DOMContentLoaded", bootOneSignal, false);
-  window.addEventListener("load", bootOneSignal, false);
+  async function bootOneSignal() {
+    if (__bootStarted) return __initialized;
+    __bootStarted = true;
+
+    try {
+      if (window.__VR_BOOT_READY) {
+        await Promise.race([window.__VR_BOOT_READY, sleep(3000)]);
+      }
+    } catch (_) {}
+
+    for (let i = 0; i < 20; i++) {
+      const ok = await initOneSignal();
+      if (ok) return true;
+      await sleep(400);
+    }
+
+    return false;
+  }
+
+  async function requestPushPermission(openSettingsIfDenied) {
+    await bootOneSignal();
+
+    const OS = getOneSignalInstance();
+    if (!OS) return false;
+
+    try {
+      if (OS.Notifications && typeof OS.Notifications.requestPermission === "function") {
+        return await OS.Notifications.requestPermission(!!openSettingsIfDenied);
+      }
+    } catch (_) {}
+
+    try {
+      if (typeof OS.promptForPushNotificationsWithUserResponse === "function") {
+        return await new Promise((resolve) => {
+          OS.promptForPushNotificationsWithUserResponse(function (accepted) {
+            resolve(!!accepted);
+          });
+        });
+      }
+    } catch (_) {}
+
+    return false;
+  }
+
+  window.VROneSignal = {
+    boot: bootOneSignal,
+    requestPushPermission: requestPushPermission,
+    syncExternalId: syncExternalId,
+    isReady: function () {
+      return __initialized;
+    }
+  };
+
+  document.addEventListener("deviceready", bootOneSignal, false);
+  document.addEventListener("resume", syncExternalId, false);
 })();
