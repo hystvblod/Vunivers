@@ -2216,6 +2216,7 @@ body.vr-peek-mode .vr-gauge-preview{
             });
           } catch (_) {}
 
+          try { window.VROneSignal?.preparePromptOnNextIndex?.(); } catch (_) {}
           try { this._clearRunSave(); } catch (_) {}
           try { window.location.href = "index.html"; } catch (_) {}
         };
@@ -2578,6 +2579,7 @@ body.vr-peek-mode .vr-gauge-preview{
               });
             } catch (_) {}
 
+            try { window.VROneSignal?.preparePromptOnNextIndex?.(); } catch (_) {}
             try { window.location.href = "index.html"; } catch (_) {}
             return;
           }
