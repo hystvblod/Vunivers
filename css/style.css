@@ -3731,7 +3731,6 @@ body[data-universe="new_world_explorer"] .vr-gauge-delta{
 
 
 
-
 /* ==========================================================
    UNIVERS — VAMPIRE
    ========================================================== */
@@ -4023,7 +4022,7 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
   text-wrap: balance !important;
 }
 
-/* Fond + lisibilité des jauges */
+/* Lisibilité jauges : voile très léger, sans vrai flou, sans contour autour du texte */
 body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row{
   position: relative !important;
   gap: clamp(10px, 2.4vw, 18px) !important;
@@ -4031,6 +4030,19 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row{
   padding: 4px 4px 6px !important;
   border-radius: 18px !important;
   overflow: visible !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row::before{
+  content: "";
+  position: absolute;
+  inset: -2px -6px -4px -6px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(8,10,16,0.18), rgba(8,10,16,0.10));
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.10);
+  pointer-events: none;
+  z-index: 0;
 }
 
 body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row > *{
@@ -4047,36 +4059,36 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label{
   align-items: center !important;
   justify-content: center !important;
   min-height: auto !important;
-  padding: 5px 10px !important;
-  border-radius: 999px !important;
-  background: rgba(10, 8, 12, 0.68) !important;
-  border: 1px solid rgba(255,255,255,0.12) !important;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.34) !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
   color: #f7f1e8 !important;
-  font-size: clamp(12px, 2.05vmin, 17px) !important;
-  font-weight: 800 !important;
-  line-height: 1.1 !important;
+  font-size: clamp(13px, 2.2vmin, 18px) !important;
+  font-weight: 900 !important;
+  line-height: 1.08 !important;
   text-align: center !important;
   text-shadow:
     0 1px 0 rgba(0,0,0,0.98),
-    0 2px 8px rgba(0,0,0,0.92),
-    0 0 12px rgba(0,0,0,0.88) !important;
+    0 2px 6px rgba(0,0,0,0.82),
+    0 0 8px rgba(0,0,0,0.60) !important;
 }
 
 body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value{
-  padding: 3px 9px !important;
-  border-radius: 999px !important;
-  background: rgba(10, 8, 12, 0.62) !important;
-  border: 1px solid rgba(255,255,255,0.10) !important;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.26) !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
   color: #fff8ef !important;
-  font-size: clamp(12px, 2.05vmin, 17px) !important;
+  font-size: clamp(13px, 2.2vmin, 18px) !important;
   font-weight: 900 !important;
-  line-height: 1.1 !important;
+  line-height: 1.08 !important;
   text-shadow:
     0 1px 0 rgba(0,0,0,0.98),
-    0 2px 8px rgba(0,0,0,0.92),
-    0 0 12px rgba(0,0,0,0.88) !important;
+    0 2px 6px rgba(0,0,0,0.82),
+    0 0 8px rgba(0,0,0,0.60) !important;
 }
 
 body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-val,
@@ -4200,18 +4212,24 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
   }
 
   body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row{
-    padding: 8px 4px 10px !important;
+    padding: 2px 2px 4px !important;
     gap: 8px !important;
   }
 
   body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label{
-    padding: 4px 8px !important;
-    font-size: clamp(11px, 2.8vw, 14px) !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: clamp(11px, 2.9vw, 14px) !important;
   }
 
   body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value{
-    padding: 2px 7px !important;
-    font-size: clamp(11px, 2.8vw, 14px) !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: clamp(11px, 2.9vw, 14px) !important;
   }
 }
 
