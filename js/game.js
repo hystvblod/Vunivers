@@ -1999,6 +1999,8 @@ body.vr-peek-mode .vr-gauge-preview{
 
       this.coinsStreak += 1;
 
+      try { window.VROneSignal?.markRealGamePlayed?.(); } catch (_) {}
+
       window.VRGame?.onCardResolved?.();
       window.VRState.reignYears = getCompletedYearsCount();
 
@@ -2214,6 +2216,7 @@ body.vr-peek-mode .vr-gauge-preview{
             });
           } catch (_) {}
 
+          try { window.VROneSignal?.preparePromptOnNextIndex?.(); } catch (_) {}
           try { this._clearRunSave(); } catch (_) {}
           try { window.location.href = "index.html"; } catch (_) {}
         };
@@ -2576,6 +2579,7 @@ body.vr-peek-mode .vr-gauge-preview{
               });
             } catch (_) {}
 
+            try { window.VROneSignal?.preparePromptOnNextIndex?.(); } catch (_) {}
             try { window.location.href = "index.html"; } catch (_) {}
             return;
           }
