@@ -3,10 +3,9 @@
 
   // === CONFIG ===
   const BASE_PATH = "data/ui";
-  const DEFAULT_LANG = "fr";
-
-  // ✅ aligné avec le reste de ton projet
-  const STORAGE_KEY = "vrealms_lang";
+  const DEFAULT_LANG = "en";
+  const STORAGE_KEY = "vuniverse_lang";
+  const LEGACY_STORAGE_KEY = "vrealms_lang";
 
   // ✅ on ne charge PLUS "cards" / "endings" ici
   // (les cartes et les fins sont chargées par le moteur: events-loader + VREndings)
@@ -19,13 +18,15 @@
     const s0 = String(raw || "").trim().toLowerCase();
     if (!s0) return DEFAULT_LANG;
 
-    // pt-br => ptbr (comme ton dossier)
     if (s0 === "pt-br" || s0 === "ptbr") return "ptbr";
+    if (s0 === "pt-pt" || s0 === "pt_pt") return "pt";
+    if (s0 === "jp" || s0 === "ja-jp") return "ja";
+    if (s0 === "kr" || s0 === "ko-kr") return "ko";
+    if (s0 === "in" || s0 === "id-id") return "id";
 
-    // fr-FR => fr / en-US => en
-    if (s0.includes("-")) return s0.split("-")[0];
-
-    return s0;
+    const base = s0.split(/[-_]/)[0];
+    if (base === "pt" && (s0.includes("br") || s0.includes("ptbr"))) return "ptbr";
+    return base || DEFAULT_LANG;
   }
 
   function deepMerge(target, source) {
@@ -130,8 +131,22 @@ async function tryLoadUiBundle(bundle, lang) {
     });
   }
 
+  function detectDeviceLang() {
+    try {
+      const list = Array.isArray(navigator.languages) && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language];
+
+      for (const cand of list) {
+        const l = normalizeLang(cand);
+        if (l) return l;
+      }
+    } catch (_) {}
+
+    return DEFAULT_LANG;
+  }
+
   function getSavedLang() {
-    // 1) userData si dispo
     try {
       if (window.VUserData?.load) {
         const u = window.VUserData.load();
@@ -139,19 +154,27 @@ async function tryLoadUiBundle(bundle, lang) {
       }
     } catch (_) {}
 
-    // 2) localStorage
     try {
-      const ls = localStorage.getItem(STORAGE_KEY);
-      if (ls) return normalizeLang(ls);
+      const ls1 = localStorage.getItem(STORAGE_KEY);
+      if (ls1) return normalizeLang(ls1);
     } catch (_) {}
 
-    return DEFAULT_LANG;
+    try {
+      const ls2 = localStorage.getItem(LEGACY_STORAGE_KEY);
+      if (ls2) return normalizeLang(ls2);
+    } catch (_) {}
+
+    const detected = detectDeviceLang();
+    try { localStorage.setItem(STORAGE_KEY, detected); } catch (_) {}
+    try { localStorage.setItem(LEGACY_STORAGE_KEY, detected); } catch (_) {}
+    return detected;
   }
 
   function saveLangLocal(lang) {
     const l = normalizeLang(lang);
 
     try { localStorage.setItem(STORAGE_KEY, l); } catch (_) {}
+    try { localStorage.setItem(LEGACY_STORAGE_KEY, l); } catch (_) {}
 
     try {
       if (window.VUserData?.load && window.VUserData?.save) {
