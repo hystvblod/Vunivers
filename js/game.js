@@ -2438,13 +2438,6 @@ body.vr-peek-mode .vr-gauge-preview{
   border-color:rgba(255,255,255,.14) !important;
 }
 
-#vr-token-popup [data-token-action="gauge50"] .vr-card-content,
-#vr-token-gauge-overlay .vr-token-gauge-card{
-  background:linear-gradient(180deg, rgba(122,167,255,.26), rgba(122,167,255,.16)) !important;
-  border-color:rgba(122,167,255,.38) !important;
-  box-shadow:0 18px 40px rgba(43,92,214,.30) !important;
-}
-
 #vr-token-popup .vr-card-title,
 #vr-token-popup .vr-token-basic-card .vr-card-title,
 #vr-coins-popup .vr-card-title{
@@ -2487,6 +2480,13 @@ body.vr-peek-mode .vr-gauge-preview{
   outline:2px solid rgba(255,255,255,.65) !important;
   outline-offset:4px !important;
   border-radius:10px !important;
+}
+
+#vr-token-popup [data-token-action="gauge50"] .vr-card-content,
+#vr-token-gauge-overlay .vr-token-gauge-card{
+  background:linear-gradient(180deg, rgba(122,167,255,.26), rgba(122,167,255,.16)) !important;
+  border-color:rgba(122,167,255,.38) !important;
+  box-shadow:0 18px 40px rgba(43,92,214,.30) !important;
 }
 
 #vr-token-popup img,
