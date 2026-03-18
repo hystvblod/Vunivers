@@ -2199,9 +2199,6 @@ body.vr-peek-mode .vr-gauge-preview{
           try { doubleBtn.disabled = true; } catch (_) {}
 
           const okAd = await (window.VRAds?.showRewardedAd?.({ placement: "end_reward_x2" }) || Promise.resolve(false));
-          if (okAd) {
-            try { window.VRAds?.markGameRewardSeen?.(); } catch (_) {}
-          }
           if (!okAd) {
             try { window.showToast?.(t("coins.toast.reward_fail", "")); } catch (_) {}
             syncEndingButtons();
@@ -2285,7 +2282,6 @@ body.vr-peek-mode .vr-gauge-preview{
             });
           } catch (_) {}
 
-          try { await window.VRAds?.maybeShowInterstitialOnReturnToIndex?.(); } catch (_) {}
           try { window.VROneSignal?.preparePromptOnNextIndex?.(); } catch (_) {}
           try { this._clearRunSave(); } catch (_) {}
           try { window.location.href = "index.html"; } catch (_) {}
@@ -2361,7 +2357,7 @@ body.vr-peek-mode .vr-gauge-preview{
   background-image:none !important;
 }
 
-/* shell popup = style index */
+/* shell popup = même esprit visuel que index */
 #vr-token-popup .vr-popup-inner,
 #vr-coins-popup .vr-popup-inner{
   width:min(560px, 94vw) !important;
@@ -2369,14 +2365,14 @@ body.vr-peek-mode .vr-gauge-preview{
   overflow:auto !important;
   display:flex !important;
   flex-direction:column !important;
-  gap:10px !important;
+  gap:12px !important;
   padding:16px 14px 14px !important;
   box-sizing:border-box !important;
 
   border-radius:18px !important;
-  background:rgba(12, 16, 32, 0.92) !important;
-  border:1px solid rgba(255,255,255,.12) !important;
-  box-shadow:0 14px 40px rgba(0,0,0,.35) !important;
+  background: radial-gradient(circle at top, #f6e7cf 0, #1b6688 62%, #03279e 100%) !important;
+  border:1px solid rgba(255,255,255,.18) !important;
+  box-shadow:0 14px 40px rgba(0,0,0,.28) !important;
   backdrop-filter:blur(6px) !important;
   -webkit-backdrop-filter:blur(6px) !important;
   color:#fff !important;
@@ -2408,39 +2404,67 @@ body.vr-peek-mode .vr-gauge-preview{
   position:relative !important;
   display:block !important;
   width:100% !important;
-  padding:0 !important;
+  min-height:72px !important;
   margin:0 !important;
-  border:none !important;
-  background:none !important;
+  padding:10px 14px !important;
+  border:0 !important;
+  border-radius:18px !important;
+  background:transparent !important;
   box-shadow:none !important;
+  overflow:hidden !important;
+  text-align:center !important;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 /* cartouches = même esprit que index */
 #vr-token-popup .vr-card-content,
 #vr-token-popup .vr-token-basic-card .vr-card-content,
 #vr-coins-popup .vr-card-content{
+  position:relative !important;
+  z-index:3 !important;
   display:flex !important;
   flex-direction:column !important;
   align-items:center !important;
   justify-content:center !important;
   text-align:center !important;
 
-  min-height:54px !important;
-  padding:10px 14px !important;
+  min-height:52px !important;
+  padding:0 !important;
   box-sizing:border-box !important;
 
-  border:1px solid rgba(255,255,255,.18) !important;
-  border-radius:14px !important;
-  background:rgba(255,255,255,.12) !important;
+  border:none !important;
+  border-radius:0 !important;
+  background:none !important;
   box-shadow:none !important;
 }
 
-/* bouton principal légèrement plus bleu comme index */
-#vr-token-popup [data-token-action="adtoken"] .vr-card-content,
-#vr-token-popup [data-token-action="gauge50"] .vr-card-content,
-#vr-coins-popup [data-coins-action="adcoins"] .vr-card-content{
-  background:rgba(122,167,255,.22) !important;
-  border-color:rgba(122,167,255,.35) !important;
+#vr-token-popup .vr-card::after,
+#vr-token-popup .vr-token-card::after,
+#vr-token-popup .vr-token-basic-card::after,
+#vr-coins-popup .vr-card::after,
+#vr-coins-popup .vr-coins-basic-card::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  background:rgba(255,255,255,.08) !important;
+  backdrop-filter:blur(2px) !important;
+  -webkit-backdrop-filter:blur(2px) !important;
+  pointer-events:none !important;
+  z-index:1 !important;
+}
+
+#vr-token-popup .vr-card::before,
+#vr-token-popup .vr-token-card::before,
+#vr-token-popup .vr-token-basic-card::before,
+#vr-coins-popup .vr-card::before,
+#vr-coins-popup .vr-coins-basic-card::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  border-radius:inherit !important;
+  border:1px solid rgba(255,255,255,.12) !important;
+  pointer-events:none !important;
+  z-index:2 !important;
 }
 
 #vr-token-popup .vr-card-title,
@@ -2487,10 +2511,11 @@ body.vr-peek-mode .vr-gauge-preview{
   border-radius:10px !important;
 }
 
+/* retire le bleu spécial sur gauge50 */
 #vr-token-gauge-overlay .vr-token-gauge-card{
-  background:rgba(12, 16, 32, 0.92) !important;
-  border:1px solid rgba(255,255,255,.12) !important;
-  box-shadow:0 14px 40px rgba(0,0,0,.35) !important;
+  background: radial-gradient(circle at top, #f6e7cf 0, #1b6688 62%, #03279e 100%) !important;
+  border-color:rgba(255,255,255,.18) !important;
+  box-shadow:0 14px 40px rgba(0,0,0,.28) !important;
 }
 
 #vr-token-popup img,
@@ -2692,7 +2717,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
             const ok = await (window.VRAds?.showRewardedAd?.({ placement: "token" }) || Promise.resolve(false));
             if (ok) {
-              try { window.VRAds?.markGameRewardSeen?.(); } catch (_) {}
               try { await window.VUserData?.addJetons?.(1); } catch (_) {}
 
               try {
@@ -2809,7 +2833,6 @@ body.vr-peek-mode .vr-gauge-preview{
               });
             } catch (_) {}
 
-            try { await window.VRAds?.maybeShowInterstitialOnReturnToIndex?.(); } catch (_) {}
             try { window.VROneSignal?.preparePromptOnNextIndex?.(); } catch (_) {}
             try { window.location.href = "index.html"; } catch (_) {}
             return;
@@ -3309,37 +3332,39 @@ body.vr-peek-mode .vr-gauge-preview{
     return false;
   }
 
-  function onTokenPopupOpened() {
-    if (!isIntroUniverse()) return;
-    if (currentCardId !== "intro_003") return;
-    resetUIState();
-    dimTokenPopupExcept("gauge50");
-  }
+function onTokenPopupOpened() {
+  if (!isIntroUniverse()) return;
+  if (currentCardId !== "intro_003") return;
+  resetUIState();
+  hideAllChoices();
+  dimTokenPopupExcept("gauge50");
+}
 
-  function beforeTokenAction(action) {
-    if (!isIntroUniverse()) return true;
-    if (currentCardId !== "intro_003") return true;
-    return action === "gauge50";
-  }
+function beforeTokenAction(action) {
+  if (!isIntroUniverse()) return true;
+  if (currentCardId !== "intro_003") return true;
+  return action === "gauge50";
+}
 
-  function onGaugeOverlayOpened() {
-    if (!isIntroUniverse()) return;
-    if (currentCardId !== "intro_003") return;
-    resetUIState();
-    pulseGauge(LOW_GAUGE_ID);
-  }
+function onGaugeOverlayOpened() {
+  if (!isIntroUniverse()) return;
+  if (currentCardId !== "intro_003") return;
+  resetUIState();
+  hideAllChoices();
+  pulseGauge(LOW_GAUGE_ID);
+}
 
-  function onGaugeSet(gaugeId) {
-    if (!isIntroUniverse()) return;
-    if (currentCardId !== "intro_003") return;
-    if (String(gaugeId || "").trim() !== LOW_GAUGE_ID) return;
-    resetUIState();
-    currentCardId = "";
-    window.setTimeout(() => {
-      try { window.VREngine?._nextCard_internalOnly?.(); } catch (_) {}
-      try { window.VREngine?._saveRunSoft?.(); } catch (_) {}
-    }, 320);
-  }
+function onGaugeSet(gaugeId) {
+  if (!isIntroUniverse()) return;
+  if (currentCardId !== "intro_003") return;
+  if (String(gaugeId || "").trim() !== LOW_GAUGE_ID) return;
+  resetUIState();
+  currentCardId = "";
+  window.setTimeout(() => {
+    try { window.VREngine?._nextCard_internalOnly?.(); } catch (_) {}
+    try { window.VREngine?._saveRunSoft?.(); } catch (_) {}
+  }, 320);
+}
 
   function ensureFinishPopup() {
     let overlay = document.getElementById("vr-intro-finish-overlay");
@@ -3575,7 +3600,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
   const ok = await (window.VRAds?.showRewardedAd?.({ placement: "coins_100" }) || Promise.resolve(false));
   if (ok) {
-    try { window.VRAds?.markGameRewardSeen?.(); } catch (_) {}
     try { await window.VUserData?.addVcoins?.(100); } catch (_) {}
 
     try {
@@ -4628,7 +4652,6 @@ window.VRGame = {
   async onUniverseSelected(universeId) {
     this.currentUniverse = universeId;
     this.session.reignLength = 0;
-    try { window.VRAds?.resetGameRewardSeen?.(); } catch (_) {}
 
     this.applyUniverseBackground(universeId);
     this.applyUniverseCosmetics(universeId);
