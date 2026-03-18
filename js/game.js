@@ -545,6 +545,7 @@ body.vr-peek-mode .vr-gauge-preview{
       this._resetChoiceCards();
       this._clearPeek();
       this.updateGauges();
+      try { window.VRIntroTutorial?.onCardShown?.(cardLogic); } catch (_) {}
     },
 
     _resetChoiceCards() {
@@ -1622,6 +1623,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
       window.VRState.initUniverse(this.universeConfig);
       window.VRUIBinding.init(this.universeConfig, this.lang, this.cardTextsDict);
+      try { window.VRIntroTutorial?.onInit?.(universeId); } catch (_) {}
 
       const restored = this._restoreFromSaveIfAny();
       this._rebuildEventIndex();
@@ -1990,6 +1992,9 @@ body.vr-peek-mode .vr-gauge-preview{
 
     applyChoice(cardLogic, choiceId) {
       if (!cardLogic || !cardLogic.choices || !cardLogic.choices[choiceId]) return;
+      try {
+        if (window.VRIntroTutorial?.beforeApplyChoice?.(cardLogic, choiceId) === false) return;
+      } catch (_) {}
 
       this._pushHistorySnapshot(cardLogic);
 
@@ -2023,6 +2028,9 @@ body.vr-peek-mode .vr-gauge-preview{
         );
       });
 
+      try {
+        if (window.VRIntroTutorial?.afterApplyChoice?.(cardLogic, choiceId) === true) return;
+      } catch (_) {}
       if (!window.VRState.isAlive()) {
         this._handleDeath();
         return;
@@ -2412,7 +2420,12 @@ body.vr-peek-mode .vr-gauge-preview{
         closeGaugeOverlay();
       };
 
-      btnJeton.addEventListener("click", () => openPopup());
+      btnJeton.addEventListener("click", () => {
+        openPopup();
+        window.setTimeout(() => {
+          try { window.VRIntroTutorial?.onTokenPopupOpened?.(); } catch (_) {}
+        }, 30);
+      });
 
       popup.addEventListener("click", (e) => {
         if (e.target === popup) closePopup();
@@ -2463,6 +2476,9 @@ body.vr-peek-mode .vr-gauge-preview{
         el.addEventListener("click", async () => {
           const action = el.getAttribute("data-token-action");
           if (!action) return;
+          try {
+            if (window.VRIntroTutorial?.beforeTokenAction?.(action) === false) return;
+          } catch (_) {}
 
           if (action === "close") { closePopup(); return; }
 
@@ -2518,6 +2534,9 @@ body.vr-peek-mode .vr-gauge-preview{
               return;
             }
             startSelectGauge50();
+            window.setTimeout(() => {
+              try { window.VRIntroTutorial?.onGaugeOverlayOpened?.(); } catch (_) {}
+            }, 30);
             return;
           }
 
@@ -2629,12 +2648,239 @@ body.vr-peek-mode .vr-gauge-preview{
 
           toast(t("token.toast.gauge_set_50", ""));
           stopSelectGauge50();
+          try { window.VRIntroTutorial?.onGaugeSet?.(gaugeId); } catch (_) {}
         });
       }
     }
   };
 
   window.VRTokenUI = VRTokenUI;
+})();
+
+
+// -------------------------------------------------------
+// INTRO TUTORIAL
+// -------------------------------------------------------
+(function () {
+  "use strict";
+
+  const INTRO_ID = "intro";
+  const LOW_GAUGE_ID = "balance";
+
+  let enabled = false;
+  let currentCardId = "";
+  let finishing = false;
+
+  function isIntroUniverse() {
+    if (!enabled) return false;
+    try {
+      const a = String(window.VRGame?.currentUniverse || "").trim();
+      const b = String(window.VREngine?.universeId || "").trim();
+      const c = String(document.body?.dataset?.universe || "").trim();
+      return a === INTRO_ID || b === INTRO_ID || c === INTRO_ID;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function ensureStyles() {
+    if (document.getElementById("vr-intro-inline-style")) return;
+
+    const style = document.createElement("style");
+    style.id = "vr-intro-inline-style";
+    style.textContent = `
+      .vr-intro-pulse{ animation: vrIntroPulse 1.15s ease-in-out infinite; filter: drop-shadow(0 0 14px rgba(255,220,120,.72)); }
+      .vr-intro-tilt{ transform: translateX(18px) rotate(7deg) !important; }
+      .vr-intro-dim{ opacity: .28 !important; pointer-events: none !important; }
+      .vr-intro-hide{ opacity: 0 !important; pointer-events: none !important; visibility: hidden !important; }
+      .vr-intro-gauge-focus{ animation: vrIntroGauge 1s ease-in-out infinite; }
+      @keyframes vrIntroPulse{ 0%,100%{ transform: scale(1); } 50%{ transform: scale(1.035); } }
+      @keyframes vrIntroGauge{ 0%,100%{ transform: scale(1); filter: drop-shadow(0 0 0 rgba(255,220,120,0)); } 50%{ transform: scale(1.035); filter: drop-shadow(0 0 18px rgba(255,220,120,.82)); } }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function allChoiceButtons() {
+    return Array.from(document.querySelectorAll(".vr-choice-button[data-choice]"));
+  }
+
+  function clearClasses() {
+    try {
+      document.querySelectorAll(".vr-intro-pulse, .vr-intro-tilt, .vr-intro-dim, .vr-intro-hide, .vr-intro-gauge-focus").forEach((el) => {
+        el.classList.remove("vr-intro-pulse", "vr-intro-tilt", "vr-intro-dim", "vr-intro-hide", "vr-intro-gauge-focus");
+      });
+    } catch (_) {}
+  }
+
+  function resetUIState() {
+    clearClasses();
+    allChoiceButtons().forEach((btn) => {
+      btn.style.pointerEvents = "";
+      btn.style.opacity = "";
+      btn.style.visibility = "";
+    });
+    document.querySelectorAll("#vr-token-popup [data-token-action]").forEach((btn) => {
+      btn.style.pointerEvents = "";
+      btn.style.opacity = "";
+      btn.style.visibility = "";
+    });
+  }
+
+  function getChoiceButton(choiceId) {
+    return document.querySelector(`.vr-choice-button[data-choice="${choiceId}"]`);
+  }
+
+  function focusOnlyChoice(choiceId) {
+    const target = getChoiceButton(choiceId);
+    allChoiceButtons().forEach((btn) => {
+      const label = btn.querySelector(".vr-choice-label")?.textContent?.trim?.() || "";
+      if (btn === target) {
+        btn.classList.add("vr-intro-pulse", "vr-intro-tilt");
+        btn.style.pointerEvents = "auto";
+        btn.style.opacity = "1";
+        return;
+      }
+      btn.style.pointerEvents = "none";
+      if (!label) btn.classList.add("vr-intro-hide");
+      else btn.classList.add("vr-intro-dim");
+    });
+  }
+
+  function hideAllChoices() {
+    allChoiceButtons().forEach((btn) => {
+      btn.style.pointerEvents = "none";
+      btn.classList.add("vr-intro-hide");
+    });
+  }
+
+  function pulseGauge(gaugeId) {
+    const gauge = document.querySelector(`.vr-gauge[data-gauge-id="${gaugeId}"]`);
+    if (gauge) gauge.classList.add("vr-intro-gauge-focus");
+  }
+
+  function pulseEl(el) {
+    if (el) el.classList.add("vr-intro-pulse");
+  }
+
+  function getShopButton() {
+    return document.querySelector('.vr-top-actions-game .vr-icon-button[href="shop.html"]');
+  }
+
+  function dimTokenPopupExcept(actionToKeep) {
+    document.querySelectorAll("#vr-token-popup [data-token-action]").forEach((btn) => {
+      const action = String(btn.getAttribute("data-token-action") || "").trim();
+      if (action === actionToKeep) {
+        btn.classList.add("vr-intro-pulse");
+        btn.style.pointerEvents = "auto";
+        btn.style.opacity = "1";
+      } else {
+        btn.classList.add("vr-intro-dim");
+        btn.style.pointerEvents = "none";
+      }
+    });
+  }
+
+  function onInit(universeId) {
+    enabled = String(universeId || "").trim() === INTRO_ID;
+    currentCardId = "";
+    finishing = false;
+    resetUIState();
+    if (!enabled) return;
+    ensureStyles();
+    try { window.VRSave?.clear?.(INTRO_ID); } catch (_) {}
+  }
+
+  function onCardShown(cardLogic) {
+    if (!isIntroUniverse()) return;
+    resetUIState();
+    currentCardId = String(cardLogic?.id || "").trim();
+    if (currentCardId === "intro_001") {
+      focusOnlyChoice("A");
+      return;
+    }
+    if (currentCardId === "intro_002") {
+      focusOnlyChoice("A");
+      pulseGauge(LOW_GAUGE_ID);
+      return;
+    }
+    if (currentCardId === "intro_003") {
+      hideAllChoices();
+      pulseGauge(LOW_GAUGE_ID);
+      pulseEl(document.getElementById("btn-jeton"));
+      return;
+    }
+    if (currentCardId === "intro_004") {
+      focusOnlyChoice("A");
+      pulseEl(document.getElementById("btn-vcoins"));
+      pulseEl(document.getElementById("btn-jeton"));
+      pulseEl(getShopButton());
+    }
+  }
+
+  function beforeApplyChoice(cardLogic, choiceId) {
+    if (!isIntroUniverse()) return true;
+    const id = String(cardLogic?.id || currentCardId || "").trim();
+    if (id === "intro_001") return choiceId === "A";
+    if (id === "intro_002") return choiceId === "A";
+    if (id === "intro_003") return false;
+    if (id === "intro_004") return choiceId === "A";
+    return true;
+  }
+
+  function afterApplyChoice(cardLogic, choiceId) {
+    if (!isIntroUniverse()) return false;
+    const id = String(cardLogic?.id || currentCardId || "").trim();
+    if (id === "intro_004" && choiceId === "A") {
+      finishIntro();
+      return true;
+    }
+    return false;
+  }
+
+  function onTokenPopupOpened() {
+    if (!isIntroUniverse()) return;
+    if (currentCardId !== "intro_003") return;
+    resetUIState();
+    dimTokenPopupExcept("gauge50");
+  }
+
+  function beforeTokenAction(action) {
+    if (!isIntroUniverse()) return true;
+    if (currentCardId !== "intro_003") return true;
+    return action === "gauge50";
+  }
+
+  function onGaugeOverlayOpened() {
+    if (!isIntroUniverse()) return;
+    if (currentCardId !== "intro_003") return;
+    resetUIState();
+    pulseGauge(LOW_GAUGE_ID);
+  }
+
+  function onGaugeSet(gaugeId) {
+    if (!isIntroUniverse()) return;
+    if (currentCardId !== "intro_003") return;
+    if (String(gaugeId || "").trim() !== LOW_GAUGE_ID) return;
+    resetUIState();
+    currentCardId = "";
+    window.setTimeout(() => {
+      try { window.VREngine?._nextCard_internalOnly?.(); } catch (_) {}
+      try { window.VREngine?._saveRunSoft?.(); } catch (_) {}
+    }, 320);
+  }
+
+  function finishIntro() {
+    if (finishing) return;
+    finishing = true;
+    resetUIState();
+    window.setTimeout(async () => {
+      try { await window.VRAds?.showInterstitialAd?.(); } catch (_) {}
+      try { localStorage.setItem("vrealms_universe", "hell_king"); } catch (_) {}
+      try { window.location.href = "index.html"; } catch (_) {}
+    }, 240);
+  }
+
+  window.VRIntroTutorial = { onInit, onCardShown, beforeApplyChoice, afterApplyChoice, onTokenPopupOpened, beforeTokenAction, onGaugeOverlayOpened, onGaugeSet };
 })();
 
 
@@ -2815,6 +3061,11 @@ body.vr-peek-mode .vr-gauge-preview{
       background: "assets/img/backgrounds/vampire_default_gray.webp",
       message: "assets/img/ui/vampire_msg_default_gray.webp",
       choice: "assets/img/ui/vampire_choice_default_gray.webp"
+    },
+    intro: {
+      background: "assets/img/backgrounds/intro_default_gray.webp",
+      message: "assets/img/ui/intro_msg_default_gray.webp",
+      choice: "assets/img/ui/intro_choice_default_gray.webp"
     }
   };
 
@@ -3473,6 +3724,11 @@ body.vr-peek-mode .vr-gauge-preview{
       background: "assets/img/backgrounds/vampire_default_gray.webp",
       message: "assets/img/ui/vampire_msg_default_gray.webp",
       choice: "assets/img/ui/vampire_choice_default_gray.webp"
+    },
+    intro: {
+      background: "assets/img/backgrounds/intro_default_gray.webp",
+      message: "assets/img/ui/intro_msg_default_gray.webp",
+      choice: "assets/img/ui/intro_choice_default_gray.webp"
     }
   };
 
@@ -3988,7 +4244,12 @@ window.VRGame = {
     try { window.VRCoinUI?.init?.(); } catch (_) {}
     try { window.VRCosmeticsGame?.init?.(); } catch (_) {}
 
-    const universeId = localStorage.getItem("vrealms_universe") || "hell_king";
+    let universeId = localStorage.getItem("vrealms_universe") || "hell_king";
+    try {
+      const params = new URLSearchParams(window.location.search || "");
+      const qUniverse = String(params.get("universe") || "").trim();
+      if (qUniverse) universeId = qUniverse;
+    } catch (_) {}
     if (window.VRGame && typeof window.VRGame.onUniverseSelected === "function") {
       await window.VRGame.onUniverseSelected(universeId);
     }
