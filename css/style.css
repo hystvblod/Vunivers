@@ -1912,16 +1912,18 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-pre
 
 
 
-
 /* ==========================================================
    UNIVERS — INTRO
+   Base de référence : Galaxy A51 = 412 x 914
+   Les valeurs du ancien @media mobile servent de base.
    ========================================================== */
+
 body[data-universe="intro"].vr-body-game #view-game .vr-card-title,
 body[data-universe="intro"].vr-body-game #view-game .vr-card-text{
   font-family: Georgia, "Times New Roman", serif !important;
   color: #000 !important;
   text-align: center !important;
-  max-width: 94% !important;
+  max-width: 96% !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -1945,76 +1947,80 @@ body[data-universe="intro"].vr-body-game #view-game .vr-choice-label{
 }
 
 body.vr-body-game[data-universe="intro"]{
-  --vr-card-w: clamp(438px, 99vw, 1120px);
+  /* Référence A51 */
+  --vr-ref-w: 412;
+  --vr-scale: clamp(0.82, calc(100vw / var(--vr-ref-w)), 1.9);
 
-  --vr-scn-h: clamp(165px, 22svh, 340px);
-  --vr-choice-h: clamp(96px, 13.8svh, 230px);
+  /* Base prise sur l’ancien bloc mobile */
+  --vr-card-w: calc(406px * var(--vr-scale));
+  --vr-scn-h: calc(210px * var(--vr-scale));
+  --vr-choice-h: calc(124px * var(--vr-scale));
 
-  --vr-scn-inset-top: 10%;
-  --vr-scn-inset-right: 12%;
-  --vr-scn-inset-bottom: 14%;
-  --vr-scn-inset-left: 12%;
+  --vr-scn-inset-top: 11%;
+  --vr-scn-inset-right: 10%;
+  --vr-scn-inset-bottom: 13%;
+  --vr-scn-inset-left: 10%;
 
-  --vr-choice-inset-top: 22%;
-  --vr-choice-inset-right: 13%;
-  --vr-choice-inset-bottom: 20%;
-  --vr-choice-inset-left: 13%;
+  --vr-choice-inset-top: 20%;
+  --vr-choice-inset-right: 11%;
+  --vr-choice-inset-bottom: 18%;
+  --vr-choice-inset-left: 11%;
 
-  --vr-font-scn-title: clamp(19px, 3.2vmin, 36px);
-  --vr-font-scn-text:  clamp(15px, 2.7vmin, 29px);
-  --vr-font-choice:    clamp(17px, 3.1vmin, 33px);
+  --vr-font-scn-title: clamp(18px, calc(20px * var(--vr-scale)), 24px);
+  --vr-font-scn-text: clamp(14px, calc(16px * var(--vr-scale)), 19px);
+  --vr-font-choice: clamp(15px, calc(17px * var(--vr-scale)), 20px);
 
-  --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
+  --vr-topbar-h: calc(clamp(50px, calc(50px * var(--vr-scale)), 76px) + env(safe-area-inset-top) + 6px);
 
-  --vr-intro-hud-w: min(94vw, 980px);
-  --vr-intro-hud-value-size: clamp(13px, 2vw, 24px);
-  --vr-intro-hud-name-size: clamp(13px, 2vw, 28px);
-  --vr-intro-hud-years-size: clamp(10px, 1.25vw, 16px);
+  --vr-intro-hud-w: min(calc(396px * var(--vr-scale)), 96vw);
+  --vr-intro-hud-value-size: clamp(11px, calc(12px * var(--vr-scale)), 14px);
+  --vr-intro-hud-name-size: clamp(11px, calc(13px * var(--vr-scale)), 16px);
+  --vr-intro-hud-years-size: clamp(9px, calc(10px * var(--vr-scale)), 12px);
 
-  --vr-intro-topbar-w: clamp(220px, 54vw, 420px);
+  --vr-intro-topbar-w: clamp(210px, calc(239px * var(--vr-scale)), 300px);
   --vr-intro-topbar-h: calc(var(--vr-intro-topbar-w) * 0.275);
 
-  --vr-intro-back-size: clamp(46px, 11vw, 76px);
-  --vr-intro-customize-size: clamp(46px, 11vw, 76px);
+  --vr-intro-back-size: clamp(40px, calc(49px * var(--vr-scale)), 60px);
+  --vr-intro-customize-size: clamp(40px, calc(49px * var(--vr-scale)), 60px);
 
   --vr-ui-topbar-img: url("../assets/img/ui/intro_topbar.webp");
   --vr-ui-hud-img: url("../assets/img/ui/intro_hud_bar.webp");
   --vr-ui-back-img: url("../assets/img/ui/intro_back.webp");
   --vr-ui-customize-img: url("../assets/img/ui/intro_customize.webp");
 
-  --vr-ui-hud-w: min(94vw, 980px);
-  --vr-ui-topbar-w: clamp(220px, 54vw, 420px);
+  --vr-ui-hud-w: var(--vr-intro-hud-w);
+  --vr-ui-topbar-w: var(--vr-intro-topbar-w);
   --vr-ui-topbar-r: 0.275;
-  --vr-ui-back-size: clamp(46px, 11vw, 76px);
-  --vr-ui-customize-size: clamp(46px, 11vw, 76px);
+  --vr-ui-back-size: var(--vr-intro-back-size);
+  --vr-ui-customize-size: var(--vr-intro-customize-size);
 
   --vr-hud-left-x: 3.5%;
-  --vr-hud-left-w: 17.8%;
-  --vr-hud-center-l: 20.2%;
-  --vr-hud-center-r: 20.2%;
+  --vr-hud-left-w: 18.4%;
+  --vr-hud-center-l: 20.8%;
+  --vr-hud-center-r: 20.8%;
   --vr-hud-right-r: 5.3%;
-  --vr-hud-right-w: 17.8%;
-  --vr-hud-item-ty: -11px;
+  --vr-hud-right-w: 18.4%;
+  --vr-hud-item-ty: calc(-4px * var(--vr-scale));
 
   --vr-identity-tx: 0px;
   --vr-identity-ty: 0px;
-  --vr-hud-name-years-gap: clamp(16px, 2.8vw, 30px);
+  --vr-hud-name-years-gap: clamp(14px, calc(16px * var(--vr-scale)), 24px);
 
   --vr-vcoins-tx: 0px;
   --vr-vcoins-ty: -2px;
   --vr-jetons-tx: 0px;
   --vr-jetons-ty: -2px;
 
-  --vr-vcoins-color:#FFCC4D;
-  --vr-vcoins-glow:rgba(255,160,60,.58);
+  --vr-vcoins-color: #FFCC4D;
+  --vr-vcoins-glow: rgba(255,160,60,.58);
   --vr-vcoins-bg: transparent;
 
   --vr-jetons-bg: transparent;
 }
 
 body.vr-body-game[data-universe="intro"] #view-game{
-  padding-left: clamp(8px, 2.8vw, 16px) !important;
-  padding-right: clamp(8px, 2.8vw, 16px) !important;
+  padding-left: clamp(8px, calc(8px * var(--vr-scale)), 16px) !important;
+  padding-right: clamp(8px, calc(8px * var(--vr-scale)), 16px) !important;
 }
 
 body.vr-body-game[data-universe="intro"] .vr-top-actions-game .vr-top-icon,
@@ -2025,7 +2031,7 @@ body.vr-body-game[data-universe="intro"] #btn-customize .vr-top-icon{
 
 body.vr-body-game[data-universe="intro"] .vr-top-actions-game{
   position: fixed !important;
-  top: calc(14px + env(safe-area-inset-top)) !important;
+  top: calc(12px + env(safe-area-inset-top)) !important;
   left: 50% !important;
   right: auto !important;
   transform: translateX(-50%) !important;
@@ -2041,6 +2047,7 @@ body.vr-body-game[data-universe="intro"] .vr-top-actions-game{
   pointer-events: none !important;
   z-index: 100000 !important;
 }
+
 body.vr-body-game[data-universe="intro"] .vr-top-actions-game::before{
   content: "";
   position: absolute;
@@ -2062,14 +2069,23 @@ body.vr-body-game[data-universe="intro"] .vr-top-actions-game .vr-icon-button{
   pointer-events: auto !important;
   z-index: 1 !important;
 }
-body.vr-body-game[data-universe="intro"] .vr-top-actions-game .vr-icon-button:nth-child(1){ left: 16% !important; }
-body.vr-body-game[data-universe="intro"] .vr-top-actions-game .vr-icon-button:nth-child(2){ left: 41% !important; }
-body.vr-body-game[data-universe="intro"] .vr-top-actions-game .vr-icon-button:nth-child(3){ left: 66% !important; }
+
+body.vr-body-game[data-universe="intro"] .vr-top-actions-game .vr-icon-button:nth-child(1){
+  left: 16% !important;
+}
+
+body.vr-body-game[data-universe="intro"] .vr-top-actions-game .vr-icon-button:nth-child(2){
+  left: 41% !important;
+}
+
+body.vr-body-game[data-universe="intro"] .vr-top-actions-game .vr-icon-button:nth-child(3){
+  left: 66% !important;
+}
 
 body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"]{
   position: fixed !important;
-  top: calc(18px + env(safe-area-inset-top)) !important;
-  left: 20px !important;
+  top: calc(16px + env(safe-area-inset-top)) !important;
+  left: 16px !important;
   width: var(--vr-intro-back-size) !important;
   height: var(--vr-intro-back-size) !important;
   padding: 0 !important;
@@ -2079,6 +2095,7 @@ body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"
   z-index: 100002 !important;
   pointer-events: auto !important;
 }
+
 body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"]::before{
   content: "";
   position: absolute;
@@ -2090,8 +2107,8 @@ body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"
 
 body.vr-body-game[data-universe="intro"] #btn-customize{
   position: fixed !important;
-  top: calc(18px + env(safe-area-inset-top)) !important;
-  right: 20px !important;
+  top: calc(16px + env(safe-area-inset-top)) !important;
+  right: 16px !important;
   width: var(--vr-intro-customize-size) !important;
   height: var(--vr-intro-customize-size) !important;
   padding: 0 !important;
@@ -2101,6 +2118,7 @@ body.vr-body-game[data-universe="intro"] #btn-customize{
   z-index: 100002 !important;
   pointer-events: auto !important;
 }
+
 body.vr-body-game[data-universe="intro"] #btn-customize::before{
   content: "";
   position: absolute;
@@ -2124,7 +2142,6 @@ body.vr-body-game[data-universe="intro"] .vr-hud{
   padding: 0 !important;
   display: block !important;
   white-space: normal !important;
-
   aspect-ratio: 1024 / 269;
   background: url("../assets/img/ui/intro_hud_bar.webp") center / 100% 100% no-repeat;
   filter: drop-shadow(0 10px 18px rgba(0,0,0,0.42));
@@ -2143,16 +2160,28 @@ body.vr-body-game[data-universe="intro"] .vr-hud-right{
   transform: none !important;
   justify-self: auto !important;
 }
-body.vr-body-game[data-universe="intro"] .vr-hud-left{ left: 3.5% !important; width: 17.8% !important; }
-body.vr-body-game[data-universe="intro"] .vr-hud-center{ left: 20.2% !important; right: 20.2% !important; }
-body.vr-body-game[data-universe="intro"] .vr-hud-right{ right: 5.3% !important; width: 17.8% !important; }
+
+body.vr-body-game[data-universe="intro"] .vr-hud-left{
+  left: 3.5% !important;
+  width: 18.4% !important;
+}
+
+body.vr-body-game[data-universe="intro"] .vr-hud-center{
+  left: 20.8% !important;
+  right: 20.8% !important;
+}
+
+body.vr-body-game[data-universe="intro"] .vr-hud-right{
+  right: 5.3% !important;
+  width: 18.4% !important;
+}
 
 body.vr-body-game[data-universe="intro"] .vr-hud-item{
   width: 100% !important;
   height: 100% !important;
   min-height: 0 !important;
-  padding: 0 clamp(1px, 0.22vw, 4px) !important;
-  gap: clamp(1px, 0.18vw, 4px) !important;
+  padding: 0 clamp(1px, calc(1px * var(--vr-scale)), 4px) !important;
+  gap: clamp(1px, calc(1px * var(--vr-scale)), 4px) !important;
 
   display: flex !important;
   align-items: center !important;
@@ -2164,7 +2193,7 @@ body.vr-body-game[data-universe="intro"] .vr-hud-item{
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 
-  transform: translateY(-11px) !important;
+  transform: translateY(var(--vr-hud-item-ty)) !important;
 }
 
 body.vr-body-game[data-universe="intro"] .vr-hud-value{
@@ -2177,11 +2206,11 @@ body.vr-body-game[data-universe="intro"] .vr-hud-value{
 }
 
 body.vr-body-game[data-universe="intro"] .vr-hud-left .vr-hud-value{
-  transform: translateY(-2px) translateX(0px) !important;
+  transform: translateY(-1px) !important;
 }
 
 body.vr-body-game[data-universe="intro"] .vr-hud-right .vr-hud-value{
-  transform: translateY(-2px) translateX(6px) !important;
+  transform: translateY(-1px) !important;
 }
 
 body.vr-body-game[data-universe="intro"] .vr-hud-identity{
@@ -2192,7 +2221,7 @@ body.vr-body-game[data-universe="intro"] .vr-hud-identity{
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: var(--vr-hud-name-years-gap, clamp(14px, 2.4vw, 24px)) !important;
+  gap: var(--vr-hud-name-years-gap) !important;
 
   white-space: nowrap !important;
   text-align: center !important;
@@ -2212,6 +2241,7 @@ body.vr-body-game[data-universe="intro"] .vr-hud-name{
   overflow: hidden !important;
   text-overflow: ellipsis !important;
 }
+
 body.vr-body-game[data-universe="intro"] .vr-hud-years{
   font-family: Georgia, "Times New Roman", serif !important;
   font-size: var(--vr-intro-hud-name-size) !important;
@@ -2224,16 +2254,22 @@ body.vr-body-game[data-universe="intro"] .vr-hud-years{
 }
 
 body.vr-body-game[data-universe="intro"] #view-game .vr-card-main{
-  overflow: hidden;
-  background-size: 96% 96% !important;
+  width: min(var(--vr-card-w), 98.6vw) !important;
+  min-height: var(--vr-scn-h) !important;
+  overflow: hidden !important;
+  background-size: 99% 99% !important;
   background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 body.vr-body-game[data-universe="intro"] #view-game .vr-choice-button{
-  background-size: 92% 92% !important;
+  width: min(var(--vr-card-w), 98.6vw) !important;
+  min-height: var(--vr-choice-h) !important;
+  overflow: hidden !important;
+  background-size: 95% 95% !important;
   background-position: center !important;
+  background-repeat: no-repeat !important;
 }
-
 
 body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"],
 body.vr-body-game[data-universe="intro"] .vr-top-actions-game,
@@ -2254,97 +2290,40 @@ body.vr-body-game[data-universe="intro"] #btn-customize{
   --vr-universe-choice: url("../assets/img/ui/intro_choice_default_gray.webp");
 }
 
-body[data-universe="intro"] .vr-gauge[data-gauge-id="vision"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/intro/g1_frame.webp"); }
+body[data-universe="intro"] .vr-gauge[data-gauge-id="vision"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/intro/g1_frame.webp");
+}
+
 body[data-universe="intro"] .vr-gauge[data-gauge-id="vision"] .vr-gauge-fill,
-body[data-universe="intro"] .vr-gauge[data-gauge-id="vision"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/intro/g1_fill.webp"); }
+body[data-universe="intro"] .vr-gauge[data-gauge-id="vision"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/intro/g1_fill.webp");
+}
 
-body[data-universe="intro"] .vr-gauge[data-gauge-id="balance"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/intro/g2_frame.webp"); }
+body[data-universe="intro"] .vr-gauge[data-gauge-id="balance"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/intro/g2_frame.webp");
+}
+
 body[data-universe="intro"] .vr-gauge[data-gauge-id="balance"] .vr-gauge-fill,
-body[data-universe="intro"] .vr-gauge[data-gauge-id="balance"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/intro/g2_fill.webp"); }
+body[data-universe="intro"] .vr-gauge[data-gauge-id="balance"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/intro/g2_fill.webp");
+}
 
-body[data-universe="intro"] .vr-gauge[data-gauge-id="power"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/intro/g3_frame.webp"); }
+body[data-universe="intro"] .vr-gauge[data-gauge-id="power"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/intro/g3_frame.webp");
+}
+
 body[data-universe="intro"] .vr-gauge[data-gauge-id="power"] .vr-gauge-fill,
-body[data-universe="intro"] .vr-gauge[data-gauge-id="power"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/intro/g3_fill.webp"); }
+body[data-universe="intro"] .vr-gauge[data-gauge-id="power"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/intro/g3_fill.webp");
+}
 
-body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/intro/g4_frame.webp"); }
+body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-frame{
+  background-image: url("../assets/img/gauges/intro/g4_frame.webp");
+}
+
 body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-fill,
-body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/intro/g4_fill.webp"); }
-
-@media (max-width: 480px){
-  body.vr-body-game[data-universe="intro"]{
-    --vr-card-w: 98.6vw;
-
-    --vr-scn-h: clamp(150px, 23svh, 230px);
-    --vr-choice-h: clamp(88px, 13.6svh, 145px);
-
-    --vr-scn-inset-top: 11%;
-    --vr-scn-inset-right: 10%;
-    --vr-scn-inset-bottom: 13%;
-    --vr-scn-inset-left: 10%;
-
-    --vr-choice-inset-top: 20%;
-    --vr-choice-inset-right: 11%;
-    --vr-choice-inset-bottom: 18%;
-    --vr-choice-inset-left: 11%;
-
-    --vr-font-scn-title: clamp(18px, 4.9vw, 24px);
-    --vr-font-scn-text: clamp(14px, 4vw, 19px);
-    --vr-font-choice: clamp(15px, 4.2vw, 20px);
-
-    --vr-intro-hud-w: 96vw;
-    --vr-intro-hud-value-size: clamp(11px, 2.8vw, 14px);
-    --vr-intro-hud-name-size: clamp(11px, 3.1vw, 16px);
-    --vr-intro-hud-years-size: clamp(9px, 2vw, 12px);
-
-    --vr-intro-topbar-w: clamp(210px, 58vw, 300px);
-    --vr-intro-back-size: clamp(40px, 12vw, 60px);
-    --vr-intro-customize-size: clamp(40px, 12vw, 60px);
-    --vr-topbar-h: calc(clamp(50px, 12vw, 76px) + env(safe-area-inset-top) + 6px);
-
-    --vr-ui-topbar-top: 12px;
-    --vr-ui-back-top: 16px;
-    --vr-ui-back-left: 16px;
-    --vr-ui-customize-top: 16px;
-    --vr-ui-customize-right: 16px;
-    --vr-hud-item-ty: -4px;
-  }
-
-  body[data-universe="intro"].vr-body-game #view-game .vr-card-title,
-  body[data-universe="intro"].vr-body-game #view-game .vr-card-text{
-    max-width: 96% !important;
-  }
-
-  body.vr-body-game[data-universe="intro"] .vr-hud-left{ left: 3.5% !important; width: 18.4% !important; }
-  body.vr-body-game[data-universe="intro"] .vr-hud-right{ right: 5.3% !important; width: 18.4% !important; }
-  body.vr-body-game[data-universe="intro"] .vr-hud-center{ left: 20.8% !important; right: 20.8% !important; }
-
-  body.vr-body-game[data-universe="intro"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
-  body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"]{ top: calc(16px + env(safe-area-inset-top)) !important; left: 16px !important; }
-  body.vr-body-game[data-universe="intro"] #btn-customize{ top: calc(16px + env(safe-area-inset-top)) !important; right: 16px !important; }
-
-  body.vr-body-game[data-universe="intro"] .vr-hud-item{ transform: translateY(-4px) !important; }
-  body.vr-body-game[data-universe="intro"] .vr-hud-value{ transform: translateY(-1px) !important; }
-
-  body.vr-body-game[data-universe="intro"] #view-game .vr-card-main{
-    background-size: 99% 99% !important;
-  }
-
-  body.vr-body-game[data-universe="intro"] #view-game .vr-choice-button{
-    background-size: 95% 95% !important;
-  }
-}
-
-body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"],
-body.vr-body-game[data-universe="intro"] .vr-top-actions-game,
-body.vr-body-game[data-universe="intro"] .vr-hud-center{
-  display:none !important;
-}
-
-body.vr-body-game[data-universe="intro"] #btn-customize{
-  display:block !important;
-  opacity:1 !important;
-  visibility:visible !important;
-  pointer-events:none !important;
+body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-preview{
+  background-image: url("../assets/img/gauges/intro/g4_fill.webp");
 }
 /* ==========================================================
    UNIVERS — HEAVEN
