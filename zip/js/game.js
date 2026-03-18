@@ -2411,6 +2411,13 @@ body.vr-peek-mode .vr-gauge-preview{
   box-shadow:0 18px 34px rgba(0,0,0,.28) !important;
 }
 
+#vr-token-popup [data-token-action="gauge50"] .vr-card-content,
+#vr-token-gauge-overlay .vr-token-gauge-card{
+  background:linear-gradient(180deg, rgba(122,167,255,.26), rgba(122,167,255,.16)) !important;
+  border-color:rgba(122,167,255,.38) !important;
+  box-shadow:0 18px 40px rgba(43,92,214,.30) !important;
+}
+
 #vr-token-popup .vr-card-title,
 #vr-token-popup .vr-token-basic-card .vr-card-title,
 #vr-coins-popup .vr-card-title{
@@ -2427,13 +2434,6 @@ body.vr-peek-mode .vr-gauge-preview{
   color:rgba(255,255,255,.88) !important;
   font:700 12px/1.24 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
   text-shadow:none !important;
-}
-
-#vr-token-popup [data-token-action="gauge50"] .vr-card-content,
-#vr-token-gauge-overlay .vr-token-gauge-card{
-  background:linear-gradient(180deg, rgba(122,167,255,.26), rgba(122,167,255,.16)) !important;
-  border-color:rgba(122,167,255,.38) !important;
-  box-shadow:0 18px 40px rgba(43,92,214,.30) !important;
 }
 
 #vr-token-popup [data-token-action="close"] .vr-card-text{

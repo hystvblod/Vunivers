@@ -899,13 +899,6 @@ body.vr-body-game .vr-choice-label{
   border-color:rgba(255,255,255,.14) !important;
 }
 
-#vr-token-popup [data-token-action="gauge50"] .vr-card-content,
-#vr-token-gauge-overlay .vr-token-gauge-card{
-  background:linear-gradient(180deg, rgba(122,167,255,.26), rgba(122,167,255,.16)) !important;
-  border-color:rgba(122,167,255,.38) !important;
-  box-shadow:0 18px 40px rgba(43,92,214,.30) !important;
-}
-
 .vr-token-gauge-overlay{
   position: fixed;
   inset:0;
@@ -939,6 +932,13 @@ body.vr-body-game .vr-choice-label{
 .vr-token-gauge-overlay{ pointer-events:none; }
 #vr-token-gauge-overlay .vr-token-gauge-card,
 .vr-token-gauge-overlay .vr-token-gauge-card{ pointer-events:auto; }
+
+#vr-token-popup [data-token-action="gauge50"] .vr-card-content,
+#vr-token-gauge-overlay .vr-token-gauge-card{
+  background:linear-gradient(180deg, rgba(122,167,255,.26), rgba(122,167,255,.16)) !important;
+  border-color:rgba(122,167,255,.38) !important;
+  box-shadow:0 18px 40px rgba(43,92,214,.30) !important;
+}
 
 body.vr-token-select-mode .vr-gauge{
   cursor:pointer;
