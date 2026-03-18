@@ -1833,44 +1833,64 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-pre
 }
 
 
+
+
+
+
+
+
+
+
 /* ==========================================================
    UNIVERS — INTRO
    ========================================================== */
 body[data-universe="intro"].vr-body-game #view-game .vr-card-title,
 body[data-universe="intro"].vr-body-game #view-game .vr-card-text{
-  font-family: "VR_Quintess", serif !important;
+  font-family: Georgia, "Times New Roman", serif !important;
   color: #000 !important;
   text-align: center !important;
-  max-width: 92% !important;
+  max-width: 94% !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
+body[data-universe="intro"].vr-body-game #view-game .vr-card-title{
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+}
+
+body[data-universe="intro"].vr-body-game #view-game .vr-card-text{
+  font-weight: 500 !important;
+  line-height: 1.42 !important;
+}
+
 body[data-universe="intro"].vr-body-game #view-game .vr-choice-label{
-  font-family: "VR_LoveSister", cursive !important;
+  font-family: Arial, Helvetica, sans-serif !important;
   color: #000 !important;
   text-shadow: none !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
 }
 
 body.vr-body-game[data-universe="intro"]{
-  --vr-card-w: clamp(380px, 98vw, 980px);
+  --vr-card-w: clamp(420px, 98vw, 1080px);
 
-  --vr-scn-h: clamp(140px, 19svh, 300px);
-  --vr-choice-h: clamp(88px, 13.2svh, 220px);
+  --vr-scn-h: clamp(165px, 22svh, 340px);
+  --vr-choice-h: clamp(96px, 13.8svh, 230px);
 
-  --vr-scn-inset-top: 12%;
-  --vr-scn-inset-right: 14%;
-  --vr-scn-inset-bottom: 16%;
-  --vr-scn-inset-left: 14%;
+  --vr-scn-inset-top: 10%;
+  --vr-scn-inset-right: 12%;
+  --vr-scn-inset-bottom: 14%;
+  --vr-scn-inset-left: 12%;
 
-  --vr-choice-inset-top: 24%;
-  --vr-choice-inset-right: 14%;
-  --vr-choice-inset-bottom: 22%;
-  --vr-choice-inset-left: 14%;
+  --vr-choice-inset-top: 22%;
+  --vr-choice-inset-right: 13%;
+  --vr-choice-inset-bottom: 20%;
+  --vr-choice-inset-left: 13%;
 
-  --vr-font-scn-title: clamp(17px, 3vmin, 32px);
-  --vr-font-scn-text:  clamp(14px, 2.5vmin, 27px);
-  --vr-font-choice:    clamp(16px, 3.0vmin, 32px);
+  --vr-font-scn-title: clamp(19px, 3.2vmin, 36px);
+  --vr-font-scn-text:  clamp(15px, 2.7vmin, 29px);
+  --vr-font-choice:    clamp(17px, 3.1vmin, 33px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
@@ -2105,7 +2125,7 @@ body.vr-body-game[data-universe="intro"] .vr-hud-identity{
 }
 
 body.vr-body-game[data-universe="intro"] .vr-hud-name{
-  font-family: "VR_Quintess", serif !important;
+  font-family: Georgia, "Times New Roman", serif !important;
   transform: translateY(-4px) !important;
   font-size: var(--vr-intro-hud-name-size) !important;
   font-weight: 700 !important;
@@ -2116,7 +2136,7 @@ body.vr-body-game[data-universe="intro"] .vr-hud-name{
   text-overflow: ellipsis !important;
 }
 body.vr-body-game[data-universe="intro"] .vr-hud-years{
-  font-family: "VR_Quintess", serif !important;
+  font-family: Georgia, "Times New Roman", serif !important;
   font-size: var(--vr-intro-hud-name-size) !important;
   font-weight: 700 !important;
   color: rgba(244,237,229,0.95) !important;
@@ -2128,11 +2148,12 @@ body.vr-body-game[data-universe="intro"] .vr-hud-years{
 
 body.vr-body-game[data-universe="intro"] #view-game .vr-card-main{
   overflow: hidden;
-  background-size: 90% 90% !important;
+  background-size: 96% 96% !important;
   background-position: center !important;
 }
+
 body.vr-body-game[data-universe="intro"] #view-game .vr-choice-button{
-  background-size: 90% 90% !important;
+  background-size: 92% 92% !important;
   background-position: center !important;
 }
 
@@ -2160,6 +2181,25 @@ body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-preview{
 
 @media (max-width: 480px){
   body.vr-body-game[data-universe="intro"]{
+    --vr-card-w: 97vw;
+
+    --vr-scn-h: clamp(150px, 23svh, 230px);
+    --vr-choice-h: clamp(88px, 13.6svh, 145px);
+
+    --vr-scn-inset-top: 11%;
+    --vr-scn-inset-right: 10%;
+    --vr-scn-inset-bottom: 13%;
+    --vr-scn-inset-left: 10%;
+
+    --vr-choice-inset-top: 20%;
+    --vr-choice-inset-right: 11%;
+    --vr-choice-inset-bottom: 18%;
+    --vr-choice-inset-left: 11%;
+
+    --vr-font-scn-title: clamp(18px, 4.9vw, 24px);
+    --vr-font-scn-text: clamp(14px, 4vw, 19px);
+    --vr-font-choice: clamp(15px, 4.2vw, 20px);
+
     --vr-intro-hud-w: 96vw;
     --vr-intro-hud-value-size: clamp(11px, 2.8vw, 14px);
     --vr-intro-hud-name-size: clamp(11px, 3.1vw, 16px);
@@ -2178,6 +2218,11 @@ body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-preview{
     --vr-hud-item-ty: -4px;
   }
 
+  body[data-universe="intro"].vr-body-game #view-game .vr-card-title,
+  body[data-universe="intro"].vr-body-game #view-game .vr-card-text{
+    max-width: 96% !important;
+  }
+
   body.vr-body-game[data-universe="intro"] .vr-hud-left{ left: 3.5% !important; width: 18.4% !important; }
   body.vr-body-game[data-universe="intro"] .vr-hud-right{ right: 5.3% !important; width: 18.4% !important; }
   body.vr-body-game[data-universe="intro"] .vr-hud-center{ left: 20.8% !important; right: 20.8% !important; }
@@ -2188,8 +2233,22 @@ body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-preview{
 
   body.vr-body-game[data-universe="intro"] .vr-hud-item{ transform: translateY(-4px) !important; }
   body.vr-body-game[data-universe="intro"] .vr-hud-value{ transform: translateY(-1px) !important; }
+
+  body.vr-body-game[data-universe="intro"] #view-game .vr-card-main{
+    background-size: 99% 99% !important;
+  }
+
+  body.vr-body-game[data-universe="intro"] #view-game .vr-choice-button{
+    background-size: 95% 95% !important;
+  }
 }
 
+body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"],
+body.vr-body-game[data-universe="intro"] #btn-customize,
+body.vr-body-game[data-universe="intro"] .vr-top-actions-game,
+body.vr-body-game[data-universe="intro"] .vr-hud-center{
+  display: none !important;
+}
 /* ==========================================================
    UNIVERS — HEAVEN
    ========================================================== */

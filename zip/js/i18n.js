@@ -50,28 +50,13 @@
   }
 
 async function tryLoadUiBundle(bundle, lang) {
-  // ✅ nouveau format voulu : data/ui/ui_fr.json
-  const urlNew = `${BASE_PATH}/${bundle}_${lang}.json`;
-
-  // ✅ fallback anciens formats pendant la transition
-  const urlOld1 = `data/i18n/${lang}/${bundle}.json`;
-  const urlOld2 = `data/i18n/${bundle}_${lang}.json`;
-
+  const url = `${BASE_PATH}/${bundle}_${lang}.json`;
   try {
-    return await fetchJson(urlNew);
+    return await fetchJson(url);
   } catch (_) {
-    try {
-      return await fetchJson(urlOld1);
-    } catch (__) {
-      try {
-        return await fetchJson(urlOld2);
-      } catch (___) {
-        return null;
-      }
-    }
+    return null;
   }
 }
-
   async function loadUi(lang) {
     const l = normalizeLang(lang);
 

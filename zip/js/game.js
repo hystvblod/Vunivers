@@ -269,6 +269,15 @@ const VR_BADGE_GOLD_CHOICES = 100;
       const yearsEl = document.getElementById("meta-years");
       const coinsEl = document.getElementById("meta-coins");
       const tokensEl = document.getElementById("meta-tokens");
+      const isIntro = String(document.body?.dataset?.universe || window.VRGame?.currentUniverse || "").trim() === "intro";
+
+      if (isIntro) {
+        if (kingEl) kingEl.textContent = "";
+        if (yearsEl) yearsEl.textContent = "";
+        if (coinsEl) coinsEl.textContent = "100";
+        if (tokensEl) tokensEl.textContent = "1";
+        return;
+      }
 
       if (kingEl) kingEl.textContent = kingName || "—";
       if (yearsEl) yearsEl.textContent = String(years || 0);
@@ -1621,6 +1630,11 @@ body.vr-peek-mode .vr-gauge-preview{
         this._uiTokens = 0;
       }
 
+      if (String(universeId || "").trim() === "intro") {
+        this._uiCoins = 100;
+        this._uiTokens = 1;
+      }
+
       window.VRState.initUniverse(this.universeConfig);
       window.VRUIBinding.init(this.universeConfig, this.lang, this.cardTextsDict);
       try { window.VRIntroTutorial?.onInit?.(universeId); } catch (_) {}
@@ -1644,6 +1658,8 @@ body.vr-peek-mode .vr-gauge-preview{
     },
 
     async _refreshUIBalancesSoft() {
+      if (String(this.universeId || "").trim() === "intro") return;
+
       try {
         const me = await window.VRProfile?.getMe?.(800);
         if (me) {
@@ -2287,9 +2303,15 @@ body.vr-peek-mode .vr-gauge-preview{
       const style = document.createElement("style");
       style.id = ID;
       style.textContent = `
-#vr-token-popup [data-token-action],
 #vr-coins-popup [data-coins-action]{
   background-image:none !important;
+}
+
+#vr-token-popup .vr-popup-inner,
+#vr-coins-popup .vr-popup-inner{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:12px !important;
 }
 
 #vr-token-popup .vr-card,
@@ -2301,6 +2323,7 @@ body.vr-peek-mode .vr-gauge-preview{
   display:block;
   width:100%;
   padding:0;
+  margin:0 !important;
   border:none;
   background:none !important;
   box-shadow:none !important;
@@ -2311,18 +2334,18 @@ body.vr-peek-mode .vr-gauge-preview{
 #vr-coins-popup .vr-card-content{
   background:linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.06)) !important;
   border:1px solid rgba(255,255,255,.14) !important;
-  border-radius:18px !important;
-  padding:14px 14px !important;
-  box-shadow:0 16px 30px rgba(0,0,0,.24) !important;
+  border-radius:16px !important;
+  padding:10px 12px !important;
+  box-shadow:0 12px 24px rgba(0,0,0,.22) !important;
   backdrop-filter:blur(2px);
 }
 
 #vr-token-popup .vr-card-title,
 #vr-token-popup .vr-token-basic-card .vr-card-title,
 #vr-coins-popup .vr-card-title{
-  margin:0 0 6px 0 !important;
+  margin:0 0 4px 0 !important;
   color:#fff !important;
-  font:900 16px/1.15 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
+  font:900 15px/1.12 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
   text-shadow:none !important;
 }
 
@@ -2331,8 +2354,16 @@ body.vr-peek-mode .vr-gauge-preview{
 #vr-coins-popup .vr-card-text{
   margin:0 !important;
   color:rgba(255,255,255,.88) !important;
-  font:700 13px/1.35 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
+  font:700 12px/1.28 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
   text-shadow:none !important;
+}
+
+#vr-token-popup [data-token-action="close"] .vr-card-text{
+  display:none !important;
+}
+
+#vr-token-popup [data-token-action="close"] .vr-card-title{
+  margin:0 !important;
 }
 
 #vr-token-popup img,
@@ -2527,12 +2558,17 @@ body.vr-peek-mode .vr-gauge-preview{
           }
 
           if (action === "gauge50") {
-            const me = await window.VRProfile?.getMe?.(0);
-            if (window.VRProfile._n(me?.jetons) <= 0) {
-              toast(t("token.toast.no_tokens", ""));
-              closePopup();
-              return;
+            const isIntro = String(window.VRGame?.currentUniverse || document.body?.dataset?.universe || "").trim() === "intro";
+
+            if (!isIntro) {
+              const me = await window.VRProfile?.getMe?.(0);
+              if (window.VRProfile._n(me?.jetons) <= 0) {
+                toast(t("token.toast.no_tokens", ""));
+                closePopup();
+                return;
+              }
             }
+
             startSelectGauge50();
             window.setTimeout(() => {
               try { window.VRIntroTutorial?.onGaugeOverlayOpened?.(); } catch (_) {}
@@ -2688,15 +2724,62 @@ body.vr-peek-mode .vr-gauge-preview{
 
     const style = document.createElement("style");
     style.id = "vr-intro-inline-style";
-    style.textContent = `
-      .vr-intro-pulse{ animation: vrIntroPulse 1.15s ease-in-out infinite; filter: drop-shadow(0 0 14px rgba(255,220,120,.72)); }
-      .vr-intro-tilt{ transform: translateX(18px) rotate(7deg) !important; }
-      .vr-intro-dim{ opacity: .28 !important; pointer-events: none !important; }
-      .vr-intro-hide{ opacity: 0 !important; pointer-events: none !important; visibility: hidden !important; }
-      .vr-intro-gauge-focus{ animation: vrIntroGauge 1s ease-in-out infinite; }
-      @keyframes vrIntroPulse{ 0%,100%{ transform: scale(1); } 50%{ transform: scale(1.035); } }
-      @keyframes vrIntroGauge{ 0%,100%{ transform: scale(1); filter: drop-shadow(0 0 0 rgba(255,220,120,0)); } 50%{ transform: scale(1.035); filter: drop-shadow(0 0 18px rgba(255,220,120,.82)); } }
-    `;
+      style.textContent = `
+        .vr-intro-pulse{
+          animation: vrIntroChoiceGlow 1.45s ease-in-out infinite;
+          filter: drop-shadow(0 0 10px rgba(255,220,120,.42));
+        }
+
+        .vr-intro-tilt{
+          transform-origin: center center !important;
+          animation: vrIntroChoiceSway 1.55s ease-in-out infinite !important;
+          will-change: transform, opacity, filter;
+        }
+
+        .vr-intro-dim{ opacity: .28 !important; pointer-events: none !important; }
+        .vr-intro-hide{ opacity: 0 !important; pointer-events: none !important; visibility: hidden !important; }
+        .vr-intro-gauge-focus{ animation: vrIntroGauge 1s ease-in-out infinite; }
+
+        @keyframes vrIntroChoiceGlow{
+          0%,100%{
+            opacity: 1;
+            filter: drop-shadow(0 0 8px rgba(255,220,120,.28));
+          }
+          50%{
+            opacity: .92;
+            filter: drop-shadow(0 0 16px rgba(255,220,120,.58));
+          }
+        }
+
+        @keyframes vrIntroChoiceSway{
+          0%{
+            transform: translateX(0px) rotate(0deg);
+          }
+          20%{
+            transform: translateX(10px) rotate(2.4deg);
+          }
+          40%{
+            transform: translateX(16px) rotate(4.4deg);
+          }
+          60%{
+            transform: translateX(10px) rotate(2.4deg);
+          }
+          100%{
+            transform: translateX(0px) rotate(0deg);
+          }
+        }
+
+        @keyframes vrIntroGauge{
+          0%,100%{
+            transform: scale(1);
+            filter: drop-shadow(0 0 0 rgba(255,220,120,0));
+          }
+          50%{
+            transform: scale(1.035);
+            filter: drop-shadow(0 0 18px rgba(255,220,120,.82));
+          }
+        }
+      `;
     document.head.appendChild(style);
   }
 
@@ -2734,8 +2817,8 @@ body.vr-peek-mode .vr-gauge-preview{
     const target = getChoiceButton(choiceId);
     allChoiceButtons().forEach((btn) => {
       const label = btn.querySelector(".vr-choice-label")?.textContent?.trim?.() || "";
-      if (btn === target) {
-        btn.classList.add("vr-intro-pulse", "vr-intro-tilt");
+          if (btn === target) {
+        btn.classList.add("vr-intro-tilt");
         btn.style.pointerEvents = "auto";
         btn.style.opacity = "1";
         return;
@@ -4098,7 +4181,9 @@ window.VRGame = {
     }
 
     this.applyUniverseCosmetics(universeId);
-    try { window.VRCosmeticsGame?.render?.(); } catch (_) {}
+    if (String(universeId || "").trim() !== "intro") {
+      try { window.VRCosmeticsGame?.render?.(); } catch (_) {}
+    }
   },
 
   applyUniverseBackground(universeId) {
