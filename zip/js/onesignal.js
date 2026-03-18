@@ -1,23 +1,85 @@
 // js/onesignal.js
-// OneSignal init (Capacitor + Cordova plugin)
-// - Compatible API v5 (global OneSignal) + fallback v3 (window.plugins.OneSignal)
-// - Links OneSignal user to Supabase uid when possible (external user id)
-// ⚠️ This file is safe to ship in www. DO NOT put Firebase service account JSON here.
-
 (function () {
   "use strict";
 
   const ONESIGNAL_APP_ID = "26703698-8c7c-46ee-9724-c22de4167a00";
 
-  function _has(obj, path) {
+  const K_PROMPT_SHOWN = "vr_os_native_prompt_shown_v1";
+  const K_PENDING_INDEX_PROMPT = "vr_os_pending_index_prompt_v1";
+  const K_REAL_GAME_THIS_RUN = "vr_os_real_game_this_run_v1";
+
+  let bootStarted = false;
+  let initialized = false;
+  let indexPromptStarted = false;
+
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  function getOS() {
     try {
-      return path.split(".").reduce((o, k) => (o && k in o ? o[k] : undefined), obj) !== undefined;
+      if (window.OneSignal) return window.OneSignal;
+      if (window.plugins && window.plugins.OneSignal) return window.plugins.OneSignal;
+    } catch (_) {}
+    return null;
+  }
+
+  function isNative() {
+    try {
+      if (window.Capacitor && typeof window.Capacitor.isNativePlatform === "function") {
+        return !!window.Capacitor.isNativePlatform();
+      }
+      if (window.cordova) return true;
+    } catch (_) {}
+    return false;
+  }
+
+  function isIndexPage() {
+    try {
+      const p = String(window.location.pathname || "").toLowerCase();
+      return p.endsWith("/index.html") || p.endsWith("index.html") || p === "/" || p === "";
     } catch (_) {
       return false;
     }
   }
 
-  async function _getUidBestEffort() {
+  function lsGet(key) {
+    try { return localStorage.getItem(key); } catch (_) { return null; }
+  }
+
+  function lsSet(key, value) {
+    try { localStorage.setItem(key, value); } catch (_) {}
+  }
+
+  function lsDel(key) {
+    try { localStorage.removeItem(key); } catch (_) {}
+  }
+
+  function ssGet(key) {
+    try { return sessionStorage.getItem(key); } catch (_) { return null; }
+  }
+
+  function ssSet(key, value) {
+    try { sessionStorage.setItem(key, value); } catch (_) {}
+  }
+
+  function ssDel(key) {
+    try { sessionStorage.removeItem(key); } catch (_) {}
+  }
+
+  function hasShownPrompt() {
+    return lsGet(K_PROMPT_SHOWN) === "1";
+  }
+
+  function hasPendingIndexPrompt() {
+    return lsGet(K_PENDING_INDEX_PROMPT) === "1";
+  }
+
+  function hasRealGameThisRun() {
+    return ssGet(K_REAL_GAME_THIS_RUN) === "1";
+  }
+
+  async function getUidBestEffort() {
     try {
       if (window.VUserData && typeof window.VUserData.ensureAuth === "function") {
         const uid = await window.VUserData.ensureAuth();
@@ -27,8 +89,8 @@
 
     try {
       if (window.sb && window.sb.auth && typeof window.sb.auth.getUser === "function") {
-        const r = await window.sb.auth.getUser();
-        const uid = r?.data?.user?.id;
+        const res = await window.sb.auth.getUser();
+        const uid = res?.data?.user?.id;
         if (uid) return uid;
       }
     } catch (_) {}
@@ -36,102 +98,174 @@
     return null;
   }
 
-  async function _linkExternalUserId(setterFn) {
-    try {
-      const uid = await _getUidBestEffort();
-      if (!uid) return;
-      try {
-        await setterFn(uid);
-      } catch (_) {
-        // some SDK methods are sync
-        try { setterFn(uid); } catch (_) {}
-      }
-    } catch (_) {}
-  }
-
-  async function _initV5() {
-    // onesignal-cordova-plugin v5 exposes a global `OneSignal`
-    // Docs-style API:
-    // OneSignal.initialize(appId)
-    // OneSignal.Notifications.requestPermission(true)
-    const OS = window.OneSignal;
-    if (!OS || typeof OS.initialize !== "function") return false;
-
-    OS.initialize(ONESIGNAL_APP_ID);
-
-    if (_has(OS, "Notifications.requestPermission")) {
-      try {
-        OS.Notifications.requestPermission(true);
-      } catch (_) {}
-    }
-
-    // v5: OS.login(externalId) is preferred, fallback to setExternalUserId if present
-    await _linkExternalUserId(async (uid) => {
-      if (typeof OS.login === "function") return OS.login(uid);
-      if (typeof OS.setExternalUserId === "function") return OS.setExternalUserId(uid);
-    });
-
-    return true;
-  }
-
-  async function _initLegacyV3() {
-    // older cordova plugin exposed window.plugins.OneSignal
-    const OS = window.plugins && window.plugins.OneSignal;
+  async function syncExternalId() {
+    const OS = getOS();
     if (!OS) return false;
 
-    if (typeof OS.setAppId === "function") {
-      OS.setAppId(ONESIGNAL_APP_ID);
-    }
+    const uid = await getUidBestEffort();
+    if (!uid) return false;
 
-    if (typeof OS.promptForPushNotificationsWithUserResponse === "function") {
-      try {
-        OS.promptForPushNotificationsWithUserResponse(function () {});
-      } catch (_) {}
-    }
-
-    await _linkExternalUserId(async (uid) => {
-      if (typeof OS.setExternalUserId === "function") return OS.setExternalUserId(uid);
-    });
-
-    return true;
-  }
-
-  async function initOneSignal() {
-    // Only run on device (best-effort). On desktop web, cordova/OneSignal won't exist.
     try {
-      const okV5 = await _initV5();
-      if (okV5) return;
-      await _initLegacyV3();
+      if (typeof OS.login === "function") {
+        await OS.login(uid);
+        return true;
+      }
     } catch (_) {}
-  }
 
-  function _isNativeBestEffort() {
     try {
-      const C = window.Capacitor;
-      if (C && typeof C.isNativePlatform === "function") return !!C.isNativePlatform();
-      if (window.cordova) return true;
+      if (typeof OS.setExternalUserId === "function") {
+        await OS.setExternalUserId(uid);
+        return true;
+      }
     } catch (_) {}
+
     return false;
   }
 
-  function _sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
+  async function initOneSignal() {
+    if (initialized) return true;
 
-  async function bootOneSignal() {
-    if (!_isNativeBestEffort()) return;
+    const OS = getOS();
+    if (!OS) return false;
 
-    // si ton app expose une promesse de boot, on attend un peu
-    try { if (window.__VR_BOOT_READY) await Promise.race([window.__VR_BOOT_READY, _sleep(2500)]); } catch (_) {}
+    try {
+      if (typeof OS.initialize === "function") {
+        OS.initialize(ONESIGNAL_APP_ID);
+      } else if (typeof OS.setAppId === "function") {
+        OS.setAppId(ONESIGNAL_APP_ID);
+      } else {
+        return false;
+      }
 
-    // retry court : attend que le SDK soit vraiment présent
-    for (let i = 0; i < 20; i++) {
-      try {
-        await initOneSignal();
-        if (window.OneSignal || (window.plugins && window.plugins.OneSignal)) break;
-      } catch (_) {}
-      await _sleep(400);
+      initialized = true;
+      await syncExternalId();
+      return true;
+    } catch (_) {
+      return false;
     }
   }
 
-  document.addEventListener("DOMContentLoaded", bootOneSignal, false);
-  window.addEventListener("load", bootOneSignal, false);
+  async function bootOneSignal() {
+    if (bootStarted) return initialized;
+    bootStarted = true;
+
+    if (!isNative()) return false;
+
+    try {
+      if (window.__VR_BOOT_READY) {
+        await Promise.race([window.__VR_BOOT_READY, sleep(3000)]);
+      }
+    } catch (_) {}
+
+    for (let i = 0; i < 20; i++) {
+      const ok = await initOneSignal();
+      if (ok) return true;
+      await sleep(400);
+    }
+
+    return false;
+  }
+
+  async function requestNativePermission() {
+    await bootOneSignal();
+
+    const OS = getOS();
+    if (!OS) return false;
+
+    try {
+      if (OS.Notifications && typeof OS.Notifications.requestPermission === "function") {
+        return await OS.Notifications.requestPermission(false);
+      }
+    } catch (_) {}
+
+    try {
+      if (typeof OS.promptForPushNotificationsWithUserResponse === "function") {
+        return await new Promise((resolve) => {
+          OS.promptForPushNotificationsWithUserResponse(function (accepted) {
+            resolve(!!accepted);
+          });
+        });
+      }
+    } catch (_) {}
+
+    return false;
+  }
+
+  function markRealGamePlayed() {
+    ssSet(K_REAL_GAME_THIS_RUN, "1");
+  }
+
+  function clearRealGamePlayed() {
+    ssDel(K_REAL_GAME_THIS_RUN);
+  }
+
+  function preparePromptOnNextIndex() {
+    if (hasShownPrompt()) return false;
+    if (!hasRealGameThisRun()) return false;
+
+    lsSet(K_PENDING_INDEX_PROMPT, "1");
+    return true;
+  }
+
+  async function maybePromptOnIndexAfterGameReturn() {
+    if (indexPromptStarted) return false;
+    indexPromptStarted = true;
+
+    if (!isIndexPage()) return false;
+    if (!hasPendingIndexPrompt()) return false;
+    if (hasShownPrompt()) {
+      lsDel(K_PENDING_INDEX_PROMPT);
+      clearRealGamePlayed();
+      return false;
+    }
+
+    lsDel(K_PENDING_INDEX_PROMPT);
+    clearRealGamePlayed();
+    lsSet(K_PROMPT_SHOWN, "1");
+
+    try {
+      await requestNativePermission();
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function bindGameReturnHook() {
+    document.addEventListener("click", function (e) {
+      try {
+        const link = e.target && e.target.closest ? e.target.closest('a[href="index.html"]') : null;
+        if (!link) return;
+        preparePromptOnNextIndex();
+      } catch (_) {}
+    }, true);
+  }
+
+  window.VROneSignal = {
+    boot: bootOneSignal,
+    syncExternalId: syncExternalId,
+    requestNativePermission: requestNativePermission,
+    markRealGamePlayed: markRealGamePlayed,
+    clearRealGamePlayed: clearRealGamePlayed,
+    preparePromptOnNextIndex: preparePromptOnNextIndex,
+    maybePromptOnIndexAfterGameReturn: maybePromptOnIndexAfterGameReturn,
+    isReady: function () {
+      return initialized;
+    }
+  };
+
+  document.addEventListener("deviceready", async function () {
+    await bootOneSignal();
+    bindGameReturnHook();
+    await maybePromptOnIndexAfterGameReturn();
+  }, false);
+
+  document.addEventListener("resume", function () {
+    syncExternalId();
+  }, false);
+
+  window.addEventListener("load", async function () {
+    bindGameReturnHook();
+    await maybePromptOnIndexAfterGameReturn();
+  }, false);
 })();

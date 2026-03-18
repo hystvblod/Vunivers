@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Vuniverse</title>
@@ -437,6 +437,72 @@
       align-items:center !important;
       justify-content:center !important;
     }
+
+    #vr-update-banner{
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 10030;
+      display: none;
+      border-radius: 18px;
+      padding: 14px 14px 12px 14px;
+      background: rgba(12, 16, 32, 0.94);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      color: #fff;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    #vr-update-title{
+      margin:0 0 6px 0;
+      font-weight:900;
+      font-size:16px;
+      line-height:1.2;
+    }
+
+    #vr-update-body{
+      margin:0 0 12px 0;
+      opacity:.92;
+      font-size:13px;
+      line-height:1.35;
+    }
+
+    .vr-update-actions{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:10px;
+    }
+
+    .vr-update-btn{
+      min-height:44px;
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.12);
+      color:#fff;
+      font-weight:900;
+      cursor:pointer;
+      text-align:center;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .vr-update-btn.primary{
+      background: rgba(122,167,255,.22);
+      border-color: rgba(122,167,255,.35);
+    }
+
+    .vr-update-btn.ghost{
+      background: rgba(0,0,0,.18);
+      border-color: rgba(255,255,255,.16);
+      opacity:.95;
+    }
+
+    .vr-update-btn:active{
+      transform: scale(.99);
+    }
   </style>
 </head>
 
@@ -600,9 +666,19 @@
     </div>
   </div>
 
+  <div id="vr-update-banner" aria-hidden="true">
+    <h2 id="vr-update-title"></h2>
+    <p id="vr-update-body"></p>
+    <div class="vr-update-actions">
+      <button id="vr-update-later" class="vr-update-btn ghost" type="button"></button>
+      <button id="vr-update-now" class="vr-update-btn primary" type="button"></button>
+    </div>
+  </div>
+
   <script src="js/supabase.min.js"></script>
   <script src="js/supabaseBootstrap.js"></script>
   <script src="js/userData.js"></script>
+  <script src="js/onesignal.js"></script>
   <script src="js/ads.js"></script>
   <script src="js/purchases.js"></script>
   <script src="js/shop.js"></script>
@@ -640,6 +716,149 @@
           window.location.replace("game.html?universe=intro");
         }
       } catch (_) {}
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const banner = document.getElementById("vr-update-banner");
+      const titleEl = document.getElementById("vr-update-title");
+      const bodyEl = document.getElementById("vr-update-body");
+      const btnLater = document.getElementById("vr-update-later");
+      const btnNow = document.getElementById("vr-update-now");
+
+      let cachedInfo = null;
+      let flexibleListenerBound = false;
+
+      function setTexts() {
+        if (titleEl) titleEl.textContent = _t("ui.update.title", "");
+        if (bodyEl) bodyEl.textContent = _t("ui.update.body", "");
+        if (btnLater) btnLater.textContent = _t("ui.update.later", "");
+        if (btnNow) btnNow.textContent = _t("ui.update.now", "");
+      }
+
+      function showBanner() {
+        if (!banner) return;
+        banner.style.display = "block";
+        banner.setAttribute("aria-hidden", "false");
+      }
+
+      function hideBanner() {
+        if (!banner) return;
+        banner.style.display = "none";
+        banner.setAttribute("aria-hidden", "true");
+      }
+
+      function isUpdateAvailable(info) {
+        const v = info?.updateAvailability;
+        return (
+          v === 2 ||
+          v === "2" ||
+          v === "UPDATE_AVAILABLE" ||
+          v === "update_available"
+        );
+      }
+
+      async function openStore() {
+        try {
+          const AppUpdate = window.Capacitor?.Plugins?.AppUpdate;
+          if (AppUpdate?.openAppStore) {
+            await AppUpdate.openAppStore();
+          }
+        } catch (_) {}
+      }
+
+      async function handleFlexibleState(state) {
+        try {
+          const status = String(state?.installStatus ?? "").toUpperCase();
+          if (
+            status === "DOWNLOADED" ||
+            status === "INSTALL_STATUS_DOWNLOADED" ||
+            status === "11"
+          ) {
+            const AppUpdate = window.Capacitor?.Plugins?.AppUpdate;
+            if (AppUpdate?.completeFlexibleUpdate) {
+              await AppUpdate.completeFlexibleUpdate();
+            }
+          }
+        } catch (_) {}
+      }
+
+      async function bindFlexibleListener() {
+        if (flexibleListenerBound) return;
+        flexibleListenerBound = true;
+
+        try {
+          const AppUpdate = window.Capacitor?.Plugins?.AppUpdate;
+          if (!AppUpdate?.addListener) return;
+
+          await AppUpdate.addListener("onFlexibleUpdateStateChange", (state) => {
+            void handleFlexibleState(state);
+          });
+        } catch (_) {}
+      }
+
+      async function handleUpdateNow() {
+        try {
+          const CapacitorObj = window.Capacitor;
+          const AppUpdate = CapacitorObj?.Plugins?.AppUpdate;
+          if (!AppUpdate) return;
+
+          const platform = CapacitorObj?.getPlatform?.() || "";
+
+          if (platform === "android") {
+            if (cachedInfo?.immediateUpdateAllowed && AppUpdate.performImmediateUpdate) {
+              await AppUpdate.performImmediateUpdate();
+              return;
+            }
+
+            if (cachedInfo?.flexibleUpdateAllowed && AppUpdate.startFlexibleUpdate) {
+              await bindFlexibleListener();
+              await AppUpdate.startFlexibleUpdate();
+              hideBanner();
+              return;
+            }
+          }
+
+          await openStore();
+        } catch (_) {
+          await openStore();
+        }
+      }
+
+      async function checkAppUpdate() {
+        if (window.__vrUpdateCheckStarted) return;
+        window.__vrUpdateCheckStarted = true;
+
+        try {
+          const AppUpdate = window.Capacitor?.Plugins?.AppUpdate;
+          if (!AppUpdate?.getAppUpdateInfo) return;
+
+          cachedInfo = await AppUpdate.getAppUpdateInfo();
+          if (!isUpdateAvailable(cachedInfo)) return;
+
+          setTexts();
+          showBanner();
+        } catch (_) {}
+      }
+
+      if (btnLater) {
+        btnLater.addEventListener("click", hideBanner);
+      }
+
+      if (btnNow) {
+        btnNow.addEventListener("click", () => {
+          void handleUpdateNow();
+        });
+      }
+
+      setTexts();
+
+      window.__vrRefreshUpdateBannerTexts = function () {
+        setTexts();
+      };
+
+      window.__vrCheckAppUpdate = checkAppUpdate;
     })();
   </script>
 
@@ -1218,6 +1437,9 @@
             await window.VRI18n.initI18n(lang);
           }
         } catch (_) {}
+
+        try { window.__vrRefreshUpdateBannerTexts?.(); } catch (_) {}
+        try { await window.__vrCheckAppUpdate?.(); } catch (_) {}
 
         try {
           const u = window.VUserData?.load?.() || {};

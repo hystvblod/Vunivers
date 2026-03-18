@@ -1458,7 +1458,21 @@ body.vr-body-game .vr-choice-label{
   font-display: swap;
 }
 
+@font-face{
+  font-family: "VR_PirataOne";
+  src: url("../assets/fronts/PirataOne-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face{
+  font-family: "VR_CrimsonText";
+  src: url("../assets/fronts/CrimsonText-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 
 /* ==========================================================
@@ -1816,6 +1830,364 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-pre
 
   body.vr-body-game[data-universe="hell_king"] .vr-hud-item{ transform: translateY(-4px) !important; }
   body.vr-body-game[data-universe="hell_king"] .vr-hud-value{ transform: translateY(-1px) !important; }
+}
+
+
+/* ==========================================================
+   UNIVERS — INTRO
+   ========================================================== */
+body[data-universe="intro"].vr-body-game #view-game .vr-card-title,
+body[data-universe="intro"].vr-body-game #view-game .vr-card-text{
+  font-family: "VR_Quintess", serif !important;
+  color: #000 !important;
+  text-align: center !important;
+  max-width: 92% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body[data-universe="intro"].vr-body-game #view-game .vr-choice-label{
+  font-family: "VR_LoveSister", cursive !important;
+  color: #000 !important;
+  text-shadow: none !important;
+}
+
+body.vr-body-game[data-universe="intro"]{
+  --vr-card-w: clamp(380px, 98vw, 980px);
+
+  --vr-scn-h: clamp(140px, 19svh, 300px);
+  --vr-choice-h: clamp(88px, 13.2svh, 220px);
+
+  --vr-scn-inset-top: 12%;
+  --vr-scn-inset-right: 14%;
+  --vr-scn-inset-bottom: 16%;
+  --vr-scn-inset-left: 14%;
+
+  --vr-choice-inset-top: 24%;
+  --vr-choice-inset-right: 14%;
+  --vr-choice-inset-bottom: 22%;
+  --vr-choice-inset-left: 14%;
+
+  --vr-font-scn-title: clamp(17px, 3vmin, 32px);
+  --vr-font-scn-text:  clamp(14px, 2.5vmin, 27px);
+  --vr-font-choice:    clamp(16px, 3.0vmin, 32px);
+
+  --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
+
+  --vr-intro-hud-w: min(94vw, 980px);
+  --vr-intro-hud-value-size: clamp(13px, 2vw, 24px);
+  --vr-intro-hud-name-size: clamp(13px, 2vw, 28px);
+  --vr-intro-hud-years-size: clamp(10px, 1.25vw, 16px);
+
+  --vr-intro-topbar-w: clamp(220px, 54vw, 420px);
+  --vr-intro-topbar-h: calc(var(--vr-intro-topbar-w) * 0.275);
+
+  --vr-intro-back-size: clamp(46px, 11vw, 76px);
+  --vr-intro-customize-size: clamp(46px, 11vw, 76px);
+
+  --vr-ui-topbar-img: url("../assets/img/ui/intro_topbar.webp");
+  --vr-ui-hud-img: url("../assets/img/ui/intro_hud_bar.webp");
+  --vr-ui-back-img: url("../assets/img/ui/intro_back.webp");
+  --vr-ui-customize-img: url("../assets/img/ui/intro_customize.webp");
+
+  --vr-ui-hud-w: min(94vw, 980px);
+  --vr-ui-topbar-w: clamp(220px, 54vw, 420px);
+  --vr-ui-topbar-r: 0.275;
+  --vr-ui-back-size: clamp(46px, 11vw, 76px);
+  --vr-ui-customize-size: clamp(46px, 11vw, 76px);
+
+  --vr-hud-left-x: 3.5%;
+  --vr-hud-left-w: 17.8%;
+  --vr-hud-center-l: 20.2%;
+  --vr-hud-center-r: 20.2%;
+  --vr-hud-right-r: 5.3%;
+  --vr-hud-right-w: 17.8%;
+  --vr-hud-item-ty: -11px;
+
+  --vr-identity-tx: 0px;
+  --vr-identity-ty: 0px;
+  --vr-hud-name-years-gap: clamp(16px, 2.8vw, 30px);
+
+  --vr-vcoins-tx: 0px;
+  --vr-vcoins-ty: -2px;
+  --vr-jetons-tx: 0px;
+  --vr-jetons-ty: -2px;
+
+  --vr-vcoins-color:#FFCC4D;
+  --vr-vcoins-glow:rgba(255,160,60,.58);
+  --vr-vcoins-bg: transparent;
+
+  --vr-jetons-bg: transparent;
+}
+
+body.vr-body-game[data-universe="intro"] #view-game{
+  padding-left: clamp(8px, 2.8vw, 16px) !important;
+  padding-right: clamp(8px, 2.8vw, 16px) !important;
+}
+
+body.vr-body-game[data-universe="intro"] .vr-top-actions-game .vr-top-icon,
+body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"] .vr-top-icon,
+body.vr-body-game[data-universe="intro"] #btn-customize .vr-top-icon{
+  display: none !important;
+}
+
+body.vr-body-game[data-universe="intro"] .vr-top-actions-game{
+  position: fixed !important;
+  top: calc(14px + env(safe-area-inset-top)) !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+
+  width: var(--vr-intro-topbar-w) !important;
+  height: var(--vr-intro-topbar-h) !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+  gap: 0 !important;
+
+  display: block !important;
+  pointer-events: none !important;
+  z-index: 100000 !important;
+}
+body.vr-body-game[data-universe="intro"] .vr-top-actions-game::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/img/ui/intro_topbar.webp") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.38));
+  pointer-events: none;
+}
+
+body.vr-body-game[data-universe="intro"] .vr-top-actions-game .vr-icon-button{
+  position: absolute !important;
+  top: 16% !important;
+  width: 17% !important;
+  height: 72% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+  z-index: 1 !important;
+}
+body.vr-body-game[data-universe="intro"] .vr-top-actions-game .vr-icon-button:nth-child(1){ left: 16% !important; }
+body.vr-body-game[data-universe="intro"] .vr-top-actions-game .vr-icon-button:nth-child(2){ left: 41% !important; }
+body.vr-body-game[data-universe="intro"] .vr-top-actions-game .vr-icon-button:nth-child(3){ left: 66% !important; }
+
+body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"]{
+  position: fixed !important;
+  top: calc(18px + env(safe-area-inset-top)) !important;
+  left: 20px !important;
+  width: var(--vr-intro-back-size) !important;
+  height: var(--vr-intro-back-size) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  z-index: 100002 !important;
+  pointer-events: auto !important;
+}
+body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"]::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/img/ui/intro_back.webp") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.42));
+  pointer-events: none;
+}
+
+body.vr-body-game[data-universe="intro"] #btn-customize{
+  position: fixed !important;
+  top: calc(18px + env(safe-area-inset-top)) !important;
+  right: 20px !important;
+  width: var(--vr-intro-customize-size) !important;
+  height: var(--vr-intro-customize-size) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  z-index: 100002 !important;
+  pointer-events: auto !important;
+}
+body.vr-body-game[data-universe="intro"] #btn-customize::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/img/ui/intro_customize.webp") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.42));
+  pointer-events: none;
+}
+
+body.vr-body-game[data-universe="intro"] .vr-top-actions-game .vr-icon-button:active,
+body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"]:active,
+body.vr-body-game[data-universe="intro"] #btn-customize:active{
+  transform: scale(0.97);
+}
+
+body.vr-body-game[data-universe="intro"] .vr-hud{
+  position: relative !important;
+  width: var(--vr-intro-hud-w) !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: block !important;
+  white-space: normal !important;
+
+  aspect-ratio: 1024 / 269;
+  background: url("../assets/img/ui/intro_hud_bar.webp") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.42));
+}
+
+body.vr-body-game[data-universe="intro"] .vr-hud-left,
+body.vr-body-game[data-universe="intro"] .vr-hud-center,
+body.vr-body-game[data-universe="intro"] .vr-hud-right{
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: none !important;
+  justify-self: auto !important;
+}
+body.vr-body-game[data-universe="intro"] .vr-hud-left{ left: 3.5% !important; width: 17.8% !important; }
+body.vr-body-game[data-universe="intro"] .vr-hud-center{ left: 20.2% !important; right: 20.2% !important; }
+body.vr-body-game[data-universe="intro"] .vr-hud-right{ right: 5.3% !important; width: 17.8% !important; }
+
+body.vr-body-game[data-universe="intro"] .vr-hud-item{
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 0 clamp(1px, 0.22vw, 4px) !important;
+  gap: clamp(1px, 0.18vw, 4px) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  transform: translateY(-11px) !important;
+}
+
+body.vr-body-game[data-universe="intro"] .vr-hud-value{
+  font-size: var(--vr-intro-hud-value-size) !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  color: #f2eee8 !important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.45),
+    0 0 8px rgba(0,0,0,0.35) !important;
+  transform: translateY(-2px) !important;
+}
+
+body.vr-body-game[data-universe="intro"] .vr-hud-identity{
+  width: 100% !important;
+  max-width: none !important;
+  overflow: hidden !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: var(--vr-hud-name-years-gap, clamp(14px, 2.4vw, 24px)) !important;
+
+  white-space: nowrap !important;
+  text-align: center !important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.5),
+    0 2px 10px rgba(0,0,0,0.55) !important;
+}
+
+body.vr-body-game[data-universe="intro"] .vr-hud-name{
+  font-family: "VR_Quintess", serif !important;
+  transform: translateY(-4px) !important;
+  font-size: var(--vr-intro-hud-name-size) !important;
+  font-weight: 700 !important;
+  color: #f4ede5 !important;
+  line-height: 1 !important;
+  max-width: 75% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+body.vr-body-game[data-universe="intro"] .vr-hud-years{
+  font-family: "VR_Quintess", serif !important;
+  font-size: var(--vr-intro-hud-name-size) !important;
+  font-weight: 700 !important;
+  color: rgba(244,237,229,0.95) !important;
+  line-height: 1 !important;
+  transform: translateY(-4px) !important;
+  opacity: 0.95 !important;
+  flex: 0 0 auto !important;
+}
+
+body.vr-body-game[data-universe="intro"] #view-game .vr-card-main{
+  overflow: hidden;
+  background-size: 90% 90% !important;
+  background-position: center !important;
+}
+body.vr-body-game[data-universe="intro"] #view-game .vr-choice-button{
+  background-size: 90% 90% !important;
+  background-position: center !important;
+}
+
+#view-game.vr-bg-intro{
+  --vr-universe-bg: url("../assets/img/backgrounds/intro_default_gray.webp");
+  --vr-universe-card: url("../assets/img/ui/intro_msg_default_gray.webp");
+  --vr-universe-choice: url("../assets/img/ui/intro_choice_default_gray.webp");
+}
+
+body[data-universe="intro"] .vr-gauge[data-gauge-id="vision"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/intro/g1_frame.webp"); }
+body[data-universe="intro"] .vr-gauge[data-gauge-id="vision"] .vr-gauge-fill,
+body[data-universe="intro"] .vr-gauge[data-gauge-id="vision"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/intro/g1_fill.webp"); }
+
+body[data-universe="intro"] .vr-gauge[data-gauge-id="balance"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/intro/g2_frame.webp"); }
+body[data-universe="intro"] .vr-gauge[data-gauge-id="balance"] .vr-gauge-fill,
+body[data-universe="intro"] .vr-gauge[data-gauge-id="balance"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/intro/g2_fill.webp"); }
+
+body[data-universe="intro"] .vr-gauge[data-gauge-id="power"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/intro/g3_frame.webp"); }
+body[data-universe="intro"] .vr-gauge[data-gauge-id="power"] .vr-gauge-fill,
+body[data-universe="intro"] .vr-gauge[data-gauge-id="power"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/intro/g3_fill.webp"); }
+
+body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/intro/g4_frame.webp"); }
+body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-fill,
+body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/intro/g4_fill.webp"); }
+
+@media (max-width: 480px){
+  body.vr-body-game[data-universe="intro"]{
+    --vr-intro-hud-w: 96vw;
+    --vr-intro-hud-value-size: clamp(11px, 2.8vw, 14px);
+    --vr-intro-hud-name-size: clamp(11px, 3.1vw, 16px);
+    --vr-intro-hud-years-size: clamp(9px, 2vw, 12px);
+
+    --vr-intro-topbar-w: clamp(210px, 58vw, 300px);
+    --vr-intro-back-size: clamp(40px, 12vw, 60px);
+    --vr-intro-customize-size: clamp(40px, 12vw, 60px);
+    --vr-topbar-h: calc(clamp(50px, 12vw, 76px) + env(safe-area-inset-top) + 6px);
+
+    --vr-ui-topbar-top: 12px;
+    --vr-ui-back-top: 16px;
+    --vr-ui-back-left: 16px;
+    --vr-ui-customize-top: 16px;
+    --vr-ui-customize-right: 16px;
+    --vr-hud-item-ty: -4px;
+  }
+
+  body.vr-body-game[data-universe="intro"] .vr-hud-left{ left: 3.5% !important; width: 18.4% !important; }
+  body.vr-body-game[data-universe="intro"] .vr-hud-right{ right: 5.3% !important; width: 18.4% !important; }
+  body.vr-body-game[data-universe="intro"] .vr-hud-center{ left: 20.8% !important; right: 20.8% !important; }
+
+  body.vr-body-game[data-universe="intro"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
+  body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"]{ top: calc(16px + env(safe-area-inset-top)) !important; left: 16px !important; }
+  body.vr-body-game[data-universe="intro"] #btn-customize{ top: calc(16px + env(safe-area-inset-top)) !important; right: 16px !important; }
+
+  body.vr-body-game[data-universe="intro"] .vr-hud-item{ transform: translateY(-4px) !important; }
+  body.vr-body-game[data-universe="intro"] .vr-hud-value{ transform: translateY(-1px) !important; }
 }
 
 /* ==========================================================
@@ -3715,20 +4087,21 @@ body[data-universe="new_world_explorer"] .vr-gauge-delta{
 
 
 
-
-
-
-
-
 /* ==========================================================
    UNIVERS — VAMPIRE
    ========================================================== */
-body[data-universe="vampire_lord"].vr-body-game #view-game .vr-card-title,
+body[data-universe="vampire_lord"].vr-body-game #view-game .vr-card-title{
+  font-family: "VR_PirataOne", serif !important;
+  color: #000 !important;
+}
+
 body[data-universe="vampire_lord"].vr-body-game #view-game .vr-card-text{
+  font-family: "VR_Cormorant", serif !important;
   color: #000 !important;
 }
 
 body[data-universe="vampire_lord"].vr-body-game #view-game .vr-choice-label{
+  font-family: "VR_CrimsonText", serif !important;
   color: #000 !important;
   text-shadow: none !important;
   opacity: 1 !important;
@@ -3743,6 +4116,7 @@ body[data-universe="vampire_lord"].vr-body-game #view-game .vr-choice-label{
 
 body.vr-body-game[data-universe="vampire_lord"]{
   --vr-card-w: clamp(390px, 98vw, 1080px);
+  --vr-gauge-size: clamp(76px, 17.5vw, 128px);
 
   --vr-scn-h: clamp(132px, 17.6svh, 236px);
   --vr-choice-h: clamp(82px, 11.2svh, 142px);
@@ -3785,10 +4159,22 @@ body.vr-body-game[data-universe="vampire_lord"]{
   --vr-jetons-bg: transparent;
 }
 
-body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title,
-body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text,
-body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
   max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
+  max-width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center !important;
@@ -3972,7 +4358,7 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
 
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
   font-size: clamp(17px, 2.7vmin, 28px) !important;
-  font-weight: 800 !important;
+  font-weight: 400 !important;
   line-height: 1.08 !important;
   max-width: 94% !important;
   overflow-wrap: break-word !important;
@@ -3990,6 +4376,109 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
   word-break: normal !important;
   hyphens: auto !important;
   text-wrap: balance !important;
+}
+
+/* Jauges : halo local fort derrière chaque jauge, sans contour visible */
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row{
+  position: relative !important;
+  gap: clamp(12px, 2.8vw, 22px) !important;
+  margin: 4px auto 10px !important;
+  padding: 2px 2px 4px !important;
+  border-radius: 18px !important;
+  overflow: visible !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row::before{
+  content: none !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row > *{
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge{
+  position: relative !important;
+  gap: 10px !important;
+  isolation: isolate !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  width: clamp(96px, 20vw, 150px);
+  height: clamp(126px, 24vw, 188px);
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse at center,
+      rgba(6,8,14,0.72) 0%,
+      rgba(6,8,14,0.52) 38%,
+      rgba(6,8,14,0.28) 62%,
+      rgba(6,8,14,0.10) 78%,
+      rgba(6,8,14,0.00) 100%);
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label{
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: auto !important;
+  padding: 0 2px !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #fbf5ed !important;
+  font-size: clamp(14px, 2.45vmin, 20px) !important;
+  font-weight: 900 !important;
+  line-height: 1.06 !important;
+  text-align: center !important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,1),
+    0 2px 8px rgba(0,0,0,0.96),
+    0 0 14px rgba(0,0,0,0.92),
+    0 0 22px rgba(0,0,0,0.70) !important;
+  z-index: 1 !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label::before{
+  content: none !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value{
+  position: relative !important;
+  padding: 0 2px !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #fffaf2 !important;
+  font-size: clamp(14px, 2.45vmin, 20px) !important;
+  font-weight: 950 !important;
+  line-height: 1.06 !important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,1),
+    0 2px 8px rgba(0,0,0,0.96),
+    0 0 14px rgba(0,0,0,0.92),
+    0 0 22px rgba(0,0,0,0.70) !important;
+  z-index: 1 !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value::before{
+  content: none !important;
+}
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-val,
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-delta{
+  color: inherit !important;
 }
 
 #view-game.vr-bg-vampire_lord{
@@ -4037,12 +4526,21 @@ body[data-universe="vampire_lord"] .vr-gauge .vr-gauge-preview{
   background-position: center;
   background-size: 100% 100%;
 }
+
+body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
+  filter:
+    drop-shadow(0 10px 22px rgba(0,0,0,0.62))
+    drop-shadow(0 0 12px rgba(0,0,0,0.46))
+    drop-shadow(0 0 26px rgba(0,0,0,0.28)) !important;
+}
+
 @media (max-width: 480px){
   body.vr-body-game[data-universe="vampire_lord"]{
     --vr-vampire-hud-w: 92vw;
     --vr-vampire-topbar-w: clamp(210px, 58vw, 300px);
     --vr-vampire-back-size: clamp(40px, 12vw, 60px);
     --vr-vampire-customize-size: clamp(40px, 12vw, 60px);
+    --vr-gauge-size: clamp(68px, 18vw, 96px);
 
     --vr-topbar-h: calc(clamp(50px, 12vw, 76px) + env(safe-area-inset-top) + 6px);
 
@@ -4079,12 +4577,12 @@ body[data-universe="vampire_lord"] .vr-gauge .vr-gauge-preview{
     transform: translateY(0px) !important;
   }
 
-body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
-  font-size: clamp(15px, 4.2vw, 20px) !important;
-  font-weight: 800 !important;
-  line-height: 1.06 !important;
-  max-width: 94% !important;
-}
+  body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
+    font-size: clamp(15px, 4.2vw, 20px) !important;
+    font-weight: 400 !important;
+    line-height: 1.06 !important;
+    max-width: 94% !important;
+  }
   body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
     font-size: clamp(13.5px, 3.8vw, 18px) !important;
     font-weight: 700 !important;
@@ -4092,10 +4590,43 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
     max-width: 94% !important;
   }
   body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
+    font-family: "VR_CrimsonText", serif !important;
     font-size: clamp(13.5px, 3.8vw, 18px) !important;
     font-weight: 700 !important;
     line-height: 1.14 !important;
     max-width: 100% !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row{
+    padding: 2px 2px 4px !important;
+    gap: 8px !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauge{
+    gap: 8px !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauge::before{
+    width: clamp(78px, 21vw, 108px) !important;
+    height: clamp(110px, 26vw, 146px) !important;
+    filter: blur(8px) !important;
+    -webkit-filter: blur(8px) !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label{
+    padding: 0 1px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: clamp(11px, 2.95vw, 15px) !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value{
+    padding: 0 1px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: clamp(11px, 2.95vw, 15px) !important;
   }
 }
 
@@ -4110,6 +4641,7 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
     --vr-choice-inset-left: 7%;
   }
 }
+
 
 
 

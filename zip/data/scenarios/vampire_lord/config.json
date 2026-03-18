@@ -38,17 +38,17 @@
       "label_id": "Klan"
     },
     {
-      "id": "secret",
-      "label_fr": "Secret vampirique",
-      "label_en": "Vampiric secret",
-      "label_de": "Vampirischer Kult",
-      "label_es": "Secreto vampírico",
-      "label_pt": "Secreto vampírico",
-      "label_ptbr": "Secreto vampírico",
-      "label_ko": "흡혈귀 숭배",
-      "label_ja": "吸血鬼の崇拝",
-      "label_id": "Kultus vampir"
-    }
+  "id": "secret",
+  "label_fr": "Secret",
+  "label_en": "Secret",
+  "label_de": "Geheimnis",
+  "label_es": "Secreto",
+  "label_pt": "Segredo",
+  "label_ptbr": "Segredo",
+  "label_ko": "비밀",
+  "label_ja": "秘密",
+  "label_id": "Rahasia"
+}
   ],
   "initialGauges": {
     "blood": 50,

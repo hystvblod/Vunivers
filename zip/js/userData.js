@@ -216,7 +216,7 @@
     username: "",
     vcoins: 0,
     jetons: 0,
-    lang: "fr",
+    lang: "en",
     unlocked_universes: FREE_UNIVERSES.slice(0),
     no_ads: false,
     has_diamond: false,
@@ -250,7 +250,7 @@
         username: (_memState.username || "").toString(),
         vcoins: _clampInt(_memState.vcoins || 0),
         jetons: _clampInt(_memState.jetons || 0),
-        lang: (_memState.lang || "fr").toString(),
+        lang: (_memState.lang || "en").toString(),
         unlocked_universes: _mergeUniverses(_memState.unlocked_universes, []),
         no_ads: !!_memState.no_ads,
         has_diamond: !!_memState.has_diamond,
@@ -264,8 +264,8 @@
       });
     } catch (_) {}
 
-    try { localStorage.setItem(LangStorageKey, (_memState.lang || "fr").toString()); } catch (_) {}
-    try { localStorage.setItem(LangStorageLegacyKey, (_memState.lang || "fr").toString()); } catch (_) {}
+    try { localStorage.setItem(LangStorageKey, (_memState.lang || "en").toString()); } catch (_) {}
+    try { localStorage.setItem(LangStorageLegacyKey, (_memState.lang || "en").toString()); } catch (_) {}
   }
 
   function _emitProfile() {
@@ -300,7 +300,7 @@
       username: "",
       vcoins: 0,
       jetons: 0,
-      lang: "fr",
+      lang: "en",
       unlocked_universes: FREE_UNIVERSES.slice(0),
       no_ads: false,
       has_diamond: false,
@@ -325,7 +325,7 @@
     _memState.username = (me.username || _memState.username || "").toString();
     _memState.vcoins = _clampInt(typeof me.vcoins !== "undefined" ? me.vcoins : _memState.vcoins);
     _memState.jetons = _clampInt(typeof me.jetons !== "undefined" ? me.jetons : _memState.jetons);
-    _memState.lang = (me.lang || _memState.lang || "fr").toString();
+    _memState.lang = (me.lang || _memState.lang || "en").toString();
     _memState.no_ads = !!(me.no_ads || _memState.no_ads || localBefore.no_ads);
     _memState.has_diamond = !!(me.has_diamond || _memState.has_diamond || localBefore.has_diamond);
     _memState.unlocked_universes = _mergeUniverses(remoteUnlocked, localUnlocked);
@@ -508,7 +508,7 @@ async _getUid() {
         payload.has_diamond = !!partial.has_diamond;
       }
       if (typeof partial?.lang !== "undefined") {
-        payload.lang = String(partial.lang || "fr");
+        payload.lang = String(partial.lang || "en");
       }
 
       if (!Object.keys(payload).length) return null;
@@ -651,7 +651,7 @@ async _getUid() {
       const uid = await this.ensureAuth();
       if (!uid) return false;
 
-      const l = (lang || "fr").toString().trim().toLowerCase() || "fr";
+      const l = (lang || "en").toString().trim().toLowerCase() || "en";
       try {
         const r = await sb.rpc("secure_set_lang", { p_lang: l });
         if (r?.error) _reportRemoteError("rpc.secure_set_lang", r.error);
@@ -779,7 +779,7 @@ return ok;
           username: (_memState.username || "").toString(),
           vcoins: _clampInt(_memState.vcoins || 0),
           jetons: _clampInt(_memState.jetons || 0),
-          lang: (_memState.lang || "fr").toString(),
+          lang: (_memState.lang || "en").toString(),
           unlocked_universes: _mergeUniverses(_memState.unlocked_universes, []),
           no_ads: !!_memState.no_ads,
           has_diamond: !!_memState.has_diamond,
@@ -804,7 +804,7 @@ return ok;
         _memState.username = (data.username || _memState.username || "").toString();
         _memState.vcoins = _clampInt(typeof data.vcoins !== "undefined" ? data.vcoins : _memState.vcoins);
         _memState.jetons = _clampInt(typeof data.jetons !== "undefined" ? data.jetons : _memState.jetons);
-        _memState.lang = (data.lang || _memState.lang || "fr").toString();
+        _memState.lang = (data.lang || _memState.lang || "en").toString();
         _memState.no_ads = !!(typeof data.no_ads !== "undefined" ? data.no_ads : _memState.no_ads);
         _memState.has_diamond = !!(typeof data.has_diamond !== "undefined" ? data.has_diamond : _memState.has_diamond);
 
@@ -998,7 +998,7 @@ return ok;
 
     getUsername() { return (this.load().username || "").toString(); },
     getUserId() { return (this.load().user_id || "").toString(); },
-    getLang() { return (this.load().lang || "fr").toString(); },
+    getLang() { return (this.load().lang || "en").toString(); },
     getVcoins() { return Number(this.load().vcoins || 0); },
     getJetons() { return Number(this.load().jetons || 0); },
     hasDiamond() { return !!this.load().has_diamond; },
@@ -1019,7 +1019,7 @@ return ok;
     },
 
     async setLang(lang) {
-      const l = (lang || "fr").toString().trim().toLowerCase() || "fr";
+      const l = (lang || "en").toString().trim().toLowerCase() || "en";
       const cur = this.load();
       this.save({ ...cur, lang: l });
 
