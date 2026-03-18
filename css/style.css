@@ -2173,7 +2173,7 @@ body.vr-body-game[data-universe="intro"] #btn-customize{
   display:block !important;
   opacity:1 !important;
   visibility:visible !important;
-  pointer-events:auto !important;
+  pointer-events:none !important;
 }
 
 #view-game.vr-bg-intro{
@@ -2272,7 +2272,7 @@ body.vr-body-game[data-universe="intro"] #btn-customize{
   display:block !important;
   opacity:1 !important;
   visibility:visible !important;
-  pointer-events:auto !important;
+  pointer-events:none !important;
 }
 /* ==========================================================
    UNIVERS — HEAVEN
