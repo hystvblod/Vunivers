@@ -2357,13 +2357,43 @@ body.vr-peek-mode .vr-gauge-preview{
   background-image:none !important;
 }
 
+/* shell popup = style index */
 #vr-token-popup .vr-popup-inner,
 #vr-coins-popup .vr-popup-inner{
+  width:min(640px, 96vw) !important;
+  max-height:min(84vh, 760px) !important;
+  overflow:auto !important;
   display:flex !important;
   flex-direction:column !important;
-  gap:10px !important;
-  padding:14px 12px 16px !important;
+  gap:0 !important;
+  padding:16px 16px 14px !important;
   box-sizing:border-box !important;
+
+  border-radius:18px !important;
+  background:linear-gradient(180deg, rgba(18,24,46,.96), rgba(12,16,32,.94)) !important;
+  border:1px solid rgba(255,255,255,.12) !important;
+  box-shadow:0 14px 40px rgba(0,0,0,.35) !important;
+  backdrop-filter:blur(6px) !important;
+  -webkit-backdrop-filter:blur(6px) !important;
+  color:#fff !important;
+}
+
+/* vrai conteneur des actions */
+#vr-token-popup .vr-token-view[data-token-view="menu"],
+#vr-coins-popup .vr-token-view[data-coins-view="menu"]{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:14px !important;
+}
+
+#vr-token-popup .vr-popup-title,
+#vr-coins-popup .vr-popup-title{
+  margin:0 0 2px 0 !important;
+  font-size:18px !important;
+  font-weight:900 !important;
+  line-height:1.15 !important;
+  text-align:center !important;
+  color:#fff !important;
 }
 
 #vr-token-popup .vr-card,
@@ -2371,27 +2401,41 @@ body.vr-peek-mode .vr-gauge-preview{
 #vr-token-popup .vr-token-basic-card,
 #vr-coins-popup .vr-card,
 #vr-coins-popup .vr-coins-basic-card{
-  position:relative;
-  display:block;
-  width:100%;
-  padding:0;
+  position:relative !important;
+  display:block !important;
+  width:100% !important;
+  padding:0 !important;
   margin:0 !important;
-  border:none;
+  border:none !important;
   background:none !important;
   box-shadow:none !important;
 }
 
+/* cartouches = même esprit que index */
 #vr-token-popup .vr-card-content,
 #vr-token-popup .vr-token-basic-card .vr-card-content,
 #vr-coins-popup .vr-card-content{
-  background:linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.06)) !important;
-  border:1px solid rgba(255,255,255,.14) !important;
-  border-radius:18px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+
+  min-height:54px !important;
   padding:10px 14px !important;
-  min-height:62px !important;
-  box-shadow:0 10px 20px rgba(0,0,0,.20) !important;
-  backdrop-filter:blur(2px);
   box-sizing:border-box !important;
+
+  border-radius:14px !important;
+  border:1px solid rgba(255,255,255,.18) !important;
+  background:linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,.10)) !important;
+  box-shadow:none !important;
+}
+
+/* bouton principal légèrement plus bleu comme index */
+#vr-token-popup [data-token-action="adtoken"] .vr-card-content,
+#vr-coins-popup [data-coins-action="ad"] .vr-card-content{
+  background:linear-gradient(180deg, rgba(122,167,255,.26), rgba(122,167,255,.18)) !important;
+  border-color:rgba(122,167,255,.35) !important;
 }
 
 #vr-token-popup .vr-card-title,
@@ -2399,30 +2443,92 @@ body.vr-peek-mode .vr-gauge-preview{
 #vr-coins-popup .vr-card-title{
   margin:0 0 4px 0 !important;
   color:#fff !important;
-  font:900 15px/1.12 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
+  font:900 15px/1.1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;
   text-shadow:none !important;
+  text-align:center !important;
 }
 
 #vr-token-popup .vr-card-text,
 #vr-token-popup .vr-token-basic-card .vr-card-text,
 #vr-coins-popup .vr-card-text{
   margin:0 !important;
-  color:rgba(255,255,255,.88) !important;
-  font:700 12px/1.24 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
+  color:rgba(255,255,255,.92) !important;
+  font:700 12px/1.2 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;
   text-shadow:none !important;
+  text-align:center !important;
 }
 
-#vr-token-popup [data-token-action="close"] .vr-card-text{
-  display:none !important;
+/* ANNULER = texte simple, hors cartouche */
+#vr-token-popup .vr-token-close-plain{
+  appearance:none !important;
+  -webkit-appearance:none !important;
+  display:block !important;
+  width:auto !important;
+  align-self:center !important;
+  margin:0 auto !important;
+  padding:0 !important;
+  border:none !important;
+  background:none !important;
+  box-shadow:none !important;
+  color:rgba(255,255,255,.96) !important;
+  font:800 15px/1.1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;
+  text-align:center !important;
+  cursor:pointer !important;
 }
 
-#vr-token-popup [data-token-action="close"] .vr-card-title{
-  margin:0 !important;
+#vr-token-popup .vr-token-close-plain:focus-visible{
+  outline:2px solid rgba(255,255,255,.65) !important;
+  outline-offset:4px !important;
+  border-radius:10px !important;
 }
 
 #vr-token-popup img,
 #vr-coins-popup img{
   object-fit:contain !important;
+}
+
+@media (max-width: 480px){
+  #vr-token-popup .vr-popup-inner,
+  #vr-coins-popup .vr-popup-inner{
+    width:min(96vw, 560px) !important;
+    padding:14px 12px 12px !important;
+    border-radius:16px !important;
+  }
+
+  #vr-token-popup .vr-token-view[data-token-view="menu"],
+  #vr-coins-popup .vr-token-view[data-coins-view="menu"]{
+    gap:12px !important;
+  }
+
+  #vr-token-popup .vr-popup-title,
+  #vr-coins-popup .vr-popup-title{
+    font-size:17px !important;
+  }
+
+  #vr-token-popup .vr-card-content,
+  #vr-token-popup .vr-token-basic-card .vr-card-content,
+  #vr-coins-popup .vr-card-content{
+    min-height:50px !important;
+    padding:9px 12px !important;
+    border-radius:14px !important;
+  }
+
+  #vr-token-popup .vr-card-title,
+  #vr-token-popup .vr-token-basic-card .vr-card-title,
+  #vr-coins-popup .vr-card-title{
+    margin:0 0 3px 0 !important;
+    font:900 14px/1.08 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;
+  }
+
+  #vr-token-popup .vr-card-text,
+  #vr-token-popup .vr-token-basic-card .vr-card-text,
+  #vr-coins-popup .vr-card-text{
+    font:700 11px/1.18 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;
+  }
+
+  #vr-token-popup .vr-token-close-plain{
+    font:800 14px/1.1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;
+  }
 }
 `;
       document.head.appendChild(style);
@@ -2969,34 +3075,6 @@ body.vr-peek-mode .vr-gauge-preview{
           0%,100%{ transform: translate3d(0,0,0) rotate(-10deg) scale(1); opacity:1; }
           50%{ transform: translate3d(-16px,0,0) rotate(-10deg) scale(.97); opacity:.92; }
         }
-@media (max-width: 480px){
-  #vr-token-popup .vr-popup-inner,
-  #vr-coins-popup .vr-popup-inner{
-    gap:8px !important;
-    padding:12px 10px 14px !important;
-  }
-
-  #vr-token-popup .vr-card-content,
-  #vr-token-popup .vr-token-basic-card .vr-card-content,
-  #vr-coins-popup .vr-card-content{
-    border-radius:16px !important;
-    padding:9px 12px !important;
-    min-height:58px !important;
-  }
-
-  #vr-token-popup .vr-card-title,
-  #vr-token-popup .vr-token-basic-card .vr-card-title,
-  #vr-coins-popup .vr-card-title{
-    margin:0 0 3px 0 !important;
-    font:900 14px/1.1 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
-  }
-
-  #vr-token-popup .vr-card-text,
-  #vr-token-popup .vr-token-basic-card .vr-card-text,
-  #vr-coins-popup .vr-card-text{
-    font:700 11px/1.2 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
-  }
-}
       `;
     document.head.appendChild(style);
   }
