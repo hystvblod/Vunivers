@@ -269,6 +269,15 @@ const VR_BADGE_GOLD_CHOICES = 100;
       const yearsEl = document.getElementById("meta-years");
       const coinsEl = document.getElementById("meta-coins");
       const tokensEl = document.getElementById("meta-tokens");
+      const isIntro = String(document.body?.dataset?.universe || window.VRGame?.currentUniverse || "").trim() === "intro";
+
+      if (isIntro) {
+        if (kingEl) kingEl.textContent = "";
+        if (yearsEl) yearsEl.textContent = "";
+        if (coinsEl) coinsEl.textContent = "100";
+        if (tokensEl) tokensEl.textContent = "1";
+        return;
+      }
 
       if (kingEl) kingEl.textContent = kingName || "—";
       if (yearsEl) yearsEl.textContent = String(years || 0);
@@ -1621,6 +1630,11 @@ body.vr-peek-mode .vr-gauge-preview{
         this._uiTokens = 0;
       }
 
+      if (String(universeId || "").trim() === "intro") {
+        this._uiCoins = 100;
+        this._uiTokens = 1;
+      }
+
       window.VRState.initUniverse(this.universeConfig);
       window.VRUIBinding.init(this.universeConfig, this.lang, this.cardTextsDict);
       try { window.VRIntroTutorial?.onInit?.(universeId); } catch (_) {}
@@ -1644,6 +1658,8 @@ body.vr-peek-mode .vr-gauge-preview{
     },
 
     async _refreshUIBalancesSoft() {
+      if (String(this.universeId || "").trim() === "intro") return;
+
       try {
         const me = await window.VRProfile?.getMe?.(800);
         if (me) {
@@ -2527,12 +2543,17 @@ body.vr-peek-mode .vr-gauge-preview{
           }
 
           if (action === "gauge50") {
-            const me = await window.VRProfile?.getMe?.(0);
-            if (window.VRProfile._n(me?.jetons) <= 0) {
-              toast(t("token.toast.no_tokens", ""));
-              closePopup();
-              return;
+            const isIntro = String(window.VRGame?.currentUniverse || document.body?.dataset?.universe || "").trim() === "intro";
+
+            if (!isIntro) {
+              const me = await window.VRProfile?.getMe?.(0);
+              if (window.VRProfile._n(me?.jetons) <= 0) {
+                toast(t("token.toast.no_tokens", ""));
+                closePopup();
+                return;
+              }
             }
+
             startSelectGauge50();
             window.setTimeout(() => {
               try { window.VRIntroTutorial?.onGaugeOverlayOpened?.(); } catch (_) {}
@@ -4076,7 +4097,9 @@ window.VRGame = {
     }
 
     this.applyUniverseCosmetics(universeId);
-    try { window.VRCosmeticsGame?.render?.(); } catch (_) {}
+    if (String(universeId || "").trim() !== "intro") {
+      try { window.VRCosmeticsGame?.render?.(); } catch (_) {}
+    }
   },
 
   applyUniverseBackground(universeId) {

@@ -2190,6 +2190,13 @@ body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-preview{
   body.vr-body-game[data-universe="intro"] .vr-hud-value{ transform: translateY(-1px) !important; }
 }
 
+body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"],
+body.vr-body-game[data-universe="intro"] #btn-customize,
+body.vr-body-game[data-universe="intro"] .vr-top-actions-game,
+body.vr-body-game[data-universe="intro"] .vr-hud-center{
+  display: none !important;
+}
+
 /* ==========================================================
    UNIVERS — HEAVEN
    ========================================================== */
