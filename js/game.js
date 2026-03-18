@@ -2709,15 +2709,62 @@ body.vr-peek-mode .vr-gauge-preview{
 
     const style = document.createElement("style");
     style.id = "vr-intro-inline-style";
-    style.textContent = `
-      .vr-intro-pulse{ animation: vrIntroPulse 1.15s ease-in-out infinite; filter: drop-shadow(0 0 14px rgba(255,220,120,.72)); }
-      .vr-intro-tilt{ transform: translateX(18px) rotate(7deg) !important; }
-      .vr-intro-dim{ opacity: .28 !important; pointer-events: none !important; }
-      .vr-intro-hide{ opacity: 0 !important; pointer-events: none !important; visibility: hidden !important; }
-      .vr-intro-gauge-focus{ animation: vrIntroGauge 1s ease-in-out infinite; }
-      @keyframes vrIntroPulse{ 0%,100%{ transform: scale(1); } 50%{ transform: scale(1.035); } }
-      @keyframes vrIntroGauge{ 0%,100%{ transform: scale(1); filter: drop-shadow(0 0 0 rgba(255,220,120,0)); } 50%{ transform: scale(1.035); filter: drop-shadow(0 0 18px rgba(255,220,120,.82)); } }
-    `;
+      style.textContent = `
+        .vr-intro-pulse{
+          animation: vrIntroChoiceGlow 1.45s ease-in-out infinite;
+          filter: drop-shadow(0 0 10px rgba(255,220,120,.42));
+        }
+
+        .vr-intro-tilt{
+          transform-origin: center center !important;
+          animation: vrIntroChoiceSway 1.55s ease-in-out infinite !important;
+          will-change: transform, opacity, filter;
+        }
+
+        .vr-intro-dim{ opacity: .28 !important; pointer-events: none !important; }
+        .vr-intro-hide{ opacity: 0 !important; pointer-events: none !important; visibility: hidden !important; }
+        .vr-intro-gauge-focus{ animation: vrIntroGauge 1s ease-in-out infinite; }
+
+        @keyframes vrIntroChoiceGlow{
+          0%,100%{
+            opacity: 1;
+            filter: drop-shadow(0 0 8px rgba(255,220,120,.28));
+          }
+          50%{
+            opacity: .92;
+            filter: drop-shadow(0 0 16px rgba(255,220,120,.58));
+          }
+        }
+
+        @keyframes vrIntroChoiceSway{
+          0%{
+            transform: translateX(0px) rotate(0deg);
+          }
+          20%{
+            transform: translateX(10px) rotate(2.4deg);
+          }
+          40%{
+            transform: translateX(16px) rotate(4.4deg);
+          }
+          60%{
+            transform: translateX(10px) rotate(2.4deg);
+          }
+          100%{
+            transform: translateX(0px) rotate(0deg);
+          }
+        }
+
+        @keyframes vrIntroGauge{
+          0%,100%{
+            transform: scale(1);
+            filter: drop-shadow(0 0 0 rgba(255,220,120,0));
+          }
+          50%{
+            transform: scale(1.035);
+            filter: drop-shadow(0 0 18px rgba(255,220,120,.82));
+          }
+        }
+      `;
     document.head.appendChild(style);
   }
 
@@ -2755,8 +2802,8 @@ body.vr-peek-mode .vr-gauge-preview{
     const target = getChoiceButton(choiceId);
     allChoiceButtons().forEach((btn) => {
       const label = btn.querySelector(".vr-choice-label")?.textContent?.trim?.() || "";
-      if (btn === target) {
-        btn.classList.add("vr-intro-pulse", "vr-intro-tilt");
+          if (btn === target) {
+        btn.classList.add("vr-intro-tilt");
         btn.style.pointerEvents = "auto";
         btn.style.opacity = "1";
         return;
