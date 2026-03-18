@@ -107,7 +107,7 @@
   const COSMETICS_DATA = [
     buildUniverseCatalog({
       id: "hell_king",
-      labelKey: "shop.universe.hell_king",
+      labelKey: "shop.universes.hell_king",
       prefix: "hell",
       keyNs: "hell",
       bgDir: "assets/img/backgrounds",
@@ -121,7 +121,7 @@
 
     buildUniverseCatalog({
       id: "heaven_king",
-      labelKey: "shop.universe.heaven_king",
+      labelKey: "shop.universes.heaven_king",
       prefix: "heaven",
       keyNs: "heaven",
       bgDir: "assets/img/backgrounds",
@@ -135,7 +135,7 @@
 
     buildUniverseCatalog({
       id: "western_president",
-      labelKey: "shop.universe.western_president",
+      labelKey: "shop.universes.western_president",
       prefix: "west",
       keyNs: "president",
       bgDir: "assets/img/backgrounds",
@@ -149,7 +149,7 @@
 
     buildUniverseCatalog({
       id: "mega_corp_ceo",
-      labelKey: "shop.universe.mega_corp_ceo",
+      labelKey: "shop.universes.mega_corp_ceo",
       prefix: "corp",
       keyNs: "ceo",
       bgDir: "assets/img/backgrounds",
@@ -163,7 +163,7 @@
 
     buildUniverseCatalog({
       id: "new_world_explorer",
-      labelKey: "shop.universe.new_world_explorer",
+      labelKey: "shop.universes.new_world_explorer",
       prefix: "explorer",
       keyNs: "explorer",
       bgDir: "assets/img/backgrounds",
@@ -177,7 +177,7 @@
 
     buildUniverseCatalog({
       id: "vampire_lord",
-      labelKey: "shop.universe.vampire_lord",
+      labelKey: "shop.universes.vampire_lord",
       prefix: "vampire",
       keyNs: "vampire",
       bgDir: "assets/img/backgrounds",
