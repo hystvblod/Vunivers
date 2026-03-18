@@ -2412,53 +2412,36 @@ body.vr-peek-mode .vr-gauge-preview{
   position:relative !important;
   display:block !important;
   width:100% !important;
-  padding:0 !important;
   margin:0 !important;
-  border:none !important;
-  background:none !important;
-  box-shadow:none !important;
+  padding:10px 14px !important;
+  border:1px solid var(--vr-card-border) !important;
+  border-radius:var(--vr-radius-xl) !important;
+  background:var(--vr-card-bg) !important;
+  box-shadow:var(--vr-shadow-soft) !important;
+  overflow:hidden !important;
+  text-align:left !important;
 }
 
 /* cartouches = même esprit que index */
 #vr-token-popup .vr-card-content,
 #vr-token-popup .vr-token-basic-card .vr-card-content,
 #vr-coins-popup .vr-card-content{
+  position:relative !important;
+  z-index:1 !important;
   display:flex !important;
   flex-direction:column !important;
   align-items:center !important;
   justify-content:center !important;
   text-align:center !important;
 
-  min-height:54px !important;
-  padding:10px 14px !important;
+  min-height:auto !important;
+  padding:0 !important;
   box-sizing:border-box !important;
 
-  border:1px solid rgba(255,255,255,.16) !important;
-  border-radius:18px !important;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.16) 0%,
-      rgba(214,226,255,.09) 100%
-    ) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.05),
-    0 8px 18px rgba(0,0,0,.12) !important;
-}
-
-/* seul le bouton pub peut être un peu plus bleu */
-#vr-token-popup [data-token-action="adtoken"] .vr-card-content,
-#vr-coins-popup [data-coins-action="adcoins"] .vr-card-content{
-  background:
-    linear-gradient(
-      180deg,
-      rgba(118, 151, 232, .42) 0%,
-      rgba(78, 110, 189, .34) 100%
-    ) !important;
-  border-color:rgba(170,196,255,.36) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.08),
-    0 8px 18px rgba(0,0,0,.14) !important;
+  border:none !important;
+  border-radius:0 !important;
+  background:none !important;
+  box-shadow:none !important;
 }
 
 #vr-token-popup .vr-card-title,
