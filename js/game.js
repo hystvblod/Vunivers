@@ -539,14 +539,29 @@ body.vr-peek-mode .vr-gauge-preview{
         return;
       }
 
+      const cardMain = document.getElementById("vr-card-main");
       const titleEl = document.getElementById("card-title");
       const bodyEl = document.getElementById("card-text");
       const choiceAEl = document.getElementById("choice-A");
       const choiceBEl = document.getElementById("choice-B");
       const choiceCEl = document.getElementById("choice-C");
 
-      if (titleEl) titleEl.textContent = texts.title || "";
-      if (bodyEl) bodyEl.textContent = texts.body || "";
+      if (cardMain) cardMain.classList.remove("is-intro-rich-card");
+
+      if (titleEl) {
+        if (texts.title_html) titleEl.innerHTML = texts.title_html;
+        else titleEl.textContent = texts.title || "";
+      }
+
+      if (bodyEl) {
+        if (texts.body_html) bodyEl.innerHTML = texts.body_html;
+        else bodyEl.textContent = texts.body || "";
+      }
+
+      if (cardMain && (texts.title_html || texts.body_html)) {
+        cardMain.classList.add("is-intro-rich-card");
+      }
+
       if (choiceAEl) choiceAEl.textContent = texts.choices?.A || "";
       if (choiceBEl) choiceBEl.textContent = texts.choices?.B || "";
       if (choiceCEl) choiceCEl.textContent = texts.choices?.C || "";
@@ -2784,7 +2799,43 @@ body.vr-peek-mode .vr-gauge-preview{
 
         #vr-intro-hand.is-visible{
           display: block;
-          animation: vrIntroHandTap 1.05s cubic-bezier(.4,0,.2,1) infinite;
+          animation: vrIntroHandTap .9s cubic-bezier(.4,0,.2,1) infinite;
+        }
+
+        #vr-card-main.is-intro-rich-card{
+          min-height: 320px !important;
+          padding: 18px 18px 20px !important;
+        }
+
+        #vr-card-main.is-intro-rich-card .vr-card-title{
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          gap:14px;
+          min-height:40px;
+          margin-bottom:8px;
+        }
+
+        #vr-card-main.is-intro-rich-card .vr-card-text{
+          font-size: 15px !important;
+          line-height: 1.5 !important;
+          text-align: center !important;
+        }
+
+        .vr-intro-inline-icon{
+          display:inline-block;
+          width:26px;
+          height:26px;
+          object-fit:contain;
+          vertical-align:middle;
+          transform: translateY(4px);
+          filter: drop-shadow(0 4px 10px rgba(0,0,0,.22));
+        }
+
+        .vr-intro-inline-icon--big{
+          width:34px;
+          height:34px;
+          transform: translateY(2px);
         }
 
         #vr-intro-finish-overlay .vr-intro-finish-card{
@@ -2878,7 +2929,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
         @keyframes vrIntroHandTap{
           0%,100%{ transform: translate3d(0,0,0) scale(1); opacity:1; }
-          50%{ transform: translate3d(6px,8px,0) scale(.92); opacity:.9; }
+          50%{ transform: translate3d(0,10px,0) scale(.94); opacity:.9; }
         }
       `;
     document.head.appendChild(style);
@@ -2941,10 +2992,11 @@ body.vr-peek-mode .vr-gauge-preview{
 
     const hand = ensureIntroHand();
     const rect = btn.getBoundingClientRect();
-    const size = Math.max(42, Math.min(62, Math.round(rect.width * 0.9)));
+    const size = Math.max(48, Math.min(68, Math.round(rect.width * 1.05)));
+
     hand.style.width = `${size}px`;
-    hand.style.left = `${Math.round(rect.left + (rect.width * 0.58))}px`;
-    hand.style.top = `${Math.round(rect.top + (rect.height * 0.42))}px`;
+    hand.style.left = `${Math.round(rect.left + (rect.width * 0.18))}px`;
+    hand.style.top = `${Math.round(rect.top - (size * 0.62))}px`;
     hand.style.display = "block";
     hand.classList.add("is-visible");
   }
@@ -3062,7 +3114,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
     if (currentCardId === "intro_002") {
       showNormalChoices(["A", "B"]);
-      pulseGauge(LOW_GAUGE_ID);
       return;
     }
 
@@ -3078,9 +3129,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
     if (currentCardId === "intro_004") {
       showNormalChoices(["A", "B"]);
-      pulseEl(document.getElementById("btn-vcoins"));
-      pulseEl(document.getElementById("btn-jeton"));
-      pulseEl(getShopButton());
     }
   }
 
