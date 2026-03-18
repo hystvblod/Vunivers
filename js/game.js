@@ -2357,7 +2357,7 @@ body.vr-peek-mode .vr-gauge-preview{
   background-image:none !important;
 }
 
-/* shell popup = style index */
+/* shell popup = même esprit visuel que index */
 #vr-token-popup .vr-popup-inner,
 #vr-coins-popup .vr-popup-inner{
   width:min(560px, 94vw) !important;
@@ -2370,9 +2370,17 @@ body.vr-peek-mode .vr-gauge-preview{
   box-sizing:border-box !important;
 
   border-radius:18px !important;
-  background:rgba(12, 16, 32, 0.92) !important;
-  border:1px solid rgba(255,255,255,.12) !important;
-  box-shadow:0 14px 40px rgba(0,0,0,.35) !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 18, 48, 0.96) 0%,
+      rgba(14, 31, 74, 0.95) 45%,
+      rgba(28, 56, 118, 0.93) 100%
+    ) !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  box-shadow:
+    0 14px 40px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.06) !important;
   backdrop-filter:blur(6px) !important;
   -webkit-backdrop-filter:blur(6px) !important;
   color:#fff !important;
@@ -2425,18 +2433,32 @@ body.vr-peek-mode .vr-gauge-preview{
   padding:10px 14px !important;
   box-sizing:border-box !important;
 
-  border:1px solid rgba(255,255,255,.18) !important;
-  border-radius:14px !important;
-  background:rgba(255,255,255,.12) !important;
-  box-shadow:none !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  border-radius:18px !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.16) 0%,
+      rgba(214,226,255,.09) 100%
+    ) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 8px 18px rgba(0,0,0,.12) !important;
 }
 
-/* bouton principal légèrement plus bleu comme index */
+/* seul le bouton pub peut être un peu plus bleu */
 #vr-token-popup [data-token-action="adtoken"] .vr-card-content,
-#vr-token-popup [data-token-action="gauge50"] .vr-card-content,
 #vr-coins-popup [data-coins-action="adcoins"] .vr-card-content{
-  background:rgba(122,167,255,.22) !important;
-  border-color:rgba(122,167,255,.35) !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(118, 151, 232, .42) 0%,
+      rgba(78, 110, 189, .34) 100%
+    ) !important;
+  border-color:rgba(170,196,255,.36) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 8px 18px rgba(0,0,0,.14) !important;
 }
 
 #vr-token-popup .vr-card-title,
@@ -2483,9 +2505,16 @@ body.vr-peek-mode .vr-gauge-preview{
   border-radius:10px !important;
 }
 
+/* retire le bleu spécial sur gauge50 */
 #vr-token-gauge-overlay .vr-token-gauge-card{
-  background:rgba(12, 16, 32, 0.92) !important;
-  border:1px solid rgba(255,255,255,.12) !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 18, 48, 0.96) 0%,
+      rgba(14, 31, 74, 0.95) 45%,
+      rgba(28, 56, 118, 0.93) 100%
+    ) !important;
+  border-color:rgba(255,255,255,.16) !important;
   box-shadow:0 14px 40px rgba(0,0,0,.35) !important;
 }
 
