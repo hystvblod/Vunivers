@@ -2831,23 +2831,23 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-card-main.is-intro-rich-card{
-          min-height: clamp(272px, 37svh, 314px) !important;
+          min-height: clamp(305px, 41svh, 352px) !important;
           padding: 10px 14px 16px !important;
-          background-size: 99% 96.5% !important;
+          background-size: 99.4% 98.2% !important;
           background-position: center !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-card-title{
           display:block;
           min-height:auto;
-          margin-bottom:6px;
+          margin-bottom:5px;
         }
 
         #vr-card-main.is-intro-rich-card .vr-card-text{
           max-width: 90% !important;
           margin: -2px auto 0 !important;
           font-size: 14px !important;
-          line-height: 1.32 !important;
+          line-height: 1.30 !important;
           text-align: center !important;
           overflow-wrap: break-word !important;
         }
@@ -3052,8 +3052,8 @@ body.vr-peek-mode .vr-gauge-preview{
     const size = Math.max(58, Math.min(80, Math.round(rect.width * 1.2)));
 
     hand.style.width = `${size}px`;
-    hand.style.left = `${Math.round(rect.left - (size * 0.18))}px`;
-    hand.style.top = `${Math.round(rect.top + (rect.height * 0.18))}px`;
+    hand.style.left = `${Math.round(rect.left - (size * 0.46))}px`;
+    hand.style.top = `${Math.round(rect.top + (rect.height * 0.46))}px`;
     hand.style.display = "block";
     hand.classList.add("is-visible");
   }
@@ -3315,6 +3315,14 @@ body.vr-peek-mode .vr-gauge-preview{
     if (finishing) return;
     finishing = true;
     resetUIState();
+    hideAllChoices();
+
+    const choicesWrap = document.querySelector(".vr-card-choices");
+    if (choicesWrap) {
+      choicesWrap.style.pointerEvents = "none";
+      choicesWrap.style.opacity = "0";
+      choicesWrap.style.visibility = "hidden";
+    }
 
     const closed = await showFinishPopup();
     if (!closed) {
