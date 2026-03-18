@@ -709,6 +709,18 @@
 
   <script>
     (function () {
+      try {
+        const introDone = localStorage.getItem("vrealms_intro_done") === "1";
+        if (!introDone) {
+          localStorage.setItem("vrealms_universe", "intro");
+          window.location.replace("game.html?universe=intro");
+        }
+      } catch (_) {}
+    })();
+  </script>
+
+  <script>
+    (function () {
       const banner = document.getElementById("vr-update-banner");
       const titleEl = document.getElementById("vr-update-title");
       const bodyEl = document.getElementById("vr-update-body");

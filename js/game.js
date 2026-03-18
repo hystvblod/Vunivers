@@ -2781,10 +2781,22 @@ body.vr-peek-mode .vr-gauge-preview{
   }
 
   function onInit(universeId) {
-    enabled = String(universeId || "").trim() === INTRO_ID;
+    const isIntro = String(universeId || "").trim() === INTRO_ID;
+    const alreadyDone = (() => {
+      try { return localStorage.getItem("vrealms_intro_done") === "1"; }
+      catch (_) { return false; }
+    })();
+    enabled = isIntro && !alreadyDone;
     currentCardId = "";
     finishing = false;
     resetUIState();
+
+    if (isIntro && alreadyDone) {
+      try { localStorage.setItem("vrealms_universe", "hell_king"); } catch (_) {}
+      try { window.location.href = "index.html"; } catch (_) {}
+      return;
+    }
+
     if (!enabled) return;
     ensureStyles();
     try { window.VRSave?.clear?.(INTRO_ID); } catch (_) {}
@@ -2875,6 +2887,7 @@ body.vr-peek-mode .vr-gauge-preview{
     resetUIState();
     window.setTimeout(async () => {
       try { await window.VRAds?.showInterstitialAd?.(); } catch (_) {}
+      try { localStorage.setItem("vrealms_intro_done", "1"); } catch (_) {}
       try { localStorage.setItem("vrealms_universe", "hell_king"); } catch (_) {}
       try { window.location.href = "index.html"; } catch (_) {}
     }, 240);
