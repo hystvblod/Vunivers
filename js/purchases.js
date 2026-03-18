@@ -42,6 +42,15 @@
   const CREDITED_KEY = "vuniverse_iap_credited_v1";
   let STORE_READY = false;
 
+  // ✅ Garde-fous anti double init / double binding
+  let START_RUNNING = false;
+  let STORE_REGISTERED = false;
+  let STORE_EVENTS_WIRED = false;
+  let STORE_INITIALIZED = false;
+  let PENDING_REPLAYED = false;
+  let TOP_NAV_WIRED = false;
+  let SHOP_BUTTONS_WIRED = false;
+
   const readJson  = (k, d=[]) => { try { return JSON.parse(localStorage.getItem(k)||"null") ?? d; } catch { return d; } };
   const writeJson = (k, v)    => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
 
@@ -76,6 +85,14 @@
 
   function emit(name, detail) {
     try { window.dispatchEvent(new CustomEvent(name, { detail: detail || {} })); } catch (_) {}
+  }
+
+  function bindClickOnce(el, marker, handler) {
+    if (!el || typeof handler !== "function") return;
+    const attr = "data-vr-bound-" + String(marker || "click");
+    if (el.getAttribute(attr) === "1") return;
+    el.addEventListener("click", handler);
+    el.setAttribute(attr, "1");
   }
 
   window.VRIAP = window.VRIAP || {};
@@ -287,107 +304,143 @@
     const { S } = getStoreApi();
     if (!S) return;
 
-    if (sbReady()) {
-      await ensureAuthStrict();
+    if (START_RUNNING) {
+      log("start skipped: already running");
+      return;
     }
+    START_RUNNING = true;
 
     try {
-      const P = window.CdvPurchase?.ProductType;
+      if (sbReady()) {
+        await ensureAuthStrict();
+      }
 
-      S.register({ id: "vuniverse_no_ads",     type: P.NON_CONSUMABLE, platform: S.Platform.GOOGLE_PLAY });
-      S.register({ id: "vuniverse_diamond",    type: P.NON_CONSUMABLE, platform: S.Platform.GOOGLE_PLAY });
-      S.register({ id: "vuniverse_coins_1200", type: P.CONSUMABLE,     platform: S.Platform.GOOGLE_PLAY });
-      S.register({ id: "vuniverse_coins_3000", type: P.CONSUMABLE,     platform: S.Platform.GOOGLE_PLAY });
-      S.register({ id: "vuniverse_jetons_12",  type: P.CONSUMABLE,     platform: S.Platform.GOOGLE_PLAY });
-      S.register({ id: "vuniverse_jetons_30",  type: P.CONSUMABLE,     platform: S.Platform.GOOGLE_PLAY });
+      try {
+        const P = window.CdvPurchase?.ProductType;
 
-      CURRENT_UNLOCKABLE_UNIVERSES.forEach((universeId) => {
-        S.register({
-          id: universeSku(universeId),
-          type: P.NON_CONSUMABLE,
-          platform: S.Platform.GOOGLE_PLAY
-        });
-      });
-    } catch (e) {
-      warn("register failed", e?.message || e);
-    }
+        if (!STORE_REGISTERED) {
+          S.register({ id: "vuniverse_no_ads",     type: P.NON_CONSUMABLE, platform: S.Platform.GOOGLE_PLAY });
+          S.register({ id: "vuniverse_diamond",    type: P.NON_CONSUMABLE, platform: S.Platform.GOOGLE_PLAY });
+          S.register({ id: "vuniverse_coins_1200", type: P.CONSUMABLE,     platform: S.Platform.GOOGLE_PLAY });
+          S.register({ id: "vuniverse_coins_3000", type: P.CONSUMABLE,     platform: S.Platform.GOOGLE_PLAY });
+          S.register({ id: "vuniverse_jetons_12",  type: P.CONSUMABLE,     platform: S.Platform.GOOGLE_PLAY });
+          S.register({ id: "vuniverse_jetons_30",  type: P.CONSUMABLE,     platform: S.Platform.GOOGLE_PLAY });
 
-    S.when()
-      .productUpdated((p) => {
-        try {
-          const id = p?.id;
-          const price = p?.pricing?.price || p?.pricing?.formattedPrice || null;
-          if (id && price) {
-            PRICES_BY_ID[id] = price;
-            updateDisplayedPrices();
-            emit("vr:iap_price", { productId: String(id), price: String(price) });
-          }
-        } catch (_) {}
-      })
-      .approved(async (tx) => {
-        const txId = getTxIdFromTx(tx);
-        const productId = getProductIdFromTx(tx);
-
-        if (!productId) return;
-
-        if (txId && (IN_FLIGHT_TX.has(txId) || isCredited(txId))) {
-          try { await tx.finish(); } catch (_) {}
-          return;
-        }
-
-        if (txId) {
-          IN_FLIGHT_TX.add(txId);
-          addPending(txId, productId);
-        }
-
-        try {
-          setText("shop-status", "…");
-          await creditByProductClientSide(productId, txId);
-          removePending(txId);
-          setText("shop-status", "✅ Achat crédité");
-        } catch (e) {
-          setText("shop-status", "❌ Achat non crédité");
-          warn("credit failed", productId, txId, e?.message || e);
-
-          emit("vr:iap_credit_failed", {
-            productId: String(productId || ""),
-            txId: String(txId || ""),
-            error: String(e?.message || e || "credit_failed")
+          CURRENT_UNLOCKABLE_UNIVERSES.forEach((universeId) => {
+            S.register({
+              id: universeSku(universeId),
+              type: P.NON_CONSUMABLE,
+              platform: S.Platform.GOOGLE_PLAY
+            });
           });
 
-          if (txId) IN_FLIGHT_TX.delete(txId);
-          return;
+          STORE_REGISTERED = true;
         }
+      } catch (e) {
+        warn("register failed", e?.message || e);
+      }
 
-        try { await tx.finish(); } catch (e) { warn("finish failed", e?.message || e); }
-        if (txId) IN_FLIGHT_TX.delete(txId);
+      if (!STORE_EVENTS_WIRED) {
+        S.when()
+          .productUpdated((p) => {
+            try {
+              const id = p?.id;
+              const price = p?.pricing?.price || p?.pricing?.formattedPrice || null;
+              if (id && price) {
+                PRICES_BY_ID[id] = price;
+                updateDisplayedPrices();
+                emit("vr:iap_price", { productId: String(id), price: String(price) });
+              }
+            } catch (_) {}
+          })
+          .approved(async (tx) => {
+            const txId = getTxIdFromTx(tx);
+            const productId = getProductIdFromTx(tx);
 
-        try { window.VRAds?.refreshNoAds && (await window.VRAds.refreshNoAds()); } catch (_) {}
-        try { await refreshNoAdsUI(); } catch (_) {}
-      });
+            if (!productId) return;
 
-    try { await replayLocalPending(); } catch (_) {}
+            if (txId && (IN_FLIGHT_TX.has(txId) || isCredited(txId))) {
+              try { await tx.finish(); } catch (_) {}
+              return;
+            }
 
-    try {
-      await S.initialize([S.Platform.GOOGLE_PLAY]);
-      await S.update();
-      STORE_READY = true;
-    } catch (e) {
-      warn("store init/update failed", e?.message || e);
+            if (txId) {
+              IN_FLIGHT_TX.add(txId);
+              addPending(txId, productId);
+            }
+
+            try {
+              setText("shop-status", "…");
+              await creditByProductClientSide(productId, txId);
+              removePending(txId);
+              setText("shop-status", "✅ Achat crédité");
+            } catch (e) {
+              setText("shop-status", "❌ Achat non crédité");
+              warn("credit failed", productId, txId, e?.message || e);
+
+              emit("vr:iap_credit_failed", {
+                productId: String(productId || ""),
+                txId: String(txId || ""),
+                error: String(e?.message || e || "credit_failed")
+              });
+
+              if (txId) IN_FLIGHT_TX.delete(txId);
+              return;
+            }
+
+            try { await tx.finish(); } catch (e) { warn("finish failed", e?.message || e); }
+            if (txId) IN_FLIGHT_TX.delete(txId);
+
+            try { window.VRAds?.refreshNoAds && (await window.VRAds.refreshNoAds()); } catch (_) {}
+            try { await refreshNoAdsUI(); } catch (_) {}
+          });
+
+        STORE_EVENTS_WIRED = true;
+      }
+
+      if (!PENDING_REPLAYED) {
+        try {
+          await replayLocalPending();
+          PENDING_REPLAYED = true;
+        } catch (_) {}
+      }
+
+      if (!STORE_INITIALIZED) {
+        try {
+          await S.initialize([S.Platform.GOOGLE_PLAY]);
+          STORE_INITIALIZED = true;
+          STORE_READY = true;
+        } catch (e) {
+          warn("store init failed", e?.message || e);
+        }
+      }
+
+      try {
+        await S.update();
+        STORE_READY = true;
+      } catch (e) {
+        warn("store update failed", e?.message || e);
+      }
+
+      try { updateDisplayedPrices(); } catch (_) {}
+      try { await refreshNoAdsUI(); } catch (_) {}
+
+    } finally {
+      START_RUNNING = false;
     }
-
-    try { updateDisplayedPrices(); } catch (_) {}
-    try { await refreshNoAdsUI(); } catch (_) {}
   }
 
   function wireTopNav() {
+    if (TOP_NAV_WIRED) return;
+    TOP_NAV_WIRED = true;
+
     const bProfile = $("btn-profile");
     const bSettings = $("btn-settings");
     const bShop = $("btn-shop");
 
-    if (bProfile) bProfile.addEventListener("click", () => { window.location.href = "profile.html"; });
-    if (bSettings) bSettings.addEventListener("click", () => { window.location.href = "settings.html"; });
-    if (bShop) bShop.addEventListener("click", () => { window.location.href = "shop.html"; });
+    bindClickOnce(bProfile, "nav-profile", () => { window.location.href = "profile.html"; });
+    bindClickOnce(bSettings, "nav-settings", () => { window.location.href = "settings.html"; });
+    bindClickOnce(bShop, "nav-shop", () => { window.location.href = "shop.html"; });
   }
 
   async function doRewarded(placement) {
@@ -465,10 +518,13 @@
   }
 
   function wireShopButtons() {
+    if (SHOP_BUTTONS_WIRED) return;
+    SHOP_BUTTONS_WIRED = true;
+
     // 1) wiring générique via data-product-id
     try {
       document.querySelectorAll("[data-product-id]").forEach((btn) => {
-        btn.addEventListener("click", () => {
+        bindClickOnce(btn, "order", () => {
           const pid = getProductIdFromButton(btn);
           if (!pid) return;
           safeOrder(pid);
@@ -479,7 +535,7 @@
     // 2) wiring générique rewarded via data-reward-placement
     try {
       document.querySelectorAll("[data-reward-placement]").forEach((btn) => {
-        btn.addEventListener("click", () => {
+        bindClickOnce(btn, "reward", () => {
           const placement = getRewardPlacementFromButton(btn);
           if (!placement) return;
           doRewarded(placement);
@@ -487,7 +543,7 @@
       });
     } catch (_) {}
 
-    // 3) fallback : tes IDs actuels (si tu n’as pas encore mis les data-*)
+    // 3) fallback : tes IDs actuels
     const bRJ = $("btn-reward-jeton");
     const bRC = $("btn-reward-coins");
     const bNoAds = $("btn-buy-noads");
@@ -499,17 +555,17 @@
     const bJ12 = $("btn-buy-jetons-12");
     const bJ30 = $("btn-buy-jetons-30");
 
-    if (bRJ) bRJ.addEventListener("click", () => doRewarded("shop_jeton"));
-    if (bRC) bRC.addEventListener("click", () => doRewarded("shop_coins"));
+    bindClickOnce(bRJ, "reward", () => doRewarded("shop_jeton"));
+    bindClickOnce(bRC, "reward", () => doRewarded("shop_coins"));
 
-    if (bNoAds) bNoAds.addEventListener("click", () => safeOrder("vuniverse_no_ads"));
-    if (bDiamond) bDiamond.addEventListener("click", () => safeOrder("vuniverse_diamond"));
+    bindClickOnce(bNoAds, "order", () => safeOrder("vuniverse_no_ads"));
+    bindClickOnce(bDiamond, "order", () => safeOrder("vuniverse_diamond"));
 
-    if (bC1200) bC1200.addEventListener("click", () => safeOrder("vuniverse_coins_1200"));
-    if (bC3000) bC3000.addEventListener("click", () => safeOrder("vuniverse_coins_3000"));
+    bindClickOnce(bC1200, "order", () => safeOrder("vuniverse_coins_1200"));
+    bindClickOnce(bC3000, "order", () => safeOrder("vuniverse_coins_3000"));
 
-    if (bJ12) bJ12.addEventListener("click", () => safeOrder("vuniverse_jetons_12"));
-    if (bJ30) bJ30.addEventListener("click", () => safeOrder("vuniverse_jetons_30"));
+    bindClickOnce(bJ12, "order", () => safeOrder("vuniverse_jetons_12"));
+    bindClickOnce(bJ30, "order", () => safeOrder("vuniverse_jetons_30"));
   }
 
   window.restorePurchases = async function () {
@@ -535,15 +591,21 @@
       )) ||
       window._cordovaReady === true;
 
-    if (already) fire();
-    else {
+    if (already) {
+      fire();
+    } else {
       document.addEventListener("deviceready", function () {
         window._cordovaReady = true;
         fire();
       }, { once: true });
 
-      setTimeout(() => { if (window._cordovaReady) fire(); }, 1200);
-      setTimeout(() => { try { updateDisplayedPrices(); } catch (_) {} }, 1500);
+      setTimeout(() => {
+        if (window._cordovaReady) fire();
+      }, 1200);
+
+      setTimeout(() => {
+        try { updateDisplayedPrices(); } catch (_) {}
+      }, 1500);
     }
 
     refreshNoAdsUI().catch(() => {});

@@ -1,0 +1,29 @@
+{
+  "intro_001": {
+    "title": "Bienvenue",
+    "body": "Unah, un nouveau dirigeant pour s’occuper des mondes. Prêt à le faire ?",
+    "choices": {
+      "A": "Oui",
+      "B": "Non"
+    }
+  },
+  "intro_002": {
+    "title": "Les jauges",
+    "body": "Chacun de tes choix a une répercussion sur les jauges du haut. Fais glisser cette carte pour voir qu’une décision peut tout faire bouger.",
+    "choices": {
+      "A": "Continuer"
+    }
+  },
+  "intro_003": {
+    "title": "Le jeton",
+    "body": "Oups ! La jauge Équilibre est très basse. Appuie sur le jeton, puis utilise l’option qui remet une jauge à 50 %. Ensuite clique sur la jauge qui clignote.",
+    "choices": {}
+  },
+  "intro_004": {
+    "title": "Pièces et jetons",
+    "body": "Tu gagnes des pièces et des jetons. Les jetons servent à obtenir des aides pendant la partie et peuvent aussi être obtenus dans la boutique. Les pièces se gagnent dans le jeu et servent à acheter des cosmétiques pour tes univers ou à débloquer de nouveaux univers. Rendez-vous dans la boutique.",
+    "choices": {
+      "A": "Terminer"
+    }
+  }
+}
