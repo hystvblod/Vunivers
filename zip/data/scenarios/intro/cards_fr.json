@@ -21,10 +21,12 @@
     "choices": {}
   },
   "intro_004": {
-    "title": "Pièces et jetons",
-    "body": "Tu gagnes des pièces et des jetons. Les jetons servent à obtenir de l’aide pendant la partie et peuvent aussi être obtenus dans la boutique. Les pièces se gagnent dans le jeu et servent à acheter des cosmétiques pour tes univers ou à débloquer de nouveaux univers. Rendez-vous dans la boutique.",
+    "title": "",
+    "title_html": "<img class=\"vr-intro-inline-icon vr-intro-inline-icon--big\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"><img class=\"vr-intro-inline-icon vr-intro-inline-icon--big\" src=\"assets/img/ui/jeton.webp\" alt=\"\">",
+    "body_html": "Tu gagnes <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> et <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\">.<br><br>Les <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> servent à obtenir de l’aide pendant la partie et tu peux en avoir dans la boutique.<br><br>Les <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> se gagnent dans le jeu ou dans la boutique et permettent de débloquer de nouveaux univers ou de personnaliser ton jeu.",
     "choices": {
-      "A": "Terminer"
+      "A": "Poursuivre l'aventure",
+      "B": "Continuer"
     }
   }
 }

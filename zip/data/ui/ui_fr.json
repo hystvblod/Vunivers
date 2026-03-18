@@ -529,5 +529,22 @@
       "title": "Seigneur vampire",
       "desc": "Étends ton influence dans l’ombre. Trop de sang attire les chasseurs, trop de prudence affaiblit ton clan."
     }
+  },
+  "intro": {
+    "finish": {
+      "title": "Bravo",
+      "body": "Tu es prêt à gouverner de nombreux univers.",
+      "gift": "Voici un petit cadeau",
+      "token": "jeton",
+      "cta": "Commencer"
+    }
+  },
+  "onesignal": {
+    "popup": {
+      "title": "Rester informé",
+      "text": "Autoriser les notifications pour recevoir les nouveautés et les récompenses importantes.",
+      "accept": "Autoriser",
+      "cancel": "Plus tard"
+    }
   }
 }

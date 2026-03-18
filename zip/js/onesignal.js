@@ -12,6 +12,14 @@
   let initialized = false;
   let indexPromptStarted = false;
 
+  function t(key, fallback) {
+    try {
+      const out = window.VRI18n?.t?.(key);
+      if (out && out !== key) return out;
+    } catch (_) {}
+    return typeof fallback === "string" ? fallback : "";
+  }
+
   function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
@@ -191,6 +199,78 @@
     return false;
   }
 
+  function ensurePrePromptStyles() {
+    if (document.getElementById("vr-os-preprompt-style")) return;
+
+    const style = document.createElement("style");
+    style.id = "vr-os-preprompt-style";
+    style.textContent = `
+      #vr-os-preprompt{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; padding:16px; background:rgba(15,23,42,.84); z-index:250000; }
+      #vr-os-preprompt.is-open{ display:flex; }
+      #vr-os-preprompt .vr-os-preprompt-card{ width:min(420px, calc(100vw - 24px)); padding:18px; border-radius:22px; background:rgba(15,23,42,.98); border:1px solid rgba(255,255,255,.14); box-shadow:0 20px 40px rgba(0,0,0,.35); color:#fff; text-align:center; display:flex; flex-direction:column; gap:12px; }
+      #vr-os-preprompt .vr-os-preprompt-title{ margin:0; font-size:clamp(20px, 5.2vw, 26px); font-weight:950; }
+      #vr-os-preprompt .vr-os-preprompt-text{ margin:0; font-size:clamp(13px, 3.7vw, 15px); line-height:1.4; color:rgba(255,255,255,.88); }
+      #vr-os-preprompt .vr-os-preprompt-actions{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+      #vr-os-preprompt button{ min-height:48px; border:none; border-radius:14px; font:800 15px/1.2 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; cursor:pointer; }
+      #vr-os-preprompt .vr-os-preprompt-accept{ background:#ffffff; color:#0f172a; }
+      #vr-os-preprompt .vr-os-preprompt-cancel{ background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.12); }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function ensurePrePrompt() {
+    let overlay = document.getElementById("vr-os-preprompt");
+    if (overlay) return overlay;
+    ensurePrePromptStyles();
+    overlay = document.createElement("div");
+    overlay.id = "vr-os-preprompt";
+    overlay.setAttribute("aria-hidden", "true");
+    overlay.innerHTML = `
+      <div class="vr-os-preprompt-card" role="dialog" aria-modal="true">
+        <h3 class="vr-os-preprompt-title" id="vr-os-preprompt-title"></h3>
+        <p class="vr-os-preprompt-text" id="vr-os-preprompt-text"></p>
+        <div class="vr-os-preprompt-actions">
+          <button type="button" class="vr-os-preprompt-cancel" id="vr-os-preprompt-cancel"></button>
+          <button type="button" class="vr-os-preprompt-accept" id="vr-os-preprompt-accept"></button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+    return overlay;
+  }
+
+  function fillPrePromptTexts() {
+    const titleEl = document.getElementById("vr-os-preprompt-title");
+    const textEl = document.getElementById("vr-os-preprompt-text");
+    const cancelEl = document.getElementById("vr-os-preprompt-cancel");
+    const acceptEl = document.getElementById("vr-os-preprompt-accept");
+    if (titleEl) titleEl.textContent = t("onesignal.popup.title", "Rester informé");
+    if (textEl) textEl.textContent = t("onesignal.popup.text", "Autoriser les notifications pour recevoir les nouveautés et les récompenses importantes.");
+    if (cancelEl) cancelEl.textContent = t("onesignal.popup.cancel", "Plus tard");
+    if (acceptEl) acceptEl.textContent = t("onesignal.popup.accept", "Autoriser");
+  }
+
+  function showPrePrompt() {
+    const overlay = ensurePrePrompt();
+    fillPrePromptTexts();
+
+    return new Promise((resolve) => {
+      const acceptBtn = document.getElementById("vr-os-preprompt-accept");
+      const cancelBtn = document.getElementById("vr-os-preprompt-cancel");
+      const close = (accepted) => {
+        overlay.classList.remove("is-open");
+        overlay.setAttribute("aria-hidden", "true");
+        resolve(!!accepted);
+      };
+      overlay.onclick = (e) => { if (e.target === overlay) close(false); };
+      if (acceptBtn) acceptBtn.onclick = () => close(true);
+      if (cancelBtn) cancelBtn.onclick = () => close(false);
+      overlay.classList.add("is-open");
+      overlay.setAttribute("aria-hidden", "false");
+      try { acceptBtn?.focus?.({ preventScroll: true }); } catch (_) {}
+    });
+  }
+
   function markRealGamePlayed() {
     ssSet(K_REAL_GAME_THIS_RUN, "1");
   }
@@ -224,6 +304,8 @@
     lsSet(K_PROMPT_SHOWN, "1");
 
     try {
+      const accepted = await showPrePrompt();
+      if (!accepted) return false;
       await requestNativePermission();
       return true;
     } catch (_) {
