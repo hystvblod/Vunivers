@@ -2453,6 +2453,40 @@ body.vr-peek-mode .vr-gauge-preview{
     } catch (_) {}
   }
 
+  function applyRuntimePopupSkin(popup) {
+    try {
+      if (!popup) return;
+
+      const inner = popup.querySelector?.('.vr-popup-inner');
+      if (inner) {
+        inner.style.setProperty('background', 'linear-gradient(180deg, rgba(7,18,38,.98), rgba(4,10,24,.98))', 'important');
+        inner.style.setProperty('border', '1px solid rgba(122,167,255,.18)', 'important');
+        inner.style.setProperty('box-shadow', '0 18px 50px rgba(0,0,0,.55)', 'important');
+        inner.style.setProperty('color', '#fff', 'important');
+      }
+
+      popup.querySelectorAll('.vr-card-content').forEach((card) => {
+        card.style.setProperty('background', 'linear-gradient(180deg, rgba(20,44,82,.96), rgba(10,24,48,.96))', 'important');
+        card.style.setProperty('border', '1px solid rgba(122,167,255,.22)', 'important');
+        card.style.setProperty('box-shadow', '0 18px 34px rgba(0,0,0,.28)', 'important');
+        card.style.setProperty('color', '#fff', 'important');
+      });
+
+      const gaugeCard = popup.querySelector('[data-token-action="gauge50"] .vr-card-content');
+      if (gaugeCard) {
+        gaugeCard.style.setProperty('background', 'linear-gradient(180deg, rgba(42,88,160,.98), rgba(16,40,78,.98))', 'important');
+        gaugeCard.style.setProperty('border-color', 'rgba(122,167,255,.38)', 'important');
+        gaugeCard.style.setProperty('box-shadow', '0 18px 40px rgba(43,92,214,.30)', 'important');
+      }
+
+      const adCard = popup.querySelector('[data-token-action="adtoken"] .vr-card-content, [data-coins-action="ad"] .vr-card-content, [data-coins-action="adcoins"] .vr-card-content');
+      if (adCard) {
+        adCard.style.setProperty('background', 'linear-gradient(180deg, rgba(20,44,82,.96), rgba(10,24,48,.96))', 'important');
+        adCard.style.setProperty('border-color', 'rgba(122,167,255,.24)', 'important');
+      }
+    } catch (_) {}
+  }
+
   const VRTokenUI = {
     selectMode: false,
     gaugeSelectBusy: false,
@@ -2467,6 +2501,9 @@ body.vr-peek-mode .vr-gauge-preview{
       const gaugesRow = document.getElementById("vr-gauges-row");
 
       if (!btnJeton || !popup) return;
+
+      applyRuntimePopupSkin(popup);
+      applyRuntimePopupSkin(overlay);
 
       try {
         const vg = document.getElementById("view-game");
@@ -2498,6 +2535,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
       const openPopup = () => {
         if (this.selectMode) return;
+        applyRuntimePopupSkin(popup);
         const first = popup?.querySelector?.("[data-token-action]");
         _showDialog(popup, first || btnJeton);
       };
@@ -2508,6 +2546,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
       const openGaugeOverlay = () => {
         if (!overlay) return;
+        applyRuntimePopupSkin(overlay);
         _showDialog(overlay, cancelGaugeBtn || btnJeton);
       };
 
@@ -3446,6 +3485,8 @@ body.vr-peek-mode .vr-gauge-preview{
       const popup = document.getElementById("vr-coins-popup");
       if (!btnVcoins || !popup) return;
 
+      applyRuntimePopupSkin(popup);
+
       try {
         const vg = document.getElementById("view-game");
         if (vg && popup && vg.contains(popup)) document.body.appendChild(popup);
@@ -3472,6 +3513,7 @@ body.vr-peek-mode .vr-gauge-preview{
       };
 
       const openPopup = () => {
+        applyRuntimePopupSkin(popup);
         const first = popup?.querySelector?.("[data-coins-action]");
         _showDialog(popup, first || btnVcoins);
       };
