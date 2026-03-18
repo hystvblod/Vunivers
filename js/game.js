@@ -2303,9 +2303,15 @@ body.vr-peek-mode .vr-gauge-preview{
       const style = document.createElement("style");
       style.id = ID;
       style.textContent = `
-#vr-token-popup [data-token-action],
 #vr-coins-popup [data-coins-action]{
   background-image:none !important;
+}
+
+#vr-token-popup .vr-popup-inner,
+#vr-coins-popup .vr-popup-inner{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:12px !important;
 }
 
 #vr-token-popup .vr-card,
@@ -2317,6 +2323,7 @@ body.vr-peek-mode .vr-gauge-preview{
   display:block;
   width:100%;
   padding:0;
+  margin:0 !important;
   border:none;
   background:none !important;
   box-shadow:none !important;
@@ -2327,18 +2334,18 @@ body.vr-peek-mode .vr-gauge-preview{
 #vr-coins-popup .vr-card-content{
   background:linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.06)) !important;
   border:1px solid rgba(255,255,255,.14) !important;
-  border-radius:18px !important;
-  padding:14px 14px !important;
-  box-shadow:0 16px 30px rgba(0,0,0,.24) !important;
+  border-radius:16px !important;
+  padding:10px 12px !important;
+  box-shadow:0 12px 24px rgba(0,0,0,.22) !important;
   backdrop-filter:blur(2px);
 }
 
 #vr-token-popup .vr-card-title,
 #vr-token-popup .vr-token-basic-card .vr-card-title,
 #vr-coins-popup .vr-card-title{
-  margin:0 0 6px 0 !important;
+  margin:0 0 4px 0 !important;
   color:#fff !important;
-  font:900 16px/1.15 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
+  font:900 15px/1.12 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
   text-shadow:none !important;
 }
 
@@ -2347,8 +2354,16 @@ body.vr-peek-mode .vr-gauge-preview{
 #vr-coins-popup .vr-card-text{
   margin:0 !important;
   color:rgba(255,255,255,.88) !important;
-  font:700 13px/1.35 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
+  font:700 12px/1.28 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
   text-shadow:none !important;
+}
+
+#vr-token-popup [data-token-action="close"] .vr-card-text{
+  display:none !important;
+}
+
+#vr-token-popup [data-token-action="close"] .vr-card-title{
+  margin:0 !important;
 }
 
 #vr-token-popup img,
