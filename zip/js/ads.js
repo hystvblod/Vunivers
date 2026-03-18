@@ -62,9 +62,15 @@
     return AD_UNIT_ID_REWARDED_PROD;
   }
 
-  // ✅ Règle interstitiel : 1 pub tous les X choix (cumul global)
-  var INTERSTITIEL_EVERY_X_ACTIONS = 8;
-  var INTER_COOLDOWN_MS = 0; // anti-spam (0 = off)
+  // ✅ Règles pubs globales
+  var INTERSTITIEL_EVERY_X_ACTIONS = 12;
+  var INTERSTITIAL_MIN_WEIGHTED_MS = 3 * 60 * 1000; // 3 min
+  var INTER_RETURN_EVERY_X_ENDS = 3;
+  var INTER_RETURN_COOLDOWN_MS = 2 * 60 * 1000; // 2 min réelles
+
+  var WEIGHTED_TIME_KEY = "vr_ads_weighted_time_ms_v1";
+  var RETURN_INDEX_COUNT_KEY = "vr_ads_return_index_count_v1";
+  var LAST_INTER_TS_KEY = "vr_ads_last_inter_ts_local_v1";
 
   // --- Récompenses par défaut (utilisées par l'UI si besoin)
   window.REWARD_JETONS = typeof window.REWARD_JETONS === "number" ? window.REWARD_JETONS : 1;
@@ -76,6 +82,123 @@
   var __showLock = false;          // anti double show best-effort
 
   window.__ads_active = false;     // flag global anti-back/anti-overlays côté app
+  var _gameRewardSeenThisRun = false;
+  var _weightedTimerStartedAt = 0;
+
+  function _readLSNumber(key) {
+    try {
+      var v = Number(localStorage.getItem(key) || 0);
+      return Number.isFinite(v) && v > 0 ? v : 0;
+    } catch (_) {}
+    return 0;
+  }
+
+  function _writeLSNumber(key, value) {
+    try {
+      var n = Math.max(0, Number(value || 0) || 0);
+      localStorage.setItem(key, String(n));
+    } catch (_) {}
+  }
+
+  function _addLSNumber(key, delta) {
+    _writeLSNumber(key, _readLSNumber(key) + Math.max(0, Number(delta || 0) || 0));
+  }
+
+  function _isGameHtmlPage() {
+    try {
+      var p = String(location.pathname || "").toLowerCase();
+      var h = String(location.href || "").toLowerCase();
+      return p.endsWith("/game.html") || p === "/game.html" || h.indexOf("game.html") !== -1;
+    } catch (_) {}
+    return false;
+  }
+
+  function _getUniverseIdForWeight() {
+    try {
+      if (window.VRGame && window.VRGame.currentUniverse) return String(window.VRGame.currentUniverse || "").trim();
+    } catch (_) {}
+    try {
+      return String(localStorage.getItem("vrealms_universe") || "").trim();
+    } catch (_) {}
+    return "";
+  }
+
+  function _getWeightedFactor() {
+    var universeId = _getUniverseIdForWeight();
+    if (_isGameHtmlPage()) {
+      if (universeId === "intro") return 0;
+      return 1;
+    }
+    return 1 / 3;
+  }
+
+  function _flushWeightedTime() {
+    if (_weightedTimerStartedAt <= 0) return 0;
+
+    var elapsed = Math.max(0, Date.now() - _weightedTimerStartedAt);
+    _weightedTimerStartedAt = 0;
+
+    if (elapsed <= 0) return 0;
+
+    var weighted = Math.floor(elapsed * _getWeightedFactor());
+    if (weighted > 0) _addLSNumber(WEIGHTED_TIME_KEY, weighted);
+    return weighted;
+  }
+
+  function _startWeightedTime() {
+    try {
+      if (document.hidden) return;
+    } catch (_) {}
+    if (_weightedTimerStartedAt > 0) return;
+    _weightedTimerStartedAt = Date.now();
+  }
+
+  function syncWeightedTime() {
+    _flushWeightedTime();
+    _startWeightedTime();
+    return getWeightedAccumulatedMs();
+  }
+
+  function getWeightedAccumulatedMs() {
+    return _readLSNumber(WEIGHTED_TIME_KEY);
+  }
+
+  function resetWeightedAccumulatedMs() {
+    _writeLSNumber(WEIGHTED_TIME_KEY, 0);
+  }
+
+  function getLastInterstitialLocalTs() {
+    return _readLSNumber(LAST_INTER_TS_KEY);
+  }
+
+  function setLastInterstitialLocalTs(ts) {
+    _writeLSNumber(LAST_INTER_TS_KEY, ts);
+  }
+
+  function markGameRewardSeen() {
+    _gameRewardSeenThisRun = true;
+  }
+
+  function resetGameRewardSeen() {
+    _gameRewardSeenThisRun = false;
+  }
+
+  function hasGameRewardSeen() {
+    return _gameRewardSeenThisRun === true;
+  }
+
+  function getReturnIndexCount() {
+    return _readLSNumber(RETURN_INDEX_COUNT_KEY);
+  }
+
+  function setReturnIndexCount(v) {
+    _writeLSNumber(RETURN_INDEX_COUNT_KEY, v);
+  }
+
+  function resetInterstitialProgress() {
+    resetWeightedAccumulatedMs();
+    resetActionsCount();
+  }
 
   // --- Compteurs (désormais server-side) ---
   var ACTIONS_KEY = "vr_actions_count";    // conservé pour compat (plus utilisé en localStorage)
@@ -274,6 +397,16 @@
       if (!(currentAdKind === "rewarded" && isRewardShowing)) postAdCleanup();
     }
   });
+  document.addEventListener("visibilitychange", function () {
+    try {
+      if (document.hidden) _flushWeightedTime();
+      else _startWeightedTime();
+    } catch (_) {}
+  });
+
+  window.addEventListener("pagehide", function () {
+    try { _flushWeightedTime(); } catch (_) {}
+  });
 
   // =============================
   // Panneau diag (optionnel)
@@ -446,19 +579,19 @@
     // Si une rewarded est en cours -> jamais d'inter
     if (currentAdKind === "rewarded" && isRewardShowing) return false;
 
-    if (!INTER_COOLDOWN_MS) return true;
-    var now = Date.now();
-    return (now - lastInterTs) >= INTER_COOLDOWN_MS;
+    return true;
   }
 
   async function markInterstitialShownNow() {
-    // Plus de localStorage -> DB
     lastInterTs = Date.now();
+    setLastInterstitialLocalTs(lastInterTs);
+
     try {
       if (sbReady()) {
         var r = await window.sb.rpc("secure_ads_mark_interstitial_shown");
         if (r && !r.error && typeof r.data !== "undefined") {
           lastInterTs = parseInt(r.data || lastInterTs, 10) || lastInterTs;
+          setLastInterstitialLocalTs(lastInterTs);
         }
       }
     } catch (_) {}
@@ -616,35 +749,78 @@
   }
 
   async function markActionAndMaybeShowInterstitial() {
-    // Incrémente puis vérifie (pub APRES le Xème choix) => DB
+    syncWeightedTime();
+
     try {
       if (sbReady()) {
         var r = await window.sb.rpc("secure_ads_mark_action", { p_delta: 1 });
         if (r && !r.error) {
           actionsCount = parseInt(r.data || actionsCount, 10) || actionsCount;
         } else {
-          // fallback soft: resync
           await syncAdsStateFromServer().catch(function () {});
         }
       } else {
-        // sans Supabase -> on incrémente en mémoire uniquement (aucun persist)
         actionsCount = (actionsCount || 0) + 1;
       }
     } catch (_) {
       actionsCount = (actionsCount || 0) + 1;
     }
 
-    // ✅ no_ads => on ne déclenche jamais l'interstitiel auto
     if (!isNoAds()) {
-      // ✅ si overlay/app busy => on NE déclenche pas
       if (window.__ads_active) return actionsCount;
 
-      if (INTERSTITIEL_EVERY_X_ACTIONS > 0 && (actionsCount % INTERSTITIEL_EVERY_X_ACTIONS) === 0) {
-        try { await showInterstitialAd(); } catch (_) {}
+      var weightedMs = getWeightedAccumulatedMs();
+      var universeId = _getUniverseIdForWeight();
+
+      if (
+        universeId !== "intro" &&
+        INTERSTITIEL_EVERY_X_ACTIONS > 0 &&
+        actionsCount >= INTERSTITIEL_EVERY_X_ACTIONS &&
+        weightedMs >= INTERSTITIAL_MIN_WEIGHTED_MS
+      ) {
+        try {
+          var ok = await showInterstitialAd();
+          if (ok) {
+            await resetInterstitialProgress();
+            resetGameRewardSeen();
+            syncWeightedTime();
+          }
+        } catch (_) {}
       }
     }
 
     return actionsCount;
+  }
+
+  async function maybeShowInterstitialOnReturnToIndex() {
+    _flushWeightedTime();
+
+    if (isNoAds()) return false;
+    if (hasGameRewardSeen()) return false;
+
+    var lastTs = getLastInterstitialLocalTs() || lastInterTs || 0;
+    if (lastTs > 0 && (Date.now() - lastTs) < INTER_RETURN_COOLDOWN_MS) {
+      return false;
+    }
+
+    var c = getReturnIndexCount() + 1;
+    if (c < INTER_RETURN_EVERY_X_ENDS) {
+      setReturnIndexCount(c);
+      return false;
+    }
+
+    setReturnIndexCount(0);
+
+    try {
+      var ok = await showInterstitialAd();
+      if (ok) {
+        await resetInterstitialProgress();
+        resetGameRewardSeen();
+        return true;
+      }
+    } catch (_) {}
+
+    return false;
   }
 
   // =============================
@@ -654,6 +830,12 @@
   window.VRAds.isNative = isNative;
   window.VRAds.showInterstitialAd = showInterstitialAd;
   window.VRAds.showRewardedAd = showRewardedAd;
+  window.VRAds.syncWeightedTime = syncWeightedTime;
+  window.VRAds.getWeightedAccumulatedMs = getWeightedAccumulatedMs;
+  window.VRAds.resetWeightedAccumulatedMs = resetWeightedAccumulatedMs;
+  window.VRAds.maybeShowInterstitialOnReturnToIndex = maybeShowInterstitialOnReturnToIndex;
+  window.VRAds.markGameRewardSeen = markGameRewardSeen;
+  window.VRAds.resetGameRewardSeen = resetGameRewardSeen;
 
   // ➜ API "actions"
   window.VRAds.getActionsCount = getActionsCount;
@@ -671,4 +853,5 @@
   window.VRAds.isNoAds = isNoAds;
   window.VRAds.refreshNoAds = syncNoAdsFromServer;
 
+  try { _startWeightedTime(); } catch (_) {}
 })();
