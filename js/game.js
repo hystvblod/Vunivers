@@ -2338,7 +2338,9 @@ body.vr-peek-mode .vr-gauge-preview{
 #vr-coins-popup .vr-popup-inner{
   display:flex !important;
   flex-direction:column !important;
-  gap:12px !important;
+  gap:16px !important;
+  padding:18px 16px 20px !important;
+  box-sizing:border-box !important;
 }
 
 #vr-token-popup .vr-card,
@@ -2361,18 +2363,20 @@ body.vr-peek-mode .vr-gauge-preview{
 #vr-coins-popup .vr-card-content{
   background:linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.06)) !important;
   border:1px solid rgba(255,255,255,.14) !important;
-  border-radius:16px !important;
-  padding:10px 12px !important;
+  border-radius:20px !important;
+  padding:14px 16px !important;
+  min-height:78px !important;
   box-shadow:0 12px 24px rgba(0,0,0,.22) !important;
   backdrop-filter:blur(2px);
+  box-sizing:border-box !important;
 }
 
 #vr-token-popup .vr-card-title,
 #vr-token-popup .vr-token-basic-card .vr-card-title,
 #vr-coins-popup .vr-card-title{
-  margin:0 0 4px 0 !important;
+  margin:0 0 6px 0 !important;
   color:#fff !important;
-  font:900 15px/1.12 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
+  font:900 16px/1.15 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
   text-shadow:none !important;
 }
 
@@ -2381,7 +2385,7 @@ body.vr-peek-mode .vr-gauge-preview{
 #vr-coins-popup .vr-card-text{
   margin:0 !important;
   color:rgba(255,255,255,.88) !important;
-  font:700 12px/1.28 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
+  font:700 13px/1.32 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
   text-shadow:none !important;
 }
 
@@ -2787,74 +2791,75 @@ body.vr-peek-mode .vr-gauge-preview{
 
         #vr-intro-hand{
           position: fixed;
-          width: clamp(42px, 10vw, 62px);
+          width: clamp(52px, 12vw, 74px);
           height: auto;
           z-index: 120000;
           pointer-events: none;
           display: none;
           filter: drop-shadow(0 6px 14px rgba(0,0,0,.28));
-          transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0) rotate(-10deg);
+          transform-origin: center center;
           will-change: transform, opacity;
         }
 
         #vr-intro-hand.is-visible{
           display: block;
-          animation: vrIntroHandTap .9s cubic-bezier(.4,0,.2,1) infinite;
+          animation: vrIntroHandSwipe 1s cubic-bezier(.4,0,.2,1) infinite;
         }
 
         #vr-card-main.is-intro-rich-card{
-          min-height: 320px !important;
-          padding: 18px 18px 20px !important;
+          min-height: clamp(280px, 38svh, 320px) !important;
+          padding: 16px 16px 18px !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-card-title{
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          gap:14px;
-          min-height:40px;
+          display:block;
+          min-height:auto;
           margin-bottom:8px;
         }
 
         #vr-card-main.is-intro-rich-card .vr-card-text{
-          font-size: 15px !important;
-          line-height: 1.5 !important;
+          max-width: 88% !important;
+          margin: 0 auto !important;
+          font-size: 14px !important;
+          line-height: 1.38 !important;
           text-align: center !important;
+          overflow-wrap: break-word !important;
         }
 
         .vr-intro-inline-icon{
           display:inline-block;
-          width:26px;
-          height:26px;
+          width:22px;
+          height:22px;
           object-fit:contain;
           vertical-align:middle;
-          transform: translateY(4px);
-          filter: drop-shadow(0 4px 10px rgba(0,0,0,.22));
+          transform: translateY(3px);
+          filter: none;
         }
 
         .vr-intro-inline-icon--big{
-          width:34px;
-          height:34px;
+          width:28px;
+          height:28px;
           transform: translateY(2px);
         }
 
         #vr-intro-finish-overlay .vr-intro-finish-card{
-          width:min(320px, calc(100vw - 28px));
+          width:min(340px, calc(100vw - 28px));
           min-height:auto;
-          padding:18px 16px 16px;
+          padding:20px 18px 18px;
           display:flex;
           flex-direction:column;
           align-items:center;
-          gap:10px;
+          gap:12px;
           border-radius:20px;
         }
 
         #vr-intro-finish-overlay .vr-intro-finish-title{
           margin:0;
           text-align:center;
-          font-size:clamp(22px, 6vw, 28px);
+          font-size:clamp(23px, 6.2vw, 30px);
           font-weight:1000;
-          line-height:1.05;
+          line-height:1.06;
           color:#fff;
         }
 
@@ -2862,8 +2867,8 @@ body.vr-peek-mode .vr-gauge-preview{
         #vr-intro-finish-overlay .vr-intro-finish-gift-text{
           margin:0;
           text-align:center;
-          font-size:clamp(13px, 3.9vw, 16px);
-          line-height:1.35;
+          font-size:clamp(14px, 4vw, 17px);
+          line-height:1.38;
           font-weight:800;
           color:#fff;
         }
@@ -2872,38 +2877,42 @@ body.vr-peek-mode .vr-gauge-preview{
           display:flex;
           flex-direction:column;
           align-items:center;
-          gap:10px;
+          gap:12px;
           width:100%;
-          margin-top:4px;
-          margin-bottom:4px;
+          margin:6px 0;
         }
 
         #vr-intro-finish-overlay .vr-intro-finish-line{
           display:flex;
           align-items:center;
           justify-content:center;
-          gap:10px;
-          min-height:38px;
+          gap:12px;
+          min-height:44px;
           color:#fff;
         }
 
         #vr-intro-finish-overlay .vr-intro-finish-line strong{
-          font-size:clamp(24px, 7vw, 30px);
+          font-size:clamp(28px, 7.8vw, 36px);
           line-height:1;
           font-weight:1000;
           color:#fff;
         }
 
         #vr-intro-finish-overlay .vr-intro-finish-line img{
-          width:clamp(24px, 7vw, 30px);
-          height:clamp(24px, 7vw, 30px);
+          width:clamp(34px, 9vw, 42px);
+          height:clamp(34px, 9vw, 42px);
           object-fit:contain;
           filter:drop-shadow(0 6px 14px rgba(0,0,0,.28));
         }
 
         #vr-intro-finish-overlay #vr-intro-finish-close{
           width:100%;
-          margin-top:4px;
+          min-height:92px;
+          margin-top:6px;
+          color:#fff !important;
+          font-size:clamp(20px, 5vw, 28px) !important;
+          font-weight:900 !important;
+          text-shadow: 0 2px 8px rgba(0,0,0,.35) !important;
         }
 
         @keyframes vrIntroChoiceGlow{
@@ -2922,9 +2931,9 @@ body.vr-peek-mode .vr-gauge-preview{
           50%{ transform: scale(1.035); filter: drop-shadow(0 0 18px rgba(255,220,120,.82)); }
         }
 
-        @keyframes vrIntroHandTap{
-          0%,100%{ transform: translate3d(0,0,0) scale(1); opacity:1; }
-          50%{ transform: translate3d(0,10px,0) scale(.94); opacity:.9; }
+        @keyframes vrIntroHandSwipe{
+          0%,100%{ transform: translate3d(0,0,0) rotate(-10deg) scale(1); opacity:1; }
+          50%{ transform: translate3d(-16px,0,0) rotate(-10deg) scale(.97); opacity:.92; }
         }
       `;
     document.head.appendChild(style);
@@ -2987,11 +2996,11 @@ body.vr-peek-mode .vr-gauge-preview{
 
     const hand = ensureIntroHand();
     const rect = btn.getBoundingClientRect();
-    const size = Math.max(48, Math.min(68, Math.round(rect.width * 1.05)));
+    const size = Math.max(58, Math.min(80, Math.round(rect.width * 1.2)));
 
     hand.style.width = `${size}px`;
-    hand.style.left = `${Math.round(rect.left + (rect.width * 0.18))}px`;
-    hand.style.top = `${Math.round(rect.top - (size * 0.62))}px`;
+    hand.style.left = `${Math.round(rect.left - (size * 0.18))}px`;
+    hand.style.top = `${Math.round(rect.top + (rect.height * 0.18))}px`;
     hand.style.display = "block";
     hand.classList.add("is-visible");
   }
@@ -3123,7 +3132,7 @@ body.vr-peek-mode .vr-gauge-preview{
     }
 
     if (currentCardId === "intro_004") {
-      showNormalChoices(["A", "B"]);
+      showNormalChoices(["A"]);
     }
   }
 
@@ -3133,7 +3142,7 @@ body.vr-peek-mode .vr-gauge-preview{
     if (id === "intro_001") return choiceId === "A" || choiceId === "B";
     if (id === "intro_002") return choiceId === "A" || choiceId === "B";
     if (id === "intro_003") return false;
-    if (id === "intro_004") return choiceId === "A" || choiceId === "B";
+    if (id === "intro_004") return choiceId === "A";
     return true;
   }
 
@@ -3219,7 +3228,7 @@ body.vr-peek-mode .vr-gauge-preview{
     const closeBtn = document.getElementById("vr-intro-finish-close");
 
     if (titleEl) titleEl.textContent = t("intro.finish.title", "Bravo");
-    if (textEl) textEl.textContent = t("intro.finish.body", "Tu es prêt à gouverner de nombreux univers.");
+    if (textEl) textEl.textContent = t("intro.finish.body", "Bravo, tu es prêt à commencer.");
     if (giftEl) giftEl.textContent = t("intro.finish.gift", "Voici un petit cadeau");
     if (closeBtn) closeBtn.textContent = t("intro.finish.cta", "Commencer");
   }
