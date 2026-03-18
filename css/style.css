@@ -847,9 +847,9 @@ body.vr-body-game .vr-choice-label{
   background:
     linear-gradient(
       180deg,
-      rgba(8, 20, 56, 0.96) 0%,
-      rgba(18, 39, 87, 0.94) 52%,
-      rgba(34, 61, 118, 0.92) 100%
+      rgba(8, 18, 48, 0.96) 0%,
+      rgba(14, 31, 74, 0.95) 45%,
+      rgba(28, 56, 118, 0.93) 100%
     ) !important;
   border:1px solid rgba(255,255,255,.16) !important;
   box-shadow:0 14px 40px rgba(0,0,0,.35) !important;
@@ -891,8 +891,8 @@ body.vr-body-game .vr-choice-label{
   background:
     linear-gradient(
       180deg,
-      rgba(255,255,255,.13) 0%,
-      rgba(210,220,255,.08) 100%
+      rgba(255,255,255,.16) 0%,
+      rgba(214,226,255,.09) 100%
     ) !important;
   box-shadow:none !important;
 }
@@ -902,10 +902,10 @@ body.vr-body-game .vr-choice-label{
   background:
     linear-gradient(
       180deg,
-      rgba(92, 132, 226, .42) 0%,
-      rgba(61, 98, 184, .34) 100%
+      rgba(118, 151, 232, .42) 0%,
+      rgba(78, 110, 189, .34) 100%
     ) !important;
-  border-color:rgba(160,190,255,.34) !important;
+  border-color:rgba(170,196,255,.36) !important;
 }
 
 .vr-token-gauge-overlay{
