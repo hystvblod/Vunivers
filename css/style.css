@@ -2157,6 +2157,14 @@ body.vr-body-game[data-universe="intro"] #view-game .vr-choice-button{
   background-position: center !important;
 }
 
+
+body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"],
+body.vr-body-game[data-universe="intro"] #btn-customize,
+body.vr-body-game[data-universe="intro"] .vr-top-actions-game,
+body.vr-body-game[data-universe="intro"] .vr-hud-center{
+  display:none !important;
+}
+
 #view-game.vr-bg-intro{
   --vr-universe-bg: url("../assets/img/backgrounds/intro_default_gray.webp");
   --vr-universe-card: url("../assets/img/ui/intro_msg_default_gray.webp");
