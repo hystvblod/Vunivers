@@ -2839,77 +2839,72 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-intro-finish-overlay .vr-intro-finish-card{
-          text-align:center;
-          align-items:stretch;
-          gap:14px;
-        }
-        #vr-intro-finish-overlay .vr-intro-finish-title,
-        #vr-intro-finish-overlay .vr-intro-finish-text{
-          text-align:center !important;
-        }
-        #vr-intro-finish-overlay .vr-intro-finish-title{
-          margin:0;
-          font-size:clamp(22px, 6vw, 30px);
-          font-weight:950;
-          color:#fff;
-        }
-        #vr-intro-finish-overlay .vr-intro-finish-text{
-          margin:0;
-          font-size:clamp(13px, 3.8vw, 16px);
-          line-height:1.4;
-          color:rgba(255,255,255,.88);
-        }
-        #vr-intro-finish-overlay .vr-intro-finish-gift{
+          width:min(320px, calc(100vw - 28px));
+          min-height:auto;
+          padding:18px 16px 16px;
           display:flex;
           flex-direction:column;
           align-items:center;
-          justify-content:center;
-          gap:12px;
-          width:100%;
-          padding:14px 12px;
-          border-radius:18px;
-          border:1px solid rgba(255,255,255,.14);
-          background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-          box-shadow:0 18px 34px rgba(0,0,0,.24);
+          gap:10px;
+          border-radius:20px;
         }
+
+        #vr-intro-finish-overlay .vr-intro-finish-title{
+          margin:0;
+          text-align:center;
+          font-size:clamp(22px, 6vw, 28px);
+          font-weight:1000;
+          line-height:1.05;
+          color:#fff;
+        }
+
+        #vr-intro-finish-overlay .vr-intro-finish-text,
         #vr-intro-finish-overlay .vr-intro-finish-gift-text{
-          font-size:clamp(13px, 3.8vw, 16px);
+          margin:0;
+          text-align:center;
+          font-size:clamp(13px, 3.9vw, 16px);
+          line-height:1.35;
           font-weight:800;
           color:#fff;
-          text-align:center;
         }
-        #vr-intro-finish-overlay .vr-intro-finish-vcoins,
-        #vr-intro-finish-overlay .vr-intro-finish-token{
+
+        #vr-intro-finish-overlay .vr-intro-finish-rewards{
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          gap:10px;
+          width:100%;
+          margin-top:4px;
+          margin-bottom:4px;
+        }
+
+        #vr-intro-finish-overlay .vr-intro-finish-line{
           display:flex;
           align-items:center;
           justify-content:center;
           gap:10px;
+          min-height:38px;
           color:#fff;
         }
-        #vr-intro-finish-overlay .vr-intro-finish-vcoins strong{
-          font-size:clamp(34px, 10vw, 52px);
+
+        #vr-intro-finish-overlay .vr-intro-finish-line strong{
+          font-size:clamp(24px, 7vw, 30px);
           line-height:1;
           font-weight:1000;
+          color:#fff;
         }
-        #vr-intro-finish-overlay .vr-intro-finish-token strong,
-        #vr-intro-finish-overlay .vr-intro-finish-token span{
-          font-size:clamp(18px, 5vw, 24px);
-          line-height:1;
-          font-weight:950;
-        }
-        #vr-intro-finish-overlay .vr-intro-finish-vcoins img{
-          width:clamp(34px, 10vw, 48px);
-          height:clamp(34px, 10vw, 48px);
+
+        #vr-intro-finish-overlay .vr-intro-finish-line img{
+          width:clamp(24px, 7vw, 30px);
+          height:clamp(24px, 7vw, 30px);
           object-fit:contain;
           filter:drop-shadow(0 6px 14px rgba(0,0,0,.28));
         }
-        #vr-intro-finish-overlay .vr-intro-finish-token img{
-          width:clamp(26px, 8vw, 34px);
-          height:clamp(26px, 8vw, 34px);
-          object-fit:contain;
-          filter:drop-shadow(0 6px 14px rgba(0,0,0,.28));
+
+        #vr-intro-finish-overlay #vr-intro-finish-close{
+          width:100%;
+          margin-top:4px;
         }
-        #vr-intro-finish-overlay #vr-intro-finish-close{ width:100%; }
 
         @keyframes vrIntroChoiceGlow{
           0%,100%{ opacity:1; filter: drop-shadow(0 0 8px rgba(255,220,120,.28)); }
@@ -3196,18 +3191,19 @@ body.vr-peek-mode .vr-gauge-preview{
       <div class="vr-ending-card vr-intro-finish-card" role="dialog" aria-modal="true">
         <h3 class="vr-intro-finish-title" id="vr-intro-finish-title"></h3>
         <p class="vr-intro-finish-text" id="vr-intro-finish-text"></p>
-        <div class="vr-intro-finish-gift">
-          <div class="vr-intro-finish-gift-text" id="vr-intro-finish-gift-text"></div>
-          <div class="vr-intro-finish-vcoins">
-            <strong>${INTRO_REWARD_VCOINS}</strong>
+        <p class="vr-intro-finish-gift-text" id="vr-intro-finish-gift-text"></p>
+
+        <div class="vr-intro-finish-rewards">
+          <div class="vr-intro-finish-line">
+            <strong>+${INTRO_REWARD_VCOINS}</strong>
             <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
           </div>
-          <div class="vr-intro-finish-token">
-            <strong>${INTRO_REWARD_TOKENS}</strong>
+          <div class="vr-intro-finish-line">
+            <strong>+${INTRO_REWARD_TOKENS}</strong>
             <img src="assets/img/ui/jeton.webp" alt="" draggable="false">
-            <span id="vr-intro-finish-token-label"></span>
           </div>
         </div>
+
         <button id="vr-intro-finish-close" class="vr-choice-button" type="button"></button>
       </div>
     `;
@@ -3220,14 +3216,12 @@ body.vr-peek-mode .vr-gauge-preview{
     const titleEl = document.getElementById("vr-intro-finish-title");
     const textEl = document.getElementById("vr-intro-finish-text");
     const giftEl = document.getElementById("vr-intro-finish-gift-text");
-    const tokenLabelEl = document.getElementById("vr-intro-finish-token-label");
     const closeBtn = document.getElementById("vr-intro-finish-close");
 
     if (titleEl) titleEl.textContent = t("intro.finish.title", "Bravo");
     if (textEl) textEl.textContent = t("intro.finish.body", "Tu es prêt à gouverner de nombreux univers.");
-    if (giftEl) giftEl.textContent = t("intro.finish.gift", "Voici un petit cadeau :");
-    if (tokenLabelEl) tokenLabelEl.textContent = t("intro.finish.token", "jeton");
-    if (closeBtn) closeBtn.textContent = t("intro.finish.cta", "Fermer");
+    if (giftEl) giftEl.textContent = t("intro.finish.gift", "Voici un petit cadeau");
+    if (closeBtn) closeBtn.textContent = t("intro.finish.cta", "Commencer");
   }
 
   function showFinishPopup() {
