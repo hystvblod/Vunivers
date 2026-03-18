@@ -2199,6 +2199,9 @@ body.vr-peek-mode .vr-gauge-preview{
           try { doubleBtn.disabled = true; } catch (_) {}
 
           const okAd = await (window.VRAds?.showRewardedAd?.({ placement: "end_reward_x2" }) || Promise.resolve(false));
+          if (okAd) {
+            try { window.VRAds?.markGameRewardSeen?.(); } catch (_) {}
+          }
           if (!okAd) {
             try { window.showToast?.(t("coins.toast.reward_fail", "")); } catch (_) {}
             syncEndingButtons();
@@ -2282,6 +2285,7 @@ body.vr-peek-mode .vr-gauge-preview{
             });
           } catch (_) {}
 
+          try { await window.VRAds?.maybeShowInterstitialOnReturnToIndex?.(); } catch (_) {}
           try { window.VROneSignal?.preparePromptOnNextIndex?.(); } catch (_) {}
           try { this._clearRunSave(); } catch (_) {}
           try { window.location.href = "index.html"; } catch (_) {}
@@ -2688,6 +2692,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
             const ok = await (window.VRAds?.showRewardedAd?.({ placement: "token" }) || Promise.resolve(false));
             if (ok) {
+              try { window.VRAds?.markGameRewardSeen?.(); } catch (_) {}
               try { await window.VUserData?.addJetons?.(1); } catch (_) {}
 
               try {
@@ -2804,6 +2809,7 @@ body.vr-peek-mode .vr-gauge-preview{
               });
             } catch (_) {}
 
+            try { await window.VRAds?.maybeShowInterstitialOnReturnToIndex?.(); } catch (_) {}
             try { window.VROneSignal?.preparePromptOnNextIndex?.(); } catch (_) {}
             try { window.location.href = "index.html"; } catch (_) {}
             return;
@@ -3569,6 +3575,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
   const ok = await (window.VRAds?.showRewardedAd?.({ placement: "coins_100" }) || Promise.resolve(false));
   if (ok) {
+    try { window.VRAds?.markGameRewardSeen?.(); } catch (_) {}
     try { await window.VUserData?.addVcoins?.(100); } catch (_) {}
 
     try {
@@ -4621,6 +4628,7 @@ window.VRGame = {
   async onUniverseSelected(universeId) {
     this.currentUniverse = universeId;
     this.session.reignLength = 0;
+    try { window.VRAds?.resetGameRewardSeen?.(); } catch (_) {}
 
     this.applyUniverseBackground(universeId);
     this.applyUniverseCosmetics(universeId);
