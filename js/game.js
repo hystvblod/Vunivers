@@ -2829,6 +2829,24 @@ body.vr-peek-mode .vr-gauge-preview{
     });
   }
 
+  function lockOnlyChoice(choiceId) {
+    const target = getChoiceButton(choiceId);
+    allChoiceButtons().forEach((btn) => {
+      const label = btn.querySelector(".vr-choice-label")?.textContent?.trim?.() || "";
+
+      if (btn === target) {
+        btn.style.pointerEvents = "auto";
+        btn.style.opacity = "1";
+        btn.classList.remove("vr-intro-tilt", "vr-intro-pulse", "vr-intro-dim", "vr-intro-hide");
+        return;
+      }
+
+      btn.style.pointerEvents = "none";
+      if (!label) btn.classList.add("vr-intro-hide");
+      else btn.classList.add("vr-intro-dim");
+    });
+  }
+
   function hideAllChoices() {
     allChoiceButtons().forEach((btn) => {
       btn.style.pointerEvents = "none";
@@ -2889,23 +2907,27 @@ body.vr-peek-mode .vr-gauge-preview{
     if (!isIntroUniverse()) return;
     resetUIState();
     currentCardId = String(cardLogic?.id || "").trim();
+
     if (currentCardId === "intro_001") {
       focusOnlyChoice("A");
       return;
     }
+
     if (currentCardId === "intro_002") {
-      focusOnlyChoice("A");
+      lockOnlyChoice("A");
       pulseGauge(LOW_GAUGE_ID);
       return;
     }
+
     if (currentCardId === "intro_003") {
       hideAllChoices();
       pulseGauge(LOW_GAUGE_ID);
       pulseEl(document.getElementById("btn-jeton"));
       return;
     }
+
     if (currentCardId === "intro_004") {
-      focusOnlyChoice("A");
+      lockOnlyChoice("A");
       pulseEl(document.getElementById("btn-vcoins"));
       pulseEl(document.getElementById("btn-jeton"));
       pulseEl(getShopButton());
