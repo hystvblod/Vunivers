@@ -529,7 +529,11 @@
 
       const name = document.createElement("h3");
       name.className = "vr-universe-name";
-      name.textContent = _t(`universe.${uid}.title`, uid);
+
+      const titleKey = `universe.${uid}.title`;
+      name.setAttribute("data-i18n", titleKey);
+      name.textContent = _t(titleKey, uid);
+
       inner.appendChild(name);
 
       const badges = document.createElement("div");
