@@ -2831,31 +2831,40 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-card-main.is-intro-rich-card{
-          min-height: clamp(305px, 41svh, 352px) !important;
-          padding: 10px 14px 16px !important;
-          background-size: 99.4% 98.2% !important;
+          min-height: clamp(372px, 52svh, 448px) !important;
+          padding: 12px 12px 18px !important;
+          background-size: 100% 99% !important;
           background-position: center !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-card-title{
           display:block;
           min-height:auto;
-          margin-bottom:5px;
+          margin-bottom:6px;
         }
 
         #vr-card-main.is-intro-rich-card .vr-card-text{
           max-width: 90% !important;
           margin: -2px auto 0 !important;
-          font-size: 14px !important;
-          line-height: 1.30 !important;
+          font-size: 13px !important;
+          line-height: 1.24 !important;
           text-align: center !important;
           overflow-wrap: break-word !important;
         }
 
+        #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
+          display:block;
+          max-width: 80% !important;
+          margin: 0 auto !important;
+          font-size: clamp(12px, 3.05vw, 13px) !important;
+          line-height: 1.20 !important;
+          text-align: center !important;
+        }
+
         .vr-intro-inline-icon{
           display:inline-block;
-          width:26px;
-          height:26px;
+          width:24px;
+          height:24px;
           object-fit:contain;
           vertical-align:middle;
           transform: translateY(0px);
@@ -2863,8 +2872,8 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         .vr-intro-inline-icon--big{
-          width:32px;
-          height:32px;
+          width:30px;
+          height:30px;
           transform: translateY(-1px);
         }
 
