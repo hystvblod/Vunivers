@@ -633,6 +633,18 @@
 
   <script>
     (function () {
+      try {
+        const introDone = localStorage.getItem("vrealms_intro_done") === "1";
+        if (!introDone) {
+          localStorage.setItem("vrealms_universe", "intro");
+          window.location.replace("game.html?universe=intro");
+        }
+      } catch (_) {}
+    })();
+  </script>
+
+  <script>
+    (function () {
       const tooltip = document.getElementById("vr-tooltip");
       if (!tooltip) return;
 
