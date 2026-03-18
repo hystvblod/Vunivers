@@ -2369,14 +2369,22 @@ body.vr-peek-mode .vr-gauge-preview{
   overflow:auto !important;
   display:flex !important;
   flex-direction:column !important;
-  gap:12px !important;
+  gap:10px !important;
   padding:16px 14px 14px !important;
   box-sizing:border-box !important;
 
   border-radius:18px !important;
-  background: radial-gradient(circle at top, #f6e7cf 0, #1b6688 62%, #03279e 100%) !important;
-  border:1px solid rgba(255,255,255,.18) !important;
-  box-shadow:0 14px 40px rgba(0,0,0,.28) !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 18, 48, 0.96) 0%,
+      rgba(14, 31, 74, 0.95) 45%,
+      rgba(28, 56, 118, 0.93) 100%
+    ) !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  box-shadow:
+    0 14px 40px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.06) !important;
   backdrop-filter:blur(6px) !important;
   -webkit-backdrop-filter:blur(6px) !important;
   color:#fff !important;
@@ -2408,16 +2416,14 @@ body.vr-peek-mode .vr-gauge-preview{
   position:relative !important;
   display:block !important;
   width:100% !important;
-  min-height:72px !important;
   margin:0 !important;
   padding:10px 14px !important;
-  border:0 !important;
-  border-radius:18px !important;
-  background:transparent !important;
-  box-shadow:none !important;
+  border:1px solid var(--vr-card-border) !important;
+  border-radius:var(--vr-radius-xl) !important;
+  background:var(--vr-card-bg) !important;
+  box-shadow:var(--vr-shadow-soft) !important;
   overflow:hidden !important;
-  text-align:center !important;
-  -webkit-tap-highlight-color: transparent !important;
+  text-align:left !important;
 }
 
 /* cartouches = même esprit que index */
@@ -2425,14 +2431,14 @@ body.vr-peek-mode .vr-gauge-preview{
 #vr-token-popup .vr-token-basic-card .vr-card-content,
 #vr-coins-popup .vr-card-content{
   position:relative !important;
-  z-index:3 !important;
+  z-index:1 !important;
   display:flex !important;
   flex-direction:column !important;
   align-items:center !important;
   justify-content:center !important;
   text-align:center !important;
 
-  min-height:52px !important;
+  min-height:auto !important;
   padding:0 !important;
   box-sizing:border-box !important;
 
@@ -2442,34 +2448,6 @@ body.vr-peek-mode .vr-gauge-preview{
   box-shadow:none !important;
 }
 
-#vr-token-popup .vr-card::after,
-#vr-token-popup .vr-token-card::after,
-#vr-token-popup .vr-token-basic-card::after,
-#vr-coins-popup .vr-card::after,
-#vr-coins-popup .vr-coins-basic-card::after{
-  content:"" !important;
-  position:absolute !important;
-  inset:0 !important;
-  background:rgba(255,255,255,.08) !important;
-  backdrop-filter:blur(2px) !important;
-  -webkit-backdrop-filter:blur(2px) !important;
-  pointer-events:none !important;
-  z-index:1 !important;
-}
-
-#vr-token-popup .vr-card::before,
-#vr-token-popup .vr-token-card::before,
-#vr-token-popup .vr-token-basic-card::before,
-#vr-coins-popup .vr-card::before,
-#vr-coins-popup .vr-coins-basic-card::before{
-  content:"" !important;
-  position:absolute !important;
-  inset:0 !important;
-  border-radius:inherit !important;
-  border:1px solid rgba(255,255,255,.12) !important;
-  pointer-events:none !important;
-  z-index:2 !important;
-}
 
 #vr-token-popup .vr-card-title,
 #vr-token-popup .vr-token-basic-card .vr-card-title,
@@ -2517,9 +2495,15 @@ body.vr-peek-mode .vr-gauge-preview{
 
 /* retire le bleu spécial sur gauge50 */
 #vr-token-gauge-overlay .vr-token-gauge-card{
-  background: radial-gradient(circle at top, #f6e7cf 0, #1b6688 62%, #03279e 100%) !important;
-  border-color:rgba(255,255,255,.18) !important;
-  box-shadow:0 14px 40px rgba(0,0,0,.28) !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 18, 48, 0.96) 0%,
+      rgba(14, 31, 74, 0.95) 45%,
+      rgba(28, 56, 118, 0.93) 100%
+    ) !important;
+  border-color:rgba(255,255,255,.16) !important;
+  box-shadow:0 14px 40px rgba(0,0,0,.35) !important;
 }
 
 #vr-token-popup img,
@@ -3133,20 +3117,29 @@ body.vr-peek-mode .vr-gauge-preview{
     } catch (_) {}
   }
 
-  function resetUIState() {
-    clearClasses();
-    hideIntroHand();
-    allChoiceButtons().forEach((btn) => {
-      btn.style.pointerEvents = "";
-      btn.style.opacity = "";
-      btn.style.visibility = "";
-    });
-    document.querySelectorAll("#vr-token-popup [data-token-action]").forEach((btn) => {
-      btn.style.pointerEvents = "";
-      btn.style.opacity = "";
-      btn.style.visibility = "";
-    });
+function resetUIState() {
+  clearClasses();
+  hideIntroHand();
+
+  const choicesWrap = document.querySelector(".vr-card-choices");
+  if (choicesWrap) {
+    choicesWrap.style.pointerEvents = "";
+    choicesWrap.style.opacity = "";
+    choicesWrap.style.visibility = "";
   }
+
+  allChoiceButtons().forEach((btn) => {
+    btn.style.pointerEvents = "";
+    btn.style.opacity = "";
+    btn.style.visibility = "";
+  });
+
+  document.querySelectorAll("#vr-token-popup [data-token-action]").forEach((btn) => {
+    btn.style.pointerEvents = "";
+    btn.style.opacity = "";
+    btn.style.visibility = "";
+  });
+}
 
   function getChoiceButton(choiceId) {
     return document.querySelector(`.vr-choice-button[data-choice="${choiceId}"]`);
@@ -3364,7 +3357,17 @@ function onGaugeSet(gaugeId) {
   if (!isIntroUniverse()) return;
   if (currentCardId !== "intro_003") return;
   if (String(gaugeId || "").trim() !== LOW_GAUGE_ID) return;
+
   resetUIState();
+  hideAllChoices();
+
+  const choicesWrap = document.querySelector(".vr-card-choices");
+  if (choicesWrap) {
+    choicesWrap.style.pointerEvents = "none";
+    choicesWrap.style.opacity = "0";
+    choicesWrap.style.visibility = "hidden";
+  }
+
   currentCardId = "";
   window.setTimeout(() => {
     try { window.VREngine?._nextCard_internalOnly?.(); } catch (_) {}
