@@ -2359,11 +2359,22 @@ body.vr-peek-mode .vr-gauge-preview{
 
 #vr-token-popup .vr-popup-inner,
 #vr-coins-popup .vr-popup-inner{
+  width:min(560px, 94vw) !important;
+  max-height:min(80vh, 720px) !important;
+  overflow:auto !important;
   display:flex !important;
   flex-direction:column !important;
   gap:10px !important;
-  padding:14px 12px 16px !important;
+  padding:16px 14px 14px !important;
   box-sizing:border-box !important;
+
+  border-radius:22px !important;
+  background:rgba(15, 23, 42, 0.96) !important;
+  border:1px solid rgba(255,255,255,0.12) !important;
+  box-shadow:0 18px 50px rgba(0,0,0,0.55) !important;
+  backdrop-filter:blur(6px) !important;
+  -webkit-backdrop-filter:blur(6px) !important;
+  color:#fff !important;
 }
 
 #vr-token-popup .vr-card,
@@ -2384,14 +2395,20 @@ body.vr-peek-mode .vr-gauge-preview{
 #vr-token-popup .vr-card-content,
 #vr-token-popup .vr-token-basic-card .vr-card-content,
 #vr-coins-popup .vr-card-content{
-  background:linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.06)) !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+
+  min-height:54px !important;
+  padding:10px 14px !important;
+  box-sizing:border-box !important;
+
   border:1px solid rgba(255,255,255,.14) !important;
   border-radius:18px !important;
-  padding:10px 14px !important;
-  min-height:62px !important;
-  box-shadow:0 10px 20px rgba(0,0,0,.20) !important;
-  backdrop-filter:blur(2px);
-  box-sizing:border-box !important;
+  background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05)) !important;
+  box-shadow:0 18px 34px rgba(0,0,0,.28) !important;
 }
 
 #vr-token-popup .vr-card-title,
@@ -2410,6 +2427,13 @@ body.vr-peek-mode .vr-gauge-preview{
   color:rgba(255,255,255,.88) !important;
   font:700 12px/1.24 system-ui,-apple-system,Segoe UI,Roboto,sans-serif !important;
   text-shadow:none !important;
+}
+
+#vr-token-popup [data-token-action="gauge50"] .vr-card-content,
+#vr-token-gauge-overlay .vr-token-gauge-card{
+  background:linear-gradient(180deg, rgba(122,167,255,.26), rgba(122,167,255,.16)) !important;
+  border-color:rgba(122,167,255,.38) !important;
+  box-shadow:0 18px 40px rgba(43,92,214,.30) !important;
 }
 
 #vr-token-popup [data-token-action="close"] .vr-card-text{
