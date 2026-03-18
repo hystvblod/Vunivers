@@ -3133,20 +3133,29 @@ body.vr-peek-mode .vr-gauge-preview{
     } catch (_) {}
   }
 
-  function resetUIState() {
-    clearClasses();
-    hideIntroHand();
-    allChoiceButtons().forEach((btn) => {
-      btn.style.pointerEvents = "";
-      btn.style.opacity = "";
-      btn.style.visibility = "";
-    });
-    document.querySelectorAll("#vr-token-popup [data-token-action]").forEach((btn) => {
-      btn.style.pointerEvents = "";
-      btn.style.opacity = "";
-      btn.style.visibility = "";
-    });
+function resetUIState() {
+  clearClasses();
+  hideIntroHand();
+
+  const choicesWrap = document.querySelector(".vr-card-choices");
+  if (choicesWrap) {
+    choicesWrap.style.pointerEvents = "";
+    choicesWrap.style.opacity = "";
+    choicesWrap.style.visibility = "";
   }
+
+  allChoiceButtons().forEach((btn) => {
+    btn.style.pointerEvents = "";
+    btn.style.opacity = "";
+    btn.style.visibility = "";
+  });
+
+  document.querySelectorAll("#vr-token-popup [data-token-action]").forEach((btn) => {
+    btn.style.pointerEvents = "";
+    btn.style.opacity = "";
+    btn.style.visibility = "";
+  });
+}
 
   function getChoiceButton(choiceId) {
     return document.querySelector(`.vr-choice-button[data-choice="${choiceId}"]`);
@@ -3364,7 +3373,17 @@ function onGaugeSet(gaugeId) {
   if (!isIntroUniverse()) return;
   if (currentCardId !== "intro_003") return;
   if (String(gaugeId || "").trim() !== LOW_GAUGE_ID) return;
+
   resetUIState();
+  hideAllChoices();
+
+  const choicesWrap = document.querySelector(".vr-card-choices");
+  if (choicesWrap) {
+    choicesWrap.style.pointerEvents = "none";
+    choicesWrap.style.opacity = "0";
+    choicesWrap.style.visibility = "hidden";
+  }
+
   currentCardId = "";
   window.setTimeout(() => {
     try { window.VREngine?._nextCard_internalOnly?.(); } catch (_) {}
