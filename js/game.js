@@ -3332,37 +3332,39 @@ body.vr-peek-mode .vr-gauge-preview{
     return false;
   }
 
-  function onTokenPopupOpened() {
-    if (!isIntroUniverse()) return;
-    if (currentCardId !== "intro_003") return;
-    resetUIState();
-    dimTokenPopupExcept("gauge50");
-  }
+function onTokenPopupOpened() {
+  if (!isIntroUniverse()) return;
+  if (currentCardId !== "intro_003") return;
+  resetUIState();
+  hideAllChoices();
+  dimTokenPopupExcept("gauge50");
+}
 
-  function beforeTokenAction(action) {
-    if (!isIntroUniverse()) return true;
-    if (currentCardId !== "intro_003") return true;
-    return action === "gauge50";
-  }
+function beforeTokenAction(action) {
+  if (!isIntroUniverse()) return true;
+  if (currentCardId !== "intro_003") return true;
+  return action === "gauge50";
+}
 
-  function onGaugeOverlayOpened() {
-    if (!isIntroUniverse()) return;
-    if (currentCardId !== "intro_003") return;
-    resetUIState();
-    pulseGauge(LOW_GAUGE_ID);
-  }
+function onGaugeOverlayOpened() {
+  if (!isIntroUniverse()) return;
+  if (currentCardId !== "intro_003") return;
+  resetUIState();
+  hideAllChoices();
+  pulseGauge(LOW_GAUGE_ID);
+}
 
-  function onGaugeSet(gaugeId) {
-    if (!isIntroUniverse()) return;
-    if (currentCardId !== "intro_003") return;
-    if (String(gaugeId || "").trim() !== LOW_GAUGE_ID) return;
-    resetUIState();
-    currentCardId = "";
-    window.setTimeout(() => {
-      try { window.VREngine?._nextCard_internalOnly?.(); } catch (_) {}
-      try { window.VREngine?._saveRunSoft?.(); } catch (_) {}
-    }, 320);
-  }
+function onGaugeSet(gaugeId) {
+  if (!isIntroUniverse()) return;
+  if (currentCardId !== "intro_003") return;
+  if (String(gaugeId || "").trim() !== LOW_GAUGE_ID) return;
+  resetUIState();
+  currentCardId = "";
+  window.setTimeout(() => {
+    try { window.VREngine?._nextCard_internalOnly?.(); } catch (_) {}
+    try { window.VREngine?._saveRunSoft?.(); } catch (_) {}
+  }, 320);
+}
 
   function ensureFinishPopup() {
     let overlay = document.getElementById("vr-intro-finish-overlay");
