@@ -3339,8 +3339,23 @@ body.vr-peek-mode .vr-gauge-preview{
       return;
     }
 
-    try { await window.VUserData?.addVcoins?.(INTRO_REWARD_VCOINS); } catch (_) {}
-    try { await window.VUserData?.addJetons?.(INTRO_REWARD_TOKENS); } catch (_) {}
+    let vcoinsOk = false;
+    let jetonsOk = false;
+
+    try {
+      const v = await window.VUserData?.addVcoinsAsync?.(INTRO_REWARD_VCOINS);
+      vcoinsOk = typeof v === "number" && !Number.isNaN(v);
+    } catch (_) {}
+
+    try {
+      const j = await window.VUserData?.addJetonsAsync?.(INTRO_REWARD_TOKENS);
+      jetonsOk = typeof j === "number" && !Number.isNaN(j);
+    } catch (_) {}
+
+    if (!vcoinsOk || !jetonsOk) {
+      finishing = false;
+      return;
+    }
 
     try { window.VRSave?.clear?.(INTRO_ID); } catch (_) {}
     try { localStorage.setItem("vrealms_intro_done", "1"); } catch (_) {}
