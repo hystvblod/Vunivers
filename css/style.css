@@ -2164,10 +2164,16 @@ body.vr-body-game[data-universe="intro"] #view-game .vr-choice-button{
 
 
 body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"],
-body.vr-body-game[data-universe="intro"] #btn-customize,
 body.vr-body-game[data-universe="intro"] .vr-top-actions-game,
 body.vr-body-game[data-universe="intro"] .vr-hud-center{
   display:none !important;
+}
+
+body.vr-body-game[data-universe="intro"] #btn-customize{
+  display:block !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:auto !important;
 }
 
 #view-game.vr-bg-intro{
@@ -2257,10 +2263,16 @@ body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-preview{
 }
 
 body.vr-body-game[data-universe="intro"] > a.vr-icon-button[aria-label="Accueil"],
-body.vr-body-game[data-universe="intro"] #btn-customize,
 body.vr-body-game[data-universe="intro"] .vr-top-actions-game,
 body.vr-body-game[data-universe="intro"] .vr-hud-center{
-  display: none !important;
+  display:none !important;
+}
+
+body.vr-body-game[data-universe="intro"] #btn-customize{
+  display:block !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:auto !important;
 }
 /* ==========================================================
    UNIVERS — HEAVEN
