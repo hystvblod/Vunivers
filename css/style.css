@@ -2100,10 +2100,8 @@ body.vr-body-game[data-universe="intro"] .vr-hud-value{
   font-weight: 900 !important;
   line-height: 1 !important;
   letter-spacing: 0 !important;
-  color: #f2eee8 !important;
-  text-shadow:
-    0 1px 0 rgba(0,0,0,0.45),
-    0 0 8px rgba(0,0,0,0.35) !important;
+  color: #111 !important;
+  text-shadow: none !important;
   transform: translateY(-2px) !important;
 }
 
