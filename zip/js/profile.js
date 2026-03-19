@@ -760,8 +760,7 @@
 
   async function boot() {
     try {
-      const lang = window.VRI18n?.getLang?.() || "fr";
-      await window.VRI18n?.initI18n?.(lang);
+      await window.VRI18n?.initI18n?.();
     } catch (_) {}
 
     try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}

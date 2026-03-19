@@ -6,6 +6,8 @@
   const DEFAULT_LANG = "en";
   const STORAGE_KEY = "vuniverse_lang";
   const LEGACY_STORAGE_KEY = "vrealms_lang";
+  const USER_DATA_KEY = "vuniverse_user_data";
+  const USER_DATA_LEGACY_KEY = "vrealms_user_data";
 
   // ✅ on ne charge PLUS "cards" / "endings" ici
   // (les cartes et les fins sont chargées par le moteur: events-loader + VREndings)
@@ -13,6 +15,7 @@
 
   let _lang = DEFAULT_LANG;
   let _dict = {};
+  let _bootPromise = null;
 
   function normalizeLang(raw) {
     const s0 = String(raw || "").trim().toLowerCase();
@@ -131,13 +134,23 @@ async function tryLoadUiBundle(bundle, lang) {
     return DEFAULT_LANG;
   }
 
-  function getSavedLang() {
-    try {
-      if (window.VUserData?.load) {
-        const u = window.VUserData.load();
-        if (u && u.lang) return normalizeLang(u.lang);
-      }
-    } catch (_) {}
+  function readLangFromUserDataStorage() {
+    const keys = [USER_DATA_KEY, USER_DATA_LEGACY_KEY];
+    for (const key of keys) {
+      try {
+        const raw = localStorage.getItem(key);
+        if (!raw) continue;
+        const parsed = JSON.parse(raw);
+        const lang = normalizeLang(parsed?.lang || "");
+        if (lang) return lang;
+      } catch (_) {}
+    }
+    return "";
+  }
+
+  function getSavedLang(forcedLang) {
+    const forced = normalizeLang(forcedLang || "");
+    if (forced) return forced;
 
     try {
       const ls1 = localStorage.getItem(STORAGE_KEY);
@@ -148,6 +161,16 @@ async function tryLoadUiBundle(bundle, lang) {
       const ls2 = localStorage.getItem(LEGACY_STORAGE_KEY);
       if (ls2) return normalizeLang(ls2);
     } catch (_) {}
+
+    try {
+      if (window.VUserData?.load) {
+        const u = window.VUserData.load();
+        if (u && u.lang) return normalizeLang(u.lang);
+      }
+    } catch (_) {}
+
+    const fromUserDataStorage = readLangFromUserDataStorage();
+    if (fromUserDataStorage) return fromUserDataStorage;
 
     const detected = detectDeviceLang();
     try { localStorage.setItem(STORAGE_KEY, detected); } catch (_) {}
@@ -162,17 +185,36 @@ async function tryLoadUiBundle(bundle, lang) {
     try { localStorage.setItem(LEGACY_STORAGE_KEY, l); } catch (_) {}
 
     try {
+      const raw = localStorage.getItem(USER_DATA_KEY) || localStorage.getItem(USER_DATA_LEGACY_KEY);
+      const parsed = raw ? (JSON.parse(raw) || {}) : {};
+      parsed.lang = l;
+      try { localStorage.setItem(USER_DATA_KEY, JSON.stringify(parsed)); } catch (_) {}
+      try { localStorage.setItem(USER_DATA_LEGACY_KEY, JSON.stringify(parsed)); } catch (_) {}
+    } catch (_) {}
+
+    try {
       if (window.VUserData?.load && window.VUserData?.save) {
         const u = window.VUserData.load();
-        window.VUserData.save({ ...u, lang: l });
+        window.VUserData.save({ ...u, lang: l }, { silent: true });
       }
     } catch (_) {}
 
     return l;
   }
 
-  async function initI18n() {
-    const wanted = getSavedLang();
+  function emitLanguageChanged() {
+    try {
+      window.dispatchEvent(new CustomEvent("vr:i18n:changed", {
+        detail: {
+          lang: _lang,
+          dict: _dict
+        }
+      }));
+    } catch (_) {}
+  }
+
+  async function initI18n(forcedLang) {
+    const wanted = getSavedLang(forcedLang);
     const { dict, lang } = await loadUi(wanted);
 
     _lang = lang || wanted || DEFAULT_LANG;
@@ -180,6 +222,7 @@ async function tryLoadUiBundle(bundle, lang) {
 
     applyTranslations(_dict);
     document.documentElement.lang = _lang;
+    emitLanguageChanged();
 
     return _lang;
   }
@@ -194,13 +237,13 @@ async function tryLoadUiBundle(bundle, lang) {
     applyTranslations(_dict);
     document.documentElement.lang = _lang;
 
-    // hook remote (plus tard)
     try {
       if (window.VRRemoteStore?.setLang) await window.VRRemoteStore.setLang(_lang);
     } catch (e) {
       console.warn("[VRI18n] saveLang remote failed", e);
     }
 
+    emitLanguageChanged();
     return _lang;
   }
 
@@ -208,15 +251,21 @@ async function tryLoadUiBundle(bundle, lang) {
     initI18n,
     setLang,
     getLang: () => _lang,
-    t: (key) => {
+    normalizeLang,
+    t: (key, fallback) => {
       const v = resolveKey(_dict, key);
-      return typeof v === "string" ? v : "";
+      return typeof v === "string" ? v : String(fallback || "");
     }
   };
 
   // auto init
   function boot() {
-    initI18n().catch(console.warn);
+    if (_bootPromise) return _bootPromise;
+    _bootPromise = initI18n().catch((e) => {
+      console.warn(e);
+      return DEFAULT_LANG;
+    });
+    return _bootPromise;
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", boot);

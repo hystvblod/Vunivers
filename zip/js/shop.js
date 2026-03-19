@@ -293,11 +293,62 @@
     if (jetonsEl) jetonsEl.textContent = String(balances.jetons);
   }
 
-  async function refreshLiveBalancesHard() {
+  let _refreshBalancesPromise = null;
+  let _lastHardRefreshAt = 0;
+  let _booted = false;
+  let _lastRenderSignature = "";
+
+  function getRenderSignature() {
     try {
-      await window.VUserData?.refresh?.();
-    } catch (_) {}
+      const data = typeof window.VUserData?.load === "function" ? (window.VUserData.load() || {}) : {};
+      return JSON.stringify({
+        lang: window.VRI18n?.getLang?.() || "",
+        vcoins: Number(data.vcoins || 0),
+        jetons: Number(data.jetons || 0),
+        owned_cosmetics: data.owned_cosmetics || {},
+        equipped_cosmetics: data.equipped_cosmetics || {}
+      });
+    } catch (_) {
+      return String(Date.now());
+    }
+  }
+
+  function renderShopView(opts) {
+    const force = !!(opts && opts.force);
     renderTopBalances();
+
+    const signature = getRenderSignature();
+    if (!force && signature === _lastRenderSignature) return;
+
+    _lastRenderSignature = signature;
+    renderCosmetics();
+  }
+
+  async function refreshLiveBalancesHard(opts) {
+    const force = !!(opts && opts.force);
+    const now = Date.now();
+
+    if (!force && _refreshBalancesPromise) return _refreshBalancesPromise;
+    if (!force && (now - _lastHardRefreshAt) < 800) {
+      renderTopBalances();
+      return true;
+    }
+
+    _lastHardRefreshAt = now;
+
+    _refreshBalancesPromise = (async function () {
+      try {
+        await window.VUserData?.refresh?.();
+      } catch (_) {}
+      renderShopView({ force: !!force });
+      return true;
+    })();
+
+    try {
+      return await _refreshBalancesPromise;
+    } finally {
+      _refreshBalancesPromise = null;
+    }
   }
 
   function normalizeCarouselIndex(index, total) {
@@ -359,6 +410,15 @@
       .vr-universe-title{position:relative;z-index:1;text-align:center;font-weight:950;font-size:19px;line-height:1.1;color:rgba(255,255,255,.96);margin:0 0 12px;text-shadow:0 12px 24px rgba(0,0,0,.55)}
       .vr-cos-row{position:relative;z-index:1;margin:0 0 14px}
       .vr-cos-row:last-child{margin-bottom:0}
+      .vr-cos-row-label{
+        text-align:center;
+        font-weight:1000;
+        font-size:15px;
+        line-height:1.1;
+        color:rgba(255,255,255,.96);
+        margin:0 0 8px;
+        text-shadow:0 8px 18px rgba(0,0,0,.45);
+      }
       .vr-cos-carousel{display:grid;grid-template-columns:36px minmax(0,1fr) 36px;align-items:center;gap:8px}
       .vr-cos-arrow{width:36px;height:36px;border:none;background:transparent;box-shadow:none;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:rgba(255,255,255,.96);font-size:28px;font-weight:900;line-height:1;text-shadow:0 10px 22px rgba(0,0,0,.45)}
       .vr-cos-viewport{min-width:0;overflow:hidden;touch-action:pan-y}
@@ -825,6 +885,10 @@
 
             return `
               <div class="vr-cos-row" data-category="${category}" data-index="0">
+                ${category !== "background" ? `
+                  <div class="vr-cos-row-label">${t(CATEGORY_KEYS[category], "")}</div>
+                ` : ""}
+
                 <div class="vr-cos-carousel">
                   <button class="vr-cos-arrow vr-cos-prev" type="button" aria-label="${t("shop.carousel.prev", "")}">‹</button>
 
@@ -924,8 +988,8 @@
         setStatus("store-status", "");
       }
 
-      await refreshLiveBalancesHard();
-      renderCosmetics();
+      await refreshLiveBalancesHard({ force: true });
+      renderShopView({ force: true });
     } catch (_) {
       setStatus("store-status", t("common.error_generic", ""));
     } finally {
@@ -936,9 +1000,14 @@
   async function boot() {
     if (!isShopPage()) return;
 
+    if (_booted) return;
+    _booted = true;
+
     try { await window.vrWaitBootstrap?.(); } catch (_) {}
     try { await window.VUserData?.init?.(); } catch (_) {}
+    try { await window.VRI18n?.initI18n?.(); } catch (_) {}
     try { await window.VUserData?.refresh?.(); } catch (_) {}
+    try { await window.VRI18n?.initI18n?.(window.VUserData?.load?.()?.lang || window.VRI18n?.getLang?.() || ""); } catch (_) {}
 
     ensureStyles();
     ensureLightboxRoot();
@@ -962,14 +1031,13 @@
 
     setStatus("shop-status", "");
     setStatus("store-status", "");
-    renderTopBalances();
-    renderCosmetics();
+    renderShopView({ force: true });
 
     document.addEventListener("click", async function (e) {
       const actionBtn = e.target && e.target.closest ? e.target.closest("[data-cosmetic-action]") : null;
       if (actionBtn) {
         await handleCosmeticAction(actionBtn);
-        renderTopBalances();
+        renderShopView({ force: true });
         return;
       }
 
@@ -993,27 +1061,34 @@
 
     window.addEventListener("vr:profile", function () {
       if (!isShopPage()) return;
-      refreshLiveBalancesHard();
-      renderCosmetics();
+      renderShopView({ force: true });
+    });
+
+    window.addEventListener("vr:i18n:changed", function () {
+      if (!isShopPage()) return;
+      renderShopView({ force: true });
     });
 
     window.addEventListener("focus", function () {
       refreshLiveBalancesHard();
     });
 
-    window.addEventListener("storage", function () {
-      refreshLiveBalancesHard();
+    window.addEventListener("storage", function (e) {
+      const key = String(e?.key || "");
+      if (!key) return;
+      if (
+        key !== "vuniverse_user_data" &&
+        key !== "vrealms_user_data" &&
+        key !== "vuniverse_lang" &&
+        key !== "vrealms_lang"
+      ) return;
+      refreshLiveBalancesHard({ force: key === "vuniverse_lang" || key === "vrealms_lang" });
     });
 
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) return;
       refreshLiveBalancesHard();
     });
-
-    setInterval(function () {
-      if (!isShopPage()) return;
-      renderTopBalances();
-    }, 800);
   }
 
   document.addEventListener("DOMContentLoaded", boot);

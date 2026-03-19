@@ -27,22 +27,62 @@
 
     .vr-top-actions{
       width:100%;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding: calc(10px + env(safe-area-inset-top)) 12px 8px;
+      display:grid;
+      grid-template-columns: 44px minmax(0, 1fr) 44px;
+      align-items:start;
+      column-gap:12px;
+      padding: calc(10px + env(safe-area-inset-top)) 12px 6px;
     }
 
     .vr-top-slot{
-      flex:1 1 0;
       display:flex;
-      align-items:center;
+      min-width:0;
     }
 
-    .vr-top-left{ justify-content:flex-start; }
-    .vr-top-center{ justify-content:center; }
-    .vr-top-right{ justify-content:flex-end; }
+    .vr-top-left{
+      justify-content:flex-start;
+      align-items:flex-start;
+    }
+
+    .vr-top-center{
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      min-width:0;
+    }
+
+    .vr-top-right{
+      justify-content:flex-end;
+      align-items:flex-start;
+    }
+
+    .vr-headerTitleWrap{
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      text-align:center;
+      gap:6px;
+      padding-top:4px;
+    }
+
+    .vr-headerTitleWrap .vr-section-title{
+      margin:0;
+      width:100%;
+      text-align:center;
+      line-height:1.05;
+    }
+
+    .vr-headerTitleWrap .vr-section-subtitle{
+      margin:0;
+      width:100%;
+      max-width:520px;
+      text-align:center;
+      font-size:13px;
+      line-height:1.35;
+      opacity:.86;
+    }
 
     .vr-icon-button{
       width:44px;
@@ -90,20 +130,7 @@
     }
 
     .vr-section-headCentered{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      gap:6px;
-      padding-top:2px;
-      margin-bottom: 8px;
-    }
-
-    .vr-section-headCentered .vr-section-title{
-      margin:0;
-      text-align:center;
-      width:100%;
+      display:none;
     }
 
     .vr-section-subtitle{
@@ -374,7 +401,12 @@
         </a>
       </div>
 
-      <div class="vr-top-slot vr-top-center"></div>
+      <div class="vr-top-slot vr-top-center">
+        <div class="vr-headerTitleWrap">
+          <h1 id="settingsTitle" class="vr-section-title"></h1>
+          <p id="settingsLangDesc" class="vr-section-subtitle"></p>
+        </div>
+      </div>
 
       <div class="vr-top-slot vr-top-right">
         <a id="btnGoProfile" class="vr-icon-button" href="profile.html" aria-label="">
@@ -388,10 +420,7 @@
 
   <main class="vr-main">
     <section id="view-settings" class="vr-view vr-view-active">
-      <div class="vr-section-headCentered">
-        <h1 id="settingsTitle" class="vr-section-title"></h1>
-        <p id="settingsLangDesc" class="vr-section-subtitle"></p>
-      </div>
+      <div class="vr-section-headCentered"></div>
 
       <div class="vr-profile-grid">
         <div class="vr-profile-card">
@@ -408,6 +437,18 @@
 
               <label id="adsSwitch" class="vr-switch" aria-label="">
                 <input id="adsPersonalized" type="checkbox" />
+                <span class="vr-switchUi"></span>
+              </label>
+            </div>
+
+            <div class="vr-toggleRow">
+              <div class="vr-toggleText">
+                <p id="musicLabel" class="vr-toggleLabel"></p>
+                <p id="musicDesc" class="vr-toggleDesc"></p>
+              </div>
+
+              <label id="musicSwitch" class="vr-switch" aria-label="">
+                <input id="musicEnabled" type="checkbox" />
                 <span class="vr-switchUi"></span>
               </label>
             </div>
@@ -512,11 +553,6 @@
 
     function getStoredLang(){
       try{
-        const fromUserData = normalizeLang(window.VUserData?.getLang?.());
-        if(fromUserData && supported(fromUserData)) return fromUserData;
-      }catch(_){}
-
-      try{
         const v = normalizeLang(localStorage.getItem(LangStorageKey));
         if(v && supported(v)) return v;
       }catch(_){}
@@ -524,6 +560,11 @@
       try{
         const v2 = normalizeLang(localStorage.getItem(LangStorageLegacyKey));
         if(v2 && supported(v2)) return v2;
+      }catch(_){}
+
+      try{
+        const fromUserData = normalizeLang(window.VUserData?.getLang?.());
+        if(fromUserData && supported(fromUserData)) return fromUserData;
       }catch(_){}
 
       return null;
@@ -599,6 +640,9 @@
       const adsLabel = $("adsLabel");
       const adsDesc = $("adsDesc");
       const adsSw = $("adsSwitch");
+      const musicLabel = $("musicLabel");
+      const musicDesc = $("musicDesc");
+      const musicSw = $("musicSwitch");
       const faqTitle = $("settingsFaqTitle");
       const faqBtn = $("btnOpenFaq");
       const faqLabel = $("settingsFaqLabel");
@@ -614,6 +658,11 @@
       if(adsLabel) adsLabel.textContent = t("ui.settings_ads_personalized_label");
       if(adsDesc) adsDesc.textContent = t("ui.settings_ads_personalized_desc");
       if(adsSw) adsSw.setAttribute("aria-label", t("ui.settings_ads_personalized_label"));
+
+      if(musicLabel) musicLabel.textContent = t("ui.settings_music_label");
+      if(musicDesc) musicDesc.textContent = t("ui.settings_music_desc");
+      if(musicSw) musicSw.setAttribute("aria-label", t("ui.settings_music_label"));
+
       if(faqTitle) faqTitle.textContent = t("ui.settings_faq_title");
       if(faqBtn) faqBtn.setAttribute("aria-label", t("ui.settings_open_faq_aria"));
       if(faqLabel) faqLabel.textContent = t("ui.settings_faq_label");
@@ -755,6 +804,40 @@
       }
     }
 
+    function getMusicPref(){
+      try{
+        if(window.VRAudio && typeof window.VRAudio.isMusicEnabled === "function"){
+          return !!window.VRAudio.isMusicEnabled();
+        }
+      }catch(_){}
+
+      try{
+        const v = localStorage.getItem("vrealms_music_enabled");
+        if(v === "1") return true;
+        if(v === "0") return false;
+      }catch(_){}
+
+      return true;
+    }
+
+    async function setMusicPref(value, { showMsg } = {}){
+      const on = !!value;
+
+      try{ localStorage.setItem("vrealms_music_enabled", on ? "1" : "0"); }catch(_){}
+
+      try{
+        window.VRAudio?.setMusicEnabled?.(on);
+      }catch(_){}
+
+      const box = $("musicEnabled");
+      if(box) box.checked = on;
+
+      const msg = $("settingsMsg");
+      if(msg && showMsg){
+        msg.textContent = t("ui.settings_music_saved");
+      }
+    }
+
     try{ await window.bootstrapAuthAndProfile?.(); }catch(_){}
     try{ await window.VUserData?.init?.(); }catch(_){}
     try{ await window.VRI18n?.initI18n?.(); }catch(_){}
@@ -777,6 +860,12 @@
     if(adsBox){
       adsBox.checked = getAdsPref();
       adsBox.addEventListener("change", () => setAdsPref(adsBox.checked, { showMsg:true }));
+    }
+
+    const musicBox = $("musicEnabled");
+    if(musicBox){
+      musicBox.checked = getMusicPref();
+      musicBox.addEventListener("change", () => setMusicPref(musicBox.checked, { showMsg:true }));
     }
 
     try{ await window.VRAds?.setPersonalizedConsent?.(getAdsPref(), { source:"settings_init" }); }catch(_){}

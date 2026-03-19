@@ -58,6 +58,9 @@
     "settings_ads_personalized_label": "Publicidad personalizada",
     "settings_ads_personalized_desc": "Permitir anuncios más relevantes. Puedes cambiarlo en cualquier momento.",
     "settings_ads_saved": "Preferencia de publicidad guardada.",
+    "settings_music_label": "Música",
+    "settings_music_desc": "Activar o desactivar la música de fondo de los universos.",
+    "settings_music_saved": "Preferencia de música guardada.",
     "settings_faq_title": "FAQ",
     "settings_faq_label": "Abrir FAQ",
     "settings_faq_desc": "Respuestas sobre monedas, años, fichas, insignias y nombre de usuario.",
@@ -379,6 +382,7 @@
     "jetons_12": "+12 fichas",
     "jetons_30": "+30 fichas",
     "diamond_title": "Diamond",
+    "diamond_badge": "Sin anuncios + todos los universos",
     "diamond_desc": "Sin anuncios + todos los universos actuales desbloqueados. Los futuros universos también pueden estar incluidos si tu backend activa el acceso Diamond.",
     "diamond_buy": "Activar Diamond",
     "aria_top": "Barra de acciones",
@@ -398,7 +402,7 @@
     "cosmetics": {
       "background": "Fondo",
       "message": "Carta de mensaje",
-      "choice": "Elección",
+      "choice": "Carta de elección",
       "hell": {
         "background_1": "Fondo ruinas ardientes",
         "background_2": "Fondo horno real",

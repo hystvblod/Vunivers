@@ -58,6 +58,9 @@
     "settings_ads_personalized_label": "Personalisierte Werbung",
     "settings_ads_personalized_desc": "Erlaube relevantere Werbung. Du kannst dies jederzeit ändern.",
     "settings_ads_saved": "Werbeeinstellung gespeichert.",
+    "settings_music_label": "Musik",
+    "settings_music_desc": "Die Hintergrundmusik der Universen ein- oder ausschalten.",
+    "settings_music_saved": "Musikeinstellung gespeichert.",
     "settings_faq_title": "FAQ",
     "settings_faq_label": "FAQ öffnen",
     "settings_faq_desc": "Antworten zu Münzen, Jahren, Token, Abzeichen und Benutzername.",
@@ -379,6 +382,7 @@
     "jetons_12": "+12 Token",
     "jetons_30": "+30 Token",
     "diamond_title": "Diamond",
+    "diamond_badge": "Keine Werbung + alle Universen",
     "diamond_desc": "Keine Werbung + alle aktuellen Universen freigeschaltet. Zukünftige Universen können ebenfalls enthalten sein, wenn dein Backend den Diamond-Zugang aktiviert.",
     "diamond_buy": "Diamond aktivieren",
     "aria_top": "Aktionsleiste",
@@ -398,7 +402,7 @@
     "cosmetics": {
       "background": "Hintergrund",
       "message": "Nachrichtenkarte",
-      "choice": "Wahl",
+      "choice": "Wahlkarte",
       "hell": {
         "background_1": "Hintergrund brennende Ruinen",
         "background_2": "Hintergrund königlicher Ofen",
