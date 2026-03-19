@@ -1171,12 +1171,12 @@ body.vr-peek-mode .vr-gauge-preview{
             flex-direction:column;
             align-items:center;
             justify-content:center;
-            gap:2px;
+            gap:1px;
             width:100%;
-            min-height:60px;
+            min-height:42px;
             border:1px solid rgba(255,255,255,.14);
-            border-radius:16px;
-            padding:8px 12px;
+            border-radius:14px;
+            padding:6px 10px;
             background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
             box-shadow:0 10px 20px rgba(0,0,0,.24);
             color:#fff;
@@ -1233,15 +1233,15 @@ body.vr-peek-mode .vr-gauge-preview{
           .vr-ending-actions{
             display:flex;
             flex-direction:column;
-            gap:8px;
+            gap:6px;
           }
           .vr-ending-actions .vr-choice-button{
             width:100%;
           }
           .vr-ending-actions-bottom{
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            gap:8px;
+            display:flex;
+            flex-direction:column;
+            gap:6px;
           }
           @keyframes vrEndingPulse{
             0%,100%{ opacity:1; transform:scale(1); filter:brightness(1); }
