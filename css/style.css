@@ -2362,13 +2362,19 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
   font-family: "MerriweatherExplorer", serif !important;
   color: #000 !important;
   font-weight: 800 !important;
-  line-height: 1.05 !important;
+  line-height: 1.04 !important;
 
-  width: 74% !important;
-  max-width: 74% !important;
+  width: 68% !important;
+  max-width: 68% !important;
   left: 50% !important;
   right: auto !important;
   transform: translateX(-50%) !important;
+
+  text-align: center !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
 }
 
 body.vr-body-game[data-universe="heaven_king"]{
@@ -2387,10 +2393,10 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-scn-inset-left: 13%;
 
   --vr-choice-inset-top: 15%;
-  --vr-choice-inset-right: 10.5%;
+  --vr-choice-inset-right: 13%;
   --vr-choice-inset-bottom: 15%;
-  --vr-choice-inset-left: 10.5%;
-  --vr-choice-safe: 78%;
+  --vr-choice-inset-left: 13%;
+  --vr-choice-safe: 68%;
 
   --vr-font-scn-title: clamp(18px, 2.9vmin, 34px);
   --vr-font-scn-text:  clamp(14px, 2.35vmin, 26px);
@@ -2728,11 +2734,11 @@ body[data-universe="heaven_king"] .vr-gauge-delta{
     --vr-choice-h: clamp(84px, 12.0svh, 128px);
     --vr-stack-gap: 0px;
     --vr-choices-gap: 0px;
-    --vr-choice-safe: 70%;
+    --vr-choice-safe: 64%;
     --vr-choice-inset-top: 16%;
-    --vr-choice-inset-right: 10%;
+    --vr-choice-inset-right: 12%;
     --vr-choice-inset-bottom: 16%;
-    --vr-choice-inset-left: 10%;
+    --vr-choice-inset-left: 12%;
   }
 
   body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3% !important; width: 17.2% !important; }
@@ -2767,11 +2773,11 @@ body[data-universe="heaven_king"] .vr-gauge-delta{
     --vr-choice-h: clamp(80px, 11.2svh, 118px);
     --vr-stack-gap: 0px;
     --vr-choices-gap: 0px;
-    --vr-choice-safe: 68%;
+    --vr-choice-safe: 62%;
     --vr-choice-inset-top: 15%;
-    --vr-choice-inset-right: 9%;
+    --vr-choice-inset-right: 11%;
     --vr-choice-inset-bottom: 15%;
-    --vr-choice-inset-left: 9%;
+    --vr-choice-inset-left: 11%;
   }
 }
 

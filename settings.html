@@ -27,22 +27,62 @@
 
     .vr-top-actions{
       width:100%;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding: calc(10px + env(safe-area-inset-top)) 12px 8px;
+      display:grid;
+      grid-template-columns: 44px minmax(0, 1fr) 44px;
+      align-items:start;
+      column-gap:12px;
+      padding: calc(10px + env(safe-area-inset-top)) 12px 6px;
     }
 
     .vr-top-slot{
-      flex:1 1 0;
       display:flex;
-      align-items:center;
+      min-width:0;
     }
 
-    .vr-top-left{ justify-content:flex-start; }
-    .vr-top-center{ justify-content:center; }
-    .vr-top-right{ justify-content:flex-end; }
+    .vr-top-left{
+      justify-content:flex-start;
+      align-items:flex-start;
+    }
+
+    .vr-top-center{
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      min-width:0;
+    }
+
+    .vr-top-right{
+      justify-content:flex-end;
+      align-items:flex-start;
+    }
+
+    .vr-headerTitleWrap{
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      text-align:center;
+      gap:6px;
+      padding-top:4px;
+    }
+
+    .vr-headerTitleWrap .vr-section-title{
+      margin:0;
+      width:100%;
+      text-align:center;
+      line-height:1.05;
+    }
+
+    .vr-headerTitleWrap .vr-section-subtitle{
+      margin:0;
+      width:100%;
+      max-width:520px;
+      text-align:center;
+      font-size:13px;
+      line-height:1.35;
+      opacity:.86;
+    }
 
     .vr-icon-button{
       width:44px;
@@ -90,20 +130,7 @@
     }
 
     .vr-section-headCentered{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      gap:6px;
-      padding-top:2px;
-      margin-bottom: 8px;
-    }
-
-    .vr-section-headCentered .vr-section-title{
-      margin:0;
-      text-align:center;
-      width:100%;
+      display:none;
     }
 
     .vr-section-subtitle{
@@ -374,7 +401,12 @@
         </a>
       </div>
 
-      <div class="vr-top-slot vr-top-center"></div>
+      <div class="vr-top-slot vr-top-center">
+        <div class="vr-headerTitleWrap">
+          <h1 id="settingsTitle" class="vr-section-title"></h1>
+          <p id="settingsLangDesc" class="vr-section-subtitle"></p>
+        </div>
+      </div>
 
       <div class="vr-top-slot vr-top-right">
         <a id="btnGoProfile" class="vr-icon-button" href="profile.html" aria-label="">
@@ -388,10 +420,7 @@
 
   <main class="vr-main">
     <section id="view-settings" class="vr-view vr-view-active">
-      <div class="vr-section-headCentered">
-        <h1 id="settingsTitle" class="vr-section-title"></h1>
-        <p id="settingsLangDesc" class="vr-section-subtitle"></p>
-      </div>
+      <div class="vr-section-headCentered"></div>
 
       <div class="vr-profile-grid">
         <div class="vr-profile-card">
