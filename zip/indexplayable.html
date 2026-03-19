@@ -5570,7 +5570,11 @@ body.vr-peek-mode .vr-gauge-preview{
     const key = `${universeId}__${lang}`;
     if (cache.has(key)) return cache.get(key);
 
-    const urlNew = `${ENDINGS_BASE_PATH}/${universeId}/endings_${lang}.json`;
+    const fileLang = (typeof window.normalizeScenarioLang === "function")
+      ? window.normalizeScenarioLang(lang)
+      : String(lang || "en").trim().toLowerCase().split(/[-_]/)[0];
+
+    const urlNew = `${ENDINGS_BASE_PATH}/${universeId}/endings_${fileLang}.json`;
     const urlOld1 = `data/i18n/${lang}/endings_${universeId}.json`;
     const urlOld2 = `data/i18n/endings_${universeId}_${lang}.json`;
 
