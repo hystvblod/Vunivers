@@ -1,10 +1,10 @@
 // ===============================================
 // VRealms - js/audio.js
-// Gestion centralisée musique + SFX
-// - musique de fond par univers
-// - son commun de mort
-// - son de choix commun avec override par univers
-// - reprise auto après 1re interaction utilisateur
+// Version propre pour 1 seul fond par univers
+// - Web Audio API
+// - boucle interne avec loopStart / loopEnd
+// - petit fade-in au lancement
+// - duck léger pendant la mort
 // ===============================================
 (function () {
   "use strict";
@@ -47,15 +47,41 @@
     }
   };
 
+  // Réglages par univers pour éviter la cassure de boucle.
+  // Ajuste ces valeurs à l’oreille si besoin.
+  // start = point où la boucle redémarre
+  // endTrim = combien on coupe avant la fin réelle du fichier
+  const BG_LOOP_POINTS = {
+    intro: { start: 0.20, endTrim: 0.25 },
+    hell_king: { start: 0.35, endTrim: 0.40 },
+    heaven_king: { start: 0.25, endTrim: 0.30 },
+    mega_corp_ceo: { start: 0.18, endTrim: 0.22 },
+    new_world_explorer: { start: 0.28, endTrim: 0.35 },
+    vampire_lord: { start: 0.30, endTrim: 0.38 },
+    western_president: { start: 0.20, endTrim: 0.25 }
+  };
+
   const state = {
     unlocked: false,
     currentUniverse: null,
-    bgAudio: null,
-    bgPath: "",
+
     musicEnabled: readBool("vrealms_music_enabled", true),
     sfxEnabled: readBool("vrealms_sfx_enabled", true),
+
     musicVolume: readNumber("vrealms_music_volume", 0.32),
-    sfxVolume: readNumber("vrealms_sfx_volume", 0.82)
+    sfxVolume: readNumber("vrealms_sfx_volume", 0.82),
+
+    ctx: null,
+    masterGain: null,
+    musicGain: null,
+    sfxGain: null,
+
+    bgSource: null,
+    bgBuffer: null,
+    bgUniverseId: null,
+    bgAbortId: 0,
+
+    decodedCache: Object.create(null)
   };
 
   function clamp(v, min, max) {
@@ -105,29 +131,54 @@
     return AUDIO_BANK.universes[resolveUniverseId(universeId)] || null;
   }
 
-  function safePlay(audio) {
-    if (!audio) return;
-    try {
-      const p = audio.play();
-      if (p && typeof p.catch === "function") p.catch(() => {});
-    } catch (_) {}
+  function getLoopPoints(universeId, duration) {
+    const uid = resolveUniverseId(universeId);
+    const cfg = BG_LOOP_POINTS[uid] || { start: 0.20, endTrim: 0.25 };
+
+    const start = clamp(cfg.start, 0, Math.max(0, duration - 0.20));
+    const end = clamp(duration - Math.max(0, cfg.endTrim), start + 0.10, duration);
+
+    return { start, end };
   }
 
-  function makeOneShot(path, volume) {
-    if (!path) return null;
-    try {
-      const a = new Audio(path);
-      a.preload = "auto";
-      a.volume = clamp(volume, 0, 1);
-      a.playsInline = true;
-      return a;
-    } catch (_) {
-      return null;
-    }
+  function ensureAudioContext() {
+    if (state.ctx) return state.ctx;
+
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    if (!Ctx) return null;
+
+    const ctx = new Ctx();
+    const masterGain = ctx.createGain();
+    const musicGain = ctx.createGain();
+    const sfxGain = ctx.createGain();
+
+    masterGain.gain.value = 1;
+    musicGain.gain.value = state.musicEnabled ? state.musicVolume : 0;
+    sfxGain.gain.value = state.sfxEnabled ? state.sfxVolume : 0;
+
+    musicGain.connect(masterGain);
+    sfxGain.connect(masterGain);
+    masterGain.connect(ctx.destination);
+
+    state.ctx = ctx;
+    state.masterGain = masterGain;
+    state.musicGain = musicGain;
+    state.sfxGain = sfxGain;
+
+    return ctx;
   }
 
-  function unlockAudio() {
+  async function unlockAudio() {
     if (state.unlocked) return;
+    const ctx = ensureAudioContext();
+    if (!ctx) return;
+
+    try {
+      if (ctx.state === "suspended") {
+        await ctx.resume();
+      }
+    } catch (_) {}
+
     state.unlocked = true;
 
     if (state.currentUniverse && state.musicEnabled) {
@@ -136,76 +187,136 @@
   }
 
   function attachUnlockListeners() {
-    const unlock = () => unlockAudio();
+    const handler = () => { unlockAudio(); };
 
-    try { document.addEventListener("pointerdown", unlock, { passive: true, capture: true }); } catch (_) {}
-    try { document.addEventListener("touchstart", unlock, { passive: true, capture: true }); } catch (_) {}
-    try { document.addEventListener("keydown", unlock, { passive: true, capture: true }); } catch (_) {}
+    try { document.addEventListener("pointerdown", handler, { passive: true, capture: true }); } catch (_) {}
+    try { document.addEventListener("touchstart", handler, { passive: true, capture: true }); } catch (_) {}
+    try { document.addEventListener("keydown", handler, { passive: true, capture: true }); } catch (_) {}
+  }
+
+  async function fetchDecodedBuffer(path) {
+    const ctx = ensureAudioContext();
+    if (!ctx || !path) return null;
+
+    if (state.decodedCache[path]) {
+      return state.decodedCache[path];
+    }
+
+    const res = await fetch(path);
+    if (!res.ok) throw new Error("Audio fetch failed: " + path);
+
+    const arr = await res.arrayBuffer();
+    const buf = await ctx.decodeAudioData(arr.slice(0));
+
+    state.decodedCache[path] = buf;
+    return buf;
   }
 
   function stopBackground() {
-    try {
-      if (state.bgAudio) {
-        state.bgAudio.pause();
-        state.bgAudio.currentTime = 0;
-      }
-    } catch (_) {}
+    state.bgAbortId += 1;
 
-    state.bgAudio = null;
-    state.bgPath = "";
+    if (state.bgSource) {
+      try { state.bgSource.stop(); } catch (_) {}
+      try { state.bgSource.disconnect(); } catch (_) {}
+    }
+
+    state.bgSource = null;
+    state.bgBuffer = null;
+    state.bgUniverseId = null;
   }
 
-  function startUniverseBg(universeId) {
+  async function startUniverseBg(universeId) {
     state.currentUniverse = resolveUniverseId(universeId);
-
-    if (!state.musicEnabled) {
-      stopBackground();
-      return;
-    }
-
-    if (!state.unlocked) return;
-
-    const cfg = getUniverseAudio(state.currentUniverse);
-    const path = cfg?.bg || "";
-
-    if (!path) {
-      stopBackground();
-      return;
-    }
-
-    if (state.bgAudio && state.bgPath === path) {
-      state.bgAudio.volume = clamp(state.musicVolume, 0, 1);
-      safePlay(state.bgAudio);
-      return;
-    }
 
     stopBackground();
 
+    if (!state.musicEnabled) return;
+    if (!state.unlocked) return;
+
+    const ctx = ensureAudioContext();
+    if (!ctx) return;
+
+    const cfg = getUniverseAudio(state.currentUniverse);
+    const path = cfg?.bg || "";
+    if (!path) return;
+
+    const myAbortId = state.bgAbortId;
+
     try {
-      const a = new Audio(path);
-      a.preload = "auto";
-      a.loop = true;
-      a.volume = clamp(state.musicVolume, 0, 1);
-      a.playsInline = true;
-      state.bgAudio = a;
-      state.bgPath = path;
-      safePlay(a);
+      const buffer = await fetchDecodedBuffer(path);
+      if (!buffer) return;
+      if (myAbortId !== state.bgAbortId) return;
+
+      const source = ctx.createBufferSource();
+      source.buffer = buffer;
+      source.loop = true;
+
+      const pts = getLoopPoints(state.currentUniverse, buffer.duration);
+      source.loopStart = pts.start;
+      source.loopEnd = pts.end;
+
+      const entryGain = ctx.createGain();
+      entryGain.gain.setValueAtTime(0, ctx.currentTime);
+
+      source.connect(entryGain);
+      entryGain.connect(state.musicGain);
+
+      // On démarre au début du fichier pour garder une vraie intro,
+      // puis les répétitions repartent entre loopStart et loopEnd.
+      source.start(0, 0);
+
+      entryGain.gain.linearRampToValueAtTime(1, ctx.currentTime + 0.65);
+
+      state.bgSource = source;
+      state.bgBuffer = buffer;
+      state.bgUniverseId = state.currentUniverse;
     } catch (_) {
       stopBackground();
     }
   }
 
-  function duckBackground(ms = 900, factor = 0.35) {
-    try {
-      if (!state.bgAudio) return;
-      const base = clamp(state.musicVolume, 0, 1);
-      state.bgAudio.volume = clamp(base * factor, 0, 1);
+  async function playOneShot(path, volume, kind = "sfx") {
+    if (!path) return;
 
-      window.setTimeout(() => {
-        try {
-          if (state.bgAudio) state.bgAudio.volume = base;
-        } catch (_) {}
-      }, ms);
+    const ctx = ensureAudioContext();
+    if (!ctx) return;
+
+    try {
+      if (ctx.state === "suspended") {
+        await ctx.resume();
+      }
+    } catch (_) {}
+
+    try {
+      const buffer = await fetchDecodedBuffer(path);
+      if (!buffer) return;
+
+      const src = ctx.createBufferSource();
+      src.buffer = buffer;
+
+      const gain = ctx.createGain();
+      gain.gain.value = clamp(volume, 0, 1);
+
+      src.connect(gain);
+      gain.connect(kind === "music" ? state.musicGain : state.sfxGain);
+
+      src.start(0);
+    } catch (_) {}
+  }
+
+  function duckBackground(ms = 1200, factor = 0.25) {
+    const ctx = ensureAudioContext();
+    if (!ctx || !state.musicGain) return;
+
+    const now = ctx.currentTime;
+    const current = state.musicEnabled ? state.musicVolume : 0;
+    const ducked = current * clamp(factor, 0, 1);
+
+    try {
+      state.musicGain.gain.cancelScheduledValues(now);
+      state.musicGain.gain.setValueAtTime(state.musicGain.gain.value, now);
+      state.musicGain.gain.linearRampToValueAtTime(ducked, now + 0.08);
+      state.musicGain.gain.linearRampToValueAtTime(current, now + ms / 1000);
     } catch (_) {}
   }
 
@@ -214,25 +325,23 @@
 
     const cfg = getUniverseAudio(universeId);
     const path = cfg?.choice || AUDIO_BANK.common.choice || "";
-
-    const shot = makeOneShot(path, state.sfxVolume);
-    if (!shot) return;
-    safePlay(shot);
+    playOneShot(path, state.sfxVolume, "sfx");
   }
 
   function playDeath() {
     if (!state.sfxEnabled) return;
 
-    duckBackground(1000, 0.25);
-
-    const shot = makeOneShot(AUDIO_BANK.common.death, Math.min(1, state.sfxVolume + 0.08));
-    if (!shot) return;
-    safePlay(shot);
+    duckBackground(1200, 0.22);
+    playOneShot(AUDIO_BANK.common.death, Math.min(1, state.sfxVolume + 0.08), "sfx");
   }
 
   function setMusicEnabled(enabled) {
     state.musicEnabled = !!enabled;
     writeBool("vrealms_music_enabled", state.musicEnabled);
+
+    if (state.musicGain) {
+      state.musicGain.gain.value = state.musicEnabled ? state.musicVolume : 0;
+    }
 
     if (!state.musicEnabled) {
       stopBackground();
@@ -245,35 +354,45 @@
   function setSfxEnabled(enabled) {
     state.sfxEnabled = !!enabled;
     writeBool("vrealms_sfx_enabled", state.sfxEnabled);
+
+    if (state.sfxGain) {
+      state.sfxGain.gain.value = state.sfxEnabled ? state.sfxVolume : 0;
+    }
   }
 
   function setMusicVolume(value) {
     state.musicVolume = clamp(value, 0, 1);
     try { localStorage.setItem("vrealms_music_volume", String(state.musicVolume)); } catch (_) {}
-    try {
-      if (state.bgAudio) state.bgAudio.volume = state.musicVolume;
-    } catch (_) {}
+
+    if (state.musicGain && state.musicEnabled) {
+      state.musicGain.gain.value = state.musicVolume;
+    }
   }
 
   function setSfxVolume(value) {
     state.sfxVolume = clamp(value, 0, 1);
     try { localStorage.setItem("vrealms_sfx_volume", String(state.sfxVolume)); } catch (_) {}
+
+    if (state.sfxGain && state.sfxEnabled) {
+      state.sfxGain.gain.value = state.sfxVolume;
+    }
   }
 
   function init() {
     attachUnlockListeners();
 
     try {
-      document.addEventListener("visibilitychange", () => {
-        if (!state.bgAudio) return;
+      document.addEventListener("visibilitychange", async () => {
+        const ctx = ensureAudioContext();
+        if (!ctx) return;
 
         if (document.hidden) {
-          try { state.bgAudio.pause(); } catch (_) {}
+          try { await ctx.suspend(); } catch (_) {}
           return;
         }
 
-        if (state.musicEnabled && state.unlocked) {
-          safePlay(state.bgAudio);
+        if (state.unlocked) {
+          try { await ctx.resume(); } catch (_) {}
         }
       });
     } catch (_) {}
@@ -308,8 +427,6 @@
 
     isSfxEnabled() {
       return !!state.sfxEnabled;
-    },
-
-    _bank: AUDIO_BANK
+    }
   };
 })();
