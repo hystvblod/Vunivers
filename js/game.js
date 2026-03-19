@@ -625,9 +625,20 @@ body.vr-peek-mode .vr-gauge-preview{
         window.setTimeout(() => { btn.style.transition = ""; }, 200);
       };
 
-      const animateFlyOut = (dx, done) => {
+      const animateFlyOut = (dx, choiceId, done) => {
         const dir = dx >= 0 ? 1 : -1;
         const outX = dir * (Math.max(window.innerWidth || 360, 360) * 1.2);
+
+        try {
+          const universeId =
+            window.VREngine?.universeId ||
+            window.VRGame?.currentUniverse ||
+            document.body?.dataset?.universe ||
+            localStorage.getItem("vrealms_universe") ||
+            "hell_king";
+
+          window.VRAudio?.playChoice?.(universeId);
+        } catch (_) {}
 
         btn.style.transition = "transform 220ms cubic-bezier(.2,.9,.2,1)";
         btn.style.transform = `translateX(${outX}px) rotate(${dir * ROT_MAX}deg)`;
@@ -699,7 +710,7 @@ body.vr-peek-mode .vr-gauge-preview{
           const choiceId = btn.getAttribute("data-choice");
           if (!choiceId) { animateBack(); return; }
 
-          animateFlyOut(dx, () => {
+          animateFlyOut(dx, choiceId, () => {
             try { window.VREngine.applyChoice(this.currentCardLogic, choiceId); } catch (_) {}
           });
         } else {
@@ -2143,6 +2154,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
     async _handleDeath() {
       const lastDeath = window.VRState.getLastDeath();
+      try { window.VRAudio?.playDeath?.(); } catch (_) {}
       this._preparePendingEndReward();
       await window.VREndings.showEnding(this.universeConfig, lastDeath);
       ensureEndingEnhancements();
@@ -4666,6 +4678,7 @@ window.VRGame = {
     try { window.VRAds?.resetGameRewardSeen?.(); } catch (_) {}
 
     this.applyUniverseBackground(universeId);
+    try { window.VRAudio?.onUniverseSelected?.(universeId); } catch (_) {}
     this.applyUniverseCosmetics(universeId);
 
     let lang = "en";
