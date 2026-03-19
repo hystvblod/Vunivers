@@ -4261,7 +4261,7 @@ body[data-universe="vampire_lord"].vr-body-game #view-game .vr-choice-label{
   color: #000 !important;
   text-shadow: none !important;
   opacity: 1 !important;
-  font-size: clamp(15px, 2.35vmin, 24px) !important;
+  font-size: clamp(16.5px, 2.7vmin, 28px) !important;
   font-weight: 700 !important;
   line-height: 1.16 !important;
   overflow-wrap: break-word !important;
@@ -4292,9 +4292,9 @@ body.vr-body-game[data-universe="vampire_lord"]{
   --vr-choice-inset-left: 9%;
   --vr-choice-safe: 84%;
 
-  --vr-font-scn-title: clamp(16px, 2.65vmin, 30px);
-  --vr-font-scn-text:  clamp(14px, 2.15vmin, 23px);
-  --vr-font-choice:    clamp(14.5px, 2.25vmin, 24px);
+  --vr-font-scn-title: clamp(18px, 2.95vmin, 34px);
+  --vr-font-scn-text:  clamp(15.5px, 2.5vmin, 27px);
+  --vr-font-choice:    clamp(16px, 2.55vmin, 28px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
@@ -4513,7 +4513,7 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
 }
 
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
-  font-size: clamp(17px, 2.7vmin, 28px) !important;
+  font-size: clamp(19px, 3.0vmin, 34px) !important;
   font-weight: 400 !important;
   line-height: 1.08 !important;
   max-width: 94% !important;
@@ -4524,7 +4524,7 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
 }
 
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
-  font-size: clamp(15px, 2.35vmin, 24px) !important;
+  font-size: clamp(16.5px, 2.7vmin, 28px) !important;
   font-weight: 700 !important;
   line-height: 1.16 !important;
   max-width: 94% !important;
@@ -4719,7 +4719,7 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
     --vr-choice-inset-bottom: 15%;
     --vr-choice-inset-left: 8%;
 
-    --vr-font-choice: clamp(13px, 3.2vw, 16.5px);
+    --vr-font-choice: clamp(14.5px, 3.6vw, 18.5px);
   }
 
   body.vr-body-game[data-universe="vampire_lord"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
@@ -4734,20 +4734,20 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
   }
 
   body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
-    font-size: clamp(15px, 4.2vw, 20px) !important;
+    font-size: clamp(16.5px, 4.6vw, 22px) !important;
     font-weight: 400 !important;
     line-height: 1.06 !important;
     max-width: 94% !important;
   }
   body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
-    font-size: clamp(13.5px, 3.8vw, 18px) !important;
+    font-size: clamp(15px, 4.15vw, 19.5px) !important;
     font-weight: 700 !important;
     line-height: 1.14 !important;
     max-width: 94% !important;
   }
   body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
     font-family: "VR_CrimsonText", serif !important;
-    font-size: clamp(13.5px, 3.8vw, 18px) !important;
+    font-size: clamp(15px, 4.15vw, 19.5px) !important;
     font-weight: 700 !important;
     line-height: 1.14 !important;
     max-width: 100% !important;
@@ -4789,7 +4789,7 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
 @media (max-width: 390px), (max-height: 740px){
   body.vr-body-game[data-universe="vampire_lord"]{
     --vr-choice-h: clamp(78px, 10.4svh, 116px);
-    --vr-font-choice: clamp(12.7px, 3.05vw, 16px);
+    --vr-font-choice: clamp(14px, 3.35vw, 17.5px);
     --vr-choice-safe: 80%;
     --vr-choice-inset-top: 14%;
     --vr-choice-inset-right: 7%;
