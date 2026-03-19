@@ -19,6 +19,31 @@
 
   const COSMETIC_CATEGORIES = ["background", "message", "choice"];
 
+  function _detectDeviceLang() {
+    try {
+      const list = Array.isArray(navigator.languages) && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language];
+
+      for (const cand of list) {
+        const s0 = String(cand || "").trim().toLowerCase();
+        if (!s0) continue;
+
+        if (s0 === "pt-br" || s0 === "ptbr") return "ptbr";
+        if (s0 === "pt-pt" || s0 === "pt_pt") return "pt";
+        if (s0 === "jp" || s0 === "ja-jp") return "ja";
+        if (s0 === "kr" || s0 === "ko-kr") return "ko";
+        if (s0 === "in" || s0 === "id-id") return "id";
+
+        const base = s0.split(/[-_]/)[0];
+        if (base === "pt" && (s0.includes("br") || s0.includes("ptbr"))) return "ptbr";
+        if (base) return base;
+      }
+    } catch (_) {}
+
+    return "en";
+  }
+
   let _uiPaused = true;
   let _pendingEmit = false;
 
@@ -216,7 +241,7 @@
     username: "",
     vcoins: 0,
     jetons: 0,
-    lang: "en",
+    lang: _detectDeviceLang(),
     unlocked_universes: FREE_UNIVERSES.slice(0),
     no_ads: false,
     has_diamond: false,
@@ -250,7 +275,7 @@
         username: (_memState.username || "").toString(),
         vcoins: _clampInt(_memState.vcoins || 0),
         jetons: _clampInt(_memState.jetons || 0),
-        lang: (_memState.lang || "en").toString(),
+        lang: (_memState.lang || _detectDeviceLang()).toString(),
         unlocked_universes: _mergeUniverses(_memState.unlocked_universes, []),
         no_ads: !!_memState.no_ads,
         has_diamond: !!_memState.has_diamond,
@@ -264,8 +289,8 @@
       });
     } catch (_) {}
 
-    try { localStorage.setItem(LangStorageKey, (_memState.lang || "en").toString()); } catch (_) {}
-    try { localStorage.setItem(LangStorageLegacyKey, (_memState.lang || "en").toString()); } catch (_) {}
+    try { localStorage.setItem(LangStorageKey, (_memState.lang || _detectDeviceLang()).toString()); } catch (_) {}
+    try { localStorage.setItem(LangStorageLegacyKey, (_memState.lang || _detectDeviceLang()).toString()); } catch (_) {}
   }
 
   function _emitProfile() {
@@ -300,7 +325,7 @@
       username: "",
       vcoins: 0,
       jetons: 0,
-      lang: "en",
+      lang: _detectDeviceLang(),
       unlocked_universes: FREE_UNIVERSES.slice(0),
       no_ads: false,
       has_diamond: false,
@@ -325,7 +350,15 @@
     _memState.username = (me.username || _memState.username || "").toString();
     _memState.vcoins = _clampInt(typeof me.vcoins !== "undefined" ? me.vcoins : _memState.vcoins);
     _memState.jetons = _clampInt(typeof me.jetons !== "undefined" ? me.jetons : _memState.jetons);
-    _memState.lang = (me.lang || _memState.lang || "en").toString();
+    const localLang =
+      (localStorage.getItem(LangStorageKey) || localStorage.getItem(LangStorageLegacyKey) || "").toString().trim();
+
+    _memState.lang = (
+      localLang ||
+      me.lang ||
+      _memState.lang ||
+      _detectDeviceLang()
+    ).toString();
     _memState.no_ads = !!(me.no_ads || _memState.no_ads || localBefore.no_ads);
     _memState.has_diamond = !!(me.has_diamond || _memState.has_diamond || localBefore.has_diamond);
     _memState.unlocked_universes = _mergeUniverses(remoteUnlocked, localUnlocked);
@@ -779,7 +812,7 @@ return ok;
           username: (_memState.username || "").toString(),
           vcoins: _clampInt(_memState.vcoins || 0),
           jetons: _clampInt(_memState.jetons || 0),
-          lang: (_memState.lang || "en").toString(),
+          lang: (_memState.lang || _detectDeviceLang()).toString(),
           unlocked_universes: _mergeUniverses(_memState.unlocked_universes, []),
           no_ads: !!_memState.no_ads,
           has_diamond: !!_memState.has_diamond,
@@ -804,7 +837,7 @@ return ok;
         _memState.username = (data.username || _memState.username || "").toString();
         _memState.vcoins = _clampInt(typeof data.vcoins !== "undefined" ? data.vcoins : _memState.vcoins);
         _memState.jetons = _clampInt(typeof data.jetons !== "undefined" ? data.jetons : _memState.jetons);
-        _memState.lang = (data.lang || _memState.lang || "en").toString();
+        _memState.lang = (data.lang || _memState.lang || _detectDeviceLang()).toString();
         _memState.no_ads = !!(typeof data.no_ads !== "undefined" ? data.no_ads : _memState.no_ads);
         _memState.has_diamond = !!(typeof data.has_diamond !== "undefined" ? data.has_diamond : _memState.has_diamond);
 
@@ -998,7 +1031,13 @@ return ok;
 
     getUsername() { return (this.load().username || "").toString(); },
     getUserId() { return (this.load().user_id || "").toString(); },
-    getLang() { return (this.load().lang || "en").toString(); },
+    getLang() {
+      try {
+        const ls = localStorage.getItem(LangStorageKey) || localStorage.getItem(LangStorageLegacyKey);
+        if (ls) return String(ls).toLowerCase();
+      } catch (_) {}
+      return (this.load().lang || _detectDeviceLang()).toString();
+    },
     getVcoins() { return Number(this.load().vcoins || 0); },
     getJetons() { return Number(this.load().jetons || 0); },
     hasDiamond() { return !!this.load().has_diamond; },
@@ -1019,8 +1058,12 @@ return ok;
     },
 
     async setLang(lang) {
-      const l = (lang || "en").toString().trim().toLowerCase() || "en";
+      const l = (lang || _detectDeviceLang()).toString().trim().toLowerCase() || _detectDeviceLang();
       const cur = this.load();
+
+      try { localStorage.setItem(LangStorageKey, l); } catch (_) {}
+      try { localStorage.setItem(LangStorageLegacyKey, l); } catch (_) {}
+
       this.save({ ...cur, lang: l });
 
       if (window.VRRemoteStore?.enabled?.()) {

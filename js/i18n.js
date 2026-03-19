@@ -162,6 +162,13 @@ async function tryLoadUiBundle(bundle, lang) {
       if (ls2) return normalizeLang(ls2);
     } catch (_) {}
 
+    try {
+      if (window.VUserData?.load) {
+        const u = window.VUserData.load();
+        if (u && u.lang) return normalizeLang(u.lang);
+      }
+    } catch (_) {}
+
     const fromUserDataStorage = readLangFromUserDataStorage();
     if (fromUserDataStorage) return fromUserDataStorage;
 

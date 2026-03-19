@@ -553,11 +553,6 @@
 
     function getStoredLang(){
       try{
-        const fromUserData = normalizeLang(window.VUserData?.getLang?.());
-        if(fromUserData && supported(fromUserData)) return fromUserData;
-      }catch(_){}
-
-      try{
         const v = normalizeLang(localStorage.getItem(LangStorageKey));
         if(v && supported(v)) return v;
       }catch(_){}
@@ -565,6 +560,11 @@
       try{
         const v2 = normalizeLang(localStorage.getItem(LangStorageLegacyKey));
         if(v2 && supported(v2)) return v2;
+      }catch(_){}
+
+      try{
+        const fromUserData = normalizeLang(window.VUserData?.getLang?.());
+        if(fromUserData && supported(fromUserData)) return fromUserData;
       }catch(_){}
 
       return null;
