@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vuniverse Ads - Vampire Lord</title>
+  <style>
+    :root {
+      --bg: #120914;
+      --bg-soft: #24102c;
+      --panel: rgba(21, 9, 27, 0.88);
+      --panel-border: rgba(255, 255, 255, 0.1);
+      --text: #f7eefe;
+      --muted: #cfbdd8;
+      --accent: #ff5c8a;
+      --accent-2: #a45bff;
+      --success: #79f2c0;
+      --danger: #ff8e8e;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(180deg, rgba(7, 2, 10, 0.5), rgba(7, 2, 10, 0.82)),
+        radial-gradient(circle at top, rgba(164, 91, 255, 0.22), transparent 34%),
+        url("assets/img/backgrounds/vampire_bg_03.webp") center/cover fixed;
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .ad-shell {
+      width: min(1080px, 100%);
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      overflow: hidden;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 680px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-cover {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(18, 9, 20, 0.08), rgba(18, 9, 20, 0.94)),
+        url("assets/img/backgrounds/vampire_bg_05.webp") center/cover;
+      opacity: 0.96;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      min-height: 680px;
+    }
+
+    .eyebrow {
+      align-self: flex-start;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 92, 138, 0.16);
+      border: 1px solid rgba(255, 92, 138, 0.3);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .title-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .title-row img {
+      width: min(220px, 48vw);
+      height: auto;
+      filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35));
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 0.98;
+      max-width: 12ch;
+    }
+
+    .subtitle {
+      margin: 0;
+      max-width: 60ch;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .stat-label {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .stat strong {
+      font-size: 1.45rem;
+    }
+
+    .scene-box {
+      margin-top: auto;
+      background: rgba(14, 8, 18, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 20px;
+    }
+
+    .scene-progress {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 14px;
+    }
+
+    .scene-title {
+      margin: 0 0 10px;
+      font-size: clamp(1.4rem, 2vw, 1.9rem);
+    }
+
+    .scene-text {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.65;
+      min-height: 120px;
+    }
+
+    .choices {
+      display: grid;
+      gap: 12px;
+    }
+
+    .choice {
+      width: 100%;
+      border: 0;
+      border-radius: 18px;
+      padding: 16px;
+      background: linear-gradient(135deg, rgba(164, 91, 255, 0.18), rgba(255, 92, 138, 0.16));
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .choice:hover,
+    .choice:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 24px rgba(0, 0, 0, 0.2);
+      outline: none;
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .choice span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 6px;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .character {
+      padding: 24px;
+    }
+
+    .character-head {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .character-head img {
+      width: 88px;
+      height: 88px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.34));
+    }
+
+    .character-head h2,
+    .cta h2,
+    .logbook h2 {
+      margin: 0 0 6px;
+      font-size: 1.35rem;
+    }
+
+    .character-head p,
+    .cta p,
+    .logbook p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .meter-group {
+      display: grid;
+      gap: 14px;
+    }
+
+    .meter label {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .bar {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .bar > i {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transition: width 0.25s ease;
+    }
+
+    .logbook,
+    .cta {
+      padding: 24px;
+    }
+
+    .log-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .log-item {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .cta {
+      background:
+        linear-gradient(180deg, rgba(255, 92, 138, 0.12), rgba(164, 91, 255, 0.08)),
+        var(--panel);
+    }
+
+    .cta-points {
+      margin: 18px 0 22px;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 14px 24px rgba(164, 91, 255, 0.28);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+    }
+
+    .status-line {
+      margin-top: 14px;
+      font-weight: 700;
+      color: var(--success);
+      min-height: 24px;
+    }
+
+    .end-screen {
+      display: none;
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(121, 242, 192, 0.08);
+      border: 1px solid rgba(121, 242, 192, 0.2);
+    }
+
+    .end-screen.show {
+      display: block;
+    }
+
+    .end-screen.bad {
+      background: rgba(255, 142, 142, 0.08);
+      border-color: rgba(255, 142, 142, 0.2);
+    }
+
+    @media (max-width: 920px) {
+      .ad-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .hero,
+      .hero-content {
+        min-height: auto;
+      }
+
+      .scene-text {
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 12px;
+      }
+
+      .hero-content,
+      .character,
+      .logbook,
+      .cta {
+        padding: 18px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .scene-progress,
+      .character-head,
+      .cta-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .title-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="ad-shell">
+    <section class="card hero" aria-label="Mini jeu publicitaire vampire">
+      <div class="hero-cover"></div>
+      <div class="hero-content">
+        <div class="eyebrow">Playable Ads • Vuniverse</div>
+        <div class="title-row">
+          <img src="assets/img/ui/logo_vuniverse.webp" alt="Logo Vuniverse" />
+          <div>
+            <h1>Le date-night du Vampire Lord a dérapé.</h1>
+            <p class="subtitle">
+              Mini aventure jouable en une minute : 4 scénarios en dur, des choix absurdes,
+              et un noble vampire qui essaye très fort de rester séduisant malgré une allergie sociale au soleil, à l'ail et aux conversations gênantes.
+            </p>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-label">Univers</span>
+            <strong>Vampire</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Durée</span>
+            <strong>~ 60 sec</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Scénarios</span>
+            <strong>4 choix</strong>
+          </div>
+        </div>
+
+        <div class="scene-box">
+          <div class="scene-progress">
+            <span id="progressLabel">Scène 1 / 4</span>
+            <span id="roundMood">Réputation nocturne : 50</span>
+          </div>
+          <h2 class="scene-title" id="sceneTitle"></h2>
+          <p class="scene-text" id="sceneText"></p>
+          <div class="choices" id="choices"></div>
+          <div class="end-screen" id="endScreen"></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <section class="card character">
+        <div class="character-head">
+          <img src="assets/img/ui/universes/vampire_lord.webp" alt="Portrait Vampire Lord" />
+          <div>
+            <h2>Comte Draculol</h2>
+            <p>Charme aristocratique, cape premium, zéro sens de la discrétion.</p>
+          </div>
+        </div>
+
+        <div class="meter-group">
+          <div class="meter">
+            <label><span>Charisme</span><strong id="charmeValue">50</strong></label>
+            <div class="bar"><i id="charmeBar" style="width: 50%"></i></div>
+          </div>
+          <div class="meter">
+            <label><span>Discrétion</span><strong id="ombreValue">50</strong></label>
+            <div class="bar"><i id="ombreBar" style="width: 50%"></i></div>
+          </div>
+          <div class="meter">
+            <label><span>Soif de drama</span><strong id="dramaValue">50</strong></label>
+            <div class="bar"><i id="dramaBar" style="width: 50%"></i></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card logbook">
+        <h2>Journal de la nuit</h2>
+        <p>Chaque choix modifie l'ambiance. Oui, même "apporter du jus de tomate".</p>
+        <div class="log-list" id="logList">
+          <div class="log-item">La lune est haute. Les décisions douteuses aussi.</div>
+        </div>
+      </section>
+
+      <section class="card cta">
+        <h2>Pourquoi ce format d'ads marche</h2>
+        <p>Tout est dans un seul fichier HTML : gameplay, CSS, JavaScript et CTA final pour teaser l'univers vampire.</p>
+        <ul class="cta-points">
+          <li>4 scènes jouables immédiatement, sans écran de profil ni userdata.</li>
+          <li>Ton humoristique pour donner envie de découvrir l'univers Vuniverse.</li>
+          <li>Structure légère, prête pour une diffusion en playable ad.</li>
+        </ul>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="game.html">Jouer au vrai jeu</a>
+          <button class="btn btn-secondary" id="restartBtn" type="button">Relancer la nuit</button>
+        </div>
+        <div class="status-line" id="statusLine">Choisis une option pour lancer la catastrophe élégante.</div>
+      </section>
+    </aside>
+  </main>
+
+  <script>
+    const scenes = [
+      {
+        title: "Scène 1 — Le réveil dans le cercueil coworking",
+        text: "Ton réveil sonne à minuit. Le Vampire Lord doit filer à un rendez-vous galant, mais son cercueil connecté a lancé la playlist 'pluie triste et fiscalité'. Pas idéal pour séduire.",
+        choices: [
+          {
+            label: "Improviser une entrée théâtrale avec fumée violette",
+            detail: "+15 charisme, +10 drama. Les voisins applaudissent puis déposent une plainte.",
+            effect: { charme: 15, ombre: -5, drama: 10 },
+            log: "Tu sors du cercueil dans un nuage violet. C'est chic, et légèrement illégal."
+          },
+          {
+            label: "Activer le mode silencieux et glisser comme une chauve-souris RH",
+            detail: "+15 discrétion, -5 drama. Très pro, presque trop.",
+            effect: { charme: 0, ombre: 15, drama: -5 },
+            log: "Tu glisses dans l'ombre avec l'assurance d'un manager qui ne veut pas être tagué sur Slack."
+          }
+        ]
+      },
+      {
+        title: "Scène 2 — Le serveur propose une boisson maison",
+        text: "Au bar gothique 'Le Plasma Joyeux', le serveur te recommande un mocktail à l'ail fermenté. Tout le monde te regarde, en particulier ton date qui adore les expériences culinaires catastrophiques.",
+        choices: [
+          {
+            label: "Prétendre que l'ail est un parfum d'ambiance très niche",
+            detail: "+10 charisme, +10 drama. Tu mens avec le sourire d'un immortel en panique.",
+            effect: { charme: 10, ombre: 0, drama: 10 },
+            log: "Tu expliques que l'odeur d'ail est une note de tête 'post-ironie médiévale'. Personne n'ose te contredire."
+          },
+          {
+            label: "Commander discrètement un Bloody Berry deluxe",
+            detail: "+10 discrétion, +5 charisme. C'est rouge, élégant et socialement acceptable.",
+            effect: { charme: 5, ombre: 10, drama: 0 },
+            log: "Tu sauves l'honneur du clan avec une boisson rouge suspecte mais marketable."
+          }
+        ]
+      },
+      {
+        title: "Scène 3 — Le selfie interdit avant l'aube",
+        text: "Ton date veut un selfie pour son feed 'Mon crush a une cape'. Problème : les miroirs, les appareils photo et ton ego ne collaborent pas toujours.",
+        choices: [
+          {
+            label: "Poser de profil avec la cape en mode ventilateur dramatique",
+            detail: "+15 charisme, +5 drama. Le selfie ne te capte pas, mais la cape oui.",
+            effect: { charme: 15, ombre: -5, drama: 5 },
+            log: "La photo montre surtout une cape majestueuse et une boisson flottante. Internet adore."
+          },
+          {
+            label: "Lancer un brouillard mystique et appeler ça un filtre premium",
+            detail: "+15 discrétion, +5 drama. Techniquement tu n'apparais pas, donc techniquement c'est réussi.",
+            effect: { charme: 0, ombre: 15, drama: 5 },
+            log: "Le selfie devient une œuvre abstraite. Ton date dit que c'est 'très conceptuel'."
+          }
+        ]
+      },
+      {
+        title: "Scène 4 — Le lever du soleil fait son audit",
+        text: "L'aube approche. Il faut conclure la soirée avant que le soleil te transforme en nugget aristocratique. Ton date attend un geste final mémorable.",
+        choices: [
+          {
+            label: "Inviter ton date dans le carrosse Vuniverse avec panache",
+            detail: "+20 charisme, +10 drama. C'est le move premium.",
+            effect: { charme: 20, ombre: -10, drama: 10 },
+            log: "Tu ouvres la portière imaginaire avec un sourire certifié 900 ans d'expérience."
+          },
+          {
+            label: "Offrir une rose noire et disparaître avant la première UV",
+            detail: "+20 discrétion, +5 charisme. Élégant, efficace, SPF 0 compatible.",
+            effect: { charme: 5, ombre: 20, drama: 0 },
+            log: "Tu laisses une rose noire, une rumeur et zéro preuve médico-légale."
+          }
+        ]
+      }
+    ];
+
+    const initialState = () => ({ charme: 50, ombre: 50, drama: 50, reputation: 50, step: 0, logs: [] });
+    let state = initialState();
+
+    const sceneTitle = document.getElementById('sceneTitle');
+    const sceneText = document.getElementById('sceneText');
+    const choicesEl = document.getElementById('choices');
+    const progressLabel = document.getElementById('progressLabel');
+    const roundMood = document.getElementById('roundMood');
+    const logList = document.getElementById('logList');
+    const statusLine = document.getElementById('statusLine');
+    const endScreen = document.getElementById('endScreen');
+
+    function clamp(value) {
+      return Math.max(0, Math.min(100, value));
+    }
+
+    function updateMeters() {
+      const values = [
+        ['charme', 'charmeValue', 'charmeBar'],
+        ['ombre', 'ombreValue', 'ombreBar'],
+        ['drama', 'dramaValue', 'dramaBar']
+      ];
+
+      values.forEach(([key, valueId, barId]) => {
+        document.getElementById(valueId).textContent = state[key];
+        document.getElementById(barId).style.width = state[key] + '%';
+      });
+
+      state.reputation = clamp(Math.round((state.charme + state.ombre + state.drama) / 3));
+      roundMood.textContent = `Réputation nocturne : ${state.reputation}`;
+    }
+
+    function renderLogs() {
+      logList.innerHTML = '';
+      const entries = state.logs.length ? state.logs.slice(-4).reverse() : ['La lune est haute. Les décisions douteuses aussi.'];
+      entries.forEach((entry) => {
+        const item = document.createElement('div');
+        item.className = 'log-item';
+        item.textContent = entry;
+        logList.appendChild(item);
+      });
+    }
+
+    function showEnding() {
+      const score = state.charme + state.ombre + state.drama;
+      const isLegend = score >= 210;
+      endScreen.className = 'end-screen show' + (isLegend ? '' : ' bad');
+      endScreen.innerHTML = isLegend
+        ? '<strong>Fin : Icône de la nuit.</strong><br>Ton date est conquis, la cape est virale, et le Vampire Lord mérite clairement une saison 2 sur Vuniverse.'
+        : '<strong>Fin : Gentleman croustillant.</strong><br>Le date était prometteur, mais l\'aube t\'a rappelé que courir après le soleil reste une stratégie discutable.';
+      statusLine.textContent = isLegend
+        ? 'Succès : tu as transformé ce rendez-vous en légende nocturne.'
+        : 'Fin alternative : un peu de panache en plus et la nuit t\'appartenait.';
+      choicesEl.innerHTML = '';
+      progressLabel.textContent = 'Aventure terminée';
+    }
+
+    function renderScene() {
+      updateMeters();
+      renderLogs();
+
+      if (state.step >= scenes.length) {
+        showEnding();
+        return;
+      }
+
+      endScreen.className = 'end-screen';
+      endScreen.innerHTML = '';
+
+      const scene = scenes[state.step];
+      progressLabel.textContent = `Scène ${state.step + 1} / ${scenes.length}`;
+      sceneTitle.textContent = scene.title;
+      sceneText.textContent = scene.text;
+      choicesEl.innerHTML = '';
+
+      scene.choices.forEach((choice) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'choice';
+        button.innerHTML = `${choice.label}<span>${choice.detail}</span>`;
+        button.addEventListener('click', () => pickChoice(choice));
+        choicesEl.appendChild(button);
+      });
+    }
+
+    function pickChoice(choice) {
+      state.charme = clamp(state.charme + choice.effect.charme);
+      state.ombre = clamp(state.ombre + choice.effect.ombre);
+      state.drama = clamp(state.drama + choice.effect.drama);
+      state.logs.push(choice.log);
+      statusLine.textContent = choice.log;
+      state.step += 1;
+      renderScene();
+    }
+
+    document.getElementById('restartBtn').addEventListener('click', () => {
+      state = initialState();
+      statusLine.textContent = 'Nouvelle partie : cette fois, évite peut-être l\'ail artisanal.';
+      renderScene();
+    });
+
+    renderScene();
+  </script>
+</body>
+</html>
