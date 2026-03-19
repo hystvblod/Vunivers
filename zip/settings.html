@@ -723,18 +723,28 @@
 
     function getAdsPref(){
       try{
+        if(window.VRAds && typeof window.VRAds.getPersonalizedConsent === "function"){
+          return !!window.VRAds.getPersonalizedConsent();
+        }
+      }catch(_){}
+
+      try{
         const v = localStorage.getItem(AdsPrefKey);
         if(v === "1") return true;
         if(v === "0") return false;
       }catch(_){}
+
       return false;
     }
 
     async function setAdsPref(value, { showMsg } = {}){
       const on = !!value;
+
       try{ localStorage.setItem(AdsPrefKey, on ? "1" : "0"); }catch(_){}
 
-      try{ window.VAds?.setPersonalized?.(on); }catch(_){}
+      try{
+        await window.VRAds?.setPersonalizedConsent?.(on, { source:"settings" });
+      }catch(_){}
 
       const box = $("adsPersonalized");
       if(box) box.checked = on;
@@ -769,7 +779,7 @@
       adsBox.addEventListener("change", () => setAdsPref(adsBox.checked, { showMsg:true }));
     }
 
-    try{ window.VAds?.setPersonalized?.(getAdsPref()); }catch(_){}
+    try{ await window.VRAds?.setPersonalizedConsent?.(getAdsPref(), { source:"settings_init" }); }catch(_){}
   })();
   </script>
 </body>

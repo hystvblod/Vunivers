@@ -546,5 +546,13 @@
       "accept": "Autoriser",
       "cancel": "Plus tard"
     }
+  },
+  "adsConsent": {
+    "popup": {
+      "title": "Publicités personnalisées",
+      "text": "Acceptes-tu des publicités personnalisées pour recevoir des annonces plus pertinentes ? Tu peux changer ce choix à tout moment dans les paramètres.",
+      "accept": "Accepter",
+      "refuse": "Refuser"
+    }
   }
 }
