@@ -645,13 +645,13 @@ body.vr-body-game .vr-choice-label{
    ========================================================== */
 #vr-ending-overlay .vr-choice-button{
   background-image: none !important;
-  background: rgba(255,255,255,0.08) !important;
+  background: rgba(255,255,255,0.07) !important;
   border: 1px solid rgba(255,255,255,0.14) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 14px 26px rgba(0,0,0,0.24) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.20) !important;
 
-  min-height: clamp(48px, 12vw, 56px) !important;
-  padding: 10px 12px !important;
+  min-height: clamp(40px, 9.5vw, 46px) !important;
+  padding: 8px 12px !important;
 
   width: 100% !important;
   max-width: none !important;
@@ -663,9 +663,9 @@ body.vr-body-game .vr-choice-label{
 
   color: #ffffff !important;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  font-size: clamp(13px, 3.8vw, 16px) !important;
+  font-size: clamp(13px, 3.6vw, 15px) !important;
   font-weight: 800 !important;
-  line-height: 1.2 !important;
+  line-height: 1.15 !important;
   text-align: center !important;
   text-shadow: 0 2px 10px rgba(0,0,0,0.35) !important;
 }
@@ -691,16 +691,13 @@ body.vr-body-game .vr-choice-label{
   overflow-wrap: anywhere !important;
 }
 
-/* ligne gain : sans cartouche */
 #vr-ending-overlay .vr-ending-reward{
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 8px !important;
-
   padding: 0 !important;
-  margin: 2px 0 6px !important;
-
+  margin: 2px 0 4px !important;
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
@@ -729,15 +726,15 @@ body.vr-body-game .vr-choice-label{
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 4px !important;
+  gap: 2px !important;
   width: 100% !important;
-  min-height: clamp(72px, 14vw, 92px) !important;
-  padding: 12px 14px !important;
+  min-height: clamp(54px, 11vw, 64px) !important;
+  padding: 8px 12px !important;
   margin-top: 4px !important;
   border: 1px solid rgba(255,255,255,.14) !important;
-  border-radius: 18px !important;
+  border-radius: 16px !important;
   background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05)) !important;
-  box-shadow: 0 18px 34px rgba(0,0,0,.28) !important;
+  box-shadow: 0 10px 20px rgba(0,0,0,.24) !important;
   color: #fff !important;
   font: inherit !important;
   cursor: pointer !important;
@@ -748,35 +745,46 @@ body.vr-body-game .vr-choice-label{
   align-items: center !important;
   justify-content: center !important;
   gap: 8px !important;
-  font-size: clamp(16px, 4.5vw, 20px) !important;
+  font-size: clamp(15px, 4vw, 18px) !important;
   font-weight: 950 !important;
   line-height: 1.05 !important;
 }
 
 #vr-ending-overlay .vr-ending-double-title img{
-  width: clamp(24px, 6.5vw, 32px) !important;
-  height: clamp(24px, 6.5vw, 32px) !important;
+  width: clamp(22px, 6vw, 28px) !important;
+  height: clamp(22px, 6vw, 28px) !important;
   object-fit: contain !important;
 }
 
 #vr-ending-overlay .vr-ending-double-sub{
-  font-size: clamp(11px, 3vw, 13px) !important;
-  font-weight: 800 !important;
-  line-height: 1.25 !important;
-  opacity: .92 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  font-size: clamp(13px, 3.2vw, 14px) !important;
+  font-weight: 900 !important;
+  line-height: 1.1 !important;
+  opacity: 1 !important;
+}
+
+#vr-ending-overlay .vr-ending-double-sub img{
+  width: clamp(16px, 4.6vw, 18px) !important;
+  height: clamp(16px, 4.6vw, 18px) !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,.28)) !important;
 }
 
 #vr-ending-overlay .vr-ending-actions{
   display: flex !important;
   flex-direction: column !important;
-  gap: 10px !important;
-  margin-top: 10px !important;
+  gap: 8px !important;
+  margin-top: 8px !important;
 }
 
 #vr-ending-overlay .vr-ending-actions-bottom{
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
-  gap: 10px !important;
+  gap: 8px !important;
   margin-top: 0 !important;
 }
 
@@ -786,7 +794,7 @@ body.vr-body-game .vr-choice-label{
 
 @media (max-width: 480px){
   #vr-ending-overlay .vr-ending-actions-bottom{
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr 1fr !important;
   }
 }
 
