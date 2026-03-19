@@ -2362,7 +2362,13 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
   font-family: "MerriweatherExplorer", serif !important;
   color: #000 !important;
   font-weight: 800 !important;
-  line-height: 1.08 !important;
+  line-height: 1.05 !important;
+
+  width: 74% !important;
+  max-width: 74% !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
 }
 
 body.vr-body-game[data-universe="heaven_king"]{
@@ -2722,7 +2728,7 @@ body[data-universe="heaven_king"] .vr-gauge-delta{
     --vr-choice-h: clamp(84px, 12.0svh, 128px);
     --vr-stack-gap: 0px;
     --vr-choices-gap: 0px;
-    --vr-choice-safe: 74%;
+    --vr-choice-safe: 70%;
     --vr-choice-inset-top: 16%;
     --vr-choice-inset-right: 10%;
     --vr-choice-inset-bottom: 16%;
@@ -2761,7 +2767,7 @@ body[data-universe="heaven_king"] .vr-gauge-delta{
     --vr-choice-h: clamp(80px, 11.2svh, 118px);
     --vr-stack-gap: 0px;
     --vr-choices-gap: 0px;
-    --vr-choice-safe: 72%;
+    --vr-choice-safe: 68%;
     --vr-choice-inset-top: 15%;
     --vr-choice-inset-right: 9%;
     --vr-choice-inset-bottom: 15%;
