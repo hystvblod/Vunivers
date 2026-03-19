@@ -57,7 +57,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:16px;
+      gap:22px;
       width:100%;
     }
 
@@ -65,7 +65,7 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:6px;
+      gap:8px;
       padding:0;
       min-width:0;
       height:auto;
@@ -78,21 +78,21 @@
     }
 
     .vr-top-balance img{
-      width:16px;
-      height:16px;
+      width:22px;
+      height:22px;
       object-fit:contain;
       display:block;
       flex:0 0 auto;
-      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.45));
+      filter: drop-shadow(0 3px 8px rgba(0,0,0,0.48));
       pointer-events:none;
       user-select:none;
     }
 
     .vr-top-balance span{
-      font-weight:950;
-      font-size:13px;
+      font-weight:1000;
+      font-size:18px;
       line-height:1;
-      color:rgba(255,255,255,.96);
+      color:rgba(255,255,255,.98);
       text-shadow:0 8px 18px rgba(0,0,0,.45);
       white-space:nowrap;
     }
@@ -252,9 +252,50 @@
       height: auto;
     }
 
-    .vr-shop-item[data-sku="vuniverse_no_ads"] .vr-shop-top,
-    .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-top{
-      justify-content: center;
+    .vr-shop-item[data-sku="vuniverse_no_ads"] .vr-shop-top{
+      justify-content:center;
+    }
+
+    #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-top{
+      flex-direction:column !important;
+      align-items:center !important;
+      justify-content:flex-start !important;
+      gap:4px !important;
+      min-height:78px !important;
+      padding-top:2px;
+    }
+
+    #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-icon{
+      transform: translateY(-6px);
+      animation: vrDiamondPulse 1.6s ease-in-out infinite;
+      filter:
+        drop-shadow(0 0 10px rgba(255,210,90,.42))
+        drop-shadow(0 10px 18px rgba(0,0,0,.42));
+    }
+
+    #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-badge-subtitle{
+      margin-top:-4px;
+      max-width:110px;
+      font-weight:1000;
+      font-size:11px;
+      line-height:1.08;
+      text-align:center;
+      color:#f7d46e;
+      letter-spacing:.2px;
+      text-shadow:
+        0 2px 10px rgba(0,0,0,.42),
+        0 0 12px rgba(247,212,110,.28);
+    }
+
+    @keyframes vrDiamondPulse{
+      0%, 100%{
+        opacity:1;
+        transform:translateY(-6px) scale(1);
+      }
+      50%{
+        opacity:.72;
+        transform:translateY(-9px) scale(1.06);
+      }
     }
 
     #shop-status,
@@ -702,6 +743,7 @@
           <div class="vr-shop-item" data-sku="vuniverse_diamond">
             <div class="vr-shop-top">
               <img class="vr-shop-icon" src="assets/img/ui/diamond.webp" alt="" draggable="false">
+              <div class="vr-shop-badge-subtitle" data-i18n="shop.diamond_badge"></div>
             </div>
             <button
               class="vr-choice-button vr-iap-button"
