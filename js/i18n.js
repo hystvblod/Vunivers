@@ -215,19 +215,101 @@ async function tryLoadUiBundle(bundle, lang) {
     const style = document.createElement("style");
     style.id = "vr-language-picker-style";
     style.textContent = `
-      .vrLangOverlay{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(7,10,18,.82);backdrop-filter:blur(10px)}
-      .vrLangModal{width:min(92vw,560px);background:linear-gradient(180deg,rgba(18,25,43,.98),rgba(11,16,28,.98));border:1px solid rgba(255,255,255,.12);border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.45);padding:22px 18px 18px;color:#fff}
-      .vrLangTitle{text-align:center;font-weight:900;font-size:clamp(24px,4.8vw,34px);line-height:1.1;margin:0 0 16px}
-      .vrLangGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-      .vrLangCard{appearance:none;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);border-radius:18px;display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer;color:#fff;min-height:68px;font:inherit;text-align:left;transition:transform .15s ease,border-color .15s ease,background .15s ease}
-      .vrLangCard:active{transform:scale(.98)}
-      .vrLangCard:hover{border-color:rgba(255,255,255,.24);background:rgba(255,255,255,.1)}
-      .vrLangFlag{width:42px;height:28px;display:grid;place-items:center;overflow:hidden;border-radius:8px;box-shadow:0 0 0 1px rgba(255,255,255,.12) inset;background:rgba(255,255,255,.92);flex:0 0 auto}
-      .vrLangFlag svg{display:block;width:100%;height:100%}
-      .vrLangText{display:flex;flex-direction:column;gap:2px}
-      .vrLangCode{font-weight:900;font-size:15px;line-height:1}
-      .vrLangHint{font-size:12px;line-height:1;color:rgba(255,255,255,.72)}
-      @media (max-width:420px){.vrLangGrid{grid-template-columns:1fr}.vrLangModal{padding:18px 14px 14px}}
+      .vrLangOverlay{
+        position:fixed;
+        inset:0;
+        z-index:999999;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:16px;
+        background:rgba(7,10,18,.82);
+        backdrop-filter:blur(10px);
+      }
+
+      .vrLangModal{
+        width:min(92vw,560px);
+        background:linear-gradient(180deg,rgba(18,25,43,.98),rgba(11,16,28,.98));
+        border:1px solid rgba(255,255,255,.12);
+        border-radius:24px;
+        box-shadow:0 20px 60px rgba(0,0,0,.45);
+        padding:18px 16px 16px;
+        color:#fff;
+      }
+
+      .vrLangTitle{
+        text-align:center;
+        font-weight:900;
+        font-size:clamp(24px,4.8vw,34px);
+        line-height:1.1;
+        margin:0 0 16px;
+      }
+
+      /* ===== EXACT LOGIQUE SETTINGS ===== */
+      .vrLangOverlay .vr-langGrid{
+        display:grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap:10px;
+        margin-top:22px;
+        margin-bottom:6px;
+      }
+
+      @media (min-width: 520px){
+        .vrLangOverlay .vr-langGrid{
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+
+      .vrLangOverlay .vr-langBtn{
+        width:100%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:0;
+        padding:10px 6px;
+        border-radius:14px;
+        border:0 !important;
+        background:transparent !important;
+        box-shadow:none !important;
+        color:inherit;
+        cursor:pointer;
+        -webkit-tap-highlight-color: transparent;
+        text-align:center;
+        appearance:none;
+      }
+
+      .vrLangOverlay .vr-langBtn:active{
+        transform:scale(.98);
+      }
+
+      .vrLangOverlay .vr-langBtn.isActive{
+        outline:0;
+        box-shadow:0 0 0 2px rgba(255,255,255,.22), 0 14px 34px rgba(0,0,0,.26) !important;
+        background:transparent !important;
+        border:0 !important;
+      }
+
+      .vrLangOverlay .vr-flagBox{
+        width:46px;
+        height:32px;
+        border-radius:8px;
+        overflow:hidden;
+        border:0 !important;
+        outline:0 !important;
+        box-shadow:none !important;
+        background:transparent !important;
+        flex:0 0 auto;
+      }
+
+      .vrLangOverlay .vr-flagBox svg{
+        width:100%;
+        height:100%;
+        display:block;
+      }
+
+      .vrLangOverlay .vr-langText{
+        display:none !important;
+      }
     `;
     document.head.appendChild(style);
   }
@@ -253,33 +335,28 @@ async function tryLoadUiBundle(bundle, lang) {
       modal.appendChild(title);
 
       const grid = document.createElement("div");
-      grid.className = "vrLangGrid";
+      grid.className = "vr-langGrid";
 
-      const deviceGuess = detectDeviceLang();
+      const active = getSavedLang("") || detectDeviceLang() || "";
 
       LANGUAGE_CHOICES.forEach((item) => {
         const btn = document.createElement("button");
         btn.type = "button";
-        btn.className = "vrLangCard";
+        btn.className = "vr-langBtn" + (active === item.code ? " isActive" : "");
         btn.setAttribute("data-lang", item.code);
+        btn.setAttribute("aria-label", item.ui);
 
         const flag = document.createElement("div");
-        flag.className = "vrLangFlag";
+        flag.className = "vr-flagBox";
         flag.innerHTML = LANGUAGE_FLAGS[item.code] || LANGUAGE_FLAGS.en;
 
         const txt = document.createElement("div");
-        txt.className = "vrLangText";
+        txt.className = "vr-langText";
 
         const code = document.createElement("div");
-        code.className = "vrLangCode";
         code.textContent = item.ui;
 
-        const hint = document.createElement("div");
-        hint.className = "vrLangHint";
-        hint.textContent = item.code === deviceGuess ? "Device" : "";
-
         txt.appendChild(code);
-        txt.appendChild(hint);
 
         btn.appendChild(flag);
         btn.appendChild(txt);
