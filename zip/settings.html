@@ -63,7 +63,7 @@
       align-items:center;
       justify-content:flex-start;
       text-align:center;
-      gap:6px;
+      gap:0;
       padding-top:4px;
     }
 
@@ -74,14 +74,20 @@
       line-height:1.05;
     }
 
-    .vr-headerTitleWrap .vr-section-subtitle{
-      margin:0;
+    .vr-settingsIntroAboveCard{
+      margin:10px auto 14px auto;
       width:100%;
       max-width:520px;
       text-align:center;
       font-size:13px;
       line-height:1.35;
       opacity:.86;
+    }
+
+    .vr-settingsSection--toggles .vr-toggleRow + .vr-toggleRow{
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,.10);
     }
 
     .vr-icon-button{
@@ -404,7 +410,6 @@
       <div class="vr-top-slot vr-top-center">
         <div class="vr-headerTitleWrap">
           <h1 id="settingsTitle" class="vr-section-title"></h1>
-          <p id="settingsLangDesc" class="vr-section-subtitle"></p>
         </div>
       </div>
 
@@ -422,13 +427,13 @@
     <section id="view-settings" class="vr-view vr-view-active">
       <div class="vr-section-headCentered"></div>
 
+      <p id="settingsLangDesc" class="vr-settingsIntroAboveCard"></p>
+
       <div class="vr-profile-grid">
         <div class="vr-profile-card">
           <div id="settingsLangGrid" class="vr-langGrid" aria-label=""></div>
 
-          <div class="vr-settingsSection">
-            <div id="settingsAdsTitle" class="vr-settingsSectionTitle"></div>
-
+          <div class="vr-settingsSection vr-settingsSection--toggles">
             <div class="vr-toggleRow">
               <div class="vr-toggleText">
                 <p id="adsLabel" class="vr-toggleLabel"></p>
@@ -636,7 +641,6 @@
       const back = $("btnBackHome");
       const prof = $("btnGoProfile");
       const grid = $("settingsLangGrid");
-      const adsTitle = $("settingsAdsTitle");
       const adsLabel = $("adsLabel");
       const adsDesc = $("adsDesc");
       const adsSw = $("adsSwitch");
@@ -654,7 +658,6 @@
       if(back) back.setAttribute("aria-label", t("ui.settings_back_home_aria"));
       if(prof) prof.setAttribute("aria-label", t("ui.settings_open_profile_aria"));
       if(grid) grid.setAttribute("aria-label", t("ui.language"));
-      if(adsTitle) adsTitle.textContent = t("ui.settings_ads_title");
       if(adsLabel) adsLabel.textContent = t("ui.settings_ads_personalized_label");
       if(adsDesc) adsDesc.textContent = t("ui.settings_ads_personalized_desc");
       if(adsSw) adsSw.setAttribute("aria-label", t("ui.settings_ads_personalized_label"));
