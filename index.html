@@ -720,6 +720,27 @@
   </script>
 
   <script>
+    window.addEventListener("load", async function () {
+      try {
+        const introJustFinished = localStorage.getItem("vrealms_intro_just_finished") === "1";
+        if (!introJustFinished) return;
+
+        try {
+          await window.VROneSignal?.maybePromptOnIndexAfterGameReturn?.();
+        } catch (_) {}
+
+        try {
+          await window.VRAds?.maybeShowPersonalizedConsentPopupOnIndexAfterIntro?.();
+        } catch (_) {}
+
+        try {
+          localStorage.removeItem("vrealms_intro_just_finished");
+        } catch (_) {}
+      } catch (_) {}
+    });
+  </script>
+
+  <script>
     (function () {
       const banner = document.getElementById("vr-update-banner");
       const titleEl = document.getElementById("vr-update-title");

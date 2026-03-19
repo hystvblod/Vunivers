@@ -296,8 +296,13 @@
   }
 
   function buildAdMobRequestOptions() {
-    // npa: "1" => non-personnalisées, "0" => personnalisées
-    return { npa: getPersonalizedAdsGranted() ? "0" : "1" };
+    var personalized = getPersonalizedConsent();
+    var npa = personalized ? "0" : "1";
+
+    return {
+      requestNonPersonalizedAdsOnly: npa === "1",
+      extras: { npa: npa }
+    };
   }
 
   async function syncAdsStateFromServer() {
@@ -824,6 +829,219 @@
   }
 
   // =============================
+  // Consent popup pubs personnalisées
+  // =============================
+  var ADS_PREF_KEY = "vrealms_ads_personalized";
+  var ADS_CHOICE_DONE_KEY = "vrealms_ads_consent_done_v1";
+  var INTRO_FINISHED_FLOW_KEY = "vrealms_intro_just_finished";
+
+  function _readLSString(key) {
+    try { return String(localStorage.getItem(key) || ""); } catch (_) {}
+    return "";
+  }
+
+  function _writeLSString(key, value) {
+    try { localStorage.setItem(key, String(value)); } catch (_) {}
+  }
+
+  function _removeLS(key) {
+    try { localStorage.removeItem(key); } catch (_) {}
+  }
+
+  function _tr(key, fallback) {
+    try {
+      var out = window.VRI18n && typeof window.VRI18n.t === "function"
+        ? window.VRI18n.t(key)
+        : "";
+      if (out && out !== key) return out;
+    } catch (_) {}
+    return typeof fallback === "string" ? fallback : "";
+  }
+
+  function hasPersonalizedConsentChoice() {
+    return _readLSString(ADS_CHOICE_DONE_KEY) === "1";
+  }
+
+  function getPersonalizedConsent() {
+    var v = _readLSString(ADS_PREF_KEY);
+    if (v === "1") return true;
+    if (v === "0") return false;
+    return false;
+  }
+
+  async function _syncConsentToServerBestEffort(granted) {
+    return false;
+  }
+
+  async function setPersonalizedConsent(granted, opts) {
+    var value = !!granted;
+
+    _adsState.rgpdConsent = value ? "accept" : "refuse";
+    _adsState.adsConsent = value;
+    _adsState.adsEnabled = value;
+
+    _writeLSString(ADS_PREF_KEY, value ? "1" : "0");
+    _writeLSString(ADS_CHOICE_DONE_KEY, "1");
+
+    try {
+      if (window.sb && typeof window.sb.rpc === "function") {
+        await window.sb.rpc("secure_set_ads_personalized_choice", {
+          p_new_value: value
+        });
+      }
+    } catch (_) {}
+
+    return value;
+  }
+
+  function ensureAdsConsentStyles() {
+    if (document.getElementById("vr-ads-consent-style")) return;
+
+    var style = document.createElement("style");
+    style.id = "vr-ads-consent-style";
+    style.textContent = `
+      #vr-ads-consent{
+        position:fixed;
+        inset:0;
+        display:none;
+        align-items:center;
+        justify-content:center;
+        padding:16px;
+        background:rgba(15,23,42,.82);
+        z-index:260000;
+      }
+      #vr-ads-consent.is-open{ display:flex; }
+      #vr-ads-consent .vr-ads-consent-card{
+        width:min(440px, calc(100vw - 24px));
+        padding:18px;
+        border-radius:22px;
+        background:rgba(15,23,42,.98);
+        border:1px solid rgba(255,255,255,.14);
+        box-shadow:0 20px 40px rgba(0,0,0,.35);
+        color:#fff;
+        text-align:center;
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+      }
+      #vr-ads-consent .vr-ads-consent-title{
+        margin:0;
+        font-size:clamp(20px, 5.2vw, 26px);
+        font-weight:950;
+      }
+      #vr-ads-consent .vr-ads-consent-text{
+        margin:0;
+        font-size:clamp(13px, 3.7vw, 15px);
+        line-height:1.45;
+        color:rgba(255,255,255,.88);
+      }
+      #vr-ads-consent .vr-ads-consent-actions{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+      }
+      #vr-ads-consent button{
+        min-height:48px;
+        border:none;
+        border-radius:14px;
+        font:800 15px/1.2 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+        cursor:pointer;
+      }
+      #vr-ads-consent .vr-ads-consent-refuse{
+        background:rgba(255,255,255,.08);
+        color:#fff;
+        border:1px solid rgba(255,255,255,.12);
+      }
+      #vr-ads-consent .vr-ads-consent-accept{
+        background:#ffffff;
+        color:#0f172a;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function ensureAdsConsentPopup() {
+    var overlay = document.getElementById("vr-ads-consent");
+    if (overlay) return overlay;
+
+    ensureAdsConsentStyles();
+
+    overlay = document.createElement("div");
+    overlay.id = "vr-ads-consent";
+    overlay.setAttribute("aria-hidden", "true");
+    overlay.innerHTML = `
+      <div class="vr-ads-consent-card" role="dialog" aria-modal="true" aria-labelledby="vr-ads-consent-title">
+        <h3 class="vr-ads-consent-title" id="vr-ads-consent-title"></h3>
+        <p class="vr-ads-consent-text" id="vr-ads-consent-text"></p>
+        <div class="vr-ads-consent-actions">
+          <button type="button" class="vr-ads-consent-refuse" id="vr-ads-consent-refuse"></button>
+          <button type="button" class="vr-ads-consent-accept" id="vr-ads-consent-accept"></button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+    return overlay;
+  }
+
+  function fillAdsConsentTexts() {
+    var titleEl = document.getElementById("vr-ads-consent-title");
+    var textEl = document.getElementById("vr-ads-consent-text");
+    var refuseEl = document.getElementById("vr-ads-consent-refuse");
+    var acceptEl = document.getElementById("vr-ads-consent-accept");
+
+    if (titleEl) titleEl.textContent = _tr("adsConsent.popup.title", "Publicités personnalisées");
+    if (textEl) textEl.textContent = _tr("adsConsent.popup.text", "Acceptes-tu des publicités personnalisées pour recevoir des annonces plus pertinentes ? Tu peux changer ce choix à tout moment dans les paramètres.");
+    if (refuseEl) refuseEl.textContent = _tr("adsConsent.popup.refuse", "Refuser");
+    if (acceptEl) acceptEl.textContent = _tr("adsConsent.popup.accept", "Accepter");
+  }
+
+  function showAdsConsentPopup() {
+    var overlay = ensureAdsConsentPopup();
+    fillAdsConsentTexts();
+
+    return new Promise(function (resolve) {
+      var acceptBtn = document.getElementById("vr-ads-consent-accept");
+      var refuseBtn = document.getElementById("vr-ads-consent-refuse");
+
+      function close(value) {
+        overlay.classList.remove("is-open");
+        overlay.setAttribute("aria-hidden", "true");
+        resolve(value);
+      }
+
+      overlay.onclick = function (e) {
+        if (e.target === overlay) close(false);
+      };
+
+      if (acceptBtn) {
+        acceptBtn.onclick = function () { close(true); };
+      }
+
+      if (refuseBtn) {
+        refuseBtn.onclick = function () { close(false); };
+      }
+
+      overlay.classList.add("is-open");
+      overlay.setAttribute("aria-hidden", "false");
+      try { acceptBtn && acceptBtn.focus && acceptBtn.focus({ preventScroll: true }); } catch (_) {}
+    });
+  }
+
+  async function maybeShowPersonalizedConsentPopupOnIndexAfterIntro() {
+    try {
+      var introJustFinished = _readLSString(INTRO_FINISHED_FLOW_KEY) === "1";
+      if (!introJustFinished) return false;
+      if (hasPersonalizedConsentChoice()) return false;
+
+      var accepted = await showAdsConsentPopup();
+      await setPersonalizedConsent(accepted, { source: "intro_index_popup" });
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  // =============================
   // Expose API attendue par ton jeu
   // =============================
   window.VRAds = window.VRAds || {};
@@ -848,6 +1066,12 @@
 
   // ➜ API "state"
   window.VRAds.refreshState = syncAdsStateFromServer;
+
+  // ➜ API consentement pubs personnalisées
+  window.VRAds.getPersonalizedConsent = getPersonalizedConsent;
+  window.VRAds.hasPersonalizedConsentChoice = hasPersonalizedConsentChoice;
+  window.VRAds.setPersonalizedConsent = setPersonalizedConsent;
+  window.VRAds.maybeShowPersonalizedConsentPopupOnIndexAfterIntro = maybeShowPersonalizedConsentPopupOnIndexAfterIntro;
 
   // ➜ API "no_ads" (utile pour UI/diagnostic)
   window.VRAds.isNoAds = isNoAds;
