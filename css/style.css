@@ -404,8 +404,8 @@ button.vr-card:focus-visible{
   font-weight:900;
   min-width:72px;
   text-shadow:
-    0 0 4px rgba(0,0,0,0.16),
-    0 1px 6px rgba(0,0,0,0.20);
+    0 0 6px rgba(0,0,0,0.22),
+    0 1px 10px rgba(0,0,0,0.28);
 }
 
 /* % actuel + delta */
@@ -418,8 +418,8 @@ button.vr-card:focus-visible{
   font-size:13px;
   line-height:1.1;
   text-shadow:
-    0 0 4px rgba(0,0,0,0.16),
-    0 1px 6px rgba(0,0,0,0.20);
+    0 0 6px rgba(0,0,0,0.22),
+    0 1px 10px rgba(0,0,0,0.28);
   opacity:0;
   visibility:hidden;
 }
@@ -4717,8 +4717,8 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label{
   line-height: 1.06 !important;
   text-align: center !important;
   text-shadow:
-    0 0 4px rgba(0,0,0,0.16),
-    0 1px 6px rgba(0,0,0,0.20) !important;
+    0 0 6px rgba(0,0,0,0.22),
+    0 1px 10px rgba(0,0,0,0.28) !important;
   z-index: 1 !important;
 }
 
@@ -4738,8 +4738,8 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value{
   font-weight: 950 !important;
   line-height: 1.06 !important;
   text-shadow:
-    0 0 4px rgba(0,0,0,0.16),
-    0 1px 6px rgba(0,0,0,0.20) !important;
+    0 0 6px rgba(0,0,0,0.22),
+    0 1px 10px rgba(0,0,0,0.28) !important;
   z-index: 1 !important;
 }
 

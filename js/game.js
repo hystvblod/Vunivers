@@ -369,8 +369,8 @@ style.textContent = `
   font:900 12px/1 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   letter-spacing:.2px;
   text-shadow:
-  0 0 4px rgba(0,0,0,.16),
-  0 1px 6px rgba(0,0,0,.20);
+  0 0 6px rgba(0,0,0,.22),
+  0 1px 10px rgba(0,0,0,.28);
 }
 
 body:not(.vr-peek-mode) .vr-gauge-value{
