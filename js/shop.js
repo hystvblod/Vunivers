@@ -293,11 +293,62 @@
     if (jetonsEl) jetonsEl.textContent = String(balances.jetons);
   }
 
-  async function refreshLiveBalancesHard() {
+  let _refreshBalancesPromise = null;
+  let _lastHardRefreshAt = 0;
+  let _booted = false;
+  let _lastRenderSignature = "";
+
+  function getRenderSignature() {
     try {
-      await window.VUserData?.refresh?.();
-    } catch (_) {}
+      const data = typeof window.VUserData?.load === "function" ? (window.VUserData.load() || {}) : {};
+      return JSON.stringify({
+        lang: window.VRI18n?.getLang?.() || "",
+        vcoins: Number(data.vcoins || 0),
+        jetons: Number(data.jetons || 0),
+        owned_cosmetics: data.owned_cosmetics || {},
+        equipped_cosmetics: data.equipped_cosmetics || {}
+      });
+    } catch (_) {
+      return String(Date.now());
+    }
+  }
+
+  function renderShopView(opts) {
+    const force = !!(opts && opts.force);
     renderTopBalances();
+
+    const signature = getRenderSignature();
+    if (!force && signature === _lastRenderSignature) return;
+
+    _lastRenderSignature = signature;
+    renderCosmetics();
+  }
+
+  async function refreshLiveBalancesHard(opts) {
+    const force = !!(opts && opts.force);
+    const now = Date.now();
+
+    if (!force && _refreshBalancesPromise) return _refreshBalancesPromise;
+    if (!force && (now - _lastHardRefreshAt) < 800) {
+      renderTopBalances();
+      return true;
+    }
+
+    _lastHardRefreshAt = now;
+
+    _refreshBalancesPromise = (async function () {
+      try {
+        await window.VUserData?.refresh?.();
+      } catch (_) {}
+      renderShopView({ force: !!force });
+      return true;
+    })();
+
+    try {
+      return await _refreshBalancesPromise;
+    } finally {
+      _refreshBalancesPromise = null;
+    }
   }
 
   function normalizeCarouselIndex(index, total) {
@@ -924,8 +975,8 @@
         setStatus("store-status", "");
       }
 
-      await refreshLiveBalancesHard();
-      renderCosmetics();
+      await refreshLiveBalancesHard({ force: true });
+      renderShopView({ force: true });
     } catch (_) {
       setStatus("store-status", t("common.error_generic", ""));
     } finally {
@@ -936,9 +987,14 @@
   async function boot() {
     if (!isShopPage()) return;
 
+    if (_booted) return;
+    _booted = true;
+
     try { await window.vrWaitBootstrap?.(); } catch (_) {}
     try { await window.VUserData?.init?.(); } catch (_) {}
+    try { await window.VRI18n?.initI18n?.(); } catch (_) {}
     try { await window.VUserData?.refresh?.(); } catch (_) {}
+    try { await window.VRI18n?.initI18n?.(window.VUserData?.load?.()?.lang || window.VRI18n?.getLang?.() || ""); } catch (_) {}
 
     ensureStyles();
     ensureLightboxRoot();
@@ -962,14 +1018,13 @@
 
     setStatus("shop-status", "");
     setStatus("store-status", "");
-    renderTopBalances();
-    renderCosmetics();
+    renderShopView({ force: true });
 
     document.addEventListener("click", async function (e) {
       const actionBtn = e.target && e.target.closest ? e.target.closest("[data-cosmetic-action]") : null;
       if (actionBtn) {
         await handleCosmeticAction(actionBtn);
-        renderTopBalances();
+        renderShopView({ force: true });
         return;
       }
 
@@ -993,27 +1048,34 @@
 
     window.addEventListener("vr:profile", function () {
       if (!isShopPage()) return;
-      refreshLiveBalancesHard();
-      renderCosmetics();
+      renderShopView({ force: true });
+    });
+
+    window.addEventListener("vr:i18n:changed", function () {
+      if (!isShopPage()) return;
+      renderShopView({ force: true });
     });
 
     window.addEventListener("focus", function () {
       refreshLiveBalancesHard();
     });
 
-    window.addEventListener("storage", function () {
-      refreshLiveBalancesHard();
+    window.addEventListener("storage", function (e) {
+      const key = String(e?.key || "");
+      if (!key) return;
+      if (
+        key !== "vuniverse_user_data" &&
+        key !== "vrealms_user_data" &&
+        key !== "vuniverse_lang" &&
+        key !== "vrealms_lang"
+      ) return;
+      refreshLiveBalancesHard({ force: key === "vuniverse_lang" || key === "vrealms_lang" });
     });
 
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) return;
       refreshLiveBalancesHard();
     });
-
-    setInterval(function () {
-      if (!isShopPage()) return;
-      renderTopBalances();
-    }, 800);
   }
 
   document.addEventListener("DOMContentLoaded", boot);
