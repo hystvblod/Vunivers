@@ -2191,21 +2191,45 @@ body.vr-peek-mode .vr-gauge-preview{
       };
 
       const renderEndingReward = (displayAmount) => {
-        if (rewardValueEl) rewardValueEl.textContent = `+${Math.max(0, asInt(displayAmount, 0))}`;
+        const safeAmount = Math.max(0, asInt(displayAmount, 0));
+        if (rewardValueEl) rewardValueEl.textContent = `+${safeAmount}`;
       };
 
       const syncEndingButtons = () => {
+        const baseReward = Math.max(0, asInt(this._pendingEndReward, 0));
+        const defaultMultiplier = baseReward < 100 ? 3 : 2;
+        const liveMultiplier = this._pendingEndClaimed
+          ? Math.max(1, asInt(this._pendingEndClaimMultiplier, 1))
+          : defaultMultiplier;
+        const previewAmount = Math.max(0, baseReward * liveMultiplier);
+
         if (doubleBtn) {
           doubleBtn.classList.toggle("is-glow", !this._pendingEndClaimed);
           doubleBtn.disabled = !!this._pendingEndClaimed;
+
           const title = doubleBtn.querySelector("#ending-double-title");
           const sub = doubleBtn.querySelector("#ending-double-sub");
-          if (title) title.textContent = this._pendingEndClaimed
-            ? t("game.ending.reward_claimed", "")
-            : t("game.ending.double_gain", "");
-          if (sub) sub.textContent = this._pendingEndClaimed
-            ? t("game.ending.reward_claimed_sub", "")
-            : t("game.ending.double_gain_sub", "");
+
+          if (title) {
+            title.textContent = this._pendingEndClaimed
+              ? t("game.ending.reward_claimed", "")
+              : (
+                  defaultMultiplier === 3
+                    ? t("game.ending.triple_gain", "Tripler ton gain")
+                    : t("game.ending.double_gain", "Doubler ton gain")
+                );
+          }
+
+          if (sub) {
+            if (this._pendingEndClaimed) {
+              sub.textContent = t("game.ending.reward_claimed_sub", "");
+            } else {
+              sub.innerHTML = `
+                <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
+                <span>+${previewAmount}</span>
+              `;
+            }
+          }
         }
 
         if (reviveBtn) {
@@ -2225,19 +2249,26 @@ body.vr-peek-mode .vr-gauge-preview{
         doubleBtn.onclick = async () => {
           if (this._pendingEndClaimed) return;
 
+          const baseReward = Math.max(0, asInt(this._pendingEndReward, 0));
+          const rewardMultiplier = baseReward < 100 ? 3 : 2;
+
           try { doubleBtn.disabled = true; } catch (_) {}
 
-          const okAd = await (window.VRAds?.showRewardedAd?.({ placement: "end_reward_x2" }) || Promise.resolve(false));
+          const okAd = await (window.VRAds?.showRewardedAd?.({
+            placement: rewardMultiplier === 3 ? "end_reward_x3" : "end_reward_x2"
+          }) || Promise.resolve(false));
+
           if (okAd) {
             try { window.VRAds?.markGameRewardSeen?.(); } catch (_) {}
           }
+
           if (!okAd) {
             try { window.showToast?.(t("coins.toast.reward_fail", "")); } catch (_) {}
             syncEndingButtons();
             return;
           }
 
-          const out = await this._finalizeEndedRun(2);
+          const out = await this._finalizeEndedRun(rewardMultiplier);
           if (!out?.ok) {
             try { window.showToast?.(t("common.error_generic", "")); } catch (_) {}
             syncEndingButtons();
