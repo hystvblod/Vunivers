@@ -3279,7 +3279,7 @@ body[data-universe="mega_corp_ceo"].vr-body-game #view-game .vr-choice-label{
 }
 
 body.vr-body-game[data-universe="mega_corp_ceo"]{
-  --vr-card-w: clamp(360px, 96vw, 920px);
+  --vr-card-w: clamp(460px, 100vw, 1240px);
 
   --vr-scn-h: clamp(176px, 22svh, 340px);
   --vr-choice-h: clamp(112px, 13.6svh, 176px);
@@ -3553,20 +3553,21 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-center .vr-hud-years{
 
 body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
   overflow: hidden !important;
-  background-size: 100% 108% !important;
+  background-size: 100% 100% !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   box-sizing: border-box !important;
   width: 100% !important;
   min-height: var(--vr-scn-h) !important;
   padding:
-    clamp(34px, 5.2vw, 56px)
-    clamp(16px, 3vw, 28px)
-    clamp(18px, 2.8vw, 24px) !important;
+    var(--vr-scn-inset-top)
+    var(--vr-scn-inset-right)
+    var(--vr-scn-inset-bottom)
+    var(--vr-scn-inset-left) !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  justify-content: flex-start !important;
+  justify-content: center !important;
   gap: clamp(6px, 1vw, 10px) !important;
 }
 
@@ -3619,7 +3620,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
   text-align: center !important;
   font-size: var(--vr-font-choice) !important;
   line-height: 1.08 !important;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   overflow-wrap: break-word !important;
   word-break: normal !important;
   hyphens: auto !important;
