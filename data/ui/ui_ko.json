@@ -15,22 +15,22 @@
     "locked": "잠금 해제 필요",
     "equipped": "장착됨",
     "error_generic": "오류",
-    "unavailable": "이용 불가"
+    "unavailable": "사용 불가"
   },
   "auth": {
     "username": {
-      "title": "사용자 이름을 선택하세요",
-      "subtitle": "앱에서 표시됩니다.",
-      "label": "사용자 이름",
+      "title": "닉네임을 선택하세요",
+      "subtitle": "앱에 표시됩니다.",
+      "label": "닉네임",
       "placeholder": "예: Martin_7",
       "cta": "확인",
       "skip": "나중에",
-      "rules": "3~20자 • 영문, 숫자, _ 또는 -",
+      "rules": "3~20자 • 문자, 숫자, _ 또는 -",
       "errors": {
-        "length": "사용자 이름은 3자에서 20자 사이여야 합니다.",
-        "chars": "영문, 숫자, _ 또는 - 만 사용할 수 있습니다.",
-        "taken": "이미 사용 중인 사용자 이름입니다. 다른 이름을 시도하세요.",
-        "generic": "사용자 이름을 저장할 수 없습니다."
+        "length": "닉네임은 3자에서 20자 사이여야 합니다.",
+        "chars": "문자, 숫자, _ 또는 -만 사용하세요.",
+        "taken": "이미 사용 중인 닉네임입니다. 다른 닉네임을 시도하세요.",
+        "generic": "닉네임을 저장할 수 없습니다."
       }
     }
   },
@@ -38,8 +38,8 @@
     "symbol_help": "?",
     "language": "언어",
     "subtitle": "당신의 운명을 선택하세요.",
-    "subtitle_desc": "군주, 대통령, 뱀파이어 또는 탐험가가 되어 보세요. 모든 선택이 게이지, 세계, 그리고 다음 세대에 영향을 줍니다.",
-    "choose_universe": "유니버스 선택",
+    "subtitle_desc": "군주, 대통령, 뱀파이어 또는 탐험가가 되어 보세요. 모든 선택은 게이지, 세계, 그리고 다음 세대에 영향을 줍니다.",
+    "choose_universe": "세계 선택",
     "footer": "Vuniverse · Vboldstudio",
     "profile": "프로필",
     "settings": "설정",
@@ -50,17 +50,17 @@
     "aria_badge_modal": "배지 미리보기",
     "aria_close": "닫기",
     "settings_title": "설정",
-    "settings_lang_desc": "언어를 선택하세요. 기기와 프로필에 모두 저장됩니다.",
+    "settings_lang_desc": "언어를 선택하세요. 기기와 프로필에 저장됩니다.",
     "settings_back_home_aria": "홈으로 돌아가기",
     "settings_open_profile_aria": "프로필 열기",
     "settings_choose_lang_aria": "언어 선택: {code}",
     "settings_ads_title": "광고",
     "settings_ads_personalized_label": "맞춤형 광고",
-    "settings_ads_personalized_desc": "더 관련성 높은 광고를 허용합니다. 이 설정은 언제든지 바꿀 수 있습니다.",
+    "settings_ads_personalized_desc": "더 관련성 높은 광고를 허용합니다. 언제든 변경할 수 있습니다.",
     "settings_ads_saved": "광고 설정이 저장되었습니다.",
     "settings_faq_title": "FAQ",
     "settings_faq_label": "FAQ 열기",
-    "settings_faq_desc": "코인, 연도, 토큰, 배지, 사용자 이름에 대한 답변입니다.",
+    "settings_faq_desc": "코인, 연도, 토큰, 배지, 닉네임에 대한 답변.",
     "settings_open_faq_aria": "FAQ 열기",
     "settings_help_title": "도움말",
     "settings_help_email_label": "문의:",
@@ -68,28 +68,28 @@
     "settings_msg_saved": "언어가 저장되었습니다.",
     "settings_msg_saved_local": "언어가 기기에 저장되었습니다. 서버 동기화는 나중에 진행됩니다.",
     "faq_title": "FAQ",
-    "faq_subtitle": "자주 묻는 질문에 대한 답변을 여기에서 확인하세요.",
+    "faq_subtitle": "자주 묻는 질문에 대한 답변을 여기서 확인하세요.",
     "faq_back_settings_aria": "설정으로 돌아가기",
     "faq_open_profile_aria": "프로필 열기",
     "faq_q1": "코인은 어떻게 얻나요?",
-    "faq_a1": "게임이 끝나면 완전한 1년마다 10 VCoins를 얻습니다. 1년은 4번의 선택에 해당하므로, 1번의 선택은 약 3개월입니다. 보상형 광고를 보면 최종 보상을 두 배로 만들 수도 있습니다.",
-    "faq_q2": "연도는 어떻게 작동하나요?",
-    "faq_a2": "게임은 4번의 선택을 1년으로 계산합니다. 4번에 도달하기 전까지는 같은 연도가 표시됩니다.",
-    "faq_q3": "토큰은 무엇에 쓰이나요?",
-    "faq_a3": "토큰은 게임 내 특별한 행동에 사용됩니다. 상황에 따라 부활, 다음 15개의 결정 보기, 3개의 선택 되돌리기, 또는 하나의 게이지를 50%로 되돌리는 데 사용할 수 있습니다.",
-    "faq_q4": "최종 보상을 두 배로 하려면 어떻게 하나요?",
-    "faq_a4": "게임이 끝나면 보상형 광고를 시청하여 최종 VCoins 보상을 두 배로 만들 수 있는 버튼이 표시됩니다. 광고를 사용할 수 없으면 보상은 그대로 유지됩니다.",
+    "faq_a1": "게임이 끝나면 완성된 1년마다 10 VCoins를 얻습니다. 1년은 4개의 선택으로 이루어지므로, 1개의 선택은 약 3개월에 해당합니다. 보상형 광고를 보면 종료 보상을 2배로 만들 수도 있습니다.",
+    "faq_q2": "연도는 어떻게 계산되나요?",
+    "faq_a2": "게임은 4개의 선택이 완료되면 1년이 지나간 것으로 계산합니다. 4개의 선택에 도달하기 전까지는 같은 연도로 표시됩니다.",
+    "faq_q3": "토큰은 어디에 쓰이나요?",
+    "faq_a3": "토큰은 게임의 특수 행동에 사용됩니다. 상황에 따라 부활, 다음 15개의 결정을 미리 보기, 최근 3개의 선택 되돌리기, 또는 게이지 하나를 50%로 되돌리는 데 사용할 수 있습니다.",
+    "faq_q4": "종료 보상을 어떻게 2배로 만드나요?",
+    "faq_a4": "게임이 끝나면 보상형 광고를 시청해 최종 VCoins 보상을 2배로 만들 수 있는 버튼이 표시됩니다. 광고를 사용할 수 없으면 보상은 일반 보상으로 유지됩니다.",
     "faq_q5": "프로필 배지는 어떻게 작동하나요?",
-    "faq_a5": "배지는 유니버스별로 나뉘어 있습니다. 플레이 중 특정 시점까지 살아 있으면 해금됩니다. 브론즈는 40번 선택, 실버는 60번 선택, 골드는 100번 선택입니다.",
-    "faq_q6": "사용자 이름은 어떻게 바꾸나요?",
-    "faq_a6": "프로필로 이동한 뒤 사용자 이름 변경 버튼을 누르고 새 이름을 입력한 후 저장하세요. 사용자 이름은 3~20자여야 하며 영문, 숫자, 밑줄 (_) 또는 하이픈 (-)만 사용할 수 있습니다.",
+    "faq_a5": "배지는 세계별로 나뉘어 있습니다. 게임 중 살아 있는 상태로 특정 시점에 도달하면 잠금 해제됩니다: 40개의 선택에서 브론즈, 60개에서 실버, 100개에서 골드입니다.",
+    "faq_q6": "닉네임은 어떻게 바꾸나요?",
+    "faq_a6": "프로필로 가서 닉네임 수정 버튼을 누른 뒤 새 이름을 입력하고 저장하세요. 닉네임은 3자에서 20자 사이여야 하며 문자, 숫자, 밑줄(_) 또는 하이픈(-)만 사용할 수 있습니다.",
     "lang_name": {
       "en": "영어",
       "fr": "프랑스어",
       "de": "독일어",
       "es": "스페인어",
       "pt": "포르투갈어",
-      "ptbr": "포르투갈어 (브라질)",
+      "ptbr": "포르투갈어(브라질)",
       "it": "이탈리아어",
       "ko": "한국어",
       "ja": "일본어",
@@ -99,40 +99,40 @@
     "profile_subtitle": "당신의 통계와 진행 상황.",
     "profile_vcoins": "VCoins",
     "profile_jetons": "토큰",
-    "profile_username_label": "사용자 이름",
-    "profile_username_edit": "사용자 이름 변경",
-    "profile_username_placeholder": "새 사용자 이름",
+    "profile_username_label": "닉네임",
+    "profile_username_edit": "닉네임 수정",
+    "profile_username_placeholder": "새 닉네임",
     "profile_username_save": "저장",
     "profile_username_cancel": "취소",
-    "profile_username_hint": "3~20자. 영문, 숫자, _ 또는 -. 사용자 이름은 고유해야 합니다.",
-    "profile_username_missing": "사용자 이름이 없습니다",
-    "profile_username_err_format": "잘못된 사용자 이름 형식입니다.",
+    "profile_username_hint": "3~20자. 문자, 숫자, _ 또는 -. 닉네임은 고유해야 합니다.",
+    "profile_username_missing": "닉네임이 없습니다",
+    "profile_username_err_format": "닉네임 형식이 올바르지 않습니다.",
     "profile_err_not_ready": "프로필이 준비되지 않았습니다.",
     "profile_username_ok_nochange": "변경 사항이 없습니다.",
     "profile_username_err_nojeton": "토큰이 부족합니다.",
     "profile_username_working": "업데이트 중...",
-    "profile_username_err_taken": "이미 사용 중인 사용자 이름입니다.",
-    "profile_username_err_generic": "사용자 이름을 변경할 수 없습니다.",
-    "profile_username_err_cost_failed": "사용자 이름은 변경되었지만 비용이 차감되지 않았습니다.",
-    "profile_username_ok_saved": "사용자 이름이 업데이트되었습니다.",
+    "profile_username_err_taken": "이미 사용 중인 닉네임입니다.",
+    "profile_username_err_generic": "닉네임을 변경할 수 없습니다.",
+    "profile_username_err_cost_failed": "닉네임은 변경되었지만 비용 차감에 실패했습니다.",
+    "profile_username_ok_saved": "닉네임이 업데이트되었습니다.",
     "profile_scenarios_title": "시나리오",
     "universe_buy": {
-      "desc": "이 유니버스는 잠겨 있습니다. {price} VCoins로 잠금 해제하거나, 스토어에서 바로 해제하거나, 상점을 열 수 있습니다.",
-      "pay_prefix": "다음으로 잠금 해제",
+      "desc": "이 세계는 잠겨 있습니다. {price} VCoins로 잠금 해제하거나, 상점에서 바로 해제하거나, 상점을 열 수 있습니다.",
+      "pay_prefix": "잠금 해제:",
       "pay_balance_inline": "잔액: {balance}",
       "unlock_store_prefix": "잠금 해제:",
       "unlock_store_no_price": "잠금 해제",
-      "iap_direct": "이 유니버스 잠금 해제 {price}",
-      "iap_direct_no_price": "이 유니버스 잠금 해제",
+      "iap_direct": "이 세계 잠금 해제 {price}",
+      "iap_direct_no_price": "이 세계 잠금 해제",
       "open_shop": "상점 열기",
       "cancel": "취소",
-      "err_unlock": "이 유니버스를 잠금 해제할 수 없습니다.",
+      "err_unlock": "이 세계를 잠금 해제할 수 없습니다.",
       "err_unlock_insufficient": "VCoins가 부족합니다. 잔액: {balance} / 가격: {price}",
       "err_app_only": "Play Store 구매는 앱에서만 가능합니다.",
       "err_not_ready": "구매 시스템이 준비되지 않았습니다.",
       "err_buy_failed": "구매가 취소되었거나 실패했습니다.",
-      "err_unlock_after_buy": "구매는 확인되었지만 잠금 해제에 실패했습니다. 나중에 다시 시도하세요.",
-      "err_unlock_after_iap": "구매는 확인되었지만 현재 잠금 해제할 수 없습니다. 상점에서 다시 시도하세요."
+      "err_unlock_after_buy": "구매는 완료되었지만 잠금 해제에 실패했습니다. 나중에 다시 시도하세요.",
+      "err_unlock_after_iap": "구매는 완료되었지만 지금은 잠금 해제할 수 없습니다. 상점에서 다시 시도하세요."
     }
   },
   "gauges": {
@@ -152,33 +152,33 @@
       },
       "gauge50": {
         "title": "게이지를 50%로 되돌리기",
-        "text": "게이지 선택"
+        "text": "게이지를 선택하세요"
       },
       "back3": {
-        "title": "되돌리기",
-        "text": "최근 3번의 선택 취소"
+        "title": "되돌아가기",
+        "text": "최근 3개의 선택을 취소합니다"
       },
       "peek": {
-        "title": "15회 효과 보기",
-        "text": "15번의 선택 동안 영향을 받는 게이지가 깜빡이며 미리보기를 표시합니다."
+        "title": "15개 효과 보기",
+        "text": "15번의 선택 동안 관련 게이지가 깜빡이며 미리보기를 표시합니다."
       },
       "close": {
         "text": "이 메뉴 닫기"
       },
       "pickGauge": {
         "title": "게이지 선택",
-        "text": "50%로 되돌릴 게이지를 클릭하세요."
+        "text": "게이지를 클릭해 50%로 되돌리세요."
       }
     },
     "toast": {
       "select_gauge": "50%로 되돌릴 게이지를 선택하세요",
-      "reward_ok": "+1 토큰 추가",
+      "reward_ok": "+1 토큰 추가됨",
       "reward_fail": "광고를 사용할 수 없습니다",
       "no_tokens": "토큰이 없습니다",
       "undo_fail": "되돌릴 수 없습니다",
       "undo_done": "-3 되돌리기 완료",
       "gauge_set_50": "게이지가 50%로 설정되었습니다",
-      "peek_on": "Peek 활성화: 다음 15개 결정"
+      "peek_on": "미리보기 활성화: 다음 15개의 결정"
     },
     "undo": {
       "fail": {
@@ -207,22 +207,22 @@
       }
     },
     "toast": {
-      "reward_ok": "+100 코인 추가",
+      "reward_ok": "+100 코인 추가됨",
       "reward_fail": "광고를 사용할 수 없습니다"
     }
   },
   "crosspromo": {
-    "open_page_aria": "크로스 프로모 페이지 열기",
+    "open_page_aria": "크로스 프로모션 페이지 열기",
     "page_title": "다른 게임 둘러보기",
-    "page_subtitle": "다른 유니버스를 발견하고 보상을 획득하세요.",
+    "page_subtitle": "다른 세계를 발견하고 보상을 받으세요.",
     "cta_install": "다운로드",
     "cta_open": "열기",
     "cta_claim": "받기",
-    "cta_claiming": "받는 중...",
-    "cta_claimed": "이미 받음",
+    "cta_claiming": "수령 중...",
+    "cta_claimed": "이미 수령함",
     "cta_later": "나중에",
     "reward_prefix": "획득:",
-    "reward_granted": "{app} 감지됨. +{amount} 지급되었습니다.",
+    "reward_granted": "{app}이 감지되었습니다. +{amount} 지급됨.",
     "aria": {
       "open_image": "이미지 열기",
       "close": "닫기"
@@ -230,34 +230,34 @@
     "apps": {
       "vblocks": {
         "name": "VBlocks",
-        "store_desc": "무거운 결정 사이에서 잠시 숨 돌릴 수 있는 더 차분하고 가벼운 게임.",
+        "store_desc": "두 번의 결정 사이에 숨을 고를 수 있는 더 차분하고 가벼운 게임입니다.",
         "popup1": {
           "title": "코인이 부족한가요?",
           "body": "VBlocks를 다운로드하고 보상을 받으세요."
         },
         "popup2": {
-          "title": "너무 많은 압박을 느끼나요?",
-          "body": "결정의 무게가 너무 크고 스트레스가 심한가요? VBlocks로 편하게 쉬어 보세요."
+          "title": "너무 부담되나요?",
+          "body": "결정들 때문에 스트레스가 크다면 VBlocks로 쉬어 가세요."
         },
         "popup3": {
           "title": "분위기를 바꾸고 싶나요?",
-          "body": "VBlocks에서 다른 유니버스를 발견해 보세요."
+          "body": "VBlocks에서 다른 세계를 만나보세요."
         }
       },
       "vchronicles": {
         "name": "VChronicles",
-        "store_desc": "어두운 유니버스를 탐험하고, 선택을 내리며, 살아남아 보세요.",
+        "store_desc": "어두운 세계를 탐험하고, 선택하고, 살아남으세요.",
         "popup1": {
           "title": "코인이 부족한가요?",
           "body": "VChronicles를 다운로드하고 보상을 받으세요."
         },
         "popup2": {
-          "title": "더 어두운 유니버스를 탐험하고 싶나요?",
+          "title": "더 어두운 세계를 탐험하고 싶나요?",
           "body": "VChronicles를 플레이하세요."
         },
         "popup3": {
-          "title": "당신은 빠져나올 수 있을까요?",
-          "body": "VChronicles가 당신을 기다립니다."
+          "title": "당신은 살아남을 수 있을까요?",
+          "body": "VChronicles가 기다립니다."
         }
       }
     }
@@ -268,14 +268,14 @@
       "text": "두 번째 기회를 어떻게 사용할지 선택하세요.",
       "use_token": {
         "title": "토큰 1개 사용",
-        "text": "토큰 1개를 소모해 지금 바로 부활합니다."
+        "text": "지금 바로 부활하려면 토큰 1개를 사용하세요."
       },
       "use_ad": {
         "title": "광고 보기",
-        "text": "보상형 광고를 보고 부활합니다."
+        "text": "보상형 광고를 보고 부활하세요."
       },
       "cancel": {
-        "text": "종료 화면으로 돌아가기"
+        "text": "엔딩 화면으로 돌아가기"
       }
     },
     "toast": {
@@ -283,8 +283,8 @@
     }
   },
   "game": {
-    "title": "게임 진행 중",
-    "subtitle": "선택을 진행하세요.",
+    "title": "진행 중인 게임",
+    "subtitle": "선택하세요.",
     "restart": "다시 시작",
     "revive": "부활",
     "return": "돌아가기",
@@ -296,9 +296,9 @@
     "ending": {
       "title": "통치의 끝",
       "body": "당신의 통치는 여기서 끝납니다.",
-      "double_gain": "보상 두 배",
+      "double_gain": "보상 2배 받기",
       "double_gain_sub": "보상형 광고 보기",
-      "reward_claimed": "두 배 보상이 지급되었습니다",
+      "reward_claimed": "2배 보상이 지급되었습니다",
       "reward_claimed_sub": "이제 다시 시작하거나 돌아갈 수 있습니다",
       "revive_token": "토큰 1개로 부활"
     },
@@ -315,24 +315,24 @@
     "rank": "랭크",
     "streak": "연속 기록",
     "inventory": "인벤토리",
-    "bestReign": "최고의 통치",
-    "totalRuns": "플레이 횟수",
-    "editUsername": "사용자 이름 변경",
-    "usernamePlaceholder": "새 사용자 이름",
+    "bestReign": "최고 통치",
+    "totalRuns": "플레이한 게임 수",
+    "editUsername": "닉네임 수정",
+    "usernamePlaceholder": "새 닉네임",
     "usernameSave": "저장",
     "usernameCancel": "취소",
-    "usernameHint": "3~20자. 영문, 숫자, _ 또는 -. 사용자 이름은 고유해야 합니다.",
-    "usernameMissing": "사용자 이름이 없습니다",
-    "usernameErrFormat": "잘못된 사용자 이름 형식입니다.",
+    "usernameHint": "3~20자. 문자, 숫자, _ 또는 -. 닉네임은 고유해야 합니다.",
+    "usernameMissing": "닉네임이 없습니다",
+    "usernameErrFormat": "닉네임 형식이 올바르지 않습니다.",
     "errNotReady": "프로필이 준비되지 않았습니다.",
     "usernameOkNochange": "변경 사항이 없습니다.",
     "usernameErrNojeton": "토큰이 부족합니다.",
     "usernameWorking": "업데이트 중...",
-    "usernameErrTaken": "이미 사용 중인 사용자 이름입니다.",
-    "usernameErrGeneric": "사용자 이름을 변경할 수 없습니다.",
-    "usernameErrCostFailed": "사용자 이름은 변경되었지만 비용이 차감되지 않았습니다.",
-    "usernameOkSaved": "사용자 이름이 업데이트되었습니다.",
-    "universesTitle": "유니버스",
+    "usernameErrTaken": "이미 사용 중인 닉네임입니다.",
+    "usernameErrGeneric": "닉네임을 변경할 수 없습니다.",
+    "usernameErrCostFailed": "닉네임은 변경되었지만 비용 차감에 실패했습니다.",
+    "usernameOkSaved": "닉네임이 업데이트되었습니다.",
+    "universesTitle": "세계",
     "scenariosTitle": "시나리오",
     "badgeBronze": "브론즈 배지",
     "badgeSilver": "실버 배지",
@@ -348,7 +348,7 @@
     "store_title": "STORE",
     "watch": "보기",
     "loading": "불러오는 중...",
-    "unavailable": "이용 불가",
+    "unavailable": "사용 불가",
     "reward_jeton_x1": "x1",
     "reward_vcoins_x100": "x100",
     "pack_jetons_12": "12",
@@ -362,23 +362,23 @@
     "rewarded_desc": "광고를 보고 작은 보상을 받으세요.",
     "reward_title": "보상",
     "reward_desc": "광고를 보고 작은 보상을 받으세요.",
-    "get_jeton": "+1 토큰 획득",
-    "get_1_jeton": "+1 토큰 획득",
-    "get_200_coins": "코인 200개 획득",
-    "get_300_coins": "+300 코인 획득",
+    "get_jeton": "+1 토큰 받기",
+    "get_1_jeton": "+1 토큰 받기",
+    "get_200_coins": "코인 200개 받기",
+    "get_300_coins": "+300 코인 받기",
     "noads_title": "광고 없음",
     "noads_desc": "전면 광고를 비활성화합니다. 보상형 광고는 계속 이용할 수 있습니다.",
     "noads_buy": "광고 없음 활성화",
     "coins_title": "코인",
-    "coins_desc": "코인을 구매해 더 빠르게 잠금 해제하세요.",
+    "coins_desc": "더 빠르게 잠금 해제하려면 코인을 구매하세요.",
     "coins_1200": "+1200 코인",
     "coins_3000": "+3000 코인",
     "jetons_title": "토큰",
-    "jetons_desc": "토큰으로 특별한 행동을 사용할 수 있습니다.",
+    "jetons_desc": "토큰은 특수 행동에 접근할 수 있게 해줍니다.",
     "jetons_12": "+12 토큰",
     "jetons_30": "+30 토큰",
     "diamond_title": "Diamond",
-    "diamond_desc": "광고 없음 + 현재 모든 유니버스 잠금 해제. 백엔드에서 Diamond 접근을 활성화하면 이후 유니버스도 포함될 수 있습니다.",
+    "diamond_desc": "광고 없음 + 현재 모든 세계 잠금 해제. 백엔드에서 Diamond 접근이 활성화되어 있으면 향후 세계도 포함될 수 있습니다.",
     "diamond_buy": "Diamond 활성화",
     "aria_top": "액션 바",
     "aria_profile": "프로필",
@@ -399,64 +399,64 @@
       "message": "메시지 카드",
       "choice": "선택",
       "hell": {
-        "background_1": "타오르는 폐허 배경",
+        "background_1": "불타는 폐허 배경",
         "background_2": "왕실 용광로 배경",
         "background_3": "용암 왕좌 배경",
         "background_4": "붉은 심연 배경",
-        "message_1": "지옥 칙령 카드",
+        "message_1": "지옥의 칙령 카드",
         "message_2": "검은 재 카드",
         "message_3": "악마의 봉인 카드",
-        "choice_1": "불씨의 판결",
-        "choice_2": "피의 계약",
-        "choice_3": "심연의 명령"
+        "choice_1": "불씨의 판결 선택",
+        "choice_2": "피의 계약 선택",
+        "choice_3": "심연의 명령 선택"
       },
       "heaven": {
         "background_1": "황금 구름 배경",
-        "background_2": "성스러운 정원 배경",
+        "background_2": "신성한 정원 배경",
         "background_3": "천사의 문 배경",
         "message_1": "순수한 빛 카드",
         "message_2": "신성한 대리석 카드",
         "message_3": "천상의 날개 카드",
         "message_4": "태양 카드",
         "message_5": "빛 카드",
-        "choice_1": "최고의 은총",
-        "choice_2": "천상의 심판",
-        "choice_3": "대리석",
-        "choice_4": "빛",
-        "choice_5": "천사의 맹세"
+        "choice_1": "최고의 은총 선택",
+        "choice_2": "천상의 심판 선택",
+        "choice_3": "대리석 선택",
+        "choice_4": "빛 선택",
+        "choice_5": "천사의 맹세 선택"
       },
       "president": {
-        "background_1": "위기 대응실 배경",
-        "background_2": "대통령 집무실 배경",
-        "background_3": "무장 수도 배경",
+        "background_1": "위기 상황실 배경",
+        "background_2": "오벌 오피스 배경",
+        "background_3": "무장된 수도 배경",
         "message_1": "기밀 문서 카드",
         "message_2": "행정 메모 카드",
         "message_3": "국가 브리핑 카드",
-        "choice_1": "대통령 거부권",
-        "choice_2": "국가 명령",
-        "choice_3": "행정 명령"
+        "choice_1": "대통령 거부권 선택",
+        "choice_2": "국가 칙령 선택",
+        "choice_3": "행정 명령 선택"
       },
       "ceo": {
         "background_1": "유리 타워 배경",
         "background_2": "이사회실 배경",
-        "background_3": "증시 폭락 배경",
+        "background_3": "주가 폭락 배경",
         "message_1": "프리미엄 보고서 카드",
         "message_2": "투자자 문서 카드",
         "message_3": "전략 메모 카드",
-        "choice_1": "빠른 합병",
-        "choice_2": "공격적 계획",
-        "choice_3": "이사회 결정"
+        "choice_1": "빠른 합병 선택",
+        "choice_2": "공격적 계획 선택",
+        "choice_3": "이사회 결정 선택"
       },
       "explorer": {
         "background_1": "잃어버린 해안 배경",
         "background_2": "깊은 정글 배경",
-        "background_3": "식민지 캠프 배경",
+        "background_3": "식민지 야영지 배경",
         "message_1": "항해 일지 카드",
         "message_2": "왕실 양피지 카드",
-        "message_3": "원정 메모 카드",
-        "choice_1": "미지의 항로",
-        "choice_2": "임무 명령",
-        "choice_3": "제국으로 향하는 길"
+        "message_3": "탐험 메모 카드",
+        "choice_1": "미지의 길 선택",
+        "choice_2": "임무 명령 선택",
+        "choice_3": "제국으로 향하는 항로 선택"
       },
       "vampire": {
         "background_1": "밤의 성 배경",
@@ -465,9 +465,9 @@
         "message_1": "검은 벨벳 카드",
         "message_2": "진홍 봉인 카드",
         "message_3": "불멸의 칙령 카드",
-        "choice_1": "왕의 물기",
-        "choice_2": "클랜의 법",
-        "choice_3": "밤의 판결"
+        "choice_1": "왕실의 물림 선택",
+        "choice_2": "가문의 법 선택",
+        "choice_3": "밤의 판결 선택"
       }
     },
     "toast": {
@@ -482,17 +482,17 @@
     "music": "음악",
     "notifications": "알림",
     "language": "언어",
-    "language_hint": "언어를 선택하세요. 기기와 프로필에 모두 저장됩니다.",
+    "language_hint": "언어를 선택하세요. 기기와 프로필에 저장됩니다.",
     "back_home_aria": "홈으로 돌아가기",
     "open_profile_aria": "프로필 열기",
     "choose_lang_aria": "언어 선택: {code}",
     "ads_title": "광고",
     "ads_personalized_label": "맞춤형 광고",
-    "ads_personalized_desc": "더 관련성 높은 광고를 허용합니다. 이 설정은 언제든지 바꿀 수 있습니다.",
+    "ads_personalized_desc": "더 관련성 높은 광고를 허용합니다. 언제든 변경할 수 있습니다.",
     "ads_saved": "광고 설정이 저장되었습니다.",
     "faq_title": "FAQ",
     "faq_label": "FAQ 열기",
-    "faq_desc": "코인, 연도, 토큰, 배지, 사용자 이름에 대한 답변입니다.",
+    "faq_desc": "코인, 연도, 토큰, 배지, 닉네임에 대한 답변.",
     "open_faq_aria": "FAQ 열기",
     "help_title": "도움말",
     "help_email_label": "문의:",
@@ -503,15 +503,15 @@
   "universe": {
     "hell_king": {
       "title": "지옥의 왕",
-      "desc": "악마 군단을 이끌고, 저주받은 영혼의 유입을 관리하며, 지상에 영향을 미치면서 지옥의 질서를 유지하세요."
+      "desc": "악마 군단을 지휘하고, 저주받은 영혼의 유입을 관리하며, 지옥의 질서를 유지하는 동시에 지상 세계에 영향을 미치세요."
     },
     "heaven_king": {
-      "title": "천상의 지배자",
+      "title": "천국의 통치자",
       "desc": "기도를 심판하고, 광신을 억제하며, 하늘이 인간 세계에 어디까지 개입할지 결정하세요."
     },
     "medieval_king": {
       "title": "중세의 왕",
-      "desc": "교회, 군대, 백성, 보물. 모든 선택이 왕국을 번영이나 반란으로 이끕니다."
+      "desc": "교회, 군대, 백성, 국고. 모든 선택이 왕국을 번영으로 이끌거나 반란으로 몰아갑니다."
     },
     "western_president": {
       "title": "대통령",
@@ -519,19 +519,40 @@
     },
     "mega_corp_ceo": {
       "title": "CEO",
-      "desc": "투자자, 직원, 규제 기관, 브랜드 이미지. 모든 것을 망치지 않고 기업 가치를 끌어올리세요."
+      "desc": "투자자, 직원, 규제 기관, 브랜드 이미지. 모든 것을 폭발시키지 않고 기업 가치를 끌어올리세요."
     },
     "new_world_explorer": {
       "title": "탐험가",
-      "desc": "정복하고, 개종시키고, 현지의 부를 찾으면서 왕관에 보고하세요."
+      "desc": "정복하고, 개종시키고, 현지의 부를 찾으면서도 왕실에 책임을 져야 합니다."
     },
     "vampire_lord": {
       "title": "뱀파이어 군주",
-      "desc": "어둠 속에서 영향력을 넓히세요. 피를 너무 많이 탐하면 사냥꾼이 오고, 너무 조심하면 혈족이 약해집니다."
+      "desc": "그림자 속에서 당신의 영향력을 넓히세요. 너무 많은 피는 사냥꾼을 끌어들이고, 너무 많은 신중함은 가문을 약화시킵니다."
     }
   },
   "intro": {
     "finish": {
       "title": "축하합니다",
-      "body": "이제 수많은 유니버스를 다스릴 준비가 되었습니다.",
-      "gift": "
+      "body": "이제 수많은 세계를 다스릴 준비가 되었습니다.",
+      "gift": "작은 선물이 있습니다",
+      "token": "토큰",
+      "cta": "시작"
+    }
+  },
+  "onesignal": {
+    "popup": {
+      "title": "소식을 받아보세요",
+      "text": "새 소식과 중요한 보상을 받으려면 알림을 허용하세요.",
+      "accept": "허용",
+      "cancel": "나중에"
+    }
+  },
+  "adsConsent": {
+    "popup": {
+      "title": "맞춤형 광고",
+      "text": "더 관련성 높은 광고를 위해 맞춤형 광고를 허용하시겠습니까? 이 선택은 언제든 설정에서 변경할 수 있습니다.",
+      "accept": "허용",
+      "refuse": "거부"
+    }
+  }
+}
