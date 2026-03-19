@@ -2362,7 +2362,7 @@ body[data-universe="heaven_king"].vr-body-game #view-game .vr-choice-label{
   font-family: "MerriweatherExplorer", serif !important;
   color: #000 !important;
   font-weight: 800 !important;
-  line-height: 1.12 !important;
+  line-height: 1.08 !important;
 }
 
 body.vr-body-game[data-universe="heaven_king"]{
@@ -2381,10 +2381,10 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-scn-inset-left: 13%;
 
   --vr-choice-inset-top: 15%;
-  --vr-choice-inset-right: 8%;
+  --vr-choice-inset-right: 10.5%;
   --vr-choice-inset-bottom: 15%;
-  --vr-choice-inset-left: 8%;
-  --vr-choice-safe: 88%;
+  --vr-choice-inset-left: 10.5%;
+  --vr-choice-safe: 78%;
 
   --vr-font-scn-title: clamp(18px, 2.9vmin, 34px);
   --vr-font-scn-text:  clamp(14px, 2.35vmin, 26px);
@@ -2722,11 +2722,11 @@ body[data-universe="heaven_king"] .vr-gauge-delta{
     --vr-choice-h: clamp(84px, 12.0svh, 128px);
     --vr-stack-gap: 0px;
     --vr-choices-gap: 0px;
-    --vr-choice-safe: 82%;
+    --vr-choice-safe: 74%;
     --vr-choice-inset-top: 16%;
-    --vr-choice-inset-right: 8%;
+    --vr-choice-inset-right: 10%;
     --vr-choice-inset-bottom: 16%;
-    --vr-choice-inset-left: 8%;
+    --vr-choice-inset-left: 10%;
   }
 
   body.vr-body-game[data-universe="heaven_king"] .vr-hud-left{ left: 3% !important; width: 17.2% !important; }
@@ -2761,11 +2761,11 @@ body[data-universe="heaven_king"] .vr-gauge-delta{
     --vr-choice-h: clamp(80px, 11.2svh, 118px);
     --vr-stack-gap: 0px;
     --vr-choices-gap: 0px;
-    --vr-choice-safe: 80%;
+    --vr-choice-safe: 72%;
     --vr-choice-inset-top: 15%;
-    --vr-choice-inset-right: 7%;
+    --vr-choice-inset-right: 9%;
     --vr-choice-inset-bottom: 15%;
-    --vr-choice-inset-left: 7%;
+    --vr-choice-inset-left: 9%;
   }
 }
 
