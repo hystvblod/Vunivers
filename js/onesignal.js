@@ -293,21 +293,16 @@
 
     if (!isIndexPage()) return false;
     if (!hasPendingIndexPrompt()) return false;
-    if (hasShownPrompt()) {
-      lsDel(K_PENDING_INDEX_PROMPT);
-      clearRealGamePlayed();
-      return false;
-    }
 
     lsDel(K_PENDING_INDEX_PROMPT);
     clearRealGamePlayed();
-    lsSet(K_PROMPT_SHOWN, "1");
+
+    if (hasShownPrompt()) return false;
 
     try {
-      const accepted = await showPrePrompt();
-      if (!accepted) return false;
-      await requestNativePermission();
-      return true;
+      const accepted = await requestNativePermission();
+      lsSet(K_PROMPT_SHOWN, "1");
+      return !!accepted;
     } catch (_) {
       return false;
     }

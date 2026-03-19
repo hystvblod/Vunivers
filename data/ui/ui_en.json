@@ -1,0 +1,18 @@
+{
+  "adsConsent": {
+    "popup": {
+      "title": "Personalized ads",
+      "text": "Do you accept personalized ads to receive more relevant advertising? You can change this choice at any time in settings.",
+      "accept": "Accept",
+      "refuse": "Decline"
+    }
+  },
+  "onesignal": {
+    "popup": {
+      "title": "Stay informed",
+      "text": "Allow notifications to receive updates and important rewards.",
+      "accept": "Allow",
+      "cancel": "Later"
+    }
+  }
+}
