@@ -411,6 +411,18 @@
                 <span class="vr-switchUi"></span>
               </label>
             </div>
+
+            <div class="vr-toggleRow">
+              <div class="vr-toggleText">
+                <p id="musicLabel" class="vr-toggleLabel"></p>
+                <p id="musicDesc" class="vr-toggleDesc"></p>
+              </div>
+
+              <label id="musicSwitch" class="vr-switch" aria-label="">
+                <input id="musicEnabled" type="checkbox" />
+                <span class="vr-switchUi"></span>
+              </label>
+            </div>
           </div>
 
           <div class="vr-settingsSection">
@@ -599,6 +611,9 @@
       const adsLabel = $("adsLabel");
       const adsDesc = $("adsDesc");
       const adsSw = $("adsSwitch");
+      const musicLabel = $("musicLabel");
+      const musicDesc = $("musicDesc");
+      const musicSw = $("musicSwitch");
       const faqTitle = $("settingsFaqTitle");
       const faqBtn = $("btnOpenFaq");
       const faqLabel = $("settingsFaqLabel");
@@ -614,6 +629,11 @@
       if(adsLabel) adsLabel.textContent = t("ui.settings_ads_personalized_label");
       if(adsDesc) adsDesc.textContent = t("ui.settings_ads_personalized_desc");
       if(adsSw) adsSw.setAttribute("aria-label", t("ui.settings_ads_personalized_label"));
+
+      if(musicLabel) musicLabel.textContent = t("ui.settings_music_label");
+      if(musicDesc) musicDesc.textContent = t("ui.settings_music_desc");
+      if(musicSw) musicSw.setAttribute("aria-label", t("ui.settings_music_label"));
+
       if(faqTitle) faqTitle.textContent = t("ui.settings_faq_title");
       if(faqBtn) faqBtn.setAttribute("aria-label", t("ui.settings_open_faq_aria"));
       if(faqLabel) faqLabel.textContent = t("ui.settings_faq_label");
@@ -755,6 +775,40 @@
       }
     }
 
+    function getMusicPref(){
+      try{
+        if(window.VRAudio && typeof window.VRAudio.isMusicEnabled === "function"){
+          return !!window.VRAudio.isMusicEnabled();
+        }
+      }catch(_){}
+
+      try{
+        const v = localStorage.getItem("vrealms_music_enabled");
+        if(v === "1") return true;
+        if(v === "0") return false;
+      }catch(_){}
+
+      return true;
+    }
+
+    async function setMusicPref(value, { showMsg } = {}){
+      const on = !!value;
+
+      try{ localStorage.setItem("vrealms_music_enabled", on ? "1" : "0"); }catch(_){}
+
+      try{
+        window.VRAudio?.setMusicEnabled?.(on);
+      }catch(_){}
+
+      const box = $("musicEnabled");
+      if(box) box.checked = on;
+
+      const msg = $("settingsMsg");
+      if(msg && showMsg){
+        msg.textContent = t("ui.settings_music_saved");
+      }
+    }
+
     try{ await window.bootstrapAuthAndProfile?.(); }catch(_){}
     try{ await window.VUserData?.init?.(); }catch(_){}
     try{ await window.VRI18n?.initI18n?.(); }catch(_){}
@@ -777,6 +831,12 @@
     if(adsBox){
       adsBox.checked = getAdsPref();
       adsBox.addEventListener("change", () => setAdsPref(adsBox.checked, { showMsg:true }));
+    }
+
+    const musicBox = $("musicEnabled");
+    if(musicBox){
+      musicBox.checked = getMusicPref();
+      musicBox.addEventListener("change", () => setMusicPref(musicBox.checked, { showMsg:true }));
     }
 
     try{ await window.VRAds?.setPersonalizedConsent?.(getAdsPref(), { source:"settings_init" }); }catch(_){}
