@@ -4729,43 +4729,53 @@ const VR_BADGE_GOLD_CHOICES = 100;
   const LEGACY_EVENTS_LOGIC_PATH = "data/events";
 
   const HARD_CODED_SCENARIOS = {
-    hell_king: (() => {
+    vampire_lord: (() => {
       const cards = [
         {
-          id: "hk_inline_001",
-          title: "Des sorciers veulent signer",
-          body: "Trois sorciers proposent un pacte groupé. Ils veulent le pouvoir tout de suite.",
+          id: "vl_inline_001",
+          title: "Le bal rouge commence",
+          body: "La noblesse vampire exige une ouverture spectaculaire pour impressionner les clans rivaux.",
           choices: {
-            A: { label: "Accepte les trois", gaugeDelta: { souls: 14, order: -8 } },
-            B: { label: "Accepte un seul pacte", gaugeDelta: { souls: 7, order: 3 } },
-            C: { label: "Refuse et ferme la porte", gaugeDelta: { souls: -9, order: 9 } }
+            A: { label: "Offrir un festin de sang royal", gaugeDelta: { influence: 14, secrecy: -8 } },
+            B: { label: "Organiser une réception raffinée", gaugeDelta: { influence: 8, loyalty: 4 } },
+            C: { label: "Annuler le bal pour rester discret", gaugeDelta: { secrecy: 11, influence: -7 } }
           }
         },
         {
-          id: "hk_inline_002",
-          title: "Les légions réclament une fête",
-          body: "Tes armées veulent boire de la lave et oublier la discipline pendant une nuit.",
+          id: "vl_inline_002",
+          title: "Une chasse dans les ruelles",
+          body: "Tes jeunes vampires ont faim et veulent chasser cette nuit au coeur de la ville humaine.",
           choices: {
-            A: { label: "Accorde la fête", gaugeDelta: { legions: 12, order: -10 } },
-            B: { label: "Une pause courte", gaugeDelta: { legions: 6, order: 2 } },
-            C: { label: "Non, au travail", gaugeDelta: { legions: -11, order: 8 } }
+            A: { label: "Lancer une traque massive", gaugeDelta: { blood: 13, secrecy: -12 } },
+            B: { label: "Autoriser une chasse encadrée", gaugeDelta: { blood: 7, loyalty: 5 } },
+            C: { label: "Imposer les réserves du château", gaugeDelta: { secrecy: 8, blood: -8 } }
           }
         },
         {
-          id: "hk_inline_003",
-          title: "Une faille s'ouvre vers la surface",
-          body: "Tu peux lancer un raid discret ou refermer la brèche avant que les humains voient tout.",
+          id: "vl_inline_003",
+          title: "Le conseil des anciens doute",
+          body: "Les anciens remettent en cause ta vision moderne du royaume nocturne et réclament un signe fort.",
           choices: {
-            A: { label: "Lance un gros raid", gaugeDelta: { surface: 13, order: -6 } },
-            B: { label: "Envoie un petit groupe", gaugeDelta: { surface: 7, legions: 4 } },
-            C: { label: "Referme la faille", gaugeDelta: { surface: -10, order: 10 } }
+            A: { label: "Écraser l'opposition par la force", gaugeDelta: { loyalty: -10, influence: 12 } },
+            B: { label: "Négocier un pacte entre clans", gaugeDelta: { loyalty: 10, influence: 6 } },
+            C: { label: "Promettre plus de pouvoir aux anciens", gaugeDelta: { loyalty: 7, secrecy: -5 } }
+          }
+        },
+        {
+          id: "vl_inline_004",
+          title: "L'aube menace le domaine",
+          body: "Des chasseurs ont repéré le manoir. Il faut protéger la couronne avant le lever du soleil.",
+          choices: {
+            A: { label: "Transformer le quartier en forteresse", gaugeDelta: { secrecy: -9, influence: 13 } },
+            B: { label: "Évacuer discrètement les héritiers", gaugeDelta: { secrecy: 12, loyalty: 4 } },
+            C: { label: "Tendre une embuscade aux chasseurs", gaugeDelta: { blood: 8, loyalty: -6, influence: 5 } }
           }
         }
       ];
 
       const deck = cards.map((card) => ({
         id: card.id,
-        universe: "hell_king",
+        universe: "vampire_lord",
         choices: {
           A: { gaugeDelta: card.choices.A.gaugeDelta },
           B: { gaugeDelta: card.choices.B.gaugeDelta },
@@ -4788,18 +4798,18 @@ const VR_BADGE_GOLD_CHOICES = 100;
 
       return {
         config: {
-          id: "hell_king",
+          id: "vampire_lord",
           gauges: [
-            { id: "souls", label_fr: "Âmes" },
-            { id: "legions", label_fr: "Légions" },
-            { id: "order", label_fr: "Ordre" },
-            { id: "surface", label_fr: "Surface" }
+            { id: "blood", label_fr: "Sang" },
+            { id: "influence", label_fr: "Influence" },
+            { id: "loyalty", label_fr: "Loyauté" },
+            { id: "secrecy", label_fr: "Secret" }
           ],
           initialGauges: {
-            souls: 50,
-            legions: 50,
-            order: 50,
-            surface: 50
+            blood: 50,
+            influence: 50,
+            loyalty: 50,
+            secrecy: 50
           }
         },
         deck,
@@ -5588,7 +5598,7 @@ body.vr-peek-mode .vr-gauge-preview{
     if (!overlay || !titleEl || !textEl) return;
 
     const universeId =
-      universeConfig?.id || localStorage.getItem("vrealms_universe") || "hell_king";
+      universeConfig?.id || localStorage.getItem("vrealms_universe") || "vampire_lord";
 
     let lang = "fr";
     try {
@@ -7876,7 +7886,7 @@ return;
   }
 
   function renderRowOnly(category) {
-    const universeId = _state.universeId || window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "hell_king";
+    const universeId = _state.universeId || window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "vampire_lord";
     const rowsRoot = ensurePopupShell(universeId);
     if (!rowsRoot) return;
 
@@ -7903,7 +7913,7 @@ return;
   }
 
   function renderPopup() {
-    const universeId = _state.universeId || window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "hell_king";
+    const universeId = _state.universeId || window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "vampire_lord";
     ensurePopupShell(universeId);
     renderRowOnly("background");
     renderRowOnly("message");
@@ -7933,7 +7943,7 @@ return;
   function openPopup() {
     const popup = getPopup();
     const btn = document.getElementById("btn-customize");
-    _state.universeId = window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "hell_king";
+    _state.universeId = window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "vampire_lord";
     renderPopup();
     showDialog(popup, popup?.querySelector?.("[data-cus-nav], [data-cus-action]") || btn);
     _state.open = true;
@@ -8059,7 +8069,7 @@ return;
     });
 
     window.addEventListener("vr:profile", () => {
-      const universeId = window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "hell_king";
+      const universeId = window.VRGame?.currentUniverse || localStorage.getItem("vrealms_universe") || "vampire_lord";
       applyUniverseCosmetics(universeId);
 
       if (_state.open) {
@@ -8131,7 +8141,7 @@ return;
       const params = new URLSearchParams(window.location.search || "");
       return {
         enabled: params.get("preview") === "1" || window.__VR_PREVIEW_MODE === true,
-        universeId: String(params.get("universe") || localStorage.getItem("vrealms_universe") || "hell_king").trim(),
+        universeId: String(params.get("universe") || localStorage.getItem("vrealms_universe") || "vampire_lord").trim(),
         category: String(params.get("category") || "").trim(),
         itemId: String(params.get("itemId") || "").trim(),
         src: String(params.get("src") || "").trim()
@@ -8139,7 +8149,7 @@ return;
     } catch (_) {
       return {
         enabled: false,
-        universeId: "hell_king",
+        universeId: "vampire_lord",
         category: "",
         itemId: "",
         src: ""
@@ -8630,7 +8640,7 @@ window.VRGame = {
     try { window.VRCoinUI?.init?.(); } catch (_) {}
     try { window.VRCosmeticsGame?.init?.(); } catch (_) {}
 
-    const universeId = localStorage.getItem("vrealms_universe") || "hell_king";
+    const universeId = localStorage.getItem("vrealms_universe") || "vampire_lord";
     if (window.VRGame && typeof window.VRGame.onUniverseSelected === "function") {
       await window.VRGame.onUniverseSelected(universeId);
     }
