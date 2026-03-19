@@ -579,7 +579,7 @@
         const base = normalizeLang(cand);
         if(base && supported(base)) return base;
       }
-      return "en";
+      return null;
     }
 
     function t(key){
@@ -842,19 +842,13 @@
     try{ await window.VUserData?.init?.(); }catch(_){}
     try{ await window.VRI18n?.initI18n?.(); }catch(_){}
 
-    try{
-      const cur = getStoredLang();
-      if(!cur){
-        const d = detectDeviceLang();
-        localStorage.setItem(LangStorageKey, d);
-        localStorage.setItem(LangStorageLegacyKey, d);
-      }
-    }catch(_){}
-
     renderTexts();
     buildGrid();
 
-    await setLanguage(getStoredLang() || detectDeviceLang(), { showMsg:false });
+    await setLanguage(
+      getStoredLang() || detectDeviceLang() || window.VRI18n?.getLang?.() || "en",
+      { showMsg:false }
+    );
 
     const adsBox = $("adsPersonalized");
     if(adsBox){
