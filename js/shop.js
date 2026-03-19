@@ -1006,8 +1006,6 @@
     try { await window.vrWaitBootstrap?.(); } catch (_) {}
     try { await window.VUserData?.init?.(); } catch (_) {}
     try { await window.VRI18n?.initI18n?.(); } catch (_) {}
-    try { await window.VUserData?.refresh?.(); } catch (_) {}
-    try { await window.VRI18n?.initI18n?.(window.VUserData?.load?.()?.lang || window.VRI18n?.getLang?.() || ""); } catch (_) {}
 
     ensureStyles();
     ensureLightboxRoot();
