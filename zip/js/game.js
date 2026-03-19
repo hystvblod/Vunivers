@@ -143,6 +143,8 @@ const VR_BADGE_GOLD_CHOICES = 100;
     return s.split(/[-_]/)[0] || "en";
   }
 
+  window.normalizeScenarioLang = normalizeScenarioLang;
+
   const VREventsLoader = {
     async loadUniverseData(universeId, lang) {
       const configPromise = this._loadConfig(universeId);
@@ -927,7 +929,9 @@ body.vr-peek-mode .vr-gauge-preview{
     const key = `${universeId}__${lang}`;
     if (cache.has(key)) return cache.get(key);
 
-    const fileLang = normalizeScenarioLang(lang);
+    const fileLang = (typeof window.normalizeScenarioLang === "function")
+      ? window.normalizeScenarioLang(lang)
+      : String(lang || "en").trim().toLowerCase().split(/[-_]/)[0];
     const urlNew = `${ENDINGS_BASE_PATH}/${universeId}/endings_${fileLang}.json`;
     const urlOld1 = `data/i18n/${lang}/endings_${universeId}.json`;
     const urlOld2 = `data/i18n/endings_${universeId}_${lang}.json`;
