@@ -342,9 +342,8 @@
         }
 
         try {
-          const lang = (!preview && window.VUserData?.getLang?.()) || "fr";
           if (window.VRI18n && typeof window.VRI18n.initI18n === "function") {
-            await window.VRI18n.initI18n(lang);
+            await window.VRI18n.initI18n();
           }
         } catch (_) {}
 
