@@ -410,6 +410,15 @@
       .vr-universe-title{position:relative;z-index:1;text-align:center;font-weight:950;font-size:19px;line-height:1.1;color:rgba(255,255,255,.96);margin:0 0 12px;text-shadow:0 12px 24px rgba(0,0,0,.55)}
       .vr-cos-row{position:relative;z-index:1;margin:0 0 14px}
       .vr-cos-row:last-child{margin-bottom:0}
+      .vr-cos-row-label{
+        text-align:center;
+        font-weight:1000;
+        font-size:15px;
+        line-height:1.1;
+        color:rgba(255,255,255,.96);
+        margin:0 0 8px;
+        text-shadow:0 8px 18px rgba(0,0,0,.45);
+      }
       .vr-cos-carousel{display:grid;grid-template-columns:36px minmax(0,1fr) 36px;align-items:center;gap:8px}
       .vr-cos-arrow{width:36px;height:36px;border:none;background:transparent;box-shadow:none;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:rgba(255,255,255,.96);font-size:28px;font-weight:900;line-height:1;text-shadow:0 10px 22px rgba(0,0,0,.45)}
       .vr-cos-viewport{min-width:0;overflow:hidden;touch-action:pan-y}
@@ -876,6 +885,10 @@
 
             return `
               <div class="vr-cos-row" data-category="${category}" data-index="0">
+                ${category !== "background" ? `
+                  <div class="vr-cos-row-label">${t(CATEGORY_KEYS[category], "")}</div>
+                ` : ""}
+
                 <div class="vr-cos-carousel">
                   <button class="vr-cos-arrow vr-cos-prev" type="button" aria-label="${t("shop.carousel.prev", "")}">‹</button>
 
