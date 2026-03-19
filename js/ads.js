@@ -883,6 +883,14 @@
     _writeLSString(ADS_PREF_KEY, value ? "1" : "0");
     _writeLSString(ADS_CHOICE_DONE_KEY, "1");
 
+    try {
+      if (window.sb && typeof window.sb.rpc === "function") {
+        await window.sb.rpc("secure_set_ads_personalized_choice", {
+          p_new_value: value
+        });
+      }
+    } catch (_) {}
+
     return value;
   }
 
