@@ -2388,7 +2388,7 @@ body.vr-body-game[data-universe="heaven_king"]{
 
   --vr-font-scn-title: clamp(18px, 2.9vmin, 34px);
   --vr-font-scn-text:  clamp(14px, 2.35vmin, 26px);
-  --vr-font-choice:    clamp(18px, 2.85vmin, 30px);
+  --vr-font-choice:    clamp(19px, 3.0vmin, 32px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 2px);
 
@@ -2718,7 +2718,7 @@ body[data-universe="heaven_king"] .vr-gauge-delta{
     --vr-identity-ty: 4px;
     --vr-hud-name-years-gap: 40px;
 
-    --vr-font-choice: clamp(12px, 3.0vw, 16px);
+    --vr-font-choice: clamp(13px, 3.15vw, 17px);
     --vr-choice-h: clamp(84px, 12.0svh, 128px);
     --vr-stack-gap: 0px;
     --vr-choices-gap: 0px;
@@ -2757,7 +2757,7 @@ body[data-universe="heaven_king"] .vr-gauge-delta{
 /* HEAVEN ultra petit écran */
 @media (max-width: 390px), (max-height: 740px){
   body.vr-body-game[data-universe="heaven_king"]{
-    --vr-font-choice: clamp(11px, 2.8vw, 14px);
+    --vr-font-choice: clamp(12px, 2.95vw, 15px);
     --vr-choice-h: clamp(80px, 11.2svh, 118px);
     --vr-stack-gap: 0px;
     --vr-choices-gap: 0px;
@@ -2831,9 +2831,9 @@ body.vr-body-game[data-universe="western_president"]{
   --vr-stack-gap: clamp(10px, 1.15svh, 22px);
   --vr-choices-gap: clamp(9px, 1svh, 18px);
 
-  --vr-scn-inset-top: 18%;
+  --vr-scn-inset-top: 16%;
   --vr-scn-inset-right: 12%;
-  --vr-scn-inset-bottom: 10%;
+  --vr-scn-inset-bottom: 12%;
   --vr-scn-inset-left: 12%;
 
   --vr-choice-inset-top: 17%;
@@ -2842,9 +2842,9 @@ body.vr-body-game[data-universe="western_president"]{
   --vr-choice-inset-left: 9%;
   --vr-choice-safe: 84%;
 
-  --vr-font-scn-title: clamp(16px, 2.6vmin, 30px);
-  --vr-font-scn-text:  clamp(13px, 2.0vmin, 21px);
-  --vr-font-choice:    clamp(13px, 2.0vmin, 20px);
+  --vr-font-scn-title: clamp(17px, 2.8vmin, 32px);
+  --vr-font-scn-text:  clamp(14px, 2.15vmin, 22px);
+  --vr-font-choice:    clamp(14px, 2.15vmin, 21px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
@@ -3148,9 +3148,9 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
     --vr-stack-gap: clamp(12px, 1.35svh, 22px);
     --vr-choices-gap: clamp(6px, 0.70svh, 12px);
 
-    --vr-scn-inset-top: 17%;
+    --vr-scn-inset-top: 15%;
     --vr-scn-inset-right: 12%;
-    --vr-scn-inset-bottom: 11%;
+    --vr-scn-inset-bottom: 13%;
     --vr-scn-inset-left: 12%;
 
     --vr-choice-safe: 82%;
@@ -3159,9 +3159,9 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
     --vr-choice-inset-bottom: 16%;
     --vr-choice-inset-left: 8%;
 
-    --vr-font-scn-title: clamp(15px, 3.5vw, 24px);
-    --vr-font-scn-text: clamp(12px, 2.7vw, 16px);
-    --vr-font-choice: clamp(12px, 3.0vw, 16px);
+    --vr-font-scn-title: clamp(16px, 3.7vw, 25px);
+    --vr-font-scn-text: clamp(13px, 2.95vw, 17px);
+    --vr-font-choice: clamp(13px, 3.15vw, 17px);
 
     --vr-hud-name-years-gap: 30px;
   }
@@ -3211,9 +3211,9 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
   body.vr-body-game[data-universe="western_president"]{
     --vr-scn-h: clamp(132px, 18.0svh, 210px);
     --vr-choice-h: clamp(84px, 11.3svh, 130px);
-    --vr-font-scn-title: clamp(14px, 3.3vw, 20px);
-    --vr-font-scn-text: clamp(11px, 2.55vw, 14px);
-    --vr-font-choice: clamp(11px, 2.8vw, 14px);
+    --vr-font-scn-title: clamp(15px, 3.45vw, 21px);
+    --vr-font-scn-text: clamp(11.8px, 2.7vw, 15px);
+    --vr-font-choice: clamp(12px, 2.95vw, 15px);
     --vr-choice-safe: 80%;
     --vr-choice-inset-top: 15%;
     --vr-choice-inset-right: 7%;
@@ -3259,9 +3259,9 @@ body.vr-body-game[data-universe="mega_corp_ceo"]{
   --vr-choices-gap: clamp(4px, 0.46svh, 9px);
 
   --vr-choice-safe: 84%;
-  --vr-font-scn-title: clamp(15px, 2.1vmin, 24px);
-  --vr-font-scn-text:  clamp(11px, 1.6vmin, 15px);
-  --vr-font-choice:    clamp(11px, 1.55vmin, 17px);
+  --vr-font-scn-title: clamp(16px, 2.3vmin, 26px);
+  --vr-font-scn-text:  clamp(12px, 1.8vmin, 16px);
+  --vr-font-choice:    clamp(12px, 1.75vmin, 18px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
@@ -3654,7 +3654,7 @@ body[data-universe="mega_corp_ceo"] .vr-gauge-delta{
     --vr-scn-h: clamp(148px, 19.6svh, 230px);
     --vr-choice-h: clamp(82px, 11.0svh, 120px);
     --vr-choice-safe: 82%;
-    --vr-font-choice: clamp(10.8px, 2.45vw, 14px);
+    --vr-font-choice: clamp(11.4px, 2.6vw, 14.8px);
   }
 
   body.vr-body-game[data-universe="mega_corp_ceo"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
@@ -3686,7 +3686,7 @@ body[data-universe="mega_corp_ceo"] .vr-gauge-delta{
 @media (max-width: 390px), (max-height: 740px){
   body.vr-body-game[data-universe="mega_corp_ceo"]{
     --vr-choice-h: clamp(78px, 10.4svh, 112px);
-    --vr-font-choice: clamp(10px, 2.3vw, 13px);
+    --vr-font-choice: clamp(10.7px, 2.45vw, 13.8px);
     --vr-choice-safe: 80%;
   }
 
@@ -3726,7 +3726,7 @@ body.vr-body-game[data-universe="new_world_explorer"]{
 
   --vr-font-scn-title: clamp(26px, 4.2vmin, 56px);
   --vr-font-scn-text:  clamp(21px, 3.5vmin, 46px);
-  --vr-font-choice:    clamp(18px, 3.1vmin, 38px);
+  --vr-font-choice:    clamp(19px, 3.25vmin, 40px);
 
   /* ===== Polices ===== */
   --vr-explorer-font-title: "AlegreyaSCExplorer", serif;
@@ -4148,7 +4148,7 @@ body[data-universe="new_world_explorer"] .vr-gauge-delta{
     --vr-choices-gap: clamp(6px, 0.8svh, 12px);
     --vr-font-scn-title: clamp(18px, 2.8vmin, 36px);
     --vr-font-scn-text: clamp(15px, 2.2vmin, 28px);
-    --vr-font-choice: clamp(13px, 2.0vmin, 24px);
+    --vr-font-choice: clamp(14px, 2.15vmin, 26px);
   }
 }
 
@@ -4181,7 +4181,7 @@ body[data-universe="new_world_explorer"] .vr-gauge-delta{
 
     --vr-font-scn-title: clamp(18px, 4.5vw, 30px);
     --vr-font-scn-text: clamp(15px, 3.8vw, 24px);
-    --vr-font-choice: clamp(13px, 3.4vw, 20px);
+    --vr-font-choice: clamp(14px, 3.55vw, 21px);
 
     --vr-explorer-topbar-top: calc(6px + env(safe-area-inset-top));
     --vr-explorer-side-btn-top: calc(10px + env(safe-area-inset-top));
@@ -4227,7 +4227,7 @@ body[data-universe="new_world_explorer"] .vr-gauge-delta{
     --vr-choices-gap: clamp(5px, 0.6svh, 9px);
     --vr-font-scn-title: clamp(16px, 4.2vw, 26px);
     --vr-font-scn-text: clamp(13px, 3.4vw, 20px);
-    --vr-font-choice: clamp(12px, 3.2vw, 17px);
+    --vr-font-choice: clamp(13px, 3.35vw, 18px);
     --vr-choice-safe: 80%;
     --vr-choice-inset-top: 14%;
     --vr-choice-inset-right: 7%;
@@ -4261,7 +4261,7 @@ body[data-universe="vampire_lord"].vr-body-game #view-game .vr-choice-label{
   color: #000 !important;
   text-shadow: none !important;
   opacity: 1 !important;
-  font-size: clamp(15px, 2.35vmin, 24px) !important;
+  font-size: clamp(16.5px, 2.7vmin, 28px) !important;
   font-weight: 700 !important;
   line-height: 1.16 !important;
   overflow-wrap: break-word !important;
@@ -4292,9 +4292,9 @@ body.vr-body-game[data-universe="vampire_lord"]{
   --vr-choice-inset-left: 9%;
   --vr-choice-safe: 84%;
 
-  --vr-font-scn-title: clamp(15px, 2.5vmin, 28px);
-  --vr-font-scn-text:  clamp(13px, 2.0vmin, 21px);
-  --vr-font-choice:    clamp(13.5px, 2.05vmin, 21px);
+  --vr-font-scn-title: clamp(18px, 2.95vmin, 34px);
+  --vr-font-scn-text:  clamp(15.5px, 2.5vmin, 27px);
+  --vr-font-choice:    clamp(16px, 2.55vmin, 28px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
@@ -4513,7 +4513,7 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
 }
 
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
-  font-size: clamp(17px, 2.7vmin, 28px) !important;
+  font-size: clamp(19px, 3.0vmin, 34px) !important;
   font-weight: 400 !important;
   line-height: 1.08 !important;
   max-width: 94% !important;
@@ -4524,7 +4524,7 @@ body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
 }
 
 body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
-  font-size: clamp(15px, 2.35vmin, 24px) !important;
+  font-size: clamp(16.5px, 2.7vmin, 28px) !important;
   font-weight: 700 !important;
   line-height: 1.16 !important;
   max-width: 94% !important;
@@ -4719,7 +4719,7 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
     --vr-choice-inset-bottom: 15%;
     --vr-choice-inset-left: 8%;
 
-    --vr-font-choice: clamp(12px, 3vw, 15.5px);
+    --vr-font-choice: clamp(14.5px, 3.6vw, 18.5px);
   }
 
   body.vr-body-game[data-universe="vampire_lord"] .vr-top-actions-game{ top: calc(12px + env(safe-area-inset-top)) !important; }
@@ -4734,20 +4734,20 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
   }
 
   body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
-    font-size: clamp(15px, 4.2vw, 20px) !important;
+    font-size: clamp(16.5px, 4.6vw, 22px) !important;
     font-weight: 400 !important;
     line-height: 1.06 !important;
     max-width: 94% !important;
   }
   body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
-    font-size: clamp(13.5px, 3.8vw, 18px) !important;
+    font-size: clamp(15px, 4.15vw, 19.5px) !important;
     font-weight: 700 !important;
     line-height: 1.14 !important;
     max-width: 94% !important;
   }
   body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
     font-family: "VR_CrimsonText", serif !important;
-    font-size: clamp(13.5px, 3.8vw, 18px) !important;
+    font-size: clamp(15px, 4.15vw, 19.5px) !important;
     font-weight: 700 !important;
     line-height: 1.14 !important;
     max-width: 100% !important;
@@ -4789,7 +4789,7 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
 @media (max-width: 390px), (max-height: 740px){
   body.vr-body-game[data-universe="vampire_lord"]{
     --vr-choice-h: clamp(78px, 10.4svh, 116px);
-    --vr-font-choice: clamp(12px, 2.9vw, 15px);
+    --vr-font-choice: clamp(14px, 3.35vw, 17.5px);
     --vr-choice-safe: 80%;
     --vr-choice-inset-top: 14%;
     --vr-choice-inset-right: 7%;
