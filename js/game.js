@@ -1291,10 +1291,25 @@ body.vr-peek-mode .vr-gauge-preview{
   #vr-ending-overlay #ending-revive-btn,
   #vr-ending-overlay #ending-restart-btn,
   #vr-ending-overlay #ending-return-btn{
-    width:auto !important;
-    max-width:max-content !important;
-    min-height:0 !important;
-    padding:5px 12px !important;
+    width:100% !important;
+    max-width:none !important;
+    min-width:0 !important;
+    min-height:42px !important;
+    height:42px !important;
+    padding:5px 10px !important;
+    box-sizing:border-box !important;
+    border:1px solid rgba(255,255,255,.14) !important;
+    border-radius:14px !important;
+    background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05)) !important;
+    box-shadow:0 10px 20px rgba(0,0,0,.24) !important;
+    color:#fff !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    font-size:16px !important;
+    font-weight:950 !important;
+    line-height:1.02 !important;
+    margin:0 !important;
   }
 `;
         document.head.appendChild(style);
