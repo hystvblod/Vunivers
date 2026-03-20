@@ -8,15 +8,33 @@
 
   <style>
     html, body.vr-body-game {
-      background: #fff !important;
+      background: #0b1220 !important;
       overflow: hidden !important;
       height: 100% !important;
     }
-    :root { --vr-bg: #fff !important; }
+
+    :root {
+      --vr-bg: #0b1220 !important;
+    }
+
+    #vr-boot-overlay{
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      background: #0b1220;
+      opacity: 1;
+      transition: opacity .18s ease;
+      pointer-events: none;
+    }
+
+    body.vr-ready #vr-boot-overlay{
+      opacity: 0;
+    }
   </style>
 </head>
 
 <body class="vr-body vr-body-game" data-page="game">
+  <div id="vr-boot-overlay" aria-hidden="true"></div>
 
   <a class="vr-icon-button" href="index.html" aria-label="Accueil"
      style="position:fixed; top:calc(10px + env(safe-area-inset-top)); left:14px; z-index:100002; pointer-events:auto;">

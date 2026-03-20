@@ -4940,6 +4940,127 @@ window.VRGame = {
     try { window.addEventListener("beforeunload", () => flush()); } catch (_) {}
   }
 
+function extractCssUrls(value) {
+  const out = [];
+  const re = /url\((['"]?)(.*?)\1\)/g;
+  let match;
+
+  while ((match = re.exec(String(value || "")))) {
+    if (match[2]) out.push(match[2]);
+  }
+
+  return out;
+}
+
+function preloadImage(url, timeout = 1500) {
+  return new Promise((resolve) => {
+    if (!url || url.startsWith("data:")) return resolve();
+
+    const img = new Image();
+    let done = false;
+
+    const finish = () => {
+      if (done) return;
+      done = true;
+      resolve();
+    };
+
+    const timer = setTimeout(finish, timeout);
+
+    img.onload = () => {
+      clearTimeout(timer);
+      finish();
+    };
+
+    img.onerror = () => {
+      clearTimeout(timer);
+      finish();
+    };
+
+    img.src = url;
+
+    try {
+      if (typeof img.decode === "function") {
+        img.decode()
+          .then(() => {
+            clearTimeout(timer);
+            finish();
+          })
+          .catch(() => {});
+      }
+    } catch (_) {}
+  });
+}
+
+async function preloadCurrentUniverseVisuals() {
+  const selectors = [
+    "#view-game",
+    "#vr-card-main",
+    ".vr-choice-button",
+    ".vr-gauge-frame",
+    ".vr-gauge-fill",
+    ".vr-gauge-preview",
+    ".vr-top-actions-game",
+    "body > a.vr-icon-button[aria-label='Accueil']",
+    "#btn-customize"
+  ];
+
+  const urls = new Set();
+
+  selectors.forEach((selector) => {
+    document.querySelectorAll(selector).forEach((el) => {
+      try {
+        const base = getComputedStyle(el);
+        extractCssUrls(base.backgroundImage).forEach((u) => urls.add(u));
+
+        const before = getComputedStyle(el, "::before");
+        extractCssUrls(before.backgroundImage).forEach((u) => urls.add(u));
+
+        const after = getComputedStyle(el, "::after");
+        extractCssUrls(after.backgroundImage).forEach((u) => urls.add(u));
+      } catch (_) {}
+    });
+  });
+
+  await Promise.all([...urls].map((url) => preloadImage(url)));
+
+  try {
+    if (document.fonts && document.fonts.ready) {
+      await Promise.race([
+        document.fonts.ready,
+        new Promise((resolve) => setTimeout(resolve, 800))
+      ]);
+    }
+  } catch (_) {}
+
+  await new Promise((resolve) => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(resolve);
+    });
+  });
+}
+
+function showBootOverlay() {
+  try {
+    document.body.classList.remove("vr-ready");
+    const overlay = document.getElementById("vr-boot-overlay");
+    if (overlay) overlay.style.display = "";
+  } catch (_) {}
+}
+
+function hideBootOverlay() {
+  try {
+    document.body.classList.add("vr-ready");
+
+    const overlay = document.getElementById("vr-boot-overlay");
+    if (overlay) {
+      setTimeout(() => {
+        overlay.style.display = "none";
+      }, 220);
+    }
+  } catch (_) {}
+}
+
   async function initApp() {
     setupNavigationGuards();
     setupSaveGuards();
@@ -4989,8 +5110,15 @@ window.VRGame = {
       const qUniverse = String(params.get("universe") || "").trim();
       if (qUniverse) universeId = qUniverse;
     } catch (_) {}
-    if (window.VRGame && typeof window.VRGame.onUniverseSelected === "function") {
-      await window.VRGame.onUniverseSelected(universeId);
+    showBootOverlay();
+
+    try {
+      if (window.VRGame && typeof window.VRGame.onUniverseSelected === "function") {
+        await window.VRGame.onUniverseSelected(universeId);
+        await preloadCurrentUniverseVisuals();
+      }
+    } finally {
+      hideBootOverlay();
     }
   }
 
