@@ -5229,17 +5229,33 @@ body.vr-body-game[data-universe] #view-game .vr-choice-label{
 
 /* HUD textes */
 body.vr-body-game[data-universe] .vr-hud-value{
-  font-size: calc(clamp(12px, 2vw, 24px) * var(--vr-fit-type)) !important;
+  font-size: calc(clamp(13px, 2.25vmin, 26px) * var(--vr-fit-type)) !important;
+  line-height: 1 !important;
 }
 
 body.vr-body-game[data-universe] .vr-hud-name,
 body.vr-body-game[data-universe] .vr-hud-years{
-  font-size: calc(clamp(12px, 1.9vw, 23px) * var(--vr-fit-type)) !important;
+  font-size: calc(clamp(13px, 2.10vmin, 25px) * var(--vr-fit-type)) !important;
+  line-height: 1.02 !important;
 }
 
 body.vr-body-game[data-universe] .vr-gauge-label{
-  font-size: calc(clamp(11px, 2.0vmin, 16px) * var(--vr-fit-type)) !important;
+  font-size: calc(clamp(12px, 2.10vmin, 18px) * var(--vr-fit-type)) !important;
   line-height: 1.08 !important;
+}
+
+body.vr-body-game[data-universe] .vr-gauge-value{
+  font-size: calc(clamp(11px, 1.90vmin, 16px) * var(--vr-fit-type)) !important;
+  line-height: 1.05 !important;
+}
+
+/* Heaven : jauges un peu plus grandes */
+body.vr-body-game[data-universe="heaven_king"] .vr-gauge-label{
+  font-size: calc(clamp(13px, 2.25vmin, 19px) * var(--vr-fit-type)) !important;
+}
+
+body.vr-body-game[data-universe="heaven_king"] .vr-gauge-value{
+  font-size: calc(clamp(12px, 2.00vmin, 17px) * var(--vr-fit-type)) !important;
 }
 
 /* ==========================================================
