@@ -760,16 +760,16 @@ body.vr-body-game .vr-choice-label{
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 6px !important;
-  font-size: clamp(13px, 3.2vw, 14px) !important;
+  gap: 7px !important;
+  font-size: clamp(15px, 3.8vw, 17px) !important;
   font-weight: 900 !important;
   line-height: 1.1 !important;
   opacity: 1 !important;
 }
 
 #vr-ending-overlay .vr-ending-double-sub img{
-  width: clamp(16px, 4.6vw, 18px) !important;
-  height: clamp(16px, 4.6vw, 18px) !important;
+  width: clamp(18px, 5vw, 20px) !important;
+  height: clamp(18px, 5vw, 20px) !important;
   object-fit: contain !important;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,.28)) !important;
 }
@@ -777,8 +777,8 @@ body.vr-body-game .vr-choice-label{
 #vr-ending-overlay .vr-ending-actions{
   display: flex !important;
   flex-direction: column !important;
-  gap: 6px !important;
-  margin-top: 6px !important;
+  gap: 12px !important;
+  margin-top: 8px !important;
 }
 
 #vr-ending-overlay .vr-ending-actions-bottom{
