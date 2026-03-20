@@ -1170,11 +1170,19 @@ body.vr-peek-mode .vr-gauge-preview{
   }
 
   #vr-ending-overlay .vr-choice-button{
-    width:100%;
-    min-height:34px !important;
-    padding:4px 10px !important;
+    width:auto !important;
+    min-width:0 !important;
+    max-width:max-content !important;
+    min-height:0 !important;
+    padding:5px 12px !important;
     border-radius:14px !important;
     line-height:1.05 !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    align-self:center !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
   }
 
   #vr-ending-overlay .vr-choice-button span{
@@ -1258,23 +1266,35 @@ body.vr-peek-mode .vr-gauge-preview{
   #vr-ending-overlay .vr-ending-actions{
     display:flex;
     flex-direction:column;
+    align-items:center;
     gap:6px;
     margin-top:4px;
   }
 
   #vr-ending-overlay .vr-ending-actions .vr-choice-button{
-    width:100%;
+    width:auto !important;
+    max-width:max-content !important;
   }
 
   #vr-ending-overlay .vr-ending-actions-bottom{
     display:flex;
     flex-direction:column;
+    align-items:center;
     gap:6px;
   }
 
   @keyframes vrEndingPulse{
     0%,100%{ opacity:1; transform:scale(1); filter:brightness(1); }
     50%{ opacity:.72; transform:scale(1.02); filter:brightness(1.28); }
+  }
+
+  #vr-ending-overlay #ending-revive-btn,
+  #vr-ending-overlay #ending-restart-btn,
+  #vr-ending-overlay #ending-return-btn{
+    width:auto !important;
+    max-width:max-content !important;
+    min-height:0 !important;
+    padding:5px 12px !important;
   }
 `;
         document.head.appendChild(style);
