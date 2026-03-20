@@ -714,8 +714,17 @@ body.vr-peek-mode .vr-gauge-preview{
           const choiceId = btn.getAttribute("data-choice");
           if (!choiceId) { animateBack(); return; }
 
+          const cardLogic = this.currentCardLogic;
+
           animateFlyOut(dx, choiceId, () => {
-            try { window.VREngine.applyChoice(this.currentCardLogic, choiceId); } catch (_) {}
+            try {
+              window.VREngine.applyChoice(cardLogic, choiceId);
+            } catch (e) {
+              console.error("[VR APPLY CHOICE ERROR]", e, {
+                cardId: cardLogic?.id || null,
+                choiceId
+              });
+            }
           });
         } else {
           animateBack();
@@ -1819,10 +1828,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
       window.VRUIBinding.updateMeta(kingName, years, this._uiCoins, this._uiTokens);
 
-      this._refreshUIBalancesSoft().then(() => {
-        window.VRUIBinding.updateMeta(getDynastyName(), getYearLabel(), this._uiCoins, this._uiTokens);
-      });
-
       this._nextCard();
       this._saveRunSoft();
     },
@@ -2168,15 +2173,6 @@ body.vr-peek-mode .vr-gauge-preview{
       try { window.VRGame?.maybeShowInterstitial?.(); } catch (_) {}
 
       this._saveRunSoft();
-
-      this._refreshUIBalancesSoft().then(() => {
-        window.VRUIBinding.updateMeta(
-          getDynastyName(),
-          getYearLabel(),
-          this._uiCoins,
-          this._uiTokens
-        );
-      });
 
       try {
         if (window.VRIntroTutorial?.afterApplyChoice?.(cardLogic, choiceId) === true) return;
