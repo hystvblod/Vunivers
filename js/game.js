@@ -3861,187 +3861,166 @@ function onGaugeSet(gaugeId) {
 
     const style = document.createElement("style");
     style.id = "vr-customize-inline-style";
-    style.textContent = `
-      #vr-customize-content{
-        display:flex;
-        flex-direction:column;
-        gap:12px;
-        margin-top:10px;
-      }
-      .vr-customize-universe-title{
-        text-align:center;
-        font-weight:900;
-        font-size:18px;
-        color:#fff;
-        margin:0 0 6px;
-      }
-      .vr-customize-row{
-        display:flex;
-        flex-direction:column;
-        gap:8px;
-      }
-      .vr-customize-subtitle{
-        text-align:center;
-        font-weight:800;
-        font-size:13px;
-        opacity:.95;
-      }
-      .vr-customize-carousel{
-        display:grid;
-        grid-template-columns:36px minmax(0,1fr) 36px;
-        align-items:center;
-        gap:8px;
-      }
-      .vr-customize-arrow{
-        width:36px;
-        height:36px;
-        border:none;
-        background:transparent;
-        box-shadow:none;
-        border-radius:0;
-        color:#fff;
-        font-size:28px;
-        font-weight:900;
-        cursor:pointer;
-        text-shadow:0 10px 22px rgba(0,0,0,.45);
-      }
-      .vr-customize-arrow[disabled]{
-        opacity:.4;
-        cursor:default;
-      }
-      .vr-customize-card{
-        position:relative;
-        overflow:hidden;
-        border-radius:18px;
-        min-height:138px;
-        border:1px solid rgba(255,255,255,.12);
-        background:rgba(255,255,255,.06);
-        box-shadow:0 16px 30px rgba(0,0,0,.28);
-      }
-      .vr-customize-card.is-ui img{
-        object-fit:contain;
-        padding:12px;
-        background:
-          radial-gradient(circle at 50% 40%, rgba(255,255,255,.10), transparent 46%),
-          linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.08));
-      }
-      .vr-customize-card img{
-        position:absolute;
-        inset:0;
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        display:block;
-      }
-      .vr-customize-overlay{
-        position:absolute;
-        inset:auto 0 0 0;
-        padding:34px 10px 10px;
-        background:linear-gradient(180deg, transparent, rgba(0,0,0,.78));
-      }
-      .vr-customize-name{
-        text-align:center;
-        font-weight:900;
-        font-size:13px;
-        color:#fff;
-        line-height:1.15;
-        margin-bottom:8px;
-      }
-      .vr-customize-bottom{
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        gap:8px;
-      }
-      .vr-customize-price{
-        display:inline-flex;
-        align-items:center;
-        gap:6px;
-        padding:6px 10px;
-        border-radius:999px;
-        border:1px solid rgba(255,255,255,.14);
-        background:rgba(0,0,0,.30);
-        color:#fff;
-        font-weight:950;
-        font-size:12px;
-      }
-      .vr-customize-price img{
-        position:static;
-        width:16px;
-        height:16px;
-        object-fit:contain;
-        padding:0;
-        background:none;
-      }
-      .vr-customize-count{
-        color:rgba(255,255,255,.86);
-        font-size:12px;
-        font-weight:900;
-      }
-      .vr-customize-action{
-        width:100%;
-        margin-top:8px;
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        padding:10px 12px;
-        border-radius:14px;
-        border:1px solid rgba(255,255,255,.14);
-        background:rgba(255,255,255,.08);
-        color:#fff;
-        font-weight:900;
-        cursor:pointer;
-      }
-      .vr-customize-action.is-owned{
-        background:rgba(255,255,255,.10);
-      }
-      .vr-customize-action.is-equipped{
-        background:rgba(138,197,95,.22);
-        border-color:rgba(138,197,95,.55);
-      }
-      .vr-customize-note{
-        text-align:center;
-        color:rgba(255,255,255,.84);
-        font-size:12px;
-        margin-top:6px;
-      }
-      #vr-customize-popup .vr-popup-inner{
-        position: relative;
-      }
-      #vr-customize-popup .vr-popup-title{
-        padding-right: 46px;
-      }
-      #vr-customize-popup .vr-customize-x{
-        z-index: 2;
-      }
-      #vr-customize-popup .vr-customize-x{
-        position:absolute;
-        top: 10px;
-        right: 10px;
-        width: 38px;
-        height: 38px;
-        border-radius: 12px;
-        border: 1px solid rgba(255,255,255,.16);
-        background: rgba(0,0,0,.25);
-        cursor: pointer;
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        box-shadow: 0 14px 26px rgba(0,0,0,.35);
-      }
-      #vr-customize-popup .vr-customize-x::before{
-        content:"×";
-        font-size: 24px;
-        font-weight: 900;
-        line-height: 1;
-        color: #fff;
-        text-shadow: 0 10px 20px rgba(0,0,0,.55);
-        transform: translateY(-1px);
-      }
-      #vr-customize-popup .vr-customize-x:active{
-        transform: scale(.97);
-      }
-    `;
+   style.textContent = `
+  #vr-ending-overlay .vr-ending-card{
+    text-align:center;
+    align-items:stretch;
+    gap:10px;
+  }
+
+  #vr-ending-overlay .vr-ending-title,
+  #vr-ending-overlay .vr-ending-text{
+    text-align:center !important;
+  }
+
+  #vr-ending-overlay .vr-ending-reward{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:0;
+    margin:0 0 2px;
+    background:transparent;
+    border:none;
+    box-shadow:none;
+  }
+
+  #vr-ending-overlay .vr-ending-reward img{
+    width:24px;
+    height:24px;
+    object-fit:contain;
+    filter:drop-shadow(0 4px 8px rgba(0,0,0,.28));
+    transform:translateY(1px);
+  }
+
+  #vr-ending-overlay .vr-ending-reward strong{
+    font-size:18px;
+    font-weight:950;
+    letter-spacing:.2px;
+    line-height:1;
+  }
+
+  #vr-ending-overlay .vr-ending-double{
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:1px;
+    width:100%;
+    min-height:42px;
+    height:42px;
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:14px;
+    padding:5px 10px;
+    box-sizing:border-box;
+    background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+    box-shadow:0 10px 20px rgba(0,0,0,.24);
+    color:#fff;
+    font:inherit;
+    cursor:pointer;
+    margin-top:2px;
+  }
+
+  #vr-ending-overlay .vr-ending-double::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 50% 18%, rgba(255,255,255,.18), transparent 55%);
+    pointer-events:none;
+  }
+
+  #vr-ending-overlay .vr-ending-double.is-glow{
+    animation:vrEndingPulse .8s linear infinite;
+  }
+
+  #vr-ending-overlay .vr-ending-double[disabled]{
+    opacity:.72;
+    cursor:default;
+    animation:none !important;
+  }
+
+  #vr-ending-overlay .vr-ending-double-title{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    font-size:16px;
+    font-weight:950;
+    line-height:1.02;
+  }
+
+  #vr-ending-overlay .vr-ending-double-title img{
+    width:20px;
+    height:20px;
+    object-fit:contain;
+    filter:drop-shadow(0 4px 8px rgba(0,0,0,.34));
+  }
+
+  #vr-ending-overlay .vr-ending-double-sub{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    font-size:12px;
+    font-weight:900;
+    line-height:1.02;
+    opacity:1;
+  }
+
+  #vr-ending-overlay .vr-ending-double-sub img{
+    width:14px;
+    height:14px;
+    object-fit:contain;
+    filter:drop-shadow(0 3px 6px rgba(0,0,0,.28));
+  }
+
+  #vr-ending-overlay .vr-ending-actions{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:6px;
+    margin-top:4px;
+  }
+
+  #vr-ending-overlay .vr-ending-actions-bottom{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:6px;
+  }
+
+  #vr-ending-overlay #ending-revive-btn,
+  #vr-ending-overlay #ending-restart-btn,
+  #vr-ending-overlay #ending-return-btn{
+    width:100% !important;
+    max-width:none !important;
+    min-width:0 !important;
+    min-height:42px !important;
+    height:42px !important;
+    padding:5px 10px !important;
+    box-sizing:border-box !important;
+    border:1px solid rgba(255,255,255,.14) !important;
+    border-radius:14px !important;
+    background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05)) !important;
+    box-shadow:0 10px 20px rgba(0,0,0,.24) !important;
+    color:#fff !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    align-self:stretch !important;
+    margin:0 !important;
+    font-size:16px !important;
+    font-weight:950 !important;
+    line-height:1.02 !important;
+  }
+
+  @keyframes vrEndingPulse{
+    0%,100%{ opacity:1; transform:scale(1); filter:brightness(1); }
+    50%{ opacity:.72; transform:scale(1.02); filter:brightness(1.28); }
+  }
+`;
     document.head.appendChild(style);
   }
 
