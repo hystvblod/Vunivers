@@ -3977,18 +3977,31 @@ function onGaugeSet(gaugeId) {
   }
 
   #vr-ending-overlay .vr-ending-actions{
-    display:flex;
-    flex-direction:column;
-    align-items:stretch;
-    gap:6px;
-    margin-top:4px;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:6px !important;
+    margin-top:4px !important;
+    width:100% !important;
+    max-width:none !important;
+    align-items:stretch !important;
   }
 
   #vr-ending-overlay .vr-ending-actions-bottom{
-    display:flex;
-    flex-direction:column;
-    align-items:stretch;
-    gap:6px;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:6px !important;
+    width:100% !important;
+    max-width:none !important;
+    align-self:stretch !important;
+    align-items:stretch !important;
+    margin:0 !important;
+  }
+
+  #vr-ending-overlay .vr-ending-actions-bottom .vr-choice-button{
+    width:100% !important;
+    max-width:none !important;
+    min-width:0 !important;
+    align-self:stretch !important;
   }
 
   #vr-ending-overlay #ending-revive-btn,
