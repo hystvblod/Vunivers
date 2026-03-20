@@ -1439,9 +1439,10 @@ body.vr-peek-mode .vr-gauge-preview{
       const spec = (rewardSpec && typeof rewardSpec === "object")
         ? rewardSpec
         : { multiplier: rewardSpec };
-
-      const mult = Math.max(1, asInt(spec.multiplier, 1));
-      const fixedAmount = spec.fixedAmount == null ? null : Math.max(0, asInt(spec.fixedAmount, 0));
+      const flatCandidate = spec.fixedAmount == null ? rewardSpec : spec.fixedAmount;
+      const isFlatAmount = asInt(flatCandidate, 0) >= 100 && base < 100;
+      const mult = isFlatAmount ? 1 : Math.max(1, asInt(spec.multiplier, 1));
+      const fixedAmount = isFlatAmount ? 100 : (spec.fixedAmount == null ? null : Math.max(0, asInt(spec.fixedAmount, 0)));
 
       if (this._pendingEndClaimed) {
         return {
@@ -1457,9 +1458,11 @@ body.vr-peek-mode .vr-gauge-preview{
         };
       }
 
-      const amount = fixedAmount !== null
-        ? fixedAmount
-        : Math.max(0, base * mult);
+      const amount = isFlatAmount
+        ? 100
+        : (fixedAmount !== null
+            ? fixedAmount
+            : Math.max(0, base * mult));
 
       if (amount > 0) {
         const ok = await (window.VUserData?.addVcoins?.(amount) || Promise.resolve(true));
@@ -2285,13 +2288,7 @@ body.vr-peek-mode .vr-gauge-preview{
       const syncEndingButtons = () => {
         const baseReward = Math.max(0, asInt(this._pendingEndReward, 0));
         const useFlat100 = baseReward < 100;
-        const claimedAmount = Math.max(
-          0,
-          asInt(this._pendingEndClaimAmount, 0)
-        );
-        const previewAmount = this._pendingEndClaimed
-          ? claimedAmount
-          : (useFlat100 ? 100 : Math.max(0, baseReward * 2));
+        const previewAmount = useFlat100 ? 100 : Math.max(0, baseReward * 2);
 
         if (doubleBtn) {
           doubleBtn.classList.toggle("is-glow", !this._pendingEndClaimed);
@@ -2303,11 +2300,7 @@ body.vr-peek-mode .vr-gauge-preview{
           if (title) {
             title.textContent = this._pendingEndClaimed
               ? t("game.ending.reward_claimed", "")
-              : (
-                  useFlat100
-                    ? t("game.ending.double_gain_sub", "Regarder une pub récompensée")
-                    : t("game.ending.double_gain", "Doubler ton gain")
-                );
+              : (useFlat100 ? "" : t("game.ending.double_gain", ""));
           }
 
           if (sub) {
@@ -2341,7 +2334,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
           const baseReward = Math.max(0, asInt(this._pendingEndReward, 0));
           const useFlat100 = baseReward < 100;
-          const rewardSpec = useFlat100 ? { fixedAmount: 100 } : { multiplier: 2 };
+          const rewardMultiplier = useFlat100 ? null : 2;
 
           try { doubleBtn.disabled = true; } catch (_) {}
 
@@ -2359,7 +2352,7 @@ body.vr-peek-mode .vr-gauge-preview{
             return;
           }
 
-          const out = await this._finalizeEndedRun(rewardSpec);
+          const out = await this._finalizeEndedRun(useFlat100 ? 100 : rewardMultiplier);
           if (!out?.ok) {
             try { window.showToast?.(t("common.error_generic", "")); } catch (_) {}
             syncEndingButtons();

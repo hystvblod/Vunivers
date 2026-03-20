@@ -11,37 +11,30 @@
   const AUDIO_BANK = {
     common: {
       death: "assets/audio/common/death_common.m4a",
-      choice: "assets/audio/common/choice_common.m4a"
+      choice: "assets/audio/common/choice.m4a"
     },
 
     universes: {
       intro: {
-        bg: "assets/audio/universes/intro/bg_loop.m4a",
-        choice: "assets/audio/universes/intro/choice.m4a"
+        bg: "assets/audio/universes/intro/bg_loop.m4a"
       },
       hell_king: {
-        bg: "assets/audio/universes/hell_king/bg_loop.m4a",
-        choice: "assets/audio/universes/hell_king/choice.m4a"
+        bg: "assets/audio/universes/hell_king/bg_loop.m4a"
       },
       heaven_king: {
-        bg: "assets/audio/universes/heaven_king/bg_loop.m4a",
-        choice: "assets/audio/universes/heaven_king/choice.m4a"
+        bg: "assets/audio/universes/heaven_king/bg_loop.m4a"
       },
       mega_corp_ceo: {
-        bg: "assets/audio/universes/mega_corp_ceo/bg_loop.m4a",
-        choice: "assets/audio/universes/mega_corp_ceo/choice.m4a"
+        bg: "assets/audio/universes/mega_corp_ceo/bg_loop.m4a"
       },
       new_world_explorer: {
-        bg: "assets/audio/universes/new_world_explorer/bg_loop.m4a",
-        choice: "assets/audio/universes/new_world_explorer/choice.m4a"
+        bg: "assets/audio/universes/new_world_explorer/bg_loop.m4a"
       },
       vampire_lord: {
-        bg: "assets/audio/universes/vampire_lord/bg_loop.m4a",
-        choice: "assets/audio/universes/vampire_lord/choice.m4a"
+        bg: "assets/audio/universes/vampire_lord/bg_loop.m4a"
       },
       western_president: {
-        bg: "assets/audio/universes/western_president/bg_loop.m4a",
-        choice: "assets/audio/universes/western_president/choice.m4a"
+        bg: "assets/audio/universes/western_president/bg_loop.m4a"
       }
     }
   };
@@ -238,8 +231,7 @@
   function playChoice(universeId) {
     if (!state.sfxEnabled) return;
 
-    const cfg = getUniverseAudio(universeId);
-    const path = cfg?.choice || AUDIO_BANK.common.choice || "";
+    const path = AUDIO_BANK.common.choice || "";
     playPath(path, state.sfxVolume);
   }
 
