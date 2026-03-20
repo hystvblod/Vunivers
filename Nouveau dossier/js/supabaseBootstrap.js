@@ -70,10 +70,12 @@ async function getUid(sb) {
     }
 
     // 3) Profil (créé par trigger) + récupère le row
-    try {
-      const prof = await sb.rpc("secure_get_me");
-      if (!prof?.error && prof?.data) return prof.data;
-    } catch (_) {}
+    if (navigator.onLine !== false) {
+      try {
+        const prof = await sb.rpc("secure_get_me");
+        if (!prof?.error && prof?.data) return prof.data;
+      } catch (_) {}
+    }
 
     // 4) fallback minimal
     if (uid) return { id: uid };

@@ -200,13 +200,12 @@
     resetActionsCount();
   }
 
-  // --- Compteurs (désormais server-side) ---
-  var ACTIONS_KEY = "vr_actions_count";    // conservé pour compat (plus utilisé en localStorage)
-  var LAST_INTER_KEY = "vr_last_inter_ts"; // conservé pour compat (plus utilisé en localStorage)
+  // --- Compteurs locaux ---
+  var ACTIONS_KEY = "vr_actions_count";
+  var LAST_INTER_KEY = "vr_last_inter_ts";
 
-  // Cache mémoire (synchro via DB)
-  var actionsCount = 0;
-  var lastInterTs = 0;
+  var actionsCount = _readLSNumber(ACTIONS_KEY);
+  var lastInterTs = _readLSNumber(LAST_INTER_KEY);
 
   // --- Consent server-side (cache mémoire) ---
   var _adsState = {
@@ -318,8 +317,6 @@
         _adsState.adsConsent  = (typeof r.data.adsConsent === "boolean") ? r.data.adsConsent : null;
         _adsState.adsEnabled  = (typeof r.data.adsEnabled === "boolean") ? r.data.adsEnabled : null;
 
-        actionsCount = parseInt(r.data.actionsCount || 0, 10) || 0;
-        lastInterTs  = parseInt(r.data.lastInterTs || 0, 10) || 0;
         return true;
       }
       return false;
@@ -590,16 +587,7 @@
   async function markInterstitialShownNow() {
     lastInterTs = Date.now();
     setLastInterstitialLocalTs(lastInterTs);
-
-    try {
-      if (sbReady()) {
-        var r = await window.sb.rpc("secure_ads_mark_interstitial_shown");
-        if (r && !r.error && typeof r.data !== "undefined") {
-          lastInterTs = parseInt(r.data || lastInterTs, 10) || lastInterTs;
-          setLastInterstitialLocalTs(lastInterTs);
-        }
-      }
-    } catch (_) {}
+    _writeLSNumber(LAST_INTER_KEY, lastInterTs);
   }
 
   async function showInterstitialAd() {
@@ -741,35 +729,14 @@
 
   async function resetActionsCount() {
     actionsCount = 0;
-    try {
-      if (sbReady()) {
-        await window.sb.rpc("secure_ads_reset_actions");
-        var s = await window.sb.rpc("secure_get_ads_state");
-        if (s && !s.error && s.data) {
-          actionsCount = parseInt(s.data.actionsCount || 0, 10) || 0;
-          lastInterTs = parseInt(s.data.lastInterTs || 0, 10) || 0;
-        }
-      }
-    } catch (_) {}
+    _writeLSNumber(ACTIONS_KEY, 0);
   }
 
   async function markActionAndMaybeShowInterstitial() {
     syncWeightedTime();
 
-    try {
-      if (sbReady()) {
-        var r = await window.sb.rpc("secure_ads_mark_action", { p_delta: 1 });
-        if (r && !r.error) {
-          actionsCount = parseInt(r.data || actionsCount, 10) || actionsCount;
-        } else {
-          await syncAdsStateFromServer().catch(function () {});
-        }
-      } else {
-        actionsCount = (actionsCount || 0) + 1;
-      }
-    } catch (_) {
-      actionsCount = (actionsCount || 0) + 1;
-    }
+    actionsCount = (actionsCount || 0) + 1;
+    _writeLSNumber(ACTIONS_KEY, actionsCount);
 
     if (!isNoAds()) {
       if (window.__ads_active) return actionsCount;

@@ -488,6 +488,10 @@ async _getUid() {
       const uid = await this.ensureAuth();
       if (!uid) return null;
 
+      if (navigator.onLine === false) {
+        return null;
+      }
+
       try {
         const r = await sb.rpc("secure_get_me");
         if (r?.error) {
