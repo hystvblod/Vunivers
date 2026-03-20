@@ -5294,13 +5294,13 @@ body.vr-body-game[data-universe="heaven_king"] .vr-gauge-value{
    ========================================================== */
 @media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
   body.vr-body-game[data-universe]{
-    --vr-fit-ui: 1.04;
-    --vr-fit-hud: 1.08;
-    --vr-fit-gauge: 1.10;
-    --vr-fit-frame: 1.00;
-    --vr-fit-type: 1.14;
-    --vr-fit-gap: 0.96;
-    --vr-fit-namegap: 1.04;
+    --vr-fit-ui: 0.90;
+    --vr-fit-hud: 0.92;
+    --vr-fit-gauge: 0.90;
+    --vr-fit-frame: 0.86;
+    --vr-fit-type: 0.84;
+    --vr-fit-gap: 0.86;
+    --vr-fit-namegap: 0.92;
   }
 }
 
@@ -5322,25 +5322,25 @@ body.vr-body-game[data-universe="heaven_king"] .vr-gauge-value{
 
 @media (min-width: 1101px) and (min-height: 760px){
   body.vr-body-game[data-universe]{
-    --vr-fit-ui: 1.08;
-    --vr-fit-hud: 1.12;
-    --vr-fit-gauge: 1.14;
-    --vr-fit-frame: 1.08;
-    --vr-fit-type: 1.16;
-    --vr-fit-gap: 1.05;
-    --vr-fit-namegap: 1.08;
+    --vr-fit-ui: 0.98;
+    --vr-fit-hud: 0.99;
+    --vr-fit-gauge: 0.98;
+    --vr-fit-frame: 0.94;
+    --vr-fit-type: 0.93;
+    --vr-fit-gap: 0.95;
+    --vr-fit-namegap: 0.98;
   }
 }
 
 @media (min-width: 1500px) and (min-height: 900px){
   body.vr-body-game[data-universe]{
-    --vr-fit-ui: 1.12;
-    --vr-fit-hud: 1.18;
-    --vr-fit-gauge: 1.22;
-    --vr-fit-frame: 1.12;
-    --vr-fit-type: 1.22;
-    --vr-fit-gap: 1.08;
-    --vr-fit-namegap: 1.10;
+    --vr-fit-ui: 1.00;
+    --vr-fit-hud: 1.00;
+    --vr-fit-gauge: 1.00;
+    --vr-fit-frame: 0.96;
+    --vr-fit-type: 0.95;
+    --vr-fit-gap: 0.97;
+    --vr-fit-namegap: 1.00;
   }
 }
 
