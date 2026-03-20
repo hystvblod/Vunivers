@@ -356,7 +356,18 @@
 
         if (!preview) {
           try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
-          try { await window.VUserData?.init?.(); } catch (_) {}
+          try {
+            const raw =
+              localStorage.getItem("vuniverse_user_data") ||
+              localStorage.getItem("vrealms_user_data");
+
+            if (raw && window.VUserData && typeof window.VUserData.save === "function") {
+              const parsed = JSON.parse(raw);
+              if (parsed && typeof parsed === "object") {
+                window.VUserData.save(parsed, { silent: true });
+              }
+            }
+          } catch (_) {}
         }
 
         try {
