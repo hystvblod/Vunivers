@@ -3594,7 +3594,7 @@ body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-main{
   box-sizing: border-box !important;
   width: 100% !important;
   border: none !important;
-  min-height: auto !important;
+  min-height: var(--vr-scn-h) !important;
   height: auto !important;
   padding:
     var(--vr-scn-inset-top)
@@ -3767,42 +3767,43 @@ body[data-universe="mega_corp_ceo"] .vr-gauge-label{
 }
 @media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
   body.vr-body-game[data-universe="mega_corp_ceo"]{
-    --vr-card-w: min(94vw, 900px);
+    --vr-card-w: min(96vw, 980px);
     --vr-corp-hud-w: min(96vw, 1020px);
 
-    --vr-scn-h: clamp(188px, 21.8svh, 330px);
-    --vr-choice-h: clamp(120px, 14.0svh, 176px);
+    --vr-scn-h: clamp(220px, 24svh, 360px);
+    --vr-choice-h: clamp(136px, 15.4svh, 210px);
 
-    --vr-stack-gap: clamp(6px, 0.55svh, 10px);
-    --vr-choices-gap: clamp(8px, 0.75svh, 12px);
+    --vr-stack-gap: clamp(8px, 0.75svh, 12px);
+    --vr-choices-gap: clamp(10px, 0.95svh, 16px);
 
-    --vr-font-scn-title: clamp(18px, 2.25vmin, 28px);
-    --vr-font-scn-text: clamp(13px, 1.65vmin, 17px);
-    --vr-font-choice: clamp(15px, 1.9vmin, 20px);
+    --vr-font-scn-title: clamp(23px, 2.75vmin, 34px);
+    --vr-font-scn-text: clamp(16px, 2.15vmin, 22px);
+    --vr-font-choice: clamp(18px, 2.30vmin, 24px);
   }
 
   body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-value{
-    font-size: clamp(18px, 2.2vw, 28px) !important;
+    font-size: clamp(19px, 2.45vw, 30px) !important;
   }
 
   body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-name,
   body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-years{
-    font-size: clamp(16px, 2.0vw, 25px) !important;
+    font-size: clamp(18px, 2.20vw, 28px) !important;
   }
 
   body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-title{
-    width: min(84%, 720px) !important;
-    max-width: min(84%, 720px) !important;
+    width: min(88%, 780px) !important;
+    max-width: min(88%, 780px) !important;
   }
 
   body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-text{
-    width: min(82%, 700px) !important;
-    max-width: min(82%, 700px) !important;
+    width: min(86%, 760px) !important;
+    max-width: min(86%, 760px) !important;
   }
 
   body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
-    width: min(86%, 760px) !important;
-    max-width: min(86%, 760px) !important;
+    width: min(88%, 820px) !important;
+    max-width: min(88%, 820px) !important;
+    line-height: 1.12 !important;
   }
 }
 
@@ -3917,46 +3918,6 @@ body.vr-body-game[data-universe="new_world_explorer"]{
 }
 
 
-@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
-  body.vr-body-game[data-universe="mega_corp_ceo"]{
-    --vr-card-w: min(94vw, 900px);
-    --vr-corp-hud-w: min(96vw, 1020px);
-
-    --vr-scn-h: auto;
-    --vr-choice-h: clamp(120px, 14.0svh, 176px);
-
-    --vr-stack-gap: clamp(6px, 0.55svh, 10px);
-    --vr-choices-gap: clamp(8px, 0.75svh, 12px);
-
-    --vr-font-scn-title: clamp(18px, 2.25vmin, 28px);
-    --vr-font-scn-text: clamp(13px, 1.65vmin, 17px);
-    --vr-font-choice: clamp(15px, 1.9vmin, 20px);
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-value{
-    font-size: clamp(18px, 2.2vw, 28px) !important;
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-name,
-  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-years{
-    font-size: clamp(16px, 2.0vw, 25px) !important;
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-title{
-    width: min(84%, 720px) !important;
-    max-width: min(84%, 720px) !important;
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-text{
-    width: min(82%, 700px) !important;
-    max-width: min(82%, 700px) !important;
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
-    width: min(86%, 760px) !important;
-    max-width: min(86%, 760px) !important;
-  }
-}
 body.vr-body-game[data-universe="new_world_explorer"] .vr-top-actions-game .vr-top-icon,
 body.vr-body-game[data-universe="new_world_explorer"] > a.vr-icon-button[aria-label="Accueil"] .vr-top-icon,
 body.vr-body-game[data-universe="new_world_explorer"] #btn-customize .vr-top-icon{
@@ -5108,29 +5069,31 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
    - aucun réglage univers à refaire
    ========================================================== */@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
   body.vr-body-game[data-universe="western_president"]{
-    --vr-scn-h: clamp(148px, 17.2svh, 220px);
-    --vr-choice-h: clamp(92px, 10.8svh, 138px);
+    --vr-card-w: min(96vw, 980px);
 
-    --vr-stack-gap: clamp(6px, 0.7svh, 10px);
-    --vr-choices-gap: clamp(6px, 0.7svh, 10px);
+    --vr-scn-h: clamp(214px, 24svh, 350px);
+    --vr-choice-h: clamp(132px, 15.0svh, 206px);
 
-    --vr-font-scn-title: clamp(15px, 1.9vmin, 24px);
-    --vr-font-scn-text: clamp(12px, 1.45vmin, 16px);
-    --vr-font-choice: clamp(12px, 1.5vmin, 16px);
+    --vr-stack-gap: clamp(8px, 0.85svh, 14px);
+    --vr-choices-gap: clamp(9px, 0.95svh, 15px);
+
+    --vr-font-scn-title: clamp(22px, 2.70vmin, 34px);
+    --vr-font-scn-text: clamp(17px, 2.15vmin, 24px);
+    --vr-font-choice: clamp(18px, 2.20vmin, 24px);
 
     --vr-scn-inset-top: 16%;
-    --vr-scn-inset-right: 13%;
+    --vr-scn-inset-right: 12%;
     --vr-scn-inset-bottom: 12%;
-    --vr-scn-inset-left: 13%;
+    --vr-scn-inset-left: 12%;
 
-    --vr-choice-inset-top: 16%;
-    --vr-choice-inset-right: 10%;
-    --vr-choice-inset-bottom: 16%;
-    --vr-choice-inset-left: 10%;
-    --vr-choice-safe: 82%;
+    --vr-choice-inset-top: 17%;
+    --vr-choice-inset-right: 9%;
+    --vr-choice-inset-bottom: 17%;
+    --vr-choice-inset-left: 9%;
+    --vr-choice-safe: 86%;
 
-    --vr-identity-ty: 10px;
-    --vr-hud-name-years-gap: 34px;
+    --vr-identity-ty: 16px;
+    --vr-hud-name-years-gap: 42px;
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-hud{
@@ -5138,25 +5101,25 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value{
-    transform: translate(-8px, 10px) !important;
+    transform: translate(-8px, 14px) !important;
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
-    transform: translate(8px, 10px) !important;
+    transform: translate(8px, 14px) !important;
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
-    transform: translate(0px, 12px) !important;
-    gap: 34px !important;
+    transform: translate(0px, 16px) !important;
+    gap: 42px !important;
   }
 
   body.vr-body-game[data-universe="western_president"] #view-game .vr-card-title,
   body.vr-body-game[data-universe="western_president"] #view-game .vr-card-text{
-    max-width: 88% !important;
+    max-width: 90% !important;
   }
 
   body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-label{
-    line-height: 1.08 !important;
+    line-height: 1.12 !important;
   }
 }
 
@@ -5320,13 +5283,13 @@ body.vr-body-game[data-universe] .vr-gauge-label{
    ========================================================== */
 @media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
   body.vr-body-game[data-universe]{
-    --vr-fit-ui: 0.92;
-    --vr-fit-hud: 0.93;
-    --vr-fit-gauge: 0.92;
-    --vr-fit-frame: 0.90;
-    --vr-fit-type: 0.94;
-    --vr-fit-gap: 0.90;
-    --vr-fit-namegap: 0.92;
+    --vr-fit-ui: 1.06;
+    --vr-fit-hud: 1.04;
+    --vr-fit-gauge: 1.03;
+    --vr-fit-frame: 1.07;
+    --vr-fit-type: 1.10;
+    --vr-fit-gap: 0.98;
+    --vr-fit-namegap: 1.02;
   }
 }
 
@@ -5372,24 +5335,24 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 
 @media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
   body.vr-body-game[data-universe="mega_corp_ceo"]{
-    --vr-fit-ui: 0.96;
-    --vr-fit-hud: 0.96;
-    --vr-fit-gauge: 0.95;
-    --vr-fit-frame: 0.96;
-    --vr-fit-type: 0.95;
-    --vr-fit-gap: 0.94;
-    --vr-fit-namegap: 0.95;
+    --vr-fit-ui: 1.08;
+    --vr-fit-hud: 1.05;
+    --vr-fit-gauge: 1.03;
+    --vr-fit-frame: 1.10;
+    --vr-fit-type: 1.12;
+    --vr-fit-gap: 1.00;
+    --vr-fit-namegap: 1.02;
   }
 }
 
 @media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
   body.vr-body-game[data-universe="western_president"]{
-    --vr-fit-ui: 0.95;
-    --vr-fit-hud: 0.95;
-    --vr-fit-gauge: 0.94;
-    --vr-fit-frame: 0.95;
-    --vr-fit-type: 0.95;
-    --vr-fit-gap: 0.93;
-    --vr-fit-namegap: 0.94;
+    --vr-fit-ui: 1.08;
+    --vr-fit-hud: 1.05;
+    --vr-fit-gauge: 1.03;
+    --vr-fit-frame: 1.10;
+    --vr-fit-type: 1.12;
+    --vr-fit-gap: 1.00;
+    --vr-fit-namegap: 1.02;
   }
 }
