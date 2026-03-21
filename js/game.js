@@ -1350,8 +1350,7 @@ body.vr-peek-mode .vr-gauge-preview{
         doubleBtn.type = "button";
         doubleBtn.className = "vr-ending-double is-glow";
         doubleBtn.innerHTML = `
-          <span class="vr-ending-double-title">
-            <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
+          <span class="vr-ending-double-title" id="ending-double-title-wrap">
             <span id="ending-double-title"></span>
           </span>
           <span class="vr-ending-double-sub" id="ending-double-sub"></span>
@@ -2294,13 +2293,18 @@ body.vr-peek-mode .vr-gauge-preview{
           doubleBtn.classList.toggle("is-glow", !this._pendingEndClaimed);
           doubleBtn.disabled = !!this._pendingEndClaimed;
 
+          const titleWrap = doubleBtn.querySelector("#ending-double-title-wrap");
           const title = doubleBtn.querySelector("#ending-double-title");
           const sub = doubleBtn.querySelector("#ending-double-sub");
+
+          if (titleWrap) {
+            titleWrap.style.display = (this._pendingEndClaimed || !useFlat100) ? "flex" : "none";
+          }
 
           if (title) {
             title.textContent = this._pendingEndClaimed
               ? t("game.ending.reward_claimed", "")
-              : (useFlat100 ? "" : t("game.ending.double_gain", ""));
+              : t("game.ending.double_gain", "");
           }
 
           if (sub) {
