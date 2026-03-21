@@ -4282,6 +4282,19 @@ body[data-universe="new_world_explorer"] .vr-gauge-delta{
   color: #000 !important;
 }
 
+body[data-universe="new_world_explorer"] .vr-gauge-label,
+body[data-universe="new_world_explorer"] .vr-gauge-value{
+  background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(227,232,239,0.86)) !important;
+  border: 1px solid rgba(134, 149, 166, 0.24) !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.10) !important;
+  border-radius: 999px !important;
+  padding: 3px 10px !important;
+}
+
+body[data-universe="new_world_explorer"] .vr-gauge-label{
+  min-height: auto !important;
+}
+
 #view-game.vr-bg-new_world_explorer{
   --vr-universe-bg: url("../assets/img/backgrounds/explorer_default_gray.webp");
   --vr-universe-card: url("../assets/img/ui/explorer_msg_default_grey.webp");
