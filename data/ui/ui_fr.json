@@ -563,9 +563,19 @@
       "title": "Bravo",
       "body": "Tu es prêt à gouverner de nombreux univers.",
       "info_html": "<p>En jouant, tu gagnes <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> et <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"></p><p>Les <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> servent à débloquer des univers et des personnalisations.</p><p>Les <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> servent à obtenir de l’aide pendant la partie.</p><p>Tu peux personnaliser ton jeu en cliquant sur la palette en haut de chaque univers ou aller dans la boutique.</p>",
-      "gift": "En terminant l’intro, tu reçois :",
+      "gift": "Pour commencer ton aventure, voici :",
       "token": "jeton",
-      "cta": "Commencer"
+      "cta": "Commencer",
+      "name_title": "À qui ai-je l'honneur ?",
+      "name_placeholder": "Ton nom",
+      "name_save": "Valider",
+      "name_confirm": "Es-tu sûr de vouloir garder ce nom : {name} ?",
+      "name_missing": "Entre un nom.",
+      "name_err_length": "Le nom doit faire entre 3 et 20 caractères.",
+      "name_err_invalid": "Utilise seulement des lettres, des chiffres, _ ou -.",
+      "name_err_taken": "Ce nom est déjà pris.",
+      "name_err_generic": "Impossible d’enregistrer le nom.",
+      "name_working": "Enregistrement..."
     }
   },
   "onesignal": {

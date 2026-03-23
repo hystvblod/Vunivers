@@ -563,9 +563,19 @@
       "title": "Congratulations",
       "body": "You are ready to rule many universes.",
       "info_html": "<p>By playing, you earn <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> and <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"></p><p><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> are used to unlock universes and customizations.</p><p><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> are used to get help during the game.</p><p>You can customize your game by clicking the palette at the top of each universe or going to the shop.</p>",
-      "gift": "By finishing the intro, you receive:",
+      "gift": "To begin your adventure, here is:",
       "token": "token",
-      "cta": "Start"
+      "cta": "Start",
+      "name_title": "To whom do I have the honor?",
+      "name_placeholder": "Your name",
+      "name_save": "Confirm",
+      "name_confirm": "Are you sure you want to keep this name: {name}?",
+      "name_missing": "Enter a name.",
+      "name_err_length": "The name must be between 3 and 20 characters.",
+      "name_err_invalid": "Use only letters, numbers, _ or -.",
+      "name_err_taken": "This name is already taken.",
+      "name_err_generic": "Unable to save the name.",
+      "name_working": "Saving..."
     }
   },
   "onesignal": {

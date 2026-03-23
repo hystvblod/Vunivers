@@ -562,9 +562,19 @@
       "title": "Selamat",
       "body": "Kamu siap memerintah banyak semesta.",
       "info_html": "<p>Saat bermain, kamu mendapatkan <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> dan <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"></p><p><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> digunakan untuk membuka semesta dan kustomisasi.</p><p><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> digunakan untuk mendapatkan bantuan selama permainan.</p><p>Kamu bisa menyesuaikan permainanmu dengan mengeklik palet di bagian atas setiap semesta atau pergi ke toko.</p>",
-      "gift": "Dengan menyelesaikan intro, kamu menerima:",
+      "gift": "Untuk memulai petualanganmu, ini untukmu:",
       "token": "token",
-      "cta": "Mulai"
+      "cta": "Mulai",
+      "name_title": "Dengan siapa saya mendapat kehormatan?",
+      "name_placeholder": "Namamu",
+      "name_save": "Konfirmasi",
+      "name_confirm": "Apakah kamu yakin ingin memakai nama ini: {name}?",
+      "name_missing": "Masukkan nama.",
+      "name_err_length": "Nama harus terdiri dari 3 sampai 20 karakter.",
+      "name_err_invalid": "Gunakan hanya huruf, angka, _ atau -.",
+      "name_err_taken": "Nama ini sudah dipakai.",
+      "name_err_generic": "Tidak dapat menyimpan nama.",
+      "name_working": "Menyimpan..."
     }
   },
   "onesignal": {
