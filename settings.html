@@ -488,7 +488,7 @@
           </div>
 
           <div class="vr-settingsSection">
-            <a id="btnOpenLicenses" class="vr-navRow" href="#" aria-label="">
+            <a id="btnOpenLicenses" class="vr-navRow" href="licenses.html" aria-label="">
               <div class="vr-navText">
                 <p id="settingsLicensesLabel" class="vr-navLabel"></p>
               </div>
@@ -512,15 +512,6 @@
     </section>
   </main>
 
-  <div id="licensesModal" class="vrLangOverlay" hidden>
-    <div class="vrLangCard" role="dialog" aria-modal="true" aria-labelledby="licensesModalTitle">
-      <div class="vrLangTitleRow">
-        <h2 id="licensesModalTitle" class="vrLangTitle"></h2>
-        <button id="btnCloseLicenses" type="button" class="vrLangClose" aria-label="">×</button>
-      </div>
-      <pre id="licensesContent" class="vr-licensePre"></pre>
-    </div>
-  </div>
 
   <script src="js/supabase.min.js"></script>
   <script src="js/supabaseBootstrap.js"></script>
@@ -688,8 +679,6 @@
       const faqDesc = $("settingsFaqDesc");
       const licensesBtn = $("btnOpenLicenses");
       const licensesLabel = $("settingsLicensesLabel");
-      const licensesModalTitle = $("licensesModalTitle");
-      const closeLicensesBtn = $("btnCloseLicenses");
       const helpTitle = $("settingsHelpTitle");
       const helpLab = $("helpEmailLabel");
       const helpVal = $("helpEmailValue");
@@ -711,8 +700,6 @@
       if(faqDesc) faqDesc.textContent = t("ui.settings_faq_desc");
       if(licensesBtn) licensesBtn.setAttribute("aria-label", t("ui.settings_open_licenses_aria"));
       if(licensesLabel) licensesLabel.textContent = t("ui.settings_licenses_label");
-      if(licensesModalTitle) licensesModalTitle.textContent = t("ui.settings_licenses_label");
-      if(closeLicensesBtn) closeLicensesBtn.setAttribute("aria-label", t("common.close"));
       if(helpTitle) helpTitle.textContent = t("ui.settings_help_title");
       if(helpLab) helpLab.textContent = t("ui.settings_help_email_label");
 
@@ -816,36 +803,6 @@
       }
     }
 
-    let licensesJsonCache = null;
-
-    async function loadLicensesJson(){
-      if(licensesJsonCache) return licensesJsonCache;
-      const res = await fetch("assets/licenses/licences.json", { cache:"no-cache" });
-      if(!res.ok) throw new Error(`licenses fetch failed: ${res.status}`);
-      licensesJsonCache = await res.json();
-      return licensesJsonCache;
-    }
-
-    async function openLicenses(){
-      const modal = $("licensesModal");
-      const content = $("licensesContent");
-      if(!modal || !content) return;
-
-      content.textContent = "...";
-      modal.hidden = false;
-
-      try{
-        const data = await loadLicensesJson();
-        content.textContent = JSON.stringify(data, null, 2);
-      }catch(err){
-        content.textContent = String(err && err.message ? err.message : err || "Unable to load licenses.");
-      }
-    }
-
-    function closeLicenses(){
-      const modal = $("licensesModal");
-      if(modal) modal.hidden = true;
-    }
 
     function getAdsPref(){
       try{
@@ -927,29 +884,6 @@
       { showMsg:false }
     );
 
-    const licensesBtn = $("btnOpenLicenses");
-    if(licensesBtn){
-      licensesBtn.addEventListener("click", (event) => {
-        event.preventDefault();
-        openLicenses();
-      });
-    }
-
-    const closeLicensesBtn = $("btnCloseLicenses");
-    if(closeLicensesBtn){
-      closeLicensesBtn.addEventListener("click", closeLicenses);
-    }
-
-    const licensesModal = $("licensesModal");
-    if(licensesModal){
-      licensesModal.addEventListener("click", (event) => {
-        if(event.target === licensesModal) closeLicenses();
-      });
-    }
-
-    document.addEventListener("keydown", (event) => {
-      if(event.key === "Escape") closeLicenses();
-    });
 
     const adsBox = $("adsPersonalized");
     if(adsBox){
