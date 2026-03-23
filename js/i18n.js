@@ -324,20 +324,20 @@ async function tryLoadUiBundle(bundle, lang) {
       overlay.className = "vrLangOverlay";
       overlay.setAttribute("role", "dialog");
       overlay.setAttribute("aria-modal", "true");
-      overlay.setAttribute("aria-label", "Choice your language");
+      overlay.setAttribute("aria-label", "Choose your language");
 
       const modal = document.createElement("div");
       modal.className = "vrLangModal";
 
       const title = document.createElement("div");
       title.className = "vrLangTitle";
-      title.textContent = "Choice your language";
+      title.textContent = "Choose your language";
       modal.appendChild(title);
 
       const grid = document.createElement("div");
       grid.className = "vr-langGrid";
 
-      const active = getSavedLang("") || detectDeviceLang() || "";
+      const active = detectDeviceLang() || DEFAULT_LANG;
 
       LANGUAGE_CHOICES.forEach((item) => {
         const btn = document.createElement("button");
@@ -391,12 +391,6 @@ async function tryLoadUiBundle(bundle, lang) {
   async function resolveInitialLang(forcedLang) {
     const saved = getSavedLang(forcedLang);
     if (saved) return saved;
-
-    const device = detectDeviceLang();
-    if (device) {
-      saveLangLocal(device);
-      return device;
-    }
 
     return await showLanguagePicker();
   }
@@ -471,7 +465,7 @@ async function tryLoadUiBundle(bundle, lang) {
   }
 
   window.VRI18n = {
-    initI18n,
+    initI18n: (forcedLang) => forcedLang ? initI18n(forcedLang) : boot(),
     setLang,
     getLang: () => _lang,
     normalizeLang,

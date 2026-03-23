@@ -208,18 +208,44 @@ const VR_BADGE_GOLD_CHOICES = 100;
 
     async _loadCardTexts(universeId, lang) {
       const fileLang = normalizeScenarioLang(lang);
-      const urlNew = `${SCENARIOS_PATH}/${universeId}/cards_${fileLang}.json`;
-      const urlOld1 = `${LEGACY_I18N_PATH}/${lang}/cards_${universeId}.json`;
-      const urlOld2 = `${LEGACY_I18N_PATH}/cards_${universeId}_${lang}.json`;
 
-      let res = await fetch(urlNew, { cache: "no-cache" });
-      if (!res.ok) res = await fetch(urlOld1, { cache: "no-cache" });
-      if (!res.ok) res = await fetch(urlOld2, { cache: "no-cache" });
+      const tries = [
+        `${SCENARIOS_PATH}/${universeId}/cards_${fileLang}.json`,
 
-      if (!res.ok) {
-        throw new Error(`[VREventsLoader] Impossible de charger les cartes de ${universeId} en ${lang}`);
+        fileLang !== "en"
+          ? `${SCENARIOS_PATH}/${universeId}/cards_en.json`
+          : "",
+
+        fileLang !== "fr"
+          ? `${SCENARIOS_PATH}/${universeId}/cards_fr.json`
+          : "",
+
+        `${LEGACY_I18N_PATH}/${fileLang}/cards_${universeId}.json`,
+        `${LEGACY_I18N_PATH}/cards_${universeId}_${fileLang}.json`,
+
+        fileLang !== "en"
+          ? `${LEGACY_I18N_PATH}/en/cards_${universeId}.json`
+          : "",
+
+        fileLang !== "en"
+          ? `${LEGACY_I18N_PATH}/cards_${universeId}_en.json`
+          : "",
+
+        fileLang !== "fr"
+          ? `${LEGACY_I18N_PATH}/fr/cards_${universeId}.json`
+          : "",
+
+        fileLang !== "fr"
+          ? `${LEGACY_I18N_PATH}/cards_${universeId}_fr.json`
+          : ""
+      ].filter(Boolean);
+
+      for (const url of tries) {
+        const res = await fetch(url, { cache: "no-cache" });
+        if (res.ok) return res.json();
       }
-      return res.json();
+
+      throw new Error(`[VREventsLoader] Impossible de charger les cartes de ${universeId} en ${lang}`);
     },
 
     async _loadEventsLogic(universeId) {
