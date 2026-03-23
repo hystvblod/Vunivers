@@ -477,6 +477,27 @@
     "toast": {
       "insufficient_vcoins": "VCoins가 부족합니다",
       "not_owned": "보유하지 않은 아이템입니다"
+    },
+    "preview": {
+      "sample_title": "결정",
+      "sample_text": "선택한 코스메틱의 적용 미리보기입니다.",
+      "sample_choice_a": "수락",
+      "sample_choice_b": "거절",
+      "sample_choice_c": "보류"
+    },
+    "status": {
+      "noads_on": "✅ 광고 없음: 활성화됨",
+      "noads_off": "ℹ️ 광고 없음: 비활성화됨",
+      "purchase_restored": "✅ 구매 복원 완료",
+      "pending": "…",
+      "purchase_credited": "✅ 구매 반영 완료",
+      "purchase_not_credited": "❌ 구매가 반영되지 않음",
+      "ad_not_ready": "광고 시스템이 준비되지 않았습니다",
+      "reward_not_validated": "❌ 광고 검증 실패",
+      "reward_validated": "✅ 보상 검증 완료",
+      "reward_error": "❌ 리워드 광고 오류",
+      "iap_unavailable_web": "⚠️ 웹에서는 IAP를 사용할 수 없습니다.",
+      "product_not_found_prefix": "⚠️ 상품을 찾을 수 없습니다: "
     }
   },
   "settings": {

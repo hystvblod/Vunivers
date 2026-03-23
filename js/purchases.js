@@ -11,6 +11,15 @@
   function $(id) { return document.getElementById(id); }
   function setText(id, txt) { const el = $(id); if (el) el.textContent = String(txt || ""); }
 
+  function t(key, fallback) {
+    try {
+      if (window.VRI18n && typeof window.VRI18n.t === "function") {
+        return window.VRI18n.t(key, fallback);
+      }
+    } catch (_) {}
+    return fallback;
+  }
+
   const CURRENT_UNLOCKABLE_UNIVERSES = [
     "western_president",
     "mega_corp_ceo",
@@ -140,7 +149,12 @@
         noAds = !!window.VUserData?.hasNoAds?.();
       }
     } catch (_) {}
-    setText("noads-status", noAds ? "✅ No Pub : activé" : "ℹ️ No Pub : désactivé");
+    setText(
+      "noads-status",
+      noAds
+        ? t("shop.status.noads_on", "✅ No Pub : activé")
+        : t("shop.status.noads_off", "ℹ️ No Pub : désactivé")
+    );
     return noAds;
   }
 
@@ -293,7 +307,7 @@
       try {
         await creditByProductClientSide(it.productId, it.txId);
         removePending(it.txId);
-        setText("shop-status", "✅ Achat restauré");
+        setText("shop-status", t("shop.status.purchase_restored", "✅ Achat restauré"));
       } catch (e) {
         warn("replay pending failed", it.productId, it.txId, e?.message || e);
       }
@@ -370,12 +384,12 @@
             }
 
             try {
-              setText("shop-status", "…");
+              setText("shop-status", t("shop.status.pending", "…"));
               await creditByProductClientSide(productId, txId);
               removePending(txId);
-              setText("shop-status", "✅ Achat crédité");
+              setText("shop-status", t("shop.status.purchase_credited", "✅ Achat crédité"));
             } catch (e) {
-              setText("shop-status", "❌ Achat non crédité");
+              setText("shop-status", t("shop.status.purchase_not_credited", "❌ Achat non crédité"));
               warn("credit failed", productId, txId, e?.message || e);
 
               emit("vr:iap_credit_failed", {
@@ -446,17 +460,20 @@
   async function doRewarded(placement) {
     try {
       if (!window.VRAds || typeof window.VRAds.showRewardedAd !== "function") {
-        setText("shop-status", "Ad system not ready");
+        setText("shop-status", t("shop.status.ad_not_ready", "Système de pub indisponible"));
         return false;
       }
-      setText("shop-status", "…");
+      setText("shop-status", t("shop.status.pending", "…"));
       const ok = await window.VRAds.showRewardedAd({ placement: String(placement || "shop") });
-      if (!ok) { setText("shop-status", "❌ Pub non validée"); return false; }
+      if (!ok) {
+        setText("shop-status", t("shop.status.reward_not_validated", "❌ Pub non validée"));
+        return false;
+      }
 
-      setText("shop-status", "✅ Récompense validée");
+      setText("shop-status", t("shop.status.reward_validated", "✅ Récompense validée"));
       return true;
     } catch (_) {
-      setText("shop-status", "❌ Erreur rewarded");
+      setText("shop-status", t("shop.status.reward_error", "❌ Erreur pub récompensée"));
       return false;
     }
   }
@@ -464,7 +481,7 @@
   async function safeOrder(productId) {
     const { S } = getStoreApi();
     if (!S) {
-      setText("shop-status", "⚠️ IAP indisponible (web).");
+      setText("shop-status", t("shop.status.iap_unavailable_web", "⚠️ IAP indisponible sur le web."));
       emit("vr:iap_unavailable", { productId: String(productId || "") });
       return;
     }
@@ -479,7 +496,10 @@
 
     const p = S.get ? S.get(productId, S.Platform.GOOGLE_PLAY) : (S.products?.byId?.[productId]);
     if (!p) {
-      setText("shop-status", "⚠️ Produit introuvable: " + productId);
+      setText(
+        "shop-status",
+        t("shop.status.product_not_found_prefix", "⚠️ Produit introuvable : ") + productId
+      );
       emit("vr:iap_order_failed", { productId: String(productId || ""), error: "product_not_found" });
       return;
     }
