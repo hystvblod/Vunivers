@@ -956,10 +956,10 @@
     var refuseEl = document.getElementById("vr-ads-consent-refuse");
     var acceptEl = document.getElementById("vr-ads-consent-accept");
 
-    if (titleEl) titleEl.textContent = _tr("adsConsent.popup.title", "Publicités personnalisées");
-    if (textEl) textEl.textContent = _tr("adsConsent.popup.text", "Acceptes-tu des publicités personnalisées pour recevoir des annonces plus pertinentes ? Tu peux changer ce choix à tout moment dans les paramètres.");
-    if (refuseEl) refuseEl.textContent = _tr("adsConsent.popup.refuse", "Refuser");
-    if (acceptEl) acceptEl.textContent = _tr("adsConsent.popup.accept", "Accepter");
+    if (titleEl) titleEl.textContent = _tr("adsConsent.popup.title", "Personalized ads");
+    if (textEl) textEl.textContent = _tr("adsConsent.popup.text", "Do you accept personalized ads to receive more relevant advertising? You can change this choice at any time in the settings.");
+    if (refuseEl) refuseEl.textContent = _tr("adsConsent.popup.refuse", "Decline");
+    if (acceptEl) acceptEl.textContent = _tr("adsConsent.popup.accept", "Accept");
   }
 
   function showAdsConsentPopup() {
