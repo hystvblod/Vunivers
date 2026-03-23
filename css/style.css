@@ -1946,30 +1946,34 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-pre
 /* ==========================================================
    UNIVERS — INTRO
    ========================================================== */
-body[data-universe="intro"].vr-body-game #view-game .vr-card-title,
-body[data-universe="intro"].vr-body-game #view-game .vr-card-text{
+body[data-universe="intro"].vr-body-game #view-game .vr-card-title{
   font-family: Georgia, "Times New Roman", serif !important;
   color: #000 !important;
-  width: 92% !important;
-  max-width: 92% !important;
+  line-height: 1.08 !important;
+  max-width: 94% !important;
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center !important;
   overflow-wrap: break-word !important;
   word-break: normal !important;
   hyphens: auto !important;
-}
-
-body[data-universe="intro"].vr-body-game #view-game .vr-card-title{
   font-weight: 700 !important;
   letter-spacing: 0.005em !important;
-  line-height: 1.08 !important;
   text-wrap: balance !important;
 }
 
 body[data-universe="intro"].vr-body-game #view-game .vr-card-text{
-  font-weight: 500 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  color: #000 !important;
   line-height: 1.22 !important;
+  max-width: 94% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  font-weight: 500 !important;
 }
 
 body[data-universe="intro"].vr-body-game #view-game .vr-choice-label{
@@ -2280,13 +2284,19 @@ body.vr-body-game[data-universe="intro"] .vr-hud-years{
 
 body.vr-body-game[data-universe="intro"] #view-game .vr-card-main{
   overflow: hidden;
-  background-size: 96% 96% !important;
+  background-size: 100% 100% !important;
   background-position: center !important;
 }
 
 body.vr-body-game[data-universe="intro"] #view-game .vr-choice-button{
-  background-size: 92% 92% !important;
+  background-size: 106% 100% !important;
   background-position: center !important;
+}
+
+body.vr-body-game[data-universe="intro"] #view-game .vr-card-main .vr-card-text{
+  max-height: none !important;
+  overflow: visible !important;
+  padding-right: 0 !important;
 }
 
 
