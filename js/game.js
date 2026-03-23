@@ -3188,55 +3188,52 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-card-main.is-intro-rich-card{
-          min-height: clamp(420px, 58svh, 620px) !important;
-          padding: clamp(18px, 3.2vw, 28px) clamp(18px, 4vw, 34px) clamp(22px, 4.2vw, 34px) !important;
+          width: min(560px, 92vw) !important;
+          min-height: 0 !important;
+          margin: 0 auto !important;
+          padding: clamp(22px, 4vw, 34px) clamp(26px, 7vw, 60px) clamp(26px, 5vw, 38px) !important;
+          box-sizing: border-box !important;
           background-size: 100% 100% !important;
           background-position: center !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
           justify-content: flex-start !important;
-          overflow: visible !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-card-title{
           display:block;
           min-height:auto;
-          width:min(100%, 620px);
-          margin:0 auto 10px !important;
-          text-align:center !important;
+          width: min(100%, 78%) !important;
+          margin: 0 auto 12px !important;
+          text-align: center !important;
+          line-height: 1.15 !important;
         }
 
-        #vr-card-main.is-intro-rich-card .vr-card-text{
-          width:min(100%, 620px) !important;
-          max-width:100% !important;
-          margin:0 auto !important;
-          font-size:clamp(13px, 1.65vw, 19px) !important;
-          line-height:1.34 !important;
-          text-align:center !important;
-          overflow-wrap:anywhere !important;
-          word-break:normal !important;
-        }
-
+        #vr-card-main.is-intro-rich-card .vr-card-text,
         #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
-          display:block;
-          width:min(100%, 560px);
-          max-width:100% !important;
-          margin:0 auto !important;
-          font-size:clamp(13px, 1.6vw, 18px) !important;
-          line-height:1.34 !important;
-          text-align:center !important;
+          width: min(100%, 78%) !important;
+          max-width: 100% !important;
+          margin: 0 auto !important;
+          font-size: clamp(13px, 1.8vw, 18px) !important;
+          line-height: 1.42 !important;
+          text-align: center !important;
+          overflow-wrap: anywhere !important;
+          word-break: normal !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy p{
-          margin:0 0 clamp(10px, 1.6vw, 14px);
+          margin: 0 0 12px 0 !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy p:last-child{
-          margin-bottom:0;
+          margin-bottom: 0 !important;
         }
 
         .vr-intro-inline-icon{
           display:inline-block;
-          width:clamp(18px, 2vw, 24px);
-          height:clamp(18px, 2vw, 24px);
+          width: clamp(18px, 2vw, 24px);
+          height: clamp(18px, 2vw, 24px);
           object-fit:contain;
           vertical-align:middle;
           transform: translateY(-1px);
@@ -3244,39 +3241,40 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         .vr-intro-inline-icon--big{
-          width:clamp(24px, 2.6vw, 30px);
-          height:clamp(24px, 2.6vw, 30px);
+          width: clamp(24px, 2.5vw, 30px);
+          height: clamp(24px, 2.5vw, 30px);
           transform: translateY(-1px);
         }
 
         @media (max-width: 540px){
           #vr-card-main.is-intro-rich-card{
-            min-height: clamp(430px, 60svh, 560px) !important;
+            width: min(96vw, 520px) !important;
             padding: 18px 16px 22px !important;
           }
 
-          #vr-card-main.is-intro-rich-card .vr-card-title{
-            width:100% !important;
-            margin:0 auto 8px !important;
+          #vr-card-main.is-intro-rich-card .vr-card-title,
+          #vr-card-main.is-intro-rich-card .vr-card-text,
+          #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
+            width: min(100%, 86%) !important;
           }
 
           #vr-card-main.is-intro-rich-card .vr-card-text,
           #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
-            width:100% !important;
-            font-size:14px !important;
-            line-height:1.32 !important;
+            font-size: 14px !important;
+            line-height: 1.38 !important;
           }
         }
 
         @media (min-width: 900px){
           #vr-card-main.is-intro-rich-card{
-            min-height: clamp(470px, 56svh, 680px) !important;
+            width: min(600px, 78vw) !important;
+            padding: 28px 42px 34px !important;
           }
 
+          #vr-card-main.is-intro-rich-card .vr-card-title,
           #vr-card-main.is-intro-rich-card .vr-card-text,
           #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
-            font-size:18px !important;
-            line-height:1.38 !important;
+            width: min(100%, 74%) !important;
           }
         }
 
@@ -3435,6 +3433,24 @@ function resetUIState() {
     btn.style.opacity = "";
     btn.style.visibility = "";
   });
+
+  const gaugeOverlay = document.getElementById("vr-token-gauge-overlay");
+  if (gaugeOverlay) {
+    try { gaugeOverlay.setAttribute("inert", ""); } catch (_) {}
+    gaugeOverlay.setAttribute("aria-hidden", "true");
+    gaugeOverlay.style.display = "none";
+  }
+
+  try {
+    document.body.classList.remove("vr-token-select-mode");
+  } catch (_) {}
+
+  try {
+    if (window.VRTokenUI) {
+      window.VRTokenUI.selectMode = false;
+      window.VRTokenUI.gaugeSelectBusy = false;
+    }
+  } catch (_) {}
 }
 
   function getChoiceButton(choiceId) {
@@ -3658,6 +3674,24 @@ function onGaugeSet(gaugeId) {
   if (currentCardId !== "intro_003") return;
   if (String(gaugeId || "").trim() !== LOW_GAUGE_ID) return;
 
+  const gaugeOverlay = document.getElementById("vr-token-gauge-overlay");
+  if (gaugeOverlay) {
+    try { gaugeOverlay.setAttribute("inert", ""); } catch (_) {}
+    gaugeOverlay.setAttribute("aria-hidden", "true");
+    gaugeOverlay.style.display = "none";
+  }
+
+  try {
+    document.body.classList.remove("vr-token-select-mode");
+  } catch (_) {}
+
+  try {
+    if (window.VRTokenUI) {
+      window.VRTokenUI.selectMode = false;
+      window.VRTokenUI.gaugeSelectBusy = false;
+    }
+  } catch (_) {}
+
   resetUIState();
   hideAllChoices();
 
@@ -3672,7 +3706,7 @@ function onGaugeSet(gaugeId) {
   window.setTimeout(() => {
     try { window.VREngine?._nextCard_internalOnly?.(); } catch (_) {}
     try { window.VREngine?._saveRunSoft?.(); } catch (_) {}
-  }, 320);
+  }, 120);
 }
 
   function ensureFinishPopup() {
