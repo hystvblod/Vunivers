@@ -2377,8 +2377,7 @@ body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-preview{
 
   body[data-universe="intro"].vr-body-game #view-game .vr-card-title,
   body[data-universe="intro"].vr-body-game #view-game .vr-card-text{
-    width: 92% !important;
-    max-width: 92% !important;
+    max-width: 94% !important;
   }
 
   body.vr-body-game[data-universe="intro"] .vr-hud-left{ left: 3.5% !important; width: 18.4% !important; }
