@@ -136,7 +136,9 @@
       "err_buy_failed": "Pembelian dibatalkan atau gagal.",
       "err_unlock_after_buy": "Pembelian berhasil, tetapi pembukaan gagal. Coba lagi nanti.",
       "err_unlock_after_iap": "Pembelian berhasil, tetapi semesta belum bisa dibuka sekarang. Coba lagi dari toko."
-    }
+    },
+    "settings_licenses_label": "Lisensi",
+    "settings_open_licenses_aria": "Buka lisensi"
   },
   "gauges": {
     "hell_king": {

@@ -136,7 +136,9 @@
       "err_buy_failed": "Achat annulé ou impossible.",
       "err_unlock_after_buy": "Achat validé, mais déblocage impossible. Réessaie plus tard.",
       "err_unlock_after_iap": "Achat validé, mais déblocage impossible pour le moment. Réessaie depuis la boutique."
-    }
+    },
+    "settings_licenses_label": "Licences",
+    "settings_open_licenses_aria": "Ouvrir les licences"
   },
   "gauges": {
     "hell_king": {
