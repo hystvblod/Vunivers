@@ -19,10 +19,10 @@
     { code: "de", ui: "DE" },
     { code: "es", ui: "ES" },
     { code: "pt", ui: "PT" },
-    { code: "ptbr", ui: "PTBR" },
+    { code: "ptbr", ui: "PT-BR" },
     { code: "it", ui: "IT" },
     { code: "ko", ui: "KO" },
-    { code: "ja", ui: "JP" },
+    { code: "ja", ui: "日本語" },
     { code: "id", ui: "ID" }
   ];
   const LANGUAGE_FLAGS = {

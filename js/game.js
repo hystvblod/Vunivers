@@ -137,10 +137,23 @@ const VR_BADGE_GOLD_CHOICES = 100;
   function normalizeScenarioLang(raw) {
     const s = String(raw || "").trim().toLowerCase();
     if (!s) return "en";
+
     if (s === "pt-br" || s === "ptbr") return "ptbr";
-    if (s === "jp" || s === "ja" || s === "ja-jp") return "jp";
-    if (s === "in" || s === "id-id") return "id";
-    return s.split(/[-_]/)[0] || "en";
+    if (s === "pt-pt" || s === "pt_pt") return "pt";
+
+    if (s === "jp" || s === "ja" || s === "ja-jp" || s === "ja_jp") return "ja";
+
+    if (s === "kr" || s === "ko-kr" || s === "ko_kr") return "ko";
+    if (s === "in" || s === "id-id" || s === "id_id") return "id";
+
+    const base = s.split(/[-_]/)[0];
+
+    if (base === "pt" && (s.includes("br") || s.includes("ptbr"))) return "ptbr";
+    if (base === "ja") return "ja";
+    if (base === "ko") return "ko";
+    if (base === "id" || base === "in") return "id";
+
+    return base || "en";
   }
 
   window.normalizeScenarioLang = normalizeScenarioLang;
