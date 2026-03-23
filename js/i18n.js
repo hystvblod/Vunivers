@@ -6,6 +6,8 @@
   const DEFAULT_LANG = "en";
   const STORAGE_KEY = "vuniverse_lang";
   const LEGACY_STORAGE_KEY = "vrealms_lang";
+  const LANG_SELECTED_KEY = "vuniverse_lang_selected";
+  const LEGACY_LANG_SELECTED_KEY = "vrealms_lang_selected";
   const USER_DATA_KEY = "vuniverse_user_data";
   const USER_DATA_LEGACY_KEY = "vrealms_user_data";
 
@@ -209,6 +211,21 @@ async function tryLoadUiBundle(bundle, lang) {
     return "";
   }
 
+  function hasExplicitLanguageChoice() {
+    try {
+      const a = localStorage.getItem(LANG_SELECTED_KEY);
+      const b = localStorage.getItem(LEGACY_LANG_SELECTED_KEY);
+      return a === "1" || b === "1";
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function markExplicitLanguageChoice() {
+    try { localStorage.setItem(LANG_SELECTED_KEY, "1"); } catch (_) {}
+    try { localStorage.setItem(LEGACY_LANG_SELECTED_KEY, "1"); } catch (_) {}
+  }
+
   function ensureLanguagePickerStyles() {
     if (document.getElementById("vr-language-picker-style")) return;
 
@@ -365,6 +382,7 @@ async function tryLoadUiBundle(bundle, lang) {
           const chosen = item.code;
 
           saveLangLocal(chosen);
+          markExplicitLanguageChoice();
 
           try {
             if (window.VRRemoteStore?.setLang) {
@@ -389,8 +407,11 @@ async function tryLoadUiBundle(bundle, lang) {
   }
 
   async function resolveInitialLang(forcedLang) {
-    const saved = getSavedLang(forcedLang);
-    if (saved) return saved;
+    const forced = normalizeMaybeLang(forcedLang);
+    if (forced && SUPPORTED_LANGS.includes(forced)) return forced;
+
+    const saved = getSavedLang("");
+    if (saved && hasExplicitLanguageChoice()) return saved;
 
     return await showLanguagePicker();
   }
