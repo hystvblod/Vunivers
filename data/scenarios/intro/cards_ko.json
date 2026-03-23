@@ -1,0 +1,30 @@
+{
+  "intro_001": {
+    "title": "환영합니다",
+    "body": "아, 세계들을 맡아 줄 새로운 통치자군요. 해볼 준비가 되었나요?",
+    "choices": {
+      "A": "네",
+      "B": "시작하자!"
+    }
+  },
+  "intro_002": {
+    "title": "게이지",
+    "body": "당신의 모든 선택은 위에 있는 게이지에 영향을 줍니다. 이 카드를 밀어서 하나의 결정이 모든 것을 바꿀 수 있다는 걸 확인해 보세요.",
+    "choices": {
+      "A": "계속",
+      "B": "가자!"
+    }
+  },
+  "intro_003": {
+    "title": "토큰",
+    "body": "이런! 균형 게이지가 매우 낮습니다. 토큰을 누른 뒤, 게이지 하나를 50 %로 되돌리는 옵션을 사용하세요. 그다음 깜빡이는 게이지를 클릭하세요.",
+    "choices": {}
+  },
+  "intro_004": {
+    "title": "보상",
+    "body_html": "<div class=\"vr-intro-rewards-copy\">플레이하면 <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> 와 <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> 를 얻습니다.<br><br><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> 는 세계와 꾸미기 요소를 해제하는 데 사용됩니다.<br><br><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> 는 플레이 도중 도움을 받는 데 사용됩니다.<br><br>각 세계 상단의 팔레트를 클릭해 게임을 꾸미거나 상점으로 갈 수 있습니다.</div>",
+    "choices": {
+      "A": "인트로 끝내기"
+    }
+  }
+}

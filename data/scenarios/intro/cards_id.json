@@ -1,0 +1,30 @@
+{
+  "intro_001": {
+    "title": "Selamat datang",
+    "body": "Ah, seorang pemimpin baru untuk mengurus dunia-dunia ini. Siap melakukannya?",
+    "choices": {
+      "A": "Ya",
+      "B": "Ayo mulai!"
+    }
+  },
+  "intro_002": {
+    "title": "Bar",
+    "body": "Setiap pilihanmu memengaruhi bar di bagian atas. Geser kartu ini untuk melihat bahwa satu keputusan bisa mengubah segalanya.",
+    "choices": {
+      "A": "Lanjutkan",
+      "B": "Ayo!"
+    }
+  },
+  "intro_003": {
+    "title": "Token",
+    "body": "Ups! Bar Keseimbangan sangat rendah. Tekan token, lalu gunakan opsi yang mengembalikan satu bar ke 50 %. Setelah itu, klik bar yang berkedip.",
+    "choices": {}
+  },
+  "intro_004": {
+    "title": "Hadiah",
+    "body_html": "<div class=\"vr-intro-rewards-copy\">Saat bermain, kamu mendapatkan <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> dan <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"><br><br><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> digunakan untuk membuka semesta dan kustomisasi.<br><br><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> digunakan untuk mendapatkan bantuan selama permainan.<br><br>Kamu bisa menyesuaikan permainanmu dengan mengeklik palet di bagian atas setiap semesta atau pergi ke toko.</div>",
+    "choices": {
+      "A": "Selesaikan intro"
+    }
+  }
+}

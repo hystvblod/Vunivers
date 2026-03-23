@@ -1,0 +1,30 @@
+{
+  "intro_001": {
+    "title": "ようこそ",
+    "body": "おや、世界を任される新しい支配者ですね。やる準備はできていますか？",
+    "choices": {
+      "A": "はい",
+      "B": "さあ始めよう！"
+    }
+  },
+  "intro_002": {
+    "title": "ゲージ",
+    "body": "あなたの選択ひとつひとつが上のゲージに影響します。このカードをスワイプして、ひとつの決断ですべてが動くことを見てみましょう。",
+    "choices": {
+      "A": "続ける",
+      "B": "行こう！"
+    }
+  },
+  "intro_003": {
+    "title": "トークン",
+    "body": "おっと！ バランスゲージがかなり低くなっています。トークンを押してから、ゲージを 50 % に戻すオプションを使ってください。そのあと、点滅しているゲージをクリックしてください。",
+    "choices": {}
+  },
+  "intro_004": {
+    "title": "報酬",
+    "body_html": "<div class=\"vr-intro-rewards-copy\">プレイすると <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> と <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> を獲得できます。<br><br><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> は世界やカスタマイズのアンロックに使います。<br><br><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> はプレイ中に助けを得るために使います。<br><br>各世界の上にあるパレットをクリックしてゲームをカスタマイズするか、ショップに行くことができます。</div>",
+    "choices": {
+      "A": "イントロを終了"
+    }
+  }
+}
