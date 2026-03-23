@@ -3048,19 +3048,16 @@ body.vr-peek-mode .vr-gauge-preview{
           const gaugeId = String(gaugeEl.dataset.gaugeId || "").trim();
           if (!gaugeId) return;
 
-          const isIntroGaugeStep =
+          const isIntroGaugeTutorial =
             String(window.VRGame?.currentUniverse || document.body?.dataset?.universe || "").trim() === "intro" &&
-            window.VRIntroTutorial?.isGaugeSelectionLocked?.() === true;
+            window.VRIntroTutorial?.isGaugeSelectionLocked?.();
 
-          if (isIntroGaugeStep && gaugeId !== "balance") return;
+          if (isIntroGaugeTutorial && gaugeId !== "balance") return;
 
           this.gaugeSelectBusy = true;
+          stopSelectGauge50();
 
-          if (isIntroGaugeStep) {
-            stopSelectGauge50(true);
-          } else {
-            stopSelectGauge50();
-
+          if (!isIntroGaugeTutorial) {
             const spent = await window.VUserData?.spendJetons?.(1);
             if (!spent) {
               this.gaugeSelectBusy = false;
@@ -3074,23 +3071,21 @@ body.vr-peek-mode .vr-gauge-preview{
 
           try { window.VREngine?._saveRunSoft?.(); } catch (_) {}
 
-          if (!isIntroGaugeStep) {
-            try {
-              const me = await window.VRProfile?.getMe?.(0);
-              if (me) {
-                window.VREngine._uiCoins = window.VRProfile._n(me.vcoins);
-                window.VREngine._uiTokens = window.VRProfile._n(me.jetons);
-              }
-            } catch (_) {}
+          try {
+            const me = await window.VRProfile?.getMe?.(0);
+            if (me) {
+              window.VREngine._uiCoins = window.VRProfile._n(me.vcoins);
+              window.VREngine._uiTokens = window.VRProfile._n(me.jetons);
+            }
+          } catch (_) {}
 
-            const kingName = runtimeDynastyName();
-            window.VRUIBinding?.updateMeta?.(
-              kingName,
-              runtimeYearLabel(),
-              window.VREngine?._uiCoins || 0,
-              window.VREngine?._uiTokens || 0
-            );
-          }
+          const kingName = runtimeDynastyName();
+          window.VRUIBinding?.updateMeta?.(
+            kingName,
+            runtimeYearLabel(),
+            window.VREngine?._uiCoins || 0,
+            window.VREngine?._uiTokens || 0
+          );
 
           toast(t("token.toast.gauge_set_50", ""));
           this.gaugeSelectBusy = false;
@@ -3692,7 +3687,9 @@ function isGaugeSelectionLocked() {
 function onGaugeOverlayOpened() {
   if (!isIntroUniverse()) return;
   if (currentCardId !== "intro_003") return;
-  resetUIState();
+
+  hideIntroHand();
+  clearClasses();
   hideAllChoices();
   pulseGauge(LOW_GAUGE_ID);
 }
