@@ -3199,51 +3199,54 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-card-main.is-intro-rich-card{
-          width: min(560px, 94vw) !important;
+          width: min(500px, 88vw) !important;
           min-height: auto !important;
           height: auto !important;
           margin: 0 auto !important;
           padding:
-            clamp(24px, 5vw, 34px)
-            clamp(34px, 10vw, 78px)
-            clamp(28px, 6vw, 40px) !important;
+            clamp(18px, 4.2vw, 24px)
+            clamp(24px, 6.2vw, 36px)
+            clamp(22px, 5vw, 30px) !important;
           box-sizing: border-box !important;
-          background-size: 100% 100% !important;
+          background-size: 96% 96% !important;
           background-position: center !important;
           background-repeat: no-repeat !important;
           display: flex !important;
           flex-direction: column !important;
           align-items: center !important;
           justify-content: flex-start !important;
-          overflow: visible !important;
+          overflow: hidden !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-card-title{
           display: block !important;
           min-height: auto !important;
           width: 100% !important;
-          max-width: clamp(180px, 56vw, 320px) !important;
-          margin: 0 auto 12px !important;
+          max-width: clamp(170px, 46vw, 250px) !important;
+          margin: 0 auto 10px !important;
           text-align: center !important;
-          line-height: 1.12 !important;
-          overflow-wrap: anywhere !important;
+          line-height: 1.06 !important;
+          overflow-wrap: break-word !important;
+          word-break: normal !important;
+          hyphens: auto !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-card-text,
         #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
           display: block !important;
           width: 100% !important;
-          max-width: clamp(190px, 60vw, 360px) !important;
+          max-width: clamp(170px, 50vw, 260px) !important;
           margin: 0 auto !important;
-          font-size: clamp(13px, 1.8vw, 18px) !important;
-          line-height: 1.40 !important;
+          font-size: clamp(12px, 3.1vw, 15px) !important;
+          line-height: 1.24 !important;
           text-align: center !important;
-          overflow-wrap: anywhere !important;
+          overflow-wrap: break-word !important;
           word-break: normal !important;
+          hyphens: auto !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy p{
-          margin: 0 0 12px 0 !important;
+          margin: 0 0 10px 0 !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy p:last-child{
@@ -3268,36 +3271,37 @@ body.vr-peek-mode .vr-gauge-preview{
 
         @media (max-width: 540px){
           #vr-card-main.is-intro-rich-card{
-            width: min(96vw, 520px) !important;
-            padding: 18px 24px 22px !important;
+            width: min(88vw, 460px) !important;
+            padding: 16px 20px 20px !important;
+            background-size: 94% 94% !important;
           }
 
           #vr-card-main.is-intro-rich-card .vr-card-title{
-            max-width: 78% !important;
-            margin-bottom: 10px !important;
+            max-width: 72% !important;
+            margin-bottom: 8px !important;
           }
 
           #vr-card-main.is-intro-rich-card .vr-card-text,
           #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
-            max-width: 82% !important;
-            font-size: 14px !important;
-            line-height: 1.36 !important;
+            max-width: 72% !important;
+            font-size: 12.5px !important;
+            line-height: 1.22 !important;
           }
         }
 
         @media (min-width: 900px){
           #vr-card-main.is-intro-rich-card{
-            width: min(600px, 78vw) !important;
-            padding: 28px 54px 36px !important;
+            width: min(520px, 72vw) !important;
+            padding: 24px 38px 28px !important;
           }
 
           #vr-card-main.is-intro-rich-card .vr-card-title{
-            max-width: 300px !important;
+            max-width: 260px !important;
           }
 
           #vr-card-main.is-intro-rich-card .vr-card-text,
           #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
-            max-width: 350px !important;
+            max-width: 280px !important;
           }
         }
 
