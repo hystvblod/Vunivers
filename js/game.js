@@ -3045,16 +3045,28 @@ body.vr-peek-mode .vr-gauge-preview{
           const gaugeEl = e.target?.closest?.(".vr-gauge");
           if (!gaugeEl) return;
 
-          const gaugeId = gaugeEl.dataset.gaugeId;
+          const gaugeId = String(gaugeEl.dataset.gaugeId || "").trim();
           if (!gaugeId) return;
 
-          this.gaugeSelectBusy = true;
-          stopSelectGauge50();
+          const isIntroGaugeStep =
+            String(window.VRGame?.currentUniverse || document.body?.dataset?.universe || "").trim() === "intro" &&
+            window.VRIntroTutorial?.isGaugeSelectionLocked?.() === true;
 
-          const spent = await window.VUserData?.spendJetons?.(1);
-          if (!spent) {
-            toast(t("token.toast.no_tokens", ""));
-            return;
+          if (isIntroGaugeStep && gaugeId !== "balance") return;
+
+          this.gaugeSelectBusy = true;
+
+          if (isIntroGaugeStep) {
+            stopSelectGauge50(true);
+          } else {
+            stopSelectGauge50();
+
+            const spent = await window.VUserData?.spendJetons?.(1);
+            if (!spent) {
+              this.gaugeSelectBusy = false;
+              toast(t("token.toast.no_tokens", ""));
+              return;
+            }
           }
 
           window.VRState?.setGaugeValue?.(gaugeId, 50);
@@ -3062,23 +3074,27 @@ body.vr-peek-mode .vr-gauge-preview{
 
           try { window.VREngine?._saveRunSoft?.(); } catch (_) {}
 
-          try {
-            const me = await window.VRProfile?.getMe?.(0);
-            if (me) {
-              window.VREngine._uiCoins = window.VRProfile._n(me.vcoins);
-              window.VREngine._uiTokens = window.VRProfile._n(me.jetons);
-            }
-          } catch (_) {}
+          if (!isIntroGaugeStep) {
+            try {
+              const me = await window.VRProfile?.getMe?.(0);
+              if (me) {
+                window.VREngine._uiCoins = window.VRProfile._n(me.vcoins);
+                window.VREngine._uiTokens = window.VRProfile._n(me.jetons);
+              }
+            } catch (_) {}
 
-          const kingName = runtimeDynastyName();
-          window.VRUIBinding?.updateMeta?.(
-            kingName,
-            runtimeYearLabel(),
-            window.VREngine?._uiCoins || 0,
-            window.VREngine?._uiTokens || 0
-          );
+            const kingName = runtimeDynastyName();
+            window.VRUIBinding?.updateMeta?.(
+              kingName,
+              runtimeYearLabel(),
+              window.VREngine?._uiCoins || 0,
+              window.VREngine?._uiTokens || 0
+            );
+          }
 
           toast(t("token.toast.gauge_set_50", ""));
+          this.gaugeSelectBusy = false;
+
           try { window.VRIntroTutorial?.onGaugeSet?.(gaugeId); } catch (_) {}
         });
       }
@@ -3188,35 +3204,44 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-card-main.is-intro-rich-card{
-          width: min(560px, 92vw) !important;
-          min-height: 0 !important;
+          width: min(560px, 94vw) !important;
+          min-height: auto !important;
+          height: auto !important;
           margin: 0 auto !important;
-          padding: clamp(22px, 4vw, 34px) clamp(26px, 7vw, 60px) clamp(26px, 5vw, 38px) !important;
+          padding:
+            clamp(24px, 5vw, 34px)
+            clamp(34px, 10vw, 78px)
+            clamp(28px, 6vw, 40px) !important;
           box-sizing: border-box !important;
           background-size: 100% 100% !important;
           background-position: center !important;
+          background-repeat: no-repeat !important;
           display: flex !important;
           flex-direction: column !important;
           align-items: center !important;
           justify-content: flex-start !important;
+          overflow: visible !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-card-title{
-          display:block;
-          min-height:auto;
-          width: min(100%, 78%) !important;
+          display: block !important;
+          min-height: auto !important;
+          width: 100% !important;
+          max-width: clamp(180px, 56vw, 320px) !important;
           margin: 0 auto 12px !important;
           text-align: center !important;
-          line-height: 1.15 !important;
+          line-height: 1.12 !important;
+          overflow-wrap: anywhere !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-card-text,
         #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
-          width: min(100%, 78%) !important;
-          max-width: 100% !important;
+          display: block !important;
+          width: 100% !important;
+          max-width: clamp(190px, 60vw, 360px) !important;
           margin: 0 auto !important;
           font-size: clamp(13px, 1.8vw, 18px) !important;
-          line-height: 1.42 !important;
+          line-height: 1.40 !important;
           text-align: center !important;
           overflow-wrap: anywhere !important;
           word-break: normal !important;
@@ -3231,11 +3256,11 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         .vr-intro-inline-icon{
-          display:inline-block;
+          display: inline-block;
           width: clamp(18px, 2vw, 24px);
           height: clamp(18px, 2vw, 24px);
-          object-fit:contain;
-          vertical-align:middle;
+          object-fit: contain;
+          vertical-align: middle;
           transform: translateY(-1px);
           filter: none;
         }
@@ -3249,32 +3274,35 @@ body.vr-peek-mode .vr-gauge-preview{
         @media (max-width: 540px){
           #vr-card-main.is-intro-rich-card{
             width: min(96vw, 520px) !important;
-            padding: 18px 16px 22px !important;
+            padding: 18px 24px 22px !important;
           }
 
-          #vr-card-main.is-intro-rich-card .vr-card-title,
-          #vr-card-main.is-intro-rich-card .vr-card-text,
-          #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
-            width: min(100%, 86%) !important;
+          #vr-card-main.is-intro-rich-card .vr-card-title{
+            max-width: 78% !important;
+            margin-bottom: 10px !important;
           }
 
           #vr-card-main.is-intro-rich-card .vr-card-text,
           #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
+            max-width: 82% !important;
             font-size: 14px !important;
-            line-height: 1.38 !important;
+            line-height: 1.36 !important;
           }
         }
 
         @media (min-width: 900px){
           #vr-card-main.is-intro-rich-card{
             width: min(600px, 78vw) !important;
-            padding: 28px 42px 34px !important;
+            padding: 28px 54px 36px !important;
           }
 
-          #vr-card-main.is-intro-rich-card .vr-card-title,
+          #vr-card-main.is-intro-rich-card .vr-card-title{
+            max-width: 300px !important;
+          }
+
           #vr-card-main.is-intro-rich-card .vr-card-text,
           #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
-            width: min(100%, 74%) !important;
+            max-width: 350px !important;
           }
         }
 
@@ -3674,24 +3702,6 @@ function onGaugeSet(gaugeId) {
   if (currentCardId !== "intro_003") return;
   if (String(gaugeId || "").trim() !== LOW_GAUGE_ID) return;
 
-  const gaugeOverlay = document.getElementById("vr-token-gauge-overlay");
-  if (gaugeOverlay) {
-    try { gaugeOverlay.setAttribute("inert", ""); } catch (_) {}
-    gaugeOverlay.setAttribute("aria-hidden", "true");
-    gaugeOverlay.style.display = "none";
-  }
-
-  try {
-    document.body.classList.remove("vr-token-select-mode");
-  } catch (_) {}
-
-  try {
-    if (window.VRTokenUI) {
-      window.VRTokenUI.selectMode = false;
-      window.VRTokenUI.gaugeSelectBusy = false;
-    }
-  } catch (_) {}
-
   resetUIState();
   hideAllChoices();
 
@@ -3702,11 +3712,11 @@ function onGaugeSet(gaugeId) {
     choicesWrap.style.visibility = "hidden";
   }
 
-  currentCardId = "";
   window.setTimeout(() => {
+    currentCardId = "";
     try { window.VREngine?._nextCard_internalOnly?.(); } catch (_) {}
     try { window.VREngine?._saveRunSoft?.(); } catch (_) {}
-  }, 120);
+  }, 60);
 }
 
   function ensureFinishPopup() {
