@@ -1950,20 +1950,26 @@ body[data-universe="intro"].vr-body-game #view-game .vr-card-title,
 body[data-universe="intro"].vr-body-game #view-game .vr-card-text{
   font-family: Georgia, "Times New Roman", serif !important;
   color: #000 !important;
-  text-align: center !important;
-  max-width: 94% !important;
+  width: 92% !important;
+  max-width: 92% !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  text-align: center !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
 }
 
 body[data-universe="intro"].vr-body-game #view-game .vr-card-title{
   font-weight: 700 !important;
-  letter-spacing: 0.01em !important;
+  letter-spacing: 0.005em !important;
+  line-height: 1.08 !important;
+  text-wrap: balance !important;
 }
 
 body[data-universe="intro"].vr-body-game #view-game .vr-card-text{
   font-weight: 500 !important;
-  line-height: 1.42 !important;
+  line-height: 1.22 !important;
 }
 
 body[data-universe="intro"].vr-body-game #view-game .vr-choice-label{
@@ -1971,28 +1977,47 @@ body[data-universe="intro"].vr-body-game #view-game .vr-choice-label{
   color: #000 !important;
   text-shadow: none !important;
   font-weight: 700 !important;
-  line-height: 1.2 !important;
+  line-height: 1.08 !important;
+
+  inset:
+    var(--vr-choice-inset-top)
+    auto
+    var(--vr-choice-inset-bottom)
+    50% !important;
+
+  width: var(--vr-choice-safe) !important;
+  max-width: var(--vr-choice-safe) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: translateX(-50%) !important;
+
+  text-align: center !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  text-wrap: balance !important;
 }
 
 body.vr-body-game[data-universe="intro"]{
-  --vr-card-w: clamp(438px, 99vw, 1120px);
+  --vr-card-w: clamp(360px, 95.5vw, 960px);
 
-  --vr-scn-h: clamp(165px, 22svh, 340px);
-  --vr-choice-h: clamp(96px, 13.8svh, 230px);
+  --vr-scn-h: clamp(168px, 20.4svh, 308px);
+  --vr-choice-h: clamp(96px, 12.9svh, 178px);
 
-  --vr-scn-inset-top: 10%;
-  --vr-scn-inset-right: 12%;
-  --vr-scn-inset-bottom: 14%;
-  --vr-scn-inset-left: 12%;
+  --vr-scn-inset-top: 12%;
+  --vr-scn-inset-right: 13%;
+  --vr-scn-inset-bottom: 18%;
+  --vr-scn-inset-left: 13%;
 
-  --vr-choice-inset-top: 22%;
-  --vr-choice-inset-right: 13%;
-  --vr-choice-inset-bottom: 20%;
-  --vr-choice-inset-left: 13%;
+  --vr-choice-inset-top: 18%;
+  --vr-choice-inset-right: 11%;
+  --vr-choice-inset-bottom: 18%;
+  --vr-choice-inset-left: 11%;
+  --vr-choice-safe: 74%;
 
-  --vr-font-scn-title: clamp(19px, 3.2vmin, 36px);
-  --vr-font-scn-text:  clamp(15px, 2.7vmin, 29px);
-  --vr-font-choice:    clamp(17px, 3.1vmin, 33px);
+  --vr-font-scn-title: clamp(18px, 2.8vmin, 30px);
+  --vr-font-scn-text:  clamp(14px, 2.25vmin, 22px);
+  --vr-font-choice:    clamp(15px, 2.5vmin, 24px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
 
@@ -2302,24 +2327,25 @@ body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-preview{
 
 @media (max-width: 480px){
   body.vr-body-game[data-universe="intro"]{
-    --vr-card-w: 98.6vw;
+    --vr-card-w: 96.8vw;
 
-    --vr-scn-h: clamp(150px, 23svh, 230px);
-    --vr-choice-h: clamp(88px, 13.6svh, 145px);
+    --vr-scn-h: clamp(150px, 20.5svh, 214px);
+    --vr-choice-h: clamp(86px, 12.5svh, 132px);
 
-    --vr-scn-inset-top: 11%;
-    --vr-scn-inset-right: 10%;
-    --vr-scn-inset-bottom: 13%;
-    --vr-scn-inset-left: 10%;
+    --vr-scn-inset-top: 12%;
+    --vr-scn-inset-right: 12%;
+    --vr-scn-inset-bottom: 18%;
+    --vr-scn-inset-left: 12%;
 
-    --vr-choice-inset-top: 20%;
-    --vr-choice-inset-right: 11%;
-    --vr-choice-inset-bottom: 18%;
-    --vr-choice-inset-left: 11%;
+    --vr-choice-inset-top: 16%;
+    --vr-choice-inset-right: 12%;
+    --vr-choice-inset-bottom: 16%;
+    --vr-choice-inset-left: 12%;
+    --vr-choice-safe: 76%;
 
-    --vr-font-scn-title: clamp(18px, 4.9vw, 24px);
-    --vr-font-scn-text: clamp(14px, 4vw, 19px);
-    --vr-font-choice: clamp(15px, 4.2vw, 20px);
+    --vr-font-scn-title: clamp(17px, 4.4vw, 22px);
+    --vr-font-scn-text: clamp(13px, 3.55vw, 17px);
+    --vr-font-choice: clamp(14px, 3.7vw, 18px);
 
     --vr-intro-hud-w: 96vw;
     --vr-intro-hud-value-size: clamp(11px, 2.8vw, 14px);
@@ -2341,7 +2367,8 @@ body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-preview{
 
   body[data-universe="intro"].vr-body-game #view-game .vr-card-title,
   body[data-universe="intro"].vr-body-game #view-game .vr-card-text{
-    max-width: 96% !important;
+    width: 92% !important;
+    max-width: 92% !important;
   }
 
   body.vr-body-game[data-universe="intro"] .vr-hud-left{ left: 3.5% !important; width: 18.4% !important; }
