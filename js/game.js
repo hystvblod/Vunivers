@@ -2745,6 +2745,15 @@ body.vr-peek-mode .vr-gauge-preview{
       const overlay = document.getElementById("vr-token-gauge-overlay");
       const cancelGaugeBtn = document.getElementById("btn-cancel-gauge-select");
       const gaugesRow = document.getElementById("vr-gauges-row");
+      const isGaugeOverlayLocked = () => {
+        try { return window.VRIntroTutorial?.isGaugeSelectionLocked?.() === true; }
+        catch (_) { return false; }
+      };
+
+      const syncGaugeOverlayLockUI = () => {
+        if (!cancelGaugeBtn) return;
+        cancelGaugeBtn.style.display = isGaugeOverlayLocked() ? "none" : "";
+      };
 
       if (!btnJeton || !popup) return;
 
@@ -2788,7 +2797,12 @@ body.vr-peek-mode .vr-gauge-preview{
 
       const openGaugeOverlay = () => {
         if (!overlay) return;
-        _showDialog(overlay, cancelGaugeBtn || btnJeton);
+        syncGaugeOverlayLockUI();
+        const focusTarget =
+          !isGaugeOverlayLocked() && cancelGaugeBtn
+            ? cancelGaugeBtn
+            : overlay.querySelector(".vr-token-gauge-card");
+        _showDialog(overlay, focusTarget || btnJeton);
       };
 
       const closeGaugeOverlay = () => {
@@ -2805,7 +2819,8 @@ body.vr-peek-mode .vr-gauge-preview{
         toast(t("token.toast.select_gauge", ""));
       };
 
-      const stopSelectGauge50 = () => {
+      const stopSelectGauge50 = (force = false) => {
+        if (!force && isGaugeOverlayLocked()) return;
         this.selectMode = false;
         this.gaugeSelectBusy = false;
         document.body.classList.remove("vr-token-select-mode");
@@ -2824,10 +2839,14 @@ body.vr-peek-mode .vr-gauge-preview{
       });
 
       document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          if (this.selectMode) stopSelectGauge50();
-          closePopup();
+        if (e.key !== "Escape") return;
+
+        if (this.selectMode) {
+          if (!isGaugeOverlayLocked()) stopSelectGauge50();
+          return;
         }
+
+        closePopup();
       });
 
       try {
@@ -3004,8 +3023,20 @@ body.vr-peek-mode .vr-gauge-preview{
         });
       });
 
-      if (cancelGaugeBtn) cancelGaugeBtn.addEventListener("click", () => stopSelectGauge50());
-      if (overlay) overlay.addEventListener("click", (e) => { if (e.target === overlay) stopSelectGauge50(); });
+      if (cancelGaugeBtn) {
+        cancelGaugeBtn.addEventListener("click", () => {
+          if (isGaugeOverlayLocked()) return;
+          stopSelectGauge50();
+        });
+      }
+
+      if (overlay) {
+        overlay.addEventListener("click", (e) => {
+          if (e.target !== overlay) return;
+          if (isGaugeOverlayLocked()) return;
+          stopSelectGauge50();
+        });
+      }
 
       if (gaugesRow) {
         gaugesRow.addEventListener("click", async (e) => {
@@ -3116,7 +3147,27 @@ body.vr-peek-mode .vr-gauge-preview{
 
         .vr-intro-dim{ opacity: .28 !important; pointer-events: none !important; }
         .vr-intro-hide{ opacity: 0 !important; pointer-events: none !important; visibility: hidden !important; }
-        .vr-intro-gauge-focus{ animation: vrIntroGauge 1s ease-in-out infinite; }
+
+        .vr-intro-gauge-focus{
+          position: relative;
+          z-index: 3;
+          animation: vrIntroGauge .72s cubic-bezier(.22,.61,.36,1) infinite;
+        }
+
+        .vr-intro-gauge-focus .vr-gauge-frame{
+          filter:
+            drop-shadow(0 0 12px rgba(255,220,120,.95))
+            drop-shadow(0 0 28px rgba(255,220,120,.78));
+        }
+
+        .vr-intro-gauge-focus::after{
+          content:"";
+          position:absolute;
+          inset:-8px;
+          border-radius:999px;
+          pointer-events:none;
+          animation: vrIntroGaugeRing .72s cubic-bezier(.22,.61,.36,1) infinite;
+        }
 
         #vr-intro-hand{
           position: fixed;
@@ -3137,50 +3188,96 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-card-main.is-intro-rich-card{
-          min-height: clamp(372px, 52svh, 448px) !important;
-          padding: 12px 12px 18px !important;
-          background-size: 100% 99% !important;
+          min-height: clamp(420px, 58svh, 620px) !important;
+          padding: clamp(18px, 3.2vw, 28px) clamp(18px, 4vw, 34px) clamp(22px, 4.2vw, 34px) !important;
+          background-size: 100% 100% !important;
           background-position: center !important;
+          justify-content: flex-start !important;
+          overflow: visible !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-card-title{
           display:block;
           min-height:auto;
-          margin-bottom:6px;
+          width:min(100%, 620px);
+          margin:0 auto 10px !important;
+          text-align:center !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-card-text{
-          max-width: 90% !important;
-          margin: -2px auto 0 !important;
-          font-size: 13px !important;
-          line-height: 1.24 !important;
-          text-align: center !important;
-          overflow-wrap: break-word !important;
+          width:min(100%, 620px) !important;
+          max-width:100% !important;
+          margin:0 auto !important;
+          font-size:clamp(13px, 1.65vw, 19px) !important;
+          line-height:1.34 !important;
+          text-align:center !important;
+          overflow-wrap:anywhere !important;
+          word-break:normal !important;
         }
 
         #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
           display:block;
-          max-width: 80% !important;
-          margin: 0 auto !important;
-          font-size: clamp(12px, 3.05vw, 13px) !important;
-          line-height: 1.20 !important;
-          text-align: center !important;
+          width:min(100%, 560px);
+          max-width:100% !important;
+          margin:0 auto !important;
+          font-size:clamp(13px, 1.6vw, 18px) !important;
+          line-height:1.34 !important;
+          text-align:center !important;
+        }
+
+        #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy p{
+          margin:0 0 clamp(10px, 1.6vw, 14px);
+        }
+
+        #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy p:last-child{
+          margin-bottom:0;
         }
 
         .vr-intro-inline-icon{
           display:inline-block;
-          width:24px;
-          height:24px;
+          width:clamp(18px, 2vw, 24px);
+          height:clamp(18px, 2vw, 24px);
           object-fit:contain;
           vertical-align:middle;
-          transform: translateY(0px);
+          transform: translateY(-1px);
           filter: none;
         }
 
         .vr-intro-inline-icon--big{
-          width:30px;
-          height:30px;
+          width:clamp(24px, 2.6vw, 30px);
+          height:clamp(24px, 2.6vw, 30px);
           transform: translateY(-1px);
+        }
+
+        @media (max-width: 540px){
+          #vr-card-main.is-intro-rich-card{
+            min-height: clamp(430px, 60svh, 560px) !important;
+            padding: 18px 16px 22px !important;
+          }
+
+          #vr-card-main.is-intro-rich-card .vr-card-title{
+            width:100% !important;
+            margin:0 auto 8px !important;
+          }
+
+          #vr-card-main.is-intro-rich-card .vr-card-text,
+          #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
+            width:100% !important;
+            font-size:14px !important;
+            line-height:1.32 !important;
+          }
+        }
+
+        @media (min-width: 900px){
+          #vr-card-main.is-intro-rich-card{
+            min-height: clamp(470px, 56svh, 680px) !important;
+          }
+
+          #vr-card-main.is-intro-rich-card .vr-card-text,
+          #vr-card-main.is-intro-rich-card .vr-intro-rewards-copy{
+            font-size:18px !important;
+            line-height:1.38 !important;
+          }
         }
 
         #vr-intro-finish-overlay .vr-intro-finish-card{
@@ -3267,8 +3364,33 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         @keyframes vrIntroGauge{
-          0%,100%{ transform: scale(1); filter: drop-shadow(0 0 0 rgba(255,220,120,0)); }
-          50%{ transform: scale(1.035); filter: drop-shadow(0 0 18px rgba(255,220,120,.82)); }
+          0%,100%{
+            transform: scale(1);
+            filter: brightness(1) drop-shadow(0 0 0 rgba(255,220,120,0));
+          }
+          50%{
+            transform: scale(1.06);
+            filter: brightness(1.18) drop-shadow(0 0 24px rgba(255,220,120,.95));
+          }
+        }
+
+        @keyframes vrIntroGaugeRing{
+          0%{
+            opacity:0;
+            box-shadow:0 0 0 0 rgba(255,220,120,0);
+          }
+          45%{
+            opacity:1;
+            box-shadow:
+              0 0 0 5px rgba(255,220,120,.34),
+              0 0 20px 8px rgba(255,220,120,.34);
+          }
+          100%{
+            opacity:0;
+            box-shadow:
+              0 0 0 14px rgba(255,220,120,0),
+              0 0 30px 14px rgba(255,220,120,0);
+          }
         }
 
         @keyframes vrIntroHandSwipe{
@@ -3519,6 +3641,10 @@ function beforeTokenAction(action) {
   return action === "gauge50";
 }
 
+function isGaugeSelectionLocked() {
+  return isIntroUniverse() && currentCardId === "intro_003";
+}
+
 function onGaugeOverlayOpened() {
   if (!isIntroUniverse()) return;
   if (currentCardId !== "intro_003") return;
@@ -3664,7 +3790,17 @@ function onGaugeSet(gaugeId) {
     try { window.location.href = "index.html"; } catch (_) {}
   }
 
-  window.VRIntroTutorial = { onInit, onCardShown, beforeApplyChoice, afterApplyChoice, onTokenPopupOpened, beforeTokenAction, onGaugeOverlayOpened, onGaugeSet };
+  window.VRIntroTutorial = {
+    onInit,
+    onCardShown,
+    beforeApplyChoice,
+    afterApplyChoice,
+    onTokenPopupOpened,
+    beforeTokenAction,
+    onGaugeOverlayOpened,
+    onGaugeSet,
+    isGaugeSelectionLocked
+  };
 })();
 
 
