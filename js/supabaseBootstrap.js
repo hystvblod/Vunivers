@@ -10,12 +10,13 @@
   const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZia2JxZmtnZGpramRmaWptZ2dkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU5MTIyOTgsImV4cCI6MjA4MTQ4ODI5OH0.ylBfBeXBWliR13GumJrFazRjP57RyBR3mzaebF7Iy24";
 
   // --- Client ---
+  let _bootstrapPromise = null;
+  let _lastBootstrapUid = null;
+
   function getCreateClient() {
-    // UMD: window.supabase.createClient
     if (window.supabase && typeof window.supabase.createClient === "function") {
       return window.supabase.createClient;
     }
-    // certaines builds exposent window.supabaseJs
     if (window.supabaseJs && typeof window.supabaseJs.createClient === "function") {
       return window.supabaseJs.createClient;
     }
@@ -38,52 +39,138 @@
     return window.sb;
   }
 
-async function getUid(sb) {
-  try {
-    const s = await sb.auth.getSession();
-    const uid = s?.data?.session?.user?.id || null;
-    if (uid) return uid;
-  } catch (_) {}
+  async function waitInitialSession(sb, timeoutMs = 1200) {
+    if (!sb?.auth?.onAuthStateChange) return;
 
-  try {
-    const r = await sb.auth.getUser();
-    return r?.data?.user?.id || null;
-  } catch (_) {
+    await new Promise((resolve) => {
+      let done = false;
+      let timer = null;
+      let sub = null;
+
+      function finish() {
+        if (done) return;
+        done = true;
+        try { clearTimeout(timer); } catch (_) {}
+        try { sub?.data?.subscription?.unsubscribe?.(); } catch (_) {}
+        resolve();
+      }
+
+      try {
+        timer = setTimeout(finish, timeoutMs);
+
+        sub = sb.auth.onAuthStateChange((event, session) => {
+          if (session?.user?.id) {
+            _lastBootstrapUid = session.user.id;
+          }
+
+          if (
+            event === "INITIAL_SESSION" ||
+            event === "SIGNED_IN" ||
+            event === "TOKEN_REFRESHED"
+          ) {
+            setTimeout(finish, 0);
+          }
+
+          if (event === "SIGNED_OUT") {
+            _lastBootstrapUid = null;
+          }
+        });
+      } catch (_) {
+        finish();
+      }
+    });
+  }
+
+  async function getUid(sb) {
+    try {
+      const s = await sb.auth.getSession();
+      const uid = s?.data?.session?.user?.id || null;
+      if (uid) return uid;
+    } catch (_) {}
+
+    try {
+      const r = await sb.auth.getUser();
+      const uid = r?.data?.user?.id || null;
+      if (uid) return uid;
+    } catch (_) {}
+
     return null;
   }
-}
 
-  // --- Bootstrap global ---
-  window.bootstrapAuthAndProfile = async function bootstrapAuthAndProfile(opts = {}) {
+  async function fetchProfile(sb) {
+    if (navigator.onLine === false) return null;
+
+    try {
+      const prof = await sb.rpc("secure_get_me");
+      if (!prof?.error && prof?.data) return prof.data;
+    } catch (_) {}
+
+    return null;
+  }
+
+  async function runBootstrap() {
     const sb = initClient();
     if (!sb) return null;
 
-    const skipProfileFetch = !!opts.skipProfileFetch;
+    await waitInitialSession(sb);
 
-    // 1) Session existante ?
     let uid = await getUid(sb);
 
-    // 2) Sinon, auth anonyme
     if (!uid) {
       try {
         const r = await sb.auth.signInAnonymously();
-        uid = r?.data?.user?.id || null;
+        uid = r?.data?.user?.id || r?.data?.session?.user?.id || null;
       } catch (_) {}
     }
 
-    // 3) Profil seulement si demandé
-    if (!skipProfileFetch && navigator.onLine !== false) {
+    if (!uid) return null;
+
+    _lastBootstrapUid = uid;
+
+    const prof = await fetchProfile(sb);
+    if (prof && typeof prof === "object") return prof;
+
+    return { id: uid };
+  }
+
+  async function bootstrapAuthAndProfile(options = {}) {
+    const force = !!options.force;
+
+    if (force) {
+      _bootstrapPromise = null;
+      _lastBootstrapUid = null;
+    }
+
+    if (_bootstrapPromise) {
+      return _bootstrapPromise;
+    }
+
+    _bootstrapPromise = (async () => {
       try {
-        const prof = await sb.rpc("secure_get_me");
-        if (!prof?.error && prof?.data) return prof.data;
-      } catch (_) {}
+        return await runBootstrap();
+      } finally {
+        _bootstrapPromise = null;
+      }
+    })();
+
+    return _bootstrapPromise;
+  }
+
+  window.bootstrapAuthAndProfile = bootstrapAuthAndProfile;
+  window.vrWaitBootstrap = bootstrapAuthAndProfile;
+
+  try {
+    const sb = initClient();
+    if (sb?.auth?.onAuthStateChange) {
+      sb.auth.onAuthStateChange((event, session) => {
+        if (event === "SIGNED_OUT") {
+          _lastBootstrapUid = null;
+        } else if (session?.user?.id) {
+          _lastBootstrapUid = session.user.id;
+        }
+      });
     }
+  } catch (_) {}
 
-    // 4) fallback minimal
-    if (uid) return { id: uid };
-    return null;
-  };
-
-  // Init immédiat (sans bloquer)
   try { initClient(); } catch (_) {}
 })();
