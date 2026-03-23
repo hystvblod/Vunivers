@@ -386,6 +386,21 @@
       text-decoration:underline;
     }
 
+    .vr-licensePre{
+      margin:0;
+      max-height:min(60vh, 520px);
+      overflow:auto;
+      white-space:pre-wrap;
+      word-break:break-word;
+      padding:12px;
+      border-radius:12px;
+      background:rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.12);
+      font-size:12px;
+      line-height:1.4;
+      text-align:left;
+    }
+
     #settingsMsg{
       margin-top:10px;
       min-height:18px;
@@ -473,6 +488,16 @@
           </div>
 
           <div class="vr-settingsSection">
+            <a id="btnOpenLicenses" class="vr-navRow" href="#" aria-label="">
+              <div class="vr-navText">
+                <p id="settingsLicensesLabel" class="vr-navLabel"></p>
+              </div>
+
+              <span class="vr-navArrow" aria-hidden="true">›</span>
+            </a>
+          </div>
+
+          <div class="vr-settingsSection">
             <div id="settingsHelpTitle" class="vr-settingsSectionTitle"></div>
 
             <div class="vr-helpLine">
@@ -486,6 +511,16 @@
       </div>
     </section>
   </main>
+
+  <div id="licensesModal" class="vrLangOverlay" hidden>
+    <div class="vrLangCard" role="dialog" aria-modal="true" aria-labelledby="licensesModalTitle">
+      <div class="vrLangTitleRow">
+        <h2 id="licensesModalTitle" class="vrLangTitle"></h2>
+        <button id="btnCloseLicenses" type="button" class="vrLangClose" aria-label="">×</button>
+      </div>
+      <pre id="licensesContent" class="vr-licensePre"></pre>
+    </div>
+  </div>
 
   <script src="js/supabase.min.js"></script>
   <script src="js/supabaseBootstrap.js"></script>
@@ -651,6 +686,10 @@
       const faqBtn = $("btnOpenFaq");
       const faqLabel = $("settingsFaqLabel");
       const faqDesc = $("settingsFaqDesc");
+      const licensesBtn = $("btnOpenLicenses");
+      const licensesLabel = $("settingsLicensesLabel");
+      const licensesModalTitle = $("licensesModalTitle");
+      const closeLicensesBtn = $("btnCloseLicenses");
       const helpTitle = $("settingsHelpTitle");
       const helpLab = $("helpEmailLabel");
       const helpVal = $("helpEmailValue");
@@ -670,6 +709,10 @@
       if(faqBtn) faqBtn.setAttribute("aria-label", t("ui.settings_open_faq_aria"));
       if(faqLabel) faqLabel.textContent = t("ui.settings_faq_label");
       if(faqDesc) faqDesc.textContent = t("ui.settings_faq_desc");
+      if(licensesBtn) licensesBtn.setAttribute("aria-label", t("ui.settings_open_licenses_aria"));
+      if(licensesLabel) licensesLabel.textContent = t("ui.settings_licenses_label");
+      if(licensesModalTitle) licensesModalTitle.textContent = t("ui.settings_licenses_label");
+      if(closeLicensesBtn) closeLicensesBtn.setAttribute("aria-label", t("common.close"));
       if(helpTitle) helpTitle.textContent = t("ui.settings_help_title");
       if(helpLab) helpLab.textContent = t("ui.settings_help_email_label");
 
@@ -773,6 +816,37 @@
       }
     }
 
+    let licensesJsonCache = null;
+
+    async function loadLicensesJson(){
+      if(licensesJsonCache) return licensesJsonCache;
+      const res = await fetch("assets/licenses/licences.json", { cache:"no-cache" });
+      if(!res.ok) throw new Error(`licenses fetch failed: ${res.status}`);
+      licensesJsonCache = await res.json();
+      return licensesJsonCache;
+    }
+
+    async function openLicenses(){
+      const modal = $("licensesModal");
+      const content = $("licensesContent");
+      if(!modal || !content) return;
+
+      content.textContent = "...";
+      modal.hidden = false;
+
+      try{
+        const data = await loadLicensesJson();
+        content.textContent = JSON.stringify(data, null, 2);
+      }catch(err){
+        content.textContent = String(err && err.message ? err.message : err || "Unable to load licenses.");
+      }
+    }
+
+    function closeLicenses(){
+      const modal = $("licensesModal");
+      if(modal) modal.hidden = true;
+    }
+
     function getAdsPref(){
       try{
         if(window.VRAds && typeof window.VRAds.getPersonalizedConsent === "function"){
@@ -852,6 +926,30 @@
       getStoredLang() || detectDeviceLang() || window.VRI18n?.getLang?.() || "en",
       { showMsg:false }
     );
+
+    const licensesBtn = $("btnOpenLicenses");
+    if(licensesBtn){
+      licensesBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        openLicenses();
+      });
+    }
+
+    const closeLicensesBtn = $("btnCloseLicenses");
+    if(closeLicensesBtn){
+      closeLicensesBtn.addEventListener("click", closeLicenses);
+    }
+
+    const licensesModal = $("licensesModal");
+    if(licensesModal){
+      licensesModal.addEventListener("click", (event) => {
+        if(event.target === licensesModal) closeLicenses();
+      });
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if(event.key === "Escape") closeLicenses();
+    });
 
     const adsBox = $("adsPersonalized");
     if(adsBox){

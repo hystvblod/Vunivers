@@ -137,7 +137,9 @@
       "err_buy_failed": "Kauf abgebrochen oder fehlgeschlagen.",
       "err_unlock_after_buy": "Kauf bestätigt, aber Freischaltung fehlgeschlagen. Versuche es später erneut.",
       "err_unlock_after_iap": "Kauf bestätigt, aber Freischaltung derzeit nicht möglich. Versuche es erneut im Shop."
-    }
+    },
+    "settings_licenses_label": "Lizenzen",
+    "settings_open_licenses_aria": "Lizenzen öffnen"
   },
   "gauges": {
     "hell_king": {

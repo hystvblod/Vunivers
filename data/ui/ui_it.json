@@ -136,7 +136,9 @@
       "err_buy_failed": "Acquisto annullato o impossibile.",
       "err_unlock_after_buy": "Acquisto convalidato, ma sblocco impossibile. Riprova più tardi.",
       "err_unlock_after_iap": "Acquisto convalidato, ma sblocco impossibile al momento. Riprova dal negozio."
-    }
+    },
+    "settings_licenses_label": "Licenze",
+    "settings_open_licenses_aria": "Apri licenze"
   },
   "gauges": {
     "hell_king": {

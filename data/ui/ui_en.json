@@ -137,7 +137,9 @@
       "err_buy_failed": "Purchase canceled or failed.",
       "err_unlock_after_buy": "Purchase validated, but unlock failed. Try again later.",
       "err_unlock_after_iap": "Purchase validated, but unlock is not possible right now. Try again from the shop."
-    }
+    },
+    "settings_licenses_label": "Licenses",
+    "settings_open_licenses_aria": "Open licenses"
   },
   "gauges": {
     "hell_king": {

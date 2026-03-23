@@ -137,7 +137,9 @@
       "err_buy_failed": "Compra cancelada o imposible.",
       "err_unlock_after_buy": "Compra validada, pero no se pudo desbloquear. Inténtalo más tarde.",
       "err_unlock_after_iap": "Compra validada, pero el desbloqueo no es posible por ahora. Inténtalo desde la tienda."
-    }
+    },
+    "settings_licenses_label": "Licencias",
+    "settings_open_licenses_aria": "Abrir licencias"
   },
   "gauges": {
     "hell_king": {

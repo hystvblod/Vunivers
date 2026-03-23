@@ -136,7 +136,9 @@
       "err_buy_failed": "購入がキャンセルされたか、実行できませんでした。",
       "err_unlock_after_buy": "購入は確認されましたが、解除できませんでした。あとでもう一度お試しください。",
       "err_unlock_after_iap": "購入は確認されましたが、現在は解除できません。ショップから再度お試しください。"
-    }
+    },
+    "settings_licenses_label": "ライセンス",
+    "settings_open_licenses_aria": "ライセンスを開く"
   },
   "gauges": {
     "hell_king": {
