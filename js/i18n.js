@@ -467,6 +467,7 @@ async function tryLoadUiBundle(bundle, lang) {
 
   async function setLang(lang) {
     const l = saveLangLocal(lang);
+    markExplicitLanguageChoice();
     const { dict, lang: resolvedLang } = await loadUi(l);
 
     _lang = resolvedLang || l;
