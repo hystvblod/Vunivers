@@ -19,12 +19,5 @@
     "title": "Il gettone",
     "body": "Ops! La barra Equilibrio è molto bassa. Premi il gettone, poi usa l’opzione che riporta una barra al 50 %. Dopo, fai clic sulla barra che lampeggia.",
     "choices": {}
-  },
-  "intro_004": {
-    "title": "Le ricompense",
-    "body_html": "Giocando, guadagni <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> e <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"><br><br>I <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> servono a sbloccare universi e personalizzazioni.<br><br>I <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> servono a ottenere aiuto durante la partita.<br><br>Puoi personalizzare il tuo gioco cliccando sulla palette in alto in ogni universo oppure andando nel negozio.",
-    "choices": {
-      "A": "Termina l'introduzione"
-    }
   }
 }

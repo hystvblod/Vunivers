@@ -561,7 +561,8 @@
     "finish": {
       "title": "Selamat",
       "body": "Kamu siap memerintah banyak semesta.",
-      "gift": "Ini hadiah kecil untukmu",
+      "info_html": "<p>Saat bermain, kamu mendapatkan <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> dan <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"></p><p><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> digunakan untuk membuka semesta dan kustomisasi.</p><p><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> digunakan untuk mendapatkan bantuan selama permainan.</p><p>Kamu bisa menyesuaikan permainanmu dengan mengeklik palet di bagian atas setiap semesta atau pergi ke toko.</p>",
+      "gift": "Dengan menyelesaikan intro, kamu menerima:",
       "token": "token",
       "cta": "Mulai"
     }

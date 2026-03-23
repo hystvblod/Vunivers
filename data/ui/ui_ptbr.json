@@ -561,7 +561,8 @@
     "finish": {
       "title": "Parabéns",
       "body": "Você está pronto para governar muitos universos.",
-      "gift": "Aqui vai um pequeno presente",
+      "info_html": "<p>Ao jogar, você ganha <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> e <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"></p><p>As <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> servem para desbloquear universos e personalizações.</p><p>As <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> servem para conseguir ajuda durante a partida.</p><p>Você pode personalizar seu jogo clicando na paleta no topo de cada universo ou indo até a loja.</p>",
+      "gift": "Ao terminar a introdução, você recebe:",
       "token": "ficha",
       "cta": "Começar"
     }

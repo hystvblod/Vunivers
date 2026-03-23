@@ -19,12 +19,5 @@
     "title": "Der Jeton",
     "body": "Ups! Der Gleichgewichts-Balken ist sehr niedrig. Tippe auf den Jeton und benutze dann die Option, die einen Balken auf 50 % zurücksetzt. Klicke danach auf den blinkenden Balken.",
     "choices": {}
-  },
-  "intro_004": {
-    "title": "Belohnungen",
-    "body_html": "Beim Spielen verdienst du <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> und <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"><br><br>Mit <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> kannst du Universen und Anpassungen freischalten.<br><br>Mit <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> kannst du während des Spiels Hilfe erhalten.<br><br>Du kannst dein Spiel anpassen, indem du oben in jedem Universum auf die Palette klickst oder in den Shop gehst.",
-    "choices": {
-      "A": "Intro beenden"
-    }
   }
 }

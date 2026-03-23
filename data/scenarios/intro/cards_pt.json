@@ -19,12 +19,5 @@
     "title": "A ficha",
     "body": "Ups! A barra de Equilíbrio está muito baixa. Carrega na ficha e depois usa a opção que repõe uma barra a 50 %. Em seguida, clica na barra que está a piscar.",
     "choices": {}
-  },
-  "intro_004": {
-    "title": "As recompensas",
-    "body_html": "Ao jogar, ganhas <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> e <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"><br><br>As <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> servem para desbloquear universos e personalizações.<br><br>As <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> servem para obter ajuda durante a partida.<br><br>Podes personalizar o teu jogo clicando na paleta no topo de cada universo ou indo até à loja.",
-    "choices": {
-      "A": "Terminar a introdução"
-    }
   }
 }
