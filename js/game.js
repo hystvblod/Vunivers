@@ -588,6 +588,9 @@ body.vr-peek-mode .vr-gauge-preview{
         else bodyEl.textContent = texts.body || "";
       }
 
+      if (cardMain && texts.title_html) {
+        cardMain.classList.add("is-intro-rich-card");
+      }
 
       if (choiceAEl) choiceAEl.textContent = texts.choices?.A || "";
       if (choiceBEl) choiceBEl.textContent = texts.choices?.B || "";
