@@ -22,7 +22,7 @@
   },
   "intro_004": {
     "title": "Belohnungen",
-    "body_html": "<div class=\"vr-intro-rewards-copy\">Beim Spielen verdienst du <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> und <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"><br><br>Mit <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> kannst du Universen und Anpassungen freischalten.<br><br>Mit <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> kannst du während des Spiels Hilfe erhalten.<br><br>Du kannst dein Spiel anpassen, indem du oben in jedem Universum auf die Palette klickst, oder du gehst in den Shop.</div>",
+    "body_html": "<div class=\"vr-intro-rewards-copy\"><p>Beim Spielen verdienst du <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> und <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"></p><p>Mit <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> kannst du Universen und Anpassungen freischalten.</p><p>Mit <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> kannst du während des Spiels Hilfe erhalten.</p><p>Du kannst dein Spiel anpassen, indem du oben in jedem Universum auf die Palette klickst oder in den Shop gehst.</p></div>",
     "choices": {
       "A": "Intro beenden"
     }

@@ -22,7 +22,7 @@
   },
   "intro_004": {
     "title": "Le ricompense",
-    "body_html": "<div class=\"vr-intro-rewards-copy\">Giocando, guadagni <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> e <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"><br><br>I <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> servono a sbloccare universi e personalizzazioni.<br><br>I <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> servono a ottenere aiuto durante la partita.<br><br>Puoi personalizzare il tuo gioco cliccando sulla palette in alto in ogni universo oppure andare nel negozio.</div>",
+    "body_html": "<div class=\"vr-intro-rewards-copy\"><p>Giocando, guadagni <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> e <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"></p><p>I <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> servono a sbloccare universi e personalizzazioni.</p><p>I <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> servono a ottenere aiuto durante la partita.</p><p>Puoi personalizzare il tuo gioco cliccando sulla palette in alto in ogni universo oppure andando nel negozio.</p></div>",
     "choices": {
       "A": "Termina l'introduzione"
     }

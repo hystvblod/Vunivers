@@ -22,7 +22,7 @@
   },
   "intro_004": {
     "title": "報酬",
-    "body_html": "<div class=\"vr-intro-rewards-copy\">プレイすると <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> と <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> を獲得できます。<br><br><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> は世界やカスタマイズのアンロックに使います。<br><br><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> はプレイ中に助けを得るために使います。<br><br>各世界の上にあるパレットをクリックしてゲームをカスタマイズするか、ショップに行くことができます。</div>",
+    "body_html": "<div class=\"vr-intro-rewards-copy\"><p>プレイすると <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> と <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> を獲得できます。</p><p><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> は世界やカスタマイズのアンロックに使います。</p><p><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> はプレイ中に助けを得るために使います。</p><p>各世界の上にあるパレットをクリックしてゲームをカスタマイズするか、ショップに行くことができます。</p></div>",
     "choices": {
       "A": "イントロを終了"
     }
