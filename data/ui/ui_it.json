@@ -477,6 +477,27 @@
     "toast": {
       "insufficient_vcoins": "VCoins insufficienti",
       "not_owned": "Oggetto non posseduto"
+    },
+    "preview": {
+      "sample_title": "Decisione",
+      "sample_text": "Anteprima del cosmetico selezionato in situazione.",
+      "sample_choice_a": "Accettare",
+      "sample_choice_b": "Rifiutare",
+      "sample_choice_c": "Rimandare"
+    },
+    "status": {
+      "noads_on": "✅ Nessuna pubblicità: attivata",
+      "noads_off": "ℹ️ Nessuna pubblicità: disattivata",
+      "purchase_restored": "✅ Acquisto ripristinato",
+      "pending": "…",
+      "purchase_credited": "✅ Acquisto accreditato",
+      "purchase_not_credited": "❌ Acquisto non accreditato",
+      "ad_not_ready": "Sistema pubblicitario non pronto",
+      "reward_not_validated": "❌ Pubblicità non convalidata",
+      "reward_validated": "✅ Ricompensa convalidata",
+      "reward_error": "❌ Errore annuncio con ricompensa",
+      "iap_unavailable_web": "⚠️ IAP non disponibile sul web.",
+      "product_not_found_prefix": "⚠️ Prodotto non trovato: "
     }
   },
   "settings": {

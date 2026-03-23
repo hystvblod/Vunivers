@@ -477,6 +477,27 @@
     "toast": {
       "insufficient_vcoins": "VCoins tidak cukup",
       "not_owned": "Item tidak dimiliki"
+    },
+    "preview": {
+      "sample_title": "Keputusan",
+      "sample_text": "Pratinjau kosmetik yang dipilih dalam situasi.",
+      "sample_choice_a": "Terima",
+      "sample_choice_b": "Tolak",
+      "sample_choice_c": "Tunda"
+    },
+    "status": {
+      "noads_on": "✅ Tanpa iklan: aktif",
+      "noads_off": "ℹ️ Tanpa iklan: nonaktif",
+      "purchase_restored": "✅ Pembelian dipulihkan",
+      "pending": "…",
+      "purchase_credited": "✅ Pembelian dikreditkan",
+      "purchase_not_credited": "❌ Pembelian tidak dikreditkan",
+      "ad_not_ready": "Sistem iklan belum siap",
+      "reward_not_validated": "❌ Iklan tidak tervalidasi",
+      "reward_validated": "✅ Hadiah tervalidasi",
+      "reward_error": "❌ Kesalahan iklan berhadiah",
+      "iap_unavailable_web": "⚠️ IAP tidak tersedia di web.",
+      "product_not_found_prefix": "⚠️ Produk tidak ditemukan: "
     }
   },
   "settings": {

@@ -478,6 +478,27 @@
     "toast": {
       "insufficient_vcoins": "Pas assez de VCoins",
       "not_owned": "Objet non possédé"
+    },
+    "preview": {
+      "sample_title": "Décision",
+      "sample_text": "Aperçu en situation du cosmétique sélectionné.",
+      "sample_choice_a": "Accepter",
+      "sample_choice_b": "Refuser",
+      "sample_choice_c": "Reporter"
+    },
+    "status": {
+      "noads_on": "✅ No Pub : activé",
+      "noads_off": "ℹ️ No Pub : désactivé",
+      "purchase_restored": "✅ Achat restauré",
+      "pending": "…",
+      "purchase_credited": "✅ Achat crédité",
+      "purchase_not_credited": "❌ Achat non crédité",
+      "ad_not_ready": "Système de pub indisponible",
+      "reward_not_validated": "❌ Pub non validée",
+      "reward_validated": "✅ Récompense validée",
+      "reward_error": "❌ Erreur pub récompensée",
+      "iap_unavailable_web": "⚠️ IAP indisponible sur le web.",
+      "product_not_found_prefix": "⚠️ Produit introuvable : "
     }
   },
   "settings": {

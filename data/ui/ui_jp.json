@@ -477,6 +477,27 @@
     "toast": {
       "insufficient_vcoins": "VCoinsが足りません",
       "not_owned": "未所持のアイテムです"
+    },
+    "preview": {
+      "sample_title": "決断",
+      "sample_text": "選択したコスメティックのゲーム内プレビューです。",
+      "sample_choice_a": "受け入れる",
+      "sample_choice_b": "拒否する",
+      "sample_choice_c": "保留する"
+    },
+    "status": {
+      "noads_on": "✅ 広告なし：有効",
+      "noads_off": "ℹ️ 広告なし：無効",
+      "purchase_restored": "✅ 購入を復元しました",
+      "pending": "…",
+      "purchase_credited": "✅ 購入を反映しました",
+      "purchase_not_credited": "❌ 購入を反映できませんでした",
+      "ad_not_ready": "広告システムを利用できません",
+      "reward_not_validated": "❌ 広告を検証できませんでした",
+      "reward_validated": "✅ 報酬を検証しました",
+      "reward_error": "❌ リワード広告エラー",
+      "iap_unavailable_web": "⚠️ IAPはWebでは利用できません。",
+      "product_not_found_prefix": "⚠️ 商品が見つかりません: "
     }
   },
   "settings": {
