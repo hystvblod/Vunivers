@@ -562,9 +562,19 @@
       "title": "Bravo",
       "body": "Sei pronto a governare molti universi.",
       "info_html": "<p>Giocando, guadagni <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> e <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"></p><p>I <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> servono a sbloccare universi e personalizzazioni.</p><p>I <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> servono a ottenere aiuto durante la partita.</p><p>Puoi personalizzare il tuo gioco cliccando sulla palette in alto in ogni universo oppure andando nel negozio.</p>",
-      "gift": "Completando l'introduzione, ricevi:",
+      "gift": "Per iniziare la tua avventura, ecco qui:",
       "token": "gettone",
-      "cta": "Inizia"
+      "cta": "Inizia",
+      "name_title": "Con chi ho l'onore?",
+      "name_placeholder": "Il tuo nome",
+      "name_save": "Conferma",
+      "name_confirm": "Sei sicuro di voler tenere questo nome: {name}?",
+      "name_missing": "Inserisci un nome.",
+      "name_err_length": "Il nome deve contenere tra 3 e 20 caratteri.",
+      "name_err_invalid": "Usa solo lettere, numeri, _ o -.",
+      "name_err_taken": "Questo nome è già in uso.",
+      "name_err_generic": "Impossibile salvare il nome.",
+      "name_working": "Salvataggio..."
     }
   },
   "onesignal": {

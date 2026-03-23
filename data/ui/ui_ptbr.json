@@ -562,9 +562,19 @@
       "title": "Parabéns",
       "body": "Você está pronto para governar muitos universos.",
       "info_html": "<p>Ao jogar, você ganha <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> e <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"></p><p>As <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> servem para desbloquear universos e personalizações.</p><p>As <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> servem para conseguir ajuda durante a partida.</p><p>Você pode personalizar seu jogo clicando na paleta no topo de cada universo ou indo até a loja.</p>",
-      "gift": "Ao terminar a introdução, você recebe:",
+      "gift": "Para começar sua aventura, aqui está:",
       "token": "ficha",
-      "cta": "Começar"
+      "cta": "Começar",
+      "name_title": "Com quem tenho a honra?",
+      "name_placeholder": "Seu nome",
+      "name_save": "Confirmar",
+      "name_confirm": "Tem certeza de que quer ficar com este nome: {name}?",
+      "name_missing": "Digite um nome.",
+      "name_err_length": "O nome deve ter entre 3 e 20 caracteres.",
+      "name_err_invalid": "Use apenas letras, números, _ ou -.",
+      "name_err_taken": "Este nome já está em uso.",
+      "name_err_generic": "Não foi possível salvar o nome.",
+      "name_working": "Salvando..."
     }
   },
   "onesignal": {

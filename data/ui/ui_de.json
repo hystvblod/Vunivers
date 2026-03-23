@@ -563,9 +563,19 @@
       "title": "Bravo",
       "body": "Du bist bereit, viele Universen zu regieren.",
       "info_html": "<p>Beim Spielen verdienst du <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> und <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"></p><p>Mit <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> kannst du Universen und Anpassungen freischalten.</p><p>Mit <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> kannst du während des Spiels Hilfe erhalten.</p><p>Du kannst dein Spiel anpassen, indem du oben in jedem Universum auf die Palette klickst oder in den Shop gehst.</p>",
-      "gift": "Wenn du das Intro abschließt, erhältst du:",
+      "gift": "Um dein Abenteuer zu beginnen, hier ist dein Geschenk:",
       "token": "Token",
-      "cta": "Starten"
+      "cta": "Starten",
+      "name_title": "Mit wem habe ich die Ehre?",
+      "name_placeholder": "Dein Name",
+      "name_save": "Bestätigen",
+      "name_confirm": "Möchtest du diesen Namen wirklich behalten: {name}?",
+      "name_missing": "Gib einen Namen ein.",
+      "name_err_length": "Der Name muss zwischen 3 und 20 Zeichen lang sein.",
+      "name_err_invalid": "Verwende nur Buchstaben, Zahlen, _ oder -.",
+      "name_err_taken": "Dieser Name ist bereits vergeben.",
+      "name_err_generic": "Der Name konnte nicht gespeichert werden.",
+      "name_working": "Wird gespeichert..."
     }
   },
   "onesignal": {

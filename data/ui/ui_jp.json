@@ -562,9 +562,19 @@
       "title": "おめでとう",
       "body": "あなたは多くのユニバースを統治する準備ができています。",
       "info_html": "<p>プレイすると <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> と <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> を獲得できます。</p><p><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> は世界やカスタマイズのアンロックに使います。</p><p><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> はプレイ中に助けを得るために使います。</p><p>各世界の上にあるパレットをクリックしてゲームをカスタマイズするか、ショップに行くことができます。</p>",
-      "gift": "イントロを終えると、次の報酬を受け取れます。",
+      "gift": "冒険を始める前に、こちらをどうぞ。",
       "token": "トークン",
-      "cta": "始める"
+      "cta": "始める",
+      "name_title": "お名前をうかがってもよろしいですか？",
+      "name_placeholder": "あなたの名前",
+      "name_save": "決定",
+      "name_confirm": "この名前でよろしいですか: {name}？",
+      "name_missing": "名前を入力してください。",
+      "name_err_length": "名前は3文字以上20文字以内で入力してください。",
+      "name_err_invalid": "使用できるのは英字、数字、_、- のみです。",
+      "name_err_taken": "この名前はすでに使われています。",
+      "name_err_generic": "名前を保存できませんでした。",
+      "name_working": "保存中..."
     }
   },
   "onesignal": {

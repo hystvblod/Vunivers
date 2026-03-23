@@ -3335,23 +3335,41 @@ body.vr-peek-mode .vr-gauge-preview{
           color:#fff;
         }
 
-        #vr-intro-finish-overlay .vr-intro-rewards-copy{
+        #vr-intro-finish-overlay #vr-intro-finish-info{
           width:100%;
-          max-width:280px;
-          margin:0;
-          text-align:center;
-          font-size:clamp(13px, 3.8vw, 16px);
-          line-height:1.35;
-          font-weight:800;
-          color:#fff;
         }
 
-        #vr-intro-finish-overlay .vr-intro-rewards-copy p{
+        #vr-intro-finish-overlay #vr-intro-finish-info .vr-intro-rewards-copy{
+          width:100%;
+          max-width:280px;
+          margin:6px 0 0;
+          font-size:clamp(12px, 3.35vw, 14px);
+          line-height:1.56;
+          font-weight:700;
+          color:#fff;
+          text-align:justify;
+          text-justify:inter-word;
+          text-align-last:left;
+          word-break:normal;
+          overflow-wrap:normal;
+          hyphens:none;
+        }
+
+        #vr-intro-finish-overlay #vr-intro-finish-info .vr-intro-rewards-copy p{
           margin:0 0 8px;
         }
 
-        #vr-intro-finish-overlay .vr-intro-rewards-copy p:last-child{
+        #vr-intro-finish-overlay #vr-intro-finish-info .vr-intro-rewards-copy p:last-child{
           margin-bottom:0;
+        }
+
+        #vr-intro-finish-overlay #vr-intro-finish-info .vr-intro-inline-icon{
+          width:1.42em;
+          height:1.42em;
+          margin:0 0.08em;
+          vertical-align:-0.20em;
+          object-fit:contain;
+          filter:drop-shadow(0 4px 10px rgba(0,0,0,.22));
         }
 
         #vr-intro-finish-overlay .vr-intro-finish-rewards{
@@ -3386,14 +3404,83 @@ body.vr-peek-mode .vr-gauge-preview{
           filter:drop-shadow(0 6px 14px rgba(0,0,0,.28));
         }
 
-        #vr-intro-finish-overlay #vr-intro-finish-close{
+        #vr-intro-finish-overlay .vr-intro-name-block{
           width:100%;
-          min-height:92px;
-          margin-top:6px;
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          gap:10px;
+          margin-top:8px;
+        }
+
+        #vr-intro-finish-overlay .vr-intro-name-title{
+          margin:0;
+          text-align:center;
+          font-size:clamp(16px, 4.6vw, 20px);
+          line-height:1.25;
+          font-weight:900;
+          color:#fff;
+        }
+
+        #vr-intro-finish-overlay .vr-intro-name-input{
+          width:min(248px, 100%);
+          min-height:52px;
+          padding:0 16px;
+          border-radius:16px;
+          border:1px solid rgba(255,255,255,.18);
+          background:rgba(255,255,255,.08);
+          color:#fff;
+          font-size:clamp(16px, 4.2vw, 18px);
+          font-weight:800;
+          text-align:center;
+          outline:none;
+          box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+        }
+
+        #vr-intro-finish-overlay .vr-intro-name-input::placeholder{
+          color:rgba(255,255,255,.66);
+        }
+
+        #vr-intro-finish-overlay .vr-intro-name-input:focus{
+          border-color:rgba(255,255,255,.34);
+          box-shadow:
+            0 0 0 3px rgba(255,255,255,.08),
+            inset 0 1px 0 rgba(255,255,255,.08);
+        }
+
+        #vr-intro-finish-overlay .vr-intro-name-msg{
+          min-height:18px;
+          width:min(270px, 100%);
+          text-align:center;
+          font-size:12px;
+          line-height:1.35;
+          font-weight:700;
+          color:rgba(255,255,255,.86);
+        }
+
+        #vr-intro-finish-overlay .vr-intro-name-msg.is-error{
+          color:#ffd4d4;
+        }
+
+        #vr-intro-finish-overlay .vr-intro-name-msg.is-ok{
+          color:#d8ffd8;
+        }
+
+        #vr-intro-finish-overlay #vr-intro-finish-close{
+          width:min(228px, 100%);
+          min-height:60px;
+          margin-top:4px;
+          padding:14px 20px;
+          align-self:center;
           color:#fff !important;
-          font-size:clamp(20px, 5vw, 28px) !important;
+          font-size:clamp(18px, 4.8vw, 24px) !important;
           font-weight:900 !important;
-          text-shadow: 0 2px 8px rgba(0,0,0,.35) !important;
+          text-shadow:0 2px 8px rgba(0,0,0,.35) !important;
+        }
+
+        #vr-intro-finish-overlay #vr-intro-finish-close[disabled]{
+          opacity:.66;
+          pointer-events:none;
         }
 
         @keyframes vrIntroChoiceGlow{
@@ -3739,7 +3826,9 @@ function onGaugeSet(gaugeId) {
       <div class="vr-ending-card vr-intro-finish-card" role="dialog" aria-modal="true">
         <h3 class="vr-intro-finish-title" id="vr-intro-finish-title"></h3>
         <p class="vr-intro-finish-text" id="vr-intro-finish-text"></p>
-        <div class="vr-intro-rewards-copy" id="vr-intro-finish-info"></div>
+
+        <div id="vr-intro-finish-info"></div>
+
         <p class="vr-intro-finish-gift-text" id="vr-intro-finish-gift-text"></p>
 
         <div class="vr-intro-finish-rewards">
@@ -3751,6 +3840,20 @@ function onGaugeSet(gaugeId) {
             <strong>+${INTRO_REWARD_TOKENS}</strong>
             <img src="assets/img/ui/jeton.webp" alt="" draggable="false">
           </div>
+        </div>
+
+        <div class="vr-intro-name-block">
+          <p class="vr-intro-name-title" id="vr-intro-name-title"></p>
+          <input
+            id="vr-intro-name-input"
+            class="vr-intro-name-input"
+            type="text"
+            maxlength="20"
+            autocomplete="off"
+            autocapitalize="none"
+            spellcheck="false"
+          />
+          <div class="vr-intro-name-msg" id="vr-intro-name-msg" aria-live="polite"></div>
         </div>
 
         <button id="vr-intro-finish-close" class="vr-choice-button" type="button"></button>
@@ -3766,13 +3869,47 @@ function onGaugeSet(gaugeId) {
     const textEl = document.getElementById("vr-intro-finish-text");
     const infoEl = document.getElementById("vr-intro-finish-info");
     const giftEl = document.getElementById("vr-intro-finish-gift-text");
-    const closeBtn = document.getElementById("vr-intro-finish-close");
+    const nameTitleEl = document.getElementById("vr-intro-name-title");
+    const nameInput = document.getElementById("vr-intro-name-input");
+    const msgEl = document.getElementById("vr-intro-name-msg");
+    const submitBtn = document.getElementById("vr-intro-finish-close");
 
     if (titleEl) titleEl.textContent = t("intro.finish.title", "Bravo");
-    if (textEl) textEl.textContent = t("intro.finish.body", "Bravo, tu es prêt à commencer.");
+    if (textEl) textEl.textContent = t("intro.finish.body", "Tu es prêt à gouverner de nombreux univers.");
     if (infoEl) infoEl.innerHTML = t("intro.finish.info_html", "");
-    if (giftEl) giftEl.textContent = t("intro.finish.gift", "Voici un petit cadeau");
-    if (closeBtn) closeBtn.textContent = t("intro.finish.cta", "Commencer");
+    if (giftEl) giftEl.textContent = t("intro.finish.gift", "Pour commencer ton aventure, voici :");
+    if (nameTitleEl) nameTitleEl.textContent = t("intro.finish.name_title", "À qui ai-je l'honneur ?");
+
+    const currentName =
+      String(
+        window.VUserData?.getUsername?.() ||
+        window.VUserData?.load?.()?.username ||
+        ""
+      ).trim();
+
+    if (nameInput) {
+      nameInput.placeholder = t("intro.finish.name_placeholder", "Ton nom");
+      nameInput.value = currentName;
+    }
+
+    if (msgEl) {
+      msgEl.textContent = "";
+      msgEl.className = "vr-intro-name-msg";
+    }
+
+    if (submitBtn) {
+      submitBtn.textContent = t("intro.finish.name_save", "Valider");
+    }
+  }
+
+  function setIntroNameMsg(kind, text) {
+    const el = document.getElementById("vr-intro-name-msg");
+    if (!el) return;
+    el.textContent = String(text || "");
+    el.className = "vr-intro-name-msg" + (
+      kind === "error" ? " is-error" :
+      kind === "ok" ? " is-ok" : ""
+    );
   }
 
   function showFinishPopup() {
@@ -3780,23 +3917,113 @@ function onGaugeSet(gaugeId) {
     fillFinishPopupTexts();
 
     return new Promise((resolve) => {
-      const closeBtn = document.getElementById("vr-intro-finish-close");
+      const submitBtn = document.getElementById("vr-intro-finish-close");
+      const input = document.getElementById("vr-intro-name-input");
 
-      const close = () => {
+      const closeAndResolve = () => {
         overlay.classList.remove("vr-ending-visible");
         overlay.setAttribute("aria-hidden", "true");
         resolve(true);
       };
 
-      overlay.onclick = (e) => {
-        if (e.target === overlay) close();
+      const setBusy = (busy) => {
+        if (submitBtn) submitBtn.disabled = !!busy;
+        if (input) input.disabled = !!busy;
       };
 
-      if (closeBtn) closeBtn.onclick = close;
+      const submit = async () => {
+        const name = String(input?.value || "").trim();
+
+        if (!name) {
+          setIntroNameMsg("error", t("intro.finish.name_missing", "Entre un nom."));
+          try { input?.focus?.({ preventScroll: true }); } catch (_) {}
+          return;
+        }
+
+        if (name.length < 3 || name.length > 20) {
+          setIntroNameMsg("error", t("intro.finish.name_err_length", "Le nom doit faire entre 3 et 20 caractères."));
+          try { input?.focus?.({ preventScroll: true }); } catch (_) {}
+          return;
+        }
+
+        if (!/^[a-zA-Z0-9_-]+$/.test(name)) {
+          setIntroNameMsg("error", t("intro.finish.name_err_invalid", "Utilise seulement des lettres, des chiffres, _ ou -."));
+          try { input?.focus?.({ preventScroll: true }); } catch (_) {}
+          return;
+        }
+
+        const confirmText = t(
+          "intro.finish.name_confirm",
+          "Es-tu sûr de vouloir garder ce nom : {name} ?"
+        ).replace("{name}", name);
+
+        if (!window.confirm(confirmText)) return;
+
+        const currentName =
+          String(
+            window.VUserData?.getUsername?.() ||
+            window.VUserData?.load?.()?.username ||
+            ""
+          ).trim();
+
+        if (currentName === name) {
+          closeAndResolve();
+          return;
+        }
+
+        setIntroNameMsg("ok", t("intro.finish.name_working", "Enregistrement..."));
+        setBusy(true);
+
+        let res = null;
+        try {
+          res = await window.VUserData?.setUsername?.(name);
+        } catch (_) {
+          res = { ok: false, reason: "exception" };
+        }
+
+        setBusy(false);
+
+        if (res?.ok) {
+          closeAndResolve();
+          return;
+        }
+
+        const reason = String(res?.reason || "");
+        if (reason === "length") {
+          setIntroNameMsg("error", t("intro.finish.name_err_length", "Le nom doit faire entre 3 et 20 caractères."));
+        } else if (reason === "invalid") {
+          setIntroNameMsg("error", t("intro.finish.name_err_invalid", "Utilise seulement des lettres, des chiffres, _ ou -."));
+        } else if (reason === "taken") {
+          setIntroNameMsg("error", t("intro.finish.name_err_taken", "Ce nom est déjà pris."));
+        } else {
+          setIntroNameMsg("error", t("intro.finish.name_err_generic", "Impossible d’enregistrer le nom."));
+        }
+
+        try { input?.focus?.({ preventScroll: true }); } catch (_) {}
+      };
+
+      overlay.onclick = null;
+
+      if (submitBtn) {
+        submitBtn.onclick = submit;
+      }
+
+      if (input) {
+        input.onkeydown = (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            submit();
+          }
+        };
+      }
 
       overlay.setAttribute("aria-hidden", "false");
       overlay.classList.add("vr-ending-visible");
-      try { closeBtn?.focus?.({ preventScroll: true }); } catch (_) {}
+
+      setBusy(false);
+      setIntroNameMsg("", "");
+
+      try { input?.focus?.({ preventScroll: true }); } catch (_) {}
     });
   }
 
