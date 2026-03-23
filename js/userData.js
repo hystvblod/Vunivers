@@ -46,6 +46,9 @@
 
   let _uiPaused = true;
   let _pendingEmit = false;
+  let _ensureAuthPromise = null;
+  let _ensureAuthUid = null;
+  let _ensureAuthUidTs = 0;
 
   function _isDebug() {
     try { return !!window.__VR_DEBUG; } catch (_) { return false; }
@@ -409,54 +412,79 @@ async ensureAuth() {
   const sb = window.sb;
   if (!sb || !sb.auth) return null;
 
-  try {
-    if (typeof window.bootstrapAuthAndProfile === "function") {
-      const p = await window.bootstrapAuthAndProfile();
-      const pid = p?.id || null;
-      if (pid) return pid;
+  const now = Date.now();
+  if (_ensureAuthUid && (now - _ensureAuthUidTs) < 5000) {
+    return _ensureAuthUid;
+  }
+
+  if (_ensureAuthPromise) {
+    return await _ensureAuthPromise;
+  }
+
+  function remember(uid) {
+    if (uid) {
+      _ensureAuthUid = uid;
+      _ensureAuthUidTs = Date.now();
     }
-  } catch (e) {
-    _reportRemoteError("ensureAuth.bootstrapAuthAndProfile", e);
+    return uid || null;
   }
 
-  try {
-    const s1 = await sb.auth.getSession();
-    const uidSession = s1?.data?.session?.user?.id || null;
-    if (uidSession) return uidSession;
-  } catch (e) {
-    _reportRemoteError("ensureAuth.getSession", e);
-  }
+  _ensureAuthPromise = (async () => {
+    try {
+      if (typeof window.bootstrapAuthAndProfile === "function") {
+        const p = await window.bootstrapAuthAndProfile({ skipProfileFetch: true });
+        const pid = p?.id || null;
+        if (pid) return remember(pid);
+      }
+    } catch (e) {
+      _reportRemoteError("ensureAuth.bootstrapAuthAndProfile", e);
+    }
+
+    try {
+      const s1 = await sb.auth.getSession();
+      const uidSession = s1?.data?.session?.user?.id || null;
+      if (uidSession) return remember(uidSession);
+    } catch (e) {
+      _reportRemoteError("ensureAuth.getSession", e);
+    }
+
+    try {
+      const u1 = await sb.auth.getUser();
+      const uidUser = u1?.data?.user?.id || null;
+      if (uidUser) return remember(uidUser);
+    } catch (e) {
+      _reportRemoteError("ensureAuth.getUser", e);
+    }
+
+    await new Promise((resolve) => setTimeout(resolve, 250));
+
+    try {
+      const s2 = await sb.auth.getSession();
+      const uidRetry = s2?.data?.session?.user?.id || null;
+      if (uidRetry) return remember(uidRetry);
+    } catch (e) {
+      _reportRemoteError("ensureAuth.getSession.retry", e);
+    }
+
+    try {
+      const r = await sb.auth.signInAnonymously();
+      return remember(r?.data?.user?.id || r?.data?.session?.user?.id || null);
+    } catch (e) {
+      _reportRemoteError("ensureAuth.signInAnonymously", e);
+    }
+
+    try {
+      const s3 = await sb.auth.getSession();
+      return remember(s3?.data?.session?.user?.id || null);
+    } catch (_) {
+      return null;
+    }
+  })();
 
   try {
-    const u1 = await sb.auth.getUser();
-    const uidUser = u1?.data?.user?.id || null;
-    if (uidUser) return uidUser;
-  } catch (e) {
-    _reportRemoteError("ensureAuth.getUser", e);
-  }
-
-  await new Promise((resolve) => setTimeout(resolve, 250));
-
-  try {
-    const s2 = await sb.auth.getSession();
-    const uidRetry = s2?.data?.session?.user?.id || null;
-    if (uidRetry) return uidRetry;
-  } catch (e) {
-    _reportRemoteError("ensureAuth.getSession.retry", e);
-  }
-
-  try {
-    const r = await sb.auth.signInAnonymously();
-    return r?.data?.user?.id || r?.data?.session?.user?.id || null;
-  } catch (e) {
-    _reportRemoteError("ensureAuth.signInAnonymously", e);
-  }
-
-  try {
-    const s3 = await sb.auth.getSession();
-    return s3?.data?.session?.user?.id || null;
-  } catch (_) {
-    return null;
+    return await _ensureAuthPromise;
+  } finally {
+    _ensureAuthPromise = null;
   }
 },
 

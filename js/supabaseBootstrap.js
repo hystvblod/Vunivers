@@ -54,9 +54,11 @@ async function getUid(sb) {
 }
 
   // --- Bootstrap global ---
-  window.bootstrapAuthAndProfile = async function bootstrapAuthAndProfile() {
+  window.bootstrapAuthAndProfile = async function bootstrapAuthAndProfile(opts = {}) {
     const sb = initClient();
     if (!sb) return null;
+
+    const skipProfileFetch = !!opts.skipProfileFetch;
 
     // 1) Session existante ?
     let uid = await getUid(sb);
@@ -69,8 +71,8 @@ async function getUid(sb) {
       } catch (_) {}
     }
 
-    // 3) Profil (créé par trigger) + récupère le row
-    if (navigator.onLine !== false) {
+    // 3) Profil seulement si demandé
+    if (!skipProfileFetch && navigator.onLine !== false) {
       try {
         const prof = await sb.rpc("secure_get_me");
         if (!prof?.error && prof?.data) return prof.data;
