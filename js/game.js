@@ -1948,7 +1948,7 @@ body.vr-peek-mode .vr-gauge-preview{
       }
 
       if (String(this.universeId || "").trim() === "intro") {
-        const introOrder = ["intro_001", "intro_002", "intro_003", "intro_004"];
+        const introOrder = ["intro_001", "intro_002", "intro_003"];
         const currentId = String(this.currentCardLogic?.id || "").trim();
         const currentIndex = introOrder.indexOf(currentId);
         const nextId = currentIndex === -1
@@ -3335,6 +3335,25 @@ body.vr-peek-mode .vr-gauge-preview{
           color:#fff;
         }
 
+        #vr-intro-finish-overlay .vr-intro-rewards-copy{
+          width:100%;
+          max-width:280px;
+          margin:0;
+          text-align:center;
+          font-size:clamp(13px, 3.8vw, 16px);
+          line-height:1.35;
+          font-weight:800;
+          color:#fff;
+        }
+
+        #vr-intro-finish-overlay .vr-intro-rewards-copy p{
+          margin:0 0 8px;
+        }
+
+        #vr-intro-finish-overlay .vr-intro-rewards-copy p:last-child{
+          margin-bottom:0;
+        }
+
         #vr-intro-finish-overlay .vr-intro-finish-rewards{
           display:flex;
           flex-direction:column;
@@ -3645,9 +3664,6 @@ function resetUIState() {
       return;
     }
 
-    if (currentCardId === "intro_004") {
-      showNormalChoices(["A"]);
-    }
   }
 
   function beforeApplyChoice(cardLogic, choiceId) {
@@ -3656,17 +3672,10 @@ function resetUIState() {
     if (id === "intro_001") return choiceId === "A" || choiceId === "B";
     if (id === "intro_002") return choiceId === "A" || choiceId === "B";
     if (id === "intro_003") return false;
-    if (id === "intro_004") return choiceId === "A";
     return true;
   }
 
   function afterApplyChoice(cardLogic, choiceId) {
-    if (!isIntroUniverse()) return false;
-    const id = String(cardLogic?.id || currentCardId || "").trim();
-    if (id === "intro_004" && choiceId === "A") {
-      finishIntro();
-      return true;
-    }
     return false;
   }
 
@@ -3714,9 +3723,7 @@ function onGaugeSet(gaugeId) {
   }
 
   window.setTimeout(() => {
-    currentCardId = "";
-    try { window.VREngine?._nextCard_internalOnly?.(); } catch (_) {}
-    try { window.VREngine?._saveRunSoft?.(); } catch (_) {}
+    finishIntro();
   }, 60);
 }
 
@@ -3732,6 +3739,7 @@ function onGaugeSet(gaugeId) {
       <div class="vr-ending-card vr-intro-finish-card" role="dialog" aria-modal="true">
         <h3 class="vr-intro-finish-title" id="vr-intro-finish-title"></h3>
         <p class="vr-intro-finish-text" id="vr-intro-finish-text"></p>
+        <div class="vr-intro-rewards-copy" id="vr-intro-finish-info"></div>
         <p class="vr-intro-finish-gift-text" id="vr-intro-finish-gift-text"></p>
 
         <div class="vr-intro-finish-rewards">
@@ -3756,11 +3764,13 @@ function onGaugeSet(gaugeId) {
   function fillFinishPopupTexts() {
     const titleEl = document.getElementById("vr-intro-finish-title");
     const textEl = document.getElementById("vr-intro-finish-text");
+    const infoEl = document.getElementById("vr-intro-finish-info");
     const giftEl = document.getElementById("vr-intro-finish-gift-text");
     const closeBtn = document.getElementById("vr-intro-finish-close");
 
     if (titleEl) titleEl.textContent = t("intro.finish.title", "Bravo");
     if (textEl) textEl.textContent = t("intro.finish.body", "Bravo, tu es prêt à commencer.");
+    if (infoEl) infoEl.innerHTML = t("intro.finish.info_html", "");
     if (giftEl) giftEl.textContent = t("intro.finish.gift", "Voici un petit cadeau");
     if (closeBtn) closeBtn.textContent = t("intro.finish.cta", "Commencer");
   }

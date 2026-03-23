@@ -561,7 +561,8 @@
     "finish": {
       "title": "Bravo",
       "body": "Sei pronto a governare molti universi.",
-      "gift": "Ecco un piccolo regalo",
+      "info_html": "<p>Giocando, guadagni <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> e <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"></p><p>I <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> servono a sbloccare universi e personalizzazioni.</p><p>I <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> servono a ottenere aiuto durante la partita.</p><p>Puoi personalizzare il tuo gioco cliccando sulla palette in alto in ogni universo oppure andando nel negozio.</p>",
+      "gift": "Completando l'introduzione, ricevi:",
       "token": "gettone",
       "cta": "Inizia"
     }

@@ -2389,7 +2389,7 @@ body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-preview{
   body.vr-body-game[data-universe="intro"] #btn-customize{ top: calc(16px + env(safe-area-inset-top)) !important; right: 16px !important; }
 
   body.vr-body-game[data-universe="intro"] .vr-hud-item{ transform: translateY(-4px) !important; }
-  body.vr-body-game[data-universe="intro"] .vr-hud-value{ transform: translateY(-1px) !important; }
+  body.vr-body-game[data-universe="intro"] .vr-hud-value{ transform: translateY(2px) !important; }
 
   body.vr-body-game[data-universe="intro"] #view-game .vr-card-main{
     background-size: 99% 99% !important;

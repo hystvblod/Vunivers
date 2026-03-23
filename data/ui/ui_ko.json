@@ -561,7 +561,8 @@
     "finish": {
       "title": "축하합니다",
       "body": "이제 수많은 세계를 다스릴 준비가 되었습니다.",
-      "gift": "작은 선물이 있습니다",
+      "info_html": "<p>플레이하면 <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> 와 <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> 를 얻습니다.</p><p><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> 는 세계와 꾸미기 요소를 해제하는 데 사용됩니다.</p><p><img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> 는 플레이 도중 도움을 받는 데 사용됩니다.</p><p>각 세계 상단의 팔레트를 클릭해 게임을 꾸미거나 상점으로 갈 수 있습니다.</p>",
+      "gift": "인트로를 마치면 다음 보상을 받습니다.",
       "token": "토큰",
       "cta": "시작"
     }

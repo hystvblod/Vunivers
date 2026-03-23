@@ -32,18 +32,6 @@
       "id": "intro_003",
       "universe": "intro",
       "choices": {}
-    },
-    {
-      "id": "intro_004",
-      "universe": "intro",
-      "choices": {
-        "A": {
-          "gaugeDelta": {}
-        },
-        "B": {
-          "gaugeDelta": {}
-        }
-      }
     }
   ]
 }

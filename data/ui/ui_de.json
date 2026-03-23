@@ -562,7 +562,8 @@
     "finish": {
       "title": "Bravo",
       "body": "Du bist bereit, viele Universen zu regieren.",
-      "gift": "Hier ist ein kleines Geschenk",
+      "info_html": "<p>Beim Spielen verdienst du <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> und <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"></p><p>Mit <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/vcoins.webp\" alt=\"\"> kannst du Universen und Anpassungen freischalten.</p><p>Mit <img class=\"vr-intro-inline-icon\" src=\"assets/img/ui/jeton.webp\" alt=\"\"> kannst du während des Spiels Hilfe erhalten.</p><p>Du kannst dein Spiel anpassen, indem du oben in jedem Universum auf die Palette klickst oder in den Shop gehst.</p>",
+      "gift": "Wenn du das Intro abschließt, erhältst du:",
       "token": "Token",
       "cta": "Starten"
     }
