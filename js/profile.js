@@ -117,7 +117,7 @@
 
   // ✅ PATCH: session locale d’abord, puis fallback getUser
   async function _ensureAuth() {
-    try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
+    try { await window.bootstrapAuthAndProfile?.({ skipProfileFetch: true }); } catch (_) {}
 
     const sb = window.sb;
     if (!sb || !sb.auth) return null;
@@ -751,7 +751,6 @@
 
   async function refreshEverything() {
     try { await window.VUserData?.refresh?.(); } catch (_) {}
-    try { await syncProfileWalletFromRemote(); } catch (_) {}
     try { await _refreshBadges(); } catch (_) {}
 
     renderProfileFromState();
@@ -765,7 +764,6 @@
 
     try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
     try { await window.VUserData?.init?.(); } catch (_) {}
-    try { await syncProfileWalletFromRemote(); } catch (_) {}
     try { await _initBadges(); } catch (_) {}
 
     renderProfileFromState();
