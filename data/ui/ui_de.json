@@ -478,6 +478,27 @@
     "toast": {
       "insufficient_vcoins": "Nicht genug VCoins",
       "not_owned": "Objekt nicht besessen"
+    },
+    "preview": {
+      "sample_title": "Entscheidung",
+      "sample_text": "Vorschau des ausgewählten Kosmetik-Elements in der Spielsituation.",
+      "sample_choice_a": "Akzeptieren",
+      "sample_choice_b": "Ablehnen",
+      "sample_choice_c": "Verschieben"
+    },
+    "status": {
+      "noads_on": "✅ Keine Werbung: aktiviert",
+      "noads_off": "ℹ️ Keine Werbung: deaktiviert",
+      "purchase_restored": "✅ Kauf wiederhergestellt",
+      "pending": "…",
+      "purchase_credited": "✅ Kauf gutgeschrieben",
+      "purchase_not_credited": "❌ Kauf nicht gutgeschrieben",
+      "ad_not_ready": "Werbesystem nicht bereit",
+      "reward_not_validated": "❌ Werbung nicht validiert",
+      "reward_validated": "✅ Belohnung validiert",
+      "reward_error": "❌ Fehler bei Rewarded Ad",
+      "iap_unavailable_web": "⚠️ IAP im Web nicht verfügbar.",
+      "product_not_found_prefix": "⚠️ Produkt nicht gefunden: "
     }
   },
   "settings": {

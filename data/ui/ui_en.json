@@ -478,6 +478,27 @@
     "toast": {
       "insufficient_vcoins": "Not enough VCoins",
       "not_owned": "Item not owned"
+    },
+    "preview": {
+      "sample_title": "Decision",
+      "sample_text": "Preview of the selected cosmetic in context.",
+      "sample_choice_a": "Accept",
+      "sample_choice_b": "Refuse",
+      "sample_choice_c": "Postpone"
+    },
+    "status": {
+      "noads_on": "✅ No Ads: enabled",
+      "noads_off": "ℹ️ No Ads: disabled",
+      "purchase_restored": "✅ Purchase restored",
+      "pending": "…",
+      "purchase_credited": "✅ Purchase credited",
+      "purchase_not_credited": "❌ Purchase not credited",
+      "ad_not_ready": "Ad system not ready",
+      "reward_not_validated": "❌ Ad not validated",
+      "reward_validated": "✅ Reward validated",
+      "reward_error": "❌ Rewarded ad error",
+      "iap_unavailable_web": "⚠️ IAP unavailable on web.",
+      "product_not_found_prefix": "⚠️ Product not found: "
     }
   },
   "settings": {
