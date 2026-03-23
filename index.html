@@ -779,6 +779,10 @@
         if (!introJustFinished) return;
 
         try {
+          await window.VRI18n?.initI18n?.();
+        } catch (_) {}
+
+        try {
           await window.VROneSignal?.maybePromptOnIndexAfterGameReturn?.();
         } catch (_) {}
 
