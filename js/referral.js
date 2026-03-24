@@ -1,63 +1,185 @@
 (function () {
   "use strict";
 
-  const REFERRAL_URL = "https://vuniverse.app";
+  const FETCHED_KEY = "vuniverse_install_referrer_fetched_v1";
+  const PENDING_INVITER_KEY = "vuniverse_install_referrer_pending_inviter_v1";
+  const PENDING_RAW_KEY = "vuniverse_install_referrer_pending_raw_v1";
+
+  const PLAY_URL_BASE = "https://play.google.com/store/apps/details?id=com.vboldstudio.vuniverse";
 
   function t(key, fallback) {
     try {
-      return window.VRI18n?.t?.(key, fallback) || fallback || "";
+      return window.VRI18n?.t?.(key, fallback) || String(fallback || "");
     } catch (_) {
-      return fallback || "";
+      return String(fallback || "");
     }
   }
 
-  async function copyText(value) {
-    if (!value) return false;
-
+  function isNativeAndroid() {
     try {
-      if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(value);
-        return true;
-      }
-    } catch (_) {}
-
-    try {
-      const ta = document.createElement("textarea");
-      ta.value = value;
-      ta.setAttribute("readonly", "");
-      ta.style.position = "fixed";
-      ta.style.left = "-9999px";
-      document.body.appendChild(ta);
-      ta.select();
-      const ok = document.execCommand("copy");
-      document.body.removeChild(ta);
-      return !!ok;
+      return !!window.Capacitor?.isNativePlatform?.() &&
+             window.Capacitor?.getPlatform?.() === "android";
     } catch (_) {
       return false;
     }
   }
 
-  async function shareInvite() {
-    const url = REFERRAL_URL;
-    const title = t("referral.share_title", "Invite a friend");
-    const textTpl = t("referral.share_text", "Download VUniverse here: {url}");
-    const text = textTpl.replace("{url}", url);
+  function getInstallReferrerPlugin() {
+    try {
+      if (window.Capacitor?.registerPlugin) {
+        return window.Capacitor.registerPlugin("InstallReferrer");
+      }
+      return window.Capacitor?.Plugins?.InstallReferrer || null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function getSharePlugin() {
+    try {
+      if (window.Capacitor?.registerPlugin) {
+        return window.Capacitor.registerPlugin("Share");
+      }
+      return window.Capacitor?.Plugins?.Share || null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  async function getCurrentUid() {
+    try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
+
+    const sb = window.sb;
+    if (!sb?.auth) return "";
 
     try {
-      if (navigator.share) {
-        await navigator.share({ title, text, url });
-        return;
+      const s = await sb.auth.getSession();
+      const uid = s?.data?.session?.user?.id || "";
+      if (uid) return uid;
+    } catch (_) {}
+
+    try {
+      const r = await sb.auth.getUser();
+      return r?.data?.user?.id || "";
+    } catch (_) {
+      return "";
+    }
+  }
+
+  function buildInviteUrl(uid) {
+    const raw = "inviter_uuid=" + encodeURIComponent(uid);
+    return PLAY_URL_BASE + "&referrer=" + encodeURIComponent(raw);
+  }
+
+  async function shareInvite() {
+    const uid = await getCurrentUid();
+    if (!uid) return false;
+
+    const url = buildInviteUrl(uid);
+    const text = t("referral.share_text", "Télécharge VUniverse ici : {url}")
+      .replaceAll("{url}", url);
+
+    try {
+      const Share = getSharePlugin();
+      if (Share?.share) {
+        await Share.share({
+          title: t("referral.share_title", "Inviter un ami"),
+          text,
+          dialogTitle: t("referral.share_title", "Inviter un ami")
+        });
+        return true;
       }
     } catch (_) {}
 
-    const copied = await copyText(url);
-    if (copied) {
-      try { alert(t("referral.link_copied", "Link copied")); } catch (_) {}
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: t("referral.share_title", "Inviter un ami"),
+          text
+        });
+        return true;
+      }
+    } catch (_) {}
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(text);
+        try { window.showToast?.(t("referral.link_copied", "Lien copié")); } catch (_) {}
+        return true;
+      }
+    } catch (_) {}
+
+    return false;
+  }
+
+  async function fetchReferrerOnceFromNative() {
+    if (!isNativeAndroid()) return;
+    if (localStorage.getItem(FETCHED_KEY) === "1") return;
+
+    const plugin = getInstallReferrerPlugin();
+    if (!plugin?.getInstallReferrer) return;
+
+    try {
+      const data = await plugin.getInstallReferrer();
+
+      if (data?.canRetry) return;
+
+      localStorage.setItem(FETCHED_KEY, "1");
+
+      const inviterUuid = String(data?.inviterUuid || "").trim();
+      const rawReferrer = String(data?.rawReferrer || "").trim();
+
+      if (inviterUuid) {
+        localStorage.setItem(PENDING_INVITER_KEY, inviterUuid);
+        localStorage.setItem(PENDING_RAW_KEY, rawReferrer);
+      }
+    } catch (_) {
+    }
+  }
+
+  async function claimPendingReferral() {
+    const pendingInviter = String(localStorage.getItem(PENDING_INVITER_KEY) || "").trim();
+    if (!pendingInviter) return;
+
+    const pendingRaw = String(localStorage.getItem(PENDING_RAW_KEY) || "").trim();
+
+    try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
+
+    const sb = window.sb;
+    if (!sb?.rpc) return;
+
+    try {
+      const { data, error } = await sb.rpc("secure_claim_referral_install", {
+        p_inviter: pendingInviter,
+        p_raw: pendingRaw || null
+      });
+
+      if (error) return;
+
+      const reason = String(data?.reason || "");
+
+      if (data?.ok && (reason === "claimed" || reason === "already_processed")) {
+        localStorage.removeItem(PENDING_INVITER_KEY);
+        localStorage.removeItem(PENDING_RAW_KEY);
+
+        try { await window.VUserData?.refresh?.(); } catch (_) {}
+        return;
+      }
+
+      if (
+        reason === "self_referral" ||
+        reason === "invalid_inviter" ||
+        reason === "inviter_limit_reached"
+      ) {
+        localStorage.removeItem(PENDING_INVITER_KEY);
+        localStorage.removeItem(PENDING_RAW_KEY);
+      }
+    } catch (_) {
     }
   }
 
   function bindInviteButtons() {
-    const ids = ["pf_invite_btn", "cp_invite_btn"];
+    const ids = ["pf_invite_top_btn", "cp_invite_btn"];
 
     ids.forEach((id) => {
       const btn = document.getElementById(id);
@@ -70,17 +192,18 @@
     });
   }
 
-  function bootReferral() {
+  async function bootReferral() {
+    await fetchReferrerOnceFromNative();
+    await claimPendingReferral();
     bindInviteButtons();
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", bootReferral, { once: true });
-  } else {
-    bootReferral();
-  }
-
-  window.addEventListener("vr:i18n:changed", () => {
-    bindInviteButtons();
+  document.addEventListener("DOMContentLoaded", () => {
+    bootReferral().catch(() => {});
   });
+
+  window.VReferral = {
+    shareInvite,
+    bootReferral
+  };
 })();

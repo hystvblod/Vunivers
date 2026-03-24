@@ -100,9 +100,52 @@
       margin-bottom:16px;
     }
 
+    .vr-crosspromo-invite-head{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      margin-bottom:12px;
+      flex-wrap:wrap;
+    }
+
+    .vr-crosspromo-invite-title{
+      font-size:18px;
+      font-weight:950;
+      color:#fff;
+      text-align:center;
+      text-shadow:0 2px 8px rgba(0,0,0,.28);
+    }
+
+    .vr-crosspromo-invite-reward{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.10);
+      box-shadow:0 6px 18px rgba(0,0,0,.14);
+    }
+
+    .vr-crosspromo-invite-reward img{
+      width:28px;
+      height:28px;
+      object-fit:contain;
+      display:block;
+      flex:0 0 28px;
+    }
+
+    .vr-crosspromo-invite-reward-value{
+      font-size:18px;
+      font-weight:950;
+      color:#fff;
+    }
+
     .vr-crosspromo-referral-card .vr-crosspromo-desc{
       max-width:36ch;
-      margin-bottom:12px;
+      margin:4px auto 14px auto;
     }
 
     .vr-crosspromo-referral-card .vr-crosspromo-actions{
@@ -420,11 +463,12 @@
 
     <section class="vr-crosspromo-card vr-crosspromo-referral-card">
       <div class="vr-crosspromo-content">
-        <div class="vr-crosspromo-head vr-crosspromo-head--reward-only">
-          <div class="vr-crosspromo-reward">
-            <img src="assets/img/ui/vcoin.webp" alt="" draggable="false" />
-            <span class="vr-crosspromo-reward-label" data-i18n="referral.crosspromo_reward_label"></span>
-            <span class="vr-crosspromo-reward-value">+200</span>
+        <div class="vr-crosspromo-invite-head">
+          <div class="vr-crosspromo-invite-title" data-i18n="referral.invite_btn"></div>
+
+          <div class="vr-crosspromo-invite-reward">
+            <img src="assets/img/ui/vcoins.webp" alt="" draggable="false" />
+            <span class="vr-crosspromo-invite-reward-value">200</span>
           </div>
         </div>
 
