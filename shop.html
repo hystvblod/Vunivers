@@ -834,203 +834,239 @@
       }
     }
 
-    @media (max-width: 390px){
     /* ==========================================================
-       SHOP responsive propre
-       On garde EXACTEMENT 2 colonnes
-       On scale tout selon l’écran
-       ========================================================== */
+   SHOP responsive propre
+   On scale tout selon l’écran via --shop-scale
+   ========================================================== */
+body.page-shop{
+  --shop-scale: 1;
+  --main-max: 760px;
+  --main-side-pad: 16px;
 
-    :root{
-      --shop-gap: clamp(8px, 1vw, 14px);
-      --shop-item-radius: clamp(16px, 1.7vw, 22px);
-      --shop-item-pad: clamp(10px, 1.25vw, 16px);
-      --shop-icon: clamp(42px, 4vw, 60px);
-      --shop-btn-h: clamp(38px, 4vw, 50px);
+  --shop-icon: calc(42px * var(--shop-scale));
+  --shop-btn-h: calc(38px * var(--shop-scale));
 
-      --u-gap: clamp(14px, 1.5vw, 20px);
-      --u-radius: clamp(20px, 1.8vw, 26px);
+  --u-gap: calc(14px * var(--shop-scale));
+  --u-radius: calc(20px * var(--shop-scale));
 
-      --cos-arrow: clamp(36px, 3.6vw, 46px);
-      --cos-card-r: clamp(18px, 1.6vw, 24px);
-      --cos-card-h: clamp(124px, 14vw, 176px);
-    }
+  --cos-arrow: calc(36px * var(--shop-scale));
+  --cos-card-r: calc(18px * var(--shop-scale));
+  --cos-card-h: calc(124px * var(--shop-scale));
+}
 
-    body.page-shop .vr-main{
-      padding:
-        clamp(12px, 1.5vw, 20px)
-        clamp(16px, 2.4vw, 28px)
-        clamp(24px, 3vw, 38px);
-    }
+body.page-shop .vr-main{
+  width: min(100%, var(--main-max));
+  margin: 0 auto;
+  padding-left: var(--main-side-pad);
+  padding-right: var(--main-side-pad);
+}
 
-    body.page-shop .vr-top-actions{
-      grid-template-columns:
-        clamp(44px, 4.5vw, 56px)
-        minmax(0,1fr)
-        clamp(44px, 4.5vw, 56px);
-      gap: clamp(12px, 1.4vw, 18px);
-      padding:
-        calc(clamp(8px, 1vw, 12px) + env(safe-area-inset-top))
-        clamp(12px, 1.6vw, 18px)
-        clamp(6px, .8vw, 10px);
-    }
+body.page-shop #view-shop{
+  width: 100%;
+}
 
-    body.page-shop .vr-top-balances{
-      gap: clamp(22px, 2.8vw, 34px);
-    }
+body.page-shop .vr-shop-block{
+  max-width: 100%;
+  margin: calc(8px * var(--shop-scale)) 0 calc(12px * var(--shop-scale));
+}
 
-    body.page-shop .vr-top-balance img{
-      width: clamp(22px, 2.5vw, 28px);
-      height: clamp(22px, 2.5vw, 28px);
-    }
+body.page-shop .vr-top-actions{
+  grid-template-columns:
+    calc(44px * var(--shop-scale))
+    minmax(0,1fr)
+    calc(44px * var(--shop-scale));
+  gap: calc(12px * var(--shop-scale));
+  padding:
+    calc((8px * var(--shop-scale)) + env(safe-area-inset-top))
+    var(--main-side-pad)
+    calc(6px * var(--shop-scale));
+}
 
-    body.page-shop .vr-top-balance span{
-      font-size: clamp(18px, 2.1vw, 24px);
-    }
+body.page-shop .vr-top-balances{
+  gap: calc(22px * var(--shop-scale));
+}
 
-    body.page-shop .vr-icon-button{
-      width: clamp(44px, 4.5vw, 56px);
-      height: clamp(44px, 4.5vw, 56px);
-    }
+body.page-shop .vr-top-balance img{
+  width: calc(22px * var(--shop-scale));
+  height: calc(22px * var(--shop-scale));
+}
 
-    body.page-shop .vr-icon-button img{
-      width: clamp(30px, 3.1vw, 36px);
-      height: clamp(30px, 3.1vw, 36px);
-    }
+body.page-shop .vr-top-balance span{
+  font-size: calc(18px * var(--shop-scale));
+}
 
-    body.page-shop .vr-back-ico{
-      width: clamp(24px, 2.6vw, 28px);
-      height: clamp(24px, 2.6vw, 28px);
-    }
+body.page-shop .vr-icon-button{
+  width: calc(44px * var(--shop-scale));
+  height: calc(44px * var(--shop-scale));
+}
 
-    body.page-shop #view-shop .vr-section-title{
-      margin-top: clamp(4px, .7vw, 10px) !important;
-      margin-bottom: clamp(10px, 1.2vw, 16px) !important;
-    }
+body.page-shop .vr-icon-button img{
+  width: calc(30px * var(--shop-scale));
+  height: calc(30px * var(--shop-scale));
+}
 
-    body.page-shop .vr-profile-title{
-      margin-top: clamp(10px, 1.2vw, 16px) !important;
-      margin-bottom: clamp(10px, 1.2vw, 16px) !important;
-    }
+body.page-shop .vr-back-ico{
+  width: calc(24px * var(--shop-scale));
+  height: calc(24px * var(--shop-scale));
+}
 
-    body.page-shop .vr-shop-block{
-      margin: clamp(8px, 1vw, 12px) 0 clamp(12px, 1.5vw, 18px);
-    }
+body.page-shop #view-shop .vr-section-title{
+  margin-top: calc(4px * var(--shop-scale)) !important;
+  margin-bottom: calc(10px * var(--shop-scale)) !important;
+}
 
-    body.page-shop .vr-shop-top{
-      gap: clamp(8px, .9vw, 10px);
-      min-height: clamp(74px, 8.3vw, 102px);
-      margin-bottom: clamp(10px, 1vw, 14px);
-    }
+body.page-shop .vr-profile-title{
+  margin-top: calc(10px * var(--shop-scale)) !important;
+  margin-bottom: calc(10px * var(--shop-scale)) !important;
+}
 
-    body.page-shop .vr-shop-qty{
-      font-size: clamp(16px, 1.9vw, 22px);
-    }
+body.page-shop .vr-shop-top{
+  gap: calc(8px * var(--shop-scale));
+  min-height: calc(74px * var(--shop-scale));
+  margin-bottom: calc(10px * var(--shop-scale));
+}
 
-    body.page-shop .vr-shop-item .vr-choice-button{
-      border-radius: clamp(13px, 1.4vw, 16px);
-      padding: clamp(9px, 1vw, 12px) clamp(10px, 1.2vw, 14px);
-      font-size: clamp(12px, 1.35vw, 15px);
-    }
+body.page-shop .vr-shop-qty{
+  font-size: calc(16px * var(--shop-scale));
+}
 
-    body.page-shop #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-top{
-      gap: clamp(4px, .6vw, 6px) !important;
-      min-height: clamp(78px, 8.8vw, 108px) !important;
-      padding-top: clamp(2px, .8vw, 10px);
-    }
+body.page-shop .vr-shop-item .vr-choice-button{
+  min-height: var(--shop-btn-h);
+  border-radius: calc(13px * var(--shop-scale));
+  padding:
+    calc(9px * var(--shop-scale))
+    calc(10px * var(--shop-scale));
+  font-size: calc(12px * var(--shop-scale));
+}
 
-    body.page-shop #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-icon{
-      transform: translateY(clamp(2px, .5vw, 6px));
-    }
+body.page-shop #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-top{
+  gap: calc(3px * var(--shop-scale)) !important;
+  min-height: calc(82px * var(--shop-scale)) !important;
+  padding-top: calc(10px * var(--shop-scale));
+}
 
-    body.page-shop #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-badge-subtitle{
-      max-width: clamp(110px, 13vw, 148px);
-      margin-top: clamp(2px, .4vw, 6px);
-      font-size: clamp(11px, 1.2vw, 14px);
-    }
+body.page-shop #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-icon{
+  transform: translateY(calc(2px * var(--shop-scale)));
+}
 
-    body.page-shop .vr-cosmetics{
-      margin-top: clamp(14px, 1.7vw, 20px);
-      padding-bottom: clamp(10px, 1vw, 14px);
-    }
+body.page-shop #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-badge-subtitle{
+  margin-top: calc(2px * var(--shop-scale));
+  max-width: calc(112px * var(--shop-scale));
+  font-size: calc(11px * var(--shop-scale));
+  line-height: 1.08;
+}
 
-    body.page-shop .vr-universe-block{
-      padding:
-        clamp(14px, 1.6vw, 20px)
-        clamp(12px, 1.5vw, 18px)
-        clamp(12px, 1.4vw, 18px);
-    }
+body.page-shop .vr-cosmetics{
+  margin-top: calc(14px * var(--shop-scale));
+  padding-bottom: calc(10px * var(--shop-scale));
+}
 
-    body.page-shop .vr-universe-title{
-      font-size: clamp(19px, 2.1vw, 26px);
-      margin: 0 0 clamp(12px, 1.2vw, 16px);
-    }
+body.page-shop .vr-universe-block{
+  padding:
+    calc(14px * var(--shop-scale))
+    calc(12px * var(--shop-scale))
+    calc(12px * var(--shop-scale));
+}
 
-    body.page-shop .vr-cos-row{
-      margin: 0 0 clamp(14px, 1.3vw, 18px);
-    }
+body.page-shop .vr-universe-title{
+  font-size: calc(19px * var(--shop-scale));
+  margin: 0 0 calc(12px * var(--shop-scale));
+}
 
-    body.page-shop .vr-cos-subtitle{
-      font-size: clamp(13px, 1.35vw, 16px);
-      margin: 0 0 clamp(8px, .9vw, 11px);
-    }
+body.page-shop .vr-cos-row{
+  margin: 0 0 calc(14px * var(--shop-scale));
+}
 
-    body.page-shop .vr-cos-carousel{
-      gap: clamp(8px, 1vw, 12px);
-    }
+body.page-shop .vr-cos-subtitle{
+  font-size: calc(13px * var(--shop-scale));
+  margin: 0 0 calc(8px * var(--shop-scale));
+}
 
-    body.page-shop .vr-cos-arrow{
-      font-size: clamp(28px, 2.7vw, 36px);
-    }
+body.page-shop .vr-cos-carousel{
+  gap: calc(8px * var(--shop-scale));
+}
 
-    body.page-shop .vr-cos-card.is-ui > img{
-      padding: clamp(14px, 1.6vw, 20px);
-    }
+body.page-shop .vr-cos-arrow{
+  font-size: calc(28px * var(--shop-scale));
+}
 
-    body.page-shop .vr-cos-overlay{
-      padding:
-        clamp(30px, 3vw, 40px)
-        clamp(10px, 1.1vw, 14px)
-        clamp(10px, 1.1vw, 14px);
-    }
+body.page-shop .vr-cos-card.is-ui > img{
+  padding: calc(14px * var(--shop-scale));
+}
 
-    body.page-shop .vr-cos-name{
-      font-size: clamp(13px, 1.35vw, 16px);
-      margin-bottom: clamp(8px, .9vw, 10px);
-    }
+body.page-shop .vr-cos-overlay{
+  padding:
+    calc(30px * var(--shop-scale))
+    calc(10px * var(--shop-scale))
+    calc(10px * var(--shop-scale));
+}
 
-    body.page-shop .vr-cos-count{
-      font-size: clamp(12px, 1.1vw, 14px);
-    }
+body.page-shop .vr-cos-name{
+  font-size: calc(13px * var(--shop-scale));
+  margin-bottom: calc(8px * var(--shop-scale));
+}
 
-    body.page-shop .vr-cos-action{
-      margin-top: clamp(8px, .9vw, 10px);
-      padding: clamp(10px, 1.1vw, 13px) clamp(12px, 1.2vw, 15px);
-      border-radius: clamp(14px, 1.5vw, 17px);
-      font-size: clamp(12px, 1.2vw, 15px);
-    }
+body.page-shop .vr-cos-count{
+  font-size: calc(12px * var(--shop-scale));
+}
 
-    body.page-shop .vr-cos-action-content{
-      gap: clamp(6px, .7vw, 8px);
-    }
+body.page-shop .vr-cos-action{
+  width: 100%;
+  margin-top: calc(8px * var(--shop-scale));
+  padding:
+    calc(10px * var(--shop-scale))
+    calc(12px * var(--shop-scale));
+  border-radius: calc(14px * var(--shop-scale));
+  font-size: calc(12px * var(--shop-scale));
+}
 
-    body.page-shop .vr-cos-action-ico{
-      width: clamp(14px, 1.3vw, 17px);
-      height: clamp(14px, 1.3vw, 17px);
-      min-width: clamp(14px, 1.3vw, 17px);
-      min-height: clamp(14px, 1.3vw, 17px);
-    }
+body.page-shop .vr-cos-action-content{
+  gap: calc(6px * var(--shop-scale));
+}
 
-    body.page-shop .vr-cos-dots{
-      gap: clamp(6px, .7vw, 8px);
-      margin-top: clamp(8px, .9vw, 11px);
-    }
+body.page-shop .vr-cos-action-ico{
+  width: calc(14px * var(--shop-scale));
+  height: calc(14px * var(--shop-scale));
+  min-width: calc(14px * var(--shop-scale));
+  min-height: calc(14px * var(--shop-scale));
+}
 
-    body.page-shop .vr-cos-dot{
-      width: clamp(7px, .75vw, 9px);
-      height: clamp(7px, .75vw, 9px);
-    }
-    }
+body.page-shop .vr-cos-dots{
+  gap: calc(6px * var(--shop-scale));
+  margin-top: calc(8px * var(--shop-scale));
+}
+
+body.page-shop .vr-cos-dot{
+  width: calc(7px * var(--shop-scale));
+  height: calc(7px * var(--shop-scale));
+}
+
+/* TABLETTE */
+@media (min-width: 700px){
+  body.page-shop{
+    --shop-scale: 1.22;
+    --main-max: 820px;
+    --main-side-pad: 18px;
+  }
+}
+
+/* GRANDES TABLETTES / PETITS DESKTOPS */
+@media (min-width: 1024px){
+  body.page-shop{
+    --shop-scale: 1.34;
+    --main-max: 920px;
+    --main-side-pad: 22px;
+  }
+}
+
+/* TRÈS GRAND ÉCRAN */
+@media (min-width: 1366px){
+  body.page-shop{
+    --shop-scale: 1.42;
+    --main-max: 980px;
+    --main-side-pad: 24px;
+  }
+}
   </style>
 </head>
 
