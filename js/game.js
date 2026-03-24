@@ -5156,70 +5156,57 @@ function resolvePreviewAssets(cfg) {
     const style = document.createElement("style");
     style.id = "vr-preview-inline-style";
     style.textContent = `
-      html.vr-preview-mode,
-      body.vr-preview-mode{
-        width:100% !important;
-        height:100% !important;
-        margin:0 !important;
-        overflow:hidden !important;
-        overscroll-behavior:none !important;
-        background:#0b1220 !important;
-      }
+    html.vr-preview-mode,
+    body.vr-preview-mode{
+      width:100% !important;
+      height:100% !important;
+      margin:0 !important;
+      overflow:hidden !important;
+      overscroll-behavior:none !important;
+      background:#0b1220 !important;
+    }
 
-      body.vr-preview-mode{
-        --vr-preview-base-w: 430;
-        --vr-preview-base-h: 932;
-        --vr-preview-scale: 1;
-      }
+    body.vr-preview-mode > a.vr-icon-button,
+    body.vr-preview-mode > button#btn-customize,
+    body.vr-preview-mode .vr-popup,
+    body.vr-preview-mode #vr-ending-overlay,
+    body.vr-preview-mode #vr-token-gauge-overlay{
+      display:none !important;
+    }
 
-      body.vr-preview-mode > a.vr-icon-button,
-      body.vr-preview-mode > button#btn-customize,
-      body.vr-preview-mode .vr-top-actions-game,
-      body.vr-preview-mode .vr-game-header,
-      body.vr-preview-mode .vr-popup,
-      body.vr-preview-mode #vr-ending-overlay,
-      body.vr-preview-mode #vr-token-gauge-overlay{
-        display:none !important;
-      }
+    body.vr-preview-mode .vr-main{
+      position:relative !important;
+      left:auto !important;
+      top:auto !important;
+      width:100% !important;
+      min-width:0 !important;
+      max-width:none !important;
+      height:100% !important;
+      min-height:100% !important;
+      max-height:none !important;
+      padding:0 !important;
+      margin:0 !important;
+      overflow:hidden !important;
+      transform:none !important;
+      transform-origin:center center !important;
+    }
 
-      body.vr-preview-mode .vr-main{
-        position:fixed !important;
-        left:50% !important;
-        top:50% !important;
-        width:calc(var(--vr-preview-base-w) * 1px) !important;
-        min-width:calc(var(--vr-preview-base-w) * 1px) !important;
-        max-width:none !important;
-        height:calc(var(--vr-preview-base-h) * 1px) !important;
-        min-height:calc(var(--vr-preview-base-h) * 1px) !important;
-        max-height:none !important;
-        padding:0 !important;
-        margin:0 !important;
-        overflow:hidden !important;
-        transform:translate(-50%, -50%) scale(var(--vr-preview-scale)) !important;
-        transform-origin:center center !important;
-      }
+    body.vr-preview-mode #view-game{
+      width:100% !important;
+      height:100% !important;
+      min-height:100% !important;
+      overflow:hidden !important;
+    }
 
-      body.vr-preview-mode #view-game{
-        width:100% !important;
-        height:100% !important;
-        min-height:100% !important;
-        overflow:hidden !important;
-      }
-
-      body.vr-preview-mode .vr-gauge-value,
-      body.vr-preview-mode .vr-gauge-delta{
-        display:none !important;
-      }
-
-      body.vr-preview-mode a,
-      body.vr-preview-mode button{
-        pointer-events:none !important;
-      }
-    `;
+    body.vr-preview-mode a,
+    body.vr-preview-mode button{
+      pointer-events:none !important;
+    }
+  `;
     document.head.appendChild(style);
   }
 
-    function updatePreviewScale() {
+  function updatePreviewScale() {
     if (!document.body.classList.contains("vr-preview-mode")) return;
 
     const baseW = 430;
@@ -5313,17 +5300,10 @@ function resolvePreviewAssets(cfg) {
     document.documentElement.classList.add("vr-preview-mode");
     document.body.classList.add("vr-preview-mode");
 
-    updatePreviewScale();
-    try { window.addEventListener("resize", updatePreviewScale, { passive: true }); } catch (_) {}
-    try { requestAnimationFrame(updatePreviewScale); } catch (_) {}
-    try { setTimeout(updatePreviewScale, 80); } catch (_) {}
-    try { setTimeout(updatePreviewScale, 250); } catch (_) {}
-
     try { await window.VUserData?.init?.(); } catch (_) {}
 
     const lang = getPreviewLang();
 
-    resetPreviewMeta();
 
     try {
       const loaded = await window.VREventsLoader.loadUniverseData(cfg.universeId, lang);
@@ -5354,7 +5334,6 @@ function resolvePreviewAssets(cfg) {
     }
 
     applyPreviewCosmetics(cfg);
-    resetPreviewMeta();
 
     return true;
   }
