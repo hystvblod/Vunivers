@@ -3364,10 +3364,10 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-intro-finish-overlay #vr-intro-finish-info .vr-intro-inline-icon{
-          width:1.72em;
-          height:1.72em;
-          margin:0 0.10em;
-          vertical-align:-0.34em;
+          width:1.95em;
+          height:1.95em;
+          margin:0 0.12em;
+          vertical-align:-0.42em;
           object-fit:contain;
           filter:drop-shadow(0 4px 10px rgba(0,0,0,.22));
         }
@@ -3398,8 +3398,8 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-intro-finish-overlay .vr-intro-finish-line img{
-          width:clamp(34px, 9vw, 42px);
-          height:clamp(34px, 9vw, 42px);
+          width:clamp(42px, 10.5vw, 52px);
+          height:clamp(42px, 10.5vw, 52px);
           object-fit:contain;
           filter:drop-shadow(0 6px 14px rgba(0,0,0,.28));
         }
@@ -3468,9 +3468,9 @@ body.vr-peek-mode .vr-gauge-preview{
 
         #vr-intro-finish-overlay #vr-intro-finish-close{
           width:100%;
-          min-height:60px;
+          min-height:50px;
           margin-top:4px;
-          padding:14px 20px;
+          padding:8px 18px;
           align-self:center;
 
           border:1px solid rgba(255,255,255,.24) !important;
@@ -3481,7 +3481,7 @@ body.vr-peek-mode .vr-gauge-preview{
             inset 0 1px 0 rgba(255,255,255,.10) !important;
 
           color:#fff !important;
-          font-size:clamp(18px, 4.8vw, 24px) !important;
+          font-size:clamp(16px, 4.2vw, 22px) !important;
           font-weight:900 !important;
           text-shadow:0 2px 8px rgba(0,0,0,.35) !important;
         }
@@ -5600,4 +5600,3 @@ function hideBootOverlay() {
 
   document.addEventListener("DOMContentLoaded", initApp);
 })();
-
