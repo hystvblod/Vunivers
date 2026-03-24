@@ -4328,11 +4328,17 @@ body[data-universe="new_world_explorer"] .vr-gauge-value{
   padding: 3px 10px !important;
 }
 
+body[data-universe="new_world_explorer"] .vr-gauge{
+  justify-content: flex-start !important;
+}
+
 body[data-universe="new_world_explorer"] .vr-gauge-label{
-  min-height: 2em !important;
+  height: 2.6em !important;
+  min-height: 2.6em !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  line-height: 1.05 !important;
 }
 
 #view-game.vr-bg-new_world_explorer{
