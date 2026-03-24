@@ -3467,27 +3467,28 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-intro-finish-overlay #vr-intro-finish-close{
-          width:100%;
-          height:52px;
-          min-height:52px;
-          margin-top:4px;
-          padding:0 16px;
+          width:auto;
+          height:auto;
+          min-height:0;
+          margin-top:6px;
+          padding:8px 18px;
           align-self:center;
 
           border:1px solid rgba(255,255,255,.24) !important;
-          border-radius:16px !important;
+          border-radius:14px !important;
           background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.05)) !important;
           box-shadow:
             0 8px 22px rgba(0,0,0,.22),
             inset 0 1px 0 rgba(255,255,255,.10) !important;
 
-          display:flex;
+          display:inline-flex;
           align-items:center;
           justify-content:center;
 
           color:#fff !important;
           font-size:clamp(16px, 4.2vw, 22px) !important;
           font-weight:900 !important;
+          line-height:1 !important;
           text-shadow:0 2px 8px rgba(0,0,0,.35) !important;
         }
 
