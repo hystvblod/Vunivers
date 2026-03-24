@@ -1902,6 +1902,91 @@ body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-fra
 body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-fill,
 body[data-universe="hell_king"] .vr-gauge[data-gauge-id="surface"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/hell_king/g4_fill.webp"); }
 
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
+  body.vr-body-game[data-universe="hell_king"]{
+    --vr-ui-hud-w: min(96vw, 1020px);
+    --vr-hell-hud-w: min(96vw, 1020px);
+    --vr-card-w: min(96vw, 1020px);
+
+    --vr-scn-h: clamp(170px, 20.8svh, 290px);
+    --vr-choice-h: clamp(106px, 13.4svh, 176px);
+
+    --vr-stack-gap: clamp(8px, 0.9svh, 14px);
+    --vr-choices-gap: clamp(8px, 0.8svh, 12px);
+
+    --vr-font-scn-title: clamp(22px, 2.8vmin, 34px);
+    --vr-font-scn-text: clamp(18px, 2.2vmin, 24px);
+    --vr-font-choice: clamp(18px, 2.2vmin, 23px);
+
+    --vr-hell-hud-value-size: clamp(19px, 2.35vw, 29px);
+    --vr-hell-hud-name-size: clamp(20px, 2.5vw, 31px);
+    --vr-hell-hud-years-size: clamp(18px, 2.2vw, 25px);
+
+    --vr-hud-name-years-gap: 34px;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] .vr-hud{
+    margin: 0 auto !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] .vr-hud-item{
+    transform: translateY(-7px) !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] .vr-hud-value{
+    font-size: var(--vr-hell-hud-value-size) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] .vr-hud-name{
+    font-size: var(--vr-hell-hud-name-size) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] .vr-hud-years{
+    font-size: var(--vr-hell-hud-years-size) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] .vr-gauge-label{
+    font-size: clamp(14px, 1.9vmin, 18px) !important;
+    min-height: 2.05em !important;
+    line-height: 1.08 !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] .vr-gauge-value{
+    font-size: clamp(13px, 1.7vmin, 16px) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] #view-game .vr-card-main{
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] #view-game .vr-choice-button{
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] #view-game .vr-card-title{
+    max-width: 90% !important;
+    line-height: 1.05 !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] #view-game .vr-card-text{
+    max-width: 90% !important;
+    line-height: 1.13 !important;
+  }
+
+  body.vr-body-game[data-universe="hell_king"] #view-game .vr-choice-label{
+    max-width: 100% !important;
+    line-height: 1.08 !important;
+  }
+}
+
 @media (max-width: 480px){
   body.vr-body-game[data-universe="hell_king"]{
     --vr-hell-hud-w: 96vw;
@@ -2792,6 +2877,93 @@ body[data-universe="heaven_king"] .vr-gauge-value{
 body[data-universe="heaven_king"] .vr-gauge-val,
 body[data-universe="heaven_king"] .vr-gauge-delta{
   font-weight: 700 !important;
+}
+
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
+  body.vr-body-game[data-universe="heaven_king"]{
+    --vr-heaven-hud-w: min(94vw, 980px);
+    --vr-card-w: min(95vw, 1020px);
+
+    --vr-scn-h: clamp(175px, 21svh, 300px);
+    --vr-choice-h: clamp(126px, 15.2svh, 190px);
+
+    --vr-stack-gap: clamp(6px, 0.6svh, 10px);
+    --vr-choices-gap: clamp(7px, 0.75svh, 12px);
+
+    --vr-font-scn-title: clamp(21px, 2.7vmin, 33px);
+    --vr-font-scn-text: clamp(17px, 2.1vmin, 23px);
+    --vr-font-choice: clamp(19px, 2.35vmin, 26px);
+
+    --vr-heaven-hud-value-size: clamp(18px, 2.25vw, 27px);
+    --vr-heaven-hud-name-size: clamp(19px, 2.35vw, 28px);
+    --vr-heaven-hud-years-size: clamp(19px, 2.35vw, 28px);
+
+    --vr-hud-name-years-gap: 40px;
+    --vr-identity-ty: 8px;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud{
+    margin: 2px auto 0 !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-item{
+    transform: translateY(-5px) !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-value{
+    font-size: var(--vr-heaven-hud-value-size) !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-name{
+    font-size: var(--vr-heaven-hud-name-size) !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-years{
+    font-size: var(--vr-heaven-hud-years-size) !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-identity{
+    gap: 40px !important;
+    transform: translate(0, 8px) !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-gauge-label{
+    font-size: clamp(14px, 1.9vmin, 18px) !important;
+    min-height: 2.05em !important;
+    line-height: 1.08 !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-gauge-value{
+    font-size: clamp(13px, 1.7vmin, 16px) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-main{
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] #view-game .vr-choice-button{
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-title{
+    max-width: 90% !important;
+    line-height: 1.05 !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] #view-game .vr-card-text{
+    max-width: 90% !important;
+    line-height: 1.15 !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] #view-game .vr-choice-label{
+    max-width: 100% !important;
+    line-height: 1.08 !important;
+  }
 }
 
 @media (max-width: 480px){
@@ -4893,6 +5065,117 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
     drop-shadow(0 10px 22px rgba(0,0,0,0.62))
     drop-shadow(0 0 12px rgba(0,0,0,0.46))
     drop-shadow(0 0 26px rgba(0,0,0,0.28)) !important;
+}
+
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
+  body.vr-body-game[data-universe="vampire_lord"]{
+    --vr-vampire-hud-w: min(95vw, 1000px);
+    --vr-card-w: min(95vw, 980px);
+    --vr-gauge-size: clamp(82px, 16.8vw, 132px);
+
+    --vr-scn-h: clamp(155px, 19.5svh, 255px);
+    --vr-choice-h: clamp(96px, 12.8svh, 155px);
+
+    --vr-stack-gap: clamp(8px, 0.85svh, 14px);
+    --vr-choices-gap: clamp(8px, 0.8svh, 13px);
+
+    --vr-scn-inset-top: 13%;
+    --vr-scn-inset-right: 11%;
+    --vr-scn-inset-bottom: 15%;
+    --vr-scn-inset-left: 11%;
+
+    --vr-choice-inset-top: 15%;
+    --vr-choice-inset-right: 9%;
+    --vr-choice-inset-bottom: 15%;
+    --vr-choice-inset-left: 9%;
+    --vr-choice-safe: 84%;
+
+    --vr-font-scn-title: clamp(21px, 2.8vmin, 33px);
+    --vr-font-scn-text: clamp(18px, 2.45vmin, 24px);
+    --vr-font-choice: clamp(18px, 2.35vmin, 24px);
+
+    --vr-vampire-topbar-w: clamp(230px, 50vw, 420px);
+    --vr-vampire-back-size: clamp(48px, 8vw, 76px);
+    --vr-vampire-customize-size: clamp(48px, 8vw, 76px);
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-hud{
+    width: var(--vr-vampire-hud-w) !important;
+    margin: 0 auto !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-hud-item{
+    transform: translateY(-7px) !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-hud-value{
+    font-size: clamp(18px, 2.2vw, 28px) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-hud-name{
+    font-size: clamp(18px, 2.15vw, 29px) !important;
+    transform: translateY(0px) !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-hud-years{
+    font-size: clamp(16px, 1.95vw, 24px) !important;
+    transform: translateY(1px) !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauges-row{
+    gap: clamp(12px, 2.2vw, 20px) !important;
+    margin: 4px auto 10px !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauge{
+    gap: 10px !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauge::before{
+    width: clamp(108px, 18vw, 156px) !important;
+    height: clamp(138px, 22vw, 196px) !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label{
+    font-size: clamp(14px, 1.9vmin, 18px) !important;
+    line-height: 1.06 !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value{
+    font-size: clamp(14px, 1.9vmin, 18px) !important;
+    line-height: 1.06 !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-main{
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-button{
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-title{
+    font-size: clamp(21px, 2.8vmin, 33px) !important;
+    line-height: 1.06 !important;
+    max-width: 90% !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-card-text{
+    font-size: clamp(18px, 2.45vmin, 24px) !important;
+    line-height: 1.13 !important;
+    max-width: 90% !important;
+  }
+
+  body.vr-body-game[data-universe="vampire_lord"] #view-game .vr-choice-label{
+    font-size: clamp(18px, 2.35vmin, 24px) !important;
+    line-height: 1.10 !important;
+    max-width: 100% !important;
+  }
 }
 
 @media (max-width: 480px){
