@@ -5369,119 +5369,20 @@ body.vr-body-game[data-universe] .vr-gauge-label{
     --vr-fit-namegap: 0.92;
   }
 }
-/* ==========================================================
-   2) Tablettes portrait / iPad portrait (jusqu’à 1024px)
-   Objectif : STOP shrink, lisibilité ++ sans faire sortir le texte
-   ========================================================== */
-@media (orientation: portrait) and (min-width: 700px) and (max-width: 1024px){
-  body.vr-body-game[data-universe]{
-    --vr-fit-ui: 1.00;
-    --vr-fit-hud: 1.02;
-    --vr-fit-gauge: 1.05;
-    --vr-fit-frame: 1.00;
-    --vr-fit-type: 1.08;
-    --vr-fit-gap: 0.96;
-    --vr-fit-namegap: 1.00;
-
-    /* un poil plus compact pour éviter que le texte sorte des cartes */
-    --vr-fit-title-lh: 1.06;
-    --vr-fit-text-lh: 1.13;
-    --vr-fit-choice-lh: 1.08;
-  }
-
-  /* === CEO : boost plus fort (cartes + HUD + jauges + topbar) === */
-  body.vr-body-game[data-universe="mega_corp_ceo"]{
-    --vr-fit-ui: 1.03;
-    --vr-fit-hud: 1.04;
-    --vr-fit-gauge: 1.08;
-    --vr-fit-frame: 1.02;
-    --vr-fit-type: 1.12;
-    --vr-fit-gap: 0.96;
-    --vr-fit-namegap: 1.01;
-  }
-
-  /* === WESTERN : boost + on BAISSE le HUD (il remonte trop) === */
-  body.vr-body-game[data-universe="western_president"]{
-    --vr-fit-ui: 1.02;
-    --vr-fit-hud: 1.03;
-    --vr-fit-gauge: 1.07;
-    --vr-fit-frame: 1.01;
-    --vr-fit-type: 1.10;
-    --vr-fit-gap: 0.96;
-    --vr-fit-namegap: 1.00;
-
-    /* HUD trop haut -> on le redescend */
-    --vr-hud-item-ty: -4px;      /* au lieu du -11 global (moins “up”) */
-    --vr-identity-ty: 10px;      /* nom + année plus bas */
-    --vr-vcoins-ty: 6px;         /* solde vcoins plus bas */
-    --vr-jetons-ty: 6px;         /* solde jetons plus bas */
-  }
-
-  /* === EXPLORER : boost + soldes un peu plus bas === */
-  body.vr-body-game[data-universe="new_world_explorer"]{
-    --vr-fit-ui: 1.01;
-    --vr-fit-hud: 1.03;
-    --vr-fit-gauge: 1.08;
-    --vr-fit-frame: 1.02;
-    --vr-fit-type: 1.10;
-    --vr-fit-gap: 0.96;
-    --vr-fit-namegap: 1.00;
-
-    --vr-vcoins-ty: 4px;
-    --vr-jetons-ty: 4px;
-  }
-
-  /* === VAMPIRE : petit boost propre (pas toucher aux choix) === */
-  body.vr-body-game[data-universe="vampire_lord"]{
-    --vr-fit-ui: 1.00;
-    --vr-fit-hud: 1.02;
-    --vr-fit-gauge: 1.05;
-    --vr-fit-frame: 1.00;
-    --vr-fit-type: 1.06;
-    --vr-fit-gap: 0.96;
-    --vr-fit-namegap: 1.00;
-  }
-
-  /* === HEAVEN : jauges + HUD plus gros, soldes un peu plus HAUT, nom/année plus BAS === */
-  body.vr-body-game[data-universe="heaven_king"]{
-    --vr-fit-ui: 1.00;
-    --vr-fit-hud: 1.03;
-    --vr-fit-gauge: 1.10;
-    --vr-fit-frame: 1.00;
-    --vr-fit-type: 1.08;
-    --vr-fit-gap: 0.96;
-    --vr-fit-namegap: 1.00;
-
-    --vr-identity-ty: 10px;      /* nom/année plus bas */
-    --vr-vcoins-ty: -6px;        /* soldes plus haut */
-    --vr-jetons-ty: -6px;        /* soldes plus haut */
-  }
-
-  /* === HELL : boost fort sur HUD/jauges + carte message === */
-  body.vr-body-game[data-universe="hell_king"]{
-    --vr-fit-ui: 1.02;
-    --vr-fit-hud: 1.04;
-    --vr-fit-gauge: 1.12;
-    --vr-fit-frame: 1.02;
-    --vr-fit-type: 1.10;
-    --vr-fit-gap: 0.96;
-    --vr-fit-namegap: 1.01;
-  }
-}
 
 /* ==========================================================
-   3) Grands téléphones / petites tablettes (portrait)
-   (on réduit moins qu’avant pour éviter “trop petit”)
+   3) Tablettes portrait un peu moins extrêmes
+   Ex: grands téléphones / petites tablettes
    ========================================================== */
 @media (orientation: portrait) and (min-width: 481px) and (max-width: 699px){
   body.vr-body-game[data-universe]{
-    --vr-fit-ui: 0.98;
-    --vr-fit-hud: 0.98;
-    --vr-fit-gauge: 0.99;
-    --vr-fit-frame: 0.98;
-    --vr-fit-type: 0.99;
-    --vr-fit-gap: 0.95;
-    --vr-fit-namegap: 0.98;
+    --vr-fit-ui: 0.93;
+    --vr-fit-hud: 0.93;
+    --vr-fit-gauge: 0.93;
+    --vr-fit-frame: 0.92;
+    --vr-fit-type: 0.94;
+    --vr-fit-gap: 0.90;
+    --vr-fit-namegap: 0.93;
   }
 }
 
@@ -5508,3 +5409,28 @@ body.vr-body-game[data-universe] .vr-gauge-label{
     --vr-fit-namegap: 1.06;
   }
 }
+
+@media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
+  body.vr-body-game[data-universe="mega_corp_ceo"]{
+    --vr-fit-ui: 0.96;
+    --vr-fit-hud: 0.96;
+    --vr-fit-gauge: 0.95;
+    --vr-fit-frame: 0.96;
+    --vr-fit-type: 0.95;
+    --vr-fit-gap: 0.94;
+    --vr-fit-namegap: 0.95;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
+  body.vr-body-game[data-universe="western_president"]{
+    --vr-fit-ui: 0.95;
+    --vr-fit-hud: 0.95;
+    --vr-fit-gauge: 0.94;
+    --vr-fit-frame: 0.95;
+    --vr-fit-type: 0.95;
+    --vr-fit-gap: 0.93;
+    --vr-fit-namegap: 0.94;
+  }
+}
+
