@@ -5369,7 +5369,6 @@ body.vr-body-game[data-universe] .vr-gauge-label{
     --vr-fit-namegap: 0.92;
   }
 }
-
 /* ==========================================================
    3) Tablettes portrait un peu moins extrêmes
    Ex: grands téléphones / petites tablettes
@@ -5384,6 +5383,16 @@ body.vr-body-game[data-universe] .vr-gauge-label{
     --vr-fit-gap: 0.90;
     --vr-fit-namegap: 0.93;
   }
+
+  /* Petit boost police sans casser le layout */
+  body.vr-body-game[data-universe] .vr-gauge-label{ font-size: 1.03em !important; }
+  body.vr-body-game[data-universe] .vr-hud-value{ font-size: 1.03em !important; }
+  body.vr-body-game[data-universe] .vr-hud-name,
+  body.vr-body-game[data-universe] .vr-hud-years{ font-size: 1.02em !important; }
+
+  body.vr-body-game[data-universe] #view-game .vr-card-title{ font-size: 1.03em !important; }
+  body.vr-body-game[data-universe] #view-game .vr-card-text{ font-size: 1.02em !important; }
+  body.vr-body-game[data-universe] #view-game .vr-choice-label{ font-size: 1.02em !important; }
 }
 
 @media (min-width: 1101px) and (min-height: 760px){
@@ -5420,6 +5429,16 @@ body.vr-body-game[data-universe] .vr-gauge-label{
     --vr-fit-gap: 0.94;
     --vr-fit-namegap: 0.95;
   }
+
+  /* Boost police tablette (iPad portrait inclus) */
+  body.vr-body-game[data-universe] .vr-gauge-label{ font-size: 1.06em !important; }
+  body.vr-body-game[data-universe] .vr-hud-value{ font-size: 1.06em !important; }
+  body.vr-body-game[data-universe] .vr-hud-name,
+  body.vr-body-game[data-universe] .vr-hud-years{ font-size: 1.05em !important; }
+
+  body.vr-body-game[data-universe] #view-game .vr-card-title{ font-size: 1.06em !important; }
+  body.vr-body-game[data-universe] #view-game .vr-card-text{ font-size: 1.05em !important; }
+  body.vr-body-game[data-universe] #view-game .vr-choice-label{ font-size: 1.04em !important; }
 }
 
 @media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
@@ -5433,4 +5452,3 @@ body.vr-body-game[data-universe] .vr-gauge-label{
     --vr-fit-namegap: 0.94;
   }
 }
-
