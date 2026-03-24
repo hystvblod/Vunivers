@@ -3801,88 +3801,6 @@ body[data-universe="mega_corp_ceo"] .vr-gauge-label{
     line-height: 1.07 !important;
   }
 }
-@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
-  body.vr-body-game[data-universe="mega_corp_ceo"]{
-    --vr-card-w: min(94vw, 900px);
-    --vr-corp-hud-w: min(96vw, 1020px);
-
-    --vr-scn-h: clamp(188px, 21.8svh, 330px);
-    --vr-choice-h: clamp(120px, 14.0svh, 176px);
-
-    --vr-stack-gap: clamp(6px, 0.55svh, 10px);
-    --vr-choices-gap: clamp(8px, 0.75svh, 12px);
-
-    --vr-font-scn-title: clamp(18px, 2.25vmin, 28px);
-    --vr-font-scn-text: clamp(13px, 1.65vmin, 17px);
-    --vr-font-choice: clamp(15px, 1.9vmin, 20px);
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-value{
-    font-size: clamp(18px, 2.2vw, 28px) !important;
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-name,
-  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-years{
-    font-size: clamp(16px, 2.0vw, 25px) !important;
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-title{
-    width: min(84%, 720px) !important;
-    max-width: min(84%, 720px) !important;
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-text{
-    width: min(82%, 700px) !important;
-    max-width: min(82%, 700px) !important;
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
-    width: min(86%, 760px) !important;
-    max-width: min(86%, 760px) !important;
-  }
-}
-
-@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
-  body.vr-body-game[data-universe="mega_corp_ceo"]{
-    --vr-card-w: min(94vw, 900px);
-    --vr-corp-hud-w: min(96vw, 1020px);
-
-    --vr-scn-h: auto;
-    --vr-choice-h: clamp(120px, 14.0svh, 176px);
-
-    --vr-stack-gap: clamp(6px, 0.55svh, 10px);
-    --vr-choices-gap: clamp(8px, 0.75svh, 12px);
-
-    --vr-font-scn-title: clamp(18px, 2.25vmin, 28px);
-    --vr-font-scn-text: clamp(13px, 1.65vmin, 17px);
-    --vr-font-choice: clamp(15px, 1.9vmin, 20px);
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-value{
-    font-size: clamp(18px, 2.2vw, 28px) !important;
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-name,
-  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-years{
-    font-size: clamp(16px, 2.0vw, 25px) !important;
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-title{
-    width: min(84%, 720px) !important;
-    max-width: min(84%, 720px) !important;
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-card-text{
-    width: min(82%, 700px) !important;
-    max-width: min(82%, 700px) !important;
-  }
-
-  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
-    width: min(86%, 760px) !important;
-    max-width: min(86%, 760px) !important;
-  }
-}
-
 
 
 
@@ -5075,61 +4993,7 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-frame{
    - ton CSS actuel devient la référence
    - on scale tout le mode jeu tel quel
    - aucun réglage univers à refaire
-   ========================================================== */@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
-  body.vr-body-game[data-universe="western_president"]{
-    --vr-scn-h: clamp(148px, 17.2svh, 220px);
-    --vr-choice-h: clamp(92px, 10.8svh, 138px);
-
-    --vr-stack-gap: clamp(6px, 0.7svh, 10px);
-    --vr-choices-gap: clamp(6px, 0.7svh, 10px);
-
-    --vr-font-scn-title: clamp(15px, 1.9vmin, 24px);
-    --vr-font-scn-text: clamp(12px, 1.45vmin, 16px);
-    --vr-font-choice: clamp(12px, 1.5vmin, 16px);
-
-    --vr-scn-inset-top: 16%;
-    --vr-scn-inset-right: 13%;
-    --vr-scn-inset-bottom: 12%;
-    --vr-scn-inset-left: 13%;
-
-    --vr-choice-inset-top: 16%;
-    --vr-choice-inset-right: 10%;
-    --vr-choice-inset-bottom: 16%;
-    --vr-choice-inset-left: 10%;
-    --vr-choice-safe: 82%;
-
-    --vr-identity-ty: 10px;
-    --vr-hud-name-years-gap: 34px;
-  }
-
-  body.vr-body-game[data-universe="western_president"] .vr-hud{
-    margin: 0 auto !important;
-  }
-
-  body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value{
-    transform: translate(-8px, 10px) !important;
-  }
-
-  body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
-    transform: translate(8px, 10px) !important;
-  }
-
-  body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
-    transform: translate(0px, 12px) !important;
-    gap: 34px !important;
-  }
-
-  body.vr-body-game[data-universe="western_president"] #view-game .vr-card-title,
-  body.vr-body-game[data-universe="western_president"] #view-game .vr-card-text{
-    max-width: 88% !important;
-  }
-
-  body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-label{
-    line-height: 1.08 !important;
-  }
-}
-
-
+   ========================================================== */
 /* ==========================================================
    ADAPTATION FINALE — BASE DE RÉFÉRENCE = 412x914
    - le CSS existant reste la référence
@@ -5290,51 +5154,43 @@ body.vr-body-game[data-universe] .vr-gauge-label{
    ========================================================== */
 @media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
   body.vr-body-game[data-universe]{
-    --vr-fit-ui: 0.92;
-    --vr-fit-hud: 0.93;
-    --vr-fit-gauge: 0.92;
+    --vr-fit-ui: 0.94;
+    --vr-fit-hud: 0.95;
+    --vr-fit-gauge: 0.98;
+    --vr-fit-frame: 0.93;
+    --vr-fit-type: 1.10;
+    --vr-fit-gap: 0.92;
+    --vr-fit-namegap: 0.96;
 
-    /* on garde le frame global contenu pour éviter le débordement */
-    --vr-fit-frame: 0.90;
-
-    /* on grossit les textes sur tablette */
-    --vr-fit-type: 1.08;
-
-    --vr-fit-gap: 0.88;
-    --vr-fit-namegap: 0.94;
-
-    --vr-fit-title-lh: 1.04;
-    --vr-fit-text-lh: 1.10;
-    --vr-fit-choice-lh: 1.06;
+    --vr-fit-title-lh: 1.05;
+    --vr-fit-text-lh: 1.12;
+    --vr-fit-choice-lh: 1.08;
   }
 
-  /* plus de place utile pour les cartes sans élargir tout le stage */
   body.vr-body-game[data-universe] #view-game .vr-card-main{
-    min-height: calc(var(--vr-scn-h) * 0.97) !important;
+    min-height: calc(var(--vr-scn-h) * 0.98) !important;
   }
 
   body.vr-body-game[data-universe] #view-game .vr-choice-button{
-    min-height: calc(var(--vr-choice-h) * 0.97) !important;
+    min-height: calc(var(--vr-choice-h) * 0.98) !important;
   }
 
-  /* HUD plus grand */
   body.vr-body-game[data-universe] .vr-hud-value{
-    font-size: calc(clamp(12px, 2vw, 24px) * 1.14) !important;
+    font-size: calc(clamp(12px, 2vw, 24px) * 1.18) !important;
   }
 
   body.vr-body-game[data-universe] .vr-hud-name,
   body.vr-body-game[data-universe] .vr-hud-years{
-    font-size: calc(clamp(12px, 1.9vw, 23px) * 1.12) !important;
+    font-size: calc(clamp(12px, 1.9vw, 23px) * 1.16) !important;
   }
 
-  /* jauges plus grandes */
   body.vr-body-game[data-universe] .vr-gauge-label{
     font-size: calc(clamp(11px, 2.1vmin, 15px) * 1.16) !important;
-    min-height: 2.10em !important;
+    min-height: 2.2em !important;
   }
 
   body.vr-body-game[data-universe] .vr-gauge-value{
-    font-size: calc(13px * 1.10) !important;
+    font-size: calc(13px * 1.12) !important;
   }
 }
 /* ==========================================================
@@ -5377,31 +5233,43 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   }
 }
 
-@media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
-  body.vr-body-game[data-universe="mega_corp_ceo"]{
-    --vr-fit-ui: 0.96;
-    --vr-fit-hud: 0.96;
-    --vr-fit-gauge: 0.95;
-    --vr-fit-frame: 0.96;
-    --vr-fit-type: 0.95;
-    --vr-fit-gap: 0.94;
-    --vr-fit-namegap: 0.95;
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
+  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud{
+    aspect-ratio: 1024 / 235 !important;
   }
 }
 
 @media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
-  body.vr-body-game[data-universe="western_president"]{
-    --vr-fit-ui: 0.95;
-    --vr-fit-hud: 0.95;
-    --vr-fit-gauge: 0.94;
-    --vr-fit-frame: 0.95;
-    --vr-fit-type: 0.95;
-    --vr-fit-gap: 0.93;
-    --vr-fit-namegap: 0.94;
+  body.vr-body-game[data-universe] .vr-gauges-row{
+    gap: clamp(10px, 1.8vw, 16px) !important;
   }
-}
-@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
-  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud{
-    aspect-ratio: 1024 / 235 !important;
+
+  body.vr-body-game[data-universe] .vr-gauge{
+    gap: 8px !important;
+  }
+
+  body.vr-body-game[data-universe] .vr-gauge-label{
+    font-size: clamp(13px, 1.75vw, 18px) !important;
+    min-height: 2.25em !important;
+    padding: 0 4px !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    text-align: center !important;
+  }
+
+  body.vr-body-game[data-universe] .vr-gauge-value{
+    font-size: clamp(12px, 1.55vw, 16px) !important;
+    min-width: 70px !important;
+  }
+
+  body.vr-body-game[data-universe] .vr-hud-value{
+    font-size: clamp(14px, 1.95vw, 24px) !important;
+  }
+
+  body.vr-body-game[data-universe] .vr-hud-name,
+  body.vr-body-game[data-universe] .vr-hud-years{
+    font-size: clamp(14px, 1.95vw, 24px) !important;
   }
 }
