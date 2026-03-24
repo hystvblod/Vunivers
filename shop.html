@@ -10,19 +10,29 @@
     :root{
       --vr-bg: radial-gradient(circle at top, #f6e7cf 0, #1b6688 62%, #03279e 100%);
       --vr-overlay: none;
+    }
 
-      --shop-gap: 8px;
-      --shop-item-radius: 16px;
-      --shop-item-pad: 10px;
-      --shop-icon: 42px;
-      --shop-btn-h: 38px;
+    body.page-shop{
+      --shop-scale: clamp(1, calc(0.94 + (100vw - 390px) / 900), 1.48);
 
-      --u-gap: 14px;
-      --u-radius: 20px;
+      --shop-gap: calc(8px * var(--shop-scale));
+      --shop-item-radius: calc(16px * var(--shop-scale));
+      --shop-item-pad: calc(10px * var(--shop-scale));
+      --shop-icon: calc(42px * var(--shop-scale));
+      --shop-btn-h: calc(38px * var(--shop-scale));
 
-      --cos-arrow: 36px;
-      --cos-card-r: 18px;
-      --cos-card-h: 124px;
+      --u-gap: calc(14px * var(--shop-scale));
+      --u-radius: calc(20px * var(--shop-scale));
+
+      --cos-arrow: calc(36px * var(--shop-scale));
+      --cos-card-r: calc(18px * var(--shop-scale));
+      --cos-card-h: calc(124px * var(--shop-scale));
+    }
+
+    @media (max-width: 390px){
+      body.page-shop{
+        --shop-scale: 1;
+      }
     }
 
     .vr-header{
@@ -37,10 +47,16 @@
     .vr-top-actions{
       width:100%;
       display:grid;
-      grid-template-columns: 44px minmax(0,1fr) 44px;
+      grid-template-columns:
+        calc(44px * var(--shop-scale))
+        minmax(0,1fr)
+        calc(44px * var(--shop-scale));
       align-items:center;
-      gap:12px;
-      padding: calc(8px + env(safe-area-inset-top)) 12px 6px;
+      gap: calc(12px * var(--shop-scale));
+      padding:
+        calc((8px * var(--shop-scale)) + env(safe-area-inset-top))
+        calc(12px * var(--shop-scale))
+        calc(6px * var(--shop-scale));
     }
 
     .vr-top-slot{
@@ -57,7 +73,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:22px;
+      gap: calc(22px * var(--shop-scale));
       width:100%;
     }
 
@@ -65,7 +81,7 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:8px;
+      gap: calc(8px * var(--shop-scale));
       padding:0;
       min-width:0;
       height:auto;
@@ -78,8 +94,8 @@
     }
 
     .vr-top-balance img{
-      width:22px;
-      height:22px;
+      width: calc(22px * var(--shop-scale));
+      height: calc(22px * var(--shop-scale));
       object-fit:contain;
       display:block;
       flex:0 0 auto;
@@ -90,7 +106,7 @@
 
     .vr-top-balance span{
       font-weight:1000;
-      font-size:18px;
+      font-size: calc(18px * var(--shop-scale));
       line-height:1;
       color:rgba(255,255,255,.98);
       text-shadow:0 8px 18px rgba(0,0,0,.45);
@@ -98,8 +114,8 @@
     }
 
     .vr-icon-button{
-      width:44px;
-      height:44px;
+      width: calc(44px * var(--shop-scale));
+      height: calc(44px * var(--shop-scale));
       border-radius:999px;
       border: 1px solid rgba(255,255,255,0.18);
       background: rgba(0,0,0,0.26);
@@ -116,8 +132,8 @@
     .vr-icon-button:active{ transform: scale(.98); }
 
     .vr-icon-button img{
-      width:30px;
-      height:30px;
+      width: calc(30px * var(--shop-scale));
+      height: calc(30px * var(--shop-scale));
       object-fit:contain;
       display:block;
       pointer-events:none;
@@ -126,8 +142,8 @@
     }
 
     .vr-back-ico{
-      width:24px;
-      height:24px;
+      width: calc(24px * var(--shop-scale));
+      height: calc(24px * var(--shop-scale));
       display:block;
       opacity:.98;
       filter: drop-shadow(0 2px 8px rgba(0,0,0,0.65));
@@ -142,17 +158,33 @@
     }
 
     #view-shop .vr-section-title{
-      margin-top: 4px !important;
-      margin-bottom: 10px !important;
+      margin-top: calc(4px * var(--shop-scale)) !important;
+      margin-bottom: calc(10px * var(--shop-scale)) !important;
     }
 
     .vr-profile-title{
-      margin-top: 10px !important;
-      margin-bottom: 10px !important;
+      margin-top: calc(10px * var(--shop-scale)) !important;
+      margin-bottom: calc(10px * var(--shop-scale)) !important;
+    }
+
+    .vr-main{
+      width:100%;
+      max-width:none;
+      margin:0 auto;
+      padding:
+        calc(12px * var(--shop-scale))
+        calc(16px * var(--shop-scale))
+        calc(24px * var(--shop-scale));
+      box-sizing:border-box;
+    }
+
+    #view-shop{
+      width:100%;
     }
 
     .vr-shop-block{
-      margin: 8px 0 12px;
+      margin: calc(8px * var(--shop-scale)) 0 calc(12px * var(--shop-scale));
+      max-width:100%;
     }
 
     .vr-shop-grid{
@@ -169,6 +201,7 @@
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.22);
       box-shadow: 0 18px 34px rgba(0,0,0,.30);
+      box-sizing:border-box;
     }
 
     .vr-shop-item::before{
@@ -190,9 +223,9 @@
       flex-direction:column;
       align-items:center;
       justify-content:center;
-      gap: 8px;
-      min-height: 74px;
-      margin-bottom: 10px;
+      gap: calc(8px * var(--shop-scale));
+      min-height: calc(74px * var(--shop-scale));
+      margin-bottom: calc(10px * var(--shop-scale));
     }
 
     .vr-shop-icon{
@@ -212,7 +245,7 @@
       z-index: 1;
       width:100%;
       font-weight: 950;
-      font-size: 16px;
+      font-size: calc(16px * var(--shop-scale));
       letter-spacing: .2px;
       color: rgba(255,255,255,.96);
       text-shadow: 0 10px 20px rgba(0,0,0,.50);
@@ -224,8 +257,8 @@
       position: relative;
       z-index: 1;
       width: 100%;
-      border-radius: 13px;
-      padding: 9px 10px;
+      border-radius: calc(13px * var(--shop-scale));
+      padding: calc(9px * var(--shop-scale)) calc(10px * var(--shop-scale));
       min-height: var(--shop-btn-h);
       border: 1px solid rgba(255,255,255,.14);
       background: rgba(0,0,0,.22);
@@ -235,6 +268,7 @@
       justify-content:center;
       text-align:center;
       color: rgba(255,255,255,.96) !important;
+      box-sizing:border-box;
     }
 
     .vr-shop-item .vr-choice-button span{
@@ -260,13 +294,13 @@
       flex-direction:column !important;
       align-items:center !important;
       justify-content:flex-start !important;
-      gap:3px !important;
-      min-height:82px !important;
-      padding-top:10px;
+      gap: calc(3px * var(--shop-scale)) !important;
+      min-height: calc(82px * var(--shop-scale)) !important;
+      padding-top: calc(10px * var(--shop-scale));
     }
 
     #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-icon{
-      transform: translateY(2px);
+      transform: translateY(calc(2px * var(--shop-scale)));
       animation: vrDiamondPulse 0.95s ease-in-out infinite;
       filter:
         drop-shadow(0 0 14px rgba(255,210,90,.58))
@@ -274,10 +308,10 @@
     }
 
     #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-badge-subtitle{
-      margin-top:2px;
-      max-width:112px;
+      margin-top: calc(2px * var(--shop-scale));
+      max-width: calc(112px * var(--shop-scale));
       font-weight:1000;
-      font-size:11px;
+      font-size: calc(11px * var(--shop-scale));
       line-height:1.08;
       text-align:center;
       color:#f7d46e;
@@ -290,7 +324,7 @@
     @keyframes vrDiamondPulse{
       0%, 100%{
         opacity:1;
-        transform:translateY(2px) scale(1);
+        transform:translateY(calc(2px * var(--shop-scale))) scale(1);
       }
       50%{
         opacity:.55;
@@ -307,8 +341,8 @@
       display:flex;
       flex-direction:column;
       gap: var(--u-gap);
-      margin-top: 14px;
-      padding-bottom: 10px;
+      margin-top: calc(14px * var(--shop-scale));
+      padding-bottom: calc(10px * var(--shop-scale));
     }
 
     .vr-universe-block{
@@ -318,7 +352,11 @@
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.18);
       box-shadow: 0 18px 34px rgba(0,0,0,.26);
-      padding: 14px 12px 12px;
+      padding:
+        calc(14px * var(--shop-scale))
+        calc(12px * var(--shop-scale))
+        calc(12px * var(--shop-scale));
+      box-sizing:border-box;
     }
 
     .vr-universe-block::before{
@@ -338,17 +376,17 @@
       z-index:1;
       text-align:center;
       font-weight:950;
-      font-size: 19px;
+      font-size: calc(19px * var(--shop-scale));
       line-height:1.1;
       color: rgba(255,255,255,.96);
-      margin: 0 0 12px;
+      margin: 0 0 calc(12px * var(--shop-scale));
       text-shadow: 0 12px 24px rgba(0,0,0,.55);
     }
 
     .vr-cos-row{
       position:relative;
       z-index:1;
-      margin: 0 0 14px;
+      margin: 0 0 calc(14px * var(--shop-scale));
     }
 
     .vr-cos-row:last-child{
@@ -358,9 +396,9 @@
     .vr-cos-subtitle{
       text-align:center;
       font-weight:900;
-      font-size:13px;
+      font-size: calc(13px * var(--shop-scale));
       color: rgba(255,255,255,.92);
-      margin: 0 0 8px;
+      margin: 0 0 calc(8px * var(--shop-scale));
       letter-spacing:.15px;
     }
 
@@ -368,10 +406,9 @@
       display:grid;
       grid-template-columns: var(--cos-arrow) minmax(0, 1fr) var(--cos-arrow);
       align-items:center;
-      gap: 8px;
+      gap: calc(8px * var(--shop-scale));
     }
 
-    /* ✅ flèches SANS encadré rond */
     .vr-cos-arrow{
       width: var(--cos-arrow);
       height: var(--cos-arrow);
@@ -385,7 +422,7 @@
       cursor:pointer;
       padding:0;
       color: rgba(255,255,255,.96);
-      font-size: 28px;
+      font-size: calc(28px * var(--shop-scale));
       font-weight: 900;
       line-height:1;
       user-select:none;
@@ -456,7 +493,7 @@
 
     .vr-cos-card.is-ui > img{
       object-fit: contain;
-      padding: 14px;
+      padding: calc(14px * var(--shop-scale));
       background:
         radial-gradient(circle at 50% 40%, rgba(255,255,255,.10), transparent 46%),
         linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.08));
@@ -466,17 +503,20 @@
       position:absolute;
       inset:auto 0 0 0;
       z-index:2;
-      padding: 30px 10px 10px;
+      padding:
+        calc(30px * var(--shop-scale))
+        calc(10px * var(--shop-scale))
+        calc(10px * var(--shop-scale));
       background: linear-gradient(180deg, transparent, rgba(0,0,0,.72));
     }
 
     .vr-cos-name{
       text-align:center;
       font-weight:900;
-      font-size:13px;
+      font-size: calc(13px * var(--shop-scale));
       color: rgba(255,255,255,.96);
       line-height:1.15;
-      margin-bottom: 8px;
+      margin-bottom: calc(8px * var(--shop-scale));
       text-shadow: 0 8px 18px rgba(0,0,0,.45);
     }
 
@@ -484,44 +524,47 @@
       display:flex;
       align-items:center;
       justify-content:flex-end;
-      gap: 8px;
+      gap: calc(8px * var(--shop-scale));
     }
 
     .vr-cos-count{
       color: rgba(255,255,255,.86);
-      font-size:12px;
+      font-size: calc(12px * var(--shop-scale));
       font-weight:900;
       text-shadow: 0 8px 18px rgba(0,0,0,.45);
     }
 
     .vr-cos-action{
       width:100%;
-      margin-top:8px;
+      margin-top: calc(8px * var(--shop-scale));
+      min-height: calc(40px * var(--shop-scale));
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:10px 12px;
-      border-radius:14px;
+      padding: calc(10px * var(--shop-scale)) calc(12px * var(--shop-scale));
+      border-radius: calc(14px * var(--shop-scale));
       border:1px solid rgba(255,255,255,.14);
       background:rgba(0,0,0,.22);
       color:#fff;
       font-weight:900;
+      font-size: calc(13px * var(--shop-scale));
       cursor:pointer;
+      box-sizing:border-box;
     }
 
     .vr-cos-action-content{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:6px;
+      gap: calc(6px * var(--shop-scale));
       line-height:1;
     }
 
     .vr-cos-action-ico{
-      width:14px;
-      height:14px;
-      min-width:14px;
-      min-height:14px;
+      width: calc(14px * var(--shop-scale));
+      height: calc(14px * var(--shop-scale));
+      min-width: calc(14px * var(--shop-scale));
+      min-height: calc(14px * var(--shop-scale));
       object-fit:contain;
       display:block;
       flex:0 0 auto;
@@ -540,13 +583,13 @@
     .vr-cos-dots{
       display:flex;
       justify-content:center;
-      gap:6px;
-      margin-top: 8px;
+      gap: calc(6px * var(--shop-scale));
+      margin-top: calc(8px * var(--shop-scale));
     }
 
     .vr-cos-dot{
-      width:7px;
-      height:7px;
+      width: calc(7px * var(--shop-scale));
+      height: calc(7px * var(--shop-scale));
       border-radius:999px;
       background: rgba(255,255,255,.28);
       box-shadow: 0 4px 10px rgba(0,0,0,.22);
@@ -554,482 +597,6 @@
 
     .vr-cos-dot.active{
       background: rgba(255,255,255,.92);
-    }
-
-
-    /* ==========================================================
-       SHOP responsive : on garde 2 colonnes, on scale seulement
-       ========================================================== */
-
-    body.page-shop .vr-main{
-      width: min(100%, 980px);
-      margin: 0 auto;
-      padding-left: clamp(12px, 2vw, 24px);
-      padding-right: clamp(12px, 2vw, 24px);
-    }
-
-    body.page-shop #view-shop{
-      width: 100%;
-    }
-
-    body.page-shop .vr-shop-block{
-      max-width: 100%;
-    }
-
-    /* tablette */
-    @media (min-width: 700px){
-      :root{
-        --shop-gap: 12px;
-        --shop-item-radius: 18px;
-        --shop-item-pad: 13px;
-        --shop-icon: 50px;
-        --shop-btn-h: 42px;
-
-        --u-gap: 16px;
-        --u-radius: 22px;
-
-        --cos-arrow: 40px;
-        --cos-card-r: 20px;
-        --cos-card-h: 138px;
-      }
-
-      .vr-top-actions{
-        grid-template-columns: 48px minmax(0,1fr) 48px;
-        gap: 14px;
-        padding: calc(10px + env(safe-area-inset-top)) 14px 8px;
-      }
-
-      .vr-top-balances{
-        gap: 26px;
-      }
-
-      .vr-top-balance img{
-        width: 20px;
-        height: 20px;
-      }
-
-      .vr-top-balance span{
-        font-size: 17px;
-      }
-
-      .vr-icon-button{
-        width: 48px;
-        height: 48px;
-      }
-
-      .vr-icon-button img{
-        width: 30px;
-        height: 30px;
-      }
-
-      .vr-back-ico{
-        width: 24px;
-        height: 24px;
-      }
-
-      #view-shop .vr-section-title{
-        margin-top: 8px !important;
-        margin-bottom: 12px !important;
-      }
-
-      .vr-profile-title{
-        margin-top: 14px !important;
-        margin-bottom: 12px !important;
-      }
-
-      .vr-shop-block{
-        margin: 10px 0 16px;
-      }
-
-      .vr-shop-top{
-        gap: 9px;
-        min-height: 86px;
-        margin-bottom: 12px;
-      }
-
-      .vr-shop-qty{
-        font-size: 18px;
-      }
-
-      .vr-shop-item .vr-choice-button{
-        min-height: 42px;
-        padding: 10px 12px;
-        border-radius: 14px;
-        font-size: 14px;
-      }
-
-      .vr-universe-block{
-        padding: 16px 14px 14px;
-      }
-
-      .vr-universe-title{
-        font-size: 21px;
-        margin-bottom: 14px;
-      }
-
-      .vr-cos-row{
-        margin-bottom: 16px;
-      }
-
-      .vr-cos-subtitle{
-        font-size: 14px;
-        margin-bottom: 10px;
-      }
-
-      .vr-cos-name{
-        font-size: 14px;
-      }
-
-      .vr-cos-action{
-        min-height: 42px;
-        font-size: 13px;
-      }
-
-      .vr-cos-action-ico{
-        width: 15px;
-        height: 15px;
-        min-width: 15px;
-        min-height: 15px;
-      }
-
-      .vr-cos-dots{
-        margin-top: 10px;
-      }
-
-      .vr-cos-dot{
-        width: 8px;
-        height: 8px;
-      }
-    }
-
-    /* desktop / grand écran */
-    @media (min-width: 1100px){
-      body.page-shop .vr-main{
-        width: min(100%, 1080px);
-        padding-left: 26px;
-        padding-right: 26px;
-      }
-
-      :root{
-        --shop-gap: 14px;
-        --shop-item-radius: 20px;
-        --shop-item-pad: 15px;
-        --shop-icon: 58px;
-        --shop-btn-h: 46px;
-
-        --u-gap: 18px;
-        --u-radius: 24px;
-
-        --cos-arrow: 42px;
-        --cos-card-r: 22px;
-        --cos-card-h: 148px;
-      }
-
-      .vr-top-actions{
-        grid-template-columns: 52px minmax(0,1fr) 52px;
-        gap: 16px;
-        padding: calc(12px + env(safe-area-inset-top)) 16px 10px;
-      }
-
-      .vr-top-balances{
-        gap: 32px;
-      }
-
-      .vr-top-balance img{
-        width: 22px;
-        height: 22px;
-      }
-
-      .vr-top-balance span{
-        font-size: 19px;
-      }
-
-      .vr-icon-button{
-        width: 52px;
-        height: 52px;
-      }
-
-      .vr-icon-button img{
-        width: 33px;
-        height: 33px;
-      }
-
-      .vr-back-ico{
-        width: 26px;
-        height: 26px;
-      }
-
-      #view-shop .vr-section-title{
-        margin-top: 10px !important;
-        margin-bottom: 14px !important;
-      }
-
-      .vr-profile-title{
-        margin-top: 16px !important;
-        margin-bottom: 14px !important;
-      }
-
-      .vr-shop-block{
-        margin: 12px 0 18px;
-      }
-
-      .vr-shop-top{
-        gap: 10px;
-        min-height: 96px;
-        margin-bottom: 14px;
-      }
-
-      .vr-shop-qty{
-        font-size: 20px;
-      }
-
-      .vr-shop-item .vr-choice-button{
-        min-height: 46px;
-        padding: 11px 14px;
-        border-radius: 15px;
-        font-size: 15px;
-      }
-
-      .vr-universe-block{
-        padding: 18px 16px 16px;
-      }
-
-      .vr-universe-title{
-        font-size: 23px;
-        margin-bottom: 16px;
-      }
-
-      .vr-cos-row{
-        margin-bottom: 18px;
-      }
-
-      .vr-cos-subtitle{
-        font-size: 15px;
-        margin-bottom: 11px;
-      }
-
-      .vr-cos-name{
-        font-size: 15px;
-      }
-
-      .vr-cos-action{
-        min-height: 44px;
-        font-size: 14px;
-      }
-
-      .vr-cos-action-ico{
-        width: 16px;
-        height: 16px;
-        min-width: 16px;
-        min-height: 16px;
-      }
-
-      .vr-cos-dots{
-        margin-top: 11px;
-      }
-
-      .vr-cos-dot{
-        width: 9px;
-        height: 9px;
-      }
-    }
-
-    @media (max-width: 390px){
-    /* ==========================================================
-       SHOP responsive propre
-       On garde EXACTEMENT 2 colonnes
-       On scale tout selon l’écran
-       ========================================================== */
-
-    :root{
-      --shop-gap: clamp(8px, 1vw, 14px);
-      --shop-item-radius: clamp(16px, 1.7vw, 22px);
-      --shop-item-pad: clamp(10px, 1.25vw, 16px);
-      --shop-icon: clamp(42px, 4vw, 60px);
-      --shop-btn-h: clamp(38px, 4vw, 50px);
-
-      --u-gap: clamp(14px, 1.5vw, 20px);
-      --u-radius: clamp(20px, 1.8vw, 26px);
-
-      --cos-arrow: clamp(36px, 3.6vw, 46px);
-      --cos-card-r: clamp(18px, 1.6vw, 24px);
-      --cos-card-h: clamp(124px, 14vw, 176px);
-    }
-
-    body.page-shop .vr-main{
-      padding:
-        clamp(12px, 1.5vw, 20px)
-        clamp(16px, 2.4vw, 28px)
-        clamp(24px, 3vw, 38px);
-    }
-
-    body.page-shop .vr-top-actions{
-      grid-template-columns:
-        clamp(44px, 4.5vw, 56px)
-        minmax(0,1fr)
-        clamp(44px, 4.5vw, 56px);
-      gap: clamp(12px, 1.4vw, 18px);
-      padding:
-        calc(clamp(8px, 1vw, 12px) + env(safe-area-inset-top))
-        clamp(12px, 1.6vw, 18px)
-        clamp(6px, .8vw, 10px);
-    }
-
-    body.page-shop .vr-top-balances{
-      gap: clamp(22px, 2.8vw, 34px);
-    }
-
-    body.page-shop .vr-top-balance img{
-      width: clamp(22px, 2.5vw, 28px);
-      height: clamp(22px, 2.5vw, 28px);
-    }
-
-    body.page-shop .vr-top-balance span{
-      font-size: clamp(18px, 2.1vw, 24px);
-    }
-
-    body.page-shop .vr-icon-button{
-      width: clamp(44px, 4.5vw, 56px);
-      height: clamp(44px, 4.5vw, 56px);
-    }
-
-    body.page-shop .vr-icon-button img{
-      width: clamp(30px, 3.1vw, 36px);
-      height: clamp(30px, 3.1vw, 36px);
-    }
-
-    body.page-shop .vr-back-ico{
-      width: clamp(24px, 2.6vw, 28px);
-      height: clamp(24px, 2.6vw, 28px);
-    }
-
-    body.page-shop #view-shop .vr-section-title{
-      margin-top: clamp(4px, .7vw, 10px) !important;
-      margin-bottom: clamp(10px, 1.2vw, 16px) !important;
-    }
-
-    body.page-shop .vr-profile-title{
-      margin-top: clamp(10px, 1.2vw, 16px) !important;
-      margin-bottom: clamp(10px, 1.2vw, 16px) !important;
-    }
-
-    body.page-shop .vr-shop-block{
-      margin: clamp(8px, 1vw, 12px) 0 clamp(12px, 1.5vw, 18px);
-    }
-
-    body.page-shop .vr-shop-top{
-      gap: clamp(8px, .9vw, 10px);
-      min-height: clamp(74px, 8.3vw, 102px);
-      margin-bottom: clamp(10px, 1vw, 14px);
-    }
-
-    body.page-shop .vr-shop-qty{
-      font-size: clamp(16px, 1.9vw, 22px);
-    }
-
-    body.page-shop .vr-shop-item .vr-choice-button{
-      border-radius: clamp(13px, 1.4vw, 16px);
-      padding: clamp(9px, 1vw, 12px) clamp(10px, 1.2vw, 14px);
-      font-size: clamp(12px, 1.35vw, 15px);
-    }
-
-    body.page-shop #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-top{
-      gap: clamp(4px, .6vw, 6px) !important;
-      min-height: clamp(78px, 8.8vw, 108px) !important;
-      padding-top: clamp(2px, .8vw, 10px);
-    }
-
-    body.page-shop #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-icon{
-      transform: translateY(clamp(2px, .5vw, 6px));
-    }
-
-    body.page-shop #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-badge-subtitle{
-      max-width: clamp(110px, 13vw, 148px);
-      margin-top: clamp(2px, .4vw, 6px);
-      font-size: clamp(11px, 1.2vw, 14px);
-    }
-
-    body.page-shop .vr-cosmetics{
-      margin-top: clamp(14px, 1.7vw, 20px);
-      padding-bottom: clamp(10px, 1vw, 14px);
-    }
-
-    body.page-shop .vr-universe-block{
-      padding:
-        clamp(14px, 1.6vw, 20px)
-        clamp(12px, 1.5vw, 18px)
-        clamp(12px, 1.4vw, 18px);
-    }
-
-    body.page-shop .vr-universe-title{
-      font-size: clamp(19px, 2.1vw, 26px);
-      margin: 0 0 clamp(12px, 1.2vw, 16px);
-    }
-
-    body.page-shop .vr-cos-row{
-      margin: 0 0 clamp(14px, 1.3vw, 18px);
-    }
-
-    body.page-shop .vr-cos-subtitle{
-      font-size: clamp(13px, 1.35vw, 16px);
-      margin: 0 0 clamp(8px, .9vw, 11px);
-    }
-
-    body.page-shop .vr-cos-carousel{
-      gap: clamp(8px, 1vw, 12px);
-    }
-
-    body.page-shop .vr-cos-arrow{
-      font-size: clamp(28px, 2.7vw, 36px);
-    }
-
-    body.page-shop .vr-cos-card.is-ui > img{
-      padding: clamp(14px, 1.6vw, 20px);
-    }
-
-    body.page-shop .vr-cos-overlay{
-      padding:
-        clamp(30px, 3vw, 40px)
-        clamp(10px, 1.1vw, 14px)
-        clamp(10px, 1.1vw, 14px);
-    }
-
-    body.page-shop .vr-cos-name{
-      font-size: clamp(13px, 1.35vw, 16px);
-      margin-bottom: clamp(8px, .9vw, 10px);
-    }
-
-    body.page-shop .vr-cos-count{
-      font-size: clamp(12px, 1.1vw, 14px);
-    }
-
-    body.page-shop .vr-cos-action{
-      margin-top: clamp(8px, .9vw, 10px);
-      padding: clamp(10px, 1.1vw, 13px) clamp(12px, 1.2vw, 15px);
-      border-radius: clamp(14px, 1.5vw, 17px);
-      font-size: clamp(12px, 1.2vw, 15px);
-    }
-
-    body.page-shop .vr-cos-action-content{
-      gap: clamp(6px, .7vw, 8px);
-    }
-
-    body.page-shop .vr-cos-action-ico{
-      width: clamp(14px, 1.3vw, 17px);
-      height: clamp(14px, 1.3vw, 17px);
-      min-width: clamp(14px, 1.3vw, 17px);
-      min-height: clamp(14px, 1.3vw, 17px);
-    }
-
-    body.page-shop .vr-cos-dots{
-      gap: clamp(6px, .7vw, 8px);
-      margin-top: clamp(8px, .9vw, 11px);
-    }
-
-    body.page-shop .vr-cos-dot{
-      width: clamp(7px, .75vw, 9px);
-      height: clamp(7px, .75vw, 9px);
-    }
     }
   </style>
 </head>
