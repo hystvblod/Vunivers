@@ -593,5 +593,13 @@
       "accept": "Akzeptieren",
       "refuse": "Ablehnen"
     }
+  },
+  "referral": {
+    "invite_btn": "Einladen",
+    "share_title": "Einen Freund einladen",
+    "share_text": "Lade VUniverse hier herunter: {url}",
+    "link_copied": "Link kopiert",
+    "crosspromo_reward_label": "Empfehlung",
+    "crosspromo_desc": "Lade einen Freund ein, VUniverse zu installieren, und erhalte 200 VCoins für jede bestätigte Installation, bis zu 5 Einladungen."
   }
 }

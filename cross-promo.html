@@ -96,6 +96,20 @@
       gap:16px;
     }
 
+    .vr-crosspromo-referral-card{
+      margin-bottom:16px;
+    }
+
+    .vr-crosspromo-referral-card .vr-crosspromo-desc{
+      max-width:36ch;
+      margin-bottom:12px;
+    }
+
+    .vr-crosspromo-referral-card .vr-crosspromo-actions{
+      max-width:320px;
+      margin:0 auto;
+    }
+
     .vr-crosspromo-card{
       position:relative;
       overflow:hidden;
@@ -404,6 +418,29 @@
       <div class="vr-crosspromo-spacer" aria-hidden="true"></div>
     </div>
 
+    <section class="vr-crosspromo-card vr-crosspromo-referral-card">
+      <div class="vr-crosspromo-content">
+        <div class="vr-crosspromo-head vr-crosspromo-head--reward-only">
+          <div class="vr-crosspromo-reward">
+            <img src="assets/img/ui/vcoin.webp" alt="" draggable="false" />
+            <span class="vr-crosspromo-reward-label" data-i18n="referral.crosspromo_reward_label"></span>
+            <span class="vr-crosspromo-reward-value">+200</span>
+          </div>
+        </div>
+
+        <p class="vr-crosspromo-desc" data-i18n="referral.crosspromo_desc"></p>
+
+        <div class="vr-crosspromo-actions">
+          <button
+            class="vr-crosspromo-btn primary"
+            id="cp_invite_btn"
+            type="button"
+            data-i18n="referral.invite_btn"
+          ></button>
+        </div>
+      </div>
+    </section>
+
     <section class="vr-crosspromo-grid" id="vr-crosspromo-grid"></section>
   </main>
 
@@ -423,5 +460,6 @@
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/crossPromo.js"></script>
+  <script src="js/referral.js"></script>
 </body>
 </html>
