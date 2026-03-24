@@ -5375,34 +5375,7 @@ body.vr-body-game[data-universe] .vr-gauge-label{
     --vr-fit-namegap: 0.92;
   }
 
-  /* + Lisibilité tablette (petit boost, sans changer le layout) */
-  body.vr-body-game[data-universe] .vr-gauge-label{
-    font-size: 1.06em !important;
-  }
 
-  body.vr-body-game[data-universe] .vr-hud-value{
-    font-size: 1.07em !important;
-  }
-
-  body.vr-body-game[data-universe] .vr-hud-name,
-  body.vr-body-game[data-universe] .vr-hud-years{
-    font-size: 1.06em !important;
-  }
-
-  body.vr-body-game[data-universe] #view-game .vr-card-title{
-    font-size: 1.07em !important;
-    line-height: 1.06 !important;
-  }
-
-  body.vr-body-game[data-universe] #view-game .vr-card-text{
-    font-size: 1.06em !important;
-    line-height: 1.12 !important;
-  }
-
-  body.vr-body-game[data-universe] #view-game .vr-choice-label{
-    font-size: 1.05em !important;
-    line-height: 1.10 !important;
-  }
 }
 
 /* ==========================================================
