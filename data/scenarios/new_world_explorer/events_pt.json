@@ -2,184 +2,186 @@
   "version": 1,
   "events": {
     "new_world_explorer_ev_001": {
-      "title": "Mapa favorable",
-      "body": "Un navegante regresa con un mapa claro. De pronto, la costa parece más pequeña.",
-      "effect": "Territorios: +5 por carta",
-      "duration": "Duración: 5 cartas"
+      "title": "Mapa vantajoso",
+      "body": "Um navegador regressa com um mapa claro. De repente, a costa parece mais pequena.",
+      "effect": "Territórios: +5 por carta",
+      "duration": "Duração: 5 cartas"
     },
     "new_world_explorer_ev_002": {
-      "title": "Bodega bien llena",
-      "body": "Un convoy regresa con cajas pesadas y sonrisas todavía más pesadas.",
+      "title": "Porão bem cheio",
+      "body": "Um comboio regressa com caixotes pesados e sorrisos ainda mais pesados.",
       "effect": "Riquezas: +5 por carta",
-      "duration": "Duración: 6 cartas"
+      "duration": "Duração: 6 cartas"
     },
     "new_world_explorer_ev_003": {
-      "title": "Misión mal recibida",
-      "body": "Unos predicadores hablan demasiado rápido y escuchan muy poco. El pueblo se cierra.",
-      "effect": "Población convertida: -5 por carta",
-      "duration": "Duración: 4 cartas"
+      "title": "Missão mal recebida",
+      "body": "Uns pregadores falam depressa de mais e escutam de menos. A aldeia fecha-se.",
+      "effect": "População convertida: -5 por carta",
+      "duration": "Duração: 4 cartas"
     },
     "new_world_explorer_ev_004": {
-      "title": "Carta del palacio",
-      "body": "La corte saluda tus últimos resultados. Por una vez, el sello real trae algo distinto a una orden.",
-      "effect": "Apoyo real: +5 por carta",
-      "duration": "Duración: 5 cartas"
+      "title": "Carta do palácio",
+      "body": "A corte saúda os teus últimos resultados. Pela primeira vez, o selo real traz outra coisa além de uma ordem.",
+      "effect": "Apoio real: +5 por carta",
+      "duration": "Duração: 5 cartas"
     },
     "new_world_explorer_ev_005": {
-      "title": "Frontera disputada",
-      "body": "Un jefe vecino cuestiona nuestros límites. De pronto, nuestras tierras parecen mucho menos seguras.",
-      "effect": "Territorios: -5 por carta",
-      "duration": "Duración: 6 cartas"
+      "title": "Fronteira contestada",
+      "body": "Um chefe vizinho põe em causa os nossos marcos. As nossas terras parecem de repente muito menos seguras.",
+      "effect": "Territórios: -5 por carta",
+      "duration": "Duração: 6 cartas"
     },
     "new_world_explorer_ev_006": {
-      "title": "Capilla del puerto",
-      "body": "Una pequeña capilla abre cerca del muelle. Los sermones circulan tan rápido como los rumores.",
-      "effect": "Población convertida: +5 por carta",
-      "duration": "Duración: 4 cartas"
+      "title": "Capela do porto",
+      "body": "Uma pequena capela abre perto do cais. Os sermões circulam tão depressa como os rumores.",
+      "effect": "População convertida: +5 por carta",
+      "duration": "Duração: 4 cartas"
     },
     "new_world_explorer_ev_007": {
-      "title": "Convoy saqueado",
-      "body": "Parte del stock desaparece en la ruta interior. El comercio odia este tipo de sorpresas.",
+      "title": "Comboio saqueado",
+      "body": "Parte do stock desaparece na estrada interior. O comércio detesta este tipo de surpresa.",
       "effect": "Riquezas: -5 por carta",
-      "duration": "Duración: 7 cartas"
+      "duration": "Duração: 7 cartas"
     },
     "new_world_explorer_ev_008": {
       "title": "Corte ofendida",
-      "body": "Un informe llega tarde y con demasiadas excusas. Al palacio le gustan aún menos los retrasos que la verdad.",
-      "effect": "Apoyo real: -5 por carta",
-      "duration": "Duración: 5 cartas"
+      "body": "Um relatório chega atrasado e com desculpas a mais. O palácio gosta ainda menos de atrasos do que da verdade.",
+      "effect": "Apoio real: -5 por carta",
+      "duration": "Duração: 5 cartas"
     },
     "new_world_explorer_ev_009": {
-      "title": "Predicador aplaudido",
-      "body": "Un predicador sabe hablar de forma simple. Las multitudes se quedan hasta el final y vuelven al día siguiente.",
-      "effect": "Población convertida: +5 por carta",
-      "duration": "Duración: 4 cartas"
+      "title": "Pregador aplaudido",
+      "body": "Um pregador sabe falar de forma simples. As multidões ficam até ao fim e voltam no dia seguinte.",
+      "effect": "População convertida: +5 por carta",
+      "duration": "Duração: 4 cartas"
     },
     "new_world_explorer_ev_010": {
-      "title": "Veta rentable",
-      "body": "Una veta discreta empieza a rendir más de lo esperado. Hasta los escribas parecen contentos.",
+      "title": "Veio lucrativo",
+      "body": "Um veio discreto começa a render mais do que o previsto. Até os escribas parecem contentes.",
       "effect": "Riquezas: +5 por carta",
-      "duration": "Duración: 6 cartas"
+      "duration": "Duração: 6 cartas"
     },
+
     "new_world_explorer_ev_011": {
-      "title": "Órdenes contradictorias",
-      "body": "Dos mensajes reales dicen dos cosas opuestas. Pierdes tiempo, y la corte pierde la paciencia.",
-      "effect": "Apoyo real: -5 por carta",
-      "duration": "Duración: 3 cartas"
+      "title": "Ordens contraditórias",
+      "body": "Duas mensagens reais dizem coisas opostas. Perdes tempo, e a corte perde a paciência.",
+      "effect": "Apoio real: -5 por carta",
+      "duration": "Duração: 3 cartas"
     },
     "new_world_explorer_ev_012": {
       "title": "Visita anunciada",
-      "body": "Un enviado del rey habla de tu colonia como de un ejemplo. Es halagador y muy útil.",
-      "effect": "Apoyo real: +5 por carta",
-      "duration": "Duración: 7 cartas"
+      "body": "Um enviado do rei fala da tua colónia como de um exemplo. É lisonjeiro e muito útil.",
+      "effect": "Apoio real: +5 por carta",
+      "duration": "Duração: 7 cartas"
     },
     "new_world_explorer_ev_013": {
-      "title": "Puesto abandonado",
-      "body": "Un pequeño puesto avanzado es abandonado tras varias noches agitadas. El mapa se repliega de golpe.",
-      "effect": "Territorios: -5 por carta",
-      "duration": "Duración: 4 cartas"
+      "title": "Posto abandonado",
+      "body": "Um pequeno posto avançado é abandonado depois de várias noites agitadas. O mapa encolhe de repente.",
+      "effect": "Territórios: -5 por carta",
+      "duration": "Duração: 4 cartas"
     },
     "new_world_explorer_ev_014": {
-      "title": "Mercado de las islas",
-      "body": "Mercaderes llegados de las islas llenan el puerto de bienes raros y de ideas de margen.",
+      "title": "Mercado das ilhas",
+      "body": "Mercadores vindos das ilhas enchem o porto de bens raros e de ideias de lucro.",
       "effect": "Riquezas: +5 por carta",
-      "duration": "Duración: 6 cartas"
+      "duration": "Duração: 6 cartas"
     },
     "new_world_explorer_ev_015": {
-      "title": "Fuerte avanzado",
-      "body": "Un pequeño fuerte surge en un lugar bien elegido. La costa parece de pronto más amplia.",
-      "effect": "Territorios: +5 por carta",
-      "duration": "Duración: 3 cartas"
+      "title": "Forte avançado",
+      "body": "Um pequeno forte ergue-se num ponto bem escolhido. A costa parece de repente mais extensa.",
+      "effect": "Territórios: +5 por carta",
+      "duration": "Duração: 3 cartas"
     },
     "new_world_explorer_ev_016": {
-      "title": "Celo torpe",
-      "body": "Hombres demasiado apresurados quieren convencer por la fuerza del tono. Consiguen sobre todo desconfianza.",
-      "effect": "Población convertida: -5 por carta",
-      "duration": "Duración: 5 cartas"
+      "title": "Zelo desastrado",
+      "body": "Homens apressados demais querem convencer pela força do tom. Conseguem sobretudo desconfiança.",
+      "effect": "População convertida: -5 por carta",
+      "duration": "Duração: 5 cartas"
     },
     "new_world_explorer_ev_017": {
-      "title": "Cofre del reino",
-      "body": "Un cofre llega del continente con material, órdenes y un poco de confianza.",
-      "effect": "Apoyo real: +5 por carta",
-      "duration": "Duración: 4 cartas"
+      "title": "Cofre do reino",
+      "body": "Um cofre chega do continente com material, ordens e um pouco de confiança.",
+      "effect": "Apoio real: +5 por carta",
+      "duration": "Duração: 4 cartas"
     },
     "new_world_explorer_ev_018": {
-      "title": "Tormenta sobre las bodegas",
-      "body": "Una serie de lluvias daña las reservas. El puerto huele a madera mojada y a pérdida clara.",
+      "title": "Tempestade sobre os porões",
+      "body": "Uma série de chuvas estraga os stocks. O porto cheira a madeira molhada e a perda seca.",
       "effect": "Riquezas: -5 por carta",
-      "duration": "Duración: 7 cartas"
+      "duration": "Duração: 7 cartas"
     },
     "new_world_explorer_ev_019": {
-      "title": "Escuela de la orilla",
-      "body": "Una escuela abre cerca del puerto. Los niños vienen por las palabras y regresan por las costumbres.",
-      "effect": "Población convertida: +5 por carta",
-      "duration": "Duración: 3 cartas"
+      "title": "Escola da costa",
+      "body": "Uma escola abre perto do porto. As crianças vêm pelas palavras e regressam pelos hábitos.",
+      "effect": "População convertida: +5 por carta",
+      "duration": "Duração: 3 cartas"
     },
     "new_world_explorer_ev_020": {
-      "title": "Mapa demasiado optimista",
-      "body": "Un viejo mapa promete tierras ya disputadas. El error cuesta tiempo y presencia.",
-      "effect": "Territorios: -5 por carta",
-      "duration": "Duración: 6 cartas"
+      "title": "Mapa demasiado otimista",
+      "body": "Um mapa antigo promete terras já disputadas. O erro custa tempo e presença.",
+      "effect": "Territórios: -5 por carta",
+      "duration": "Duração: 6 cartas"
     },
+
     "new_world_explorer_ev_021": {
-      "title": "Rumor en la corte",
-      "body": "Un rumor de mala gestión cruza el océano. Al palacio le encantan los relatos, salvo cuando vienen de aquí.",
-      "effect": "Apoyo real: -5 por carta",
-      "duration": "Duración: 5 cartas"
+      "title": "Rumor na corte",
+      "body": "Um rumor de má gestão atravessa o oceano. O palácio adora histórias, excepto quando vêm daqui.",
+      "effect": "Apoio real: -5 por carta",
+      "duration": "Duração: 5 cartas"
     },
     "new_world_explorer_ev_022": {
-      "title": "Ruta de las especias",
-      "body": "Una ruta comercial se vuelve por fin segura. Los barcos parten llenos y regresan aún más motivados.",
+      "title": "Rota das especiarias",
+      "body": "Uma rota comercial torna-se finalmente segura. Os navios partem cheios e regressam ainda mais motivados.",
       "effect": "Riquezas: +5 por carta",
-      "duration": "Duración: 7 cartas"
+      "duration": "Duração: 7 cartas"
     },
     "new_world_explorer_ev_023": {
-      "title": "Bahía asegurada",
-      "body": "La bahía está mejor defendida, mejor vigilada y es mucho más fácil de reclamar.",
-      "effect": "Territorios: +5 por carta",
-      "duration": "Duración: 4 cartas"
+      "title": "Baía segura",
+      "body": "A baía está melhor controlada, melhor vigiada e muito mais fácil de reivindicar.",
+      "effect": "Territórios: +5 por carta",
+      "duration": "Duração: 4 cartas"
     },
     "new_world_explorer_ev_024": {
       "title": "Templo ofendido",
-      "body": "Un lugar sagrado es alterado por torpeza o por orgullo. Las puertas se cierran de inmediato.",
-      "effect": "Población convertida: -5 por carta",
-      "duration": "Duración: 6 cartas"
+      "body": "Um lugar sagrado é perturbado por desleixo ou por orgulho. As portas fecham-se de imediato.",
+      "effect": "População convertida: -5 por carta",
+      "duration": "Duração: 6 cartas"
     },
     "new_world_explorer_ev_025": {
-      "title": "Almacén húmedo",
-      "body": "La humedad invade las reservas. Parte del stock pierde valor incluso antes de ser vendido.",
+      "title": "Armazém húmido",
+      "body": "A humidade ganha terreno nas reservas. Parte do stock perde valor antes sequer de ser vendido.",
       "effect": "Riquezas: -5 por carta",
-      "duration": "Duración: 3 cartas"
+      "duration": "Duração: 3 cartas"
     },
     "new_world_explorer_ev_026": {
-      "title": "Fiesta de la misión",
-      "body": "Una gran fiesta religiosa reúne al puerto y a varios pueblos. El momento está bien elegido y bien llevado.",
-      "effect": "Población convertida: +5 por carta",
-      "duration": "Duración: 5 cartas"
+      "title": "Festa da missão",
+      "body": "Uma grande festa religiosa reúne o porto e várias aldeias. O momento é bem escolhido e bem conduzido.",
+      "effect": "População convertida: +5 por carta",
+      "duration": "Duração: 5 cartas"
     },
     "new_world_explorer_ev_027": {
-      "title": "Tratado de la orilla",
-      "body": "Un acuerdo simple fija por fin quién guarda qué en la costa. Es menos glorioso que una bandera, pero mucho más sólido.",
-      "effect": "Territorios: +5 por carta",
-      "duration": "Duración: 4 cartas"
+      "title": "Tratado da margem",
+      "body": "Um acordo simples fixa finalmente quem guarda o quê na costa. É menos glorioso do que uma bandeira, mas muito mais sólido.",
+      "effect": "Territórios: +5 por carta",
+      "duration": "Duração: 4 cartas"
     },
     "new_world_explorer_ev_028": {
-      "title": "Enviado descontento",
-      "body": "Un enviado real se marcha con el rostro cerrado y un cuaderno bien lleno. Nada bueno suele cruzar el mar de esa manera.",
-      "effect": "Apoyo real: -5 por carta",
-      "duration": "Duración: 6 cartas"
+      "title": "Enviado descontente",
+      "body": "Um enviado real parte com um rosto fechado e um caderno bem cheio. Nada de bom gosta de atravessar o mar assim.",
+      "effect": "Apoio real: -5 por carta",
+      "duration": "Duração: 6 cartas"
     },
     "new_world_explorer_ev_029": {
       "title": "Mina decepcionante",
-      "body": "La mina que parecía prometedora produce sobre todo cansancio y cuentas tristes.",
+      "body": "A mina que se julgava brilhante produz sobretudo cansaço e contas tristes.",
       "effect": "Riquezas: -5 por carta",
-      "duration": "Duración: 3 cartas"
+      "duration": "Duração: 3 cartas"
     },
     "new_world_explorer_ev_030": {
-      "title": "Semana de bautismos",
-      "body": "La misión vive una semana muy seguida. Incluso los más prudentes vienen a mirar más de cerca.",
-      "effect": "Población convertida: +5 por carta",
-      "duration": "Duración: 7 cartas"
+      "title": "Semana dos baptismos",
+      "body": "A missão vive uma semana muito participada. Até os mais prudentes vêm ver mais de perto.",
+      "effect": "População convertida: +5 por carta",
+      "duration": "Duração: 7 cartas"
     }
   }
 }

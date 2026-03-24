@@ -2,184 +2,187 @@
   "version": 1,
   "events": {
     "hell_king_ev_001": {
-      "title": "税の宝箱",
-      "body": "ひとつの宝箱がきしみながら勝手に開く。帳簿係たちはこういうのが大好きだ。",
-      "effect": "魂: 1カードごとに+5",
-      "duration": "期間: 5カード"
+      "title": "Peti Pajak",
+      "body": "Sebuah peti berderit lalu terbuka sendiri. Buku catatan sangat menyukainya.",
+      "effect": "Jiwa : +5 per kartu",
+      "duration": "Durasi : 5 kartu"
     },
     "hell_king_ev_002": {
-      "title": "軍団閲兵",
-      "body": "部隊が行進する。誰もが重圧の中にいる...秩序でさえも。",
-      "effect": "軍団: 1カードごとに+5",
-      "duration": "期間: 6カード"
+      "title": "Inspeksi Legiun",
+      "body": "Pasukan berparade. Semua orang berada di bawah tekanan... bahkan keteraturan juga.",
+      "effect": "Legiun : +5 per kartu",
+      "duration": "Durasi : 6 kartu"
     },
     "hell_king_ev_003": {
-      "title": "魂の市場",
-      "body": "入札額が上がっていく。書記たちはため息ひとつまで記録する。",
-      "effect": "秩序: 1カードごとに-5",
-      "duration": "期間: 4カード"
+      "title": "Pasar Jiwa",
+      "body": "Lelang semakin naik. Para juru tulis mencatat setiap helaan napas.",
+      "effect": "Keteraturan : -5 per kartu",
+      "duration": "Durasi : 4 kartu"
     },
     "hell_king_ev_004": {
-      "title": "地上の宴",
-      "body": "上では騒がしすぎる夜が続く。その代償はすぐに下へ降りてくる。",
-      "effect": "地上: 1カードごとに+5",
-      "duration": "期間: 5カード"
+      "title": "Pesta di Permukaan",
+      "body": "Malam yang terlalu bising di atas sana. Dampaknya cepat turun ke bawah.",
+      "effect": "Permukaan : +5 per kartu",
+      "duration": "Durasi : 5 kartu"
     },
     "hell_king_ev_005": {
-      "title": "超速募集",
-      "body": "次々と徴募が進む。効率的ではある...だが廊下では軋みが響いている。",
-      "effect": "魂: 1カードごとに-5",
-      "duration": "期間: 6カード"
+      "title": "Rekrutmen Kilat",
+      "body": "Mereka merekrut tanpa henti. Efektif... tapi lorong-lorong mulai berderit.",
+      "effect": "Jiwa : -5 per kartu",
+      "duration": "Durasi : 6 kartu"
     },
     "hell_king_ev_006": {
-      "title": "秩序の勅令",
-      "body": "新たな勅令が下る。群衆は静まるが、指揮官たちはそうではない。",
-      "effect": "秩序: 1カードごとに+5",
-      "duration": "期間: 4カード"
+      "title": "Dekret Keteraturan",
+      "body": "Sebuah dekret baru turun. Itu menenangkan kerumunan, tapi bukan para pemimpin.",
+      "effect": "Keteraturan : +5 per kartu",
+      "duration": "Durasi : 4 kartu"
     },
+
     "hell_king_ev_007": {
-      "title": "有利な契約",
-      "body": "ある契約が大きな利益をもたらす。だが誰もが自分の取り分を欲しがる。",
-      "effect": "軍団: 1カードごとに-5",
-      "duration": "期間: 7カード"
+      "title": "Perjanjian Menguntungkan",
+      "body": "Sebuah perjanjian membawa banyak keuntungan. Tapi semua orang ingin bagiannya.",
+      "effect": "Legiun : -5 per kartu",
+      "duration": "Durasi : 7 kartu"
     },
     "hell_king_ev_008": {
-      "title": "上の噂",
-      "body": "地上で噂が広まる。おまえはもうその波を感じている。",
-      "effect": "地上: 1カードごとに-5",
-      "duration": "期間: 5カード"
+      "title": "Rumor di Atas",
+      "body": "Sebuah rumor beredar di permukaan. Kamu sudah bisa merasakan gelombangnya.",
+      "effect": "Permukaan : -5 per kartu",
+      "duration": "Durasi : 5 kartu"
     },
     "hell_king_ev_009": {
-      "title": "秩序監査",
-      "body": "監査官たちが現れる。規則はさらに厳しくなる。",
-      "effect": "秩序: 1カードごとに+5",
-      "duration": "期間: 4カード"
+      "title": "Audit Keteraturan",
+      "body": "Para inspektur datang. Aturan diperketat.",
+      "effect": "Keteraturan : +5 per kartu",
+      "duration": "Durasi : 4 kartu"
     },
     "hell_king_ev_010": {
-      "title": "演習",
-      "body": "軍団は昼も夜も訓練する。見栄えはする...そして疲れる。",
-      "effect": "軍団: 1カードごとに+5",
-      "duration": "期間: 6カード"
+      "title": "Manuver",
+      "body": "Legiun berlatih siang dan malam. Mengesankan... dan melelahkan.",
+      "effect": "Legiun : +5 per kartu",
+      "duration": "Durasi : 6 kartu"
     },
+
     "hell_king_ev_011": {
-      "title": "収穫ボーナス",
-      "body": "思いがけない魂の収穫だ。もちろん受け取る。",
-      "effect": "地上: 1カードごとに-5",
-      "duration": "期間: 3カード"
+      "title": "Bonus Panen",
+      "body": "Panen jiwa yang tak terduga. Tentu saja kamu ambil.",
+      "effect": "Permukaan : -5 per kartu",
+      "duration": "Durasi : 3 kartu"
     },
     "hell_king_ev_012": {
-      "title": "禁じられた祭り",
-      "body": "即席の祭りが始まる。笑い声は増え、秩序は下がる。",
-      "effect": "地上: 1カードごとに+5",
-      "duration": "期間: 7カード"
+      "title": "Karnaval Terlarang",
+      "body": "Sebuah karnaval dadakan. Tawa naik, keteraturan turun.",
+      "effect": "Permukaan : +5 per kartu",
+      "duration": "Durasi : 7 kartu"
     },
     "hell_king_ev_013": {
-      "title": "規律週間",
-      "body": "締め付けが強まる。歯ぎしりする者もいる。",
-      "effect": "魂: 1カードごとに-5",
-      "duration": "期間: 4カード"
+      "title": "Minggu Disiplin",
+      "body": "Aturan diperketat. Beberapa mulai menggeretakkan gigi.",
+      "effect": "Jiwa : -5 per kartu",
+      "duration": "Durasi : 4 kartu"
     },
     "hell_king_ev_014": {
-      "title": "旗の行進",
-      "body": "旗がはためく。見た目も大事だ。",
-      "effect": "軍団: 1カードごとに+5",
-      "duration": "期間: 6カード"
+      "title": "Parade Panji",
+      "body": "Panji-panji berkibar keras. Penampilan itu penting.",
+      "effect": "Legiun : +5 per kartu",
+      "duration": "Durasi : 6 kartu"
     },
     "hell_king_ev_015": {
-      "title": "署名報奨金",
-      "body": "契約が結ばれていく。大量に。ものすごい速さで。",
-      "effect": "魂: 1カードごとに+5",
-      "duration": "期間: 3カード"
+      "title": "Bonus Tanda Tangan",
+      "body": "Kontrak ditandatangani. Banyak sekali. Sangat cepat.",
+      "effect": "Jiwa : +5 per kartu",
+      "duration": "Durasi : 3 kartu"
     },
     "hell_king_ev_016": {
-      "title": "兵舎点検",
-      "body": "抜き打ち検査だ。上官たちは平静を装う。",
-      "effect": "秩序: 1カードごとに-5",
-      "duration": "期間: 5カード"
+      "title": "Pemeriksaan Barak",
+      "body": "Inspeksi mendadak. Para perwira berpura-pura tenang.",
+      "effect": "Keteraturan : -5 per kartu",
+      "duration": "Durasi : 5 kartu"
     },
     "hell_king_ev_017": {
-      "title": "小さな暴動",
-      "body": "小さな暴動だ。長引かなければ大したことではない。",
-      "effect": "地上: 1カードごとに+5",
-      "duration": "期間: 4カード"
+      "title": "Kerusuhan Kecil",
+      "body": "Sebuah kerusuhan kecil. Tidak serius... kecuali kalau itu berlangsung lama.",
+      "effect": "Permukaan : +5 per kartu",
+      "duration": "Durasi : 4 kartu"
     },
     "hell_king_ev_018": {
-      "title": "窓口の混雑",
-      "body": "要求は多すぎ、忍耐は足りない。いつものことだ。",
-      "effect": "軍団: 1カードごとに-5",
-      "duration": "期間: 7カード"
+      "title": "Dorong-Dorongan di Loket",
+      "body": "Terlalu banyak permintaan, terlalu sedikit kesabaran. Klasik.",
+      "effect": "Legiun : -5 per kartu",
+      "duration": "Durasi : 7 kartu"
     },
     "hell_king_ev_019": {
-      "title": "行政の静けさ",
-      "body": "すべてがうまく回っている。怪しいが、心地よい。",
-      "effect": "秩序: 1カードごとに+5",
-      "duration": "期間: 3カード"
+      "title": "Tenang Administratif",
+      "body": "Semuanya berjalan lancar. Mencurigakan, tapi menyenangkan.",
+      "effect": "Keteraturan : +5 per kartu",
+      "duration": "Durasi : 3 kartu"
     },
     "hell_king_ev_020": {
-      "title": "VIPの夜",
-      "body": "とても選ばれた者だけの晩餐。同盟はデザートの席で結ばれる。",
-      "effect": "魂: 1カードごとに-5",
-      "duration": "期間: 6カード"
+      "title": "Malam VIP",
+      "body": "Makan malam yang sangat eksklusif. Aliansi terbentuk saat hidangan penutup.",
+      "effect": "Jiwa : -5 per kartu",
+      "duration": "Durasi : 6 kartu"
     },
+
     "hell_king_ev_021": {
-      "title": "今日の規則",
-      "body": "新しい規則だ。誰も気に入らない。だからこそ機能する。",
-      "effect": "地上: 1カードごとに-5",
-      "duration": "期間: 5カード"
+      "title": "Aturan Hari Ini",
+      "body": "Aturan baru. Tidak ada yang menyukainya, jadi itu berhasil.",
+      "effect": "Permukaan : -5 per kartu",
+      "duration": "Durasi : 5 kartu"
     },
     "hell_king_ev_022": {
-      "title": "在庫切れ",
-      "body": "何かが足りない。何かは誰もわからないが、皆が慌てる。",
-      "effect": "軍団: 1カードごとに+5",
-      "duration": "期間: 7カード"
+      "title": "Kehabisan Stok",
+      "body": "Ada sesuatu yang habis. Tidak ada yang tahu apa, tapi semua panik.",
+      "effect": "Legiun : +5 per kartu",
+      "duration": "Durasi : 7 kartu"
     },
     "hell_king_ev_023": {
-      "title": "魅力的な提案",
-      "body": "輝かしい提案だ。裏があるとわかっている。それでも受ける。",
-      "effect": "魂: 1カードごとに+5",
-      "duration": "期間: 4カード"
+      "title": "Tawaran Menggiurkan",
+      "body": "Sebuah tawaran brilian. Kamu tahu ada sesuatu yang disembunyikan. Tapi tetap kamu ambil.",
+      "effect": "Jiwa : +5 per kartu",
+      "duration": "Durasi : 4 kartu"
     },
     "hell_king_ev_024": {
-      "title": "即席交渉",
-      "body": "握手ひとつ、署名三つ、そしてすぐ次へ進む。",
-      "effect": "秩序: 1カードごとに-5",
-      "duration": "期間: 6カード"
+      "title": "Negosiasi Kilat",
+      "body": "Satu jabat tangan, tiga tanda tangan, lalu semua beralih ke hal lain.",
+      "effect": "Keteraturan : -5 per kartu",
+      "duration": "Durasi : 6 kartu"
     },
     "hell_king_ev_025": {
-      "title": "突然の配置転換",
-      "body": "部隊が移される。体制だけでなく空気まで組み替わる。",
-      "effect": "軍団: 1カードごとに-5",
-      "duration": "期間: 3カード"
+      "title": "Mutasi Mendadak",
+      "body": "Unit-unit dipindahkan. Itu mengatur ulang segalanya, termasuk suasana hati.",
+      "effect": "Legiun : -5 per kartu",
+      "duration": "Durasi : 3 kartu"
     },
     "hell_king_ev_026": {
-      "title": "調書",
-      "body": "一通の報告書が落ちてくる。誰も笑わない。",
-      "effect": "秩序: 1カードごとに+5",
-      "duration": "期間: 5カード"
+      "title": "Berita Acara",
+      "body": "Sebuah laporan resmi jatuh. Tidak ada yang tertawa.",
+      "effect": "Keteraturan : +5 per kartu",
+      "duration": "Durasi : 5 kartu"
     },
     "hell_king_ev_027": {
-      "title": "儀式の報酬",
-      "body": "忠実な者たちが報われる。ほかの者たちは白い目で見る。",
-      "effect": "魂: 1カードごとに+5",
-      "duration": "期間: 4カード"
+      "title": "Hadiah Ritual",
+      "body": "Yang setia diberi hadiah. Yang lain memandang dengan sinis.",
+      "effect": "Jiwa : +5 per kartu",
+      "duration": "Durasi : 4 kartu"
     },
     "hell_king_ev_028": {
-      "title": "地上の恐慌",
-      "body": "上では混乱が広がる。下ではおまえが受け取る。",
-      "effect": "地上: 1カードごとに-5",
-      "duration": "期間: 6カード"
+      "title": "Panik di Permukaan",
+      "body": "Di atas sana, semua panik. Di bawah, kamulah yang menanggungnya.",
+      "effect": "Permukaan : -5 per kartu",
+      "duration": "Durasi : 6 kartu"
     },
     "hell_king_ev_029": {
-      "title": "力比べ",
-      "body": "小さな試験。大きな自尊心。結果は...微妙だ。",
-      "effect": "軍団: 1カードごとに-5",
-      "duration": "期間: 3カード"
+      "title": "Uji Kekuatan",
+      "body": "Tes kecil. Ego besar. Hasilnya... campur aduk.",
+      "effect": "Legiun : -5 per kartu",
+      "duration": "Durasi : 3 kartu"
     },
     "hell_king_ev_030": {
-      "title": "内部メモ",
-      "body": "メモが回り始める。いつも間違った部署にたどり着く。",
-      "effect": "秩序: 1カードごとに+5",
-      "duration": "期間: 7カード"
+      "title": "Catatan Internal",
+      "body": "Sebuah catatan beredar. Pada akhirnya, itu selalu sampai ke meja yang salah.",
+      "effect": "Keteraturan : +5 per kartu",
+      "duration": "Durasi : 7 kartu"
     }
   }
 }
