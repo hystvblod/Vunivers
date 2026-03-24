@@ -3364,10 +3364,10 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-intro-finish-overlay #vr-intro-finish-info .vr-intro-inline-icon{
-          width:1.42em;
-          height:1.42em;
-          margin:0 0.08em;
-          vertical-align:-0.20em;
+          width:1.72em;
+          height:1.72em;
+          margin:0 0.10em;
+          vertical-align:-0.34em;
           object-fit:contain;
           filter:drop-shadow(0 4px 10px rgba(0,0,0,.22));
         }
@@ -3467,11 +3467,19 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-intro-finish-overlay #vr-intro-finish-close{
-          width:min(228px, 100%);
+          width:100%;
           min-height:60px;
           margin-top:4px;
           padding:14px 20px;
           align-self:center;
+
+          border:1px solid rgba(255,255,255,.24) !important;
+          border-radius:18px !important;
+          background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.05)) !important;
+          box-shadow:
+            0 8px 22px rgba(0,0,0,.22),
+            inset 0 1px 0 rgba(255,255,255,.10) !important;
+
           color:#fff !important;
           font-size:clamp(18px, 4.8vw, 24px) !important;
           font-weight:900 !important;
@@ -5592,5 +5600,4 @@ function hideBootOverlay() {
 
   document.addEventListener("DOMContentLoaded", initApp);
 })();
-
 
