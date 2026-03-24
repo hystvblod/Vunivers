@@ -3400,6 +3400,7 @@ body.vr-peek-mode .vr-gauge-preview{
         #vr-intro-finish-overlay .vr-intro-finish-line img{
           width:clamp(42px, 10.5vw, 52px);
           height:clamp(42px, 10.5vw, 52px);
+          margin-top:6px;
           object-fit:contain;
           filter:drop-shadow(0 6px 14px rgba(0,0,0,.28));
         }
@@ -3467,12 +3468,21 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-intro-finish-overlay #vr-intro-finish-close{
-          width:auto;
-          height:auto;
-          min-height:0;
-          margin-top:6px;
-          padding:8px 18px;
-          align-self:center;
+          width:fit-content !important;
+          max-width:none !important;
+          min-width:0 !important;
+          height:auto !important;
+          min-height:0 !important;
+
+          margin:6px auto 0 !important;
+          padding:8px 16px !important;
+
+          align-self:center !important;
+          flex:0 0 auto !important;
+
+          display:inline-flex !important;
+          align-items:center !important;
+          justify-content:center !important;
 
           border:1px solid rgba(255,255,255,.24) !important;
           border-radius:14px !important;
@@ -3480,10 +3490,6 @@ body.vr-peek-mode .vr-gauge-preview{
           box-shadow:
             0 8px 22px rgba(0,0,0,.22),
             inset 0 1px 0 rgba(255,255,255,.10) !important;
-
-          display:inline-flex;
-          align-items:center;
-          justify-content:center;
 
           color:#fff !important;
           font-size:clamp(16px, 4.2vw, 22px) !important;
