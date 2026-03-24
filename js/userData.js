@@ -1279,8 +1279,6 @@ return ok;
         }
 
         _applyMergedCosmetics(remote);
-        _memState.updated_at = Date.now();
-        _emitProfile();
         _persistLocal();
 
         return {
@@ -1353,8 +1351,6 @@ return ok;
         }
 
         _applyMergedCosmetics(remote);
-        _memState.updated_at = Date.now();
-        _emitProfile();
         _persistLocal();
 
         return {
