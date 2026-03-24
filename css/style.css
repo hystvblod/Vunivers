@@ -5362,7 +5362,7 @@ body.vr-body-game[data-universe] .vr-gauge-label{
    2) Tablettes portrait / écrans très larges par rapport
       à la référence 412x914
    Ex: iPad Mini, Surface Pro portrait
-   Ici on SHRINK le layout, mais on AUGMENTE la lisibilité texte
+   Ici on SHRINK, car ton jeu est pensé phone
    ========================================================== */
 @media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
   body.vr-body-game[data-universe]{
@@ -5371,45 +5371,26 @@ body.vr-body-game[data-universe] .vr-gauge-label{
     --vr-fit-gauge: 0.92;
     --vr-fit-frame: 0.90;
 
-    /* ✅ tablette : on remonte la taille de police partout */
-    --vr-fit-type: 1.16;
+    /* ✅ au lieu de 0.94 (qui rapetisse), on agrandit la police */
+    --vr-fit-type: 1.18;
 
     --vr-fit-gap: 0.90;
     --vr-fit-namegap: 0.92;
+
+    /* ✅ un peu plus serré pour éviter que ça déborde dans les cartouches */
+    --vr-fit-title-lh: 1.06;
+    --vr-fit-text-lh: 1.12;
+    --vr-fit-choice-lh: 1.08;
   }
 
-  /* ✅ boost direct pour être sûr : jauges / soldes / nom / année / cartes / choix */
+  /* ✅ jauges : elles ne suivent pas vr-fit-type dans ton CSS, donc on force */
   body.vr-body-game[data-universe] .vr-gauge-label{
-    font-size: 1.16em !important;
+    font-size: calc(clamp(11px, 2.1vmin, 15px) * 1.18) !important;
     min-height: 2.15em !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
   }
 
-  body.vr-body-game[data-universe] .vr-hud-value{
-    font-size: 1.18em !important;
-  }
-
-  body.vr-body-game[data-universe] .vr-hud-name,
-  body.vr-body-game[data-universe] .vr-hud-years{
-    font-size: 1.16em !important;
-  }
-
-  body.vr-body-game[data-universe] #view-game .vr-card-title{
-    font-size: 1.18em !important;
-    line-height: 1.06 !important;
-  }
-
-  body.vr-body-game[data-universe] #view-game .vr-card-text{
-    font-size: 1.16em !important;
-    line-height: 1.12 !important;
-  }
-
-  body.vr-body-game[data-universe] #view-game .vr-choice-label{
-    font-size: 1.12em !important;
-    line-height: 1.10 !important;
+  body.vr-body-game[data-universe] .vr-gauge-value{
+    font-size: calc(13px * 1.12) !important;
   }
 }
 /* ==========================================================
