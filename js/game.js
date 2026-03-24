@@ -3964,63 +3964,83 @@ function onGaugeSet(gaugeId) {
   }
 
   function showIntroNameConfirmPopup(name, focusBackEl) {
-    const popup = document.getElementById("vr-intro-name-confirm-popup");
-    const textEl = document.getElementById("vr-intro-name-confirm-text");
-    const yesLabel = document.getElementById("vr-intro-name-confirm-yes");
-    const noLabel = document.getElementById("vr-intro-name-confirm-no");
-    const yesBtn = popup?.querySelector?.('[data-intro-name-confirm="yes"]');
-    const noBtn = popup?.querySelector?.('[data-intro-name-confirm="no"]');
+  const popup = document.getElementById("vr-intro-name-confirm-popup");
+  const textEl = document.getElementById("vr-intro-name-confirm-text");
+  const yesLabel = document.getElementById("vr-intro-name-confirm-yes");
+  const noLabel = document.getElementById("vr-intro-name-confirm-no");
+  const yesBtn = popup?.querySelector?.('[data-intro-name-confirm="yes"]');
+  const noBtn = popup?.querySelector?.('[data-intro-name-confirm="no"]');
 
-    if (!popup || !yesBtn || !noBtn) {
-      return Promise.resolve(true);
-    }
-
-    if (textEl) {
-      textEl.textContent = t(
-        "intro.finish.name_confirm",
-        "Es-tu sûr de vouloir garder ce nom : {name} ?"
-      ).replace("{name}", name);
-    }
-
-    if (yesLabel) {
-      yesLabel.textContent = t("intro.finish.name_save", "Valider");
-    }
-
-    if (noLabel) {
-      noLabel.textContent = t("common.cancel", "Annuler");
-    }
-
-    return new Promise((resolve) => {
-      const cleanup = () => {
-        popup.onclick = null;
-        popup.onkeydown = null;
-        yesBtn.onclick = null;
-        noBtn.onclick = null;
-        hideDialog(popup, focusBackEl);
-      };
-
-      const decide = (value) => {
-        cleanup();
-        resolve(!!value);
-      };
-
-      yesBtn.onclick = () => decide(true);
-      noBtn.onclick = () => decide(false);
-
-      popup.onclick = (e) => {
-        if (e.target === popup) decide(false);
-      };
-
-      popup.onkeydown = (e) => {
-        if (e.key === "Escape") {
-          e.preventDefault();
-          decide(false);
-        }
-      };
-
-      showDialog(popup, yesBtn);
-    });
+  if (!popup || !yesBtn || !noBtn) {
+    return Promise.resolve(true);
   }
+
+  if (textEl) {
+    textEl.textContent = t(
+      "intro.finish.name_confirm",
+      "Es-tu sûr de vouloir garder ce nom : {name} ?"
+    ).replace("{name}", name);
+  }
+
+  if (yesLabel) {
+    yesLabel.textContent = t("intro.finish.name_save", "Valider");
+  }
+
+  if (noLabel) {
+    noLabel.textContent = t("common.cancel", "Annuler");
+  }
+
+  return new Promise((resolve) => {
+    const closePopup = () => {
+      popup.onclick = null;
+      popup.onkeydown = null;
+      yesBtn.onclick = null;
+      noBtn.onclick = null;
+
+      const active = document.activeElement;
+      if (active && popup.contains(active)) {
+        try { active.blur(); } catch (_) {}
+      }
+
+      try { popup.setAttribute("inert", ""); } catch (_) {}
+      popup.setAttribute("aria-hidden", "true");
+      popup.style.display = "none";
+
+      try { focusBackEl?.focus?.({ preventScroll: true }); } catch (_) {}
+    };
+
+    const decide = (value) => {
+      closePopup();
+      resolve(!!value);
+    };
+
+    yesBtn.onclick = () => decide(true);
+    noBtn.onclick = () => decide(false);
+
+    popup.onclick = (e) => {
+      if (e.target === popup) decide(false);
+    };
+
+    popup.onkeydown = (e) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        decide(false);
+        return;
+      }
+
+      if (e.key === "Enter") {
+        e.preventDefault();
+        decide(true);
+      }
+    };
+
+    try { popup.removeAttribute("inert"); } catch (_) {}
+    popup.setAttribute("aria-hidden", "false");
+    popup.style.display = "flex";
+
+    try { yesBtn.focus({ preventScroll: true }); } catch (_) {}
+  });
+}
 
   function showFinishPopup() {
     const overlay = ensureFinishPopup();
