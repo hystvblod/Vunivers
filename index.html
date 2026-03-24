@@ -201,56 +201,86 @@
       border-radius: 14px !important;
     }
 
-    @media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
+    @media (orientation: portrait) and (min-width: 700px) and (max-width: 1300px){
+      .vr-main{
+        width:min(100%, 860px) !important;
+        max-width:860px !important;
+        margin:0 auto !important;
+        padding-top:18px !important;
+        padding-left:20px !important;
+        padding-right:20px !important;
+      }
+
       .vr-top-actions,
       .vr-top-actions-4{
-        gap:18px !important;
-        padding: 14px 18px 12px !important;
+        gap:22px !important;
+        padding:18px 22px 14px !important;
       }
 
       .vr-icon-button{
-        width:54px !important;
-        height:54px !important;
+        width:60px !important;
+        height:60px !important;
       }
 
       .vr-icon-button img{
-        width:34px !important;
-        height:34px !important;
+        width:38px !important;
+        height:38px !important;
       }
 
-      .vr-main{
-        padding-top:10px !important;
-        padding-left:18px !important;
-        padding-right:18px !important;
+      .vr-intro{
+        margin-top:10px !important;
+        margin-bottom:18px !important;
       }
 
       .vr-main-logo{
-        width:min(54vw, 360px) !important;
-        max-height:140px !important;
+        width:min(78vw, 500px) !important;
+        max-height:170px !important;
+      }
+
+      .vr-section-title{
+        font-size:clamp(22px, 2.5vw, 28px) !important;
+        margin:16px 0 14px !important;
       }
 
       .vr-universe-grid{
-        gap:14px !important;
+        gap:16px !important;
       }
 
       .vr-card{
-        min-height:68px !important;
-        height:68px !important;
-        border-radius:18px !important;
+        min-height:82px !important;
+        height:82px !important;
+        border-radius:22px !important;
       }
 
       .vr-card-header-line{
-        padding:0 16px !important;
+        padding:0 20px !important;
+        gap:16px !important;
       }
 
       .vr-card-title{
-        font-size:clamp(15px, 2.1vw, 18px) !important;
+        font-size:clamp(20px, 2.3vw, 26px) !important;
+        line-height:1.08 !important;
       }
 
       .vr-info-btn{
-        width:38px !important;
-        height:38px !important;
+        width:46px !important;
+        height:46px !important;
+        font-size:18px !important;
+      }
+
+      .vr-tooltip{
+        max-width:420px !important;
         font-size:15px !important;
+      }
+
+      .vr-locked-bubble{
+        width:52px !important;
+        height:52px !important;
+      }
+
+      .vr-locked-bubble svg{
+        width:28px !important;
+        height:28px !important;
       }
     }
 
