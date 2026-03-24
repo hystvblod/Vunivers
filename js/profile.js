@@ -572,12 +572,20 @@
     try { window.VRI18n?.initI18n?.(); } catch (_) {}
   }
 
-  function openModalWithSrc(src) {
+  function openModalWithBadge(meta) {
     const modal = $("badgeModal");
     const img = $("badgeModalImg");
-    if (!modal || !img || !src) return;
+    const title = $("badgeModalTitle");
+    const desc = $("badgeModalDesc");
 
-    img.src = src;
+    if (!modal || !img || !meta || !meta.src) return;
+
+    img.src = meta.src;
+    img.alt = String(meta.title || "");
+
+    if (title) title.textContent = String(meta.title || "");
+    if (desc) desc.textContent = String(meta.desc || "");
+
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
 
@@ -588,9 +596,17 @@
   function closeModal() {
     const modal = $("badgeModal");
     const img = $("badgeModalImg");
+    const title = $("badgeModalTitle");
+    const desc = $("badgeModalDesc");
+
     if (!modal || !img) return;
 
     img.removeAttribute("src");
+    img.setAttribute("alt", "");
+
+    if (title) title.textContent = "";
+    if (desc) desc.textContent = "";
+
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
 
@@ -598,19 +614,37 @@
     try { document.body.style.overflow = ""; } catch (_) {}
   }
 
-  function pickBadgeSrc(badgeEl) {
+  function getBadgePreviewMeta(badgeEl) {
     if (!badgeEl) return null;
 
-    const full = badgeEl.querySelector("img.full");
-    const empty = badgeEl.querySelector("img.empty");
+    const key = _norm(badgeEl.getAttribute("data-badge"));
+    if (!["bronze", "silver", "gold"].includes(key)) return null;
 
-    if (badgeEl.classList.contains("unlocked") && full?.getAttribute("src")) {
-      return full.getAttribute("src");
-    }
+    const icons = badgeIconPaths();
+    const src =
+      badgeEl.querySelector("img.full")?.getAttribute("src") ||
+      icons[key]?.full ||
+      null;
 
-    if (empty?.getAttribute("src")) return empty.getAttribute("src");
-    if (full?.getAttribute("src")) return full.getAttribute("src");
-    return null;
+    if (!src) return null;
+
+    const titleMap = {
+      bronze: _t("profile.badgeBronze", "Badge bronze"),
+      silver: _t("profile.badgeSilver", "Badge argent"),
+      gold: _t("profile.badgeGold", "Badge or")
+    };
+
+    const descMap = {
+      bronze: _t("profile.badgeUnlockBronze", "Débloqué à partir de 40 choix dans une partie."),
+      silver: _t("profile.badgeUnlockSilver", "Débloqué à partir de 60 choix dans une partie."),
+      gold: _t("profile.badgeUnlockGold", "Débloqué à partir de 100 choix dans une partie.")
+    };
+
+    return {
+      src,
+      title: titleMap[key],
+      desc: descMap[key]
+    };
   }
 
   async function handleSaveUsername() {
@@ -715,12 +749,12 @@
         const badgeEl = e.target?.closest?.(".vr-badge");
         if (!badgeEl) return;
 
-        const src = pickBadgeSrc(badgeEl);
-        if (!src) return;
+        const meta = getBadgePreviewMeta(badgeEl);
+        if (!meta) return;
 
         e.preventDefault();
         e.stopPropagation();
-        openModalWithSrc(src);
+        openModalWithBadge(meta);
       }, true);
     }
 
