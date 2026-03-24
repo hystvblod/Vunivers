@@ -5669,6 +5669,8 @@ function hideBootOverlay() {
 
     const previewCfg = window.VRPreviewMode?.getConfig?.() || { enabled: false };
     if (previewCfg.enabled) {
+      showBootOverlay();
+
       try {
         if (window.VRI18n && typeof window.VRI18n.initI18n === "function") {
           await window.VRI18n.initI18n();
@@ -5679,6 +5681,8 @@ function hideBootOverlay() {
         await window.VRPreviewMode.init();
       } catch (e) {
         console.error("[VRealms] preview mode error:", e);
+      } finally {
+        hideBootOverlay();
       }
       return;
     }
