@@ -3343,8 +3343,8 @@ body.vr-peek-mode .vr-gauge-preview{
           width:100%;
           max-width:280px;
           margin:6px 0 0;
-          font-size:clamp(12px, 3.35vw, 14px);
-          line-height:1.56;
+          font-size:clamp(13px, 3.55vw, 15px);
+          line-height:1.52;
           font-weight:700;
           color:#fff;
           text-align:justify;
@@ -3367,7 +3367,7 @@ body.vr-peek-mode .vr-gauge-preview{
           width:1.95em;
           height:1.95em;
           margin:0 0.12em;
-          vertical-align:-0.42em;
+          vertical-align:-0.56em;
           object-fit:contain;
           filter:drop-shadow(0 4px 10px rgba(0,0,0,.22));
         }
@@ -3376,22 +3376,22 @@ body.vr-peek-mode .vr-gauge-preview{
           display:flex;
           flex-direction:column;
           align-items:center;
-          gap:12px;
+          gap:7px;
           width:100%;
-          margin:6px 0;
+          margin:2px 0 3px;
         }
 
         #vr-intro-finish-overlay .vr-intro-finish-line{
           display:flex;
           align-items:center;
           justify-content:center;
-          gap:12px;
-          min-height:44px;
+          gap:8px;
+          min-height:34px;
           color:#fff;
         }
 
         #vr-intro-finish-overlay .vr-intro-finish-line strong{
-          font-size:clamp(28px, 7.8vw, 36px);
+          font-size:clamp(22px, 6.4vw, 30px);
           line-height:1;
           font-weight:1000;
           color:#fff;
@@ -3400,8 +3400,8 @@ body.vr-peek-mode .vr-gauge-preview{
         #vr-intro-finish-overlay .vr-intro-finish-line img{
           width:clamp(42px, 10.5vw, 52px);
           height:clamp(42px, 10.5vw, 52px);
-          margin-top:6px;
           object-fit:contain;
+          transform:translateY(3px);
           filter:drop-shadow(0 6px 14px rgba(0,0,0,.28));
         }
 
@@ -3468,21 +3468,18 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-intro-finish-overlay #vr-intro-finish-close{
-          width:fit-content !important;
+          width:100% !important;
           max-width:none !important;
           min-width:0 !important;
+
           height:auto !important;
           min-height:0 !important;
 
-          margin:6px auto 0 !important;
-          padding:8px 16px !important;
+          margin:6px 0 0 !important;
+          padding:8px 14px !important;
 
-          align-self:center !important;
+          align-self:stretch !important;
           flex:0 0 auto !important;
-
-          display:inline-flex !important;
-          align-items:center !important;
-          justify-content:center !important;
 
           border:1px solid rgba(255,255,255,.24) !important;
           border-radius:14px !important;
@@ -3490,6 +3487,10 @@ body.vr-peek-mode .vr-gauge-preview{
           box-shadow:
             0 8px 22px rgba(0,0,0,.22),
             inset 0 1px 0 rgba(255,255,255,.10) !important;
+
+          display:flex !important;
+          align-items:center !important;
+          justify-content:center !important;
 
           color:#fff !important;
           font-size:clamp(16px, 4.2vw, 22px) !important;
