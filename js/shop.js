@@ -298,6 +298,21 @@
   let _booted = false;
   let _lastRenderSignature = "";
 
+  let _resumeRefreshTimer = null;
+
+  function scheduleResumeRefresh() {
+    if (!isShopPage()) return;
+
+    if (_resumeRefreshTimer) {
+      clearTimeout(_resumeRefreshTimer);
+    }
+
+    _resumeRefreshTimer = setTimeout(function () {
+      _resumeRefreshTimer = null;
+      refreshLiveBalancesHard();
+    }, 120);
+  }
+
   function getRenderSignature() {
     try {
       const data = typeof window.VUserData?.load === "function" ? (window.VUserData.load() || {}) : {};
@@ -324,12 +339,11 @@
     renderCosmetics();
   }
 
-  async function refreshLiveBalancesHard(opts) {
-    const force = !!(opts && opts.force);
+  async function refreshLiveBalancesHard() {
     const now = Date.now();
 
-    if (!force && _refreshBalancesPromise) return _refreshBalancesPromise;
-    if (!force && (now - _lastHardRefreshAt) < 800) {
+    if (_refreshBalancesPromise) return _refreshBalancesPromise;
+    if ((now - _lastHardRefreshAt) < 800) {
       renderTopBalances();
       return true;
     }
@@ -340,7 +354,7 @@
       try {
         await window.VUserData?.refresh?.();
       } catch (_) {}
-      renderShopView({ force: !!force });
+      renderShopView();
       return true;
     })();
 
@@ -988,8 +1002,7 @@
         setStatus("store-status", "");
       }
 
-      await refreshLiveBalancesHard({ force: true });
-      renderShopView({ force: true });
+      await refreshLiveBalancesHard();
     } catch (_) {
       setStatus("store-status", t("common.error_generic", ""));
     } finally {
@@ -1035,7 +1048,6 @@
       const actionBtn = e.target && e.target.closest ? e.target.closest("[data-cosmetic-action]") : null;
       if (actionBtn) {
         await handleCosmeticAction(actionBtn);
-        renderShopView({ force: true });
         return;
       }
 
@@ -1057,10 +1069,10 @@
       }
     });
 
-  window.addEventListener("vr:profile", function () {
-  if (!isShopPage()) return;
-  renderShopView();
-});
+    window.addEventListener("vr:profile", function () {
+      if (!isShopPage()) return;
+      renderShopView();
+    });
 
     window.addEventListener("vr:i18n:changed", function () {
       if (!isShopPage()) return;
@@ -1068,24 +1080,31 @@
     });
 
     window.addEventListener("focus", function () {
-      refreshLiveBalancesHard();
+      scheduleResumeRefresh();
     });
 
     window.addEventListener("storage", function (e) {
       const key = String(e?.key || "");
       if (!key) return;
+
       if (
         key !== "vuniverse_user_data" &&
         key !== "vrealms_user_data" &&
         key !== "vuniverse_lang" &&
         key !== "vrealms_lang"
       ) return;
-      refreshLiveBalancesHard({ force: key === "vuniverse_lang" || key === "vrealms_lang" });
+
+      if (key === "vuniverse_lang" || key === "vrealms_lang") {
+        renderShopView({ force: true });
+        return;
+      }
+
+      scheduleResumeRefresh();
     });
 
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) return;
-      refreshLiveBalancesHard();
+      scheduleResumeRefresh();
     });
   }
 

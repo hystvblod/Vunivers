@@ -349,22 +349,50 @@
       ? localBefore.unlocked_universes
       : _memState.unlocked_universes;
 
-    _memState.user_id = (me.id || _memState.user_id || "").toString();
-    _memState.username = (me.username || _memState.username || "").toString();
-    _memState.vcoins = _clampInt(typeof me.vcoins !== "undefined" ? me.vcoins : _memState.vcoins);
-    _memState.jetons = _clampInt(typeof me.jetons !== "undefined" ? me.jetons : _memState.jetons);
     const localLang =
       (localStorage.getItem(LangStorageKey) || localStorage.getItem(LangStorageLegacyKey) || "").toString().trim();
 
-    _memState.lang = (
-      localLang ||
-      me.lang ||
-      _memState.lang ||
-      _detectDeviceLang()
-    ).toString();
-    _memState.no_ads = !!(me.no_ads || _memState.no_ads || localBefore.no_ads);
-    _memState.has_diamond = !!(me.has_diamond || _memState.has_diamond || localBefore.has_diamond);
-    _memState.unlocked_universes = _mergeUniverses(remoteUnlocked, localUnlocked);
+    const nextState = {
+      user_id: (me.id || _memState.user_id || "").toString(),
+      username: (me.username || _memState.username || "").toString(),
+      vcoins: _clampInt(typeof me.vcoins !== "undefined" ? me.vcoins : _memState.vcoins),
+      jetons: _clampInt(typeof me.jetons !== "undefined" ? me.jetons : _memState.jetons),
+      lang: (
+        localLang ||
+        me.lang ||
+        _memState.lang ||
+        _detectDeviceLang()
+      ).toString(),
+      no_ads: !!(me.no_ads || _memState.no_ads || localBefore.no_ads),
+      has_diamond: !!(me.has_diamond || _memState.has_diamond || localBefore.has_diamond),
+      unlocked_universes: _mergeUniverses(remoteUnlocked, localUnlocked)
+    };
+
+    const before = JSON.stringify({
+      user_id: (_memState.user_id || "").toString(),
+      username: (_memState.username || "").toString(),
+      vcoins: _clampInt(_memState.vcoins || 0),
+      jetons: _clampInt(_memState.jetons || 0),
+      lang: (_memState.lang || _detectDeviceLang()).toString(),
+      no_ads: !!_memState.no_ads,
+      has_diamond: !!_memState.has_diamond,
+      unlocked_universes: _mergeUniverses(_memState.unlocked_universes, [])
+    });
+
+    const after = JSON.stringify(nextState);
+
+    if (after === before) {
+      return false;
+    }
+
+    _memState.user_id = nextState.user_id;
+    _memState.username = nextState.username;
+    _memState.vcoins = nextState.vcoins;
+    _memState.jetons = nextState.jetons;
+    _memState.lang = nextState.lang;
+    _memState.no_ads = nextState.no_ads;
+    _memState.has_diamond = nextState.has_diamond;
+    _memState.unlocked_universes = nextState.unlocked_universes;
     _memState.updated_at = Date.now();
     _memState.last_sync_at = Date.now();
 
@@ -392,6 +420,20 @@
       mergedOwned,
       _mergeEquippedCosmetics(remoteEquipped, localEquipped)
     );
+
+    const before = JSON.stringify({
+      owned_cosmetics: _normalizeOwnedCosmetics(_memState.owned_cosmetics),
+      equipped_cosmetics: _normalizeEquippedCosmetics(_memState.equipped_cosmetics)
+    });
+
+    const after = JSON.stringify({
+      owned_cosmetics: mergedOwned,
+      equipped_cosmetics: mergedEquipped
+    });
+
+    if (after === before) {
+      return false;
+    }
 
     _memState.owned_cosmetics = mergedOwned;
     _memState.equipped_cosmetics = mergedEquipped;
@@ -1279,8 +1321,6 @@ return ok;
         }
 
         _applyMergedCosmetics(remote);
-        _memState.updated_at = Date.now();
-        _emitProfile();
         _persistLocal();
 
         return {
@@ -1353,8 +1393,6 @@ return ok;
         }
 
         _applyMergedCosmetics(remote);
-        _memState.updated_at = Date.now();
-        _emitProfile();
         _persistLocal();
 
         return {
