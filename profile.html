@@ -56,7 +56,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 10px;
+      gap: 12px;
       padding: calc(10px + env(safe-area-inset-top)) 12px 8px;
     }
 
@@ -64,21 +64,17 @@
       flex: 1 1 0;
       display:flex;
       align-items:center;
+      justify-content:center;
     }
 
-    .vr-top-left{ justify-content:flex-start; }
-    .vr-top-center{ justify-content:center; }
-    .vr-top-right{ justify-content:flex-end; gap:10px; }
-
     .vr-icon-button{
-      width:44px;
-      height:44px;
-      border-radius:999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(0,0,0,0.26);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+      width:56px;
+      height:56px;
+      border:none;
+      background:transparent;
+      box-shadow:none;
+      backdrop-filter:none;
+      -webkit-backdrop-filter:none;
       padding:0;
       display:inline-flex;
       align-items:center;
@@ -88,32 +84,18 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    .vr-icon-button:active{ transform: scale(.98); }
-
-    .vr-icon-button svg{
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,.65));
+    .vr-icon-button:active{
+      transform: scale(.98);
     }
 
-    .vr-icon-image{
-      width:30px;
-      height:30px;
+    .vr-icon-button img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
       display:block;
-      background-size: contain;
-      background-repeat:no-repeat;
-      background-position:center;
-      pointer-events:none;
       user-select:none;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.65)) contrast(1.15) brightness(1.08);
-    }
-
-    /* ✅ supprimé: vr-icon-profile */
-
-    .vr-icon-settings{
-      background-image: url("assets/img/ui/btn_settings.webp");
-    }
-
-    .vr-icon-shop{
-      background-image: url("assets/img/ui/btn_shop.webp");
+      -webkit-user-drag:none;
+      filter: drop-shadow(0 6px 16px rgba(0,0,0,.45));
     }
 
     .vr-main{
@@ -257,6 +239,123 @@
     }
 
     .vr-mini-btn:active{ transform: scale(.99); }
+
+    .vr-referral-card{
+      width:min(560px,100%);
+      margin: 0 auto 18px;
+      padding: 18px 16px 16px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(10,16,28,.28);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      box-shadow:0 16px 40px rgba(0,0,0,.28);
+    }
+
+    .vr-referral-head{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      margin-bottom:12px;
+      flex-wrap:wrap;
+    }
+
+    .vr-referral-title{
+      font-size:18px;
+      font-weight:950;
+      color:#fff;
+      text-align:center;
+      text-shadow: var(--vr-text-shadow);
+    }
+
+    .vr-referral-reward{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.10);
+      box-shadow:0 6px 18px rgba(0,0,0,.14);
+    }
+
+    .vr-referral-reward img{
+      width:28px;
+      height:28px;
+      object-fit:contain;
+      display:block;
+      flex:0 0 28px;
+      transform:translateY(2px);
+    }
+
+    .vr-referral-reward-value{
+      font-size:18px;
+      font-weight:950;
+      color:#fff;
+      text-shadow: var(--vr-text-shadow);
+    }
+
+    .vr-referral-desc{
+      max-width:36ch;
+      margin:4px auto 14px auto;
+      color:rgba(255,255,255,.96);
+      font-size:14px;
+      line-height:1.45;
+      text-align:center;
+      text-shadow:0 2px 8px rgba(0,0,0,.18);
+    }
+
+    .vr-referral-actions{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      max-width:320px;
+      margin:0 auto;
+    }
+
+    .vr-referral-btn{
+      min-height:50px;
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid rgba(122,167,255,.36);
+      background:rgba(122,167,255,.24);
+      color:#fff;
+      font-weight:900;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+      text-shadow: var(--vr-text-shadow);
+      animation: vrInvitePulse 1.15s ease-in-out infinite;
+      box-shadow: 0 0 0 rgba(122,167,255,0);
+    }
+
+    .vr-referral-btn:active{
+      transform:scale(.99);
+    }
+
+    @keyframes vrInvitePulse{
+      0%{
+        transform:scale(1);
+        opacity:1;
+        box-shadow:0 0 0 rgba(122,167,255,0);
+      }
+      50%{
+        transform:scale(1.035);
+        opacity:.9;
+        box-shadow:0 0 22px rgba(122,167,255,.34);
+      }
+      100%{
+        transform:scale(1);
+        opacity:1;
+        box-shadow:0 0 0 rgba(122,167,255,0);
+      }
+    }
 
     .vr-edit-wrap{
       display:none;
@@ -553,55 +652,27 @@
 
   <header class="vr-header" aria-label="Top actions">
     <div class="vr-top-actions">
-      <div class="vr-top-slot vr-top-left">
+      <div class="vr-top-slot">
         <a id="btn-back-home" class="vr-icon-button" href="index.html" data-i18n-aria="common.back">
-          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false">
-            <path d="M15.5 5l-7 7 7 7"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="2.4"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-          </svg>
+          <img src="assets/img/ui/btn_home.webp" alt="" draggable="false" />
         </a>
       </div>
 
-      <div class="vr-top-slot vr-top-center">
+      <div class="vr-top-slot">
         <a id="btn-settings" class="vr-icon-button" href="settings.html" data-i18n-aria="common.settings">
-          <span class="vr-icon-image vr-icon-settings"></span>
+          <img src="assets/img/ui/btn_settings.webp" alt="" draggable="false" />
         </a>
       </div>
 
-      <div class="vr-top-slot vr-top-right">
-        <button
-          id="pf_invite_top_btn"
-          class="vr-icon-button"
-          type="button"
-          data-i18n-aria="referral.invite_btn"
-          title="Invite"
-        >
-          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
-            <path
-              d="M14 5l5 5-5 5"
-              fill="none"
-              stroke="white"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M19 10H9a4 4 0 0 0-4 4v5"
-              fill="none"
-              stroke="white"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
+      <div class="vr-top-slot">
+        <a id="btn-crosspromo" class="vr-icon-button" href="cross-promo.html" data-i18n-aria="crosspromo.open_page_aria">
+          <img src="assets/img/ui/btn_crosspromo.webp" alt="" draggable="false" />
+        </a>
+      </div>
 
+      <div class="vr-top-slot">
         <a id="btn-shop" class="vr-icon-button" href="shop.html" data-i18n-aria="common.shop">
-          <span class="vr-icon-image vr-icon-shop"></span>
+          <img src="assets/img/ui/btn_shop.webp" alt="" draggable="false" />
         </a>
       </div>
     </div>
@@ -670,6 +741,28 @@
             </div>
           </div>
 
+        </div>
+      </div>
+
+      <div class="vr-referral-card">
+        <div class="vr-referral-head">
+          <div class="vr-referral-title" data-i18n="referral.invite_and_earn_title"></div>
+
+          <div class="vr-referral-reward">
+            <img src="assets/img/ui/vcoins.webp" alt="" draggable="false" />
+            <span class="vr-referral-reward-value">+ 200</span>
+          </div>
+        </div>
+
+        <p class="vr-referral-desc" data-i18n="referral.crosspromo_desc"></p>
+
+        <div class="vr-referral-actions">
+          <button
+            class="vr-referral-btn"
+            id="pf_invite_btn"
+            type="button"
+            data-i18n="referral.invite_and_earn_btn"
+          ></button>
         </div>
       </div>
 
