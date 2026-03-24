@@ -178,20 +178,24 @@
     }
   }
 
-  function bindInviteButton() {
-    const btn = document.getElementById("pf_invite_btn");
-    if (!btn || btn.dataset.referralBound === "1") return;
+  function bindInviteButtons() {
+    const ids = ["pf_invite_top_btn", "cp_invite_btn"];
 
-    btn.dataset.referralBound = "1";
-    btn.addEventListener("click", async () => {
-      await shareInvite();
+    ids.forEach((id) => {
+      const btn = document.getElementById(id);
+      if (!btn || btn.dataset.referralBound === "1") return;
+
+      btn.dataset.referralBound = "1";
+      btn.addEventListener("click", async () => {
+        await shareInvite();
+      });
     });
   }
 
   async function bootReferral() {
     await fetchReferrerOnceFromNative();
     await claimPendingReferral();
-    bindInviteButton();
+    bindInviteButtons();
   }
 
   document.addEventListener("DOMContentLoaded", () => {
