@@ -1057,10 +1057,10 @@
       }
     });
 
-    window.addEventListener("vr:profile", function () {
-      if (!isShopPage()) return;
-      renderShopView({ force: true });
-    });
+  window.addEventListener("vr:profile", function () {
+  if (!isShopPage()) return;
+  renderShopView();
+});
 
     window.addEventListener("vr:i18n:changed", function () {
       if (!isShopPage()) return;

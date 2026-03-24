@@ -4329,7 +4329,10 @@ body[data-universe="new_world_explorer"] .vr-gauge-value{
 }
 
 body[data-universe="new_world_explorer"] .vr-gauge-label{
-  min-height: auto !important;
+  min-height: 2em !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 #view-game.vr-bg-new_world_explorer{
