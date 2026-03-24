@@ -489,7 +489,7 @@
 
       .vr-cos-phone{
         width:100%;
-        aspect-ratio:9/16;
+        aspect-ratio:var(--vr-preview-device-ratio, 9 / 16);
         position:relative;
         overflow:hidden;
         background:#0b1220
@@ -692,6 +692,16 @@
     });
   }
 
+
+  function syncPreviewDeviceRatio(root) {
+    if (!root) return;
+
+    const w = Math.max(1, window.innerWidth || document.documentElement.clientWidth || 1);
+    const h = Math.max(1, window.innerHeight || document.documentElement.clientHeight || 1);
+
+    root.style.setProperty("--vr-preview-device-ratio", w + " / " + h);
+  }
+
   function openLightbox(opts) {
     const root = ensureLightboxRoot();
     if (!root || !opts?.src) return;
@@ -706,6 +716,8 @@
     _lightboxState.category = String(opts.category || "");
     _lightboxState.itemId = String(opts.itemId || "");
     _lightboxState.slideIndex = 0;
+
+    syncPreviewDeviceRatio(root);
 
     heroImg.src = _lightboxState.src;
     frame.src = buildPreviewUrl(opts);
