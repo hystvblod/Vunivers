@@ -558,241 +558,256 @@
 
 
     /* ==========================================================
-   SHOP responsive propre
-   On scale tout selon l’écran via --shop-scale
+   SHOP responsive proportionnel avec clamp
+   Un seul système, sans double logique
    ========================================================== */
+
 body.page-shop{
-  --shop-scale: 1;
-  --main-max: 760px;
-  --main-side-pad: 16px;
+  --page-max: clamp(760px, 94vw, 1080px);
+  --page-pad-x: clamp(14px, 2.2vw, 26px);
 
-  --shop-gap: calc(8px * var(--shop-scale));
-  --shop-item-radius: calc(16px * var(--shop-scale));
-  --shop-item-pad: calc(10px * var(--shop-scale));
-  --shop-icon: calc(42px * var(--shop-scale));
-  --shop-btn-h: calc(38px * var(--shop-scale));
+  --top-btn: clamp(44px, 4.2vw, 58px);
+  --top-btn-ico: clamp(24px, 2.8vw, 34px);
+  --top-gap: clamp(12px, 1.5vw, 18px);
 
-  --u-gap: calc(14px * var(--shop-scale));
-  --u-radius: calc(20px * var(--shop-scale));
+  --balance-gap: clamp(22px, 3vw, 38px);
+  --balance-icon: clamp(22px, 2.5vw, 30px);
+  --balance-font: clamp(18px, 2vw, 28px);
 
-  --cos-arrow: calc(36px * var(--shop-scale));
-  --cos-card-r: calc(18px * var(--shop-scale));
-  --cos-card-h: calc(124px * var(--shop-scale));
+  --title-mt: clamp(4px, .8vw, 12px);
+  --title-mb: clamp(10px, 1.3vw, 18px);
+
+  --shop-gap: clamp(8px, 1.2vw, 16px);
+  --shop-item-radius: clamp(16px, 1.8vw, 24px);
+  --shop-item-pad: clamp(10px, 1.4vw, 18px);
+  --shop-icon: clamp(42px, 5vw, 72px);
+  --shop-top-gap: clamp(8px, 1vw, 12px);
+  --shop-top-minh: clamp(74px, 8.5vw, 116px);
+  --shop-qty-size: clamp(16px, 2vw, 28px);
+  --shop-btn-h: clamp(38px, 4.8vw, 62px);
+  --shop-btn-radius: clamp(13px, 1.4vw, 18px);
+  --shop-btn-font: clamp(12px, 1.4vw, 17px);
+  --shop-btn-py: clamp(9px, 1vw, 14px);
+  --shop-btn-px: clamp(10px, 1.2vw, 16px);
+
+  --u-gap: clamp(14px, 1.6vw, 22px);
+  --u-radius: clamp(20px, 2vw, 28px);
+  --u-pad-y: clamp(14px, 1.7vw, 22px);
+  --u-pad-x: clamp(12px, 1.6vw, 18px);
+  --u-title-size: clamp(19px, 2.2vw, 30px);
+  --u-title-mb: clamp(12px, 1.3vw, 18px);
+
+  --cos-arrow: clamp(36px, 3.8vw, 50px);
+  --cos-arrow-font: clamp(28px, 2.8vw, 38px);
+  --cos-card-r: clamp(18px, 1.8vw, 24px);
+  --cos-card-h: clamp(124px, 14vw, 190px);
+  --cos-subtitle-size: clamp(13px, 1.5vw, 18px);
+  --cos-name-size: clamp(13px, 1.5vw, 18px);
+  --cos-count-size: clamp(12px, 1.3vw, 15px);
+  --cos-action-font: clamp(12px, 1.3vw, 16px);
+  --cos-action-radius: clamp(14px, 1.5vw, 18px);
+  --cos-action-py: clamp(10px, 1.1vw, 14px);
+  --cos-action-px: clamp(12px, 1.3vw, 16px);
+  --cos-action-ico: clamp(14px, 1.3vw, 18px);
 }
 
 body.page-shop .vr-main{
-  width: min(100%, var(--main-max));
+  width: min(100%, var(--page-max));
   margin: 0 auto;
-  padding-left: var(--main-side-pad);
-  padding-right: var(--main-side-pad);
-}
-
-body.page-shop #view-shop{
-  width: 100%;
-}
-
-body.page-shop .vr-shop-block{
-  max-width: 100%;
-  margin: calc(8px * var(--shop-scale)) 0 calc(12px * var(--shop-scale));
+  padding-left: var(--page-pad-x);
+  padding-right: var(--page-pad-x);
 }
 
 body.page-shop .vr-top-actions{
-  grid-template-columns:
-    calc(44px * var(--shop-scale))
-    minmax(0,1fr)
-    calc(44px * var(--shop-scale));
-  gap: calc(12px * var(--shop-scale));
+  grid-template-columns: var(--top-btn) minmax(0,1fr) var(--top-btn);
+  gap: var(--top-gap);
   padding:
-    calc((8px * var(--shop-scale)) + env(safe-area-inset-top))
-    var(--main-side-pad)
-    calc(6px * var(--shop-scale));
+    calc(clamp(8px, 1vw, 12px) + env(safe-area-inset-top))
+    var(--page-pad-x)
+    clamp(6px, .8vw, 10px);
 }
 
 body.page-shop .vr-top-balances{
-  gap: calc(22px * var(--shop-scale));
+  gap: var(--balance-gap);
 }
 
 body.page-shop .vr-top-balance img{
-  width: calc(22px * var(--shop-scale));
-  height: calc(22px * var(--shop-scale));
+  width: var(--balance-icon);
+  height: var(--balance-icon);
 }
 
 body.page-shop .vr-top-balance span{
-  font-size: calc(18px * var(--shop-scale));
+  font-size: var(--balance-font);
 }
 
 body.page-shop .vr-icon-button{
-  width: calc(44px * var(--shop-scale));
-  height: calc(44px * var(--shop-scale));
+  width: var(--top-btn);
+  height: var(--top-btn);
 }
 
 body.page-shop .vr-icon-button img{
-  width: calc(30px * var(--shop-scale));
-  height: calc(30px * var(--shop-scale));
+  width: var(--top-btn-ico);
+  height: var(--top-btn-ico);
 }
 
 body.page-shop .vr-back-ico{
-  width: calc(24px * var(--shop-scale));
-  height: calc(24px * var(--shop-scale));
+  width: clamp(24px, 2.4vw, 30px);
+  height: clamp(24px, 2.4vw, 30px);
 }
 
 body.page-shop #view-shop .vr-section-title{
-  margin-top: calc(4px * var(--shop-scale)) !important;
-  margin-bottom: calc(10px * var(--shop-scale)) !important;
+  margin-top: var(--title-mt) !important;
+  margin-bottom: var(--title-mb) !important;
 }
 
 body.page-shop .vr-profile-title{
-  margin-top: calc(10px * var(--shop-scale)) !important;
-  margin-bottom: calc(10px * var(--shop-scale)) !important;
+  margin-top: var(--title-mb) !important;
+  margin-bottom: var(--title-mb) !important;
+}
+
+body.page-shop .vr-shop-block{
+  margin: clamp(8px, 1vw, 14px) 0 clamp(12px, 1.5vw, 20px);
+  max-width: 100%;
+}
+
+body.page-shop .vr-shop-grid{
+  gap: var(--shop-gap);
+}
+
+body.page-shop .vr-shop-item{
+  border-radius: var(--shop-item-radius);
+  padding: var(--shop-item-pad);
 }
 
 body.page-shop .vr-shop-top{
-  gap: calc(8px * var(--shop-scale));
-  min-height: calc(74px * var(--shop-scale));
-  margin-bottom: calc(10px * var(--shop-scale));
+  gap: var(--shop-top-gap);
+  min-height: var(--shop-top-minh);
+  margin-bottom: clamp(10px, 1vw, 14px);
+}
+
+body.page-shop .vr-shop-icon{
+  width: var(--shop-icon);
+  height: var(--shop-icon);
+  max-width: var(--shop-icon);
+  max-height: var(--shop-icon);
 }
 
 body.page-shop .vr-shop-qty{
-  font-size: calc(16px * var(--shop-scale));
+  font-size: var(--shop-qty-size);
 }
 
 body.page-shop .vr-shop-item .vr-choice-button{
   min-height: var(--shop-btn-h);
-  border-radius: calc(13px * var(--shop-scale));
-  padding:
-    calc(9px * var(--shop-scale))
-    calc(10px * var(--shop-scale));
-  font-size: calc(12px * var(--shop-scale));
+  border-radius: var(--shop-btn-radius);
+  padding: var(--shop-btn-py) var(--shop-btn-px);
+  font-size: var(--shop-btn-font);
 }
 
 body.page-shop #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-top{
-  gap: calc(3px * var(--shop-scale)) !important;
-  min-height: calc(82px * var(--shop-scale)) !important;
-  padding-top: calc(10px * var(--shop-scale));
+  gap: clamp(3px, .4vw, 6px) !important;
+  min-height: clamp(82px, 9vw, 126px) !important;
+  padding-top: clamp(10px, 1vw, 14px);
 }
 
 body.page-shop #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-icon{
-  transform: translateY(calc(2px * var(--shop-scale)));
+  transform: translateY(clamp(2px, .3vw, 5px));
 }
 
 body.page-shop #store-grid .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-badge-subtitle{
-  margin-top: calc(2px * var(--shop-scale));
-  max-width: calc(112px * var(--shop-scale));
-  font-size: calc(11px * var(--shop-scale));
+  margin-top: clamp(2px, .3vw, 5px);
+  max-width: clamp(112px, 12vw, 170px);
+  font-size: clamp(11px, 1.1vw, 15px);
   line-height: 1.08;
 }
 
 body.page-shop .vr-cosmetics{
-  margin-top: calc(14px * var(--shop-scale));
-  padding-bottom: calc(10px * var(--shop-scale));
+  gap: var(--u-gap);
+  margin-top: clamp(14px, 1.6vw, 22px);
+  padding-bottom: clamp(10px, 1vw, 16px);
 }
 
 body.page-shop .vr-universe-block{
-  padding:
-    calc(14px * var(--shop-scale))
-    calc(12px * var(--shop-scale))
-    calc(12px * var(--shop-scale));
+  border-radius: var(--u-radius);
+  padding: var(--u-pad-y) var(--u-pad-x) var(--u-pad-x);
 }
 
 body.page-shop .vr-universe-title{
-  font-size: calc(19px * var(--shop-scale));
-  margin: 0 0 calc(12px * var(--shop-scale));
+  font-size: var(--u-title-size);
+  margin: 0 0 var(--u-title-mb);
 }
 
 body.page-shop .vr-cos-row{
-  margin: 0 0 calc(14px * var(--shop-scale));
+  margin: 0 0 clamp(14px, 1.4vw, 20px);
 }
 
 body.page-shop .vr-cos-subtitle{
-  font-size: calc(13px * var(--shop-scale));
-  margin: 0 0 calc(8px * var(--shop-scale));
+  font-size: var(--cos-subtitle-size);
+  margin: 0 0 clamp(8px, .9vw, 12px);
 }
 
 body.page-shop .vr-cos-carousel{
-  gap: calc(8px * var(--shop-scale));
+  gap: clamp(8px, 1vw, 12px);
 }
 
 body.page-shop .vr-cos-arrow{
-  font-size: calc(28px * var(--shop-scale));
+  width: var(--cos-arrow);
+  height: var(--cos-arrow);
+  font-size: var(--cos-arrow-font);
+}
+
+body.page-shop .vr-cos-card{
+  border-radius: var(--cos-card-r);
+  height: var(--cos-card-h);
 }
 
 body.page-shop .vr-cos-card.is-ui > img{
-  padding: calc(14px * var(--shop-scale));
+  padding: clamp(14px, 1.5vw, 22px);
 }
 
 body.page-shop .vr-cos-overlay{
   padding:
-    calc(30px * var(--shop-scale))
-    calc(10px * var(--shop-scale))
-    calc(10px * var(--shop-scale));
+    clamp(30px, 3vw, 44px)
+    clamp(10px, 1.1vw, 16px)
+    clamp(10px, 1.1vw, 16px);
 }
 
 body.page-shop .vr-cos-name{
-  font-size: calc(13px * var(--shop-scale));
-  margin-bottom: calc(8px * var(--shop-scale));
+  font-size: var(--cos-name-size);
+  margin-bottom: clamp(8px, .9vw, 12px);
 }
 
 body.page-shop .vr-cos-count{
-  font-size: calc(12px * var(--shop-scale));
+  font-size: var(--cos-count-size);
 }
 
 body.page-shop .vr-cos-action{
-  width: 100%;
-  margin-top: calc(8px * var(--shop-scale));
-  padding:
-    calc(10px * var(--shop-scale))
-    calc(12px * var(--shop-scale));
-  border-radius: calc(14px * var(--shop-scale));
-  font-size: calc(12px * var(--shop-scale));
+  margin-top: clamp(8px, .9vw, 12px);
+  padding: var(--cos-action-py) var(--cos-action-px);
+  border-radius: var(--cos-action-radius);
+  font-size: var(--cos-action-font);
 }
 
 body.page-shop .vr-cos-action-content{
-  gap: calc(6px * var(--shop-scale));
+  gap: clamp(6px, .7vw, 9px);
 }
 
 body.page-shop .vr-cos-action-ico{
-  width: calc(14px * var(--shop-scale));
-  height: calc(14px * var(--shop-scale));
-  min-width: calc(14px * var(--shop-scale));
-  min-height: calc(14px * var(--shop-scale));
+  width: var(--cos-action-ico);
+  height: var(--cos-action-ico);
+  min-width: var(--cos-action-ico);
+  min-height: var(--cos-action-ico);
 }
 
 body.page-shop .vr-cos-dots{
-  gap: calc(6px * var(--shop-scale));
-  margin-top: calc(8px * var(--shop-scale));
+  gap: clamp(6px, .7vw, 9px);
+  margin-top: clamp(8px, .9vw, 12px);
 }
 
 body.page-shop .vr-cos-dot{
-  width: calc(7px * var(--shop-scale));
-  height: calc(7px * var(--shop-scale));
+  width: clamp(7px, .8vw, 10px);
+  height: clamp(7px, .8vw, 10px);
 }
 
-/* TABLETTE */
-@media (min-width: 700px){
-  body.page-shop{
-    --shop-scale: 1.22;
-    --main-max: 820px;
-    --main-side-pad: 18px;
-  }
-}
-
-/* GRANDES TABLETTES / PETITS DESKTOPS */
-@media (min-width: 1024px){
-  body.page-shop{
-    --shop-scale: 1.34;
-    --main-max: 920px;
-    --main-side-pad: 22px;
-  }
-}
-
-/* TRÈS GRAND ÉCRAN */
-@media (min-width: 1366px){
-  body.page-shop{
-    --shop-scale: 1.42;
-    --main-max: 980px;
-    --main-side-pad: 24px;
-  }
-}
   </style>
 </head>
 
