@@ -179,7 +179,7 @@
   }
 
   function bindInviteButtons() {
-    const ids = ["pf_invite_top_btn", "cp_invite_btn"];
+    const ids = ["pf_invite_btn", "cp_invite_btn", "pf_invite_top_btn"];
 
     ids.forEach((id) => {
       const btn = document.getElementById(id);
