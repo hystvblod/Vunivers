@@ -673,7 +673,7 @@
 
     if (cur === next) {
       openEdit(false);
-      setMsg("ok", "profile.username_ok_nochange");
+      setMsg("ok", "profile.usernameOkNochange");
       return;
     }
 
@@ -699,7 +699,7 @@
 
       renderProfileFromState();
       openEdit(false);
-      setMsg("ok", "profile.username_ok_saved");
+      setMsg("ok", "profile.usernameOkSaved");
     } finally {
       if (saveBtn) saveBtn.disabled = false;
     }
