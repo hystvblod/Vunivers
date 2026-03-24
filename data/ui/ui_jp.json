@@ -592,5 +592,13 @@
       "accept": "許可",
       "refuse": "拒否"
     }
+  },
+  "referral": {
+    "invite_btn": "招待する",
+    "share_title": "友だちを招待",
+    "share_text": "VUniverse のダウンロードはこちら: {url}",
+    "link_copied": "リンクをコピーしました",
+    "crosspromo_reward_label": "招待",
+    "crosspromo_desc": "友だちを招待して VUniverse をインストールしてもらうと、インストールが確認されるたびに 200 VCoins を獲得できます。最大 5 件まで。"
   }
 }

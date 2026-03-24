@@ -592,5 +592,13 @@
       "accept": "허용",
       "refuse": "거부"
     }
+  },
+  "referral": {
+    "invite_btn": "초대하기",
+    "share_title": "친구 초대",
+    "share_text": "여기에서 VUniverse를 다운로드하세요: {url}",
+    "link_copied": "링크가 복사되었습니다",
+    "crosspromo_reward_label": "추천",
+    "crosspromo_desc": "친구를 초대해 VUniverse를 설치하게 하면, 설치가 확인될 때마다 200 VCoins를 받습니다. 최대 5명까지 가능합니다."
   }
 }
