@@ -5273,3 +5273,156 @@ body.vr-body-game[data-universe] .vr-gauge-label{
     font-size: clamp(14px, 1.95vw, 24px) !important;
   }
 }
+
+
+
+
+
+
+
+
+@media (orientation: portrait) and (min-width: 600px) and (max-width: 1100px){
+
+  /* =========================
+     HEAVEN
+     ========================= */
+  body.vr-body-game[data-universe="heaven_king"]{
+    --vr-heaven-hud-w: min(86vw, 860px);
+    --vr-heaven-hud-value-size: clamp(16px, 2.1vw, 26px);
+    --vr-heaven-hud-name-size: clamp(16px, 2.1vw, 26px);
+    --vr-heaven-hud-years-size: clamp(16px, 2.1vw, 26px);
+
+    --vr-card-w: min(92vw, 820px);
+    --vr-choice-safe: 74%;
+
+    --vr-font-scn-title: clamp(20px, 2.5vmin, 30px);
+    --vr-font-scn-text: clamp(15px, 1.95vmin, 20px);
+    --vr-font-choice: clamp(16px, 2.05vmin, 21px);
+
+    --vr-choice-h: clamp(104px, 11.8svh, 156px);
+    --vr-choices-gap: clamp(6px, 0.7svh, 10px);
+    --vr-stack-gap: clamp(4px, 0.45svh, 8px);
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-choice-button{
+    background-size: 100% 100% !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-gauge-label{
+    font-size: clamp(14px, 1.8vw, 18px) !important;
+    min-height: 2.35em !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-gauge-value{
+    font-size: clamp(13px, 1.6vw, 16px) !important;
+  }
+
+  /* =========================
+     WESTERN
+     ========================= */
+  body.vr-body-game[data-universe="western_president"]{
+    --vr-ui-hud-w: min(84vw, 820px);
+    --vr-west-hud-w: min(84vw, 820px);
+
+    --vr-card-w: min(90vw, 760px);
+    --vr-scn-h: clamp(150px, 17.5svh, 220px);
+    --vr-choice-h: clamp(94px, 10.8svh, 138px);
+
+    --vr-font-scn-title: clamp(18px, 2.15vmin, 25px);
+    --vr-font-scn-text: clamp(14px, 1.7vmin, 18px);
+    --vr-font-choice: clamp(15px, 1.8vmin, 19px);
+
+    --vr-hud-name-years-gap: 26px;
+  }
+
+  body.vr-body-game[data-universe="western_president"] #view-game .vr-card-main{
+    background-size: 100% 100% !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] #view-game .vr-choice-button{
+    background-size: 100% 100% !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value{
+    transform: translate(-4px, 10px) !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
+    transform: translate(4px, 10px) !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
+    transform: translate(0px, 12px) !important;
+    gap: 26px !important;
+  }
+
+  body.vr-body-game[data-universe="western_president"] .vr-gauge-label{
+    font-size: clamp(14px, 1.8vw, 18px) !important;
+    min-height: 2.35em !important;
+  }
+
+  /* =========================
+     CEO
+     ========================= */
+  body.vr-body-game[data-universe="mega_corp_ceo"]{
+    --vr-corp-hud-w: min(90vw, 900px);
+
+    --vr-card-w: min(92vw, 820px);
+    --vr-choice-h: clamp(112px, 12.0svh, 156px);
+
+    --vr-font-scn-title: clamp(20px, 2.2vmin, 28px);
+    --vr-font-scn-text: clamp(15px, 1.8vmin, 19px);
+    --vr-font-choice: clamp(16px, 1.95vmin, 21px);
+  }
+
+  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud{
+    width: min(90vw, 900px) !important;
+    aspect-ratio: 1024 / 220 !important;
+  }
+
+  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-gauge-label{
+    font-size: clamp(14px, 1.8vw, 18px) !important;
+    min-height: 2.35em !important;
+  }
+
+  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-gauge-value{
+    font-size: clamp(13px, 1.6vw, 16px) !important;
+  }
+
+  body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
+    font-size: clamp(16px, 1.95vmin, 21px) !important;
+    line-height: 1.08 !important;
+  }
+
+  /* =========================
+     EXPLORER
+     ========================= */
+  body.vr-body-game[data-universe="new_world_explorer"]{
+    --vr-card-w: min(82vw, 760px);
+    --vr-explorer-hud-w: min(86vw, 860px);
+
+    --vr-explorer-hud-shift-x: 0px;
+    --vr-explorer-hud-shift-y: -2px;
+
+    --vr-identity-ty: 8px;
+    --vr-vcoins-ty: 4px;
+    --vr-jetons-ty: 4px;
+
+    --vr-font-scn-title: clamp(21px, 2.6vmin, 32px);
+    --vr-font-scn-text: clamp(16px, 2.0vmin, 22px);
+    --vr-font-choice: clamp(15px, 1.95vmin, 21px);
+
+    --vr-choice-h: clamp(96px, 11.0svh, 146px);
+    --vr-stack-gap: clamp(8px, 0.9svh, 14px);
+    --vr-choices-gap: clamp(6px, 0.7svh, 10px);
+  }
+
+  body.vr-body-game[data-universe="new_world_explorer"] .vr-gauge-label{
+    font-size: clamp(14px, 1.8vw, 18px) !important;
+    min-height: 2.45em !important;
+  }
+
+  body.vr-body-game[data-universe="new_world_explorer"] .vr-gauge-value{
+    font-size: clamp(13px, 1.6vw, 16px) !important;
+  }
+}
