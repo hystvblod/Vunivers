@@ -5400,3 +5400,8 @@ body.vr-body-game[data-universe] .vr-gauge-label{
     --vr-fit-namegap: 0.94;
   }
 }
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
+  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud{
+    aspect-ratio: 1024 / 235 !important;
+  }
+}
