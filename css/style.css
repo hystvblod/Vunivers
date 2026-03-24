@@ -5400,3 +5400,60 @@ body.vr-body-game[data-universe] .vr-gauge-label{
     --vr-fit-namegap: 0.94;
   }
 }
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 1100px){
+
+  /* ==========================================================
+     TOUS LES UNIVERS
+     -> jauges + HUD plus gros sur tablette
+     ========================================================== */
+  body.vr-body-game[data-universe] .vr-gauge-label{
+    font-size: clamp(15px, 2.2vmin, 22px) !important;
+    min-height: 2.2em !important;
+  }
+
+  body.vr-body-game[data-universe] .vr-gauge-value{
+    font-size: clamp(15px, 2.2vmin, 22px) !important;
+  }
+
+  body.vr-body-game[data-universe] .vr-hud-value{
+    font-size: clamp(18px, 2.4vw, 30px) !important;
+  }
+
+  body.vr-body-game[data-universe] .vr-hud-name,
+  body.vr-body-game[data-universe] .vr-hud-years{
+    font-size: clamp(18px, 2.3vw, 30px) !important;
+  }
+
+  /* ==========================================================
+     EXPLORER
+     -> texte cartes / choix / message plus gros
+     -> images inchangées
+     ========================================================== */
+  body.vr-body-game[data-universe="new_world_explorer"]{
+    --vr-font-scn-title: clamp(22px, 3.4vmin, 40px);
+    --vr-font-scn-text: clamp(18px, 2.8vmin, 32px);
+    --vr-font-choice: clamp(18px, 2.7vmin, 30px);
+  }
+
+  /* ==========================================================
+     CEO
+     -> texte cartes / choix / message plus gros
+     -> images inchangées
+     ========================================================== */
+  body.vr-body-game[data-universe="mega_corp_ceo"]{
+    --vr-font-scn-title: clamp(22px, 2.8vmin, 34px);
+    --vr-font-scn-text: clamp(17px, 2.2vmin, 22px);
+    --vr-font-choice: clamp(18px, 2.3vmin, 24px);
+  }
+
+  /* ==========================================================
+     WESTERN
+     -> texte cartes / choix / message plus gros
+     -> images inchangées
+     ========================================================== */
+  body.vr-body-game[data-universe="western_president"]{
+    --vr-font-scn-title: clamp(20px, 2.7vmin, 30px);
+    --vr-font-scn-text: clamp(16px, 2.1vmin, 20px);
+    --vr-font-choice: clamp(16px, 2.1vmin, 20px);
+  }
+}
