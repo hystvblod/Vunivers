@@ -386,37 +386,6 @@
     const style = document.createElement("style");
     style.id = "vr-cosmetics-inline-style";
     style.textContent = `
-      #reward-grid .vr-shop-top,
-      #store-grid .vr-shop-top{
-        position:relative !important;
-        z-index:1 !important;
-        display:flex !important;
-        flex-direction:row !important;
-        align-items:center !important;
-        justify-content:center !important;
-        gap:10px !important;
-        min-height:48px !important;
-        margin-bottom:10px !important;
-      }
-
-      #reward-grid .vr-shop-qty,
-      #store-grid .vr-shop-qty{
-        position:relative !important;
-        z-index:1 !important;
-        width:auto !important;
-        margin:0 !important;
-        text-align:left !important;
-        display:inline-flex !important;
-        align-items:center !important;
-        justify-content:flex-start !important;
-        line-height:1 !important;
-      }
-
-      .vr-shop-item[data-sku="vuniverse_no_ads"] .vr-shop-top,
-      .vr-shop-item[data-sku="vuniverse_diamond"] .vr-shop-top{
-        justify-content:center !important;
-      }
-
       .vr-cosmetics{display:flex;flex-direction:column;gap:14px;margin-top:14px;padding-bottom:10px}
       .vr-universe-block{position:relative;overflow:hidden;border-radius:20px;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.18);box-shadow:0 18px 34px rgba(0,0,0,.26);padding:14px 12px 12px}
       .vr-universe-block::before{content:"";position:absolute;inset:-2px;pointer-events:none;background:radial-gradient(520px 220px at 15% 12%, rgba(255,255,255,.08), transparent 60%),radial-gradient(520px 260px at 85% 18%, rgba(255,214,156,.08), transparent 60%),linear-gradient(180deg, rgba(255,255,255,.03), transparent 40%);opacity:.9}
