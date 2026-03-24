@@ -3879,6 +3879,36 @@ function onGaugeSet(gaugeId) {
 
         <button id="vr-intro-finish-close" class="vr-choice-button" type="button"></button>
       </div>
+
+      <div class="vr-popup" id="vr-intro-name-confirm-popup" role="dialog" aria-modal="true" aria-hidden="true" inert>
+        <div class="vr-popup-inner">
+          <p
+            class="vr-card-text"
+            id="vr-intro-name-confirm-text"
+            style="text-align:center; margin:4px 0 6px;"
+          ></p>
+
+          <button
+            class="vr-card vr-token-card vr-token-card-big"
+            type="button"
+            data-intro-name-confirm="yes"
+          >
+            <div class="vr-card-content">
+              <h4 class="vr-card-title" id="vr-intro-name-confirm-yes"></h4>
+            </div>
+          </button>
+
+          <button
+            class="vr-card vr-token-card"
+            type="button"
+            data-intro-name-confirm="no"
+          >
+            <div class="vr-card-content">
+              <h4 class="vr-card-title" id="vr-intro-name-confirm-no"></h4>
+            </div>
+          </button>
+        </div>
+      </div>
     `;
 
     document.body.appendChild(overlay);
@@ -3933,6 +3963,65 @@ function onGaugeSet(gaugeId) {
     );
   }
 
+  function showIntroNameConfirmPopup(name, focusBackEl) {
+    const popup = document.getElementById("vr-intro-name-confirm-popup");
+    const textEl = document.getElementById("vr-intro-name-confirm-text");
+    const yesLabel = document.getElementById("vr-intro-name-confirm-yes");
+    const noLabel = document.getElementById("vr-intro-name-confirm-no");
+    const yesBtn = popup?.querySelector?.('[data-intro-name-confirm="yes"]');
+    const noBtn = popup?.querySelector?.('[data-intro-name-confirm="no"]');
+
+    if (!popup || !yesBtn || !noBtn) {
+      return Promise.resolve(true);
+    }
+
+    if (textEl) {
+      textEl.textContent = t(
+        "intro.finish.name_confirm",
+        "Es-tu sûr de vouloir garder ce nom : {name} ?"
+      ).replace("{name}", name);
+    }
+
+    if (yesLabel) {
+      yesLabel.textContent = t("intro.finish.name_save", "Valider");
+    }
+
+    if (noLabel) {
+      noLabel.textContent = t("common.cancel", "Annuler");
+    }
+
+    return new Promise((resolve) => {
+      const cleanup = () => {
+        popup.onclick = null;
+        popup.onkeydown = null;
+        yesBtn.onclick = null;
+        noBtn.onclick = null;
+        hideDialog(popup, focusBackEl);
+      };
+
+      const decide = (value) => {
+        cleanup();
+        resolve(!!value);
+      };
+
+      yesBtn.onclick = () => decide(true);
+      noBtn.onclick = () => decide(false);
+
+      popup.onclick = (e) => {
+        if (e.target === popup) decide(false);
+      };
+
+      popup.onkeydown = (e) => {
+        if (e.key === "Escape") {
+          e.preventDefault();
+          decide(false);
+        }
+      };
+
+      showDialog(popup, yesBtn);
+    });
+  }
+
   function showFinishPopup() {
     const overlay = ensureFinishPopup();
     fillFinishPopupTexts();
@@ -3973,12 +4062,11 @@ function onGaugeSet(gaugeId) {
           return;
         }
 
-        const confirmText = t(
-          "intro.finish.name_confirm",
-          "Es-tu sûr de vouloir garder ce nom : {name} ?"
-        ).replace("{name}", name);
-
-        if (!window.confirm(confirmText)) return;
+        const confirmed = await showIntroNameConfirmPopup(name, input);
+        if (!confirmed) {
+          try { input?.focus?.({ preventScroll: true }); } catch (_) {}
+          return;
+        }
 
         const currentName =
           String(
