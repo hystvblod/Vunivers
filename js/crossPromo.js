@@ -306,6 +306,14 @@
       writeState(freshState);
 
       showRewardToast(appId);
+
+      try {
+        await window.VRAnalytics?.log?.("crosspromo_reward_claimed", {
+          app_id: appId,
+          amount: REWARD_AMOUNT
+        });
+      } catch (_) {}
+
       return true;
     } catch (_) {
       freshRow.rewardClaiming = false;
@@ -560,6 +568,13 @@
       const popupText = getPopupText(app, popupIndex);
       registerShown();
 
+      try {
+        await window.VRAnalytics?.log?.("crosspromo_popup_shown", {
+          app_id: appId,
+          popup_index: popupIndex
+        });
+      } catch (_) {}
+
       const root = buildPopupRoot();
       const cover = document.getElementById("vr-crosspromo-cover");
       const appName = document.getElementById("vr-crosspromo-appname");
@@ -601,21 +616,53 @@
       closeBtn.setAttribute("title", t("crosspromo.aria.close"));
 
       primary.onclick = async function () {
+        try {
+          await window.VRAnalytics?.log?.("crosspromo_install_click", {
+            app_id: appId,
+            popup_index: popupIndex,
+            source: "popup"
+          });
+        } catch (_) {}
+
         setPendingStoreClick(appId);
         finish("install", false);
         await openStore(app);
       };
 
-      secondary.onclick = function () {
+      secondary.onclick = async function () {
+        try {
+          await window.VRAnalytics?.log?.("crosspromo_popup_dismiss", {
+            app_id: appId,
+            popup_index: popupIndex,
+            reason: "later"
+          });
+        } catch (_) {}
+
         finish("later", true);
       };
 
-      closeBtn.onclick = function () {
+      closeBtn.onclick = async function () {
+        try {
+          await window.VRAnalytics?.log?.("crosspromo_popup_dismiss", {
+            app_id: appId,
+            popup_index: popupIndex,
+            reason: "close"
+          });
+        } catch (_) {}
+
         finish("close", true);
       };
 
-      root.onclick = function (e) {
+      root.onclick = async function (e) {
         if (e.target === root) {
+          try {
+            await window.VRAnalytics?.log?.("crosspromo_popup_dismiss", {
+              app_id: appId,
+              popup_index: popupIndex,
+              reason: "outside"
+            });
+          } catch (_) {}
+
           finish("outside", true);
         }
       };
@@ -856,6 +903,13 @@
           await renderStorePage();
           return;
         }
+
+        try {
+          await window.VRAnalytics?.log?.("crosspromo_install_click", {
+            app_id: id,
+            source: "store_page"
+          });
+        } catch (_) {}
 
         setPendingStoreClick(id);
         await openStore(app);

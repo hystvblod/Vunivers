@@ -46,6 +46,21 @@
     }
   }
 
+  function getSourcePage() {
+    try {
+      const page = document.body?.dataset?.page;
+      if (page) return String(page).trim().replace(/-/g, "_");
+    } catch (_) {}
+
+    try {
+      const file = String(window.location.pathname || "").split("/").pop() || "";
+      const clean = file.replace(/\.html$/i, "").trim().replace(/-/g, "_");
+      if (clean) return clean;
+    } catch (_) {}
+
+    return "unknown";
+  }
+
   async function getCurrentUid() {
     try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
 
@@ -75,9 +90,16 @@
     const uid = await getCurrentUid();
     if (!uid) return false;
 
+    const source = getSourcePage();
     const url = buildInviteUrl(uid);
     const text = t("referral.share_text", "Télécharge VUniverse ici : {url}")
       .replaceAll("{url}", url);
+
+    try {
+      await window.VRAnalytics?.log?.("referral_share_click", {
+        source: source
+      });
+    } catch (_) {}
 
     try {
       const Share = getSharePlugin();
@@ -87,6 +109,14 @@
           text,
           dialogTitle: t("referral.share_title", "Inviter un ami")
         });
+
+        try {
+          await window.VRAnalytics?.log?.("referral_share_success", {
+            source: source,
+            method: "capacitor_share"
+          });
+        } catch (_) {}
+
         return true;
       }
     } catch (_) {}
@@ -97,6 +127,14 @@
           title: t("referral.share_title", "Inviter un ami"),
           text
         });
+
+        try {
+          await window.VRAnalytics?.log?.("referral_share_success", {
+            source: source,
+            method: "navigator_share"
+          });
+        } catch (_) {}
+
         return true;
       }
     } catch (_) {}
@@ -105,8 +143,22 @@
       if (navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(text);
         try { window.showToast?.(t("referral.link_copied", "Lien copié")); } catch (_) {}
+
+        try {
+          await window.VRAnalytics?.log?.("referral_share_success", {
+            source: source,
+            method: "clipboard"
+          });
+        } catch (_) {}
+
         return true;
       }
+    } catch (_) {}
+
+    try {
+      await window.VRAnalytics?.log?.("referral_share_failed", {
+        source: source
+      });
     } catch (_) {}
 
     return false;
@@ -157,6 +209,13 @@
       if (error) return;
 
       const reason = String(data?.reason || "");
+
+      try {
+        await window.VRAnalytics?.log?.("referral_install_claim_result", {
+          ok: !!data?.ok,
+          reason: reason || "unknown"
+        });
+      } catch (_) {}
 
       if (data?.ok && (reason === "claimed" || reason === "already_processed")) {
         localStorage.removeItem(PENDING_INVITER_KEY);
