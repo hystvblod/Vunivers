@@ -31,9 +31,10 @@
     }
 
     .vr-crosspromo-shell{
-      width:min(100%, 640px);
+      width:calc(100vw - 12px);
+      max-width:980px;
       margin:0 auto;
-      padding:14px 12px 28px;
+      padding:12px 0 28px;
     }
 
     .vr-crosspromo-top{
@@ -42,8 +43,8 @@
       justify-content:space-between;
       gap:10px;
       margin-bottom:14px;
-      padding:12px 14px;
-      border-radius:20px;
+      padding:10px 12px;
+      border-radius:18px;
       background:linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,.12));
       backdrop-filter:blur(4px);
       -webkit-backdrop-filter:blur(4px);
@@ -80,7 +81,7 @@
     .vr-crosspromo-title{
       margin:0;
       color:#fff;
-      font-size:clamp(22px, 3.2vw, 28px);
+      font-size:22px;
       font-weight:900;
       text-shadow:
         0 2px 6px rgba(0,0,0,.58),
@@ -90,8 +91,8 @@
     .vr-crosspromo-subtitle{
       margin:6px 0 0;
       color:rgba(255,255,255,.99);
-      font-size:clamp(13px, 2vw, 15px);
-      line-height:1.4;
+      font-size:13px;
+      line-height:1.35;
       text-shadow:
         0 2px 6px rgba(0,0,0,.54),
         0 4px 12px rgba(0,0,0,.32);
@@ -103,8 +104,6 @@
       flex:0 0 44px;
     }
 
-    /* IMPORTANT :
-       une seule colonne partout pour garder le rendu "app" sur tablette */
     .vr-crosspromo-grid{
       display:grid;
       grid-template-columns:1fr;
@@ -113,17 +112,6 @@
 
     .vr-crosspromo-referral-card{
       margin-bottom:16px;
-    }
-
-    .vr-crosspromo-card{
-      position:relative;
-      overflow:hidden;
-      border-radius:22px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(10,16,28,.28);
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
-      box-shadow:0 16px 40px rgba(0,0,0,.28);
     }
 
     .vr-crosspromo-invite-pill{
@@ -135,7 +123,7 @@
       width:fit-content;
       max-width:100%;
       margin:0 auto 14px;
-      padding:12px 18px;
+      padding:10px 18px;
       border-radius:999px;
       border:1px solid rgba(255,255,255,.18);
       background:rgba(255,255,255,.10);
@@ -144,7 +132,7 @@
 
     .vr-crosspromo-invite-title{
       display:block;
-      font-size:clamp(16px, 2.6vw, 20px);
+      font-size:18px;
       font-weight:950;
       color:#fff;
       text-align:center;
@@ -158,12 +146,12 @@
       object-fit:contain;
       display:block;
       flex:0 0 28px;
-      transform:translateY(3px);
+      transform:translateY(4px);
     }
 
     .vr-crosspromo-invite-reward-value{
       display:block;
-      font-size:clamp(16px, 2.6vw, 20px);
+      font-size:18px;
       font-weight:950;
       color:#fff;
       line-height:1;
@@ -180,9 +168,20 @@
       margin:0 auto;
     }
 
+    .vr-crosspromo-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(10,16,28,.28);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      box-shadow:0 16px 40px rgba(0,0,0,.28);
+    }
+
     .vr-crosspromo-hero{
       position:relative;
-      height:clamp(170px, 34vw, 220px);
+      height:172px;
       overflow:hidden;
       background:
         linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0)),
@@ -202,7 +201,7 @@
     }
 
     .vr-crosspromo-content{
-      padding:14px;
+      padding:12px;
       color:#fff;
     }
 
@@ -242,7 +241,7 @@
     }
 
     .vr-crosspromo-reward-label{
-      font-size:clamp(13px, 2vw, 15px);
+      font-size:14px;
       font-weight:950;
       letter-spacing:.2px;
       opacity:1;
@@ -258,7 +257,7 @@
     }
 
     .vr-crosspromo-reward-value{
-      font-size:clamp(15px, 2vw, 17px);
+      font-size:16px;
       font-weight:950;
     }
 
@@ -278,20 +277,20 @@
     }
 
     .vr-crosspromo-desc{
-      margin:6px auto 14px auto;
+      margin:4px auto 14px auto;
       color:rgba(255,255,255,.96);
-      font-size:clamp(14px, 2.2vw, 16px);
-      line-height:1.5;
+      font-size:14px;
+      line-height:1.45;
       text-align:center;
-      max-width:30ch;
+      max-width:28ch;
       text-shadow:0 2px 8px rgba(0,0,0,.18);
     }
 
     .vr-crosspromo-gallery{
       display:grid;
       grid-template-columns:repeat(3, minmax(0, 1fr));
-      gap:10px;
-      margin-bottom:14px;
+      gap:8px;
+      margin-bottom:12px;
       align-items:start;
     }
 
@@ -329,13 +328,12 @@
     }
 
     .vr-crosspromo-btn{
-      min-height:54px;
-      padding:14px 16px;
+      min-height:50px;
+      padding:12px 14px;
       border-radius:16px;
       border:1px solid rgba(255,255,255,.16);
       background:rgba(255,255,255,.10);
       color:#fff;
-      font-size:clamp(15px, 2.2vw, 17px);
       font-weight:900;
       text-decoration:none;
       display:inline-flex;
@@ -352,7 +350,7 @@
     }
 
     .vr-crosspromo-referral-card .vr-crosspromo-btn.primary{
-      animation:vrCrossInvitePulse 1.15s ease-in-out infinite;
+      animation: vrCrossInvitePulse 1.15s ease-in-out infinite;
       box-shadow:0 0 0 rgba(122,167,255,0);
     }
 
@@ -431,27 +429,34 @@
       box-shadow:0 18px 40px rgba(0,0,0,.35);
     }
 
-    /* Téléphones */
-    @media (max-width: 520px){
-      .vr-crosspromo-shell{
-        padding:10px 9px 22px;
+    /* Desktop large uniquement */
+    @media (min-width: 1200px){
+      .vr-crosspromo-grid{
+        grid-template-columns:1fr 1fr;
       }
 
-      .vr-crosspromo-top{
-        padding:10px 10px;
-        border-radius:18px;
+      .vr-crosspromo-hero{
+        height:200px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 520px){
+      .vr-crosspromo-shell{
+        width:calc(100vw - 10px);
+        padding:10px 0 22px;
       }
 
       .vr-crosspromo-title{
         font-size:20px;
       }
 
-      .vr-crosspromo-subtitle{
-        font-size:13px;
-      }
-
       .vr-crosspromo-hero{
         height:156px;
+      }
+
+      .vr-crosspromo-top{
+        padding:8px 10px;
       }
 
       .vr-crosspromo-reward{
@@ -472,68 +477,105 @@
         flex:0 0 28px;
         transform:translateY(2px);
       }
-
-      .vr-crosspromo-gallery{
-        gap:8px;
-      }
-
-      .vr-crosspromo-btn{
-        min-height:50px;
-        font-size:15px;
-      }
     }
 
-    /* Tablettes : on garde le rendu mobile/app, mais en plus gros */
-    @media (min-width: 700px){
+    /* TABLETTE : large, 1 colonne, gros texte */
+    @media (min-width: 700px) and (max-width: 1199px){
       .vr-crosspromo-shell{
-        width:min(100%, 660px);
-        padding:18px 14px 34px;
-      }
-
-      .vr-crosspromo-top{
-        padding:14px 16px;
-      }
-
-      .vr-crosspromo-title{
-        font-size:28px;
-      }
-
-      .vr-crosspromo-subtitle{
-        font-size:15px;
-      }
-
-      .vr-crosspromo-content{
-        padding:16px;
-      }
-
-      .vr-crosspromo-invite-title,
-      .vr-crosspromo-invite-reward-value{
-        font-size:20px;
-      }
-
-      .vr-crosspromo-desc{
-        font-size:16px;
-      }
-
-      .vr-crosspromo-reward-label{
-        font-size:15px;
-      }
-
-      .vr-crosspromo-reward-value{
-        font-size:17px;
-      }
-
-      .vr-crosspromo-btn{
-        min-height:56px;
-        font-size:17px;
-      }
-
-      .vr-crosspromo-hero{
-        height:220px;
+        width:calc(100vw - 8px);
+        max-width:none;
+        padding:14px 0 32px;
       }
 
       .vr-crosspromo-grid{
         grid-template-columns:1fr !important;
+        gap:18px;
+      }
+
+      .vr-crosspromo-top{
+        padding:14px 16px;
+        border-radius:22px;
+      }
+
+      .vr-crosspromo-title{
+        font-size:30px;
+      }
+
+      .vr-crosspromo-subtitle{
+        font-size:17px;
+        line-height:1.4;
+      }
+
+      .vr-crosspromo-card{
+        border-radius:24px;
+      }
+
+      .vr-crosspromo-content{
+        padding:18px;
+      }
+
+      .vr-crosspromo-invite-pill{
+        padding:13px 22px;
+        gap:10px;
+      }
+
+      .vr-crosspromo-invite-title{
+        font-size:24px;
+      }
+
+      .vr-crosspromo-invite-pill img{
+        width:34px;
+        height:34px;
+        flex:0 0 34px;
+      }
+
+      .vr-crosspromo-invite-reward-value{
+        font-size:24px;
+      }
+
+      .vr-crosspromo-referral-card .vr-crosspromo-actions{
+        max-width:420px;
+      }
+
+      .vr-crosspromo-hero{
+        height:260px;
+      }
+
+      .vr-crosspromo-reward{
+        padding:12px 20px;
+        gap:9px;
+      }
+
+      .vr-crosspromo-reward-label{
+        font-size:18px;
+      }
+
+      .vr-crosspromo-reward img{
+        width:34px;
+        height:34px;
+        flex:0 0 34px;
+      }
+
+      .vr-crosspromo-reward-value{
+        font-size:20px;
+      }
+
+      .vr-crosspromo-desc{
+        font-size:18px;
+        line-height:1.5;
+        max-width:34ch;
+      }
+
+      .vr-crosspromo-gallery{
+        gap:12px;
+        margin-bottom:16px;
+      }
+
+      .vr-crosspromo-btn{
+        min-height:60px;
+        padding:14px 18px;
+        font-size:20px;
+        border-radius:18px;
       }
     }
   </style>
