@@ -289,21 +289,31 @@
 
   async function maybePromptOnIndexAfterGameReturn() {
     if (indexPromptStarted) return false;
-    indexPromptStarted = true;
-
     if (!isIndexPage()) return false;
     if (!hasPendingIndexPrompt()) return false;
 
-    lsDel(K_PENDING_INDEX_PROMPT);
-    clearRealGamePlayed();
+    if (hasShownPrompt()) {
+      lsDel(K_PENDING_INDEX_PROMPT);
+      clearRealGamePlayed();
+      return false;
+    }
 
-    if (hasShownPrompt()) return false;
+    indexPromptStarted = true;
 
     try {
       const accepted = await requestNativePermission();
-      lsSet(K_PROMPT_SHOWN, "1");
-      return !!accepted;
+
+      if (accepted) {
+        lsSet(K_PROMPT_SHOWN, "1");
+        lsDel(K_PENDING_INDEX_PROMPT);
+        clearRealGamePlayed();
+        return true;
+      }
+
+      indexPromptStarted = false;
+      return false;
     } catch (_) {
+      indexPromptStarted = false;
       return false;
     }
   }
