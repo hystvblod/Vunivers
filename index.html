@@ -784,19 +784,24 @@
   <script>
     window.addEventListener("load", async function () {
       try {
+        await window.VRI18n?.initI18n?.();
+      } catch (_) {}
+
+      try {
         const introJustFinished = localStorage.getItem("vrealms_intro_just_finished") === "1";
-        if (!introJustFinished) return;
+
+        if (introJustFinished) {
+          const umpShown = await window.VRAds?.maybeShowGoogleConsentFormOnIndexAfterIntro?.();
+
+          try {
+            localStorage.removeItem("vrealms_intro_just_finished");
+          } catch (_) {}
+
+          if (umpShown) return;
+        }
 
         try {
-          await window.VRI18n?.initI18n?.();
-        } catch (_) {}
-
-  try {
-  await window.VRAds?.maybeShowPersonalizedConsentPopupOnIndexAfterIntro?.();
-} catch (_) {}
-
-        try {
-          localStorage.removeItem("vrealms_intro_just_finished");
+          await window.VROneSignal?.maybePromptOnIndexAfterGameReturn?.();
         } catch (_) {}
       } catch (_) {}
     });

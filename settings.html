@@ -258,6 +258,18 @@
       line-height:1.25;
     }
 
+    .vr-privacyBtn{
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      color:#fff;
+      font-weight:900;
+      cursor:pointer;
+      flex:0 0 auto;
+    }
+
     .vr-switch{
       position:relative;
       width:54px;
@@ -455,10 +467,7 @@
                 <p id="adsDesc" class="vr-toggleDesc"></p>
               </div>
 
-              <label id="adsSwitch" class="vr-switch" aria-label="">
-                <input id="adsPersonalized" type="checkbox" />
-                <span class="vr-switchUi"></span>
-              </label>
+              <button id="btnPrivacyOptions" type="button" class="vr-privacyBtn"></button>
             </div>
 
             <div class="vr-toggleRow">
@@ -532,7 +541,6 @@
 
     const LangStorageKey = "vuniverse_lang";
     const LangStorageLegacyKey = "vrealms_lang";
-    const AdsPrefKey = "vrealms_ads_personalized";
 
     const LANGS = [
       { code:"en",   ui:"EN",   nameKey:"ui.lang_name.en"   },
@@ -675,7 +683,7 @@
       const grid = $("settingsLangGrid");
       const adsLabel = $("adsLabel");
       const adsDesc = $("adsDesc");
-      const adsSw = $("adsSwitch");
+      const adsBtn = $("btnPrivacyOptions");
       const musicLabel = $("musicLabel");
       const musicDesc = $("musicDesc");
       const musicSw = $("musicSwitch");
@@ -692,9 +700,12 @@
       if(back) back.setAttribute("aria-label", t("ui.settings_back_home_aria"));
       if(prof) prof.setAttribute("aria-label", t("ui.settings_open_profile_aria"));
       if(grid) grid.setAttribute("aria-label", t("ui.language"));
-      if(adsLabel) adsLabel.textContent = t("ui.settings_ads_personalized_label");
-      if(adsDesc) adsDesc.textContent = t("ui.settings_ads_personalized_desc");
-      if(adsSw) adsSw.setAttribute("aria-label", t("ui.settings_ads_personalized_label"));
+      if(adsLabel) adsLabel.textContent = t("ui.settings_privacy_options_label") || "Privacy choices";
+      if(adsDesc) adsDesc.textContent = t("ui.settings_privacy_options_desc") || "Open Google's form to review or change your ad choices.";
+      if(adsBtn){
+        adsBtn.textContent = t("ui.settings_privacy_options_button") || "Open";
+        adsBtn.setAttribute("aria-label", t("ui.settings_privacy_options_label") || "Privacy choices");
+      }
 
       if(musicLabel) musicLabel.textContent = t("ui.settings_music_label");
       if(musicDesc) musicDesc.textContent = t("ui.settings_music_desc");
@@ -808,41 +819,21 @@
           : t("ui.settings_msg_saved_local");
       }
     }
+    async function openPrivacyOptions() {
+      let ok = false;
 
-
-    function getAdsPref(){
-      try{
-        if(window.VRAds && typeof window.VRAds.getPersonalizedConsent === "function"){
-          return !!window.VRAds.getPersonalizedConsent();
-        }
-      }catch(_){}
-
-      try{
-        const v = localStorage.getItem(AdsPrefKey);
-        if(v === "1") return true;
-        if(v === "0") return false;
-      }catch(_){}
-
-      return false;
-    }
-
-    async function setAdsPref(value, { showMsg } = {}){
-      const on = !!value;
-
-      try{ localStorage.setItem(AdsPrefKey, on ? "1" : "0"); }catch(_){}
-
-      try{
-        await window.VRAds?.setPersonalizedConsent?.(on, { source:"settings" });
-      }catch(_){}
-
-      const box = $("adsPersonalized");
-      if(box) box.checked = on;
+      try {
+        ok = !!(await window.VRAds?.openGooglePrivacyOptionsForm?.());
+      } catch (_) {}
 
       const msg = $("settingsMsg");
-      if(msg && showMsg){
-        msg.textContent = t("ui.settings_ads_saved");
+      if (msg) {
+        msg.textContent = ok
+          ? (t("ui.settings_privacy_options_opened") || "Privacy options opened.")
+          : (t("ui.settings_privacy_options_unavailable") || "No privacy options are available right now.");
       }
     }
+
 
     function getMusicPref(){
       try{
@@ -891,10 +882,11 @@
     );
 
 
-    const adsBox = $("adsPersonalized");
-    if(adsBox){
-      adsBox.checked = getAdsPref();
-      adsBox.addEventListener("change", () => setAdsPref(adsBox.checked, { showMsg:true }));
+    const adsBtn = $("btnPrivacyOptions");
+    if(adsBtn){
+      adsBtn.addEventListener("click", () => {
+        void openPrivacyOptions();
+      });
     }
 
     const musicBox = $("musicEnabled");
@@ -903,7 +895,6 @@
       musicBox.addEventListener("change", () => setMusicPref(musicBox.checked, { showMsg:true }));
     }
 
-    try{ await window.VRAds?.setPersonalizedConsent?.(getAdsPref(), { source:"settings_init" }); }catch(_){}
   })();
   </script>
 </body>
