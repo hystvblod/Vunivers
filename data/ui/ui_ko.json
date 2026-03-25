@@ -61,6 +61,14 @@
     "settings_music_label": "음악",
     "settings_music_desc": "유니버스 배경 음악을 켜거나 끕니다.",
     "settings_music_saved": "음악 설정이 저장되었습니다.",
+
+    "music_prompt": {
+      "title": "음악",
+      "text": "배경 음악을 켤까요?",
+      "note": "이 선택은 나중에 설정에서 언제든지 바꿀 수 있어요.",
+      "disable": "지금은 안 함",
+      "enable": "켜기"
+    },
     "settings_privacy_options_label": "개인정보 선택",
     "settings_privacy_options_desc": "Google 양식을 열어 광고 선택 사항을 검토하거나 변경합니다.",
     "settings_privacy_options_button": "열기",

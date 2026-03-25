@@ -61,6 +61,14 @@
     "settings_music_label": "Música",
     "settings_music_desc": "Ativar ou desativar a música de fundo dos universos.",
     "settings_music_saved": "Preferência de música salva.",
+
+    "music_prompt": {
+      "title": "Música",
+      "text": "Você quer ativar a música de fundo?",
+      "note": "Você poderá mudar essa opção depois em Configurações.",
+      "disable": "Agora não",
+      "enable": "Ativar"
+    },
     "settings_privacy_options_label": "Opções de privacidade",
     "settings_privacy_options_desc": "Abra o formulário do Google para revisar ou alterar suas escolhas de anúncios.",
     "settings_privacy_options_button": "Abrir",
