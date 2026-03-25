@@ -178,6 +178,79 @@
     }
   }
 
+  function showAndroidOnlyInvitePopup() {
+    return new Promise((resolve) => {
+      let root = document.getElementById("vr-referral-platform-popup");
+
+      if (!root) {
+        root = document.createElement("div");
+        root.id = "vr-referral-platform-popup";
+        root.style.cssText = [
+          "position:fixed",
+          "inset:0",
+          "z-index:99999",
+          "display:none",
+          "align-items:center",
+          "justify-content:center",
+          "padding:20px",
+          "background:rgba(5,10,20,.66)",
+          "backdrop-filter:blur(10px)"
+        ].join(";");
+
+        root.innerHTML = `
+          <div role="dialog" aria-modal="true" style="width:min(420px,92vw);border-radius:22px;padding:20px 18px;background:linear-gradient(180deg, rgba(24,33,58,.98), rgba(13,20,39,.98));border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 46px rgba(0,0,0,.42);color:#fff;">
+            <div id="vr-referral-platform-popup-title" style="font-size:18px;font-weight:900;line-height:1.2;margin-bottom:10px;"></div>
+            <div id="vr-referral-platform-popup-text" style="font-size:14px;line-height:1.45;color:rgba(255,255,255,.92);margin-bottom:16px;"></div>
+            <button id="vr-referral-platform-popup-ok" type="button" style="width:100%;min-height:48px;border:0;border-radius:14px;background:linear-gradient(135deg,#70b7ff,#4a80ff);color:#fff;font-weight:900;font-size:14px;cursor:pointer;"></button>
+          </div>
+        `;
+
+        document.body.appendChild(root);
+      }
+
+      const titleEl = document.getElementById("vr-referral-platform-popup-title");
+      const textEl = document.getElementById("vr-referral-platform-popup-text");
+      const okBtn = document.getElementById("vr-referral-platform-popup-ok");
+
+      if (titleEl) {
+        titleEl.textContent = t("common.unavailable", "Indisponible");
+      }
+
+      if (textEl) {
+        textEl.textContent = t(
+          "referral.android_only_popup.text",
+          "Seule la version Android est disponible pour le moment. La version iOS est en cours et ne peut donc pas être téléchargée pour le moment."
+        );
+      }
+
+      if (okBtn) {
+        okBtn.textContent = t("common.continue", "Continuer");
+      }
+
+      const close = () => {
+        root.style.display = "none";
+        root.onclick = null;
+        if (okBtn) okBtn.onclick = null;
+        document.removeEventListener("keydown", onKeyDown);
+        resolve(true);
+      };
+
+      const onKeyDown = (e) => {
+        if (e.key === "Escape") close();
+      };
+
+      root.onclick = (e) => {
+        if (e.target === root) close();
+      };
+
+      if (okBtn) okBtn.onclick = close;
+
+      root.style.display = "flex";
+      document.addEventListener("keydown", onKeyDown);
+      setTimeout(() => okBtn?.focus?.(), 0);
+    });
+  }
+
   function bindInviteButtons() {
     const ids = ["pf_invite_btn", "cp_invite_btn", "pf_invite_top_btn"];
 
@@ -187,6 +260,7 @@
 
       btn.dataset.referralBound = "1";
       btn.addEventListener("click", async () => {
+        await showAndroidOnlyInvitePopup();
         await shareInvite();
       });
     });

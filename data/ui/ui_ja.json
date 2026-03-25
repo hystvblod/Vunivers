@@ -595,5 +595,10 @@
       "accept": "許可",
       "refuse": "拒否"
     }
+  },
+  "referral": {
+    "android_only_popup": {
+      "text": "現在利用できるのはAndroid版のみです。iOS版は開発中のため、まだダウンロードできません。"
+    }
   }
 }
