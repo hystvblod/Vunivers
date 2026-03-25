@@ -791,13 +791,9 @@
           await window.VRI18n?.initI18n?.();
         } catch (_) {}
 
-        try {
-          await window.VROneSignal?.maybePromptOnIndexAfterGameReturn?.();
-        } catch (_) {}
-
-        try {
-          await window.VRAds?.maybeShowPersonalizedConsentPopupOnIndexAfterIntro?.();
-        } catch (_) {}
+  try {
+  await window.VRAds?.maybeShowPersonalizedConsentPopupOnIndexAfterIntro?.();
+} catch (_) {}
 
         try {
           localStorage.removeItem("vrealms_intro_just_finished");
