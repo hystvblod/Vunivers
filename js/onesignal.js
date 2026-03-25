@@ -8,9 +8,10 @@
   const K_PENDING_INDEX_PROMPT = "vr_os_pending_index_prompt_v1";
   const K_REAL_GAME_THIS_RUN = "vr_os_real_game_this_run_v1";
 
-  let bootStarted = false;
   let initialized = false;
+  let bootPromise = null;
   let indexPromptStarted = false;
+  let gameReturnHookBound = false;
 
   function t(key, fallback) {
     try {
@@ -154,49 +155,65 @@
   }
 
   async function bootOneSignal() {
-    if (bootStarted) return initialized;
-    bootStarted = true;
-
+    if (initialized) return true;
     if (!isNative()) return false;
+    if (bootPromise) return bootPromise;
 
-    try {
-      if (window.__VR_BOOT_READY) {
-        await Promise.race([window.__VR_BOOT_READY, sleep(3000)]);
+    bootPromise = (async function () {
+      try {
+        try {
+          if (window.__VR_BOOT_READY) {
+            await Promise.race([window.__VR_BOOT_READY, sleep(3000)]);
+          }
+        } catch (_) {}
+
+        for (let i = 0; i < 20; i++) {
+          const ok = await initOneSignal();
+          if (ok) return true;
+          await sleep(400);
+        }
+
+        return false;
+      } finally {
+        if (!initialized) {
+          bootPromise = null;
+        }
       }
-    } catch (_) {}
+    })();
 
-    for (let i = 0; i < 20; i++) {
-      const ok = await initOneSignal();
-      if (ok) return true;
-      await sleep(400);
-    }
-
-    return false;
+    return bootPromise;
   }
 
   async function requestNativePermission() {
-    await bootOneSignal();
+    const bootOk = await bootOneSignal();
+    if (!bootOk) {
+      return { attempted: false, accepted: false };
+    }
 
     const OS = getOS();
-    if (!OS) return false;
+    if (!OS) {
+      return { attempted: false, accepted: false };
+    }
 
     try {
       if (OS.Notifications && typeof OS.Notifications.requestPermission === "function") {
-        return await OS.Notifications.requestPermission(false);
+        const accepted = await OS.Notifications.requestPermission(false);
+        return { attempted: true, accepted: !!accepted };
       }
     } catch (_) {}
 
     try {
       if (typeof OS.promptForPushNotificationsWithUserResponse === "function") {
-        return await new Promise((resolve) => {
-          OS.promptForPushNotificationsWithUserResponse(function (accepted) {
-            resolve(!!accepted);
+        const accepted = await new Promise((resolve) => {
+          OS.promptForPushNotificationsWithUserResponse(function (ok) {
+            resolve(!!ok);
           });
         });
+        return { attempted: true, accepted: !!accepted };
       }
     } catch (_) {}
 
-    return false;
+    return { attempted: false, accepted: false };
   }
 
   function ensurePrePromptStyles() {
@@ -221,7 +238,9 @@
   function ensurePrePrompt() {
     let overlay = document.getElementById("vr-os-preprompt");
     if (overlay) return overlay;
+
     ensurePrePromptStyles();
+
     overlay = document.createElement("div");
     overlay.id = "vr-os-preprompt";
     overlay.setAttribute("aria-hidden", "true");
@@ -244,6 +263,7 @@
     const textEl = document.getElementById("vr-os-preprompt-text");
     const cancelEl = document.getElementById("vr-os-preprompt-cancel");
     const acceptEl = document.getElementById("vr-os-preprompt-accept");
+
     if (titleEl) titleEl.textContent = t("onesignal.popup.title", "Rester informé");
     if (textEl) textEl.textContent = t("onesignal.popup.text", "Autoriser les notifications pour recevoir les nouveautés et les récompenses importantes.");
     if (cancelEl) cancelEl.textContent = t("onesignal.popup.cancel", "Plus tard");
@@ -257,17 +277,26 @@
     return new Promise((resolve) => {
       const acceptBtn = document.getElementById("vr-os-preprompt-accept");
       const cancelBtn = document.getElementById("vr-os-preprompt-cancel");
+
       const close = (accepted) => {
         overlay.classList.remove("is-open");
         overlay.setAttribute("aria-hidden", "true");
         resolve(!!accepted);
       };
-      overlay.onclick = (e) => { if (e.target === overlay) close(false); };
+
+      overlay.onclick = (e) => {
+        if (e.target === overlay) close(false);
+      };
+
       if (acceptBtn) acceptBtn.onclick = () => close(true);
       if (cancelBtn) cancelBtn.onclick = () => close(false);
+
       overlay.classList.add("is-open");
       overlay.setAttribute("aria-hidden", "false");
-      try { acceptBtn?.focus?.({ preventScroll: true }); } catch (_) {}
+
+      try {
+        acceptBtn?.focus?.({ preventScroll: true });
+      } catch (_) {}
     });
   }
 
@@ -301,17 +330,18 @@
     indexPromptStarted = true;
 
     try {
-      const accepted = await requestNativePermission();
+      const result = await requestNativePermission();
 
-      if (accepted) {
-        lsSet(K_PROMPT_SHOWN, "1");
-        lsDel(K_PENDING_INDEX_PROMPT);
-        clearRealGamePlayed();
-        return true;
+      if (!result || !result.attempted) {
+        indexPromptStarted = false;
+        return false;
       }
 
-      indexPromptStarted = false;
-      return false;
+      lsSet(K_PROMPT_SHOWN, "1");
+      lsDel(K_PENDING_INDEX_PROMPT);
+      clearRealGamePlayed();
+
+      return !!result.accepted;
     } catch (_) {
       indexPromptStarted = false;
       return false;
@@ -319,6 +349,9 @@
   }
 
   function bindGameReturnHook() {
+    if (gameReturnHookBound) return;
+    gameReturnHookBound = true;
+
     document.addEventListener("click", function (e) {
       try {
         const link = e.target && e.target.closest ? e.target.closest('a[href="index.html"]') : null;
@@ -336,14 +369,15 @@
     clearRealGamePlayed: clearRealGamePlayed,
     preparePromptOnNextIndex: preparePromptOnNextIndex,
     maybePromptOnIndexAfterGameReturn: maybePromptOnIndexAfterGameReturn,
+    showPrePrompt: showPrePrompt,
     isReady: function () {
       return initialized;
     }
   };
 
   document.addEventListener("deviceready", async function () {
-    await bootOneSignal();
     bindGameReturnHook();
+    await bootOneSignal();
     await maybePromptOnIndexAfterGameReturn();
   }, false);
 
@@ -351,8 +385,7 @@
     syncExternalId();
   }, false);
 
-  window.addEventListener("load", async function () {
+  window.addEventListener("load", function () {
     bindGameReturnHook();
-    await maybePromptOnIndexAfterGameReturn();
   }, false);
 })();
