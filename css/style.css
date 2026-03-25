@@ -722,7 +722,7 @@ body.vr-body-game .vr-choice-label{
 #vr-ending-overlay .vr-ending-double{
   position: relative !important;
   overflow: hidden !important;
-  display: flex !important;
+  display: flex ;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
@@ -741,7 +741,7 @@ body.vr-body-game .vr-choice-label{
 }
 
 #vr-ending-overlay .vr-ending-double-title{
-  display: flex !important;
+  display: flex;
   align-items: center !important;
   justify-content: center !important;
   gap: 8px !important;
