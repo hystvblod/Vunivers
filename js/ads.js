@@ -918,6 +918,34 @@
     }
   }
 
+  async function incrementActionsCount() {
+    return markActionAndMaybeShowInterstitial();
+  }
+
+  function canAutoShowInterstitial() {
+    if (isNoAds()) return false;
+    if (window.__ads_active) return false;
+
+    var weightedMs = getWeightedAccumulatedMs();
+    var universeId = _getUniverseIdForWeight();
+
+    return (
+      universeId !== "intro" &&
+      INTERSTITIEL_EVERY_X_ACTIONS > 0 &&
+      (actionsCount || 0) >= INTERSTITIEL_EVERY_X_ACTIONS &&
+      weightedMs >= INTERSTITIAL_MIN_WEIGHTED_MS
+    );
+  }
+
+  function getAdsStats() {
+    return {
+      rewarded_total: parseInt(_adsStats.rewarded_total || 0, 10) || 0,
+      rewarded_24h: parseInt(_adsStats.rewarded_24h || 0, 10) || 0,
+      inter_total: parseInt(_adsStats.inter_total || 0, 10) || 0,
+      inter_24h: parseInt(_adsStats.inter_24h || 0, 10) || 0
+    };
+  }
+
   // =============================
   // Expose API attendue par ton jeu
   // =============================

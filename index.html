@@ -1985,35 +1985,47 @@
       if (!uid) return null;
 
       const r = await sb
-        .from("profiles")
-        .select("id,admin_popup_payload,admin_popup_sent_at,admin_popup_shown_at,admin_popup_read_at")
-        .eq("id", uid)
+        .from("admin_user_popups")
+        .select("id,user_id,payload,sent_at,shown_at,read_at,is_active")
+        .eq("user_id", uid)
+        .eq("is_active", true)
+        .is("read_at", null)
+        .order("sent_at", { ascending: false })
+        .limit(1)
         .maybeSingle();
 
-      if (r?.error || !r?.data) return null;
+      if (r?.error || !r?.data || !r.data.payload) return null;
 
-      const row = r.data;
-      if (!row.admin_popup_payload) return null;
-      if (row.admin_popup_read_at) return null;
-
-      return row;
+      return {
+        id: r.data.id,
+        admin_popup_payload: r.data.payload,
+        admin_popup_sent_at: r.data.sent_at,
+        admin_popup_shown_at: r.data.shown_at,
+        admin_popup_read_at: r.data.read_at
+      };
     }
 
     async function vrAdminMarkShown() {
       const sb = window.sb;
       if (!sb || typeof sb.from !== "function") return false;
 
-      const uid = await vrAdminGetUid();
-      if (!uid) return false;
+      const popupId = vrAdminPopupCurrent?.id;
+      if (!popupId) return false;
+
+      const now = new Date().toISOString();
 
       try {
         await sb
-          .from("profiles")
+          .from("admin_user_popups")
           .update({
-            admin_popup_shown_at: new Date().toISOString()
+            shown_at: now
           })
-          .eq("id", uid)
-          .is("admin_popup_shown_at", null);
+          .eq("id", popupId)
+          .is("shown_at", null);
+
+        if (vrAdminPopupCurrent && !vrAdminPopupCurrent.admin_popup_shown_at) {
+          vrAdminPopupCurrent.admin_popup_shown_at = now;
+        }
 
         return true;
       } catch (_) {
@@ -2025,19 +2037,26 @@
       const sb = window.sb;
       if (!sb || typeof sb.from !== "function") return false;
 
-      const uid = await vrAdminGetUid();
-      if (!uid) return false;
+      const popupId = vrAdminPopupCurrent?.id;
+      if (!popupId) return false;
 
       const now = new Date().toISOString();
+      const shownAt = vrAdminPopupCurrent?.admin_popup_shown_at || now;
 
       try {
         await sb
-          .from("profiles")
+          .from("admin_user_popups")
           .update({
-            admin_popup_shown_at: vrAdminPopupCurrent?.admin_popup_shown_at || now,
-            admin_popup_read_at: now
+            shown_at: shownAt,
+            read_at: now,
+            is_active: false
           })
-          .eq("id", uid);
+          .eq("id", popupId);
+
+        if (vrAdminPopupCurrent) {
+          vrAdminPopupCurrent.admin_popup_shown_at = shownAt;
+          vrAdminPopupCurrent.admin_popup_read_at = now;
+        }
 
         return true;
       } catch (_) {
