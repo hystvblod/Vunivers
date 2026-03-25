@@ -378,7 +378,6 @@
   document.addEventListener("deviceready", async function () {
     bindGameReturnHook();
     await bootOneSignal();
-    await maybePromptOnIndexAfterGameReturn();
   }, false);
 
   document.addEventListener("resume", function () {
