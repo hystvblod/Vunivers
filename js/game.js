@@ -1823,9 +1823,21 @@ body.vr-peek-mode .vr-gauge-preview{
         try { window.VRCrossPromo?.notifySessionStart?.(); } catch (_) {}
       }
 
+      try {
+        await window.VRAnalytics?.screen?.("game_" + String(universeId || "unknown"), "GamePage");
+      } catch (_) {}
+
       if (!restored) {
         this._startNewReign();
         this._saveRunSoft();
+
+        if (String(universeId || "").trim() !== "intro") {
+          try {
+            await window.VRAnalytics?.log?.("game_start", {
+              universe_id: String(universeId || "unknown")
+            });
+          } catch (_) {}
+        }
       } else {
         if (!this._eventPool.length && this._allEventIds.length) {
           this._eventPool = this._allEventIds.slice();
@@ -2288,6 +2300,17 @@ body.vr-peek-mode .vr-gauge-preview{
       const lastDeath = window.VRState.getLastDeath();
       try { window.VRAudio?.playDeath?.(); } catch (_) {}
       this._preparePendingEndReward();
+
+      try {
+        await window.VRAnalytics?.log?.("game_over", {
+          universe_id: String(this.universeId || "unknown"),
+          death_gauge: String(lastDeath?.gaugeId || ""),
+          death_direction: String(lastDeath?.direction || ""),
+          choices: Number(this._pendingEndChoices || 0),
+          years: Number(this._pendingEndYears || 0),
+          reward_base: Number(this._pendingEndReward || 0)
+        });
+      } catch (_) {}
       await window.VREndings.showEnding(this.universeConfig, lastDeath);
       ensureEndingEnhancements();
 
@@ -2390,6 +2413,15 @@ body.vr-peek-mode .vr-gauge-preview{
           }
 
           renderEndingReward(out.amount);
+
+          try {
+            await window.VRAnalytics?.log?.("end_reward_doubled", {
+              universe_id: String(this.universeId || "unknown"),
+              amount: Number(out.amount || 0),
+              mode: useFlat100 ? "flat_100" : "x2"
+            });
+          } catch (_) {}
+
           syncEndingButtons();
         };
       }
@@ -2411,6 +2443,15 @@ body.vr-peek-mode .vr-gauge-preview{
           window.VREndings.hideEnding();
 
           const did = this.reviveSecondChance();
+
+          if (did) {
+            try {
+              await window.VRAnalytics?.log?.("game_revive_used", {
+                universe_id: String(this.universeId || "unknown")
+              });
+            } catch (_) {}
+          }
+
           if (!did) this.restartRun();
         };
       }

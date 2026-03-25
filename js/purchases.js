@@ -218,6 +218,15 @@
       txId: String(txId || "")
     });
 
+    try {
+      await window.VRAnalytics?.log?.("iap_purchase_success", {
+        product_id: String(productId || ""),
+        kind: String(cfg.kind || ""),
+        amount: Number(cfg.amount || 0),
+        universe_id: String(cfg.universe || "")
+      });
+    } catch (_) {}
+
     return true;
   }
 
@@ -464,6 +473,12 @@
         return false;
       }
       setText("shop-status", t("shop.status.pending", "…"));
+      try {
+        await window.VRAnalytics?.log?.("shop_reward_ad_click", {
+          placement: String(placement || "shop")
+        });
+      } catch (_) {}
+
       const ok = await window.VRAds.showRewardedAd({ placement: String(placement || "shop") });
       if (!ok) {
         setText("shop-status", t("shop.status.reward_not_validated", "❌ Pub non validée"));
@@ -479,6 +494,12 @@
   }
 
   async function safeOrder(productId) {
+    try {
+      await window.VRAnalytics?.log?.("iap_purchase_click", {
+        product_id: String(productId || "")
+      });
+    } catch (_) {}
+
     const { S } = getStoreApi();
     if (!S) {
       setText("shop-status", t("shop.status.iap_unavailable_web", "⚠️ IAP indisponible sur le web."));
@@ -511,10 +532,19 @@
 
     if (err?.isError) {
       warn("order err", err.code, err.message);
+      const errorText = String(err.message || err.code || "order_error");
+
       emit("vr:iap_order_failed", {
         productId: String(productId || ""),
-        error: String(err.message || err.code || "order_error")
+        error: errorText
       });
+
+      try {
+        await window.VRAnalytics?.log?.("iap_purchase_failed", {
+          product_id: String(productId || ""),
+          error: errorText
+        });
+      } catch (_) {}
     }
   }
 

@@ -628,6 +628,12 @@
           }
         } catch (_) {}
 
+        try {
+          await window.VRAnalytics?.log?.("interstitial_shown", {
+            placement: "auto"
+          });
+        } catch (_) {}
+
         // Refresh stats best-effort
         try { await refreshAdsStats(); } catch (_) {}
 
@@ -701,12 +707,20 @@
       // ⚠️ Best-effort log rewarded view.
       // Le plus safe: logger côté DB au moment du credit (secure_claim_reward).
       if (gotReward) {
+        var plc = (opts && opts.placement) ? String(opts.placement) : "rewarded";
+
         try {
           if (sbReady()) {
-            var plc = (opts && opts.placement) ? String(opts.placement) : "rewarded";
             await window.sb.rpc("secure_log_ad_event", { p_kind: "rewarded", p_placement: plc });
           }
         } catch (_) {}
+
+        try {
+          await window.VRAnalytics?.log?.("rewarded_ad_completed", {
+            placement: plc
+          });
+        } catch (_) {}
+
         try { await refreshAdsStats(); } catch (_) {}
       }
 
