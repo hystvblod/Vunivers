@@ -1543,5 +1543,405 @@
     })();
   </script>
 
+  <script>
+  (function () {
+    "use strict";
+
+    let vrAdminPopupOpen = false;
+    let vrAdminPopupBooted = false;
+    let vrAdminPopupCurrent = null;
+
+    function vrAdminNormalizeLang(code) {
+      const s = String(code || "").trim().toLowerCase();
+      if (!s) return "en";
+      if (s === "jp") return "ja";
+      if (s === "pt-br" || s === "ptbr") return "ptbr";
+      if (s === "pt-pt") return "pt";
+      return s;
+    }
+
+    function vrAdminGetLang() {
+      try {
+        const l = window.VRI18n?.getLang?.();
+        if (l) return vrAdminNormalizeLang(l);
+      } catch (_) {}
+
+      try {
+        const u = window.VUserData?.load?.();
+        if (u?.lang) return vrAdminNormalizeLang(u.lang);
+      } catch (_) {}
+
+      return "en";
+    }
+
+    function vrAdminPickLocalized(value) {
+      if (!value) return "";
+
+      if (typeof value === "string") {
+        return value.trim();
+      }
+
+      if (typeof value !== "object" || Array.isArray(value)) {
+        return "";
+      }
+
+      const lang = vrAdminGetLang();
+
+      return String(
+        value[lang] ??
+        value.en ??
+        value.fr ??
+        value.de ??
+        value.es ??
+        value.it ??
+        value.pt ??
+        value.ptbr ??
+        value.ko ??
+        value.ja ??
+        value.jp ??
+        value.id ??
+        ""
+      ).trim();
+    }
+
+    function vrAdminLooksLikeLangMap(obj) {
+      if (!obj || typeof obj !== "object" || Array.isArray(obj)) return false;
+      const keys = Object.keys(obj).map(k => vrAdminNormalizeLang(k));
+      const known = ["fr", "en", "de", "es", "it", "pt", "ptbr", "ko", "ja", "id"];
+      return keys.some(k => known.includes(k));
+    }
+
+    function vrAdminNormalizePayload(raw) {
+      if (!raw) return null;
+
+      if (typeof raw === "string") {
+        return {
+          title: {},
+          body: raw,
+          cta: {}
+        };
+      }
+
+      if (typeof raw !== "object" || Array.isArray(raw)) {
+        return null;
+      }
+
+      if ("title" in raw || "body" in raw || "cta" in raw) {
+        return {
+          title: raw.title || {},
+          body: raw.body || raw.message || "",
+          cta: raw.cta || {}
+        };
+      }
+
+      if (vrAdminLooksLikeLangMap(raw)) {
+        return {
+          title: {},
+          body: raw,
+          cta: {}
+        };
+      }
+
+      return null;
+    }
+
+    function vrAdminT(key, fallback) {
+      try {
+        const out = window.VRI18n?.t?.(key);
+        if (out && out !== key) return out;
+      } catch (_) {}
+      return fallback || "";
+    }
+
+    function vrAdminEnsureStyles() {
+      if (document.getElementById("vr-admin-popup-style")) return;
+
+      const style = document.createElement("style");
+      style.id = "vr-admin-popup-style";
+      style.textContent = `
+        #vr-admin-popup-overlay{
+          position:fixed;
+          inset:0;
+          display:none;
+          align-items:center;
+          justify-content:center;
+          padding:16px;
+          background:rgba(0,0,0,.62);
+          z-index:290000;
+        }
+        #vr-admin-popup-overlay.is-open{
+          display:flex;
+        }
+        #vr-admin-popup-card{
+          width:min(460px, calc(100vw - 24px));
+          max-height:82vh;
+          overflow:auto;
+          border-radius:22px;
+          padding:18px;
+          background:linear-gradient(180deg, rgba(17,24,39,.98), rgba(15,23,42,.98));
+          color:#fff;
+          border:1px solid rgba(255,255,255,.12);
+          box-shadow:0 24px 60px rgba(0,0,0,.45);
+        }
+        #vr-admin-popup-title{
+          margin:0 0 10px 0;
+          font-size:clamp(20px, 5vw, 28px);
+          line-height:1.12;
+          font-weight:900;
+        }
+        #vr-admin-popup-body{
+          margin:0;
+          white-space:pre-wrap;
+          font-size:clamp(14px, 3.8vw, 16px);
+          line-height:1.5;
+          color:rgba(255,255,255,.92);
+        }
+        #vr-admin-popup-actions{
+          margin-top:16px;
+          display:grid;
+          grid-template-columns:1fr;
+          gap:10px;
+        }
+        #vr-admin-popup-close{
+          min-height:48px;
+          border:none;
+          border-radius:14px;
+          cursor:pointer;
+          font:800 15px/1.2 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+          background:#fff;
+          color:#0f172a;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    function vrAdminEnsureDom() {
+      let overlay = document.getElementById("vr-admin-popup-overlay");
+      if (overlay) return overlay;
+
+      vrAdminEnsureStyles();
+
+      overlay = document.createElement("div");
+      overlay.id = "vr-admin-popup-overlay";
+      overlay.setAttribute("aria-hidden", "true");
+      overlay.innerHTML = `
+        <div id="vr-admin-popup-card" role="dialog" aria-modal="true" aria-labelledby="vr-admin-popup-title">
+          <h3 id="vr-admin-popup-title"></h3>
+          <p id="vr-admin-popup-body"></p>
+          <div id="vr-admin-popup-actions">
+            <button type="button" id="vr-admin-popup-close"></button>
+          </div>
+        </div>
+      `;
+
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+          void vrAdminClosePopup();
+        }
+      });
+
+      const closeBtn = document.getElementById("vr-admin-popup-close");
+      if (closeBtn) {
+        closeBtn.addEventListener("click", () => void vrAdminClosePopup());
+      }
+
+      return overlay;
+    }
+
+    function vrAdminUsernamePopupOpen() {
+      const p = document.getElementById("vr-username-popup");
+      if (!p) return false;
+      return p.getAttribute("aria-hidden") === "false" || p.style.display === "flex";
+    }
+
+    async function vrAdminGetUid() {
+      try {
+        const local = window.VUserData?.load?.();
+        if (local?.user_id) return String(local.user_id);
+      } catch (_) {}
+
+      try {
+        const uid = window.VUserData?.getUserId?.();
+        if (uid) return String(uid);
+      } catch (_) {}
+
+      try {
+        const boot = await window.bootstrapAuthAndProfile?.();
+        if (boot?.id) return String(boot.id);
+      } catch (_) {}
+
+      return null;
+    }
+
+    async function vrAdminFetchRow() {
+      const sb = window.sb;
+      if (!sb || typeof sb.from !== "function") return null;
+
+      const uid = await vrAdminGetUid();
+      if (!uid) return null;
+
+      const r = await sb
+        .from("profiles")
+        .select("id,admin_popup_payload,admin_popup_sent_at,admin_popup_shown_at,admin_popup_read_at")
+        .eq("id", uid)
+        .maybeSingle();
+
+      if (r?.error || !r?.data) return null;
+
+      const row = r.data;
+      if (!row.admin_popup_payload) return null;
+      if (row.admin_popup_read_at) return null;
+
+      return row;
+    }
+
+    async function vrAdminMarkShown() {
+      const sb = window.sb;
+      if (!sb || typeof sb.from !== "function") return false;
+
+      const uid = await vrAdminGetUid();
+      if (!uid) return false;
+
+      try {
+        await sb
+          .from("profiles")
+          .update({
+            admin_popup_shown_at: new Date().toISOString()
+          })
+          .eq("id", uid)
+          .is("admin_popup_shown_at", null);
+
+        return true;
+      } catch (_) {
+        return false;
+      }
+    }
+
+    async function vrAdminMarkRead() {
+      const sb = window.sb;
+      if (!sb || typeof sb.from !== "function") return false;
+
+      const uid = await vrAdminGetUid();
+      if (!uid) return false;
+
+      const now = new Date().toISOString();
+
+      try {
+        await sb
+          .from("profiles")
+          .update({
+            admin_popup_shown_at: vrAdminPopupCurrent?.admin_popup_shown_at || now,
+            admin_popup_read_at: now
+          })
+          .eq("id", uid);
+
+        return true;
+      } catch (_) {
+        return false;
+      }
+    }
+
+    function vrAdminRenderPopup(row) {
+      const payload = vrAdminNormalizePayload(row?.admin_popup_payload);
+      if (!payload) return false;
+
+      const overlay = vrAdminEnsureDom();
+      const titleEl = document.getElementById("vr-admin-popup-title");
+      const bodyEl = document.getElementById("vr-admin-popup-body");
+      const closeBtn = document.getElementById("vr-admin-popup-close");
+
+      const title = vrAdminPickLocalized(payload.title) || vrAdminT("common.information", "Information");
+      const body = vrAdminPickLocalized(payload.body);
+      const cta = vrAdminPickLocalized(payload.cta) || vrAdminT("common.close", "OK");
+
+      if (!body) return false;
+
+      titleEl.textContent = title;
+      bodyEl.textContent = body;
+      closeBtn.textContent = cta;
+
+      overlay.classList.add("is-open");
+      overlay.setAttribute("aria-hidden", "false");
+      vrAdminPopupOpen = true;
+      return true;
+    }
+
+    async function vrAdminClosePopup() {
+      if (!vrAdminPopupOpen) return;
+
+      const overlay = document.getElementById("vr-admin-popup-overlay");
+      if (overlay) {
+        overlay.classList.remove("is-open");
+        overlay.setAttribute("aria-hidden", "true");
+      }
+
+      vrAdminPopupOpen = false;
+      await vrAdminMarkRead();
+      vrAdminPopupCurrent = null;
+    }
+
+    async function vrAdminMaybeShowPopup() {
+      if (vrAdminPopupOpen) return;
+      if (vrAdminUsernamePopupOpen()) return;
+
+      let row = null;
+      try {
+        row = await vrAdminFetchRow();
+      } catch (e) {
+        console.warn("[vrAdminPopup] fetch error:", e?.message || e);
+        return;
+      }
+
+      if (!row) return;
+
+      vrAdminPopupCurrent = row;
+
+      const ok = vrAdminRenderPopup(row);
+      if (!ok) return;
+
+      await vrAdminMarkShown();
+    }
+
+    async function vrAdminBoot() {
+      if (vrAdminPopupBooted) return;
+      vrAdminPopupBooted = true;
+
+      try { await window.bootstrapAuthAndProfile?.(); } catch (_) {}
+      try {
+        window.__vrIndexInitPromise = window.__vrIndexInitPromise || window.VUserData?.init?.() || null;
+        await window.__vrIndexInitPromise;
+      } catch (_) {}
+      try { await window.VRI18n?.initI18n?.(); } catch (_) {}
+
+      vrAdminEnsureDom();
+
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) {
+          void vrAdminMaybeShowPopup();
+        }
+      });
+
+      window.addEventListener("vr:profile", () => {
+        void vrAdminMaybeShowPopup();
+      });
+
+      await vrAdminMaybeShowPopup();
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => void vrAdminBoot(), { once: true });
+    } else {
+      void vrAdminBoot();
+    }
+
+    window.VRAdminPopup = {
+      refresh: vrAdminMaybeShowPopup,
+      close: vrAdminClosePopup
+    };
+  })();
+  </script>
+
 </body>
 </html>
