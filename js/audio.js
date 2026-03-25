@@ -14,6 +14,12 @@
       choice: "assets/audio/common/choice.m4a"
     },
 
+    ui: {
+      menu: {
+        bg: "assets/audio/ui/menu_bg.m4a"
+      }
+    },
+
     universes: {
       intro: {
         bg: "assets/audio/universes/intro/bg_loop.m4a"
@@ -160,6 +166,35 @@
 
     try { a.pause(); } catch (_) {}
     try { a.currentTime = 0; } catch (_) {}
+  }
+
+  async function startMenuBg() {
+    if (!state.musicEnabled) {
+      stopBackground();
+      return;
+    }
+
+    const path = AUDIO_BANK.ui?.menu?.bg || "";
+    if (!path) {
+      stopBackground();
+      return;
+    }
+
+    const a = ensureBg();
+    const absolute = new URL(path, document.baseURI).href;
+
+    if (state.bgPath === absolute && !a.paused) {
+      a.volume = clamp(state.musicVolume, 0, 1);
+      return;
+    }
+
+    try { a.pause(); } catch (_) {}
+    a.src = path;
+    a.load();
+    state.bgPath = absolute;
+    a.volume = clamp(state.musicVolume, 0, 1);
+
+    await tryPlayBg();
   }
 
   async function startUniverseBg(universeId, opts = {}) {
@@ -310,6 +345,7 @@
     },
 
     startUniverseBg,
+    startMenuBg,
     stopBackground,
 
     playChoice(universeId) {
