@@ -982,7 +982,12 @@ return ok;
         unlocked_universes: _mergeUniverses(cur.unlocked_universes, [id])
       });
 
-      this._syncEntitlementsToRemote().catch(() => false);
+      const okRemote = await this._syncEntitlementsToRemote().catch(() => false);
+      if (!okRemote) {
+        await this.refresh().catch(() => false);
+        return { ok: false, reason: "remote_sync_failed", data: this.load() };
+      }
+
       return { ok: true, reason: "ok", data: this.load() };
     },
 
@@ -991,7 +996,13 @@ return ok;
       if (cur.no_ads) return { ok: true, reason: "already", data: cur };
 
       this.save({ ...cur, no_ads: true });
-      this._syncEntitlementsToRemote().catch(() => false);
+
+      const okRemote = await this._syncEntitlementsToRemote().catch(() => false);
+      if (!okRemote) {
+        await this.refresh().catch(() => false);
+        return { ok: false, reason: "remote_sync_failed", data: this.load() };
+      }
+
       return { ok: true, reason: "ok", data: this.load() };
     },
 
@@ -1006,7 +1017,12 @@ return ok;
         unlocked_universes: _mergeUniverses(cur.unlocked_universes, this.getAllKnownUniverses())
       });
 
-      this._syncEntitlementsToRemote().catch(() => false);
+      const okRemote = await this._syncEntitlementsToRemote().catch(() => false);
+      if (!okRemote) {
+        await this.refresh().catch(() => false);
+        return { ok: false, reason: "remote_sync_failed", data: this.load() };
+      }
+
       return { ok: true, reason: "ok", data: this.load() };
     },
 
