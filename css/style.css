@@ -3885,8 +3885,8 @@ body.vr-body-game[data-universe="new_world_explorer"]{
   --vr-hud-name-years-gap: 18px;
 
   /* ===== Réglages soldes ===== */
-  --vr-vcoins-tx: 4px;
-  --vr-vcoins-ty: 9px;
+  --vr-vcoins-tx: 2px;
+  --vr-vcoins-ty: 10px;
   --vr-jetons-tx: 0px;
   --vr-jetons-ty: 9px;
 
@@ -4692,18 +4692,18 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge::before{
   left: 50%;
   top: 46%;
   transform: translate(-50%, -50%);
-  width: clamp(110px, 22vw, 165px);
-  height: clamp(140px, 27vw, 205px);
+  width: clamp(134px, 26vw, 200px);
+  height: clamp(172px, 33vw, 248px);
   border-radius: 999px;
   background:
     radial-gradient(ellipse at center,
-      rgba(6,8,14,0.82) 0%,
-      rgba(6,8,14,0.62) 35%,
-      rgba(6,8,14,0.34) 64%,
-      rgba(6,8,14,0.12) 82%,
+      rgba(18,20,30,0.96) 0%,
+      rgba(18,20,30,0.78) 36%,
+      rgba(18,20,30,0.46) 66%,
+      rgba(18,20,30,0.18) 86%,
       rgba(6,8,14,0.00) 100%);
-  filter: blur(14px);
-  -webkit-filter: blur(14px);
+  filter: blur(24px);
+  -webkit-filter: blur(24px);
   pointer-events: none;
   z-index: -1;
 }
@@ -4725,9 +4725,9 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-label{
   line-height: 1.06 !important;
   text-align: center !important;
   text-shadow:
-    0 0 10px rgba(0,0,0,0.45),
-    0 2px 16px rgba(0,0,0,0.55),
-    0 0 26px rgba(0,0,0,0.28) !important;
+    0 0 14px rgba(0,0,0,0.58),
+    0 3px 22px rgba(0,0,0,0.70),
+    0 0 34px rgba(0,0,0,0.42) !important;
   z-index: 1 !important;
 }
 
@@ -4747,9 +4747,9 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge-value{
   font-weight: 950 !important;
   line-height: 1.06 !important;
   text-shadow:
-    0 0 10px rgba(0,0,0,0.45),
-    0 2px 16px rgba(0,0,0,0.55),
-    0 0 26px rgba(0,0,0,0.28) !important;
+    0 0 14px rgba(0,0,0,0.58),
+    0 3px 22px rgba(0,0,0,0.70),
+    0 0 34px rgba(0,0,0,0.42) !important;
   z-index: 1 !important;
 }
 
@@ -5485,6 +5485,7 @@ body.vr-body-game[data-universe] .vr-gauge-label{
     --vr-explorer-hud-shift-y: -2px;
 
     --vr-identity-ty: 18px;
+    --vr-vcoins-tx: 2px;
     --vr-vcoins-ty: 10px;
     --vr-jetons-ty: 10px;
 
