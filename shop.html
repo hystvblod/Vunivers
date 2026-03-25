@@ -808,6 +808,77 @@ body.page-shop .vr-cos-dot{
   height: clamp(7px, .8vw, 10px);
 }
 
+@media (min-width: 700px) and (max-width: 1366px){
+
+  body.page-shop{
+    --page-max: min(96vw, 1180px);
+    --page-pad-x: clamp(18px, 2.4vw, 30px);
+
+    --top-btn: clamp(50px, 5.4vw, 68px);
+    --top-btn-ico: clamp(28px, 3.1vw, 38px);
+    --top-gap: clamp(14px, 1.8vw, 22px);
+
+    --balance-gap: clamp(24px, 3.5vw, 44px);
+    --balance-icon: clamp(26px, 3.2vw, 38px);
+    --balance-font: clamp(20px, 2.6vw, 32px);
+
+    --title-mt: clamp(8px, 1vw, 14px);
+    --title-mb: clamp(14px, 1.5vw, 22px);
+
+    --shop-gap: clamp(12px, 1.5vw, 18px);
+    --shop-item-radius: clamp(18px, 2vw, 26px);
+    --shop-item-pad: clamp(14px, 1.8vw, 22px);
+    --shop-icon: clamp(58px, 6.8vw, 86px);
+    --shop-top-gap: clamp(10px, 1.2vw, 14px);
+    --shop-top-minh: clamp(104px, 12vw, 150px);
+    --shop-qty-size: clamp(20px, 2.4vw, 32px);
+    --shop-btn-h: clamp(48px, 5.4vw, 72px);
+    --shop-btn-radius: clamp(15px, 1.6vw, 20px);
+    --shop-btn-font: clamp(14px, 1.6vw, 18px);
+    --shop-btn-py: clamp(11px, 1.2vw, 16px);
+    --shop-btn-px: clamp(14px, 1.4vw, 18px);
+
+    --u-gap: clamp(18px, 1.9vw, 26px);
+    --u-radius: clamp(22px, 2.2vw, 30px);
+    --u-pad-y: clamp(18px, 1.9vw, 24px);
+    --u-pad-x: clamp(16px, 1.8vw, 22px);
+    --u-title-size: clamp(22px, 2.5vw, 34px);
+    --u-title-mb: clamp(14px, 1.4vw, 20px);
+
+    --cos-arrow: clamp(40px, 4.2vw, 56px);
+    --cos-arrow-font: clamp(30px, 3.2vw, 42px);
+    --cos-card-r: clamp(20px, 2vw, 26px);
+    --cos-card-h: clamp(150px, 16vw, 220px);
+    --cos-subtitle-size: clamp(15px, 1.7vw, 20px);
+    --cos-name-size: clamp(15px, 1.7vw, 20px);
+    --cos-count-size: clamp(13px, 1.4vw, 16px);
+    --cos-action-font: clamp(13px, 1.4vw, 17px);
+    --cos-action-radius: clamp(15px, 1.6vw, 20px);
+    --cos-action-py: clamp(11px, 1.2vw, 15px);
+    --cos-action-px: clamp(14px, 1.4vw, 18px);
+    --cos-action-ico: clamp(16px, 1.5vw, 20px);
+  }
+
+  body.page-shop .vr-shop-item{
+    min-height: clamp(170px, 22vw, 240px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  body.page-shop .vr-shop-top{
+    flex: 1 1 auto;
+  }
+
+  body.page-shop .vr-shop-item .vr-choice-button{
+    width: 100%;
+  }
+
+  body.page-shop .vr-cos-card.is-ui > img{
+    padding: clamp(18px, 2vw, 24px);
+  }
+}
+
   </style>
 </head>
 

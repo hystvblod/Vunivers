@@ -258,7 +258,6 @@
 
         root.innerHTML = `
           <div role="dialog" aria-modal="true" style="width:min(420px,92vw);border-radius:22px;padding:20px 18px;background:linear-gradient(180deg, rgba(24,33,58,.98), rgba(13,20,39,.98));border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 46px rgba(0,0,0,.42);color:#fff;">
-            <div id="vr-referral-platform-popup-title" style="font-size:18px;font-weight:900;line-height:1.2;margin-bottom:10px;"></div>
             <div id="vr-referral-platform-popup-text" style="font-size:14px;line-height:1.45;color:rgba(255,255,255,.92);margin-bottom:16px;"></div>
             <button id="vr-referral-platform-popup-ok" type="button" style="width:100%;min-height:48px;border:0;border-radius:14px;background:linear-gradient(135deg,#70b7ff,#4a80ff);color:#fff;font-weight:900;font-size:14px;cursor:pointer;"></button>
           </div>
@@ -267,13 +266,8 @@
         document.body.appendChild(root);
       }
 
-      const titleEl = document.getElementById("vr-referral-platform-popup-title");
       const textEl = document.getElementById("vr-referral-platform-popup-text");
       const okBtn = document.getElementById("vr-referral-platform-popup-ok");
-
-      if (titleEl) {
-        titleEl.textContent = t("common.unavailable", "Indisponible");
-      }
 
       if (textEl) {
         textEl.textContent = t(
