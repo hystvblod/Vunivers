@@ -61,6 +61,14 @@
     "settings_music_label": "音楽",
     "settings_music_desc": "各ユニバースの背景音楽をオンまたはオフにします。",
     "settings_music_saved": "音楽設定を保存しました。",
+
+    "music_prompt": {
+      "title": "音楽",
+      "text": "BGMを有効にしますか？",
+      "note": "この設定はあとで設定画面からいつでも変更できます。",
+      "disable": "今はしない",
+      "enable": "有効にする"
+    },
     "settings_privacy_options_label": "プライバシー設定",
     "settings_privacy_options_desc": "Googleのフォームを開いて、広告に関する選択を確認または変更します。",
     "settings_privacy_options_button": "開く",

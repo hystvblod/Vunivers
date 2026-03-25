@@ -61,6 +61,14 @@
     "settings_music_label": "Musique",
     "settings_music_desc": "Activer ou couper la musique de fond des univers.",
     "settings_music_saved": "Préférence musique enregistrée.",
+
+    "music_prompt": {
+      "title": "Musique",
+      "text": "Souhaites-tu activer la musique de fond ?",
+      "note": "Tu pourras toujours changer ce choix plus tard dans Paramètres.",
+      "disable": "Pas maintenant",
+      "enable": "Activer"
+    },
     "settings_privacy_options_label": "Choix de confidentialité",
     "settings_privacy_options_desc": "Ouvrir le formulaire Google pour revoir ou modifier tes choix publicitaires.",
     "settings_privacy_options_button": "Ouvrir",

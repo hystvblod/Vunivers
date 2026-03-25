@@ -61,6 +61,14 @@
     "settings_music_label": "Musik",
     "settings_music_desc": "Nyalakan atau matikan musik latar untuk setiap universe.",
     "settings_music_saved": "Preferensi musik disimpan.",
+
+    "music_prompt": {
+      "title": "Musik",
+      "text": "Apakah kamu ingin mengaktifkan musik latar?",
+      "note": "Kamu selalu bisa mengubah pilihan ini nanti di Pengaturan.",
+      "disable": "Nanti saja",
+      "enable": "Aktifkan"
+    },
     "settings_privacy_options_label": "Pilihan privasi",
     "settings_privacy_options_desc": "Buka formulir Google untuk meninjau atau mengubah pilihan iklanmu.",
     "settings_privacy_options_button": "Buka",

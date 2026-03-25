@@ -61,6 +61,14 @@
     "settings_music_label": "Music",
     "settings_music_desc": "Turn the universe background music on or off.",
     "settings_music_saved": "Music preference saved.",
+
+    "music_prompt": {
+      "title": "Music",
+      "text": "Do you want to enable background music?",
+      "note": "You can always change this later in Settings.",
+      "disable": "Not now",
+      "enable": "Enable"
+    },
     "settings_privacy_options_label": "Privacy choices",
     "settings_privacy_options_desc": "Open Google's form to review or change your ad choices.",
     "settings_privacy_options_button": "Open",

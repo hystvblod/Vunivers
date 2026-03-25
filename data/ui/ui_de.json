@@ -61,6 +61,14 @@
     "settings_music_label": "Musik",
     "settings_music_desc": "Die Hintergrundmusik der Universen ein- oder ausschalten.",
     "settings_music_saved": "Musikeinstellung gespeichert.",
+
+    "music_prompt": {
+      "title": "Musik",
+      "text": "Möchtest du die Hintergrundmusik aktivieren?",
+      "note": "Du kannst diese Auswahl später jederzeit in den Einstellungen ändern.",
+      "disable": "Jetzt nicht",
+      "enable": "Aktivieren"
+    },
     "settings_privacy_options_label": "Datenschutzoptionen",
     "settings_privacy_options_desc": "Öffne das Google-Formular, um deine Werbeentscheidungen zu prüfen oder zu ändern.",
     "settings_privacy_options_button": "Öffnen",

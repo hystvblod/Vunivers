@@ -1132,6 +1132,30 @@ body.vr-peek-mode .vr-gauge-preview{
     return getCompletedYearsCount() + 1;
   }
 
+  const MUSIC_PROMPT_MIN_CHOICES = 8;
+  const MUSIC_PROMPT_PENDING_KEY = "vr_music_pending_index_prompt_v1";
+  const MUSIC_PROMPT_SHOWN_KEY = "vr_music_prompt_shown_v1";
+
+  function prepareMusicPromptOnNextIndex(universeId) {
+    try {
+      if (String(universeId || "").trim() === "intro") return false;
+
+      const alreadyShown = localStorage.getItem(MUSIC_PROMPT_SHOWN_KEY) === "1";
+      if (alreadyShown) return false;
+
+      const existingChoice = localStorage.getItem("vrealms_music_enabled");
+      if (existingChoice === "1" || existingChoice === "0") return false;
+
+      const choices = getResolvedChoicesCount();
+      if (choices < MUSIC_PROMPT_MIN_CHOICES) return false;
+
+      localStorage.setItem(MUSIC_PROMPT_PENDING_KEY, "1");
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
   function getYearLabel() {
     let label = "";
 
@@ -2528,6 +2552,7 @@ body.vr-peek-mode .vr-gauge-preview{
           } catch (_) {}
 
           try { await window.VRAds?.maybeShowInterstitialOnReturnToIndex?.(); } catch (_) {}
+          try { prepareMusicPromptOnNextIndex(this.universeId); } catch (_) {}
           try { window.VROneSignal?.preparePromptOnNextIndex?.(); } catch (_) {}
           try { this._clearRunSave(); } catch (_) {}
           try { window.location.href = "index.html"; } catch (_) {}
@@ -3099,6 +3124,7 @@ body.vr-peek-mode .vr-gauge-preview{
             } catch (_) {}
 
             try { await window.VRAds?.maybeShowInterstitialOnReturnToIndex?.(); } catch (_) {}
+            try { prepareMusicPromptOnNextIndex(this.universeId); } catch (_) {}
             try { window.VROneSignal?.preparePromptOnNextIndex?.(); } catch (_) {}
             try { window.location.href = "index.html"; } catch (_) {}
             return;
