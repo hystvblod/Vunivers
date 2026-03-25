@@ -3258,9 +3258,9 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
     --vr-choice-inset-bottom: 16%;
     --vr-choice-inset-left: 8%;
 
-    --vr-font-scn-title: clamp(17px, 3.9vw, 26px);
-    --vr-font-scn-text: clamp(14px, 3.15vw, 18px);
-    --vr-font-choice: clamp(14px, 3.35vw, 18px);
+    --vr-font-scn-title: clamp(18px, 4.2vw, 28px);
+    --vr-font-scn-text: clamp(15px, 3.35vw, 19px);
+    --vr-font-choice: clamp(15px, 3.55vw, 19px);
 
     --vr-hud-name-years-gap: 30px;
   }
@@ -3282,11 +3282,11 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
-    transform: translate(6px, 12px) !important;
+    transform: translate(12px, 14px) !important;
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
-    transform: translate(0px, 14px) !important;
+    transform: translate(0px, 18px) !important;
     gap: 30px !important;
   }
 
@@ -5376,8 +5376,17 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-gauge-label{
-    font-size: clamp(14px, 1.8vw, 18px) !important;
+    font-size: clamp(15px, 2.0vw, 19px) !important;
     min-height: 2.35em !important;
+  }
+
+  body[data-universe="western_president"] .vr-gauge-label,
+  body[data-universe="western_president"] .vr-gauge-value{
+    background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(227,232,239,0.86)) !important;
+    border: 1px solid rgba(134, 149, 166, 0.24) !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.10) !important;
+    border-radius: 999px !important;
+    padding: 3px 10px !important;
   }
 
   /* =========================
@@ -5409,12 +5418,17 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   }
 
   body.vr-body-game[data-universe="mega_corp_ceo"] .vr-gauge-label{
-    font-size: clamp(14px, 1.8vw, 18px) !important;
+    font-size: clamp(15px, 2.0vw, 19px) !important;
     min-height: 2.35em !important;
   }
 
   body.vr-body-game[data-universe="mega_corp_ceo"] .vr-gauge-value{
-    font-size: clamp(13px, 1.6vw, 16px) !important;
+    font-size: clamp(14px, 1.8vw, 17px) !important;
+  }
+
+  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-gauge-label,
+  body.vr-body-game[data-universe="mega_corp_ceo"] .vr-gauge-value{
+    font-weight: 800 !important;
   }
 
   body.vr-body-game[data-universe="mega_corp_ceo"] #view-game .vr-choice-label{
