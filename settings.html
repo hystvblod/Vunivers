@@ -700,11 +700,11 @@
       if(back) back.setAttribute("aria-label", t("ui.settings_back_home_aria"));
       if(prof) prof.setAttribute("aria-label", t("ui.settings_open_profile_aria"));
       if(grid) grid.setAttribute("aria-label", t("ui.language"));
-      if(adsLabel) adsLabel.textContent = t("ui.settings_privacy_options_label") || "Privacy choices";
-      if(adsDesc) adsDesc.textContent = t("ui.settings_privacy_options_desc") || "Open Google's form to review or change your ad choices.";
+      if(adsLabel) adsLabel.textContent = t("ui.settings_privacy_options_label");
+      if(adsDesc) adsDesc.textContent = t("ui.settings_privacy_options_desc");
       if(adsBtn){
-        adsBtn.textContent = t("ui.settings_privacy_options_button") || "Open";
-        adsBtn.setAttribute("aria-label", t("ui.settings_privacy_options_label") || "Privacy choices");
+        adsBtn.textContent = t("ui.settings_privacy_options_button");
+        adsBtn.setAttribute("aria-label", t("ui.settings_privacy_options_label"));
       }
 
       if(musicLabel) musicLabel.textContent = t("ui.settings_music_label");
@@ -829,8 +829,8 @@
       const msg = $("settingsMsg");
       if (msg) {
         msg.textContent = ok
-          ? (t("ui.settings_privacy_options_opened") || "Privacy options opened.")
-          : (t("ui.settings_privacy_options_unavailable") || "No privacy options are available right now.");
+          ? t("ui.settings_privacy_options_opened")
+          : t("ui.settings_privacy_options_unavailable");
       }
     }
 
