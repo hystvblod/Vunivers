@@ -519,7 +519,7 @@
 
       const st = getUniverseBadgeState(uid, badgeMap);
 
-      const unlocked = !!(window.VUserData?.isUniverseUnlocked?.(uid) || uid === "hell_king" || uid === "heaven_king");
+      const unlocked = !!(window.VUserData?.isUniverseUnlocked?.(uid) || uid === "hell_king" || uid === "vampire_lord");
 
       const card = document.createElement("div");
       card.className = "vr-universe-card" + (unlocked ? "" : " is-locked");
