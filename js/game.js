@@ -1464,10 +1464,13 @@ body.vr-peek-mode .vr-gauge-preview{
       const spec = (rewardSpec && typeof rewardSpec === "object")
         ? rewardSpec
         : { multiplier: rewardSpec };
+
       const flatCandidate = spec.fixedAmount == null ? rewardSpec : spec.fixedAmount;
       const isFlatAmount = asInt(flatCandidate, 0) >= 100 && base < 100;
       const mult = isFlatAmount ? 1 : Math.max(1, asInt(spec.multiplier, 1));
-      const fixedAmount = isFlatAmount ? 100 : (spec.fixedAmount == null ? null : Math.max(0, asInt(spec.fixedAmount, 0)));
+      const fixedAmount = isFlatAmount
+        ? 100
+        : (spec.fixedAmount == null ? null : Math.max(0, asInt(spec.fixedAmount, 0)));
 
       if (this._pendingEndClaimed) {
         return {
@@ -1485,13 +1488,26 @@ body.vr-peek-mode .vr-gauge-preview{
 
       const amount = isFlatAmount
         ? 100
-        : (fixedAmount !== null
-            ? fixedAmount
-            : Math.max(0, base * mult));
+        : (fixedAmount !== null ? fixedAmount : Math.max(0, base * mult));
 
       if (amount > 0) {
-        const ok = await (window.VUserData?.addVcoins?.(amount) || Promise.resolve(true));
-        if (ok === false) return { ok: false, amount: 0 };
+        if (!window.VUserData || typeof window.VUserData.addVcoinsAsync !== "function") {
+          return { ok: false, amount: 0 };
+        }
+
+        const beforeCoins = Number(window.VUserData.getVcoins?.() || 0);
+
+        try {
+          await window.VUserData.addVcoinsAsync(amount);
+          await window.VUserData.refresh?.();
+        } catch (_) {
+          return { ok: false, amount: 0 };
+        }
+
+        const afterCoins = Number(window.VUserData.getVcoins?.() || beforeCoins);
+        if (afterCoins < beforeCoins + amount) {
+          return { ok: false, amount: 0 };
+        }
       }
 
       this._pendingEndClaimed = true;
@@ -1503,11 +1519,13 @@ body.vr-peek-mode .vr-gauge-preview{
         if (me) {
           this._uiCoins = window.VRProfile._n(me.vcoins);
           this._uiTokens = window.VRProfile._n(me.jetons);
-        } else if (amount > 0) {
-          this._uiCoins += amount;
+        } else {
+          this._uiCoins = Number(window.VUserData?.getVcoins?.() || this._uiCoins || 0);
+          this._uiTokens = Number(window.VUserData?.getJetons?.() || this._uiTokens || 0);
         }
       } catch (_) {
-        if (amount > 0) this._uiCoins += amount;
+        this._uiCoins = Number(window.VUserData?.getVcoins?.() || this._uiCoins || 0);
+        this._uiTokens = Number(window.VUserData?.getJetons?.() || this._uiTokens || 0);
       }
 
       try {
@@ -2166,8 +2184,17 @@ body.vr-peek-mode .vr-gauge-preview{
 
         if (dj) {
           if (dj > 0) {
-            const ok = await (window.VUserData?.addJetons?.(dj) || Promise.resolve(false));
-            if (ok !== false) this._uiTokens += dj;
+            const beforeTokens = Number(window.VUserData?.getJetons?.() || this._uiTokens || 0);
+
+            try {
+              await window.VUserData?.addJetonsAsync?.(dj);
+              await window.VUserData?.refresh?.();
+            } catch (_) {}
+
+            const afterTokens = Number(window.VUserData?.getJetons?.() || beforeTokens);
+            if (afterTokens >= beforeTokens + dj) {
+              this._uiTokens = afterTokens;
+            }
           } else {
             const cost = Math.abs(dj);
             const ok = await (window.VUserData?.spendJetons?.(cost) || Promise.resolve(false));
@@ -2339,27 +2366,26 @@ body.vr-peek-mode .vr-gauge-preview{
         const previewAmount = useFlat100 ? 100 : Math.max(0, baseReward * 2);
 
         if (doubleBtn) {
-          doubleBtn.classList.toggle("is-glow", !this._pendingEndClaimed);
-          doubleBtn.disabled = !!this._pendingEndClaimed;
+          if (this._pendingEndClaimed) {
+            doubleBtn.style.display = "none";
+          } else {
+            doubleBtn.style.display = "";
+            doubleBtn.classList.toggle("is-glow", true);
+            doubleBtn.disabled = false;
 
-          const titleWrap = doubleBtn.querySelector("#ending-double-title-wrap");
-          const title = doubleBtn.querySelector("#ending-double-title");
-          const sub = doubleBtn.querySelector("#ending-double-sub");
+            const titleWrap = doubleBtn.querySelector("#ending-double-title-wrap");
+            const title = doubleBtn.querySelector("#ending-double-title");
+            const sub = doubleBtn.querySelector("#ending-double-sub");
 
-          if (titleWrap) {
-            titleWrap.style.display = (this._pendingEndClaimed || !useFlat100) ? "flex" : "none";
-          }
+            if (titleWrap) {
+              titleWrap.style.display = useFlat100 ? "none" : "flex";
+            }
 
-          if (title) {
-            title.textContent = this._pendingEndClaimed
-              ? t("game.ending.reward_claimed", "")
-              : t("game.ending.double_gain", "");
-          }
+            if (title) {
+              title.textContent = t("game.ending.double_gain", "");
+            }
 
-          if (sub) {
-            if (this._pendingEndClaimed) {
-              sub.textContent = t("game.ending.reward_claimed_sub", "");
-            } else {
+            if (sub) {
               sub.innerHTML = `
                 <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
                 <span>+${previewAmount}</span>
@@ -2370,7 +2396,8 @@ body.vr-peek-mode .vr-gauge-preview{
 
         if (reviveBtn) {
           reviveBtn.textContent = t("game.ending.revive_token", "");
-          reviveBtn.disabled = !!this._reviveUsed || !!this._pendingEndClaimed;
+          reviveBtn.disabled = !!this._reviveUsed;
+          reviveBtn.style.display = this._pendingEndClaimed ? "none" : "";
         }
 
         if (restartBtn) restartBtn.textContent = t("game.restart", "");
@@ -2940,7 +2967,19 @@ body.vr-peek-mode .vr-gauge-preview{
             const ok = await (window.VRAds?.showRewardedAd?.({ placement: "token" }) || Promise.resolve(false));
             if (ok) {
               try { window.VRAds?.markGameRewardSeen?.(); } catch (_) {}
-              try { await window.VUserData?.addJetons?.(1); } catch (_) {}
+              const beforeTokens = Number(window.VUserData?.getJetons?.() || 0);
+
+              try {
+                await window.VUserData?.addJetonsAsync?.(1);
+                await window.VUserData?.refresh?.();
+              } catch (_) {}
+
+              const afterTokens = Number(window.VUserData?.getJetons?.() || beforeTokens);
+              if (afterTokens < beforeTokens + 1) {
+                toast(t("token.toast.reward_fail", ""));
+                return;
+              }
+
 
               try {
                 const me = await window.VRProfile?.getMe?.(0);
@@ -3010,7 +3049,10 @@ body.vr-peek-mode .vr-gauge-preview{
 
             const ok = window.VREngine?.undoChoices?.(3);
             if (!ok) {
-              try { await window.VUserData?.addJetons?.(1); } catch (_) {}
+              try {
+                await window.VUserData?.addJetonsAsync?.(1);
+                await window.VUserData?.refresh?.();
+              } catch (_) {}
               toast(t("token.toast.undo_fail", ""));
               try {
                 await window.VREventOverlay?.showEvent?.(
@@ -4373,7 +4415,19 @@ function onGaugeSet(gaugeId) {
   const ok = await (window.VRAds?.showRewardedAd?.({ placement: "coins_100" }) || Promise.resolve(false));
   if (ok) {
     try { window.VRAds?.markGameRewardSeen?.(); } catch (_) {}
-    try { await window.VUserData?.addVcoins?.(100); } catch (_) {}
+    const beforeCoins = Number(window.VUserData?.getVcoins?.() || 0);
+
+    try {
+      await window.VUserData?.addVcoinsAsync?.(100);
+      await window.VUserData?.refresh?.();
+    } catch (_) {}
+
+    const afterCoins = Number(window.VUserData?.getVcoins?.() || beforeCoins);
+    if (afterCoins < beforeCoins + 100) {
+      toast(t("coins.toast.reward_fail", "Pub indisponible"));
+      return;
+    }
+
 
     try {
       const me = await window.VRProfile?.getMe?.(0);

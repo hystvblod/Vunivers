@@ -670,12 +670,10 @@
   // =============================
   async function showRewardedAd(opts) {
     opts = opts || {};
+
     try {
-      // ⚠️ no_ads NE BLOQUE PAS les rewarded (volontaire)
       if (!isNative()) return false;
       if (!AdMob || !AdMob.prepareRewardVideoAd || !AdMob.showRewardVideoAd) return false;
-
-      // si app busy, on refuse (évite double overlay)
       if (window.__ads_active || __showLock) return false;
 
       __showLock = true;
@@ -689,42 +687,62 @@
       preShowAdCleanup();
       isRewardShowing = true;
 
-      var rewardedP = waitRewardedOnce(30000);
-      var dismissedP = waitDismissedOnce();
+      const rewardedP = waitRewardedOnce(30000);
+      const dismissedP = waitDismissedOnce();
 
-      var showPromise = AdMob.showRewardVideoAd();
+      let showResult = null;
 
-      var gotReward = await rewardedP;
-      await Promise.race([dismissedP.catch(function () {}), waitAppReturnOnce()]);
+      try {
+        showResult = await AdMob.showRewardVideoAd();
+      } catch (e) {
+        try { await dismissedP.catch(function () {}); } catch (_) {}
+        postAdCleanup();
+        isRewardShowing = false;
+        currentAdKind = null;
+        __showLock = false;
+        return false;
+      }
+
+      const eventRewarded = await rewardedP.catch(function () { return false; });
+
+      const returnRewarded = !!(
+        showResult &&
+        (
+          showResult.rewarded === true ||
+          showResult.reward === true ||
+          showResult.rewardItem ||
+          showResult.type ||
+          showResult.amount != null
+        )
+      );
+
+      const gotReward = !!(eventRewarded || returnRewarded);
+
+      await Promise.race([
+        dismissedP.catch(function () {}),
+        waitAppReturnOnce()
+      ]);
+
       postAdCleanup();
-
-      try { await showPromise; } catch (_) {}
 
       isRewardShowing = false;
       currentAdKind = null;
       __showLock = false;
 
-      // ⚠️ Best-effort log rewarded view.
-      // Le plus safe: logger côté DB au moment du credit (secure_claim_reward).
       if (gotReward) {
-        var plc = (opts && opts.placement) ? String(opts.placement) : "rewarded";
+        const plc = (opts && opts.placement) ? String(opts.placement) : "rewarded";
 
         try {
           if (sbReady()) {
-            await window.sb.rpc("secure_log_ad_event", { p_kind: "rewarded", p_placement: plc });
+            await window.sb.rpc("secure_log_ad_event", {
+              p_kind: "rewarded",
+              p_placement: plc
+            });
           }
         } catch (_) {}
-
-        try {
-          await window.VRAnalytics?.log?.("rewarded_ad_completed", {
-            placement: plc
-          });
-        } catch (_) {}
-
-        try { await refreshAdsStats(); } catch (_) {}
       }
 
-      return !!gotReward;
+      return gotReward;
     } catch (_) {
       try { postAdCleanup(); } catch (_) {}
       isRewardShowing = false;

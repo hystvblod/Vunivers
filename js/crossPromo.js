@@ -293,10 +293,19 @@
         return false;
       }
 
+      const beforeCoins = Number(window.VUserData.getVcoins?.() || 0);
+
       await window.VUserData.addVcoinsAsync(REWARD_AMOUNT);
 
       if (window.VUserData && typeof window.VUserData.refresh === "function") {
         await window.VUserData.refresh();
+      }
+
+      const afterCoins = Number(window.VUserData.getVcoins?.() || beforeCoins);
+      if (afterCoins < beforeCoins + REWARD_AMOUNT) {
+        freshRow.rewardClaiming = false;
+        writeState(freshState);
+        return false;
       }
 
       freshRow.rewardClaimed = true;

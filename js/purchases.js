@@ -467,27 +467,76 @@
   }
 
   async function doRewarded(placement) {
+    const plc = String(placement || "shop");
+
+    const rewardMap = {
+      shop_jeton: { kind: "jetons", amount: 1 },
+      shop_coins: { kind: "vcoins", amount: 100 }
+    };
+
+    const cfg = rewardMap[plc];
+
     try {
+      if (!cfg) {
+        setText("shop-status", "❌ Placement reward inconnu");
+        return false;
+      }
+
       if (!window.VRAds || typeof window.VRAds.showRewardedAd !== "function") {
         setText("shop-status", t("shop.status.ad_not_ready", "Système de pub indisponible"));
         return false;
       }
+
+      if (!window.VUserData) {
+        setText("shop-status", "❌ Wallet indisponible");
+        return false;
+      }
+
+      const before = cfg.kind === "jetons"
+        ? Number(window.VUserData.getJetons?.() || 0)
+        : Number(window.VUserData.getVcoins?.() || 0);
+
       setText("shop-status", t("shop.status.pending", "…"));
+
       try {
-        await window.VRAnalytics?.log?.("shop_reward_ad_click", {
-          placement: String(placement || "shop")
-        });
+        await window.VRAnalytics?.log?.("shop_reward_ad_click", { placement: plc });
       } catch (_) {}
 
-      const ok = await window.VRAds.showRewardedAd({ placement: String(placement || "shop") });
-      if (!ok) {
+      const okAd = await window.VRAds.showRewardedAd({ placement: plc });
+      if (!okAd) {
         setText("shop-status", t("shop.status.reward_not_validated", "❌ Pub non validée"));
+        return false;
+      }
+
+      if (cfg.kind === "jetons") {
+        if (typeof window.VUserData.addJetonsAsync !== "function") {
+          setText("shop-status", "❌ addJetonsAsync indisponible");
+          return false;
+        }
+        await window.VUserData.addJetonsAsync(cfg.amount);
+      } else {
+        if (typeof window.VUserData.addVcoinsAsync !== "function") {
+          setText("shop-status", "❌ addVcoinsAsync indisponible");
+          return false;
+        }
+        await window.VUserData.addVcoinsAsync(cfg.amount);
+      }
+
+      try { await window.VUserData.refresh?.(); } catch (_) {}
+
+      const after = cfg.kind === "jetons"
+        ? Number(window.VUserData.getJetons?.() || 0)
+        : Number(window.VUserData.getVcoins?.() || 0);
+
+      if (after < before + cfg.amount) {
+        setText("shop-status", "❌ Pub vue mais crédit non reçu");
         return false;
       }
 
       setText("shop-status", t("shop.status.reward_validated", "✅ Récompense validée"));
       return true;
-    } catch (_) {
+    } catch (e) {
+      console.error("[shop rewarded] error:", e);
       setText("shop-status", t("shop.status.reward_error", "❌ Erreur pub récompensée"));
       return false;
     }
