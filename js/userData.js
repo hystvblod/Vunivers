@@ -7,7 +7,7 @@
   const LangStorageKey = "vuniverse_lang";
   const LangStorageLegacyKey = "vrealms_lang";
 
-  const FREE_UNIVERSES = ["hell_king", "heaven_king"];
+  const FREE_UNIVERSES = ["hell_king", "vampire_lord"];
   const DEFAULT_KNOWN_UNIVERSES = [
     "hell_king",
     "heaven_king",

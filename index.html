@@ -611,6 +611,16 @@
       <h2 class="vr-section-title" data-i18n="ui.choose_universe"></h2>
 
       <div class="vr-universe-grid">
+        <button class="vr-card" data-universe="vampire_lord" type="button">
+          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/vampire_lord.webp');"></div>
+          <div class="vr-card-content">
+            <div class="vr-card-header-line">
+              <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
+              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.vampire_lord.desc">?</span>
+            </div>
+          </div>
+        </button>
+
         <button class="vr-card" data-universe="hell_king" type="button">
           <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/hell_king.webp');"></div>
           <div class="vr-card-content">
@@ -627,16 +637,6 @@
             <div class="vr-card-header-line">
               <h3 class="vr-card-title" data-i18n="universe.heaven_king.title"></h3>
               <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.heaven_king.desc">?</span>
-            </div>
-          </div>
-        </button>
-
-        <button class="vr-card" data-universe="vampire_lord" type="button">
-          <div class="vr-card-bg" style="background-image:url('assets/img/ui/universes/vampire_lord.webp');"></div>
-          <div class="vr-card-content">
-            <div class="vr-card-header-line">
-              <h3 class="vr-card-title" data-i18n="universe.vampire_lord.title"></h3>
-              <span class="vr-info-btn" role="button" tabindex="0" data-i18n-tip="universe.vampire_lord.desc">?</span>
             </div>
           </div>
         </button>
@@ -1112,7 +1112,7 @@
           }
         } catch (_) {}
 
-        return (id === "hell_king" || id === "heaven_king");
+        return (id === "hell_king" || id === "vampire_lord");
       }
 
       const LOCK_SVG = `
