@@ -435,14 +435,14 @@
         .update({ [SECRET_PROFILE_FIELD]: true })
         .eq("id", uid)
         .eq(SECRET_PROFILE_FIELD, false)
-        .select("id")
-        .maybeSingle();
+        .select("id");
 
       if (claim?.error) {
+        console.error("SECRET claim error:", claim.error);
         return { ok: false, credited: false, reward: 0, first_time: false, reason: "claim_failed" };
       }
 
-      const firstTime = !!claim?.data;
+      const firstTime = Array.isArray(claim?.data) && claim.data.length > 0;
 
       if (!firstTime) {
         return { ok: true, credited: false, reward: 0, first_time: false };
@@ -463,7 +463,8 @@
         first_time: true,
         vcoins: Number(newBalance || 0) || 0
       };
-    } catch (_) {
+    } catch (err) {
+      console.error("SECRET exception:", err);
       return { ok: false, credited: false, reward: 0, first_time: false, reason: "exception" };
     }
   }
