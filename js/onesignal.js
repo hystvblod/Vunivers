@@ -4,22 +4,12 @@
 
   const ONESIGNAL_APP_ID = "26703698-8c7c-46ee-9724-c22de4167a00";
 
-  const K_PROMPT_SHOWN = "vr_os_native_prompt_shown_v1";
-  const K_PENDING_INDEX_PROMPT = "vr_os_pending_index_prompt_v1";
-  const K_REAL_GAME_THIS_RUN = "vr_os_real_game_this_run_v1";
+  const K_PROMPT_DONE = "vr_os_native_prompt_done_v2";
+  const K_PENDING_INDEX = "vr_os_native_prompt_pending_v2";
 
   let initialized = false;
   let bootPromise = null;
-  let indexPromptStarted = false;
-  let gameReturnHookBound = false;
-
-  function t(key, fallback) {
-    try {
-      const out = window.VRI18n?.t?.(key);
-      if (out && out !== key) return out;
-    } catch (_) {}
-    return typeof fallback === "string" ? fallback : "";
-  }
+  let requestInFlight = null;
 
   function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -62,30 +52,6 @@
 
   function lsDel(key) {
     try { localStorage.removeItem(key); } catch (_) {}
-  }
-
-  function ssGet(key) {
-    try { return sessionStorage.getItem(key); } catch (_) { return null; }
-  }
-
-  function ssSet(key, value) {
-    try { sessionStorage.setItem(key, value); } catch (_) {}
-  }
-
-  function ssDel(key) {
-    try { sessionStorage.removeItem(key); } catch (_) {}
-  }
-
-  function hasShownPrompt() {
-    return lsGet(K_PROMPT_SHOWN) === "1";
-  }
-
-  function hasPendingIndexPrompt() {
-    return lsGet(K_PENDING_INDEX_PROMPT) === "1";
-  }
-
-  function hasRealGameThisRun() {
-    return ssGet(K_REAL_GAME_THIS_RUN) === "1";
   }
 
   async function getUidBestEffort() {
@@ -175,9 +141,7 @@
 
         return false;
       } finally {
-        if (!initialized) {
-          bootPromise = null;
-        }
+        if (!initialized) bootPromise = null;
       }
     })();
 
@@ -225,178 +189,63 @@
     return { attempted: false, accepted: false };
   }
 
-  function ensurePrePromptStyles() {
-    if (document.getElementById("vr-os-preprompt-style")) return;
-
-    const style = document.createElement("style");
-    style.id = "vr-os-preprompt-style";
-    style.textContent = `
-      #vr-os-preprompt{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; padding:16px; background:rgba(15,23,42,.84); z-index:250000; }
-      #vr-os-preprompt.is-open{ display:flex; }
-      #vr-os-preprompt .vr-os-preprompt-card{ width:min(420px, calc(100vw - 24px)); padding:18px; border-radius:22px; background:rgba(15,23,42,.98); border:1px solid rgba(255,255,255,.14); box-shadow:0 20px 40px rgba(0,0,0,.35); color:#fff; text-align:center; display:flex; flex-direction:column; gap:12px; }
-      #vr-os-preprompt .vr-os-preprompt-title{ margin:0; font-size:clamp(20px, 5.2vw, 26px); font-weight:950; }
-      #vr-os-preprompt .vr-os-preprompt-text{ margin:0; font-size:clamp(13px, 3.7vw, 15px); line-height:1.4; color:rgba(255,255,255,.88); }
-      #vr-os-preprompt .vr-os-preprompt-actions{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-      #vr-os-preprompt button{ min-height:48px; border:none; border-radius:14px; font:800 15px/1.2 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; cursor:pointer; }
-      #vr-os-preprompt .vr-os-preprompt-accept{ background:#ffffff; color:#0f172a; }
-      #vr-os-preprompt .vr-os-preprompt-cancel{ background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.12); }
-    `;
-    document.head.appendChild(style);
-  }
-
-  function ensurePrePrompt() {
-    let overlay = document.getElementById("vr-os-preprompt");
-    if (overlay) return overlay;
-
-    ensurePrePromptStyles();
-
-    overlay = document.createElement("div");
-    overlay.id = "vr-os-preprompt";
-    overlay.setAttribute("aria-hidden", "true");
-    overlay.innerHTML = `
-      <div class="vr-os-preprompt-card" role="dialog" aria-modal="true">
-        <h3 class="vr-os-preprompt-title" id="vr-os-preprompt-title"></h3>
-        <p class="vr-os-preprompt-text" id="vr-os-preprompt-text"></p>
-        <div class="vr-os-preprompt-actions">
-          <button type="button" class="vr-os-preprompt-cancel" id="vr-os-preprompt-cancel"></button>
-          <button type="button" class="vr-os-preprompt-accept" id="vr-os-preprompt-accept"></button>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(overlay);
-    return overlay;
-  }
-
-  function fillPrePromptTexts() {
-    const titleEl = document.getElementById("vr-os-preprompt-title");
-    const textEl = document.getElementById("vr-os-preprompt-text");
-    const cancelEl = document.getElementById("vr-os-preprompt-cancel");
-    const acceptEl = document.getElementById("vr-os-preprompt-accept");
-
-    if (titleEl) titleEl.textContent = t("onesignal.popup.title", "Rester informé");
-    if (textEl) textEl.textContent = t("onesignal.popup.text", "Autoriser les notifications pour recevoir les nouveautés et les récompenses importantes.");
-    if (cancelEl) cancelEl.textContent = t("onesignal.popup.cancel", "Plus tard");
-    if (acceptEl) acceptEl.textContent = t("onesignal.popup.accept", "Autoriser");
-  }
-
-  function showPrePrompt() {
-    const overlay = ensurePrePrompt();
-    fillPrePromptTexts();
-
-    return new Promise((resolve) => {
-      const acceptBtn = document.getElementById("vr-os-preprompt-accept");
-      const cancelBtn = document.getElementById("vr-os-preprompt-cancel");
-
-      const close = (accepted) => {
-        overlay.classList.remove("is-open");
-        overlay.setAttribute("aria-hidden", "true");
-        resolve(!!accepted);
-      };
-
-      overlay.onclick = (e) => {
-        if (e.target === overlay) close(false);
-      };
-
-      if (acceptBtn) acceptBtn.onclick = () => close(true);
-      if (cancelBtn) cancelBtn.onclick = () => close(false);
-
-      overlay.classList.add("is-open");
-      overlay.setAttribute("aria-hidden", "false");
-
-      try {
-        acceptBtn?.focus?.({ preventScroll: true });
-      } catch (_) {}
-    });
-  }
-
-  function markRealGamePlayed() {
-    ssSet(K_REAL_GAME_THIS_RUN, "1");
-  }
-
-  function clearRealGamePlayed() {
-    ssDel(K_REAL_GAME_THIS_RUN);
-  }
-
-  function preparePromptOnNextIndex() {
-    if (hasShownPrompt()) return false;
-    if (!hasRealGameThisRun()) return false;
-
-    lsSet(K_PENDING_INDEX_PROMPT, "1");
+  function markPromptPendingOnNextIndex() {
+    if (lsGet(K_PROMPT_DONE) === "1") return false;
+    lsSet(K_PENDING_INDEX, "1");
     return true;
   }
 
-  async function maybePromptOnIndexAfterGameReturn() {
-    if (indexPromptStarted) return false;
-    if (!isIndexPage()) return false;
-    if (!hasPendingIndexPrompt()) return false;
-
-    if (hasShownPrompt()) {
-      lsDel(K_PENDING_INDEX_PROMPT);
-      clearRealGamePlayed();
-      return false;
-    }
-
-    indexPromptStarted = true;
-
-    try {
-      const result = await requestNativePermission();
-
-      lsDel(K_PENDING_INDEX_PROMPT);
-      clearRealGamePlayed();
-      indexPromptStarted = false;
-
-      if (!result || !result.attempted) {
-        return false;
-      }
-
-      lsSet(K_PROMPT_SHOWN, "1");
-      return !!result.accepted;
-    } catch (e) {
-      console.warn("[OneSignal] maybePromptOnIndexAfterGameReturn failed", e);
-      lsDel(K_PENDING_INDEX_PROMPT);
-      clearRealGamePlayed();
-      indexPromptStarted = false;
-      return false;
-    }
+  function clearPendingPrompt() {
+    lsDel(K_PENDING_INDEX);
   }
 
-  function bindGameReturnHook() {
-    if (gameReturnHookBound) return;
-    gameReturnHookBound = true;
+  async function maybePromptNativeAfterAdmobOnIndex() {
+    if (!isIndexPage()) return false;
+    if (lsGet(K_PROMPT_DONE) === "1") return false;
+    if (lsGet(K_PENDING_INDEX) !== "1") return false;
 
-    document.addEventListener("click", function (e) {
+    if (requestInFlight) return requestInFlight;
+
+    requestInFlight = (async function () {
       try {
-        const link = e.target && e.target.closest ? e.target.closest('a[href="index.html"]') : null;
-        if (!link) return;
-        preparePromptOnNextIndex();
-      } catch (_) {}
-    }, true);
+        const result = await requestNativePermission();
+
+        clearPendingPrompt();
+
+        if (result && result.attempted) {
+          lsSet(K_PROMPT_DONE, "1");
+        }
+
+        return !!result?.accepted;
+      } catch (e) {
+        console.warn("[OneSignal] maybePromptNativeAfterAdmobOnIndex failed", e);
+        clearPendingPrompt();
+        return false;
+      } finally {
+        requestInFlight = null;
+      }
+    })();
+
+    return requestInFlight;
   }
 
   window.VROneSignal = {
     boot: bootOneSignal,
     syncExternalId: syncExternalId,
     requestNativePermission: requestNativePermission,
-    markRealGamePlayed: markRealGamePlayed,
-    clearRealGamePlayed: clearRealGamePlayed,
-    preparePromptOnNextIndex: preparePromptOnNextIndex,
-    maybePromptOnIndexAfterGameReturn: maybePromptOnIndexAfterGameReturn,
-    showPrePrompt: showPrePrompt,
+    markPromptPendingOnNextIndex: markPromptPendingOnNextIndex,
+    clearPendingPrompt: clearPendingPrompt,
+    maybePromptNativeAfterAdmobOnIndex: maybePromptNativeAfterAdmobOnIndex,
     isReady: function () {
       return initialized;
     }
   };
 
   document.addEventListener("deviceready", async function () {
-    bindGameReturnHook();
     await bootOneSignal();
   }, false);
 
   document.addEventListener("resume", function () {
     syncExternalId();
-  }, false);
-
-  window.addEventListener("load", function () {
-    bindGameReturnHook();
   }, false);
 })();
