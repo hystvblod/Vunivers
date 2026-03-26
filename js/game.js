@@ -1489,12 +1489,11 @@ body.vr-peek-mode .vr-gauge-preview{
         ? rewardSpec
         : { multiplier: rewardSpec };
 
-      const flatCandidate = spec.fixedAmount == null ? rewardSpec : spec.fixedAmount;
-      const isFlatAmount = asInt(flatCandidate, 0) >= 100 && base < 100;
-      const mult = isFlatAmount ? 1 : Math.max(1, asInt(spec.multiplier, 1));
-      const fixedAmount = isFlatAmount
-        ? 100
-        : (spec.fixedAmount == null ? null : Math.max(0, asInt(spec.fixedAmount, 0)));
+      const fixedAmount = (spec.fixedAmount == null)
+        ? null
+        : Math.max(0, asInt(spec.fixedAmount, 0));
+
+      const mult = fixedAmount !== null ? 1 : Math.max(1, asInt(spec.multiplier, 1));
 
       if (this._pendingEndClaimed) {
         return {
@@ -1503,16 +1502,18 @@ body.vr-peek-mode .vr-gauge-preview{
             0,
             asInt(
               this._pendingEndClaimAmount,
-              base * Math.max(1, asInt(this._pendingEndClaimMultiplier, 1))
+              fixedAmount !== null
+                ? fixedAmount
+                : base * Math.max(1, asInt(this._pendingEndClaimMultiplier, 1))
             )
           ),
           already: true
         };
       }
 
-      const amount = isFlatAmount
-        ? 100
-        : (fixedAmount !== null ? fixedAmount : Math.max(0, base * mult));
+      const amount = fixedAmount !== null
+        ? fixedAmount
+        : Math.max(0, base * mult);
 
       if (amount > 0) {
         if (!window.VUserData || typeof window.VUserData.addVcoinsAsync !== "function") {
@@ -2387,7 +2388,7 @@ body.vr-peek-mode .vr-gauge-preview{
       const syncEndingButtons = () => {
         const baseReward = Math.max(0, asInt(this._pendingEndReward, 0));
         const useFlat100 = baseReward < 100;
-        const previewAmount = useFlat100 ? 100 : Math.max(0, baseReward * 2);
+        const previewAmount = useFlat100 ? Math.max(0, baseReward + 100) : Math.max(0, baseReward * 2);
 
         if (doubleBtn) {
           if (this._pendingEndClaimed) {
@@ -2438,7 +2439,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
           const baseReward = Math.max(0, asInt(this._pendingEndReward, 0));
           const useFlat100 = baseReward < 100;
-          const rewardMultiplier = useFlat100 ? null : 2;
+          const rewardSpec = useFlat100 ? { fixedAmount: baseReward + 100 } : 2;
 
           try { doubleBtn.disabled = true; } catch (_) {}
 
@@ -2456,7 +2457,7 @@ body.vr-peek-mode .vr-gauge-preview{
             return;
           }
 
-          const out = await this._finalizeEndedRun(useFlat100 ? 100 : rewardMultiplier);
+          const out = await this._finalizeEndedRun(rewardSpec);
           if (!out?.ok) {
             try { window.showToast?.(t("common.error_generic", "")); } catch (_) {}
             syncEndingButtons();
@@ -2469,7 +2470,7 @@ body.vr-peek-mode .vr-gauge-preview{
             await window.VRAnalytics?.log?.("end_reward_doubled", {
               universe_id: String(this.universeId || "unknown"),
               amount: Number(out.amount || 0),
-              mode: useFlat100 ? "flat_100" : "x2"
+              mode: useFlat100 ? "base_plus_100" : "x2"
             });
           } catch (_) {}
 
