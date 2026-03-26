@@ -82,8 +82,6 @@
   var __showLock = false;          // anti double show best-effort
 
   window.__ads_active = false;     // flag global anti-back/anti-overlays côté app
-  var __googleConsentInfo = null;
-  var __googleConsentInfoPromise = null;
   var _gameRewardSeenThisRun = false;
   var _weightedTimerStartedAt = 0;
 
@@ -270,105 +268,34 @@
   // =============================
   // Consent / Request options (NPA) - SERVER SIDE
   // =============================
-  function getPersonalizedAdsGrantedLegacy() {
-    var rgpd = localStorage.getItem("rgpdConsent"); // "accept"|"refuse"|null
-    var adsConsent = (localStorage.getItem("adsConsent") || "").toLowerCase();
-    var adsEnabled = (localStorage.getItem("adsEnabled") || "").toLowerCase();
-    if (rgpd === "refuse") return false;
-    if (rgpd === "accept") {
-      if (adsConsent) return adsConsent === "yes";
-      if (adsEnabled) return adsEnabled === "true";
+  function getPersonalizedAdsGranted() {
+    // Plus de localStorage.
+    // Logique : si RGPD refuse => false
+    // sinon on regarde adsConsent / adsEnabled
+    try {
+      var rgpd = _adsState.rgpdConsent; // "accept"|"refuse"|null
+      var adsConsent = _adsState.adsConsent; // boolean|null
+      var adsEnabled = _adsState.adsEnabled; // boolean|null
+
+      if (rgpd === "refuse") return false;
+
+      if (rgpd === "accept") {
+        if (typeof adsConsent === "boolean") return adsConsent === true;
+        if (typeof adsEnabled === "boolean") return adsEnabled === true;
+        return false;
+      }
+
+      if (typeof adsConsent === "boolean") return adsConsent === true;
+      if (typeof adsEnabled === "boolean") return adsEnabled === true;
+
+      return false;
+    } catch (_) {
       return false;
     }
-    if (adsConsent) return adsConsent === "yes";
-    if (adsEnabled) return adsEnabled === "true";
-    return false;
-  }
-
-  function hasOfficialUmpSupport() {
-    return !!(AdMob && AdMob.requestConsentInfo && AdMob.showConsentForm && AdMob.showPrivacyOptionsForm);
   }
 
   function buildAdMobRequestOptions() {
-    if (isNative() && hasOfficialUmpSupport()) return {};
-    return { npa: getPersonalizedAdsGrantedLegacy() ? "0" : "1" };
-  }
-
-  async function syncLegacyConsentMirror(info) {
-    try {
-      if (!info) return;
-      var accepted = !!info.canRequestAds;
-      localStorage.setItem("rgpdConsent", accepted ? "accept" : "refuse");
-      localStorage.setItem("adsConsent", accepted ? "yes" : "no");
-      localStorage.setItem("adsEnabled", accepted ? "true" : "false");
-    } catch (_) {}
-
-    try {
-      if (!info) return;
-      if (window.bootstrapAuthAndProfile) await window.bootstrapAuthAndProfile();
-      if (window.sb && window.sb.rpc) {
-        await window.sb.rpc("update_ads_consent", { new_consent: info.canRequestAds ? "accept" : "refuse" });
-      }
-    } catch (_) {}
-  }
-
-  async function getGoogleConsentInfo(forceRefresh) {
-    if (!isNative() || !hasOfficialUmpSupport()) return null;
-    if (__googleConsentInfo && !forceRefresh) return __googleConsentInfo;
-    if (__googleConsentInfoPromise) return __googleConsentInfoPromise;
-
-    __googleConsentInfoPromise = AdMob.requestConsentInfo()
-      .then(async function (info) {
-        __googleConsentInfo = info || null;
-        await syncLegacyConsentMirror(__googleConsentInfo);
-        return __googleConsentInfo;
-      })
-      .catch(function () {
-        return __googleConsentInfo;
-      })
-      .finally(function () {
-        __googleConsentInfoPromise = null;
-      });
-
-    return __googleConsentInfoPromise;
-  }
-
-  async function ensureCanRequestAds() {
-    var info = await getGoogleConsentInfo(false);
-    if (!info) return true;
-    return !!info.canRequestAds;
-  }
-
-  async function maybeShowGoogleConsentFormOnIndexAfterIntro() {
-    if (!isNative() || !hasOfficialUmpSupport()) return null;
-
-    var info = await getGoogleConsentInfo(true);
-    if (!info) return null;
-    if (info.canRequestAds) return info;
-
-    try {
-      info = await AdMob.showConsentForm();
-      __googleConsentInfo = info || __googleConsentInfo;
-      await syncLegacyConsentMirror(__googleConsentInfo);
-      return __googleConsentInfo;
-    } catch (_) {
-      return __googleConsentInfo;
-    }
-  }
-
-  async function showGooglePrivacyOptionsForm() {
-    if (!isNative() || !hasOfficialUmpSupport()) return false;
-
-    var info = await getGoogleConsentInfo(true);
-    if (!info || info.privacyOptionsRequirementStatus !== "REQUIRED") return false;
-
-    try {
-      await AdMob.showPrivacyOptionsForm();
-      await getGoogleConsentInfo(true);
-      return true;
-    } catch (_) {
-      return false;
-    }
+    return {};
   }
 
   async function syncAdsStateFromServer() {
@@ -413,8 +340,10 @@
   // Helpers anti-surcouches avant/après show() — WHITELIST SAFE
   // =============================
   var APP_OVERLAYS = [
+    "#popup-consent",
     "#update-banner",
     ".tooltip-box",
+    ".popup-consent-bg",
     ".modal-app",
     ".dialog-app",
     ".backdrop-app",
@@ -582,8 +511,10 @@
         requestTrackingAuthorization: false,
         initializeForTesting: __DEV_ADS__
       });
+
+      await refreshGoogleConsentInfo().catch(function () {});
+
       registerAdEventsOnce();
-      await getGoogleConsentInfo(true);
     } catch (_) {}
   })();
 
@@ -710,7 +641,7 @@
       if (!isNative()) return false;
       if (!AdMob || !AdMob.prepareInterstitial || !AdMob.showInterstitial) return false;
       if (!canShowInterstitialNow()) return false;
-      if (!(await ensureCanRequestAds())) return false;
+      if (!(await canRequestAdsNowWithConsent())) return false;
 
       __showLock = true;
       currentAdKind = "interstitial";
@@ -788,7 +719,7 @@
       if (!isNative()) return false;
       if (!AdMob || !AdMob.prepareRewardVideoAd || !AdMob.showRewardVideoAd) return false;
       if (window.__ads_active || __showLock) return false;
-      if (!(await ensureCanRequestAds())) return false;
+      if (!(await canRequestAdsNowWithConsent())) return false;
 
       __showLock = true;
       currentAdKind = "rewarded";
@@ -941,6 +872,99 @@
     return false;
   }
 
+  // =============================
+  // Consentement Google UMP
+  // =============================
+  var INTRO_FINISHED_FLOW_KEY = "vrealms_intro_just_finished";
+  var _umpConsentInfo = null;
+
+  function _readLSString(key) {
+    try { return String(localStorage.getItem(key) || ""); } catch (_) {}
+    return "";
+  }
+
+  function _emptyConsentInfo() {
+    return {
+      status: "UNKNOWN",
+      isConsentFormAvailable: false,
+      canRequestAds: false,
+      privacyOptionsRequirementStatus: "UNKNOWN"
+    };
+  }
+
+  async function refreshGoogleConsentInfo(opts) {
+    try {
+      if (!isNative()) {
+        _umpConsentInfo = {
+          status: "NOT_REQUIRED",
+          isConsentFormAvailable: false,
+          canRequestAds: true,
+          privacyOptionsRequirementStatus: "NOT_REQUIRED"
+        };
+        return _umpConsentInfo;
+      }
+
+      if (!AdMob || typeof AdMob.requestConsentInfo !== "function") {
+        _umpConsentInfo = _emptyConsentInfo();
+        return _umpConsentInfo;
+      }
+
+      _umpConsentInfo = await AdMob.requestConsentInfo(opts || {});
+      return _umpConsentInfo || _emptyConsentInfo();
+    } catch (_) {
+      return _umpConsentInfo || _emptyConsentInfo();
+    }
+  }
+
+  function getGoogleConsentInfo() {
+    return _umpConsentInfo || _emptyConsentInfo();
+  }
+
+  async function canRequestAdsNowWithConsent() {
+    try {
+      var info = await refreshGoogleConsentInfo();
+      return !!(info && info.canRequestAds);
+    } catch (_) {
+      return false;
+    }
+  }
+
+  async function maybeShowGoogleConsentFormOnIndexAfterIntro() {
+    try {
+      var introJustFinished = _readLSString(INTRO_FINISHED_FLOW_KEY) === "1";
+      if (!introJustFinished) return false;
+      if (!isNative()) return false;
+      if (!AdMob || typeof AdMob.requestConsentInfo !== "function" || typeof AdMob.showConsentForm !== "function") return false;
+
+      var info = await refreshGoogleConsentInfo();
+
+      if (info.canRequestAds) return false;
+
+      await AdMob.showConsentForm();
+      await refreshGoogleConsentInfo();
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  async function openGooglePrivacyOptionsForm() {
+    try {
+      if (!isNative()) return false;
+      if (!AdMob || typeof AdMob.requestConsentInfo !== "function" || typeof AdMob.showPrivacyOptionsForm !== "function") return false;
+
+      var info = await refreshGoogleConsentInfo();
+
+      if (info.privacyOptionsRequirementStatus !== "REQUIRED") return false;
+
+      await AdMob.showPrivacyOptionsForm();
+      await refreshGoogleConsentInfo();
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
   async function incrementActionsCount() {
     return markActionAndMaybeShowInterstitial();
   }
@@ -988,18 +1012,18 @@
   window.VRAds.getAdsStats = getAdsStats;
   window.VRAds.syncNoAdsFromServer = syncNoAdsFromServer;
   window.VRAds.isNoAds = isNoAds;
-  window.VRAds = Object.assign({}, window.VRAds || {}, {
-    getGoogleConsentInfo: getGoogleConsentInfo,
-    maybeShowGoogleConsentFormOnIndexAfterIntro: maybeShowGoogleConsentFormOnIndexAfterIntro,
-    showGooglePrivacyOptionsForm: showGooglePrivacyOptionsForm
-  });
+
+  window.VRAds.getGoogleConsentInfo = getGoogleConsentInfo;
+  window.VRAds.refreshGoogleConsentInfo = refreshGoogleConsentInfo;
+  window.VRAds.maybeShowGoogleConsentFormOnIndexAfterIntro = maybeShowGoogleConsentFormOnIndexAfterIntro;
+  window.VRAds.openGooglePrivacyOptionsForm = openGooglePrivacyOptionsForm;
 
   /* compat temporaire */
   window.VRAds.setPersonalizedConsent = async function () { return false; };
   window.VRAds.maybeShowPersonalizedConsentPopupOnIndexAfterIntro = maybeShowGoogleConsentFormOnIndexAfterIntro;
   window.VRAds.getPersonalizedConsent = function () { return false; };
   window.VRAds.hasPersonalizedConsentChoice = function () {
-    var s = (__googleConsentInfo && __googleConsentInfo.status) || "UNKNOWN";
+    var s = getGoogleConsentInfo().status;
     return s !== "UNKNOWN";
   };
 
