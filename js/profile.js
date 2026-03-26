@@ -51,7 +51,7 @@
         }
 
         #vrSecretOverlay.is-glitch{
-          animation: vrSecretShake .46s linear 2;
+          animation: vrSecretShake .85s linear 4;
         }
 
         #vrSecretOverlay .vr-secret-noise{
@@ -106,6 +106,14 @@
           white-space: pre-line;
           max-width: 440px;
           margin: 0 auto 18px;
+          min-height: 168px;
+        }
+
+        #vrSecretOverlay .vr-secret-body.is-typing::after{
+          content: "▋";
+          display: inline-block;
+          margin-left: 4px;
+          animation: vrSecretCaret .7s step-end infinite;
         }
 
         #vrSecretOverlay .vr-secret-reward{
@@ -176,13 +184,23 @@
           animation-fill-mode: forwards;
         }
 
+        @keyframes vrSecretCaret{
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
+
         @keyframes vrSecretShake{
-          0%   { transform: translate(0,0); }
-          20%  { transform: translate(-6px, 2px); }
-          40%  { transform: translate(6px, -3px); }
-          60%  { transform: translate(-4px, 3px); }
-          80%  { transform: translate(4px, -2px); }
-          100% { transform: translate(0,0); }
+          0%   { transform: translate(0,0) rotate(0deg); }
+          10%  { transform: translate(-10px, 4px) rotate(-0.4deg); }
+          20%  { transform: translate(10px, -5px) rotate(0.4deg); }
+          30%  { transform: translate(-8px, 5px) rotate(-0.35deg); }
+          40%  { transform: translate(9px, -4px) rotate(0.35deg); }
+          50%  { transform: translate(-7px, 4px) rotate(-0.25deg); }
+          60%  { transform: translate(7px, -5px) rotate(0.25deg); }
+          70%  { transform: translate(-6px, 3px) rotate(-0.2deg); }
+          80%  { transform: translate(6px, -3px) rotate(0.2deg); }
+          90%  { transform: translate(-3px, 2px) rotate(-0.1deg); }
+          100% { transform: translate(0,0) rotate(0deg); }
         }
 
         @keyframes vrSecretNoise{
@@ -284,17 +302,50 @@
       piece.style.height = `${12 + Math.random() * 10}px`;
       piece.style.setProperty("--dx", `${(-140 + Math.random() * 280).toFixed(0)}px`);
       piece.style.setProperty("--rot", `${(-540 + Math.random() * 1080).toFixed(0)}deg`);
-      piece.style.animationDuration = `${1.5 + Math.random() * 1.1}s`;
-      piece.style.animationDelay = `${Math.random() * 0.18}s`;
+      piece.style.animationDuration = `${3.8 + Math.random() * 2.4}s`;
+      piece.style.animationDelay = `${Math.random() * 0.45}s`;
       host.appendChild(piece);
     }
 
     setTimeout(() => {
       if (host) host.innerHTML = "";
-    }, 3200);
+    }, 7600);
   }
 
-  function showSecretOverlay(result) {
+  function typeSecretBodyText(el, text, baseSpeed = 18) {
+    if (!el) return Promise.resolve();
+
+    const fullText = String(text || "");
+    el.textContent = "";
+    el.classList.add("is-typing");
+
+    return new Promise((resolve) => {
+      let i = 0;
+
+      function tick() {
+        el.textContent = fullText.slice(0, i);
+        i += 1;
+
+        if (i <= fullText.length) {
+          const prev = fullText.charAt(i - 1);
+          let delay = baseSpeed;
+
+          if (prev === "\n") delay = 120;
+          else if (/[.!?…]/.test(prev)) delay = 140;
+          else if (/[,;:]/.test(prev)) delay = 80;
+
+          setTimeout(tick, delay);
+        } else {
+          el.classList.remove("is-typing");
+          resolve();
+        }
+      }
+
+      tick();
+    });
+  }
+
+  async function showSecretOverlay(result) {
     ensureSecretOverlay();
 
     const overlay = document.getElementById("vrSecretOverlay");
@@ -312,17 +363,20 @@
     const credited = !!result?.credited;
     const rewardAmount = Number(result?.reward || 0) || 0;
 
-    title.textContent = credited
+    const titleText = credited
       ? _t("profile.secretTitleClaimed", "")
       : _t("profile.secretTitleSeen", "");
 
-    body.textContent = credited
+    const bodyText = credited
       ? _t("profile.secretBodyClaimed", "")
       : _t("profile.secretBodySeen", "");
 
+    title.textContent = titleText;
+    body.textContent = "";
+
     rewardLabel.textContent = _t("profile.secretRewardLabel", "");
     rewardValue.textContent = `+${rewardAmount}`;
-    reward.hidden = !credited;
+    reward.hidden = true;
 
     closeBtn.textContent = _t("common.continue", "Continue");
 
@@ -331,9 +385,15 @@
 
     setTimeout(() => {
       overlay.classList.remove("is-glitch");
-    }, 900);
+    }, 2800);
 
-    if (credited) spawnSecretConfetti();
+    await typeSecretBodyText(body, bodyText, 18);
+
+    reward.hidden = !credited;
+
+    if (credited) {
+      spawnSecretConfetti();
+    }
 
     return new Promise((resolve) => {
       overlay.__resolve = resolve;
