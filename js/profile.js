@@ -50,8 +50,9 @@
           display: flex;
         }
 
-        #vrSecretOverlay.is-glitch{
-          animation: vrSecretShake .85s linear 4;
+        body.vr-secret-screen-shake{
+          animation: vrSecretShake .9s linear 3;
+          transform-origin: center center;
         }
 
         #vrSecretOverlay .vr-secret-noise{
@@ -80,6 +81,7 @@
 
         #vrSecretOverlay .vr-secret-panel{
           position: relative;
+          z-index: 10;
           width: min(560px, 100%);
           border-radius: 24px;
           padding: 24px 18px 18px;
@@ -170,6 +172,7 @@
           inset: 0;
           pointer-events: none;
           overflow: hidden;
+          z-index: 5;
         }
 
         #vrSecretOverlay .vr-secret-piece{
@@ -278,8 +281,14 @@
     const overlay = document.getElementById("vrSecretOverlay");
     if (!overlay || !overlay.classList.contains("is-open")) return;
 
-    overlay.classList.remove("is-open", "is-glitch");
-    try { document.body.classList.remove("vr-secret-active"); } catch (_) {}
+    overlay.classList.remove("is-open");
+    try {
+      document.body.classList.remove("vr-secret-active");
+      document.body.classList.remove("vr-secret-screen-shake");
+    } catch (_) {}
+
+    const confetti = document.getElementById("vrSecretConfetti");
+    if (confetti) confetti.innerHTML = "";
 
     const done = overlay.__resolve;
     overlay.__resolve = null;
@@ -291,25 +300,26 @@
     if (!host) return;
 
     host.innerHTML = "";
-    const colors = ["#ffffff", "#ffd84d", "#8dd6ff", "#ff8ad8", "#9effa5"];
+    const colors = ["#ffffff", "#ffd84d", "#8dd6ff", "#ff8ad8", "#9effa5", "#ffb347"];
 
-    for (let i = 0; i < 42; i += 1) {
+    for (let i = 0; i < 90; i += 1) {
       const piece = document.createElement("span");
       piece.className = "vr-secret-piece";
       piece.style.left = `${Math.random() * 100}%`;
       piece.style.background = colors[i % colors.length];
-      piece.style.width = `${8 + Math.random() * 6}px`;
-      piece.style.height = `${12 + Math.random() * 10}px`;
-      piece.style.setProperty("--dx", `${(-140 + Math.random() * 280).toFixed(0)}px`);
-      piece.style.setProperty("--rot", `${(-540 + Math.random() * 1080).toFixed(0)}deg`);
-      piece.style.animationDuration = `${3.8 + Math.random() * 2.4}s`;
-      piece.style.animationDelay = `${Math.random() * 0.45}s`;
+      piece.style.width = `${6 + Math.random() * 10}px`;
+      piece.style.height = `${10 + Math.random() * 16}px`;
+      piece.style.borderRadius = `${2 + Math.random() * 4}px`;
+      piece.style.setProperty("--dx", `${(-220 + Math.random() * 440).toFixed(0)}px`);
+      piece.style.setProperty("--rot", `${(-900 + Math.random() * 1800).toFixed(0)}deg`);
+      piece.style.animationDuration = `${4.8 + Math.random() * 2.8}s`;
+      piece.style.animationDelay = `${Math.random() * 0.7}s`;
       host.appendChild(piece);
     }
 
     setTimeout(() => {
       if (host) host.innerHTML = "";
-    }, 7600);
+    }, 9000);
   }
 
   function typeSecretBodyText(el, text, baseSpeed = 18) {
@@ -380,20 +390,28 @@
 
     closeBtn.textContent = _t("common.continue", "Continue");
 
-    try { document.body.classList.add("vr-secret-active"); } catch (_) {}
-    overlay.classList.add("is-open", "is-glitch");
+    try {
+      document.body.classList.add("vr-secret-active");
+      document.body.classList.add("vr-secret-screen-shake");
+    } catch (_) {}
 
-    setTimeout(() => {
-      overlay.classList.remove("is-glitch");
-    }, 2800);
+    await new Promise((resolve) => setTimeout(resolve, 2200));
+
+    try {
+      document.body.classList.remove("vr-secret-screen-shake");
+    } catch (_) {}
+
+    overlay.classList.add("is-open");
+
+    if (credited) {
+      setTimeout(() => {
+        spawnSecretConfetti();
+      }, 180);
+    }
 
     await typeSecretBodyText(body, bodyText, 18);
 
     reward.hidden = !credited;
-
-    if (credited) {
-      spawnSecretConfetti();
-    }
 
     return new Promise((resolve) => {
       overlay.__resolve = resolve;
