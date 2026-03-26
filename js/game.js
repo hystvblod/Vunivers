@@ -2553,7 +2553,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
           try { await window.VRAds?.maybeShowInterstitialOnReturnToIndex?.(); } catch (_) {}
           try { prepareMusicPromptOnNextIndex(this.universeId); } catch (_) {}
-          try { window.VROneSignal?.preparePromptOnNextIndex?.(); } catch (_) {}
+          try { window.VROneSignal?.markPromptPendingOnNextIndex?.(); } catch (_) {}
           try { this._clearRunSave(); } catch (_) {}
           try { window.location.href = "index.html"; } catch (_) {}
         };
@@ -3125,7 +3125,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
             try { await window.VRAds?.maybeShowInterstitialOnReturnToIndex?.(); } catch (_) {}
             try { prepareMusicPromptOnNextIndex(this.universeId); } catch (_) {}
-            try { window.VROneSignal?.preparePromptOnNextIndex?.(); } catch (_) {}
+            try { window.VROneSignal?.markPromptPendingOnNextIndex?.(); } catch (_) {}
             try { window.location.href = "index.html"; } catch (_) {}
             return;
           }
@@ -4305,8 +4305,7 @@ function onGaugeSet(gaugeId) {
     try { window.VRSave?.clear?.(INTRO_ID); } catch (_) {}
     try { localStorage.setItem("vrealms_intro_done", "1"); } catch (_) {}
     try { localStorage.setItem("vrealms_intro_just_finished", "1"); } catch (_) {}
-    try { window.VROneSignal?.markRealGamePlayed?.(); } catch (_) {}
-    try { window.VROneSignal?.preparePromptOnNextIndex?.(); } catch (_) {}
+    try { window.VROneSignal?.markPromptPendingOnNextIndex?.(); } catch (_) {}
     try { localStorage.setItem("vrealms_universe", "hell_king"); } catch (_) {}
     try { window.location.href = "index.html"; } catch (_) {}
   }
