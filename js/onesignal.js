@@ -17,7 +17,6 @@
 
   function getOS() {
     try {
-      if (window.OneSignal) return window.OneSignal;
       if (window.plugins && window.plugins.OneSignal) return window.plugins.OneSignal;
     } catch (_) {}
     return null;
@@ -101,21 +100,30 @@
     if (initialized) return true;
 
     const OS = getOS();
-    if (!OS) return false;
+    if (!OS) {
+      console.warn("[OneSignal] window.plugins.OneSignal introuvable");
+      return false;
+    }
 
     try {
+      if (OS.Debug && typeof OS.Debug.setLogLevel === "function") {
+        OS.Debug.setLogLevel(6);
+      }
+
       if (typeof OS.initialize === "function") {
         OS.initialize(ONESIGNAL_APP_ID);
       } else if (typeof OS.setAppId === "function") {
         OS.setAppId(ONESIGNAL_APP_ID);
       } else {
+        console.warn("[OneSignal] initialize/setAppId introuvable sur window.plugins.OneSignal", Object.keys(OS || {}));
         return false;
       }
 
       initialized = true;
       await syncExternalId();
       return true;
-    } catch (_) {
+    } catch (e) {
+      console.warn("[OneSignal] initOneSignal() error", e);
       return false;
     }
   }
@@ -163,7 +171,7 @@
 
     try {
       if (OS.Notifications && typeof OS.Notifications.requestPermission === "function") {
-        const accepted = await OS.Notifications.requestPermission(true);
+        const accepted = await OS.Notifications.requestPermission(false);
         console.log("[OneSignal] Native permission result:", accepted);
         return { attempted: true, accepted: !!accepted };
       }
