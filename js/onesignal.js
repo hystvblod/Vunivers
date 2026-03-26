@@ -187,20 +187,25 @@
   async function requestNativePermission() {
     const bootOk = await bootOneSignal();
     if (!bootOk) {
+      console.warn("[OneSignal] bootOneSignal() failed");
       return { attempted: false, accepted: false };
     }
 
     const OS = getOS();
     if (!OS) {
+      console.warn("[OneSignal] getOS() returned null");
       return { attempted: false, accepted: false };
     }
 
     try {
       if (OS.Notifications && typeof OS.Notifications.requestPermission === "function") {
         const accepted = await OS.Notifications.requestPermission(true);
+        console.log("[OneSignal] Native permission result:", accepted);
         return { attempted: true, accepted: !!accepted };
       }
-    } catch (_) {}
+    } catch (e) {
+      console.warn("[OneSignal] Notifications.requestPermission failed", e);
+    }
 
     try {
       if (typeof OS.promptForPushNotificationsWithUserResponse === "function") {
@@ -209,10 +214,14 @@
             resolve(!!ok);
           });
         });
+        console.log("[OneSignal] Legacy native permission result:", accepted);
         return { attempted: true, accepted: !!accepted };
       }
-    } catch (_) {}
+    } catch (e) {
+      console.warn("[OneSignal] Legacy prompt failed", e);
+    }
 
+    console.warn("[OneSignal] No native permission API available");
     return { attempted: false, accepted: false };
   }
 
@@ -330,28 +339,22 @@
     indexPromptStarted = true;
 
     try {
-      const acceptedSoft = await showPrePrompt();
-
-      if (!acceptedSoft) {
-        indexPromptStarted = false;
-        lsDel(K_PENDING_INDEX_PROMPT);
-        clearRealGamePlayed();
-        return false;
-      }
-
       const result = await requestNativePermission();
 
+      lsDel(K_PENDING_INDEX_PROMPT);
+      clearRealGamePlayed();
+      indexPromptStarted = false;
+
       if (!result || !result.attempted) {
-        indexPromptStarted = false;
         return false;
       }
 
       lsSet(K_PROMPT_SHOWN, "1");
+      return !!result.accepted;
+    } catch (e) {
+      console.warn("[OneSignal] maybePromptOnIndexAfterGameReturn failed", e);
       lsDel(K_PENDING_INDEX_PROMPT);
       clearRealGamePlayed();
-
-      return !!result.accepted;
-    } catch (_) {
       indexPromptStarted = false;
       return false;
     }
