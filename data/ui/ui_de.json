@@ -58,16 +58,15 @@
     "settings_ads_personalized_label": "Personalisierte Werbung",
     "settings_ads_personalized_desc": "Erlaube relevantere Werbung. Du kannst dies jederzeit ändern.",
     "settings_ads_saved": "Werbeeinstellung gespeichert.",
-    "settings_music_label": "Musik",
-    "settings_music_desc": "Die Hintergrundmusik der Universen ein- oder ausschalten.",
-    "settings_music_saved": "Musikeinstellung gespeichert.",
-
+    "settings_music_label": "Audio",
+    "settings_music_desc": "Alle Spielsounds aktivieren oder stummschalten.",
+    "settings_music_saved": "Audioeinstellung gespeichert.",
     "music_prompt": {
-      "title": "Musik",
-      "text": "Möchtest du die Hintergrundmusik aktivieren?",
-      "note": "Du kannst diese Auswahl später jederzeit in den Einstellungen ändern.",
-      "disable": "Jetzt nicht",
-      "enable": "Aktivieren"
+      "title": "Audio",
+      "text": "Möchtest du den Ton aktiviert lassen?",
+      "note": "Du kannst diese Wahl später jederzeit in den Einstellungen ändern.",
+      "disable": "Stummschalten",
+      "enable": "Aktiv lassen"
     },
     "settings_privacy_options_label": "Datenschutzoptionen",
     "settings_privacy_options_desc": "Öffne das Google-Formular, um deine Werbeentscheidungen zu prüfen oder zu ändern.",

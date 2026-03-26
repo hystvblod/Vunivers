@@ -910,13 +910,20 @@
         const on = !!enabled;
 
         try { localStorage.setItem("vrealms_music_enabled", on ? "1" : "0"); } catch (_) {}
+        try { localStorage.setItem("vrealms_sfx_enabled", on ? "1" : "0"); } catch (_) {}
 
         try {
           window.VRAudio?.setMusicEnabled?.(on);
         } catch (_) {}
 
+        try {
+          window.VRAudio?.setSfxEnabled?.(on);
+        } catch (_) {}
+
         if (on) {
           try { window.VRAudio?.startMenuBg?.(); } catch (_) {}
+        } else {
+          try { window.VRAudio?.stopBackground?.(); } catch (_) {}
         }
       }
 
