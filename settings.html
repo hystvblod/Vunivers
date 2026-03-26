@@ -823,7 +823,7 @@
       let ok = false;
 
       try {
-        ok = !!(await window.VRAds?.openGooglePrivacyOptionsForm?.());
+        ok = !!(await window.VRAds?.showGooglePrivacyOptionsForm?.());
       } catch (_) {}
 
       const msg = $("settingsMsg");
