@@ -4,6 +4,7 @@
 // - BGM via HTMLAudioElement
 // - pas de verrou par interaction
 // - SFX simples
+// - reprise propre du menu_bg entre pages menu
 // ===============================================
 (function () {
   "use strict";
@@ -44,6 +45,9 @@
       }
     }
   };
+
+  const MENU_BG_RESUME_KEY = "vrealms_menu_bg_resume_v1";
+  const MENU_BG_MAX_RESUME_AGE_MS = 8000;
 
   const state = {
     currentUniverse: null,
@@ -87,6 +91,120 @@
     } catch (_) {
       return fallback;
     }
+  }
+
+  function getMenuBgAbsolutePath() {
+    const path = AUDIO_BANK.ui?.menu?.bg || "";
+    return path ? new URL(path, document.baseURI).href : "";
+  }
+
+  function readSessionJSON(key) {
+    try {
+      const raw = sessionStorage.getItem(key);
+      if (!raw) return null;
+      return JSON.parse(raw);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function writeSessionJSON(key, value) {
+    try {
+      sessionStorage.setItem(key, JSON.stringify(value));
+    } catch (_) {}
+  }
+
+  function clearMenuBgResume() {
+    try { sessionStorage.removeItem(MENU_BG_RESUME_KEY); } catch (_) {}
+  }
+
+  function isCurrentBgMenuTrack() {
+    const menuAbsolute = getMenuBgAbsolutePath();
+    if (!menuAbsolute) return false;
+    return state.bgPath === menuAbsolute;
+  }
+
+  function saveMenuBgResume() {
+    const a = state.bg;
+    if (!a) return;
+    if (!isCurrentBgMenuTrack()) return;
+
+    const currentTime = Number(a.currentTime || 0);
+    if (!Number.isFinite(currentTime) || currentTime < 0) return;
+
+    writeSessionJSON(MENU_BG_RESUME_KEY, {
+      currentTime,
+      savedAt: Date.now()
+    });
+  }
+
+  function getMenuBgResumeTime(duration) {
+    const payload = readSessionJSON(MENU_BG_RESUME_KEY);
+    if (!payload) return null;
+
+    const savedAt = Number(payload.savedAt || 0);
+    const currentTime = Number(payload.currentTime || 0);
+
+    if (!Number.isFinite(savedAt) || !Number.isFinite(currentTime)) return null;
+
+    const ageMs = Date.now() - savedAt;
+    if (ageMs < 0 || ageMs > MENU_BG_MAX_RESUME_AGE_MS) return null;
+
+    let resumeTime = currentTime + (ageMs / 1000);
+
+    if (Number.isFinite(duration) && duration > 0) {
+      resumeTime = resumeTime % duration;
+    }
+
+    return Math.max(0, resumeTime);
+  }
+
+  function applyMenuResumeIfNeeded(audioEl) {
+    if (!audioEl) return;
+    if (!isCurrentBgMenuTrack()) return;
+
+    const doApply = () => {
+      const t = getMenuBgResumeTime(audioEl.duration);
+      if (t == null) return;
+      try {
+        audioEl.currentTime = t;
+      } catch (_) {}
+    };
+
+    if (audioEl.readyState >= 1) {
+      doApply();
+      return;
+    }
+
+    audioEl.addEventListener("loadedmetadata", doApply, { once: true });
+  }
+
+  function fadeBgTo(target, ms = 120) {
+    const a = state.bg;
+    if (!a) return;
+
+    const start = Number(a.volume || 0);
+    const end = clamp(target, 0, 1);
+    const duration = Math.max(0, Number(ms) || 0);
+
+    if (duration <= 0 || start === end) {
+      a.volume = end;
+      return;
+    }
+
+    const steps = Math.max(1, Math.round(duration / 16));
+    const delta = (end - start) / steps;
+    let currentStep = 0;
+
+    const timer = window.setInterval(() => {
+      currentStep += 1;
+      if (currentStep >= steps) {
+        window.clearInterval(timer);
+        a.volume = end;
+        return;
+      }
+      a.volume = clamp(start + (delta * currentStep), 0, 1);
+    }, Math.max(10, Math.floor(duration / steps)));
   }
 
   function resolveUniverseId(universeId) {
@@ -141,12 +259,15 @@
     return a;
   }
 
-  async function tryPlayBg() {
+  async function tryPlayBg(opts = {}) {
+    const { fadeIn = false } = opts || {};
+
     const a = ensureBg();
     if (!state.musicEnabled) return;
     if (!a.src) return;
 
-    a.volume = clamp(state.musicVolume, 0, 1);
+    const targetVolume = clamp(state.musicVolume, 0, 1);
+    a.volume = fadeIn ? 0 : targetVolume;
 
     try {
       const p = a.play();
@@ -154,6 +275,10 @@
         await p;
       }
       state.pendingBgRetry = false;
+
+      if (fadeIn) {
+        fadeBgTo(targetVolume, 120);
+      }
     } catch (err) {
       state.pendingBgRetry = true;
       console.warn("[VRAudio] autoplay bg bloqué :", err);
@@ -166,6 +291,10 @@
 
     try { a.pause(); } catch (_) {}
     try { a.currentTime = 0; } catch (_) {}
+  }
+
+  function shouldUseUniverseBg() {
+    return document.body?.dataset?.page === "game";
   }
 
   async function startMenuBg() {
@@ -188,13 +317,19 @@
       return;
     }
 
-    try { a.pause(); } catch (_) {}
-    a.src = path;
-    a.load();
-    state.bgPath = absolute;
-    a.volume = clamp(state.musicVolume, 0, 1);
+    const isTrackChange = state.bgPath !== absolute;
 
-    await tryPlayBg();
+    try { a.pause(); } catch (_) {}
+
+    if (isTrackChange) {
+      a.src = path;
+      state.bgPath = absolute;
+      applyMenuResumeIfNeeded(a);
+      a.load();
+    }
+
+    a.volume = 0;
+    await tryPlayBg({ fadeIn: true });
   }
 
   async function startUniverseBg(universeId, opts = {}) {
@@ -284,13 +419,20 @@
     const a = ensureBg();
 
     if (!state.musicEnabled) {
+      saveMenuBgResume();
       try { a.pause(); } catch (_) {}
       a.volume = 0;
       return;
     }
 
     a.volume = clamp(state.musicVolume, 0, 1);
-    startUniverseBg(state.currentUniverse || localStorage.getItem("vrealms_universe") || "hell_king");
+
+    if (shouldUseUniverseBg()) {
+      startUniverseBg(state.currentUniverse || localStorage.getItem("vrealms_universe") || "hell_king");
+      return;
+    }
+
+    startMenuBg();
   }
 
   function setSfxEnabled(enabled) {
@@ -316,6 +458,10 @@
   function init() {
     ensureBg();
 
+    window.addEventListener("pagehide", () => {
+      saveMenuBgResume();
+    });
+
     window.addEventListener("pageshow", () => {
       if (state.musicEnabled && !document.hidden) {
         tryPlayBg();
@@ -326,6 +472,7 @@
       const a = ensureBg();
 
       if (document.hidden) {
+        saveMenuBgResume();
         try { a.pause(); } catch (_) {}
         return;
       }
