@@ -1145,15 +1145,26 @@ return ok;
 
       const self = this;
       const out = await queueRemote(async () => {
-        const newv = await window.VRRemoteStore.addVcoins(d);
-        if (typeof newv === "number" && !Number.isNaN(newv)) {
-          _memState.vcoins = _clampInt(newv);
+        const before = self.getVcoins();
+        const raw = await window.VRRemoteStore.addVcoins(d);
+
+        try {
+          const me = await window.VRRemoteStore.getMe();
+          if (me && typeof me === "object") {
+            _applyMergedRemote(me);
+            return self.getVcoins();
+          }
+        } catch (_) {}
+
+        const candidate = Number(raw);
+        if (Number.isFinite(candidate) && candidate >= (before + d)) {
+          _memState.vcoins = _clampInt(candidate);
           _memState.updated_at = Date.now();
           _emitProfile();
           _persistLocal();
           return _memState.vcoins;
         }
-        await self.refresh().catch(() => false);
+
         return self.getVcoins();
       }, "VUserData.addVcoinsAsync");
 
