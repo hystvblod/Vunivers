@@ -164,7 +164,9 @@
       "err_unlock_after_iap": "Achat validé, mais déblocage impossible pour le moment. Réessaie depuis la boutique."
     },
     "settings_licenses_label": "Licences",
-    "settings_open_licenses_aria": "Ouvrir les licences"
+    "settings_open_licenses_aria": "Ouvrir les licences",
+    "faq_q14": "Il existe des secrets dans l’app ?",
+    "faq_a14": "Parfois, certains endroits réagissent à des idées un peu absurdes. Comme taper thomaslucasprout dans la barre de pseudo par exemple... quelle idée."
   },
   "gauges": {
     "hell_king": {
@@ -374,7 +376,13 @@
     "badgeUnlockGold": "Débloqué à partir de 100 choix dans une partie.",
     "badge_bronze_aria": "Agrandir le badge bronze",
     "badge_silver_aria": "Agrandir le badge argent",
-    "badge_gold_aria": "Agrandir le badge or"
+    "badge_gold_aria": "Agrandir le badge or",
+    "secretTitleClaimed": "Tu as découvert un secret",
+    "secretBodyClaimed": "Celui d’un tonton qui prend plaisir à embêter ses neveux.\nEt NON ! C’est EUX les prouts, pas moi.\nEt d’ailleurs, comment tu sais ça toi ?\nMais qui lit les FAQ ??\nÇa va ? Tu te sens bien ?\nAllez tiens, un petit cadeau.",
+    "secretTitleSeen": "Le secret est déjà découvert",
+    "secretBodySeen": "Oui, oui, tu l’as déjà réveillé une fois.\nLe petit glitch revient, mais le cadeau a déjà été récupéré.",
+    "secretRewardLabel": "Cadeau secret",
+    "secretErrGeneric": "Le secret a bien été trouvé, mais une erreur a empêché l’ouverture correcte."
   },
   "shop": {
     "title": "BOUTIQUE",

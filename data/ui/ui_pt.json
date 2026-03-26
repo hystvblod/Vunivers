@@ -164,7 +164,9 @@
       "err_unlock_after_iap": "Compra validada, mas desbloqueio impossível por agora. Tenta novamente a partir da loja."
     },
     "settings_licenses_label": "Licenças",
-    "settings_open_licenses_aria": "Abrir licenças"
+    "settings_open_licenses_aria": "Abrir licenças",
+    "faq_q14": "Existem segredos na app?",
+    "faq_a14": "Às vezes, certos lugares reagem a ideias um pouco absurdas. Como escrever thomaslucasprout na barra do nome de utilizador, por exemplo... que ideia."
   },
   "gauges": {
     "hell_king": {
@@ -373,7 +375,13 @@
     "badgeUnlockGold": "Desbloqueado a partir de 100 escolhas numa partida.",
     "badge_bronze_aria": "Ampliar o emblema de bronze",
     "badge_silver_aria": "Ampliar o emblema de prata",
-    "badge_gold_aria": "Ampliar o emblema de ouro"
+    "badge_gold_aria": "Ampliar o emblema de ouro",
+    "secretTitleClaimed": "Descobriste um segredo",
+    "secretBodyClaimed": "O de um tio que gosta de implicar com os sobrinhos.\nE NÃO! Os peidolas são ELES, não eu.\nE já agora, como é que sabes isso?\nMas quem lê as FAQ??\nEstá tudo bem?\nSentes-te bem?\nToma lá, um pequeno presente.",
+    "secretTitleSeen": "O segredo já foi descoberto",
+    "secretBodySeen": "Sim, sim, já o ativaste uma vez.\nO pequeno glitch volta, mas o presente já foi resgatado.",
+    "secretRewardLabel": "Presente secreto",
+    "secretErrGeneric": "O segredo foi encontrado, mas um erro impediu a abertura correta."
   },
   "shop": {
     "title": "LOJA",

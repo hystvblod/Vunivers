@@ -165,7 +165,9 @@
       "err_unlock_after_iap": "Kauf bestätigt, aber Freischaltung derzeit nicht möglich. Versuche es erneut im Shop."
     },
     "settings_licenses_label": "Lizenzen",
-    "settings_open_licenses_aria": "Lizenzen öffnen"
+    "settings_open_licenses_aria": "Lizenzen öffnen",
+    "faq_q14": "Gibt es Geheimnisse in der App?",
+    "faq_a14": "Manche Stellen reagieren auf etwas absurde Ideen. Zum Beispiel thomaslucasprout in das Namensfeld einzugeben... was für eine Idee."
   },
   "gauges": {
     "hell_king": {
@@ -374,7 +376,13 @@
     "badgeUnlockGold": "Wird ab 100 Entscheidungen in einer Partie freigeschaltet.",
     "badge_bronze_aria": "Bronze-Abzeichen vergrößern",
     "badge_silver_aria": "Silber-Abzeichen vergrößern",
-    "badge_gold_aria": "Gold-Abzeichen vergrößern"
+    "badge_gold_aria": "Gold-Abzeichen vergrößern",
+    "secretTitleClaimed": "Du hast ein Geheimnis entdeckt",
+    "secretBodyClaimed": "Das eines Onkels, der seine Neffen liebend gern ärgert.\nUnd NEIN! Die Pupser sind SIE, nicht ich.\nUnd woher weißt du das überhaupt?\nWer liest bitte die FAQ??\nAlles okay?\nGeht’s dir gut?\nNa los, hier ist ein kleines Geschenk.",
+    "secretTitleSeen": "Das Geheimnis wurde schon entdeckt",
+    "secretBodySeen": "Ja, ja, du hast es schon einmal ausgelöst.\nDer kleine Glitch kommt wieder, aber das Geschenk wurde bereits abgeholt.",
+    "secretRewardLabel": "Geheimes Geschenk",
+    "secretErrGeneric": "Das Geheimnis wurde gefunden, aber ein Fehler hat die korrekte Anzeige verhindert."
   },
   "shop": {
     "title": "SHOP",
