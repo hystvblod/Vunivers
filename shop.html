@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title data-i18n="shop.title"></title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="preload" href="assets/audio/bg.mp3" as="audio">
 
   <style>
     :root{
@@ -1102,114 +1101,5 @@ body.page-shop .vr-cos-dot{
   <script src="js/shop.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/crossPromo.js"></script>
-  <audio id="bgMusic" loop preload="auto" playsinline>
-    <source src="assets/audio/bg.mp3" type="audio/mpeg">
-  </audio>
-
-  <script>
-  (function () {
-    const audio = document.getElementById('bgMusic');
-    if (!audio) return;
-
-    const KEY_ENABLED = 'app_music_enabled';
-    const KEY_MUTED = 'app_music_muted';
-    const KEY_VOLUME = 'app_music_volume';
-    const KEY_TIME = 'app_music_time';
-    const KEY_SAVED_AT = 'app_music_saved_at';
-    const KEY_UNLOCKED = 'app_music_unlocked';
-
-    const enabled = sessionStorage.getItem(KEY_ENABLED) !== '0';
-    const muted = sessionStorage.getItem(KEY_MUTED) === '1';
-    const volume = parseFloat(sessionStorage.getItem(KEY_VOLUME) || '1');
-
-    audio.muted = muted;
-    audio.volume = Math.max(0, Math.min(1, volume));
-
-    function saveState() {
-      try {
-        sessionStorage.setItem(KEY_TIME, String(audio.currentTime || 0));
-        sessionStorage.setItem(KEY_SAVED_AT, String(Date.now()));
-        sessionStorage.setItem(KEY_MUTED, audio.muted ? '1' : '0');
-        sessionStorage.setItem(KEY_VOLUME, String(audio.volume));
-        sessionStorage.setItem(KEY_ENABLED, enabled ? '1' : '0');
-      } catch (e) {}
-    }
-
-    function computeResumeTime(duration) {
-      const savedTime = parseFloat(sessionStorage.getItem(KEY_TIME) || '0');
-      const savedAt = parseInt(sessionStorage.getItem(KEY_SAVED_AT) || '0', 10);
-      const delta = savedAt ? (Date.now() - savedAt) / 1000 : 0;
-      let t = savedTime + Math.max(0, delta);
-
-      if (Number.isFinite(duration) && duration > 0) {
-        t = t % duration;
-      }
-
-      return Math.max(0, t);
-    }
-
-    function fadeInTo(targetVolume, ms) {
-      const steps = 8;
-      const stepMs = Math.max(10, Math.floor(ms / steps));
-      let i = 0;
-      audio.volume = 0;
-
-      const timer = setInterval(() => {
-        i++;
-        audio.volume = targetVolume * (i / steps);
-        if (i >= steps) clearInterval(timer);
-      }, stepMs);
-    }
-
-    async function tryStart() {
-      if (!enabled) return;
-
-      const baseVolume = Math.max(0, Math.min(1, volume));
-      const resume = () => {
-        const targetTime = computeResumeTime(audio.duration);
-        try {
-          audio.currentTime = targetTime;
-        } catch (e) {}
-
-        const p = audio.play();
-        if (p && typeof p.then === 'function') {
-          p.then(() => {
-            fadeInTo(baseVolume, 120);
-          }).catch(() => {
-            // si bloqué par autoplay, on attend le prochain vrai clic
-          });
-        }
-      };
-
-      if (audio.readyState >= 1) {
-        resume();
-      } else {
-        audio.addEventListener('loadedmetadata', resume, { once: true });
-      }
-    }
-
-    function unlockAndStart() {
-      sessionStorage.setItem(KEY_UNLOCKED, '1');
-      tryStart();
-      window.removeEventListener('pointerdown', unlockAndStart);
-      window.removeEventListener('keydown', unlockAndStart);
-    }
-
-    window.addEventListener('pagehide', saveState);
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'hidden') saveState();
-    });
-
-    // si le site a déjà eu une interaction avant, on tente direct
-    // sinon on attend le prochain clic/tap
-    if (sessionStorage.getItem(KEY_UNLOCKED) === '1') {
-      tryStart();
-    } else {
-      window.addEventListener('pointerdown', unlockAndStart, { once: true });
-      window.addEventListener('keydown', unlockAndStart, { once: true });
-    }
-  })();
-  </script>
-
 </body>
 </html>
