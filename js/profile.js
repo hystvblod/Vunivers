@@ -15,6 +15,404 @@
 
   const BADGES_STORAGE_KEY = "vuniverse_badges_v1";
 
+  const SECRET_USERNAME_CODE = "thomaslucasprout";
+  const SECRET_REWARD_VCOINS = 150;
+  const SECRET_PROFILE_FIELD = "secret_thomas_lucas_prout_claimed";
+
+  function _secretNorm(v) {
+    return String(v || "").trim().toLowerCase();
+  }
+
+  function ensureSecretOverlay() {
+    if (!document.getElementById("vrSecretStyle")) {
+      const style = document.createElement("style");
+      style.id = "vrSecretStyle";
+      style.textContent = `
+        body.vr-secret-active > *:not(#vrSecretOverlay){
+          filter: grayscale(.82) contrast(1.06) brightness(.92);
+        }
+
+        #vrSecretOverlay{
+          position: fixed;
+          inset: 0;
+          z-index: 99999;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          padding: 18px;
+          background: rgba(0,0,0,.78);
+          backdrop-filter: blur(3px);
+          -webkit-backdrop-filter: blur(3px);
+          overflow: hidden;
+        }
+
+        #vrSecretOverlay.is-open{
+          display: flex;
+        }
+
+        #vrSecretOverlay.is-glitch{
+          animation: vrSecretShake .46s linear 2;
+        }
+
+        #vrSecretOverlay .vr-secret-noise{
+          position: absolute;
+          inset: -15%;
+          pointer-events: none;
+          opacity: .22;
+          background:
+            repeating-linear-gradient(
+              180deg,
+              rgba(255,255,255,.10) 0px,
+              rgba(255,255,255,.10) 1px,
+              transparent 2px,
+              transparent 4px
+            ),
+            repeating-linear-gradient(
+              90deg,
+              rgba(255,255,255,.05) 0px,
+              rgba(255,255,255,.05) 1px,
+              transparent 2px,
+              transparent 6px
+            );
+          mix-blend-mode: screen;
+          animation: vrSecretNoise .16s steps(2) infinite;
+        }
+
+        #vrSecretOverlay .vr-secret-panel{
+          position: relative;
+          width: min(560px, 100%);
+          border-radius: 24px;
+          padding: 24px 18px 18px;
+          border: 1px solid rgba(255,255,255,.12);
+          background: linear-gradient(180deg, rgba(23,27,40,.96), rgba(10,12,18,.98));
+          box-shadow: 0 24px 70px rgba(0,0,0,.5);
+          color: #fff;
+          text-align: center;
+          transform: translateY(10px) scale(.98);
+          animation: vrSecretPanelIn .24s ease forwards;
+        }
+
+        #vrSecretOverlay .vr-secret-title{
+          font-size: clamp(22px, 4.8vw, 32px);
+          font-weight: 1000;
+          line-height: 1.04;
+          margin-bottom: 12px;
+        }
+
+        #vrSecretOverlay .vr-secret-body{
+          font-size: clamp(14px, 3.2vw, 16px);
+          line-height: 1.5;
+          opacity: .95;
+          white-space: pre-line;
+          max-width: 440px;
+          margin: 0 auto 18px;
+        }
+
+        #vrSecretOverlay .vr-secret-reward{
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 12px 18px;
+          border-radius: 999px;
+          margin-bottom: 18px;
+          background: rgba(255,255,255,.08);
+          border: 1px solid rgba(255,255,255,.12);
+        }
+
+        #vrSecretOverlay .vr-secret-reward img{
+          width: 34px;
+          height: 34px;
+          object-fit: contain;
+        }
+
+        #vrSecretOverlay .vr-secret-reward-text{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          line-height: 1.04;
+        }
+
+        #vrSecretOverlay .vr-secret-reward-label{
+          font-size: 11px;
+          letter-spacing: .08em;
+          text-transform: uppercase;
+          opacity: .78;
+        }
+
+        #vrSecretOverlay .vr-secret-reward-value{
+          font-size: 28px;
+          font-weight: 1000;
+          animation: vrSecretBlink 1s ease-in-out infinite;
+        }
+
+        #vrSecretOverlay .vr-secret-btn{
+          min-width: 160px;
+          border: 0;
+          border-radius: 14px;
+          padding: 12px 18px;
+          font-weight: 1000;
+          cursor: pointer;
+          color: #10131b;
+          background: linear-gradient(180deg, #ffffff, #dfe7ff);
+          box-shadow: 0 10px 24px rgba(0,0,0,.22);
+        }
+
+        #vrSecretOverlay .vr-secret-confetti{
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          overflow: hidden;
+        }
+
+        #vrSecretOverlay .vr-secret-piece{
+          position: absolute;
+          top: -10%;
+          width: 10px;
+          height: 18px;
+          border-radius: 3px;
+          opacity: .96;
+          animation-name: vrSecretConfetti;
+          animation-timing-function: ease-out;
+          animation-fill-mode: forwards;
+        }
+
+        @keyframes vrSecretShake{
+          0%   { transform: translate(0,0); }
+          20%  { transform: translate(-6px, 2px); }
+          40%  { transform: translate(6px, -3px); }
+          60%  { transform: translate(-4px, 3px); }
+          80%  { transform: translate(4px, -2px); }
+          100% { transform: translate(0,0); }
+        }
+
+        @keyframes vrSecretNoise{
+          0%   { transform: translate(0,0); }
+          25%  { transform: translate(-1%, 1%); }
+          50%  { transform: translate(1%, -1%); }
+          75%  { transform: translate(1%, 1%); }
+          100% { transform: translate(0,0); }
+        }
+
+        @keyframes vrSecretPanelIn{
+          from { opacity: 0; transform: translateY(16px) scale(.96); }
+          to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes vrSecretConfetti{
+          0%{
+            transform: translate3d(0,0,0) rotate(0deg);
+            opacity: 0;
+          }
+          10%{
+            opacity: 1;
+          }
+          100%{
+            transform: translate3d(var(--dx), 120vh, 0) rotate(var(--rot));
+            opacity: 0;
+          }
+        }
+
+        @keyframes vrSecretBlink{
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: .45; transform: scale(1.08); }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    if (!document.getElementById("vrSecretOverlay")) {
+      const overlay = document.createElement("div");
+      overlay.id = "vrSecretOverlay";
+      overlay.innerHTML = `
+        <div class="vr-secret-noise"></div>
+        <div class="vr-secret-confetti" id="vrSecretConfetti"></div>
+
+        <div class="vr-secret-panel" role="dialog" aria-modal="true">
+          <div class="vr-secret-title" id="vrSecretTitle"></div>
+          <div class="vr-secret-body" id="vrSecretBody"></div>
+
+          <div class="vr-secret-reward" id="vrSecretReward" hidden>
+            <img src="assets/img/ui/vcoins.webp" alt="" draggable="false" />
+            <div class="vr-secret-reward-text">
+              <span class="vr-secret-reward-label" id="vrSecretRewardLabel"></span>
+              <span class="vr-secret-reward-value" id="vrSecretRewardValue"></span>
+            </div>
+          </div>
+
+          <button type="button" class="vr-secret-btn" id="vrSecretCloseBtn"></button>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeSecretOverlay();
+      });
+
+      overlay.querySelector("#vrSecretCloseBtn")?.addEventListener("click", closeSecretOverlay);
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeSecretOverlay();
+      });
+    }
+  }
+
+  function closeSecretOverlay() {
+    const overlay = document.getElementById("vrSecretOverlay");
+    if (!overlay || !overlay.classList.contains("is-open")) return;
+
+    overlay.classList.remove("is-open", "is-glitch");
+    try { document.body.classList.remove("vr-secret-active"); } catch (_) {}
+
+    const done = overlay.__resolve;
+    overlay.__resolve = null;
+    if (typeof done === "function") done();
+  }
+
+  function spawnSecretConfetti() {
+    const host = document.getElementById("vrSecretConfetti");
+    if (!host) return;
+
+    host.innerHTML = "";
+    const colors = ["#ffffff", "#ffd84d", "#8dd6ff", "#ff8ad8", "#9effa5"];
+
+    for (let i = 0; i < 42; i += 1) {
+      const piece = document.createElement("span");
+      piece.className = "vr-secret-piece";
+      piece.style.left = `${Math.random() * 100}%`;
+      piece.style.background = colors[i % colors.length];
+      piece.style.width = `${8 + Math.random() * 6}px`;
+      piece.style.height = `${12 + Math.random() * 10}px`;
+      piece.style.setProperty("--dx", `${(-140 + Math.random() * 280).toFixed(0)}px`);
+      piece.style.setProperty("--rot", `${(-540 + Math.random() * 1080).toFixed(0)}deg`);
+      piece.style.animationDuration = `${1.5 + Math.random() * 1.1}s`;
+      piece.style.animationDelay = `${Math.random() * 0.18}s`;
+      host.appendChild(piece);
+    }
+
+    setTimeout(() => {
+      if (host) host.innerHTML = "";
+    }, 3200);
+  }
+
+  function showSecretOverlay(result) {
+    ensureSecretOverlay();
+
+    const overlay = document.getElementById("vrSecretOverlay");
+    const title = document.getElementById("vrSecretTitle");
+    const body = document.getElementById("vrSecretBody");
+    const reward = document.getElementById("vrSecretReward");
+    const rewardLabel = document.getElementById("vrSecretRewardLabel");
+    const rewardValue = document.getElementById("vrSecretRewardValue");
+    const closeBtn = document.getElementById("vrSecretCloseBtn");
+
+    if (!overlay || !title || !body || !reward || !rewardLabel || !rewardValue || !closeBtn) {
+      return Promise.resolve();
+    }
+
+    const credited = !!result?.credited;
+    const rewardAmount = Number(result?.reward || 0) || 0;
+
+    title.textContent = credited
+      ? _t("profile.secretTitleClaimed", "")
+      : _t("profile.secretTitleSeen", "");
+
+    body.textContent = credited
+      ? _t("profile.secretBodyClaimed", "")
+      : _t("profile.secretBodySeen", "");
+
+    rewardLabel.textContent = _t("profile.secretRewardLabel", "");
+    rewardValue.textContent = `+${rewardAmount}`;
+    reward.hidden = !credited;
+
+    closeBtn.textContent = _t("common.continue", "Continue");
+
+    try { document.body.classList.add("vr-secret-active"); } catch (_) {}
+    overlay.classList.add("is-open", "is-glitch");
+
+    setTimeout(() => {
+      overlay.classList.remove("is-glitch");
+    }, 900);
+
+    if (credited) spawnSecretConfetti();
+
+    return new Promise((resolve) => {
+      overlay.__resolve = resolve;
+    });
+  }
+
+  async function tryClaimProfileSecretOnce() {
+    const sb = window.sb;
+    if (!sb || typeof sb.from !== "function") {
+      return { ok: false, credited: false, reward: 0, first_time: false, reason: "no_client" };
+    }
+
+    const uid = await _ensureAuth();
+    if (!uid) {
+      return { ok: false, credited: false, reward: 0, first_time: false, reason: "no_auth" };
+    }
+
+    try {
+      const claim = await sb
+        .from("profiles")
+        .update({ [SECRET_PROFILE_FIELD]: true })
+        .eq("id", uid)
+        .eq(SECRET_PROFILE_FIELD, false)
+        .select("id")
+        .maybeSingle();
+
+      if (claim?.error) {
+        return { ok: false, credited: false, reward: 0, first_time: false, reason: "claim_failed" };
+      }
+
+      const firstTime = !!claim?.data;
+
+      if (!firstTime) {
+        return { ok: true, credited: false, reward: 0, first_time: false };
+      }
+
+      const newBalance = await window.VUserData?.addVcoinsAsync?.(SECRET_REWARD_VCOINS);
+
+      if (typeof newBalance !== "number" || Number.isNaN(newBalance)) {
+        return { ok: false, credited: false, reward: 0, first_time: true, reason: "credit_failed" };
+      }
+
+      try { await window.VUserData?.refresh?.(); } catch (_) {}
+
+      return {
+        ok: true,
+        credited: true,
+        reward: SECRET_REWARD_VCOINS,
+        first_time: true,
+        vcoins: Number(newBalance || 0) || 0
+      };
+    } catch (_) {
+      return { ok: false, credited: false, reward: 0, first_time: false, reason: "exception" };
+    }
+  }
+
+  async function runProfileSecretFlow() {
+    const result = await tryClaimProfileSecretOnce();
+
+    if (!result.ok) {
+      setMsg("err", "profile.secretErrGeneric");
+      return false;
+    }
+
+    renderProfileFromState();
+
+    try {
+      await window.VRAnalytics?.log?.("profile_secret_found", {
+        code: SECRET_USERNAME_CODE,
+        first_time: !!result.first_time,
+        credited: !!result.credited,
+        reward: Number(result.reward || 0) || 0
+      });
+    } catch (_) {}
+
+    await showSecretOverlay(result);
+    return true;
+  }
+
   const FALLBACK_UNIVERSES = [
     "hell_king",
     "heaven_king",
@@ -652,6 +1050,24 @@
     if (!input) return;
 
     const next = String(input.value || "").trim();
+
+    if (_secretNorm(next) === SECRET_USERNAME_CODE) {
+      const saveBtnSecret = $("pf_save");
+      if (saveBtnSecret) saveBtnSecret.disabled = true;
+
+      try {
+        const ok = await runProfileSecretFlow();
+        if (ok) {
+          const state = window.VUserData?.load?.() || {};
+          input.value = String(state.username || "").trim();
+          openEdit(false);
+          clearMsg();
+        }
+      } finally {
+        if (saveBtnSecret) saveBtnSecret.disabled = false;
+      }
+      return;
+    }
 
     if (!isValidUsername(next)) {
       if (next.length < 3 || next.length > 20) {

@@ -164,7 +164,9 @@
       "err_unlock_after_iap": "Pembelian berhasil, tetapi semesta belum bisa dibuka sekarang. Coba lagi dari toko."
     },
     "settings_licenses_label": "Lisensi",
-    "settings_open_licenses_aria": "Buka lisensi"
+    "settings_open_licenses_aria": "Buka lisensi",
+    "faq_q14": "Apakah ada rahasia di aplikasi ini?",
+    "faq_a14": "Kadang-kadang, beberapa tempat bereaksi terhadap ide yang agak absurd. Misalnya mengetik thomaslucasprout di kolom nama pengguna... ide yang aneh."
   },
   "gauges": {
     "hell_king": {
@@ -373,7 +375,13 @@
     "badgeUnlockGold": "Terbuka mulai 100 pilihan dalam satu permainan.",
     "badge_bronze_aria": "Perbesar lencana perunggu",
     "badge_silver_aria": "Perbesar lencana perak",
-    "badge_gold_aria": "Perbesar lencana emas"
+    "badge_gold_aria": "Perbesar lencana emas",
+    "secretTitleClaimed": "Kamu menemukan sebuah rahasia",
+    "secretBodyClaimed": "Rahasia seorang paman yang senang mengganggu keponakan-keponakannya.\nDan TIDAK! Yang kentut itu MEREKA, bukan aku.\nDan memangnya, kok kamu bisa tahu itu?\nSiapa sih yang baca FAQ??\nKamu baik-baik saja?\nMasih waras?\nNih, hadiah kecil buat kamu.",
+    "secretTitleSeen": "Rahasianya sudah ditemukan",
+    "secretBodySeen": "Iya, iya, kamu sudah memicunya sekali.\nGlitch kecilnya muncul lagi, tapi hadiahnya sudah diambil.",
+    "secretRewardLabel": "Hadiah rahasia",
+    "secretErrGeneric": "Rahasianya berhasil ditemukan, tetapi ada error yang mencegah pembukaan dengan benar."
   },
   "shop": {
     "title": "TOKO",
