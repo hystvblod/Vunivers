@@ -988,18 +988,17 @@
         const introJustFinished = localStorage.getItem("vrealms_intro_just_finished") === "1";
 
         if (introJustFinished) {
-          const umpShown = await window.VRAds?.maybeShowGoogleConsentFormOnIndexAfterIntro?.();
+          try {
+            await window.VRAds?.maybeShowGoogleConsentFormOnIndexAfterIntro?.();
+          } catch (_) {}
 
           try {
             localStorage.removeItem("vrealms_intro_just_finished");
           } catch (_) {}
-
-          if (umpShown) return;
         }
 
         try {
-          const musicShown = await window.VRIndexMusicPrompt?.maybeShowAfterRealGame?.();
-          if (musicShown) return;
+          await window.VRIndexMusicPrompt?.maybeShowAfterRealGame?.();
         } catch (_) {}
 
         try {
