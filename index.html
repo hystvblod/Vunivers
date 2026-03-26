@@ -996,20 +996,24 @@
 
         if (introJustFinished) {
           try {
+            await window.VROneSignal?.maybePromptOnIndexAfterGameReturn?.();
+          } catch (_) {}
+
+          try {
             await window.VRAds?.maybeShowGoogleConsentFormOnIndexAfterIntro?.();
           } catch (_) {}
 
           try {
             localStorage.removeItem("vrealms_intro_just_finished");
           } catch (_) {}
+        } else {
+          try {
+            await window.VROneSignal?.maybePromptOnIndexAfterGameReturn?.();
+          } catch (_) {}
         }
 
         try {
           await window.VRIndexMusicPrompt?.maybeShowAfterRealGame?.();
-        } catch (_) {}
-
-        try {
-          await window.VROneSignal?.maybePromptOnIndexAfterGameReturn?.();
         } catch (_) {}
       } catch (_) {}
     });
