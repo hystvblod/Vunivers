@@ -58,16 +58,15 @@
     "settings_ads_personalized_label": "Personalized ads",
     "settings_ads_personalized_desc": "Allow more relevant ads. You can change this at any time.",
     "settings_ads_saved": "Ad preference saved.",
-    "settings_music_label": "Music",
-    "settings_music_desc": "Turn the universe background music on or off.",
-    "settings_music_saved": "Music preference saved.",
-
+    "settings_music_label": "Audio",
+    "settings_music_desc": "Enable or mute all game sounds.",
+    "settings_music_saved": "Audio preference saved.",
     "music_prompt": {
-      "title": "Music",
-      "text": "Do you want to enable background music?",
+      "title": "Audio",
+      "text": "Do you want to keep audio enabled?",
       "note": "You can always change this later in Settings.",
-      "disable": "Not now",
-      "enable": "Enable"
+      "disable": "Mute",
+      "enable": "Keep enabled"
     },
     "settings_privacy_options_label": "Privacy choices",
     "settings_privacy_options_desc": "Open Google's form to review or change your ad choices.",

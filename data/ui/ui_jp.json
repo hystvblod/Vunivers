@@ -58,16 +58,15 @@
     "settings_ads_personalized_label": "パーソナライズ広告",
     "settings_ads_personalized_desc": "より関連性の高い広告を許可します。この設定はいつでも変更できます。",
     "settings_ads_saved": "広告設定を保存しました。",
-    "settings_music_label": "音楽",
-    "settings_music_desc": "各ユニバースの背景音楽をオンまたはオフにします。",
-    "settings_music_saved": "音楽設定を保存しました。",
-
+    "settings_music_label": "オーディオ",
+    "settings_music_desc": "ゲーム内のすべての音をオンまたはオフにします。",
+    "settings_music_saved": "オーディオ設定を保存しました。",
     "music_prompt": {
-      "title": "音楽",
-      "text": "BGMを有効にしますか？",
-      "note": "この設定はあとで設定画面からいつでも変更できます。",
-      "disable": "今はしない",
-      "enable": "有効にする"
+      "title": "オーディオ",
+      "text": "オーディオを有効のままにしますか？",
+      "note": "この選択は後で設定からいつでも変更できます。",
+      "disable": "オフにする",
+      "enable": "有効のままにする"
     },
     "settings_privacy_options_label": "プライバシー設定",
     "settings_privacy_options_desc": "Googleのフォームを開いて、広告に関する選択を確認または変更します。",

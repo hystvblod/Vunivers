@@ -58,16 +58,15 @@
     "settings_ads_personalized_label": "Publicités personnalisées",
     "settings_ads_personalized_desc": "Autoriser des publicités plus pertinentes. Tu peux changer à tout moment.",
     "settings_ads_saved": "Préférence publicitaire enregistrée.",
-    "settings_music_label": "Musique",
-    "settings_music_desc": "Activer ou couper la musique de fond des univers.",
-    "settings_music_saved": "Préférence musique enregistrée.",
-
+    "settings_music_label": "Audio",
+    "settings_music_desc": "Activer ou couper tous les sons du jeu.",
+    "settings_music_saved": "Préférence audio enregistrée.",
     "music_prompt": {
-      "title": "Musique",
-      "text": "Souhaites-tu activer la musique de fond ?",
+      "title": "Audio",
+      "text": "Souhaites-tu laisser l’audio actif ?",
       "note": "Tu pourras toujours changer ce choix plus tard dans Paramètres.",
-      "disable": "Pas maintenant",
-      "enable": "Activer"
+      "disable": "Couper",
+      "enable": "Laisser actif"
     },
     "settings_privacy_options_label": "Choix de confidentialité",
     "settings_privacy_options_desc": "Ouvrir le formulaire Google pour revoir ou modifier tes choix publicitaires.",

@@ -197,7 +197,7 @@
 
     try {
       if (OS.Notifications && typeof OS.Notifications.requestPermission === "function") {
-        const accepted = await OS.Notifications.requestPermission(false);
+        const accepted = await OS.Notifications.requestPermission(true);
         return { attempted: true, accepted: !!accepted };
       }
     } catch (_) {}
@@ -330,6 +330,15 @@
     indexPromptStarted = true;
 
     try {
+      const acceptedSoft = await showPrePrompt();
+
+      if (!acceptedSoft) {
+        indexPromptStarted = false;
+        lsDel(K_PENDING_INDEX_PROMPT);
+        clearRealGamePlayed();
+        return false;
+      }
+
       const result = await requestNativePermission();
 
       if (!result || !result.attempted) {

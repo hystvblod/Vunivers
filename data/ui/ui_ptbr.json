@@ -58,16 +58,15 @@
     "settings_ads_personalized_label": "Anúncios personalizados",
     "settings_ads_personalized_desc": "Permitir anúncios mais relevantes. Você pode mudar isso a qualquer momento.",
     "settings_ads_saved": "Preferência de anúncios salva.",
-    "settings_music_label": "Música",
-    "settings_music_desc": "Ativar ou desativar a música de fundo dos universos.",
-    "settings_music_saved": "Preferência de música salva.",
-
+    "settings_music_label": "Áudio",
+    "settings_music_desc": "Ative ou desative todos os sons do jogo.",
+    "settings_music_saved": "Preferência de áudio salva.",
     "music_prompt": {
-      "title": "Música",
-      "text": "Você quer ativar a música de fundo?",
-      "note": "Você poderá mudar essa opção depois em Configurações.",
-      "disable": "Agora não",
-      "enable": "Ativar"
+      "title": "Áudio",
+      "text": "Você quer manter o áudio ativado?",
+      "note": "Você sempre poderá mudar essa escolha depois nas Configurações.",
+      "disable": "Desativar",
+      "enable": "Manter ativado"
     },
     "settings_privacy_options_label": "Opções de privacidade",
     "settings_privacy_options_desc": "Abra o formulário do Google para revisar ou alterar suas escolhas de anúncios.",

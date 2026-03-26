@@ -851,20 +851,31 @@
       return true;
     }
 
-    async function setMusicPref(value, { showMsg } = {}){
+    async function setMusicPref(value, { showMsg } = {}) {
       const on = !!value;
 
-      try{ localStorage.setItem("vrealms_music_enabled", on ? "1" : "0"); }catch(_){}
+      try { localStorage.setItem("vrealms_music_enabled", on ? "1" : "0"); } catch (_) {}
+      try { localStorage.setItem("vrealms_sfx_enabled", on ? "1" : "0"); } catch (_) {}
 
-      try{
+      try {
         window.VRAudio?.setMusicEnabled?.(on);
-      }catch(_){}
+      } catch (_) {}
+
+      try {
+        window.VRAudio?.setSfxEnabled?.(on);
+      } catch (_) {}
+
+      if (!on) {
+        try { window.VRAudio?.stopBackground?.(); } catch (_) {}
+      } else {
+        try { window.VRAudio?.startMenuBg?.(); } catch (_) {}
+      }
 
       const box = $("musicEnabled");
-      if(box) box.checked = on;
+      if (box) box.checked = on;
 
       const msg = $("settingsMsg");
-      if(msg && showMsg){
+      if (msg && showMsg) {
         msg.textContent = t("ui.settings_music_saved");
       }
     }
