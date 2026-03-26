@@ -210,16 +210,14 @@
       try {
         const result = await requestNativePermission();
 
-        clearPendingPrompt();
-
         if (result && result.attempted) {
           lsSet(K_PROMPT_DONE, "1");
+          clearPendingPrompt();
         }
 
         return !!result?.accepted;
       } catch (e) {
         console.warn("[OneSignal] maybePromptNativeAfterAdmobOnIndex failed", e);
-        clearPendingPrompt();
         return false;
       } finally {
         requestInFlight = null;
