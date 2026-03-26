@@ -17,7 +17,7 @@
 
   const SECRET_USERNAME_CODE = "thomaslucasprout";
   const SECRET_REWARD_VCOINS = 150;
-  const SECRET_PROFILE_FIELD = "secret_thomas_lucas_prout_claimed";
+  const SECRET_PROFILE_FIELD = "secret_lucas_thomas_prout_claimed";
 
   function _secretNorm(v) {
     return String(v || "").trim().toLowerCase();
