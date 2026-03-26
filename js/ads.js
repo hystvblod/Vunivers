@@ -434,30 +434,56 @@
       window.__adListenersRegistered = true;
 
       var SAFE = function (fn) {
-        return function (arg) { try { fn && fn(arg); } catch (_) {} };
+        return function (arg) {
+          try { fn && fn(arg); } catch (_) {}
+        };
       };
 
       var map = [
-        ["onAdFullScreenContentOpened", function () {
-          // ⚠️ NE PAS forcer isRewardShowing ici (ça s'applique aussi aux inter)
+        ["interstitialAdShowed", function () {
           window.__ads_active = true;
-          diag("Ad opened");
+          diag("Interstitial showed");
         }],
-        ["onAdDismissedFullScreenContent", function () {
-          diag("Ad dismissed");
-          if (currentAdKind === "rewarded") isRewardShowing = false;
-          currentAdKind = null;
-          __showLock = false;
-          postAdCleanup();
+        ["interstitialAdDismissed", function () {
+          diag("Interstitial dismissed");
+          if (currentAdKind === "interstitial") {
+            currentAdKind = null;
+            __showLock = false;
+            postAdCleanup();
+          }
         }],
-        ["onAdFailedToShowFullScreenContent", function () {
-          diag("Ad failed to show");
-          if (currentAdKind === "rewarded") isRewardShowing = false;
-          currentAdKind = null;
-          __showLock = false;
-          postAdCleanup();
+        ["interstitialAdFailedToShow", function () {
+          diag("Interstitial failed to show");
+          if (currentAdKind === "interstitial") {
+            currentAdKind = null;
+            __showLock = false;
+            postAdCleanup();
+          }
         }],
-        ["onRewarded", function () {
+
+        ["onRewardedVideoAdShowed", function () {
+          window.__ads_active = true;
+          diag("Rewarded showed");
+        }],
+        ["onRewardedVideoAdDismissed", function () {
+          diag("Rewarded dismissed");
+          if (currentAdKind === "rewarded") {
+            isRewardShowing = false;
+            currentAdKind = null;
+            __showLock = false;
+            postAdCleanup();
+          }
+        }],
+        ["onRewardedVideoAdFailedToShow", function () {
+          diag("Rewarded failed to show");
+          if (currentAdKind === "rewarded") {
+            isRewardShowing = false;
+            currentAdKind = null;
+            __showLock = false;
+            postAdCleanup();
+          }
+        }],
+        ["onRewardedVideoAdReward", function () {
           diag("Rewarded granted");
         }]
       ];
@@ -495,17 +521,27 @@
   // =============================
   // Helpers "wait" (dismissed / rewarded / app return)
   // =============================
-  function waitDismissedOnce() {
+  function waitDismissedOnce(kind) {
     return new Promise(function (resolve) {
       var off1 = null, off2 = null;
+
       function done(ok) {
         try { off1 && off1.remove && off1.remove(); } catch (_) {}
         try { off2 && off2.remove && off2.remove(); } catch (_) {}
         resolve(!!ok);
       }
+
+      var dismissedEvt = kind === "rewarded"
+        ? "onRewardedVideoAdDismissed"
+        : "interstitialAdDismissed";
+
+      var failedEvt = kind === "rewarded"
+        ? "onRewardedVideoAdFailedToShow"
+        : "interstitialAdFailedToShow";
+
       try {
-        off1 = AdMob.addListener("onAdDismissedFullScreenContent", function () { done(true); });
-        off2 = AdMob.addListener("onAdFailedToShowFullScreenContent", function () { done(false); });
+        off1 = AdMob.addListener(dismissedEvt, function () { done(true); });
+        off2 = AdMob.addListener(failedEvt, function () { done(false); });
       } catch (_) {
         done(false);
       }
@@ -514,19 +550,30 @@
 
   function waitRewardedOnce(timeoutMs) {
     return new Promise(function (resolve) {
-      var off = null, timer = null;
+      var off = null;
+      var timer = null;
+
       function done(ok) {
         try { off && off.remove && off.remove(); } catch (_) {}
-        if (timer) { clearTimeout(timer); timer = null; }
+        if (timer) {
+          clearTimeout(timer);
+          timer = null;
+        }
         resolve(!!ok);
       }
+
       try {
-        off = AdMob.addListener("onRewarded", function () { done(true); });
+        off = AdMob.addListener("onRewardedVideoAdReward", function () {
+          done(true);
+        });
       } catch (_) {
         done(false);
         return;
       }
-      timer = setTimeout(function () { done(false); }, timeoutMs || 30000);
+
+      timer = setTimeout(function () {
+        done(false);
+      }, timeoutMs || 30000);
     });
   }
 
@@ -606,7 +653,7 @@
 
       preShowAdCleanup();
 
-      var dismissedP = waitDismissedOnce();
+      var dismissedP = waitDismissedOnce("interstitial");
       var res = await AdMob.showInterstitial();
 
       await Promise.race([dismissedP.catch(function () {}), waitAppReturnOnce()]);
@@ -686,7 +733,7 @@
       isRewardShowing = true;
 
       const rewardedP = waitRewardedOnce(30000);
-      const dismissedP = waitDismissedOnce();
+      const dismissedP = waitDismissedOnce("rewarded");
 
       let showResult = null;
 
