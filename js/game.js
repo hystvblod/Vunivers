@@ -143,7 +143,54 @@ const VR_BADGE_GOLD_CHOICES = 100;
     return s.split(/[-_]/)[0] || "en";
   }
 
+  function normalizeUniverseId(raw) {
+    const s = String(raw || "").trim().toLowerCase();
+    if (!s) return "hell_king";
+
+    const cleaned = s
+      .replace(/%20/g, " ")
+      .replace(/[^\w\s-]/g, " ")
+      .replace(/[\s-]+/g, "_")
+      .replace(/_+/g, "_")
+      .replace(/^_+|_+$/g, "");
+
+    const compact = cleaned.replace(/_/g, "");
+
+    const map = {
+      intro: "intro",
+
+      hell: "hell_king",
+      hell_king: "hell_king",
+      hellking: "hell_king",
+
+      heaven: "heaven_king",
+      heaven_king: "heaven_king",
+      heavenking: "heaven_king",
+
+      vampire: "vampire_lord",
+      vampire_lord: "vampire_lord",
+      vampirelord: "vampire_lord",
+
+      western: "western_president",
+      western_president: "western_president",
+      westernpresident: "western_president",
+
+      mega_corp: "mega_corp_ceo",
+      megacorp: "mega_corp_ceo",
+      mega_corp_ceo: "mega_corp_ceo",
+      megacorpceo: "mega_corp_ceo",
+
+      new_world: "new_world_explorer",
+      newworld: "new_world_explorer",
+      new_world_explorer: "new_world_explorer",
+      newworldexplorer: "new_world_explorer"
+    };
+
+    return map[cleaned] || map[compact] || cleaned;
+  }
+
   window.normalizeScenarioLang = normalizeScenarioLang;
+  window.normalizeUniverseId = normalizeUniverseId;
 
   const VREventsLoader = {
     async loadUniverseData(universeId, lang) {
@@ -5479,6 +5526,12 @@ window.VRGame = {
   session: { reignLength: 0 },
 
   async onUniverseSelected(universeId) {
+    universeId = (typeof window.normalizeUniverseId === "function")
+      ? window.normalizeUniverseId(universeId)
+      : String(universeId || "").trim();
+
+    try { localStorage.setItem("vrealms_universe", universeId); } catch (_) {}
+
     this.currentUniverse = universeId;
     this.session.reignLength = 0;
     try { window.VRAds?.resetGameRewardSeen?.(); } catch (_) {}
