@@ -381,7 +381,13 @@
     "secretTitleSeen": "その秘密はもう見つけている",
     "secretBodySeen": "うんうん、もう一度起動済みだよ。\n小さなグリッチはまた出るけど、プレゼントはもう受け取ってある。",
     "secretRewardLabel": "秘密のプレゼント",
-    "secretErrGeneric": "秘密は見つかったけど、エラーのせいで正しく開けなかった。"
+    "secretErrGeneric": "秘密は見つかったけど、エラーのせいで正しく開けなかった。",
+    "ladybugSecretTitle": "てんとう虫の秘密",
+    "ladybugSecretSub": "10個のバブルを全部割ってね",
+    "ladybugSecretFinishTitleClaimed": "秘密を解除しました",
+    "ladybugSecretFinishBodyClaimed": "10匹のてんとう虫をすべて割って、50 VCoinsを獲得しました。",
+    "ladybugSecretFinishTitleSeen": "この秘密はすでに見つけています",
+    "ladybugSecretFinishBodySeen": "演出はもう一度出ますが、50 VCoinsはすでに受け取り済みです。"
   },
   "shop": {
     "title": "ショップ",
