@@ -20,12 +20,12 @@
     return fallback;
   }
 
-  const CURRENT_UNLOCKABLE_UNIVERSES = [
-    "western_president",
-    "mega_corp_ceo",
-    "new_world_explorer",
-    "vampire_lord"
-  ];
+ const CURRENT_UNLOCKABLE_UNIVERSES = [
+  "heaven_king",
+  "western_president",
+  "mega_corp_ceo",
+  "new_world_explorer"
+];
 
   function universeSku(universeId) {
     return "vuniverse_universe_" + String(universeId || "").trim().toLowerCase();

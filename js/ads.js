@@ -25,7 +25,7 @@
           : ((Capacitor.Plugins && Capacitor.Plugins.App) ? Capacitor.Plugins.App : null);
 
   // ------- STRICT PROD -------
-  var __DEV_ADS__ = true;      // ✅ mets TRUE pour tests (Ad Units TEST + initializeForTesting)
+  var __DEV_ADS__ = false;      // ✅ mets TRUE pour tests (Ad Units TEST + initializeForTesting)
   var SHOW_DIAG_PANEL = false;  // overlay debug (laisse false en prod)
 
   // ✅ Tes Ad Units (PROD)
