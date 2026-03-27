@@ -592,122 +592,155 @@
       const style = document.createElement("style");
       style.id = "vrBaudelaireStyle";
       style.textContent = `
-      #vrBaudelaireOverlay{
-        position:fixed;
-        inset:0;
-        z-index:100002;
-        display:none;
-        align-items:center;
-        justify-content:center;
-        padding:18px;
-        overflow:hidden;
-      }
+    #vrBaudelaireOverlay{
+      position:fixed;
+      inset:0;
+      z-index:100002;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      overflow:hidden;
+    }
 
-      #vrBaudelaireOverlay.is-open{
-        display:flex;
-      }
+    #vrBaudelaireOverlay.is-open{
+      display:flex;
+    }
 
-      #vrBaudelaireOverlay::before{
-        content:"";
-        position:absolute;
-        inset:0;
-        background:
-          radial-gradient(circle at 50% 42%, rgba(255,255,255,0.06), transparent 18%),
-          radial-gradient(circle at 18% 20%, rgba(110,110,140,0.08), transparent 24%),
-          radial-gradient(circle at 82% 78%, rgba(110,110,140,0.08), transparent 22%),
-          linear-gradient(180deg, rgba(10,10,16,0.90), rgba(14,14,22,0.94));
-        backdrop-filter: blur(6px);
-        animation: vrBaudelairePulse 2.8s ease-in-out infinite;
-      }
+    #vrBaudelaireOverlay::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 50% 38%, rgba(255,255,255,.05), transparent 16%),
+        radial-gradient(circle at 20% 20%, rgba(120,120,150,.05), transparent 22%),
+        radial-gradient(circle at 80% 80%, rgba(120,120,150,.04), transparent 22%),
+        linear-gradient(180deg, rgba(7,8,12,.88), rgba(10,10,16,.93));
+      backdrop-filter: blur(5px);
+      animation: vrBaudelairePulse 2.8s ease-in-out infinite;
+    }
 
-      #vrBaudelaireOverlay::after{
-        content:"";
-        position:absolute;
-        inset:0;
-        pointer-events:none;
-        background: radial-gradient(circle at center, transparent 28%, rgba(0,0,0,0.38) 100%);
-      }
+    #vrBaudelaireOverlay::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at center, transparent 30%, rgba(0,0,0,.42) 100%);
+      pointer-events:none;
+    }
 
-      #vrBaudelaireCard{
-        position:relative;
-        z-index:1;
-        width:min(420px, calc(100vw - 28px));
-        padding:24px 20px 18px;
-        border-radius:24px;
-        color:#f3f0e8;
-        text-align:center;
-        background:linear-gradient(180deg, rgba(28,28,38,0.96), rgba(18,18,26,0.98));
-        border:1px solid rgba(255,255,255,0.10);
-        box-shadow:
-          0 22px 60px rgba(0,0,0,0.44),
-          inset 0 1px 0 rgba(255,255,255,0.08);
-        backdrop-filter: blur(10px);
-        transform:translateY(8px) scale(.985);
-        opacity:0;
-        transition:transform .22s ease, opacity .22s ease;
-      }
+    #vrBaudelaireRain{
+      position:absolute;
+      inset:-10% 0 0 0;
+      overflow:hidden;
+      pointer-events:none;
+      z-index:0;
+    }
 
-      #vrBaudelaireOverlay.is-open #vrBaudelaireCard{
-        transform:translateY(0) scale(1);
-        opacity:1;
-      }
+    .vrBaudelaireDrop{
+      position:absolute;
+      top:-20%;
+      width:1.4px;
+      height:90px;
+      opacity:.16;
+      background:linear-gradient(
+        to bottom,
+        rgba(255,255,255,0),
+        rgba(210,220,255,.7),
+        rgba(255,255,255,0)
+      );
+      animation-name:vrBaudelaireRainFall;
+      animation-timing-function:linear;
+      animation-iteration-count:infinite;
+      filter:blur(.2px);
+    }
 
-      #vrBaudelaireGlow{
-        position:absolute;
-        left:50%;
-        top:50%;
-        width:min(560px, 94vw);
-        height:min(560px, 94vw);
-        transform:translate(-50%, -50%);
-        border-radius:999px;
-        background:radial-gradient(circle, rgba(255,255,255,0.07), rgba(120,120,170,0.05) 28%, transparent 64%);
-        filter:blur(26px);
-        pointer-events:none;
-        animation: vrBaudelaireGlow 3.2s ease-in-out infinite;
-      }
+    #vrBaudelaireGlow{
+      position:absolute;
+      left:50%;
+      top:52%;
+      width:min(760px, 92vw);
+      height:min(760px, 92vw);
+      transform:translate(-50%, -50%);
+      border-radius:999px;
+      background:
+        radial-gradient(circle, rgba(170,170,220,.05), rgba(80,80,120,.03) 30%, transparent 65%);
+      filter:blur(36px);
+      pointer-events:none;
+      z-index:0;
+      animation:vrBaudelaireGlow 4.5s ease-in-out infinite;
+    }
 
-      #vrBaudelaireTitle{
-        margin:0 0 10px;
-        font-size:24px;
-        line-height:1.1;
-        font-weight:900;
-        letter-spacing:.01em;
-      }
+    #vrBaudelaireCard{
+      position:relative;
+      z-index:1;
+      width:min(420px, calc(100vw - 28px));
+      padding:24px 20px 18px;
+      border-radius:24px;
+      color:#f3f0e8;
+      text-align:center;
+      background:linear-gradient(180deg, rgba(28,28,38,.96), rgba(18,18,26,.985));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:
+        0 22px 60px rgba(0,0,0,.48),
+        inset 0 1px 0 rgba(255,255,255,.07);
+      backdrop-filter:blur(10px);
+      transform:translateY(8px) scale(.985);
+      opacity:0;
+      transition:transform .22s ease, opacity .22s ease;
+    }
 
-      #vrBaudelaireBody{
-        margin:0 0 18px;
-        font-size:14px;
-        line-height:1.6;
-        color:rgba(243,240,232,0.92);
-        white-space:pre-line;
-        max-height:min(58vh, 520px);
-        overflow:auto;
-        padding-right:4px;
-      }
+    #vrBaudelaireOverlay.is-open #vrBaudelaireCard{
+      transform:translateY(0) scale(1);
+      opacity:1;
+    }
 
-      #vrBaudelaireBtn{
-        border:none;
-        border-radius:999px;
-        padding:12px 18px;
-        min-width:140px;
-        font-size:14px;
-        font-weight:900;
-        cursor:pointer;
-        color:#14141d;
-        background:linear-gradient(180deg,#f5f1e8,#d7d1c7);
-        box-shadow:0 10px 24px rgba(0,0,0,0.22);
-      }
+    #vrBaudelaireTitle{
+      margin:0 0 10px;
+      font-size:24px;
+      line-height:1.1;
+      font-weight:900;
+      letter-spacing:.01em;
+    }
 
-      @keyframes vrBaudelairePulse{
-        0%,100%{ opacity:1; }
-        50%{ opacity:.92; }
-      }
+    #vrBaudelaireBody{
+      margin:0 0 18px;
+      font-size:14px;
+      line-height:1.6;
+      color:rgba(243,240,232,.92);
+      white-space:pre-line;
+      max-height:min(58vh, 520px);
+      overflow:auto;
+      padding-right:4px;
+    }
 
-      @keyframes vrBaudelaireGlow{
-        0%,100%{ opacity:.70; transform:translate(-50%, -50%) scale(1); }
-        50%{ opacity:1; transform:translate(-50%, -50%) scale(1.06); }
-      }
-      `;
+    #vrBaudelaireBtn{
+      border:none;
+      border-radius:999px;
+      padding:12px 18px;
+      min-width:140px;
+      font-size:14px;
+      font-weight:900;
+      cursor:pointer;
+      color:#14141d;
+      background:linear-gradient(180deg,#f5f1e8,#d7d1c7);
+      box-shadow:0 10px 24px rgba(0,0,0,.22);
+    }
+
+    @keyframes vrBaudelairePulse{
+      0%,100%{ opacity:1; }
+      50%{ opacity:.92; }
+    }
+
+    @keyframes vrBaudelaireGlow{
+      0%,100%{ opacity:.62; transform:translate(-50%, -50%) scale(1); }
+      50%{ opacity:1; transform:translate(-50%, -50%) scale(1.05); }
+    }
+
+    @keyframes vrBaudelaireRainFall{
+      from{ transform:translate3d(0,-110vh,0); }
+      to{ transform:translate3d(-12px,120vh,0); }
+    }
+    `;
       document.head.appendChild(style);
     }
 
@@ -715,14 +748,30 @@
       const overlay = document.createElement("div");
       overlay.id = "vrBaudelaireOverlay";
       overlay.innerHTML = `
-      <div id="vrBaudelaireGlow"></div>
-      <div id="vrBaudelaireCard" role="dialog" aria-modal="true" aria-labelledby="vrBaudelaireTitle">
-        <h2 id="vrBaudelaireTitle"></h2>
-        <p id="vrBaudelaireBody"></p>
-        <button type="button" id="vrBaudelaireBtn"></button>
-      </div>
-      `;
+    <div id="vrBaudelaireRain"></div>
+    <div id="vrBaudelaireGlow"></div>
+    <div id="vrBaudelaireCard" role="dialog" aria-modal="true" aria-labelledby="vrBaudelaireTitle">
+      <h2 id="vrBaudelaireTitle"></h2>
+      <p id="vrBaudelaireBody"></p>
+      <button type="button" id="vrBaudelaireBtn"></button>
+    </div>
+    `;
       document.body.appendChild(overlay);
+
+      const rain = overlay.querySelector("#vrBaudelaireRain");
+      if (rain && !rain.dataset.ready) {
+        for (let i = 0; i < 90; i++) {
+          const drop = document.createElement("div");
+          drop.className = "vrBaudelaireDrop";
+          drop.style.left = (Math.random() * 100) + "vw";
+          drop.style.opacity = String(0.06 + Math.random() * 0.16);
+          drop.style.height = (45 + Math.random() * 85) + "px";
+          drop.style.animationDuration = (0.8 + Math.random() * 0.9) + "s";
+          drop.style.animationDelay = (-Math.random() * 2) + "s";
+          rain.appendChild(drop);
+        }
+        rain.dataset.ready = "1";
+      }
 
       overlay.addEventListener("click", (e) => {
         if (e.target === overlay) closeBaudelaireOverlay();
@@ -731,6 +780,7 @@
       overlay.querySelector("#vrBaudelaireBtn")?.addEventListener("click", closeBaudelaireOverlay);
     }
   }
+
 
   function closeBaudelaireOverlay() {
     const overlay = document.getElementById("vrBaudelaireOverlay");
