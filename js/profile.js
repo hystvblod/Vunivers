@@ -352,12 +352,12 @@
 
         if (popped >= total) {
           finishTitle.textContent = result?.credited
-            ? _t("profile.ladybugSecretFinishTitleClaimed", "Secret unlocked")
-            : _t("profile.ladybugSecretFinishTitleSeen", "Secret already found");
+            ? _t("profile.ladybugSecretFinishTitleClaimed", "Bravo")
+            : _t("profile.ladybugSecretFinishTitleSeen", "Already collected");
 
           finishBody.textContent = result?.credited
-            ? _t("profile.ladybugSecretFinishBodyClaimed", "You popped all 10 ladybugs and earned 50 VCoins.")
-            : _t("profile.ladybugSecretFinishBodySeen", "The effect comes back, but the 50 VCoins were already claimed.");
+            ? _t("profile.ladybugSecretFinishBodyClaimed", "You earned 50 VCoins.")
+            : _t("profile.ladybugSecretFinishBodySeen", "You already received the 50 VCoins for this one.");
 
           finish.classList.add("show");
         }
@@ -499,6 +499,8 @@
     }
 
     try {
+      const beforeBalance = Number(window.VUserData?.getVcoins?.() || 0) || 0;
+
       const claim = await sb
         .from("profiles")
         .update({ [LADYBUG_PROFILE_FIELD]: true })
@@ -519,18 +521,41 @@
 
       const newBalance = await window.VUserData?.addVcoinsAsync?.(LADYBUG_REWARD_VCOINS);
 
-      if (typeof newBalance !== "number" || Number.isNaN(newBalance)) {
-        return { ok: false, credited: false, reward: 0, first_time: true, reason: "credit_failed" };
-      }
-
       try { await window.VUserData?.refresh?.(); } catch (_) {}
+
+      const afterBalance = Number(window.VUserData?.getVcoins?.() || newBalance || 0) || 0;
+      const credited = afterBalance >= (beforeBalance + LADYBUG_REWARD_VCOINS);
+
+      if (!credited) {
+        console.error("LADYBUG SECRET credit failed: expected +50 VCoins", {
+          beforeBalance,
+          afterBalance,
+          newBalance
+        });
+
+        try {
+          await sb
+            .from("profiles")
+            .update({ [LADYBUG_PROFILE_FIELD]: false })
+            .eq("id", uid)
+            .eq(LADYBUG_PROFILE_FIELD, true);
+        } catch (_) {}
+
+        return {
+          ok: false,
+          credited: false,
+          reward: 0,
+          first_time: true,
+          reason: "credit_failed"
+        };
+      }
 
       return {
         ok: true,
         credited: true,
         reward: LADYBUG_REWARD_VCOINS,
         first_time: true,
-        vcoins: Number(newBalance || 0) || 0
+        vcoins: afterBalance
       };
     } catch (err) {
       console.error("LADYBUG SECRET exception:", err);
