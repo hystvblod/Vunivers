@@ -3163,7 +3163,7 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-left .vr-hud-value{
 }
 
 body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
-  transform: translate(12px, 22px) !important;
+  transform: translate(15px, 19px) !important;
 }
 
 body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
@@ -3283,7 +3283,7 @@ body[data-universe="western_president"] .vr-gauge[data-gauge-id="diplomacy"] .vr
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
-    transform: translate(12px, 14px) !important;
+    transform: translate(15px, 12px) !important;
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-hud-identity{
@@ -5388,7 +5388,7 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-hud-right .vr-hud-value{
-    transform: translate(22px, 20px) !important;
+    transform: translate(25px, 18px) !important;
   }
 
   body.vr-body-game[data-universe="western_president"] .vr-hud-identity{

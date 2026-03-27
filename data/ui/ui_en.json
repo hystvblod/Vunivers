@@ -167,7 +167,7 @@
     "settings_licenses_label": "Licenses",
     "settings_open_licenses_aria": "Open licenses",
     "faq_q14": "Are there secrets in the app?",
-    "faq_a14": "Sometimes, certain places react to slightly absurd ideas. Like typing thomaslucasprout into the username field, for example... what an idea."
+    "faq_a14": "Sometimes, certain places react to slightly absurd ideas. Like typing thomaslucasprout or ladybugcometome into the username field, for example... what an idea."
   },
   "gauges": {
     "hell_king": {
@@ -382,7 +382,13 @@
     "secretTitleSeen": "You already discovered this secret",
     "secretBodySeen": "Yep, you already triggered it once.\nThe little glitch comes back, but the gift has already been claimed.",
     "secretRewardLabel": "Secret gift",
-    "secretErrGeneric": "The secret was found, but an error prevented it from opening correctly."
+    "secretErrGeneric": "The secret was found, but an error prevented it from opening correctly.",
+    "ladybugSecretTitle": "Ladybug secret",
+    "ladybugSecretSub": "Pop all 10 bubbles",
+    "ladybugSecretFinishTitleClaimed": "Secret unlocked",
+    "ladybugSecretFinishBodyClaimed": "You popped all 10 ladybugs and earned 50 VCoins.",
+    "ladybugSecretFinishTitleSeen": "You already discovered this secret",
+    "ladybugSecretFinishBodySeen": "The glitch comes back, but the 50 VCoins were already claimed."
   },
   "shop": {
     "title": "SHOP",

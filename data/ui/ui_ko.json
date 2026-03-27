@@ -166,7 +166,7 @@
     "settings_licenses_label": "라이선스",
     "settings_open_licenses_aria": "라이선스 열기",
     "faq_q14": "앱 안에 비밀이 있나요?",
-    "faq_a14": "가끔은 어떤 곳이 조금 황당한 아이디어에 반응하기도 해요. 예를 들면 닉네임 입력칸에 thomaslucasprout 를 써 보는 거죠... 참 별난 생각이네요."
+    "faq_a14": "가끔은 조금 엉뚱한 아이디어에 반응하는 곳도 있어요. 예를 들면 이름 칸에 thomaslucasprout 또는 ladybugcometome 를 입력하는 거죠... 참 기발하네요."
   },
   "gauges": {
     "hell_king": {
@@ -381,7 +381,13 @@
     "secretTitleSeen": "너는 이미 이 비밀을 발견했어",
     "secretBodySeen": "그래, 그래, 이미 한 번 발동했어.\n작은 글리치는 다시 나오지만 선물은 이미 받았어.",
     "secretRewardLabel": "비밀 선물",
-    "secretErrGeneric": "비밀은 찾았지만 오류 때문에 제대로 열리지 않았어."
+    "secretErrGeneric": "비밀은 찾았지만 오류 때문에 제대로 열리지 않았어.",
+    "ladybugSecretTitle": "무당벌레 비밀",
+    "ladybugSecretSub": "버블 10개를 모두 터뜨리세요",
+    "ladybugSecretFinishTitleClaimed": "비밀 해제",
+    "ladybugSecretFinishBodyClaimed": "무당벌레 10개를 모두 터뜨리고 50 VCoins를 획득했어요.",
+    "ladybugSecretFinishTitleSeen": "이미 이 비밀을 발견했어요",
+    "ladybugSecretFinishBodySeen": "글리치는 다시 나오지만, 50 VCoins는 이미 받았어요."
   },
   "shop": {
     "title": "상점",

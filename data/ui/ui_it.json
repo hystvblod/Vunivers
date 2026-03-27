@@ -166,7 +166,7 @@
     "settings_licenses_label": "Licenze",
     "settings_open_licenses_aria": "Apri licenze",
     "faq_q14": "Ci sono segreti nell’app?",
-    "faq_a14": "A volte certi punti reagiscono a idee un po’ assurde. Per esempio scrivere thomaslucasprout nella barra del nome utente... che idea."
+    "faq_a14": "A volte, certi punti reagiscono a idee un po' assurde. Per esempio, digitare thomaslucasprout o ladybugcometome nel campo del nome... che idea."
   },
   "gauges": {
     "hell_king": {
@@ -381,7 +381,13 @@
     "secretTitleSeen": "Hai già scoperto questo segreto",
     "secretBodySeen": "Sì, sì, l’hai già attivato una volta.\nIl piccolo glitch torna, ma il regalo è già stato riscattato.",
     "secretRewardLabel": "Regalo segreto",
-    "secretErrGeneric": "Il segreto è stato trovato, ma un errore ne ha impedito l’apertura corretta."
+    "secretErrGeneric": "Il segreto è stato trovato, ma un errore ne ha impedito l’apertura corretta.",
+    "ladybugSecretTitle": "Segreto coccinella",
+    "ladybugSecretSub": "Scoppia tutte e 10 le bolle",
+    "ladybugSecretFinishTitleClaimed": "Segreto sbloccato",
+    "ladybugSecretFinishBodyClaimed": "Hai fatto scoppiare tutte e 10 le coccinelle e hai ottenuto 50 VCoins.",
+    "ladybugSecretFinishTitleSeen": "Hai già scoperto questo segreto",
+    "ladybugSecretFinishBodySeen": "Il glitch torna, ma i 50 VCoins sono già stati riscossi."
   },
   "shop": {
     "title": "NEGOZIO",

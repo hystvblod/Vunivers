@@ -167,7 +167,7 @@
     "settings_licenses_label": "Licencias",
     "settings_open_licenses_aria": "Abrir licencias",
     "faq_q14": "¿Hay secretos en la app?",
-    "faq_a14": "A veces, ciertos lugares reaccionan a ideas un poco absurdas. Como escribir thomaslucasprout en la barra del apodo, por ejemplo... menuda idea."
+    "faq_a14": "A veces, algunos lugares reaccionan a ideas un poco absurdas. Como escribir thomaslucasprout o ladybugcometome en el campo del nombre, por ejemplo... vaya idea."
   },
   "gauges": {
     "hell_king": {
@@ -382,7 +382,13 @@
     "secretTitleSeen": "Ya descubriste este secreto",
     "secretBodySeen": "Sí, sí, ya lo activaste una vez.\nEl pequeño glitch vuelve, pero el regalo ya fue reclamado.",
     "secretRewardLabel": "Regalo secreto",
-    "secretErrGeneric": "El secreto fue encontrado, pero un error impidió abrirlo correctamente."
+    "secretErrGeneric": "El secreto fue encontrado, pero un error impidió abrirlo correctamente.",
+    "ladybugSecretTitle": "Secreto mariquita",
+    "ladybugSecretSub": "Explota las 10 burbujas",
+    "ladybugSecretFinishTitleClaimed": "Secreto desbloqueado",
+    "ladybugSecretFinishBodyClaimed": "Explotaste las 10 mariquitas y ganaste 50 VCoins.",
+    "ladybugSecretFinishTitleSeen": "Ya descubriste este secreto",
+    "ladybugSecretFinishBodySeen": "El glitch vuelve, pero los 50 VCoins ya fueron reclamados."
   },
   "shop": {
     "title": "TIENDA",
