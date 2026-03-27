@@ -166,7 +166,7 @@
     "settings_licenses_label": "Licenze",
     "settings_open_licenses_aria": "Apri licenze",
     "faq_q14": "Ci sono segreti nell’app?",
-    "faq_a14": "A volte, certi punti reagiscono a idee un po' assurde. Per esempio, digitare ladybugcometome nel campo del nome... che idea."
+    "faq_a14": "A volte, certi punti reagiscono a idee un po' assurde. Per esempio, digitare ladybugcometome nel campo del nome... o baudelaire, senza nemmeno parlare del poeta preferito."
   },
   "gauges": {
     "hell_king": {
@@ -382,7 +382,10 @@
     "ladybugSecretFinishTitleClaimed": "Ben fatto",
     "ladybugSecretFinishBodyClaimed": "Hai guadagnato 50 VCoins.",
     "ladybugSecretFinishTitleSeen": "Già ricevuto",
-    "ladybugSecretFinishBodySeen": "Hai già ricevuto i 50 VCoins per questo."
+    "ladybugSecretFinishBodySeen": "Hai già ricevuto i 50 VCoins per questo.",
+    "baudelaireSecretTitle": "Baudelaire — La Distruzione",
+    "baudelaireSecretBody": "Senza tregua il Demone si agita al mio fianco;\nNuota intorno a me come un'aria impalpabile;\nLo ingoio e sento che mi brucia il polmone\nE lo riempie d'un desiderio eterno e colpevole.\n\nTalvolta, sapendo quanto io ami l'Arte,\nPrende la forma della più seducente delle donne,\nE, sotto speciosi pretesti di malinconia,\nAssuefa le mie labbra a filtri infami.\n\nCosì mi conduce, lontano dallo sguardo di Dio,\nAnsante e spezzato dalla fatica, nel mezzo\nDelle pianure della Noia, profonde e deserte,\n\nE getta nei miei occhi pieni di smarrimento\nVesti macchiate, ferite aperte,\nE l'apparato sanguinoso della Distruzione!",
+    "baudelaireSecretButton": "Continua"
   },
   "shop": {
     "title": "NEGOZIO",

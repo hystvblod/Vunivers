@@ -166,7 +166,7 @@
     "settings_licenses_label": "Licences",
     "settings_open_licenses_aria": "Ouvrir les licences",
     "faq_q14": "Il existe des secrets dans l’app ?",
-    "faq_a14": "Parfois, certains endroits réagissent à des idées un peu absurdes. Comme taper ladybugcometome dans la barre de pseudo par exemple... quelle idée."
+    "faq_a14": "Parfois, certains endroits réagissent à des idées un peu absurdes. Comme taper ladybugcometome dans la barre de pseudo... ou baudelaire, sans même parler de son poète préféré."
   },
   "gauges": {
     "hell_king": {
@@ -383,7 +383,10 @@
     "ladybugSecretFinishTitleClaimed": "Bravo",
     "ladybugSecretFinishBodyClaimed": "Tu as gagné 50 VCoins.",
     "ladybugSecretFinishTitleSeen": "Déjà récupéré",
-    "ladybugSecretFinishBodySeen": "Tu as déjà reçu les 50 VCoins pour celui-ci."
+    "ladybugSecretFinishBodySeen": "Tu as déjà reçu les 50 VCoins pour celui-ci.",
+    "baudelaireSecretTitle": "Baudelaire — La Destruction",
+    "baudelaireSecretBody": "Sans cesse le Démon s'agite à mes côtés ;\nIl nage autour de moi comme un air impalpable ;\nJe l'avale et le sens qui brûle mon poumon\nEt l'emplit d'un désir éternel et coupable.\n\nParfois, sachant mon grand amour de l'Art,\nIl prend la forme de la plus séduisante des femmes,\nEt, sous de spécieux prétextes de mélancolie,\nAccoutume mes lèvres à des philtres infâmes.\n\nAinsi il me conduit, loin du regard de Dieu,\nHaletant et brisé de fatigue, au milieu\nDes plaines de l'Ennui, profondes et désertes,\n\nEt jette dans mes yeux pleins de confusion\nDes vêtements souillés, des blessures ouvertes,\nEt l'appareil sanglant de la Destruction.",
+    "baudelaireSecretButton": "Continuer"
   },
   "shop": {
     "title": "BOUTIQUE",
