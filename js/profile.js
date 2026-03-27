@@ -403,11 +403,9 @@
 
     overlay.classList.add("is-open");
 
-    if (credited) {
-      setTimeout(() => {
-        spawnSecretConfetti();
-      }, 180);
-    }
+    setTimeout(() => {
+      spawnSecretConfetti();
+    }, 180);
 
     await typeSecretBodyText(body, bodyText, 18);
 
@@ -437,14 +435,28 @@
         .eq(SECRET_PROFILE_FIELD, false)
         .select("id");
 
+      console.log("[SECRET] uid =", uid);
+      console.log("[SECRET] field =", SECRET_PROFILE_FIELD);
+      console.log("[SECRET] raw claim =", claim);
+
       if (claim?.error) {
-        console.error("SECRET claim error:", claim.error);
+        console.error("[SECRET] claim error:", claim.error);
         return { ok: false, credited: false, reward: 0, first_time: false, reason: "claim_failed" };
       }
 
       const firstTime = Array.isArray(claim?.data) && claim.data.length > 0;
+      console.log("[SECRET] firstTime =", firstTime, "rows =", Array.isArray(claim?.data) ? claim.data.length : "no-array");
 
       if (!firstTime) {
+        const profileCheck = await sb
+          .from("profiles")
+          .select(`id, ${SECRET_PROFILE_FIELD}, vcoins, username`)
+          .eq("id", uid)
+          .maybeSingle();
+
+        console.log("[SECRET] profileCheck =", profileCheck);
+        console.error("[SECRET] update returned 0 row, front was about to treat this as already seen");
+
         return { ok: true, credited: false, reward: 0, first_time: false };
       }
 
