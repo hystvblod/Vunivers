@@ -2388,7 +2388,11 @@ body.vr-peek-mode .vr-gauge-preview{
       const syncEndingButtons = () => {
         const baseReward = Math.max(0, asInt(this._pendingEndReward, 0));
         const useFlat100 = baseReward < 100;
-        const previewAmount = useFlat100 ? Math.max(0, baseReward + 100) : Math.max(0, baseReward * 2);
+
+        // Ce qu'on affiche dans le bouton :
+        // - si base < 100 : on affiche seulement le bonus pub +100
+        // - sinon : on affiche le total doublé
+        const previewLabelAmount = useFlat100 ? 100 : Math.max(0, baseReward * 2);
 
         if (doubleBtn) {
           if (this._pendingEndClaimed) {
@@ -2413,7 +2417,7 @@ body.vr-peek-mode .vr-gauge-preview{
             if (sub) {
               sub.innerHTML = `
                 <img src="assets/img/ui/vcoins.webp" alt="" draggable="false">
-                <span>+${previewAmount}</span>
+                <span>+${previewLabelAmount}</span>
               `;
             }
           }
