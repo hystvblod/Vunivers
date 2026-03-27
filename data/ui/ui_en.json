@@ -382,7 +382,13 @@
     "secretTitleSeen": "You already discovered this secret",
     "secretBodySeen": "Yep, you already triggered it once.\nThe little glitch comes back, but the gift has already been claimed.",
     "secretRewardLabel": "Secret gift",
-    "secretErrGeneric": "The secret was found, but an error prevented it from opening correctly."
+    "secretErrGeneric": "The secret was found, but an error prevented it from opening correctly.",
+    "ladybugSecretTitle": "Ladybug secret",
+    "ladybugSecretSub": "Pop all 10 bubbles",
+    "ladybugSecretFinishTitleClaimed": "Secret unlocked",
+    "ladybugSecretFinishBodyClaimed": "You popped all 10 ladybugs and earned 50 VCoins.",
+    "ladybugSecretFinishTitleSeen": "You already discovered this secret",
+    "ladybugSecretFinishBodySeen": "The glitch comes back, but the 50 VCoins were already claimed."
   },
   "shop": {
     "title": "SHOP",

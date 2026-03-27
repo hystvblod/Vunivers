@@ -381,7 +381,13 @@
     "secretTitleSeen": "Kamu sudah menemukan rahasia ini",
     "secretBodySeen": "Iya, iya, kamu sudah memicunya sekali.\nGlitch kecilnya muncul lagi, tapi hadiahnya sudah diambil.",
     "secretRewardLabel": "Hadiah rahasia",
-    "secretErrGeneric": "Rahasianya berhasil ditemukan, tetapi ada error yang mencegah pembukaan dengan benar."
+    "secretErrGeneric": "Rahasianya berhasil ditemukan, tetapi ada error yang mencegah pembukaan dengan benar.",
+    "ladybugSecretTitle": "Rahasia kepik",
+    "ladybugSecretSub": "Pecahkan semua 10 gelembung",
+    "ladybugSecretFinishTitleClaimed": "Rahasia terbuka",
+    "ladybugSecretFinishBodyClaimed": "Kamu memecahkan 10 kepik dan mendapatkan 50 VCoins.",
+    "ladybugSecretFinishTitleSeen": "Kamu sudah menemukan rahasia ini",
+    "ladybugSecretFinishBodySeen": "Glitch-nya muncul lagi, tapi 50 VCoins-nya sudah diambil."
   },
   "shop": {
     "title": "TOKO",
