@@ -166,7 +166,7 @@
     "settings_licenses_label": "라이선스",
     "settings_open_licenses_aria": "라이선스 열기",
     "faq_q14": "앱 안에 비밀이 있나요?",
-    "faq_a14": "가끔은 조금 엉뚱한 아이디어에 반응하는 곳도 있어요. 예를 들면 이름 칸에 ladybugcometome 를 입력하는 거죠... 참 기발하네요."
+    "faq_a14": "가끔은 조금 엉뚱한 아이디어에 반응하는 곳도 있어요. 예를 들면 이름 칸에 ladybugcometome 를 입력하는 거죠... 또는 baudelaire 라고 써 보는 것도요. 굳이 가장 좋아하는 시인을 말하지 않아도요."
   },
   "gauges": {
     "hell_king": {
@@ -382,7 +382,10 @@
     "ladybugSecretFinishTitleClaimed": "잘했어요",
     "ladybugSecretFinishBodyClaimed": "50 VCoins를 획득했어요.",
     "ladybugSecretFinishTitleSeen": "이미 받음",
-    "ladybugSecretFinishBodySeen": "이 보상 50 VCoins는 이미 받았어요."
+    "ladybugSecretFinishBodySeen": "이 보상 50 VCoins는 이미 받았어요.",
+    "baudelaireSecretTitle": "보들레르 — 파괴",
+    "baudelaireSecretBody": "끊임없이 악마가 내 곁에서 몸부림친다.\n그는 형체 없는 공기처럼 내 주위를 헤엄친다.\n나는 그를 들이마시고, 그가 내 폐를 태우며\n그 안을 영원하고도 죄스러운 욕망으로 채우는 것을 느낀다.\n\n때로는, 내가 예술을 얼마나 사랑하는지 알기에,\n그는 가장 매혹적인 여인의 모습으로 변하고,\n우울이라는 그럴듯한 구실 아래\n내 입술을 사악한 독약에 길들인다.\n\n그리하여 그는 나를, 하느님의 시선에서 멀리,\n헐떡이며 피로에 짓눌린 채로,\n깊고 황량한 권태의 벌판 한가운데로 이끈다.\n\n그리고 혼란으로 가득 찬 내 눈앞에\n더럽혀진 옷들, 벌어진 상처들,\n그리고 파괴의 피비린내 나는 광경을 던져 넣는다.",
+    "baudelaireSecretButton": "계속"
   },
   "shop": {
     "title": "상점",

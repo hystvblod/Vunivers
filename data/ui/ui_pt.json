@@ -166,7 +166,7 @@
     "settings_licenses_label": "Licenças",
     "settings_open_licenses_aria": "Abrir licenças",
     "faq_q14": "Existem segredos na app?",
-    "faq_a14": "Às vezes, certos lugares reagem a ideias um pouco absurdas. Como escrever ladybugcometome no campo do nome, por exemplo... que ideia."
+    "faq_a14": "Às vezes, certos lugares reagem a ideias um pouco absurdas. Como escrever ladybugcometome no campo do nome... ou baudelaire, sem sequer falar do poeta preferido."
   },
   "gauges": {
     "hell_king": {
@@ -382,7 +382,10 @@
     "ladybugSecretFinishTitleClaimed": "Muito bem",
     "ladybugSecretFinishBodyClaimed": "Ganhaste 50 VCoins.",
     "ladybugSecretFinishTitleSeen": "Já recebido",
-    "ladybugSecretFinishBodySeen": "Já recebeste os 50 VCoins por este."
+    "ladybugSecretFinishBodySeen": "Já recebeste os 50 VCoins por este.",
+    "baudelaireSecretTitle": "Baudelaire — A Destruição",
+    "baudelaireSecretBody": "Sem cessar, o Demónio agita-se ao meu lado;\nNada à minha volta como um ar impalpável;\nEu respiro-o e sinto-o a queimar-me o pulmão\nE a enchê-lo de um desejo eterno e culpado.\n\nPor vezes, sabendo do meu grande amor pela Arte,\nToma a forma da mais sedutora das mulheres,\nE, sob especiosos pretextos de melancolia,\nHabitua os meus lábios a filtros infames.\n\nAssim me conduz, longe do olhar de Deus,\nOfegante e quebrado de fadiga, para o meio\nDas planícies do Tédio, profundas e desertas,\n\nE lança nos meus olhos cheios de confusão\nVestuários manchados, feridas abertas,\nE todo o aparato sangrento da Destruição!",
+    "baudelaireSecretButton": "Continuar"
   },
   "shop": {
     "title": "LOJA",

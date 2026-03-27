@@ -166,7 +166,7 @@
     "settings_licenses_label": "ライセンス",
     "settings_open_licenses_aria": "ライセンスを開く",
     "faq_q14": "このアプリに秘密はあるの？",
-    "faq_a14": "ときどき、ちょっと変わった発想に反応する場所があります。たとえば名前欄に ladybugcometome と入力すると……なかなかの発想ですね。"
+    "faq_a14": "ときどき、ちょっと変わった発想に反応する場所があります。たとえば名前欄に ladybugcometome と入力したり……あるいは baudelaire と入れてみたり。お気に入りの詩人の話をしなくても、です。"
   },
   "gauges": {
     "hell_king": {
@@ -382,7 +382,10 @@
     "ladybugSecretFinishTitleClaimed": "おめでとう",
     "ladybugSecretFinishBodyClaimed": "50 VCoinsを獲得しました。",
     "ladybugSecretFinishTitleSeen": "受け取り済み",
-    "ladybugSecretFinishBodySeen": "これの50 VCoinsはすでに受け取っています。"
+    "ladybugSecretFinishBodySeen": "これの50 VCoinsはすでに受け取っています。",
+    "baudelaireSecretTitle": "ボードレール — 破壊",
+    "baudelaireSecretBody": "絶え間なく、悪魔は私のかたわらで蠢いている。\nそれは、触れることのできない空気のように、私のまわりを漂う。\n私はそれを吸い込み、それが私の肺を焼き、\nそこを永遠で罪深い欲望で満たすのを感じる。\n\nときには、私が芸術を深く愛していると知って、\n悪魔はもっとも妖しい女の姿をとり、\n憂鬱というもっともらしい口実のもとで、\n私の唇を忌まわしい秘薬に慣らしてゆく。\n\nこうして悪魔は私を、神のまなざしから遠く離れ、\n息を切らし、疲労に打ち砕かれたまま、\n深く荒れ果てた〈倦怠〉の平原のただ中へと導く。\n\nそして、混乱に満ちた私の目に向かって、\n汚れた衣服、裂け開いた傷口、\nそして〈破壊〉の血にまみれた光景を投げつける。",
+    "baudelaireSecretButton": "続ける"
   },
   "shop": {
     "title": "ショップ",

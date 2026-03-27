@@ -167,7 +167,7 @@
     "settings_licenses_label": "Licenses",
     "settings_open_licenses_aria": "Open licenses",
     "faq_q14": "Are there secrets in the app?",
-    "faq_a14": "Sometimes, certain places react to slightly absurd ideas. Like typing ladybugcometome into the username field, for example... what an idea."
+    "faq_a14": "Sometimes, certain places react to slightly absurd ideas. Like typing ladybugcometome in the username field... or baudelaire, without even mentioning someone's favorite poet."
   },
   "gauges": {
     "hell_king": {
@@ -383,7 +383,10 @@
     "ladybugSecretFinishTitleClaimed": "Well done",
     "ladybugSecretFinishBodyClaimed": "You earned 50 VCoins.",
     "ladybugSecretFinishTitleSeen": "Already collected",
-    "ladybugSecretFinishBodySeen": "You already received the 50 VCoins for this one."
+    "ladybugSecretFinishBodySeen": "You already received the 50 VCoins for this one.",
+    "baudelaireSecretTitle": "Baudelaire — Destruction",
+    "baudelaireSecretBody": "Without cease the Demon stirs beside me;\nHe swims around me like impalpable air;\nI breathe him in and feel him burn my lungs\nAnd fill them with an endless, guilty desire.\n\nAt times, knowing my great love of Art,\nHe takes the shape of the most seductive woman,\nAnd, under specious pretexts of melancholy,\nAccustoms my lips to infamous potions.\n\nThus he leads me, far from the gaze of God,\nPanting and broken down with weariness, into the midst\nOf the plains of Ennui, deep and deserted,\n\nAnd throws into my eyes, full of confusion,\nSoiled garments, open wounds,\nAnd the bloody pageantry of Destruction.",
+    "baudelaireSecretButton": "Continue"
   },
   "shop": {
     "title": "SHOP",

@@ -18,6 +18,7 @@
   const LADYBUG_USERNAME_CODE = "ladybugcometome";
   const LADYBUG_REWARD_VCOINS = 50;
   const LADYBUG_PROFILE_FIELD = "secret_ladybug_claimed";
+  const BAUDELAIRE_USERNAME_CODE = "baudelaire";
 
   function _secretNorm(v) {
     return String(v || "").trim().toLowerCase();
@@ -583,6 +584,199 @@
     } catch (_) {}
 
     await showLadybugOverlay(result);
+    return true;
+  }
+
+  function ensureBaudelaireOverlay() {
+    if (!document.getElementById("vrBaudelaireStyle")) {
+      const style = document.createElement("style");
+      style.id = "vrBaudelaireStyle";
+      style.textContent = `
+      #vrBaudelaireOverlay{
+        position:fixed;
+        inset:0;
+        z-index:100002;
+        display:none;
+        align-items:center;
+        justify-content:center;
+        padding:18px;
+        overflow:hidden;
+      }
+
+      #vrBaudelaireOverlay.is-open{
+        display:flex;
+      }
+
+      #vrBaudelaireOverlay::before{
+        content:"";
+        position:absolute;
+        inset:0;
+        background:
+          radial-gradient(circle at 50% 42%, rgba(255,255,255,0.06), transparent 18%),
+          radial-gradient(circle at 18% 20%, rgba(110,110,140,0.08), transparent 24%),
+          radial-gradient(circle at 82% 78%, rgba(110,110,140,0.08), transparent 22%),
+          linear-gradient(180deg, rgba(10,10,16,0.90), rgba(14,14,22,0.94));
+        backdrop-filter: blur(6px);
+        animation: vrBaudelairePulse 2.8s ease-in-out infinite;
+      }
+
+      #vrBaudelaireOverlay::after{
+        content:"";
+        position:absolute;
+        inset:0;
+        pointer-events:none;
+        background: radial-gradient(circle at center, transparent 28%, rgba(0,0,0,0.38) 100%);
+      }
+
+      #vrBaudelaireCard{
+        position:relative;
+        z-index:1;
+        width:min(420px, calc(100vw - 28px));
+        padding:24px 20px 18px;
+        border-radius:24px;
+        color:#f3f0e8;
+        text-align:center;
+        background:linear-gradient(180deg, rgba(28,28,38,0.96), rgba(18,18,26,0.98));
+        border:1px solid rgba(255,255,255,0.10);
+        box-shadow:
+          0 22px 60px rgba(0,0,0,0.44),
+          inset 0 1px 0 rgba(255,255,255,0.08);
+        backdrop-filter: blur(10px);
+        transform:translateY(8px) scale(.985);
+        opacity:0;
+        transition:transform .22s ease, opacity .22s ease;
+      }
+
+      #vrBaudelaireOverlay.is-open #vrBaudelaireCard{
+        transform:translateY(0) scale(1);
+        opacity:1;
+      }
+
+      #vrBaudelaireGlow{
+        position:absolute;
+        left:50%;
+        top:50%;
+        width:min(560px, 94vw);
+        height:min(560px, 94vw);
+        transform:translate(-50%, -50%);
+        border-radius:999px;
+        background:radial-gradient(circle, rgba(255,255,255,0.07), rgba(120,120,170,0.05) 28%, transparent 64%);
+        filter:blur(26px);
+        pointer-events:none;
+        animation: vrBaudelaireGlow 3.2s ease-in-out infinite;
+      }
+
+      #vrBaudelaireTitle{
+        margin:0 0 10px;
+        font-size:24px;
+        line-height:1.1;
+        font-weight:900;
+        letter-spacing:.01em;
+      }
+
+      #vrBaudelaireBody{
+        margin:0 0 18px;
+        font-size:14px;
+        line-height:1.6;
+        color:rgba(243,240,232,0.92);
+        white-space:pre-line;
+        max-height:min(58vh, 520px);
+        overflow:auto;
+        padding-right:4px;
+      }
+
+      #vrBaudelaireBtn{
+        border:none;
+        border-radius:999px;
+        padding:12px 18px;
+        min-width:140px;
+        font-size:14px;
+        font-weight:900;
+        cursor:pointer;
+        color:#14141d;
+        background:linear-gradient(180deg,#f5f1e8,#d7d1c7);
+        box-shadow:0 10px 24px rgba(0,0,0,0.22);
+      }
+
+      @keyframes vrBaudelairePulse{
+        0%,100%{ opacity:1; }
+        50%{ opacity:.92; }
+      }
+
+      @keyframes vrBaudelaireGlow{
+        0%,100%{ opacity:.70; transform:translate(-50%, -50%) scale(1); }
+        50%{ opacity:1; transform:translate(-50%, -50%) scale(1.06); }
+      }
+      `;
+      document.head.appendChild(style);
+    }
+
+    if (!document.getElementById("vrBaudelaireOverlay")) {
+      const overlay = document.createElement("div");
+      overlay.id = "vrBaudelaireOverlay";
+      overlay.innerHTML = `
+      <div id="vrBaudelaireGlow"></div>
+      <div id="vrBaudelaireCard" role="dialog" aria-modal="true" aria-labelledby="vrBaudelaireTitle">
+        <h2 id="vrBaudelaireTitle"></h2>
+        <p id="vrBaudelaireBody"></p>
+        <button type="button" id="vrBaudelaireBtn"></button>
+      </div>
+      `;
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeBaudelaireOverlay();
+      });
+
+      overlay.querySelector("#vrBaudelaireBtn")?.addEventListener("click", closeBaudelaireOverlay);
+    }
+  }
+
+  function closeBaudelaireOverlay() {
+    const overlay = document.getElementById("vrBaudelaireOverlay");
+    if (!overlay || !overlay.classList.contains("is-open")) return;
+
+    overlay.classList.remove("is-open");
+
+    const done = overlay.__resolve;
+    overlay.__resolve = null;
+    if (typeof done === "function") done();
+  }
+
+  async function showBaudelaireOverlay() {
+    ensureBaudelaireOverlay();
+
+    const overlay = document.getElementById("vrBaudelaireOverlay");
+    const title = document.getElementById("vrBaudelaireTitle");
+    const body = document.getElementById("vrBaudelaireBody");
+    const btn = document.getElementById("vrBaudelaireBtn");
+
+    if (!overlay || !title || !body || !btn) {
+      return Promise.resolve();
+    }
+
+    title.textContent = _t("profile.baudelaireSecretTitle", "Baudelaire — Destruction");
+    body.textContent = _t("profile.baudelaireSecretBody", "Without cease the Demon stirs beside me...");
+    btn.textContent = _t("profile.baudelaireSecretButton", "Continue");
+
+    overlay.classList.add("is-open");
+
+    return new Promise((resolve) => {
+      overlay.__resolve = resolve;
+    });
+  }
+
+  async function runBaudelaireSecretFlow() {
+    try {
+      await window.VRAnalytics?.log?.("profile_secret_found", {
+        code: "baudelaire",
+        first_time: false,
+        credited: false,
+        reward: 0
+      });
+    } catch (_) {}
+
+    await showBaudelaireOverlay();
     return true;
   }
 
@@ -1232,6 +1426,25 @@
 
       try {
         const ok = await runLadybugSecretFlow();
+
+        if (ok) {
+          const state = window.VUserData?.load?.() || {};
+          input.value = String(state.username || "").trim();
+          openEdit(false);
+          clearMsg();
+        }
+      } finally {
+        if (saveBtnSecret) saveBtnSecret.disabled = false;
+      }
+      return;
+    }
+
+    if (nextNorm === BAUDELAIRE_USERNAME_CODE) {
+      const saveBtnSecret = $("pf_save");
+      if (saveBtnSecret) saveBtnSecret.disabled = true;
+
+      try {
+        const ok = await runBaudelaireSecretFlow();
 
         if (ok) {
           const state = window.VUserData?.load?.() || {};
