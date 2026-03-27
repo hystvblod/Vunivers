@@ -19,8 +19,7 @@
   const SECRET_REWARD_VCOINS = 150;
   const SECRET_PROFILE_FIELD = "secret_lucas_thomas_prout_claimed";
 
-  const LADYBUG_USERNAME_CODE_FR = "coccinelleviensamoi";
-  const LADYBUG_USERNAME_CODE_EN = "ladybugcometome";
+  const LADYBUG_USERNAME_CODE = "ladybugcometome";
   const LADYBUG_REWARD_VCOINS = 50;
   const LADYBUG_PROFILE_FIELD = "secret_ladybug_claimed";
 
@@ -1691,8 +1690,7 @@
 
     if (
       nextNorm === SECRET_USERNAME_CODE ||
-      nextNorm === LADYBUG_USERNAME_CODE_FR ||
-      nextNorm === LADYBUG_USERNAME_CODE_EN
+      nextNorm === LADYBUG_USERNAME_CODE
     ) {
       const saveBtnSecret = $("pf_save");
       if (saveBtnSecret) saveBtnSecret.disabled = true;
