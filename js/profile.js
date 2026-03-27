@@ -588,197 +588,201 @@
   }
 
   function ensureBaudelaireOverlay() {
-    if (!document.getElementById("vrBaudelaireStyle")) {
-      const style = document.createElement("style");
-      style.id = "vrBaudelaireStyle";
-      style.textContent = `
-    #vrBaudelaireOverlay{
-      position:fixed;
-      inset:0;
-      z-index:100002;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      overflow:hidden;
-    }
+    const oldOverlay = document.getElementById("vrBaudelaireOverlay");
+    const oldStyle = document.getElementById("vrBaudelaireStyle");
 
-    #vrBaudelaireOverlay.is-open{
-      display:flex;
-    }
+    if (oldOverlay) oldOverlay.remove();
+    if (oldStyle) oldStyle.remove();
 
-    #vrBaudelaireOverlay::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle at 50% 38%, rgba(255,255,255,.05), transparent 16%),
-        radial-gradient(circle at 20% 20%, rgba(120,120,150,.05), transparent 22%),
-        radial-gradient(circle at 80% 80%, rgba(120,120,150,.04), transparent 22%),
-        linear-gradient(180deg, rgba(7,8,12,.88), rgba(10,10,16,.93));
-      backdrop-filter: blur(5px);
-      animation: vrBaudelairePulse 2.8s ease-in-out infinite;
-    }
+    const style = document.createElement("style");
+    style.id = "vrBaudelaireStyle";
+    style.textContent = `
+  #vrBaudelaireOverlay{
+    position:fixed;
+    inset:0;
+    z-index:100002;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+    overflow:hidden;
+    isolation:isolate;
+  }
 
-    #vrBaudelaireOverlay::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:radial-gradient(circle at center, transparent 30%, rgba(0,0,0,.42) 100%);
-      pointer-events:none;
-    }
+  #vrBaudelaireOverlay.is-open{
+    display:flex;
+  }
 
-    #vrBaudelaireRain{
-      position:absolute;
-      inset:-10% 0 0 0;
-      overflow:hidden;
-      pointer-events:none;
-      z-index:0;
-    }
+  #vrBaudelaireOverlay::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:0;
+    background:
+      radial-gradient(circle at 50% 38%, rgba(255,255,255,.05), transparent 16%),
+      radial-gradient(circle at 20% 20%, rgba(120,120,150,.05), transparent 22%),
+      radial-gradient(circle at 80% 80%, rgba(120,120,150,.04), transparent 22%),
+      linear-gradient(180deg, rgba(7,8,12,.78), rgba(10,10,16,.84));
+    backdrop-filter: blur(4px);
+    animation: vrBaudelairePulse 2.8s ease-in-out infinite;
+  }
 
-    .vrBaudelaireDrop{
-      position:absolute;
-      top:-20%;
-      width:1.4px;
-      height:90px;
-      opacity:.16;
-      background:linear-gradient(
-        to bottom,
-        rgba(255,255,255,0),
-        rgba(210,220,255,.7),
-        rgba(255,255,255,0)
-      );
-      animation-name:vrBaudelaireRainFall;
-      animation-timing-function:linear;
-      animation-iteration-count:infinite;
-      filter:blur(.2px);
-    }
+  #vrBaudelaireRain{
+    position:absolute;
+    inset:-10% 0 0 0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
+  }
 
-    #vrBaudelaireGlow{
-      position:absolute;
-      left:50%;
-      top:52%;
-      width:min(760px, 92vw);
-      height:min(760px, 92vw);
-      transform:translate(-50%, -50%);
-      border-radius:999px;
-      background:
-        radial-gradient(circle, rgba(170,170,220,.05), rgba(80,80,120,.03) 30%, transparent 65%);
-      filter:blur(36px);
-      pointer-events:none;
-      z-index:0;
-      animation:vrBaudelaireGlow 4.5s ease-in-out infinite;
-    }
+  .vrBaudelaireDrop{
+    position:absolute;
+    top:-20%;
+    width:2px;
+    height:110px;
+    opacity:.30;
+    background:linear-gradient(
+      to bottom,
+      rgba(255,255,255,0),
+      rgba(210,220,255,.88),
+      rgba(255,255,255,0)
+    );
+    animation-name:vrBaudelaireRainFall;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+    filter:blur(.15px);
+  }
 
-    #vrBaudelaireCard{
-      position:relative;
-      z-index:1;
-      width:min(420px, calc(100vw - 28px));
-      padding:24px 20px 18px;
-      border-radius:24px;
-      color:#f3f0e8;
-      text-align:center;
-      background:linear-gradient(180deg, rgba(28,28,38,.96), rgba(18,18,26,.985));
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:
-        0 22px 60px rgba(0,0,0,.48),
-        inset 0 1px 0 rgba(255,255,255,.07);
-      backdrop-filter:blur(10px);
-      transform:translateY(8px) scale(.985);
-      opacity:0;
-      transition:transform .22s ease, opacity .22s ease;
-    }
+  #vrBaudelaireGlow{
+    position:absolute;
+    left:50%;
+    top:52%;
+    width:min(760px, 92vw);
+    height:min(760px, 92vw);
+    transform:translate(-50%, -50%);
+    border-radius:999px;
+    background:
+      radial-gradient(circle, rgba(170,170,220,.08), rgba(80,80,120,.04) 30%, transparent 65%);
+    filter:blur(36px);
+    pointer-events:none;
+    z-index:2;
+    animation:vrBaudelaireGlow 4.5s ease-in-out infinite;
+  }
 
-    #vrBaudelaireOverlay.is-open #vrBaudelaireCard{
-      transform:translateY(0) scale(1);
-      opacity:1;
-    }
+  #vrBaudelaireOverlay::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:3;
+    background:radial-gradient(circle at center, transparent 32%, rgba(0,0,0,.28) 100%);
+    pointer-events:none;
+  }
 
-    #vrBaudelaireTitle{
-      margin:0 0 10px;
-      font-size:24px;
-      line-height:1.1;
-      font-weight:900;
-      letter-spacing:.01em;
-    }
+  #vrBaudelaireCard{
+    position:relative;
+    z-index:4;
+    width:min(420px, calc(100vw - 28px));
+    padding:24px 20px 18px;
+    border-radius:24px;
+    color:#f3f0e8;
+    text-align:center;
+    background:linear-gradient(180deg, rgba(28,28,38,.96), rgba(18,18,26,.985));
+    border:1px solid rgba(255,255,255,.10);
+    box-shadow:
+      0 22px 60px rgba(0,0,0,.48),
+      inset 0 1px 0 rgba(255,255,255,.07);
+    backdrop-filter:blur(10px);
+    transform:translateY(8px) scale(.985);
+    opacity:0;
+    transition:transform .22s ease, opacity .22s ease;
+  }
 
-    #vrBaudelaireBody{
-      margin:0 0 18px;
-      font-size:14px;
-      line-height:1.6;
-      color:rgba(243,240,232,.92);
-      white-space:pre-line;
-      max-height:min(58vh, 520px);
-      overflow:auto;
-      padding-right:4px;
-    }
+  #vrBaudelaireOverlay.is-open #vrBaudelaireCard{
+    transform:translateY(0) scale(1);
+    opacity:1;
+  }
 
-    #vrBaudelaireBtn{
-      border:none;
-      border-radius:999px;
-      padding:12px 18px;
-      min-width:140px;
-      font-size:14px;
-      font-weight:900;
-      cursor:pointer;
-      color:#14141d;
-      background:linear-gradient(180deg,#f5f1e8,#d7d1c7);
-      box-shadow:0 10px 24px rgba(0,0,0,.22);
-    }
+  #vrBaudelaireTitle{
+    margin:0 0 10px;
+    font-size:24px;
+    line-height:1.1;
+    font-weight:900;
+    letter-spacing:.01em;
+  }
 
-    @keyframes vrBaudelairePulse{
-      0%,100%{ opacity:1; }
-      50%{ opacity:.92; }
-    }
+  #vrBaudelaireBody{
+    margin:0 0 18px;
+    font-size:14px;
+    line-height:1.6;
+    color:rgba(243,240,232,.92);
+    white-space:pre-line;
+    max-height:min(58vh, 520px);
+    overflow:auto;
+    padding-right:4px;
+  }
 
-    @keyframes vrBaudelaireGlow{
-      0%,100%{ opacity:.62; transform:translate(-50%, -50%) scale(1); }
-      50%{ opacity:1; transform:translate(-50%, -50%) scale(1.05); }
-    }
+  #vrBaudelaireBtn{
+    border:none;
+    border-radius:999px;
+    padding:12px 18px;
+    min-width:140px;
+    font-size:14px;
+    font-weight:900;
+    cursor:pointer;
+    color:#14141d;
+    background:linear-gradient(180deg,#f5f1e8,#d7d1c7);
+    box-shadow:0 10px 24px rgba(0,0,0,.22);
+  }
 
-    @keyframes vrBaudelaireRainFall{
-      from{ transform:translate3d(0,-110vh,0); }
-      to{ transform:translate3d(-12px,120vh,0); }
-    }
-    `;
-      document.head.appendChild(style);
-    }
+  @keyframes vrBaudelairePulse{
+    0%,100%{ opacity:1; }
+    50%{ opacity:.92; }
+  }
 
-    if (!document.getElementById("vrBaudelaireOverlay")) {
-      const overlay = document.createElement("div");
-      overlay.id = "vrBaudelaireOverlay";
-      overlay.innerHTML = `
-    <div id="vrBaudelaireRain"></div>
-    <div id="vrBaudelaireGlow"></div>
-    <div id="vrBaudelaireCard" role="dialog" aria-modal="true" aria-labelledby="vrBaudelaireTitle">
-      <h2 id="vrBaudelaireTitle"></h2>
-      <p id="vrBaudelaireBody"></p>
-      <button type="button" id="vrBaudelaireBtn"></button>
-    </div>
-    `;
-      document.body.appendChild(overlay);
+  @keyframes vrBaudelaireGlow{
+    0%,100%{ opacity:.62; transform:translate(-50%, -50%) scale(1); }
+    50%{ opacity:1; transform:translate(-50%, -50%) scale(1.05); }
+  }
 
-      const rain = overlay.querySelector("#vrBaudelaireRain");
-      if (rain && !rain.dataset.ready) {
-        for (let i = 0; i < 90; i++) {
-          const drop = document.createElement("div");
-          drop.className = "vrBaudelaireDrop";
-          drop.style.left = (Math.random() * 100) + "vw";
-          drop.style.opacity = String(0.06 + Math.random() * 0.16);
-          drop.style.height = (45 + Math.random() * 85) + "px";
-          drop.style.animationDuration = (0.8 + Math.random() * 0.9) + "s";
-          drop.style.animationDelay = (-Math.random() * 2) + "s";
-          rain.appendChild(drop);
-        }
-        rain.dataset.ready = "1";
+  @keyframes vrBaudelaireRainFall{
+    from{ transform:translate3d(0,-110vh,0); }
+    to{ transform:translate3d(-12px,120vh,0); }
+  }
+  `;
+    document.head.appendChild(style);
+
+    const overlay = document.createElement("div");
+    overlay.id = "vrBaudelaireOverlay";
+    overlay.innerHTML = `
+  <div id="vrBaudelaireRain"></div>
+  <div id="vrBaudelaireGlow"></div>
+  <div id="vrBaudelaireCard" role="dialog" aria-modal="true" aria-labelledby="vrBaudelaireTitle">
+    <h2 id="vrBaudelaireTitle"></h2>
+    <p id="vrBaudelaireBody"></p>
+    <button type="button" id="vrBaudelaireBtn"></button>
+  </div>
+  `;
+    document.body.appendChild(overlay);
+
+    const rain = overlay.querySelector("#vrBaudelaireRain");
+    if (rain) {
+      for (let i = 0; i < 90; i++) {
+        const drop = document.createElement("div");
+        drop.className = "vrBaudelaireDrop";
+        drop.style.left = (Math.random() * 100) + "%";
+        drop.style.opacity = String(0.14 + Math.random() * 0.22);
+        drop.style.height = (55 + Math.random() * 85) + "px";
+        drop.style.animationDuration = (0.85 + Math.random() * 1.05) + "s";
+        drop.style.animationDelay = (-Math.random() * 2.2) + "s";
+        rain.appendChild(drop);
       }
-
-      overlay.addEventListener("click", (e) => {
-        if (e.target === overlay) closeBaudelaireOverlay();
-      });
-
-      overlay.querySelector("#vrBaudelaireBtn")?.addEventListener("click", closeBaudelaireOverlay);
     }
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeBaudelaireOverlay();
+    });
+
+    overlay.querySelector("#vrBaudelaireBtn")?.addEventListener("click", closeBaudelaireOverlay);
   }
 
 
