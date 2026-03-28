@@ -3209,9 +3209,9 @@ body.vr-body-game[data-universe="western_president"] .vr-hud-years{
   --vr-universe-choice: url("../assets/img/ui/west_choice_default_grey.webp");
 }
 
-body[data-universe="western_president"] .vr-gauge[data-gauge-id="public_opinion"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/western_president/g1_frame.webp"); }
-body[data-universe="western_president"] .vr-gauge[data-gauge-id="public_opinion"] .vr-gauge-fill,
-body[data-universe="western_president"] .vr-gauge[data-gauge-id="public_opinion"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/western_president/g1_fill.webp"); }
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="opinion"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/western_president/g1_frame.webp"); }
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="opinion"] .vr-gauge-fill,
+body[data-universe="western_president"] .vr-gauge[data-gauge-id="opinion"] .vr-gauge-preview{ background-image: url("../assets/img/gauges/western_president/g1_fill.webp"); }
 
 body[data-universe="western_president"] .vr-gauge[data-gauge-id="economy"] .vr-gauge-frame{ background-image: url("../assets/img/gauges/western_president/g2_frame.webp"); }
 body[data-universe="western_president"] .vr-gauge[data-gauge-id="economy"] .vr-gauge-fill,
