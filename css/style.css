@@ -1851,24 +1851,27 @@ body.vr-body-game[data-universe="hell_king"] .vr-hud-identity{
 
 body.vr-body-game[data-universe="hell_king"] .vr-hud-name{
   font-family: "VR_Quintess", serif !important;
-  transform: translateY(-4px) !important;
+  transform: translateY(-2px) !important;
   font-size: var(--vr-hell-hud-name-size) !important;
   font-weight: 700 !important;
   color: #f4ede5 !important;
-  line-height: 1 !important;
+  line-height: 1.12 !important;
   max-width: 75% !important;
-  overflow: hidden !important;
+  overflow: visible !important;
   text-overflow: ellipsis !important;
+  padding-bottom: 2px !important;
 }
 body.vr-body-game[data-universe="hell_king"] .vr-hud-years{
   font-family: "VR_Quintess", serif !important;
   font-size: var(--vr-hell-hud-name-size) !important;
   font-weight: 700 !important;
   color: rgba(244,237,229,0.95) !important;
-  line-height: 1 !important;
-  transform: translateY(-4px) !important;
+  line-height: 1.12 !important;
+  transform: translateY(-2px) !important;
   opacity: 0.95 !important;
   flex: 0 0 auto !important;
+  overflow: visible !important;
+  padding-bottom: 2px !important;
 }
 
 body.vr-body-game[data-universe="hell_king"] #view-game .vr-card-main{
@@ -3572,14 +3575,15 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-right .vr-hud-value{
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-name{
   font-size: clamp(16px, 2.05vw, 26px) !important;
   font-weight: 900 !important;
-  line-height:1 !important;
+  line-height: 1.12 !important;
   color:#fff !important;
   max-width:62% !important;
-  overflow:hidden !important;
+  overflow: visible !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
   text-align:center !important;
-  transform: translateY(-1px) !important;
+  transform: translateY(0px) !important;
+  padding-bottom: 2px !important;
   text-shadow:
     0 1px 0 rgba(0,0,0,0.55),
     0 2px 6px rgba(0,0,0,0.30) !important;
@@ -3588,10 +3592,12 @@ body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-name{
 body.vr-body-game[data-universe="mega_corp_ceo"] .vr-hud-years{
   font-size: clamp(16px, 2.05vw, 26px) !important;
   font-weight: 900 !important;
-  line-height:1 !important;
+  line-height: 1.12 !important;
   color:#fff !important;
-  transform: translateY(-1px) !important;
+  transform: translateY(0px) !important;
   opacity: 1 !important;
+  overflow: visible !important;
+  padding-bottom: 2px !important;
   text-shadow:
     0 1px 0 rgba(0,0,0,0.55),
     0 2px 6px rgba(0,0,0,0.30) !important;
