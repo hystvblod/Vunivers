@@ -95,7 +95,7 @@
     "faq_q4": "Wie kann ich meine Endbelohnung erhöhen?",
     "faq_a4": "Wenn eine Partie endet, kannst du dir über einen Button eine belohnte Werbung ansehen. Liegt deine Grundbelohnung unter 100, wird sie auf 100 VCoins gesetzt. Andernfalls wird sie verdoppelt. Wenn die Werbung nicht bestätigt wird oder nicht verfügbar ist, bleibt die normale Belohnung bestehen.",
     "faq_q5": "Wie funktionieren die Profil-Abzeichen?",
-    "faq_a5": "Die Abzeichen sind nach Universen getrennt. Sie werden während einer Partie freigeschaltet, wenn du zum richtigen Zeitpunkt noch am Leben bist: Bronze bei 40 Entscheidungen, Silber bei 60 und Gold bei 100.",
+    "faq_a5": "Die Abzeichen sind nach Universen getrennt. Sie werden während einer Partie freigeschaltet, wenn du im richtigen Moment noch am Leben bist: Holz bei 20 Entscheidungen, Bronze bei 40, Silber bei 60, Gold bei 100 und Kristall bei 150.",
     "faq_q6": "Wie ändere ich meinen Benutzernamen?",
     "faq_a6": "Gehe zu Profil, tippe auf die Schaltfläche zum Ändern des Benutzernamens, gib deinen neuen Namen ein und speichere ihn. Der Benutzername muss eindeutig sein, 3 bis 20 Zeichen enthalten und darf nur Buchstaben ohne Akzente, Zahlen, Unterstriche _ oder Bindestriche - verwenden.",
     "faq_q7": "Wofür werden VCoins verwendet?",
@@ -386,7 +386,13 @@
     "ladybugSecretFinishBodySeen": "Du hast die 50 VCoins dafür bereits bekommen.",
     "baudelaireSecretTitle": "Baudelaire — Die Zerstörung",
     "baudelaireSecretBody": "Unaufhörlich regt sich an meiner Seite der Dämon;\nEr schwimmt um mich herum wie eine ungreifbare Luft;\nIch atme ihn ein und spüre, wie er meine Lunge brennt\nUnd sie mit einem ewigen und schuldvollen Verlangen erfüllt.\n\nManchmal nimmt er, da er meine große Liebe zur Kunst kennt,\nDie Gestalt der verführerischsten aller Frauen an,\nUnd unter scheinbar triftigen Vorwänden des Trübsinns\nGewöhnt er meine Lippen an ruchlose Zaubertränke.\n\nSo führt er mich, fern vom Blick Gottes,\nKeuchend und von Müdigkeit gebrochen, mitten hinein\nIn die tiefen und öden Ebenen der Langeweile,\n\nUnd wirft in meine Augen, voll Verwirrung,\nBeschmutzte Gewänder, offene Wunden\nUnd das blutige Aufgebot der Zerstörung!",
-    "baudelaireSecretButton": "Weiter"
+    "baudelaireSecretButton": "Weiter",
+    "badgeWood": "Holz-Abzeichen",
+    "badgeCrystal": "Kristall-Abzeichen",
+    "badgeUnlockWood": "Wird ab 20 Entscheidungen in einer Partie freigeschaltet.",
+    "badgeUnlockCrystal": "Wird ab 150 Entscheidungen in einer Partie freigeschaltet.",
+    "badge_wood_aria": "Holz-Abzeichen vergrößern",
+    "badge_crystal_aria": "Kristall-Abzeichen vergrößern"
   },
   "shop": {
     "title": "SHOP",
@@ -646,6 +652,50 @@
     "crosspromo_desc": "Lade einen Freund ein, VUniverse zu installieren, und erhalte 200 VCoins für jede bestätigte Installation, bis zu 5 Einladungen.",
     "android_only_popup": {
       "text": "Derzeit ist nur die Android-Version verfügbar. Die iOS-Version ist in Arbeit und kann im Moment noch nicht heruntergeladen werden."
+    }
+  },
+  "jobs": {
+    "hell_king": {
+      "wood": "Verlorene Seele",
+      "bronze": "Höllendiener",
+      "silver": "Dämonischer Assistent",
+      "gold": "Herr der Flammen",
+      "crystal": "König der Hölle"
+    },
+    "heaven_king": {
+      "wood": "Reine Seele",
+      "bronze": "Himmlischer Bote",
+      "silver": "Wächter des Himmels",
+      "gold": "Erzengel",
+      "crystal": "König des Paradieses"
+    },
+    "vampire_lord": {
+      "wood": "Verdorbener Mensch",
+      "bronze": "Nacht-Diener",
+      "silver": "Vampir",
+      "gold": "Vampirfürst",
+      "crystal": "König der Finsternis"
+    },
+    "mega_corp_ceo": {
+      "wood": "Praktikant",
+      "bronze": "Angestellter",
+      "silver": "Manager",
+      "gold": "Direktor",
+      "crystal": "CEO"
+    },
+    "western_president": {
+      "wood": "Berater",
+      "bronze": "Stellvertreter",
+      "silver": "Bürgermeister",
+      "gold": "Gouverneur",
+      "crystal": "Präsident"
+    },
+    "new_world_explorer": {
+      "wood": "Seemann",
+      "bronze": "Kundschafter",
+      "silver": "Entdecker",
+      "gold": "Kommandant",
+      "crystal": "Vertreter der Krone"
     }
   }
 }

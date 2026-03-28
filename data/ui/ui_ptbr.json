@@ -95,7 +95,7 @@
     "faq_q4": "Como aumento minha recompensa final?",
     "faq_a4": "Quando uma partida termina, um botão permite assistir a um anúncio recompensado. Se sua recompensa base for menor que 100, ela passa para 100 VCoins. Caso contrário, ela é duplicada. Se o anúncio não for validado ou não estiver disponível, a recompensa continua normal.",
     "faq_q5": "Como funcionam os emblemas do perfil?",
-    "faq_a5": "Os emblemas são separados por universo. Eles são desbloqueados durante uma partida se você ainda estiver vivo no momento certo: bronze em 40 escolhas, prata em 60 e ouro em 100.",
+    "faq_a5": "Os distintivos são separados por universo. Eles são desbloqueados durante uma partida se você ainda estiver vivo no momento certo: madeira com 20 escolhas, bronze com 40, prata com 60, ouro com 100 e cristal com 150.",
     "faq_q6": "Como altero meu nome de usuário?",
     "faq_a6": "Vá em Perfil, toque no botão para alterar o nome de usuário, digite o novo nome e salve. O nome de usuário deve ser único, ter entre 3 e 20 caracteres e usar apenas letras sem acento, números, underscore _ ou hífen -.",
     "faq_q7": "Para que servem os VCoins?",
@@ -385,7 +385,13 @@
     "ladybugSecretFinishBodySeen": "Você já recebeu os 50 VCoins deste.",
     "baudelaireSecretTitle": "Baudelaire — A Destruição",
     "baudelaireSecretBody": "Sem cessar, o Demônio se agita ao meu lado;\nEle nada ao meu redor como um ar impalpável;\nEu o respiro e o sinto queimar meu pulmão\nE enchê-lo de um desejo eterno e culpado.\n\nÀs vezes, sabendo do meu grande amor pela Arte,\nEle toma a forma da mais sedutora das mulheres\nE, sob pretextos enganosos de melancolia,\nAcostuma meus lábios a filtros infames.\n\nAssim ele me conduz, para longe do olhar de Deus,\nOfegante e quebrado de cansaço, ao meio\nDas planícies do Tédio, profundas e desertas,\n\nE lança em meus olhos cheios de confusão\nRoupas manchadas, feridas abertas,\nE todo o aparato sangrento da Destruição!",
-    "baudelaireSecretButton": "Continuar"
+    "baudelaireSecretButton": "Continuar",
+    "badgeWood": "Distintivo de madeira",
+    "badgeCrystal": "Distintivo de cristal",
+    "badgeUnlockWood": "Desbloqueado a partir de 20 escolhas em uma partida.",
+    "badgeUnlockCrystal": "Desbloqueado a partir de 150 escolhas em uma partida.",
+    "badge_wood_aria": "Ampliar distintivo de madeira",
+    "badge_crystal_aria": "Ampliar distintivo de cristal"
   },
   "shop": {
     "title": "LOJA",
@@ -645,6 +651,50 @@
     "crosspromo_desc": "Convide um amigo para instalar o VUniverse e ganhe 200 VCoins por cada instalação validada, até 5 convites.",
     "android_only_popup": {
       "text": "No momento, apenas a versão Android está disponível. A versão iOS está em desenvolvimento e ainda não pode ser baixada."
+    }
+  },
+  "jobs": {
+    "hell_king": {
+      "wood": "Alma perdida",
+      "bronze": "Servo infernal",
+      "silver": "Assistente demoníaco",
+      "gold": "Senhor das chamas",
+      "crystal": "Rei do Inferno"
+    },
+    "heaven_king": {
+      "wood": "Alma pura",
+      "bronze": "Mensageiro celestial",
+      "silver": "Guardião do céu",
+      "gold": "Arcanjo",
+      "crystal": "Rei do Paraíso"
+    },
+    "vampire_lord": {
+      "wood": "Humano corrompido",
+      "bronze": "Servo noturno",
+      "silver": "Vampiro",
+      "gold": "Senhor vampiro",
+      "crystal": "Rei das trevas"
+    },
+    "mega_corp_ceo": {
+      "wood": "Estagiário",
+      "bronze": "Empregado",
+      "silver": "Gerente",
+      "gold": "Diretor",
+      "crystal": "CEO"
+    },
+    "western_president": {
+      "wood": "Conselheiro",
+      "bronze": "Adjunto",
+      "silver": "Prefeito",
+      "gold": "Governador",
+      "crystal": "Presidente"
+    },
+    "new_world_explorer": {
+      "wood": "Marinheiro",
+      "bronze": "Batedor",
+      "silver": "Explorador",
+      "gold": "Comandante",
+      "crystal": "Representante da Coroa"
     }
   }
 }

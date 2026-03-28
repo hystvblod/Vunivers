@@ -523,15 +523,16 @@
     .vr-universe-badges{
       margin-top: 10px;
       width: 100%;
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
       gap: clamp(6px, 1.8vw, var(--badgeGap));
       align-items:center;
-      justify-items:center;
       overflow: visible;
     }
 
     .vr-badge{
+      flex: 0 0 calc(33.333% - 12px);
       width: 100% !important;
       aspect-ratio: 1 / 1 !important;
       max-width: var(--badgeSize) !important;
@@ -865,6 +866,9 @@
 
       .vr-universe-badges{
         margin-top: 14px;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
         gap: 16px;
       }
 

@@ -117,9 +117,47 @@
 // -------------------------------------------------------
 // Badge thresholds (sans mort)
 // -------------------------------------------------------
+const VR_BADGE_WOOD_CHOICES = 20;
 const VR_BADGE_BRONZE_CHOICES = 40;
 const VR_BADGE_SILVER_CHOICES = 60;
 const VR_BADGE_GOLD_CHOICES = 100;
+const VR_BADGE_CRYSTAL_CHOICES = 150;
+
+
+function getRankTierFromReignLength(reignLength) {
+  const v = Math.max(0, Number(reignLength || 0));
+  if (v >= 150) return "crystal";
+  if (v >= 100) return "gold";
+  if (v >= 60) return "silver";
+  if (v >= 40) return "bronze";
+  return "wood";
+}
+
+function getRankTargetFromReignLength(reignLength) {
+  const v = Math.max(0, Number(reignLength || 0));
+  if (v >= 150) return 150;
+  if (v >= 100) return 150;
+  if (v >= 60) return 100;
+  if (v >= 40) return 60;
+  if (v >= 20) return 40;
+  return 20;
+}
+
+function getRankProgressLabel(reignLength) {
+  const v = Math.max(0, Number(reignLength || 0));
+  const target = getRankTargetFromReignLength(v);
+  return `${Math.min(v, target)}/${target}`;
+}
+
+function getRankLabel(universeId, reignLength) {
+  const tier = getRankTierFromReignLength(reignLength);
+  const key = `jobs.${String(universeId || "").trim()}.${tier}`;
+  try {
+    const out = window.VRI18n?.t?.(key);
+    if (out && out !== key) return out;
+  } catch (_) {}
+  return tier;
+}
 
 
 // -------------------------------------------------------
@@ -344,7 +382,8 @@ const VR_BADGE_GOLD_CHOICES = 100;
       const yearsEl = document.getElementById("meta-years");
       const coinsEl = document.getElementById("meta-coins");
       const tokensEl = document.getElementById("meta-tokens");
-      const isIntro = String(document.body?.dataset?.universe || window.VRGame?.currentUniverse || "").trim() === "intro";
+      const currentUniverse = String(document.body?.dataset?.universe || window.VRGame?.currentUniverse || "").trim();
+      const isIntro = currentUniverse === "intro";
 
       if (isIntro) {
         if (kingEl) kingEl.textContent = "";
@@ -354,8 +393,12 @@ const VR_BADGE_GOLD_CHOICES = 100;
         return;
       }
 
-      if (kingEl) kingEl.textContent = kingName || "—";
-      if (yearsEl) yearsEl.textContent = String(years || 0);
+      const reignLength = Number(window.VRGame?.session?.reignLength || 0);
+      const rankLabel = getRankLabel(currentUniverse, reignLength);
+      const progressLabel = getRankProgressLabel(reignLength);
+
+      if (kingEl) kingEl.textContent = rankLabel || "—";
+      if (yearsEl) yearsEl.textContent = progressLabel;
       if (coinsEl) coinsEl.textContent = String(coins || 0);
       if (tokensEl) tokensEl.textContent = String(tokens || 0);
     },
@@ -5597,6 +5640,9 @@ window.VRGame = {
       const all = window.VUProfileBadges?.getAll?.() || { map: {} };
       const row = (all.map && all.map[universeId]) ? all.map[universeId] : {};
 
+      if (reign >= VR_BADGE_WOOD_CHOICES && !row.wood) {
+        await window.VUProfileBadges?.setBadge?.(universeId, "wood", true);
+      }
       if (reign >= VR_BADGE_BRONZE_CHOICES && !row.bronze) {
         await window.VUProfileBadges?.setBadge?.(universeId, "bronze", true);
       }
@@ -5605,6 +5651,9 @@ window.VRGame = {
       }
       if (reign >= VR_BADGE_GOLD_CHOICES && !row.gold) {
         await window.VUProfileBadges?.setBadge?.(universeId, "gold", true);
+      }
+      if (reign >= VR_BADGE_CRYSTAL_CHOICES && !row.crystal) {
+        await window.VUProfileBadges?.setBadge?.(universeId, "crystal", true);
       }
     } catch (e) {
       console.warn("[VRGame] badge unlock skipped:", e);
