@@ -95,7 +95,7 @@
     "faq_q4": "Bagaimana cara meningkatkan hadiah akhir?",
     "faq_a4": "Saat permainan berakhir, ada tombol untuk menonton iklan berhadiah. Jika hadiah dasarmu di bawah 100, hadiah itu menjadi 100 VCoins. Jika tidak, hadiah akan digandakan. Jika iklan tidak selesai ditonton atau tidak tersedia, hadiah tetap normal.",
     "faq_q5": "Bagaimana cara kerja badge profil?",
-    "faq_a5": "Badge dipisahkan per universe. Badge terbuka saat permainan jika kamu masih hidup pada momen yang tepat: perunggu pada 40 pilihan, perak pada 60 pilihan, dan emas pada 100 pilihan.",
+    "faq_a5": "Lencana dipisahkan per semesta. Lencana terbuka selama permainan jika kamu masih hidup pada saat yang tepat: kayu pada 20 pilihan, perunggu pada 40, perak pada 60, emas pada 100, dan kristal pada 150.",
     "faq_q6": "Bagaimana cara mengubah nama pengguna saya?",
     "faq_a6": "Buka Profil, tekan tombol untuk mengubah nama pengguna, masukkan nama baru, lalu simpan. Nama pengguna harus unik, terdiri dari 3 sampai 20 karakter, dan hanya boleh menggunakan huruf tanpa aksen, angka, underscore _, atau tanda hubung -.",
     "faq_q7": "Untuk apa VCoins digunakan?",
@@ -385,7 +385,13 @@
     "ladybugSecretFinishBodySeen": "Kamu sudah menerima 50 VCoins untuk yang ini.",
     "baudelaireSecretTitle": "Baudelaire — Kehancuran",
     "baudelaireSecretBody": "Tanpa henti Iblis bergeliat di sisiku;\nIa berenang di sekelilingku seperti udara yang tak kasatmata;\nAku menghirupnya dan merasakan ia membakar paru-paruku\nSerta memenuhinya dengan hasrat yang abadi dan berdosa.\n\nKadang-kadang, karena tahu betapa besar cintaku pada Seni,\nIa mengambil wujud perempuan yang paling menggoda,\nDan, dengan dalih muram yang tampak meyakinkan,\nMembiasakan bibirku pada ramuan-ramuan hina.\n\nDemikianlah ia menuntunku, jauh dari tatapan Tuhan,\nTerengah-engah dan remuk oleh kelelahan, ke tengah\nPadang-padang Kebosanan yang dalam dan tandus,\n\nLalu melempar ke dalam mataku yang penuh kebingungan\nPakaian-pakaian kotor, luka-luka yang terbuka,\nDan seluruh arak-arakan berdarah dari Kehancuran!",
-    "baudelaireSecretButton": "Lanjutkan"
+    "baudelaireSecretButton": "Lanjutkan",
+    "badgeWood": "Lencana kayu",
+    "badgeCrystal": "Lencana kristal",
+    "badgeUnlockWood": "Terbuka mulai 20 pilihan dalam satu permainan.",
+    "badgeUnlockCrystal": "Terbuka mulai 150 pilihan dalam satu permainan.",
+    "badge_wood_aria": "Perbesar lencana kayu",
+    "badge_crystal_aria": "Perbesar lencana kristal"
   },
   "shop": {
     "title": "TOKO",
@@ -645,6 +651,50 @@
     "crosspromo_desc": "Undang teman untuk menginstal VUniverse dan dapatkan 200 VCoins untuk setiap instalasi yang tervalidasi, hingga 5 undangan.",
     "android_only_popup": {
       "text": "Untuk saat ini hanya versi Android yang tersedia. Versi iOS sedang dalam proses dan belum bisa diunduh."
+    }
+  },
+  "jobs": {
+    "hell_king": {
+      "wood": "Jiwa tersesat",
+      "bronze": "Pelayan neraka",
+      "silver": "Asisten iblis",
+      "gold": "Penguasa api",
+      "crystal": "Raja Neraka"
+    },
+    "heaven_king": {
+      "wood": "Jiwa murni",
+      "bronze": "Utusan surga",
+      "silver": "Penjaga langit",
+      "gold": "Malaikat agung",
+      "crystal": "Raja Surga"
+    },
+    "vampire_lord": {
+      "wood": "Manusia korup",
+      "bronze": "Pelayan malam",
+      "silver": "Vampir",
+      "gold": "Tuan vampir",
+      "crystal": "Raja kegelapan"
+    },
+    "mega_corp_ceo": {
+      "wood": "Magang",
+      "bronze": "Karyawan",
+      "silver": "Manajer",
+      "gold": "Direktur",
+      "crystal": "CEO"
+    },
+    "western_president": {
+      "wood": "Penasihat",
+      "bronze": "Wakil",
+      "silver": "Wali Kota",
+      "gold": "Gubernur",
+      "crystal": "Presiden"
+    },
+    "new_world_explorer": {
+      "wood": "Pelaut",
+      "bronze": "Pengintai",
+      "silver": "Penjelajah",
+      "gold": "Komandan",
+      "crystal": "Perwakilan Mahkota"
     }
   }
 }

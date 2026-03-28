@@ -892,9 +892,11 @@
       if (!row || typeof row !== "object") return;
 
       out[uid] = {
+        wood: _bool(row.wood),
         bronze: _bool(row.bronze),
         silver: _bool(row.silver),
-        gold: _bool(row.gold)
+        gold: _bool(row.gold),
+        crystal: _bool(row.crystal)
       };
     });
 
@@ -1013,7 +1015,7 @@
 
   function _hasAnyBadge(map) {
     try {
-      return Object.values(map || {}).some((row) => row && (row.bronze || row.silver || row.gold));
+      return Object.values(map || {}).some((row) => row && (row.wood || row.bronze || row.silver || row.gold || row.crystal));
     } catch (_) {
       return false;
     }
@@ -1090,13 +1092,13 @@
     const key = _norm(badgeKey);
 
     if (!uid) return false;
-    if (!["bronze", "silver", "gold"].includes(key)) return false;
+    if (!["wood", "bronze", "silver", "gold", "crystal"].includes(key)) return false;
 
     const local = _readLocalBadges();
     const map = _normalizeBadgeMap(local.map || {});
 
     if (!map[uid]) {
-      map[uid] = { bronze: false, silver: false, gold: false };
+      map[uid] = { wood: false, bronze: false, silver: false, gold: false, crystal: false };
     }
 
     map[uid][key] = !!unlocked;
@@ -1126,9 +1128,11 @@
     const map = _normalizeBadgeMap(local.map || {});
 
     map[uid] = {
+      wood: !!state?.wood,
       bronze: !!state?.bronze,
       silver: !!state?.silver,
-      gold: !!state?.gold
+      gold: !!state?.gold,
+      crystal: !!state?.crystal
     };
 
     const next = {
@@ -1193,6 +1197,10 @@
 
   function badgeIconPaths() {
     return {
+      wood: {
+        empty: "assets/img/ui/badge_empty.webp",
+        full: "assets/img/ui/badge_wood_full.webp"
+      },
       bronze: {
         empty: "assets/img/ui/badge_empty.webp",
         full: "assets/img/ui/badge_bronze_full.webp"
@@ -1204,6 +1212,10 @@
       gold: {
         empty: "assets/img/ui/badge_empty.webp",
         full: "assets/img/ui/badge_gold_full.webp"
+      },
+      crystal: {
+        empty: "assets/img/ui/badge_empty.webp",
+        full: "assets/img/ui/badge_crystal_full.webp"
       }
     };
   }
@@ -1285,9 +1297,11 @@
     const row = (map && map[uid] && typeof map[uid] === "object") ? map[uid] : {};
 
     return {
+      wood: !!row.wood,
       bronze: !!row.bronze,
       silver: !!row.silver,
-      gold: !!row.gold
+      gold: !!row.gold,
+      crystal: !!row.crystal
     };
   }
 
@@ -1358,7 +1372,7 @@
       const badges = document.createElement("div");
       badges.className = "vr-universe-badges";
 
-      for (const key of ["bronze", "silver", "gold"]) {
+      for (const key of ["wood", "bronze", "silver", "gold", "crystal"]) {
         const unlocked2 = !!st[key];
 
         const box = document.createElement("button");
@@ -1437,7 +1451,7 @@
     if (!badgeEl) return null;
 
     const key = _norm(badgeEl.getAttribute("data-badge"));
-    if (!["bronze", "silver", "gold"].includes(key)) return null;
+    if (!["wood", "bronze", "silver", "gold", "crystal"].includes(key)) return null;
 
     const icons = badgeIconPaths();
     const src =
@@ -1448,15 +1462,19 @@
     if (!src) return null;
 
     const titleMap = {
+      wood: _t("profile.badgeWood", "Badge bois"),
       bronze: _t("profile.badgeBronze", "Badge bronze"),
       silver: _t("profile.badgeSilver", "Badge argent"),
-      gold: _t("profile.badgeGold", "Badge or")
+      gold: _t("profile.badgeGold", "Badge or"),
+      crystal: _t("profile.badgeCrystal", "Badge cristal")
     };
 
     const descMap = {
+      wood: _t("profile.badgeUnlockWood", "Débloqué à partir de 20 choix dans une partie."),
       bronze: _t("profile.badgeUnlockBronze", "Débloqué à partir de 40 choix dans une partie."),
       silver: _t("profile.badgeUnlockSilver", "Débloqué à partir de 60 choix dans une partie."),
-      gold: _t("profile.badgeUnlockGold", "Débloqué à partir de 100 choix dans une partie.")
+      gold: _t("profile.badgeUnlockGold", "Débloqué à partir de 100 choix dans une partie."),
+      crystal: _t("profile.badgeUnlockCrystal", "Débloqué à partir de 150 choix dans une partie.")
     };
 
     return {

@@ -95,7 +95,7 @@
     "faq_q4": "Comment augmenter mon gain de fin ?",
     "faq_a4": "Quand une partie se termine, un bouton permet de regarder une pub récompensée. Si ton gain de base est inférieur à 100, il passe à 100 VCoins. Sinon, il est doublé. Si la pub n’est pas validée ou indisponible, le gain reste normal.",
     "faq_q5": "Comment fonctionnent les badges du profil ?",
-    "faq_a5": "Les badges sont séparés par univers. Ils se débloquent pendant une partie si tu es encore en vie au bon moment : bronze à 40 choix, argent à 60 choix et or à 100 choix.",
+    "faq_a5": "Les badges sont séparés par univers. Ils se débloquent pendant une partie si tu es encore en vie au bon moment : bois à 20 choix, bronze à 40 choix, argent à 60 choix, or à 100 choix et cristal à 150 choix.",
     "faq_q6": "Comment changer mon pseudo ?",
     "faq_a6": "Va dans Profil, appuie sur le bouton pour modifier le pseudo, entre ton nouveau nom puis enregistre. Le pseudo doit être unique, contenir entre 3 et 20 caractères, et utiliser uniquement des lettres non accentuées, des chiffres, des tirets bas _ ou des tirets -.",
     "faq_q7": "À quoi servent les VCoins ?",
@@ -386,7 +386,13 @@
     "ladybugSecretFinishBodySeen": "Tu as déjà reçu les 50 VCoins pour celui-ci.",
     "baudelaireSecretTitle": "Baudelaire — La Destruction",
     "baudelaireSecretBody": "Sans cesse le Démon s'agite à mes côtés ;\nIl nage autour de moi comme un air impalpable ;\nJe l'avale et le sens qui brûle mon poumon\nEt l'emplit d'un désir éternel et coupable.\n\nParfois, sachant mon grand amour de l'Art,\nIl prend la forme de la plus séduisante des femmes,\nEt, sous de spécieux prétextes de mélancolie,\nAccoutume mes lèvres à des philtres infâmes.\n\nAinsi il me conduit, loin du regard de Dieu,\nHaletant et brisé de fatigue, au milieu\nDes plaines de l'Ennui, profondes et désertes,\n\nEt jette dans mes yeux pleins de confusion\nDes vêtements souillés, des blessures ouvertes,\nEt l'appareil sanglant de la Destruction.",
-    "baudelaireSecretButton": "Continuer"
+    "baudelaireSecretButton": "Continuer",
+    "badgeWood": "Badge bois",
+    "badgeCrystal": "Badge cristal",
+    "badgeUnlockWood": "Débloqué à partir de 20 choix dans une partie.",
+    "badgeUnlockCrystal": "Débloqué à partir de 150 choix dans une partie.",
+    "badge_wood_aria": "Agrandir le badge bois",
+    "badge_crystal_aria": "Agrandir le badge cristal"
   },
   "shop": {
     "title": "BOUTIQUE",
@@ -646,6 +652,50 @@
     "crosspromo_desc": "Invite un ami à installer VUniverse et gagne 200 VCoins par installation validée, jusqu’à 5 invitations.",
     "android_only_popup": {
       "text": "Seule la version Android est disponible pour le moment. La version iOS est en cours et ne peut donc pas être téléchargée pour le moment."
+    }
+  },
+  "jobs": {
+    "hell_king": {
+      "wood": "Âme perdue",
+      "bronze": "Serviteur infernal",
+      "silver": "Assistant démoniaque",
+      "gold": "Seigneur des flammes",
+      "crystal": "Roi des Enfers"
+    },
+    "heaven_king": {
+      "wood": "Âme pure",
+      "bronze": "Messager céleste",
+      "silver": "Gardien des cieux",
+      "gold": "Archange",
+      "crystal": "Roi du Paradis"
+    },
+    "vampire_lord": {
+      "wood": "Humain corrompu",
+      "bronze": "Serviteur nocturne",
+      "silver": "Vampire",
+      "gold": "Seigneur vampire",
+      "crystal": "Roi des ténèbres"
+    },
+    "mega_corp_ceo": {
+      "wood": "Stagiaire",
+      "bronze": "Employé",
+      "silver": "Manager",
+      "gold": "Directeur",
+      "crystal": "PDG"
+    },
+    "western_president": {
+      "wood": "Conseiller",
+      "bronze": "Adjoint",
+      "silver": "Maire",
+      "gold": "Gouverneur",
+      "crystal": "Président"
+    },
+    "new_world_explorer": {
+      "wood": "Marin",
+      "bronze": "Éclaireur",
+      "silver": "Explorateur",
+      "gold": "Commandant",
+      "crystal": "Représentant de la Couronne"
     }
   }
 }

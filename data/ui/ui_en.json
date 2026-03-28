@@ -95,7 +95,7 @@
     "faq_q4": "How do I increase my final reward?",
     "faq_a4": "When a run ends, a button lets you watch a rewarded ad. If your base reward is below 100, it becomes 100 VCoins. Otherwise, it is doubled. If the ad is not completed or unavailable, the reward stays normal.",
     "faq_q5": "How do profile badges work?",
-    "faq_a5": "Badges are separated by universe. They unlock during a run if you are still alive at the right moment: bronze at 40 choices, silver at 60 choices, and gold at 100 choices.",
+    "faq_a5": "Badges are separated by universe. They unlock during a run if you are still alive at the right moment: wood at 20 choices, bronze at 40 choices, silver at 60 choices, gold at 100 choices, and crystal at 150 choices.",
     "faq_q6": "How do I change my username?",
     "faq_a6": "Go to Profile, tap the button to edit your username, enter your new name, and save it. The username must be unique, contain between 3 and 20 characters, and use only unaccented letters, numbers, underscores _, or hyphens -.",
     "faq_q7": "What are VCoins used for?",
@@ -386,7 +386,13 @@
     "ladybugSecretFinishBodySeen": "You already received the 50 VCoins for this one.",
     "baudelaireSecretTitle": "Baudelaire — Destruction",
     "baudelaireSecretBody": "Without cease the Demon stirs beside me;\nHe swims around me like impalpable air;\nI breathe him in and feel him burn my lungs\nAnd fill them with an endless, guilty desire.\n\nAt times, knowing my great love of Art,\nHe takes the shape of the most seductive woman,\nAnd, under specious pretexts of melancholy,\nAccustoms my lips to infamous potions.\n\nThus he leads me, far from the gaze of God,\nPanting and broken down with weariness, into the midst\nOf the plains of Ennui, deep and deserted,\n\nAnd throws into my eyes, full of confusion,\nSoiled garments, open wounds,\nAnd the bloody pageantry of Destruction.",
-    "baudelaireSecretButton": "Continue"
+    "baudelaireSecretButton": "Continue",
+    "badgeWood": "Wood badge",
+    "badgeCrystal": "Crystal badge",
+    "badgeUnlockWood": "Unlocked from 20 choices in a single run.",
+    "badgeUnlockCrystal": "Unlocked from 150 choices in a single run.",
+    "badge_wood_aria": "Enlarge wood badge",
+    "badge_crystal_aria": "Enlarge crystal badge"
   },
   "shop": {
     "title": "SHOP",
@@ -646,6 +652,50 @@
     "crosspromo_desc": "Invite a friend to install VUniverse and earn 200 VCoins for each validated install, up to 5 invites.",
     "android_only_popup": {
       "text": "Only the Android version is currently available. The iOS version is in progress and cannot be downloaded yet."
+    }
+  },
+  "jobs": {
+    "hell_king": {
+      "wood": "Lost Soul",
+      "bronze": "Infernal Servant",
+      "silver": "Demonic Assistant",
+      "gold": "Lord of Flames",
+      "crystal": "King of Hell"
+    },
+    "heaven_king": {
+      "wood": "Pure Soul",
+      "bronze": "Celestial Messenger",
+      "silver": "Guardian of Heaven",
+      "gold": "Archangel",
+      "crystal": "King of Paradise"
+    },
+    "vampire_lord": {
+      "wood": "Corrupted Human",
+      "bronze": "Night Servant",
+      "silver": "Vampire",
+      "gold": "Vampire Lord",
+      "crystal": "King of Darkness"
+    },
+    "mega_corp_ceo": {
+      "wood": "Intern",
+      "bronze": "Employee",
+      "silver": "Manager",
+      "gold": "Director",
+      "crystal": "CEO"
+    },
+    "western_president": {
+      "wood": "Advisor",
+      "bronze": "Deputy",
+      "silver": "Mayor",
+      "gold": "Governor",
+      "crystal": "President"
+    },
+    "new_world_explorer": {
+      "wood": "Sailor",
+      "bronze": "Scout",
+      "silver": "Explorer",
+      "gold": "Commander",
+      "crystal": "Representative of the Crown"
     }
   }
 }
