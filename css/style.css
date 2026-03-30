@@ -5534,18 +5534,18 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 .vr-guide-popup{
   position: absolute;
   left: 50%;
-  top: 31%;
+  top: 25.5%;
   transform: translate(-50%, -50%);
-  width: min(92%, 760px);
-  max-width: calc(100% - 8px);
+  width: min(88%, 720px);
+  max-width: calc(100% - 18px);
   z-index: 4;
 }
 
 .vr-guide-bubble-text{
   position: relative;
   width: 100%;
-  min-height: clamp(72px, 9.5vh, 110px);
-  padding: clamp(10px, 1.5vw, 14px) clamp(12px, 1.8vw, 18px);
+  min-height: clamp(88px, 12vh, 138px);
+  padding: clamp(12px, 1.7vw, 16px) clamp(14px, 2vw, 22px);
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 18px;
@@ -5563,9 +5563,9 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   position: absolute;
   right: 0;
   bottom: 0;
-  width: min(64%, 430px);
-  min-width: 240px;
-  max-width: 430px;
+  width: clamp(280px, 74vw, 520px);
+  max-width: calc(100% - 8px);
+  height: auto;
   aspect-ratio: 1024 / 1536;
   display: flex;
   align-items: flex-end;
@@ -5577,7 +5577,8 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 .vr-guide-image{
   width: 100%;
   height: auto;
-  max-height: min(74vh, 720px);
+  max-width: 100%;
+  max-height: calc(100svh - 8px);
   object-fit: contain;
   object-position: right bottom;
   display: block;
@@ -5628,14 +5629,14 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 
 @media (max-width: 600px){
   .vr-guide-popup{
-    top: 28%;
-    width: calc(100% - 6px);
+    top: 23.5%;
+    width: calc(100% - 18px);
     max-width: none;
   }
 
   .vr-guide-bubble-text{
-    min-height: clamp(68px, 8.8vh, 92px);
-    padding: 8px 10px;
+    min-height: clamp(84px, 11vh, 128px);
+    padding: 10px 12px;
     border-radius: 16px;
   }
 
@@ -5647,35 +5648,62 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   .vr-guide-figure{
     right: 0;
     bottom: 0;
-    width: min(56%, 280px);
-    min-width: 190px;
-    max-width: 280px;
+    width: clamp(300px, 78vw, 420px);
+    max-width: calc(100% - 6px);
   }
 
   .vr-guide-image{
-    max-height: min(58vh, 470px);
+    max-width: 100%;
+    max-height: calc(100svh - 10px);
   }
 }
 
-@media (min-width: 900px){
+@media (orientation: portrait) and (min-width: 601px) and (max-width: 1100px){
   .vr-guide-popup{
-    top: 33%;
-    width: min(86%, 820px);
+    top: 24.5%;
+    width: min(84%, 760px);
+    max-width: calc(100% - 28px);
   }
 
   .vr-guide-bubble-text{
-    min-height: clamp(78px, 10vh, 116px);
+    min-height: clamp(92px, 11.5vh, 140px);
+    padding: 12px 16px;
   }
 
   .vr-guide-figure{
     right: 0;
     bottom: 0;
-    width: min(42%, 520px);
-    min-width: 290px;
-    max-width: 520px;
+    width: clamp(360px, 52vw, 520px);
+    max-width: calc(100% - 8px);
   }
 
   .vr-guide-image{
-    max-height: min(78vh, 820px);
+    max-width: 100%;
+    max-height: calc(100svh - 10px);
+  }
+}
+
+@media (min-width: 1101px){
+  .vr-guide-popup{
+    top: 26%;
+    width: min(78%, 760px);
+    max-width: calc(100% - 32px);
+  }
+
+  .vr-guide-bubble-text{
+    min-height: clamp(94px, 11vh, 142px);
+    padding: 14px 18px;
+  }
+
+  .vr-guide-figure{
+    right: 0;
+    bottom: 0;
+    width: clamp(360px, 34vw, 560px);
+    max-width: calc(100% - 10px);
+  }
+
+  .vr-guide-image{
+    max-width: 100%;
+    max-height: calc(100svh - 12px);
   }
 }
