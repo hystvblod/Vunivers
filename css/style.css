@@ -5529,23 +5529,25 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 .vr-guide-overlay.is-visible{
   opacity: 1;
   transform: translateY(0) scale(1);
+  pointer-events: auto;
 }
 
 .vr-guide-popup{
   position: absolute;
   left: 50%;
-  top: 25.5%;
+  top: 29%;
   transform: translate(-50%, -50%);
-  width: min(88%, 720px);
-  max-width: calc(100% - 18px);
+  width: min(84%, 700px);
+  max-width: calc(100% - 24px);
   z-index: 4;
+  pointer-events: none;
 }
 
 .vr-guide-bubble-text{
   position: relative;
   width: 100%;
-  min-height: clamp(88px, 12vh, 138px);
-  padding: clamp(12px, 1.7vw, 16px) clamp(14px, 2vw, 22px);
+  min-height: clamp(84px, 10.8vh, 124px);
+  padding: clamp(12px, 1.6vw, 16px) clamp(14px, 2vw, 22px) clamp(20px, 2.4vw, 28px);
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 18px;
@@ -5557,15 +5559,30 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
+}
+
+.vr-guide-bubble-text::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:10px;
+  width:12px;
+  height:12px;
+  border-right:3px solid rgba(255,255,255,.92);
+  border-bottom:3px solid rgba(255,255,255,.92);
+  transform:translateX(-50%) rotate(45deg);
+  opacity:.9;
+  animation:vrGuideHintBounce 1s ease-in-out infinite;
 }
 
 .vr-guide-figure{
   position: absolute;
   right: 0;
   bottom: 0;
-  width: clamp(280px, 74vw, 520px);
-  max-width: calc(100% - 8px);
-  height: auto;
+  width: min(68%, 470px);
+  min-width: 260px;
+  max-width: 470px;
   aspect-ratio: 1024 / 1536;
   display: flex;
   align-items: flex-end;
@@ -5577,14 +5594,51 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 .vr-guide-image{
   width: 100%;
   height: auto;
-  max-width: 100%;
-  max-height: calc(100svh - 8px);
+  max-height: min(78vh, 780px);
   object-fit: contain;
   object-position: right bottom;
   display: block;
   user-select: none;
   -webkit-user-drag: none;
   filter: drop-shadow(0 16px 34px rgba(0,0,0,.42));
+}
+
+.vr-guide-confetti-layer{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.vr-guide-confetti-piece{
+  position:absolute;
+  top:-8%;
+  width:10px;
+  height:18px;
+  border-radius:3px;
+  opacity:0;
+  will-change:transform,opacity;
+  animation:vrGuideConfettiFall var(--dur,1100ms) ease-out forwards;
+}
+
+@keyframes vrGuideHintBounce{
+  0%,100%{ transform:translateX(-50%) rotate(45deg) translateY(0); opacity:.78; }
+  50%{ transform:translateX(-50%) rotate(45deg) translateY(4px); opacity:1; }
+}
+
+@keyframes vrGuideConfettiFall{
+  0%{
+    opacity:0;
+    transform:translate3d(0,0,0) rotate(0deg) scale(.9);
+  }
+  10%{
+    opacity:1;
+  }
+  100%{
+    opacity:0;
+    transform:translate3d(var(--dx,0px), 62vh, 0) rotate(var(--rot,360deg)) scale(1.05);
+  }
 }
 
 .vr-guide-bubble-fit{
@@ -5629,14 +5683,14 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 
 @media (max-width: 600px){
   .vr-guide-popup{
-    top: 23.5%;
-    width: calc(100% - 18px);
+    top: 26%;
+    width: calc(100% - 24px);
     max-width: none;
   }
 
   .vr-guide-bubble-text{
-    min-height: clamp(84px, 11vh, 128px);
-    padding: 10px 12px;
+    min-height: clamp(80px, 10.2vh, 112px);
+    padding: 10px 12px 22px;
     border-radius: 16px;
   }
 
@@ -5648,13 +5702,21 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   .vr-guide-figure{
     right: 0;
     bottom: 0;
-    width: clamp(300px, 78vw, 420px);
-    max-width: calc(100% - 6px);
+    width: min(62%, 320px);
+    min-width: 220px;
+    max-width: 320px;
   }
 
   .vr-guide-image{
-    max-width: 100%;
-    max-height: calc(100svh - 10px);
+    max-height: min(66vh, 560px);
+  }
+
+  .vr-guide-bubble-text::after{
+    bottom: 8px;
+    width: 11px;
+    height: 11px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
   }
 }
 
