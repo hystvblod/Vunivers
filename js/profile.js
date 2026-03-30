@@ -969,9 +969,13 @@
         .from("profiles")
         .select("id, universe_badges, universe_badges_updated_at")
         .eq("id", uid)
-        .single();
+        .maybeSingle();
 
-      if (r?.error) return null;
+      if (r?.error) {
+        console.warn("[VUProfileBadges] remote badges error:", r.error);
+        return null;
+      }
+      if (!r?.data) return null;
 
       return {
         ts: _fromIso(r?.data?.universe_badges_updated_at),
@@ -1000,9 +1004,13 @@
         .update(payload)
         .eq("id", uid)
         .select("id, universe_badges, universe_badges_updated_at")
-        .single();
+        .maybeSingle();
 
-      if (r?.error) return null;
+      if (r?.error) {
+        console.warn("[VUProfileBadges] remote badges error:", r.error);
+        return null;
+      }
+      if (!r?.data) return null;
 
       return {
         ts: _fromIso(r?.data?.universe_badges_updated_at),
