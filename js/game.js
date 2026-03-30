@@ -5647,11 +5647,22 @@ window.VRGuideMentor = {
   },
 
   _t(key, fallback, vars) {
+    let out = "";
+
     try {
-      return window.VRI18n?.t?.(key, vars) || fallback || key;
+      out = window.VRI18n?.t?.(key) || fallback || key;
     } catch (_) {
-      return fallback || key;
+      out = fallback || key;
     }
+
+    if (vars && typeof out === "string") {
+      Object.keys(vars).forEach((k) => {
+        const value = String(vars[k]);
+        out = out.replaceAll(`{${k}}`, value);
+      });
+    }
+
+    return out;
   },
 
   _rankKey(universeId, tier) {
@@ -5665,40 +5676,43 @@ window.VRGuideMentor = {
   _setText(text) {
     const { fit } = this._els();
     if (!fit) return;
-    fit.textContent = text || "";
+    fit.innerText = text || "";
   },
 
   _fitTextAndScale() {
     const { overlay, bubble, fit, view } = this._els();
     if (!overlay || !bubble || !fit || !view) return;
 
-    const minFont = 12;
-    const maxFont = 28;
-    const preferredMinFont = 16;
-
     const viewWidth = view.clientWidth || window.innerWidth || 360;
-    const maxOverlayWidth = Math.min(Math.round(viewWidth * 0.92), 560);
-    const startWidth = Math.min(Math.max(overlay.offsetWidth || 320, 280), maxOverlayWidth);
+    const minOverlayWidth = Math.max(Math.round(viewWidth * 0.62), 300);
+    const maxOverlayWidth = Math.min(Math.round(viewWidth * 0.98), 760);
 
-    let chosenWidth = startWidth;
-    let chosenFont = minFont;
+    const minFont = 10;
+    const maxFont = 26;
 
-    for (let width = startWidth; width <= maxOverlayWidth; width += 20) {
+    const textFits = () => {
+      return (
+        fit.scrollWidth <= bubble.clientWidth + 1 &&
+        fit.scrollHeight <= bubble.clientHeight + 1
+      );
+    };
+
+    let finalWidth = minOverlayWidth;
+    let finalFont = minFont;
+    let found = false;
+
+    for (let width = minOverlayWidth; width <= maxOverlayWidth; width += 16) {
       overlay.style.width = width + "px";
 
       let low = minFont;
       let high = maxFont;
       let best = minFont;
 
-      for (let i = 0; i < 14; i++) {
+      for (let i = 0; i < 16; i++) {
         const mid = Math.floor((low + high) / 2);
         fit.style.fontSize = mid + "px";
 
-        const fits =
-          fit.scrollWidth <= bubble.clientWidth + 1 &&
-          fit.scrollHeight <= bubble.clientHeight + 1;
-
-        if (fits) {
+        if (textFits()) {
           best = mid;
           low = mid + 1;
         } else {
@@ -5706,17 +5720,33 @@ window.VRGuideMentor = {
         }
       }
 
-      chosenWidth = width;
-      chosenFont = best;
       fit.style.fontSize = best + "px";
 
-      if (best >= preferredMinFont) {
-        break;
+      if (textFits()) {
+        finalWidth = width;
+        finalFont = best;
+        found = true;
+
+        if (best >= 15) {
+          break;
+        }
       }
     }
 
-    overlay.style.width = chosenWidth + "px";
-    fit.style.fontSize = chosenFont + "px";
+    if (!found) {
+      overlay.style.width = maxOverlayWidth + "px";
+      fit.style.fontSize = minFont + "px";
+
+      while (!textFits() && parseFloat(fit.style.fontSize) > 8) {
+        fit.style.fontSize = (parseFloat(fit.style.fontSize) - 1) + "px";
+      }
+
+      finalWidth = maxOverlayWidth;
+      finalFont = parseFloat(fit.style.fontSize) || 8;
+    }
+
+    overlay.style.width = finalWidth + "px";
+    fit.style.fontSize = finalFont + "px";
   },
 
   show(universeId, lines) {
@@ -5731,7 +5761,7 @@ window.VRGuideMentor = {
 
     const text = (Array.isArray(lines) ? lines : [])
       .filter(Boolean)
-      .join(" ");
+      .join("\n");
 
     this._setText(text);
 

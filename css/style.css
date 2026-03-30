@@ -5608,10 +5608,10 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   text-align: center;
   color: #1f2430;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.08;
   word-break: break-word;
   overflow-wrap: anywhere;
-  text-wrap: balance;
+  white-space: pre-line;
   font-size: 22px;
 }
 
@@ -5643,4 +5643,3 @@ body.vr-body-game[data-universe] .vr-gauge-label{
     max-width: 520px;
   }
 }
-
