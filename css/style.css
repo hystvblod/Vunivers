@@ -5534,17 +5534,17 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 .vr-guide-popup{
   position: absolute;
   left: 50%;
-  top: 29%;
+  top: 31%;
   transform: translate(-50%, -50%);
-  width: min(88%, 620px);
-  max-width: calc(100% - 12px);
+  width: min(92%, 760px);
+  max-width: calc(100% - 8px);
   z-index: 4;
 }
 
 .vr-guide-bubble-text{
   position: relative;
   width: 100%;
-  min-height: clamp(74px, 10vh, 108px);
+  min-height: clamp(72px, 9.5vh, 110px);
   padding: clamp(10px, 1.5vw, 14px) clamp(12px, 1.8vw, 18px);
   box-sizing: border-box;
   overflow: hidden;
@@ -5563,9 +5563,9 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   position: absolute;
   right: 0;
   bottom: 0;
-  width: min(52%, 340px);
-  min-width: 210px;
-  max-width: 340px;
+  width: min(64%, 430px);
+  min-width: 240px;
+  max-width: 430px;
   aspect-ratio: 1024 / 1536;
   display: flex;
   align-items: flex-end;
@@ -5577,7 +5577,7 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 .vr-guide-image{
   width: 100%;
   height: auto;
-  max-height: min(62vh, 560px);
+  max-height: min(74vh, 720px);
   object-fit: contain;
   object-position: right bottom;
   display: block;
@@ -5626,17 +5626,16 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   border-color: rgba(255,255,255,0.12);
 }
 
-/* Mobile étroit */
 @media (max-width: 600px){
   .vr-guide-popup{
-    top: 27%;
-    width: calc(100% - 8px);
+    top: 28%;
+    width: calc(100% - 6px);
     max-width: none;
   }
 
   .vr-guide-bubble-text{
-    min-height: clamp(70px, 9vh, 96px);
-    padding: 9px 11px;
+    min-height: clamp(68px, 8.8vh, 92px);
+    padding: 8px 10px;
     border-radius: 16px;
   }
 
@@ -5646,37 +5645,37 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   }
 
   .vr-guide-figure{
-    width: min(50%, 245px);
-    min-width: 185px;
-    max-width: 245px;
     right: 0;
     bottom: 0;
+    width: min(56%, 280px);
+    min-width: 190px;
+    max-width: 280px;
   }
 
   .vr-guide-image{
-    max-height: min(54vh, 430px);
+    max-height: min(58vh, 470px);
   }
 }
 
-/* Tablette / grand écran */
 @media (min-width: 900px){
   .vr-guide-popup{
-    top: 31%;
-    width: min(74%, 700px);
+    top: 33%;
+    width: min(86%, 820px);
   }
 
   .vr-guide-bubble-text{
-    min-height: clamp(82px, 10vh, 118px);
+    min-height: clamp(78px, 10vh, 116px);
   }
 
   .vr-guide-figure{
-    width: min(38%, 420px);
-    min-width: 260px;
-    max-width: 420px;
     right: 0;
+    bottom: 0;
+    width: min(42%, 520px);
+    min-width: 290px;
+    max-width: 520px;
   }
 
   .vr-guide-image{
-    max-height: min(68vh, 680px);
+    max-height: min(78vh, 820px);
   }
 }
