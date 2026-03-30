@@ -5634,12 +5634,15 @@ function resolvePreviewAssets(cfg) {
 
 window.VRGuideMentor = {
   _hideTimer: null,
+  _finalTimer: null,
 
   _els() {
     return {
       overlay: document.getElementById("vr-guide-overlay"),
       image: document.getElementById("vr-guide-image"),
-      fit: document.getElementById("vr-guide-bubble-fit")
+      bubble: document.getElementById("vr-guide-bubble-text"),
+      fit: document.getElementById("vr-guide-bubble-fit"),
+      view: document.getElementById("view-game")
     };
   },
 
@@ -5663,39 +5666,57 @@ window.VRGuideMentor = {
     const { fit } = this._els();
     if (!fit) return;
     fit.textContent = text || "";
-    this._fitText();
   },
 
-  _fitText() {
-    const { fit } = this._els();
-    if (!fit) return;
+  _fitTextAndScale() {
+    const { overlay, bubble, fit, view } = this._els();
+    if (!overlay || !bubble || !fit || !view) return;
 
-    fit.style.fontSize = "20px";
+    const minFont = 12;
+    const maxFont = 28;
+    const preferredMinFont = 16;
 
-    const parent = fit.parentElement;
-    if (!parent) return;
+    const viewWidth = view.clientWidth || window.innerWidth || 360;
+    const maxOverlayWidth = Math.min(Math.round(viewWidth * 0.92), 560);
+    const startWidth = Math.min(Math.max(overlay.offsetWidth || 320, 280), maxOverlayWidth);
 
-    let low = 10;
-    let high = 34;
-    let best = 10;
+    let chosenWidth = startWidth;
+    let chosenFont = minFont;
 
-    for (let i = 0; i < 12; i++) {
-      const mid = Math.floor((low + high) / 2);
-      fit.style.fontSize = mid + "px";
+    for (let width = startWidth; width <= maxOverlayWidth; width += 20) {
+      overlay.style.width = width + "px";
 
-      const fits =
-        fit.scrollWidth <= parent.clientWidth + 1 &&
-        fit.scrollHeight <= parent.clientHeight + 1;
+      let low = minFont;
+      let high = maxFont;
+      let best = minFont;
 
-      if (fits) {
-        best = mid;
-        low = mid + 1;
-      } else {
-        high = mid - 1;
+      for (let i = 0; i < 14; i++) {
+        const mid = Math.floor((low + high) / 2);
+        fit.style.fontSize = mid + "px";
+
+        const fits =
+          fit.scrollWidth <= bubble.clientWidth + 1 &&
+          fit.scrollHeight <= bubble.clientHeight + 1;
+
+        if (fits) {
+          best = mid;
+          low = mid + 1;
+        } else {
+          high = mid - 1;
+        }
+      }
+
+      chosenWidth = width;
+      chosenFont = best;
+      fit.style.fontSize = best + "px";
+
+      if (best >= preferredMinFont) {
+        break;
       }
     }
 
-    fit.style.fontSize = best + "px";
+    overlay.style.width = chosenWidth + "px";
+    fit.style.fontSize = chosenFont + "px";
   },
 
   show(universeId, lines) {
@@ -5718,13 +5739,20 @@ window.VRGuideMentor = {
     overlay.classList.remove("is-final");
 
     clearTimeout(this._hideTimer);
-    this._hideTimer = setTimeout(() => {
+    clearTimeout(this._finalTimer);
+
+    requestAnimationFrame(() => {
+      this._fitTextAndScale();
+    });
+
+    this._finalTimer = setTimeout(() => {
       overlay.classList.add("is-final");
-    }, 100);
+      this._fitTextAndScale();
+    }, 120);
 
     this._hideTimer = setTimeout(() => {
       this.hide();
-    }, 5200);
+    }, 5600);
   },
 
   hide() {
@@ -5784,7 +5812,7 @@ window.VRGuideMentor = {
   },
 
   refresh() {
-    this._fitText();
+    this._fitTextAndScale();
   }
 };
 
