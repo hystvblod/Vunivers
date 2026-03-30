@@ -5676,7 +5676,7 @@ window.VRGuideMentor = {
   _setText(text) {
     const { fit } = this._els();
     if (!fit) return;
-    fit.innerText = text || "";
+    fit.textContent = text || "";
   },
 
   _fitTextAndScale() {
@@ -5684,11 +5684,12 @@ window.VRGuideMentor = {
     if (!overlay || !bubble || !fit || !view) return;
 
     const viewWidth = view.clientWidth || window.innerWidth || 360;
-    const minOverlayWidth = Math.max(Math.round(viewWidth * 0.62), 300);
-    const maxOverlayWidth = Math.min(Math.round(viewWidth * 0.98), 760);
 
-    const minFont = 10;
-    const maxFont = 26;
+    const minOverlayWidth = Math.max(Math.round(viewWidth * 0.82), 420);
+    const maxOverlayWidth = Math.min(Math.round(viewWidth * 1.18), 980);
+
+    const minFont = 9;
+    const maxFont = 24;
 
     const textFits = () => {
       return (
@@ -5701,14 +5702,14 @@ window.VRGuideMentor = {
     let finalFont = minFont;
     let found = false;
 
-    for (let width = minOverlayWidth; width <= maxOverlayWidth; width += 16) {
+    for (let width = minOverlayWidth; width <= maxOverlayWidth; width += 20) {
       overlay.style.width = width + "px";
 
       let low = minFont;
       let high = maxFont;
       let best = minFont;
 
-      for (let i = 0; i < 16; i++) {
+      for (let i = 0; i < 18; i++) {
         const mid = Math.floor((low + high) / 2);
         fit.style.fontSize = mid + "px";
 
@@ -5727,7 +5728,7 @@ window.VRGuideMentor = {
         finalFont = best;
         found = true;
 
-        if (best >= 15) {
+        if (best >= 14) {
           break;
         }
       }
@@ -5737,12 +5738,12 @@ window.VRGuideMentor = {
       overlay.style.width = maxOverlayWidth + "px";
       fit.style.fontSize = minFont + "px";
 
-      while (!textFits() && parseFloat(fit.style.fontSize) > 8) {
+      while (!textFits() && parseFloat(fit.style.fontSize) > 7) {
         fit.style.fontSize = (parseFloat(fit.style.fontSize) - 1) + "px";
       }
 
       finalWidth = maxOverlayWidth;
-      finalFont = parseFloat(fit.style.fontSize) || 8;
+      finalFont = parseFloat(fit.style.fontSize) || 7;
     }
 
     overlay.style.width = finalWidth + "px";
@@ -5761,7 +5762,7 @@ window.VRGuideMentor = {
 
     const text = (Array.isArray(lines) ? lines : [])
       .filter(Boolean)
-      .join("\n");
+      .join(" ");
 
     this._setText(text);
 
