@@ -5736,7 +5736,7 @@ window.VRGuideMentor = {
 
     const viewWidth = view.clientWidth || window.innerWidth || 360;
     const minFont = viewWidth <= 420 ? 10 : 11;
-    const maxFont = viewWidth >= 1200 ? 25 : viewWidth >= 900 ? 22 : viewWidth >= 680 ? 19 : 16;
+    const maxFont = viewWidth >= 1200 ? 22 : viewWidth >= 900 ? 20 : viewWidth >= 680 ? 18 : 16;
 
     overlay.style.width = "";
 
@@ -5751,7 +5751,7 @@ window.VRGuideMentor = {
     let high = maxFont;
     let best = minFont;
 
-    fit.style.lineHeight = viewWidth <= 600 ? "1.12" : "1.14";
+    fit.style.lineHeight = viewWidth <= 600 ? "1.06" : "1.08";
 
     while (low <= high) {
       const mid = Math.floor((low + high) / 2);
