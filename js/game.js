@@ -5947,6 +5947,8 @@ function resolvePreviewAssets(cfg) {
 window.VRGuideMentor = {
   _hideTimer: null,
   _finalTimer: null,
+  _confettiCleanupTimer: null,
+  _dismissEnabledAt: 0,
 
   _els() {
     return {
@@ -6003,6 +6005,78 @@ window.VRGuideMentor = {
       div.textContent = line;
       fit.appendChild(div);
     });
+  },
+
+  _ensureDismissBinding() {
+    const { overlay } = this._els();
+    if (!overlay || overlay.__vrGuideDismissBound) return;
+
+    const onDismiss = (e) => {
+      if (!overlay.classList.contains("is-visible")) return;
+      if (Date.now() < (this._dismissEnabledAt || 0)) return;
+
+      if (e?.type === "keydown") {
+        const k = String(e.key || "");
+        if (k !== "Escape" && k !== "Enter" && k !== " ") return;
+      }
+
+      this.hide();
+    };
+
+    overlay.__vrGuideDismissBound = true;
+    overlay.setAttribute("tabindex", "-1");
+    overlay.addEventListener("pointerdown", onDismiss);
+    overlay.addEventListener("click", onDismiss);
+    overlay.addEventListener("keydown", onDismiss);
+  },
+
+  _ensureConfettiLayer() {
+    const { overlay } = this._els();
+    if (!overlay) return null;
+
+    let layer = overlay.querySelector(".vr-guide-confetti-layer");
+    if (!layer) {
+      layer = document.createElement("div");
+      layer.className = "vr-guide-confetti-layer";
+      overlay.insertBefore(layer, overlay.firstChild || null);
+    }
+    return layer;
+  },
+
+  _burstConfetti() {
+    const layer = this._ensureConfettiLayer();
+    if (!layer) return;
+
+    layer.innerHTML = "";
+
+    const colors = ["#ffffff", "#f4d35e", "#ff6b6b", "#b8f2e6", "#d0bfff"];
+    const count = 24;
+
+    for (let i = 0; i < count; i += 1) {
+      const piece = document.createElement("span");
+      piece.className = "vr-guide-confetti-piece";
+
+      const left = 12 + Math.random() * 76;
+      const dx = -90 + Math.random() * 180;
+      const rot = -260 + Math.random() * 520;
+      const dur = 900 + Math.random() * 650;
+      const delay = Math.random() * 120;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+
+      piece.style.left = `${left}%`;
+      piece.style.background = color;
+      piece.style.setProperty("--dx", `${dx}px`);
+      piece.style.setProperty("--rot", `${rot}deg`);
+      piece.style.setProperty("--dur", `${dur}ms`);
+      piece.style.animationDelay = `${delay}ms`;
+
+      layer.appendChild(piece);
+    }
+
+    clearTimeout(this._confettiCleanupTimer);
+    this._confettiCleanupTimer = setTimeout(() => {
+      try { layer.innerHTML = ""; } catch (_) {}
+    }, 2200);
   },
 
   _fitTextAndScale() {
@@ -6065,6 +6139,7 @@ window.VRGuideMentor = {
       .filter(Boolean);
 
     this._setText(textLines);
+    this._ensureDismissBinding();
 
     overlay.classList.add("is-visible");
     overlay.classList.remove("is-final");
@@ -6072,24 +6147,34 @@ window.VRGuideMentor = {
     clearTimeout(this._hideTimer);
     clearTimeout(this._finalTimer);
 
+    this._dismissEnabledAt = Date.now() + 220;
+
     requestAnimationFrame(() => {
       this._fitTextAndScale();
+      try { overlay.focus({ preventScroll: true }); } catch (_) {}
     });
 
     this._finalTimer = setTimeout(() => {
       overlay.classList.add("is-final");
       this._fitTextAndScale();
     }, 120);
-
-    this._hideTimer = setTimeout(() => {
-      this.hide();
-    }, 5600);
   },
 
   hide() {
     const { overlay } = this._els();
     if (!overlay) return;
+
+    clearTimeout(this._hideTimer);
+    clearTimeout(this._finalTimer);
+
     overlay.classList.remove("is-visible");
+
+    const layer = overlay.querySelector(".vr-guide-confetti-layer");
+    if (layer) {
+      setTimeout(() => {
+        try { layer.innerHTML = ""; } catch (_) {}
+      }, 180);
+    }
   },
 
   markSeen(universeId, key) {
@@ -6139,6 +6224,7 @@ window.VRGuideMentor = {
     ];
 
     this.show(universeId, lines);
+    this._burstConfetti();
     this.markSeen(universeId, reachedTier);
   },
 
