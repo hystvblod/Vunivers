@@ -5684,12 +5684,10 @@ window.VRGuideMentor = {
     if (!overlay || !bubble || !fit || !view) return;
 
     const viewWidth = view.clientWidth || window.innerWidth || 360;
+    const minFont = viewWidth <= 420 ? 12 : 13;
+    const maxFont = viewWidth >= 1200 ? 27 : viewWidth >= 900 ? 24 : viewWidth >= 680 ? 22 : 20;
 
-    const minOverlayWidth = Math.max(Math.round(viewWidth * 0.82), 420);
-    const maxOverlayWidth = Math.min(Math.round(viewWidth * 1.18), 980);
-
-    const minFont = 9;
-    const maxFont = 24;
+    overlay.style.width = "";
 
     const textFits = () => {
       return (
@@ -5698,61 +5696,37 @@ window.VRGuideMentor = {
       );
     };
 
-    let finalWidth = minOverlayWidth;
-    let finalFont = minFont;
-    let found = false;
+    let low = minFont;
+    let high = maxFont;
+    let best = minFont;
 
-    for (let width = minOverlayWidth; width <= maxOverlayWidth; width += 20) {
-      overlay.style.width = width + "px";
+    fit.style.lineHeight = viewWidth <= 600 ? "1.12" : "1.14";
 
-      let low = minFont;
-      let high = maxFont;
-      let best = minFont;
-
-      for (let i = 0; i < 18; i++) {
-        const mid = Math.floor((low + high) / 2);
-        fit.style.fontSize = mid + "px";
-
-        if (textFits()) {
-          best = mid;
-          low = mid + 1;
-        } else {
-          high = mid - 1;
-        }
-      }
-
-      fit.style.fontSize = best + "px";
+    while (low <= high) {
+      const mid = Math.floor((low + high) / 2);
+      fit.style.fontSize = mid + "px";
 
       if (textFits()) {
-        finalWidth = width;
-        finalFont = best;
-        found = true;
-
-        if (best >= 14) {
-          break;
-        }
+        best = mid;
+        low = mid + 1;
+      } else {
+        high = mid - 1;
       }
     }
 
-    if (!found) {
-      overlay.style.width = maxOverlayWidth + "px";
-      fit.style.fontSize = minFont + "px";
+    fit.style.fontSize = best + "px";
 
-      while (!textFits() && parseFloat(fit.style.fontSize) > 7) {
-        fit.style.fontSize = (parseFloat(fit.style.fontSize) - 1) + "px";
-      }
-
-      finalWidth = maxOverlayWidth;
-      finalFont = parseFloat(fit.style.fontSize) || 7;
+    while (!textFits() && best > 10) {
+      best -= 1;
+      fit.style.fontSize = best + "px";
     }
-
-    overlay.style.width = finalWidth + "px";
-    fit.style.fontSize = finalFont + "px";
   },
 
   show(universeId, lines) {
     const { overlay, image } = this._els();
     if (!overlay || !image) return;
+
+    overlay.style.width = "";
 
     const src = VR_GUIDE_IMAGE_MAP[universeId];
     if (!src) return;
