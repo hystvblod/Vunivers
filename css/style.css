@@ -5550,9 +5550,9 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   position: absolute;
   right: 0;
   bottom: 0;
-  width: min(72vw, 460px);
-  max-width: 460px;
-  min-width: 280px;
+  width: min(96vw, 760px);
+  max-width: 760px;
+  min-width: 360px;
   z-index: 3500;
   pointer-events: none;
   opacity: 0;
@@ -5583,15 +5583,12 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 /* Zone de texte DEBUG visible */
 .vr-guide-bubble-text{
   position: absolute;
-  left: 3.8%;
-  top: 8.8%;
-  width: 52.2%;
-  height: 18.8%;
-  padding: 2.6% 3.2%;
+  left: 3.6%;
+  top: 8.7%;
+  width: 55.5%;
+  height: 19.8%;
+  padding: 2.8% 3.4%;
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
   border-radius: 18px;
 
@@ -5600,19 +5597,22 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 }
 
 .vr-guide-bubble-fit{
+  display: block;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   color: #1f2430;
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.04;
+  font-size: 22px;
+
+  white-space: normal;
   word-break: break-word;
   overflow-wrap: anywhere;
-  white-space: pre-line;
-  font-size: 22px;
+
+  column-count: 1;
+  columns: auto;
+  writing-mode: horizontal-tb;
 }
 
 /* Mode final: zone invisible */
