@@ -5710,10 +5710,24 @@ window.VRGuideMentor = {
     return `guideMentor.${universeId}.${tierOrIntro}`;
   },
 
-  _setText(text) {
+  _setText(lines) {
     const { fit } = this._els();
     if (!fit) return;
-    fit.textContent = text || "";
+
+    const items = Array.isArray(lines)
+      ? lines.map(v => String(v || "").trim()).filter(Boolean)
+      : [String(lines || "").trim()].filter(Boolean);
+
+    fit.innerHTML = "";
+
+    items.forEach((line, index) => {
+      const div = document.createElement("div");
+      div.className = index === 0
+        ? "vr-guide-line vr-guide-line--title"
+        : "vr-guide-line vr-guide-line--body";
+      div.textContent = line;
+      fit.appendChild(div);
+    });
   },
 
   _fitTextAndScale() {
@@ -5721,8 +5735,8 @@ window.VRGuideMentor = {
     if (!overlay || !bubble || !fit || !view) return;
 
     const viewWidth = view.clientWidth || window.innerWidth || 360;
-    const minFont = viewWidth <= 420 ? 12 : 13;
-    const maxFont = viewWidth >= 1200 ? 30 : viewWidth >= 900 ? 27 : viewWidth >= 680 ? 24 : 21;
+    const minFont = viewWidth <= 420 ? 10 : 11;
+    const maxFont = viewWidth >= 1200 ? 25 : viewWidth >= 900 ? 22 : viewWidth >= 680 ? 19 : 16;
 
     overlay.style.width = "";
 
@@ -5771,11 +5785,11 @@ window.VRGuideMentor = {
     image.src = src;
     image.alt = universeId;
 
-    const text = (Array.isArray(lines) ? lines : [])
-      .filter(Boolean)
-      .join(" ");
+    const textLines = (Array.isArray(lines) ? lines : [])
+      .map(v => String(v || "").trim())
+      .filter(Boolean);
 
-    this._setText(text);
+    this._setText(textLines);
 
     overlay.classList.add("is-visible");
     overlay.classList.remove("is-final");
