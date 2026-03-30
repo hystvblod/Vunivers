@@ -5534,10 +5534,10 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 .vr-guide-popup{
   position: absolute;
   left: 50%;
-  top: 24%;
+  top: 29%;
   transform: translate(-50%, -50%);
-  width: min(76%, 500px);
-  max-width: calc(100% - 20px);
+  width: min(88%, 620px);
+  max-width: calc(100% - 12px);
   z-index: 4;
 }
 
@@ -5561,11 +5561,11 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 
 .vr-guide-figure{
   position: absolute;
-  right: clamp(4px, 1vw, 10px);
+  right: 0;
   bottom: 0;
-  width: min(40%, 260px);
-  min-width: 175px;
-  max-width: 260px;
+  width: min(52%, 340px);
+  min-width: 210px;
+  max-width: 340px;
   aspect-ratio: 1024 / 1536;
   display: flex;
   align-items: flex-end;
@@ -5577,7 +5577,7 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 .vr-guide-image{
   width: 100%;
   height: auto;
-  max-height: min(52vh, 460px);
+  max-height: min(62vh, 560px);
   object-fit: contain;
   object-position: right bottom;
   display: block;
@@ -5629,8 +5629,8 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 /* Mobile étroit */
 @media (max-width: 600px){
   .vr-guide-popup{
-    top: 21%;
-    width: calc(100% - 14px);
+    top: 27%;
+    width: calc(100% - 8px);
     max-width: none;
   }
 
@@ -5646,23 +5646,23 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   }
 
   .vr-guide-figure{
-    width: min(42%, 210px);
-    min-width: 160px;
-    max-width: 210px;
-    right: 2px;
+    width: min(50%, 245px);
+    min-width: 185px;
+    max-width: 245px;
+    right: 0;
     bottom: 0;
   }
 
   .vr-guide-image{
-    max-height: min(44vh, 360px);
+    max-height: min(54vh, 430px);
   }
 }
 
 /* Tablette / grand écran */
 @media (min-width: 900px){
   .vr-guide-popup{
-    top: 26%;
-    width: min(62%, 560px);
+    top: 31%;
+    width: min(74%, 700px);
   }
 
   .vr-guide-bubble-text{
@@ -5670,13 +5670,13 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   }
 
   .vr-guide-figure{
-    width: min(30%, 300px);
-    min-width: 220px;
-    max-width: 300px;
-    right: 8px;
+    width: min(38%, 420px);
+    min-width: 260px;
+    max-width: 420px;
+    right: 0;
   }
 
   .vr-guide-image{
-    max-height: min(58vh, 520px);
+    max-height: min(68vh, 680px);
   }
 }
