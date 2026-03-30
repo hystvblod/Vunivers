@@ -4709,20 +4709,20 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-gauge::before{
   content: "";
   position: absolute;
   left: 50%;
-  top: 46%;
+  top: 61%;
   transform: translate(-50%, -50%);
-  width: clamp(134px, 26vw, 200px);
-  height: clamp(172px, 33vw, 248px);
+  width: clamp(112px, 22vw, 164px);
+  height: clamp(104px, 21vw, 150px);
   border-radius: 999px;
   background:
     radial-gradient(ellipse at center,
-      rgba(210,220,235,0.30) 0%,
-      rgba(170,185,205,0.22) 36%,
-      rgba(120,138,165,0.13) 66%,
-      rgba(86,102,128,0.06) 86%,
+      rgba(210,220,235,0.26) 0%,
+      rgba(170,185,205,0.18) 36%,
+      rgba(120,138,165,0.10) 66%,
+      rgba(86,102,128,0.04) 86%,
       rgba(6,8,14,0.00) 100%);
-  filter: blur(24px);
-  -webkit-filter: blur(24px);
+  filter: blur(20px);
+  -webkit-filter: blur(20px);
   pointer-events: none;
   z-index: -1;
 }
