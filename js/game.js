@@ -1267,11 +1267,6 @@ body.vr-peek-mode .vr-gauge-preview{
   const BASE_COINS_PER_CARD = 5;
   const HISTORY_MAX = 30;
 
-  const EVENT_CHECK_EVERY_N_CARDS = 3;
-  const EVENT_CHANCE = 0.10;
-  const EVENT_NO_REPEAT_UNTIL = 25;
-  const EVENT_EXCLUDE_LAST = 5;
-
   const CHOICES_PER_YEAR = 4;
   const VCOINS_PER_YEAR = 10;
 
@@ -1638,7 +1633,6 @@ body.vr-peek-mode .vr-gauge-preview{
     eventsTexts: {},
     _eventById: new Map(),
     _allEventIds: [],
-    _eventPool: [],
     _seenEvents: [],
     _cardsSinceEventRoll: 0,
     _eventShowing: false,
@@ -1778,11 +1772,6 @@ body.vr-peek-mode .vr-gauge-preview{
       };
     },
 
-    _distinctSeenCount() {
-      try { return new Set(Array.isArray(this._seenEvents) ? this._seenEvents : []).size; }
-      catch (_) { return 0; }
-    },
-
     _rebuildEventIndex() {
       this._eventById = new Map();
       const arr = Array.isArray(this.eventsLogic?.events) ? this.eventsLogic.events : [];
@@ -1792,16 +1781,10 @@ body.vr-peek-mode .vr-gauge-preview{
 
       this._allEventIds = Array.from(this._eventById.keys());
 
-      if (!Array.isArray(this._eventPool)) this._eventPool = [];
       if (!Array.isArray(this._seenEvents)) this._seenEvents = [];
 
       const allow = new Set(this._allEventIds);
-      this._eventPool = this._eventPool.filter(id => allow.has(id));
       this._seenEvents = this._seenEvents.filter(id => allow.has(id));
-
-      if (!this._eventPool.length && this._allEventIds.length) {
-        this._eventPool = this._allEventIds.slice();
-      }
 
       if (!Number.isFinite(this._cardsSinceEventRoll)) this._cardsSinceEventRoll = 0;
     },
@@ -1824,7 +1807,6 @@ body.vr-peek-mode .vr-gauge-preview{
             reviveUsed: !!this._reviveUsed,
             events: {
               cardsSinceRoll: asInt(this._cardsSinceEventRoll, 0),
-              pool: Array.isArray(this._eventPool) ? deepClone(this._eventPool) : [],
               seen: Array.isArray(this._seenEvents) ? deepClone(this._seenEvents) : []
             },
             ui: {
@@ -1929,7 +1911,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
         const evs = e.events || {};
         this._cardsSinceEventRoll = asInt(evs.cardsSinceRoll, 0);
-        this._eventPool = Array.isArray(evs.pool) ? deepClone(evs.pool) : [];
         this._seenEvents = Array.isArray(evs.seen) ? deepClone(evs.seen) : [];
 
         const ui = e.ui || {};
@@ -2027,7 +2008,6 @@ body.vr-peek-mode .vr-gauge-preview{
 
       this.eventsLogic = eventsLogic || { events: [] };
       this.eventsTexts = eventsTexts || {};
-      this._eventPool = [];
       this._seenEvents = [];
       this._cardsSinceEventRoll = 0;
       this._eventShowing = false;
@@ -2076,9 +2056,6 @@ body.vr-peek-mode .vr-gauge-preview{
           } catch (_) {}
         }
       } else {
-        if (!this._eventPool.length && this._allEventIds.length) {
-          this._eventPool = this._allEventIds.slice();
-        }
         this._saveRunSoft();
       }
     },
@@ -2125,10 +2102,6 @@ body.vr-peek-mode .vr-gauge-preview{
       this._pendingRunBonusCoins = 0;
       this._clearPendingEndState();
 
-      if (!this._eventPool.length && this._allEventIds.length) {
-        this._eventPool = this._allEventIds.slice();
-      }
-
       const kingName = getDynastyName();
       const years = getYearLabel();
 
@@ -2161,7 +2134,6 @@ body.vr-peek-mode .vr-gauge-preview{
       this.reignIndex = 0;
       this._cardsSinceEventRoll = 0;
       this._eventShowing = false;
-      this._eventPool = this._allEventIds.slice();
       this._seenEvents = [];
 
       if (window.VRGame?.session) window.VRGame.session.reignLength = 0;
@@ -2257,7 +2229,6 @@ body.vr-peek-mode .vr-gauge-preview{
         uiTokens: this._uiTokens,
         sessionReignLength: Number(window.VRGame?.session?.reignLength || 0),
         cardsSinceEventRoll: asInt(this._cardsSinceEventRoll, 0),
-        eventPool: deepClone(this._eventPool || []),
         seenEvents: deepClone(this._seenEvents || [])
       };
       this.history.push(snap);
@@ -2287,7 +2258,6 @@ body.vr-peek-mode .vr-gauge-preview{
       this._uiTokens = Number(snap.uiTokens || 0);
 
       this._cardsSinceEventRoll = asInt(snap.cardsSinceEventRoll, 0);
-      this._eventPool = Array.isArray(snap.eventPool) ? deepClone(snap.eventPool) : this._eventPool;
       this._seenEvents = Array.isArray(snap.seenEvents) ? deepClone(snap.seenEvents) : this._seenEvents;
 
       if (window.VRGame?.session) {
@@ -2311,150 +2281,6 @@ body.vr-peek-mode .vr-gauge-preview{
       );
 
       this._saveRunSoft();
-      return true;
-    },
-
-    _maybeRollEventAfterCardResolved() {
-      this._cardsSinceEventRoll = asInt(this._cardsSinceEventRoll, 0) + 1;
-
-      if (this._cardsSinceEventRoll < EVENT_CHECK_EVERY_N_CARDS) {
-        this._saveRunSoft();
-        return false;
-      }
-
-      this._cardsSinceEventRoll = 0;
-
-      if (!this._allEventIds.length) {
-        this._saveRunSoft();
-        return false;
-      }
-
-      const hit = Math.random() < EVENT_CHANCE;
-      this._saveRunSoft();
-      return hit;
-    },
-
-    _refillEventPoolIfNeeded() {
-      const all = this._allEventIds || [];
-      if (!all.length) return;
-
-      if (!Array.isArray(this._seenEvents)) this._seenEvents = [];
-      if (!Array.isArray(this._eventPool)) this._eventPool = [];
-
-      if (this._eventPool.length !== 0) return;
-
-      const distinct = this._distinctSeenCount();
-
-      if (distinct < EVENT_NO_REPEAT_UNTIL) {
-        const seenSet = new Set(this._seenEvents);
-        this._eventPool = all.filter(id => !seenSet.has(id));
-        if (!this._eventPool.length) this._eventPool = all.slice();
-        return;
-      }
-
-      const last = this._seenEvents.slice(-EVENT_EXCLUDE_LAST);
-      const lastSet = new Set(last);
-      this._eventPool = all.filter(id => !lastSet.has(id));
-      if (!this._eventPool.length) this._eventPool = all.slice();
-    },
-
-    _pickRandomEventId() {
-      this._refillEventPoolIfNeeded();
-      if (!this._eventPool.length) return null;
-
-      const idx = Math.floor(Math.random() * this._eventPool.length);
-      const id = this._eventPool[idx];
-
-      this._eventPool.splice(idx, 1);
-      this._seenEvents.push(id);
-
-      return id || null;
-    },
-
-    async _triggerRandomEvent() {
-      if (this._eventShowing) return false;
-      if (!window.VRState.isAlive()) return false;
-
-      const id = this._pickRandomEventId();
-      if (!id) return false;
-
-      const ev = this._eventById.get(id) || null;
-      const texts = this.eventsTexts?.[id] || null;
-
-      try {
-        const deltaMap = ev?.effects || ev?.gaugeDelta || ev?.deltas || {};
-        if (deltaMap && typeof deltaMap === "object") {
-          window.VRState.applyDeltas(deltaMap);
-        }
-
-        const dv =
-          (typeof ev?.vcoins === "number") ? ev.vcoins :
-          (typeof ev?.vcoinsDelta === "number") ? ev.vcoinsDelta :
-          0;
-
-        if (dv) {
-          this._pendingRunBonusCoins += asInt(dv, 0);
-        }
-
-        const dj =
-          (typeof ev?.jetons === "number") ? ev.jetons :
-          (typeof ev?.jetonsDelta === "number") ? ev.jetonsDelta :
-          0;
-
-        if (dj) {
-          if (dj > 0) {
-            const beforeTokens = Number(window.VUserData?.getJetons?.() || this._uiTokens || 0);
-
-            try {
-              await window.VUserData?.addJetonsAsync?.(dj);
-              await window.VUserData?.refresh?.();
-            } catch (_) {}
-
-            const afterTokens = Number(window.VUserData?.getJetons?.() || beforeTokens);
-            if (afterTokens >= beforeTokens + dj) {
-              this._uiTokens = afterTokens;
-            }
-          } else {
-            const cost = Math.abs(dj);
-            const ok = await (window.VUserData?.spendJetons?.(cost) || Promise.resolve(false));
-            if (ok) this._uiTokens -= cost;
-          }
-        }
-      } catch (e) {
-        console.error("[VREngine] event apply error:", e);
-      }
-
-      const kingName = getDynastyName();
-      window.VRUIBinding.updateGauges();
-      window.VRUIBinding.updateMeta(kingName, getYearLabel(), this._uiCoins, this._uiTokens);
-
-      this._eventShowing = true;
-      this._saveRunSoft();
-
-      const t = (k, fallback) => {
-        try {
-          const out = window.VRI18n?.t?.(k);
-          if (out && out !== k) return out;
-        } catch (_) {}
-        return typeof fallback === "string" ? fallback : "";
-      };
-
-      const title = texts?.title || t("event.title", "");
-      const body = texts?.body || texts?.text || "";
-
-      try {
-        await window.VREventOverlay?.showEvent?.(title, body);
-      } catch (_) {}
-
-      this._eventShowing = false;
-
-      if (!window.VRState.isAlive()) {
-        await this._handleDeath();
-        return true;
-      }
-
-      this._saveRunSoft();
-      this._nextCard();
       return true;
     },
 
@@ -2967,7 +2793,6 @@ body.vr-peek-mode .vr-gauge-preview{
       uiTokens: this._uiTokens,
       sessionReignLength: Number(window.VRGame?.session?.reignLength || 0),
       cardsSinceEventRoll: asInt(this._cardsSinceEventRoll, 0),
-      eventPool: clone(this._eventPool || []),
       seenEvents: clone(this._seenEvents || []),
       activeEvents: clone(this._activeEvents || []),
       eventCooldowns: clone(this._eventCooldowns || {})
@@ -3000,7 +2825,6 @@ body.vr-peek-mode .vr-gauge-preview{
     this._uiTokens = Number(snap.uiTokens || 0);
 
     this._cardsSinceEventRoll = asInt(snap.cardsSinceEventRoll, 0);
-    this._eventPool = Array.isArray(snap.eventPool) ? clone(snap.eventPool) : this._eventPool;
     this._seenEvents = Array.isArray(snap.seenEvents) ? clone(snap.seenEvents) : this._seenEvents;
     this._activeEvents = Array.isArray(snap.activeEvents) ? clone(snap.activeEvents) : [];
     this._eventCooldowns = (snap.eventCooldowns && typeof snap.eventCooldowns === "object" && !Array.isArray(snap.eventCooldowns))
