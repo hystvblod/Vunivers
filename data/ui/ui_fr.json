@@ -654,6 +654,104 @@
       "text": "Seule la version Android est disponible pour le moment. La version iOS est en cours et ne peut donc pas être téléchargée pour le moment."
     }
   },
+  "guideMentor": {
+    "common": {
+      "introGoal": "Maintiens l'équilibre durant {target} choix pour obtenir ta première promotion.",
+      "nextGoal": "Maintiens encore l'équilibre durant {remaining} choix pour atteindre la prochaine promotion.",
+      "promotionNow": "Bravo. Tu es désormais {rank}.",
+      "maxGoal": "Tu as atteint le rang suprême de cet univers. À toi de prouver que tu peux le conserver."
+    },
+    "hell_king": {
+      "ranks": {
+        "wood": "âme damnée",
+        "bronze": "démon de premier rang",
+        "silver": "seigneur infernal",
+        "gold": "prince des enfers",
+        "crystal": "roi des enfers"
+      },
+      "intro": "Bienvenue, âme perdue. Dans les Enfers, chaque décision laisse une trace.",
+      "wood": "Tu n'erres plus sans but. Tu sers désormais l'ordre infernal.",
+      "bronze": "Tu as gagné ta place parmi les serviteurs infernaux. Ne faiblis pas.",
+      "silver": "Ton influence grandit. Les démons mineurs commencent à t'obéir.",
+      "gold": "Les flammes s'inclinent plus facilement devant toi. On te craint désormais.",
+      "crystal": "Tu te tiens au sommet. Règne sur les Enfers comme un vrai roi."
+    },
+    "heaven_king": {
+      "ranks": {
+        "wood": "âme lumineuse",
+        "bronze": "gardien céleste",
+        "silver": "ange supérieur",
+        "gold": "archange",
+        "crystal": "roi du paradis"
+      },
+      "intro": "Bienvenue, âme pure. Ici, chaque choix doit préserver l'harmonie des cieux.",
+      "wood": "Tu as fait tes premiers pas dans la lumière. Garde le cap.",
+      "bronze": "Ton rôle dépasse désormais celui d'un simple messager. Le ciel t'observe.",
+      "silver": "Tu es devenu un véritable gardien des cieux. Ta responsabilité grandit.",
+      "gold": "Ton autorité rayonne comme celle d'un archange. Continue d'élever cet univers.",
+      "crystal": "Tu as atteint le plus haut rang. Règne sur le Paradis avec sagesse."
+    },
+    "vampire_lord": {
+      "ranks": {
+        "wood": "initié de la nuit",
+        "bronze": "noble vampire",
+        "silver": "seigneur vampire",
+        "gold": "maître des ombres",
+        "crystal": "seigneur vampire suprême"
+      },
+      "intro": "Bienvenue dans la nuit. Chaque choix nourrira ou affaiblira ton ascension.",
+      "wood": "Le sang t'appelle déjà. Tu n'es plus tout à fait humain.",
+      "bronze": "Tu es entré dans la vraie nuit. Ton nom commence à circuler.",
+      "silver": "Tu es désormais un vampire accompli. Les ombres te reconnaissent.",
+      "gold": "Ta présence inspire la crainte. Peu osent encore te défier.",
+      "crystal": "Tu es devenu le maître des ténèbres. Domine la nuit."
+    },
+    "mega_corp_ceo": {
+      "ranks": {
+        "wood": "employé",
+        "bronze": "manager",
+        "silver": "directeur",
+        "gold": "directeur exécutif",
+        "crystal": "PDG"
+      },
+      "intro": "Bienvenue, stagiaire. Ici, chaque décision compte et chaque erreur coûte cher.",
+      "wood": "Bravo. Tu n'es plus un simple stagiaire. Tu es désormais employé.",
+      "bronze": "Ton travail a porté ses fruits. Tu prends maintenant des responsabilités.",
+      "silver": "Tu diriges désormais les autres. Les résultats parlent pour toi.",
+      "gold": "Tu as atteint un niveau où l'entreprise dépend vraiment de tes choix.",
+      "crystal": "Te voilà PDG. À toi de tenir l'entreprise au sommet."
+    },
+    "western_president": {
+      "ranks": {
+        "wood": "conseiller",
+        "bronze": "maire",
+        "silver": "gouverneur",
+        "gold": "chef d'État",
+        "crystal": "président"
+      },
+      "intro": "Bienvenue, conseiller. Dans l'Ouest, l'équilibre du pouvoir ne tient jamais longtemps.",
+      "wood": "Tu as gagné en poids politique. On commence à t'écouter.",
+      "bronze": "Tu ne suis plus seulement le mouvement. Tu aides maintenant à le diriger.",
+      "silver": "Te voilà gouverneur. Tes choix façonnent déjà le territoire.",
+      "gold": "Tu gouvernes désormais à grande échelle. Le pays attend beaucoup de toi.",
+      "crystal": "Tu es président maintenant. À toi de tenir la nation."
+    },
+    "new_world_explorer": {
+      "ranks": {
+        "wood": "marin",
+        "bronze": "éclaireur",
+        "silver": "explorateur",
+        "gold": "commandant",
+        "crystal": "représentant de la Couronne"
+      },
+      "intro": "Bienvenue, marin. Le Nouveau Monde ne pardonne ni l'hésitation ni l'excès.",
+      "wood": "Tu as quitté le simple rôle d'homme d'équipage. Tu observes et tu apprends.",
+      "bronze": "Tu t'aventures plus loin que les autres. Ton regard devient précieux.",
+      "silver": "Tu es désormais un vrai explorateur. On compte sur ton jugement.",
+      "gold": "Tu commandes l'expédition. Chaque choix peut changer le destin du voyage.",
+      "crystal": "Tu représentes la Couronne. Le monde découvert parlera désormais en ton nom."
+    }
+  },
   "jobs": {
     "hell_king": {
       "wood": "Âme perdue",

@@ -654,6 +654,104 @@
       "text": "Derzeit ist nur die Android-Version verfügbar. Die iOS-Version ist in Arbeit und kann im Moment noch nicht heruntergeladen werden."
     }
   },
+  "guideMentor": {
+    "common": {
+      "introGoal": "Halte das Gleichgewicht für {target} Entscheidungen, um deine erste Beförderung zu erhalten.",
+      "nextGoal": "Halte das Gleichgewicht noch {remaining} Entscheidungen lang, um deine nächste Beförderung zu erreichen.",
+      "promotionNow": "Glückwunsch. Du bist jetzt {rank}.",
+      "maxGoal": "Du hast den höchsten Rang dieses Universums erreicht. Jetzt beweise, dass du ihn halten kannst."
+    },
+    "hell_king": {
+      "ranks": {
+        "wood": "verdammte Seele",
+        "bronze": "Dämon ersten Ranges",
+        "silver": "infernaler Herr",
+        "gold": "Prinz der Hölle",
+        "crystal": "König der Hölle"
+      },
+      "intro": "Willkommen, verlorene Seele. In der Hölle hinterlässt jede Entscheidung eine Spur.",
+      "wood": "Du irrst nicht länger ziellos umher. Du dienst nun der infernalen Ordnung.",
+      "bronze": "Du hast dir deinen Platz unter den Dienern der Hölle verdient. Schwäche nicht.",
+      "silver": "Dein Einfluss wächst. Niedere Dämonen beginnen dir zu gehorchen.",
+      "gold": "Die Flammen beugen sich deinem Willen nun leichter. Man fürchtet dich jetzt.",
+      "crystal": "Du stehst nun an der Spitze. Herrsche wie ein wahrer König über die Hölle."
+    },
+    "heaven_king": {
+      "ranks": {
+        "wood": "lichtvolle Seele",
+        "bronze": "himmlischer Wächter",
+        "silver": "hoher Engel",
+        "gold": "Erzengel",
+        "crystal": "König des Himmels"
+      },
+      "intro": "Willkommen, reine Seele. Hier muss jede Entscheidung die Harmonie des Himmels bewahren.",
+      "wood": "Du hast deine ersten Schritte ins Licht gemacht. Bleib auf Kurs.",
+      "bronze": "Deine Rolle geht nun über die eines einfachen Boten hinaus. Der Himmel beobachtet dich.",
+      "silver": "Du bist zu einem wahren Wächter des Himmels geworden. Deine Verantwortung wächst.",
+      "gold": "Deine Autorität strahlt wie die eines Erzengels. Erhebe dieses Universum weiter.",
+      "crystal": "Du hast den höchsten Rang erreicht. Herrsche mit Weisheit über den Himmel."
+    },
+    "vampire_lord": {
+      "ranks": {
+        "wood": "Eingeweihter der Nacht",
+        "bronze": "edler Vampir",
+        "silver": "Vampirfürst",
+        "gold": "Meister der Schatten",
+        "crystal": "oberster Vampirfürst"
+      },
+      "intro": "Willkommen in der Nacht. Jede Entscheidung wird deinen Aufstieg nähren oder schwächen.",
+      "wood": "Das Blut ruft bereits nach dir. Du bist nicht länger ganz menschlich.",
+      "bronze": "Du bist in die wahre Nacht eingetreten. Dein Name beginnt sich zu verbreiten.",
+      "silver": "Du bist nun ein vollendeter Vampir. Die Schatten erkennen dich an.",
+      "gold": "Deine Gegenwart flößt Furcht ein. Nur wenige wagen es noch, dich herauszufordern.",
+      "crystal": "Du bist zum Meister der Dunkelheit geworden. Beherrsche die Nacht."
+    },
+    "mega_corp_ceo": {
+      "ranks": {
+        "wood": "Mitarbeiter",
+        "bronze": "Manager",
+        "silver": "Direktor",
+        "gold": "Exekutivdirektor",
+        "crystal": "CEO"
+      },
+      "intro": "Willkommen, Praktikant. Hier zählt jede Entscheidung und jeder Fehler kostet etwas.",
+      "wood": "Gut gemacht. Du bist nicht länger nur ein Praktikant. Du bist jetzt Mitarbeiter.",
+      "bronze": "Deine Arbeit hat sich ausgezahlt. Du übernimmst nun echte Verantwortung.",
+      "silver": "Du führst nun andere. Die Ergebnisse sprechen für dich.",
+      "gold": "Du hast ein Niveau erreicht, auf dem das Unternehmen wirklich von deinen Entscheidungen abhängt.",
+      "crystal": "Du bist jetzt CEO. Es liegt an dir, das Unternehmen an der Spitze zu halten."
+    },
+    "western_president": {
+      "ranks": {
+        "wood": "Berater",
+        "bronze": "Bürgermeister",
+        "silver": "Gouverneur",
+        "gold": "Staatsoberhaupt",
+        "crystal": "Präsident"
+      },
+      "intro": "Willkommen, Berater. Im Westen hält das Machtgleichgewicht nie lange an.",
+      "wood": "Du hast politisches Gewicht gewonnen. Man beginnt, dir zuzuhören.",
+      "bronze": "Du folgst nicht mehr nur der Bewegung. Du hilfst nun, sie zu führen.",
+      "silver": "Du bist jetzt Gouverneur. Deine Entscheidungen prägen das Gebiet bereits.",
+      "gold": "Du regierst nun in größerem Maßstab. Das Land erwartet viel von dir.",
+      "crystal": "Du bist jetzt Präsident. Es liegt an dir, die Nation zusammenzuhalten."
+    },
+    "new_world_explorer": {
+      "ranks": {
+        "wood": "Seemann",
+        "bronze": "Kundschafter",
+        "silver": "Entdecker",
+        "gold": "Kommandant",
+        "crystal": "Vertreter der Krone"
+      },
+      "intro": "Willkommen, Seemann. Die Neue Welt verzeiht weder Zögern noch Übermaß.",
+      "wood": "Du hast die einfache Rolle eines Mannschaftsmitglieds hinter dir gelassen. Du beobachtest und lernst.",
+      "bronze": "Du wagst dich weiter vor als die anderen. Dein Blick wird wertvoll.",
+      "silver": "Du bist nun ein wahrer Entdecker. Man verlässt sich auf dein Urteilsvermögen.",
+      "gold": "Du führst jetzt die Expedition. Jede Entscheidung kann das Schicksal der Reise verändern.",
+      "crystal": "Du vertrittst die Krone. Die entdeckte Welt wird nun in deinem Namen sprechen."
+    }
+  },
   "jobs": {
     "hell_king": {
       "wood": "Verlorene Seele",

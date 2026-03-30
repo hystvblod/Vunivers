@@ -654,6 +654,104 @@
       "text": "Only the Android version is currently available. The iOS version is in progress and cannot be downloaded yet."
     }
   },
+  "guideMentor": {
+    "common": {
+      "introGoal": "Maintain the balance for {target} choices to earn your first promotion.",
+      "nextGoal": "Maintain the balance for {remaining} more choices to reach your next promotion.",
+      "promotionNow": "Congratulations. You are now {rank}.",
+      "maxGoal": "You have reached the highest rank in this universe. Now prove you can keep it."
+    },
+    "hell_king": {
+      "ranks": {
+        "wood": "damned soul",
+        "bronze": "first-rank demon",
+        "silver": "infernal lord",
+        "gold": "prince of hell",
+        "crystal": "king of hell"
+      },
+      "intro": "Welcome, lost soul. In Hell, every decision leaves a mark.",
+      "wood": "You no longer wander without purpose. You now serve the infernal order.",
+      "bronze": "You have earned your place among Hell's servants. Do not falter.",
+      "silver": "Your influence is growing. Lesser demons are beginning to obey you.",
+      "gold": "The flames now bend more easily to your will. You are feared now.",
+      "crystal": "You stand at the summit. Rule Hell like a true king."
+    },
+    "heaven_king": {
+      "ranks": {
+        "wood": "radiant soul",
+        "bronze": "celestial guardian",
+        "silver": "high angel",
+        "gold": "archangel",
+        "crystal": "king of heaven"
+      },
+      "intro": "Welcome, pure soul. Here, every choice must preserve the harmony of Heaven.",
+      "wood": "You have taken your first steps into the light. Stay the course.",
+      "bronze": "Your role now goes beyond that of a simple messenger. Heaven is watching you.",
+      "silver": "You have become a true guardian of Heaven. Your responsibility is growing.",
+      "gold": "Your authority shines like that of an archangel. Keep lifting this universe higher.",
+      "crystal": "You have reached the highest rank. Rule Heaven with wisdom."
+    },
+    "vampire_lord": {
+      "ranks": {
+        "wood": "initiate of the night",
+        "bronze": "noble vampire",
+        "silver": "vampire lord",
+        "gold": "master of shadows",
+        "crystal": "supreme vampire lord"
+      },
+      "intro": "Welcome to the night. Every choice will feed or weaken your rise.",
+      "wood": "Blood is already calling to you. You are no longer entirely human.",
+      "bronze": "You have entered the true night. Your name is beginning to spread.",
+      "silver": "You are now a fully accomplished vampire. The shadows recognize you.",
+      "gold": "Your presence inspires fear. Few still dare to challenge you.",
+      "crystal": "You have become the master of darkness. Rule the night."
+    },
+    "mega_corp_ceo": {
+      "ranks": {
+        "wood": "employee",
+        "bronze": "manager",
+        "silver": "director",
+        "gold": "executive director",
+        "crystal": "CEO"
+      },
+      "intro": "Welcome, intern. Here, every decision matters and every mistake is costly.",
+      "wood": "Well done. You are no longer just an intern. You are now an employee.",
+      "bronze": "Your work has paid off. You are now taking on real responsibilities.",
+      "silver": "You are now leading others. The results speak for you.",
+      "gold": "You have reached a level where the company truly depends on your decisions.",
+      "crystal": "You are now the CEO. It is up to you to keep the company at the top."
+    },
+    "western_president": {
+      "ranks": {
+        "wood": "advisor",
+        "bronze": "mayor",
+        "silver": "governor",
+        "gold": "head of state",
+        "crystal": "president"
+      },
+      "intro": "Welcome, advisor. In the West, the balance of power never holds for long.",
+      "wood": "You have gained political weight. People are starting to listen to you.",
+      "bronze": "You are no longer just following the movement. You now help lead it.",
+      "silver": "You are now governor. Your choices are already shaping the territory.",
+      "gold": "You now govern on a larger scale. The country expects a great deal from you.",
+      "crystal": "You are president now. It is up to you to hold the nation together."
+    },
+    "new_world_explorer": {
+      "ranks": {
+        "wood": "sailor",
+        "bronze": "scout",
+        "silver": "explorer",
+        "gold": "commander",
+        "crystal": "representative of the Crown"
+      },
+      "intro": "Welcome, sailor. The New World forgives neither hesitation nor excess.",
+      "wood": "You have left behind the simple role of crewman. You observe and you learn.",
+      "bronze": "You venture farther than the others. Your eye is becoming valuable.",
+      "silver": "You are now a true explorer. People rely on your judgment.",
+      "gold": "You command the expedition now. Every choice can change the fate of the voyage.",
+      "crystal": "You represent the Crown. The discovered world will now speak in your name."
+    }
+  },
   "jobs": {
     "hell_king": {
       "wood": "Lost Soul",

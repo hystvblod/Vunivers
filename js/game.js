@@ -123,6 +123,73 @@ const VR_BADGE_SILVER_CHOICES = 60;
 const VR_BADGE_GOLD_CHOICES = 100;
 const VR_BADGE_CRYSTAL_CHOICES = 150;
 
+const VR_GUIDE_STORAGE_KEY = "vuniverse_guide_seen_v1";
+
+const VR_GUIDE_THRESHOLDS = {
+  wood: 20,
+  bronze: 40,
+  silver: 60,
+  gold: 100,
+  crystal: 150
+};
+
+const VR_GUIDE_IMAGE_MAP = {
+  hell_king: "assets/img/guides/hell_king.webp",
+  heaven_king: "assets/img/guides/heaven_king.webp",
+  vampire_lord: "assets/img/guides/vampire_lord.webp",
+  mega_corp_ceo: "assets/img/guides/mega_corp_ceo.webp",
+  western_president: "assets/img/guides/western_president.webp",
+  new_world_explorer: "assets/img/guides/new_world_explorer.webp"
+};
+
+function vrGuideLoadSeen() {
+  try {
+    return JSON.parse(localStorage.getItem(VR_GUIDE_STORAGE_KEY) || "{}") || {};
+  } catch (_) {
+    return {};
+  }
+}
+
+function vrGuideSaveSeen(map) {
+  try {
+    localStorage.setItem(VR_GUIDE_STORAGE_KEY, JSON.stringify(map || {}));
+  } catch (_) {}
+}
+
+function vrGuideEnsureUniverse(map, universeId) {
+  if (!map[universeId]) {
+    map[universeId] = {
+      intro: false,
+      wood: false,
+      bronze: false,
+      silver: false,
+      gold: false,
+      crystal: false
+    };
+  }
+  return map[universeId];
+}
+
+function vrGuideGetNextTier(reignLength) {
+  const v = Math.max(0, Number(reignLength || 0));
+  if (v < 20) return "wood";
+  if (v < 40) return "bronze";
+  if (v < 60) return "silver";
+  if (v < 100) return "gold";
+  if (v < 150) return "crystal";
+  return null;
+}
+
+function vrGuideGetReachedTier(reignLength) {
+  const v = Math.max(0, Number(reignLength || 0));
+  if (v >= 150) return "crystal";
+  if (v >= 100) return "gold";
+  if (v >= 60) return "silver";
+  if (v >= 40) return "bronze";
+  if (v >= 20) return "wood";
+  return null;
+}
+
 
 function getRankTierFromReignLength(reignLength) {
   const v = Math.max(0, Number(reignLength || 0));
@@ -5564,6 +5631,168 @@ function resolvePreviewAssets(cfg) {
 // -------------------------------------------------------
 // VRGame
 // -------------------------------------------------------
+
+window.VRGuideMentor = {
+  _hideTimer: null,
+
+  _els() {
+    return {
+      overlay: document.getElementById("vr-guide-overlay"),
+      image: document.getElementById("vr-guide-image"),
+      fit: document.getElementById("vr-guide-bubble-fit")
+    };
+  },
+
+  _t(key, fallback, vars) {
+    try {
+      return window.VRI18n?.t?.(key, vars) || fallback || key;
+    } catch (_) {
+      return fallback || key;
+    }
+  },
+
+  _rankKey(universeId, tier) {
+    return `guideMentor.${universeId}.ranks.${tier}`;
+  },
+
+  _messageKey(universeId, tierOrIntro) {
+    return `guideMentor.${universeId}.${tierOrIntro}`;
+  },
+
+  _setText(text) {
+    const { fit } = this._els();
+    if (!fit) return;
+    fit.textContent = text || "";
+    this._fitText();
+  },
+
+  _fitText() {
+    const { fit } = this._els();
+    if (!fit) return;
+
+    fit.style.fontSize = "20px";
+
+    const parent = fit.parentElement;
+    if (!parent) return;
+
+    let low = 10;
+    let high = 34;
+    let best = 10;
+
+    for (let i = 0; i < 12; i++) {
+      const mid = Math.floor((low + high) / 2);
+      fit.style.fontSize = mid + "px";
+
+      const fits =
+        fit.scrollWidth <= parent.clientWidth + 1 &&
+        fit.scrollHeight <= parent.clientHeight + 1;
+
+      if (fits) {
+        best = mid;
+        low = mid + 1;
+      } else {
+        high = mid - 1;
+      }
+    }
+
+    fit.style.fontSize = best + "px";
+  },
+
+  show(universeId, lines) {
+    const { overlay, image } = this._els();
+    if (!overlay || !image) return;
+
+    const src = VR_GUIDE_IMAGE_MAP[universeId];
+    if (!src) return;
+
+    image.src = src;
+    image.alt = universeId;
+
+    const text = (Array.isArray(lines) ? lines : [])
+      .filter(Boolean)
+      .join(" ");
+
+    this._setText(text);
+
+    overlay.classList.add("is-visible");
+    overlay.classList.remove("is-final");
+
+    clearTimeout(this._hideTimer);
+    this._hideTimer = setTimeout(() => {
+      overlay.classList.add("is-final");
+    }, 100);
+
+    this._hideTimer = setTimeout(() => {
+      this.hide();
+    }, 5200);
+  },
+
+  hide() {
+    const { overlay } = this._els();
+    if (!overlay) return;
+    overlay.classList.remove("is-visible");
+  },
+
+  markSeen(universeId, key) {
+    const all = vrGuideLoadSeen();
+    const u = vrGuideEnsureUniverse(all, universeId);
+    u[key] = true;
+    vrGuideSaveSeen(all);
+  },
+
+  hasSeen(universeId, key) {
+    const all = vrGuideLoadSeen();
+    const u = vrGuideEnsureUniverse(all, universeId);
+    return !!u[key];
+  },
+
+  maybeShowIntro(universeId) {
+    if (!universeId || universeId === "intro") return;
+    if (this.hasSeen(universeId, "intro")) return;
+
+    const lines = [
+      this._t(this._messageKey(universeId, "intro"), ""),
+      this._t("guideMentor.common.introGoal", "", { target: 20 })
+    ];
+
+    this.show(universeId, lines);
+    this.markSeen(universeId, "intro");
+  },
+
+  maybeShowTierMessage(universeId, reignLength) {
+    if (!universeId || universeId === "intro") return;
+
+    const reachedTier = vrGuideGetReachedTier(reignLength);
+    if (!reachedTier) return;
+    if (this.hasSeen(universeId, reachedTier)) return;
+
+    const rankLabel = this._t(this._rankKey(universeId, reachedTier), reachedTier);
+    const nextTier = vrGuideGetNextTier(reignLength);
+    const nextTarget = nextTier ? VR_GUIDE_THRESHOLDS[nextTier] : null;
+    const remaining = nextTarget ? Math.max(0, nextTarget - Number(reignLength || 0)) : 0;
+
+    const lines = [
+      this._t(this._messageKey(universeId, reachedTier), ""),
+      this._t("guideMentor.common.promotionNow", "", { rank: rankLabel }),
+      nextTier
+        ? this._t("guideMentor.common.nextGoal", "", { remaining })
+        : this._t("guideMentor.common.maxGoal", "")
+    ];
+
+    this.show(universeId, lines);
+    this.markSeen(universeId, reachedTier);
+  },
+
+  refresh() {
+    this._fitText();
+  }
+};
+
+window.addEventListener("resize", () => {
+  try { window.VRGuideMentor?.refresh?.(); } catch (_) {}
+});
+
+
 window.VRGame = {
   currentUniverse: null,
   session: { reignLength: 0 },
@@ -5596,6 +5825,16 @@ window.VRGame = {
     } catch (e) {
       console.error("[VRGame] Erreur init moteur:", e);
     }
+
+    try {
+      const saved = window.VRSave?.load?.(universeId);
+      const alreadyRunning = !!saved;
+      if (!alreadyRunning) {
+        setTimeout(() => {
+          window.VRGuideMentor?.maybeShowIntro?.(universeId);
+        }, 450);
+      }
+    } catch (_) {}
 
     this.applyUniverseCosmetics(universeId);
     if (String(universeId || "").trim() !== "intro") {
@@ -5663,6 +5902,12 @@ window.VRGame = {
   onCardResolved() {
     this.session.reignLength += 1;
     Promise.resolve().then(() => this.maybeUnlockRunBadges());
+    Promise.resolve().then(() => {
+      window.VRGuideMentor?.maybeShowTierMessage?.(
+        this.currentUniverse,
+        this.session.reignLength
+      );
+    });
   },
 
   async onRunEnded() {
