@@ -5537,27 +5537,38 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   }
 }
 
+/* =========================
+   GUIDE MENTOR OVERLAY
+   ========================= */
+
+#view-game{
+  position: relative;
+  overflow: hidden;
+}
+
 .vr-guide-overlay{
-  position: fixed;
-  right: max(10px, env(safe-area-inset-right));
-  bottom: max(10px, env(safe-area-inset-bottom));
-  width: clamp(220px, 34vw, 520px);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(72vw, 460px);
+  max-width: 460px;
+  min-width: 280px;
   z-index: 3500;
   pointer-events: none;
   opacity: 0;
-  transform: translateY(18px) scale(.98);
-  transition: opacity .22s ease, transform .22s ease;
+  transform: translateY(10px);
+  transition: opacity .22s ease, transform .22s ease, width .18s ease;
 }
 
 .vr-guide-overlay.is-visible{
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
 }
 
 .vr-guide-figure{
   position: relative;
   width: 100%;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 1024 / 1536; /* ratio portrait de tes images */
 }
 
 .vr-guide-image{
@@ -5565,23 +5576,27 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   height: 100%;
   object-fit: contain;
   display: block;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
+/* Zone de texte DEBUG visible */
 .vr-guide-bubble-text{
   position: absolute;
-  left: 3.5%;
-  top: 9.2%;
-  width: 51.5%;
-  height: 19%;
+  left: 3.8%;
+  top: 8.8%;
+  width: 52.2%;
+  height: 18.8%;
+  padding: 2.6% 3.2%;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2.4% 3.2%;
-  box-sizing: border-box;
-  background: rgba(255, 0, 0, .18);
-  outline: 2px dashed rgba(255, 80, 80, .95);
-  border-radius: 18px;
   overflow: hidden;
+  border-radius: 18px;
+
+  background: rgba(255, 0, 0, .18);
+  outline: 2px dashed rgba(255, 70, 70, .95);
 }
 
 .vr-guide-bubble-fit{
@@ -5591,16 +5606,41 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   align-items: center;
   justify-content: center;
   text-align: center;
-  line-height: 1.14;
-  font-weight: 800;
   color: #1f2430;
-  text-wrap: balance;
+  font-weight: 800;
+  line-height: 1.1;
   word-break: break-word;
   overflow-wrap: anywhere;
-  font-size: 20px;
+  text-wrap: balance;
+  font-size: 22px;
 }
 
+/* Mode final: zone invisible */
 .vr-guide-overlay.is-final .vr-guide-bubble-text{
   background: transparent;
   outline: none;
 }
+
+/* Mobile étroit */
+@media (max-width: 600px){
+  .vr-guide-overlay{
+    width: min(88vw, 420px);
+    min-width: 260px;
+  }
+
+  .vr-guide-bubble-text{
+    left: 3.6%;
+    top: 8.8%;
+    width: 52.4%;
+    height: 18.9%;
+  }
+}
+
+/* Tablette */
+@media (min-width: 900px){
+  .vr-guide-overlay{
+    width: min(44vw, 520px);
+    max-width: 520px;
+  }
+}
+
