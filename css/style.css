@@ -5534,18 +5534,18 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 .vr-guide-popup{
   position: absolute;
   left: 50%;
-  top: 31%;
+  top: 24%;
   transform: translate(-50%, -50%);
-  width: min(74%, 520px);
-  max-width: calc(100% - 22px);
+  width: min(76%, 500px);
+  max-width: calc(100% - 20px);
   z-index: 4;
 }
 
 .vr-guide-bubble-text{
   position: relative;
   width: 100%;
-  min-height: clamp(78px, 11vh, 120px);
-  padding: clamp(10px, 1.4vw, 14px) clamp(14px, 1.8vw, 18px);
+  min-height: clamp(74px, 10vh, 108px);
+  padding: clamp(10px, 1.5vw, 14px) clamp(12px, 1.8vw, 18px);
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 18px;
@@ -5561,15 +5561,15 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 
 .vr-guide-figure{
   position: absolute;
-  left: 50%;
+  right: clamp(4px, 1vw, 10px);
   bottom: 0;
-  transform: translateX(-8%);
-  width: min(102%, 470px);
-  min-width: 300px;
+  width: min(40%, 260px);
+  min-width: 175px;
+  max-width: 260px;
   aspect-ratio: 1024 / 1536;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-end;
   z-index: 3;
   pointer-events: none;
 }
@@ -5577,9 +5577,9 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 .vr-guide-image{
   width: 100%;
   height: auto;
-  max-height: min(84vh, 940px);
+  max-height: min(52vh, 460px);
   object-fit: contain;
-  object-position: center bottom;
+  object-position: right bottom;
   display: block;
   user-select: none;
   -webkit-user-drag: none;
@@ -5591,7 +5591,7 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: clamp(4px, .7vw, 8px);
+  gap: 6px;
   width: 100%;
   color: #f3efe6;
   font-weight: 700;
@@ -5610,7 +5610,7 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 }
 
 .vr-guide-line--title{
-  font-size: 1.14em;
+  font-size: 1.12em;
   font-weight: 900;
   line-height: 1.04;
 }
@@ -5629,43 +5629,54 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 /* Mobile étroit */
 @media (max-width: 600px){
   .vr-guide-popup{
-    top: 28%;
-    width: calc(100% - 18px);
+    top: 21%;
+    width: calc(100% - 14px);
     max-width: none;
   }
 
   .vr-guide-bubble-text{
-    min-height: clamp(74px, 10vh, 102px);
-    padding: 10px 12px;
+    min-height: clamp(70px, 9vh, 96px);
+    padding: 9px 11px;
     border-radius: 16px;
   }
 
+  .vr-guide-bubble-fit{
+    gap: 4px;
+    line-height: 1.06;
+  }
+
   .vr-guide-figure{
-    width: min(118%, 430px);
-    min-width: 300px;
-    transform: translateX(-10%);
+    width: min(42%, 210px);
+    min-width: 160px;
+    max-width: 210px;
+    right: 2px;
     bottom: 0;
   }
 
   .vr-guide-image{
-    max-height: min(86vh, 860px);
+    max-height: min(44vh, 360px);
   }
 }
 
 /* Tablette / grand écran */
 @media (min-width: 900px){
   .vr-guide-popup{
-    top: 29%;
-    width: min(62%, 540px);
+    top: 26%;
+    width: min(62%, 560px);
   }
 
   .vr-guide-bubble-text{
-    min-height: clamp(82px, 10vh, 124px);
+    min-height: clamp(82px, 10vh, 118px);
   }
 
   .vr-guide-figure{
-    width: min(86%, 560px);
-    min-width: 360px;
-    transform: translateX(-6%);
+    width: min(30%, 300px);
+    min-width: 220px;
+    max-width: 300px;
+    right: 8px;
+  }
+
+  .vr-guide-image{
+    max-height: min(58vh, 520px);
   }
 }
