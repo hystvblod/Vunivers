@@ -423,8 +423,8 @@
     }
   },
   "vampire_048": {
-    "title": "La soirée karaoke",
-    "body": "Le clan veut une soirée karaoke pour la cohésion. Mauvaise idée, mais drôle.",
+    "title": "La soirée karaoké",
+    "body": "Le clan veut une soirée karaoké pour la cohésion. Mauvaise idée, mais drôle.",
     "choices": {
       "A": "Accepter et encadrer",
       "B": "Interdire",
@@ -1684,7 +1684,7 @@
   },
   "vampire_188": {
     "title": "Fuite dans la crypte",
-    "body": "De l’eau goutte sur les réserves. Même les vampires n aiment pas le moisi.",
+    "body": "De l’eau goutte sur les réserves. Même les vampires n’aiment pas le moisi.",
     "choices": {
       "A": "Réparer tout de suite",
       "B": "Déplacer les réserves",
@@ -1711,7 +1711,7 @@
   },
   "vampire_191": {
     "title": "Banque soupçonneuse",
-    "body": "Ton compte attire l’attention. Trop d achats nocturnes et trop peu de soleil.",
+    "body": "Ton compte attire l’attention. Trop d’achats nocturnes et trop peu de soleil.",
     "choices": {
       "A": "Envoyer un faux gestionnaire",
       "B": "Changer d’identité",
@@ -1782,7 +1782,7 @@
     }
   },
   "vampire_199": {
-    "title": "Panne d électricité",
+    "title": "Panne d’électricité",
     "body": "Plus de courant au repaire. Sans alarme, tout devient trop facile pour les chasseurs.",
     "choices": {
       "A": "Réparer vite",
@@ -1801,7 +1801,7 @@
   },
   "vampire_201": {
     "title": "Sang frelaté",
-    "body": "Un lot de sang est douteux. Les vampires font la grimace et ça, c est rare.",
+    "body": "Un lot de sang est douteux. Les vampires font la grimace et ça, c’est rare.",
     "choices": {
       "A": "Jeter le lot",
       "B": "Le couper avec du bon",
@@ -1823,12 +1823,12 @@
     "choices": {
       "A": "Interdire et punir",
       "B": "Limiter à un signe discret",
-      "C": "S en servir pour marquer le territoire"
+      "C": "S’en servir pour marquer le territoire"
     }
   },
   "vampire_204": {
     "title": "Le livre interdit",
-    "body": "Un grimoire du repaire disparaît. Et le dernier à l avoir touché sourit trop.",
+    "body": "Un grimoire du repaire disparaît. Et le dernier à l’avoir touché sourit trop.",
     "choices": {
       "A": "Fouiller tout le clan",
       "B": "Proposer une amnistie",
@@ -1837,7 +1837,7 @@
   },
   "vampire_205": {
     "title": "Taxi de nuit bavard",
-    "body": "Un chauffeur raconte qu il a eu un client froid comme la pierre. Ça ressemble à toi.",
+    "body": "Un chauffeur raconte qu’il a eu un client froid comme la pierre. Ça ressemble à toi.",
     "choices": {
       "A": "Le faire taire",
       "B": "Le payer pour mentir",
@@ -1875,7 +1875,7 @@
     "title": "Le costume qui gratte",
     "body": "Ton manteau ancien attire les regards. La mode nocturne exige du banal.",
     "choices": {
-      "A": "S adapter au style moderne",
+      "A": "S’adapter au style moderne",
       "B": "Imposer le style ancien",
       "C": "Rester invisible"
     }
@@ -1891,7 +1891,7 @@
   },
   "vampire_211": {
     "title": "Assemblée du clan",
-    "body": "Le clan réclame une réunion. Personne n aime les réunions. Mais tous aiment râler.",
+    "body": "Le clan réclame une réunion. Personne n’aime les réunions. Mais tous aiment râler.",
     "choices": {
       "A": "Écouter et trancher",
       "B": "Reporter encore",
@@ -1927,9 +1927,9 @@
   },
   "vampire_215": {
     "title": "Nouveau rival élégant",
-    "body": "Un vampire inconnu arrive. Il est poli. Trop poli. Ça sent l ambition.",
+    "body": "Un vampire inconnu arrive. Il est poli. Trop poli. Ça sent l’ambition.",
     "choices": {
-      "A": "L accueillir et l encadrer",
+      "A": "L’accueillir et l’encadrer",
       "B": "Le tester avec une mission",
       "C": "Le repousser hors du territoire"
     }
@@ -1944,7 +1944,7 @@
     }
   },
   "vampire_217": {
-    "title": "La potion de l ancien",
+    "title": "La potion de l’ancien",
     "body": "Un ancien propose une potion. Il dit que ça calme la soif. Personne ne le croit.",
     "choices": {
       "A": "Tester sur toi",
@@ -1957,7 +1957,7 @@
     "body": "Une chasse a tourné en spectacle. Sirènes. Vidéos. Un vrai show gratuit.",
     "choices": {
       "A": "Punir le responsable",
-      "B": "Couvrir l affaire",
+      "B": "Couvrir l’affaire",
       "C": "Accuser les chasseurs"
     }
   },
@@ -1966,7 +1966,7 @@
     "body": "Un contrôle sanitaire arrive près de tes caches. Ils cherchent des stocks illégaux.",
     "choices": {
       "A": "Déplacer les caches",
-      "B": "Corrompre l inspecteur",
+      "B": "Corrompre l’inspecteur",
       "C": "Mettre un leurre"
     }
   },
@@ -1998,7 +1998,7 @@
     }
   },
   "vampire_223": {
-    "title": "Duel d anciens",
+    "title": "Duel d’anciens",
     "body": "Deux anciens veulent un duel pour décider de tout. Même du menu du soir.",
     "choices": {
       "A": "Autoriser le duel",
@@ -2010,7 +2010,7 @@
     "title": "Le colis piégé",
     "body": "Un colis arrive au repaire. Trop propre. Trop bien emballé. Trop suspect.",
     "choices": {
-      "A": "L ouvrir avec précaution",
+      "A": "L’ouvrir avec précaution",
       "B": "Le renvoyer",
       "C": "Le faire ouvrir par un rival"
     }
@@ -2025,7 +2025,7 @@
     }
   },
   "vampire_226": {
-    "title": "L alarme solaire",
+    "title": "L’alarme solaire",
     "body": "Le repaire a une alarme soleil. Elle se déclenche en pleine nuit. Tout le monde panique.",
     "choices": {
       "A": "Réparer immédiatement",
@@ -2035,7 +2035,7 @@
   },
   "vampire_227": {
     "title": "Le costume du secret",
-    "body": "Le secret te fabrique une tenue officielle. C est trop brillant. Et ça attire les flashs.",
+    "body": "Le secret te fabrique une tenue officielle. C’est trop brillant. Et ça attire les flashs.",
     "choices": {
       "A": "Refuser la tenue",
       "B": "Accepter une version discrète",
@@ -2053,7 +2053,7 @@
   },
   "vampire_229": {
     "title": "Le pacte des rues",
-    "body": "Des humains proposent un pacte. Ils donnent silence contre protection. C est du commerce.",
+    "body": "Des humains proposent un pacte. Ils donnent silence contre protection. C’est du commerce.",
     "choices": {
       "A": "Accepter et encadrer",
       "B": "Refuser et imposer la peur",
@@ -2062,7 +2062,7 @@
   },
   "vampire_230": {
     "title": "Le parfum de rose",
-    "body": "Un parfum masque l odeur du sang. Tout le clan en met. Tu tousses. C est humiliant.",
+    "body": "Un parfum masque l’odeur du sang. Tout le clan en met. Tu tousses. C’est humiliant.",
     "choices": {
       "A": "Interdire le parfum",
       "B": "Limiter aux sorties",
@@ -2071,7 +2071,7 @@
   },
   "vampire_231": {
     "title": "La liste des absents",
-    "body": "Deux vampires manquent à l appel. Le clan murmure. Les chasseurs sourient.",
+    "body": "Deux vampires manquent à l’appel. Le clan murmure. Les chasseurs sourient.",
     "choices": {
       "A": "Lancer une recherche",
       "B": "Renforcer la défense",
@@ -2082,7 +2082,7 @@
     "title": "Le marché aux reliques",
     "body": "Une relique anti vampire est vendue en ville. Tout le monde la veut. Surtout toi.",
     "choices": {
-      "A": "L acheter discrètement",
+      "A": "L’acheter discrètement",
       "B": "La voler",
       "C": "La détruire"
     }
@@ -2110,7 +2110,7 @@
     "body": "Une brume étrange couvre la zone. Les chasseurs y entrent. Le clan hésite.",
     "choices": {
       "A": "Explorer la brume",
-      "B": "Rester à l abri",
+      "B": "Rester à l’abri",
       "C": "Attirer les chasseurs dedans"
     }
   },
@@ -2120,12 +2120,12 @@
     "choices": {
       "A": "Accepter avec piège",
       "B": "Ignorer et renforcer",
-      "C": "Chercher l expéditeur"
+      "C": "Chercher l’expéditeur"
     }
   },
   "vampire_237": {
     "title": "La réserve secrète",
-    "body": "On découvre une réserve de sang cachée. Elle n est pas à toi. Alors à qui est elle.",
+    "body": "On découvre une réserve de sang cachée. Elle n’est pas à toi. Alors à qui est-elle ?",
     "choices": {
       "A": "La prendre pour le clan",
       "B": "La piéger",
@@ -2172,14 +2172,14 @@
     "title": "Le piège à UV",
     "body": "Une lampe UV est trouvée près du repaire. Quelqu un teste le terrain.",
     "choices": {
-      "A": "Détruire l équipement",
+      "A": "Détruire l’équipement",
       "B": "Piéger le piège",
-      "C": "Déplacer l entrée"
+      "C": "Déplacer l’entrée"
     }
   },
   "vampire_243": {
     "title": "Le vampire romantique",
-    "body": "Un vampire écrit des lettres d amour aux humains. Il signe avec ton nom. Catastrophe.",
+    "body": "Un vampire écrit des lettres d’amour aux humains. Il signe avec ton nom. Catastrophe.",
     "choices": {
       "A": "Le stopper immédiatement",
       "B": "Le recadrer et réparer",
@@ -2196,10 +2196,10 @@
     }
   },
   "vampire_245": {
-    "title": "La pluie d argent",
+    "title": "La pluie d’argent",
     "body": "Une grosse somme tombe dans tes mains. Trop belle. Ça ressemble à un piège financier.",
     "choices": {
-      "A": "Refuser l argent",
+      "A": "Refuser l’argent",
       "B": "Le blanchir vite",
       "C": "Le rendre avec menace"
     }
@@ -2217,7 +2217,7 @@
     "title": "Le stock qui gèle",
     "body": "Une partie du sang a gelé. Le clan crie. Toi aussi tu pourrais crier mais tu es digne.",
     "choices": {
-      "A": "Sauver ce qui peut l être",
+      "A": "Sauver ce qui peut l’être",
       "B": "Jeter et sécuriser",
       "C": "Répartir la perte"
     }
@@ -2228,11 +2228,11 @@
     "choices": {
       "A": "Suspendre la chasse",
       "B": "Chasser en périphérie",
-      "C": "Saboter l éclairage"
+      "C": "Saboter l’éclairage"
     }
   },
   "vampire_249": {
-    "title": "La promesse d un chasseur",
+    "title": "La promesse d’un chasseur",
     "body": "Un chasseur propose une trêve. Il dit vouloir le vrai chef. Il te vise.",
     "choices": {
       "A": "Accepter la rencontre",
@@ -2260,7 +2260,7 @@
   },
   "vampire_252": {
     "title": "La porte marquée",
-    "body": "Un symbole de chasseur est peint sur une porte proche. Personne ne sait qui l a vu en premier.",
+    "body": "Un symbole de chasseur est peint sur une porte proche. Personne ne sait qui l’a vu en premier.",
     "choices": {
       "A": "Effacer la marque",
       "B": "Poser une embuscade",
@@ -2268,7 +2268,7 @@
     }
   },
   "vampire_253": {
-    "title": "L invitation chic",
+    "title": "L’invitation chic",
     "body": "Tu es invité à une soirée privée. Trop de miroirs. Trop de regards. Trop de risques.",
     "choices": {
       "A": "Y aller avec un masque",
@@ -2314,7 +2314,7 @@
   },
   "vampire_258": {
     "title": "Le stock de secours",
-    "body": "Une réserve de secours existe. Mais personne n a la clé. Et tout le monde te regarde.",
+    "body": "Une réserve de secours existe. Mais personne n’a la clé. Et tout le monde te regarde.",
     "choices": {
       "A": "Forcer la serrure",
       "B": "Chercher la clé",
@@ -2332,15 +2332,15 @@
   },
   "vampire_260": {
     "title": "Le clan veut un symbole",
-    "body": "Le clan veut un symbole officiel. Le secret propose une couronne géante. C est non.",
+    "body": "Le clan veut un symbole officiel. Le secret propose une couronne géante. C’est non.",
     "choices": {
       "A": "Choisir un symbole discret",
-      "B": "Imposer l ancien symbole",
+      "B": "Imposer l’ancien symbole",
       "C": "Laisser le clan voter"
     }
   },
   "vampire_261": {
-    "title": "L odeur de fumée",
+    "title": "L’odeur de fumée",
     "body": "Une fumée entre dans la crypte. Ça vient de dehors. Et dehors il y a des chasseurs.",
     "choices": {
       "A": "Sortir et stopper",
@@ -2368,7 +2368,7 @@
   },
   "vampire_264": {
     "title": "Le livreur de fleurs",
-    "body": "Un livreur de fleurs insiste pour entrer. Il dit que c est une surprise. Les surprises tu détestes.",
+    "body": "Un livreur de fleurs insiste pour entrer. Il dit que c’est une surprise. Les surprises tu détestes.",
     "choices": {
       "A": "Le repousser",
       "B": "Le contrôler et vérifier",
@@ -2376,7 +2376,7 @@
     }
   },
   "vampire_265": {
-    "title": "L épidémie de rumeurs",
+    "title": "L’épidémie de rumeurs",
     "body": "Une rumeur dit que tu as un point faible ridicule. La ville en rit. Le clan aussi.",
     "choices": {
       "A": "Écraser la rumeur",
@@ -2421,7 +2421,7 @@
     }
   },
   "vampire_270": {
-    "title": "L arrivée du grand froid",
+    "title": "L’arrivée du grand froid",
     "body": "Le froid arrive. Les rues se vident. Chasser devient plus dur. Les chasseurs, eux, restent.",
     "choices": {
       "A": "Rationner et tenir",
@@ -2451,16 +2451,16 @@
     "title": "Le plan de secours du secret",
     "body": "Le secret a un plan de secours au cas où tu meurs. Très gentil. Très insultant.",
     "choices": {
-      "A": "Punir l idée",
+      "A": "Punir l’idée",
       "B": "Encadrer et corriger",
       "C": "Utiliser le plan pour tester la loyauté"
     }
   },
   "vampire_274": {
-    "title": "L enquête privée",
-    "body": "Un détective privé fouille ton quartier. Il n a pas peur. Ça c est nouveau.",
+    "title": "L’enquête privée",
+    "body": "Un détective privé fouille ton quartier. Il n’a pas peur. Ça c’est nouveau.",
     "choices": {
-      "A": "Le détourner de l enquête",
+      "A": "Le détourner de l’enquête",
       "B": "Le recruter",
       "C": "Le neutraliser"
     }
