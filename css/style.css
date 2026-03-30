@@ -4635,6 +4635,10 @@ body.vr-body-game[data-universe="vampire_lord"] .vr-hud-value{
   transform: translateY(-2px) !important;
 }
 
+body.vr-body-game[data-universe="vampire_lord"] .vr-hud-right .vr-hud-value{
+  transform: translate(3px, -2px) !important;
+}
+
 body.vr-body-game[data-universe="vampire_lord"] .vr-hud-name{
   font-size: clamp(13px, 2vw, 28px) !important;
   font-weight: 800 !important;
