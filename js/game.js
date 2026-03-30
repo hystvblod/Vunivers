@@ -191,33 +191,70 @@ function vrGuideGetReachedTier(reignLength) {
 }
 
 
+const VR_BADGE_ORDER = ["wood", "bronze", "silver", "gold", "crystal"];
+
+function getStoredBadgeTier(universeId) {
+  try {
+    const map = window.VUProfileBadges?.getAll?.()?.map || {};
+    const row = map[String(universeId || "").trim()] || {};
+
+    if (row.crystal) return "crystal";
+    if (row.gold) return "gold";
+    if (row.silver) return "silver";
+    if (row.bronze) return "bronze";
+    if (row.wood) return "wood";
+  } catch (_) {}
+
+  return null;
+}
+
 function getRankTierFromReignLength(reignLength) {
   const v = Math.max(0, Number(reignLength || 0));
   if (v >= 150) return "crystal";
   if (v >= 100) return "gold";
   if (v >= 60) return "silver";
   if (v >= 40) return "bronze";
+  if (v >= 20) return "wood";
   return "wood";
 }
 
-function getRankTargetFromReignLength(reignLength) {
-  const v = Math.max(0, Number(reignLength || 0));
-  if (v >= 150) return 150;
-  if (v >= 100) return 150;
-  if (v >= 60) return 100;
-  if (v >= 40) return 60;
-  if (v >= 20) return 40;
+function getHigherTier(a, b) {
+  const ia = VR_BADGE_ORDER.indexOf(a);
+  const ib = VR_BADGE_ORDER.indexOf(b);
+  return (ib > ia) ? b : a;
+}
+
+function getEffectiveRankTier(universeId, reignLength) {
+  const storedTier = getStoredBadgeTier(universeId);
+  const currentRunTier = getRankTierFromReignLength(reignLength);
+
+  if (!storedTier) return currentRunTier;
+  return getHigherTier(storedTier, currentRunTier);
+}
+
+function getRankTargetFromState(universeId, reignLength) {
+  const tier = getEffectiveRankTier(universeId, reignLength);
+
+  if (tier === "crystal") return 150;
+  if (tier === "gold") return 150;
+  if (tier === "silver") return 100;
+  if (tier === "bronze") return 60;
+  if (tier === "wood") {
+    const storedTier = getStoredBadgeTier(universeId);
+    return storedTier ? 40 : 20;
+  }
+
   return 20;
 }
 
-function getRankProgressLabel(reignLength) {
+function getRankProgressLabel(universeId, reignLength) {
   const v = Math.max(0, Number(reignLength || 0));
-  const target = getRankTargetFromReignLength(v);
+  const target = getRankTargetFromState(universeId, reignLength);
   return `${Math.min(v, target)}/${target}`;
 }
 
 function getRankLabel(universeId, reignLength) {
-  const tier = getRankTierFromReignLength(reignLength);
+  const tier = getEffectiveRankTier(universeId, reignLength);
   const key = `jobs.${String(universeId || "").trim()}.${tier}`;
   try {
     const out = window.VRI18n?.t?.(key);
@@ -462,7 +499,7 @@ function getRankLabel(universeId, reignLength) {
 
       const reignLength = Number(window.VRGame?.session?.reignLength || 0);
       const rankLabel = getRankLabel(currentUniverse, reignLength);
-      const progressLabel = getRankProgressLabel(reignLength);
+      const progressLabel = getRankProgressLabel(currentUniverse, reignLength);
 
       if (kingEl) kingEl.textContent = rankLabel || "—";
       if (yearsEl) yearsEl.textContent = progressLabel;
