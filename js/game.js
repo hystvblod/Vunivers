@@ -2766,6 +2766,457 @@ body.vr-peek-mode .vr-gauge-preview{
   window.VREngine = VREngine;
 })();
 
+// -------------------------------------------------------
+// Event system patch — aligné sur logic_events.json / events_*.json
+// -------------------------------------------------------
+(function () {
+  "use strict";
+
+  const engine = window.VREngine;
+  if (!engine) return;
+
+  const clone = (obj) => {
+    try { return JSON.parse(JSON.stringify(obj)); } catch (_) { return obj; }
+  };
+
+  const asInt = (x, fallback) => {
+    const n = Number(x);
+    return Number.isFinite(n) ? Math.trunc(n) : (fallback || 0);
+  };
+
+  function ensureEventState(ctx) {
+    if (!ctx || typeof ctx !== "object") return;
+    if (!Array.isArray(ctx._activeEvents)) ctx._activeEvents = [];
+    if (!ctx._eventCooldowns || typeof ctx._eventCooldowns !== "object" || Array.isArray(ctx._eventCooldowns)) {
+      ctx._eventCooldowns = {};
+    }
+    if (!Array.isArray(ctx._seenEvents)) ctx._seenEvents = [];
+  }
+
+  function sanitizeEventState(ctx) {
+    ensureEventState(ctx);
+
+    const allow = new Set(Array.isArray(ctx._allEventIds) ? ctx._allEventIds : []);
+
+    ctx._activeEvents = ctx._activeEvents
+      .filter((row) => row && allow.has(row.id))
+      .map((row) => ({
+        id: row.id,
+        remainingCards: Math.max(0, asInt(row.remainingCards, 0)),
+        perCardDelta: (row.perCardDelta && typeof row.perCardDelta === "object") ? clone(row.perCardDelta) : {}
+      }))
+      .filter((row) => row.remainingCards > 0);
+
+    const nextCooldowns = {};
+    Object.entries(ctx._eventCooldowns || {}).forEach(([id, value]) => {
+      if (!allow.has(id)) return;
+      const n = Math.max(0, asInt(value, 0));
+      if (n > 0) nextCooldowns[id] = n;
+    });
+    ctx._eventCooldowns = nextCooldowns;
+  }
+
+  function getRollEveryCards(ctx) {
+    return Math.max(1, asInt(ctx?.eventsLogic?.roll_every_cards, 3));
+  }
+
+  function getTriggerChance(ctx) {
+    const raw = Number(ctx?.eventsLogic?.trigger_chance);
+    if (!Number.isFinite(raw)) return 0.10;
+    return Math.max(0, Math.min(1, raw));
+  }
+
+  function getCooldownCards(ctx) {
+    return Math.max(0, asInt(ctx?.eventsLogic?.cooldown_cards, 25));
+  }
+
+  function getEventTexts(ctx, id) {
+    const root = ctx?.eventsTexts;
+    if (!root || typeof root !== "object") return null;
+    return root?.events?.[id] || root?.[id] || null;
+  }
+
+  function getPerCardDelta(ev) {
+    const a = ev?.effects?.per_card;
+    if (a && typeof a === "object" && !Array.isArray(a)) return clone(a);
+
+    const b = ev?.per_card;
+    if (b && typeof b === "object" && !Array.isArray(b)) return clone(b);
+
+    return {};
+  }
+
+  function getImmediateDelta(ev) {
+    const direct = ev?.gaugeDelta || ev?.deltas || ev?.effects?.immediate || ev?.effects?.gaugeDelta;
+    if (direct && typeof direct === "object" && !Array.isArray(direct)) return clone(direct);
+    return {};
+  }
+
+  function getEventDuration(ev) {
+    return Math.max(0, asInt(ev?.duration_cards, ev?.duration || 0));
+  }
+
+  function applyActiveEventTicks(ctx) {
+    ensureEventState(ctx);
+    if (!Array.isArray(ctx._activeEvents) || !ctx._activeEvents.length) return;
+
+    const next = [];
+
+    ctx._activeEvents.forEach((row) => {
+      const delta = (row?.perCardDelta && typeof row.perCardDelta === "object") ? row.perCardDelta : {};
+      if (Object.keys(delta).length) {
+        window.VRState.applyDeltas(delta);
+      }
+
+      const remaining = Math.max(0, asInt(row?.remainingCards, 0) - 1);
+      if (remaining > 0) {
+        next.push({
+          id: row.id,
+          remainingCards: remaining,
+          perCardDelta: clone(delta)
+        });
+      }
+    });
+
+    ctx._activeEvents = next;
+  }
+
+  function tickEventCooldowns(ctx) {
+    ensureEventState(ctx);
+    const next = {};
+
+    Object.entries(ctx._eventCooldowns || {}).forEach(([id, value]) => {
+      const remaining = Math.max(0, asInt(value, 0) - 1);
+      if (remaining > 0) next[id] = remaining;
+    });
+
+    ctx._eventCooldowns = next;
+  }
+
+  const originalRebuildEventIndex = engine._rebuildEventIndex;
+  engine._rebuildEventIndex = function () {
+    const out = originalRebuildEventIndex.apply(this, arguments);
+    sanitizeEventState(this);
+    return out;
+  };
+
+  const originalMakeSavePayload = engine._makeSavePayload;
+  engine._makeSavePayload = function () {
+    ensureEventState(this);
+    const payload = originalMakeSavePayload.apply(this, arguments) || {};
+    payload.engine = payload.engine || {};
+    payload.engine.events = payload.engine.events || {};
+    payload.engine.events.active = clone(this._activeEvents || []);
+    payload.engine.events.cooldowns = clone(this._eventCooldowns || {});
+    return payload;
+  };
+
+  const originalInit = engine.init;
+  engine.init = async function () {
+    const out = await originalInit.apply(this, arguments);
+    ensureEventState(this);
+
+    try {
+      const saved = window.VRSave?.load?.(this.universeId);
+      const evs = saved?.engine?.events || {};
+      if (Array.isArray(evs.active)) this._activeEvents = clone(evs.active);
+      if (evs.cooldowns && typeof evs.cooldowns === "object" && !Array.isArray(evs.cooldowns)) {
+        this._eventCooldowns = clone(evs.cooldowns);
+      }
+    } catch (_) {}
+
+    sanitizeEventState(this);
+    this._saveRunSoft();
+    return out;
+  };
+
+  const originalStartNewReign = engine._startNewReign;
+  engine._startNewReign = function () {
+    this._activeEvents = [];
+    this._eventCooldowns = {};
+    return originalStartNewReign.apply(this, arguments);
+  };
+
+  const originalRestartRun = engine.restartRun;
+  engine.restartRun = function () {
+    this._activeEvents = [];
+    this._eventCooldowns = {};
+    return originalRestartRun.apply(this, arguments);
+  };
+
+  const originalReviveSecondChance = engine.reviveSecondChance;
+  engine.reviveSecondChance = function () {
+    this._activeEvents = [];
+    this._eventCooldowns = {};
+    return originalReviveSecondChance.apply(this, arguments);
+  };
+
+  engine._pushHistorySnapshot = function (cardLogic) {
+    ensureEventState(this);
+
+    const snap = {
+      cardId: cardLogic?.id || null,
+      gauges: clone(window.VRState.gauges),
+      alive: true,
+      lastDeath: null,
+      reignYears: window.VRState.reignYears,
+      cardsPlayed: window.VRState.cardsPlayed,
+      recentCards: clone(this.recentCards),
+      coinsStreak: this.coinsStreak,
+      uiCoins: this._uiCoins,
+      uiTokens: this._uiTokens,
+      sessionReignLength: Number(window.VRGame?.session?.reignLength || 0),
+      cardsSinceEventRoll: asInt(this._cardsSinceEventRoll, 0),
+      eventPool: clone(this._eventPool || []),
+      seenEvents: clone(this._seenEvents || []),
+      activeEvents: clone(this._activeEvents || []),
+      eventCooldowns: clone(this._eventCooldowns || {})
+    };
+
+    this.history.push(snap);
+    if (this.history.length > 30) this.history.shift();
+  };
+
+  engine.undoChoices = function (steps) {
+    const n = Math.max(1, Math.min(Number(steps || 1), 10));
+    if (!this.history.length) return false;
+
+    let snap = null;
+    for (let i = 0; i < n; i++) {
+      if (!this.history.length) break;
+      snap = this.history.pop();
+    }
+    if (!snap) return false;
+
+    window.VRState.gauges = clone(snap.gauges) || window.VRState.gauges;
+    window.VRState.alive = true;
+    window.VRState.lastDeath = null;
+    window.VRState.reignYears = Number(snap.reignYears || 0);
+    window.VRState.cardsPlayed = Number(snap.cardsPlayed || 0);
+
+    this.recentCards = clone(snap.recentCards) || [];
+    this.coinsStreak = Number(snap.coinsStreak || 0);
+    this._uiCoins = Number(snap.uiCoins || 0);
+    this._uiTokens = Number(snap.uiTokens || 0);
+
+    this._cardsSinceEventRoll = asInt(snap.cardsSinceEventRoll, 0);
+    this._eventPool = Array.isArray(snap.eventPool) ? clone(snap.eventPool) : this._eventPool;
+    this._seenEvents = Array.isArray(snap.seenEvents) ? clone(snap.seenEvents) : this._seenEvents;
+    this._activeEvents = Array.isArray(snap.activeEvents) ? clone(snap.activeEvents) : [];
+    this._eventCooldowns = (snap.eventCooldowns && typeof snap.eventCooldowns === "object" && !Array.isArray(snap.eventCooldowns))
+      ? clone(snap.eventCooldowns)
+      : {};
+
+    if (window.VRGame?.session) {
+      window.VRGame.session.reignLength = Number(snap.sessionReignLength || 0);
+    }
+
+    const card = this.deck.find((c) => c.id === snap.cardId) || this.currentCardLogic;
+    if (card) {
+      this.currentCardLogic = card;
+      window.VRUIBinding.showCard(card);
+    }
+
+    sanitizeEventState(this);
+    window.VRUIBinding.updateGauges();
+
+    const kingName = window.VRRuntimeText?.getDynastyName?.() || "";
+    const years = window.VRRuntimeText?.getYearLabel?.() || "";
+    window.VRUIBinding.updateMeta(kingName, years, this._uiCoins, this._uiTokens);
+
+    this._saveRunSoft();
+    return true;
+  };
+
+  engine._maybeRollEventAfterCardResolved = function () {
+    ensureEventState(this);
+    this._cardsSinceEventRoll = asInt(this._cardsSinceEventRoll, 0) + 1;
+
+    const rollEvery = getRollEveryCards(this);
+    if (this._cardsSinceEventRoll < rollEvery) {
+      this._saveRunSoft();
+      return false;
+    }
+
+    this._cardsSinceEventRoll = 0;
+
+    if (!Array.isArray(this._allEventIds) || !this._allEventIds.length) {
+      this._saveRunSoft();
+      return false;
+    }
+
+    const hit = Math.random() < getTriggerChance(this);
+    this._saveRunSoft();
+    return hit;
+  };
+
+  engine._pickRandomEventId = function () {
+    ensureEventState(this);
+
+    const all = Array.isArray(this._allEventIds) ? this._allEventIds.slice() : [];
+    if (!all.length) return null;
+
+    const available = all.filter((id) => asInt(this._eventCooldowns?.[id], 0) <= 0);
+    const pool = available.length ? available : all;
+    const idx = Math.floor(Math.random() * pool.length);
+    const id = pool[idx] || null;
+    if (id) this._seenEvents.push(id);
+    return id;
+  };
+
+  engine._triggerRandomEvent = async function () {
+    ensureEventState(this);
+    if (this._eventShowing) return false;
+    if (!window.VRState.isAlive()) return false;
+
+    const id = this._pickRandomEventId();
+    if (!id) return false;
+
+    const ev = this._eventById.get(id) || null;
+    const texts = getEventTexts(this, id) || {};
+
+    try {
+      const immediateDelta = getImmediateDelta(ev);
+      if (Object.keys(immediateDelta).length) {
+        window.VRState.applyDeltas(immediateDelta);
+      }
+
+      const perCardDelta = getPerCardDelta(ev);
+      const durationCards = getEventDuration(ev);
+      if (Object.keys(perCardDelta).length && durationCards > 0) {
+        this._activeEvents.push({
+          id,
+          remainingCards: durationCards,
+          perCardDelta: clone(perCardDelta)
+        });
+      }
+
+      const cooldownCards = getCooldownCards(this);
+      if (cooldownCards > 0) {
+        this._eventCooldowns[id] = cooldownCards;
+      }
+
+      const dv =
+        (typeof ev?.vcoins === "number") ? ev.vcoins :
+        (typeof ev?.vcoinsDelta === "number") ? ev.vcoinsDelta :
+        0;
+
+      if (dv) {
+        this._pendingRunBonusCoins += asInt(dv, 0);
+      }
+
+      const dj =
+        (typeof ev?.jetons === "number") ? ev.jetons :
+        (typeof ev?.jetonsDelta === "number") ? ev.jetonsDelta :
+        0;
+
+      if (dj) {
+        if (dj > 0) {
+          const beforeTokens = Number(window.VUserData?.getJetons?.() || this._uiTokens || 0);
+
+          try {
+            await window.VUserData?.addJetonsAsync?.(dj);
+            await window.VUserData?.refresh?.();
+          } catch (_) {}
+
+          const afterTokens = Number(window.VUserData?.getJetons?.() || beforeTokens);
+          if (afterTokens >= beforeTokens + dj) {
+            this._uiTokens = afterTokens;
+          }
+        } else {
+          const cost = Math.abs(dj);
+          const ok = await (window.VUserData?.spendJetons?.(cost) || Promise.resolve(false));
+          if (ok) this._uiTokens -= cost;
+        }
+      }
+    } catch (e) {
+      console.error("[VREngine] event apply error:", e);
+    }
+
+    sanitizeEventState(this);
+
+    const kingName = window.VRRuntimeText?.getDynastyName?.() || "";
+    const years = window.VRRuntimeText?.getYearLabel?.() || "";
+    window.VRUIBinding.updateGauges();
+    window.VRUIBinding.updateMeta(kingName, years, this._uiCoins, this._uiTokens);
+
+    this._eventShowing = true;
+    this._saveRunSoft();
+
+    const title = texts?.title || "";
+    const bodyParts = [texts?.body || texts?.text || "", texts?.effect || "", texts?.duration || ""].filter(Boolean);
+    const body = bodyParts.join("\n\n");
+
+    try {
+      await window.VREventOverlay?.showEvent?.(title, body);
+    } catch (_) {}
+
+    this._eventShowing = false;
+
+    if (!window.VRState.isAlive()) {
+      await this._handleDeath();
+      return true;
+    }
+
+    this._saveRunSoft();
+    this._nextCard();
+    return true;
+  };
+
+  engine.applyChoice = function (cardLogic, choiceId) {
+    if (!cardLogic || !cardLogic.choices || !cardLogic.choices[choiceId]) return;
+    try {
+      if (window.VRIntroTutorial?.beforeApplyChoice?.(cardLogic, choiceId) === false) return;
+    } catch (_) {}
+
+    ensureEventState(this);
+    this._pushHistorySnapshot(cardLogic);
+
+    const choiceData = cardLogic.choices[choiceId];
+    const deltas = choiceData.gaugeDelta || {};
+    window.VRState.applyDeltas(deltas);
+
+    if (window.VRState.isAlive()) {
+      applyActiveEventTicks(this);
+      tickEventCooldowns(this);
+    }
+
+    this.coinsStreak += 1;
+
+    try { window.VROneSignal?.markRealGamePlayed?.(); } catch (_) {}
+
+    window.VRGame?.onCardResolved?.();
+    window.VRState.reignYears = Math.floor((Math.max(0, Number(window.VRGame?.session?.reignLength || 0))) / 4);
+
+    const years = window.VRRuntimeText?.getYearLabel?.() || "";
+    const kingName = window.VRRuntimeText?.getDynastyName?.() || "";
+    window.VRUIBinding.updateMeta(kingName, years, this._uiCoins, this._uiTokens);
+    window.VRUIBinding.updateGauges();
+
+    try { window.VRUIBinding?._consumePeekDecision?.(); } catch (_) {}
+    try { window.VRGame?.maybeShowInterstitial?.(); } catch (_) {}
+
+    sanitizeEventState(this);
+    this._saveRunSoft();
+
+    try {
+      if (window.VRIntroTutorial?.afterApplyChoice?.(cardLogic, choiceId) === true) return;
+    } catch (_) {}
+
+    if (!window.VRState.isAlive()) {
+      this._handleDeath();
+      return;
+    }
+
+    const shouldEvent = this._maybeRollEventAfterCardResolved();
+    if (shouldEvent) {
+      this._triggerRandomEvent();
+      return;
+    }
+
+    this._nextCard();
+  };
+})();
 
 // -------------------------------------------------------
 // Token UI
