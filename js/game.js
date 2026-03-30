@@ -5722,7 +5722,7 @@ window.VRGuideMentor = {
 
     const viewWidth = view.clientWidth || window.innerWidth || 360;
     const minFont = viewWidth <= 420 ? 12 : 13;
-    const maxFont = viewWidth >= 1200 ? 27 : viewWidth >= 900 ? 24 : viewWidth >= 680 ? 22 : 20;
+    const maxFont = viewWidth >= 1200 ? 30 : viewWidth >= 900 ? 27 : viewWidth >= 680 ? 24 : 21;
 
     overlay.style.width = "";
 
