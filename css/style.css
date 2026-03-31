@@ -5596,7 +5596,7 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 .vr-guide-confetti-layer{
   position:absolute;
   inset:0;
-  z-index:3;
+  z-index:2;
   pointer-events:none;
   overflow:hidden;
 }
@@ -5604,14 +5604,13 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 .vr-guide-confetti-piece{
   position:absolute;
   left:0;
-  top:auto;
-  bottom:-12%;
+  bottom:-6%;
   width:10px;
   height:18px;
   border-radius:3px;
   opacity:0;
   will-change:transform,opacity;
-  animation:vrGuideConfettiBurstFall var(--dur,3600ms) linear forwards;
+  animation:vrGuideConfettiBurstScreen var(--dur,4200ms) cubic-bezier(.18,.7,.16,1) forwards;
 }
 
 @keyframes vrGuideSoftBlink{
@@ -5625,21 +5624,21 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   }
 }
 
-@keyframes vrGuideConfettiBurstFall{
+@keyframes vrGuideConfettiBurstScreen{
   0%{
     opacity:0;
-    transform:translate3d(0,0,0) rotate(0deg) scale(.86);
+    transform:translate3d(0,0,0) rotate(0deg) scale(.88);
   }
   8%{
     opacity:1;
   }
-  26%{
+  34%{
     opacity:1;
-    transform:translate3d(var(--peakX, 0px), var(--peakY, -220px), 0) rotate(var(--rotPeak, 240deg)) scale(1);
+    transform:translate3d(var(--peakX, 0px), var(--peakY, -70svh), 0) rotate(var(--rot1, 360deg)) scale(1);
   }
   100%{
     opacity:0;
-    transform:translate3d(var(--fallX, 0px), var(--fallY, 112svh), 0) rotate(var(--rotEnd, 900deg)) scale(1.02);
+    transform:translate3d(var(--endX, 0px), 116svh, 0) rotate(var(--rot2, 1080deg)) scale(1.02);
   }
 }
 
