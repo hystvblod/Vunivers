@@ -164,6 +164,18 @@
     return false;
   }
 
+  function parseInviterUuidFromRawReferrer(rawReferrer) {
+    const raw = String(rawReferrer || "").trim();
+    if (!raw) return "";
+
+    try {
+      const params = new URLSearchParams(raw);
+      return String(params.get("inviter_uuid") || "").trim();
+    } catch (_) {
+      return "";
+    }
+  }
+
   async function fetchReferrerOnceFromNative() {
     if (!isNativeAndroid()) return;
     if (localStorage.getItem(FETCHED_KEY) === "1") return;
@@ -176,10 +188,14 @@
 
       if (data?.canRetry) return;
 
-      localStorage.setItem(FETCHED_KEY, "1");
-
-      const inviterUuid = String(data?.inviterUuid || "").trim();
       const rawReferrer = String(data?.rawReferrer || "").trim();
+      let inviterUuid = String(data?.inviterUuid || "").trim();
+
+      if (!inviterUuid && rawReferrer) {
+        inviterUuid = parseInviterUuidFromRawReferrer(rawReferrer);
+      }
+
+      localStorage.setItem(FETCHED_KEY, "1");
 
       if (inviterUuid) {
         localStorage.setItem(PENDING_INVITER_KEY, inviterUuid);
