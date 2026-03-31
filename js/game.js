@@ -6093,38 +6093,45 @@ window.VRGuideMentor = {
 
     layer.innerHTML = "";
 
-    const colors = ["#ffffff", "#f4d35e", "#ff6b6b", "#b8f2e6", "#d0bfff", "#7dd3fc", "#f9a8d4"];
-    const count = 110;
+    const colors = [
+      "#ffffff",
+      "#f4d35e",
+      "#ff6b6b",
+      "#b8f2e6",
+      "#d0bfff",
+      "#7dd3fc",
+      "#f9a8d4"
+    ];
+
+    const count = 160;
 
     for (let i = 0; i < count; i += 1) {
       const piece = document.createElement("span");
       piece.className = "vr-guide-confetti-piece";
 
-      const left = 8 + Math.random() * 84;
-      const peakX = -160 + Math.random() * 320;
-      const peakY = -(180 + Math.random() * 260);
-      const fallX = -260 + Math.random() * 520;
-      const fallY = 112 + Math.random() * 14;
-      const rotPeak = -260 + Math.random() * 520;
-      const rotEnd = -980 + Math.random() * 1960;
+      const startX = Math.random() * 100;
+      const peakX = -380 + Math.random() * 760;
+      const peakY = -(45 + Math.random() * 55);
+      const endX = peakX + (-160 + Math.random() * 320);
+      const rot1 = -360 + Math.random() * 720;
+      const rot2 = -1100 + Math.random() * 2200;
       const dur = 3200 + Math.random() * 1800;
-      const delay = Math.random() * 260;
+      const delay = Math.random() * 420;
       const color = colors[Math.floor(Math.random() * colors.length)];
-      const width = 6 + Math.random() * 8;
-      const height = 12 + Math.random() * 16;
+      const width = 5 + Math.random() * 8;
+      const height = 10 + Math.random() * 16;
       const radius = 2 + Math.random() * 3;
 
-      piece.style.left = `${left}%`;
+      piece.style.left = `${startX}%`;
       piece.style.background = color;
       piece.style.width = `${width}px`;
       piece.style.height = `${height}px`;
       piece.style.borderRadius = `${radius}px`;
       piece.style.setProperty("--peakX", `${peakX}px`);
-      piece.style.setProperty("--peakY", `${peakY}px`);
-      piece.style.setProperty("--fallX", `${fallX}px`);
-      piece.style.setProperty("--fallY", `${fallY}svh`);
-      piece.style.setProperty("--rotPeak", `${rotPeak}deg`);
-      piece.style.setProperty("--rotEnd", `${rotEnd}deg`);
+      piece.style.setProperty("--peakY", `${peakY}svh`);
+      piece.style.setProperty("--endX", `${endX}px`);
+      piece.style.setProperty("--rot1", `${rot1}deg`);
+      piece.style.setProperty("--rot2", `${rot2}deg`);
       piece.style.setProperty("--dur", `${dur}ms`);
       piece.style.animationDelay = `${delay}ms`;
 
@@ -6134,7 +6141,7 @@ window.VRGuideMentor = {
     clearTimeout(this._confettiCleanupTimer);
     this._confettiCleanupTimer = setTimeout(() => {
       try { layer.innerHTML = ""; } catch (_) {}
-    }, 6200);
+    }, 7000);
   },
 
   _fitTextAndScale() {
