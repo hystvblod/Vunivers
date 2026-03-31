@@ -654,7 +654,13 @@
     }
   },
   "guideMentor": {
-    "common": {"introGoal": "Mantém o equilíbrio durante {target} escolhas para obteres a tua primeira promoção.","nextGoal": "Mantém o equilíbrio durante mais {remaining} escolhas para alcançares a tua próxima promoção.","promotionNow": "Parabéns. Agora és {rank}.","maxGoal": "Alcançaste o posto mais alto deste universo. Agora prova que o consegues manter."},
+        "common": {
+    "introGoal": "Mantém o equilíbrio durante {target} escolhas para obteres a tua primeira promoção.",
+    "nextGoal": "Mantém o equilíbrio durante mais {remaining} escolhas para alcançares a tua próxima promoção.",
+    "promotionNow": "Parabéns. Agora és {rank}.",
+    "maxGoal": "Atingiste o posto mais alto deste universo. Agora prova que consegues mantê-lo.",
+    "nextButton": "Seguinte"
+  },
     "hell_king": {"ranks": {"wood": "alma condenada","bronze": "demónio de primeiro escalão","silver": "senhor infernal","gold": "príncipe do inferno","crystal": "rei do inferno"},"intro": "Bem-vinda, alma perdida. No Inferno, cada decisão deixa uma marca.","wood": "Já não vagueias sem rumo. Agora serves a ordem infernal.","bronze": "Conquistaste o teu lugar entre os servos do Inferno. Não vaciles.","silver": "A tua influência está a crescer. Os demónios menores começam a obedecer-te.","gold": "As chamas curvam-se mais facilmente à tua vontade. Agora és temido.","crystal": "Estás no topo. Governa o Inferno como um verdadeiro rei."},
     "heaven_king": {"ranks": {"wood": "alma luminosa","bronze": "guardião celestial","silver": "anjo superior","gold": "arcanjo","crystal": "rei do paraíso"},"intro": "Bem-vinda, alma pura. Aqui, cada escolha deve preservar a harmonia do Céu.","wood": "Deste os teus primeiros passos na luz. Mantém-te firme.","bronze": "O teu papel já vai além do de um simples mensageiro. O Céu observa-te.","silver": "Tornaste-te um verdadeiro guardião do Céu. A tua responsabilidade cresce.","gold": "A tua autoridade brilha como a de um arcanjo. Continua a elevar este universo.","crystal": "Alcançaste o posto mais alto. Governa o Paraíso com sabedoria."},
     "vampire_lord": {"ranks": {"wood": "iniciado da noite","bronze": "vampiro nobre","silver": "senhor vampiro","gold": "mestre das sombras","crystal": "senhor vampiro supremo"},"intro": "Bem-vindo à noite. Cada escolha alimentará ou enfraquecerá a tua ascensão.","wood": "O sangue já te chama. Já não és totalmente humano.","bronze": "Entraste na verdadeira noite. O teu nome começa a circular.","silver": "Agora és um vampiro completo. As sombras reconhecem-te.","gold": "A tua presença inspira medo. Poucos ainda se atrevem a desafiar-te.","crystal": "Tornaste-te o mestre da escuridão. Domina a noite."},

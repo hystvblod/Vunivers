@@ -654,7 +654,13 @@
     }
   },
   "guideMentor": {
-    "common": {"introGoal": "Pertahankan keseimbangan selama {target} pilihan untuk mendapatkan promosi pertamamu.","nextGoal": "Pertahankan keseimbangan selama {remaining} pilihan lagi untuk mencapai promosi berikutnya.","promotionNow": "Selamat. Sekarang kamu adalah {rank}.","maxGoal": "Kamu telah mencapai peringkat tertinggi di semesta ini. Sekarang buktikan bahwa kamu bisa mempertahankannya."},
+        "common": {
+    "introGoal": "Pertahankan keseimbangan selama {target} pilihan untuk mendapatkan promosi pertamamu.",
+    "nextGoal": "Pertahankan keseimbangan selama {remaining} pilihan lagi untuk mencapai promosi berikutnya.",
+    "promotionNow": "Selamat. Sekarang kamu adalah {rank}.",
+    "maxGoal": "Kamu telah mencapai peringkat tertinggi di semesta ini. Sekarang buktikan bahwa kamu bisa mempertahankannya.",
+    "nextButton": "Lanjut"
+  },
     "hell_king": {"ranks": {"wood": "jiwa terkutuk","bronze": "iblis tingkat pertama","silver": "penguasa neraka","gold": "pangeran neraka","crystal": "raja neraka"},"intro": "Selamat datang, jiwa yang tersesat. Di Neraka, setiap keputusan meninggalkan jejak.","wood": "Kamu tidak lagi berkeliaran tanpa tujuan. Sekarang kamu melayani tatanan neraka.","bronze": "Kamu telah mendapatkan tempatmu di antara para pelayan Neraka. Jangan goyah.","silver": "Pengaruhmu semakin besar. Iblis-iblis rendahan mulai mematuhimu.","gold": "Api kini lebih mudah tunduk pada kehendakmu. Kini kamu ditakuti.","crystal": "Kamu berdiri di puncak. Kuasai Neraka seperti raja sejati."},
     "heaven_king": {"ranks": {"wood": "jiwa bercahaya","bronze": "penjaga surgawi","silver": "malaikat tingkat tinggi","gold": "malaikat agung","crystal": "raja surga"},"intro": "Selamat datang, jiwa yang murni. Di sini, setiap pilihan harus menjaga harmoni Surga.","wood": "Kamu telah melangkah pertama kali ke dalam cahaya. Tetaplah di jalur ini.","bronze": "Peranmu kini melampaui sekadar utusan biasa. Surga mengawasimu.","silver": "Kamu telah menjadi penjaga Surga yang sejati. Tanggung jawabmu semakin besar.","gold": "Wibawamu bersinar seperti malaikat agung. Teruslah mengangkat semesta ini lebih tinggi.","crystal": "Kamu telah mencapai peringkat tertinggi. Pimpin Surga dengan kebijaksanaan."},
     "vampire_lord": {"ranks": {"wood": "inisiasi malam","bronze": "vampir bangsawan","silver": "tuan vampir","gold": "penguasa bayangan","crystal": "tuan vampir tertinggi"},"intro": "Selamat datang di malam hari. Setiap pilihan akan memperkuat atau melemahkan kenaikanmu.","wood": "Darah sudah memanggilmu. Kamu tidak lagi sepenuhnya manusia.","bronze": "Kamu telah memasuki malam yang sesungguhnya. Namamu mulai menyebar.","silver": "Sekarang kamu adalah vampir sejati yang sempurna. Bayangan mengenalimu.","gold": "Kehadiranmu menimbulkan ketakutan. Hanya sedikit yang masih berani menantangmu.","crystal": "Kamu telah menjadi penguasa kegelapan. Kuasai malam."},
