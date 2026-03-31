@@ -6307,7 +6307,7 @@ window.VRGame = {
 
   async maybeShowInterstitial() {
     try {
-      await (window.VRAds?.markAction?.() || Promise.resolve(0));
+      await (window.VRAds?.incrementActionsCount?.() || Promise.resolve(0));
     } catch (e) {
       console.warn("[VRGame] interstitial skipped:", e);
     }

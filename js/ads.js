@@ -1001,6 +1001,7 @@
   window.VRAds.showInterstitialAd = showInterstitialAd;
   window.VRAds.showRewardedAd = showRewardedAd;
   window.VRAds.incrementActionsCount = incrementActionsCount;
+  window.VRAds.markAction = incrementActionsCount;
   window.VRAds.getActionsCount = getActionsCount;
   window.VRAds.resetActionsCount = resetActionsCount;
   window.VRAds.canAutoShowInterstitial = canAutoShowInterstitial;
