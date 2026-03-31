@@ -6190,6 +6190,23 @@ window.VRGuideMentor = {
     return !!u[key];
   },
 
+  resetSeen(universeId) {
+    if (!universeId) {
+      try { localStorage.removeItem(VR_GUIDE_STORAGE_KEY); } catch (_) {}
+      return;
+    }
+
+    const all = vrGuideLoadSeen();
+    delete all[String(universeId)];
+    vrGuideSaveSeen(all);
+  },
+
+  debugShow(universeId, lines, opts) {
+    const options = (opts && typeof opts === "object") ? opts : {};
+    if (options.resetSeen) this.resetSeen(universeId);
+    this.show(universeId, lines);
+  },
+
   maybeShowIntro(universeId) {
     if (!universeId || universeId === "intro") return;
     if (this.hasSeen(universeId, "intro")) return;
