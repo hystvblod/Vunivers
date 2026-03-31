@@ -312,6 +312,21 @@
     }, 120);
   }
 
+  let _resumeRefreshTimer = null;
+
+  function scheduleResumeRefresh() {
+    if (!isShopPage()) return;
+
+    if (_resumeRefreshTimer) {
+      clearTimeout(_resumeRefreshTimer);
+    }
+
+    _resumeRefreshTimer = setTimeout(function () {
+      _resumeRefreshTimer = null;
+      refreshLiveBalancesHard();
+    }, 120);
+  }
+
   function getRenderSignature() {
     try {
       const data = typeof window.VUserData?.load === "function" ? (window.VUserData.load() || {}) : {};
