@@ -5628,24 +5628,36 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   0%{
     opacity:0;
     transform:translate3d(0,0,0) rotate(0deg) scale(.88);
-    animation-timing-function:cubic-bezier(.10,.82,.22,1);
+    animation-timing-function:cubic-bezier(.12,.78,.22,1);
   }
 
-  16%{
+  14%{
     opacity:1;
-    transform:translate3d(calc(var(--peakX, 0px) * .72), calc(var(--peakY, -70svh) * .72), 0) rotate(calc(var(--rot1, 360deg) * .55)) scale(1);
-    animation-timing-function:cubic-bezier(.12,.72,.18,1);
+    transform:translate3d(calc(var(--peakX, 0px) * .78), calc(var(--peakY, -70svh) * .78), 0) rotate(calc(var(--rot1, 360deg) * .6)) scale(1);
+    animation-timing-function:cubic-bezier(.18,.62,.22,1);
   }
 
-  24%{
+  22%{
     opacity:1;
     transform:translate3d(var(--peakX, 0px), var(--peakY, -70svh), 0) rotate(var(--rot1, 360deg)) scale(1.02);
-    animation-timing-function:cubic-bezier(.20,.28,.22,1);
+    animation-timing-function:linear;
+  }
+
+  42%{
+    opacity:1;
+    transform:translate3d(calc(var(--peakX, 0px) + var(--driftX, 0px) * .28), -12svh, 0) rotate(calc(var(--rot1, 360deg) + (var(--rot2, 1080deg) - var(--rot1, 360deg)) * .28)) scale(1);
+    animation-timing-function:linear;
+  }
+
+  68%{
+    opacity:.95;
+    transform:translate3d(calc(var(--peakX, 0px) + var(--driftX, 0px) * .62), 42svh, 0) rotate(calc(var(--rot1, 360deg) + (var(--rot2, 1080deg) - var(--rot1, 360deg)) * .62)) scale(1);
+    animation-timing-function:linear;
   }
 
   100%{
     opacity:0;
-    transform:translate3d(var(--endX, 0px), 112svh, 0) rotate(var(--rot2, 1080deg)) scale(1);
+    transform:translate3d(calc(var(--peakX, 0px) + var(--driftX, 0px)), 116svh, 0) rotate(var(--rot2, 1080deg)) scale(1);
   }
 }
 
