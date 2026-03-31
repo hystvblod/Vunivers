@@ -6103,30 +6103,34 @@ window.VRGuideMentor = {
       "#f9a8d4"
     ];
 
-    const count = 160;
+    const count = 150;
 
     for (let i = 0; i < count; i += 1) {
       const piece = document.createElement("span");
       piece.className = "vr-guide-confetti-piece";
 
-      const startX = Math.random() * 100;
-      const peakX = -380 + Math.random() * 760;
-      const peakY = -(45 + Math.random() * 55);
-      const endX = peakX + (-160 + Math.random() * 320);
-      const rot1 = -360 + Math.random() * 720;
-      const rot2 = -1100 + Math.random() * 2200;
-      const dur = 3200 + Math.random() * 1800;
-      const delay = Math.random() * 420;
-      const color = colors[Math.floor(Math.random() * colors.length)];
+      const startX = 8 + Math.random() * 84;
+      const peakX = -320 + Math.random() * 640;
+      const peakY = -(52 + Math.random() * 42);
+      const endX = peakX + (-120 + Math.random() * 240);
+
+      const rot1 = -280 + Math.random() * 560;
+      const rot2 = -980 + Math.random() * 1960;
+
+      const dur = 4200 + Math.random() * 1800;
+      const delay = Math.random() * 220;
+
       const width = 5 + Math.random() * 8;
       const height = 10 + Math.random() * 16;
       const radius = 2 + Math.random() * 3;
+      const color = colors[Math.floor(Math.random() * colors.length)];
 
       piece.style.left = `${startX}%`;
       piece.style.background = color;
       piece.style.width = `${width}px`;
       piece.style.height = `${height}px`;
       piece.style.borderRadius = `${radius}px`;
+
       piece.style.setProperty("--peakX", `${peakX}px`);
       piece.style.setProperty("--peakY", `${peakY}svh`);
       piece.style.setProperty("--endX", `${endX}px`);
@@ -6141,7 +6145,7 @@ window.VRGuideMentor = {
     clearTimeout(this._confettiCleanupTimer);
     this._confettiCleanupTimer = setTimeout(() => {
       try { layer.innerHTML = ""; } catch (_) {}
-    }, 7000);
+    }, 7600);
   },
 
   _fitTextAndScale() {
