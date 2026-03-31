@@ -2972,7 +2972,11 @@ body.vr-peek-mode .vr-gauge-preview{
     const body = bodyParts.join("\n\n");
 
     try {
-      await window.VREventOverlay?.showEvent?.(title, body);
+      await window.VRGuideMentor?.showEvent?.(
+        this.universeId || window.VRGame?.currentUniverse || "",
+        title,
+        body
+      );
     } catch (_) {}
 
     this._eventShowing = false;
@@ -5949,6 +5953,7 @@ window.VRGuideMentor = {
   _finalTimer: null,
   _confettiCleanupTimer: null,
   _dismissEnabledAt: 0,
+  _dismissResolver: null,
 
   _els() {
     return {
@@ -5956,6 +5961,7 @@ window.VRGuideMentor = {
       image: document.getElementById("vr-guide-image"),
       bubble: document.getElementById("vr-guide-bubble-text"),
       fit: document.getElementById("vr-guide-bubble-fit"),
+      nextBtn: document.getElementById("vr-guide-next-btn"),
       view: document.getElementById("view-game")
     };
   },
@@ -5987,7 +5993,7 @@ window.VRGuideMentor = {
     return `guideMentor.${universeId}.${tierOrIntro}`;
   },
 
-  _setText(lines) {
+  _setText(lines, mode = "rank") {
     const { fit } = this._els();
     if (!fit) return;
 
@@ -5999,16 +6005,40 @@ window.VRGuideMentor = {
 
     items.forEach((line, index) => {
       const div = document.createElement("div");
-      div.className = index === 0
+      const isTitle = index === 0;
+
+      div.className = isTitle
         ? "vr-guide-line vr-guide-line--title"
         : "vr-guide-line vr-guide-line--body";
+
+      if (mode === "event" && !isTitle) {
+        div.style.whiteSpace = "pre-wrap";
+      }
+
       div.textContent = line;
       fit.appendChild(div);
     });
   },
 
+  _resolveDismiss() {
+    const fn = this._dismissResolver;
+    this._dismissResolver = null;
+
+    if (typeof fn === "function") {
+      try { fn(); } catch (_) {}
+    }
+  },
+
+  _createDismissPromise() {
+    this._resolveDismiss();
+
+    return new Promise((resolve) => {
+      this._dismissResolver = resolve;
+    });
+  },
+
   _ensureDismissBinding() {
-    const { overlay } = this._els();
+    const { overlay, nextBtn } = this._els();
     if (!overlay || overlay.__vrGuideDismissBound) return;
 
     const onDismiss = (e) => {
@@ -6028,6 +6058,19 @@ window.VRGuideMentor = {
     overlay.addEventListener("pointerdown", onDismiss);
     overlay.addEventListener("click", onDismiss);
     overlay.addEventListener("keydown", onDismiss);
+
+    if (nextBtn && !nextBtn.__vrGuideDismissBound) {
+      nextBtn.__vrGuideDismissBound = true;
+      nextBtn.addEventListener("click", (e) => {
+        try { e.preventDefault(); } catch (_) {}
+        try { e.stopPropagation(); } catch (_) {}
+
+        if (!overlay.classList.contains("is-visible")) return;
+        if (Date.now() < (this._dismissEnabledAt || 0)) return;
+
+        this.hide();
+      });
+    }
   },
 
   _ensureConfettiLayer() {
@@ -6040,6 +6083,7 @@ window.VRGuideMentor = {
       layer.className = "vr-guide-confetti-layer";
       overlay.insertBefore(layer, overlay.firstChild || null);
     }
+
     return layer;
   },
 
@@ -6080,8 +6124,8 @@ window.VRGuideMentor = {
   },
 
   _fitTextAndScale() {
-    const { overlay, bubble, fit, view } = this._els();
-    if (!overlay || !bubble || !fit || !view) return;
+    const { overlay, fit, view } = this._els();
+    if (!overlay || !fit || !view) return;
 
     const viewWidth = view.clientWidth || window.innerWidth || 360;
     const minFont = viewWidth <= 420 ? 10 : 11;
@@ -6091,8 +6135,8 @@ window.VRGuideMentor = {
 
     const textFits = () => {
       return (
-        fit.scrollWidth <= bubble.clientWidth + 1 &&
-        fit.scrollHeight <= bubble.clientHeight + 1
+        fit.scrollWidth <= fit.clientWidth + 1 &&
+        fit.scrollHeight <= fit.clientHeight + 1
       );
     };
 
@@ -6122,32 +6166,47 @@ window.VRGuideMentor = {
     }
   },
 
-  show(universeId, lines) {
-    const { overlay, image } = this._els();
-    if (!overlay || !image) return;
+  _open(universeId, lines, opts = {}) {
+    const { overlay, image, nextBtn } = this._els();
+    if (!overlay || !image) return Promise.resolve();
 
     overlay.style.width = "";
 
     const src = VR_GUIDE_IMAGE_MAP[universeId];
-    if (!src) return;
+    if (!src) return Promise.resolve();
 
     image.src = src;
     image.alt = universeId;
+
+    if (nextBtn) {
+      nextBtn.setAttribute("aria-label", this._t("guideMentor.common.nextButton", "Next"));
+    }
 
     const textLines = (Array.isArray(lines) ? lines : [])
       .map(v => String(v || "").trim())
       .filter(Boolean);
 
-    this._setText(textLines);
+    this._setText(textLines, opts.mode || "rank");
     this._ensureDismissBinding();
 
     overlay.classList.add("is-visible");
     overlay.classList.remove("is-final");
+    overlay.classList.toggle("is-event", !!opts.isEvent);
+    overlay.setAttribute("aria-hidden", "false");
 
     clearTimeout(this._hideTimer);
     clearTimeout(this._finalTimer);
 
+    if (opts.playBell) {
+      try { window.VRAudio?.playDeath?.(); } catch (_) {}
+    }
+
+    if (opts.confetti) {
+      this._burstConfetti();
+    }
+
     this._dismissEnabledAt = Date.now() + 220;
+    const wait = this._createDismissPromise();
 
     requestAnimationFrame(() => {
       this._fitTextAndScale();
@@ -6158,6 +6217,34 @@ window.VRGuideMentor = {
       overlay.classList.add("is-final");
       this._fitTextAndScale();
     }, 120);
+
+    return wait;
+  },
+
+  show(universeId, lines) {
+    return this._open(universeId, lines, {
+      mode: "rank",
+      isEvent: false,
+      confetti: false,
+      playBell: false
+    });
+  },
+
+  showEvent(universeId, title, body) {
+    const parts = [
+      String(title || "").trim(),
+      ...String(body || "")
+        .split(/\n\s*\n/)
+        .map(v => String(v || "").trim())
+        .filter(Boolean)
+    ].filter(Boolean);
+
+    return this._open(universeId, parts, {
+      mode: "event",
+      isEvent: true,
+      confetti: false,
+      playBell: true
+    });
   },
 
   hide() {
@@ -6168,6 +6255,8 @@ window.VRGuideMentor = {
     clearTimeout(this._finalTimer);
 
     overlay.classList.remove("is-visible");
+    overlay.classList.remove("is-event");
+    overlay.setAttribute("aria-hidden", "true");
 
     const layer = overlay.querySelector(".vr-guide-confetti-layer");
     if (layer) {
@@ -6175,6 +6264,8 @@ window.VRGuideMentor = {
         try { layer.innerHTML = ""; } catch (_) {}
       }, 180);
     }
+
+    this._resolveDismiss();
   },
 
   markSeen(universeId, key) {
@@ -6223,8 +6314,13 @@ window.VRGuideMentor = {
         : this._t("guideMentor.common.maxGoal", "")
     ];
 
-    this.show(universeId, lines);
-    this._burstConfetti();
+    this._open(universeId, lines, {
+      mode: "rank",
+      isEvent: false,
+      confetti: true,
+      playBell: false
+    });
+
     this.markSeen(universeId, reachedTier);
   },
 

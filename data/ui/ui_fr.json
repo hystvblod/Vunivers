@@ -655,12 +655,13 @@
     }
   },
   "guideMentor": {
-    "common": {
-      "introGoal": "Maintiens l'équilibre durant {target} choix pour obtenir ta première promotion.",
-      "nextGoal": "Maintiens encore l'équilibre durant {remaining} choix pour atteindre la prochaine promotion.",
-      "promotionNow": "Bravo. Tu es désormais {rank}.",
-      "maxGoal": "Tu as atteint le rang suprême de cet univers. À toi de prouver que tu peux le conserver."
-    },
+        "common": {
+    "introGoal": "Maintiens l'équilibre durant {target} choix pour obtenir ta première promotion.",
+    "nextGoal": "Maintiens encore l'équilibre durant {remaining} choix pour atteindre la prochaine promotion.",
+    "promotionNow": "Bravo. Tu es désormais {rank}.",
+    "maxGoal": "Tu as atteint le rang suprême de cet univers. À toi de prouver que tu peux le conserver.",
+    "nextButton": "Suivant"
+  },
     "hell_king": {
       "ranks": {
         "wood": "âme damnée",
