@@ -1809,10 +1809,6 @@ body.vr-peek-mode .vr-gauge-preview{
               cardsSinceRoll: asInt(this._cardsSinceEventRoll, 0),
               seen: Array.isArray(this._seenEvents) ? deepClone(this._seenEvents) : []
             },
-            ui: {
-              coins: asInt(this._uiCoins, 0),
-              tokens: asInt(this._uiTokens, 0)
-            },
             pending: {
               runBonusCoins: asInt(this._pendingRunBonusCoins, 0),
               endReward: asInt(this._pendingEndReward, 0),
@@ -1913,10 +1909,6 @@ body.vr-peek-mode .vr-gauge-preview{
         this._cardsSinceEventRoll = asInt(evs.cardsSinceRoll, 0);
         this._seenEvents = Array.isArray(evs.seen) ? deepClone(evs.seen) : [];
 
-        const ui = e.ui || {};
-        if (Number.isFinite(Number(ui.coins))) this._uiCoins = asInt(ui.coins, this._uiCoins);
-        if (Number.isFinite(Number(ui.tokens))) this._uiTokens = asInt(ui.tokens, this._uiTokens);
-
         const pending = e.pending || {};
         this._pendingRunBonusCoins = asInt(pending.runBonusCoins, 0);
         this._pendingEndReward = asInt(pending.endReward, 0);
@@ -2016,12 +2008,18 @@ body.vr-peek-mode .vr-gauge-preview{
       this._rebuildEventIndex();
 
       try {
-        const me = await window.VRProfile?.getMe?.(0);
-        this._uiCoins = window.VRProfile._n(me?.vcoins);
-        this._uiTokens = window.VRProfile._n(me?.jetons);
+        const me = await window.VRProfile?.getMe?.(4000);
+
+        if (me) {
+          this._uiCoins = window.VRProfile._n(me.vcoins);
+          this._uiTokens = window.VRProfile._n(me.jetons);
+        } else {
+          this._uiCoins = Number(window.VUserData?.getVcoins?.() || 0);
+          this._uiTokens = Number(window.VUserData?.getJetons?.() || 0);
+        }
       } catch (_) {
-        this._uiCoins = 0;
-        this._uiTokens = 0;
+        this._uiCoins = Number(window.VUserData?.getVcoins?.() || 0);
+        this._uiTokens = Number(window.VUserData?.getJetons?.() || 0);
       }
 
       if (String(universeId || "").trim() === "intro") {
@@ -2035,6 +2033,14 @@ body.vr-peek-mode .vr-gauge-preview{
 
       const restored = this._restoreFromSaveIfAny();
       this._rebuildEventIndex();
+
+      await this._refreshUIBalancesSoft();
+      window.VRUIBinding.updateMeta(
+        getDynastyName(),
+        getYearLabel(),
+        this._uiCoins,
+        this._uiTokens
+      );
 
       if (restored) {
         try { window.VRCrossPromo?.notifySessionStart?.(); } catch (_) {}
@@ -2064,12 +2070,18 @@ body.vr-peek-mode .vr-gauge-preview{
       if (String(this.universeId || "").trim() === "intro") return;
 
       try {
-        const me = await window.VRProfile?.getMe?.(800);
+        const me = await window.VRProfile?.getMe?.(4000);
         if (me) {
           this._uiCoins = window.VRProfile._n(me.vcoins);
           this._uiTokens = window.VRProfile._n(me.jetons);
+        } else {
+          this._uiCoins = Number(window.VUserData?.getVcoins?.() || this._uiCoins || 0);
+          this._uiTokens = Number(window.VUserData?.getJetons?.() || this._uiTokens || 0);
         }
-      } catch (_) {}
+      } catch (_) {
+        this._uiCoins = Number(window.VUserData?.getVcoins?.() || this._uiCoins || 0);
+        this._uiTokens = Number(window.VUserData?.getJetons?.() || this._uiTokens || 0);
+      }
     },
 
     _resetGaugesToInitial() {
