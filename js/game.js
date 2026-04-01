@@ -3788,25 +3788,35 @@ body.vr-peek-mode .vr-gauge-preview{
           display:inline-flex;
           align-items:center;
           justify-content:center;
+          text-align:center;
+          color:#fff;
+          font-weight:900;
+          line-height:1.2;
+        }
+
+        #vr-intro-swipe-hint .vr-intro-hint-text{
+          padding:0;
+          min-height:0;
+          background:none;
+          border:none;
+          box-shadow:none;
+          backdrop-filter:none;
+          color:#fff;
+          font-size:clamp(24px, 8vw, 40px);
+          text-shadow:
+            0 2px 8px rgba(0,0,0,.35),
+            0 0 18px rgba(255,255,255,.10);
+          animation:vrIntroHintZoom 1.2s ease-in-out infinite;
+        }
+
+        #vr-intro-gauge-hint .vr-intro-hint-text{
           min-height:46px;
           padding:10px 16px;
           border-radius:16px;
           background:rgba(10,16,32,.78);
           border:1px solid rgba(255,255,255,.18);
           box-shadow:0 14px 36px rgba(0,0,0,.28);
-          color:#fff;
-          text-align:center;
-          font-weight:900;
-          line-height:1.2;
           backdrop-filter:blur(10px);
-        }
-
-        #vr-intro-swipe-hint .vr-intro-hint-text{
-          font-size:clamp(24px, 8vw, 40px);
-          animation:vrIntroHintZoom 1.2s ease-in-out infinite;
-        }
-
-        #vr-intro-gauge-hint .vr-intro-hint-text{
           font-size:clamp(14px, 4vw, 18px);
           max-width:min(88vw, 420px);
         }
@@ -4371,7 +4381,7 @@ function resetUIState() {
     const btn = getChoiceButton("A");
     if (btn) btn.classList.add("vr-intro-tilt");
 
-    showSwipeHint(t("intro.swipe_hint", "Swipe"));
+    showSwipeHint("Swipe");
 
     introHintTimer1 = window.setTimeout(() => {
       if (!isIntroUniverse() || currentCardId !== "intro_002") return;
@@ -4522,7 +4532,7 @@ function resetUIState() {
             "heaven_king",
             [
               t("intro.guide.welcome_title", "Bienvenue"),
-              t("intro.guide.welcome_body", "Te voilà aux portes du paradis. Prêt pour ta première vraie entrée ?")
+              t("intro.guide.welcome_body", "Ah, un nouveau dirigeant pour s’occuper des mondes. Prêt à le faire ?")
             ],
             {
               mode: "rank",
