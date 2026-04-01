@@ -2516,9 +2516,9 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-identity-ty: 3px;
   --vr-hud-name-years-gap: 50px;
 
-  --vr-vcoins-tx: 0px;
+  --vr-vcoins-tx: -2px;
   --vr-vcoins-ty: 0px;
-  --vr-jetons-tx: 0px;
+  --vr-jetons-tx: 1px;
   --vr-jetons-ty: 0px;
 
   --vr-vcoins-color: #000000;
@@ -2863,11 +2863,11 @@ body[data-universe="heaven_king"] .vr-gauge-delta{
   }
 
   body.vr-body-game[data-universe="heaven_king"] .vr-hud-left .vr-hud-value{
-    transform: translate(0px, 0px) !important;
+    transform: translate(-2px, 0px) !important;
   }
 
   body.vr-body-game[data-universe="heaven_king"] .vr-hud-right .vr-hud-value{
-    transform: translate(0px, 0px) !important;
+    transform: translate(1px, 0px) !important;
   }
 }
 
@@ -5309,7 +5309,11 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   }
 
   body.vr-body-game[data-universe="heaven_king"] .vr-hud-left .vr-hud-value{
-    transform: translate(-12px, 0px) !important;
+    transform: translate(-14px, 0px) !important;
+  }
+
+  body.vr-body-game[data-universe="heaven_king"] .vr-hud-right .vr-hud-value{
+    transform: translate(1px, 0px) !important;
   }
 
   body.vr-body-game[data-universe="heaven_king"] .vr-gauge{
