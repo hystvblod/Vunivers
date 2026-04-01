@@ -6196,6 +6196,14 @@ window.VRGuideMentor = {
       ? lines.map(v => String(v || "").trim()).filter(Boolean)
       : [String(lines || "").trim()].filter(Boolean);
 
+    const escapeHtml = (value) =>
+      String(value || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+
     fit.innerHTML = "";
 
     items.forEach((line, index) => {
@@ -6211,9 +6219,21 @@ window.VRGuideMentor = {
 
       if (mode === "event" && index > 0) {
         div.style.whiteSpace = "pre-wrap";
+        div.textContent = line;
+        fit.appendChild(div);
+        return;
       }
 
-      div.textContent = line;
+      if (mode === "rank" && index >= 2) {
+        const safe = escapeHtml(line).replace(
+          /(\d+)/g,
+          '<span class="vr-guide-inline-num">$1</span>'
+        );
+        div.innerHTML = safe;
+      } else {
+        div.textContent = line;
+      }
+
       fit.appendChild(div);
     });
   },
