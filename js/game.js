@@ -6005,13 +6005,16 @@ window.VRGuideMentor = {
 
     items.forEach((line, index) => {
       const div = document.createElement("div");
-      const isTitle = index === 0;
 
-      div.className = isTitle
-        ? "vr-guide-line vr-guide-line--title"
-        : "vr-guide-line vr-guide-line--body";
+      if (index === 0) {
+        div.className = "vr-guide-line vr-guide-line--title";
+      } else if (index === 1) {
+        div.className = "vr-guide-line vr-guide-line--lead";
+      } else {
+        div.className = "vr-guide-line vr-guide-line--body";
+      }
 
-      if (mode === "event" && !isTitle) {
+      if (mode === "event" && index > 0) {
         div.style.whiteSpace = "pre-wrap";
       }
 
@@ -6391,8 +6394,8 @@ window.VRGuideMentor = {
     const remaining = nextTarget ? Math.max(0, nextTarget - Number(reignLength || 0)) : 0;
 
     const lines = [
-      this._t(this._messageKey(universeId, reachedTier), ""),
       this._t("guideMentor.common.promotionNow", "", { rank: rankLabel }),
+      this._t(this._messageKey(universeId, reachedTier), ""),
       nextTier
         ? this._t("guideMentor.common.nextGoal", "", { remaining })
         : this._t("guideMentor.common.maxGoal", "")
