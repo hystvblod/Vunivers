@@ -6088,65 +6088,65 @@ window.VRGuideMentor = {
   },
 
   _burstConfetti() {
-  const layer = this._ensureConfettiLayer();
-  if (!layer) return;
+    const layer = this._ensureConfettiLayer();
+    if (!layer) return;
 
-  layer.innerHTML = "";
+    layer.innerHTML = "";
 
-  const colors = [
-    "#ffffff",
-    "#f4d35e",
-    "#ff6b6b",
-    "#b8f2e6",
-    "#d0bfff",
-    "#7dd3fc",
-    "#f9a8d4"
-  ];
+    const colors = [
+      "#ffffff",
+      "#f4d35e",
+      "#ff6b6b",
+      "#b8f2e6",
+      "#d0bfff",
+      "#7dd3fc",
+      "#f9a8d4"
+    ];
 
-  const count = 150;
+    const count = 170;
 
-  for (let i = 0; i < count; i += 1) {
-    const piece = document.createElement("span");
-    piece.className = "vr-guide-confetti-piece";
+    for (let i = 0; i < count; i += 1) {
+      const piece = document.createElement("span");
+      piece.className = "vr-guide-confetti-piece";
 
-    const startX = 8 + Math.random() * 84;
-    const peakX = -340 + Math.random() * 680;
-    const peakY = -(58 + Math.random() * 34);
-    const driftX = -180 + Math.random() * 360;
+      const startX = Math.random() * 100;
+      const peakX = -420 + Math.random() * 840;
+      const peakY = -(74 + Math.random() * 28);
+      const fallX = -220 + Math.random() * 440;
 
-    const rot1 = -320 + Math.random() * 640;
-    const rot2 = -980 + Math.random() * 1960;
+      const rot1 = -360 + Math.random() * 720;
+      const rot2 = rot1 + (-900 + Math.random() * 1800);
 
-    const dur = 4400 + Math.random() * 1800;
-    const delay = Math.random() * 220;
+      const dur = 4400 + Math.random() * 1400;
+      const delay = Math.random() * 120;
 
-    const width = 5 + Math.random() * 8;
-    const height = 10 + Math.random() * 16;
-    const radius = 2 + Math.random() * 3;
-    const color = colors[Math.floor(Math.random() * colors.length)];
+      const width = 5 + Math.random() * 8;
+      const height = 10 + Math.random() * 16;
+      const radius = 2 + Math.random() * 3;
+      const color = colors[Math.floor(Math.random() * colors.length)];
 
-    piece.style.left = `${startX}%`;
-    piece.style.background = color;
-    piece.style.width = `${width}px`;
-    piece.style.height = `${height}px`;
-    piece.style.borderRadius = `${radius}px`;
+      piece.style.left = `${startX}%`;
+      piece.style.background = color;
+      piece.style.width = `${width}px`;
+      piece.style.height = `${height}px`;
+      piece.style.borderRadius = `${radius}px`;
 
-    piece.style.setProperty("--peakX", `${peakX}px`);
-    piece.style.setProperty("--peakY", `${peakY}svh`);
-    piece.style.setProperty("--driftX", `${driftX}px`);
-    piece.style.setProperty("--rot1", `${rot1}deg`);
-    piece.style.setProperty("--rot2", `${rot2}deg`);
-    piece.style.setProperty("--dur", `${dur}ms`);
-    piece.style.animationDelay = `${delay}ms`;
+      piece.style.setProperty("--peakX", `${peakX}px`);
+      piece.style.setProperty("--peakY", `${peakY}svh`);
+      piece.style.setProperty("--fallX", `${fallX}px`);
+      piece.style.setProperty("--rot1", `${rot1}deg`);
+      piece.style.setProperty("--rot2", `${rot2}deg`);
+      piece.style.setProperty("--dur", `${dur}ms`);
+      piece.style.animationDelay = `${delay}ms`;
 
-    layer.appendChild(piece);
-  }
+      layer.appendChild(piece);
+    }
 
-  clearTimeout(this._confettiCleanupTimer);
-  this._confettiCleanupTimer = setTimeout(() => {
-    try { layer.innerHTML = ""; } catch (_) {}
-  }, 7800);
-},
+    clearTimeout(this._confettiCleanupTimer);
+    this._confettiCleanupTimer = setTimeout(() => {
+      try { layer.innerHTML = ""; } catch (_) {}
+    }, 7200);
+  },
 
   _fitTextAndScale() {
     const { overlay, fit, view } = this._els();
