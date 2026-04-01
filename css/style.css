@@ -528,6 +528,14 @@ body.vr-body-game .vr-card-main .vr-card-text{
   font-size: var(--vr-font-scn-text);
   color: var(--vr-text-muted);
 }
+body.vr-body-game[data-universe="intro"] #view-game .vr-card-title{
+  margin: 0 0 12px !important;
+  line-height: 1.1 !important;
+}
+
+body.vr-body-game[data-universe="intro"] #view-game .vr-card-text{
+  line-height: 1.28 !important;
+}
 
 .vr-card-choices{ display:flex; flex-direction:column; gap:14px; width:100%; }
 
@@ -2013,15 +2021,15 @@ body[data-universe="intro"].vr-body-game #view-game .vr-choice-label{
 }
 
 body.vr-body-game[data-universe="intro"]{
-  --vr-card-w: clamp(360px, 95.5vw, 960px);
+  --vr-card-w: clamp(388px, 98vw, 1040px);
 
-  --vr-scn-h: clamp(168px, 20.4svh, 308px);
+  --vr-scn-h: clamp(198px, 23.5svh, 356px);
   --vr-choice-h: clamp(96px, 12.9svh, 178px);
 
-  --vr-scn-inset-top: 12%;
-  --vr-scn-inset-right: 13%;
-  --vr-scn-inset-bottom: 18%;
-  --vr-scn-inset-left: 13%;
+  --vr-scn-inset-top: 10.5%;
+  --vr-scn-inset-right: 11.5%;
+  --vr-scn-inset-bottom: 15.5%;
+  --vr-scn-inset-left: 11.5%;
 
   --vr-choice-inset-top: 18%;
   --vr-choice-inset-right: 11%;
@@ -2029,8 +2037,8 @@ body.vr-body-game[data-universe="intro"]{
   --vr-choice-inset-left: 11%;
   --vr-choice-safe: 74%;
 
-  --vr-font-scn-title: clamp(18px, 2.8vmin, 30px);
-  --vr-font-scn-text:  clamp(14px, 2.25vmin, 22px);
+  --vr-font-scn-title: clamp(21px, 3.2vmin, 34px);
+  --vr-font-scn-text:  clamp(16px, 2.6vmin, 25px);
   --vr-font-choice:    clamp(15px, 2.5vmin, 24px);
 
   --vr-topbar-h: calc(clamp(56px, 11vw, 90px) + env(safe-area-inset-top) + 8px);
@@ -2347,15 +2355,15 @@ body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-preview{
 
 @media (max-width: 480px){
   body.vr-body-game[data-universe="intro"]{
-    --vr-card-w: 96.8vw;
+    --vr-card-w: 98.4vw;
 
-    --vr-scn-h: clamp(150px, 20.5svh, 214px);
+    --vr-scn-h: clamp(176px, 24svh, 248px);
     --vr-choice-h: clamp(86px, 12.5svh, 132px);
 
-    --vr-scn-inset-top: 12%;
-    --vr-scn-inset-right: 12%;
-    --vr-scn-inset-bottom: 18%;
-    --vr-scn-inset-left: 12%;
+    --vr-scn-inset-top: 10%;
+    --vr-scn-inset-right: 10.8%;
+    --vr-scn-inset-bottom: 15%;
+    --vr-scn-inset-left: 10.8%;
 
     --vr-choice-inset-top: 16%;
     --vr-choice-inset-right: 12%;
@@ -2363,8 +2371,8 @@ body[data-universe="intro"] .vr-gauge[data-gauge-id="legacy"] .vr-gauge-preview{
     --vr-choice-inset-left: 12%;
     --vr-choice-safe: 76%;
 
-    --vr-font-scn-title: clamp(17px, 4.4vw, 22px);
-    --vr-font-scn-text: clamp(13px, 3.55vw, 17px);
+    --vr-font-scn-title: clamp(19px, 5vw, 24px);
+    --vr-font-scn-text: clamp(14.8px, 4.05vw, 18.5px);
     --vr-font-choice: clamp(14px, 3.7vw, 18px);
 
     --vr-intro-hud-w: 96vw;
