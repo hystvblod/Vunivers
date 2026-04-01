@@ -4172,9 +4172,8 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         @keyframes vrIntroChoiceSway{
-          0%{ transform: translate3d(0,0,0) rotate(0deg); }
-          50%{ transform: translate3d(12px,0,0) rotate(2deg); }
-          100%{ transform: translate3d(0,0,0) rotate(0deg); }
+          0%,100%{ transform: translate3d(0,0,0) rotate(0deg); }
+          50%{ transform: translate3d(8px,0,0) rotate(1.35deg); }
         }
 
         @keyframes vrIntroGauge{
@@ -4375,28 +4374,15 @@ function resetUIState() {
 
   function startIntroSwipeSequence() {
     clearIntroTimers();
-    hideSwipeHint();
     hideGaugeHint();
 
     const btn = getChoiceButton("A");
-    if (btn) btn.classList.add("vr-intro-tilt");
+    if (btn) {
+      btn.classList.remove("vr-intro-pulse", "vr-intro-dim", "vr-intro-hide");
+      btn.classList.add("vr-intro-tilt");
+    }
 
     showSwipeHint("Swipe");
-
-    introHintTimer1 = window.setTimeout(() => {
-      if (!isIntroUniverse() || currentCardId !== "intro_002") return;
-
-      if (btn) btn.classList.remove("vr-intro-tilt");
-      hideSwipeHint();
-
-      pulseGauge(LOW_GAUGE_ID);
-      showGaugeHint(t("intro.balance_hint", "This choice can move the Balance bar."));
-
-      introHintTimer2 = window.setTimeout(() => {
-        if (!isIntroUniverse() || currentCardId !== "intro_002") return;
-        hideGaugeHint();
-      }, 1800);
-    }, 1700);
   }
 
   function showIntroHandOnJeton() {
@@ -4585,6 +4571,27 @@ function resetUIState() {
   }
 
   function afterApplyChoice(cardLogic, choiceId) {
+    if (!isIntroUniverse()) return false;
+
+    const id = String(cardLogic?.id || currentCardId || "").trim();
+
+    if (id === "intro_002" && choiceId === "A") {
+      clearIntroTimers();
+      hideSwipeHint();
+      hideGaugeHint();
+
+      const btn = getChoiceButton("A");
+      if (btn) {
+        btn.classList.remove("vr-intro-tilt", "vr-intro-pulse");
+      }
+
+      window.setTimeout(() => {
+        try { pulseGauge(LOW_GAUGE_ID); } catch (_) {}
+      }, 180);
+
+      return false;
+    }
+
     return false;
   }
 
