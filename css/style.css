@@ -5832,3 +5832,237 @@ body.vr-body-game[data-universe] .vr-gauge-label{
     max-height: calc(100svh - 10px);
   }
 }
+
+
+
+
+
+/* ==========================================================
+   POPUP PERSONNALISATION
+   ========================================================== */
+
+#vr-customize-popup .vr-popup-inner{
+  position: relative;
+  width: min(430px, 94vw);
+  max-height: min(86vh, 820px);
+  padding: 16px 14px 14px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+#vr-customize-content{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#vr-customize-title{
+  margin: 0 0 4px;
+  color: #fff;
+  font-size: clamp(20px, 5vw, 28px);
+  font-weight: 900;
+  line-height: 1.05;
+  text-align: left;
+}
+
+#vr-customize-rows{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#vr-customize-popup .vr-customize-row{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#vr-customize-popup .vr-customize-subtitle{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+#vr-customize-popup .vr-customize-note{
+  color: rgba(255,255,255,0.78);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+#vr-customize-popup .vr-customize-carousel{
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) 32px;
+  align-items: center;
+  gap: 10px;
+}
+
+#vr-customize-popup .vr-customize-arrow{
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+}
+
+#vr-customize-popup .vr-customize-arrow:disabled{
+  opacity: 0.35;
+  cursor: default;
+}
+
+#vr-customize-popup .vr-customize-card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid var(--vr-card-border);
+  background: var(--vr-card-bg);
+  box-shadow: var(--vr-shadow-soft);
+  min-width: 0;
+}
+
+#vr-customize-popup .vr-customize-card img{
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  object-position: center;
+}
+
+#vr-customize-popup .vr-customize-card.is-ui img{
+  object-fit: contain;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#vr-customize-popup .vr-customize-overlay{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 8, 18, 0) 0%,
+      rgba(5, 8, 18, 0.62) 28%,
+      rgba(5, 8, 18, 0.92) 100%
+    );
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#vr-customize-popup .vr-customize-name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.15;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+}
+
+#vr-customize-popup .vr-customize-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#vr-customize-popup .vr-customize-price{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+#vr-customize-popup .vr-customize-price img{
+  width: 18px;
+  height: 18px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  padding: 0;
+  background: none;
+}
+
+#vr-customize-popup .vr-customize-count{
+  color: rgba(255,255,255,0.86);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+#vr-customize-popup .vr-customize-action{
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.07));
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.1;
+  padding: 10px 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+}
+
+#vr-customize-popup .vr-customize-action.is-owned{
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.09));
+}
+
+#vr-customize-popup .vr-customize-action.is-equipped{
+  background: linear-gradient(180deg, rgba(224,184,77,0.32), rgba(224,184,77,0.16));
+  border-color: rgba(224,184,77,0.45);
+}
+
+#vr-customize-popup .vr-customize-x{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+  cursor: pointer;
+  z-index: 3;
+}
+
+#vr-customize-popup .vr-customize-x::before{
+  content: "✕";
+  color: #fff;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+@media (max-width: 480px){
+  #vr-customize-popup .vr-popup-inner{
+    width: min(96vw, 430px);
+    padding: 14px 10px 12px;
+  }
+
+  #vr-customize-popup .vr-customize-carousel{
+    grid-template-columns: 28px minmax(0, 1fr) 28px;
+    gap: 8px;
+  }
+
+  #vr-customize-popup .vr-customize-arrow{
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+  }
+}
