@@ -16,16 +16,16 @@
   const UI_BUNDLES = ["ui"];
   const SUPPORTED_LANGS = ["en", "fr", "de", "es", "pt", "ptbr", "it", "ko", "ja", "id"];
   const LANGUAGE_CHOICES = [
-    { code: "en", ui: "EN" },
-    { code: "fr", ui: "FR" },
-    { code: "de", ui: "DE" },
-    { code: "es", ui: "ES" },
-    { code: "pt", ui: "PT" },
-    { code: "ptbr", ui: "PTBR" },
-    { code: "it", ui: "IT" },
-    { code: "ko", ui: "KO" },
-    { code: "ja", ui: "JP" },
-    { code: "id", ui: "ID" }
+    { code: "en", ui: "English" },
+    { code: "fr", ui: "Français" },
+    { code: "de", ui: "Deutsch" },
+    { code: "es", ui: "Español" },
+    { code: "pt", ui: "Português" },
+    { code: "ptbr", ui: "Português BR" },
+    { code: "it", ui: "Italiano" },
+    { code: "ko", ui: "한국어" },
+    { code: "ja", ui: "日本語" },
+    { code: "id", ui: "Bahasa Indonesia" }
   ];
   const LANGUAGE_FLAGS = {
     fr: `<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="10" height="20" x="0" y="0" fill="#1f4fbf"/><rect width="10" height="20" x="10" y="0" fill="#ffffff"/><rect width="10" height="20" x="20" y="0" fill="#d11f2e"/></svg>`,
@@ -280,10 +280,11 @@ async function tryLoadUiBundle(bundle, lang) {
       .vrLangOverlay .vr-langBtn{
         width:100%;
         display:flex;
+        flex-direction:column;
         align-items:center;
-        justify-content:center;
-        gap:0;
-        padding:10px 6px;
+        justify-content:flex-start;
+        gap:8px;
+        padding:10px 6px 12px;
         border-radius:14px;
         border:0 !important;
         background:transparent !important;
@@ -325,7 +326,20 @@ async function tryLoadUiBundle(bundle, lang) {
       }
 
       .vrLangOverlay .vr-langText{
-        display:none !important;
+        display:flex !important;
+        align-items:center;
+        justify-content:center;
+        min-height:30px;
+        font-size:clamp(11px,2.8vw,13px);
+        font-weight:800;
+        line-height:1.15;
+        color:rgba(255,255,255,.96);
+        text-align:center;
+        word-break:break-word;
+      }
+
+      .vrLangOverlay .vr-langText > div{
+        max-width:100%;
       }
 
       .vrLangActions{
