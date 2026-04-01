@@ -6093,6 +6093,12 @@ window.VRGuideMentor = {
 
     layer.innerHTML = "";
 
+    if (this._confettiRaf) {
+      cancelAnimationFrame(this._confettiRaf);
+      this._confettiRaf = null;
+    }
+    clearTimeout(this._confettiCleanupTimer);
+
     const colors = [
       "#ffffff",
       "#f4d35e",
@@ -6103,49 +6109,102 @@ window.VRGuideMentor = {
       "#f9a8d4"
     ];
 
+    const rect = layer.getBoundingClientRect();
+    const W = Math.max(1, rect.width || window.innerWidth || 360);
+    const H = Math.max(1, rect.height || window.innerHeight || 640);
+
     const count = 170;
+    const gravity = 1550;
+    const pieces = [];
 
     for (let i = 0; i < count; i += 1) {
-      const piece = document.createElement("span");
-      piece.className = "vr-guide-confetti-piece";
+      const el = document.createElement("span");
+      el.className = "vr-guide-confetti-piece";
 
-      const startX = Math.random() * 100;
-      const peakX = -420 + Math.random() * 840;
-      const peakY = -(74 + Math.random() * 28);
-      const fallX = -220 + Math.random() * 440;
+      const w = 5 + Math.random() * 8;
+      const h = 10 + Math.random() * 16;
+      const x = Math.random() * W;
+      const y = H + 20 + Math.random() * 60;
 
-      const rot1 = -360 + Math.random() * 720;
-      const rot2 = rot1 + (-900 + Math.random() * 1800);
+      const vx = -260 + Math.random() * 520;
+      const vy = -(980 + Math.random() * 720);
+      const spin = -720 + Math.random() * 1440;
+      const rot = Math.random() * 360;
+      const life = 3.8 + Math.random() * 1.4;
+      const fadeStart = life * 0.72;
 
-      const dur = 4400 + Math.random() * 1400;
-      const delay = Math.random() * 120;
+      el.style.width = `${w}px`;
+      el.style.height = `${h}px`;
+      el.style.borderRadius = `${2 + Math.random() * 3}px`;
+      el.style.background = colors[Math.floor(Math.random() * colors.length)];
+      el.style.opacity = "1";
+      el.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${rot}deg)`;
 
-      const width = 5 + Math.random() * 8;
-      const height = 10 + Math.random() * 16;
-      const radius = 2 + Math.random() * 3;
-      const color = colors[Math.floor(Math.random() * colors.length)];
+      layer.appendChild(el);
 
-      piece.style.left = `${startX}%`;
-      piece.style.background = color;
-      piece.style.width = `${width}px`;
-      piece.style.height = `${height}px`;
-      piece.style.borderRadius = `${radius}px`;
-
-      piece.style.setProperty("--peakX", `${peakX}px`);
-      piece.style.setProperty("--peakY", `${peakY}svh`);
-      piece.style.setProperty("--fallX", `${fallX}px`);
-      piece.style.setProperty("--rot1", `${rot1}deg`);
-      piece.style.setProperty("--rot2", `${rot2}deg`);
-      piece.style.setProperty("--dur", `${dur}ms`);
-      piece.style.animationDelay = `${delay}ms`;
-
-      layer.appendChild(piece);
+      pieces.push({
+        el,
+        x,
+        y,
+        vx,
+        vy,
+        rot,
+        spin,
+        age: 0,
+        life,
+        fadeStart
+      });
     }
 
-    clearTimeout(this._confettiCleanupTimer);
+    let last = performance.now();
+
+    const tick = (now) => {
+      const dt = Math.min((now - last) / 1000, 0.033);
+      last = now;
+
+      let alive = 0;
+
+      for (const p of pieces) {
+        p.age += dt;
+        if (p.age >= p.life) {
+          p.el.style.opacity = "0";
+          continue;
+        }
+
+        p.vy += gravity * dt;
+        p.x += p.vx * dt;
+        p.y += p.vy * dt;
+        p.rot += p.spin * dt;
+
+        const fade =
+          p.age < p.fadeStart
+            ? 1
+            : Math.max(0, 1 - ((p.age - p.fadeStart) / (p.life - p.fadeStart)));
+
+        p.el.style.opacity = String(fade);
+        p.el.style.transform =
+          `translate3d(${p.x}px, ${p.y}px, 0) rotate(${p.rot}deg)`;
+
+        alive += 1;
+      }
+
+      if (alive > 0) {
+        this._confettiRaf = requestAnimationFrame(tick);
+      } else {
+        this._confettiRaf = null;
+        try { layer.innerHTML = ""; } catch (_) {}
+      }
+    };
+
+    this._confettiRaf = requestAnimationFrame(tick);
+
     this._confettiCleanupTimer = setTimeout(() => {
+      if (this._confettiRaf) {
+        cancelAnimationFrame(this._confettiRaf);
+        this._confettiRaf = null;
+      }
       try { layer.innerHTML = ""; } catch (_) {}
-    }, 7200);
+    }, 6500);
   },
 
   _fitTextAndScale() {
