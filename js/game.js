@@ -3843,7 +3843,9 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         #vr-intro-hand{
-          position: fixed;
+          position: absolute;
+          left: 0;
+          top: 0;
           width: clamp(52px, 12vw, 74px);
           height: auto;
           z-index: 120000;
@@ -3858,6 +3860,10 @@ body.vr-peek-mode .vr-gauge-preview{
         #vr-intro-hand.is-visible{
           display: block;
           animation: vrIntroHandSwipe 1s cubic-bezier(.4,0,.2,1) infinite;
+        }
+
+        body.vr-body-game .vr-hud-item{
+          overflow: visible !important;
         }
 
         #vr-card-main.is-intro-rich-card{
@@ -4290,6 +4296,7 @@ function resetUIState() {
     hand.src = INTRO_HAND_SRC;
     hand.alt = "";
     hand.draggable = false;
+    hand.dataset.bound = "0";
     document.body.appendChild(hand);
     return hand;
   }
@@ -4299,6 +4306,30 @@ function resetUIState() {
     if (!hand) return;
     hand.classList.remove("is-visible");
     hand.style.display = "none";
+  }
+
+  function positionIntroHandOnJeton() {
+    const btn = document.getElementById("btn-jeton");
+    if (!btn) return;
+
+    const host =
+      btn.closest(".vr-hud-item") ||
+      btn.parentElement ||
+      document.body;
+
+    const hand = ensureIntroHand();
+
+    if (hand.parentElement !== host) {
+      host.appendChild(hand);
+    }
+
+    const rect = btn.getBoundingClientRect();
+    const hostRect = host.getBoundingClientRect();
+    const size = Math.max(58, Math.min(80, Math.round(rect.width * 1.2)));
+
+    hand.style.width = `${size}px`;
+    hand.style.left = `${Math.round((rect.left - hostRect.left) - (size * 0.46))}px`;
+    hand.style.top = `${Math.round((rect.top - hostRect.top) + (rect.height * 0.46))}px`;
   }
 
   function clearIntroTimers() {
@@ -4390,14 +4421,35 @@ function resetUIState() {
     if (!btn) return;
 
     const hand = ensureIntroHand();
-    const rect = btn.getBoundingClientRect();
-    const size = Math.max(58, Math.min(80, Math.round(rect.width * 1.2)));
 
-    hand.style.width = `${size}px`;
-    hand.style.left = `${Math.round(rect.left - (size * 0.46))}px`;
-    hand.style.top = `${Math.round(rect.top + (rect.height * 0.46))}px`;
+    const syncHand = () => {
+      const current = document.getElementById("vr-intro-hand");
+      if (!current || !current.classList.contains("is-visible")) return;
+      positionIntroHandOnJeton();
+    };
+
+    if (hand.dataset.bound !== "1") {
+      window.addEventListener("resize", syncHand, { passive: true });
+      window.addEventListener("orientationchange", syncHand, { passive: true });
+
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", syncHand, { passive: true });
+        window.visualViewport.addEventListener("scroll", syncHand, { passive: true });
+      }
+
+      hand.dataset.bound = "1";
+    }
+
+    positionIntroHandOnJeton();
     hand.style.display = "block";
     hand.classList.add("is-visible");
+
+    requestAnimationFrame(() => {
+      positionIntroHandOnJeton();
+      requestAnimationFrame(() => {
+        positionIntroHandOnJeton();
+      });
+    });
   }
 
   function focusOnlyChoice(choiceId) {
