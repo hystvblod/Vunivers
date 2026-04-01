@@ -5631,12 +5631,9 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   width: 100%;
   color: #f3efe6;
-  font-weight: 700;
-  line-height: 1.08;
-  font-size: 18px;
   text-align: center;
   white-space: normal;
   word-break: break-word;
@@ -5680,26 +5677,53 @@ body.vr-body-game[data-universe] .vr-gauge-label{
 .vr-guide-line{
   display: block;
   width: 100%;
+  margin: 0;
 }
 
 .vr-guide-line--title{
-  font-size: 1.12em;
-  font-weight: 900;
-  line-height: 1.04;
+  font-family: "VR_Cinzel", serif;
+  font-size: clamp(24px, 3.1vw, 34px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  color: #fff7ea;
+  text-align: center;
+  max-width: 92%;
+  margin: 0 auto 2px;
+}
+
+.vr-guide-line--lead{
+  font-family: "VR_Cormorant", serif;
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 700;
+  line-height: 1.08;
+  color: #f6e7cf;
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .vr-guide-line--body{
-  font-size: .84em;
-  font-weight: 700;
-  line-height: 1.12;
+  font-family: "VR_CrimsonText", serif;
+  font-size: clamp(15px, 1.7vw, 19px);
+  font-weight: 400;
+  line-height: 1.28;
+  color: rgba(255,245,230,.96);
+  text-align: center;
+  max-width: 88%;
+  margin: 0 auto;
 }
 
 .vr-guide-overlay.is-event .vr-guide-line--title{
-  font-size: 1.08em;
+  font-size: clamp(22px, 2.8vw, 30px);
+}
+
+.vr-guide-overlay.is-event .vr-guide-line--lead{
+  font-size: clamp(17px, 2vw, 22px);
 }
 
 .vr-guide-overlay.is-event .vr-guide-line--body{
-  font-size: .82em;
+  font-size: clamp(14px, 1.6vw, 18px);
 }
 
 .vr-guide-overlay.is-final .vr-guide-bubble-text{
