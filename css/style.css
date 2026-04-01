@@ -2479,9 +2479,9 @@ body.vr-body-game[data-universe="heaven_king"]{
   --vr-scn-h: clamp(150px, 19.2svh, 320px);
   --vr-choice-h: clamp(124px, 15.8svh, 220px);
 
-  --vr-scn-inset-top: 12%;
+  --vr-scn-inset-top: 14%;
   --vr-scn-inset-right: 13%;
-  --vr-scn-inset-bottom: 18%;
+  --vr-scn-inset-bottom: 16%;
   --vr-scn-inset-left: 13%;
 
   --vr-choice-inset-top: 14%;
