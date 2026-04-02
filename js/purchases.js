@@ -352,7 +352,7 @@
 
     try {
       try {
-        window.VRAds?.preloadRewardedAd?.().catch(function () {});
+        window.VRAds?.scheduleRewardedPreload?.(0);
       } catch (_) {}
 
       if (sbReady()) {
