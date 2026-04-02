@@ -601,6 +601,14 @@
       try { refreshPricesFromStore(S); } catch (_) {}
       try { await refreshNoAdsUI(); } catch (_) {}
 
+      document.addEventListener("resume", async () => {
+        try { await ensureAuthStrict(); } catch (_) {}
+        try { S.update ? await S.update() : (S.refresh && await S.refresh()); } catch (_) {}
+        try { await replayLocalPending(); } catch (_) {}
+        try { refreshPricesFromStore(S); } catch (_) {}
+        try { await refreshNoAdsUI(); } catch (_) {}
+      });
+
     } finally {
       START_RUNNING = false;
     }
