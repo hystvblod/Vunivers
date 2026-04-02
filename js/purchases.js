@@ -20,12 +20,12 @@
     return fallback;
   }
 
- const CURRENT_UNLOCKABLE_UNIVERSES = [
-  "heaven_king",
-  "western_president",
-  "mega_corp_ceo",
-  "new_world_explorer"
-];
+  const CURRENT_UNLOCKABLE_UNIVERSES = [
+    "heaven_king",
+    "western_president",
+    "mega_corp_ceo",
+    "new_world_explorer"
+  ];
 
   function universeSku(universeId) {
     return "vuniverse_universe_" + String(universeId || "").trim().toLowerCase();
@@ -46,12 +46,12 @@
 
   const PRICES_BY_ID = Object.create(null);
   const IN_FLIGHT_TX = new Set();
+  const FINISHED_TX = new Set();
 
-  const PENDING_KEY  = "vuniverse_iap_pending_v1";
+  const PENDING_KEY = "vuniverse_iap_pending_v1";
   const CREDITED_KEY = "vuniverse_iap_credited_v1";
   let STORE_READY = false;
 
-  // ✅ Garde-fous anti double init / double binding
   let START_RUNNING = false;
   let STORE_REGISTERED = false;
   let STORE_EVENTS_WIRED = false;
@@ -59,9 +59,14 @@
   let PENDING_REPLAYED = false;
   let TOP_NAV_WIRED = false;
   let SHOP_BUTTONS_WIRED = false;
+  let STORE_READY_HOOKED = false;
 
-  const readJson  = (k, d=[]) => { try { return JSON.parse(localStorage.getItem(k)||"null") ?? d; } catch { return d; } };
-  const writeJson = (k, v)    => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+  const readJson = (k, d = []) => {
+    try { return JSON.parse(localStorage.getItem(k) || "null") ?? d; } catch { return d; }
+  };
+  const writeJson = (k, v) => {
+    try { localStorage.setItem(k, JSON.stringify(v)); } catch {}
+  };
 
   function addPending(txId, productId) {
     if (!txId) return;
@@ -104,6 +109,31 @@
     el.setAttribute(attr, "1");
   }
 
+  function simpleHash(str) {
+    const s = String(str || "");
+    let h = 5381;
+    let i = s.length;
+    while (i) h = (h * 33) ^ s.charCodeAt(--i);
+    return (h >>> 0).toString(16);
+  }
+
+  function parseMaybeJson(x) {
+    try {
+      if (!x) return null;
+      if (typeof x === "object") return x;
+      return JSON.parse(x);
+    } catch {
+      return null;
+    }
+  }
+
+  function parseMaybeBase64Json(x) {
+    if (!x || typeof x !== "string") return null;
+    try { return JSON.parse(x); } catch (_) {}
+    try { return JSON.parse(atob(x)); } catch (_) {}
+    return null;
+  }
+
   window.VRIAP = window.VRIAP || {};
   window.VRIAP.isAvailable = function () { return !!window.CdvPurchase?.store; };
   window.VRIAP.getPrice = function (productId) { return PRICES_BY_ID[String(productId || "")] || ""; };
@@ -113,7 +143,6 @@
     return !!(window.sb && window.sb.auth);
   }
 
-  // ✅ PATCH: session locale d’abord (getSession), fallback getUser ensuite
   async function ensureAuthStrict() {
     try {
       try { await window.vrWaitBootstrap?.(); } catch (_) {}
@@ -134,7 +163,6 @@
         const r = await sb.auth.getUser();
         return r?.data?.user?.id || null;
       } catch (_) {}
-
     } catch (_) {}
 
     return null;
@@ -149,12 +177,14 @@
         noAds = !!window.VUserData?.hasNoAds?.();
       }
     } catch (_) {}
+
     setText(
       "noads-status",
       noAds
         ? t("shop.status.noads_on", "✅ No Pub : activé")
         : t("shop.status.noads_off", "ℹ️ No Pub : désactivé")
     );
+
     return noAds;
   }
 
@@ -230,23 +260,19 @@
     return true;
   }
 
-  function parseMaybeJson(x) {
-    try {
-      if (!x) return null;
-      if (typeof x === "object") return x;
-      return JSON.parse(x);
-    } catch {
-      return null;
-    }
-  }
-
   function getTxIdFromTx(tx) {
     try {
+      if (tx?.transaction?.purchaseToken) return tx.transaction.purchaseToken;
+    } catch (_) {}
+
+    try {
       const rec = tx?.transaction?.receipt || tx?.receipt;
-      const r = typeof rec === "string" ? parseMaybeJson(rec) : rec;
+      const r = typeof rec === "string" ? parseMaybeBase64Json(rec) : rec;
+
+      if (r?.purchaseToken) return r.purchaseToken;
 
       if (r?.payload) {
-        const p = typeof r.payload === "string" ? parseMaybeJson(r.payload) : r.payload;
+        const p = typeof r.payload === "string" ? parseMaybeBase64Json(r.payload) : r.payload;
         if (p?.purchaseToken) return p.purchaseToken;
       }
     } catch (_) {}
@@ -272,15 +298,23 @@
       null;
 
     if (!pid) {
-      const rec = tx?.transaction?.receipt || tx?.receipt;
-      const r = typeof rec === "string" ? parseMaybeJson(rec) : rec;
-      if (Array.isArray(r?.productIds) && r.productIds[0]) pid = r.productIds[0];
-      else if (r?.productId) pid = r.productId;
-      else if (r?.payload) {
-        const p = typeof r.payload === "string" ? parseMaybeJson(r.payload) : r.payload;
-        pid = p?.productId || (Array.isArray(p?.productIds) && p.productIds[0]) || pid;
-      }
+      try {
+        const rec = tx?.transaction?.receipt || tx?.receipt;
+        const r = typeof rec === "string" ? parseMaybeBase64Json(rec) : rec;
+
+        if (Array.isArray(r?.productIds) && r.productIds[0]) pid = r.productIds[0];
+        else if (r?.productId) pid = r.productId;
+        else if (r?.payload) {
+          const p = typeof r.payload === "string" ? parseMaybeBase64Json(r.payload) : r.payload;
+          pid =
+            p?.productId ||
+            p?.product_id ||
+            (Array.isArray(p?.productIds) && p.productIds[0]) ||
+            pid;
+        }
+      } catch (_) {}
     }
+
     return pid || null;
   }
 
@@ -320,16 +354,40 @@
     return { S };
   }
 
+  function refreshPricesFromStore(S) {
+    try {
+      Object.keys(SKU).forEach((id) => {
+        const p = S.get ? S.get(id, S.Platform.GOOGLE_PLAY) : (S.products?.byId?.[id]);
+        const price =
+          p?.pricing?.price ||
+          p?.price ||
+          p?.pricing?.formattedPrice ||
+          p?.pricing?.priceString ||
+          null;
+
+        if (price) {
+          PRICES_BY_ID[id] = String(price);
+        }
+      });
+
+      updateDisplayedPrices();
+    } catch (e) {
+      warn("refreshPricesFromStore failed", e?.message || e);
+    }
+  }
+
   async function replayLocalPending() {
     const pendings = readJson(PENDING_KEY, []);
     if (!pendings.length) return;
 
     for (const it of pendings) {
-      if (!it?.txId || !it?.productId) continue;
+      if (!it?.txId || !it?.productId || it.productId === "unknown") continue;
+
       if (isCredited(it.txId)) {
         removePending(it.txId);
         continue;
       }
+
       try {
         await creditByProductClientSide(it.productId, it.txId);
         removePending(it.txId);
@@ -342,7 +400,20 @@
 
   async function start() {
     const { S } = getStoreApi();
-    if (!S) return;
+
+    if (!S) {
+      let tries = 0;
+      const timer = setInterval(() => {
+        tries++;
+        const g = getStoreApi();
+        if (g.S) {
+          clearInterval(timer);
+          start().catch((e) => warn("start retry failed", e?.message || e));
+        }
+        if (tries > 60) clearInterval(timer);
+      }, 600);
+      return;
+    }
 
     if (START_RUNNING) {
       log("start skipped: already running");
@@ -385,33 +456,65 @@
       }
 
       if (!STORE_EVENTS_WIRED) {
+        S.error && S.error((err) => {
+          warn("store error", err?.code, err?.message || err);
+        });
+
         S.when()
           .productUpdated((p) => {
             try {
               const id = p?.id;
-              const price = p?.pricing?.price || p?.pricing?.formattedPrice || null;
+              const price =
+                p?.pricing?.price ||
+                p?.pricing?.formattedPrice ||
+                p?.price ||
+                p?.pricing?.priceString ||
+                null;
+
               if (id && price) {
-                PRICES_BY_ID[id] = price;
+                PRICES_BY_ID[id] = String(price);
                 updateDisplayedPrices();
                 emit("vr:iap_price", { productId: String(id), price: String(price) });
               }
             } catch (_) {}
           })
           .approved(async (tx) => {
-            const txId = getTxIdFromTx(tx);
+            let txId = getTxIdFromTx(tx);
             const productId = getProductIdFromTx(tx);
 
-            if (!productId) return;
+            if (!txId) {
+              txId = "fallback:" + (
+                tx?.orderId ||
+                tx?.transactionId ||
+                simpleHash(JSON.stringify(tx) || String(Date.now()))
+              );
+              log("approved without purchaseToken, fallback txId =", txId);
+            }
 
-            if (txId && (IN_FLIGHT_TX.has(txId) || isCredited(txId))) {
+            if (!productId) {
+              addPending(txId, "unknown");
+              try { S.update && await S.update(); } catch (_) {}
+              warn("approved without productId, transaction kept for replay", txId);
+              return;
+            }
+
+            if (FINISHED_TX.has(txId)) {
               try { await tx.finish(); } catch (_) {}
               return;
             }
 
-            if (txId) {
-              IN_FLIGHT_TX.add(txId);
-              addPending(txId, productId);
+            if (IN_FLIGHT_TX.has(txId)) {
+              return;
             }
+
+            if (isCredited(txId)) {
+              try { await tx.finish(); } catch (_) {}
+              FINISHED_TX.add(txId);
+              return;
+            }
+
+            IN_FLIGHT_TX.add(txId);
+            addPending(txId, productId);
 
             try {
               setText("shop-status", t("shop.status.pending", "…"));
@@ -428,12 +531,18 @@
                 error: String(e?.message || e || "credit_failed")
               });
 
-              if (txId) IN_FLIGHT_TX.delete(txId);
+              IN_FLIGHT_TX.delete(txId);
               return;
             }
 
-            try { await tx.finish(); } catch (e) { warn("finish failed", e?.message || e); }
-            if (txId) IN_FLIGHT_TX.delete(txId);
+            try {
+              await tx.finish();
+              FINISHED_TX.add(txId);
+            } catch (e) {
+              warn("finish failed", e?.message || e);
+            } finally {
+              IN_FLIGHT_TX.delete(txId);
+            }
 
             try { window.VRAds?.refreshNoAds && (await window.VRAds.refreshNoAds()); } catch (_) {}
             try { await refreshNoAdsUI(); } catch (_) {}
@@ -459,6 +568,29 @@
         }
       }
 
+      if (!STORE_READY_HOOKED && typeof S.ready === "function") {
+        STORE_READY_HOOKED = true;
+        try {
+          S.ready(async () => {
+            STORE_READY = true;
+            refreshPricesFromStore(S);
+
+            try {
+              const noAdsProduct = S.get ? S.get("vuniverse_no_ads", S.Platform.GOOGLE_PLAY) : null;
+              if (noAdsProduct?.owned) {
+                try { await window.VRAds?.refreshNoAds?.(); } catch (_) {}
+                try { await refreshNoAdsUI(); } catch (_) {}
+              }
+            } catch (_) {}
+
+            try { await replayLocalPending(); } catch (_) {}
+            try { S.update && await S.update(); } catch (_) {}
+          });
+        } catch (e) {
+          warn("store ready hook failed", e?.message || e);
+        }
+      }
+
       try {
         await S.update();
         STORE_READY = true;
@@ -466,7 +598,7 @@
         warn("store update failed", e?.message || e);
       }
 
-      try { updateDisplayedPrices(); } catch (_) {}
+      try { refreshPricesFromStore(S); } catch (_) {}
       try { await refreshNoAdsUI(); } catch (_) {}
 
     } finally {
@@ -582,10 +714,19 @@
     }
 
     if (!STORE_READY) {
-      try { await S.update(); STORE_READY = true; } catch (_) {}
+      try {
+        await S.update();
+        STORE_READY = true;
+      } catch (_) {}
     }
 
-    const p = S.get ? S.get(productId, S.Platform.GOOGLE_PLAY) : (S.products?.byId?.[productId]);
+    let p = S.get ? S.get(productId, S.Platform.GOOGLE_PLAY) : (S.products?.byId?.[productId]);
+
+    if (!p) {
+      try { await S.update(); } catch (_) {}
+      p = S.get ? S.get(productId, S.Platform.GOOGLE_PLAY) : (S.products?.byId?.[productId]);
+    }
+
     if (!p) {
       setText(
         "shop-status",
@@ -618,7 +759,6 @@
     }
   }
 
-  // ✅ Boutons robustes : priorités data-product-id/data-reward-placement, sinon fallback IDs actuels
   function getProductIdFromButton(btn) {
     try {
       const pid = btn?.getAttribute?.("data-product-id");
@@ -641,7 +781,6 @@
     if (SHOP_BUTTONS_WIRED) return;
     SHOP_BUTTONS_WIRED = true;
 
-    // 1) wiring générique via data-product-id
     try {
       document.querySelectorAll("[data-product-id]").forEach((btn) => {
         bindClickOnce(btn, "order", () => {
@@ -652,7 +791,6 @@
       });
     } catch (_) {}
 
-    // 2) wiring générique rewarded via data-reward-placement
     try {
       document.querySelectorAll("[data-reward-placement]").forEach((btn) => {
         bindClickOnce(btn, "reward", () => {
@@ -663,7 +801,6 @@
       });
     } catch (_) {}
 
-    // 3) fallback : tes IDs actuels
     const bRJ = $("btn-reward-jeton");
     const bRC = $("btn-reward-coins");
     const bNoAds = $("btn-buy-noads");
