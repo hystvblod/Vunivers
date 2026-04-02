@@ -802,5 +802,11 @@
       "gold": "Commandant",
       "crystal": "Représentant de la Couronne"
     }
+  },
+  "update": {
+    "title": "Mise à jour disponible",
+    "body": "Une nouvelle version de l’application est disponible.",
+    "later": "Plus tard",
+    "now": "Mettre à jour"
   }
 }

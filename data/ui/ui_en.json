@@ -802,5 +802,11 @@
       "gold": "Commander",
       "crystal": "Representative of the Crown"
     }
+  },
+  "update": {
+    "title": "Update available",
+    "body": "A new version of the app is available.",
+    "later": "Later",
+    "now": "Update"
   }
 }
