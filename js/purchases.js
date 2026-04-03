@@ -329,6 +329,7 @@
 
         if (price) {
           label.textContent = String(price);
+          label.removeAttribute("data-i18n");
           btn.disabled = false;
           btn.removeAttribute("aria-busy");
         } else {
@@ -354,8 +355,18 @@
     return { S };
   }
 
+  function getGooglePlayPlatform(S) {
+    return S?.Platform?.GOOGLE_PLAY || window.CdvPurchase?.Platform?.GOOGLE_PLAY || null;
+  }
+
   function refreshPricesFromStore(S) {
     try {
+      const GP = getGooglePlayPlatform(S);
+      if (!GP) {
+        warn("refreshPricesFromStore: GOOGLE_PLAY unavailable");
+        return;
+      }
+
       Object.keys(SKU).forEach((id) => {
         const p = S.get ? S.get(id, GP) : (S.products?.byId?.[id]);
         const price =
@@ -400,6 +411,8 @@
 
   async function start() {
     const { S } = getStoreApi();
+    const GP = getGooglePlayPlatform(S);
+    const P = S?.ProductType || window.CdvPurchase?.ProductType;
 
     if (!S) {
       let tries = 0;
@@ -427,12 +440,15 @@
       } catch (_) {}
 
       if (sbReady()) {
-        await ensureAuthStrict();
+        ensureAuthStrict().catch(() => {});
       }
 
       try {
-        const GP = S?.Platform?.GOOGLE_PLAY || window.CdvPurchase?.Platform?.GOOGLE_PLAY;
-        const P = S?.ProductType || window.CdvPurchase?.ProductType;
+        if (!GP || !P) {
+          warn("register failed: GOOGLE_PLAY or ProductType unavailable", { GP, P });
+          setText("store-status", "⚠️ Store indisponible");
+          return;
+        }
 
         if (!STORE_REGISTERED) {
           S.register({ id: "vuniverse_no_ads",     type: P.NON_CONSUMABLE, platform: GP });
@@ -577,7 +593,7 @@
             refreshPricesFromStore(S);
 
             try {
-              const noAdsProduct = S.get ? S.get("vuniverse_no_ads", S.Platform.GOOGLE_PLAY) : null;
+              const noAdsProduct = S.get ? S.get("vuniverse_no_ads", GP) : null;
               if (noAdsProduct?.owned) {
                 try { await window.VRAds?.refreshNoAds?.(); } catch (_) {}
                 try { await refreshNoAdsUI(); } catch (_) {}
@@ -712,6 +728,7 @@
     } catch (_) {}
 
     const { S } = getStoreApi();
+    const GP = getGooglePlayPlatform(S);
     if (!S) {
       setText("shop-status", t("shop.status.iap_unavailable_web", "⚠️ IAP indisponible sur le web."));
       emit("vr:iap_unavailable", { productId: String(productId || "") });
@@ -729,11 +746,11 @@
       } catch (_) {}
     }
 
-    let p = S.get ? S.get(productId, S.Platform.GOOGLE_PLAY) : (S.products?.byId?.[productId]);
+    let p = S.get ? S.get(productId, GP) : (S.products?.byId?.[productId]);
 
     if (!p) {
       try { await S.update(); } catch (_) {}
-      p = S.get ? S.get(productId, S.Platform.GOOGLE_PLAY) : (S.products?.byId?.[productId]);
+      p = S.get ? S.get(productId, GP) : (S.products?.byId?.[productId]);
     }
 
     if (!p) {
@@ -873,6 +890,24 @@
         try { updateDisplayedPrices(); } catch (_) {}
       }, 1500);
     }
+
+    window.addEventListener("vr:i18n:changed", function () {
+      setTimeout(() => {
+        try {
+          const { S } = getStoreApi();
+          if (S) refreshPricesFromStore(S);
+          updateDisplayedPrices();
+        } catch (_) {}
+      }, 0);
+
+      setTimeout(() => {
+        try {
+          const { S } = getStoreApi();
+          if (S) refreshPricesFromStore(S);
+          updateDisplayedPrices();
+        } catch (_) {}
+      }, 120);
+    });
 
     refreshNoAdsUI().catch(() => {});
   }
