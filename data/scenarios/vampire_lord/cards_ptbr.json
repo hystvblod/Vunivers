@@ -1270,7 +1270,7 @@
   },
   "vampire_142": {
     "title": "O guarda que sorri",
-    "body": "Ele não recua. Ele te faz um sinal. Ele sabe. Ou está encenando. Nos dois casos, é perigoso.",
+    "body": "Ele não recua e faz um sinal para você. Ou ele te reconheceu, ou está te testando. Nos dois casos, é perigoso.",
     "choices": {
       "A": "Intimidá-lo",
       "B": "Segui-lo discretamente",
@@ -1837,7 +1837,7 @@
   },
   "vampire_205": {
     "title": "Táxi noturno falador",
-    "body": "Um motorista conta que levou um cliente frio como pedra. Parece você.",
+    "body": "Um motorista da noite descreve um passageiro com um comportamento parecido demais com o seu. Isso pode acabar fazendo você ser reconhecido.",
     "choices": {
       "A": "Mandá-lo calar a boca",
       "B": "Pagá-lo para mentir",
@@ -2413,7 +2413,7 @@
   },
   "vampire_269": {
     "title": "O guarda do estacionamento",
-    "body": "Um guarda vigia bem demais. Conhece as placas. Conhece os horários. Conhece demais.",
+    "body": "Um segurança vigia o estacionamento de perto demais. Ele já conhece as placas e os horários.",
     "choices": {
       "A": "Corrompê-lo",
       "B": "Substituí-lo",
@@ -3412,11 +3412,11 @@
   },
   "vampire_380": {
     "title": "O encanador discreto",
-    "body": "Um encanador conhece bem demais teus subterrâneos. Ele trabalha sem fazer perguntas.",
+    "body": "Um encanador já conhece bem demais os acessos ao subsolo do refúgio. Quanto mais ele trabalha aqui, maior o risco de entender o que você esconde.",
     "choices": {
       "A": "Pagá-lo melhor",
       "B": "Recrutá-lo",
-      "C": "Trocar de equipe"
+      "C": "Chamar outra empresa"
     }
   },
   "vampire_381": {

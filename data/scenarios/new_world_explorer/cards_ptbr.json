@@ -946,11 +946,11 @@
   },
   "nw_106": {
     "title": "Bolsa furada",
-    "body": "O arrecadador perde moedas como uma árvore perde folhas.",
+    "body": "A pessoa responsável pelo caixa está perdendo moedas demais, e ninguém sabe exatamente para onde elas estão sumindo.",
     "choices": {
-      "A": "Contar tudo na frente dele",
-      "B": "Dar a ele um ajudante",
-      "C": "Fechar os olhos por um mês"
+      "A": "Verificar o caixa com ele, moeda por moeda",
+      "B": "Dar a ele um assistente para controlar tudo",
+      "C": "Não dizer nada por um mês"
     }
   },
   "nw_107": {
@@ -1805,7 +1805,7 @@
     "choices": {
       "A": "Substituí-lo",
       "B": "Consertá-lo localmente",
-      "C": "Trocar por apito"
+      "C": "Substituir o alarme por um apito"
     }
   },
   "nw_202": {
@@ -1882,7 +1882,7 @@
   },
   "nw_210": {
     "title": "Apito do porto",
-    "body": "O novo apito acorda todo mundo, menos as pessoas certas.",
+    "body": "O novo apito avisa mal os guardas e incomoda principalmente os moradores.",
     "choices": {
       "A": "Reservá-lo para emergências",
       "B": "Treinar os guardas",

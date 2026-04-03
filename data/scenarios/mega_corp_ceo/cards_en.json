@@ -523,11 +523,11 @@
   },
   "mcc_059": {
     "title": "Exemplary employer label",
-    "body": "You are offered an employer label in exchange for a big communications budget. It feels like a bought label.",
+    "body": "You are offered an employer label in exchange for a large communication budget. It may end up looking like a bought award.",
     "choices": {
       "A": "Decline: improve reality first.",
       "B": "Accept: it helps recruitment.",
-      "C": "Negotiate: serious audit + label without the empty talk."
+      "C": "Negotiate a real audit before any label is granted"
     }
   },
   "mcc_060": {
@@ -1341,12 +1341,12 @@
     }
   },
   "mcc_150": {
-    "title": "Keynote too long",
-    "body": "Your keynote lasts 90 minutes. By the end, even the teleprompter wants a break.",
+    "title": "Presentation that is too long",
+    "body": "Your presentation lasts 90 minutes. By the end, almost everyone has stopped paying attention.",
     "choices": {
       "A": "Shorten it and get to the point next time.",
-      "B": "Keep going: \"vision takes time.\"",
-      "C": "Keep it long, but add concrete demos."
+      "B": "Keep going and say that this format is necessary",
+      "C": "Keep a long presentation, but add concrete examples"
     }
   },
   "mcc_151": {
@@ -1855,7 +1855,7 @@
   },
   "mcc_207": {
     "title": "Energy moderation week",
-    "body": "The government launches a \"moderation\" week. Your offices are glowing like a stadium.",
+    "body": "The government launches an energy moderation week. Your offices are still far too brightly lit.",
     "choices": {
       "A": "Reduce lighting and show concrete actions.",
       "B": "Change nothing: \"we pay, so we light.\"",

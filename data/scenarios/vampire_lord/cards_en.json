@@ -1270,7 +1270,7 @@
   },
   "vampire_142": {
     "title": "The Smiling Guard",
-    "body": "He does not step back. He gives you a sign. He knows. Or he is pretending. Either way, it is dangerous.",
+    "body": "He does not step back and signals to you. Either he recognized you, or he is testing you. In both cases, it is dangerous.",
     "choices": {
       "A": "Intimidate him",
       "B": "Follow him discreetly",
@@ -1837,7 +1837,7 @@
   },
   "vampire_205": {
     "title": "Talkative Night Taxi",
-    "body": "A driver says he had a passenger as cold as stone. Sounds like you.",
+    "body": "A night driver describes a client whose behavior is too similar to yours. He could eventually make you recognizable.",
     "choices": {
       "A": "Silence him",
       "B": "Pay him to lie",
@@ -2413,7 +2413,7 @@
   },
   "vampire_269": {
     "title": "The Parking Guard",
-    "body": "A guard watches too well. He knows the plates. He knows the schedules. He knows too much.",
+    "body": "A guard is watching the parking lot too closely. He already knows the plates and the schedules.",
     "choices": {
       "A": "Bribe him",
       "B": "Replace him",
@@ -3412,11 +3412,11 @@
   },
   "vampire_380": {
     "title": "The Discreet Plumber",
-    "body": "A plumber knows your basements a little too well. He works without asking questions.",
+    "body": "A plumber already knows the lair’s basement access points far too well. The more he works here, the more likely he is to understand what you are hiding.",
     "choices": {
       "A": "Pay him more",
       "B": "Recruit him",
-      "C": "Change crews"
+      "C": "Bring in a different company"
     }
   },
   "vampire_381": {

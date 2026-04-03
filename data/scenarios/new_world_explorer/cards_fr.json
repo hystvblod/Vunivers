@@ -946,11 +946,11 @@
   },
   "nw_106": {
     "title": "Bourse trouée",
-    "body": "Le receveur perd des pièces comme un arbre perd des feuilles.",
+    "body": "Le responsable de la caisse perd trop de pièces, et personne ne sait exactement où elles disparaissent.",
     "choices": {
-      "A": "Compter tout devant lui",
-      "B": "Lui donner un adjoint",
-      "C": "Fermer les yeux un mois"
+      "A": "Vérifier la caisse avec lui, pièce par pièce",
+      "B": "Lui donner un adjoint pour tout contrôler",
+      "C": "Ne rien dire pendant un mois"
     }
   },
   "nw_107": {
@@ -1805,7 +1805,7 @@
     "choices": {
       "A": "La remplacer",
       "B": "La réparer localement",
-      "C": "Passer au sifflet"
+      "C": "Remplacer l’alerte par un sifflet"
     }
   },
   "nw_202": {
@@ -1882,7 +1882,7 @@
   },
   "nw_210": {
     "title": "Sifflet du port",
-    "body": "Le nouveau sifflet réveille tout le monde sauf les bonnes personnes.",
+    "body": "Le nouveau sifflet alerte mal les gardes et dérange surtout les habitants.",
     "choices": {
       "A": "Le réserver aux urgences",
       "B": "Former les gardes",
