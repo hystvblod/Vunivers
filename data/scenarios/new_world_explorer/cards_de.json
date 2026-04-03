@@ -946,11 +946,11 @@
   },
   "nw_106": {
     "title": "Löchriger Geldbeutel",
-    "body": "Der Einnehmer verliert Münzen wie ein Baum Blätter verliert.",
+    "body": "Der Verantwortliche für die Kasse verliert zu viele Münzen, und niemand weiß genau, wo sie verschwinden.",
     "choices": {
-      "A": "Alles vor seinen Augen zählen",
-      "B": "Ihm einen Assistenten geben",
-      "C": "Einen Monat lang die Augen schließen"
+      "A": "Die Kasse mit ihm zusammen Münze für Münze prüfen",
+      "B": "Ihm einen Assistenten geben, damit alles kontrolliert wird",
+      "C": "Einen Monat lang nichts sagen"
     }
   },
   "nw_107": {
@@ -1801,11 +1801,11 @@
   },
   "nw_201": {
     "title": "Rostige Glocke",
-    "body": "Die Hafenglocke klingt mal, und niemand weiß, ob es ein echter Alarm ist.",
+    "body": "Die Hafenglocke klingt schlecht, und niemand weiß, ob es ein echter Alarm ist.",
     "choices": {
       "A": "Sie ersetzen",
       "B": "Sie vor Ort reparieren",
-      "C": "Zur Pfeife wechseln"
+      "C": "Das Alarmsignal durch eine Pfeife ersetzen"
     }
   },
   "nw_202": {
@@ -1882,7 +1882,7 @@
   },
   "nw_210": {
     "title": "Pfeife des Hafens",
-    "body": "Die neue Pfeife weckt alle auf, außer die richtigen Leute.",
+    "body": "Die neue Pfeife warnt die Wachen schlecht und stört vor allem die Bewohner.",
     "choices": {
       "A": "Sie den Notfällen vorbehalten",
       "B": "Die Wachen schulen",

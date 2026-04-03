@@ -946,11 +946,11 @@
   },
   "nw_106": {
     "title": "Bolsa agujereada",
-    "body": "El recaudador pierde monedas como un árbol pierde hojas.",
+    "body": "La persona encargada de la caja pierde demasiadas monedas y nadie sabe exactamente adónde desaparecen.",
     "choices": {
-      "A": "Contarlo todo delante de él",
-      "B": "Darle un ayudante",
-      "C": "Cerrar los ojos un mes"
+      "A": "Revisar la caja con él, moneda por moneda",
+      "B": "Darle un ayudante para controlarlo todo",
+      "C": "No decir nada durante un mes"
     }
   },
   "nw_107": {
@@ -1805,7 +1805,7 @@
     "choices": {
       "A": "Reemplazarla",
       "B": "Repararla localmente",
-      "C": "Pasar al silbato"
+      "C": "Sustituir la alerta por un silbato"
     }
   },
   "nw_202": {
@@ -1882,7 +1882,7 @@
   },
   "nw_210": {
     "title": "Silbato del puerto",
-    "body": "El nuevo silbato despierta a todo el mundo salvo a las personas correctas.",
+    "body": "El nuevo silbato avisa mal a los guardias y sobre todo molesta a los habitantes.",
     "choices": {
       "A": "Reservarlo para emergencias",
       "B": "Formar a los guardias",

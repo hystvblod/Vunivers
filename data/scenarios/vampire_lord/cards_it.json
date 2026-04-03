@@ -1270,7 +1270,7 @@
   },
   "vampire_142": {
     "title": "La guardia che sorride",
-    "body": "Non indietreggia. Ti fa un cenno. Sa. O finge. In entrambi i casi è pericoloso.",
+    "body": "Non indietreggia e ti fa un cenno. O ti ha riconosciuto, oppure ti sta mettendo alla prova. In entrambi i casi è pericoloso.",
     "choices": {
       "A": "Intimidirlo",
       "B": "Seguirlo discretamente",
@@ -1837,7 +1837,7 @@
   },
   "vampire_205": {
     "title": "Taxi notturno chiacchierone",
-    "body": "Un autista racconta di aver avuto un cliente freddo come la pietra. Somiglia a te.",
+    "body": "Un autista notturno descrive un cliente con un comportamento fin troppo simile al tuo. Potrebbe finire per renderti riconoscibile.",
     "choices": {
       "A": "Farlo tacere",
       "B": "Pagargli una menzogna",
@@ -2413,7 +2413,7 @@
   },
   "vampire_269": {
     "title": "La guardia del parcheggio",
-    "body": "Una guardia sorveglia fin troppo bene. Conosce le targhe. Conosce gli orari. Sa troppo.",
+    "body": "Una guardia controlla il parcheggio troppo da vicino. Conosce già le targhe e gli orari.",
     "choices": {
       "A": "Corromperla",
       "B": "Sostituirla",
@@ -3412,11 +3412,11 @@
   },
   "vampire_380": {
     "title": "L’idraulico discreto",
-    "body": "Un idraulico conosce fin troppo bene i tuoi sotterranei. Lavora senza fare domande.",
+    "body": "Un idraulico conosce già fin troppo bene gli accessi al seminterrato del rifugio. Più interviene qui, più rischia di capire ciò che nascondi.",
     "choices": {
       "A": "Pagargli di più",
       "B": "Reclutarlo",
-      "C": "Cambiare squadra"
+      "C": "Far intervenire un’altra impresa"
     }
   },
   "vampire_381": {

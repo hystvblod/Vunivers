@@ -523,11 +523,11 @@
   },
   "mcc_059": {
     "title": "Marchio datore di lavoro esemplare",
-    "body": "Ti propongono un marchio di datore di lavoro in cambio di un grosso budget comunicazione. Sembra un'etichetta comprata.",
+    "body": "Ti propongono un marchio di datore di lavoro in cambio di un grosso budget di comunicazione. Potrebbe sembrare un riconoscimento comprato.",
     "choices": {
       "A": "Rifiutare: prima miglioriamo la realtà.",
       "B": "Accettare: aiuta il recruiting.",
-      "C": "Negoziare: audit serio + etichetta senza bla bla."
+      "C": "Negoziare un vero audit prima di qualunque etichetta"
     }
   },
   "mcc_060": {
@@ -1341,12 +1341,12 @@
     }
   },
   "mcc_150": {
-    "title": "Keynote troppo lunga",
-    "body": "La tua keynote dura 90 minuti. Alla fine, perfino il gobbo chiede una pausa.",
+    "title": "Presentazione troppo lunga",
+    "body": "La tua presentazione dura 90 minuti. Alla fine, quasi nessuno presta più davvero attenzione.",
     "choices": {
       "A": "Accorciare e andare all'essenziale dalla prossima.",
-      "B": "Continuare: la visione richiede tempo.",
-      "C": "Tenerla lunga, ma aggiungere dimostrazioni concrete."
+      "B": "Continuare dicendo che questo formato è necessario",
+      "C": "Mantenere una presentazione lunga, ma con esempi concreti"
     }
   },
   "mcc_151": {
@@ -1855,7 +1855,7 @@
   },
   "mcc_207": {
     "title": "Settimana della moderazione energetica",
-    "body": "Il governo lancia una settimana della moderazione. I tuoi uffici brillano come uno stadio.",
+    "body": "Il governo lancia una settimana di moderazione energetica. I tuoi uffici restano comunque troppo illuminati.",
     "choices": {
       "A": "Ridurre l'illuminazione e mostrare gesti concreti.",
       "B": "Non cambiare nulla: paghiamo, quindi illuminiamo.",

@@ -523,11 +523,11 @@
   },
   "mcc_059": {
     "title": "Selo de empregador exemplar",
-    "body": "Oferecem a você um selo de empregador em troca de um grande orçamento de comunicação. Parece selo comprado.",
+    "body": "Oferecem a você um selo de empregador em troca de um grande orçamento de comunicação. Isso pode acabar parecendo um prêmio comprado.",
     "choices": {
       "A": "Recusar: melhorar a realidade primeiro.",
       "B": "Aceitar: ajuda no recrutamento.",
-      "C": "Negociar: auditoria séria + selo sem blá-blá-blá."
+      "C": "Negociar uma auditoria real antes de qualquer selo"
     }
   },
   "mcc_060": {
@@ -1341,12 +1341,12 @@
     }
   },
   "mcc_150": {
-    "title": "Keynote longa demais",
-    "body": "Sua keynote dura 90 minutos. No fim, até o teleprompter pede uma pausa.",
+    "title": "Apresentação longa demais",
+    "body": "Sua apresentação dura 90 minutos. No fim, quase ninguém ainda está prestando atenção de verdade.",
     "choices": {
       "A": "Encurtar e ir direto ao ponto na próxima.",
-      "B": "Continuar: \"a visão exige tempo\".",
-      "C": "Manter longa, mas adicionar demonstrações concretas."
+      "B": "Continuar dizendo que esse formato é necessário",
+      "C": "Manter uma apresentação longa, mas com exemplos concretos"
     }
   },
   "mcc_151": {
@@ -1855,7 +1855,7 @@
   },
   "mcc_207": {
     "title": "Semana da moderação energética",
-    "body": "O governo lança uma semana de \"moderação\". Seus escritórios brilham como um estádio.",
+    "body": "O governo lança uma semana de moderação energética. Seus escritórios continuam claros demais.",
     "choices": {
       "A": "Reduzir a iluminação e mostrar ações concretas.",
       "B": "Não mudar nada: \"a gente paga, então ilumina\".",

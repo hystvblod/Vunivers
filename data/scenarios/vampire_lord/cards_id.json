@@ -1270,7 +1270,7 @@
   },
   "vampire_142": {
     "title": "Penjaga yang tersenyum",
-    "body": "Dia tidak mundur. Dia memberi isyarat padamu. Dia tahu. Atau sedang bermain. Dalam dua-duanya, itu berbahaya.",
+    "body": "Dia tidak mundur dan memberimu isyarat. Entah dia mengenalimu, atau dia sedang mengujimu. Dalam kedua kasus itu, ini berbahaya.",
     "choices": {
       "A": "Mengintimidasinya",
       "B": "Mengikutinya diam-diam",
@@ -1837,7 +1837,7 @@
   },
   "vampire_205": {
     "title": "Taksi malam yang cerewet",
-    "body": "Seorang sopir bercerita bahwa dia pernah mengantar penumpang sedingin batu. Mirip sekali denganmu.",
+    "body": "Seorang sopir malam menggambarkan penumpang dengan perilaku yang terlalu mirip denganmu. Pada akhirnya dia bisa membuatmu mudah dikenali.",
     "choices": {
       "A": "Membungkamnya",
       "B": "Membayarnya untuk berbohong",
@@ -2413,7 +2413,7 @@
   },
   "vampire_269": {
     "title": "Penjaga parkir",
-    "body": "Seorang penjaga terlalu teliti. Dia tahu pelat nomor. Dia tahu jadwal. Dia tahu terlalu banyak.",
+    "body": "Seorang penjaga mengawasi area parkir terlalu dekat. Dia sudah mengetahui pelat nomor dan jadwalnya.",
     "choices": {
       "A": "Menyuapnya",
       "B": "Menggantinya",
@@ -3412,11 +3412,11 @@
   },
   "vampire_380": {
     "title": "Tukang ledeng yang rapi",
-    "body": "Seorang tukang ledeng terlalu mengenal ruang bawah tanahmu. Dia bekerja tanpa banyak bertanya.",
+    "body": "Seorang tukang ledeng sudah terlalu mengenal akses ke ruang bawah tanah markas. Semakin sering dia bekerja di sini, semakin besar risiko dia memahami apa yang kamu sembunyikan.",
     "choices": {
       "A": "Membayarnya lebih banyak",
       "B": "Merekrutnya",
-      "C": "Mengganti tim"
+      "C": "Memanggil perusahaan lain"
     }
   },
   "vampire_381": {

@@ -1270,7 +1270,7 @@
   },
   "vampire_142": {
     "title": "Der lächelnde Wächter",
-    "body": "Er weicht nicht zurück. Er gibt dir ein Zeichen. Er weiß Bescheid. Oder er spielt. In beiden Fällen ist es gefährlich.",
+    "body": "Er weicht nicht zurück und gibt dir ein Zeichen. Entweder hat er dich erkannt, oder er testet dich. In beiden Fällen ist es gefährlich.",
     "choices": {
       "A": "Ihn einschüchtern",
       "B": "Ihm unauffällig folgen",
@@ -1837,7 +1837,7 @@
   },
   "vampire_205": {
     "title": "Der redselige Nachttaxifahrer",
-    "body": "Ein Fahrer erzählt, er habe einen Kunden gehabt, kalt wie Stein. Das klingt nach dir.",
+    "body": "Ein Nachtfahrer beschreibt einen Fahrgast, dessen Verhalten deinem viel zu ähnlich ist. Am Ende könnte er dich wiedererkennbar machen.",
     "choices": {
       "A": "Ihn zum Schweigen bringen",
       "B": "Ihn fürs Lügen bezahlen",
@@ -2413,7 +2413,7 @@
   },
   "vampire_269": {
     "title": "Der Parkplatzwächter",
-    "body": "Ein Wachmann beobachtet zu gut. Er kennt Kennzeichen. Er kennt Uhrzeiten. Er weiß zu viel.",
+    "body": "Ein Wachmann beobachtet den Parkplatz viel zu genau. Er kennt bereits die Kennzeichen und die Zeiten.",
     "choices": {
       "A": "Ihn bestechen",
       "B": "Ihn ersetzen",
@@ -3412,11 +3412,11 @@
   },
   "vampire_380": {
     "title": "Der diskrete Klempner",
-    "body": "Ein Klempner kennt deine Untergeschosse viel zu gut. Er arbeitet, ohne Fragen zu stellen.",
+    "body": "Ein Klempner kennt die Zugänge zum Keller des Verstecks bereits viel zu gut. Je öfter er hier arbeitet, desto eher versteht er, was du verbirgst.",
     "choices": {
       "A": "Ihn besser bezahlen",
       "B": "Ihn rekrutieren",
-      "C": "Das Team wechseln"
+      "C": "Eine andere Firma beauftragen"
     }
   },
   "vampire_381": {

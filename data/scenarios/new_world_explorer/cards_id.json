@@ -946,11 +946,11 @@
   },
   "nw_106": {
     "title": "Kantong berlubang",
-    "body": "Petugas penerima kehilangan koin seperti pohon kehilangan daun.",
+    "body": "Orang yang bertanggung jawab atas kas kehilangan terlalu banyak koin, dan tidak ada yang tahu persis ke mana koin itu menghilang.",
     "choices": {
-      "A": "Hitung semuanya di depannya",
-      "B": "Beri dia seorang asisten",
-      "C": "Tutup mata selama sebulan"
+      "A": "Memeriksa kas bersamanya, koin demi koin",
+      "B": "Memberinya asisten untuk mengawasi semuanya",
+      "C": "Tidak mengatakan apa pun selama sebulan"
     }
   },
   "nw_107": {
@@ -1805,7 +1805,7 @@
     "choices": {
       "A": "Ganti lonceng",
       "B": "Perbaiki secara lokal",
-      "C": "Beralih ke peluit"
+      "C": "Mengganti alarm dengan peluit"
     }
   },
   "nw_202": {
@@ -1882,7 +1882,7 @@
   },
   "nw_210": {
     "title": "Peluit pelabuhan",
-    "body": "Peluit baru membangunkan semua orang kecuali orang yang tepat.",
+    "body": "Peluit baru itu buruk dalam memberi peringatan kepada penjaga dan justru lebih banyak mengganggu warga.",
     "choices": {
       "A": "Gunakan hanya untuk darurat",
       "B": "Latih para penjaga",

@@ -523,11 +523,11 @@
   },
   "mcc_059": {
     "title": "Label pemberi kerja teladan",
-    "body": "Kamu ditawari label pemberi kerja dengan imbalan anggaran komunikasi besar. Terasa seperti label yang dibeli.",
+    "body": "Kamu ditawari label pemberi kerja dengan imbalan anggaran komunikasi yang besar. Ini bisa terlihat seperti penghargaan yang dibeli.",
     "choices": {
       "A": "Tolak: kita perbaiki kenyataannya dulu.",
       "B": "Terima: itu membantu perekrutan.",
-      "C": "Negosiasikan: audit serius + label tanpa omong kosong."
+      "C": "Menegosiasikan audit nyata sebelum label apa pun diberikan"
     }
   },
   "mcc_060": {
@@ -1341,12 +1341,12 @@
     }
   },
   "mcc_150": {
-    "title": "Keynote terlalu panjang",
-    "body": "Keynote-mu berlangsung 90 menit. Di akhir, bahkan teleprompter pun minta jeda.",
+    "title": "Presentasi terlalu panjang",
+    "body": "Presentasimu berlangsung 90 menit. Pada akhirnya, hampir semua orang sudah tidak memperhatikan lagi.",
     "choices": {
       "A": "Pendekkan dan langsung ke inti mulai berikutnya.",
-      "B": "Lanjutkan: visi butuh waktu.",
-      "C": "Tetap panjang, tapi tambahkan demo konkret."
+      "B": "Tetap lanjut dengan mengatakan bahwa format ini diperlukan",
+      "C": "Tetap membuat presentasi panjang, tetapi tambahkan contoh-contoh konkret"
     }
   },
   "mcc_151": {
@@ -1855,7 +1855,7 @@
   },
   "mcc_207": {
     "title": "Minggu penghematan energi",
-    "body": "Pemerintah meluncurkan minggu moderasi energi. Kantormu bersinar seperti stadion.",
+    "body": "Pemerintah meluncurkan pekan penghematan energi. Kantormu tetap terlalu terang.",
     "choices": {
       "A": "Kurangi pencahayaan dan tunjukkan tindakan konkret.",
       "B": "Jangan ubah apa-apa: kami bayar, jadi kami nyalakan.",

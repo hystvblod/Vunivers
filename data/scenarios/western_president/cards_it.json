@@ -1504,7 +1504,7 @@
   },
   "wp_168": {
     "title": "Stadio in rovina",
-    "body": "Un grande stadio deve ospitare una finale. Ispezione: \"tiene insieme per fede\".",
+    "body": "Un grande stadio dovrebbe ospitare una finale, ma l’ispezione rivela che non è in condizioni abbastanza buone.",
     "choices": {
       "A": "Ristrutturazione lampo finanziata dallo Stato.",
       "B": "Spostare l'evento all'estero, sarebbe umiliante.",
@@ -1531,7 +1531,7 @@
   },
   "wp_171": {
     "title": "Cyber-attacco a un ospedale",
-    "body": "Un ospedale è colpito da un cyber-attacco. Il direttore dice: \"scriviamo su carta... come nel 1998\".",
+    "body": "Un ospedale è colpito da un attacco informatico. Il personale deve tornare alla carta, segno di quanto il sistema sia superato.",
     "choices": {
       "A": "Piano cyber-salute + investimento massiccio.",
       "B": "Controffensiva cyber + sanzioni internazionali.",

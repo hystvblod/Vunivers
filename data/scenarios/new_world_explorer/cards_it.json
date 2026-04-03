@@ -946,11 +946,11 @@
   },
   "nw_106": {
     "title": "Borsa bucata",
-    "body": "L esattore perde monete come un albero perde foglie.",
+    "body": "Il responsabile della cassa perde troppe monete e nessuno sa esattamente dove spariscano.",
     "choices": {
-      "A": "Contare tutto davanti a lui",
-      "B": "Dargli un assistente",
-      "C": "Chiudere gli occhi per un mese"
+      "A": "Controllare la cassa con lui, moneta per moneta",
+      "B": "Affiancargli un assistente per controllare tutto",
+      "C": "Non dire nulla per un mese"
     }
   },
   "nw_107": {
@@ -1805,7 +1805,7 @@
     "choices": {
       "A": "Sostituirla",
       "B": "Ripararla localmente",
-      "C": "Passare al fischietto"
+      "C": "Sostituire l’allarme con un fischietto"
     }
   },
   "nw_202": {
@@ -1882,7 +1882,7 @@
   },
   "nw_210": {
     "title": "Fischietto del porto",
-    "body": "Il nuovo fischietto sveglia tutti tranne le persone giuste.",
+    "body": "Il nuovo fischietto avvisa male le guardie e disturba soprattutto gli abitanti.",
     "choices": {
       "A": "Riservarlo alle emergenze",
       "B": "Addestrare le guardie",

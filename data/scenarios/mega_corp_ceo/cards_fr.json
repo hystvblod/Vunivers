@@ -523,11 +523,11 @@
   },
   "mcc_059": {
     "title": "Label employeur exemplaire",
-    "body": "On te propose un label employeur contre un gros budget communication. Ça sent le label acheté.",
+    "body": "On te propose un label employeur en échange d’un gros budget de communication. Cela risque de ressembler à une récompense achetée.",
     "choices": {
       "A": "Refuser: on améliore d’abord le réel.",
       "B": "Accepter: ça aide le recrutement.",
-      "C": "Négocier: audit sérieux + label sans blabla."
+      "C": "Négocier un vrai audit avant toute labellisation"
     }
   },
   "mcc_060": {
@@ -1341,12 +1341,12 @@
     }
   },
   "mcc_150": {
-    "title": "Keynote trop longue",
-    "body": "Ta keynote dure 90 minutes. À la fin, même le prompteur demande une pause.",
+    "title": "Présentation trop longue",
+    "body": "Ta présentation dure 90 minutes. À la fin, presque tout le monde a décroché.",
     "choices": {
       "A": "Raccourcir et aller à l’essentiel dès la prochaine.",
-      "B": "Continuer: \"la vision demande du temps\".",
-      "C": "Garder longue, mais ajouter démonstrations concrètes."
+      "B": "Continuer en disant que ce format est nécessaire",
+      "C": "Garder une présentation longue, mais avec des exemples concrets"
     }
   },
   "mcc_151": {
@@ -1855,7 +1855,7 @@
   },
   "mcc_207": {
     "title": "Semaine de la modération énergie",
-    "body": "Le gouvernement lance une semaine \"modération\". Tes bureaux brillent comme un stade.",
+    "body": "Le gouvernement lance une semaine de modération énergétique. Tes bureaux restent beaucoup trop éclairés.",
     "choices": {
       "A": "Réduire l’éclairage et afficher des gestes concrets.",
       "B": "Ne rien changer: \"on paie, donc on éclaire\".",
