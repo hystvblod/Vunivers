@@ -10,7 +10,7 @@
   },
   "nw_002": {
     "title": "Impuesto del rey",
-    "body": "La corte reclama su parte incluso antes de que la caja respire.",
+    "body": "La corte reclama su parte incluso antes de que el dinero entre de verdad.",
     "choices": {
       "A": "Pagar sin discutir",
       "B": "Retrasar el pago",
@@ -127,7 +127,7 @@
   },
   "nw_015": {
     "title": "Monopolio de la sal",
-    "body": "La sal local vale casi tanto como el oro y menos que los rumores.",
+    "body": "La sal local vale mucho y ya despierta codicia.",
     "choices": {
       "A": "Crear un monopolio",
       "B": "Dejar vender libremente",
@@ -460,7 +460,7 @@
   },
   "nw_052": {
     "title": "Espía hablador",
-    "body": "Un hombre habla demasiado bien nuestra lengua como para ser solo un mercader.",
+    "body": "Un hombre habla nuestra lengua con demasiada facilidad para ser solo un comerciante.",
     "choices": {
       "A": "Darle la vuelta",
       "B": "Expulsarlo",
@@ -901,7 +901,7 @@
   },
   "nw_101": {
     "title": "Barcas demasiado lentas",
-    "body": "Nuestras barcas avanzan como muebles flotantes y el puerto se burla de ellas.",
+    "body": "Nuestras barcas avanzan demasiado despacio y todo el puerto se da cuenta.",
     "choices": {
       "A": "Comprar velas nuevas",
       "B": "Formar mejores remeros",
@@ -928,7 +928,7 @@
   },
   "nw_104": {
     "title": "Mercado bajo la lluvia",
-    "body": "El mercado resiste, pero los puestos casi nadan mejor que los vendedores.",
+    "body": "El mercado sigue pese a la lluvia, pero los puestos están casi bajo el agua.",
     "choices": {
       "A": "Construir toldos",
       "B": "Mover el mercado al fuerte",
@@ -1144,7 +1144,7 @@
   },
   "nw_128": {
     "title": "Mercader encantador",
-    "body": "Un mercader sonríe tanto que conviene revisar su bolsa dos veces.",
+    "body": "Un mercader parece tan amable que resulta aún más sospechoso.",
     "choices": {
       "A": "Firmar un pequeño acuerdo",
       "B": "Ponerlo bajo vigilancia",
@@ -1486,7 +1486,7 @@
   },
   "nw_166": {
     "title": "Oficina demasiado limpia",
-    "body": "El nuevo jefe de la oficina lo ordena todo, sobre todo lo que hay que encontrar.",
+    "body": "El nuevo jefe de oficina lo guarda todo, incluso lo que debería encontrarse rápido.",
     "choices": {
       "A": "Confiar en él",
       "B": "Revisar sus cuentas",
@@ -1531,7 +1531,7 @@
   },
   "nw_171": {
     "title": "Zapatero hablador",
-    "body": "El zapatero sabe todo del puerto y lo dice demasiado bien.",
+    "body": "El zapatero conoce todos los secretos del puerto y habla demasiado.",
     "choices": {
       "A": "Pagarle por su información",
       "B": "Contratarlo en el fuerte",
@@ -1549,7 +1549,7 @@
   },
   "nw_173": {
     "title": "Días de descanso",
-    "body": "Los obreros piden un día de descanso antes de convertirse en estatuas.",
+    "body": "Los obreros piden un día de descanso antes de volver al trabajo.",
     "choices": {
       "A": "Conceder el descanso",
       "B": "Pagar un bonus para seguir",
@@ -1657,7 +1657,7 @@
   },
   "nw_185": {
     "title": "Bodega demasiado llena",
-    "body": "La bodega del barco real se traga todo menos el orden.",
+    "body": "La bodega del barco real está tan llena que la organización empieza a romperse.",
     "choices": {
       "A": "Descargar rápido",
       "B": "Vender una parte allí mismo",
@@ -1729,7 +1729,7 @@
   },
   "nw_193": {
     "title": "Granero caliente",
-    "body": "El granero se calienta demasiado y el grano empieza a pensar.",
+    "body": "El granero se calienta demasiado y las reservas de grano empiezan a estropearse.",
     "choices": {
       "A": "Ventilar el granero",
       "B": "Vender rápido el stock",
@@ -1819,7 +1819,7 @@
   },
   "nw_203": {
     "title": "Niebla burlona",
-    "body": "Una niebla espesa oculta el puerto y vuelve las órdenes muy imaginarias.",
+    "body": "Una niebla espesa oculta el puerto y hace difícil aplicar las órdenes.",
     "choices": {
       "A": "Encender más fuegos",
       "B": "Suspender las salidas",
@@ -1979,7 +1979,6 @@
       "C": "Compartir el riesgo"
     }
   },
-
   "nw_221": {
     "title": "Tienda agujereada",
     "body": "La gran tienda deja entrar el viento como si fuera un invitado conocido.",

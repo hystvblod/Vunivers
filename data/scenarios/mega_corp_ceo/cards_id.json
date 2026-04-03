@@ -640,10 +640,10 @@
   },
   "mcc_072": {
     "title": "Tim di bawah tekanan",
-    "body": "Satu departemen mulai kelelahan berat, tidak sampai drama, tapi benar-benar lelah. Hasil menurun.",
+    "body": "Sebuah tim kelelahan. Belum ada krisis terbuka, tetapi kelelahan itu nyata dan hasil mulai turun.",
     "choices": {
       "A": "Turunkan target dan perkuat jumlah staf.",
-      "B": "Paksa: ini masa intens, kita tahan.",
+      "B": "Menuntut agar mereka terus bertahan meski kelelahan.",
       "C": "Pasang manajer krisis + sistem rotasi."
     }
   },
@@ -901,7 +901,7 @@
   },
   "mcc_101": {
     "title": "Mesin kopi revolusioner",
-    "body": "Mesin pintar baru itu membagikan… kopi tanpa kafein. Terus-menerus. Kantor pusat dalam keadaan genting.",
+    "body": "Mesin kopi baru hanya mengeluarkan kopi tanpa kafein. Seluruh kantor pusat mengeluh.",
     "choices": {
       "A": "Ganti rugi + pasang mesin sederhana yang andal.",
       "B": "Katakan ini detoks kafein resmi.",
@@ -1108,7 +1108,7 @@
   },
   "mcc_124": {
     "title": "Tantangan internal",
-    "body": "Tantangan internal siapa yang menjual paling banyak dimulai. Ini menaikkan semangat… tapi bikin semua orang tegang.",
+    "body": "Sebuah kompetisi internal dimulai untuk memberi penghargaan pada penjualan terbaik. Ini memotivasi, tetapi juga menimbulkan ketegangan.",
     "choices": {
       "A": "Pertahankan tapi tambahkan kriteria etika dan kualitas.",
       "B": "Hentikan: suasana jadi toksik.",
@@ -1243,11 +1243,11 @@
   },
   "mcc_139": {
     "title": "Newsletter internal",
-    "body": "Newsletter internal terdiri dari 18 halaman. Tak ada yang membacanya, tapi semua bilang keren.",
+    "body": "Buletin internal itu panjangnya 18 halaman. Hampir tidak ada yang benar-benar membacanya.",
     "choices": {
       "A": "Beralih ke format singkat dan berguna.",
       "B": "Lanjutkan: ini penting.",
-      "C": "Pertahankan, tapi wajib ada ringkasan singkat."
+      "C": "Tetap pertahankan, tetapi tambahkan ringkasan yang sangat singkat di awal."
     }
   },
   "mcc_140": {
@@ -1315,7 +1315,7 @@
   },
   "mcc_147": {
     "title": "Lencana pengunjung",
-    "body": "Lencana pengunjung begitu ketat sampai kamu sendiri tidak bisa masuk lagi. Simbolis sekali.",
+    "body": "Lencana pengunjung menjadi begitu ketat sampai-sampai bahkan kamu kesulitan masuk ke area tertentu.",
     "choices": {
       "A": "Sederhanakan sambil tetap menjaga keamanan.",
       "B": "Pertahankan: keamanan maksimal.",
@@ -2069,7 +2069,6 @@
       "C": "Pertahankan, tapi opsional menurut jenis pekerjaan, dengan kompensasi."
     }
   },
-
   "mcc_231": {
     "title": "Kemungkinan kontrak publik",
     "body": "Sebuah kontrak publik besar sedang dipertaruhkan. Etalase yang bagus, tapi tuntutan kepatuhannya sangat ketat.",
@@ -2288,11 +2287,11 @@
   },
   "mcc_255": {
     "title": "Foto resmi",
-    "body": "Kamu ditawari foto bersama seorang menteri di depan pabrikmu. Timmu bertanya: senyumnya seberapa lebar?",
+    "body": "Kamu ditawari foto bersama seorang menteri di depan pabrikmu. Timmu bertanya-tanya seberapa jauh sandiwara ini harus dijalankan.",
     "choices": {
       "A": "Terima, tapi tetap sederhana dan faktual.",
       "B": "Tolak: netralitas total.",
-      "C": "Terima hanya jika kamu mengumumkan proyek yang berguna, pelatihan."
+      "C": "Terima hanya jika kamu mengumumkan proyek pelatihan yang nyata dan berguna."
     }
   },
   "mcc_256": {
@@ -2369,7 +2368,7 @@
   },
   "mcc_264": {
     "title": "Label perusahaan teladan",
-    "body": "Sebuah label publik menawarkan lencana teladan. Timmu bilang: baunya seperti stempel pajangan.",
+    "body": "Sebuah label publik menawarkan lencana “teladan”. Timmu khawatir itu hanya terlihat seperti penghargaan kosmetik.",
     "choices": {
       "A": "Terima jika kriterianya ketat dan bisa diaudit.",
       "B": "Tolak: tidak usah pakai lencana.",
@@ -3377,7 +3376,7 @@
   },
   "mcc_376": {
     "title": "Hari tanpa AC saat puncak panas",
-    "body": "Kamu diminta mematikan AC untuk memberi contoh. Suhunya 38°C. Karyawanmu meleleh seperti es.",
+    "body": "Kamu diminta mematikan AC demi memberi contoh. Suhu 38°C dan para karyawan menerimanya dengan sangat buruk.",
     "choices": {
       "A": "Penghematan cerdas: ambang batas, ventilasi, jam kerja yang disesuaikan.",
       "B": "Tolak: kesehatan lebih dulu.",
@@ -3773,7 +3772,7 @@
   },
   "mcc_420": {
     "title": "Minggu pujian untuk otoritas",
-    "body": "Kamu disarankan mengirim pujian ke otoritas pengawas. Pengacaramu: tidak, tidak, tidak.",
+    "body": "Kamu disarankan mengirim pesan yang terlalu menjilat kepada otoritas pengawas. Pengacaramu langsung menolaknya.",
     "choices": {
       "A": "Tetap netral, cukup bekerja sama dengan baik.",
       "B": "Kirim pujian, berisiko canggung.",
@@ -4051,4 +4050,3 @@
     }
   }
 }
-

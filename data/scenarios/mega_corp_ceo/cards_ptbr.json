@@ -640,10 +640,10 @@
   },
   "mcc_072": {
     "title": "Equipe sob pressão",
-    "body": "Um departamento está em burnout, sem drama visível, mas com cansaço real. Os resultados caem.",
+    "body": "Uma equipe está esgotada. Ainda não há uma crise aberta, mas o cansaço é real e os resultados estão caindo.",
     "choices": {
       "A": "Reduzir metas e reforçar a equipe.",
-      "B": "Exigir: \"é um momento intenso, vamos aguentar\".",
+      "B": "Exigir que eles aguentem mais um pouco apesar do cansaço.",
       "C": "Colocar um gerente de crise + rodízios."
     }
   },
@@ -901,7 +901,7 @@
   },
   "mcc_101": {
     "title": "Máquina de café revolucionária",
-    "body": "A nova máquina \"inteligente\" serve... café descafeinado. Sem parar. A sede está em estado de sítio.",
+    "body": "A nova máquina de café só serve descafeinado. A sede inteira está reclamando.",
     "choices": {
       "A": "Reembolsar + instalar uma máquina simples e confiável.",
       "B": "Dizer que é uma \"desintoxicação oficial de cafeína\".",
@@ -1108,7 +1108,7 @@
   },
   "mcc_124": {
     "title": "Desafio interno",
-    "body": "Começa um desafio interno de \"quem vende mais ganha\". Isso impulsiona... mas deixa todo mundo nervoso.",
+    "body": "Começa uma competição interna para premiar as melhores vendas. Isso motiva, mas também cria tensões.",
     "choices": {
       "A": "Manter, mas adicionar critérios éticos e de qualidade.",
       "B": "Parar: clima tóxico.",
@@ -1243,11 +1243,11 @@
   },
   "mcc_139": {
     "title": "Newsletter interna",
-    "body": "A newsletter interna tem 18 páginas. Ninguém lê, mas todo mundo diz \"ótima\".",
+    "body": "A newsletter interna tem 18 páginas. Quase ninguém lê de verdade.",
     "choices": {
       "A": "Passar para um formato curto e útil.",
       "B": "Continuar: \"isso é importante\".",
-      "C": "Manter, mas com resumo obrigatório."
+      "C": "Manter, mas acrescentar um resumo bem curto no começo."
     }
   },
   "mcc_140": {
@@ -1315,7 +1315,7 @@
   },
   "mcc_147": {
     "title": "Crachá de visitante",
-    "body": "Os crachás de visitante são tão rígidos que nem você consegue mais entrar. Simbólico.",
+    "body": "Os crachás de visitante ficaram tão rígidos que até você tem dificuldade para entrar em certas áreas.",
     "choices": {
       "A": "Simplificar mantendo a segurança.",
       "B": "Manter: segurança máxima.",
@@ -2287,11 +2287,11 @@
   },
   "mcc_255": {
     "title": "Foto oficial",
-    "body": "Propõem uma foto sua com um ministro diante da sua fábrica. Suas equipes perguntam: \"a gente sorri quanto?\".",
+    "body": "Oferecem uma foto sua com um ministro em frente à sua fábrica. Suas equipes se perguntam até onde essa encenação deve ir.",
     "choices": {
       "A": "Aceitar, mas manter sobriedade e fatos.",
       "B": "Recusar: neutralidade total.",
-      "C": "Aceitar só se você anunciar um projeto útil, formação."
+      "C": "Aceitar apenas se você anunciar um projeto real e útil de capacitação."
     }
   },
   "mcc_256": {
@@ -2368,7 +2368,7 @@
   },
   "mcc_264": {
     "title": "Selo empresa exemplar",
-    "body": "Um selo público oferece um distintivo de \"exemplar\". Suas equipes dizem: \"isso parece carimbo de vitrine\".",
+    "body": "Um selo público oferece um distintivo “exemplar”. Suas equipes temem que isso pareça um prêmio de fachada.",
     "choices": {
       "A": "Aceitar se os critérios forem rígidos e auditáveis.",
       "B": "Recusar: sem distintivos.",
@@ -3376,7 +3376,7 @@
   },
   "mcc_376": {
     "title": "Dia sem ar-condicionado em pleno calor",
-    "body": "Pedem que você desligue o ar-condicionado \"para dar o exemplo\". Faz 38°C. Seus funcionários derretem.",
+    "body": "Pedem para você desligar o ar-condicionado para dar o exemplo. Está fazendo 38°C e os funcionários estão levando isso muito mal.",
     "choices": {
       "A": "Sobriedade inteligente: limites, ventilação, horários adaptados.",
       "B": "Recusar: saúde em primeiro lugar.",
@@ -3772,7 +3772,7 @@
   },
   "mcc_420": {
     "title": "Semana do elogio às autoridades",
-    "body": "Sugerem que você mande elogios às autoridades. Seu jurídico: \"não, não, não\".",
+    "body": "Sugerem que você envie uma mensagem elogiosa demais às autoridades de controle. Seu jurídico rejeita a ideia na hora.",
     "choices": {
       "A": "Ficar neutro, só cooperar corretamente.",
       "B": "Mandar elogios, risco de constrangimento.",

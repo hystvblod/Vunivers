@@ -10,7 +10,7 @@
   },
   "nw_002": {
     "title": "The King's Tax",
-    "body": "The court demands its share before the treasury can even breathe.",
+    "body": "The court demands its share before the money has even truly come in.",
     "choices": {
       "A": "Pay without arguing",
       "B": "Delay the payment",
@@ -127,7 +127,7 @@
   },
   "nw_015": {
     "title": "Salt Monopoly",
-    "body": "Local salt is worth almost as much as gold and less than rumors.",
+    "body": "Local salt is worth a great deal and is already attracting greed.",
     "choices": {
       "A": "Create a monopoly",
       "B": "Allow free trade",
@@ -460,7 +460,7 @@
   },
   "nw_052": {
     "title": "Talkative Spy",
-    "body": "A man speaks our language too well to be only a merchant.",
+    "body": "A man speaks our language far too easily to be just a merchant.",
     "choices": {
       "A": "Turn him",
       "B": "Expel him",
@@ -901,7 +901,7 @@
   },
   "nw_101": {
     "title": "Boats Too Slow",
-    "body": "Our boats move like floating furniture, and the port laughs at them.",
+    "body": "Our boats move far too slowly, and the whole port can see it.",
     "choices": {
       "A": "Buy new sails",
       "B": "Train better rowers",
@@ -928,7 +928,7 @@
   },
   "nw_104": {
     "title": "Market in the Rain",
-    "body": "The market holds on, but the stalls are almost swimming better than the vendors.",
+    "body": "The market goes on despite the rain, but the stalls are almost underwater.",
     "choices": {
       "A": "Build awnings",
       "B": "Move the market to the fort",
@@ -1144,7 +1144,7 @@
   },
   "nw_128": {
     "title": "Charming Merchant",
-    "body": "A merchant smiles so much that we check his purse twice.",
+    "body": "A merchant seems so friendly that it only makes him more suspicious.",
     "choices": {
       "A": "Sign a small deal",
       "B": "Put him under watch",
@@ -1486,7 +1486,7 @@
   },
   "nw_166": {
     "title": "Office Too Clean",
-    "body": "The new office chief stores everything neatly, especially what must be found.",
+    "body": "The new office chief puts everything away, including what should be easy to find quickly.",
     "choices": {
       "A": "Trust him",
       "B": "Check his accounts",
@@ -1531,7 +1531,7 @@
   },
   "nw_171": {
     "title": "Talkative Shoemaker",
-    "body": "The shoemaker knows everything about the port and says it too well.",
+    "body": "The shoemaker knows every secret of the port and talks far too much.",
     "choices": {
       "A": "Pay him for information",
       "B": "Hire him at the fort",
@@ -1549,7 +1549,7 @@
   },
   "nw_173": {
     "title": "Days of Rest",
-    "body": "The workers are asking for a day off before they turn into statues.",
+    "body": "The workers ask for one day of rest before getting back to work.",
     "choices": {
       "A": "Grant the rest day",
       "B": "Pay a bonus to keep going",
@@ -1657,7 +1657,7 @@
   },
   "nw_185": {
     "title": "Overloaded Hold",
-    "body": "The royal ship's hold swallows everything except order.",
+    "body": "The hold of the royal ship is so full that organization is starting to break down.",
     "choices": {
       "A": "Unload quickly",
       "B": "Sell part of it on site",
@@ -1729,7 +1729,7 @@
   },
   "nw_193": {
     "title": "Hot Granary",
-    "body": "The granary is getting too hot, and the grain is starting to think.",
+    "body": "The granary is getting too hot, and the grain stock is starting to spoil.",
     "choices": {
       "A": "Air out the granary",
       "B": "Sell the stock quickly",
@@ -1819,7 +1819,7 @@
   },
   "nw_203": {
     "title": "Laughing Fog",
-    "body": "A thick fog hides the port and turns orders into imagination.",
+    "body": "A thick fog hides the port and makes orders hard to carry out.",
     "choices": {
       "A": "Light more fires",
       "B": "Suspend departures",
@@ -1979,7 +1979,6 @@
       "C": "Share the risk"
     }
   },
-
   "nw_221": {
     "title": "Torn Tent",
     "body": "The large tent lets the wind in like a familiar guest.",

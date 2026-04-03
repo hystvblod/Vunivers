@@ -1,4 +1,4 @@
-{
+﻿{
   "nw_001": {
     "title": "Port naturel",
     "body": "Une baie parfaite peut devenir notre porte d’entrée ou un simple arrêt.",
@@ -10,7 +10,7 @@
   },
   "nw_002": {
     "title": "Impôt du roi",
-    "body": "La cour réclame sa part avant même que la caisse respire.",
+    "body": "La cour réclame sa part avant même que l’argent n’entre vraiment.",
     "choices": {
       "A": "Payer sans discuter",
       "B": "Retarder le paiement",
@@ -127,7 +127,7 @@
   },
   "nw_015": {
     "title": "Monopole du sel",
-    "body": "Le sel local vaut presque autant que l’or et moins que les rumeurs.",
+    "body": "Le sel local vaut très cher et attire déjà les convoitises.",
     "choices": {
       "A": "Créer un monopole",
       "B": "Laisser vendre librement",
@@ -460,7 +460,7 @@
   },
   "nw_052": {
     "title": "Espion bavard",
-    "body": "Un homme parle trop bien notre langue pour être seulement marchand.",
+    "body": "Un homme parle notre langue bien trop facilement pour être un simple marchand.",
     "choices": {
       "A": "Le retourner",
       "B": "L’expulser",
@@ -901,7 +901,7 @@
   },
   "nw_101": {
     "title": "Barques trop lentes",
-    "body": "Nos barques avancent comme des meubles flottants et le port s’en moque.",
+    "body": "Nos barques avancent trop lentement et tout le port s’en rend compte.",
     "choices": {
       "A": "Acheter des voiles neuves",
       "B": "Former de meilleurs rameurs",
@@ -928,7 +928,7 @@
   },
   "nw_104": {
     "title": "Marché sous la pluie",
-    "body": "Le marché tient bon mais les étals nagent presque mieux que les vendeurs.",
+    "body": "Le marché continue malgré la pluie, mais les étals sont presque sous l’eau.",
     "choices": {
       "A": "Bâtir des auvents",
       "B": "Déplacer le marché au fort",
@@ -1144,7 +1144,7 @@
   },
   "nw_128": {
     "title": "Marchand charmant",
-    "body": "Un marchand sourit tant qu’on vérifie sa bourse deux fois.",
+    "body": "Un marchand paraît si aimable qu’on se méfie encore plus de lui.",
     "choices": {
       "A": "Signer un petit accord",
       "B": "Le faire surveiller",
@@ -1486,7 +1486,7 @@
   },
   "nw_166": {
     "title": "Bureau trop propre",
-    "body": "Le nouveau chef du bureau range tout, surtout ce qu’il faut trouver.",
+    "body": "Le nouveau chef du bureau range tout, y compris ce qu’il faudrait retrouver vite.",
     "choices": {
       "A": "Lui faire confiance",
       "B": "Vérifier ses comptes",
@@ -1531,7 +1531,7 @@
   },
   "nw_171": {
     "title": "Cordonnier bavard",
-    "body": "Le cordonnier sait tout du port et le dit trop bien.",
+    "body": "Le cordonnier connaît tous les secrets du port et parle beaucoup trop.",
     "choices": {
       "A": "Le payer pour ses infos",
       "B": "L’embaucher au fort",
@@ -1549,7 +1549,7 @@
   },
   "nw_173": {
     "title": "Jours de repos",
-    "body": "Les ouvriers réclament un jour de repos avant de devenir des statues.",
+    "body": "Les ouvriers demandent un jour de repos avant de reprendre le travail.",
     "choices": {
       "A": "Accorder le repos",
       "B": "Payer un bonus pour continuer",
@@ -1657,7 +1657,7 @@
   },
   "nw_185": {
     "title": "Cale trop pleine",
-    "body": "La cale du navire royal avale tout sauf l’ordre.",
+    "body": "La cale du navire royal est tellement pleine que l’organisation commence à céder.",
     "choices": {
       "A": "Décharger vite",
       "B": "Vendre une part sur place",
@@ -1729,7 +1729,7 @@
   },
   "nw_193": {
     "title": "Grenier chaud",
-    "body": "Le grenier chauffe trop et le grain commence à réfléchir.",
+    "body": "Le grenier chauffe trop et le stock de grain commence à s’abîmer.",
     "choices": {
       "A": "Aérer le grenier",
       "B": "Vendre vite le stock",
@@ -1819,7 +1819,7 @@
   },
   "nw_203": {
     "title": "Brouillard rieur",
-    "body": "Un brouillard épais cache le port et rend les ordres très imaginaires.",
+    "body": "Un brouillard épais cache le port et rend les ordres difficiles à faire appliquer.",
     "choices": {
       "A": "Allumer plus de feux",
       "B": "Suspendre les départs",

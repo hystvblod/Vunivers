@@ -640,10 +640,10 @@
   },
   "mcc_072": {
     "title": "Team sotto pressione",
-    "body": "Un reparto è in burnout, senza drammi, ma con stanchezza reale. I risultati calano.",
+    "body": "Un team è esausto. Non c’è ancora una crisi aperta, ma la stanchezza è reale e i risultati peggiorano.",
     "choices": {
       "A": "Ridurre gli obiettivi e rafforzare gli organici.",
-      "B": "Pretendere: è un momento intenso, resistiamo.",
+      "B": "Pretendere che resistano ancora nonostante la stanchezza.",
       "C": "Mettere un manager di crisi + rotazioni."
     }
   },
@@ -901,7 +901,7 @@
   },
   "mcc_101": {
     "title": "Macchina del caffè rivoluzionaria",
-    "body": "La nuova macchina intelligente distribuisce… decaffeinato. In loop. La sede è sotto assedio.",
+    "body": "La nuova macchina del caffè serve solo decaffeinato. Tutta la sede si lamenta.",
     "choices": {
       "A": "Rimborsare + installare una macchina semplice e affidabile.",
       "B": "Dire che è una detossinazione ufficiale dalla caffeina.",
@@ -1108,7 +1108,7 @@
   },
   "mcc_124": {
     "title": "Sfida interna",
-    "body": "Parte una sfida interna chi vende di più vince. Spinge… ma rende tutti nervosi.",
+    "body": "Parte un concorso interno per premiare le migliori vendite. Motiva, ma crea anche tensioni.",
     "choices": {
       "A": "Tenerla ma aggiungere criteri etici/qualitativi.",
       "B": "Fermarla: clima tossico.",
@@ -1243,11 +1243,11 @@
   },
   "mcc_139": {
     "title": "Newsletter interna",
-    "body": "La newsletter interna è lunga 18 pagine. Nessuno la legge, ma tutti dicono super.",
+    "body": "La newsletter interna è lunga 18 pagine. Quasi nessuno la legge davvero.",
     "choices": {
       "A": "Passare a un formato breve e utile.",
       "B": "Continuare: è importante.",
-      "C": "Tenerla, ma con TL;DR obbligatorio."
+      "C": "Mantenerla, ma aggiungere un riassunto molto breve all’inizio."
     }
   },
   "mcc_140": {
@@ -1315,7 +1315,7 @@
   },
   "mcc_147": {
     "title": "Badge visitatore",
-    "body": "I badge visitatore sono così rigidi che nemmeno tu riesci più a entrare. Simbolico.",
+    "body": "I badge visitatori sono diventati così rigidi che persino tu fai fatica a entrare in alcuni spazi.",
     "choices": {
       "A": "Semplificare mantenendo la sicurezza.",
       "B": "Tenere così: sicurezza massima.",
@@ -2287,11 +2287,11 @@
   },
   "mcc_255": {
     "title": "Foto ufficiale",
-    "body": "Ti propongono una foto con un ministro davanti alla tua fabbrica. I tuoi team chiedono: quanto dobbiamo sorridere?",
+    "body": "Ti propongono una foto con un ministro davanti alla tua fabbrica. I tuoi team si chiedono fin dove spingere la messa in scena.",
     "choices": {
       "A": "Accettare, ma restare sobrio e concreto.",
       "B": "Rifiutare: neutralità totale.",
-      "C": "Accettare solo se annunci un progetto utile, formazione."
+      "C": "Accettare solo se annunci un vero progetto utile di formazione."
     }
   },
   "mcc_256": {
@@ -2368,7 +2368,7 @@
   },
   "mcc_264": {
     "title": "Etichetta impresa esemplare",
-    "body": "Un'etichetta pubblica propone un badge esemplare. I tuoi team dicono: sa di timbro da vetrina.",
+    "body": "Un marchio pubblico propone un badge “esemplare”. I tuoi team temono che sembri una ricompensa di facciata.",
     "choices": {
       "A": "Accettare se i criteri sono rigorosi e verificabili.",
       "B": "Rifiutare: niente badge.",
@@ -3376,7 +3376,7 @@
   },
   "mcc_376": {
     "title": "Giornata senza aria condizionata in piena estate",
-    "body": "Ti chiedono di spegnere l'aria condizionata per dare l'esempio. Ci sono 38°C. I tuoi dipendenti si sciolgono come ghiaccioli.",
+    "body": "Ti chiedono di spegnere l’aria condizionata per dare l’esempio. Ci sono 38°C e i dipendenti la vivono molto male.",
     "choices": {
       "A": "Sobrietà intelligente: soglie, ventilazione, orari adattati.",
       "B": "Rifiutare: prima la salute.",
@@ -3772,7 +3772,7 @@
   },
   "mcc_420": {
     "title": "Settimana del complimento alle autorità",
-    "body": "Ti suggeriscono di inviare complimenti alle autorità di controllo. Il tuo legale: no, no, no.",
+    "body": "Ti suggeriscono di inviare un messaggio troppo lusinghiero alle autorità di controllo. Il tuo legale si oppone subito.",
     "choices": {
       "A": "Restare neutrale, solo collaborare correttamente.",
       "B": "Inviare complimenti, rischio grande imbarazzo.",

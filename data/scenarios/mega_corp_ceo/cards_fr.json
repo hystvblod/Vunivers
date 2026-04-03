@@ -1,4 +1,4 @@
-{
+﻿{
   "mcc_001": {
     "title": "Grève éclair",
     "body": "Les employés des centres logistiques annoncent une grève surprise. Les livraisons sont en retard.",
@@ -640,10 +640,10 @@
   },
   "mcc_072": {
     "title": "Équipe sous pression",
-    "body": "Un département est en burn-out, sans drame, mais fatigue réelle. Les résultats chutent.",
+    "body": "Une équipe est épuisée. Il n’y a pas encore de crise ouverte, mais la fatigue est réelle et les résultats chutent.",
     "choices": {
       "A": "Réduire les objectifs et renforcer les effectifs.",
-      "B": "Exiger: \"c’est un moment intense, on tient\".",
+      "B": "Exiger qu’ils tiennent encore malgré la fatigue.",
       "C": "Mettre un manager de crise + rotations."
     }
   },
@@ -901,7 +901,7 @@
   },
   "mcc_101": {
     "title": "Machine à café révolutionnaire",
-    "body": "La nouvelle machine \"intelligente\" distribue… du déca. En boucle. Le siège est en état de siège.",
+    "body": "La nouvelle machine à café distribue seulement du déca. Tout le siège se plaint.",
     "choices": {
       "A": "Rembourser + installer une machine simple et fiable.",
       "B": "Dire que c’est une \"détox caféine\" officielle.",
@@ -1108,7 +1108,7 @@
   },
   "mcc_124": {
     "title": "Challenge interne",
-    "body": "Un challenge interne \"qui vend le plus gagne\" démarre. Ça booste… mais ça rend tout le monde nerveux.",
+    "body": "Un concours interne démarre pour récompenser les meilleures ventes. Cela motive, mais crée aussi des tensions.",
     "choices": {
       "A": "Garder mais ajouter des critères éthiques/qualité.",
       "B": "Stopper: ambiance toxique.",
@@ -1243,11 +1243,11 @@
   },
   "mcc_139": {
     "title": "Newsletter interne",
-    "body": "La newsletter interne fait 18 pages. Personne ne la lit, mais tout le monde dit \"super\".",
+    "body": "La newsletter interne fait 18 pages. Presque personne ne la lit vraiment.",
     "choices": {
       "A": "Passer à un format court et utile.",
       "B": "Continuer: \"c’est important\".",
-      "C": "Garder, mais avec TL; DR obligatoire."
+      "C": "Garder, mais ajouter un résumé très court au début."
     }
   },
   "mcc_140": {
@@ -1315,7 +1315,7 @@
   },
   "mcc_147": {
     "title": "Badge visiteur",
-    "body": "Les badges visiteurs sont si stricts que même toi tu n’arrives plus à entrer. Symbolique.",
+    "body": "Les badges visiteurs sont devenus si stricts que même toi, tu as du mal à entrer dans certains espaces.",
     "choices": {
       "A": "Simplifier tout en gardant la sécurité.",
       "B": "Garder: sécurité maximale.",
@@ -2287,11 +2287,11 @@
   },
   "mcc_255": {
     "title": "Photo officielle",
-    "body": "On te propose une photo avec un ministre devant ton usine. Tes équipes demandent: \"on sourit combien?\".",
+    "body": "On te propose une photo avec un ministre devant ton usine. Tes équipes se demandent jusqu’où il faut jouer la mise en scène.",
     "choices": {
       "A": "Accepter, mais rester sobre et factuel.",
       "B": "Refuser: neutralité totale.",
-      "C": "Accepter seulement si tu annonces un projet utile, formation"
+      "C": "Accepter seulement si tu annonces un vrai projet utile de formation."
     }
   },
   "mcc_256": {
@@ -2368,7 +2368,7 @@
   },
   "mcc_264": {
     "title": "Label entreprise exemplaire",
-    "body": "Un label public propose un badge \"exemplaire\". Tes équipes disent: \"Ça sent le tampon pour la vitrine\".",
+    "body": "Un label public propose un badge \"exemplaire\". Tes équipes ont peur que cela ressemble à une récompense de façade.",
     "choices": {
       "A": "Accepter si les critères sont stricts et auditables.",
       "B": "Refuser: pas de badges.",
@@ -3376,7 +3376,7 @@
   },
   "mcc_376": {
     "title": "Journée sans clim en pleine",
-    "body": "On te demande de couper la clim \"pour l’exemple\". Il fait 38°C. Tes employés fondent comme des glaçons.",
+    "body": "On te demande de couper la clim pour montrer l’exemple. Il fait 38°C et les employés le vivent très mal.",
     "choices": {
       "A": "Sobriété intelligente: seuils, ventilation, horaires adaptés.",
       "B": "Refuser: santé d’abord.",
@@ -3772,7 +3772,7 @@
   },
   "mcc_420": {
     "title": "Semaine du compliment aux",
-    "body": "On te suggère d’envoyer des compliments aux autorités de contrôle. Ton juriste: \"non, non, non\".",
+    "body": "On te suggère d’envoyer un message trop flatteur aux autorités de contrôle. Ton juriste s’y oppose immédiatement.",
     "choices": {
       "A": "Rester neutre, juste coopérer correctement.",
       "B": "Envoyer des compliments, risque de malaise.",
