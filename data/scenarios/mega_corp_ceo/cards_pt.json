@@ -640,10 +640,10 @@
   },
   "mcc_072": {
     "title": "Equipa sob pressão",
-    "body": "Um departamento está em burnout, sem drama, mas com fadiga real. Os resultados caem.",
+    "body": "Uma equipa está esgotada. Ainda não há uma crise aberta, mas o cansaço é real e os resultados estão a cair.",
     "choices": {
       "A": "Reduzir os objetivos e reforçar a equipa.",
-      "B": "Exigir mais: \"é um momento intenso, aguentamos\".",
+      "B": "Exigir que aguentem mais um pouco apesar do cansaço.",
       "C": "Colocar um gestor de crise + rotações."
     }
   },
@@ -901,7 +901,7 @@
   },
   "mcc_101": {
     "title": "Máquina de café revolucionária",
-    "body": "A nova máquina \"inteligente\" distribui... descafeinado. Sem parar. A sede está em estado de sítio.",
+    "body": "A nova máquina de café só serve descafeinado. Toda a sede se queixa.",
     "choices": {
       "A": "Reembolsar + instalar uma máquina simples e fiável.",
       "B": "Dizer que é uma \"desintoxicação de cafeína\" oficial.",
@@ -1108,7 +1108,7 @@
   },
   "mcc_124": {
     "title": "Desafio interno",
-    "body": "Arranca um desafio interno \"quem vende mais ganha\". Dá impulso... mas deixa toda a gente nervosa.",
+    "body": "Arranca um concurso interno para premiar as melhores vendas. Motiva, mas também cria tensões.",
     "choices": {
       "A": "Manter, mas acrescentar critérios éticos/de qualidade.",
       "B": "Parar: ambiente tóxico.",
@@ -1243,11 +1243,11 @@
   },
   "mcc_139": {
     "title": "Newsletter interna",
-    "body": "A newsletter interna tem 18 páginas. Ninguém a lê, mas toda a gente diz \"ótimo\".",
+    "body": "A newsletter interna tem 18 páginas. Quase ninguém a lê a sério.",
     "choices": {
       "A": "Passar a um formato curto e útil.",
       "B": "Continuar: \"é importante\".",
-      "C": "Manter, mas com TL;DR obrigatório."
+      "C": "Manter, mas acrescentar um resumo muito curto no início."
     }
   },
   "mcc_140": {
@@ -1315,7 +1315,7 @@
   },
   "mcc_147": {
     "title": "Crachá de visitante",
-    "body": "Os crachás de visitante são tão rigorosos que nem tu consegues entrar. Simbólico.",
+    "body": "Os crachás de visitante tornaram-se tão rígidos que até tu tens dificuldade em entrar em certas áreas.",
     "choices": {
       "A": "Simplificar mantendo a segurança.",
       "B": "Manter: segurança máxima.",
@@ -2069,7 +2069,6 @@
       "C": "Manter, mas opcional consoante as funções, com compensação."
     }
   },
-
   "mcc_231": {
     "title": "Possível contrato público",
     "body": "Está em jogo um grande contrato público. Boa montra, mas com exigências rigorosas de cumprimento das regras.",
@@ -2288,11 +2287,11 @@
   },
   "mcc_255": {
     "title": "Fotografia oficial",
-    "body": "Propõem-te uma fotografia com um ministro diante da tua fábrica. As tuas equipas perguntam: \"sorrimos quanto?\".",
+    "body": "Propõem-te uma fotografia com um ministro em frente à tua fábrica. As tuas equipas perguntam-se até onde esta encenação deve ir.",
     "choices": {
       "A": "Aceitar, mas manter sobriedade e factos.",
       "B": "Recusar: neutralidade total.",
-      "C": "Aceitar apenas se anunciares um projeto útil, formação"
+      "C": "Aceitar apenas se anunciares um verdadeiro projeto útil de formação."
     }
   },
   "mcc_256": {
@@ -2369,7 +2368,7 @@
   },
   "mcc_264": {
     "title": "Selo de empresa exemplar",
-    "body": "Um selo público propõe-te um distintivo \"exemplar\". As tuas equipas dizem: \"Cheira a carimbo para a montra\".",
+    "body": "Um selo público propõe um distintivo “exemplar”. As tuas equipas receiam que isso pareça um prémio de fachada.",
     "choices": {
       "A": "Aceitar se os critérios forem rigorosos e auditáveis.",
       "B": "Recusar: nada de selos.",
@@ -3377,7 +3376,7 @@
   },
   "mcc_376": {
     "title": "Dia sem ar condicionado em plena onda",
-    "body": "Pedem-te para desligar o ar condicionado \"pelo exemplo\". Estão 38°C. Os teus empregados derretem como cubos de gelo.",
+    "body": "Pedem-te para cortar o ar condicionado para dar o exemplo. Estão 38°C e os funcionários estão a reagir muito mal.",
     "choices": {
       "A": "Sobriedade inteligente: limites, ventilação, horários adaptados.",
       "B": "Recusar: saúde primeiro.",
@@ -3773,7 +3772,7 @@
   },
   "mcc_420": {
     "title": "Semana do elogio às",
-    "body": "Sugerem-te enviar elogios às autoridades de controlo. O teu jurista: \"não, não, não\".",
+    "body": "Sugerem-te enviar uma mensagem demasiado elogiosa às autoridades de controlo. O teu jurista opõe-se de imediato.",
     "choices": {
       "A": "Ficar neutro, apenas cooperar corretamente.",
       "B": "Enviar elogios, risco de embaraço.",

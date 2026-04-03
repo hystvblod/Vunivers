@@ -10,7 +10,7 @@
   },
   "nw_002": {
     "title": "Imposto do rei",
-    "body": "A corte exige sua parte antes mesmo que o caixa respire.",
+    "body": "A corte exige sua parte antes mesmo de o dinheiro entrar de verdade.",
     "choices": {
       "A": "Pagar sem discutir",
       "B": "Adiar o pagamento",
@@ -127,7 +127,7 @@
   },
   "nw_015": {
     "title": "Monopólio do sal",
-    "body": "O sal local vale quase tanto quanto o ouro e menos do que os rumores.",
+    "body": "O sal local vale muito e já desperta cobiça.",
     "choices": {
       "A": "Criar um monopólio",
       "B": "Deixar vender livremente",
@@ -460,7 +460,7 @@
   },
   "nw_052": {
     "title": "Espião falador",
-    "body": "Um homem fala nossa língua bem demais para ser apenas comerciante.",
+    "body": "Um homem fala nossa língua com facilidade demais para ser apenas um comerciante.",
     "choices": {
       "A": "Virá-lo para nosso lado",
       "B": "Expulsá-lo",
@@ -901,7 +901,7 @@
   },
   "nw_101": {
     "title": "Barcos lentos demais",
-    "body": "Nossos barcos avançam como móveis flutuantes e o porto zomba deles.",
+    "body": "Nossos barcos andam devagar demais, e o porto inteiro já percebeu isso.",
     "choices": {
       "A": "Comprar velas novas",
       "B": "Treinar remadores melhores",
@@ -928,7 +928,7 @@
   },
   "nw_104": {
     "title": "Mercado sob chuva",
-    "body": "O mercado resiste, mas as bancas quase nadam melhor do que os vendedores.",
+    "body": "O mercado continua apesar da chuva, mas as barracas estão quase debaixo d’água.",
     "choices": {
       "A": "Construir coberturas",
       "B": "Levar o mercado para o forte",
@@ -1144,7 +1144,7 @@
   },
   "nw_128": {
     "title": "Mercador encantador",
-    "body": "Um mercador sorri tanto que dá vontade de conferir sua bolsa duas vezes.",
+    "body": "Um comerciante parece tão simpático que isso o torna ainda mais suspeito.",
     "choices": {
       "A": "Assinar um pequeno acordo",
       "B": "Mandar vigiá-lo",
@@ -1486,7 +1486,7 @@
   },
   "nw_166": {
     "title": "Escritório arrumado demais",
-    "body": "O novo chefe do escritório guarda tudo, especialmente o que deveria ser encontrado.",
+    "body": "O novo chefe do escritório guarda tudo, inclusive o que deveria ser encontrado rapidamente.",
     "choices": {
       "A": "Confiar nele",
       "B": "Verificar suas contas",
@@ -1531,7 +1531,7 @@
   },
   "nw_171": {
     "title": "Sapateiro falador",
-    "body": "O sapateiro sabe tudo do porto e fala disso bem demais.",
+    "body": "O sapateiro conhece todos os segredos do porto e fala demais.",
     "choices": {
       "A": "Pagá-lo por suas informações",
       "B": "Contratá-lo no forte",
@@ -1549,7 +1549,7 @@
   },
   "nw_173": {
     "title": "Dias de descanso",
-    "body": "Os operários exigem um dia de descanso antes de virarem estátuas.",
+    "body": "Os trabalhadores pedem um dia de descanso antes de voltar ao trabalho.",
     "choices": {
       "A": "Conceder descanso",
       "B": "Pagar um bônus para continuarem",
@@ -1657,7 +1657,7 @@
   },
   "nw_185": {
     "title": "Porão cheio demais",
-    "body": "O porão do navio real engole tudo, menos a ordem.",
+    "body": "O porão do navio real está tão cheio que a organização começa a falhar.",
     "choices": {
       "A": "Descarregar logo",
       "B": "Vender uma parte ali mesmo",
@@ -1729,7 +1729,7 @@
   },
   "nw_193": {
     "title": "Celeiro quente",
-    "body": "O celeiro esquenta demais, e o grão começa a pensar.",
+    "body": "O celeiro está quente demais, e o estoque de grãos começa a estragar.",
     "choices": {
       "A": "Ventilar o celeiro",
       "B": "Vender logo o estoque",
@@ -1819,7 +1819,7 @@
   },
   "nw_203": {
     "title": "Névoa zombeteira",
-    "body": "Uma névoa espessa esconde o porto e torna as ordens muito imaginárias.",
+    "body": "Uma névoa espessa encobre o porto e dificulta fazer cumprir as ordens.",
     "choices": {
       "A": "Acender mais fogueiras",
       "B": "Suspender as partidas",
@@ -1979,7 +1979,6 @@
       "C": "Compartilhar o risco"
     }
   },
-
   "nw_221": {
     "title": "Tenda furada",
     "body": "A grande tenda deixa o vento entrar como um convidado conhecido.",

@@ -136,7 +136,7 @@
   },
   "vampire_016": {
     "title": "Veganes Blut",
-    "body": "Menschen verkaufen angeblich ethisches Blut. Es riecht nach Betrug und Polizei.",
+    "body": "Menschen verkaufen Blut, das als ethisch dargestellt wird. Es wirkt vor allem wie eine Falle.",
     "choices": {
       "A": "Zum Testen kaufen",
       "B": "Den Handel zerstören",
@@ -190,7 +190,7 @@
   },
   "vampire_022": {
     "title": "Der höfliche Jäger",
-    "body": "Ein Jäger bittet um ein Treffen. Er lächelt zu sehr. Er weiß etwas.",
+    "body": "Ein Jäger will dich treffen. Er scheint bereits etwas über dich zu wissen.",
     "choices": {
       "A": "Ihn anhören",
       "B": "Ihn in eine Falle locken",
@@ -775,7 +775,7 @@
   },
   "vampire_087": {
     "title": "Der zu nette Fahrer",
-    "body": "Er erzählt überall, dass du nie schläfst. Nett gemeint. Vor allem gefährlich.",
+    "body": "Er erzählt überall, dass du nie schläfst. Vielleicht meint er es nicht böse, aber für den Clan ist das gefährlich.",
     "choices": {
       "A": "Ihn behalten, aber in Grenzen halten",
       "B": "Ihn schnell ersetzen",
@@ -883,7 +883,7 @@
   },
   "vampire_099": {
     "title": "Der Gärtner-Nachbar",
-    "body": "Er ist nett, lächelt, und liebt kleine Schaufeln. Alles, was du gerade verabscheust.",
+    "body": "Dein Nachbar wirkt freundlich, aber er kommt viel zu oft an deinem versteckten Eingang vorbei.",
     "choices": {
       "A": "Ihn mit einem Geschenk ablenken",
       "B": "Den geheimen Eingang verändern",
@@ -955,7 +955,7 @@
   },
   "vampire_107": {
     "title": "Der durchstochene Blutbeutel",
-    "body": "Eine rote Spur wie ein Ariadnefaden. Nur dass dein Labyrinth Zähne hat.",
+    "body": "Eine Blutspur führt fast direkt bis zum Versteck. Wenn ihr jemand folgt, ist der Clan aufgedeckt.",
     "choices": {
       "A": "Der Spur folgen",
       "B": "Alle bestrafen",
@@ -964,7 +964,7 @@
   },
   "vampire_108": {
     "title": "Der Überraschungsbesuch",
-    "body": "Er lächelt wie ein König auf Reisen. Er betrachtet dein Versteck, als gehöre es ihm schon.",
+    "body": "Er kommt viel zu selbstsicher an und mustert dein Versteck, als würde er es schon kennen.",
     "choices": {
       "A": "Ihn respektvoll empfangen",
       "B": "Ihn draußen warten lassen",
@@ -991,7 +991,7 @@
   },
   "vampire_111": {
     "title": "Der Geruch der Lüge",
-    "body": "Lügen haben einen Geruch. Du kennst ihn zu gut. Die Frage ist, warum er gerade jetzt lügt.",
+    "body": "Du merkst, dass er lügt. Das eigentliche Problem ist zu verstehen, warum er gerade jetzt lügt.",
     "choices": {
       "A": "Ihn zur Rede stellen",
       "B": "Ihn stillschweigend testen",
@@ -1018,7 +1018,7 @@
   },
   "vampire_114": {
     "title": "Der zu redselige Kellner",
-    "body": "Er sagt, du seist geheimnisvoll. Er imitiert deinen Gang. Er fügt Details hinzu. Details sind Messer.",
+    "body": "Er redet zu viel über dich, ahmt dich nach und fügt unnötige Details hinzu. Je mehr er sagt, desto gefährlicher wird er.",
     "choices": {
       "A": "Ihn freundlich zurechtweisen",
       "B": "Ihn entlassen",
@@ -1027,7 +1027,7 @@
   },
   "vampire_115": {
     "title": "Das anonyme Paket",
-    "body": "Das Paket riecht nicht nach Mensch. Es riecht nach etwas Uraltem. Und es ist viel zu leicht bis zu dir gekommen.",
+    "body": "Das Paket ist ganz offensichtlich ungewöhnlich, und es hat dich viel zu leicht erreicht.",
     "choices": {
       "A": "Es vorsichtig öffnen",
       "B": "Es verbrennen",
@@ -1045,7 +1045,7 @@
   },
   "vampire_117": {
     "title": "Der Nachtmusiker",
-    "body": "Er spielt zu gut. Als wolle er jemanden anlocken. Die Frage ist nur wen.",
+    "body": "Er spielt, als wollte er ganz bewusst jemanden anlocken. Die Frage ist nur: wen.",
     "choices": {
       "A": "Ihn vertreiben",
       "B": "Ihn rekrutieren",
@@ -1333,7 +1333,7 @@
   },
   "vampire_149": {
     "title": "Die Kerze, die nicht ausgeht",
-    "body": "Die Flamme tanzt, als würde sie dich ansehen. Eine Flamme, die schaut, ist selten ein gutes Zeichen.",
+    "body": "Die Flamme verhält sich auf unnatürliche Weise, als würde sie auf deine Anwesenheit reagieren.",
     "choices": {
       "A": "Sie mit Gewalt löschen",
       "B": "Das Ritual verstehen",
@@ -1387,7 +1387,7 @@
   },
   "vampire_155": {
     "title": "Das Fest der Nachbarn",
-    "body": "Musik, Lachen, zerbrochene Gläser. Und du musst unter ihren Füßen wie ein nervöses Geheimnis hindurch.",
+    "body": "Das Fest versperrt dir den Weg und zwingt dich, durch eine Menschenmenge zu gehen, die dem Versteck viel zu nahe ist.",
     "choices": {
       "A": "Das Fest unterbrechen",
       "B": "Bis zum Ende warten",
@@ -1522,7 +1522,7 @@
   },
   "vampire_170": {
     "title": "Die Flüsterin",
-    "body": "Sie flieht nicht. Sie flüstert. Und die Schatten antworten fast. Das geschieht nie ohne Preis.",
+    "body": "Sie flieht nicht. Sie flüstert und scheint etwas aus den Schatten herbeizurufen. Das ist nicht normal.",
     "choices": {
       "A": "Dich ihr behutsam nähern",
       "B": "Sie mit Angst vertreiben",
@@ -1828,7 +1828,7 @@
   },
   "vampire_204": {
     "title": "Das verbotene Buch",
-    "body": "Ein Grimoire aus dem Versteck verschwindet. Und der Letzte, der es berührt hat, lächelt viel zu sehr.",
+    "body": "Ein Grimoire aus dem Versteck verschwindet, und die letzte Person, die es berührt hat, wirkt viel zu ruhig.",
     "choices": {
       "A": "Den ganzen Clan durchsuchen",
       "B": "Eine Amnestie anbieten",
@@ -1979,7 +1979,6 @@
       "C": "Es in einen Geheimcode verwandeln"
     }
   },
-
   "vampire_221": {
     "title": "Die Nachtbar",
     "body": "Eine Bar wird zu deinem neuen Jagdgebiet. Aber der Besitzer stellt zu viele Fragen.",
@@ -2009,7 +2008,7 @@
   },
   "vampire_224": {
     "title": "Das präparierte Paket",
-    "body": "Ein Paket kommt im Versteck an. Zu sauber. Zu ordentlich verpackt. Zu verdächtig.",
+    "body": "Ein Paket kommt in einem so perfekten Zustand im Versteck an, dass es eher beunruhigend wirkt.",
     "choices": {
       "A": "Es vorsichtig öffnen",
       "B": "Es zurückschicken",
@@ -2441,7 +2440,7 @@
   },
   "vampire_272": {
     "title": "Die Anti-Geheimnis-Gruppe",
-    "body": "Eine menschliche Gruppe kämpft gegen das Geheimnis. Sie hängt Flugblätter auf. Sie sucht einen Anführer.",
+    "body": "Eine menschliche Gruppe will alles aufdecken, was sich in der Stadt verbirgt. Sie klebt Plakate und sucht ein Sprachrohr.",
     "choices": {
       "A": "Die Gruppe auflösen",
       "B": "Die Gruppe infiltrieren",
@@ -2936,7 +2935,7 @@
   },
   "vampire_327": {
     "title": "Der Krankenpfleger",
-    "body": "Ein Mensch bietet an, die Schwächsten des Clans zu nähren. Er lächelt viel zu gut.",
+    "body": "Ein Mensch bietet an, sich um die schwächsten Mitglieder des Clans zu kümmern. Er wirkt viel zu gelassen, um beruhigend zu sein.",
     "choices": {
       "A": "Unter Kontrolle annehmen",
       "B": "Ablehnen",
@@ -3062,7 +3061,7 @@
   },
   "vampire_341": {
     "title": "Der Räucherverkäufer",
-    "body": "Ein Verkäufer beduftet jede Nacht die Straße. Der Clan hustet vor Würde.",
+    "body": "Ein Händler beduftet jede Nacht die Straße. Der Geruch stört den Clan und zieht Aufmerksamkeit auf sich.",
     "choices": {
       "A": "Ihn bezahlen, damit er verschwindet",
       "B": "Ihn manipulieren",
@@ -3071,7 +3070,7 @@
   },
   "vampire_342": {
     "title": "Der lebendige Dachboden",
-    "body": "Der Dachboden des Verstecks scheint nachts zu atmen. Der Clan weigert sich, hinaufzugehen.",
+    "body": "Der Dachboden des Verstecks macht nachts seltsame Geräusche. Der Clan weigert sich, hinaufzugehen.",
     "choices": {
       "A": "Allein hinaufgehen",
       "B": "Einen Ältesten hinschicken",

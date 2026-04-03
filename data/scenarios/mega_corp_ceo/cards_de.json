@@ -640,10 +640,10 @@
   },
   "mcc_072": {
     "title": "Team unter Druck",
-    "body": "Eine Abteilung ist am Limit, ohne Drama, aber mit echter Erschöpfung. Die Ergebnisse sinken.",
+    "body": "Ein Team ist erschöpft. Es gibt noch keine offene Krise, aber die Müdigkeit ist real und die Ergebnisse fallen.",
     "choices": {
       "A": "Ziele senken und Personal verstärken.",
-      "B": "Fordern: \"Das ist eine intensive Phase, wir halten durch\".",
+      "B": "Verlangen, dass sie trotz der Erschöpfung weitermachen.",
       "C": "Einen Krisenmanager einsetzen + Rotation."
     }
   },
@@ -901,7 +901,7 @@
   },
   "mcc_101": {
     "title": "Revolutionäre Kaffeemaschine",
-    "body": "Die neue \"intelligente\" Maschine verteilt… koffeinfreien Kaffee. In Endlosschleife. Die Zentrale ist im Belagerungszustand.",
+    "body": "Die neue Kaffeemaschine gibt nur entkoffeinierten Kaffee aus. Der ganze Hauptsitz beschwert sich.",
     "choices": {
       "A": "Erstatten + eine einfache und verlässliche Maschine aufstellen.",
       "B": "Sagen, das sei eine offizielle \"Koffein-Detox\".",
@@ -1108,7 +1108,7 @@
   },
   "mcc_124": {
     "title": "Interne Challenge",
-    "body": "Eine interne Challenge \"wer am meisten verkauft, gewinnt\" startet. Sie pusht… macht aber alle nervös.",
+    "body": "Ein interner Wettbewerb startet, um die besten Verkäufe zu belohnen. Das motiviert, schafft aber auch Spannungen.",
     "choices": {
       "A": "Behalten, aber ethische/qualitative Kriterien hinzufügen.",
       "B": "Stoppen: giftige Stimmung.",
@@ -1243,11 +1243,11 @@
   },
   "mcc_139": {
     "title": "Interner Newsletter",
-    "body": "Der interne Newsletter hat 18 Seiten. Niemand liest ihn, aber alle sagen \"super\".",
+    "body": "Der interne Newsletter ist 18 Seiten lang. Fast niemand liest ihn wirklich.",
     "choices": {
       "A": "Auf ein kurzes und nützliches Format umstellen.",
       "B": "Weitermachen: \"Das ist wichtig\".",
-      "C": "Behalten, aber mit verpflichtendem TL;DR."
+      "C": "Beibehalten, aber am Anfang eine sehr kurze Zusammenfassung hinzufügen."
     }
   },
   "mcc_140": {
@@ -1315,7 +1315,7 @@
   },
   "mcc_147": {
     "title": "Besucherbadge",
-    "body": "Die Besucherbadges sind so streng, dass nicht einmal du noch hereinkommst. Symbolisch.",
+    "body": "Die Besucherausweise sind so streng geworden, dass selbst du Schwierigkeiten hast, manche Bereiche zu betreten.",
     "choices": {
       "A": "Vereinfachen und trotzdem die Sicherheit behalten.",
       "B": "Beibehalten: maximale Sicherheit.",
@@ -2069,7 +2069,6 @@
       "C": "Beibehalten, aber je nach Beruf optional, mit Ausgleich."
     }
   },
-
   "mcc_231": {
     "title": "Möglicher öffentlicher Auftrag",
     "body": "Ein großer öffentlicher Auftrag steht auf dem Spiel. Gute Bühne, aber strenge Compliance-Anforderungen.",
@@ -2288,11 +2287,11 @@
   },
   "mcc_255": {
     "title": "Offizielles Foto",
-    "body": "Man schlägt dir ein Foto mit einem Minister vor deiner Fabrik vor. Deine Teams fragen: \"Wie viel sollen wir lächeln?\".",
+    "body": "Man schlägt dir ein Foto mit einem Minister vor deiner Fabrik vor. Deine Teams fragen sich, wie weit diese Inszenierung gehen soll.",
     "choices": {
       "A": "Akzeptieren, aber nüchtern und sachlich bleiben.",
       "B": "Ablehnen: völlige Neutralität.",
-      "C": "Nur akzeptieren, wenn du ein nützliches Projekt ankündigst, Ausbildung."
+      "C": "Nur zustimmen, wenn du ein echtes und nützliches Ausbildungsprojekt ankündigst."
     }
   },
   "mcc_256": {
@@ -2369,7 +2368,7 @@
   },
   "mcc_264": {
     "title": "Siegel vorbildliches Unternehmen",
-    "body": "Ein öffentliches Label bietet ein \"vorbildlich\"-Abzeichen an. Deine Teams sagen: \"Das riecht nach einem Stempel fürs Schaufenster.\"",
+    "body": "Ein öffentliches Label bietet ein „vorbildlich“-Siegel an. Deine Teams fürchten, dass es wie eine reine Fassaden-Auszeichnung wirkt.",
     "choices": {
       "A": "Annehmen, wenn die Kriterien streng und prüfbar sind.",
       "B": "Ablehnen: keine Abzeichen.",
@@ -3377,7 +3376,7 @@
   },
   "mcc_376": {
     "title": "Tag ohne Klimaanlage in voller Hitze",
-    "body": "Man bittet dich, die Klimaanlage \"als Beispiel\" abzuschalten. Es sind 38°C. Deine Mitarbeitenden schmelzen wie Eiswürfel.",
+    "body": "Man verlangt von dir, die Klimaanlage als Vorbild abzuschalten. Es sind 38°C, und die Mitarbeiter erleben das sehr schlecht.",
     "choices": {
       "A": "Intelligente Sparsamkeit: Schwellen, Lüftung, angepasste Zeiten.",
       "B": "Ablehnen: Gesundheit zuerst.",
@@ -3773,7 +3772,7 @@
   },
   "mcc_420": {
     "title": "Woche des Kompliments an die…",
-    "body": "Man schlägt vor, den Aufsichtsbehörden Komplimente zu schicken. Dein Jurist: \"nein, nein, nein\".",
+    "body": "Man rät dir, den Kontrollbehörden eine zu schmeichelhafte Nachricht zu schicken. Dein Jurist lehnt das sofort ab.",
     "choices": {
       "A": "Neutral bleiben, einfach korrekt kooperieren.",
       "B": "Komplimente schicken, peinliches Risiko.",

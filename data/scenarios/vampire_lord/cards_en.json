@@ -136,7 +136,7 @@
   },
   "vampire_016": {
     "title": "Vegan Blood",
-    "body": "Humans are selling supposedly ethical blood. It smells like a scam and the police.",
+    "body": "Humans are selling blood presented as ethical. It mostly looks like a trap.",
     "choices": {
       "A": "Buy some to test it",
       "B": "Destroy the operation",
@@ -190,7 +190,7 @@
   },
   "vampire_022": {
     "title": "The Polite Hunter",
-    "body": "A hunter asks for a meeting. He smiles too much. He knows something.",
+    "body": "A hunter asks to meet you. He already seems to know something about you.",
     "choices": {
       "A": "Hear him out",
       "B": "Trap him",
@@ -775,7 +775,7 @@
   },
   "vampire_087": {
     "title": "The Overly Nice Driver",
-    "body": "He tells everyone you never sleep. It is sweet. It is mostly dangerous.",
+    "body": "He tells everyone that you never sleep. He may not mean any harm, but it is dangerous for the clan.",
     "choices": {
       "A": "Keep him but rein him in",
       "B": "Replace him quickly",
@@ -883,7 +883,7 @@
   },
   "vampire_099": {
     "title": "The Gardener Neighbor",
-    "body": "He is kind, smiling, and obsessed with little shovels. Everything you hate right now.",
+    "body": "Your neighbor seems friendly, but he passes too often near your hidden entrance.",
     "choices": {
       "A": "Distract him with a gift",
       "B": "Alter the secret entrance",
@@ -955,7 +955,7 @@
   },
   "vampire_107": {
     "title": "The Punctured Blood Bag",
-    "body": "A red trail like Ariadne's thread. Except your labyrinth has fangs.",
+    "body": "A trail of blood almost leads straight to the lair. If someone follows it, the clan is exposed.",
     "choices": {
       "A": "Follow the trail",
       "B": "Punish everyone",
@@ -964,7 +964,7 @@
   },
   "vampire_108": {
     "title": "The Surprise Visit",
-    "body": "He smiles like a king traveling abroad. He looks at your lair as if it already belongs to him.",
+    "body": "He arrives far too confident and looks over your lair as if he already knows it.",
     "choices": {
       "A": "Welcome him with respect",
       "B": "Make him wait outside",
@@ -991,7 +991,7 @@
   },
   "vampire_111": {
     "title": "The Scent of Lies",
-    "body": "Lies have a smell. You know it too well. The question is why he is lying now.",
+    "body": "You can tell he is lying. The real problem is understanding why he is lying now.",
     "choices": {
       "A": "Confront him",
       "B": "Test him in silence",
@@ -1018,7 +1018,7 @@
   },
   "vampire_114": {
     "title": "The Overly Talkative Waiter",
-    "body": "He says you are mysterious. He imitates the way you walk. He adds details. Details are knives.",
+    "body": "He talks too much about you, imitates you, and adds useless details. The more he says, the more dangerous he becomes.",
     "choices": {
       "A": "Put him back in line gently",
       "B": "Fire him",
@@ -1027,7 +1027,7 @@
   },
   "vampire_115": {
     "title": "The Anonymous Package",
-    "body": "The package does not smell human. It smells ancient. And it arrived far too easily at your door.",
+    "body": "The package is clearly unusual, and it reached you far too easily.",
     "choices": {
       "A": "Open it carefully",
       "B": "Burn it",
@@ -1045,7 +1045,7 @@
   },
   "vampire_117": {
     "title": "The Night Musician",
-    "body": "He plays too well. As if he is trying to lure someone. The question is who.",
+    "body": "He plays as if he is deliberately trying to draw someone in. The question is who.",
     "choices": {
       "A": "Make him leave",
       "B": "Recruit him",
@@ -1333,7 +1333,7 @@
   },
   "vampire_149": {
     "title": "The Candle That Will Not Go Out",
-    "body": "The flame dances as if it is watching you. A flame that watches is rarely good news.",
+    "body": "The flame behaves abnormally, as if it were reacting to your presence.",
     "choices": {
       "A": "Snuff it out by force",
       "B": "Understand the ritual",
@@ -1387,7 +1387,7 @@
   },
   "vampire_155": {
     "title": "The Neighbors' Party",
-    "body": "Music, laughter, broken glasses. And you have to slip beneath their feet like a nervous secret.",
+    "body": "The party blocks your way and forces you to cross a crowd that is far too close to the lair.",
     "choices": {
       "A": "Interrupt the party",
       "B": "Wait until it ends",
@@ -1522,7 +1522,7 @@
   },
   "vampire_170": {
     "title": "The Whisperer",
-    "body": "She does not run. She whispers. And the shadows almost answer. That never comes for free.",
+    "body": "She does not run away. She whispers and seems to be calling something from the shadows. That is not normal.",
     "choices": {
       "A": "Approach her gently",
       "B": "Drive her away through fear",
@@ -1828,7 +1828,7 @@
   },
   "vampire_204": {
     "title": "The Forbidden Book",
-    "body": "A grimoire from the lair has gone missing. And the last one to touch it is smiling too much.",
+    "body": "A grimoire from the lair goes missing, and the last person to touch it seems far too calm.",
     "choices": {
       "A": "Search the entire clan",
       "B": "Offer amnesty",
@@ -1979,7 +1979,6 @@
       "C": "Turn it into a secret code"
     }
   },
-
   "vampire_221": {
     "title": "The Night Bar",
     "body": "A bar becomes your new hunting ground. But the owner asks far too many questions.",
@@ -2009,7 +2008,7 @@
   },
   "vampire_224": {
     "title": "The Trapped Package",
-    "body": "A package arrives at the lair. Too clean. Too well wrapped. Too suspicious.",
+    "body": "A package reaches the lair in such perfect condition that it feels unsettling.",
     "choices": {
       "A": "Open it carefully",
       "B": "Send it back",
@@ -2441,7 +2440,7 @@
   },
   "vampire_272": {
     "title": "The Anti-Secret Group",
-    "body": "A human group fights against secrecy. They put up flyers. They are looking for a leader.",
+    "body": "A human group wants to expose everything hidden in the city. They are posting flyers and looking for a spokesperson.",
     "choices": {
       "A": "Break up the group",
       "B": "Infiltrate the group",
@@ -2936,7 +2935,7 @@
   },
   "vampire_327": {
     "title": "The Caretaker Guard",
-    "body": "A human offers to feed the weakest in the clan. He smiles far too well.",
+    "body": "A human offers to take care of the weakest members of the clan. He seems far too comfortable to be reassuring.",
     "choices": {
       "A": "Accept under supervision",
       "B": "Refuse",
@@ -3062,7 +3061,7 @@
   },
   "vampire_341": {
     "title": "The Incense Seller",
-    "body": "A seller perfumes the street every night. The clan coughs with dignity.",
+    "body": "A vendor perfumes the street every night. The smell bothers the clan and draws attention.",
     "choices": {
       "A": "Pay him to leave",
       "B": "Manipulate him",
@@ -3071,7 +3070,7 @@
   },
   "vampire_342": {
     "title": "The Living Attic",
-    "body": "The lair's attic seems to breathe at night. The clan refuses to go up there.",
+    "body": "The attic of the lair makes strange noises at night. The clan refuses to go up there.",
     "choices": {
       "A": "Go up alone",
       "B": "Send in an elder",
