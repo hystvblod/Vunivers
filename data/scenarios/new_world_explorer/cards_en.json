@@ -991,7 +991,7 @@
   },
   "nw_111": {
     "title": "Stubborn River",
-    "body": "The river changes course the way a merchant changes prices.",
+    "body": "The river has changed course, and that is making travel and trade more difficult.",
     "choices": {
       "A": "Dig a small canal",
       "B": "Follow the new course",
@@ -1117,7 +1117,7 @@
   },
   "nw_125": {
     "title": "Empty Warehouse",
-    "body": "Our warehouse sounds hollow, and it is getting embarrassing.",
+    "body": "Our warehouse is almost empty, and that is starting to create a real supply problem.",
     "choices": {
       "A": "Fill it with purchases",
       "B": "Rent it to merchants",
@@ -1351,7 +1351,7 @@
   },
   "nw_151": {
     "title": "Leaning Pier",
-    "body": "The new pier is already leaning like a sailor after a party.",
+    "body": "The new dock is already leaning. If it is not reinforced, it will quickly become dangerous.",
     "choices": {
       "A": "Reinforce it",
       "B": "Limit its use",
@@ -1981,7 +1981,7 @@
   },
   "nw_221": {
     "title": "Torn Tent",
-    "body": "The large tent lets the wind in like a familiar guest.",
+    "body": "The large tent lets wind through from every side. It protects the camp poorly.",
     "choices": {
       "A": "Sew it back up",
       "B": "Buy another one",
@@ -2062,7 +2062,7 @@
   },
   "nw_230": {
     "title": "Line at the Well",
-    "body": "The line at the well grows every morning like a patient vine.",
+    "body": "The line at the well grows longer every morning. Access to water is becoming too slow.",
     "choices": {
       "A": "Open a second water point",
       "B": "Let the camp go first",
@@ -3070,7 +3070,7 @@
   },
   "nw_342": {
     "title": "Wet Drum",
-    "body": "The port drum sounds like a sad sock.",
+    "body": "The port drum sounds bad. The signals are becoming hard to understand.",
     "choices": {
       "A": "Dry it out",
       "B": "Buy another one",
@@ -3385,7 +3385,7 @@
   },
   "nw_377": {
     "title": "Nearby Reef",
-    "body": "A very close reef could be useful or deeply annoying.",
+    "body": "A nearby reef can help with fishing, but it can also get in the way of boat maneuvers.",
     "choices": {
       "A": "Mark it",
       "B": "Keep it secret",

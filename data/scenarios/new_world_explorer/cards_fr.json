@@ -991,7 +991,7 @@
   },
   "nw_111": {
     "title": "Rivière têtue",
-    "body": "La rivière change de chemin comme un marchand change de prix.",
+    "body": "La rivière a changé de trajet, et cela complique les déplacements et les échanges.",
     "choices": {
       "A": "Creuser un petit canal",
       "B": "Suivre le nouveau cours",
@@ -1117,7 +1117,7 @@
   },
   "nw_125": {
     "title": "Entrepôt vide",
-    "body": "Notre entrepôt sonne creux et cela devient vexant.",
+    "body": "Notre entrepôt est presque vide, et cela commence à poser un vrai problème de ravitaillement.",
     "choices": {
       "A": "Le remplir avec des achats",
       "B": "Le louer aux marchands",
@@ -1351,7 +1351,7 @@
   },
   "nw_151": {
     "title": "Ponton qui penche",
-    "body": "Le nouveau ponton penche déjà comme un marin après fête.",
+    "body": "Le nouveau ponton penche déjà. S’il n’est pas renforcé, il deviendra vite dangereux.",
     "choices": {
       "A": "Le consolider",
       "B": "Limiter son usage",
@@ -1981,7 +1981,7 @@
   },
   "nw_221": {
     "title": "Tente trouée",
-    "body": "La grande tente laisse entrer le vent comme un invité connu.",
+    "body": "La grande tente laisse passer le vent de partout. Elle protège mal le camp.",
     "choices": {
       "A": "La recoudre",
       "B": "En acheter une autre",
@@ -2062,7 +2062,7 @@
   },
   "nw_230": {
     "title": "Queue au puits",
-    "body": "La file au puits grandit chaque matin comme une liane patiente.",
+    "body": "La file au puits s’allonge chaque matin. L’accès à l’eau devient trop lent.",
     "choices": {
       "A": "Ouvrir un second point d’eau",
       "B": "Faire passer le camp d’abord",
@@ -3070,7 +3070,7 @@
   },
   "nw_342": {
     "title": "Tambour mouillé",
-    "body": "Le tambour du port sonne comme une chaussette triste.",
+    "body": "Le tambour du port sonne mal. Les signaux deviennent difficiles à comprendre.",
     "choices": {
       "A": "Le faire sécher",
       "B": "En acheter un autre",
@@ -3385,7 +3385,7 @@
   },
   "nw_377": {
     "title": "Récif proche",
-    "body": "Un récif tout proche pourrait être utile ou très vexant.",
+    "body": "Un récif tout proche peut aider pour la pêche, mais il peut aussi gêner les manœuvres des bateaux.",
     "choices": {
       "A": "Le signaler",
       "B": "Le garder secret",

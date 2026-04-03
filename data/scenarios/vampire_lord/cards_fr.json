@@ -199,7 +199,7 @@
   },
   "vampire_023": {
     "title": "Le pactole du clan",
-    "body": "Le clan offre des dons énormes. Ça sent la manipulation, mais c’est tentant.",
+    "body": "On propose au clan une aide très importante. Cela peut aider, mais cela ressemble à une tentative d’influence.",
     "choices": {
       "A": "Accepter avec contrôle",
       "B": "Refuser",
@@ -811,7 +811,7 @@
   },
   "vampire_091": {
     "title": "Le collier d’ail",
-    "body": "Les humains trouvent ça drôle. Toi, tu trouves ça agressif. Et l’odeur te suit comme une insulte.",
+    "body": "Des humains diffusent une odeur qui gêne vraiment le clan.",
     "choices": {
       "A": "Faire fermer la boutique",
       "B": "Lancer une campagne ridicule",
@@ -1837,7 +1837,7 @@
   },
   "vampire_205": {
     "title": "Taxi de nuit bavard",
-    "body": "Un chauffeur raconte qu’il a eu un client froid comme la pierre. Ça ressemble à toi.",
+    "body": "Un chauffeur de nuit décrit un client qui te ressemble trop.",
     "choices": {
       "A": "Le faire taire",
       "B": "Le payer pour mentir",
@@ -1927,7 +1927,7 @@
   },
   "vampire_215": {
     "title": "Nouveau rival élégant",
-    "body": "Un vampire inconnu arrive. Il est poli. Trop poli. Ça sent l’ambition.",
+    "body": "Un vampire inconnu arrive avec des manières parfaites. Il semble surtout vouloir prendre de l’influence.",
     "choices": {
       "A": "L’accueillir et l’encadrer",
       "B": "Le tester avec une mission",
@@ -2044,7 +2044,7 @@
   },
   "vampire_228": {
     "title": "Chasseur sous couverture",
-    "body": "Un nouveau membre du clan pose des questions trop précises. Ça sent le faux fan.",
+    "body": "Un nouveau membre du clan pose des questions trop précises.",
     "choices": {
       "A": "Le tester discrètement",
       "B": "Le chasser tout de suite",
@@ -2557,7 +2557,7 @@
   },
   "vampire_285": {
     "title": "Le drone du toit",
-    "body": "Un drone tourne au-dessus du repaire chaque nuit. Ça sent la curiosité payée.",
+    "body": "Un drone tourne chaque nuit au-dessus du repaire.",
     "choices": {
       "A": "Le pirater",
       "B": "Le faire tomber",
@@ -2629,7 +2629,7 @@
   },
   "vampire_293": {
     "title": "Le serveur bavard",
-    "body": "Un serveur reconnaît trop bien tes habitudes nocturnes. Il sourit quand tu mens.",
+    "body": "Un serveur remarque trop bien tes habitudes. Il pourrait finir par te reconnaître.",
     "choices": {
       "A": "Le payer",
       "B": "Le recruter",
@@ -3322,7 +3322,7 @@
   },
   "vampire_370": {
     "title": "Le ruban de police",
-    "body": "Du ruban de police barre une rue utile au clan. Ça sent le piège large.",
+    "body": "La police bloque une rue utile au clan. Cela ressemble à un piège.",
     "choices": {
       "A": "Contourner le secteur",
       "B": "Tester la zone",

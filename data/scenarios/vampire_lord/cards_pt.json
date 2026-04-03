@@ -199,7 +199,7 @@
   },
   "vampire_023": {
     "title": "O tesouro do clã",
-    "body": "O clã oferece doações enormes. Cheira a manipulação, mas é tentador.",
+    "body": "É proposta ao clã uma ajuda muito importante. Isso pode ajudar, mas parece uma tentativa de ganhar influência.",
     "choices": {
       "A": "Aceitar com controlo",
       "B": "Recusar",
@@ -811,7 +811,7 @@
   },
   "vampire_091": {
     "title": "O colar de alho",
-    "body": "Os humanos acham isso engraçado. Tu achas agressivo. E o cheiro segue-te como um insulto.",
+    "body": "Alguns humanos espalham um cheiro que incomoda mesmo o clã.",
     "choices": {
       "A": "Mandar fechar a loja",
       "B": "Lançar uma campanha ridícula",
@@ -1837,7 +1837,7 @@
   },
   "vampire_205": {
     "title": "Táxi noturno falador",
-    "body": "Um motorista conta que teve um cliente frio como pedra. Isso faz lembrar-te.",
+    "body": "Um motorista noturno descreve um cliente demasiado parecido contigo.",
     "choices": {
       "A": "Mandá-lo calar",
       "B": "Pagá-lo para mentir",
@@ -1927,7 +1927,7 @@
   },
   "vampire_215": {
     "title": "Novo rival elegante",
-    "body": "Chega um vampiro desconhecido. É educado. Educado demais. Cheira a ambição.",
+    "body": "Chega um vampiro desconhecido com maneiras perfeitas. Parece sobretudo querer ganhar influência.",
     "choices": {
       "A": "Recebê-lo e enquadrá-lo",
       "B": "Testá-lo com uma missão",
@@ -2044,7 +2044,7 @@
   },
   "vampire_228": {
     "title": "Caçador infiltrado",
-    "body": "Um novo membro do clã faz perguntas demasiado precisas. Cheira a falso admirador.",
+    "body": "Um novo membro do clã faz perguntas demasiado precisas.",
     "choices": {
       "A": "Testá-lo discretamente",
       "B": "Expulsá-lo já",
@@ -2557,7 +2557,7 @@
   },
   "vampire_285": {
     "title": "O drone do telhado",
-    "body": "Um drone ronda por cima do esconderijo todas as noites. Cheira a curiosidade paga.",
+    "body": "Um drone circula sobre o refúgio todas as noites.",
     "choices": {
       "A": "Hackeá-lo",
       "B": "Fazê-lo cair",
@@ -2629,7 +2629,7 @@
   },
   "vampire_293": {
     "title": "O empregado falador",
-    "body": "Um empregado reconhece demasiado bem os teus hábitos noturnos. Sorri quando mentes.",
+    "body": "Um empregado de mesa nota demasiado bem os teus hábitos. Pode acabar por reconhecer-te.",
     "choices": {
       "A": "Pagá-lo",
       "B": "Recrutá-lo",
@@ -3322,7 +3322,7 @@
   },
   "vampire_370": {
     "title": "A fita da polícia",
-    "body": "Uma fita da polícia bloqueia uma rua útil ao clã. Cheira a armadilha em grande escala.",
+    "body": "A polícia bloqueia uma rua útil ao clã. Isso parece uma armadilha.",
     "choices": {
       "A": "Contornar a zona",
       "B": "Testar o terreno",
