@@ -1801,7 +1801,7 @@
   },
   "nw_201": {
     "title": "Campana oxidada",
-    "body": "La campana del puerto suena como una cacerola ofendida y nadie sabe si es la alarma.",
+    "body": "La campana del puerto suena mal y nadie sabe si se trata de una alerta real.",
     "choices": {
       "A": "Reemplazarla",
       "B": "Repararla localmente",
@@ -3223,7 +3223,7 @@
   },
   "nw_359": {
     "title": "Patrulla lenta",
-    "body": "La patrulla de la tarde avanza como una sopa fría.",
+    "body": "La patrulla de la noche avanza demasiado despacio.",
     "choices": {
       "A": "Dar un bonus",
       "B": "Cambiar el recorrido",
