@@ -199,7 +199,7 @@
   },
   "vampire_023": {
     "title": "Il tesoro del clan",
-    "body": "Il clan offre doni enormi. Sa di manipolazione, ma è tentatore.",
+    "body": "Al clan viene offerto un aiuto molto importante. Potrebbe essere utile, ma sembra un tentativo di ottenere influenza.",
     "choices": {
       "A": "Accettare con controllo",
       "B": "Rifiutare",
@@ -811,7 +811,7 @@
   },
   "vampire_091": {
     "title": "La collana d’aglio",
-    "body": "Gli umani lo trovano divertente. Tu lo trovi aggressivo. E l’odore ti segue come un insulto.",
+    "body": "Alcuni umani diffondono un odore che dà davvero fastidio al clan.",
     "choices": {
       "A": "Far chiudere il negozio",
       "B": "Lanciare una campagna ridicola",
@@ -1837,7 +1837,7 @@
   },
   "vampire_205": {
     "title": "Taxi notturno chiacchierone",
-    "body": "Un autista notturno descrive un cliente con un comportamento fin troppo simile al tuo. Potrebbe finire per renderti riconoscibile.",
+    "body": "Un autista notturno descrive un cliente che ti somiglia troppo.",
     "choices": {
       "A": "Farlo tacere",
       "B": "Pagargli una menzogna",
@@ -1927,7 +1927,7 @@
   },
   "vampire_215": {
     "title": "Nuovo rivale elegante",
-    "body": "Arriva un vampiro sconosciuto. È educato. Troppo educato. Sa di ambizione.",
+    "body": "Arriva un vampiro sconosciuto dai modi impeccabili. Sembra soprattutto voler ottenere influenza.",
     "choices": {
       "A": "Accoglierlo e inquadrarlo",
       "B": "Metterlo alla prova con una missione",
@@ -2044,7 +2044,7 @@
   },
   "vampire_228": {
     "title": "Cacciatore sotto copertura",
-    "body": "Un nuovo membro del clan fa domande troppo precise. Sa di falso ammiratore.",
+    "body": "Un nuovo membro del clan fa domande fin troppo precise.",
     "choices": {
       "A": "Metterlo alla prova discretamente",
       "B": "Cacciarlo subito",
@@ -2557,7 +2557,7 @@
   },
   "vampire_285": {
     "title": "Il drone sul tetto",
-    "body": "Un drone gira sopra il rifugio ogni notte. Sa di curiosità pagata.",
+    "body": "Un drone gira sopra il rifugio ogni notte.",
     "choices": {
       "A": "Hackerarlo",
       "B": "Farlo precipitare",
@@ -2629,7 +2629,7 @@
   },
   "vampire_293": {
     "title": "Il cameriere chiacchierone",
-    "body": "Un cameriere riconosce fin troppo bene le tue abitudini notturne. Sorride quando menti.",
+    "body": "Un cameriere nota fin troppo bene le tue abitudini. Potrebbe finire per riconoscerti.",
     "choices": {
       "A": "Pagarlo",
       "B": "Reclutarlo",
@@ -3322,7 +3322,7 @@
   },
   "vampire_370": {
     "title": "Il nastro della polizia",
-    "body": "Un nastro della polizia blocca una strada utile al clan. Sa di grande trappola.",
+    "body": "La polizia blocca una strada utile al clan. Sembra una trappola.",
     "choices": {
       "A": "Aggirare il settore",
       "B": "Testare la zona",

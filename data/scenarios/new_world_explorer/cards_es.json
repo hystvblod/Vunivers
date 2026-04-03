@@ -991,7 +991,7 @@
   },
   "nw_111": {
     "title": "Río testarudo",
-    "body": "El río cambia de curso como un mercader cambia de precio.",
+    "body": "El río ha cambiado de curso, y eso complica los desplazamientos y los intercambios.",
     "choices": {
       "A": "Excavar un pequeño canal",
       "B": "Seguir el nuevo curso",
@@ -1117,7 +1117,7 @@
   },
   "nw_125": {
     "title": "Almacén vacío",
-    "body": "Nuestro almacén suena hueco y eso empieza a ser humillante.",
+    "body": "Nuestro almacén está casi vacío, y eso empieza a crear un verdadero problema de abastecimiento.",
     "choices": {
       "A": "Llenarlo con compras",
       "B": "Alquilarlo a los mercaderes",
@@ -1351,7 +1351,7 @@
   },
   "nw_151": {
     "title": "Embarcadero inclinado",
-    "body": "El nuevo embarcadero ya se inclina como un marinero después de una fiesta.",
+    "body": "El nuevo embarcadero ya está inclinado. Si no se refuerza, pronto se volverá peligroso.",
     "choices": {
       "A": "Consolidarlo",
       "B": "Limitar su uso",
@@ -1981,7 +1981,7 @@
   },
   "nw_221": {
     "title": "Tienda agujereada",
-    "body": "La gran tienda deja entrar el viento como si fuera un invitado conocido.",
+    "body": "La gran tienda deja pasar el viento por todas partes. Protege mal el campamento.",
     "choices": {
       "A": "Coserla",
       "B": "Comprar otra",
@@ -2062,7 +2062,7 @@
   },
   "nw_230": {
     "title": "Cola en el pozo",
-    "body": "La fila en el pozo crece cada mañana como una liana paciente.",
+    "body": "La fila del pozo se alarga cada mañana. El acceso al agua se vuelve demasiado lento.",
     "choices": {
       "A": "Abrir un segundo punto de agua",
       "B": "Hacer pasar primero al campamento",
@@ -3070,7 +3070,7 @@
   },
   "nw_342": {
     "title": "Tambor mojado",
-    "body": "El tambor del puerto suena como un calcetín triste.",
+    "body": "El tambor del puerto suena mal. Las señales empiezan a ser difíciles de entender.",
     "choices": {
       "A": "Hacerlo secar",
       "B": "Comprar otro",
@@ -3385,7 +3385,7 @@
   },
   "nw_377": {
     "title": "Arrecife cercano",
-    "body": "Un arrecife muy cercano podría ser útil o muy molesto.",
+    "body": "Un arrecife cercano puede ayudar para la pesca, pero también puede dificultar las maniobras de los barcos.",
     "choices": {
       "A": "Señalarlo",
       "B": "Mantenerlo en secreto",
