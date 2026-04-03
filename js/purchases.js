@@ -357,7 +357,7 @@
   function refreshPricesFromStore(S) {
     try {
       Object.keys(SKU).forEach((id) => {
-        const p = S.get ? S.get(id, S.Platform.GOOGLE_PLAY) : (S.products?.byId?.[id]);
+        const p = S.get ? S.get(id, GP) : (S.products?.byId?.[id]);
         const price =
           p?.pricing?.price ||
           p?.price ||
@@ -431,21 +431,22 @@
       }
 
       try {
-        const P = window.CdvPurchase?.ProductType;
+        const GP = S?.Platform?.GOOGLE_PLAY || window.CdvPurchase?.Platform?.GOOGLE_PLAY;
+        const P = S?.ProductType || window.CdvPurchase?.ProductType;
 
         if (!STORE_REGISTERED) {
-          S.register({ id: "vuniverse_no_ads",     type: P.NON_CONSUMABLE, platform: S.Platform.GOOGLE_PLAY });
-          S.register({ id: "vuniverse_diamond",    type: P.NON_CONSUMABLE, platform: S.Platform.GOOGLE_PLAY });
-          S.register({ id: "vuniverse_coins_1200", type: P.CONSUMABLE,     platform: S.Platform.GOOGLE_PLAY });
-          S.register({ id: "vuniverse_coins_3000", type: P.CONSUMABLE,     platform: S.Platform.GOOGLE_PLAY });
-          S.register({ id: "vuniverse_jetons_12",  type: P.CONSUMABLE,     platform: S.Platform.GOOGLE_PLAY });
-          S.register({ id: "vuniverse_jetons_30",  type: P.CONSUMABLE,     platform: S.Platform.GOOGLE_PLAY });
+          S.register({ id: "vuniverse_no_ads",     type: P.NON_CONSUMABLE, platform: GP });
+          S.register({ id: "vuniverse_diamond",    type: P.NON_CONSUMABLE, platform: GP });
+          S.register({ id: "vuniverse_coins_1200", type: P.CONSUMABLE,     platform: GP });
+          S.register({ id: "vuniverse_coins_3000", type: P.CONSUMABLE,     platform: GP });
+          S.register({ id: "vuniverse_jetons_12",  type: P.CONSUMABLE,     platform: GP });
+          S.register({ id: "vuniverse_jetons_30",  type: P.CONSUMABLE,     platform: GP });
 
           CURRENT_UNLOCKABLE_UNIVERSES.forEach((universeId) => {
             S.register({
               id: universeSku(universeId),
               type: P.NON_CONSUMABLE,
-              platform: S.Platform.GOOGLE_PLAY
+              platform: GP
             });
           });
 
@@ -560,7 +561,7 @@
 
       if (!STORE_INITIALIZED) {
         try {
-          await S.initialize([S.Platform.GOOGLE_PLAY]);
+          await S.initialize([GP]);
           STORE_INITIALIZED = true;
           STORE_READY = true;
         } catch (e) {
