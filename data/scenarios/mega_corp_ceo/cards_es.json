@@ -640,10 +640,10 @@
   },
   "mcc_072": {
     "title": "Equipo bajo presión",
-    "body": "Un departamento está en burnout, sin drama visible, pero con fatiga real. Los resultados bajan.",
+    "body": "Un equipo está agotado. Aún no hay una crisis abierta, pero el cansancio es real y los resultados bajan.",
     "choices": {
       "A": "Reducir objetivos y reforzar la plantilla.",
-      "B": "Exigir: \"es un momento intenso, aguantamos\".",
+      "B": "Exigir que sigan adelante a pesar del cansancio.",
       "C": "Poner a un manager de crisis + rotaciones."
     }
   },
@@ -901,7 +901,7 @@
   },
   "mcc_101": {
     "title": "Máquina de café revolucionaria",
-    "body": "La nueva máquina \"inteligente\" sirve… descafeinado. En bucle. La sede está en estado de sitio.",
+    "body": "La nueva máquina de café solo sirve descafeinado. Toda la sede se queja.",
     "choices": {
       "A": "Reembolsar + instalar una máquina simple y fiable.",
       "B": "Decir que es una \"desintoxicación oficial de cafeína\".",
@@ -1108,7 +1108,7 @@
   },
   "mcc_124": {
     "title": "Reto interno",
-    "body": "Empieza un reto interno de \"quien más venda gana\". Impulsa… pero pone nervioso a todo el mundo.",
+    "body": "Arranca un concurso interno para recompensar las mejores ventas. Motiva, pero también crea tensiones.",
     "choices": {
       "A": "Mantenerlo, pero añadiendo criterios éticos/de calidad.",
       "B": "Pararlo: ambiente tóxico.",
@@ -1243,11 +1243,11 @@
   },
   "mcc_139": {
     "title": "Boletín interno",
-    "body": "El boletín interno tiene 18 páginas. Nadie lo lee, pero todo el mundo dice \"genial\".",
+    "body": "La newsletter interna tiene 18 páginas. Casi nadie la lee de verdad.",
     "choices": {
       "A": "Pasar a un formato corto y útil.",
       "B": "Seguir: \"es importante\".",
-      "C": "Mantenerlo, pero con TL;DR obligatorio."
+      "C": "Mantenerla, pero añadir un resumen muy corto al principio."
     }
   },
   "mcc_140": {
@@ -1315,7 +1315,7 @@
   },
   "mcc_147": {
     "title": "Credencial de visitante",
-    "body": "Las credenciales de visitante son tan estrictas que ni tú consigues entrar. Simbólico.",
+    "body": "Las acreditaciones de visitante se han vuelto tan estrictas que incluso tú tienes problemas para entrar en ciertos lugares.",
     "choices": {
       "A": "Simplificar manteniendo la seguridad.",
       "B": "Mantenerlo: máxima seguridad.",
@@ -2069,7 +2069,6 @@
       "C": "Mantenerlo, pero opcional según oficios, con compensación."
     }
   },
-
   "mcc_231": {
     "title": "Posible contrato público",
     "body": "Hay un gran contrato público en juego. Buena vitrina, pero con exigencias estrictas de cumplimiento.",
@@ -2288,11 +2287,11 @@
   },
   "mcc_255": {
     "title": "Foto oficial",
-    "body": "Te proponen una foto con un ministro delante de tu fábrica. Tus equipos preguntan: \"¿cuánto sonreímos?\".",
+    "body": "Te proponen una foto con un ministro delante de tu fábrica. Tus equipos se preguntan hasta dónde hay que llevar la puesta en escena.",
     "choices": {
       "A": "Aceptar, pero manteniéndote sobrio y factual.",
       "B": "Rechazar: neutralidad total.",
-      "C": "Aceptar solo si anuncias un proyecto útil, formación."
+      "C": "Aceptar solo si anuncias un proyecto real y útil de formación."
     }
   },
   "mcc_256": {
@@ -2369,7 +2368,7 @@
   },
   "mcc_264": {
     "title": "Sello de empresa ejemplar",
-    "body": "Un sello público propone una insignia de \"ejemplar\". Tus equipos dicen: \"Huele a sello para el escaparate\".",
+    "body": "Un sello público propone una insignia “ejemplar”. Tus equipos temen que parezca un premio de fachada.",
     "choices": {
       "A": "Aceptarlo si los criterios son estrictos y auditables.",
       "B": "Rechazar: nada de insignias.",
@@ -3377,7 +3376,7 @@
   },
   "mcc_376": {
     "title": "Día sin aire acondicionado en pleno calor",
-    "body": "Te piden cortar el aire acondicionado \"como ejemplo\". Hace 38 °C. Tus empleados se derriten como cubitos.",
+    "body": "Te piden cortar el aire acondicionado para dar ejemplo. Hace 38°C y los empleados lo están viviendo muy mal.",
     "choices": {
       "A": "Sobriedad inteligente: umbrales, ventilación, horarios adaptados.",
       "B": "Rechazar: la salud primero.",
@@ -3773,7 +3772,7 @@
   },
   "mcc_420": {
     "title": "Semana del cumplido a las autoridades",
-    "body": "Te sugieren enviar cumplidos a las autoridades de control. Tu jurista: \"no, no, no\".",
+    "body": "Te sugieren enviar un mensaje demasiado adulador a las autoridades de control. Tu jurista se opone de inmediato.",
     "choices": {
       "A": "Mantenerse neutral, solo cooperar correctamente.",
       "B": "Enviar cumplidos, riesgo de incomodidad.",

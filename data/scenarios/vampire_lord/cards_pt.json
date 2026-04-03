@@ -136,7 +136,7 @@
   },
   "vampire_016": {
     "title": "O sangue vegan",
-    "body": "Uns humanos vendem sangue supostamente ético. Cheira a fraude e a polícia.",
+    "body": "Alguns humanos vendem sangue apresentado como ético. Isto parece sobretudo uma armadilha.",
     "choices": {
       "A": "Comprar para testar",
       "B": "Destruir o tráfico",
@@ -190,7 +190,7 @@
   },
   "vampire_022": {
     "title": "O caçador educado",
-    "body": "Um caçador pede um encontro. Sorri demais. Sabe alguma coisa.",
+    "body": "Um caçador pede para se encontrar contigo. Ele já parece saber algo sobre ti.",
     "choices": {
       "A": "Ouvi-lo",
       "B": "Apanhá-lo numa armadilha",
@@ -775,7 +775,7 @@
   },
   "vampire_087": {
     "title": "O motorista simpático demais",
-    "body": "Ele conta a toda a gente que tu nunca dormes. É simpático. Sobretudo perigoso.",
+    "body": "Ele anda a dizer a toda a gente que nunca dormes. Talvez não haja maldade, mas isso é perigoso para o clã.",
     "choices": {
       "A": "Mantê-lo mas controlá-lo",
       "B": "Substituí-lo depressa",
@@ -883,7 +883,7 @@
   },
   "vampire_099": {
     "title": "O vizinho jardineiro",
-    "body": "É simpático, sorridente e adora pás pequenas. Tudo aquilo de que mais desgostas neste momento.",
+    "body": "O teu vizinho parece simpático, mas passa vezes demais perto da tua entrada escondida.",
     "choices": {
       "A": "Distraí-lo com um presente",
       "B": "Alterar a entrada secreta",
@@ -955,7 +955,7 @@
   },
   "vampire_107": {
     "title": "A bolsa de sangue furada",
-    "body": "Um rasto vermelho como um fio de Ariadne. Só que o teu labirinto tem presas.",
+    "body": "Um rasto de sangue conduz quase até ao refúgio. Se alguém o seguir, o clã fica exposto.",
     "choices": {
       "A": "Seguir o rasto",
       "B": "Punir toda a gente",
@@ -964,7 +964,7 @@
   },
   "vampire_108": {
     "title": "A visita surpresa",
-    "body": "Ele sorri como um rei em viagem. Olha para o teu esconderijo como se tudo já lhe pertencesse.",
+    "body": "Ele chega com confiança a mais e observa o teu refúgio como se já o conhecesse.",
     "choices": {
       "A": "Recebê-lo com respeito",
       "B": "Fazê-lo esperar lá fora",
@@ -991,7 +991,7 @@
   },
   "vampire_111": {
     "title": "O perfume da mentira",
-    "body": "A mentira tem cheiro. Conheces esse cheiro bem demais. A questão é porque mente ele agora.",
+    "body": "Percebes que ele está a mentir. O verdadeiro problema é perceber porque está a mentir agora.",
     "choices": {
       "A": "Confrontá-lo",
       "B": "Testá-lo em silêncio",
@@ -1018,7 +1018,7 @@
   },
   "vampire_114": {
     "title": "O empregado demasiado falador",
-    "body": "Ele diz que és misterioso. Imita a tua maneira de andar. Acrescenta detalhes. Os detalhes são facas.",
+    "body": "Ele fala demais sobre ti, imita-te e acrescenta detalhes inúteis. Quanto mais diz, mais perigoso se torna.",
     "choices": {
       "A": "Corrigi-lo com delicadeza",
       "B": "Despedi-lo",
@@ -1027,7 +1027,7 @@
   },
   "vampire_115": {
     "title": "A encomenda anónima",
-    "body": "A encomenda não cheira a humano. Cheira a antigo. E chegou facilmente demais até ti.",
+    "body": "A encomenda não tem nada de normal e chegou até ti com facilidade a mais.",
     "choices": {
       "A": "Abrir com cuidado",
       "B": "Queimá-la",
@@ -1045,7 +1045,7 @@
   },
   "vampire_117": {
     "title": "O músico noturno",
-    "body": "Toca demasiado bem. Como se quisesse atrair alguém. A questão é quem.",
+    "body": "Ele toca como se estivesse a tentar atrair alguém de propósito. Falta perceber quem.",
     "choices": {
       "A": "Mandá-lo embora",
       "B": "Recrutá-lo",
@@ -1333,7 +1333,7 @@
   },
   "vampire_149": {
     "title": "A vela que não se apaga",
-    "body": "A chama dança como se te estivesse a olhar. Uma chama que olha raramente traz coisa boa.",
+    "body": "A chama comporta-se de forma anormal, como se reagisse à tua presença.",
     "choices": {
       "A": "Apagá-la à força",
       "B": "Compreender o ritual",
@@ -1387,7 +1387,7 @@
   },
   "vampire_155": {
     "title": "A festa dos vizinhos",
-    "body": "Música, risos, copos partidos. E tu tens de passar por baixo dos pés deles como um segredo nervoso.",
+    "body": "A festa bloqueia-te a passagem e obriga-te a atravessar uma multidão demasiado próxima do refúgio.",
     "choices": {
       "A": "Interromper a festa",
       "B": "Esperar que acabe",
@@ -1522,7 +1522,7 @@
   },
   "vampire_170": {
     "title": "A sussurradora",
-    "body": "Ela não foge. Murmura. E as sombras quase respondem. Isso nunca acontece de graça.",
+    "body": "Ela não foge. Murmura e parece chamar algo nas sombras. Isto não é normal.",
     "choices": {
       "A": "Aproximar-te com cuidado",
       "B": "Afastá-la pelo medo",
@@ -1828,7 +1828,7 @@
   },
   "vampire_204": {
     "title": "O livro proibido",
-    "body": "Um grimório do esconderijo desaparece. E o último a tocá-lo sorri demais.",
+    "body": "Um grimório do refúgio desaparece, e a última pessoa a tocá-lo parece calma demais.",
     "choices": {
       "A": "Revistar todo o clã",
       "B": "Propor uma amnistia",
@@ -2008,7 +2008,7 @@
   },
   "vampire_224": {
     "title": "A encomenda armadilhada",
-    "body": "Chega uma encomenda ao esconderijo. Limpa demais. Bem embrulhada demais. Suspeita demais.",
+    "body": "Uma encomenda chega ao refúgio num estado demasiado perfeito para ser tranquilizador.",
     "choices": {
       "A": "Abri-la com cuidado",
       "B": "Devolvê-la",
@@ -2440,7 +2440,7 @@
   },
   "vampire_272": {
     "title": "O grupo anti-segredo",
-    "body": "Um grupo humano luta contra o segredo. Colam panfletos. Procuram um chefe.",
+    "body": "Um grupo humano quer revelar tudo o que se esconde na cidade. Está a colar cartazes e procura um porta-voz.",
     "choices": {
       "A": "Dissolver o grupo",
       "B": "Infiltrar o grupo",
@@ -2935,7 +2935,7 @@
   },
   "vampire_327": {
     "title": "O cuidador humano",
-    "body": "Um humano propõe alimentar os mais fracos do clã. Sorri bem demais.",
+    "body": "Um humano oferece-se para cuidar dos membros mais frágeis do clã. Parece demasiado à vontade para ser tranquilizador.",
     "choices": {
       "A": "Aceitar sob controlo",
       "B": "Recusar",
@@ -3061,7 +3061,7 @@
   },
   "vampire_341": {
     "title": "O vendedor de incenso",
-    "body": "Um vendedor perfuma a rua todas as noites. O clã tosse com dignidade.",
+    "body": "Um vendedor perfuma a rua todas as noites. O cheiro incomoda o clã e chama a atenção.",
     "choices": {
       "A": "Pagá-lo para ir embora",
       "B": "Manipulá-lo",
@@ -3070,7 +3070,7 @@
   },
   "vampire_342": {
     "title": "O sótão vivo",
-    "body": "O sótão do esconderijo parece respirar durante a noite. O clã recusa-se a subir.",
+    "body": "O sótão do refúgio faz ruídos estranhos durante a noite. O clã recusa-se a subir.",
     "choices": {
       "A": "Subir sozinho",
       "B": "Enviar lá um ancião",
