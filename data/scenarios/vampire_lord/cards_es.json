@@ -199,7 +199,7 @@
   },
   "vampire_023": {
     "title": "El dineral del clan",
-    "body": "El clan ofrece donaciones enormes. Huele a manipulación, pero resulta tentador.",
+    "body": "Se ofrece al clan una ayuda muy importante. Eso puede ayudar, pero parece un intento de ganar influencia.",
     "choices": {
       "A": "Aceptar con control",
       "B": "Negarse",
@@ -811,7 +811,7 @@
   },
   "vampire_091": {
     "title": "El collar de ajo",
-    "body": "A los humanos les parece gracioso. A ti te parece agresivo. Y el olor te sigue como un insulto.",
+    "body": "Unos humanos están difundiendo un olor que molesta de verdad al clan.",
     "choices": {
       "A": "Hacer cerrar la tienda",
       "B": "Lanzar una campaña ridícula",
@@ -1837,7 +1837,7 @@
   },
   "vampire_205": {
     "title": "Taxi nocturno hablador",
-    "body": "Un conductor nocturno describe a un cliente con un comportamiento demasiado parecido al tuyo. Podría terminar haciendo que te reconozcan.",
+    "body": "Un conductor nocturno describe a un cliente que se parece demasiado a ti.",
     "choices": {
       "A": "Hacerlo callar",
       "B": "Pagarle para que mienta",
@@ -1927,7 +1927,7 @@
   },
   "vampire_215": {
     "title": "Nuevo rival elegante",
-    "body": "Llega un vampiro desconocido. Es educado. Demasiado educado. Huele a ambición.",
+    "body": "Llega un vampiro desconocido con modales impecables. Parece sobre todo querer ganar influencia.",
     "choices": {
       "A": "Recibirlo y controlarlo",
       "B": "Ponerlo a prueba con una misión",
@@ -2044,7 +2044,7 @@
   },
   "vampire_228": {
     "title": "Cazador infiltrado",
-    "body": "Un nuevo miembro del clan hace preguntas demasiado precisas. Huele a falso admirador.",
+    "body": "Un nuevo miembro del clan hace preguntas demasiado precisas.",
     "choices": {
       "A": "Ponerlo a prueba discretamente",
       "B": "Echarlo de inmediato",
@@ -2557,7 +2557,7 @@
   },
   "vampire_285": {
     "title": "El dron del tejado",
-    "body": "Un dron gira sobre la guarida cada noche. Huele a curiosidad pagada.",
+    "body": "Un dron sobrevuela el refugio cada noche.",
     "choices": {
       "A": "Hackearlo",
       "B": "Derribarlo",
@@ -2629,7 +2629,7 @@
   },
   "vampire_293": {
     "title": "El camarero hablador",
-    "body": "Un camarero conoce demasiado bien tus hábitos nocturnos. Sonríe cuando mientes.",
+    "body": "Un camarero nota demasiado bien tus hábitos. Podría acabar reconociéndote.",
     "choices": {
       "A": "Pagarle",
       "B": "Reclutarlo",
@@ -3322,7 +3322,7 @@
   },
   "vampire_370": {
     "title": "La cinta policial",
-    "body": "Una cinta policial corta una calle útil para el clan. Huele a trampa grande.",
+    "body": "La policía bloquea una calle útil para el clan. Parece una trampa.",
     "choices": {
       "A": "Rodear la zona",
       "B": "Probar el terreno",
