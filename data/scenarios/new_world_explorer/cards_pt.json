@@ -946,11 +946,11 @@
   },
   "nw_106": {
     "title": "Bolsa furada",
-    "body": "O recebedor perde moedas como uma árvore perde folhas.",
+    "body": "A pessoa responsável pela caixa perde moedas a mais e ninguém sabe exatamente para onde elas desaparecem.",
     "choices": {
-      "A": "Contar tudo à frente dele",
-      "B": "Dar-lhe um adjunto",
-      "C": "Fechar os olhos durante um mês"
+      "A": "Verificar a caixa com ele, moeda a moeda",
+      "B": "Dar-lhe um adjunto para controlar tudo",
+      "C": "Não dizer nada durante um mês"
     }
   },
   "nw_107": {
@@ -1805,7 +1805,7 @@
     "choices": {
       "A": "Substituí-lo",
       "B": "Repará-lo localmente",
-      "C": "Passar ao apito"
+      "C": "Substituir o alarme por um apito"
     }
   },
   "nw_202": {
@@ -1882,7 +1882,7 @@
   },
   "nw_210": {
     "title": "Apito do porto",
-    "body": "O novo apito acorda toda a gente menos as pessoas certas.",
+    "body": "O novo apito avisa mal os guardas e incomoda sobretudo os habitantes.",
     "choices": {
       "A": "Reservá-lo para as urgências",
       "B": "Formar os guardas",

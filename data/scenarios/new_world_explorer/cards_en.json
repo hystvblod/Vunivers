@@ -946,11 +946,11 @@
   },
   "nw_106": {
     "title": "Leaky Purse",
-    "body": "The tax collector loses coins like a tree loses leaves.",
+    "body": "The person in charge of the cash box is losing too many coins, and no one knows exactly where they are disappearing.",
     "choices": {
-      "A": "Count everything in front of him",
-      "B": "Give him an assistant",
-      "C": "Look away for a month"
+      "A": "Check the cash box with him, coin by coin",
+      "B": "Give him an assistant to check everything",
+      "C": "Say nothing for a month"
     }
   },
   "nw_107": {
@@ -1805,7 +1805,7 @@
     "choices": {
       "A": "Replace it",
       "B": "Repair it locally",
-      "C": "Switch to whistles"
+      "C": "Replace the alarm with a whistle"
     }
   },
   "nw_202": {
@@ -1882,7 +1882,7 @@
   },
   "nw_210": {
     "title": "Port Whistle",
-    "body": "The new whistle wakes everyone except the right people.",
+    "body": "The new whistle does a poor job of alerting the guards and mostly disturbs the residents.",
     "choices": {
       "A": "Reserve it for emergencies",
       "B": "Train the guards",

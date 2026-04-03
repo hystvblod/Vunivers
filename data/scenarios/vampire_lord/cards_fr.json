@@ -1270,7 +1270,7 @@
   },
   "vampire_142": {
     "title": "Le garde qui sourit",
-    "body": "Il ne recule pas. Il te fait un signe. Il sait. Ou il joue. Dans les deux cas, c’est dangereux.",
+    "body": "Il ne recule pas et te fait un signe. Soit il t’a reconnu, soit il te teste. Dans les deux cas, c’est dangereux.",
     "choices": {
       "A": "L’intimider",
       "B": "Le suivre discrètement",
@@ -1837,7 +1837,7 @@
   },
   "vampire_205": {
     "title": "Taxi de nuit bavard",
-    "body": "Un chauffeur raconte qu’il a eu un client froid comme la pierre. Ça ressemble à toi.",
+    "body": "Un chauffeur de nuit décrit un client au comportement trop proche du tien. Il pourrait finir par te faire reconnaître.",
     "choices": {
       "A": "Le faire taire",
       "B": "Le payer pour mentir",
@@ -2413,7 +2413,7 @@
   },
   "vampire_269": {
     "title": "Le garde du parking",
-    "body": "Un garde surveille trop bien. Il connaît les plaques. Il connaît les horaires. Il connaît trop.",
+    "body": "Un garde surveille le parking de trop près. Il connaît déjà les plaques et les horaires.",
     "choices": {
       "A": "Le corrompre",
       "B": "Le remplacer",
@@ -3412,11 +3412,11 @@
   },
   "vampire_380": {
     "title": "Le plombier discret",
-    "body": "Un plombier connaît trop bien tes sous-sols. Il travaille sans poser de questions.",
+    "body": "Un plombier connaît déjà trop bien les accès du sous-sol du repaire. Plus il intervient ici, plus il risque de comprendre ce que tu caches.",
     "choices": {
       "A": "Le payer plus",
       "B": "Le recruter",
-      "C": "Changer d’équipe"
+      "C": "Faire intervenir une autre entreprise"
     }
   },
   "vampire_381": {

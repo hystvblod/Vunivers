@@ -1270,7 +1270,7 @@
   },
   "vampire_142": {
     "title": "O guarda que sorri",
-    "body": "Ele não recua. Faz-te um sinal. Sabe. Ou finge. Nos dois casos, é perigoso.",
+    "body": "Ele não recua e faz-te um sinal. Ou te reconheceu, ou está a testar-te. Em ambos os casos, é perigoso.",
     "choices": {
       "A": "Intimidá-lo",
       "B": "Segui-lo discretamente",
@@ -1837,7 +1837,7 @@
   },
   "vampire_205": {
     "title": "Táxi noturno falador",
-    "body": "Um motorista conta que teve um cliente frio como pedra. Isso faz lembrar-te.",
+    "body": "Um motorista noturno descreve um cliente com um comportamento demasiado parecido com o teu. Isso pode acabar por tornar-te reconhecível.",
     "choices": {
       "A": "Mandá-lo calar",
       "B": "Pagá-lo para mentir",
@@ -2413,7 +2413,7 @@
   },
   "vampire_269": {
     "title": "O guarda do parque",
-    "body": "Um guarda vigia demasiado bem. Conhece as matrículas. Conhece os horários. Sabe demais.",
+    "body": "Um guarda vigia o parque de estacionamento de perto demais. Já conhece as matrículas e os horários.",
     "choices": {
       "A": "Corrompê-lo",
       "B": "Substituí-lo",
@@ -3412,11 +3412,11 @@
   },
   "vampire_380": {
     "title": "O canalizador discreto",
-    "body": "Um canalizador conhece demasiado bem as tuas caves. Trabalha sem fazer perguntas.",
+    "body": "Um canalizador já conhece demasiado bem os acessos à cave do refúgio. Quanto mais trabalha aqui, maior é o risco de perceber o que escondes.",
     "choices": {
       "A": "Pagar-lhe mais",
       "B": "Recrutá-lo",
-      "C": "Mudar de equipa"
+      "C": "Chamar outra empresa"
     }
   },
   "vampire_381": {

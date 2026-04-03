@@ -523,11 +523,11 @@
   },
   "mcc_059": {
     "title": "Vorbildlicher Arbeitgeber-Siegel",
-    "body": "Dir wird ein Arbeitgebersiegel gegen ein großes Kommunikationsbudget angeboten. Es riecht nach gekauftem Siegel.",
+    "body": "Man bietet dir ein Arbeitgebersiegel im Austausch gegen ein großes Kommunikationsbudget an. Das könnte wie eine gekaufte Auszeichnung wirken.",
     "choices": {
       "A": "Ablehnen: Erst die Realität verbessern.",
       "B": "Annehmen: Das hilft beim Recruiting.",
-      "C": "Verhandeln: ernsthaftes Audit + Siegel ohne leeres Gerede."
+      "C": "Vor jeder Auszeichnung ein echtes Audit aushandeln"
     }
   },
   "mcc_060": {
@@ -1341,12 +1341,12 @@
     }
   },
   "mcc_150": {
-    "title": "Zu lange Keynote",
-    "body": "Deine Keynote dauert 90 Minuten. Am Ende verlangt sogar der Teleprompter eine Pause.",
+    "title": "Zu lange Präsentation",
+    "body": "Deine Präsentation dauert 90 Minuten. Am Ende hört fast niemand mehr richtig zu.",
     "choices": {
       "A": "Kürzen und beim nächsten Mal aufs Wesentliche gehen.",
-      "B": "So weitermachen: \"Vision braucht Zeit\".",
-      "C": "Lang lassen, aber konkrete Demonstrationen hinzufügen."
+      "B": "Weiter so, mit der Begründung, dass dieses Format nötig ist",
+      "C": "Die Präsentation lang lassen, aber konkrete Beispiele hinzufügen"
     }
   },
   "mcc_151": {
@@ -1855,7 +1855,7 @@
   },
   "mcc_207": {
     "title": "Woche der Energiemäßigung",
-    "body": "Die Regierung startet eine Woche der \"Mäßigung\". Deine Büros leuchten wie ein Stadion.",
+    "body": "Die Regierung startet eine Woche der Energieeinsparung. Deine Büros bleiben trotzdem viel zu hell beleuchtet.",
     "choices": {
       "A": "Die Beleuchtung reduzieren und konkrete Maßnahmen zeigen.",
       "B": "Nichts ändern: \"Wir zahlen, also leuchten wir\".",

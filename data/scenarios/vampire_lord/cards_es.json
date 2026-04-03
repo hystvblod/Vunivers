@@ -1270,7 +1270,7 @@
   },
   "vampire_142": {
     "title": "El guardia que sonríe",
-    "body": "No retrocede. Te hace una señal. Lo sabe. O está jugando. En ambos casos, es peligroso.",
+    "body": "No retrocede y te hace una señal. O te ha reconocido, o te está poniendo a prueba. En ambos casos, es peligroso.",
     "choices": {
       "A": "Intimidarlo",
       "B": "Seguirlo discretamente",
@@ -1837,7 +1837,7 @@
   },
   "vampire_205": {
     "title": "Taxi nocturno hablador",
-    "body": "Un conductor cuenta que tuvo un cliente frío como la piedra. Se parece a ti.",
+    "body": "Un conductor nocturno describe a un cliente con un comportamiento demasiado parecido al tuyo. Podría terminar haciendo que te reconozcan.",
     "choices": {
       "A": "Hacerlo callar",
       "B": "Pagarle para que mienta",
@@ -2413,7 +2413,7 @@
   },
   "vampire_269": {
     "title": "El guardia del aparcamiento",
-    "body": "Un guardia vigila demasiado bien. Conoce las matrículas. Conoce los horarios. Sabe demasiado.",
+    "body": "Un guardia vigila el aparcamiento demasiado de cerca. Ya conoce las matrículas y los horarios.",
     "choices": {
       "A": "Corromperlo",
       "B": "Reemplazarlo",
@@ -3412,11 +3412,11 @@
   },
   "vampire_380": {
     "title": "El fontanero discreto",
-    "body": "Un fontanero conoce demasiado bien tus sótanos. Trabaja sin hacer preguntas.",
+    "body": "Un fontanero ya conoce demasiado bien los accesos al sótano del refugio. Cuanto más trabaja aquí, más riesgo hay de que entienda lo que escondes.",
     "choices": {
       "A": "Pagarle más",
       "B": "Reclutarlo",
-      "C": "Cambiar de equipo"
+      "C": "Hacer intervenir a otra empresa"
     }
   },
   "vampire_381": {
