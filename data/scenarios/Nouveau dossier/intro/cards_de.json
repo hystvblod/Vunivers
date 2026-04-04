@@ -1,0 +1,19 @@
+{
+  "intro_001": {
+    "title": "",
+    "body": "",
+    "choices": {}
+  },
+  "intro_002": {
+    "title": "Die Balken",
+    "body": "Wische diese Karte, um fortzufahren. Beim Kippen kannst du die Auswirkungen auf die Balken sehen.",
+    "choices": {
+      "A": "Weiter"
+    }
+  },
+  "intro_003": {
+    "title": "Der Jeton",
+    "body": "Ups! Der Gleichgewichts-Balken ist sehr niedrig. Tippe auf den Jeton und benutze dann die Option, die einen Balken auf 50 % zurücksetzt. Klicke danach auf den blinkenden Balken.",
+    "choices": {}
+  }
+}
