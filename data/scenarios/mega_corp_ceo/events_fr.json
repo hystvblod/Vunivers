@@ -1,4 +1,4 @@
-{
+﻿{
   "version": 1,
   "events": {
     "mega_corp_ceo_ev_001": {
@@ -27,7 +27,7 @@
     },
     "mega_corp_ceo_ev_005": {
       "title": "Trimestre décevant",
-      "body": "Les résultats tombent un peu trop bas. Les investisseurs deviennent soudain très créatifs dans leurs inquiétudes.",
+      "body": "Les résultats tombent un peu trop bas. Les investisseurs s’inquiètent de plus en plus.",
       "effect": "Investisseurs : -5 par carte",
       "duration": "Durée : 6 cartes"
     },
@@ -61,7 +61,6 @@
       "effect": "Employés : +5 par carte",
       "duration": "Durée : 6 cartes"
     },
-
     "mega_corp_ceo_ev_011": {
       "title": "Article cassant",
       "body": "Un média publie un portrait froid de ton groupe. La formule fait mal, donc elle tourne partout.",
@@ -122,7 +121,6 @@
       "effect": "Investisseurs : -5 par carte",
       "duration": "Durée : 6 cartes"
     },
-
     "mega_corp_ceo_ev_021": {
       "title": "Rumeur produit",
       "body": "Une rumeur absurde prend trop bien. Plus elle est floue, plus elle voyage.",

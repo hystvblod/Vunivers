@@ -1,9 +1,9 @@
-{
+﻿{
   "version": 1,
   "events": {
     "heaven_king_ev_001": {
       "title": "Vague de Recueillement",
-      "body": "Un calme doux traverse les nuages. Même les anges bavards chuchotent avec élégance.",
+      "body": "Un calme doux traverse les cieux. Même les anges les plus agités se calment.",
       "effect": "Prières : +5 par carte",
       "duration": "Durée : 5 cartes"
     },
@@ -37,7 +37,6 @@
       "effect": "Libre arbitre : +5 par carte",
       "duration": "Durée : 4 cartes"
     },
-
     "heaven_king_ev_007": {
       "title": "Baisse de Ferveur",
       "body": "Les grands rites attirent un peu moins de monde. Les cierges restent dignes, eux.",
@@ -62,7 +61,6 @@
       "effect": "Culte : +5 par carte",
       "duration": "Durée : 6 cartes"
     },
-
     "heaven_king_ev_011": {
       "title": "Dossier Miracles en Retard",
       "body": "Quelques requêtes restent en pile. Personne ne panique officiellement, donc tout le monde panique poliment.",
@@ -119,11 +117,10 @@
     },
     "heaven_king_ev_020": {
       "title": "Murmures Fatigués",
-      "body": "Les prières arrivent encore, mais avec moins d’élan. Un peu comme un message envoyé à 2h du matin.",
+      "body": "Les prières continuent d’arriver, mais elles sont moins sincères et moins fortes.",
       "effect": "Prières : -5 par carte",
       "duration": "Durée : 6 cartes"
     },
-
     "heaven_king_ev_021": {
       "title": "Observation Respectueuse",
       "body": "Le paradis regarde sans agir. C’est noble, mesuré, et franchement insupportable pour ceux qui aiment appuyer sur les boutons.",
@@ -180,7 +177,7 @@
     },
     "heaven_king_ev_030": {
       "title": "Libre Élan",
-      "body": "Le monde avance de lui-même avec une étonnante dignité. Pour le ciel, c’est vexant et magnifique.",
+      "body": "Le monde avance de lui-même de façon impressionnante. Pour le ciel, c’est à la fois beau et frustrant.",
       "effect": "Libre arbitre : +5 par carte",
       "duration": "Durée : 7 cartes"
     }
