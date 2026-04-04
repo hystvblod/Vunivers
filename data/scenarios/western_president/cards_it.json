@@ -1819,7 +1819,7 @@
   },
   "wp_203": {
     "title": "Il vicino fa \"boom\"",
-    "body": "Un paese vicino testa una nuova arma. Il tuo popolo vuole una risposta e il tuo ministro vuole un caffè.",
+    "body": "Un paese vicino testa una nuova arma. La popolazione aspetta una risposta chiara, ma il tuo ministro non è all’altezza.",
     "choices": {
       "A": "Sanzioni + coalizione diplomatica.",
       "B": "Rafforzare la difesa e mostrare i muscoli.",
@@ -1976,7 +1976,7 @@
     "choices": {
       "A": "Trattarlo come un incidente minore per calmare la situazione",
       "B": "Risposta ferma: protesta ufficiale.",
-      "C": "Creare un protocollo comune per incidenti assurdi."
+      "C": "Creare un protocollo comune per questo tipo di incidente."
     }
   },
   "wp_221": {
@@ -2425,7 +2425,7 @@
     "body": "Le scorte di caschi sono basse. Un fornitore propone una consegna rapida... con caschi rosa fluo.",
     "choices": {
       "A": "Accettare temporaneamente + rilancio della produzione.",
-      "B": "Rifiutare: dignità militare.",
+      "B": "Rifiutare per mantenere un equipaggiamento serio e coerente.",
       "C": "Comprare tramite alleati, standardizzando l'equipaggiamento."
     }
   },
@@ -2629,7 +2629,7 @@
   },
   "wp_293": {
     "title": "Rivale vicino alla frontiera",
-    "body": "Un rivale schiera truppe vicino alla tua frontiera. Il tuo ministro propone una risposta assurda.",
+    "body": "Un rivale schiera truppe vicino al tuo confine. Il tuo ministro propone una risposta sproporzionata.",
     "choices": {
       "A": "Rafforzare la difesa + mantenere un canale di dialogo.",
       "B": "Risposta aggressiva: mobilitazione e ultimatum.",

@@ -3326,7 +3326,7 @@
     "choices": {
       "A": "Rispettarlo solo negli incontri ufficiali.",
       "B": "Rifiutare: libertà totale.",
-      "C": "Indossare il grigio… con calzini vistosi, dolce ribellione."
+      "C": "Indossare il grigio, ma tenere un dettaglio discreto per mostrare il tuo disaccordo."
     }
   },
   "mcc_371": {
@@ -3420,8 +3420,8 @@
     }
   },
   "mcc_381": {
-    "title": "Il chatbot diventa ministro",
-    "body": "Il tuo chatbot interno comincia a rispondere ai giornalisti. Firma Ministro della Produttività.",
+    "title": "Chatbot che risponde al posto del team",
+    "body": "Il tuo chatbot interno comincia a rispondere ai giornalisti al posto del tuo team.",
     "choices": {
       "A": "Staccarlo subito + scuse + audit.",
       "B": "Lasciarlo: è divertente, no.",
@@ -3466,7 +3466,7 @@
   },
   "mcc_386": {
     "title": "Il ministro vuole un escape game",
-    "body": "Un ministro vuole capire la tua attività tramite un escape game. Vuole uscire dalla burocrazia.",
+    "body": "Un ministro vuole scoprire la tua attività attraverso una messa in scena poco seria.",
     "choices": {
       "A": "Creare un escape game pedagogico, professionale.",
       "B": "Rifiutare: non c'è tempo.",
@@ -3547,7 +3547,7 @@
   },
   "mcc_395": {
     "title": "Colpo di clacson ufficiale",
-    "body": "Un ministro vuole annunciare la tua partnership con un colpo di clacson in diretta.",
+    "body": "Un ministro vuole annunciare la tua partnership con una messa in scena ridicola.",
     "choices": {
       "A": "Fare un annuncio sobrio, senza show.",
       "B": "Trovare un clacson e assumere lo show.",
@@ -3631,7 +3631,7 @@
     "body": "Il team comunicazione vuole stampare un QR code sulla fronte dei dipendenti. Le risorse umane urlano.",
     "choices": {
       "A": "Vietare subito: rispetto e buon senso.",
-      "B": "Autorizzare su adesivi… volontari.",
+      "B": "Permetterlo solo in una forma facoltativa e rispettosa.",
       "C": "Sostituire con un badge digitale opzionale."
     }
   },
@@ -3951,8 +3951,8 @@
     }
   },
   "mcc_440": {
-    "title": "Commissione delle cose assurde",
-    "body": "Una commissione parlamentare vuole studiare le cose assurde in azienda.",
+    "title": "Commissione sulle pratiche assurde",
+    "body": "Una commissione parlamentare vuole studiare alcune pratiche assurde nelle imprese.",
     "choices": {
       "A": "Condividere 5 esempi + soluzioni.",
       "B": "Non condividere nulla: troppo rischioso.",

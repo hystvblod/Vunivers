@@ -3326,7 +3326,7 @@
     "choices": {
       "A": "Follow it only for official meetings.",
       "B": "Refuse: total freedom.",
-      "C": "Wear gray... with flashy socks, gentle rebellion."
+      "C": "Wear gray, but keep one discreet detail to show your disagreement."
     }
   },
   "mcc_371": {
@@ -3420,8 +3420,8 @@
     }
   },
   "mcc_381": {
-    "title": "Chatbot becomes minister",
-    "body": "Your internal chatbot starts answering journalists. It signs: \"Minister of Productivity.\"",
+    "title": "Chatbot answering instead of the team",
+    "body": "Your internal chatbot starts replying to journalists instead of your team.",
     "choices": {
       "A": "Shut it down immediately + apologize + audit.",
       "B": "Leave it: \"it's funny,\" no.",
@@ -3466,7 +3466,7 @@
   },
   "mcc_386": {
     "title": "Minister wants an escape room",
-    "body": "A minister wants to understand your business through an escape room. He wants to \"escape bureaucracy.\"",
+    "body": "A minister wants to discover your business through a gimmicky setup.",
     "choices": {
       "A": "Create a professional educational escape room.",
       "B": "Refuse: no time.",
@@ -3547,7 +3547,7 @@
   },
   "mcc_395": {
     "title": "Official honk announcement",
-    "body": "A minister wants to announce your partnership with a live horn honk.",
+    "body": "A minister wants to announce your partnership with a ridiculous stunt.",
     "choices": {
       "A": "Make a sober announcement, no show.",
       "B": "Find a horn and embrace the show.",
@@ -3631,7 +3631,7 @@
     "body": "The communications team wants to print a QR code on employees' foreheads. HR is screaming.",
     "choices": {
       "A": "Ban it immediately: respect and common sense.",
-      "B": "Allow it on stickers... voluntarily.",
+      "B": "Allow it only in an optional and respectful form.",
       "C": "Replace it with an optional digital badge."
     }
   },
@@ -3951,8 +3951,8 @@
     }
   },
   "mcc_440": {
-    "title": "Commission on absurd things",
-    "body": "A parliamentary commission wants to study \"absurd things in business.\"",
+    "title": "Committee on absurd practices",
+    "body": "A parliamentary committee wants to study certain absurd business practices.",
     "choices": {
       "A": "Share 5 examples + solutions.",
       "B": "Share nothing: too risky.",
