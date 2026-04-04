@@ -1173,7 +1173,7 @@
     "title": "Logo ovunque",
     "body": "Il team pubblicità incolla il logo ovunque: tazze, sedie, ascensori.",
     "choices": {
-      "A": "Fermare: moderazione ed eleganza.",
+      "A": "Smettere di mettere il logo ovunque",
       "B": "Continuare: visibilità massima.",
       "C": "Tenere il logo solo su alcuni elementi premium."
     }
@@ -2722,7 +2722,7 @@
     "body": "Una commissione ti chiede come lotti contro la disinformazione.",
     "choices": {
       "A": "Rispondere seriamente: trasparenza e moderazione se necessario.",
-      "B": "Rispondere con ironia: i nostri calzini non mentono mai.",
+      "B": "Rispondere con una battuta, cattiva idea",
       "C": "Proporre una carta volontaria di settore."
     }
   },
@@ -2782,7 +2782,7 @@
   },
   "mcc_310": {
     "title": "Dibattito sulla tassa pubblicitaria",
-    "body": "Si parla di una tassa sulla pubblicità. Il tuo team pubblicità chiede se conta anche un adesivo su una tazza.",
+    "body": "Si parla di una tassa sulla pubblicità. Il tuo team sta già cercando di capire cosa sarà interessato.",
     "choices": {
       "A": "Ridurre la pubblicità e rafforzare qualità/servizio.",
       "B": "Spostarsi a fondo sugli influencer.",
@@ -3159,10 +3159,10 @@
     }
   },
   "mcc_352": {
-    "title": "L'audit dei calzini",
-    "body": "Un'autorità di controllo chiede un audit… sui tuoi calzini aziendali.",
+    "title": "Audit assurdo",
+    "body": "Un’autorità di controllo chiede un audit su un tema ridicolo.",
     "choices": {
-      "A": "Collaborare e pubblicare un rapporto calzini.",
+      "A": "Collaborare seriamente nonostante l’assurdità",
       "B": "Prenderla in giro e ignorare, cattiva idea.",
       "C": "Inviare un dossier serio + offrire tappeti antiscivolo."
     }
@@ -3367,7 +3367,7 @@
   },
   "mcc_375": {
     "title": "Dibattito sui meme",
-    "body": "Un parlamentare propone di regolamentare i meme. La tua azienda è un meme. Il tuo volto è uno sticker.",
+    "body": "Un parlamentare vuole regolamentare i meme. La tua azienda diventa spesso il bersaglio di battute online.",
     "choices": {
       "A": "Rispondere con umorismo + restare professionale.",
       "B": "Minacciare tutti legalmente.",
@@ -3384,11 +3384,11 @@
     }
   },
   "mcc_377": {
-    "title": "Drone che filma le nuvole",
-    "body": "Il tuo drone di sicurezza filma… le nuvole per 3 giorni. Un eletto parla di sorveglianza celeste.",
+    "title": "Drone mal regolato",
+    "body": "Il tuo drone di sicurezza filma il cielo per tre giorni invece di sorvegliare la zona.",
     "choices": {
       "A": "Audit e correzione + trasparenza.",
-      "B": "Ignorare: sono solo nuvole.",
+      "B": "Ignorare il problema, cattiva idea",
       "C": "Sospendere i droni il tempo di rivedere la politica."
     }
   },
@@ -3753,12 +3753,12 @@
     }
   },
   "mcc_418": {
-    "title": "Piano d'emergenza: adesivi",
-    "body": "In crisi, il tuo team propone adesivi Non molliamo.",
+    "title": "Piano d’emergenza debole",
+    "body": "Nel pieno di una crisi, il tuo team propone soprattutto adesivi motivazionali invece di un vero piano.",
     "choices": {
-      "A": "Piano concreto + niente adesivi.",
-      "B": "Adesivi ovunque: boost morale.",
-      "C": "Piano concreto + un adesivo discreto, ok."
+      "A": "Piano concreto, senza adesivi",
+      "B": "Mettere adesivi ovunque per rialzare il morale",
+      "C": "Piano concreto con un piccolo supporto visivo"
     }
   },
   "mcc_419": {

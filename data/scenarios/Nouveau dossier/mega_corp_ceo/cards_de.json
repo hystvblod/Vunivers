@@ -1173,7 +1173,7 @@
     "title": "Logo auf allem",
     "body": "Das Werbeteam klebt das Logo überall hin: Tassen, Stühle, Aufzüge.",
     "choices": {
-      "A": "Stoppen: Mäßigung und Eleganz.",
+      "A": "Aufhören, das Logo überall anzubringen",
       "B": "Weitermachen: maximale Sichtbarkeit.",
       "C": "Das Logo nur auf einige hochwertige Elemente setzen."
     }
@@ -2722,7 +2722,7 @@
     "body": "Eine Kommission fragt dich, wie du gegen Desinformation kämpfst.",
     "choices": {
       "A": "Ernsthaft antworten: Transparenz und Moderation, wenn nötig.",
-      "B": "Ironisch antworten: \"unsere Socken lügen nie\".",
+      "B": "Mit einem Witz antworten, schlechte Idee",
       "C": "Eine freiwillige Branchencharta vorschlagen."
     }
   },
@@ -2782,7 +2782,7 @@
   },
   "mcc_310": {
     "title": "Debatte über Werbesteuern",
-    "body": "Es ist von einer Steuer auf Werbung die Rede. Dein Werbeteam fragt, ob ein Sticker auf einer Tasse zählt.",
+    "body": "Es ist von einer Werbesteuer die Rede. Dein Team versucht bereits herauszufinden, was betroffen sein wird.",
     "choices": {
       "A": "Werbung reduzieren und Qualität/Service stärken.",
       "B": "Voll auf Influencer verlagern.",
@@ -3159,10 +3159,10 @@
     }
   },
   "mcc_352": {
-    "title": "Das Socken-Audit",
-    "body": "Eine Aufsichtsbehörde fordert ein Audit… über deine Unternehmenssocken.",
+    "title": "Absurdes Audit",
+    "body": "Eine Kontrollbehörde verlangt ein Audit zu einem lächerlichen Thema.",
     "choices": {
-      "A": "Kooperieren und einen \"Sockenbericht\" veröffentlichen.",
+      "A": "Trotz der Absurdität ernsthaft kooperieren",
       "B": "Darüber spotten und ignorieren, schlechte Idee.",
       "C": "Eine ernsthafte Akte schicken + rutschfeste Matten anbieten."
     }
@@ -3367,7 +3367,7 @@
   },
   "mcc_375": {
     "title": "Debatte über Memes",
-    "body": "Ein Parlamentarier schlägt vor, Memes zu regulieren. Dein Unternehmen ist ein Meme. Dein Gesicht ist ein Sticker.",
+    "body": "Ein Abgeordneter will Memes regulieren. Dein Unternehmen wird oft zur Zielscheibe von Online-Witzen.",
     "choices": {
       "A": "Mit Humor antworten + professionell bleiben.",
       "B": "Allen juristisch drohen.",
@@ -3384,11 +3384,11 @@
     }
   },
   "mcc_377": {
-    "title": "Drohne filmt Wolken",
-    "body": "Deine Sicherheitsdrohne filmt… 3 Tage lang die Wolken. Ein Politiker spricht von \"himmlischer Überwachung\".",
+    "title": "Schlecht eingestellte Drohne",
+    "body": "Deine Sicherheitsdrohne filmt drei Tage lang den Himmel, statt das Gelände zu überwachen.",
     "choices": {
       "A": "Audit und Korrektur + Transparenz.",
-      "B": "Ignorieren: \"es sind nur Wolken\".",
+      "B": "Das Problem ignorieren, schlechte Idee",
       "C": "Drohnen aussetzen, bis die Richtlinie überarbeitet ist."
     }
   },
@@ -3753,12 +3753,12 @@
     }
   },
   "mcc_418": {
-    "title": "Notfallplan: Sticker",
-    "body": "In einer Krise schlägt dein Team Sticker mit \"Wir lassen nicht locker\" vor.",
+    "title": "Schwacher Notfallplan",
+    "body": "Mitten in der Krise schlägt dein Team vor allem Motivationsaufkleber statt eines echten Plans vor.",
     "choices": {
-      "A": "Konkreter Plan + keine Sticker.",
-      "B": "Sticker überall: Moralboost.",
-      "C": "Konkreter Plan + ein dezenter Sticker, okay."
+      "A": "Konkreter Plan, ohne Aufkleber",
+      "B": "Überall Aufkleber anbringen, um die Moral zu heben",
+      "C": "Konkreter Plan mit einer kleinen visuellen aide"
     }
   },
   "mcc_419": {

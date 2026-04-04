@@ -1173,7 +1173,7 @@
     "title": "Logotipo em tudo",
     "body": "A equipe de publicidade coloca o logotipo em todo lugar: canecas, cadeiras, elevadores.",
     "choices": {
-      "A": "Parar: moderação e elegância.",
+      "A": "Parar de colocar o logo em todo lugar",
       "B": "Continuar: visibilidade máxima.",
       "C": "Manter o logotipo só em alguns elementos premium."
     }
@@ -2722,7 +2722,7 @@
     "body": "Uma comissão pergunta como você combate a desinformação.",
     "choices": {
       "A": "Responder seriamente: transparência e moderação se necessário.",
-      "B": "Responder com ironia: \"nossas meias nunca mentem\".",
+      "B": "Responder com uma piada, má ideia",
       "C": "Propor uma carta voluntária setorial."
     }
   },
@@ -2782,7 +2782,7 @@
   },
   "mcc_310": {
     "title": "Debate sobre a taxa da publicidade",
-    "body": "Falam em uma taxa sobre publicidade. Sua equipe pergunta se um adesivo numa caneca conta.",
+    "body": "Fala-se em uma taxa sobre publicidade. Sua equipe já tenta descobrir o que será afetado.",
     "choices": {
       "A": "Reduzir a publicidade e reforçar qualidade/serviço.",
       "B": "Migrar pesado para influenciadores.",
@@ -3159,10 +3159,10 @@
     }
   },
   "mcc_352": {
-    "title": "A auditoria das meias",
-    "body": "Uma autoridade pede uma auditoria... sobre as meias da sua empresa.",
+    "title": "Auditoria absurda",
+    "body": "Uma autoridade de controle pede uma auditoria sobre um assunto ridículo.",
     "choices": {
-      "A": "Cooperar e publicar um \"relatório das meias\".",
+      "A": "Cooperar com seriedade apesar do absurdo",
       "B": "Zombar e ignorar, péssima ideia.",
       "C": "Enviar um dossiê sério + oferecer tapetes antiderrapantes."
     }
@@ -3367,7 +3367,7 @@
   },
   "mcc_375": {
     "title": "Debate sobre memes",
-    "body": "Um parlamentar propõe enquadrar os memes. Sua empresa é um meme. Seu rosto é um sticker.",
+    "body": "Um parlamentar quer regular os memes. Sua empresa vira com frequência alvo de piadas na internet.",
     "choices": {
       "A": "Responder com humor + continuar profissional.",
       "B": "Ameaçar todo mundo judicialmente.",
@@ -3384,11 +3384,11 @@
     }
   },
   "mcc_377": {
-    "title": "Drone que filma as nuvens",
-    "body": "Seu drone de segurança filma... as nuvens por 3 dias. Um político fala em \"vigilância celeste\".",
+    "title": "Drone mal configurado",
+    "body": "Seu drone de segurança filma o céu por três dias em vez de vigiar a área.",
     "choices": {
       "A": "Auditar e corrigir + transparência.",
-      "B": "Ignorar: \"são só nuvens\".",
+      "B": "Ignorar o problema, má ideia",
       "C": "Suspender os drones até revisar a política."
     }
   },
@@ -3753,12 +3753,12 @@
     }
   },
   "mcc_418": {
-    "title": "Plano de emergência: adesivos",
-    "body": "Em crise, sua equipe propõe adesivos com \"Não vamos desistir\".",
+    "title": "Plano de emergência fraco",
+    "body": "Em plena crise, sua equipe propõe principalmente adesivos motivacionais em vez de um plano de verdade.",
     "choices": {
-      "A": "Plano concreto + sem adesivos.",
-      "B": "Adesivos por toda parte: moral elevado.",
-      "C": "Plano concreto + um adesivo discreto, ok."
+      "A": "Plano concreto, sem adesivos",
+      "B": "Espalhar adesivos por todo lado para levantar o moral",
+      "C": "Plano concreto com um pequeno apoio visual"
     }
   },
   "mcc_419": {

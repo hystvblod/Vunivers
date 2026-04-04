@@ -1173,7 +1173,7 @@
     "title": "Logo di mana-mana",
     "body": "Tim iklan menempelkan logo di mana-mana: mug, kursi, lift.",
     "choices": {
-      "A": "Hentikan: moderasi dan elegansi.",
+      "A": "Berhenti menaruh logo di mana-mana",
       "B": "Lanjutkan: visibilitas maksimal.",
       "C": "Pertahankan logo hanya pada beberapa elemen premium."
     }
@@ -2722,7 +2722,7 @@
     "body": "Sebuah komisi menanyakan bagaimana kamu melawan disinformasi.",
     "choices": {
       "A": "Jawab serius: transparansi dan moderasi bila perlu.",
-      "B": "Jawab dengan sindiran: kaus kaki kami tidak pernah bohong.",
+      "B": "Menjawab dengan lelucon, ide buruk",
       "C": "Usulkan piagam sukarela tingkat sektor."
     }
   },
@@ -2782,7 +2782,7 @@
   },
   "mcc_310": {
     "title": "Debat soal pajak iklan",
-    "body": "Orang membicarakan pajak atas iklan. Tim iklanmu bertanya apakah stiker di mug termasuk.",
+    "body": "Orang-orang mulai membahas pajak iklan. Timmu sudah mencoba mencari tahu apa saja yang akan terkena dampaknya.",
     "choices": {
       "A": "Kurangi iklan dan perkuat kualitas/layanan.",
       "B": "Alihkan penuh ke influencer.",
@@ -3159,10 +3159,10 @@
     }
   },
   "mcc_352": {
-    "title": "Audit kaus kaki",
-    "body": "Sebuah otoritas pengawas meminta audit… atas kaus kaki perusahaanmu.",
+    "title": "Audit yang absurd",
+    "body": "Otoritas pengawas meminta audit atas hal yang konyol.",
     "choices": {
-      "A": "Bekerja sama dan publikasikan laporan kaus kaki.",
+      "A": "Tetap bekerja sama dengan serius meski ini absurd",
       "B": "Mengejek dan mengabaikan, ide buruk.",
       "C": "Kirim berkas yang serius + tawarkan alas anti-selip."
     }
@@ -3367,7 +3367,7 @@
   },
   "mcc_375": {
     "title": "Debat soal meme",
-    "body": "Seorang anggota parlemen ingin mengatur meme. Perusahaanmu jadi meme. Wajahmu jadi stiker.",
+    "body": "Seorang anggota parlemen ingin mengatur meme. Perusahaanmu sering menjadi sasaran lelucon di internet.",
     "choices": {
       "A": "Tanggapi dengan humor + tetap profesional.",
       "B": "Ancaman hukum ke semua orang.",
@@ -3384,11 +3384,11 @@
     }
   },
   "mcc_377": {
-    "title": "Drone yang memfilmkan awan",
-    "body": "Drone keamananmu merekam… awan selama 3 hari. Seorang pejabat bicara soal pengawasan langit.",
+    "title": "Drone yang salah pengaturan",
+    "body": "Drone keamananmu merekam langit selama tiga hari alih-alih mengawasi area tersebut.",
     "choices": {
       "A": "Audit dan koreksi + transparansi.",
-      "B": "Abaikan: cuma awan.",
+      "B": "Mengabaikan masalah, ide buruk",
       "C": "Tangguhkan drone sambil meninjau ulang kebijakannya."
     }
   },
@@ -3753,12 +3753,12 @@
     }
   },
   "mcc_418": {
-    "title": "Rencana darurat: stiker",
-    "body": "Saat krisis, timmu mengusulkan stiker jangan menyerah.",
+    "title": "Rencana darurat yang lemah",
+    "body": "Di tengah krisis, timmu lebih banyak mengusulkan stiker motivasi daripada rencana yang nyata.",
     "choices": {
-      "A": "Rencana konkret + tanpa stiker.",
-      "B": "Stiker di mana-mana: penambah semangat.",
-      "C": "Rencana konkret + satu stiker kecil, oke."
+      "A": "Rencana konkret, tanpa stiker",
+      "B": "Menempelkan stiker di mana-mana untuk menaikkan semangat",
+      "C": "Rencana konkret dengan sedikit dukungan visual"
     }
   },
   "mcc_419": {
