@@ -1173,7 +1173,7 @@
     "title": "Logo sur tout",
     "body": "L’équipe pub colle le logo partout: mugs, chaises, ascenseurs.",
     "choices": {
-      "A": "Stopper: modération et élégance.",
+      "A": "Arrêter de mettre le logo partout",
       "B": "Continuer: visibilité maximale.",
       "C": "Garder le logo sur quelques éléments haut de gamme seulement."
     }
@@ -2722,7 +2722,7 @@
     "body": "Une commission te demande comment tu luttes contre la désinformation.",
     "choices": {
       "A": "Répondre sérieusement: transparence et modération si besoin.",
-      "B": "Répondre ironique: \"nos chaussettes ne mentent jamais\".",
+      "B": "Répondre avec une blague, mauvaise idée",
       "C": "Proposer une charte volontaire sectorielle."
     }
   },
@@ -2782,7 +2782,7 @@
   },
   "mcc_310": {
     "title": "Débat sur la taxe pubs",
-    "body": "On parle d’une taxe sur la publicité. Ton équipe pub demande si un sticker sur un mug compte.",
+    "body": "On parle d’une taxe sur la publicité. Ton équipe cherche déjà ce qui sera concerné.",
     "choices": {
       "A": "Réduire la pub et renforcer la qualité/service.",
       "B": "Déplacer vers influenceurs à fond.",
@@ -3159,10 +3159,10 @@
     }
   },
   "mcc_352": {
-    "title": "L’audit des chaussettes",
-    "body": "Une autorité de contrôle demande un audit… sur tes chaussettes d’entreprise.",
+    "title": "Audit absurde",
+    "body": "Une autorité de contrôle demande un audit sur un sujet ridicule.",
     "choices": {
-      "A": "Coopérer et publier un \"rapport chaussette\".",
+      "A": "Coopérer sérieusement malgré l’absurdité",
       "B": "Se moquer et ignorer, mauvaise idée.",
       "C": "Envoyer un dossier sérieux + offrir des tapis antidérapants."
     }
@@ -3367,7 +3367,7 @@
   },
   "mcc_375": {
     "title": "Débat sur les mèmes",
-    "body": "Un parlementaire propose d’encadrer les mèmes. Ton entreprise est un mème. Ton visage est un sticker.",
+    "body": "Un parlementaire veut encadrer les mèmes. Ton entreprise devient souvent la cible de blagues en ligne.",
     "choices": {
       "A": "Répondre avec humour + rester pro.",
       "B": "Menacer tout le monde juridiquement.",
@@ -3384,11 +3384,11 @@
     }
   },
   "mcc_377": {
-    "title": "Drone qui filme les nuages",
-    "body": "Ton drone de sécurité filme… les nuages pendant 3 jours. Un élu parle de \"surveillance céleste\".",
+    "title": "Drone mal réglé",
+    "body": "Ton drone de sécurité filme le ciel pendant trois jours au lieu de surveiller la zone.",
     "choices": {
       "A": "Audit et correction + transparence.",
-      "B": "Ignorer: \"c’est juste des nuages\".",
+      "B": "Ignorer le problème, mauvaise idée",
       "C": "Suspendre les drones le temps de revoir la politique."
     }
   },
@@ -3753,12 +3753,12 @@
     }
   },
   "mcc_418": {
-    "title": "Plan d’urgence: stickers",
-    "body": "En crise, ton équipe propose des stickers \"On lâche rien\".",
+    "title": "Plan d’urgence faible",
+    "body": "En pleine crise, ton équipe propose surtout des autocollants de motivation au lieu d’un vrai plan.",
     "choices": {
-      "A": "Plan concret + pas de stickers.",
-      "B": "Stickers partout: moral boost.",
-      "C": "Plan concret + un sticker discret, ok."
+      "A": "Plan concret, sans autocollants",
+      "B": "Mettre des autocollants partout pour remonter le moral",
+      "C": "Plan concret avec un petit support visuel"
     }
   },
   "mcc_419": {

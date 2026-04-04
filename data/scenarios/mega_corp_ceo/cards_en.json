@@ -1173,7 +1173,7 @@
     "title": "Logo on everything",
     "body": "The ad team is slapping the logo everywhere: mugs, chairs, elevators.",
     "choices": {
-      "A": "Stop it: moderation and elegance.",
+      "A": "Stop putting the logo everywhere",
       "B": "Keep going: maximum visibility.",
       "C": "Keep the logo only on a few premium items."
     }
@@ -2722,7 +2722,7 @@
     "body": "A commission asks how you fight disinformation.",
     "choices": {
       "A": "Answer seriously: transparency and moderation if needed.",
-      "B": "Answer ironically: \"our socks never lie.\"",
+      "B": "Reply with a joke, bad idea",
       "C": "Propose a voluntary sector charter."
     }
   },
@@ -2782,7 +2782,7 @@
   },
   "mcc_310": {
     "title": "Debate on an ad tax",
-    "body": "People are discussing a tax on advertising. Your ad team asks whether a sticker on a mug counts.",
+    "body": "People are discussing an advertising tax. Your team is already trying to figure out what will be affected.",
     "choices": {
       "A": "Reduce advertising and strengthen quality/service.",
       "B": "Shift hard toward influencers.",
@@ -3159,10 +3159,10 @@
     }
   },
   "mcc_352": {
-    "title": "The sock audit",
-    "body": "A regulator requests an audit... on your company socks.",
+    "title": "Absurd audit",
+    "body": "A regulator asks for an audit on a ridiculous issue.",
     "choices": {
-      "A": "Cooperate and publish a \"sock report.\"",
+      "A": "Cooperate seriously despite the absurdity",
       "B": "Make fun of it and ignore it, bad idea.",
       "C": "Send a serious file + offer non-slip mats."
     }
@@ -3367,7 +3367,7 @@
   },
   "mcc_375": {
     "title": "Debate on memes",
-    "body": "A parliamentarian proposes regulating memes. Your company is a meme. Your face is a sticker.",
+    "body": "A lawmaker wants to regulate memes. Your company is often becoming the target of online jokes.",
     "choices": {
       "A": "Respond with humor + stay professional.",
       "B": "Threaten everyone legally.",
@@ -3384,11 +3384,11 @@
     }
   },
   "mcc_377": {
-    "title": "Drone filming the clouds",
-    "body": "Your security drone films... the clouds for 3 days. An official talks about \"sky surveillance.\"",
+    "title": "Poorly configured drone",
+    "body": "Your security drone films the sky for three days instead of monitoring the area.",
     "choices": {
       "A": "Audit and fix it + transparency.",
-      "B": "Ignore it: \"it's just clouds.\"",
+      "B": "Ignore the problem, bad idea",
       "C": "Suspend drones while you review the policy."
     }
   },
@@ -3753,12 +3753,12 @@
     }
   },
   "mcc_418": {
-    "title": "Emergency plan: stickers",
-    "body": "In a crisis, your team proposes stickers saying \"We are not giving up.\"",
+    "title": "Weak emergency plan",
+    "body": "In the middle of a crisis, your team is mainly proposing motivational stickers instead of a real plan.",
     "choices": {
-      "A": "Concrete plan + no stickers.",
-      "B": "Stickers everywhere: morale boost.",
-      "C": "Concrete plan + one discreet sticker, okay."
+      "A": "Concrete plan, no stickers",
+      "B": "Put stickers everywhere to boost morale",
+      "C": "Concrete plan with a small visual support"
     }
   },
   "mcc_419": {
