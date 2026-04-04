@@ -1173,7 +1173,7 @@
     "title": "Logótipo em todo o lado",
     "body": "A equipa de publicidade cola o logótipo em todo o lado: canecas, cadeiras, elevadores.",
     "choices": {
-      "A": "Parar: moderação e elegância.",
+      "A": "Parar de pôr o logótipo em todo o lado",
       "B": "Continuar: visibilidade máxima.",
       "C": "Manter o logótipo apenas em alguns elementos premium."
     }
@@ -2722,7 +2722,7 @@
     "body": "Uma comissão pergunta-te como lutas contra a desinformação.",
     "choices": {
       "A": "Responder seriamente: transparência e moderação, se necessário.",
-      "B": "Responder com ironia: \"as nossas meias nunca mentem\".",
+      "B": "Responder com uma piada, má ideia",
       "C": "Propor uma carta voluntária setorial."
     }
   },
@@ -2782,7 +2782,7 @@
   },
   "mcc_310": {
     "title": "Debate sobre a taxa da publicidade",
-    "body": "Fala-se numa taxa sobre a publicidade. A tua equipa pergunta se um autocolante numa caneca conta.",
+    "body": "Fala-se de um imposto sobre a publicidade. A tua equipa já tenta perceber o que será afetado.",
     "choices": {
       "A": "Reduzir publicidade e reforçar qualidade/serviço.",
       "B": "Deslocar tudo para influenciadores.",
@@ -3159,10 +3159,10 @@
     }
   },
   "mcc_352": {
-    "title": "A auditoria das meias",
-    "body": "Uma autoridade de controlo pede uma auditoria... às tuas meias empresariais.",
+    "title": "Auditoria absurda",
+    "body": "Uma autoridade de controlo pede uma auditoria sobre um assunto ridículo.",
     "choices": {
-      "A": "Cooperar e publicar um \"relatório das meias\".",
+      "A": "Cooperar seriamente apesar do absurdo",
       "B": "Troçar e ignorar, péssima ideia.",
       "C": "Enviar um dossier sério + oferecer tapetes antiderrapantes."
     }
@@ -3367,7 +3367,7 @@
   },
   "mcc_375": {
     "title": "Debate sobre memes",
-    "body": "Um parlamentar propõe enquadrar os memes. A tua empresa é um meme. A tua cara é um autocolante.",
+    "body": "Um parlamentar quer enquadrar os memes. A tua empresa torna-se muitas vezes alvo de piadas online.",
     "choices": {
       "A": "Responder com humor + manter profissionalismo.",
       "B": "Ameaçar toda a gente juridicamente.",
@@ -3384,11 +3384,11 @@
     }
   },
   "mcc_377": {
-    "title": "Drone que filma as nuvens",
-    "body": "O teu drone de segurança filma... as nuvens durante 3 dias. Um eleito fala em \"vigilância celeste\".",
+    "title": "Drone mal configurado",
+    "body": "O teu drone de segurança filma o céu durante três dias em vez de vigiar a zona.",
     "choices": {
       "A": "Auditoria e correção + transparência.",
-      "B": "Ignorar: \"são só nuvens\".",
+      "B": "Ignorar o problema, má ideia",
       "C": "Suspender drones enquanto revês a política."
     }
   },
@@ -3753,12 +3753,12 @@
     }
   },
   "mcc_418": {
-    "title": "Plano de emergência: autocolantes",
-    "body": "Em crise, a tua equipa propõe autocolantes com \"Não desistimos\".",
+    "title": "Plano de emergência fraco",
+    "body": "Em plena crise, a tua equipa propõe sobretudo autocolantes motivacionais em vez de um verdadeiro plano.",
     "choices": {
-      "A": "Plano concreto + sem autocolantes.",
-      "B": "Autocolantes por todo o lado: moral em alta.",
-      "C": "Plano concreto + um autocolante discreto, pronto."
+      "A": "Plano concreto, sem autocolantes",
+      "B": "Pôr autocolantes por todo o lado para levantar a moral",
+      "C": "Plano concreto com um pequeno apoio visual"
     }
   },
   "mcc_419": {
