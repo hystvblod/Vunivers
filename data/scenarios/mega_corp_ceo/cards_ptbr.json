@@ -3326,7 +3326,7 @@
     "choices": {
       "A": "Respeitar só em encontros oficiais.",
       "B": "Recusar: liberdade total.",
-      "C": "Usar cinza... com meias chamativas, rebeldia suave."
+      "C": "Usar cinza, mas manter um detalhe discreto para mostrar seu desacordo."
     }
   },
   "mcc_371": {
@@ -3420,8 +3420,8 @@
     }
   },
   "mcc_381": {
-    "title": "Chatbot vira ministro",
-    "body": "Seu chatbot interno começa a responder jornalistas. Ele assina \"Ministro da Produtividade\".",
+    "title": "Chatbot que responde no lugar da equipe",
+    "body": "Seu chatbot interno começa a responder aos jornalistas no lugar da sua equipe.",
     "choices": {
       "A": "Desligar imediatamente + desculpas + auditoria.",
       "B": "Deixar: \"é engraçado\", não.",
@@ -3466,7 +3466,7 @@
   },
   "mcc_386": {
     "title": "Ministro quer um escape game",
-    "body": "Um ministro quer entender sua atividade por meio de um escape game. Ele quer \"escapar da burocracia\".",
+    "body": "Um ministro quer conhecer sua atividade por meio de uma encenação pouco séria.",
     "choices": {
       "A": "Criar um escape game pedagógico e profissional.",
       "B": "Recusar: sem tempo.",
@@ -3547,7 +3547,7 @@
   },
   "mcc_395": {
     "title": "Buzina oficial",
-    "body": "Um ministro quer anunciar sua parceria com uma buzina ao vivo.",
+    "body": "Um ministro quer anunciar sua parceria com uma encenação ridícula.",
     "choices": {
       "A": "Fazer um anúncio sóbrio, sem show.",
       "B": "Arrumar uma buzina e assumir o show.",
@@ -3631,7 +3631,7 @@
     "body": "A equipe de comunicação quer imprimir um QR code na testa dos funcionários. O RH entra em pânico.",
     "choices": {
       "A": "Proibir na hora: respeito e bom senso.",
-      "B": "Autorizar em adesivos... voluntários.",
+      "B": "Permitir isso apenas de forma opcional e respeitosa.",
       "C": "Trocar por um crachá digital opcional."
     }
   },
@@ -3951,8 +3951,8 @@
     }
   },
   "mcc_440": {
-    "title": "Comissão das coisas absurdas",
-    "body": "Uma comissão parlamentar quer estudar \"as coisas absurdas nas empresas\".",
+    "title": "Comissão sobre práticas absurdas",
+    "body": "Uma comissão parlamentar quer estudar certas práticas absurdas nas empresas.",
     "choices": {
       "A": "Compartilhar 5 exemplos + soluções.",
       "B": "Não compartilhar nada: arriscado demais.",

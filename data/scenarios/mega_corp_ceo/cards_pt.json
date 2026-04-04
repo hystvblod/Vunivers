@@ -3326,7 +3326,7 @@
     "choices": {
       "A": "Respeitar apenas em reuniões oficiais.",
       "B": "Recusar: liberdade total.",
-      "C": "Vestir cinzento... com meias vistosas, rebeldia suave."
+      "C": "Vestir cinzento, mas manter um detalhe discreto para mostrar o teu desacordo."
     }
   },
   "mcc_371": {
@@ -3420,8 +3420,8 @@
     }
   },
   "mcc_381": {
-    "title": "Chatbot torna-se ministro",
-    "body": "O teu chatbot interno começa a responder a jornalistas. Assina \"Ministro da Produtividade\".",
+    "title": "Chatbot que responde no lugar da equipa",
+    "body": "O teu chatbot interno começa a responder aos jornalistas no lugar da tua equipa.",
     "choices": {
       "A": "Desligar imediatamente + desculpas + auditoria.",
       "B": "Deixar: \"é engraçado\", não.",
@@ -3466,7 +3466,7 @@
   },
   "mcc_386": {
     "title": "Ministro quer um escape room",
-    "body": "Um ministro quer compreender a tua atividade através de um escape room. Quer \"sair da burocracia\".",
+    "body": "Um ministro quer descobrir a tua atividade através de uma encenação pouco séria.",
     "choices": {
       "A": "Criar um escape room pedagógico, profissional.",
       "B": "Recusar: não há tempo.",
@@ -3547,7 +3547,7 @@
   },
   "mcc_395": {
     "title": "Buzinão oficial",
-    "body": "Um ministro quer anunciar a tua parceria com um \"toque de buzina\" em direto.",
+    "body": "Um ministro quer anunciar a tua parceria com uma encenação ridícula.",
     "choices": {
       "A": "Fazer um anúncio sóbrio, sem espetáculo.",
       "B": "Arranjar uma buzina e assumir o espetáculo.",
@@ -3631,7 +3631,7 @@
     "body": "A equipa de comunicação quer imprimir um QR code na testa dos empregados. Os RH entram em pânico.",
     "choices": {
       "A": "Proibir imediatamente: respeito e bom senso.",
-      "B": "Autorizar em autocolantes... voluntários.",
+      "B": "Permitir isso apenas de forma opcional e respeitosa.",
       "C": "Substituir por um crachá digital opcional."
     }
   },
@@ -3951,8 +3951,8 @@
     }
   },
   "mcc_440": {
-    "title": "Comissão das coisas absurdas",
-    "body": "Uma comissão parlamentar quer estudar \"coisas absurdas na empresa\".",
+    "title": "Comissão sobre práticas absurdas",
+    "body": "Uma comissão parlamentar quer estudar certas práticas absurdes nas empresas.",
     "choices": {
       "A": "Partilhar 5 exemplos + soluções.",
       "B": "Não partilhar nada: demasiado arriscado.",

@@ -3326,7 +3326,7 @@
     "choices": {
       "A": "Patuhi hanya untuk pertemuan resmi.",
       "B": "Tolak: kebebasan total.",
-      "C": "Pakai abu-abu… tapi dengan kaus kaki mencolok, pemberontakan lembut."
+      "C": "Memakai warna abu-abu, tetapi tetap menyimpan satu detail kecil untuk menunjukkan ketidaksetujuanmu."
     }
   },
   "mcc_371": {
@@ -3420,8 +3420,8 @@
     }
   },
   "mcc_381": {
-    "title": "Chatbot jadi menteri",
-    "body": "Chatbot internalmu mulai menjawab wartawan. Tanda tangannya Menteri Produktivitas.",
+    "title": "Chatbot yang menjawab menggantikan tim",
+    "body": "Chatbot internalmu mulai menjawab wartawan menggantikan timmu.",
     "choices": {
       "A": "Matikan segera + minta maaf + audit.",
       "B": "Biarkan: lucu, kan. Tidak.",
@@ -3466,7 +3466,7 @@
   },
   "mcc_386": {
     "title": "Menteri ingin escape game",
-    "body": "Seorang menteri ingin memahami aktivitasmu lewat escape game. Dia ingin keluar dari birokrasi.",
+    "body": "Seorang menteri ingin mengenal kegiatanmu lewat sebuah pertunjukan yang kurang serius.",
     "choices": {
       "A": "Buat escape game edukatif yang profesional.",
       "B": "Tolak: tidak ada waktu.",
@@ -3547,7 +3547,7 @@
   },
   "mcc_395": {
     "title": "Klakson resmi",
-    "body": "Seorang menteri ingin mengumumkan kemitraanmu dengan bunyi klakson langsung.",
+    "body": "Seorang menteri ingin mengumumkan kemitraanmu dengan pertunjukan yang konyol.",
     "choices": {
       "A": "Buat pengumuman yang tenang, tanpa pertunjukan.",
       "B": "Cari klakson dan lanjutkan pertunjukannya.",
@@ -3631,7 +3631,7 @@
     "body": "Tim komunikasimu ingin mencetak QR code di dahi para karyawan. Tim HR berteriak.",
     "choices": {
       "A": "Larangan langsung: hormat dan akal sehat.",
-      "B": "Izinkan dalam bentuk stiker… sukarela.",
+      "B": "Mengizinkannya hanya dalam bentuk yang opsional dan tetap menghormati semua orang.",
       "C": "Ganti dengan badge digital opsional."
     }
   },
@@ -3951,8 +3951,8 @@
     }
   },
   "mcc_440": {
-    "title": "Komisi hal-hal absurd",
-    "body": "Sebuah komisi parlemen ingin meneliti hal-hal absurd di perusahaan.",
+    "title": "Komisi tentang praktik-praktik absurd",
+    "body": "Sebuah komisi parlemen ingin mempelajari beberapa praktik absurd di perusahaan.",
     "choices": {
       "A": "Bagikan 5 contoh + solusi.",
       "B": "Jangan bagikan apa pun: terlalu berisiko.",

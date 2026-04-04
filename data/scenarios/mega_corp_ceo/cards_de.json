@@ -3326,7 +3326,7 @@
     "choices": {
       "A": "Nur bei offiziellen Terminen befolgen.",
       "B": "Ablehnen: totale Freiheit.",
-      "C": "Grau tragen… mit auffälligen Socken, sanfte Rebellion."
+      "C": "Grau tragen, aber ein diskretes Detail behalten, um deinen Widerspruch zu zeigen."
     }
   },
   "mcc_371": {
@@ -3420,8 +3420,8 @@
     }
   },
   "mcc_381": {
-    "title": "Chatbot wird Minister",
-    "body": "Dein interner Chatbot antwortet plötzlich Journalisten. Er unterschreibt mit \"Minister für Produktivität\".",
+    "title": "Chatbot, der anstelle des Teams antwortet",
+    "body": "Dein interner Chatbot beginnt, anstelle deines Teams den Journalisten zu antworten.",
     "choices": {
       "A": "Sofort abschalten + Entschuldigung + Audit.",
       "B": "Lassen: \"das ist lustig\", nein.",
@@ -3466,7 +3466,7 @@
   },
   "mcc_386": {
     "title": "Minister will ein Escape Game",
-    "body": "Ein Minister will dein Geschäft über ein Escape Game verstehen. Er will \"aus der Bürokratie raus\".",
+    "body": "Ein Minister will dein Geschäft durch eine wenig seriöse Inszenierung kennenlernen.",
     "choices": {
       "A": "Ein pädagogisches, professionelles Escape Game machen.",
       "B": "Ablehnen: keine Zeit.",
@@ -3547,7 +3547,7 @@
   },
   "mcc_395": {
     "title": "Offizielles Hupkonzert",
-    "body": "Ein Minister will deine Partnerschaft mit einem \"Hupzeichen\" live ankündigen.",
+    "body": "Ein Minister will eure Partnerschaft mit einer lächerlichen Inszenierung ankündigen.",
     "choices": {
       "A": "Eine nüchterne Ankündigung machen, ohne Show.",
       "B": "Eine Hupe finden und die Show durchziehen.",
@@ -3631,7 +3631,7 @@
     "body": "Das Kommunikationsteam will den Mitarbeitenden einen QR-Code auf die Stirn drucken. HR schreit.",
     "choices": {
       "A": "Sofort verbieten: Respekt und gesunder Menschenverstand.",
-      "B": "Nur auf freiwilligen Stickern erlauben.",
+      "B": "Es nur in einer freiwilligen und respektvollen Form erlauben.",
       "C": "Durch ein optionales digitales Badge ersetzen."
     }
   },
@@ -3951,8 +3951,8 @@
     }
   },
   "mcc_440": {
-    "title": "Kommission für absurde Dinge",
-    "body": "Eine parlamentarische Kommission will \"absurde Dinge im Unternehmen\" untersuchen.",
+    "title": "Kommission für absurde Praktiken",
+    "body": "Eine parlamentarische Kommission will bestimmte absurde Praktiken in Unternehmen untersuchen.",
     "choices": {
       "A": "5 Beispiele + Lösungen teilen.",
       "B": "Nichts teilen: zu riskant.",
