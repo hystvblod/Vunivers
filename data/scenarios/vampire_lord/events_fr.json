@@ -1,4 +1,4 @@
-{
+﻿{
   "version": 1,
   "events": {
     "vampire_lord_ev_001": {
@@ -123,7 +123,7 @@
     },
     "vampire_lord_ev_021": {
       "title": "Visage repéré",
-      "body": "Un visage lié au repaire circule dans un groupe fermé. Le voile se déchire un peu.",
+      "body": "Un visage lié au repaire commence à circuler dans un groupe fermé. La discrétion baisse.",
       "effect": "Discrétion : -5 par carte",
       "duration": "Durée : 5 cartes"
     },
