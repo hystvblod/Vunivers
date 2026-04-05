@@ -1,0 +1,185 @@
+﻿{
+  "version": 1,
+  "events": {
+    "heaven_king_ev_001": {
+      "title": "Gelombang Keheningan",
+      "body": "Ketenangan lembut menyelimuti langit. Bahkan para malaikat yang paling gelisah pun ikut tenang.",
+      "effect": "Doa: +5 per kartu",
+      "duration": "Durasi: 5 kartu"
+    },
+    "heaven_king_ev_002": {
+      "title": "Paduan Suara Besar Pagi Hari",
+      "body": "Para umat bernyanyi dengan semangat begitu besar sampai pilar-pilar surga pun sedikit bergetar.",
+      "effect": "Ibadah: +5 per kartu",
+      "duration": "Durasi: 6 kartu"
+    },
+    "heaven_king_ev_003": {
+      "title": "Hari Penuh Pertanyaan",
+      "body": "Manusia ragu, bimbang, dan banyak berpikir. Mereka terus maju tanpa kepastian.",
+      "effect": "Kehendak bebas: -5 per kartu",
+      "duration": "Durasi: 4 kartu"
+    },
+    "heaven_king_ev_004": {
+      "title": "Keajaiban Kecil yang Tepat Sasaran",
+      "body": "Beberapa bantuan datang pada saat yang tepat, secara halus dan berguna.",
+      "effect": "Intervensi: +5 per kartu",
+      "duration": "Durasi: 5 kartu"
+    },
+    "heaven_king_ev_005": {
+      "title": "Sunyi di Kapel",
+      "body": "Kelelahan sesaat menyentuh para umat. Semangat mereka sedikit menurun.",
+      "effect": "Doa: -5 per kartu",
+      "duration": "Durasi: 6 kartu"
+    },
+    "heaven_king_ev_006": {
+      "title": "Lonjakan Kesadaran",
+      "body": "Manusia memutuskan untuk berpikir sendiri dengan energi yang hampir lancang. Menjengkelkan, tapi mulia.",
+      "effect": "Kehendak bebas: +5 per kartu",
+      "duration": "Durasi: 4 kartu"
+    },
+    "heaven_king_ev_007": {
+      "title": "Turunnya Gairah Iman",
+      "body": "Ritual besar menarik sedikit lebih sedikit orang. Lilin-lilin, setidaknya, tetap terlihat bermartabat.",
+      "effect": "Ibadah: -5 per kartu",
+      "duration": "Durasi: 7 kartu"
+    },
+    "heaven_king_ev_008": {
+      "title": "Kebijakan Tidak Ikut Campur",
+      "body": "Kerajaan memutuskan untuk membiarkan dunia bernapas. Sangat bijak. Sangat membuat frustrasi bagi malaikat yang gelisah.",
+      "effect": "Intervensi: -5 per kartu",
+      "duration": "Durasi: 5 kartu"
+    },
+    "heaven_king_ev_009": {
+      "title": "Sentakan Kemandirian",
+      "body": "Di bawah sana, pilihan-pilihan berani diambil tanpa tanda bercahaya atau suara dari langit. Sungguh nekat.",
+      "effect": "Kehendak bebas: +5 per kartu",
+      "duration": "Durasi: 4 kartu"
+    },
+    "heaven_king_ev_010": {
+      "title": "Prosesi Bercahaya",
+      "body": "Lagu-lagu naik, langkah-langkah selaras, dan semua orang tampak tahu persis ke mana mereka melangkah.",
+      "effect": "Ibadah: +5 per kartu",
+      "duration": "Durasi: 6 kartu"
+    },
+    "heaven_king_ev_011": {
+      "title": "Tumpukan Keajaiban Tertunda",
+      "body": "Beberapa permintaan masih tertunda. Situasinya mulai mengkhawatirkan.",
+      "effect": "Intervensi: -5 per kartu",
+      "duration": "Durasi: 3 kartu"
+    },
+    "heaven_king_ev_012": {
+      "title": "Hujan Tanda Baik",
+      "body": "Kebetulan-kebetulan baik semakin sering terjadi. Banyak yang melihatnya sebagai tanda yang baik.",
+      "effect": "Intervensi: +5 per kartu",
+      "duration": "Durasi: 7 kartu"
+    },
+    "heaven_king_ev_013": {
+      "title": "Malam Tanpa Jawaban",
+      "body": "Panggilan dari hati semakin jarang. Keheningan ini tidak kejam. Hanya terasa agak kosong.",
+      "effect": "Doa: -5 per kartu",
+      "duration": "Durasi: 4 kartu"
+    },
+    "heaven_king_ev_014": {
+      "title": "Perayaan Suara-Suara Bersatu",
+      "body": "Para umat berkumpul dalam jumlah besar dan nyanyian mereka semakin kuat.",
+      "effect": "Ibadah: +5 per kartu",
+      "duration": "Durasi: 6 kartu"
+    },
+    "heaven_king_ev_015": {
+      "title": "Fajar Perhenungan",
+      "body": "Kelembutan naik dari Bumi. Untuk sekali ini, bahkan administrasi surga merasa itu indah tanpa perlu menambahkan apa pun.",
+      "effect": "Doa: +5 per kartu",
+      "duration": "Durasi: 3 kartu"
+    },
+    "heaven_king_ev_016": {
+      "title": "Roh yang Terlalu Ingin Tahu",
+      "body": "Banyak yang mulai bertanya apakah mereka benar-benar harus mengikuti jalan yang ditunjukkan. Jawabannya, belum tentu.",
+      "effect": "Kehendak bebas: -5 per kartu",
+      "duration": "Durasi: 5 kartu"
+    },
+    "heaven_king_ev_017": {
+      "title": "Tanda di Waktu yang Tepat",
+      "body": "Sebuah dorongan kecil yang pas berhasil mencegah bencana besar. Rapi. Diam-diam. Memuaskan.",
+      "effect": "Intervensi: +5 per kartu",
+      "duration": "Durasi: 4 kartu"
+    },
+    "heaven_king_ev_018": {
+      "title": "Umat yang Teralihkan",
+      "body": "Tatapan mengembara, nyanyian melemah, dan seseorang jelas sedang memeriksa hal lain saat ibadah berlangsung.",
+      "effect": "Ibadah: -5 per kartu",
+      "duration": "Durasi: 7 kartu"
+    },
+    "heaven_king_ev_019": {
+      "title": "Pilihan yang Berani",
+      "body": "Manusia mengambil keputusan berani meski masih ragu. Langit menghormati dorongan ini.",
+      "effect": "Kehendak bebas: +5 per kartu",
+      "duration": "Durasi: 3 kartu"
+    },
+    "heaven_king_ev_020": {
+      "title": "Bisikan yang Lelah",
+      "body": "Doa-doa masih terus datang, tetapi kurang tulus dan kurang kuat.",
+      "effect": "Doa: -5 per kartu",
+      "duration": "Durasi: 6 kartu"
+    },
+    "heaven_king_ev_021": {
+      "title": "Pengamatan yang Penuh Hormat",
+      "body": "Surga memilih untuk tidak campur tangan. Sikap menahan diri ini bijak, tetapi membuat beberapa malaikat frustrasi.",
+      "effect": "Intervensi: -5 per kartu",
+      "duration": "Durasi: 5 kartu"
+    },
+    "heaven_king_ev_022": {
+      "title": "Pembaruan Liturgi",
+      "body": "Ritual-ritual mendapatkan kembali kilaunya. Bahkan pedupaan tua tampak berdiri sedikit lebih tegak.",
+      "effect": "Ibadah: +5 per kartu",
+      "duration": "Durasi: 7 kartu"
+    },
+    "heaven_king_ev_023": {
+      "title": "Tangan yang Tertaut",
+      "body": "Panggilan yang tulus naik dengan hangat. Sederhana, rendah hati, dan sangat efektif.",
+      "effect": "Doa: +5 per kartu",
+      "duration": "Durasi: 4 kartu"
+    },
+    "heaven_king_ev_024": {
+      "title": "Gelombang Otonomi",
+      "body": "Manusia ingin memutuskan sendiri. Langit bimbang antara kagum dan kedutan gugup kecil.",
+      "effect": "Kehendak bebas: -5 per kartu",
+      "duration": "Durasi: 6 kartu"
+    },
+    "heaven_king_ev_025": {
+      "title": "Kuil Setengah Kosong",
+      "body": "Tempat-tempat ibadah mulai sedikit kosong. Ini tidak parah, tetapi penurunannya terlihat.",
+      "effect": "Ibadah: -5 per kartu",
+      "duration": "Durasi: 3 kartu"
+    },
+    "heaven_king_ev_026": {
+      "title": "Kebangkitan Batin Besar",
+      "body": "Hati nurani menjadi terang, keputusan kembali tegak, dan takdir harus berbagi panggung.",
+      "effect": "Kehendak bebas: +5 per kartu",
+      "duration": "Durasi: 5 kartu"
+    },
+    "heaven_king_ev_027": {
+      "title": "Paduan Hati yang Tulus",
+      "body": "Doa naik tanpa hiasan, tanpa gaya, hanya sungguh-sungguh. Langit menyukainya saat semuanya tetap sederhana.",
+      "effect": "Doa: +5 per kartu",
+      "duration": "Durasi: 4 kartu"
+    },
+    "heaven_king_ev_028": {
+      "title": "Jeda Surgawi",
+      "body": "Intervensi menjadi lebih jarang untuk sementara waktu. Langit memilih memberi lebih banyak otonomi.",
+      "effect": "Intervensi: -5 per kartu",
+      "duration": "Durasi: 6 kartu"
+    },
+    "heaven_king_ev_029": {
+      "title": "Ritual yang Sedikit Terlalu Panjang",
+      "body": "Ibadah berlangsung terlalu lama dan perhatian mulai menurun.",
+      "effect": "Ibadah: -5 per kartu",
+      "duration": "Durasi: 3 kartu"
+    },
+    "heaven_king_ev_030": {
+      "title": "Dorongan Bebas",
+      "body": "Dunia terus maju dengan sendirinya secara mengesankan. Bagi langit, ini sekaligus indah dan membuat frustrasi.",
+      "effect": "Kehendak bebas: +5 per kartu",
+      "duration": "Durasi: 7 kartu"
+    }
+  }
+}

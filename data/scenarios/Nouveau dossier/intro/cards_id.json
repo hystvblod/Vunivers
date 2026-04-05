@@ -1,0 +1,19 @@
+{
+  "intro_001": {
+    "title": "",
+    "body": "",
+    "choices": {}
+  },
+  "intro_002": {
+    "title": "Bar",
+    "body": "Geser kartu ini untuk melanjutkan. Saat dimiringkan, kamu bisa melihat efeknya pada bar.",
+    "choices": {
+      "A": "Lanjutkan"
+    }
+  },
+  "intro_003": {
+    "title": "Token",
+    "body": "Ups! Bar Keseimbangan sangat rendah. Tekan token, lalu gunakan opsi yang mengembalikan satu bar ke 50 %. Setelah itu, klik bar yang berkedip.",
+    "choices": {}
+  }
+}
