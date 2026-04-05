@@ -622,9 +622,9 @@
   },
   "mcc_070": {
     "title": "Telefono del CEO",
-    "body": "Il tuo telefono lascia trapelare notifiche durante un evento pubblico. Questo fa partire speculazioni.",
+    "body": "Durante un evento pubblico compaiono notifiche sul tuo telefono. Questo scatena subito delle speculazioni.",
     "choices": {
-      "A": "Riderci sopra e sviare: sì, sto lavorando.",
+      "A": "Sdrammatizzare con una risposta leggera e alleggerire la situazione.",
       "B": "Rifiutare di commentare, chiudere la porta.",
       "C": "Pubblicare una chiarificazione e calmare il gioco."
     }
@@ -1279,7 +1279,7 @@
   },
   "mcc_143": {
     "title": "Stagista social media",
-    "body": "Un post ufficiale viene pubblicato con un emoji strano. Nessuno sa cosa significhi, ma va in tendenza.",
+    "body": "Viene pubblicato un post ufficiale con un’emoji strana. Nessuno capisce cosa significhi, ma diventa virale.",
     "choices": {
       "A": "Chiarire e riprendere il controllo editoriale.",
       "B": "Cavalcare: più emoji, più rumore mediatico.",
@@ -2119,7 +2119,7 @@
     "body": "I dipendenti votano: più vegetale in mensa. Alcuni gridano al complotto dei broccoli.",
     "choices": {
       "A": "Aggiungere più opzioni vegetali, senza imporre.",
-      "B": "Rifiutare: la mensa non è un parlamento.",
+      "B": "Rifiutare ricordando che la mensa non può essere gestita con votazioni continue.",
       "C": "Testare 2 giorni a settimana e misurare la soddisfazione."
     }
   },

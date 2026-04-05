@@ -622,9 +622,9 @@
   },
   "mcc_070": {
     "title": "Téléphone du CEO",
-    "body": "Ton téléphone fuit des notifications en plein événement public. Ça lance des spéculations.",
+    "body": "Des notifications apparaissent sur ton téléphone en plein événement public. Cela lance immédiatement des spéculations.",
     "choices": {
-      "A": "En rire et détourner: \"oui, je bosse\".",
+      "A": "En rire et détourner la situation avec une réponse légère.",
       "B": "Refuser de commenter, fermer la porte.",
       "C": "Publier une clarification et calmer le jeu."
     }
@@ -1279,7 +1279,7 @@
   },
   "mcc_143": {
     "title": "Stagiaire social media",
-    "body": "Un post officiel est publié avec un emoji étrange. Personne ne sait ce que ça signifie, mais ça trend.",
+    "body": "Un post officiel est publié avec un emoji étrange. Personne ne comprend ce qu’il signifie, mais il devient viral.",
     "choices": {
       "A": "Clarifier et reprendre le contrôle éditorial.",
       "B": "Surfer: plus d’emojis, plus de bruit médiatique.",
@@ -2119,7 +2119,7 @@
     "body": "Les employés votent: plus végétal à la cantine. Certains crient au complot du brocoli.",
     "choices": {
       "A": "Ajouter plus d’options végétales, sans imposer.",
-      "B": "Refuser: \"la cantine n’est pas un parlement\".",
+      "B": "Refuser en rappelant que la cantine ne peut pas être gérée par vote permanent.",
       "C": "Tester 2 jours/semaine et mesurer la satisfaction."
     }
   },
