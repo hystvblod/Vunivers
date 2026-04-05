@@ -622,9 +622,9 @@
   },
   "mcc_070": {
     "title": "CEO phone",
-    "body": "Your phone leaks notifications during a public event. Speculation starts flying.",
+    "body": "Notifications appear on your phone during a public event. This immediately sparks speculation.",
     "choices": {
-      "A": "Laugh it off and deflect: \"yes, I work.\"",
+      "A": "Laugh it off and defuse the situation with a light response.",
       "B": "Refuse to comment, shut it down.",
       "C": "Publish a clarification and calm things down."
     }
@@ -1279,7 +1279,7 @@
   },
   "mcc_143": {
     "title": "Social media intern",
-    "body": "An official post goes out with a strange emoji. Nobody knows what it means, but it is trending.",
+    "body": "An official post is published with a strange emoji. No one understands what it means, but it goes viral.",
     "choices": {
       "A": "Clarify and take back editorial control.",
       "B": "Ride it: more emojis, more media noise.",
@@ -2119,7 +2119,7 @@
     "body": "Employees vote for more plant-based food in the cafeteria. Some are shouting about a broccoli conspiracy.",
     "choices": {
       "A": "Add more plant-based options, without forcing it.",
-      "B": "Refuse: \"the cafeteria is not a parliament.\"",
+      "B": "Refuse, pointing out that the cafeteria cannot be run by constant voting.",
       "C": "Test 2 days a week and measure satisfaction."
     }
   },
