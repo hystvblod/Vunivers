@@ -1135,7 +1135,7 @@
   },
   "vampire_127": {
     "title": "Die knarrende Truhe",
-    "body": "Die Truhe hat nie Geräusche gemacht. Jetzt stöhnt sie. Und Archive schmecken nach Geheimnissen.",
+    "body": "Die Truhe hat nie Geräusche gemacht. Jetzt stöhnt sie. Jemand hat vielleicht die Archive durchsucht.",
     "choices": {
       "A": "Öffnen und nachsehen",
       "B": "Sie versiegeln",
@@ -1756,7 +1756,7 @@
   },
   "vampire_196": {
     "title": "Die leere Truhe des Clans",
-    "body": "Die Opfertruhe ist leer. Der Clan streitet sich, und das Ganze wird öffentlich.",
+    "body": "Die Opfertruhe ist leer. Der Clan streitet sich, und die Gerüchte beginnen aus dem Versteck nach draußen zu dringen.",
     "choices": {
       "A": "Das Geld zurückgeben und alle zurechtweisen",
       "B": "Einen Verantwortlichen benennen",
@@ -3259,7 +3259,7 @@
   },
   "vampire_363": {
     "title": "Der Rosenmarkt",
-    "body": "Ein Rosenmarkt öffnet nachts. Sehr schön. Sehr voll mit Zeugen.",
+    "body": "Ein Rosenmarkt öffnet nachts. Es ist wunderschön, aber es gibt zu viele Zeugen.",
     "choices": {
       "A": "Ihn verlegen",
       "B": "Darin untertauchen",
