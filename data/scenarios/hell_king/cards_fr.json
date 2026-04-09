@@ -309,7 +309,7 @@
     "title": "Tour des confessions",
     "body": "Les damnés avouent leurs secrets dans une tour. Ces aveux peuvent t’être utiles.",
     "choices": {
-      "A": "Utiliser ces aveux pour renforcer ton stock d'âmes.",
+      "A": "Utiliser ces aveux pour mieux tenir ces âmes.",
       "B": "Exploiter certains secrets pour influencer le monde des vivants.",
       "C": "Classer ces archives pour améliorer l'ordre infernal."
     }
@@ -354,7 +354,7 @@
     "title": "Conseil stratégique infernal",
     "body": "Tes conseillers veulent que tu privilégies les âmes, les armées, l’ordre ou le monde des hommes.",
     "choices": {
-      "A": "Donner un peu plus à chacun, au risque de tendre l'ordre.",
+      "A": "Donner un peu plus à chacun, au risque de fragiliser l'ordre.",
       "B": "Imposer la priorité de l'ordre, quitte à perdre des âmes.",
       "C": "Investir dans le monde des hommes, ton futur terrain de jeu."
     }
@@ -1319,7 +1319,7 @@
     "choices": {
       "A": "Y précipiter davantage d’âmes pour faire peur.",
       "B": "Construire des digues avec des matériaux extrêmement contrôlés.",
-      "C": "Utiliser cette mer comme image obsédante pour certains mortels."
+      "C": "Utiliser cette mer pour hanter l'esprit de certains mortels."
     }
   },
   "hk_148": {
@@ -1327,8 +1327,8 @@
     "body": "Une crypte contient tout ce que les vivants et les morts n’ont jamais osé avouer.",
     "choices": {
       "A": "Plonger des âmes dedans pour les briser.",
-      "B": "Indexer ces secrets comme données stratégiques.",
-      "C": "Laisser en filtrer quelques-uns vers des scandales terrestres."
+      "B": "Classer ces secrets pour t'en servir plus tard.",
+      "C": "En laisser filtrer quelques-uns pour provoquer des scandales sur Terre."
     }
   },
   "hk_149": {
@@ -1345,7 +1345,7 @@
     "body": "On te propose de recenser les enfers parallèles, concurrents ou à peine formés.",
     "choices": {
       "A": "Mesurer surtout combien d’âmes tu peux absorber.",
-      "B": "En faire un outil d’ordre et de contrôle sur les autres plans.",
+      "B": "En faire un outil pour surveiller et contenir les autres royaumes infernaux.",
       "C": "Utiliser ces infos pour préparer une expansion sur Terre."
     }
   },
@@ -1922,7 +1922,7 @@
     "choices": {
       "A": "Les encourager à abandonner leur discernement.",
       "B": "Structurer des règles strictes, souvent ignorées.",
-      "C": "Orienter ces systèmes vers des valeurs subtiles de domination."
+      "C": "Orienter ces systèmes pour qu'ils donnent toujours plus de pouvoir aux mêmes."
     }
   },
   "hk_215": {
@@ -3037,7 +3037,7 @@
     "body": "Un lac où aucun cri ne peut être entendu apparaît dans tes domaines.",
     "choices": {
       "A": "Y jeter les âmes qui crient trop.",
-      "B": "L’étudier et l’intégrer à un plan d’ordre global.",
+      "B": "L'étudier pour voir comment t'en servir dans ton royaume.",
       "C": "Relier ce lac à certains lieux de solitude extrême sur Terre."
     }
   },
@@ -3160,7 +3160,7 @@
   },
   "hk_352": {
     "title": "Statues de souverains déchus",
-    "body": "Une galerie entière regroupe les statues de rois humains tombés dans ta sphère.",
+    "body": "Une galerie entière regroupe les statues de rois humains tombés sous ton pouvoir.",
     "choices": {
       "A": "Les exhiber pour humilier encore leurs âmes.",
       "B": "Classer chaque statue par type de chute dans tes registres.",
@@ -3484,7 +3484,7 @@
   },
   "hk_388": {
     "title": "Jardin de cendres figées",
-    "body": "Chaque fleur représente un espoir détruit.",
+    "body": "Dans ce jardin, chaque fleur représente un espoir détruit.",
     "choices": {
       "A": "Y promener les âmes optimistes jusqu'à ce qu'elles renoncent.",
       "B": "Répertorier chaque fleur par origine de l'espoir brisé.",
@@ -3533,15 +3533,15 @@
     "choices": {
       "A": "Les pousser à une efficacité inhumaine.",
       "B": "Intégrer leurs bilans à ta stratégie globale.",
-      "C": "Injecter cette obsession du chiffre dans certaines économies."
+      "C": "Faire naître cette obsession des chiffres dans certaines économies."
     }
   },
   "hk_394": {
     "title": "Bûchers sans flammes",
-    "body": "Des bûchers qui ne brûlent pas le corps, mais l’esprit.",
+    "body": "Ces bûchers ne brûlent pas le corps, mais l'esprit.",
     "choices": {
       "A": "Y attacher ceux qui s'accrochent à leur image.",
-      "B": "Classer chaque brûlure invisible comme donnée d'ordre.",
+      "B": "Noter chaque blessure invisible pour mieux contrôler les âmes.",
       "C": "Faire écho de ces bûchers dans la honte sociale humaine."
     }
   },
