@@ -1135,7 +1135,7 @@
   },
   "vampire_127": {
     "title": "The Creaking Chest",
-    "body": "The chest never used to make noise. Now it groans. And archives taste like secrets.",
+    "body": "The chest never used to make noise. Now it groans. Someone may have searched the archives.",
     "choices": {
       "A": "Open it and check",
       "B": "Seal it shut",
@@ -1756,7 +1756,7 @@
   },
   "vampire_196": {
     "title": "The Empty Clan Chest",
-    "body": "The offering chest is empty. The clan is fighting and it is becoming public.",
+    "body": "The offering chest is empty. The clan is arguing, and rumors are starting to leak out of the hideout.",
     "choices": {
       "A": "Return the money and restore order",
       "B": "Name someone responsible",
@@ -3259,7 +3259,7 @@
   },
   "vampire_363": {
     "title": "The Rose Market",
-    "body": "A rose market opens at night. Very beautiful. Very full of witnesses.",
+    "body": "A rose market opens at night. It is beautiful, but there are too many witnesses.",
     "choices": {
       "A": "Have it moved",
       "B": "Blend into it",

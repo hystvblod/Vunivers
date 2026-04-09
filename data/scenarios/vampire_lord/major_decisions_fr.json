@@ -1,4 +1,4 @@
-{
+﻿{
   "version": 1,
   "decisions": {
     "vampire_major_001": {
@@ -32,7 +32,7 @@
       "outcome_yes_title": "Bonne décision",
       "outcome_yes_body": "Tu détournes la menace. La pression des chasseurs revient à 50.",
       "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Ils avancent sans obstacle. Les chasseurs gagnent la moitié de terrain utile."
+      "outcome_no_body": "Ils avancent sans obstacle. Les chasseurs gagnent encore du terrain."
     },
     "vampire_major_004": {
       "title": "Punir un chef du clan",
@@ -91,7 +91,7 @@
     },
     "vampire_major_009": {
       "title": "Changer de repaire",
-      "body": "Trop de rumeurs tournent sur votre repaire actuel. Tu ordonnes un déménagement discret immédiat ?",
+      "body": "Trop de rumeurs tournent sur ton repaire actuel. Tu ordonnes un déménagement discret immédiat ?",
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
@@ -102,7 +102,7 @@
     },
     "vampire_major_010": {
       "title": "Caméras partout",
-      "body": "La ville se couvre de caméras et de téléphones. Tu réduis fortement les sorties nocturnes du clan ?",
+      "body": "La ville se couvre de caméras et de téléphones. Tu continues presque comme avant malgré le risque ?",
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
@@ -113,7 +113,7 @@
     },
     "vampire_major_011": {
       "title": "Source sûre à l'hôpital",
-      "body": "Un contact humain propose un accès discret à des réserves de sang. Tu centralises toute l'approvisionnement sur lui ?",
+      "body": "Un contact humain propose un accès discret à des réserves de sang. Tu centralises tout l’approvisionnement sur lui ?",
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
@@ -186,7 +186,7 @@
       "outcome_yes_title": "Bonne décision",
       "outcome_yes_body": "La pression retombe enfin. Les chasseurs reviennent à 50.",
       "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Ils gagnent encore du terrain. Leur menace est divisée par deux trop tardivement."
+      "outcome_no_body": "Ils gagnent encore du terrain. Tu réagis trop tard pour vraiment les freiner."
     },
     "vampire_major_018": {
       "title": "Ancien contre ancien",
@@ -228,7 +228,7 @@
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
       "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "L'équipe tombe dans un piège. Les chasseurs gagnent la moitié de terrain utile.",
+      "outcome_yes_body": "L’équipe tombe dans un piège. Les chasseurs gagnent encore du terrain.",
       "outcome_no_title": "Bonne décision",
       "outcome_no_body": "Tu privilégies la défense intelligente. Les chasseurs reviennent à 50."
     },
@@ -245,7 +245,7 @@
     },
     "vampire_major_023": {
       "title": "Une seule source",
-      "body": "Un conseiller veut dépendre d'une seule grande source de sang pour simplifier la logistique. Tu acceptes ?",
+      "body": "Un conseiller veut dépendre d’une seule grande source de sang pour simplifier la logistique. Tu refuses cette dépendance ?",
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
@@ -399,7 +399,7 @@
     },
     "vampire_major_037": {
       "title": "Clinique infiltrée",
-      "body": "Un allié humain peut vous aider durablement pour le sang, mais il faudra mieux protéger la filière. Tu sécurises tout de suite ?",
+      "body": "Un allié humain peut aider durablement le clan pour le sang, mais il faudra mieux protéger la filière. Tu sécurises tout de suite ?",
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
@@ -410,7 +410,7 @@
     },
     "vampire_major_038": {
       "title": "Chasseurs trop proches",
-      "body": "Ils connaissent presque vos horaires. Tu changes toutes les routines du clan dès ce soir ?",
+      "body": "Ils connaissent presque les horaires du clan. Tu changes toutes les routines dès ce soir ?",
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
@@ -437,7 +437,7 @@
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
       "outcome_yes_title": "Catastrophe",
-      "outcome_yes_body": "Ils offrent votre existence au monde entier. Fin de partie.",
+      "outcome_yes_body": "Ils révèlent l’existence du clan au monde entier. Fin de partie.",
       "outcome_no_title": "Bonne décision",
       "outcome_no_body": "Tu bloques ce suicide collectif. La discrétion revient à 50."
     }

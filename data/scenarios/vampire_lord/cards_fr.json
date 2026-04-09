@@ -1135,7 +1135,7 @@
   },
   "vampire_127": {
     "title": "Le coffre qui grince",
-    "body": "Le coffre n’a jamais fait de bruit. Maintenant il gémit. Et les archives ont le goût des secrets.",
+    "body": "Le coffre n’a jamais fait de bruit. Maintenant il gémit. Quelqu’un a peut-être fouillé les archives.",
     "choices": {
       "A": "Ouvrir et vérifier",
       "B": "Le sceller",
@@ -1756,7 +1756,7 @@
   },
   "vampire_196": {
     "title": "Coffre du clan vide",
-    "body": "Le coffre d’offrandes est vide. Le clan se dispute et ça devient public.",
+    "body": "Le coffre d’offrandes est vide. Le clan se dispute et les rumeurs commencent à sortir du repaire.",
     "choices": {
       "A": "Rendre l’argent et recadrer",
       "B": "Désigner un responsable",
@@ -3259,7 +3259,7 @@
   },
   "vampire_363": {
     "title": "Le marché aux roses",
-    "body": "Un marché aux roses ouvre la nuit. Très beau. Très plein de témoins.",
+    "body": "Un marché aux roses ouvre la nuit. C’est magnifique, mais il y a trop de témoins.",
     "choices": {
       "A": "Le déplacer",
       "B": "S’y fondre",

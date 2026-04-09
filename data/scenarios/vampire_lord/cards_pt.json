@@ -1135,7 +1135,7 @@
   },
   "vampire_127": {
     "title": "O cofre que range",
-    "body": "O cofre nunca fez barulho. Agora geme. E os arquivos sabem a segredos.",
+    "body": "O cofre nunca fez barulho. Agora geme. Alguém pode ter mexido nos arquivos.",
     "choices": {
       "A": "Abrir e verificar",
       "B": "Selá-lo",
@@ -1756,7 +1756,7 @@
   },
   "vampire_196": {
     "title": "Cofre do clã vazio",
-    "body": "O cofre das oferendas está vazio. O clã discute e isso torna-se público.",
+    "body": "O cofre das oferendas está vazio. O clã discute e os rumores começam a sair do refúgio.",
     "choices": {
       "A": "Devolver o dinheiro e recentrar tudo",
       "B": "Apontar um responsável",
@@ -3259,7 +3259,7 @@
   },
   "vampire_363": {
     "title": "O mercado das rosas",
-    "body": "Um mercado de rosas abre à noite. Muito bonito. Muito cheio de testemunhas.",
+    "body": "Um mercado de rosas abre à noite. É belíssimo, mas há testemunhas a mais.",
     "choices": {
       "A": "Mudá-lo de lugar",
       "B": "Misturar-te nele",
