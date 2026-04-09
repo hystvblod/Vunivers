@@ -1,4 +1,4 @@
-{
+﻿{
   "vampire_001": {
     "title": "La bolsa de sangre orgánica",
     "body": "Desaparece una reserva de sangre. Alguien ha hecho acopio sin autorización.",
@@ -635,7 +635,7 @@
     "choices": {
       "A": "Retirar la foto",
       "B": "Negarlo con humor",
-      "C": "Culpar a un filtro"
+      "C": "Decir que la foto está manipulada"
     }
   },
   "vampire_072": {
@@ -1180,7 +1180,7 @@
   },
   "vampire_132": {
     "title": "La lluvia ácida",
-    "body": "No es el sol. Es otra cosa. Y otra cosa suele significar trampa.",
+    "body": "Cae lluvia ácida sobre la zona. No es el sol, pero salir sigue siendo peligroso.",
     "choices": {
       "A": "Quedarte en la guarida",
       "B": "Buscar la fuente",
@@ -1292,7 +1292,7 @@
     "choices": {
       "A": "Aceptar y proteger",
       "B": "Negarte y vigilarlo",
-      "C": "Sustituirlo"
+      "C": "Sustituirlo por alguien más fiable"
     }
   },
   "vampire_145": {
@@ -1396,7 +1396,7 @@
   },
   "vampire_156": {
     "title": "El ruido bajo la piedra",
-    "body": "Rasguños, aliento, silencio. Las tres etapas de un problema que crece.",
+    "body": "Se oye un rasguño bajo la piedra, luego una respiración y después nada. Algo se mueve detrás del muro.",
     "choices": {
       "A": "Abrir y mirar",
       "B": "Sellar y olvidar",
@@ -1612,7 +1612,7 @@
   },
   "vampire_180": {
     "title": "El plan de renovación",
-    "body": "Obreros, lámparas, planos y horarios. Todo lo que no puedes morder.",
+    "body": "Llegan obreros con luces, planos y horarios. Las obras amenazan directamente tus accesos.",
     "choices": {
       "A": "Hacer cancelar las obras",
       "B": "Mover los accesos",
@@ -2530,7 +2530,7 @@
   },
   "vampire_282": {
     "title": "El sótano húmedo",
-    "body": "El sótano de la guarida gotea por todas partes. Hasta los ataúdes empiezan a quejarse.",
+    "body": "El sótano del refugio gotea por todas partes. La humedad está empezando a estropear los ataúdes.",
     "choices": {
       "A": "Reparar rápido",
       "B": "Mover el stock",
@@ -2642,7 +2642,7 @@
     "choices": {
       "A": "Robarla",
       "B": "Esperar un poco más",
-      "C": "Enviar humanos"
+      "C": "Enviar humanos a robar la reliquia"
     }
   },
   "vampire_295": {
@@ -3187,7 +3187,7 @@
   },
   "vampire_355": {
     "title": "El notario clandestino",
-    "body": "Un notario clandestino propone blanquear tus herencias. Huele a trampa.",
+    "body": "Un notario clandestino propone blanquear tu patrimonio. Huele a trampa.",
     "choices": {
       "A": "Intentarlo",
       "B": "Vigilarlo",
@@ -3200,7 +3200,7 @@
     "choices": {
       "A": "Corromper la obra",
       "B": "Cambiar de ruta",
-      "C": "Trabajar de noche"
+      "C": "Pasar después de que se vayan los obreros"
     }
   },
   "vampire_357": {
@@ -3277,7 +3277,7 @@
   },
   "vampire_365": {
     "title": "El chófer del alcalde",
-    "body": "El chófer del alcalde te reconoce en una vieja foto. Espera un precio.",
+    "body": "El chófer del alcalde te reconoce en una foto antigua. Espera algo a cambio.",
     "choices": {
       "A": "Pagarle",
       "B": "Hacer que mienta",
@@ -3497,7 +3497,7 @@
     "choices": {
       "A": "Recibirlo",
       "B": "Mantenerlo a distancia",
-      "C": "Empujarlo a decidir"
+      "C": "Empujarlo a tomar partido"
     }
   },
   "vampire_390": {

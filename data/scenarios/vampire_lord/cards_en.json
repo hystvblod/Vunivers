@@ -1,4 +1,4 @@
-{
+﻿{
   "vampire_001": {
     "title": "The Organic Blood Bag",
     "body": "A stock of blood has gone missing. Someone has been building reserves without permission.",
@@ -635,7 +635,7 @@
     "choices": {
       "A": "Take the photo down",
       "B": "Deny it with humor",
-      "C": "Blame a filter"
+      "C": "Claim the photo was doctored"
     }
   },
   "vampire_072": {
@@ -1180,7 +1180,7 @@
   },
   "vampire_132": {
     "title": "The Acid Rain",
-    "body": "It is not sunlight. It is something else. And something else usually means a trap.",
+    "body": "Acid rain is falling over the area. It isn’t the sun, but going out is still dangerous.",
     "choices": {
       "A": "Stay in the lair",
       "B": "Search for the source",
@@ -1292,7 +1292,7 @@
     "choices": {
       "A": "Accept and protect him",
       "B": "Refuse and keep watch on him",
-      "C": "Replace him"
+      "C": "Replace him with someone more reliable"
     }
   },
   "vampire_145": {
@@ -1396,7 +1396,7 @@
   },
   "vampire_156": {
     "title": "The Sound Beneath the Stone",
-    "body": "Scratching, breath, silence. The three stages of a problem that is growing.",
+    "body": "A scratching sound comes from beneath the stone, then a breath, then nothing. Something is moving behind the wall.",
     "choices": {
       "A": "Open it and see",
       "B": "Seal it and forget it",
@@ -1612,7 +1612,7 @@
   },
   "vampire_180": {
     "title": "The Renovation Plan",
-    "body": "Workers, lamps, plans, schedules. Everything you cannot bite.",
+    "body": "Workers are arriving with lights, plans, and schedules. The construction directly threatens your access routes.",
     "choices": {
       "A": "Have the work canceled",
       "B": "Move the access points",
@@ -2530,7 +2530,7 @@
   },
   "vampire_282": {
     "title": "The Damp Basement",
-    "body": "The basement of the lair drips everywhere. Even the coffins are starting to complain.",
+    "body": "Water is dripping everywhere in the hideout’s basement. The damp is starting to damage the coffins.",
     "choices": {
       "A": "Repair it quickly",
       "B": "Move the stock",
@@ -2642,7 +2642,7 @@
     "choices": {
       "A": "Steal it",
       "B": "Wait a little longer",
-      "C": "Send humans"
+      "C": "Send humans to steal the relic"
     }
   },
   "vampire_295": {
@@ -3187,7 +3187,7 @@
   },
   "vampire_355": {
     "title": "The Cellar Notary",
-    "body": "A clandestine notary offers to launder your inheritances. It smells like a trap.",
+    "body": "A shady notary offers to launder your assets. It smells like a trap.",
     "choices": {
       "A": "Take the chance",
       "B": "Watch him",
@@ -3200,7 +3200,7 @@
     "choices": {
       "A": "Bribe the work crew",
       "B": "Change your route",
-      "C": "Work at night"
+      "C": "Pass through after the workers leave"
     }
   },
   "vampire_357": {
@@ -3277,7 +3277,7 @@
   },
   "vampire_365": {
     "title": "The Mayor's Driver",
-    "body": "The mayor's driver recognizes you from an old photo. He expects a price.",
+    "body": "The mayor’s driver recognizes you in an old photo. He wants something in return.",
     "choices": {
       "A": "Pay him",
       "B": "Make him lie",
@@ -3497,7 +3497,7 @@
     "choices": {
       "A": "Receive him",
       "B": "Keep him at a distance",
-      "C": "Force him to choose"
+      "C": "Push him to take a side"
     }
   },
   "vampire_390": {
