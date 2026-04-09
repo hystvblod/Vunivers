@@ -21,7 +21,7 @@
     "title": "Data leak",
     "body": "A server was misconfigured: customer data was exposed.",
     "choices": {
-      "A": "Inform people immediately",
+      "A": "Inform the affected customers immediately.",
       "B": "Wait until you confirm the exact impact before speaking.",
       "C": "Downplay it publicly and handle it internally."
     }
@@ -365,7 +365,7 @@
     "choices": {
       "A": "Simplify it a lot: free and easy returns.",
       "B": "Tighten it: checks and return fees.",
-      "C": "Simplify it, but with smart limits, thresholds, and history."
+      "C": "Simplify, but with clear limits based on past abuse."
     }
   },
   "mcc_042": {
@@ -552,7 +552,7 @@
     "title": "Ad team out of control",
     "body": "The ad team wants an aggressive slogan: \"We crush the competition.\" Legal sighs.",
     "choices": {
-      "A": "Approve it: psychological warfare.",
+      "A": "Approve it: keep the aggressive slogan.",
       "B": "Decline: calm and reliable tone.",
       "C": "Keep the energy but change the wording."
     }
@@ -1432,7 +1432,7 @@
   },
   "mcc_160": {
     "title": "Leaked budget plan",
-    "body": "An internal document about planned savings leaks out. Employees see it as a threat.",
+    "body": "An internal document about planned cost cuts has leaked. Employees see it as a threat.",
     "choices": {
       "A": "Explain clearly + protect jobs as much as possible.",
       "B": "Stay silent and wait for it to pass.",
@@ -1749,7 +1749,7 @@
     "title": "Currencies and exchange rates",
     "body": "Exchange rates are moving sharply. Your international profits are becoming unpredictable.",
     "choices": {
-      "A": "Hedge the risk and stabilize things.",
+      "A": "Protect against exchange-rate risk to stabilize results.",
       "B": "Accept the volatility.",
       "C": "Reduce exposure by localizing more."
     }
@@ -1792,7 +1792,7 @@
   },
   "mcc_200": {
     "title": "Resilience plan",
-    "body": "You are being asked for a resilience plan, crises, energy, supply. It takes time, but it reassures people.",
+    "body": "You are being asked for a resilience plan covering crises, energy, and supplies. It takes time, but it reassures people.",
     "choices": {
       "A": "Build a full plan with scenarios.",
       "B": "Make a minimal plan just to check the box.",
@@ -2021,7 +2021,7 @@
     "choices": {
       "A": "Launch a wellness and improvement plan.",
       "B": "Run a communications operation to climb quickly.",
-      "C": "Publicly challenge the barometer and its method."
+      "C": "Publicly challenge the survey’s methodology."
     }
   },
   "mcc_226": {
@@ -2219,7 +2219,7 @@
     "choices": {
       "A": "Show your contribution: jobs, innovation, prices.",
       "B": "Ignore it and keep going.",
-      "C": "Announce pro-competition commitments: APIs, partnerships."
+      "C": "Announce concrete commitments to leave more room for competition."
     }
   },
   "mcc_248": {
@@ -2340,7 +2340,7 @@
     }
   },
   "mcc_261": {
-    "title": "Debate on over-the-top ads",
+    "title": "Debate on intrusive ads",
     "body": "A proposed law targets ads that are too intrusive. Your ad team asks whether a screaming pop-up counts.",
     "choices": {
       "A": "Move to softer, clearer advertising.",
@@ -2417,7 +2417,7 @@
     "choices": {
       "A": "Launch a major apprenticeship program.",
       "B": "Do the minimum.",
-      "C": "Train fewer young people, but better, quality first."
+      "C": "Train fewer young people, but support them better."
     }
   },
   "mcc_270": {
@@ -2452,7 +2452,7 @@
     "body": "You are being asked to store data locally. Tech says yes, finance says \"ouch.\"",
     "choices": {
       "A": "Localize sensitive data and audit the rest.",
-      "B": "Keep everything global for cost/performance.",
+      "B": "Keep everything on global infrastructure to reduce costs.",
       "C": "Hybrid approach: local + multi-region cloud."
     }
   },
@@ -2470,7 +2470,7 @@
     "body": "A lawmaker wants a simulator to explain your pricing to the public. Your CFO is grimacing.",
     "choices": {
       "A": "Make a simple educational simulator.",
-      "B": "Refuse: too exposing.",
+      "B": "Refuse: too risky in public.",
       "C": "Create an FAQ with 3 key numbers."
     }
   },
@@ -2579,7 +2579,7 @@
     "choices": {
       "A": "Open your costs on one product line, transparency.",
       "B": "Attack the official: \"lie.\"",
-      "C": "Publish simple indicators, average margin, investments."
+      "C": "Publish simple indicators: average margin, costs, investments."
     }
   },
   "mcc_288": {
@@ -2633,7 +2633,7 @@
     "choices": {
       "A": "Offer a slower \"green\" option by default.",
       "B": "Keep ultra-fast delivery everywhere.",
-      "C": "Invest in cleaner fleets, gradually."
+      "C": "Invest progressively in cleaner fleets."
     }
   },
   "mcc_294": {
@@ -2809,7 +2809,7 @@
   },
   "mcc_313": {
     "title": "Visitor badge scandal",
-    "body": "A lawmaker is outraged on social media.",
+    "body": "A lawmaker says online that they were able to get in far too easily with a visitor badge. The story quickly grows.",
     "choices": {
       "A": "Strengthen security + apologies + public fixes.",
       "B": "Threaten immediate legal action.",
@@ -2926,7 +2926,7 @@
   },
   "mcc_326": {
     "title": "Data security",
-    "body": "After a highly publicized leak elsewhere, the regulator wants guarantees.",
+    "body": "After a heavily publicized leak at another company, the regulator wants guarantees.",
     "choices": {
       "A": "Invest heavily + external audit + transparency.",
       "B": "Do the legal minimum.",
@@ -2997,12 +2997,12 @@
     }
   },
   "mcc_334": {
-    "title": "Debate on moderation",
-    "body": "Your brand’s booth is far too overloaded. It gives an excessive image instead of a serious one.",
+    "title": "Debate on visual restraint",
+    "body": "Your brand booth is too overloaded: too many lights, too many slogans, too many effects. It gives an excessive image instead of a serious one.",
     "choices": {
-      "A": "Real moderation plan + visible measures.",
-      "B": "Symbolic measure for 1 week.",
-      "C": "Do nothing: productivity first."
+      "A": "Really simplify the booth and keep only the essentials.",
+      "B": "Make a small visual effort for one week, then go back to the way it was before.",
+      "C": "Change nothing: flashy works."
     }
   },
   "mcc_335": {
@@ -3082,7 +3082,7 @@
     "body": "A law wants to ban surprise fees. Your product has a small \"service\" fee. Very small... to you.",
     "choices": {
       "A": "Remove hidden fees, clear pricing.",
-      "B": "Keep it, in smaller print, no.",
+      "B": "Keep the hidden fees by writing them in smaller print.",
       "C": "Keep it, but make it ultra visible before payment."
     }
   },
@@ -3164,7 +3164,7 @@
     "choices": {
       "A": "Cooperate seriously despite the absurdity",
       "B": "Make fun of it and ignore it, bad idea.",
-      "C": "Send a serious file + offer non-slip mats."
+      "C": "Send a serious file and ask for clear written instructions."
     }
   },
   "mcc_353": {
@@ -3297,7 +3297,7 @@
     "title": "Anti-jargon law",
     "body": "In a meeting, everyone is speaking in corporate jargon.",
     "choices": {
-      "A": "Rewrite everything in simple language, good.",
+      "A": "Rewrite everything in simple language.",
       "B": "Ignore it: that is the culture.",
       "C": "Keep the jargon... but add a ridiculous glossary."
     }
@@ -3344,7 +3344,7 @@
     "choices": {
       "A": "Tone it down: more discreet branding.",
       "B": "Refuse: \"identity matters.\"",
-      "C": "Let teams vote on which items to de-logo."
+      "C": "Let teams vote on which objects really need the logo."
     }
   },
   "mcc_373": {
@@ -3375,7 +3375,7 @@
     }
   },
   "mcc_376": {
-    "title": "No-AC day in peak heat",
+    "title": "No-AC day in the middle of a heatwave",
     "body": "You are asked to turn off the air conditioning to set an example. It is 38°C and the employees are taking it very badly.",
     "choices": {
       "A": "Smart moderation: thresholds, ventilation, adapted hours.",
@@ -3477,7 +3477,7 @@
     "title": "Regulators ask for a jingle",
     "body": "A regulator asks you for a compliance jingle \"to raise awareness.\"",
     "choices": {
-      "A": "Make a simple, useful jingle, not cringe.",
+      "A": "Make a simple, useful jingle without making it ridiculous.",
       "B": "Refuse: seriousness first.",
       "C": "Do an internal campaign without a jingle, just training."
     }
@@ -3540,7 +3540,7 @@
     "title": "Anti-neon-green-button law",
     "body": "A law wants to ban neon green buttons that are \"too pushy.\"",
     "choices": {
-      "A": "Redesign with accessibility and calm colors.",
+      "A": "Redesign it to make it clean, readable, and accessible.",
       "B": "Change just one button and hope.",
       "C": "Switch to neon blue, same problem."
     }
@@ -3605,7 +3605,7 @@
     "choices": {
       "A": "Create a real dark mode, sober + accessible.",
       "B": "Keep the neon pink: \"it's our signature.\"",
-      "C": "Dark mode, but subscribers only, ouch."
+      "C": "Create a simple night mode for everyone, then reserve advanced options for subscribers."
     }
   },
   "mcc_402": {
@@ -3771,7 +3771,7 @@
     }
   },
   "mcc_420": {
-    "title": "Compliment week for the",
+    "title": "Compliment week for regulators",
     "body": "You are advised to send an overly flattering message to the regulators. Your lawyer rejects the idea immediately.",
     "choices": {
       "A": "Stay neutral, just cooperate properly.",
@@ -3843,12 +3843,12 @@
     }
   },
   "mcc_428": {
-    "title": "Lawmaker wants a button",
-    "body": "Your product team says it is doable.",
+    "title": "Lawmaker wants a wellbeing button",
+    "body": "A lawmaker suggests adding a wellbeing button to apps to help users take a break. Your product team says it is doable.",
     "choices": {
       "A": "Add an optional wellness button.",
       "B": "Refuse: off-topic.",
-      "C": "Add the button... but it opens the payment page, no."
+      "C": "Add the button... but use it to push a paid offer."
     }
   },
   "mcc_429": {
@@ -3888,12 +3888,12 @@
     }
   },
   "mcc_433": {
-    "title": "Micro-listening plan",
-    "body": "A minister wants to reduce city noise.",
+    "title": "Anti-noise sensor plan",
+    "body": "A minister wants to install sensors to measure city noise. You are offered the contract, but these sensors could worry people if they look like microphones.",
     "choices": {
-      "A": "Refuse: too sensitive.",
+      "A": "Refuse: too sensitive for privacy.",
       "B": "Accept: big public contract.",
-      "C": "Accept, but only with anonymization and total transparency."
+      "C": "Accept only with non-audio sensors, anonymization, and full transparency."
     }
   },
   "mcc_434": {
@@ -4033,7 +4033,7 @@
   },
   "mcc_449": {
     "title": "Debate on the right to complain",
-    "body": "A political party proposes an official right to complain. Your support gets 10,000 complaints a day already. What changes?",
+    "body": "A party proposes an official right to complain. Your support team already gets 10,000 complaints a day. What would it really change?",
     "choices": {
       "A": "Improve support + create a clear feedback channel.",
       "B": "Ignore it: it is just noise.",
