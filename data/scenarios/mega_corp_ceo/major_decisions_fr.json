@@ -18,10 +18,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu restes crédible et les investisseurs reviennent à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Le doute s'installe et leur confiance est divisée par deux."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu annonces quelque chose que tu ne pourras pas tenir. La confiance des investisseurs est divisée par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu restes crédible et les investisseurs reviennent à 50."
     },
     "corp_major_003": {
       "title": "Plan social brutal",
@@ -29,10 +29,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu bloques la casse et les employés reviennent à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses tomber les équipes. Leur confiance chute de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu laisses tomber les équipes. Les employés chutent de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu bloques cette casse et les employés reviennent à 50."
     },
     "corp_major_004": {
       "title": "Campagne mensongère",
@@ -40,10 +40,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses le mensonge et l'image de marque revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses publier n'importe quoi. L'image de marque est divisée par deux."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu valides une campagne mensongère. L'image de marque est divisée par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses ce mensonge et l'image de marque revient à 50."
     },
     "corp_major_005": {
       "title": "Inspection annoncée",
@@ -51,10 +51,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu imposes une vraie remise en ordre. Les régulateurs reviennent à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Le camouflage se voit. La relation avec les régulateurs chute de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu préfères cacher au lieu de corriger. Les régulateurs te sanctionnent et leur relation chute de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu imposes une vraie remise en ordre. Les régulateurs reviennent à 50."
     },
     "corp_major_006": {
       "title": "Annonce trop optimiste",
@@ -73,10 +73,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu choisis de ralentir avant la casse. Les employés reviennent à 50.",
-      "outcome_no_title": "Catastrophe",
-      "outcome_no_body": "Le site craque et emporte tout avec lui. Fin de partie."
+      "outcome_yes_title": "Catastrophe",
+      "outcome_yes_body": "Tu forces jusqu'à la rupture. Fin de partie.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu ralentis avant la casse. Les employés reviennent à 50."
     },
     "corp_major_008": {
       "title": "Bad buzz en ligne",
@@ -117,10 +117,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu gardes les investisseurs ancrés dans le réel. Leur confiance revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses gonfler quelque chose de faux. L'image de marque perd la moitié de sa valeur."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu vends une promesse vide. L'image de marque perd la moitié de sa valeur.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses de vendre du faux et l'image de marque revient à 50."
     },
     "corp_major_012": {
       "title": "Gel des salaires",
@@ -139,10 +139,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu choisis la sobriété au lieu du gadget. L'image de marque revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses l'usure visuelle s'installer. L'image de marque chute de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu lances un grand écran de fumée et l'image de marque chute de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses ce coup de peinture et l'image de marque revient à 50."
     },
     "corp_major_014": {
       "title": "Relations publiques toxiques",
@@ -150,10 +150,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses l'arrangement sale et la relation avec les régulateurs revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses s'installer une dépendance dangereuse. Les régulateurs te coupent en deux."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu laisses un arrangement sale s'installer. Les régulateurs chutent de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses cette négociation dans l'ombre et les régulateurs reviennent à 50."
     },
     "corp_major_015": {
       "title": "Distribution de dividendes",
@@ -161,10 +161,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu tiens bon et la confiance des investisseurs revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu cèdes au court terme. Les investisseurs perdent la moitié de leur confiance utile."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu cèdes au court terme et la confiance des investisseurs chute de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu tiens bon et les investisseurs reviennent à 50."
     },
     "corp_major_016": {
       "title": "Produit dangereux",
@@ -216,10 +216,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses le bluff et les investisseurs reviennent à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Le doute grandit partout. Les investisseurs perdent la moitié de leur soutien."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu annonces un chiffre impossible et les investisseurs perdent la moitié de leur soutien.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses ce bluff et les investisseurs reviennent à 50."
     },
     "corp_major_021": {
       "title": "Pression sur les équipes",
@@ -282,10 +282,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses la casse et les employés reviennent à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses la fatigue gagner. Les employés perdent la moitié de leur stabilité."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu pousses des équipes déjà à bout. Les employés perdent la moitié de leur stabilité.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses cette surcharge et les employés reviennent à 50."
     },
     "corp_major_027": {
       "title": "Mensonge généralisé",
@@ -329,7 +329,7 @@
       "outcome_yes_title": "Bonne décision",
       "outcome_yes_body": "Tu envoies un signal clair. Les employés reviennent à 50.",
       "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses le poison tourner. Les employés chutent de moitié."
+      "outcome_no_body": "Tu laisses ce manager toxique détruire le reste. Les employés chutent de moitié."
     },
     "corp_major_031": {
       "title": "Promesse de marque",
@@ -359,10 +359,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu bloques trop tard et les marchés sanctionnent. Les investisseurs chutent de moitié.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu reprends le dossier proprement. Les investisseurs reviennent à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu bloques ce rachat mal préparé et les investisseurs reviennent à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu laisses partir un dossier bancal. Les investisseurs chutent de moitié."
     },
     "corp_major_034": {
       "title": "Réunion vérité",
@@ -392,10 +392,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu corriges trop lentement. Les régulateurs gardent la moitié de leur défiance.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu simplifies vite et bien. Les régulateurs reviennent à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu réécris cette procédure avant qu'elle n'explose. Les régulateurs reviennent à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu laisses l'opacité durer. Les régulateurs perdent la moitié de leur confiance."
     },
     "corp_major_037": {
       "title": "Discours aux investisseurs",
@@ -414,10 +414,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu corriges tard et brutalement. Les employés perdent encore la moitié de leur énergie.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu refais un cadre viable. Les employés reviennent à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu ramènes les objectifs au réel. Les employés reviennent à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu laisses des objectifs intenables user tout le monde. Les employés perdent la moitié de leur énergie."
     },
     "corp_major_039": {
       "title": "Promesse au public",

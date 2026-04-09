@@ -1,4 +1,4 @@
-﻿{
+{
   "version": 1,
   "decisions": {
     "vampire_major_001": {
@@ -73,10 +73,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Le piège est prêt et la menace redescend. Les chasseurs reviennent à 50.",
-      "outcome_no_title": "Catastrophe",
-      "outcome_no_body": "Le plan fuit avant même de commencer. Fin de partie."
+      "outcome_yes_title": "Catastrophe",
+      "outcome_yes_body": "Le piège échoue et le repaire est compromis. Fin de partie.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses ce coup trop risqué et les chasseurs reviennent à 50."
     },
     "vampire_major_008": {
       "title": "Exiler une lignée",
@@ -260,10 +260,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu coupes trop d'un coup. La discrétion perd déjà la moitié de sa marge.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu réorganises proprement. La discrétion revient à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu acceptes ce repli et la discrétion revient à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu restes trop exposé et la discrétion chute de moitié."
     },
     "vampire_major_025": {
       "title": "Partager les réserves",
@@ -305,9 +305,9 @@
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
       "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu t'agites trop et attires encore plus l'attention. La discrétion chute de moitié.",
+      "outcome_yes_body": "Tu lances une opération trop visible et la discrétion chute de moitié.",
       "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu fais les choses proprement. La discrétion revient à 50."
+      "outcome_no_body": "Tu refuses cette agitation et tu traites ça plus discrètement. La discrétion revient à 50."
     },
     "vampire_major_029": {
       "title": "Stocks contrôlés",
@@ -359,10 +359,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "La mesure arrive trop tard et trop mal. Le sang perd la moitié de sa valeur.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu choisis une solution plus saine. Le sang revient à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu rationnes à temps et le sang revient à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu laisses la situation glisser et le sang perd la moitié de sa valeur."
     },
     "vampire_major_034": {
       "title": "Cacher le repaire",
@@ -414,10 +414,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Le changement est mal préparé. Les chasseurs gardent la moitié de leur avantage.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu restructures intelligemment. Les chasseurs reviennent à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu changes les routines avant d'être percé. Les chasseurs reviennent à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu laisses tes horaires devenir lisibles. Les chasseurs gardent la moitié de leur avance."
     },
     "vampire_major_039": {
       "title": "Serment du clan",

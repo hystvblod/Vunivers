@@ -18,10 +18,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu imposes une vraie préparation. Les légions reviennent à un niveau correct.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu cèdes à la pression. Les légions reviennent brisées."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu lances l'assaut trop tôt. Les légions sont divisées par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu imposes une vraie préparation. Les légions reviennent à 50."
     },
     "hell_major_003": {
       "title": "Grand ménage dans l'administration",
@@ -63,9 +63,9 @@
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
       "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu frappes trop large et tout se grippe. L'ordre infernal s'effondre de moitié.",
+      "outcome_yes_body": "Tu frappes trop large et l'ordre infernal s'effondre de moitié.",
       "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu calmes le jeu et tu reprends le contrôle. L'ordre infernal revient à 50."
+      "outcome_no_body": "Tu reprends la cour en main sans tout casser. L'ordre infernal revient à 50."
     },
     "hell_major_007": {
       "title": "Légions épuisées",
@@ -151,9 +151,9 @@
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
       "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu simplifies trop brutalement et tout bloque. L'ordre infernal est divisé par deux.",
+      "outcome_yes_body": "Tu imposes une règle unique trop brutalement. L'ordre infernal est divisé par deux.",
       "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu prends le temps de remettre chacun à sa place. L'ordre infernal revient à 50."
+      "outcome_no_body": "Tu remets de l'ordre sans bloquer tout le système. L'ordre infernal revient à 50."
     },
     "hell_major_015": {
       "title": "Rationnement des troupes",
@@ -360,9 +360,9 @@
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
       "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu vides trop brutalement le système. L'ordre infernal est coupé en deux.",
+      "outcome_yes_body": "Tu repars de zéro trop brutalement. L'ordre infernal est coupé en deux.",
       "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu reconstruis sans casser d'un coup. L'ordre infernal revient à 50."
+      "outcome_no_body": "Tu reconstruis sans tout détruire d'un coup. L'ordre infernal revient à 50."
     },
     "hell_major_034": {
       "title": "Âmes oubliées",
@@ -426,9 +426,9 @@
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
       "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu provoques une cassure immédiate. Les légions sont divisées par deux.",
+      "outcome_yes_body": "Tu remplaces tout trop vite. Les légions sont divisées par deux.",
       "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu prépares la transition au lieu de casser tout de suite. Les légions reviennent à 50."
+      "outcome_no_body": "Tu prépares la transition sans casser l'armée. Les légions reviennent à 50."
     },
     "hell_major_040": {
       "title": "Dernier sceau",
