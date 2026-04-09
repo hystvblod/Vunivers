@@ -185,7 +185,7 @@
     "choices": {
       "A": "Formar al novato",
       "B": "Ocultarlo al clan",
-      "C": "Confiarlo a un anciano para que lo forme."
+      "C": "Confiarlo a un anciano para que lo forme"
     }
   },
   "vampire_022": {
@@ -572,7 +572,7 @@
     "choices": {
       "A": "Salvar las reservas",
       "B": "Cambiar de guarida",
-      "C": "Convertir el sótano en una trampa para los curiosos."
+      "C": "Convertir el sótano en una trampa para los curiosos"
     }
   },
   "vampire_065": {
@@ -2053,7 +2053,7 @@
   },
   "vampire_229": {
     "title": "El pacto de las calles",
-    "body": "Unos humanos proponen un pacto. Ofrecen silencio a cambio de protección. Es puro negocio.",
+    "body": "Unos humanos proponen un pacto. Ofrecen su silencio a cambio de tu protección. Es un trato clair.",
     "choices": {
       "A": "Aceptar y controlarlo",
       "B": "Negarte e imponer el miedo",
@@ -2323,7 +2323,7 @@
   },
   "vampire_259": {
     "title": "La caza del dron",
-    "body": "Vuelan drones por la noche. Buscan calor. Los vampiros no desprenden calor, pero sí observan.",
+    "body": "Drones vuelan por la noche. Buscan fuentes de calor. Aunque te detecten mal, pueden vigilar los accesos.",
     "choices": {
       "A": "Derribar los drones",
       "B": "Desviarlos",
@@ -2539,7 +2539,7 @@
   },
   "vampire_283": {
     "title": "El vecino sin cortinas",
-    "body": "Un vecino nunca duerme y mira la calle. Colecciona detalles.",
+    "body": "Un vecino nunca duerme y observa la calle. Se fija en el menor detalle.",
     "choices": {
       "A": "Distraerlo",
       "B": "Cambiar de hábitos",
@@ -2668,7 +2668,7 @@
     "body": "El clan organiza una lotería para financiar tus noches. La idea es horrible y rentable.",
     "choices": {
       "A": "Controlar el juego",
-      "B": "Prohibir esa vergüenza",
+      "B": "Acabar con este circo",
       "C": "Quedarte con la caja"
     }
   },
@@ -3315,7 +3315,7 @@
     "title": "La deuda del rival",
     "body": "Un rival te confiesa una deuda enorme. El clan quiere verlo caer.",
     "choices": {
-      "A": "Ayudarlo a un alto precio",
+      "A": "Ayudarlo, pero a un precio elevado",
       "B": "Aplastarlo",
       "C": "Comprar su lealtad"
     }
@@ -3442,7 +3442,7 @@
     "body": "Un bar sin ventanas abre a dos calles de aquí. El clan ya quiere ir.",
     "choices": {
       "A": "Probar el lugar",
-      "B": "Mantenerlo vigilado",
+      "B": "Vigilarlo de cerca",
       "C": "Prohibir ese sitio"
     }
   },
