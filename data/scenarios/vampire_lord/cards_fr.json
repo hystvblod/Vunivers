@@ -1,4 +1,4 @@
-{
+﻿{
   "vampire_001": {
     "title": "La poche de sang bio",
     "body": "Un stock de sang disparaît. Quelqu’un a fait des réserves sans autorisation.",
@@ -635,7 +635,7 @@
     "choices": {
       "A": "Retirer la photo",
       "B": "Nier avec humour",
-      "C": "Accuser un filtre"
+      "C": "Dire que la photo a été truquée"
     }
   },
   "vampire_072": {
@@ -904,7 +904,7 @@
     "body": "Le vendeur prétend que l’objet vient d’une cave ancienne, mais son histoire semble inventée.",
     "choices": {
       "A": "L’acheter discrètement",
-      "B": "La voler cette nuit",
+      "B": "Le voler cette nuit",
       "C": "Piéger le vendeur"
     }
   },
@@ -1180,7 +1180,7 @@
   },
   "vampire_132": {
     "title": "La pluie acide",
-    "body": "Ce n’est pas le soleil. C’est autre chose. Et autre chose signifie souvent piège.",
+    "body": "Une pluie acide tombe sur la zone. Ce n’est pas le soleil, mais sortir reste dangereux.",
     "choices": {
       "A": "Rester au repaire",
       "B": "Chercher la source",
@@ -1292,7 +1292,7 @@
     "choices": {
       "A": "Accepter et protéger",
       "B": "Refuser et le surveiller",
-      "C": "Le remplacer"
+      "C": "Le remplacer par quelqu’un de plus fiable"
     }
   },
   "vampire_145": {
@@ -1396,7 +1396,7 @@
   },
   "vampire_156": {
     "title": "Le bruit sous la pierre",
-    "body": "Grattement, souffle, silence. Les trois étapes d’un problème qui grandit.",
+    "body": "On entend un grattement sous la pierre, puis un souffle, puis plus rien. Quelque chose bouge derrière le mur.",
     "choices": {
       "A": "Ouvrir et voir",
       "B": "Sceller et oublier",
@@ -1612,7 +1612,7 @@
   },
   "vampire_180": {
     "title": "Le plan de rénovation",
-    "body": "Des ouvriers, des lampes, des plans, et des horaires. Tout ce que tu ne peux pas mordre.",
+    "body": "Des ouvriers arrivent avec des lampes, des plans et des horaires. Les travaux menacent directement tes accès.",
     "choices": {
       "A": "Faire annuler les travaux",
       "B": "Déplacer les accès",
@@ -2530,7 +2530,7 @@
   },
   "vampire_282": {
     "title": "Le sous-sol humide",
-    "body": "Le sous-sol du repaire goutte partout. Même les cercueils commencent à râler.",
+    "body": "Le sous-sol du repaire goutte partout. L’humidité commence à abîmer les cercueils.",
     "choices": {
       "A": "Réparer vite",
       "B": "Déplacer le stock",
@@ -2642,7 +2642,7 @@
     "choices": {
       "A": "La voler",
       "B": "Attendre encore",
-      "C": "Envoyer des humains"
+      "C": "Envoyer des humains voler la relique"
     }
   },
   "vampire_295": {
@@ -3187,7 +3187,7 @@
   },
   "vampire_355": {
     "title": "Le notaire de cave",
-    "body": "Un notaire clandestin propose de blanchir tes héritages. Ça pue le piège.",
+    "body": "Un notaire clandestin propose de blanchir ton patrimoine. Ça sent le piège.",
     "choices": {
       "A": "Tenter le coup",
       "B": "Le surveiller",
@@ -3200,7 +3200,7 @@
     "choices": {
       "A": "Corrompre le chantier",
       "B": "Changer de route",
-      "C": "Travailler la nuit"
+      "C": "Passer après le départ des ouvriers"
     }
   },
   "vampire_357": {
@@ -3277,7 +3277,7 @@
   },
   "vampire_365": {
     "title": "Le chauffeur du maire",
-    "body": "Le chauffeur du maire te reconnaît sur une vieille photo. Il attend un prix.",
+    "body": "Le chauffeur du maire te reconnaît sur une vieille photo. Il attend quelque chose en échange.",
     "choices": {
       "A": "Le payer",
       "B": "Le faire mentir",
@@ -3497,7 +3497,7 @@
     "choices": {
       "A": "Le recevoir",
       "B": "Le garder à distance",
-      "C": "Le pousser à choisir"
+      "C": "Le pousser à se positionner"
     }
   },
   "vampire_390": {

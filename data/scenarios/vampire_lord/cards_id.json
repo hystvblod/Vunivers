@@ -1,4 +1,4 @@
-{
+﻿{
   "vampire_001": {
     "title": "Kantong darah organik",
     "body": "Stok darah menghilang. Seseorang menimbun persediaan tanpa izin.",
@@ -635,7 +635,7 @@
     "choices": {
       "A": "Menghapus foto itu",
       "B": "Menyangkal dengan humor",
-      "C": "Menyalahkan filter"
+      "C": "Mengatakan bahwa fotonya sudah dimanipulasi"
     }
   },
   "vampire_072": {
@@ -1180,7 +1180,7 @@
   },
   "vampire_132": {
     "title": "Hujan asam",
-    "body": "Ini bukan matahari. Ini sesuatu yang lain. Dan sesuatu yang lain biasanya berarti jebakan.",
+    "body": "Hujan asam turun di area itu. Ini bukan matahari, tetapi keluar tetap berbahaya.",
     "choices": {
       "A": "Tetap di markas",
       "B": "Mencari sumbernya",
@@ -1292,7 +1292,7 @@
     "choices": {
       "A": "Menerima dan melindunginya",
       "B": "Menolak dan mengawasinya",
-      "C": "Menggantinya"
+      "C": "Menggantinya dengan orang yang lebih bisa dipercaya"
     }
   },
   "vampire_145": {
@@ -1396,7 +1396,7 @@
   },
   "vampire_156": {
     "title": "Suara di bawah batu",
-    "body": "Goresan, hembusan, lalu diam. Tiga tahap masalah yang sedang membesar.",
+    "body": "Terdengar suara garukan di bawah batu, lalu hembusan napas, lalu tidak ada apa-apa. Sesuatu bergerak di balik dinding.",
     "choices": {
       "A": "Membuka dan melihat",
       "B": "Menyegel dan melupakan",
@@ -1612,7 +1612,7 @@
   },
   "vampire_180": {
     "title": "Rencana renovasi",
-    "body": "Para pekerja, lampu, denah, dan jadwal. Semua hal yang tak bisa kau gigit.",
+    "body": "Para pekerja datang dengan lampu, rencana, dan jadwal. Pekerjaan itu langsung mengancam jalur aksesmu.",
     "choices": {
       "A": "Membatalkan pekerjaan",
       "B": "Memindahkan akses",
@@ -2530,7 +2530,7 @@
   },
   "vampire_282": {
     "title": "Ruang bawah tanah lembap",
-    "body": "Ruang bawah tanah markas menetes di mana-mana. Bahkan peti mati mulai protes.",
+    "body": "Ruang bawah tanah markas bocor di mana-mana. Kelembapan mulai merusak peti-peti.",
     "choices": {
       "A": "Memperbaikinya cepat",
       "B": "Memindahkan stok",
@@ -2642,7 +2642,7 @@
     "choices": {
       "A": "Mencurinya",
       "B": "Menunggu lagi",
-      "C": "Mengirim manusia"
+      "C": "Mengirim manusia untuk mencuri relik itu"
     }
   },
   "vampire_295": {
@@ -3187,7 +3187,7 @@
   },
   "vampire_355": {
     "title": "Notaris bawah tanah",
-    "body": "Seorang notaris gelap menawarkan mencuci warisanmu. Baunya seperti jebakan.",
+    "body": "Seorang notaris gelap menawarkan untuk mencuci asetmu. Ini terasa seperti jebakan.",
     "choices": {
       "A": "Mencoba peruntungan",
       "B": "Mengawasinya",
@@ -3200,7 +3200,7 @@
     "choices": {
       "A": "Menyuap proyeknya",
       "B": "Mengganti rute",
-      "C": "Bekerja di malam hari"
+      "C": "Lewat setelah para pekerja pergi"
     }
   },
   "vampire_357": {
@@ -3277,7 +3277,7 @@
   },
   "vampire_365": {
     "title": "Sopir wali kota",
-    "body": "Sopir wali kota mengenalimu dari foto lama. Dia menunggu harga.",
+    "body": "Sopir wali kota mengenalimu dari foto lama. Dia menginginkan sesuatu sebagai imbalan.",
     "choices": {
       "A": "Membayarnya",
       "B": "Membuatnya berbohong",
@@ -3497,7 +3497,7 @@
     "choices": {
       "A": "Menerimanya",
       "B": "Menjaganya dari jauh",
-      "C": "Mendorongnya untuk memilih pihak"
+      "C": "Mendorongnya untuk memihak"
     }
   },
   "vampire_390": {

@@ -1,4 +1,4 @@
-{
+﻿{
   "vampire_001": {
     "title": "La sacca di sangue biologico",
     "body": "Una scorta di sangue scompare. Qualcuno ha fatto delle riserve senza autorizzazione.",
@@ -635,7 +635,7 @@
     "choices": {
       "A": "Rimuovere la foto",
       "B": "Negare con umorismo",
-      "C": "Dare la colpa a un filtro"
+      "C": "Dire che la foto è stata ritoccata"
     }
   },
   "vampire_072": {
@@ -1180,7 +1180,7 @@
   },
   "vampire_132": {
     "title": "La pioggia acida",
-    "body": "Non è il sole. È qualcos’altro. E qualcos’altro significa spesso trappola.",
+    "body": "Sulla zona cade pioggia acida. Non è il sole, ma uscire resta pericoloso.",
     "choices": {
       "A": "Restare nel rifugio",
       "B": "Cercare la fonte",
@@ -1292,7 +1292,7 @@
     "choices": {
       "A": "Accettare e proteggere",
       "B": "Rifiutare e sorvegliarlo",
-      "C": "Sostituirlo"
+      "C": "Sostituirlo con qualcuno di più affidabile"
     }
   },
   "vampire_145": {
@@ -1396,7 +1396,7 @@
   },
   "vampire_156": {
     "title": "Il rumore sotto la pietra",
-    "body": "Graffi, respiro, silenzio. Le tre fasi di un problema che cresce.",
+    "body": "Si sente un graffio sotto la pietra, poi un respiro, poi più nulla. Qualcosa si muove dietro il muro.",
     "choices": {
       "A": "Aprire e vedere",
       "B": "Sigillare e dimenticare",
@@ -1612,7 +1612,7 @@
   },
   "vampire_180": {
     "title": "Il piano di ristrutturazione",
-    "body": "Operai, lampade, progetti e orari. Tutto ciò che non puoi mordere.",
+    "body": "Arrivano operai con lampade, progetti e orari. I lavori minacciano direttamente i tuoi accessi.",
     "choices": {
       "A": "Far annullare i lavori",
       "B": "Spostare gli accessi",
@@ -2530,7 +2530,7 @@
   },
   "vampire_282": {
     "title": "Il seminterrato umido",
-    "body": "Il seminterrato del rifugio gocciola ovunque. Perfino le bare cominciano a lamentarsi.",
+    "body": "Nel seminterrato del rifugio gocciola ovunque. L’umidità comincia a rovinare le bare.",
     "choices": {
       "A": "Riparare in fretta",
       "B": "Spostare la scorta",
@@ -2642,7 +2642,7 @@
     "choices": {
       "A": "Rubarla",
       "B": "Aspettare ancora",
-      "C": "Mandare degli umani"
+      "C": "Inviare degli umani a rubare la reliquia"
     }
   },
   "vampire_295": {
@@ -3187,7 +3187,7 @@
   },
   "vampire_355": {
     "title": "Il notaio di cantina",
-    "body": "Un notaio clandestino propone di ripulire le tue eredità. Sa di trappola.",
+    "body": "Un notaio clandestino propone di ripulire il tuo patrimonio. Sembra una trappola.",
     "choices": {
       "A": "Tentare il colpo",
       "B": "Sorvegliarlo",
@@ -3200,7 +3200,7 @@
     "choices": {
       "A": "Corrompere il cantiere",
       "B": "Cambiare strada",
-      "C": "Lavorare di notte"
+      "C": "Passare dopo la partenza degli operai"
     }
   },
   "vampire_357": {
@@ -3277,7 +3277,7 @@
   },
   "vampire_365": {
     "title": "L’autista del sindaco",
-    "body": "L’autista del sindaco ti riconosce in una vecchia foto. Aspetta un prezzo.",
+    "body": "L’autista del sindaco ti riconosce in una vecchia foto. Vuole qualcosa in cambio.",
     "choices": {
       "A": "Pagarlo",
       "B": "Farlo mentire",
@@ -3497,7 +3497,7 @@
     "choices": {
       "A": "Riceverlo",
       "B": "Tenerlo a distanza",
-      "C": "Spingerlo a scegliere"
+      "C": "Spingerlo a schierarsi"
     }
   },
   "vampire_390": {
