@@ -45,12 +45,12 @@
     }
   },
   "mcc_006": {
-    "title": "Remote work on the verge of a clash",
-    "body": "Managers want people back in the office. Teams are threatening to leave if you force too much.",
+    "title": "Remote work: conflict ahead",
+    "body": "Managers want people back in the office. Teams are threatening to leave if you force too many days on-site.",
     "choices": {
       "A": "Flexible hybrid model, team by team.",
       "B": "Mandatory return 4 days a week.",
-      "C": "Almost fully remote work + shared offices."
+      "C": "Almost full remote work with shared offices."
     }
   },
   "mcc_007": {
@@ -58,7 +58,7 @@
     "body": "Customer complaints are exploding around a flagship product. The quality team wants the line stopped.",
     "choices": {
       "A": "Stop production and fix it before restarting.",
-      "B": "Keep going and deal with it as you go.",
+      "B": "Keep production going and fix problems as they appear.",
       "C": "Launch a free replacement program and tighten controls without stopping."
     }
   },
@@ -73,11 +73,11 @@
   },
   "mcc_009": {
     "title": "Rumor of a takeover attempt",
-    "body": "A rumor of a hostile takeover drives the stock up. Investors love it. Employees panic.",
+    "body": "A rumor of a forced takeover sends the stock up. Investors love it. Employees panic.",
     "choices": {
       "A": "Defend yourself: stock buyback and anti-takeover plan.",
-      "B": "Negotiate a \"friendly\" merger behind the scenes.",
-      "C": "Ignore it publicly and keep going as if nothing happened."
+      "B": "Negotiate quietly a closer deal with the other company.",
+      "C": "Say nothing publicly and keep going normally."
     }
   },
   "mcc_010": {
@@ -90,10 +90,10 @@
     }
   },
   "mcc_011": {
-    "title": "Poisoned gift",
-    "body": "A major client offers a huge contract... with a massive penalty if you miss a deadline.",
+    "title": "Risky contract",
+    "body": "A major client offers a huge contract, with a very heavy penalty if you miss a deadline.",
     "choices": {
-      "A": "Sign: ambitious target, everyone on deck.",
+      "A": "Sign and mobilize all teams.",
       "B": "Decline: too dangerous.",
       "C": "Sign, but negotiate the clause and spread out the schedule."
     }
@@ -108,11 +108,11 @@
     }
   },
   "mcc_013": {
-    "title": "Accused of greenwashing",
-    "body": "Your latest \"sustainability\" report is under attack: \"nice words, little proof.\"",
+    "title": "Accusation of fake green claims",
+    "body": "Your latest environmental report is being criticized: lots of promises, little proof.",
     "choices": {
       "A": "Publish the raw numbers and accept the criticism.",
-      "B": "Launch an ad campaign to bury the issue.",
+      "B": "Launch an ad campaign to distract attention.",
       "C": "Request an independent audit and update the report."
     }
   },
@@ -135,12 +135,12 @@
     }
   },
   "mcc_016": {
-    "title": "A key talent leaves",
-    "body": "Your head of tech announces they are leaving. Teams panic. Investors are watching.",
+    "title": "Departure of a key executive",
+    "body": "The head of technology announces their departure. The teams panic. Investors are watching.",
     "choices": {
       "A": "Offer a huge counterproposal.",
       "B": "Respect the decision and promote internal talent.",
-      "C": "Bring in an expensive outside star."
+      "C": "Bring in a big external name, very expensive."
     }
   },
   "mcc_017": {
@@ -154,9 +154,9 @@
   },
   "mcc_018": {
     "title": "Training program",
-    "body": "HR is asking for a big budget to train everyone. The CFO is grimacing.",
+    "body": "HR is asking for a large budget to train everyone. The finance director is not convinced.",
     "choices": {
-      "A": "Approve it: broad upskilling.",
+      "A": "Approve it: train the teams broadly.",
       "B": "Decline: targeted training at the bare minimum.",
       "C": "Fund half of it, with the rest through supervised self-learning."
     }
@@ -1081,11 +1081,11 @@
   },
   "mcc_121": {
     "title": "Prodigy intern",
-    "body": "An intern automates a task that 12 people used to do by hand. Applause... and anxiety.",
+    "body": "An intern automates a task that 12 people used to do by hand. Everyone applauds, then starts to worry.",
     "choices": {
-      "A": "Reward them and reassign the work to better tasks.",
+      "A": "Reward the intern and give the teams more useful tasks.",
       "B": "Hide the project: too sensitive.",
-      "C": "Roll it out gradually with an upskilling plan."
+      "C": "Roll it out gradually with a training plan."
     }
   },
   "mcc_122": {

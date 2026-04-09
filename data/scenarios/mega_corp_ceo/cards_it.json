@@ -45,12 +45,12 @@
     }
   },
   "mcc_006": {
-    "title": "Smart working sul filo dello scontro",
-    "body": "I manager vogliono il ritorno in ufficio. I team minacciano di andarsene se imponi troppo.",
+    "title": "Telelavoro: conflitto in vista",
+    "body": "I manager vogliono il ritorno in ufficio. I team minacciano di andarsene se imponi troppi giorni in presenza.",
     "choices": {
       "A": "Modello ibrido flessibile, per team.",
       "B": "Ritorno obbligatorio 4 giorni a settimana.",
-      "C": "Smart working quasi totale + uffici condivisi."
+      "C": "Telelavoro quasi totale con uffici condivisi."
     }
   },
   "mcc_007": {
@@ -58,7 +58,7 @@
     "body": "I reclami dei clienti esplodono su un prodotto di punta. Il team qualità chiede di fermare la linea.",
     "choices": {
       "A": "Fermare la produzione e correggere prima di ripartire.",
-      "B": "Continuare e sistemare strada facendo.",
+      "B": "Continuare la produzione e correggere i problemi man mano che compaiono.",
       "C": "Avviare una sostituzione gratuita e rafforzare il controllo senza fermare tutto."
     }
   },
@@ -73,11 +73,11 @@
   },
   "mcc_009": {
     "title": "Voce di tentativo di acquisizione",
-    "body": "Una voce di acquisizione ostile fa salire il titolo. Gli investitori adorano. I dipendenti vanno nel panico.",
+    "body": "Una voce di acquisizione forzata fa salire il titolo. Gli investitori la adorano. I dipendenti vanno nel panico.",
     "choices": {
       "A": "Difenderti: riacquisto di azioni e piano anti-acquisizione.",
-      "B": "Negoziare nell'ombra una fusione amichevole.",
-      "C": "Ignorare pubblicamente e continuare come se nulla fosse."
+      "B": "Negoziare in modo discreto un avvicinamento con l'altra azienda.",
+      "C": "Non dire nulla in pubblico e continuare normalmente."
     }
   },
   "mcc_010": {
@@ -90,10 +90,10 @@
     }
   },
   "mcc_011": {
-    "title": "Regalo avvelenato",
-    "body": "Un grande cliente propone un contratto enorme… con una penale mostruosa se salti una scadenza.",
+    "title": "Contratto rischioso",
+    "body": "Un grande cliente offre un contratto enorme, con una penalità molto alta se non rispetti una scadenza.",
     "choices": {
-      "A": "Firmare: obiettivo ambizioso, tutti in prima linea.",
+      "A": "Firmare e mobilitare tutti i team.",
       "B": "Rifiutare: troppo pericoloso.",
       "C": "Firmare ma negoziare la clausola e diluire il calendario."
     }
@@ -108,8 +108,8 @@
     }
   },
   "mcc_013": {
-    "title": "Accusa di ecologia di facciata",
-    "body": "Il tuo ultimo rapporto sostenibile viene attaccato: belle parole, poche prove.",
+    "title": "Accusa di false promesse ecologiche",
+    "body": "Il tuo ultimo rapporto ambientale viene criticato: molte promesse, poche prove.",
     "choices": {
       "A": "Pubblicare i dati grezzi e accettare le critiche.",
       "B": "Lanciare una campagna pubblicitaria per sviare l'attenzione.",
@@ -135,12 +135,12 @@
     }
   },
   "mcc_016": {
-    "title": "Addio di un talento chiave",
-    "body": "La direzione tech annuncia la sua partenza. I team vanno nel panico. Gli investitori osservano.",
+    "title": "Partenza di un dirigente chiave",
+    "body": "Il responsabile tecnico annuncia la sua partenza. I team vanno nel panico. Gli investitori osservano.",
     "choices": {
       "A": "Proporre una controfferta enorme.",
       "B": "Rispettare la sua scelta e promuovere un talento interno.",
-      "C": "Far arrivare una star esterna, costosa."
+      "C": "Far arrivare un grande nome esterno, molto costoso."
     }
   },
   "mcc_017": {
@@ -154,9 +154,9 @@
   },
   "mcc_018": {
     "title": "Programma di formazione",
-    "body": "Le risorse umane chiedono un grande budget per formare tutti. Il direttore finanziario storce il naso.",
+    "body": "Le risorse umane chiedono un grande budget per formare tutti. Il direttore finanziario non è convinto.",
     "choices": {
-      "A": "Approvare: crescita generale delle competenze.",
+      "A": "Approvare: formare ampiamente i team.",
       "B": "Rifiutare: formazione mirata al minimo indispensabile.",
       "C": "Finanziare a metà, il resto in autoformazione guidata."
     }
@@ -1081,11 +1081,11 @@
   },
   "mcc_121": {
     "title": "Stagista prodigio",
-    "body": "Uno stagista automatizza un compito che 12 persone facevano a mano. Applausi… e preoccupazione.",
+    "body": "Uno stagista automatizza un compito che 12 persone facevano a mano. Tutti applaudono, poi iniziano a preoccuparsi.",
     "choices": {
-      "A": "Premiare e riqualificare le attività verso qualcosa di migliore.",
+      "A": "Premiare lo stagista e dare ai team compiti più utili.",
       "B": "Nascondere il progetto: troppo sensibile.",
-      "C": "Distribuire gradualmente con un piano di crescita delle competenze."
+      "C": "Introdurlo gradualmente con un piano di formazione."
     }
   },
   "mcc_122": {
