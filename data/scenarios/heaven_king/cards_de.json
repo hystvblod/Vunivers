@@ -223,7 +223,7 @@
     "choices": {
       "A": "Echte spirituelle Inspirationen einhauchen",
       "B": "Die Kunst sich frei entwickeln lassen",
-      "C": "Diese Werke mit einem neuen Mikrokult verbinden"
+      "C": "Diese Werke zur Grundlage eines kleinen Kults machen"
     },
     "body": "Junge Künstler erschaffen sakrale Werke in virtueller Realität."
   },
@@ -258,7 +258,7 @@
     "description": "Eine spirituelle Bewegung verteidigt Tiere als heilige Geschöpfe.",
     "choices": {
       "A": "Ihre Sache mit einigen diskreten Zeichen unterstützen",
-      "B": "Diese Bewegung klein bleiben lassen",
+      "B": "Diese Bewegung begrenzt bleiben lassen",
       "C": "Diese Bewegung zu starr werden lassen"
     },
     "body": "Eine spirituelle Bewegung verteidigt Tiere als heilige Geschöpfe."
@@ -378,7 +378,7 @@
     "description": "Ein Einsiedler empfängt Visionen, aber niemand hört ihm wirklich zu.",
     "choices": {
       "A": "Seiner Botschaft mehr Kraft geben",
-      "B": "Ihn in seiner fruchtbaren Einsamkeit lassen",
+      "B": "Ihn mit seinen Visionen allein lassen",
       "C": "Sehr eifrige Jünger um ihn versammeln"
     },
     "body": "Ein Einsiedler empfängt Visionen, aber niemand hört ihm wirklich zu."
@@ -402,7 +402,7 @@
     "description": "Ein Kult konzentriert sich ganz auf die Engel und vergisst dich fast völlig.",
     "choices": {
       "A": "Diesen Kult seine Hingabe an die Engel leben lassen",
-      "B": "Deine zentrale Rolle sanft in Erinnerung rufen",
+      "B": "Sanft daran erinnern, dass du im Mittelpunkt ihres Glaubens bleiben musst",
       "C": "Diesen Kult nutzen, um alle Gebete zu bündeln"
     },
     "body": "Ein Kult konzentriert sich ganz auf die Engel und vergisst dich fast völlig."
@@ -1555,7 +1555,7 @@
     "choices": {
       "A": "Eine Kandidatin inspirieren, das Konzept live zu kritisieren",
       "B": "Die Show ihren Hype machen lassen",
-      "C": "Einem Gewinner Pech widerfahren lassen, um die Drohungen zu stützen"
+      "C": "Einen Gewinner von einem Unglück treffen lassen, um die Angst zu verstärken"
     },
     "body": "Eine Realityshow stellt Verhaltensweisen an den Pranger, die als unmoralisch gelten, und verbindet sie mit der Hölle."
   },
@@ -4134,7 +4134,7 @@
     "description": "Ein Leitfaden versucht, unterschiedliche spirituelle Wege mit sehr gelehrten Worten zu erklären.",
     "choices": {
       "A": "Echte innere Annäherungen entstehen lassen",
-      "B": "Diese Kreise experimentell und begrenzt bleiben lassen",
+      "B": "Diesen Leitfaden vertraulich und schwer verständlich bleiben lassen",
       "C": "Ein festes Protokoll rund um die Idee einführen"
     },
     "body": "Ein Leitfaden versucht, unterschiedliche spirituelle Wege mit zu komplizierten Worten zu erklären."
@@ -4337,7 +4337,7 @@
     "title": "Beruhigte soziale Netzwerke",
     "description": "Ein Creator startet eine Seite, die nur ermutigenden Botschaften gewidmet ist.",
     "choices": {
-      "A": "Worte einflüstern, die wirklich beruhigen und aufrichten",
+      "A": "Worte souffler, die wirklich beruhigen und den Lesenden neuen Mut geben",
       "B": "Die Seite ihr Publikum finden oder nicht finden lassen",
       "C": "Eine Organisation das Konzept übernehmen lassen"
     },
@@ -4422,7 +4422,7 @@
     "description": "Ein Unternehmen will das Klima unter Kollegen verbessern.",
     "choices": {
       "A": "Einfache tägliche Gesten der Anerkennung einflüstern",
-      "B": "Den Ansatz ein einfaches HR-Seminar bleiben lassen",
+      "B": "Diese Maßnahme nur ein gewöhnliches Firmentraining bleiben lassen",
       "C": "Die Leitung dazu ermutigen, einen sehr detaillierten Verhaltenskodex aufzuzwingen"
     },
     "body": "Ein Unternehmen will das Klima unter Kollegen verbessern."
@@ -4434,7 +4434,7 @@
     "description": "Ein Büro richtet Pflanzen und eine Entspannungsecke mit Blick zum Himmel ein.",
     "choices": {
       "A": "Einigen helfen, diesen Ort zur inneren Sammlung zu nutzen",
-      "B": "Diesen Raum ein einfach verbessertes Kaffeeeck bleiben lassen",
+      "B": "Diesen Bereich nur eine etwas angenehmere Pausenecke bleiben lassen",
       "C": "Dort geführte Meditationen organisieren"
     },
     "body": "Ein Büro richtet Pflanzen und eine Entspannungsecke mit Blick zum Himmel ein."
@@ -4543,7 +4543,7 @@
     "choices": {
       "A": "Einige durch diese Klänge echte Gemeinschaft spüren lassen",
       "B": "Den Kreis eine lustige musikalische Erfahrung bleiben lassen",
-      "C": "Den Leiter dazu ermutigen, strenge Strukturen und Regeln aufzuerlegen"
+      "C": "Den Leiter dazu ermutigen, eine strenge Struktur und feste Regeln durchzusetzen"
     },
     "body": "Eine Gruppe trifft sich, um gemeinsam ohne Urteil Klänge zu improvisieren."
   },
@@ -4553,7 +4553,7 @@
     "title": "Leseecke in der Metro",
     "description": "Ein U-Bahn-Wagen wird mit Auszügen beruhigender Texte neu gestaltet.",
     "choices": {
-      "A": "Diese Worte wie echten Trost lesen lassen",
+      "A": "Diese Texte zu einer echten Quelle der Beruhigung machen",
       "B": "Diese Texte für die meisten unbemerkt bleiben lassen",
       "C": "Die Verkehrsbetriebe dazu ermutigen, diesen Wagen für einen stark geregelten Gebrauch zu reservieren"
     },
@@ -4601,8 +4601,8 @@
     "title": "Workshop für geführte Nickerchen",
     "description": "Ein Wellnesszentrum bietet geführte Nickerchen an, um sich mitten am Tag auszuruhen.",
     "choices": {
-      "A": "Einige ein echtes Loslassen kosten lassen, das dem Gebet nahekommt",
-      "B": "Dieses geführte Nickerchen ein einfacher Wellness-Service bleiben lassen",
+      "A": "Manche einen echten Moment innerer Ruhe erleben lassen",
+      "B": "Den geführten Mittagsschlaf nur eine einfache Entspannungsaktivität bleiben lassen",
       "C": "Ein vollständiges Programm mit verpflichtenden Schritten aufbauen"
     },
     "body": "Ein Wellnesszentrum bietet geführte Nickerchen an, um sich mitten am Tag auszuruhen."
@@ -4626,7 +4626,7 @@
     "description": "Ein Gymnasium richtet eine Ecke ein, in der ein Erwachsener den Schülern zuhört.",
     "choices": {
       "A": "Einige dort einen echten Raum für Worte und Trost finden lassen",
-      "B": "Diesen Ort vor allem über Schule und Zukunft sprechen lassen",
+      "B": "Diesen Raum vor allem dafür nutzen lassen, über den Unterricht und die Zukunft zu sprechen",
       "C": "Diese Einrichtung mit sehr strengen Regeln umgeben"
     },
     "body": "Ein Gymnasium richtet eine Ecke ein, in der ein Erwachsener den Schülern zuhört."
@@ -4675,7 +4675,7 @@
     "choices": {
       "A": "Ein echtes Bewusstsein für das Gute, das sie haben, entstehen lassen",
       "B": "Das Zeichnen eine Kunstübung bleiben lassen",
-      "C": "Diese Zeichnungen als moralische Regel ausstellen"
+      "C": "Diese Zeichnungen als Vorbild für alle aushängen"
     },
     "body": "Kinder zeichnen, wofür sie dankbar sind."
   },
@@ -4711,7 +4711,7 @@
     "choices": {
       "A": "Geschichten einflüstern, die Vertrauen zurückgeben",
       "B": "Den Podcast eine optimistische Blase bleiben lassen",
-      "C": "Ein Netzwerk dazu ermutigen, daraus ein zu stark gesteuertes Kommunikationswerkzeug zu machen"
+      "C": "Ein großes Netzwerk dazu ermutigen, daraus ein zu stark kontrolliertes Format zu machen"
     },
     "body": "Ein Podcast teilt jeden Tag eine echte gute Nachricht."
   },
@@ -4730,7 +4730,7 @@
   "heaven_395": {
     "id": "heaven_395",
     "universe": "heaven_king",
-    "title": "Kreis 'ein kleiner Sieg'",
+    "title": "Kreis der kleinen Siege",
     "description": "Eine Gruppe trifft sich jede Woche, um einen kleinen persönlichen Sieg zu teilen.",
     "choices": {
       "A": "Diese Erzählungen das innere Vertrauen jedes Einzelnen nähren lassen",
@@ -4754,14 +4754,14 @@
   "heaven_397": {
     "id": "heaven_397",
     "universe": "heaven_king",
-    "title": "Tag 'Danke, Leben'",
-    "description": "Eine Schule organisiert einen Tag, um für die kleinen Dinge des Alltags zu danken.",
+    "title": "Tag der Dankbarkeit",
+    "description": "Eine Schule organisiert einen Tag, um für die kleinen Dinge des Alltags Danke zu sagen",
     "choices": {
       "A": "Bei einigen Schülern eine echte Gewohnheit der Dankbarkeit entstehen lassen",
       "B": "Diesen Tag als pädagogisches Projekt erleben lassen",
       "C": "Daraus ein großes jährliches Ritual machen"
     },
-    "body": "Eine Schule organisiert einen Tag, um für die kleinen Dinge des Alltags zu danken."
+    "body": "Eine Schule organisiert einen Tag, um für die kleinen Dinge des Alltags Danke zu sagen"
   },
   "heaven_398": {
     "id": "heaven_398",
@@ -4778,7 +4778,7 @@
   "heaven_399": {
     "id": "heaven_399",
     "universe": "heaven_king",
-    "title": "Atelier 'Briefe an das zukünftige Ich'",
+    "title": "Workshop: Briefe an das zukünftige Ich",
     "description": "Teilnehmer schreiben einen Brief an die Person, die sie in zehn Jahren sein werden.",
     "choices": {
       "A": "Diesen Briefen Worte der Güte und Hoffnung einflüstern",
@@ -4793,7 +4793,7 @@
     "title": "Viertel der Glühwürmchen",
     "description": "Ein Viertel entscheidet sich, unnötige Beleuchtung auszuschalten, um die Sterne besser sehen zu können.",
     "choices": {
-      "A": "Unter diesem dunklen Himmel ein Gefühl von Verbundenheit entstehen lassen",
+      "A": "Diese Nacht zu einem echten gemeinsamen Moment der Ruhe machen",
       "B": "Diese Maßnahme als praktische ökologische Geste sehen lassen",
       "C": "Ein großes Ereignis um diese Nacht schaffen"
     },

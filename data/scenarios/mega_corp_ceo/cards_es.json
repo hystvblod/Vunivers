@@ -45,12 +45,12 @@
     }
   },
   "mcc_006": {
-    "title": "Teletrabajo al borde del choque",
-    "body": "Los managers quieren la vuelta a la oficina. Los equipos amenazan con irse si impones demasiado.",
+    "title": "Teletrabajo: conflicto a la vista",
+    "body": "Los directivos quieren que todos vuelvan a la oficina. Los equipos amenazan con marcharse si impones demasiados días presenciales.",
     "choices": {
       "A": "Modelo híbrido flexible, por equipo.",
       "B": "Vuelta obligatoria 4 días por semana.",
-      "C": "Teletrabajo casi total + oficinas compartidas."
+      "C": "Teletrabajo casi total con oficinas compartidas."
     }
   },
   "mcc_007": {
@@ -58,7 +58,7 @@
     "body": "Las devoluciones de clientes se disparan en un producto estrella. El equipo de calidad exige parar la línea.",
     "choices": {
       "A": "Parar la producción y corregir antes de relanzar.",
-      "B": "Seguir y resolver sobre la marcha.",
+      "B": "Mantener la producción y corregir los problemas a medida que aparezcan.",
       "C": "Lanzar un cambio gratuito y reforzar el control sin detenerse."
     }
   },
@@ -73,11 +73,11 @@
   },
   "mcc_009": {
     "title": "Rumor de intento de compra",
-    "body": "Un rumor de opa hostil hace subir la acción. A los inversores les encanta. Los empleados entran en pánico.",
+    "body": "Un rumor de compra forzada hace subir la acción. A los inversores les encanta. Los empleados entran en pánico.",
     "choices": {
       "A": "Defenderte: recompra de acciones y plan anti-opa.",
-      "B": "Negociar entre bastidores una fusión \"amistosa\".",
-      "C": "Ignorarlo públicamente y seguir como si nada."
+      "B": "Negociar discretamente un acercamiento con la otra empresa.",
+      "C": "No decir nada en público y seguir con normalidad."
     }
   },
   "mcc_010": {
@@ -90,10 +90,10 @@
     }
   },
   "mcc_011": {
-    "title": "Regalo envenenado",
-    "body": "Un gran cliente propone un contrato enorme… con una penalización monstruosa si fallas un plazo.",
+    "title": "Contrato arriesgado",
+    "body": "Un gran cliente ofrece un contrato enorme, con una penalización muy alta si no cumples un plazo.",
     "choices": {
-      "A": "Firmar: objetivo ambicioso, todos al frente.",
+      "A": "Firmar y movilizar a todos los equipos.",
       "B": "Rechazar: demasiado peligroso.",
       "C": "Firmar, pero negociar la cláusula y repartir el calendario."
     }
@@ -108,8 +108,8 @@
     }
   },
   "mcc_013": {
-    "title": "Acusación de ecología de escaparate",
-    "body": "Tu último informe \"sostenible\" es atacado: \"muchas palabras bonitas, pocas pruebas\".",
+    "title": "Acusación de falsas promesas ecológicas",
+    "body": "Tu último informe medioambiental está siendo atacado: muchas promesas, pocas pruebas.",
     "choices": {
       "A": "Publicar los datos brutos y aceptar las críticas.",
       "B": "Lanzar una campaña publicitaria para desviar la atención.",
@@ -135,12 +135,12 @@
     }
   },
   "mcc_016": {
-    "title": "Salida de un talento clave",
-    "body": "La dirección tech anuncia su marcha. Los equipos se inquietan. Los inversores observan.",
+    "title": "Salida de un directivo clave",
+    "body": "La persona responsable de tecnología anuncia su salida. Los equipos entran en pánico. Los inversores observan.",
     "choices": {
       "A": "Proponer una contraoferta enorme.",
       "B": "Respetar su decisión y promocionar a un talento interno.",
-      "C": "Traer a una estrella externa, cara."
+      "C": "Traer a una gran figura externa, muy cara."
     }
   },
   "mcc_017": {
@@ -154,9 +154,9 @@
   },
   "mcc_018": {
     "title": "Programa de formación",
-    "body": "RR. HH. pide un gran presupuesto para formar a todo el mundo. El director financiero pone mala cara.",
+    "body": "Recursos Humanos pide un gran presupuesto para formar a todo el mundo. El director financiero no está convencido.",
     "choices": {
-      "A": "Aprobar: mejora general de competencias.",
+      "A": "Aprobar: formar ampliamente a los equipos.",
       "B": "Rechazar: formación focalizada al mínimo estricto.",
       "C": "Financiar la mitad y el resto en autoformación guiada."
     }
@@ -1081,11 +1081,11 @@
   },
   "mcc_121": {
     "title": "Becario prodigio",
-    "body": "Un becario automatiza una tarea que 12 personas hacían a mano. Aplausos… e inquietud.",
+    "body": "Un becario automatiza una tarea que 12 personas hacían a mano. Todos aplauden y luego empiezan a preocuparse.",
     "choices": {
-      "A": "Premiar y reorientar las tareas hacia algo mejor.",
+      "A": "Recompensar al becario y dar a los equipos tareas más útiles.",
       "B": "Ocultar el proyecto: demasiado sensible.",
-      "C": "Desplegarlo progresivamente con un plan de mejora de competencias."
+      "C": "Desplegarlo poco a poco con un plan de formación."
     }
   },
   "mcc_122": {

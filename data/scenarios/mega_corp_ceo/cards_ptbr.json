@@ -45,12 +45,12 @@
     }
   },
   "mcc_006": {
-    "title": "Home office à beira do conflito",
-    "body": "Os gerentes querem a volta ao escritório. As equipes ameaçam sair se você impor demais.",
+    "title": "Teletrabalho: conflito à vista",
+    "body": "Os gestores querem a volta ao escritório. As equipes ameaçam sair se você exigir dias presenciais demais.",
     "choices": {
       "A": "Modelo híbrido flexível, por equipe.",
       "B": "Retorno obrigatório 4 dias por semana.",
-      "C": "Quase só home office + escritórios compartilhados."
+      "C": "Trabalho remoto quase total com escritórios compartilhados."
     }
   },
   "mcc_007": {
@@ -58,7 +58,7 @@
     "body": "As reclamações dos clientes explodem em um produto principal. A equipe de qualidade exige parar a linha.",
     "choices": {
       "A": "Parar a produção e corrigir antes de relançar.",
-      "B": "Continuar e ajustar aos poucos.",
+      "B": "Manter a produção e corrigir os problemas à medida que aparecerem.",
       "C": "Lançar uma troca gratuita e reforçar o controle sem parar."
     }
   },
@@ -73,11 +73,11 @@
   },
   "mcc_009": {
     "title": "Rumor de tentativa de compra",
-    "body": "Um rumor de aquisição hostil faz a ação subir. Os investidores adoram. Os funcionários entram em pânico.",
+    "body": "Um rumor de compra forçada faz a ação subir. Os investidores adoram. Os funcionários entram em pânico.",
     "choices": {
       "A": "Se defender: recompra de ações e plano anti-aquisição.",
-      "B": "Negociar nos bastidores uma fusão \"amigável\".",
-      "C": "Ignorar publicamente e seguir como se nada tivesse acontecido."
+      "B": "Negociar discretamente uma aproximação com a outra empresa.",
+      "C": "Não falar nada publicamente e seguir normalmente."
     }
   },
   "mcc_010": {
@@ -90,10 +90,10 @@
     }
   },
   "mcc_011": {
-    "title": "Presente envenenado",
-    "body": "Um grande cliente propõe um contrato enorme... com uma multa monstruosa se você perder o prazo.",
+    "title": "Contrato arriscado",
+    "body": "Um grande cliente oferece um contrato enorme, com uma multa muito pesada se você perder um prazo.",
     "choices": {
-      "A": "Assinar: meta ambiciosa, todo mundo na linha de frente.",
+      "A": "Assinar e mobilizar todas as equipes.",
       "B": "Recusar: perigoso demais.",
       "C": "Assinar, mas negociar a cláusula e distribuir melhor o cronograma."
     }
@@ -108,11 +108,11 @@
     }
   },
   "mcc_013": {
-    "title": "Acusação de ecologia de fachada",
-    "body": "Seu último relatório \"sustentável\" é atacado: \"belas palavras, poucas provas\".",
+    "title": "Acusação de falsas promessas ecológicas",
+    "body": "Seu último relatório ambiental está sendo criticado: muitas promessas, poucas provas.",
     "choices": {
       "A": "Publicar os números brutos e aceitar as críticas.",
-      "B": "Lançar uma campanha de publicidade para abafar o assunto.",
+      "B": "Lançar uma campanha publicitária para desviar a atenção.",
       "C": "Pedir uma auditoria independente e atualizar o relatório."
     }
   },
@@ -135,12 +135,12 @@
     }
   },
   "mcc_016": {
-    "title": "Saída de um talento-chave",
-    "body": "A liderança de tecnologia anuncia a saída. As equipes entram em pânico. Os investidores estão de olho.",
+    "title": "Saída de um executivo essencial",
+    "body": "O responsável por tecnologia anuncia sua saída. As equipes entram em pânico. Os investidores estão atentos.",
     "choices": {
       "A": "Fazer uma contraproposta enorme.",
       "B": "Respeitar a escolha e promover um talento interno.",
-      "C": "Trazer uma estrela de fora, cara."
+      "C": "Trazer um grande nome de fora, muito caro."
     }
   },
   "mcc_017": {
@@ -154,9 +154,9 @@
   },
   "mcc_018": {
     "title": "Programa de treinamento",
-    "body": "O RH pede um grande orçamento para treinar todo mundo. O diretor financeiro faz careta.",
+    "body": "O RH pede um grande orçamento para treinar todo mundo. O diretor financeiro não está convencido.",
     "choices": {
-      "A": "Aprovar: evolução geral de competências.",
+      "A": "Aprovar: treinar amplamente as equipes.",
       "B": "Recusar: treinamento direcionado ao estritamente necessário.",
       "C": "Financiar metade, o resto em autoaprendizado orientado."
     }
@@ -1081,11 +1081,11 @@
   },
   "mcc_121": {
     "title": "Estagiário prodígio",
-    "body": "Um estagiário automatiza uma tarefa que 12 pessoas faziam manualmente. Aplausos... e preocupação.",
+    "body": "Um estagiário automatiza uma tarefa que 12 pessoas faziam manualmente. Todos aplaudem e depois começam a se preocupar.",
     "choices": {
-      "A": "Recompensar e redirecionar as tarefas para algo melhor.",
+      "A": "Recompensar o estagiário e dar às equipes tarefas mais úteis.",
       "B": "Esconder o projeto: sensível demais.",
-      "C": "Implantar aos poucos com plano de capacitação."
+      "C": "Implementar aos poucos com um plano de treinamento."
     }
   },
   "mcc_122": {

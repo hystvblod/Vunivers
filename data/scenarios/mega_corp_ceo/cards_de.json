@@ -45,12 +45,12 @@
     }
   },
   "mcc_006": {
-    "title": "Homeoffice kurz vor dem Knall",
-    "body": "Die Manager wollen die Rückkehr ins Büro. Die Teams drohen zu gehen, wenn du zu viel erzwingst.",
+    "title": "Telearbeit: Konflikt voraus",
+    "body": "Die Manager wollen alle zurück ins Büro. Die Teams drohen zu gehen, wenn du zu viele Präsenztage verlangst.",
     "choices": {
       "A": "Flexibles Hybridmodell je Team.",
       "B": "Rückkehrpflicht an 4 Tagen pro Woche.",
-      "C": "Fast vollständiges Homeoffice + geteilte Büros."
+      "C": "Fast vollständige Telearbeit mit geteilten Büros."
     }
   },
   "mcc_007": {
@@ -58,7 +58,7 @@
     "body": "Die Kundenreklamationen zu einem Hauptprodukt schießen in die Höhe. Das Qualitätsteam fordert einen Produktionsstopp.",
     "choices": {
       "A": "Produktion stoppen und vor dem Neustart korrigieren.",
-      "B": "Weitermachen und unterwegs nachbessern.",
+      "B": "Die Produktion weiterlaufen lassen und die Probleme nach und nach beheben.",
       "C": "Einen kostenlosen Austausch starten und die Kontrolle verstärken, ohne zu stoppen."
     }
   },
@@ -73,11 +73,11 @@
   },
   "mcc_009": {
     "title": "Gerücht über Übernahmeversuch",
-    "body": "Ein Gerücht über eine feindliche Übernahme treibt die Aktie nach oben. Die Investoren lieben es. Die Mitarbeitenden geraten in Panik.",
+    "body": "Ein Gerücht über eine erzwungene Übernahme treibt die Aktie nach oben. Die Investoren lieben das. Die Beschäftigten geraten in Panik.",
     "choices": {
       "A": "Dich verteidigen: Aktienrückkauf und Abwehrplan gegen Übernahmeversuche.",
-      "B": "Im Hintergrund eine \"freundliche\" Fusion verhandeln.",
-      "C": "Öffentlich ignorieren und weitermachen, als wäre nichts."
+      "B": "Im Hintergrund diskret eine Annäherung mit dem anderen Unternehmen verhandeln.",
+      "C": "Öffentlich nichts sagen und normal weitermachen."
     }
   },
   "mcc_010": {
@@ -90,10 +90,10 @@
     }
   },
   "mcc_011": {
-    "title": "Vergiftetes Geschenk",
-    "body": "Ein Großkunde bietet einen riesigen Vertrag an… mit einer gewaltigen Vertragsstrafe, falls du eine Frist verpasst.",
+    "title": "Riskanter Vertrag",
+    "body": "Ein großer Kunde bietet einen riesigen Vertrag an, mit einer sehr hohen Strafe, wenn du eine Frist verpasst.",
     "choices": {
-      "A": "Unterschreiben: ehrgeiziges Ziel, alle an die Front.",
+      "A": "Unterschreiben und alle Teams mobilisieren.",
       "B": "Ablehnen: zu gefährlich.",
       "C": "Unterschreiben, aber die Klausel neu verhandeln und den Zeitplan strecken."
     }
@@ -108,12 +108,12 @@
     }
   },
   "mcc_013": {
-    "title": "Vorwurf von Scheinökologie",
-    "body": "Dein letzter \"nachhaltiger\" Bericht wird angegriffen: \"schöne Worte, wenig Beweise\".",
+    "title": "Vorwurf falscher Umweltversprechen",
+    "body": "Dein letzter Umweltbericht wird kritisiert: viele Versprechen, wenig Beweise.",
     "choices": {
       "A": "Die Rohzahlen veröffentlichen und Kritik annehmen.",
-      "B": "Eine Werbekampagne starten, um alles zu überdecken.",
-      "C": "Ein unabhängiges Audit verlangen und den Bericht aktualisieren."
+      "B": "Eine Werbekampagne starten, um die Aufmerksamkeit abzulenken.",
+      "C": "Eine unabhängige Prüfung anfordern und den Bericht aktualisieren."
     }
   },
   "mcc_014": {
@@ -135,12 +135,12 @@
     }
   },
   "mcc_016": {
-    "title": "Abgang eines Schlüsseltalents",
-    "body": "Die Tech-Leitung kündigt ihren Weggang an. Die Teams geraten in Panik. Die Investoren beobachten alles.",
+    "title": "Abgang einer wichtigen Führungskraft",
+    "body": "Die technische Leitung kündigt ihren Abgang an. Die Teams geraten in Panik. Die Investoren beobachten alles.",
     "choices": {
       "A": "Ein riesiges Gegenangebot machen.",
       "B": "Die Entscheidung respektieren und ein internes Talent befördern.",
-      "C": "Einen externen Star holen, teuer."
+      "C": "Einen großen externen Namen holen, sehr teuer."
     }
   },
   "mcc_017": {
@@ -154,9 +154,9 @@
   },
   "mcc_018": {
     "title": "Schulungsprogramm",
-    "body": "Die Personalabteilung fordert ein großes Budget, um alle zu schulen. Der Finanzchef verzieht das Gesicht.",
+    "body": "Die Personalabteilung fordert ein großes Budget, um alle zu schulen. Der Finanzdirektor ist nicht überzeugt.",
     "choices": {
-      "A": "Freigeben: allgemeiner Kompetenzaufbau.",
+      "A": "Genehmigen: die Teams breit schulen.",
       "B": "Ablehnen: nur gezielte Schulung auf das absolute Minimum.",
       "C": "Zur Hälfte finanzieren, den Rest als betreutes Selbstlernen."
     }
@@ -1081,11 +1081,11 @@
   },
   "mcc_121": {
     "title": "Genialer Praktikant",
-    "body": "Ein Praktikant automatisiert eine Aufgabe, die 12 Personen von Hand gemacht haben. Applaus… und Sorge.",
+    "body": "Ein Praktikant automatisiert eine Aufgabe, die zuvor 12 Menschen von Hand erledigt haben. Erst applaudieren alle, dann werden sie nervös.",
     "choices": {
-      "A": "Belohnen und die Aufgaben auf Besseres verlagern.",
+      "A": "Den Praktikanten belohnen und den Teams nützlichere Aufgaben geben.",
       "B": "Das Projekt verstecken: zu sensibel.",
-      "C": "Schrittweise ausrollen mit einem Qualifizierungsplan."
+      "C": "Schrittweise einführen, mit einem Schulungsplan."
     }
   },
   "mcc_122": {
