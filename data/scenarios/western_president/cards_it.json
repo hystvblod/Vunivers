@@ -1144,7 +1144,7 @@
   },
   "wp_128": {
     "title": "Festival di gastronomia",
-    "body": "Un grande festival gastronomico potrebbe rilanciare il turismo. Ma costa una fortuna... in burro.",
+    "body": "Un grande festival gastronomico potrebbe attirare molti turisti, ma il budget è enorme.",
     "choices": {
       "A": "Finanziare: vetrina mondiale.",
       "B": "Sostegno moderato + sponsor privati.",
@@ -1359,10 +1359,10 @@
     }
   },
   "wp_152": {
-    "title": "Vertice... di cucina",
-    "body": "Un vertice internazionale è organizzato... da un programma di cucina. Gli chef vogliono una foto con te.",
+    "title": "Vertice culinario televisivo",
+    "body": "Un programma di cucina organizza un vertice internazionale e vuole una tua foto con gli chef.",
     "choices": {
-      "A": "Andarci e firmare un \"patto gastronomico\" simbolico.",
+      "A": "Andarci, sostenere l’evento e fare un annuncio simbolico sulla gastronomia nazionale.",
       "B": "Inviare il tuo ministro: tu lavori ufficialmente.",
       "C": "Rifiutare: \"la diplomazia non si fa col mestolo\"."
     }
@@ -1387,7 +1387,7 @@
   },
   "wp_155": {
     "title": "Ambasciatore maldestro",
-    "body": "Un ambasciatore fa una battuta che cade nel vuoto. Proprio nel vuoto. Livello geopolitico: pavimento.",
+    "body": "Un ambasciatore fa una battuta che viene accolta molto male. L’incidente mette tutti in imbarazzo e crea un disagio diplomatico.",
     "choices": {
       "A": "Scuse ufficiali + gesto diplomatico.",
       "B": "Richiamarlo immediatamente: tolleranza zero.",
@@ -1423,7 +1423,7 @@
   },
   "wp_159": {
     "title": "Carenza di cioccolato",
-    "body": "Una crisi logistica provoca una carenza di cioccolato. I cittadini parlano di \"linea rossa morale\".",
+    "body": "Una crisi logistica provoca una carenza di cioccolato. Per molti è la carenza di troppo.",
     "choices": {
       "A": "Mettere in sicurezza l'approvvigionamento con accordi rapidi.",
       "B": "Lanciare una produzione locale accelerata, ma è costosa.",
@@ -1630,7 +1630,7 @@
   },
   "wp_182": {
     "title": "Hack del ministero",
-    "body": "Il sito di un ministero mostra uno striscione: \"ciao\". Non un \"ciao\" ufficiale.",
+    "body": "Il sito di un ministero è stato hackerato e ora mostra soltanto un semplice \"ciao\".",
     "choices": {
       "A": "Audit totale + formazione cyber degli agenti.",
       "B": "Controffensiva cyber + comunicazione ferma.",
@@ -1665,8 +1665,8 @@
     }
   },
   "wp_186": {
-    "title": "Conferenza climatica fittizia",
-    "body": "Ti propongono di ospitare una conferenza su aria e acqua. Molto consensuale... fino al finanziamento.",
+    "title": "Conferenza su aria e acqua",
+    "body": "Ti viene proposto di ospitare una conferenza sulla qualità dell’aria e dell’acqua. Tutti sono d’accordo sul principio, finché non arriva il momento di pagare.",
     "choices": {
       "A": "Ospitare e investire: immagine internazionale.",
       "B": "Ospitare senza spese pubbliche.",
@@ -1765,7 +1765,7 @@
   },
   "wp_197": {
     "title": "Incidente all'aeroporto VIP",
-    "body": "Un incidente nel salone VIP fa il giro del web. Perfino i tapis roulant hanno un'opinione.",
+    "body": "Un incidente nella lounge VIP diventa virale. Tutti commentano la vicenda.",
     "choices": {
       "A": "Scuse + audit sicurezza + miglioramenti rapidi.",
       "B": "Sanzionare pubblicamente la direzione.",
@@ -1818,8 +1818,8 @@
     }
   },
   "wp_203": {
-    "title": "Il vicino fa \"boom\"",
-    "body": "Un paese vicino testa una nuova arma. La popolazione aspetta una risposta chiara, ma il tuo ministro non è all’altezza.",
+    "title": "Test di un’arma da parte di un paese vicino",
+    "body": "Un paese vicino testa una nuova arma. La popolazione si aspetta una risposta chiara, ma il tuo governo dà un’immagine confusa.",
     "choices": {
       "A": "Sanzioni + coalizione diplomatica.",
       "B": "Rafforzare la difesa e mostrare i muscoli.",
@@ -1890,8 +1890,8 @@
     }
   },
   "wp_211": {
-    "title": "Frontiera e torneo di pétanque",
-    "body": "Una zona di frontiera si surriscalda. La pressione sale.",
+    "title": "Torneo di pétanque al confine",
+    "body": "Per calmare la tensione al confine, alcuni eletti locali propongono un torneo di pétanque tra le due parti. Per alcuni l’idea è simpatica, per altri è scandalosa.",
     "choices": {
       "A": "Sostenere l'iniziativa + dialogo locale ufficiale.",
       "B": "Rifiutare: rafforzare i controlli e la presenza militare.",
@@ -1945,7 +1945,7 @@
   },
   "wp_217": {
     "title": "Battaglia delle bandiere",
-    "body": "Scoppia un conflitto su una bandiera comune. Gli esperti vogliono agire in fretta.",
+    "body": "Scoppia un conflitto per una bandiera che entrambe le parti vogliono rivendicare. Nessuno vuole cedere su quel simbolo.",
     "choices": {
       "A": "Compromesso diplomatico e condivisione.",
       "B": "Imporre la tua bandiera: autorità.",
@@ -2035,7 +2035,7 @@
   },
   "wp_227": {
     "title": "Passaporto diplomatico... perso",
-    "body": "Un diplomatico perde il passaporto. In un aeroporto. Davanti alle telecamere. Sembra uno sketch.",
+    "body": "Un diplomatico perde il passaporto in un aeroporto, davanti alle telecamere. La situazione diventa subito ridicola.",
     "choices": {
       "A": "Riforma della sicurezza diplomatica + formazione.",
       "B": "Minimizzare pubblicamente, risolvere dietro le quinte.",
@@ -2314,7 +2314,7 @@
   },
   "wp_258": {
     "title": "Generale e baffi strategici",
-    "body": "Il tuo generale diventa il bersaglio dei social. Le immagini girano ovunque.",
+    "body": "Il tuo generale diventa il bersaglio dei social a causa di una foto virale. Il suo aspetto prende il sopravvento sul messaggio.",
     "choices": {
       "A": "Ridere e riportare il focus sulla strategia.",
       "B": "Richiamarlo: immagine seria obbligatoria.",
@@ -2539,7 +2539,7 @@
   },
   "wp_283": {
     "title": "Guerra dell'acqua",
-    "body": "Il tuo vicino sposta delle navi. La pressione sale.",
+    "body": "Il tuo vicino devia una parte dell’acqua e schiera navi per mettere in sicurezza la zona. La tensione sale.",
     "choices": {
       "A": "Accordo regionale + investimenti idraulici.",
       "B": "Priorità nazionale: restrizioni e controllo.",
@@ -2863,7 +2863,7 @@
   },
   "wp_319": {
     "title": "Sicurezza alimentare",
-    "body": "Gli esperti chiedono un piano di sicurezza alimentare. Gli esperti vogliono agire in fretta.",
+    "body": "Gli esperti chiedono un piano di sicurezza alimentare. Vogliono decisioni rapide prima che la situazione peggiori.",
     "choices": {
       "A": "Lanciare un piano nazionale con obiettivi e finanziamento.",
       "B": "Lasciare che il mercato si adatti, con una rete minima di sicurezza.",
@@ -3439,7 +3439,7 @@
   },
   "wp_383": {
     "title": "Carenza di autisti",
-    "body": "Nel trasporto mancano autisti e i tempi si allungano. Le imprese vogliono reggere.",
+    "body": "Nel trasporto mancano conducenti e i ritardi aumentano. Le imprese vogliono una soluzione duratura.",
     "choices": {
       "A": "Formazione accelerata e miglioramento delle condizioni del mestiere.",
       "B": "Reclutamento internazionale regolato per colmare rapidamente.",
