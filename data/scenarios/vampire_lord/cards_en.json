@@ -185,7 +185,7 @@
     "choices": {
       "A": "Train the novice",
       "B": "Hide him from the clan",
-      "C": "Hand him over to an elder for training."
+      "C": "Hand him over to an elder for training"
     }
   },
   "vampire_022": {
@@ -572,7 +572,7 @@
     "choices": {
       "A": "Save the reserves",
       "B": "Change lairs",
-      "C": "Turn the cellar into a trap for intruders."
+      "C": "Turn the cellar into a trap for intruders"
     }
   },
   "vampire_065": {
@@ -2053,7 +2053,7 @@
   },
   "vampire_229": {
     "title": "The Streets Pact",
-    "body": "Humans propose a pact. They offer silence in exchange for protection. Business, in other words.",
+    "body": "Humans offer a pact. They offer their silence in exchange for your protection. It is a clear bargain.",
     "choices": {
       "A": "Accept and supervise it",
       "B": "Refuse and impose fear",
@@ -2323,7 +2323,7 @@
   },
   "vampire_259": {
     "title": "The Drone Hunt",
-    "body": "Drones fly at night. They seek heat. Vampires do not run hot, but they do watch.",
+    "body": "Drones fly at night. They are looking for heat sources. Even if they cannot detect you clearly, they can still watch the entrances.",
     "choices": {
       "A": "Shoot down the drones",
       "B": "Redirect them",
@@ -2539,7 +2539,7 @@
   },
   "vampire_283": {
     "title": "The Neighbor Without Curtains",
-    "body": "A neighbor never sleeps and watches the street. He collects details.",
+    "body": "A neighbor never sleeps and watches the street. He notices every little detail.",
     "choices": {
       "A": "Distract him",
       "B": "Change your habits",
@@ -2668,7 +2668,7 @@
     "body": "The clan organizes a lottery to fund your nights. The idea is dreadful and profitable.",
     "choices": {
       "A": "Supervise the game",
-      "B": "Ban the embarrassment",
+      "B": "Put an end to this circus",
       "C": "Take the cashbox"
     }
   },
@@ -3315,7 +3315,7 @@
     "title": "The Rival's Debt",
     "body": "A rival admits to a crushing debt. The clan wants to see him fall.",
     "choices": {
-      "A": "Help him at a price",
+      "A": "Help him, but at a high price",
       "B": "Crush him",
       "C": "Buy his loyalty"
     }
@@ -3442,7 +3442,7 @@
     "body": "A bar without windows opens two streets away. The clan already wants to go.",
     "choices": {
       "A": "Test the place",
-      "B": "Keep an eye on it",
+      "B": "Keep an eye on him",
       "C": "Ban the place"
     }
   },

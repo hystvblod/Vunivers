@@ -185,7 +185,7 @@
     "choices": {
       "A": "Den Neuling ausbilden",
       "B": "Ihn vor dem Clan verstecken",
-      "C": "Ihn einem Ältesten zur Ausbildung anvertrauen."
+      "C": "Ihn einem Ältesten zur Ausbildung anvertrauen"
     }
   },
   "vampire_022": {
@@ -572,7 +572,7 @@
     "choices": {
       "A": "Die Vorräte retten",
       "B": "Das Versteck wechseln",
-      "C": "Den Keller in eine Falle für Neugierige verwandeln."
+      "C": "Den Keller in eine Falle für Neugierige verwandeln"
     }
   },
   "vampire_065": {
@@ -2053,7 +2053,7 @@
   },
   "vampire_229": {
     "title": "Der Pakt der Straßen",
-    "body": "Menschen schlagen einen Pakt vor. Sie geben Schweigen gegen Schutz. Es ist ein Geschäft.",
+    "body": "Menschen schlagen einen Pakt vor. Sie bieten ihr Schweigen im Austausch für deinen Schutz an. Es ist ein klares Geschäft.",
     "choices": {
       "A": "Annehmen und Regeln festlegen",
       "B": "Ablehnen und Angst verbreiten",
@@ -2323,7 +2323,7 @@
   },
   "vampire_259": {
     "title": "Die Jagd auf die Drohne",
-    "body": "Drohnen fliegen nachts. Sie suchen Wärme. Vampire geben keine Wärme ab, aber sie beobachten.",
+    "body": "Nachts fliegen Drohnen. Sie suchen nach Wärmequellen. Selbst wenn sie dich schlecht erkennen, können sie die Zugänge überwachen.",
     "choices": {
       "A": "Die Drohnen abschießen",
       "B": "Sie umlenken",
@@ -2539,7 +2539,7 @@
   },
   "vampire_283": {
     "title": "Der Nachbar ohne Vorhänge",
-    "body": "Ein Nachbar schläft nie und beobachtet die Straße. Er sammelt Details.",
+    "body": "Ein Nachbar schläft nie und beobachtet die Straße. Ihm entgeht nicht das kleinste Detail.",
     "choices": {
       "A": "Ihn ablenken",
       "B": "Deine Gewohnheiten ändern",
@@ -2668,7 +2668,7 @@
     "body": "Der Clan organisiert eine Tombola, um deine Nächte zu finanzieren. Die Idee ist grauenhaft und profitabel.",
     "choices": {
       "A": "Das Spiel beaufsichtigen",
-      "B": "Diese Blamage verbieten",
+      "B": "Diesem Zirkus ein Ende setzen",
       "C": "Die Kasse nehmen"
     }
   },
@@ -3315,7 +3315,7 @@
     "title": "Die Schuld des Rivalen",
     "body": "Ein Rivale gesteht dir eine enorme Schuld. Der Clan will ihn fallen sehen.",
     "choices": {
-      "A": "Ihm teuer helfen",
+      "A": "Ihm helfen, aber zu einem hohen Preis",
       "B": "Ihn zerschmettern",
       "C": "Seine Loyalität kaufen"
     }
@@ -3442,7 +3442,7 @@
     "body": "Zwei Straßen weiter öffnet eine Bar ohne Fenster. Der Clan will schon hin.",
     "choices": {
       "A": "Den Ort testen",
-      "B": "Sie im Auge behalten",
+      "B": "Ihn im Auge behalten",
       "C": "Den Ort verbieten"
     }
   },

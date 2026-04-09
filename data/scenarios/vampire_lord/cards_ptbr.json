@@ -185,7 +185,7 @@
     "choices": {
       "A": "Treinar o novato",
       "B": "Escondê-lo do clã",
-      "C": "Entregá-lo a um ancião para treiná-lo."
+      "C": "Entregá-lo a um ancião para treiná-lo"
     }
   },
   "vampire_022": {
@@ -572,7 +572,7 @@
     "choices": {
       "A": "Salvar as reservas",
       "B": "Mudar de esconderijo",
-      "C": "Transformar o porão em uma armadilha para curiosos."
+      "C": "Transformar o porão em uma armadilha para curiosos"
     }
   },
   "vampire_065": {
@@ -2053,7 +2053,7 @@
   },
   "vampire_229": {
     "title": "O pacto das ruas",
-    "body": "Humanos propõem um pacto. Oferecem silêncio em troca de proteção. É comércio.",
+    "body": "Alguns humanos propõem um pacto. Eles oferecem silêncio em troca da sua proteção. É um acordo claro.",
     "choices": {
       "A": "Aceitar e enquadrar",
       "B": "Recusar e impor o medo",
@@ -2323,7 +2323,7 @@
   },
   "vampire_259": {
     "title": "A caça ao drone",
-    "body": "Drones voam pela noite. Procuram calor. Vampiros não esquentam, mas observam.",
+    "body": "Drones voam à noite. Eles procuram fontes de calor. Mesmo que não te detectem bem, ainda podem vigiar os acessos.",
     "choices": {
       "A": "Derrubar os drones",
       "B": "Desviá-los",
@@ -2539,7 +2539,7 @@
   },
   "vampire_283": {
     "title": "O vizinho sem cortinas",
-    "body": "Um vizinho nunca dorme e vigia a rua. Ele coleciona detalhes.",
+    "body": "Um vizinho nunca dorme e observa a rua. Ele percebe o menor detalhe.",
     "choices": {
       "A": "Distraí-lo",
       "B": "Mudar teus hábitos",
@@ -2668,7 +2668,7 @@
     "body": "O clã organiza um bingo para financiar tuas noites. A ideia é horrível e lucrativa.",
     "choices": {
       "A": "Controlar o jogo",
-      "B": "Proibir essa vergonha",
+      "B": "Acabar com esse circo",
       "C": "Ficar com o caixa"
     }
   },
@@ -3315,7 +3315,7 @@
     "title": "A dívida do rival",
     "body": "Um rival te confessa uma dívida enorme. O clã quer vê-lo cair.",
     "choices": {
-      "A": "Ajudá-lo cobrando caro",
+      "A": "Ajudá-lo, mas por um preço alto",
       "B": "Esmagá-lo",
       "C": "Comprar a lealdade dele"
     }
@@ -3442,7 +3442,7 @@
     "body": "Um bar sem janelas abre a duas ruas daqui. O clã já quer ir.",
     "choices": {
       "A": "Testar o lugar",
-      "B": "Mantê-lo sob vigilância",
+      "B": "Ficar de olho nele",
       "C": "Proibir o local"
     }
   },
