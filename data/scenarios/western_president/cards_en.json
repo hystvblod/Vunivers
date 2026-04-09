@@ -1144,7 +1144,7 @@
   },
   "wp_128": {
     "title": "Gastronomy Festival",
-    "body": "A major gastronomy festival could boost tourism. But it costs a fortune… in butter.",
+    "body": "A major gastronomy festival could attract many tourists, but the budget is enormous.",
     "choices": {
       "A": "Fund it: global showcase.",
       "B": "Moderate support + private sponsors.",
@@ -1359,10 +1359,10 @@
     }
   },
   "wp_152": {
-    "title": "A Summit… About Cooking",
-    "body": "An international summit is organized… by a cooking show. The chefs want a photo with you.",
+    "title": "Televised Culinary Summit",
+    "body": "A cooking show is organizing an international summit and wants a photo of you with the chefs.",
     "choices": {
-      "A": "Go and sign a symbolic 'gastronomic pact.'",
+      "A": "Go there, support the event, and make a symbolic announcement about national gastronomy.",
       "B": "Send your minister: you are officially working.",
       "C": "Refuse: 'diplomacy is not done with a ladle.'"
     }
@@ -1387,7 +1387,7 @@
   },
   "wp_155": {
     "title": "Awkward Ambassador",
-    "body": "An ambassador makes a joke that falls flat. Very flat. Geopolitical level: floor tile.",
+    "body": "An ambassador makes a joke that lands very badly. The incident embarrasses everyone and creates diplomatic discomfort.",
     "choices": {
       "A": "Official apologies + diplomatic gesture.",
       "B": "Recall them immediately: zero tolerance.",
@@ -1423,7 +1423,7 @@
   },
   "wp_159": {
     "title": "Chocolate Shortage",
-    "body": "A logistics crisis causes a chocolate shortage. Citizens call it a 'moral red line.'",
+    "body": "A logistics crisis causes a chocolate shortage. For many people, this is one shortage too many.",
     "choices": {
       "A": "Secure supply through fast agreements.",
       "B": "Launch accelerated local production, but it is costly.",
@@ -1630,7 +1630,7 @@
   },
   "wp_182": {
     "title": "Ministry Hack",
-    "body": "A ministry website displays a banner that says 'hello.' Not an official hello.",
+    "body": "A ministry website has been hacked and now shows nothing but a simple \"hello.\"",
     "choices": {
       "A": "Full audit + cyber training for government staff.",
       "B": "Cyber retaliation + firm communication.",
@@ -1665,8 +1665,8 @@
     }
   },
   "wp_186": {
-    "title": "Fictional Climate Conference",
-    "body": "You are offered the chance to host a conference on air and water. Very consensual… until funding comes up.",
+    "title": "Conference on Air and Water",
+    "body": "You are being asked to host a conference on air and water quality. Everyone agrees with the idea until it is time to pay.",
     "choices": {
       "A": "Host it and invest: international image.",
       "B": "Host it without public spending.",
@@ -1765,7 +1765,7 @@
   },
   "wp_197": {
     "title": "VIP Airport Lounge Incident",
-    "body": "An incident in the VIP lounge goes viral. Even the moving walkways have an opinion.",
+    "body": "An incident in the VIP lounge goes viral. Everyone is commenting on it.",
     "choices": {
       "A": "Apologies + security audit + fast improvements.",
       "B": "Publicly punish management.",
@@ -1818,8 +1818,8 @@
     }
   },
   "wp_203": {
-    "title": "The Neighbor Goes 'Boom'",
-    "body": "A neighboring country is testing a new weapon. The public expects a clear response, but your minister is not up to the task.",
+    "title": "Weapon Test by a Neighbor",
+    "body": "A neighboring country tests a new weapon. The public expects a clear response, but your government looks confused.",
     "choices": {
       "A": "Sanctions + diplomatic coalition.",
       "B": "Strengthen defense and flex muscle.",
@@ -1890,8 +1890,8 @@
     }
   },
   "wp_211": {
-    "title": "Border and Bocce Tournament",
-    "body": "A border area is heating up. Pressure is rising.",
+    "title": "Bocce Tournament at the Border",
+    "body": "To calm tensions at the border, local officials propose a bocce tournament between the two sides. Some find the idea amusing, others find it shocking.",
     "choices": {
       "A": "Support the initiative + official local dialogue.",
       "B": "Refuse: strengthen controls and military presence.",
@@ -1945,7 +1945,7 @@
   },
   "wp_217": {
     "title": "Battle of the Flags",
-    "body": "A conflict erupts over a shared flag. Experts want to act fast.",
+    "body": "A conflict breaks out over a flag that two sides both claim. Neither side is willing to give up the symbol.",
     "choices": {
       "A": "Diplomatic compromise and shared use.",
       "B": "Impose your flag: authority.",
@@ -2035,7 +2035,7 @@
   },
   "wp_227": {
     "title": "Diplomatic Passport… Lost",
-    "body": "A diplomat loses their passport. In an airport. In front of cameras. It is a sketch.",
+    "body": "A diplomat loses their passport in an airport, in front of cameras. The situation immediately becomes ridiculous.",
     "choices": {
       "A": "Reform diplomatic security + training.",
       "B": "Minimize it publicly, fix it behind the scenes.",
@@ -2314,7 +2314,7 @@
   },
   "wp_258": {
     "title": "General and Strategic Mustache",
-    "body": "Your general becomes the target of social media. The images are everywhere.",
+    "body": "Your general becomes a target on social media because of a viral photo. His appearance overshadows the message.",
     "choices": {
       "A": "Laugh and refocus on strategy.",
       "B": "Reel him in: serious image required.",
@@ -2539,7 +2539,7 @@
   },
   "wp_283": {
     "title": "Water War",
-    "body": "Your neighbor moves ships around. Pressure is mounting.",
+    "body": "Your neighbor diverts part of the water supply and deploys ships to secure the area. Pressure is rising.",
     "choices": {
       "A": "Regional agreement + water infrastructure investment.",
       "B": "National priority: restrictions and control.",
@@ -2863,7 +2863,7 @@
   },
   "wp_319": {
     "title": "Food Security",
-    "body": "Experts are calling for a food security plan. Experts want to act fast.",
+    "body": "Experts are calling for a food security plan. They want quick decisions before the situation worsens.",
     "choices": {
       "A": "Launch a national plan with goals and funding.",
       "B": "Let the market adapt, with only a minimal safety net.",
@@ -3439,7 +3439,7 @@
   },
   "wp_383": {
     "title": "Driver Shortage",
-    "body": "Transport is short on drivers and delays are growing. Companies want to hold on.",
+    "body": "Transport is short on drivers and delays are getting longer. Companies want a lasting solution.",
     "choices": {
       "A": "Accelerated training and better working conditions.",
       "B": "Regulated international recruitment to fill the gap quickly.",

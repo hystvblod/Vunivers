@@ -1144,7 +1144,7 @@
   },
   "wp_128": {
     "title": "Festival gastronomi",
-    "body": "Festival gastronomi besar bisa mendongkrak pariwisata. Tapi biayanya sangat mahal, terutama dalam mentega.",
+    "body": "Festival gastronomi besar bisa menarik banyak wisatawan, tetapi anggarannya sangat besar.",
     "choices": {
       "A": "Membiayai: etalase dunia.",
       "B": "Dukungan moderat dan sponsor swasta.",
@@ -1359,10 +1359,10 @@
     }
   },
   "wp_152": {
-    "title": "KTT... memasak",
-    "body": "Sebuah KTT internasional diadakan oleh acara memasak. Para koki ingin berfoto denganmu.",
+    "title": "KTT kuliner televisi",
+    "body": "Sebuah acara memasak mengadakan KTT internasional dan ingin memotretmu bersama para koki.",
     "choices": {
-      "A": "Datang dan menandatangani 'pakta gastronomi' simbolis.",
+      "A": "Datang, mendukung acara, dan membuat pengumuman simbolis tentang gastronomi nasional.",
       "B": "Mengirim menterimu: kamu resmi tetap bekerja.",
       "C": "Menolak: 'diplomasi tidak dilakukan dengan sendok sayur'."
     }
@@ -1387,7 +1387,7 @@
   },
   "wp_155": {
     "title": "Duta besar canggung",
-    "body": "Seorang duta besar melontarkan lelucon yang gagal total. Sangat gagal. Tingkat geopolitik: ubin lantai.",
+    "body": "Seorang duta besar melontarkan lelucon yang diterima dengan sangat buruk. Insiden itu mempermalukan semua orang dan menimbulkan ketegangan diplomatik.",
     "choices": {
       "A": "Permintaan maaf resmi dan isyarat diplomatik.",
       "B": "Memanggil pulang segera: nol toleransi.",
@@ -1423,7 +1423,7 @@
   },
   "wp_159": {
     "title": "Kelangkaan cokelat",
-    "body": "Krisis logistik menyebabkan kelangkaan cokelat. Warga menyebutnya 'garis merah moral'.",
+    "body": "Krisis logistik menyebabkan kelangkaan cokelat. Bagi banyak orang, ini adalah kelangkaan yang sudah kelewatan.",
     "choices": {
       "A": "Mengamankan pasokan lewat perjanjian cepat.",
       "B": "Meluncurkan produksi lokal dipercepat, tetapi mahal.",
@@ -1630,7 +1630,7 @@
   },
   "wp_182": {
     "title": "Peretasan kementerian",
-    "body": "Situs sebuah kementerian menampilkan spanduk 'halo'. Bukan 'halo' resmi.",
+    "body": "Situs sebuah kementerian diretas dan sekarang hanya menampilkan kata sederhana: \"halo\".",
     "choices": {
       "A": "Audit total dan pelatihan siber bagi pegawai.",
       "B": "Serangan balasan siber dan komunikasi tegas.",
@@ -1665,8 +1665,8 @@
     }
   },
   "wp_186": {
-    "title": "Konferensi iklim fiktif",
-    "body": "Kamu ditawari menjadi tuan rumah konferensi tentang udara dan air. Sangat mudah disetujui sampai menyangkut pembiayaan.",
+    "title": "Konferensi tentang udara dan air",
+    "body": "Kamu diminta menjadi tuan rumah konferensi tentang kualitas udara dan air. Semua setuju dengan idenya sampai saatnya membayar.",
     "choices": {
       "A": "Menjadi tuan rumah dan berinvestasi: citra internasional.",
       "B": "Menjadi tuan rumah tanpa pengeluaran publik.",
@@ -1765,7 +1765,7 @@
   },
   "wp_197": {
     "title": "Insiden di lounge VIP bandara",
-    "body": "Insiden di lounge VIP menjadi viral. Bahkan ban berjalan pun punya pendapat.",
+    "body": "Sebuah insiden di lounge VIP menjadi viral. Semua orang membicarakan kejadian itu.",
     "choices": {
       "A": "Permintaan maaf, audit keamanan, dan perbaikan cepat.",
       "B": "Menghukum pimpinan secara terbuka.",
@@ -1818,8 +1818,8 @@
     }
   },
   "wp_203": {
-    "title": "Tetangga bikin 'boom'",
-    "body": "Negara tetangga menguji senjata baru. Rakyat menunggu jawaban yang jelas, tetapi menterimu tidak mampu mengatasinya.",
+    "title": "Uji senjata oleh negara tetangga",
+    "body": "Negara tetangga menguji senjata baru. Masyarakat menunggu jawaban yang jelas, tetapi pemerintahmu terlihat bingung.",
     "choices": {
       "A": "Sanksi dan koalisi diplomatik.",
       "B": "Memperkuat pertahanan dan menunjukkan otot.",
@@ -1890,8 +1890,8 @@
     }
   },
   "wp_211": {
-    "title": "Perbatasan dan turnamen petanque",
-    "body": "Sebuah zona perbatasan memanas. Tekanan meningkat.",
+    "title": "Turnamen petanque di perbatasan",
+    "body": "Untuk meredakan ketegangan di perbatasan, pejabat lokal mengusulkan turnamen petanque antara kedua pihak. Sebagian orang menganggapnya lucu, yang lain menganggapnya mengejutkan.",
     "choices": {
       "A": "Mendukung inisiatif itu dan dialog lokal resmi.",
       "B": "Menolak: memperkuat kontrol dan kehadiran militer.",
@@ -1945,7 +1945,7 @@
   },
   "wp_217": {
     "title": "Pertempuran bendera",
-    "body": "Konflik pecah tentang bendera bersama. Para ahli ingin bertindak cepat.",
+    "body": "Konflik pecah karena sebuah bendera yang sama-sama diklaim oleh dua pihak. Tidak ada pihak yang mau mengalah soal simbol itu.",
     "choices": {
       "A": "Kompromi diplomatik dan berbagi.",
       "B": "Memaksakan benderamu: otoritas.",
@@ -2035,7 +2035,7 @@
   },
   "wp_227": {
     "title": "Paspor diplomatik... hilang",
-    "body": "Seorang diplomat kehilangan paspornya. Di bandara. Di depan kamera. Seperti sketsa komedi.",
+    "body": "Seorang diplomat kehilangan paspornya di bandara, di depan kamera. Kejadian itu langsung terlihat konyol.",
     "choices": {
       "A": "Reformasi keamanan diplomatik dan pelatihan.",
       "B": "Meremehkan di depan publik, menyelesaikannya di balik layar.",
@@ -2314,7 +2314,7 @@
   },
   "wp_258": {
     "title": "Jenderal dan kumis strategis",
-    "body": "Jenderalmu menjadi sasaran media sosial. Gambar-gambarnya beredar di mana-mana.",
+    "body": "Jenderalmu menjadi sasaran di media sosial gara-gara sebuah foto viral. Penampilannya menutupi pesan yang ingin disampaikan.",
     "choices": {
       "A": "Menertawakannya dan memusatkan kembali pada strategi.",
       "B": "Menegurnya: citra serius wajib.",
@@ -2539,7 +2539,7 @@
   },
   "wp_283": {
     "title": "Perang air",
-    "body": "Tetanggamu memindahkan kapal-kapal. Tekanan meningkat.",
+    "body": "Negara tetanggamu mengalihkan sebagian air dan mengerahkan kapal untuk mengamankan zona itu. Tekanan meningkat.",
     "choices": {
       "A": "Perjanjian regional dan investasi hidrolik.",
       "B": "Prioritas nasional: pembatasan dan kontrol.",
@@ -2863,7 +2863,7 @@
   },
   "wp_319": {
     "title": "Keamanan pangan",
-    "body": "Para ahli meminta rencana keamanan pangan. Para ahli ingin bertindak cepat.",
+    "body": "Para ahli meminta rencana ketahanan pangan. Mereka ingin keputusan cepat sebelum situasinya memburuk.",
     "choices": {
       "A": "Meluncurkan rencana nasional dengan target dan pendanaan.",
       "B": "Membiarkan pasar menyesuaikan dengan jaring pengaman minimal.",
@@ -3439,7 +3439,7 @@
   },
   "wp_383": {
     "title": "Kelangkaan sopir",
-    "body": "Transportasi kekurangan sopir dan tenggat makin panjang. Perusahaan ingin bertahan.",
+    "body": "Sektor transportasi kekurangan sopir dan keterlambatan makin panjang. Perusahaan ingin solusi yang berkelanjutan.",
     "choices": {
       "A": "Pelatihan dipercepat dan perbaikan kondisi kerja profesi ini.",
       "B": "Rekrutmen internasional yang diawasi untuk menutup kekurangan dengan cepat.",
