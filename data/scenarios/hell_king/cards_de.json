@@ -45,12 +45,12 @@
     }
   },
   "hk_006": {
-    "title": "Aufstand in einem Kreis",
-    "body": "In einem Kreis haben Verdammte Wächter entwaffnet und deren Werkzeuge gegen sie gerichtet.",
+    "title": "Aufstand in einer Region",
+    "body": "In einer Region haben Verdammte Wächter entwaffnet und deren Werkzeuge gegen sie gerichtet.",
     "choices": {
       "A": "Zerschlage den Aufstand mit zusätzlichen Legionen.",
       "B": "Verhandle über eine „Lockerung“ der Strafen im Tausch gegen Ruhe.",
-      "C": "Setze ein öffentliches Exempel, um die anderen Kreise zu terrorisieren."
+      "C": "Setze ein öffentliches Exempel, um die anderen Regionen zu terrorisieren."
     }
   },
   "hk_007": {
@@ -81,7 +81,7 @@
     }
   },
   "hk_010": {
-    "title": "Flucht von Seelen an die Oberfläche",
+    "title": "Flucht von Seelen zur Erde",
     "body": "Ein Riss in einem alten Portal erlaubt einigen verdammten Seelen, wieder nach oben zu gelangen und die Lebenden heimzusuchen.",
     "choices": {
       "A": "Lass sie Angst säen, du holst sie später zurück.",
@@ -127,7 +127,7 @@
   },
   "hk_015": {
     "title": "Makabre Spiele unter Dämonen",
-    "body": "Dämonen veranstalten Spiele, bei denen sie um Seelen, Legionen und Gebiete an der Oberfläche wetten.",
+    "body": "Dämonen veranstalten Spiele, bei denen sie um Seelen, Legionen und Gebiet auf der Erde wetten.",
     "choices": {
       "A": "Verbiete diese Spiele, zu gefährlich.",
       "B": "Regle sie, mit dir als höchstem Schiedsrichter.",
@@ -154,7 +154,7 @@
   },
   "hk_018": {
     "title": "Angebot einer himmlischen Waffenruhe",
-    "body": "Ein himmlischer Bote schlägt eine Waffenruhe vor, um die Oberfläche zu beruhigen und die Welten zu stabilisieren.",
+    "body": "Ein himmlischer Bote schlägt einen Waffenstillstand vor, um die Welt der Menschen zu beruhigen und die Welten zu stabilisieren.",
     "choices": {
       "A": "Nimm an, die kosmische Ordnung nützt auch dir.",
       "B": "Lehne ab, die Hölle lässt sich nichts vorschreiben.",
@@ -163,7 +163,7 @@
   },
   "hk_019": {
     "title": "Aschesturm",
-    "body": "Ein Aschesturm verschlingt mehrere Kreise. Die Sicht bricht ein, die Verdammten geraten in Panik.",
+    "body": "Ein Aschesturm verschlingt mehrere Regionen. Die Sicht bricht ein, die Verdammten geraten in Panik.",
     "choices": {
       "A": "Lass den Sturm seinen Lauf nehmen, das ist die normale Landschaft.",
       "B": "Schicke Legionen, um einen Anschein von Ordnung wiederherzustellen.",
@@ -171,8 +171,8 @@
     }
   },
   "hk_020": {
-    "title": "Neuer experimenteller Kreis",
-    "body": "Einer deiner Architekten schlägt einen neuen Kreistyp vor, effizienter, aber instabil.",
+    "title": "Neue experimentelle Region",
+    "body": "Einer deiner Architekten schlägt einen neuen Typ von Region vor, effizienter, aber instabil.",
     "choices": {
       "A": "Genehmige das Projekt und öffne ihn sofort.",
       "B": "Teste ihn zuerst an einer kleinen Zahl von Seelen.",
@@ -184,7 +184,7 @@
     "body": "Einige Verdammte debattieren über den Sinn ewiger Strafe und stellen deine Legitimität infrage.",
     "choices": {
       "A": "Bring sie mit allen Mitteln zum Schweigen.",
-      "B": "Schaffe einen Kreis nur für ihre Debatten, gut isoliert.",
+      "B": "Schaffe eine Region nur für ihre Debatten, gut isoliert.",
       "C": "Schicke sie auf die Erde, damit sie dort den Glauben verwirren."
     }
   },
@@ -239,7 +239,7 @@
     "choices": {
       "A": "Fördern, Kreativität ist gut für die Moral der Dämonen.",
       "B": "Begrenze die Schäden, manche Versuche gehen zu weit.",
-      "C": "Beschränke diesen Wettbewerb auf einen sehr, sehr abgeschiedenen Kreis."
+      "C": "Beschränke diesen Wettbewerb auf eine sehr, sehr abgelegene Region."
     }
   },
   "hk_028": {
@@ -253,7 +253,7 @@
   },
   "hk_029": {
     "title": "Botschaft benachbarter Höllen",
-    "body": "Ein benachbartes infernales Reich schlägt ein Bündnis rund um Seelen, Legionen und die Oberfläche vor.",
+    "body": "Ein benachbartes Höllenreich schlägt ein Bündnis rund um Seelen, Legionen und die Welt der Menschen vor.",
     "choices": {
       "A": "Unterzeichne einen aggressiven Pakt, der auf Seelenernte ausgerichtet ist.",
       "B": "Verhandle ein stark begrenztes Abkommen, um die Kontrolle zu behalten.",
@@ -271,7 +271,7 @@
   },
   "hk_031": {
     "title": "Unerlaubte Portale",
-    "body": "Dämonen haben Portale zur Oberfläche geöffnet. Die oberen Welten beginnen es zu bemerken.",
+    "body": "Dämonen haben Portale zur Erde geöffnet. Die Welten darüber beginnen es zu bemerken.",
     "choices": {
       "A": "Weite diese Portale aus, die Gelegenheit ist zu gut.",
       "B": "Schließe sie sauber und setze strenge Regeln durch.",
@@ -342,7 +342,7 @@
     }
   },
   "hk_039": {
-    "title": "Eingestürzter Tempel an der Oberfläche",
+    "title": "Eingestürzter Tempel auf der Erde",
     "body": "Ein alter Tempel deines Kults ist eingestürzt. Manche sehen darin ein Zeichen, andere nur eine Ruine.",
     "choices": {
       "A": "Verstärke die diskrete Präsenz deiner Agenten in der Gegend.",
@@ -352,11 +352,11 @@
   },
   "hk_040": {
     "title": "Höllischer Strategierat",
-    "body": "Deine Berater wollen, dass du Seelen, Armeen, Ordnung oder die Oberfläche priorisierst.",
+    "body": "Deine Berater wollen, dass du Seelen, Armeen, Ordnung oder die Welt der Menschen bevorzugst.",
     "choices": {
       "A": "Gib jedem ein bisschen mehr, auch wenn das die Ordnung spannt.",
       "B": "Setze Ordnung als Priorität durch, auch wenn du Seelen verlierst.",
-      "C": "Investiere in die Oberfläche, dein zukünftiges Spielfeld."
+      "C": "In die Welt der Menschen investieren, dein zukünftiges Spielfeld."
     }
   },
   "hk_041": {
@@ -379,7 +379,7 @@
   },
   "hk_043": {
     "title": "Große infernale Finsternis",
-    "body": "Eine seltene Finsternis verdunkelt die Hölle und die Oberfläche. Die Grenzen zwischen den Welten werden schwächer.",
+    "body": "Eine seltene Finsternis verdunkelt Hölle und Erde. Die Grenzen zwischen den Welten werden schwächer.",
     "choices": {
       "A": "Nutze die Gelegenheit, um mehr Seelen zu dir zu drängen.",
       "B": "Verstärke die Barrieren, um Fluchten zu verhindern.",
@@ -397,7 +397,7 @@
   },
   "hk_045": {
     "title": "Großer Rat der Versucher",
-    "body": "Die Versucher, die an der Oberfläche wirken, wollen in der Gesamtstrategie stärker mitreden.",
+    "body": "Die Verführer, die in der Welt der Menschen wirken, wollen mehr Einfluss auf die Gesamtstrategie.",
     "choices": {
       "A": "Gib ihnen mehr Freiheit, um Seelen zu ernten.",
       "B": "Integriere sie in eine strengere Hierarchie.",
@@ -410,7 +410,7 @@
     "choices": {
       "A": "Ersetze sie durch frischere Rekruten.",
       "B": "Organisiere Kriegszüge, um sie wieder aufzuwecken.",
-      "C": "Gestalte einige Kreise um, um für Abwechslung zu sorgen."
+      "C": "Gestalte einige Regionen um, um für Abwechslung zu sorgen."
     }
   },
   "hk_047": {
@@ -468,8 +468,8 @@
     }
   },
   "hk_053": {
-    "title": "Funkenstürme an der Oberfläche",
-    "body": "Funkenregen fällt auf die Oberfläche und schürt an manchen Orten Konflikte.",
+    "title": "Funkenstürme auf der Erde",
+    "body": "Funkenregen fällt auf die Erde und schürt an manchen Orten Konflikte.",
     "choices": {
       "A": "Verstärke diese Regenfälle, um mehr Seelen zu ernten.",
       "B": "Begrenze ihre Häufigkeit, um nicht zu viel Aufmerksamkeit zu erregen.",
@@ -487,7 +487,7 @@
   },
   "hk_055": {
     "title": "Karneval der Illusionen",
-    "body": "Truppen von Dämonen-Illusionisten wollen in einem bestimmten Kreis einen dauerhaften Karneval veranstalten.",
+    "body": "Truppen von Dämonen-Illusionisten wollen in einer bestimmten Region einen dauerhaften Karneval veranstalten.",
     "choices": {
       "A": "Mach daraus eine unwiderstehliche Seelenfalle.",
       "B": "Integriere ihn als experimentelle Zone in die allgemeine Ordnung.",
@@ -498,7 +498,7 @@
     "title": "Überfluteter Blutfluss",
     "body": "Einer der großen Blutflüsse tritt über die Ufer und bedroht mehrere wichtige Anlagen.",
     "choices": {
-      "A": "Leite die Flut in überbevölkerte Kreise um.",
+      "A": "Leite die Flut in überbevölkerte Regionen um.",
       "B": "Errichte mit deinen disziplinierten Einheiten infernale Dämme.",
       "C": "Lass den Fluss die höllische Landschaft neu formen."
     }
@@ -541,7 +541,7 @@
   },
   "hk_061": {
     "title": "Labor neuer Sünden",
-    "body": "Ein experimenteller Kreis versucht, Formen des Lasters zu erfinden, die zum modernen Zeitalter passen.",
+    "body": "Eine experimentelle Region versucht, Formen des Lasters zu erfinden, die zum modernen Zeitalter passen.",
     "choices": {
       "A": "Teste diese Neuerungen an möglichst vielen Sterblichen.",
       "B": "Führe sie in ein streng kontrolliertes Protokoll ein.",
@@ -558,8 +558,8 @@
     }
   },
   "hk_063": {
-    "title": "Aufstand eines autonomen Kreises",
-    "body": "Ein Kreis hat begonnen, sich selbst zu verwalten, ohne die üblichen Berichte nach oben zu schicken.",
+    "title": "Aufstand einer autonomen Region",
+    "body": "Eine Region hat begonnen, sich selbst zu verwalten, ohne die üblichen Berichte nach oben zu schicken.",
     "choices": {
       "A": "Überschwemme ihn mit neuen Seelen, um wieder die Kontrolle zu übernehmen.",
       "B": "Schicke eine disziplinierte Streitmacht, um die zentrale Autorität wiederherzustellen.",
@@ -631,7 +631,7 @@
   },
   "hk_071": {
     "title": "Kongress berühmter Sünder",
-    "body": "Mehrere berühmte Seelen finden sich im selben Kreis wieder und verlangen eine Elitebehandlung.",
+    "body": "Mehrere berühmte Seelen finden sich in derselben Region wieder und verlangen eine Elitebehandlung.",
     "choices": {
       "A": "Stelle sie als Trophäen aus, um mehr Seelen anzulocken.",
       "B": "Unterwirf sie denselben Regeln wie alle anderen.",
@@ -648,8 +648,8 @@
     }
   },
   "hk_073": {
-    "title": "Kreis der Entweiher",
-    "body": "Ein Kreis erfindet neue Entweihungen. Ihre Ideen können nützlich sein oder alles aus dem Gleichgewicht bringen.",
+    "title": "Region der Schänder",
+    "body": "Eine Region erfindet neue Formen der Schändung. Ihre Ideen können nützen oder alles aus dem Gleichgewicht bringen.",
     "choices": {
       "A": "Nutze ihren Erfindungsgeist, um mehr Seelen anzulocken.",
       "B": "Isoliere sie streng, um die Ordnung zu bewahren.",
@@ -702,8 +702,8 @@
     }
   },
   "hk_079": {
-    "title": "Kreis der gebrochenen Pakte",
-    "body": "Ein ganzer Kreis ist mit jenen bevölkert, die ihre Pakte verraten haben, höllisch oder nicht.",
+    "title": "Region der gebrochenen Pakte",
+    "body": "Eine ganze Region ist von jenen bevölkert, die ihre Pakte verraten haben, infernal oder nicht.",
     "choices": {
       "A": "Nutze sie, um Geständnisse und Geheimnisse zu bekommen.",
       "B": "Verstärke als Beispiel die Struktur ihrer Strafen.",
@@ -729,8 +729,8 @@
     }
   },
   "hk_082": {
-    "title": "Kreise in Konkurrenz",
-    "body": "Zwei Kreise prahlen damit, „der höllischste“ zu sein, und kämpfen um Ressourcen.",
+    "title": "Konkurrierende Regionen",
+    "body": "Zwei Regionen rühmen sich, die infernalsten zu sein, und kämpfen um Ressourcen.",
     "choices": {
       "A": "Versorge beide mit noch mehr Seelen.",
       "B": "Erzwinge eine klare Hierarchie zwischen ihnen.",
@@ -793,7 +793,7 @@
   },
   "hk_089": {
     "title": "Prozession der zerbrochenen Masken",
-    "body": "Eine Prozession Verdammter mit rissigen Masken zieht durch mehrere Kreise.",
+    "body": "Ein Zug Verdammter mit rissigen Masken durchquert mehrere Regionen.",
     "choices": {
       "A": "Ziehe noch mehr Seelen an, die nach einem Spektakel suchen.",
       "B": "Mach aus dieser Prozession ein stark kodifiziertes Ritual.",
@@ -811,7 +811,7 @@
   },
   "hk_091": {
     "title": "Rebellion der Aufseher",
-    "body": "Jene, die die Brücken zwischen den Kreisen bewachen, verlangen mehr Anerkennung.",
+    "body": "Diejenigen, die die Brücken zwischen den Regionen bewachen, verlangen mehr Anerkennung.",
     "choices": {
       "A": "Stopfe sie mit neuen Seelen voll, die sie filtern sollen.",
       "B": "Kläre ihre Rechte und Pflichten streng.",
@@ -840,7 +840,7 @@
     "title": "Versammlung der flammenden Zungen",
     "body": "Feuerzungen flüstern die schlimmsten Geheimnisse der Lebenden und der Toten.",
     "choices": {
-      "A": "Sättige deine Kreise mit diesen Enthüllungen, um Seelen zu brechen.",
+      "A": "Überschwemme deine Regionen mit diesen Enthüllungen, um Seelen zu brechen.",
       "B": "Ordne sie als strategische Informationen ein.",
       "C": "Lass einige davon in die Ohren einflussreicher Menschen auf der Erde sickern."
     }
@@ -892,7 +892,7 @@
   },
   "hk_100": {
     "title": "Große infernale Volkszählung",
-    "body": "Man schlägt dir eine vollständige Erfassung von Seelen, Legionen, Strukturen und Einflüssen an der Oberfläche vor.",
+    "body": "Man schlägt dir eine vollständige Erfassung von Seelen, Legionen, Strukturen und Einflüssen in der Welt der Menschen vor.",
     "choices": {
       "A": "Richte die Erfassung auf die Masse der Seelen aus.",
       "B": "Mach daraus ein Werkzeug absoluter Ordnung und Kontrolle.",
@@ -954,8 +954,8 @@
     }
   },
   "hk_107": {
-    "title": "Schwelender Krieg zwischen zwei Kreisen",
-    "body": "Zwei Kreise beschuldigen sich gegenseitig, einander Verdammte und Wächter zu stehlen.",
+    "title": "Ein schwelender Konflikt zwischen zwei Regionen",
+    "body": "Zwei Regionen beschuldigen sich gegenseitig, ihre Verdammten und ihre Wächter zu stehlen.",
     "choices": {
       "A": "Versorge sie mit Seelen, um die Spannung vorläufig zu beruhigen.",
       "B": "Schicke eine Elitelegion, um wieder Ordnung zu schaffen.",
@@ -991,7 +991,7 @@
   },
   "hk_111": {
     "title": "Meuterei auf einer Brücke der Verdammten",
-    "body": "Eine Brücke, die zwei Kreise verbindet, wird von meuternden Verdammten besetzt.",
+    "body": "Eine Brücke, die zwei Regionen verbindet, wurde von meuternden Verdammten besetzt.",
     "choices": {
       "A": "Überschwemme sie mit einem Strom zusätzlicher Seelen.",
       "B": "Schicke eine disziplinierte Truppe, um die Kontrolle zurückzuholen.",
@@ -1120,7 +1120,7 @@
     "body": "Seelen extremer Frommer wollen dir beweisen, dass sie eine besondere Behandlung verdienen.",
     "choices": {
       "A": "Nutze sie als Aushängeschild, um andere Gläubige anzuziehen.",
-      "B": "Gliedere sie in einen stark normierten Kreis ein.",
+      "B": "Integriere sie in eine Region mit sehr strengen Regeln.",
       "C": "Richte sie gegen die religiösen Strukturen der Oberfläche."
     }
   },
@@ -1170,7 +1170,7 @@
     }
   },
   "hk_131": {
-    "title": "Neblige Brücke zur Oberfläche",
+    "title": "Neblige Brücke zur Erde",
     "body": "Eine Brücke aus Nebel erscheint und verbindet dein Reich kurzzeitig mit einem genauen Ort in der Welt der Lebenden.",
     "choices": {
       "A": "Lass die Seelen über diese Brücke strömen.",
@@ -1315,7 +1315,7 @@
   },
   "hk_147": {
     "title": "Riss zu einem Säuremeer",
-    "body": "Ein Meer aus höllischer Säure droht, einen ganzen Kreis zu überfluten.",
+    "body": "Ein Meer aus infernalischer Säure droht, eine ganze Region zu verschlingen.",
     "choices": {
       "A": "Stoße noch mehr Seelen hinein, um Angst zu machen.",
       "B": "Errichte Deiche aus extrem streng kontrollierten Materialien.",
@@ -1405,7 +1405,7 @@
   },
   "hk_157": {
     "title": "Schmuggel gefrorener Seelen",
-    "body": "Man meldet dir einen Handel mit gefrorenen Seelen, die durch deine Kreise geschleust werden.",
+    "body": "Man meldet dir einen Schmuggel mit gefrorenen Seelen, der durch deine Regionen läuft.",
     "choices": {
       "A": "Nimm deinen Zehnten und sieh weg.",
       "B": "Reguliere den Handel und erfasse jede Transaktion.",
@@ -1417,7 +1417,7 @@
     "body": "Ein von angeketteten Seelen belebter Eiskoloss bewegt sich auf deine Grenzen zu.",
     "choices": {
       "A": "Zerstöre ihn mit einer Schocktruppe.",
-      "B": "Sperre ihn in einen eigens dafür bestimmten Kreis, unter strengster Bewachung.",
+      "B": "Sperre ihn in eine eigens vorgesehene Region unter strenger Überwachung.",
       "C": "Lenke diesen Koloss um, um einige sterbliche Städte in Angst zu versetzen."
     }
   },
@@ -1504,7 +1504,7 @@
   },
   "hk_168": {
     "title": "Handel mit Bannern",
-    "body": "Banner des Nordens, die dein verzerrtes Abbild tragen, zirkulieren in deinen Kreisen.",
+    "body": "Banner aus dem Norden mit einem verzerrten Abbild deines Gesichts verbreiten sich in deinen Regionen.",
     "choices": {
       "A": "Lass sie zirkulieren, um Hass und Angst zu schüren.",
       "B": "Beschlagnahme und archiviere jedes Banner nach strengen Regeln.",
@@ -1567,7 +1567,7 @@
   },
   "hk_175": {
     "title": "Gesang der Nebel des Nordens",
-    "body": "Ein Gesang aus dem Norden lässt die Wände deiner Kreise vibrieren.",
+    "body": "Ein Gesang aus dem Norden lässt die Mauern deiner Regionen erzittern.",
     "choices": {
       "A": "Verstärke ihn, um noch mehr beeinflussbare Seelen anzuziehen.",
       "B": "Filtere ihn durch ein Ritual, um ihn berechenbar zu machen.",
@@ -1588,7 +1588,7 @@
     "body": "Deine Strategen wollen jene des Nordens in einem Wettstreit des Einflusses herausfordern.",
     "choices": {
       "A": "Bewerte den Sieg an der Menge gewonnener Seelen.",
-      "B": "Bewerte den Sieg an der in den Kreisen zurückgebrachten Stabilität.",
+      "B": "Den Sieg nach der Stabilität bewerten, die in die Regionen zurückgebracht wird.",
       "C": "Bewerte den Sieg an der Größe der Unruhen an der Oberfläche."
     }
   },
@@ -1612,7 +1612,7 @@
   },
   "hk_180": {
     "title": "Einladung zur Seelenjagd",
-    "body": "Der Norden lädt dich zu einer in den Kreisen groß vermarkteten „Seelenjagd“ ein.",
+    "body": "Der Norden lädt dich zu einer sehr sichtbaren „Seelenjagd“ in den Regionen ein.",
     "choices": {
       "A": "Mach mit und entfessle deine gefräßigsten Legionen.",
       "B": "Setze strenge Regeln, um das Chaos zu begrenzen.",
@@ -1693,7 +1693,7 @@
   },
   "hk_189": {
     "title": "Blutiger diplomatischer Zwischenfall",
-    "body": "Eine Delegation des Nordens wurde in einem deiner Kreise von Verdammten angegriffen.",
+    "body": "Eine Delegation aus dem Norden wurde in einer deiner Regionen von Verdammten angegriffen.",
     "choices": {
       "A": "Beschuldige den Norden der Provokation und schlage zurück.",
       "B": "Erkenne eigenes Versagen an und kodifiziere bessere Sicherheitsregeln.",
@@ -1714,13 +1714,13 @@
     "body": "Ein Ort, an dem die Hoffnung langsam verschwindet.",
     "choices": {
       "A": "Nutze die Gelegenheit, um mehr Seelen zu ernten.",
-      "B": "Setze Grenzen, um das Gleichgewicht deiner Kreise zu bewahren.",
+      "B": "Grenzen setzen, um das Gleichgewicht deiner Regionen zu bewahren.",
       "C": "Konzentriere diese Katastrophen auf wichtige menschliche Orte."
     }
   },
   "hk_192": {
     "title": "Experiment einer vereinten Hölle",
-    "body": "Ein kühnes Experiment bestünde darin, kurzzeitig Teile deiner Kreise mit denen des Nordens zu verschmelzen.",
+    "body": "Ein gewagtes Experiment bestünde darin, einige deiner Regionen kurzzeitig mit denen des Nordens zu verschmelzen.",
     "choices": {
       "A": "Nimm an, um einen Schock massiver Verdammung zu erzeugen.",
       "B": "Lehne ab, aus Angst vor totalem Chaos.",
@@ -1846,7 +1846,7 @@
   },
   "hk_206": {
     "title": "Soziale Netzwerke in Flammen",
-    "body": "Die Netzwerke der Oberfläche verwandeln sich in Arenen von Hass und Neid.",
+    "body": "Die Netzwerke der Welt der Menschen verwandeln sich in Arenen von Hass und Neid.",
     "choices": {
       "A": "Verstärke giftige Vergleiche und öffentliche Demütigungen.",
       "B": "Stütze beruhigende Regeln, ohne wirklich zu handeln.",
@@ -2017,7 +2017,7 @@
   },
   "hk_225": {
     "title": "Zusammenbruch des wilden Lebens",
-    "body": "Die Oberfläche verliert ihre Arten, ihre Wälder und ihre alten Gleichgewichte.",
+    "body": "Die Erde verliert ihre Arten, ihre Wälder und ihre alten Gleichgewichte.",
     "choices": {
       "A": "Förder das Gefühl von Unvermeidlichkeit und „zu spät“.",
       "B": "Stütze streng geregelte, aber unzureichende Schutzmaßnahmen.",
@@ -2062,7 +2062,7 @@
   },
   "hk_230": {
     "title": "Auslöschung kollektiver Hoffnung",
-    "body": "Eine dumpfe Welle erfasst die Oberfläche: Niemand glaubt mehr an eine bessere Zukunft.",
+    "body": "Eine dumpfe Welle erfasst die Welt der Menschen: Niemand glaubt mehr an eine bessere Zukunft.",
     "choices": {
       "A": "Verwandle diese Verzweiflung in totale Apathie und einsame Laster.",
       "B": "Lass einige gemeinsame Projekte entstehen, streng kontrolliert.",
@@ -2251,7 +2251,7 @@
   },
   "hk_251": {
     "title": "Federregen",
-    "body": "Ein Regen goldener Federn fällt in deine Kreise. Die Verdammten begreifen, dass sich das Paradies zeigt.",
+    "body": "Ein Regen aus goldenen Federn fällt über deine Regionen. Die Verdammten begreifen, dass sich der Himmel zeigt.",
     "choices": {
       "A": "Entweihe diese Federn, indem du sie unter dem Geschrei der Seelen verbrennst.",
       "B": "Verzeichne sie als Beweisstücke in deinen Archiven.",
@@ -2323,7 +2323,7 @@
   },
   "hk_259": {
     "title": "Flüchtige Seele",
-    "body": "Eine dem Paradies versprochene Seele hat es durch List geschafft, in deine Kreise zu gelangen.",
+    "body": "Eine dem Himmel versprochene Seele hat es durch List geschafft, in deine Regionen zu gelangen.",
     "choices": {
       "A": "Behalte sie als Trophäe trotz des diplomatischen Risikos.",
       "B": "Schicke sie mit einem detaillierten Bericht zurück, der deinen guten Willen beweist.",
@@ -2350,7 +2350,7 @@
   },
   "hk_262": {
     "title": "Zorn eines Erzengels",
-    "body": "Ein Erzengel droht, seinen Zorn über einige deiner Kreise zu entfesseln.",
+    "body": "Ein Erzengel droht, seinen Zorn über einige deiner Regionen loszulassen.",
     "choices": {
       "A": "Provoziere weiter und teste seine Grenzen.",
       "B": "Gib ein kleines Symbol preis, um das Gleichgewicht zu bewahren.",
@@ -2530,7 +2530,7 @@
   },
   "hk_282": {
     "title": "Auf der Erde eingeschleuste Engel",
-    "body": "Engel steigen heimlich auf die Oberfläche hinab, um deine Pläne zu stören.",
+    "body": "Engel steigen heimlich zur Erde hinab, um deine Pläne zu stören.",
     "choices": {
       "A": "Lass deine Diener sie jagen und verderben.",
       "B": "Überwache sie methodisch, um deine Strategien anzupassen.",
@@ -2723,7 +2723,7 @@
     "choices": {
       "A": "Stell ihm öffentlich eine Falle, um deine Herrschaft zu festigen.",
       "B": "Stelle ihn in einer Ordnungszelle unter enge Überwachung.",
-      "C": "Nutze ihn als Figur, um andere Kreise zu infiltrieren."
+      "C": "Nutze ihn als Spielstein, um andere Regionen zu infiltrieren."
     }
   },
   "hk_304": {
@@ -2800,7 +2800,7 @@
   },
   "hk_312": {
     "title": "Architekten des Abgrunds",
-    "body": "Dämonische Architekten wollen einige Kreise umgestalten.",
+    "body": "Dämonische Architekten wollen einige Regionen umgestalten.",
     "choices": {
       "A": "Gib ihnen freie Hand, um nie dagewesene Schrecken zu erschaffen.",
       "B": "Genehmige detaillierte Pläne, die einer strengen Ordnung folgen.",
@@ -2871,11 +2871,11 @@
     }
   },
   "hk_320": {
-    "title": "Verlassener Kreis",
-    "body": "Ein einst sehr belebter Kreis ist seltsam dünn besiedelt.",
+    "title": "Verlassene Region",
+    "body": "Eine einst stark bevölkerte Region ist auf seltsame Weise leerer geworden.",
     "choices": {
       "A": "Verlege neue Seelen dorthin, um die Aktivität wieder anzukurbeln.",
-      "B": "Gestalte diesen Kreis völlig neu für ein neues Konzept.",
+      "B": "Diese Region vollständig umgestalten und auf ein neues Konzept ausrichten.",
       "C": "Nutze diese Leere als Experimentierzone für die Oberfläche."
     }
   },
@@ -3079,7 +3079,7 @@
   },
   "hk_343": {
     "title": "Umgestürzte Gräber",
-    "body": "Einige Gräber an der Oberfläche kippen auf geheimnisvolle Weise um.",
+    "body": "Einige Gräber auf der Erde kippen auf geheimnisvolle Weise um.",
     "choices": {
       "A": "Sieh darin ein Zeichen deiner Macht und verstärke es.",
       "B": "Erfasse jeden Fall und gleiche ihn mit deinen Registern ab.",

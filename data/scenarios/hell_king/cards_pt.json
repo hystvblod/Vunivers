@@ -45,12 +45,12 @@
     }
   },
   "hk_006": {
-    "title": "Revolta num círculo",
-    "body": "Num círculo, alguns condenados desarmaram guardas e viraram os instrumentos contra eles.",
+    "title": "Revolta numa região",
+    "body": "Numa região, alguns condenados desarmaram guardas e viraram os instrumentos contra eles.",
     "choices": {
       "A": "Esmaga a revolta com legiões suplementares.",
       "B": "Negocia um «alívio» dos castigos em troca de calma.",
-      "C": "Dá um exemplo público para aterrorizar os outros círculos."
+      "C": "Dá um exemplo público para aterrorizar as outras regiões."
     }
   },
   "hk_007": {
@@ -81,7 +81,7 @@
     }
   },
   "hk_010": {
-    "title": "Fuga de almas à superfície",
+    "title": "Fuga de almas para a Terra",
     "body": "Uma fissura num antigo portal permite a algumas almas condenadas subir para assombrar os vivos.",
     "choices": {
       "A": "Deixa-as espalhar o medo, recuperarás mais tarde.",
@@ -127,7 +127,7 @@
   },
   "hk_015": {
     "title": "Jogos macabros entre demónios",
-    "body": "Alguns demónios organizam jogos onde apostam almas, legiões e território à superfície.",
+    "body": "Demónios organizam jogos em que apostam almas, legiões e território na Terra.",
     "choices": {
       "A": "Proíbe esses jogos, são perigosos demais.",
       "B": "Regula-os, contigo como árbitro supremo.",
@@ -154,7 +154,7 @@
   },
   "hk_018": {
     "title": "Oferta de tréguas celestes",
-    "body": "Um mensageiro celeste propõe uma trégua para acalmar a superfície e estabilizar os mundos.",
+    "body": "Um mensageiro celeste propõe uma trégua para acalmar o mundo dos homens e estabilizar os mundos.",
     "choices": {
       "A": "Aceita, a ordem cósmica também te beneficia.",
       "B": "Recusa, o Inferno não se deixa ditar.",
@@ -163,7 +163,7 @@
   },
   "hk_019": {
     "title": "Tempestade de cinzas",
-    "body": "Uma tempestade de cinzas engole vários círculos. A visibilidade cai, os condenados entram em pânico.",
+    "body": "Uma tempestade de cinzas engole várias regiões. A visibilidade cai e os condenados entram em pânico.",
     "choices": {
       "A": "Deixa a tempestade seguir o seu curso, é a paisagem normal.",
       "B": "Envia legiões para restabelecer uma aparência de ordem.",
@@ -171,8 +171,8 @@
     }
   },
   "hk_020": {
-    "title": "Novo círculo experimental",
-    "body": "Um dos teus arquitetos propõe um novo tipo de círculo, mais eficaz mas instável.",
+    "title": "Nova região experimental",
+    "body": "Um dos teus arquitetos propõe um novo tipo de região, mais eficaz mas instável.",
     "choices": {
       "A": "Aprova o projeto e abre-o imediatamente.",
       "B": "Testa-o primeiro com um pequeno número de almas.",
@@ -184,7 +184,7 @@
     "body": "Alguns condenados debatem o sentido da punição eterna e contestam a tua legitimidade.",
     "choices": {
       "A": "Reduzi-los ao silêncio, por todos os meios.",
-      "B": "Criar um círculo dedicado aos seus debates, bem isolado.",
+      "B": "Criar uma região dedicada aos seus debates, bem isolada.",
       "C": "Enviá-los a pregar na Terra para confundir as crenças."
     }
   },
@@ -239,7 +239,7 @@
     "choices": {
       "A": "Incentiva, a criatividade é boa para o moral dos demónios.",
       "B": "Limita os danos, algumas experiências vão longe demais.",
-      "C": "Reserva esse concurso a um círculo muito, muito isolado."
+      "C": "Reserva esse concurso a uma região muito, muito isolada."
     }
   },
   "hk_028": {
@@ -253,7 +253,7 @@
   },
   "hk_029": {
     "title": "Embaixada dos infernos vizinhos",
-    "body": "Um reino infernal vizinho propõe uma aliança em torno das almas, das legiões e da superfície.",
+    "body": "Um reino infernal vizinho propõe uma aliança em torno de almas, legiões e do mundo dos homens.",
     "choices": {
       "A": "Assinar um pacto agressivo, centrado na colheita de almas.",
       "B": "Negociar um acordo muito enquadrado, para manter o controlo.",
@@ -271,7 +271,7 @@
   },
   "hk_031": {
     "title": "Portais não autorizados",
-    "body": "Alguns demónios abriram portais para a superfície. Os mundos lá de cima começam a vê-lo.",
+    "body": "Demónios abriram portais para a Terra. Os mundos de cima começam a notar.",
     "choices": {
       "A": "Expandir esses portais, a oportunidade é demasiado boa.",
       "B": "Fechá-los corretamente, impondo regras rigorosas.",
@@ -342,7 +342,7 @@
     }
   },
   "hk_039": {
-    "title": "Templo desabado à superfície",
+    "title": "Templo desabado na Terra",
     "body": "Um antigo templo do teu culto desabou. Alguns veem nisso um sinal, outros uma simples ruína.",
     "choices": {
       "A": "Reforçar a presença discreta dos teus agentes na zona.",
@@ -352,11 +352,11 @@
   },
   "hk_040": {
     "title": "Conselho estratégico infernal",
-    "body": "Os teus conselheiros querem que privilegies as almas, os exércitos, a ordem ou a superfície.",
+    "body": "Os teus conselheiros querem que dês prioridade às almas, aos exércitos, à ordem ou ao mundo dos homens.",
     "choices": {
       "A": "Dar um pouco mais a cada um, com o risco de esticar a ordem.",
       "B": "Impor a prioridade da ordem, mesmo que percas almas.",
-      "C": "Investir na superfície, o teu futuro terreno de jogo."
+      "C": "Investir no mundo dos homens, o teu futuro terreno de jogo."
     }
   },
   "hk_041": {
@@ -379,7 +379,7 @@
   },
   "hk_043": {
     "title": "Grande eclipse infernal",
-    "body": "Um raro eclipse escurece o Inferno e a superfície. As fronteiras entre os mundos enfraquecem.",
+    "body": "Um raro eclipse escurece o Inferno e a Terra. As fronteiras entre os mundos enfraquecem.",
     "choices": {
       "A": "Aproveitar para empurrar mais almas para ti.",
       "B": "Reforçar as barreiras para evitar fugas.",
@@ -397,7 +397,7 @@
   },
   "hk_045": {
     "title": "Grande conselho dos tentadores",
-    "body": "Os tentadores que atuam à superfície querem uma voz mais importante na estratégia global.",
+    "body": "Os tentadores que atuam no mundo dos homens querem ter mais peso na estratégia global.",
     "choices": {
       "A": "Dar-lhes mais liberdade para recolher almas.",
       "B": "Integrá-los numa hierarquia mais rígida.",
@@ -410,7 +410,7 @@
     "choices": {
       "A": "Substituí-los por recrutas mais frescos.",
       "B": "Organizar campanhas de guerra para os despertar.",
-      "C": "Reorganizar alguns círculos para variar os prazeres."
+      "C": "Reorganizar algumas regiões para variar os prazeres."
     }
   },
   "hk_047": {
@@ -468,8 +468,8 @@
     }
   },
   "hk_053": {
-    "title": "Tempestades de faúlhas à superfície",
-    "body": "Chuvas de faúlhas caem sobre a superfície e atiçam conflitos em certos lugares.",
+    "title": "Tempestades de faúlhas na Terra",
+    "body": "Chuvas de faúlhas caem sobre a Terra e atiçam conflitos em certos lugares.",
     "choices": {
       "A": "Intensificar essas chuvas para recolher mais almas.",
       "B": "Limitar a frequência para não atrair demasiada atenção.",
@@ -487,7 +487,7 @@
   },
   "hk_055": {
     "title": "Carnaval das ilusões",
-    "body": "Tropas de demónios ilusionistas querem organizar um carnaval permanente num círculo particular.",
+    "body": "Tropas de demónios ilusionistas querem organizar um carnaval permanente numa região específica.",
     "choices": {
       "A": "Transformá-lo numa armadilha irresistível para almas.",
       "B": "Integrá-lo na ordem geral como zona experimental.",
@@ -498,7 +498,7 @@
     "title": "Rio de sangue em cheia",
     "body": "Um dos grandes rios de sangue transborda e ameaça várias instalações importantes.",
     "choices": {
-      "A": "Canalizar a cheia para círculos sobrepovoados.",
+      "A": "Canalizar a cheia para regiões sobrepovoadas.",
       "B": "Erguer diques infernais com as tuas unidades disciplinadas.",
       "C": "Deixar o rio redesenhar a paisagem infernal."
     }
@@ -541,7 +541,7 @@
   },
   "hk_061": {
     "title": "Laboratório de novos pecados",
-    "body": "Um círculo experimental procura inventar formas de vício adaptadas à era moderna.",
+    "body": "Uma região experimental procura inventar formas de vício adaptadas à era moderna.",
     "choices": {
       "A": "Testar essas inovações no maior número possível de mortais.",
       "B": "Integrá-las num protocolo estritamente controlado.",
@@ -558,8 +558,8 @@
     }
   },
   "hk_063": {
-    "title": "Revolta de um círculo autónomo",
-    "body": "Um círculo começou a administrar-se sozinho, sem enviar os relatórios habituais.",
+    "title": "Revolta de uma região autónoma",
+    "body": "Uma região começou a administrar-se sozinha, sem enviar os relatórios habituais.",
     "choices": {
       "A": "Afogá-lo com novas almas para retomar o controlo.",
       "B": "Enviar uma força disciplinada para restabelecer a autoridade central.",
@@ -631,7 +631,7 @@
   },
   "hk_071": {
     "title": "Congresso dos pecadores célebres",
-    "body": "Várias almas célebres reúnem-se no mesmo círculo e exigem um tratamento de elite.",
+    "body": "Várias almas célebres reúnem-se na mesma região e exigem um tratamento de elite.",
     "choices": {
       "A": "Exibi-las como troféus para atrair mais almas.",
       "B": "Submetê-las às mesmas regras que toda a gente.",
@@ -648,8 +648,8 @@
     }
   },
   "hk_073": {
-    "title": "Círculo dos profanadores",
-    "body": "Um círculo inventa novas profanações. As suas ideias podem servir-te ou desregular tudo.",
+    "title": "Região dos profanadores",
+    "body": "Uma região inventa novas profanações. As suas ideias podem servir ou desregular tudo.",
     "choices": {
       "A": "Explorar a inventividade deles para atrair mais almas.",
       "B": "Isolá-los rigidamente para preservar a ordem.",
@@ -702,8 +702,8 @@
     }
   },
   "hk_079": {
-    "title": "Círculo dos pactos quebrados",
-    "body": "Um círculo inteiro é povoado por aqueles que traíram os seus pactos, infernais ou não.",
+    "title": "Região dos pactos quebrados",
+    "body": "Uma região inteira é povoada por aqueles que traíram os seus pactos, infernais ou não.",
     "choices": {
       "A": "Explorá-los para obter confissões e segredos.",
       "B": "Reforçar a estrutura dos seus castigos para servir de exemplo.",
@@ -729,8 +729,8 @@
     }
   },
   "hk_082": {
-    "title": "Círculos em concorrência",
-    "body": "Dois círculos gabam-se de ser «o mais infernal» e lutam por recursos.",
+    "title": "Regiões em concorrência",
+    "body": "Duas regiões gabam-se de ser as mais infernais e lutam por recursos.",
     "choices": {
       "A": "Alimentá-los a ambos com mais almas.",
       "B": "Impor uma hierarquia clara entre eles.",
@@ -793,7 +793,7 @@
   },
   "hk_089": {
     "title": "Procissão das máscaras partidas",
-    "body": "Uma procissão de condenados com máscaras fendidas atravessa vários círculos.",
+    "body": "Uma procissão de condenados com máscaras rachadas atravessa várias regiões.",
     "choices": {
       "A": "Atrair ainda mais almas em busca de espetáculo.",
       "B": "Fazer dessa procissão um ritual muito codificado.",
@@ -811,7 +811,7 @@
   },
   "hk_091": {
     "title": "Rebelião dos vigilantes",
-    "body": "Aqueles que guardam as pontes entre círculos exigem mais consideração.",
+    "body": "Aqueles que guardam as pontes entre as regiões exigem mais consideração.",
     "choices": {
       "A": "Empanturrá-los de novas almas para filtrar.",
       "B": "Clarificar rigidamente os seus direitos e deveres.",
@@ -840,7 +840,7 @@
     "title": "Assembleia das línguas flamejantes",
     "body": "Línguas de fogo murmuram os piores segredos dos vivos e dos mortos.",
     "choices": {
-      "A": "Saturar os teus círculos com essas revelações para quebrar as almas.",
+      "A": "Inunda as tuas regiões com estas revelações para quebrar as almas.",
       "B": "Classificá-las como informações estratégicas.",
       "C": "Fazer escapar algumas para ouvidos influentes na Terra."
     }
@@ -892,7 +892,7 @@
   },
   "hk_100": {
     "title": "Grande recenseamento infernal",
-    "body": "Propõem-te um recenseamento completo das almas, legiões, estruturas e influências à superfície.",
+    "body": "Propõem-te um recenseamento completo das almas, legiões, estruturas e influências no mundo dos homens.",
     "choices": {
       "A": "Focar o recenseamento na massa de almas.",
       "B": "Fazer dele uma ferramenta de ordem e controlo absoluto.",
@@ -954,8 +954,8 @@
     }
   },
   "hk_107": {
-    "title": "Guerra larvar entre dois círculos",
-    "body": "Dois círculos acusam-se mutuamente de roubar os condenados e os guardiões um do outro.",
+    "title": "Conflito crescente entre duas regiões",
+    "body": "Duas regiões acusam-se mutuamente de roubar os seus condenados e guardas.",
     "choices": {
       "A": "Alimentá-los com almas para acalmar a tensão… provisoriamente.",
       "B": "Enviar uma legião de elite para repor a ordem.",
@@ -991,7 +991,7 @@
   },
   "hk_111": {
     "title": "Motim numa ponte dos condenados",
-    "body": "Uma ponte que liga dois círculos foi ocupada por condenados em motim.",
+    "body": "Uma ponte que liga duas regiões foi ocupada por condenados amotinados.",
     "choices": {
       "A": "Afogá-los sob um fluxo de almas suplementares.",
       "B": "Enviar uma força disciplinada para retomar o controlo.",
@@ -1120,7 +1120,7 @@
     "body": "Almas de devotos extremos querem provar-te que merecem um tratamento especial.",
     "choices": {
       "A": "Usá-las como montra para atrair outros crentes.",
-      "B": "Integrá-las num círculo muito normativo.",
+      "B": "Integrá-los numa região com regras muito rígidas.",
       "C": "Virá-las contra as estruturas religiosas da superfície."
     }
   },
@@ -1170,7 +1170,7 @@
     }
   },
   "hk_131": {
-    "title": "Ponte enevoada para a superfície",
+    "title": "Ponte enevoada para a Terra",
     "body": "Uma ponte de nevoeiro aparece, ligando brevemente o teu reino a um local preciso do mundo dos vivos.",
     "choices": {
       "A": "Deixar as almas afluírem através dessa ponte.",
@@ -1315,7 +1315,7 @@
   },
   "hk_147": {
     "title": "Fissura para um mar de ácido",
-    "body": "Um mar de ácido infernal ameaça submergir um círculo inteiro.",
+    "body": "Um mar de ácido infernal ameaça submergir uma região inteira.",
     "choices": {
       "A": "Lançar para lá mais almas para meter medo.",
       "B": "Construir diques com materiais extremamente controlados.",
@@ -1405,7 +1405,7 @@
   },
   "hk_157": {
     "title": "Tráfico de almas geladas",
-    "body": "É-te assinalado um tráfico de almas geladas que transitam pelos teus círculos.",
+    "body": "Informam-te de um tráfico de almas congeladas que passa pelas tuas regiões.",
     "choices": {
       "A": "Cobrar a tua parte e fechar os olhos.",
       "B": "Regular o tráfico e registar cada transação.",
@@ -1417,7 +1417,7 @@
     "body": "Um colosso de gelo animado por almas acorrentadas dirige-se às tuas fronteiras.",
     "choices": {
       "A": "Destruí-lo com uma força de choque.",
-      "B": "Aprisioná-lo num círculo dedicado, sob alta vigilância.",
+      "B": "Aprisioná-lo numa região dedicada, sob vigilância apertada.",
       "C": "Desviar esse colosso para assustar algumas cidades mortais."
     }
   },
@@ -1504,7 +1504,7 @@
   },
   "hk_168": {
     "title": "Tráfico de estandartes",
-    "body": "Estandartes do Norte com a tua efígie deformada circulam pelos teus círculos.",
+    "body": "Bandeiras do Norte mostrando o teu rosto deformado circulam pelas tuas regiões.",
     "choices": {
       "A": "Deixá-los circular para atiçar o ódio… e o medo.",
       "B": "Confiscar e arquivar cada estandarte segundo regras rígidas.",
@@ -1567,7 +1567,7 @@
   },
   "hk_175": {
     "title": "Cântico das brumas do Norte",
-    "body": "Um cântico vindo do Norte faz vibrar as paredes dos teus círculos.",
+    "body": "Um canto vindo do Norte faz vibrar as paredes das tuas regiões.",
     "choices": {
       "A": "Amplificá-lo para atrair mais almas impressionáveis.",
       "B": "Filtrá-lo através de um ritual para o tornar previsível.",
@@ -1588,7 +1588,7 @@
     "body": "Os teus estrategas querem enfrentar os do Norte num concurso de influência.",
     "choices": {
       "A": "Avaliar a vitória pela quantidade de almas ganhas.",
-      "B": "Avaliar a vitória pela estabilidade trazida aos círculos.",
+      "B": "Avaliar a vitória pela estabilidade devolvida às regiões.",
       "C": "Avaliar a vitória pela amplitude dos problemas na superfície."
     }
   },
@@ -1612,7 +1612,7 @@
   },
   "hk_180": {
     "title": "Convite para uma caça às almas",
-    "body": "O Norte convida-te para uma «caça às almas» muito mediatizada nos círculos.",
+    "body": "O Norte convida-te para uma «caça às almas» muito visível nas regiões.",
     "choices": {
       "A": "Participar soltando as tuas legiões mais vorazes.",
       "B": "Impor regras rígidas para limitar o caos.",
@@ -1693,7 +1693,7 @@
   },
   "hk_189": {
     "title": "Incidente diplomático sangrento",
-    "body": "Uma delegação do Norte foi atacada num dos teus círculos por condenados.",
+    "body": "Uma delegação do Norte foi atacada por condenados numa das tuas regiões.",
     "choices": {
       "A": "Acusar o Norte de provocação e retaliar.",
       "B": "Reconhecer falhas e codificar melhor a segurança.",
@@ -1714,13 +1714,13 @@
     "body": "Um lugar onde a esperança desaparece pouco a pouco.",
     "choices": {
       "A": "Aproveitar a oportunidade para recolher mais almas.",
-      "B": "Impor limites para preservar o equilíbrio dos teus círculos.",
+      "B": "Impor limites para preservar o equilíbrio das tuas regiões.",
       "C": "Concentrar essas catástrofes em lugares humanos-chave."
     }
   },
   "hk_192": {
     "title": "Experiência de inferno unificado",
-    "body": "Uma experiência ousada consistiria em fundir brevemente partes dos teus círculos com os do Norte.",
+    "body": "Uma experiência audaciosa consistiria em fundir brevemente algumas das tuas regiões com as do Norte.",
     "choices": {
       "A": "Aceitar para criar um choque de danação massiva.",
       "B": "Recusar, temendo a desordem total.",
@@ -1846,7 +1846,7 @@
   },
   "hk_206": {
     "title": "Redes sociais em chamas",
-    "body": "As redes da superfície transformam-se em arenas de ódio e inveja.",
+    "body": "As redes do mundo dos homens transformam-se em arenas de ódio e inveja.",
     "choices": {
       "A": "Amplificar as comparações tóxicas e as humilhações públicas.",
       "B": "Sustentar regras tranquilizadoras, sem agir de verdade.",
@@ -2017,7 +2017,7 @@
   },
   "hk_225": {
     "title": "Colapso da vida selvagem",
-    "body": "A superfície perde espécies, florestas e equilíbrios antigos.",
+    "body": "A Terra perde as suas espécies, as suas florestas e os seus antigos equilíbrios.",
     "choices": {
       "A": "Incentivar o sentimento de fatalidade e de «já é tarde».",
       "B": "Apoiar proteções muito enquadradas, mas insuficientes.",
@@ -2062,7 +2062,7 @@
   },
   "hk_230": {
     "title": "Extinção da esperança coletiva",
-    "body": "Uma vaga surda ganha a superfície: já ninguém acredita num futuro melhor.",
+    "body": "Uma vaga surda ganha o mundo dos homens: já ninguém acredita num futuro melhor.",
     "choices": {
       "A": "Transformar esse desespero em apatia total e em vícios solitários.",
       "B": "Deixar surgir alguns projetos comuns, rigidamente enquadrados.",
@@ -2251,7 +2251,7 @@
   },
   "hk_251": {
     "title": "Chuva de penas",
-    "body": "Uma chuva de penas douradas cai nos teus círculos. Os condenados compreendem que o Paraíso se mostra.",
+    "body": "Uma chuva de penas douradas cai sobre as tuas regiões. Os condenados percebem que o Paraíso se mostra.",
     "choices": {
       "A": "Profanar essas penas, queimando-as sob os gritos das almas.",
       "B": "Registá-las como provas nos teus arquivos.",
@@ -2323,7 +2323,7 @@
   },
   "hk_259": {
     "title": "Alma fugitiva",
-    "body": "Uma alma prometida ao Paraíso conseguiu infiltrar-se nos teus círculos por astúcia.",
+    "body": "Uma alma prometida ao Paraíso conseguiu infiltrar-se nas tuas regiões por astúcia.",
     "choices": {
       "A": "Guardá-la como troféu, apesar do risco diplomático.",
       "B": "Devolvê-la com um relatório detalhado a provar a tua boa-fé.",
@@ -2350,7 +2350,7 @@
   },
   "hk_262": {
     "title": "Ira de um arcanjo",
-    "body": "Um arcanjo ameaça desencadear a sua ira sobre alguns dos teus círculos.",
+    "body": "Um arcanjo ameaça libertar a sua ira sobre algumas das tuas regiões.",
     "choices": {
       "A": "Provocar ainda mais e testar os limites dele.",
       "B": "Ceder um símbolo menor para preservar o equilíbrio.",
@@ -2530,7 +2530,7 @@
   },
   "hk_282": {
     "title": "Anjos infiltrados na Terra",
-    "body": "Anjos descem discretamente à superfície para interferir com os teus planos.",
+    "body": "Anjos descem discretamente à Terra para interferir com os teus planos.",
     "choices": {
       "A": "Caçá-los através dos teus servos e corrompê-los.",
       "B": "Vigiá-los metodicamente para ajustar as tuas estratégias.",
@@ -2723,7 +2723,7 @@
     "choices": {
       "A": "Apanhá-lo em público para afirmar a tua dominação.",
       "B": "Colocá-lo sob vigilância apertada numa célula de ordem.",
-      "C": "Usá-lo como peão para infiltrar outros círculos."
+      "C": "Usá-lo como peão para infiltrar outras regiões."
     }
   },
   "hk_304": {
@@ -2800,7 +2800,7 @@
   },
   "hk_312": {
     "title": "Arquitetos dos abismos",
-    "body": "Arquitetos demoníacos querem remodelar certos círculos.",
+    "body": "Arquitetos demoníacos querem remodelar certas regiões.",
     "choices": {
       "A": "Dar-lhes carta branca para criarem horrores inéditos.",
       "B": "Validar planos detalhados que respeitem uma ordem rígida.",
@@ -2871,11 +2871,11 @@
     }
   },
   "hk_320": {
-    "title": "Círculo deserto",
-    "body": "Um círculo outrora muito frequentado está estranhamente menos povoado.",
+    "title": "Região deserta",
+    "body": "Uma região outrora muito frequentada está estranhamente menos povoada.",
     "choices": {
       "A": "Transferir para lá novas almas para relançar a atividade.",
-      "B": "Reorganizar por completo esse círculo com um novo conceito.",
+      "B": "Reorganizar por completo esta região em torno de um novo conceito.",
       "C": "Usar esse deserto como zona de experimentação para a superfície."
     }
   },
@@ -3079,7 +3079,7 @@
   },
   "hk_343": {
     "title": "Túmulos virados",
-    "body": "Certos túmulos à superfície viram-se misteriosamente.",
+    "body": "Certos túmulos na Terra viram-se misteriosamente.",
     "choices": {
       "A": "Ver nisso um sinal do teu poder e amplificá-lo.",
       "B": "Recensear cada caso e cruzá-lo com os teus registos.",
