@@ -45,12 +45,12 @@
     }
   },
   "hk_006": {
-    "title": "Pemberontakan di sebuah lingkaran",
-    "body": "Di sebuah lingkaran, para terkutuk melucuti para penjaga dan membalikkan alat-alat itu terhadap mereka.",
+    "title": "Pemberontakan di sebuah wilayah",
+    "body": "Di sebuah wilayah, para terkutuk melucuti para penjaga dan membalikkan alat-alat itu terhadap mereka.",
     "choices": {
       "A": "Hancurkan pemberontakan dengan legiun tambahan.",
       "B": "Negosiasikan “keringanan” hukuman sebagai imbalan ketenangan.",
-      "C": "Buat contoh publik untuk meneror lingkaran lainnya."
+      "C": "Buat contoh publik untuk meneror wilayah lainnya."
     }
   },
   "hk_007": {
@@ -81,7 +81,7 @@
     }
   },
   "hk_010": {
-    "title": "Pelarian jiwa ke permukaan",
+    "title": "Pelarian jiwa ke Bumi",
     "body": "Retakan pada portal tua memungkinkan beberapa jiwa terkutuk naik kembali untuk menghantui yang hidup.",
     "choices": {
       "A": "Biarkan mereka menebar ketakutan, nanti juga akan kau ambil lagi.",
@@ -127,7 +127,7 @@
   },
   "hk_015": {
     "title": "Permainan mengerikan antar iblis",
-    "body": "Beberapa iblis mengadakan permainan di mana mereka mempertaruhkan jiwa, legiun, dan wilayah di permukaan.",
+    "body": "Para iblis mengadakan permainan di mana mereka mempertaruhkan jiwa, legiun, dan wilayah di Bumi.",
     "choices": {
       "A": "Larangan permainan ini, terlalu berbahaya.",
       "B": "Atur dengan dirimu sebagai wasit tertinggi.",
@@ -154,7 +154,7 @@
   },
   "hk_018": {
     "title": "Tawaran gencatan senjata surgawi",
-    "body": "Seorang utusan surgawi menawarkan gencatan senjata untuk menenangkan permukaan dan menstabilkan dunia.",
+    "body": "Seorang utusan surgawi menawarkan gencatan senjata untuk menenangkan dunia manusia dan menstabilkan dunia-dunia.",
     "choices": {
       "A": "Terima, tatanan kosmik juga menguntungkanmu.",
       "B": "Tolak, Neraka tidak membiarkan jalannya diatur.",
@@ -163,7 +163,7 @@
   },
   "hk_019": {
     "title": "Badai abu",
-    "body": "Sebuah badai abu menelan beberapa lingkaran. Jarak pandang turun, para terkutuk panik.",
+    "body": "Sebuah badai abu menelan beberapa wilayah. Jarak pandang turun, para terkutuk panik.",
     "choices": {
       "A": "Biarkan badai berjalan dengan sendirinya, itu pemandangan biasa.",
       "B": "Kirim legiun untuk memulihkan sedikit ketertiban.",
@@ -171,8 +171,8 @@
     }
   },
   "hk_020": {
-    "title": "Lingkaran eksperimental baru",
-    "body": "Salah satu arsitekmu mengusulkan jenis lingkaran baru, lebih efisien namun tidak stabil.",
+    "title": "Wilayah eksperimental baru",
+    "body": "Salah satu arsitekmu mengusulkan jenis wilayah baru, lebih efisien namun tidak stabil.",
     "choices": {
       "A": "Setujui proyek dan buka segera.",
       "B": "Uji dulu pada sejumlah kecil jiwa.",
@@ -184,7 +184,7 @@
     "body": "Beberapa terkutuk memperdebatkan makna hukuman abadi dan mempertanyakan legitimasi dirimu.",
     "choices": {
       "A": "Bungkam mereka, dengan cara apa pun.",
-      "B": "Buat lingkaran khusus untuk perdebatan mereka, terisolasi dengan baik.",
+      "B": "Buat wilayah khusus untuk perdebatan mereka, terisolasi dengan baik.",
       "C": "Kirim mereka berkhotbah di Bumi untuk mengacaukan keyakinan."
     }
   },
@@ -239,7 +239,7 @@
     "choices": {
       "A": "Dukung, kreativitas bagus untuk moral para iblis.",
       "B": "Batasi kerusakan, beberapa percobaan terlalu jauh.",
-      "C": "Batasi lomba ini hanya pada satu lingkaran yang sangat terisolasi."
+      "C": "Batasi lomba ini hanya pada satu wilayah yang sangat terisolasi."
     }
   },
   "hk_028": {
@@ -253,7 +253,7 @@
   },
   "hk_029": {
     "title": "Kedutaan Neraka tetangga",
-    "body": "Sebuah kerajaan neraka tetangga menawarkan aliansi seputar jiwa, legiun, dan permukaan.",
+    "body": "Sebuah kerajaan neraka tetangga menawarkan aliansi seputar jiwa, legiun, dan dunia manusia.",
     "choices": {
       "A": "Tandatangani pakta agresif yang berfokus pada panen jiwa.",
       "B": "Negosiasikan perjanjian yang sangat terkontrol untuk menjaga kendali.",
@@ -271,7 +271,7 @@
   },
   "hk_031": {
     "title": "Portal tak sah",
-    "body": "Beberapa iblis membuka portal ke permukaan. Dunia atas mulai menyadarinya.",
+    "body": "Para iblis telah membuka portal menuju Bumi. Dunia-dunia di atas mulai menyadarinya.",
     "choices": {
       "A": "Perluas portal-portal itu, kesempatan ini terlalu bagus.",
       "B": "Tutup dengan rapi dan tetapkan aturan ketat.",
@@ -342,7 +342,7 @@
     }
   },
   "hk_039": {
-    "title": "Kuil runtuh di permukaan",
+    "title": "Kuil runtuh di Bumi",
     "body": "Sebuah kuil kuno dari kultusmu runtuh. Ada yang melihatnya sebagai tanda, ada pula yang menganggapnya hanya reruntuhan biasa.",
     "choices": {
       "A": "Perkuat kehadiran diam-diam agenmu di area itu.",
@@ -352,11 +352,11 @@
   },
   "hk_040": {
     "title": "Dewan strategi neraka",
-    "body": "Para penasihatmu ingin kau memprioritaskan jiwa, pasukan, ketertiban, atau permukaan.",
+    "body": "Para penasihatmu ingin kau memprioritaskan jiwa, pasukan, ketertiban, atau dunia manusia.",
     "choices": {
       "A": "Berikan sedikit lebih banyak pada semuanya, meski ketertiban menegang.",
       "B": "Tetapkan prioritas pada ketertiban, meski kehilangan beberapa jiwa.",
-      "C": "Investasikan pada permukaan, medan permainan masa depanmu."
+      "C": "Berinvestasi di dunia manusia, medan permainanmu di masa depan."
     }
   },
   "hk_041": {
@@ -379,7 +379,7 @@
   },
   "hk_043": {
     "title": "Gerhana besar neraka",
-    "body": "Gerhana langka menggelapkan Neraka dan permukaan. Batas antar dunia melemah.",
+    "body": "Gerhana langka menggelapkan Neraka dan Bumi. Batas antar dunia melemah.",
     "choices": {
       "A": "Manfaatkan untuk mendorong lebih banyak jiwa kepadamu.",
       "B": "Perkuat penghalang untuk mencegah pelarian.",
@@ -397,7 +397,7 @@
   },
   "hk_045": {
     "title": "Dewan besar para penggoda",
-    "body": "Para penggoda yang bekerja di permukaan ingin suara yang lebih besar dalam strategi keseluruhan.",
+    "body": "Para penggoda yang bekerja di dunia manusia ingin suara yang lebih besar dalam strategi keseluruhan.",
     "choices": {
       "A": "Beri mereka lebih banyak kebebasan untuk memanen jiwa.",
       "B": "Masukkan mereka ke dalam hierarki yang lebih ketat.",
@@ -410,7 +410,7 @@
     "choices": {
       "A": "Ganti mereka dengan rekrutan yang lebih segar.",
       "B": "Adakan kampanye perang untuk membangunkan mereka.",
-      "C": "Tata ulang beberapa lingkaran untuk memvariasikan kesenangan."
+      "C": "Tata ulang beberapa wilayah untuk memvariasikan kesenangan."
     }
   },
   "hk_047": {
@@ -468,8 +468,8 @@
     }
   },
   "hk_053": {
-    "title": "Badai percikan di permukaan",
-    "body": "Hujan percikan jatuh di permukaan dan memicu konflik di beberapa tempat.",
+    "title": "Badai percikan di Bumi",
+    "body": "Hujan percikan jatuh di Bumi dan memicu konflik di beberapa tempat.",
     "choices": {
       "A": "Perkuat hujan ini untuk memanen lebih banyak jiwa.",
       "B": "Batasi frekuensinya agar tidak terlalu menarik perhatian.",
@@ -487,7 +487,7 @@
   },
   "hk_055": {
     "title": "Karnaval ilusi",
-    "body": "Pasukan iblis ilusionis ingin mengadakan karnaval permanen di sebuah lingkaran tertentu.",
+    "body": "Pasukan iblis ilusionis ingin mengadakan karnaval permanen di sebuah wilayah tertentu.",
     "choices": {
       "A": "Jadikan perangkap jiwa yang tak tertahankan.",
       "B": "Masukkan ke dalam tatanan umum sebagai zona eksperimental.",
@@ -498,7 +498,7 @@
     "title": "Sungai darah meluap",
     "body": "Salah satu sungai darah besar meluap dan mengancam beberapa instalasi penting.",
     "choices": {
-      "A": "Salurkan luapan itu ke lingkaran yang terlalu padat.",
+      "A": "Salurkan luapan itu ke wilayah yang terlalu padat.",
       "B": "Dirikan tanggul neraka dengan unit-unitmu yang disiplin.",
       "C": "Biarkan sungai menggambar ulang lanskap neraka."
     }
@@ -541,7 +541,7 @@
   },
   "hk_061": {
     "title": "Laboratorium dosa baru",
-    "body": "Sebuah lingkaran eksperimental berusaha menciptakan bentuk keburukan yang cocok untuk zaman modern.",
+    "body": "Sebuah wilayah eksperimental berusaha menciptakan bentuk keburukan yang cocok untuk zaman modern.",
     "choices": {
       "A": "Uji inovasi ini pada sebanyak mungkin manusia fana.",
       "B": "Masukkan ke dalam protokol yang dikendalikan ketat.",
@@ -558,8 +558,8 @@
     }
   },
   "hk_063": {
-    "title": "Pemberontakan lingkaran otonom",
-    "body": "Sebuah lingkaran mulai mengatur dirinya sendiri tanpa mengirim laporan seperti biasa.",
+    "title": "Pemberontakan wilayah otonom",
+    "body": "Sebuah wilayah mulai mengatur dirinya sendiri tanpa mengirim laporan seperti biasa.",
     "choices": {
       "A": "Tenggelamkan dengan jiwa-jiwa baru untuk mengambil alih lagi.",
       "B": "Kirim pasukan disiplin untuk memulihkan wewenang pusat.",
@@ -631,7 +631,7 @@
   },
   "hk_071": {
     "title": "Kongres para pendosa terkenal",
-    "body": "Beberapa jiwa terkenal berada di lingkaran yang sama dan menuntut perlakuan elit.",
+    "body": "Beberapa jiwa terkenal berada di wilayah yang sama dan menuntut perlakuan elit.",
     "choices": {
       "A": "Pajang mereka sebagai trofi untuk menarik lebih banyak jiwa.",
       "B": "Tundukkan mereka pada aturan yang sama seperti semua orang.",
@@ -648,8 +648,8 @@
     }
   },
   "hk_073": {
-    "title": "Lingkaran para penajis",
-    "body": "Sebuah lingkaran menciptakan penodaan baru. Ide-ide mereka bisa berguna atau justru mengacaukan semuanya.",
+    "title": "Wilayah para penista",
+    "body": "Sebuah wilayah menciptakan bentuk-bentuk penistaan baru. Ide-ide mereka bisa berguna atau justru mengacaukan segalanya.",
     "choices": {
       "A": "Manfaatkan kreativitas mereka untuk menarik lebih banyak jiwa.",
       "B": "Isolasi mereka dengan ketat demi menjaga ketertiban.",
@@ -702,8 +702,8 @@
     }
   },
   "hk_079": {
-    "title": "Lingkaran pakta yang rusak",
-    "body": "Satu lingkaran penuh dihuni mereka yang mengkhianati perjanjian, baik neraka maupun yang lain.",
+    "title": "Wilayah para pengingkar pakta",
+    "body": "Satu wilayah penuh dihuni oleh mereka yang mengkhianati pakta mereka, baik infernal maupun bukan.",
     "choices": {
       "A": "Eksploitasi mereka untuk mendapatkan pengakuan dan rahasia.",
       "B": "Perkuat struktur hukuman mereka sebagai contoh.",
@@ -729,8 +729,8 @@
     }
   },
   "hk_082": {
-    "title": "Lingkaran yang bersaing",
-    "body": "Dua lingkaran membanggakan diri sebagai yang “paling neraka” dan berebut sumber daya.",
+    "title": "Wilayah-wilayah yang bersaing",
+    "body": "Dua wilayah membanggakan diri sebagai yang paling neraka dan bertarung memperebutkan sumber daya.",
     "choices": {
       "A": "Suplai keduanya dengan lebih banyak jiwa.",
       "B": "Terapkan hierarki yang jelas di antara mereka.",
@@ -793,7 +793,7 @@
   },
   "hk_089": {
     "title": "Prosesi topeng retak",
-    "body": "Sebuah prosesi para terkutuk dengan topeng retak melintasi beberapa lingkaran.",
+    "body": "Sebuah arak-arakan para terkutuk dengan topeng retak melintasi beberapa wilayah.",
     "choices": {
       "A": "Tarik lebih banyak jiwa yang mencari tontonan.",
       "B": "Jadikan prosesi ini ritual yang sangat terkode.",
@@ -811,7 +811,7 @@
   },
   "hk_091": {
     "title": "Pemberontakan para pengawas",
-    "body": "Mereka yang menjaga jembatan antar lingkaran menuntut lebih banyak penghargaan.",
+    "body": "Mereka yang menjaga jembatan antarwilayah menuntut lebih banyak pengakuan.",
     "choices": {
       "A": "Bebani mereka dengan jiwa baru untuk disaring.",
       "B": "Jelaskan hak dan kewajiban mereka secara ketat.",
@@ -840,7 +840,7 @@
     "title": "Majelis lidah api",
     "body": "Lidah-lidah api membisikkan rahasia terburuk dari yang hidup dan yang mati.",
     "choices": {
-      "A": "Penuhi lingkaranmu dengan pengungkapan ini untuk menghancurkan jiwa.",
+      "A": "Banjiri wilayahmu dengan pengungkapan ini untuk menghancurkan jiwa-jiwa.",
       "B": "Klasifikasikan sebagai informasi strategis.",
       "C": "Biarkan sebagian bocor ke telinga yang berpengaruh di Bumi."
     }
@@ -892,7 +892,7 @@
   },
   "hk_100": {
     "title": "Sensus besar neraka",
-    "body": "Ada usulan sensus lengkap atas jiwa, legiun, struktur, dan pengaruh di permukaan.",
+    "body": "Ada usulan sensus lengkap atas jiwa, legiun, struktur, dan pengaruh di dunia manusia.",
     "choices": {
       "A": "Fokuskan sensus pada jumlah besar jiwa.",
       "B": "Jadikan alat ketertiban dan kontrol mutlak.",
@@ -954,8 +954,8 @@
     }
   },
   "hk_107": {
-    "title": "Perang diam-diam antara dua lingkaran",
-    "body": "Dua lingkaran saling menuduh mencuri para terkutuk dan penjaga satu sama lain.",
+    "title": "Konflik yang memanas antara dua wilayah",
+    "body": "Dua wilayah saling menuduh mencuri para terkutuk dan penjaga masing-masing.",
     "choices": {
       "A": "Suplai mereka dengan jiwa untuk meredakan ketegangan… sementara.",
       "B": "Kirim legiun elit untuk memulihkan ketertiban.",
@@ -991,7 +991,7 @@
   },
   "hk_111": {
     "title": "Pemberontakan di jembatan para terkutuk",
-    "body": "Sebuah jembatan yang menghubungkan dua lingkaran diduduki oleh para terkutuk yang memberontak.",
+    "body": "Sebuah jembatan yang menghubungkan dua wilayah diduduki para terkutuk yang memberontak.",
     "choices": {
       "A": "Tenggelamkan mereka di bawah arus jiwa tambahan.",
       "B": "Kirim pasukan disiplin untuk merebut kembali kendali.",
@@ -1120,7 +1120,7 @@
     "body": "Jiwa para pemuja ekstrem ingin membuktikan bahwa mereka layak mendapat perlakuan khusus.",
     "choices": {
       "A": "Gunakan mereka sebagai etalase untuk menarik penganut lain.",
-      "B": "Masukkan mereka ke lingkaran yang sangat teratur.",
+      "B": "Masukkan mereka ke wilayah dengan aturan yang sangat ketat.",
       "C": "Balikkan mereka melawan struktur keagamaan di permukaan."
     }
   },
@@ -1170,7 +1170,7 @@
     }
   },
   "hk_131": {
-    "title": "Jembatan berkabut menuju permukaan",
+    "title": "Jembatan berkabut menuju Bumi",
     "body": "Sebuah jembatan kabut muncul, menghubungkan kerajaanmu sejenak dengan lokasi tertentu di dunia yang hidup.",
     "choices": {
       "A": "Biarkan jiwa mengalir melalui jembatan ini.",
@@ -1315,7 +1315,7 @@
   },
   "hk_147": {
     "title": "Retakan menuju laut asam",
-    "body": "Sebuah laut asam neraka mengancam menenggelamkan satu lingkaran sepenuhnya.",
+    "body": "Lautan asam neraka mengancam akan menelan seluruh wilayah.",
     "choices": {
       "A": "Lempar lebih banyak jiwa ke sana untuk menebar rasa takut.",
       "B": "Bangun tanggul dengan bahan yang sangat terkendali.",
@@ -1405,7 +1405,7 @@
   },
   "hk_157": {
     "title": "Perdagangan jiwa beku",
-    "body": "Dilaporkan ada perdagangan jiwa beku yang melintas melalui lingkaran-lingkaranmu.",
+    "body": "Kau diberi tahu tentang perdagangan jiwa beku yang melewati wilayahmu.",
     "choices": {
       "A": "Ambil upetimu dan tutup mata.",
       "B": "Atur perdagangan itu dan catat setiap transaksi.",
@@ -1417,7 +1417,7 @@
     "body": "Sebuah raksasa es yang digerakkan oleh jiwa-jiwa terantai bergerak menuju perbatasanmu.",
     "choices": {
       "A": "Hancurkan dengan pasukan kejut.",
-      "B": "Penjarakan di lingkaran khusus di bawah pengawasan tinggi.",
+      "B": "Penjarakan dia di wilayah khusus dengan pengawasan ketat.",
       "C": "Alihkan raksasa ini untuk menakut-nakuti beberapa kota fana."
     }
   },
@@ -1504,7 +1504,7 @@
   },
   "hk_168": {
     "title": "Perdagangan panji",
-    "body": "Panji-panji Utara dengan sosokmu yang dipelintir beredar di lingkaran-lingkaranmu.",
+    "body": "Spanduk dari Utara yang menampilkan wajahmu dalam bentuk terdistorsi beredar di wilayahmu.",
     "choices": {
       "A": "Biarkan beredar untuk membakar kebencian… dan rasa takut.",
       "B": "Sita dan arsipkan setiap panji menurut aturan ketat.",
@@ -1567,7 +1567,7 @@
   },
   "hk_175": {
     "title": "Nyanyian kabut Utara",
-    "body": "Sebuah nyanyian dari Utara membuat dinding lingkaranmu bergetar.",
+    "body": "Nyanyian dari Utara membuat dinding wilayahmu bergetar.",
     "choices": {
       "A": "Perkuat untuk menarik lebih banyak jiwa yang mudah terkesan.",
       "B": "Saring lewat ritual agar bisa diprediksi.",
@@ -1588,7 +1588,7 @@
     "body": "Para ahli strategimu ingin menghadapi milik Utara dalam lomba pengaruh.",
     "choices": {
       "A": "Nilai kemenangan dari jumlah jiwa yang diperoleh.",
-      "B": "Nilai kemenangan dari kestabilan yang dibawa ke lingkaran.",
+      "B": "Nilai kemenangan berdasarkan stabilitas yang dipulihkan di wilayah-wilayah itu.",
       "C": "Nilai kemenangan dari besarnya kekacauan di permukaan."
     }
   },
@@ -1612,7 +1612,7 @@
   },
   "hk_180": {
     "title": "Undangan berburu jiwa",
-    "body": "Utara mengundangmu ke sebuah “perburuan jiwa” yang sangat dipublikasikan di lingkaran.",
+    "body": "Utara mengundangmu ke sebuah “perburuan jiwa” yang sangat terlihat di berbagai wilayah.",
     "choices": {
       "A": "Ikut dengan melepas legiunmu yang paling rakus.",
       "B": "Tetapkan aturan ketat untuk membatasi kekacauan.",
@@ -1693,7 +1693,7 @@
   },
   "hk_189": {
     "title": "Insiden diplomatik berdarah",
-    "body": "Sebuah delegasi dari Utara diserang di salah satu lingkaranmu oleh para terkutuk.",
+    "body": "Sebuah delegasi dari Utara diserang para terkutuk di salah satu wilayahmu.",
     "choices": {
       "A": "Tuduh Utara memprovokasi dan balas serangan.",
       "B": "Akui ada kesalahan dan kodifikasikan keamanan yang lebih baik.",
@@ -1714,13 +1714,13 @@
     "body": "Tempat di mana harapan perlahan menghilang.",
     "choices": {
       "A": "Manfaatkan kesempatan untuk memanen lebih banyak jiwa.",
-      "B": "Terapkan batasan demi menjaga keseimbangan lingkaranmu.",
+      "B": "Tetapkan batas untuk menjaga keseimbangan wilayahmu.",
       "C": "Fokuskan bencana ini pada tempat-tempat penting manusia."
     }
   },
   "hk_192": {
     "title": "Eksperimen neraka terpadu",
-    "body": "Sebuah eksperimen berani akan menggabungkan sejenak sebagian lingkaranmu dengan milik Utara.",
+    "body": "Sebuah percobaan nekat akan menyatukan untuk sesaat beberapa wilayahmu dengan wilayah milik Utara.",
     "choices": {
       "A": "Terima untuk menciptakan guncangan kutukan besar-besaran.",
       "B": "Tolak, takut pada kekacauan total.",
@@ -1846,7 +1846,7 @@
   },
   "hk_206": {
     "title": "Media sosial terbakar",
-    "body": "Jaringan di permukaan berubah menjadi arena kebencian dan iri hati.",
+    "body": "Jaringan di dunia manusia berubah menjadi arena kebencian dan iri hati.",
     "choices": {
       "A": "Perkuat perbandingan beracun dan penghinaan publik.",
       "B": "Dukung aturan-aturan yang menenangkan, tanpa sungguh bertindak.",
@@ -2017,7 +2017,7 @@
   },
   "hk_225": {
     "title": "Runtuhnya kehidupan liar",
-    "body": "Permukaan kehilangan spesies, hutan, dan keseimbangan purbanya.",
+    "body": "Bumi kehilangan spesies, hutan, dan keseimbangan purbanya.",
     "choices": {
       "A": "Dorong rasa fatalisme dan “sudah terlambat”.",
       "B": "Dukung perlindungan yang sangat teratur namun tak memadai.",
@@ -2062,7 +2062,7 @@
   },
   "hk_230": {
     "title": "Punahnya harapan bersama",
-    "body": "Gelombang sunyi menyapu permukaan: tak ada lagi yang percaya pada masa depan yang lebih baik.",
+    "body": "Gelombang sunyi menyapu dunia manusia: tak ada lagi yang percaya pada masa depan yang lebih baik.",
     "choices": {
       "A": "Ubah keputusasaan ini menjadi apati total dan keburukan yang sepi.",
       "B": "Biarkan beberapa proyek bersama muncul, namun diawasi ketat.",
@@ -2251,7 +2251,7 @@
   },
   "hk_251": {
     "title": "Hujan bulu",
-    "body": "Hujan bulu emas turun di lingkaran-lingkaranmu. Para terkutuk paham bahwa Surga sedang memperlihatkan diri.",
+    "body": "Hujan bulu emas turun di wilayahmu. Para terkutuk menyadari bahwa Surga sedang menampakkan diri.",
     "choices": {
       "A": "Nodai bulu-bulu itu dengan membakarnya di bawah jeritan jiwa.",
       "B": "Catat mereka sebagai barang bukti dalam arsipmu.",
@@ -2323,7 +2323,7 @@
   },
   "hk_259": {
     "title": "Jiwa yang kabur",
-    "body": "Sebuah jiwa yang dijanjikan untuk Surga berhasil menyelinap ke lingkaran-lingkaranmu dengan tipu daya.",
+    "body": "Sebuah jiwa yang dijanjikan untuk Surga berhasil menyusup ke wilayahmu dengan licik.",
     "choices": {
       "A": "Simpan sebagai trofi, meski berisiko secara diplomatik.",
       "B": "Kembalikan dengan laporan rinci yang membuktikan itikad baikmu.",
@@ -2350,7 +2350,7 @@
   },
   "hk_262": {
     "title": "Amarah malaikat agung",
-    "body": "Seorang malaikat agung mengancam akan melepaskan murkanya ke beberapa lingkaranmu.",
+    "body": "Seorang malaikat agung mengancam akan melampiaskan murkanya ke beberapa wilayahmu.",
     "choices": {
       "A": "Provokasi lebih jauh dan uji batasnya.",
       "B": "Serahkan simbol kecil demi menjaga keseimbangan.",
@@ -2530,7 +2530,7 @@
   },
   "hk_282": {
     "title": "Malaikat menyusup ke Bumi",
-    "body": "Malaikat turun diam-diam ke permukaan untuk mengganggu rencanamu.",
+    "body": "Malaikat turun diam-diam ke Bumi untuk mengganggu rencanamu.",
     "choices": {
       "A": "Kejar mereka lewat para pelayanmu dan rusakkan mereka.",
       "B": "Awasi mereka dengan saksama untuk menyesuaikan strategimu.",
@@ -2723,7 +2723,7 @@
     "choices": {
       "A": "Jerat dia di depan umum untuk menegakkan dominasimu.",
       "B": "Tempatkan dia di bawah pengawasan dekat dalam sel ketertiban.",
-      "C": "Gunakan dia sebagai pion untuk menyusup ke lingkaran-lingkaran lain."
+      "C": "Gunakan dia sebagai pion untuk menyusup ke wilayah lain."
     }
   },
   "hk_304": {
@@ -2800,7 +2800,7 @@
   },
   "hk_312": {
     "title": "Arsitek jurang",
-    "body": "Beberapa arsitek iblis ingin membentuk ulang beberapa lingkaran.",
+    "body": "Para arsitek iblis ingin membentuk ulang beberapa wilayah.",
     "choices": {
       "A": "Beri mereka kebebasan penuh untuk menciptakan kengerian baru.",
       "B": "Setujui rencana rinci yang mematuhi ketertiban ketat.",
@@ -2871,11 +2871,11 @@
     }
   },
   "hk_320": {
-    "title": "Lingkaran yang ditinggalkan",
-    "body": "Sebuah lingkaran yang dulu ramai kini anehnya jauh lebih sepi.",
+    "title": "Wilayah yang ditinggalkan",
+    "body": "Sebuah wilayah yang dulu sangat ramai kini anehnya jauh lebih sepi.",
     "choices": {
       "A": "Pindahkan jiwa-jiwa baru ke sana untuk menghidupkannya kembali.",
-      "B": "Rombak sepenuhnya lingkaran ini untuk konsep baru.",
+      "B": "Rombak seluruh wilayah ini berdasarkan konsep baru.",
       "C": "Gunakan kehampaan itu sebagai zona eksperimen bagi permukaan."
     }
   },
@@ -3079,7 +3079,7 @@
   },
   "hk_343": {
     "title": "Makam-makam terbalik",
-    "body": "Beberapa makam di permukaan terbalik secara misterius.",
+    "body": "Beberapa makam di Bumi terbalik secara misterius.",
     "choices": {
       "A": "Anggap itu tanda kekuasaanmu dan perkuat fenomenanya.",
       "B": "Catat setiap kasus dan kaitkan dengan catatanmu.",
