@@ -1,4 +1,4 @@
-{
+﻿{
   "version": 1,
   "decisions": {
     "western_major_001": {
@@ -14,12 +14,12 @@
     },
     "western_major_002": {
       "title": "Discours au peuple",
-      "body": "Le pays doute de toi. Tes conseillers veulent un grand discours très agressif pour rallumer l'opinion. Tu les suis ?",
+      "body": "Le pays doute de toi. Tes conseillers veulent un grand discours clair et ferme pour remobiliser l’opinion. Tu les suis ?",
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
       "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses le ton facile et l'opinion publique revient à 50.",
+      "outcome_yes_body": "Ton discours remobilise le pays et l’opinion publique revient à 50.",
       "outcome_no_title": "Mauvaise décision",
       "outcome_no_body": "Tu laisses le malaise s'installer. L'opinion est divisée par deux."
     },
