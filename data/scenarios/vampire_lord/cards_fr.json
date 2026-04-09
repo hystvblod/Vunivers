@@ -127,7 +127,7 @@
   },
   "vampire_015": {
     "title": "Le pacte du quartier",
-    "body": "Les gangs locaux veulent un accord. Protection contre discrétion.",
+    "body": "Les gangs locaux veulent un accord. Ils offrent leur discrétion en échange de ta protection.",
     "choices": {
       "A": "Accepter et imposer des règles",
       "B": "Refuser et les effrayer",
@@ -185,7 +185,7 @@
     "choices": {
       "A": "Former le novice",
       "B": "Le cacher au clan",
-      "C": "Le cacher dans un refuge secret"
+      "C": "Le confier à un ancien pour le former"
     }
   },
   "vampire_022": {
@@ -343,7 +343,7 @@
   },
   "vampire_039": {
     "title": "La pluie bénite",
-    "body": "Il pleut une eau qui brûle un peu. Quelqu’un bénit les nuages, oui.",
+    "body": "Il pleut une eau qui brûle la peau. Quelqu’un a trouvé un moyen de bénir la pluie.",
     "choices": {
       "A": "Trouver la source",
       "B": "Se terrer",
@@ -370,7 +370,7 @@
   },
   "vampire_042": {
     "title": "La bibliothèque scellée",
-    "body": "Une bibliothèque interdit l’accès à une salle. Le clan dit que ça chante la nuit.",
+    "body": "Une bibliothèque interdit l’accès à une salle. Le clan dit qu’on y entend des voix la nuit.",
     "choices": {
       "A": "Forcer l’entrée",
       "B": "Demander un permis",
@@ -568,11 +568,11 @@
   },
   "vampire_064": {
     "title": "La cave inondée",
-    "body": "Ta cave secrète est inondée. Les cercueils flottent, ambiance ridicule.",
+    "body": "Ta cave secrète est inondée. Les cercueils flottent et la situation devient impossible à cacher.",
     "choices": {
       "A": "Sauver les réserves",
       "B": "Changer de repaire",
-      "C": "Transformer ça en attraction secrète"
+      "C": "Transformer la cave en piège pour les curieux"
     }
   },
   "vampire_065": {
@@ -901,7 +901,7 @@
   },
   "vampire_101": {
     "title": "Le marché aux antiques",
-    "body": "Le vendeur dit que ça vient d’une cave. Bien sûr. Les caves ont toujours bon dos.",
+    "body": "Le vendeur prétend que l’objet vient d’une cave ancienne, mais son histoire semble inventée.",
     "choices": {
       "A": "L’acheter discrètement",
       "B": "La voler cette nuit",
@@ -1009,7 +1009,7 @@
   },
   "vampire_113": {
     "title": "Le bus de nuit",
-    "body": "Chaque nuit, des fenêtres pleines d’yeux. Les yeux regardent. Un jour, ils verront.",
+    "body": "Chaque nuit, les voyageurs du bus voient l’entrée du repaire. Tôt ou tard, l’un d’eux remarquera quelque chose.",
     "choices": {
       "A": "Faire changer le trajet",
       "B": "Camoufler l’entrée",
@@ -1450,7 +1450,7 @@
   },
   "vampire_162": {
     "title": "La bombe médiatique",
-    "body": "Le cercle rouge vise ton visage. Tu sais que le prochain cercle rouge visera ton repaire.",
+    "body": "Un média diffuse une image floue où ton visage est entouré d’un cercle rouge. Si l’enquête continue, ils finiront par localiser ton repaire.",
     "choices": {
       "A": "Supprimer la source",
       "B": "Créer un faux scandale ailleurs",
@@ -1495,7 +1495,7 @@
   },
   "vampire_167": {
     "title": "Le piège au sel",
-    "body": "C’est simple, efficace et humiliant. En principe, on ne piège pas un vampire avec du sel. Pourtant, cette fois, ça a marché.",
+    "body": "Un piège au sel bloque l’un de tes passages. Quelqu’un connaît mieux tes habitudes que prévu.",
     "choices": {
       "A": "Désamorcer et suivre l’auteur",
       "B": "Changer de tunnel",
@@ -1954,7 +1954,7 @@
   },
   "vampire_218": {
     "title": "Chasse trop visible",
-    "body": "Une chasse a tourné en spectacle. Sirènes. Vidéos. Un vrai show gratuit.",
+    "body": "Une chasse a tourné au spectacle. Sirènes, vidéos et témoins attirent maintenant l’attention sur le clan.",
     "choices": {
       "A": "Punir le responsable",
       "B": "Couvrir l’affaire",
@@ -2224,7 +2224,7 @@
   },
   "vampire_248": {
     "title": "Le festival de lanternes",
-    "body": "Un festival illumine les rues toute la nuit. Zéro ombre. Ton territoire devient un aquarium.",
+    "body": "Un festival illumine les rues toute la nuit. Ton territoire devient trop éclairé pour chasser discrètement.",
     "choices": {
       "A": "Suspendre la chasse",
       "B": "Chasser en périphérie",
@@ -2296,7 +2296,7 @@
   },
   "vampire_256": {
     "title": "La cave des humains",
-    "body": "Une cave cachée contient des réserves humaines. Qui a fait ça. Et pourquoi ici.",
+    "body": "Une cave cachée contient des humains retenus prisonniers. Qui les a enfermés ici, et pourquoi ?",
     "choices": {
       "A": "Libérer et effacer",
       "B": "Utiliser et contrôler",
@@ -2395,7 +2395,7 @@
   },
   "vampire_267": {
     "title": "La dispute des parts",
-    "body": "Le clan se dispute sur la répartition du sang. Ça ressemble à une réunion de copropriété.",
+    "body": "Le clan se dispute sur la répartition du sang. Le conflit devient assez grave pour menacer l’ordre du repaire.",
     "choices": {
       "A": "Fixer une répartition",
       "B": "Distribuer selon mérite",
@@ -2458,7 +2458,7 @@
   },
   "vampire_274": {
     "title": "L’enquête privée",
-    "body": "Un détective privé fouille ton quartier. Il n’a pas peur. Ça c’est nouveau.",
+    "body": "Un détective privé fouille ton quartier sans la moindre crainte. Le fait qu’il n’ait pas peur le rend plus dangereux.",
     "choices": {
       "A": "Le détourner de l’enquête",
       "B": "Le recruter",
@@ -2863,7 +2863,7 @@
   },
   "vampire_319": {
     "title": "Le piano du hall",
-    "body": "Un piano se met à jouer seul dans le hall. Très classe. Très mauvais signe.",
+    "body": "Un piano se met à jouer seul dans le hall. Le phénomène trouble le clan et peut annoncer un danger.",
     "choices": {
       "A": "Couper le son",
       "B": "Faire venir un ancien",
@@ -3214,7 +3214,7 @@
   },
   "vampire_358": {
     "title": "Le tableau des dettes",
-    "body": "Quelqu’un affiche les dettes du clan dans le hall. L’ambiance devient délicieuse.",
+    "body": "Quelqu’un affiche les dettes du clan dans le hall. La tension monte aussitôt dans tout le repaire.",
     "choices": {
       "A": "Punir l’auteur",
       "B": "Effacer le tableau",
@@ -3250,7 +3250,7 @@
   },
   "vampire_362": {
     "title": "Le nouveau code",
-    "body": "Le clan change tous ses codes sans te prévenir. Belle idée idiote.",
+    "body": "Le clan change tous ses codes sans te prévenir. Cette décision met directement le repaire en danger.",
     "choices": {
       "A": "Reprendre le contrôle",
       "B": "Punir les meneurs",
@@ -3448,7 +3448,7 @@
   },
   "vampire_384": {
     "title": "Le dossier du maire",
-    "body": "Un dossier sur le maire arrive sur ton bureau. Il sent le piège utile.",
+    "body": "Un dossier sur le maire arrive sur ton bureau. Il peut servir, mais il ressemble aussi à un piège.",
     "choices": {
       "A": "L’utiliser vite",
       "B": "Le vérifier d’abord",
@@ -3592,7 +3592,7 @@
   },
   "vampire_400": {
     "title": "Le pacte du matin",
-    "body": "Une partie du clan veut une promesse. Les chasseurs un signe. L’aube approche déjà.",
+    "body": "Une partie du clan veut une promesse. Les chasseurs attendent un signe. L’aube approche déjà.",
     "choices": {
       "A": "Choisir le clan",
       "B": "Choisir les chasseurs",
