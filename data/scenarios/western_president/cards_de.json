@@ -1,11 +1,11 @@
 ﻿{
   "wp_001": {
     "title": "Verkehrsstreik",
-    "body": "Die Gewerkschaften kündigen ab Montag einen landesweiten Verkehrsstreik an. Die Bilder sind überall zu sehen.",
+    "body": "Die Gewerkschaften kündigen ab Montag einen landesweiten Verkehrsstreik an. Die Bilder laufen im Fernsehen und in den sozialen Netzwerken in Dauerschleife.",
     "choices": {
       "A": "Verhandeln und Zugeständnisse machen.",
       "B": "Hart bleiben: Mindestbetrieb und Konsequenz.",
-      "C": "Militärbusse freigeben, um das Land am Laufen zu halten."
+      "C": "Militärbusse anfordern, um einen Mindestverkehr aufrechtzuerhalten."
     }
   },
   "wp_002": {
@@ -13,7 +13,7 @@
     "body": "Ein internationaler Klimagipfel findet bei dir statt. Alle erwarten eine starke Ankündigung.",
     "choices": {
       "A": "Einen ehrgeizigen Plan mit grünen Investitionen ankündigen.",
-      "B": "Schrittweise Ziele mit Überprüfungsklauseln festlegen.",
+      "B": "Schrittweise Ziele festlegen, mit einem Zeitplan zur Überprüfung.",
       "C": "Eine große symbolische Erklärung ohne Zahlen abgeben."
     }
   },
@@ -93,7 +93,7 @@
     "title": "Steuerdatenleck",
     "body": "Steuerdaten kursieren im Internet. Viele werfen dem Staat Fahrlässigkeit vor.",
     "choices": {
-      "A": "Transparent sein: zugeben und schnell reparieren.",
+      "A": "Transparenz: die Sicherheitslücke anerkennen und den betroffenen Personen schnell helfen.",
       "B": "Verharmlosen: 'Nichts Ernstes'.",
       "C": "Eine verstärkte nationale Cyberagentur schaffen."
     }
@@ -829,7 +829,7 @@
   },
   "wp_093": {
     "title": "Vertrauenskrise in die Wissenschaft",
-    "body": "Eine nicht tödliche Kontroverse um ein Medikament lässt das Vertrauen abstürzen. Die Experten regen sich auf, die Öffentlichkeit auch.",
+    "body": "Eine Kontroverse um ein Medikament, ohne Todesfälle, lässt das Vertrauen sinken. Die Experten werden wütend, und die Öffentlichkeit zweifelt immer mehr.",
     "choices": {
       "A": "Eine unabhängige öffentliche Kommission schaffen.",
       "B": "Die Institutionen kompromisslos verteidigen.",
@@ -1072,7 +1072,7 @@
   },
   "wp_120": {
     "title": "Abkommen über den Weltraum",
-    "body": "Ein Partner schlägt ein Raumfahrtabkommen vor: Datenaustausch, gemeinsame Missionen. Das Militär will es.",
+    "body": "Ein Partner schlägt ein Raumfahrtabkommen vor: Datenaustausch und gemeinsame Missionen. Das Militär drängt auf eine Unterzeichnung.",
     "choices": {
       "A": "Unterzeichnen: offene Zusammenarbeit.",
       "B": "Unterzeichnen, aber einen strategischen Teil einstufen.",
@@ -1288,7 +1288,7 @@
   },
   "wp_144": {
     "title": "Großer Aufforstungsplan",
-    "body": "Ein Aufforstungsplan kann das Image des Landes und die Umwelt verbessern, aber einige Industrielle sind skeptisch.",
+    "body": "Ein großer Aufforstungsplan könnte Umwelt und Ansehen des Landes verbessern, doch einige Industrievertreter fürchten neue Auflagen.",
     "choices": {
       "A": "Einen ehrgeizigen Plan plus grüne Arbeitsplätze.",
       "B": "Einen moderaten und freiwilligen Plan.",
@@ -2557,7 +2557,7 @@
   },
   "wp_285": {
     "title": "Humanitäre Operation",
-    "body": "Ein Rivale verbreitet ein spöttisches Lied gegen dich. Die Bilder sind überall.",
+    "body": "In einer instabilen Region bricht eine humanitäre Krise aus. Zivilisten brauchen schnell Hilfe.",
     "choices": {
       "A": "Hilfe schicken plus minimalen militärischen Schutz.",
       "B": "Hilfe nur über NGOs schicken.",
@@ -2566,7 +2566,7 @@
   },
   "wp_286": {
     "title": "Ein Bündnis will mehr",
-    "body": "Eine Luftwaffenbasis öffnet sich mitten in der Spannung für die Öffentlichkeit. Der Druck steigt.",
+    "body": "Ein Bündnis, an dem du beteiligt bist, verlangt von dir ein stärkeres Engagement. Der Druck steigt.",
     "choices": {
       "A": "Den Beitrag erhöhen und wirtschaftlich ausgleichen.",
       "B": "Ablehnen: innere Prioritäten zuerst.",
@@ -2575,7 +2575,7 @@
   },
   "wp_287": {
     "title": "Die Rakete, die umdreht",
-    "body": "Ein kritischer Lieferant droht, seine Lieferungen einzustellen. Der Druck steigt.",
+    "body": "Bei einem Test ändert eine Rakete plötzlich ihre Flugbahn und kehrt fast in Richtung Startzone zurück. Der Druck steigt.",
     "choices": {
       "A": "Transparenz plus Sicherheitsprüfung, die Angst beruhigen.",
       "B": "Verbergen und Tests heimlich verstärken.",
@@ -2593,7 +2593,7 @@
   },
   "wp_289": {
     "title": "Visa-Krieg",
-    "body": "Ein Skandal trifft Übungen, die trotz großer Fehler als erfolgreich dargestellt werden. Der Druck steigt.",
+    "body": "Ein Partner schränkt plötzlich die Visa für deine Staatsbürger ein. Der Druck steigt.",
     "choices": {
       "A": "Gegenseitigkeit verhandeln und beruhigen.",
       "B": "Symmetrische Antwort: Visa begrenzen.",
@@ -2674,7 +2674,7 @@
   },
   "wp_298": {
     "title": "Kaffee-Diplomatie",
-    "body": "Ein humanitäres Schiff treibt in Richtung eines angespannten Gebiets. Der Druck steigt.",
+    "body": "Ein Rivale schlägt ein informelles Treffen bei einem Kaffee vor, um die Krise zu beruhigen. Der Druck steigt.",
     "choices": {
       "A": "Annehmen, Frieden zuerst.",
       "B": "Ablehnen: keine Launen.",
@@ -2683,7 +2683,7 @@
   },
   "wp_299": {
     "title": "Die falsche Mitteilung",
-    "body": "Ein virtueller Gipfel soll einen Konflikt beruhigen. Der Druck steigt.",
+    "body": "Mitten in der Krise verbreitet sich eine gefälschte offizielle Mitteilung, die ein Abkommen ankündigt. Der Druck steigt.",
     "choices": {
       "A": "Sofort dementieren plus Cyber-Schutz verstärken.",
       "B": "Den Rivalen beschuldigen: Sanktionen und harte Haltung.",
@@ -2692,7 +2692,7 @@
   },
   "wp_300": {
     "title": "Die mechanische Taube",
-    "body": "Man schlägt dir eine sogenannte grüne Abschreckung vor. Der Druck steigt.",
+    "body": "Um eine Friedensbotschaft zu senden, wird dir bei einem Gipfeltreffen eine riesige mechanische Taube vorgeschlagen. Der Druck steigt.",
     "choices": {
       "A": "Darüber lachen, dazu stehen und eine Friedensinitiative ankündigen.",
       "B": "Das Ereignis absagen und hart bleiben.",
@@ -2710,7 +2710,7 @@
   },
   "wp_302": {
     "title": "Außergewöhnliches Hochwasser",
-    "body": "Ausfälle treffen das Stromnetz während der Kälte. Der Druck steigt.",
+    "body": "Ein außergewöhnliches Hochwasser trifft mehrere Regionen und beschädigt Straßen, Deiche und Wohnhäuser. Der Druck steigt.",
     "choices": {
       "A": "Notfallplan plus logistische Verstärkung und beschleunigte Reparaturen.",
       "B": "Prävention, Deiche und Normen priorisieren.",
@@ -2719,7 +2719,7 @@
   },
   "wp_303": {
     "title": "Hitzewelle und Stromnachfrage",
-    "body": "Die Gasnachfrage steigt stark an. Der Druck steigt.",
+    "body": "Die Hitzewelle lässt die Stromnachfrage stark ansteigen. Das Netz hält stand, steht aber unter großer Belastung.",
     "choices": {
       "A": "Energiesparmaßnahmen plus gezielte Hilfen für Haushalte.",
       "B": "Produktion und Speicherung beschleunigen, trotz Kosten.",
@@ -2800,7 +2800,7 @@
   },
   "wp_312": {
     "title": "Technologische Beschränkungen",
-    "body": "Eine Fernsehdiskussion endet im Chaos. Der Moderator hat nichts mehr unter Kontrolle.",
+    "body": "Ein Partner beschränkt den Zugang zu bestimmten Schlüsseltechnologien. Die Industrie fürchtet eine dauerhafte Abhängigkeit.",
     "choices": {
       "A": "In nationale Forschung und Entwicklung investieren, um Abhängigkeit zu verringern.",
       "B": "Ausnahmen und Garantien mit Partnern aushandeln.",
@@ -3061,7 +3061,7 @@
   },
   "wp_341": {
     "title": "Konflikt um CO2-Steuer",
-    "body": "Eine patriotische Zeremonie verwandelt sich schnell in eine politische Konfrontation.",
+    "body": "Ein Partner droht damit, Produkte stärker zu besteuern, die als zu CO₂-intensiv gelten. Deine Industrie fürchtet einen Wettbewerbsnachteil.",
     "choices": {
       "A": "Die industrielle Dekarbonisierung beschleunigen.",
       "B": "Ausnahmen und einen realistischen Zeitplan aushandeln.",
@@ -3295,7 +3295,7 @@
   },
   "wp_367": {
     "title": "Insolvenz eines wichtigen Zulieferers",
-    "body": "Ein Gouverneur will eine Krise lösen, indem er sich auf eine Umfrage in sozialen Netzwerken stützt.",
+    "body": "Ein wichtiger Zulieferer droht insolvent zu gehen. Eine ganze Branche könnte blockiert werden, wenn nichts geschieht.",
     "choices": {
       "A": "Bedingte und schnelle Rettung.",
       "B": "Durch Wettbewerb ersetzen: Markt und Umstrukturierung.",
@@ -3610,7 +3610,7 @@
   },
   "wp_402": {
     "title": "Anhaltende Hitzewelle",
-    "body": "Ein Bürgermeister schlägt eine Ausgangssperre vor, um die Lage zu beruhigen.",
+    "body": "Eine anhaltende Hitzewelle setzt Städte, Krankenhäuser und das Stromnetz unter Druck. Die lokalen Verantwortlichen fordern dauerhafte Maßnahmen.",
     "choices": {
       "A": "Vorübergehende Beschränkungen plus Hilfe für die am stärksten betroffenen Sektoren.",
       "B": "Anpassungsplan für städtische Beschattung, Gebäude und Netz.",
@@ -4042,7 +4042,7 @@
   },
   "wp_450": {
     "title": "Dringendes Wirtschaftsabkommen",
-    "body": "Mehrere Sektoren verlangen eine klarere Resilienzdoktrin.",
+    "body": "Dir wird ein dringendes Wirtschaftsabkommen angeboten, um mehrere Sektoren abzusichern. Der Druck steigt.",
     "choices": {
       "A": "Mit Mindestgarantien und schneller Revisionsklausel unterzeichnen.",
       "B": "Ablehnen und einen internen Ersatzplan aktivieren.",

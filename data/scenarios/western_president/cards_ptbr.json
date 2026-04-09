@@ -1,11 +1,11 @@
 ﻿{
   "wp_001": {
     "title": "Greve dos transportes",
-    "body": "Os sindicatos anunciam uma greve nacional dos transportes a partir de segunda-feira. As imagens estão por toda parte.",
+    "body": "Os sindicatos anunciam uma greve nacional dos transportes a partir de segunda-feira. As imagens passam sem parar na TV e nas redes sociais.",
     "choices": {
-      "A": "Negociar e ceder um pouco.",
+      "A": "Negociar e fazer concessões.",
       "B": "Manter-se firme: serviço mínimo e rigor.",
-      "C": "Liberar ônibus militares para manter o país funcionando."
+      "C": "Requisitar ônibus militares para manter um serviço mínimo de transporte."
     }
   },
   "wp_002": {
@@ -13,7 +13,7 @@
     "body": "Uma cúpula internacional sobre o clima acontece no seu país. Todos esperam um anúncio forte.",
     "choices": {
       "A": "Anunciar um plano ambicioso com investimentos verdes.",
-      "B": "Definir metas graduais, com cláusulas de revisão.",
+      "B": "Definir metas progressivas, com um calendário de revisão.",
       "C": "Fazer uma grande declaração simbólica, sem números."
     }
   },
@@ -93,7 +93,7 @@
     "title": "Vazamento de dados fiscais",
     "body": "Dados fiscais estão circulando online. Muitos acusam o Estado de negligência.",
     "choices": {
-      "A": "Transparência: reconhecer e corrigir rapidamente.",
+      "A": "Transparência: reconhecer a falha e ajudar rapidamente as pessoas afetadas.",
       "B": "Minimizar: 'nada grave'.",
       "C": "Criar uma agência cibernética nacional reforçada."
     }
@@ -829,7 +829,7 @@
   },
   "wp_093": {
     "title": "Crise de confiança científica",
-    "body": "Uma polêmica não fatal sobre um medicamento derruba a confiança. Especialistas se irritam, o público também.",
+    "body": "Uma polêmica em torno de um medicamento, sem mortes, derruba a confiança. Os especialistas se irritam e o público desconfia cada vez mais.",
     "choices": {
       "A": "Criar uma comissão pública independente.",
       "B": "Defender as instituições sem concessões.",
@@ -1072,7 +1072,7 @@
   },
   "wp_120": {
     "title": "Acordo sobre o espaço",
-    "body": "Um parceiro propõe um acordo espacial: compartilhamento de dados, missões conjuntas. Os militares querem.",
+    "body": "Um parceiro propõe um acordo espacial: compartilhamento de dados e missões conjuntas. Os militares pressionam para assiná-lo.",
     "choices": {
       "A": "Assinar: cooperação aberta.",
       "B": "Assinar, mas classificar uma parte estratégica.",
@@ -1288,7 +1288,7 @@
   },
   "wp_144": {
     "title": "Grande plano de reflorestamento",
-    "body": "Um plano de reflorestamento pode melhorar a imagem do país e o meio ambiente, mas preocupa alguns industriais.",
+    "body": "Um grande plano de reflorestamento pode melhorar o meio ambiente e a imagem do país, mas alguns industriais temem novas restrições.",
     "choices": {
       "A": "Plano ambicioso + empregos verdes.",
       "B": "Plano moderado e voluntário.",
@@ -2557,7 +2557,7 @@
   },
   "wp_285": {
     "title": "Operação humanitária",
-    "body": "Um rival divulga uma música zombando de você. As imagens estão por toda parte.",
+    "body": "Uma crise humanitária explode em uma área instável. Os civis precisam de ajuda rapidamente.",
     "choices": {
       "A": "Enviar ajuda + proteção militar mínima.",
       "B": "Enviar ajuda apenas via ONGs.",
@@ -2566,7 +2566,7 @@
   },
   "wp_286": {
     "title": "Uma aliança quer mais",
-    "body": "Uma base aérea abre ao público em plena tensão. A pressão aumenta.",
+    "body": "Uma aliança da qual você participa pede que aumente seu compromisso. A pressão aumenta.",
     "choices": {
       "A": "Aumentar a contribuição e compensar economicamente.",
       "B": "Recusar: prioridade interna.",
@@ -2575,7 +2575,7 @@
   },
   "wp_287": {
     "title": "O míssil que dá meia-volta",
-    "body": "Um fornecedor crítico ameaça interromper suas entregas. A pressão aumenta.",
+    "body": "Durante um teste, um míssil muda bruscamente de trajetória e quase volta para a área de lançamento. A pressão aumenta.",
     "choices": {
       "A": "Transparência + auditoria de segurança, acalmar o medo.",
       "B": "Esconder e reforçar os testes em segredo.",
@@ -2593,7 +2593,7 @@
   },
   "wp_289": {
     "title": "Guerra dos vistos",
-    "body": "Um escândalo atinge exercícios considerados bem-sucedidos apesar de grandes falhas. A pressão aumenta.",
+    "body": "Um parceiro restringe bruscamente os vistos para os seus cidadãos. A pressão aumenta.",
     "choices": {
       "A": "Negociar reciprocidade e apaziguar.",
       "B": "Resposta simétrica: vistos limitados.",
@@ -2674,7 +2674,7 @@
   },
   "wp_298": {
     "title": "Diplomacia do café",
-    "body": "Um navio humanitário deriva para uma zona tensa. A pressão aumenta.",
+    "body": "Um rival propõe um encontro informal em torno de um café para tentar acalmar a crise. A pressão aumenta.",
     "choices": {
       "A": "Aceitar, prioridade para a paz.",
       "B": "Recusar: nada de caprichos.",
@@ -2683,7 +2683,7 @@
   },
   "wp_299": {
     "title": "O comunicado falso",
-    "body": "Uma cúpula virtual deve acalmar um conflito. A pressão aumenta.",
+    "body": "Circula em plena crise um falso comunicado oficial anunciando um acordo. A pressão aumenta.",
     "choices": {
       "A": "Desmentido imediato + reforço cibernético.",
       "B": "Acusar o rival: sanções e postura firme.",
@@ -2692,7 +2692,7 @@
   },
   "wp_300": {
     "title": "A pomba mecânica",
-    "body": "Propõem a você uma dissuasão dita verde. A pressão aumenta.",
+    "body": "Para enviar uma mensagem de paz, propõem a você uma pomba mecânica gigante durante uma cúpula. A pressão aumenta.",
     "choices": {
       "A": "Rir, assumir e anunciar uma iniciativa de paz.",
       "B": "Cancelar o evento e manter firmeza.",
@@ -2710,7 +2710,7 @@
   },
   "wp_302": {
     "title": "Cheia excepcional",
-    "body": "Cortes atingem a rede elétrica durante o frio. A pressão aumenta.",
+    "body": "Uma cheia excepcional atinge várias regiões e danifica estradas, diques e casas. A pressão aumenta.",
     "choices": {
       "A": "Plano de emergência + reforços logísticos e reparo acelerado.",
       "B": "Priorizar prevenção, diques e normas.",
@@ -2719,7 +2719,7 @@
   },
   "wp_303": {
     "title": "Onda de calor e demanda elétrica",
-    "body": "A demanda por gás sobe fortemente. A pressão aumenta.",
+    "body": "A onda de calor faz a demanda por eletricidade disparar. A rede aguenta, mas continua sob forte pressão.",
     "choices": {
       "A": "Medidas de economia de energia + ajuda direcionada às famílias.",
       "B": "Acelerar produção e armazenamento, apesar do custo.",
@@ -2800,7 +2800,7 @@
   },
   "wp_312": {
     "title": "Restrições tecnológicas",
-    "body": "Um debate na TV vira caos. O apresentador já não controla mais nada.",
+    "body": "Um parceiro restringe o acesso a certas tecnologias-chave. Os industriais temem uma dependência duradoura.",
     "choices": {
       "A": "Investir em P&D nacional para reduzir a dependência.",
       "B": "Negociar isenções e garantias com parceiros.",
@@ -3061,7 +3061,7 @@
   },
   "wp_341": {
     "title": "Conflito sobre a taxa de carbono",
-    "body": "Uma cerimônia patriótica rapidamente se transforma em confronto político.",
+    "body": "Um parceiro ameaça taxar mais os produtos considerados intensivos demais em carbono. Seus industriais temem perder competitividade.",
     "choices": {
       "A": "Acelerar a descarbonização industrial.",
       "B": "Negociar isenções e um calendário realista.",
@@ -3295,7 +3295,7 @@
   },
   "wp_367": {
     "title": "Falência de um subcontratado-chave",
-    "body": "Um governador quer resolver uma crise se apoiando em uma enquete lançada nas redes sociais.",
+    "body": "Um subcontratado essencial ameaça falir. Toda uma cadeia produtiva pode ficar travada se nada for feito.",
     "choices": {
       "A": "Resgate rápido e condicionado.",
       "B": "Substituição pela concorrência: mercado e reorganização.",
@@ -3610,7 +3610,7 @@
   },
   "wp_402": {
     "title": "Onda de calor prolongada",
-    "body": "Um prefeito propõe toque de recolher para tentar acalmar a situação.",
+    "body": "Uma onda de calor prolongada coloca cidades, hospitais e a rede elétrica sob pressão. Os representantes locais pedem medidas duradouras.",
     "choices": {
       "A": "Restrições temporárias + ajuda aos setores mais expostos.",
       "B": "Plano de adaptação para sombreamento urbano, edifícios e rede.",
@@ -4042,7 +4042,7 @@
   },
   "wp_450": {
     "title": "Acordo econômico urgente",
-    "body": "Vários setores pedem uma doutrina de resiliência mais clara.",
+    "body": "Um acordo econômico urgente é proposto a você para proteger vários setores. A pressão aumenta.",
     "choices": {
       "A": "Assinar com garantias mínimas e cláusula de revisão rápida.",
       "B": "Recusar e ativar um plano de substituição interna.",

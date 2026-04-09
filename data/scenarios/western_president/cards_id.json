@@ -1,11 +1,11 @@
 ﻿{
   "wp_001": {
     "title": "Pemogokan transportasi",
-    "body": "Serikat pekerja mengumumkan pemogokan transportasi nasional mulai Senin. Gambar-gambarnya beredar di mana-mana.",
+    "body": "Serikat pekerja mengumumkan pemogokan transportasi nasional mulai Senin. Gambarnya terus diputar di TV dan media sosial.",
     "choices": {
-      "A": "Berunding dan melonggarkan sedikit tuntutan.",
+      "A": "Bernegosiasi dan memberi konsesi.",
       "B": "Tetap tegas: layanan minimum dan ketegasan.",
-      "C": "Mengerahkan bus militer untuk menjaga negara tetap berjalan."
+      "C": "Mengerahkan bus militer untuk menjaga layanan transportasi minimum."
     }
   },
   "wp_002": {
@@ -13,7 +13,7 @@
     "body": "Sebuah KTT internasional tentang iklim berlangsung di negaramu. Semua orang menunggu pengumuman yang kuat.",
     "choices": {
       "A": "Mengumumkan rencana ambisius dengan investasi hijau.",
-      "B": "Menetapkan target bertahap dengan klausul evaluasi.",
+      "B": "Menetapkan target bertahap, dengan jadwal peninjauan.",
       "C": "Membuat pernyataan simbolis besar tanpa angka."
     }
   },
@@ -93,7 +93,7 @@
     "title": "Kebocoran data pajak",
     "body": "Data pajak beredar online. Banyak orang menuduh negara lalai.",
     "choices": {
-      "A": "Transparansi: mengakui dan memperbaiki dengan cepat.",
+      "A": "Transparansi: akui kebocorannya dan bantu cepat orang-orang yang terdampak.",
       "B": "Meremehkan: 'tidak ada yang serius'.",
       "C": "Membentuk badan siber nasional yang diperkuat."
     }
@@ -829,7 +829,7 @@
   },
   "wp_093": {
     "title": "Krisis kepercayaan ilmiah",
-    "body": "Polemik tentang obat yang tidak mematikan membuat kepercayaan merosot. Para ahli marah, publik juga.",
+    "body": "Kontroversi seputar sebuah obat, tanpa korban jiwa, membuat kepercayaan menurun. Para ahli marah, dan publik makin ragu.",
     "choices": {
       "A": "Membentuk komisi independen publik.",
       "B": "Membela institusi tanpa kompromi.",
@@ -1072,7 +1072,7 @@
   },
   "wp_120": {
     "title": "Perjanjian antariksa",
-    "body": "Seorang mitra menawarkan perjanjian antariksa: berbagi data dan misi bersama. Pihak militer tertarik.",
+    "body": "Seorang mitra menawarkan perjanjian luar angkasa: berbagi data dan misi bersama. Kalangan militer mendorong agar itu ditandatangani.",
     "choices": {
       "A": "Menandatangani: kerja sama terbuka.",
       "B": "Menandatangani tetapi mengklasifikasikan sebagian yang strategis.",
@@ -1288,7 +1288,7 @@
   },
   "wp_144": {
     "title": "Rencana besar reboisasi",
-    "body": "Rencana reboisasi bisa memperbaiki citra negara dan lingkungan, tetapi sebagian industrialis keberatan.",
+    "body": "Rencana reboisasi besar bisa memperbaiki lingkungan dan citra negara, tetapi sebagian pelaku industri khawatir akan muncul pembatasan baru.",
     "choices": {
       "A": "Rencana ambisius dan lapangan kerja hijau.",
       "B": "Rencana moderat dan sukarela.",
@@ -2557,7 +2557,7 @@
   },
   "wp_285": {
     "title": "Operasi kemanusiaan",
-    "body": "Seorang rival menyebarkan lagu ejekan tentangmu. Gambar-gambarnya beredar di mana-mana.",
+    "body": "Krisis kemanusiaan pecah di wilayah yang tidak stabil. Warga sipil membutuhkan bantuan dengan cepat.",
     "choices": {
       "A": "Mengirim bantuan ditambah perlindungan militer minimal.",
       "B": "Mengirim bantuan hanya lewat LSM.",
@@ -2566,7 +2566,7 @@
   },
   "wp_286": {
     "title": "Sebuah aliansi menginginkan lebih",
-    "body": "Pangkalan udara dibuka untuk umum di tengah ketegangan. Tekanan meningkat.",
+    "body": "Aliansi yang kamu ikuti memintamu meningkatkan komitmenmu. Tekanannya naik.",
     "choices": {
       "A": "Menambah kontribusi dan memberi kompensasi ekonomi.",
       "B": "Menolak: prioritas dalam negeri.",
@@ -2575,7 +2575,7 @@
   },
   "wp_287": {
     "title": "Rudal yang berbalik arah",
-    "body": "Pemasok penting mengancam menghentikan pengirimannya. Tekanan meningkat.",
+    "body": "Saat uji coba, sebuah rudal tiba-tiba berubah arah dan hampir kembali ke area peluncuran. Tekanannya naik.",
     "choices": {
       "A": "Transparansi dan audit keamanan, menenangkan ketakutan.",
       "B": "Menyembunyikannya dan memperkuat pengujian secara rahasia.",
@@ -2593,7 +2593,7 @@
   },
   "wp_289": {
     "title": "Perang visa",
-    "body": "Skandal menimpa latihan yang disebut sukses meski ada kesalahan besar. Tekanan meningkat.",
+    "body": "Seorang mitra tiba-tiba membatasi visa bagi warga negaramu. Tekanannya naik.",
     "choices": {
       "A": "Menegosiasikan timbal balik dan meredakan.",
       "B": "Balasan simetris: visa dibatasi.",
@@ -2674,7 +2674,7 @@
   },
   "wp_298": {
     "title": "Diplomasi kopi",
-    "body": "Sebuah kapal kemanusiaan hanyut menuju zona tegang. Tekanan meningkat.",
+    "body": "Seorang rival mengusulkan pertemuan santai sambil minum kopi untuk mencoba meredakan krisis. Tekanannya naik.",
     "choices": {
       "A": "Menerima, perdamaian jadi prioritas.",
       "B": "Menolak: tanpa tingkah.",
@@ -2683,7 +2683,7 @@
   },
   "wp_299": {
     "title": "Pernyataan palsu",
-    "body": "KTT virtual harus menenangkan konflik. Tekanan meningkat.",
+    "body": "Di tengah krisis, beredar pernyataan resmi palsu yang mengumumkan adanya kesepakatan. Tekanannya naik.",
     "choices": {
       "A": "Bantahan segera dan penguatan siber.",
       "B": "Menuduh rival: sanksi dan sikap tegas.",
@@ -2692,7 +2692,7 @@
   },
   "wp_300": {
     "title": "Merpati mekanik",
-    "body": "Kamu ditawari pencegahan yang katanya hijau. Tekanan meningkat.",
+    "body": "Untuk mengirim pesan damai, kamu ditawari seekor merpati mekanis raksasa saat sebuah pertemuan puncak. Tekanannya naik.",
     "choices": {
       "A": "Tertawa, mengakuinya, dan mengumumkan inisiatif damai.",
       "B": "Membatalkan acara dan tetap tegas.",
@@ -2710,7 +2710,7 @@
   },
   "wp_302": {
     "title": "Banjir luar biasa",
-    "body": "Pemadaman menghantam jaringan listrik saat cuaca dingin. Tekanan meningkat.",
+    "body": "Banjir besar yang luar biasa melanda beberapa wilayah dan merusak jalan, tanggul, serta rumah. Tekanannya naik.",
     "choices": {
       "A": "Rencana darurat, bala bantuan logistik, dan percepatan perbaikan.",
       "B": "Memprioritaskan pencegahan, tanggul, dan standar.",
@@ -2719,7 +2719,7 @@
   },
   "wp_303": {
     "title": "Gelombang panas dan permintaan listrik",
-    "body": "Permintaan gas naik tajam. Tekanan meningkat.",
+    "body": "Gelombang panas membuat permintaan listrik melonjak tajam. Jaringan masih bertahan, tetapi tetap berada di bawah tekanan besar.",
     "choices": {
       "A": "Langkah penghematan energi dan bantuan terarah bagi rumah tangga.",
       "B": "Mempercepat produksi dan penyimpanan, meski mahal.",
@@ -2800,7 +2800,7 @@
   },
   "wp_312": {
     "title": "Pembatasan teknologi",
-    "body": "Sebuah debat televisi berubah menjadi kacau. Pembawa acara tidak lagi mengendalikan apa pun.",
+    "body": "Seorang mitra membatasi akses ke beberapa teknologi kunci. Para pelaku industri khawatir akan ketergantungan jangka panjang.",
     "choices": {
       "A": "Berinvestasi pada litbang nasional untuk mengurangi ketergantungan.",
       "B": "Menegosiasikan pengecualian dan jaminan dengan mitra.",
@@ -3061,7 +3061,7 @@
   },
   "wp_341": {
     "title": "Konflik soal pajak karbon",
-    "body": "Sebuah upacara patriotik dengan cepat berubah menjadi bentrokan politik.",
+    "body": "Seorang mitra mengancam akan mengenakan pajak lebih tinggi pada produk yang dianggap terlalu tinggi emisi karbonnya. Para pelaku industri takut kehilangan daya saing.",
     "choices": {
       "A": "Mempercepat dekarbonisasi industri.",
       "B": "Menegosiasikan pengecualian dan jadwal yang realistis.",
@@ -3295,7 +3295,7 @@
   },
   "wp_367": {
     "title": "Kebangkrutan subkontraktor utama",
-    "body": "Seorang gubernur ingin menyelesaikan krisis dengan mengandalkan jajak pendapat yang diluncurkan di media sosial.",
+    "body": "Subkontraktor penting terancam bangkrut. Seluruh rantai sektor bisa macet jika tidak ada tindakan.",
     "choices": {
       "A": "Penyelamatan bersyarat dan cepat.",
       "B": "Penggantian lewat persaingan: pasar dan reorganisasi.",
@@ -3610,7 +3610,7 @@
   },
   "wp_402": {
     "title": "Gelombang panas berkepanjangan",
-    "body": "Seorang wali kota mengusulkan jam malam untuk mencoba menenangkan situasi.",
+    "body": "Gelombang panas berkepanjangan menekan kota, rumah sakit, dan jaringan listrik. Para pejabat daerah meminta langkah yang berkelanjutan.",
     "choices": {
       "A": "Pembatasan sementara dan bantuan bagi sektor yang paling terpapar.",
       "B": "Rencana adaptasi untuk peneduhan kota, bangunan, dan jaringan.",
@@ -4042,7 +4042,7 @@
   },
   "wp_450": {
     "title": "Perjanjian ekonomi yang mendesak",
-    "body": "Beberapa sektor meminta doktrin ketahanan yang lebih jelas.",
+    "body": "Sebuah perjanjian ekonomi mendesak ditawarkan kepadamu untuk mengamankan beberapa sektor. Tekanannya naik.",
     "choices": {
       "A": "Menandatangani dengan jaminan minimal dan klausul revisi cepat.",
       "B": "Menolak dan mengaktifkan rencana pengganti internal.",

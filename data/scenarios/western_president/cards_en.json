@@ -1,11 +1,11 @@
 ﻿{
   "wp_001": {
     "title": "Transport Strike",
-    "body": "Unions announce a nationwide transport strike starting Monday. The images are everywhere.",
+    "body": "The unions announce a nationwide transport strike starting Monday. The footage is running nonstop on TV and social media.",
     "choices": {
-      "A": "Negotiate and ease up.",
+      "A": "Negotiate and make concessions.",
       "B": "Stand firm: minimum service and toughness.",
-      "C": "Deploy military buses to keep the country moving."
+      "C": "Requisition military buses to keep a minimum transport service running."
     }
   },
   "wp_002": {
@@ -13,7 +13,7 @@
     "body": "An international climate summit is taking place on your soil. Everyone expects a strong announcement.",
     "choices": {
       "A": "Announce an ambitious plan with green investments.",
-      "B": "Set gradual goals with review clauses.",
+      "B": "Set gradual targets, with a review schedule.",
       "C": "Make a big symbolic statement, with no numbers."
     }
   },
@@ -93,7 +93,7 @@
     "title": "Tax Data Leak",
     "body": "Tax records are circulating online. Many are accusing the state of negligence.",
     "choices": {
-      "A": "Be transparent: admit it and fix it fast.",
+      "A": "Transparency: acknowledge the breach and quickly help the people affected.",
       "B": "Minimize it: 'nothing serious.'",
       "C": "Create a stronger national cyber agency."
     }
@@ -829,7 +829,7 @@
   },
   "wp_093": {
     "title": "Scientific Trust Crisis",
-    "body": "A non-fatal medication controversy makes trust collapse. Experts are angry, and so is the public.",
+    "body": "A controversy around a medicine, with no deaths reported, is undermining trust. Experts are getting angry, and the public is growing more doubtful.",
     "choices": {
       "A": "Create a public independent commission.",
       "B": "Defend the institutions without compromise.",
@@ -1072,7 +1072,7 @@
   },
   "wp_120": {
     "title": "Space Agreement",
-    "body": "A partner proposes a space agreement: data sharing, joint missions. The military wants it.",
+    "body": "A partner is offering a space agreement: shared data and joint missions. The military is pushing to sign it.",
     "choices": {
       "A": "Sign: open cooperation.",
       "B": "Sign but classify a strategic part.",
@@ -1288,7 +1288,7 @@
   },
   "wp_144": {
     "title": "Major Reforestation Plan",
-    "body": "A reforestation plan could improve the country's image and the environment, but some industrial groups are worried.",
+    "body": "A major reforestation plan could improve the environment and the country’s image, but some industrial players fear new constraints.",
     "choices": {
       "A": "Ambitious plan + green jobs.",
       "B": "Moderate and voluntary plan.",
@@ -2557,7 +2557,7 @@
   },
   "wp_285": {
     "title": "Humanitarian Operation",
-    "body": "A rival spreads a mocking song about you. The images are everywhere.",
+    "body": "A humanitarian crisis is breaking out in an unstable area. Civilians need help quickly.",
     "choices": {
       "A": "Send aid + minimal military protection.",
       "B": "Send aid only through NGOs.",
@@ -2566,7 +2566,7 @@
   },
   "wp_286": {
     "title": "An Alliance Wants More",
-    "body": "An air base opens to the public during a period of tension. Pressure is mounting.",
+    "body": "An alliance you belong to is asking you to increase your commitment. Pressure is rising.",
     "choices": {
       "A": "Increase your contribution and offset it economically.",
       "B": "Refuse: domestic priorities first.",
@@ -2575,7 +2575,7 @@
   },
   "wp_287": {
     "title": "The Missile That Turned Around",
-    "body": "A critical supplier threatens to stop deliveries. Pressure is mounting.",
+    "body": "During a test, a missile suddenly changes course and nearly turns back toward the launch area. Pressure is rising.",
     "choices": {
       "A": "Transparency + safety audit, calm fears.",
       "B": "Hide it and strengthen testing in secret.",
@@ -2593,7 +2593,7 @@
   },
   "wp_289": {
     "title": "Visa War",
-    "body": "A scandal hits exercises judged successful despite major failures. Pressure is mounting.",
+    "body": "A partner suddenly restricts visas for your citizens. Pressure is rising.",
     "choices": {
       "A": "Negotiate reciprocity and calm things down.",
       "B": "Symmetrical retaliation: limit visas.",
@@ -2674,7 +2674,7 @@
   },
   "wp_298": {
     "title": "Coffee Diplomacy",
-    "body": "A humanitarian ship drifts toward a tense zone. Pressure is mounting.",
+    "body": "A rival proposes an informal coffee meeting to try to calm the crisis. Pressure is rising.",
     "choices": {
       "A": "Accept it, peace comes first.",
       "B": "Refuse: no tantrums.",
@@ -2683,7 +2683,7 @@
   },
   "wp_299": {
     "title": "The Fake Statement",
-    "body": "A virtual summit is supposed to calm a conflict. Pressure is mounting.",
+    "body": "A fake official statement announcing an agreement is circulating in the middle of the crisis. Pressure is rising.",
     "choices": {
       "A": "Immediate denial + stronger cyber defenses.",
       "B": "Accuse the rival: sanctions and firm posture.",
@@ -2692,7 +2692,7 @@
   },
   "wp_300": {
     "title": "The Mechanical Dove",
-    "body": "You are offered a so-called green deterrence system. Pressure is mounting.",
+    "body": "To send a message of peace, you are offered a giant mechanical dove during a summit. Pressure is rising.",
     "choices": {
       "A": "Laugh it off, own it, and announce a peace initiative.",
       "B": "Cancel the event and stay firm.",
@@ -2710,7 +2710,7 @@
   },
   "wp_302": {
     "title": "Exceptional Flooding",
-    "body": "Power outages hit the grid during cold weather. Pressure is mounting.",
+    "body": "An exceptional flood hits several regions and damages roads, dikes, and homes. Pressure is rising.",
     "choices": {
       "A": "Emergency plan + logistics reinforcements and faster repairs.",
       "B": "Prioritize prevention, levees, and standards.",
@@ -2719,7 +2719,7 @@
   },
   "wp_303": {
     "title": "Heat Wave and Power Demand",
-    "body": "Demand for gas rises sharply. Pressure is mounting.",
+    "body": "The heatwave is driving electricity demand through the roof. The grid is holding, but it remains under heavy strain.",
     "choices": {
       "A": "Energy-saving measures + targeted aid for households.",
       "B": "Speed up production and storage, despite the cost.",
@@ -2800,7 +2800,7 @@
   },
   "wp_312": {
     "title": "Technology Restrictions",
-    "body": "A TV debate turns into chaos. The host no longer controls anything.",
+    "body": "A partner is restricting access to certain key technologies. Industrial leaders fear lasting dependence.",
     "choices": {
       "A": "Invest in national R&D to reduce dependence.",
       "B": "Negotiate exemptions and guarantees with partners.",
@@ -3061,7 +3061,7 @@
   },
   "wp_341": {
     "title": "Carbon Tax Conflict",
-    "body": "A patriotic ceremony quickly turns into a political confrontation.",
+    "body": "A partner is threatening to tax products deemed too carbon-intensive. Your industrial sector fears losing competitiveness.",
     "choices": {
       "A": "Speed up industrial decarbonization.",
       "B": "Negotiate exemptions and a realistic timeline.",
@@ -3295,7 +3295,7 @@
   },
   "wp_367": {
     "title": "Failure of a Key Supplier",
-    "body": "A governor wants to solve a crisis by relying on a poll launched on social media.",
+    "body": "A key subcontractor is on the verge of bankruptcy. An entire sector could be blocked if nothing is done.",
     "choices": {
       "A": "Conditional and rapid rescue.",
       "B": "Replace through competition: market and restructuring.",
@@ -3610,7 +3610,7 @@
   },
   "wp_402": {
     "title": "Prolonged Heat Wave",
-    "body": "A mayor proposes a curfew in an attempt to calm the situation.",
+    "body": "A prolonged heatwave is putting cities, hospitals, and the power grid under pressure. Local leaders are asking for lasting measures.",
     "choices": {
       "A": "Temporary restrictions + aid to the most exposed sectors.",
       "B": "Adaptation plan for urban shade, buildings, and the network.",
@@ -4042,7 +4042,7 @@
   },
   "wp_450": {
     "title": "Urgent Economic Agreement",
-    "body": "Several sectors are asking for a clearer resilience doctrine.",
+    "body": "An urgent economic agreement is being offered to you to secure several sectors. Pressure is rising.",
     "choices": {
       "A": "Sign with minimum guarantees and a quick review clause.",
       "B": "Refuse and activate an internal substitution plan.",
