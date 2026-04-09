@@ -140,7 +140,7 @@
     "choices": {
       "A": "Organizza uno spettacolo grandioso, che tutto l’Inferno se ne ricordi.",
       "B": "Fai una cerimonia sobria, prima di tutto l’ordine.",
-      "C": "Sposta il festival verso zone vicine alla superficie."
+      "C": "Sposta il festival vicino al confine con il mondo dei vivi."
     }
   },
   "hk_017": {
@@ -310,7 +310,7 @@
     "body": "I dannati confessano i loro segreti in una torre. Queste confessioni possono esserti utili.",
     "choices": {
       "A": "Usa queste confessioni per rafforzare la tua scorta di anime.",
-      "B": "Sfrutta alcuni segreti per influenzare la superficie.",
+      "B": "Sfruttare certi segreti per influenzare il mondo dei vivi.",
       "C": "Archivia questi documenti per migliorare l’ordine infernale."
     }
   },
@@ -374,7 +374,7 @@
     "choices": {
       "A": "Metti l’accento sulla forza bruta e sulla paura.",
       "B": "Valorizza prima di tutto la lealtà e la disciplina.",
-      "C": "Includi corsi sulla manipolazione della superficie."
+      "C": "Includere corsi sulla manipolazione dei mortali."
     }
   },
   "hk_043": {
@@ -417,7 +417,7 @@
     "title": "Torre delle urla deformate",
     "body": "Una torre amplifica le urla dei dannati. Ormai i loro echi turbano perfino i tuoi soldati.",
     "choices": {
-      "A": "Reindirizza queste urla verso la superficie per perseguitarla.",
+      "A": "Reindirizzare quelle urla verso il mondo dei vivi per seminare paura.",
       "B": "Isola la torre in una zona strettamente controllata.",
       "C": "Usa questi echi per allenare mentalmente le tue legioni."
     }
@@ -446,7 +446,7 @@
     "choices": {
       "A": "Ignora la profezia e accelera ancora la dannazione.",
       "B": "Rafforza l’ordine per evitare uno sconvolgimento brutale.",
-      "C": "Ripartisci il caos tra superficie, legioni e anime."
+      "C": "Ripartire il caos tra il mondo dei vivi, le legioni e le anime."
     }
   },
   "hk_051": {
@@ -590,7 +590,7 @@
     "choices": {
       "A": "Amplifica le punizioni per raccogliere più energia.",
       "B": "Imponi un quadro rigido, anche nell’orrore.",
-      "C": "Usa questi casi come esempio per spaventare la superficie."
+      "C": "Usare questi casi come esempio per spaventare i vivi."
     }
   },
   "hk_067": {
@@ -608,7 +608,7 @@
     "choices": {
       "A": "Usala per attirare un flusso di anime nostalgiche.",
       "B": "Integrala nel tuo ordine come vassallo strettamente sorvegliato.",
-      "C": "Mandala a svolgere un ruolo discreto sulla superficie."
+      "C": "Inviarla ad agire discretamente nel mondo dei vivi."
     }
   },
   "hk_069": {
@@ -626,7 +626,7 @@
     "choices": {
       "A": "Sfrutta questo coro per sondare la massa delle anime.",
       "B": "Canalizza questi sussurri in una struttura di consiglio.",
-      "C": "Lascia che queste voci raggiungano la superficie e tocchino i sognatori."
+      "C": "Lasciare che queste voci raggiungano il mondo dei vivi e turbino i sognatori."
     }
   },
   "hk_071": {
@@ -680,7 +680,7 @@
     "choices": {
       "A": "Spingili a registrare tutto, anche al prezzo del caos.",
       "B": "Semplificare le categorie per mantenere un ordine generale.",
-      "C": "Registrare in dettaglio solo i peccati chiave sulla superficie."
+      "C": "Registrare in dettaglio solo i peccati chiave commessi tra i vivi."
     }
   },
   "hk_077": {
@@ -829,11 +829,11 @@
   },
   "hk_093": {
     "title": "Campi di statue di cenere",
-    "body": "Un’istituzione insegna alle anime a cadere in modo controllato.",
+    "body": "In questi campi, anime spezzate restano fissate in statue di cenere, allineate come un avvertimento.",
     "choices": {
       "A": "Spezzali in massa per nutrire il tuo regno.",
       "B": "Catalogali e sorvegliarli secondo regole severe.",
-      "C": "Inviane alcune a infestare silenziosamente la superficie."
+      "C": "Farne apparire alcune in silenzio tra i vivi."
     }
   },
   "hk_094": {
@@ -874,7 +874,7 @@
   },
   "hk_098": {
     "title": "Notte degli specchi invertiti",
-    "body": "I piccoli peccati di oggi finiscono per causare grandi condanne.",
+    "body": "Gli specchi mostrano come piccole colpe finiscano per condurre a grandi condanne.",
     "choices": {
       "A": "Sfrutta queste visioni per rafforzare il dolore.",
       "B": "Riponi con cura questi specchi in sale codificate.",
@@ -1085,7 +1085,7 @@
     "choices": {
       "A": "Assorbile in massa nel tuo sistema.",
       "B": "Mettili sotto un regime strettamente codificato.",
-      "C": "Usale come moneta di scambio con la superficie."
+      "C": "Usarle come merce di scambio nei tuoi affari con i vivi."
     }
   },
   "hk_122": {
@@ -1139,7 +1139,7 @@
     "choices": {
       "A": "Nerisci la voce punendo degli innocenti.",
       "B": "Avvia un’indagine gerarchizzata e segreta.",
-      "C": "Usa la voce per scatenare una purga mirata sulla superficie."
+      "C": "Usare la voce per scatenare una purga mirata tra le tue stesse fila."
     }
   },
   "hk_128": {
@@ -1157,7 +1157,7 @@
     "choices": {
       "A": "Aumenta il numero di gabbie per ottenere più confessioni.",
       "B": "Regola questo campo per evitare gli eccessi.",
-      "C": "Sfrutta queste denunce per manipolare la superficie."
+      "C": "Sfruttare queste denunce per manipolare i vivi."
     }
   },
   "hk_130": {
@@ -1202,7 +1202,7 @@
     "choices": {
       "A": "Seppelliscici ancora più anime spezzate.",
       "B": "Indicizza ogni promessa per un ordine perfetto.",
-      "C": "Risveglia certe promesse sulla superficie."
+      "C": "Far riemergere alcune di quelle promesse tra i vivi."
     }
   },
   "hk_135": {
@@ -1297,7 +1297,7 @@
   },
   "hk_145": {
     "title": "Serra delle piante d’anima",
-    "body": "Un quartiere è completamente in rovina, e tutti lo accettano così.",
+    "body": "Una serra fa crescere strane piante nutrite dall’energia delle anime.",
     "choices": {
       "A": "Aumenta il loro numero per accelerare il raccolto.",
       "B": "Organizza questa serra come un’istituzione modello.",
@@ -1310,7 +1310,7 @@
     "choices": {
       "A": "Premia soprattutto la quantità di anime perdute.",
       "B": "Iscrivi ogni menzogna in un registro codificato.",
-      "C": "Metti alla prova queste menzogne sulle reti della superficie."
+      "C": "Mettere alla prova queste menzogne sulle reti dei vivi."
     }
   },
   "hk_147": {
@@ -1576,7 +1576,7 @@
   },
   "hk_176": {
     "title": "Accordo segreto di non ingerenza",
-    "body": "La paura circola ovunque come una moneta.",
+    "body": "Il Nord ti propone un accordo segreto: ciascuno smette di sabotare direttamente gli affari dell’altro.",
     "choices": {
       "A": "Accetta per stabilizzare il tuo impero a breve termine.",
       "B": "Rifiuta e consolida ancora di più il tuo ordine interno.",
@@ -1607,7 +1607,7 @@
     "choices": {
       "A": "Metti alla prova il rituale per aumentare la raccolta di anime.",
       "B": "Vietalo finché non sarà perfettamente regolato.",
-      "C": "Dirigi una parte di questa fusione verso la superficie."
+      "C": "Dirigere una parte di questa fusione verso il mondo dei vivi."
     }
   },
   "hk_180": {
@@ -1711,7 +1711,7 @@
   },
   "hk_191": {
     "title": "Trattato delle catastrofi",
-    "body": "Un luogo dove la speranza scompare lentamente.",
+    "body": "Il Nord propone un trattato per spartirsi l’influenza sulle grandi catastrofi del mondo dei vivi.",
     "choices": {
       "A": "Cogli l’occasione per raccogliere più anime.",
       "B": "Imporre limiti per preservare l’equilibrio delle tue regioni.",
@@ -1837,7 +1837,7 @@
   },
   "hk_205": {
     "title": "Guerra di disinformazione",
-    "body": "Le torture lì sono organizzate con precisione.",
+    "body": "Le menzogne si diffondono così in fretta che i mortali non sanno più cosa credere.",
     "choices": {
       "A": "Nutri ogni campo con false rivelazioni.",
       "B": "Promuovi alcune voci «ragionevoli» per mantenere una struttura.",
@@ -1990,7 +1990,7 @@
   },
   "hk_222": {
     "title": "Crudeltà in spettacolo",
-    "body": "Vogliono organizzare la sofferenza in modo più logico.",
+    "body": "La sofferenza umana diventa uno spettacolo consumato per intrattenere, scioccare o fare audience.",
     "choices": {
       "A": "Spingi i mortali a desensibilizzarsi completamente.",
       "B": "Sostieni regole rigide sulle immagini, poco applicate.",
@@ -2188,7 +2188,7 @@
   },
   "hk_244": {
     "title": "Nebbia chimica",
-    "body": "I rimorsi si accumulano senza fine lì.",
+    "body": "Una nebbia chimica proveniente da fabbriche e incidenti avvelena l’aria, i corpi e le menti.",
     "choices": {
       "A": "Rendi questo uso banale per evitare ogni vera riflessione.",
       "B": "Inquadra alcuni prodotti, lasciando prosperare gli altri.",
@@ -2431,7 +2431,7 @@
   },
   "hk_271": {
     "title": "Processione celeste",
-    "body": "Alcuni cercano di rendere le punizioni più controllate.",
+    "body": "Una processione venuta dal Paradiso attraversa per un attimo il cielo sopra il tuo regno.",
     "choices": {
       "A": "Tenta di catturare alcune anime durante il passaggio.",
       "B": "Lasciale passare per evitare un grave incidente.",
@@ -2575,7 +2575,7 @@
   },
   "hk_287": {
     "title": "Anime ripescate",
-    "body": "La punizione deve tornare a essere chiara per tutti.",
+    "body": "Il Paradiso riesce a strappare alcune anime all’ultimo istante, appena prima della loro caduta definitiva nel tuo regno.",
     "choices": {
       "A": "Rifiuta ogni riduzione di pena.",
       "B": "Accetta una quota minima in cambio di concessioni ufficiali.",
@@ -2701,7 +2701,7 @@
   },
   "hk_301": {
     "title": "Rivolta degli scribi",
-    "body": "La sofferenza non è più abbastanza efficace.",
+    "body": "I tuoi scribi si ribellano: troppi fascicoli, troppe anime, e ormai nessuno riesce più a stare al passo.",
     "choices": {
       "A": "Esigi che scrivano finché le loro penne non si spezzeranno.",
       "B": "Riorganizza l’amministrazione creando nuovi uffici.",
@@ -2732,7 +2732,7 @@
     "choices": {
       "A": "Approva: più dolore, più anime spezzate.",
       "B": "Inquadra tutto con regole rigide.",
-      "C": "Prova prima in superficie, in segreto."
+      "C": "Provarlo prima sui mortali, in segreto."
     }
   },
   "hk_305": {
@@ -2768,7 +2768,7 @@
     "choices": {
       "A": "Tuffati nel caos per aumentare il tuo raccolto.",
       "B": "Sospendi ogni giudizio e rimetti tutto in ordine a mano.",
-      "C": "Lascia che la tempesta soffi fino ai confini della superficie."
+      "C": "Lasciare che la tempesta soffi fino al mondo dei vivi."
     }
   },
   "hk_309": {
@@ -2876,7 +2876,7 @@
     "choices": {
       "A": "Trasferiscici nuove anime per rilanciare l’attività.",
       "B": "Riadattare completamente questa regione intorno a un nuovo concetto.",
-      "C": "Usa questo deserto come zona di sperimentazione per la superficie."
+      "C": "Usare questa regione vuota come zona di sperimentazione prima di agire tra i vivi."
     }
   },
   "hk_321": {
@@ -3308,7 +3308,7 @@
     "choices": {
       "A": "Costringi le anime a rivivere eternamente le loro scelte mancate.",
       "B": "Indicizza queste decisioni per affinare le tue future manipolazioni.",
-      "C": "Lascia che questa sala perseguiti dirigenti viventi."
+      "C": "Lasciare che i dirigenti vivi vedano questa sala nei loro incubi."
     }
   },
   "hk_369": {
@@ -3596,7 +3596,7 @@
     "choices": {
       "A": "Ignora i numeri e continua negli eccessi.",
       "B": "Studia ogni dato per ottimizzare il tuo ordine.",
-      "C": "Decidi di orientare ancora di più i tuoi sforzi verso la superficie."
+      "C": "Decidere di orientare ancora di più i tuoi sforzi verso il mondo dei vivi."
     }
   }
 }

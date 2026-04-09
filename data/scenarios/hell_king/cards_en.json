@@ -140,7 +140,7 @@
     "choices": {
       "A": "Organize a grand spectacle, let all of Hell remember it.",
       "B": "Hold a sober ceremony, order comes first.",
-      "C": "Move the festival to areas close to the surface."
+      "C": "Move the festival near the border of the world of the living."
     }
   },
   "hk_017": {
@@ -310,7 +310,7 @@
     "body": "The damned confess their secrets in a tower. These confessions may be useful to you.",
     "choices": {
       "A": "Use these confessions to strengthen your stock of souls.",
-      "B": "Exploit certain secrets to influence the surface.",
+      "B": "Exploit certain secrets to influence the world of the living.",
       "C": "Archive these records to improve infernal order."
     }
   },
@@ -374,7 +374,7 @@
     "choices": {
       "A": "Put the emphasis on brute strength and fear.",
       "B": "Value loyalty and discipline above all else.",
-      "C": "Include courses on manipulating the surface."
+      "C": "Include courses on manipulating mortals."
     }
   },
   "hk_043": {
@@ -417,7 +417,7 @@
     "title": "Tower of Distorted Screams",
     "body": "A tower amplifies the screams of the damned. Now their echoes disturb even your soldiers.",
     "choices": {
-      "A": "Redirect those screams to the surface to haunt it.",
+      "A": "Redirect those screams toward the world of the living to spread fear.",
       "B": "Isolate the tower in a heavily controlled zone.",
       "C": "Use those echoes to mentally train your legions."
     }
@@ -446,7 +446,7 @@
     "choices": {
       "A": "Ignore the prophecy and accelerate damnation even more.",
       "B": "Strengthen order to avoid a brutal collapse.",
-      "C": "Spread the chaos between the surface, legions, and souls."
+      "C": "Spread the chaos between the world of the living, the legions, and the souls."
     }
   },
   "hk_051": {
@@ -590,7 +590,7 @@
     "choices": {
       "A": "Intensify the punishments to harvest more energy.",
       "B": "Impose a strict framework, even in horror.",
-      "C": "Use these cases as examples to frighten the surface."
+      "C": "Use these cases as examples to frighten the living."
     }
   },
   "hk_067": {
@@ -608,7 +608,7 @@
     "choices": {
       "A": "Use it to attract a flood of nostalgic souls.",
       "B": "Integrate it into your order as a tightly watched vassal.",
-      "C": "Send it to play a discreet role on the surface."
+      "C": "Send it to act discreetly in the world of the living."
     }
   },
   "hk_069": {
@@ -626,7 +626,7 @@
     "choices": {
       "A": "Exploit this chorus to probe the mass of souls.",
       "B": "Channel these whispers into an advisory structure.",
-      "C": "Let these voices reach the surface and touch dreamers."
+      "C": "Let these voices reach the world of the living and disturb dreamers."
     }
   },
   "hk_071": {
@@ -680,7 +680,7 @@
     "choices": {
       "A": "Push them to record everything, even at the cost of chaos.",
       "B": "Simplify the categories to preserve overall order.",
-      "C": "Record in detail only the key sins on the surface."
+      "C": "Record in detail only the key sins committed among the living."
     }
   },
   "hk_077": {
@@ -829,11 +829,11 @@
   },
   "hk_093": {
     "title": "Fields of Ash Statues",
-    "body": "An institution teaches souls how to fall in a controlled way.",
+    "body": "In these fields, broken souls are frozen into ash statues, lined up like a warning.",
     "choices": {
       "A": "Break them apart in massive numbers to feed your kingdom.",
       "B": "Catalog them and watch them under strict rules.",
-      "C": "Send a few to silently haunt the surface."
+      "C": "Make a few of them appear silently among the living."
     }
   },
   "hk_094": {
@@ -874,7 +874,7 @@
   },
   "hk_098": {
     "title": "Night of Inverted Mirrors",
-    "body": "Small sins today eventually lead to major condemnations.",
+    "body": "Mirrors show how small faults eventually lead to great condemnations.",
     "choices": {
       "A": "Exploit these visions to deepen the pain.",
       "B": "Carefully store these mirrors in codified rooms.",
@@ -1085,7 +1085,7 @@
     "choices": {
       "A": "Absorb them en masse into your system.",
       "B": "Place them under a strictly codified regime.",
-      "C": "Use them as bargaining chips with the surface."
+      "C": "Use them as bargaining chips in your dealings with the living."
     }
   },
   "hk_122": {
@@ -1139,7 +1139,7 @@
     "choices": {
       "A": "Darken the rumor by punishing innocents.",
       "B": "Launch a secret, hierarchical investigation.",
-      "C": "Use the rumor to trigger a targeted purge on the surface."
+      "C": "Use the rumor to trigger a targeted purge within your own ranks."
     }
   },
   "hk_128": {
@@ -1157,7 +1157,7 @@
     "choices": {
       "A": "Increase the number of cages to obtain more confessions.",
       "B": "Regulate this field to avoid overflow.",
-      "C": "Use these accusations to manipulate the surface."
+      "C": "Use these accusations to manipulate the living."
     }
   },
   "hk_130": {
@@ -1202,7 +1202,7 @@
     "choices": {
       "A": "Bury even more broken souls there.",
       "B": "Index every promise for perfect order.",
-      "C": "Awaken some promises on the surface."
+      "C": "Bring some of these promises back among the living."
     }
   },
   "hk_135": {
@@ -1297,7 +1297,7 @@
   },
   "hk_145": {
     "title": "Greenhouse of Soul Plants",
-    "body": "A district lies entirely in ruins, and everyone accepts it as such.",
+    "body": "A greenhouse grows strange plants fed by the energy of souls.",
     "choices": {
       "A": "Increase their numbers to speed up harvesting.",
       "B": "Organize this greenhouse like a model institution.",
@@ -1310,7 +1310,7 @@
     "choices": {
       "A": "Reward above all the number of souls lost.",
       "B": "Record every lie in a codified register.",
-      "C": "Test these lies through networks on the surface."
+      "C": "Test these lies across the networks of the living."
     }
   },
   "hk_147": {
@@ -1576,7 +1576,7 @@
   },
   "hk_176": {
     "title": "Secret Pact of Non-Interference",
-    "body": "Fear spreads everywhere like a currency.",
+    "body": "The North offers you a secret pact: each side stops directly sabotaging the other’s affairs.",
     "choices": {
       "A": "Accept to stabilize your empire in the short term.",
       "B": "Refuse and further strengthen your internal order.",
@@ -1607,7 +1607,7 @@
     "choices": {
       "A": "Test the ritual to boost soul harvesting.",
       "B": "Ban it until it is perfectly regulated.",
-      "C": "Direct part of this fusion toward the surface."
+      "C": "Direct part of this fusion toward the world of the living."
     }
   },
   "hk_180": {
@@ -1711,7 +1711,7 @@
   },
   "hk_191": {
     "title": "Treaty of Catastrophes",
-    "body": "A place where hope slowly disappears.",
+    "body": "The North proposes a treaty to divide influence over the great catastrophes of the world of the living.",
     "choices": {
       "A": "Seize the opportunity to harvest more souls.",
       "B": "Impose limits to preserve the balance of your regions.",
@@ -1837,7 +1837,7 @@
   },
   "hk_205": {
     "title": "War of Disinformation",
-    "body": "The punishments there are organized with precision.",
+    "body": "Lies spread so quickly that mortals no longer know what to believe.",
     "choices": {
       "A": "Feed every side with false revelations.",
       "B": "Promote a few 'reasonable' voices to preserve structure.",
@@ -1990,7 +1990,7 @@
   },
   "hk_222": {
     "title": "Cruelty as Entertainment",
-    "body": "They want to organize suffering in a more logical way.",
+    "body": "Human suffering becomes a spectacle consumed to entertain, shock, or drive ratings.",
     "choices": {
       "A": "Push mortals to become completely desensitized.",
       "B": "Support strict rules on images that are barely enforced.",
@@ -2188,7 +2188,7 @@
   },
   "hk_244": {
     "title": "Chemical Fog",
-    "body": "Regrets pile up endlessly there.",
+    "body": "A chemical haze from factories and accidents poisons the air, bodies, and minds.",
     "choices": {
       "A": "Make this use so ordinary that no real thought remains.",
       "B": "Regulate certain products while letting the others thrive.",
@@ -2431,7 +2431,7 @@
   },
   "hk_271": {
     "title": "Heavenly Procession",
-    "body": "Some try to make punishments more controlled.",
+    "body": "A procession from Paradise briefly crosses the sky above your kingdom.",
     "choices": {
       "A": "Try to capture a few souls as they pass.",
       "B": "Let them pass to avoid a major incident.",
@@ -2575,7 +2575,7 @@
   },
   "hk_287": {
     "title": "Recovered Souls",
-    "body": "Punishment must become clear again for everyone.",
+    "body": "Paradise manages to pull back certain souls at the last moment, just before their final fall into your realm.",
     "choices": {
       "A": "Refuse any reduction of sentence.",
       "B": "Accept a tiny quota in exchange for official concessions.",
@@ -2701,7 +2701,7 @@
   },
   "hk_301": {
     "title": "Revolt of the Scribes",
-    "body": "Suffering is no longer effective enough.",
+    "body": "Your scribes are revolting: too many files, too many souls, and no one can keep up anymore.",
     "choices": {
       "A": "Demand that they write until their quills break.",
       "B": "Reorganize the administration by creating new offices.",
@@ -2732,7 +2732,7 @@
     "choices": {
       "A": "Approve it: more pain, more shattered souls.",
       "B": "Frame it with strict rules.",
-      "C": "Test it on the surface first, in secret."
+      "C": "Test it on mortals first, in secret."
     }
   },
   "hk_305": {
@@ -2768,7 +2768,7 @@
     "choices": {
       "A": "Dive into the chaos to increase your harvest.",
       "B": "Suspend all judgment and sort everything by hand.",
-      "C": "Let the storm blow all the way to the borders of the surface."
+      "C": "Let the storm blow all the way into the world of the living."
     }
   },
   "hk_309": {
@@ -2876,7 +2876,7 @@
     "choices": {
       "A": "Transfer new souls there to revive activity.",
       "B": "Completely redesign this region around a new concept.",
-      "C": "Use this emptiness as an experimental zone for the surface."
+      "C": "Use this empty region as a testing zone before acting among the living."
     }
   },
   "hk_321": {
@@ -3308,7 +3308,7 @@
     "choices": {
       "A": "Force souls to relive their missed choices forever.",
       "B": "Index those decisions to refine your future manipulations.",
-      "C": "Let this hall haunt living leaders."
+      "C": "Let living leaders see this hall in nightmares."
     }
   },
   "hk_369": {
@@ -3596,7 +3596,7 @@
     "choices": {
       "A": "Ignore the numbers and continue in excess.",
       "B": "Study every piece of data to optimize your order.",
-      "C": "Decide to direct more of your efforts toward the surface."
+      "C": "Decide to direct more of your efforts toward the world of the living."
     }
   }
 }
