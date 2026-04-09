@@ -1,4 +1,4 @@
-{
+﻿{
   "nw_001": {
     "title": "Pelabuhan alami",
     "body": "Sebuah teluk yang sempurna bisa menjadi gerbang masuk kita atau hanya tempat singgah.",
@@ -28,7 +28,7 @@
   },
   "nw_004": {
     "title": "Tambang tersembunyi",
-    "body": "Seorang pemandu berbicara tentang tambang jauh dari pantai dan dekat dengan masalah.",
+    "body": "Seorang pemandu berbicara tentang sebuah tambang di pedalaman, di daerah berbahaya.",
     "choices": {
       "A": "Kirim tentara",
       "B": "Kirim para penambang",
@@ -46,7 +46,7 @@
   },
   "nw_006": {
     "title": "Awak kapal yang rakus",
-    "body": "Para pelaut ingin jamuan sungguhan dan bukan lagi ikan muram.",
+    "body": "Para pelaut meminta makanan yang layak, bukan ikan yang disajikan setiap hari.",
     "choices": {
       "A": "Bayar jamuan besar",
       "B": "Janji lebih baik nanti",
@@ -136,11 +136,11 @@
   },
   "nw_016": {
     "title": "Bangsawan tak berguna",
-    "body": "Seorang bangsawan menuntut pengawalan untuk mengunjungi pantai kosong dengan gaya.",
+    "body": "Seorang bangsawan menuntut pengawalan untuk mengunjungi pantai terpencil.",
     "choices": {
       "A": "Berikan dia pengawalan",
       "B": "Biarkan dia menunggu",
-      "C": "Kirim dia bersama juru masak"
+      "C": "Kirim dia dengan pengawalan kecil"
     }
   },
   "nw_017": {
@@ -172,7 +172,7 @@
   },
   "nw_020": {
     "title": "Pelaut pencuri",
-    "body": "Seorang pelaut yang pendiam punya kantong lebih berat daripada gajinya.",
+    "body": "Seorang pelaut dicurigai mencuri dari persediaan.",
     "choices": {
       "A": "Hukum di depan umum",
       "B": "Beri dia kesempatan",
@@ -181,7 +181,7 @@
   },
   "nw_021": {
     "title": "Kuil tepi pantai",
-    "body": "Sebuah kuil kecil menjaga pelabuhan dan tatapan desa.",
+    "body": "Sebuah kuil kecil dekat pelabuhan penting bagi desa.",
     "choices": {
       "A": "Hormati secara terbuka",
       "B": "Gunakan sebagai gudang",
@@ -208,7 +208,7 @@
   },
   "nw_024": {
     "title": "Rumor pemberontakan",
-    "body": "Bisikan berlari lebih cepat daripada sepatu bot kita di jalan-jalan pelabuhan.",
+    "body": "Rumor pemberontakan mulai menyebar di pelabuhan.",
     "choices": {
       "A": "Kirim penjaga",
       "B": "Turunkan satu pajak",
@@ -217,7 +217,7 @@
   },
   "nw_025": {
     "title": "Kas kerajaan kosong",
-    "body": "Kas benteng mengeluarkan suara kosong yang sangat meyakinkan.",
+    "body": "Kas benteng hampir kosong.",
     "choices": {
       "A": "Tarik pajak baru",
       "B": "Jual persediaan",
@@ -343,7 +343,7 @@
   },
   "nw_039": {
     "title": "Jalan bukit",
-    "body": "Sebuah jalan ke bukit membuka perdagangan dan menutup tidur.",
+    "body": "Jalan menuju perbukitan akan membantu perdagangan, tetapi juga meningkatkan risiko serangan.",
     "choices": {
       "A": "Amankan jalan",
       "B": "Pajaki jalan",
@@ -352,7 +352,7 @@
   },
   "nw_040": {
     "title": "Rum selundupan",
-    "body": "Sebuah tong bergerak di malam hari lebih cepat daripada dokumen kerajaan.",
+    "body": "Sebuah tong rum selundupan dipindahkan diam-diam pada malam hari.",
     "choices": {
       "A": "Sita rum itu",
       "B": "Jual sendiri rum itu",
@@ -424,7 +424,7 @@
   },
   "nw_048": {
     "title": "Musim hujan",
-    "body": "Hujan bisa merusak jalan atau mencuci kesalahan kita, tergantung suasana.",
+    "body": "Musim hujan dapat memblokir jalan dan memperlambat seluruh pelabuhan.",
     "choices": {
       "A": "Perkuat jalan",
       "B": "Simpan stok dan menunggu",
@@ -433,7 +433,7 @@
   },
   "nw_049": {
     "title": "Kain berwarna",
-    "body": "Kain lokal membuat kepala menoleh dan pikiran untung bergerak.",
+    "body": "Kain lokal yang sangat dicari bisa menghasilkan keuntungan besar.",
     "choices": {
       "A": "Beli semua stok",
       "B": "Pajaki penjualan",
@@ -442,7 +442,7 @@
   },
   "nw_050": {
     "title": "Penanda rusak",
-    "body": "Penanda di tanjung jatuh. Laut sangat suka detail seperti itu.",
+    "body": "Penanda di tanjung telah roboh, sehingga pintu masuk teluk menjadi lebih berbahaya.",
     "choices": {
       "A": "Tegakkan kembali cepat",
       "B": "Suruh kapal membayar",
@@ -622,7 +622,7 @@
   },
   "nw_070": {
     "title": "Akuntan kreatif",
-    "body": "Akuntan itu selalu menemukan angka yang tepat untuk masalah yang salah.",
+    "body": "Akuntan memanipulasi angka untuk menyembunyikan beberapa masalah.",
     "choices": {
       "A": "Pertahankan karena berguna",
       "B": "Ganti dia",
@@ -721,7 +721,7 @@
   },
   "nw_081": {
     "title": "Kantor pelabuhan",
-    "body": "Kantor pelabuhan tenggelam dalam kertas dan sangat kurang efisien.",
+    "body": "Kantor pelabuhan kewalahan oleh dokumen dan bekerja dengan buruk.",
     "choices": {
       "A": "Bayar lebih banyak juru tulis",
       "B": "Sederhanakan aturan",
@@ -739,7 +739,7 @@
   },
   "nw_083": {
     "title": "Perusahaan saingan",
-    "body": "Perusahaan Eropa lain menawarkan kesepakatan yang berbau jebakan sopan.",
+    "body": "Perusahaan Eropa lain menawarkan kesepakatan yang tampak berisiko.",
     "choices": {
       "A": "Tandatangani perjanjian singkat",
       "B": "Jual mereka hak lewat",
@@ -829,7 +829,7 @@
   },
   "nw_093": {
     "title": "Peti hilang",
-    "body": "Sebuah peti hilang di antara dermaga, benteng, dan tatapan yang sangat polos.",
+    "body": "Sebuah peti hilang antara dermaga dan benteng, tetapi tidak ada yang mau mengaku.",
     "choices": {
       "A": "Periksa semua orang",
       "B": "Tawarkan hadiah",
@@ -910,7 +910,7 @@
   },
   "nw_102": {
     "title": "Ikan raksasa",
-    "body": "Seekor ikan besar menghalangi pintu masuk pelabuhan seolah-olah ia membayar sewa.",
+    "body": "Seekor ikan yang sangat besar menghalangi pintu masuk pelabuhan.",
     "choices": {
       "A": "Usir bersama-sama",
       "B": "Jual dalam potongan",
@@ -1000,7 +1000,7 @@
   },
   "nw_112": {
     "title": "Kayu harum",
-    "body": "Kayu langka berbau begitu enak hingga bahkan harta kerajaan memperhatikannya.",
+    "body": "Kayu langka ini sangat berharga dan sudah menarik perhatian perbendaharaan.",
     "choices": {
       "A": "Jual jauh",
       "B": "Cadangkan untuk kapal",
@@ -1045,7 +1045,7 @@
   },
   "nw_117": {
     "title": "Jembatan tali",
-    "body": "Jembatan tali mempersingkat jalan dan memperpanjang doa.",
+    "body": "Jembatan tali akan mempersingkat jalan, tetapi tetap berbahaya.",
     "choices": {
       "A": "Perkuat jembatan",
       "B": "Tarik biaya lewat",
@@ -1153,7 +1153,7 @@
   },
   "nw_129": {
     "title": "Atap benteng",
-    "body": "Atap benteng bocor dengan rasa drama yang nyata.",
+    "body": "Atap benteng bocor di mana-mana.",
     "choices": {
       "A": "Buat ulang dengan kayu baru",
       "B": "Perbaiki yang paling parah saja",
@@ -1189,7 +1189,7 @@
   },
   "nw_133": {
     "title": "Penginapan dermaga",
-    "body": "Sebuah penginapan buka dan menjanjikan istirahat, rumor, dan tagihan yang lunak.",
+    "body": "Sebuah penginapan dibuka di pelabuhan dan diperkirakan akan menarik pelancong, rumor, dan pengeluaran.",
     "choices": {
       "A": "Pajaki penginapan",
       "B": "Inapkan tamu kita di sana",
@@ -1378,7 +1378,7 @@
   },
   "nw_154": {
     "title": "Lada diam-diam",
-    "body": "Lada melewati bawah dermaga seolah-olah punya kaki.",
+    "body": "Lada selundupan dipindahkan diam-diam di bawah dermaga.",
     "choices": {
       "A": "Perketat pemeriksaan",
       "B": "Kurangi pajak",
@@ -1540,7 +1540,7 @@
   },
   "nw_172": {
     "title": "Keranjang rusak",
-    "body": "Keranjang pasar membuat nanas lebih cepat daripada penjualnya.",
+    "body": "Keranjang di pasar terlalu rusak untuk membawa nanas dengan baik.",
     "choices": {
       "A": "Beli keranjang baru",
       "B": "Anyam di tempat",
@@ -1621,7 +1621,7 @@
   },
   "nw_181": {
     "title": "Timbangan palsu",
-    "body": "Beberapa timbangan pasar lebih ringan daripada kebenaran.",
+    "body": "Beberapa timbangan di pasar sudah dimanipulasi.",
     "choices": {
       "A": "Sita timbangan palsu",
       "B": "Buat timbangan umum",
@@ -1828,7 +1828,7 @@
   },
   "nw_204": {
     "title": "Peti tanpa nama",
-    "body": "Sebuah peti datang tanpa tanda, tanpa kertas, dan dengan sangat percaya diri.",
+    "body": "Sebuah peti datang tanpa tanda, tanpa dokumen, dan tanpa penjelasan.",
     "choices": {
       "A": "Buka petinya",
       "B": "Pajaki",
@@ -2305,7 +2305,7 @@
   },
   "nw_257": {
     "title": "Tong yang menggelinding",
-    "body": "Sebuah tong meluncur sendiri di dermaga dan tak ada yang mengucapkan terima kasih kepadanya.",
+    "body": "Sebuah tong meluncur sendiri di dermaga karena tidak dipasang dengan baik.",
     "choices": {
       "A": "Blokir lereng",
       "B": "Tumpuk dengan cara lain",
@@ -2467,7 +2467,7 @@
   },
   "nw_275": {
     "title": "Malam tanpa ronda",
-    "body": "Ronda malam kadang terlupa dengan sendirinya.",
+    "body": "Patroli malam kadang-kadang terlupakan.",
     "choices": {
       "A": "Gandakan ronda",
       "B": "Bayar bonus malam",
@@ -2494,7 +2494,7 @@
   },
   "nw_278": {
     "title": "Pintu setengah terbuka",
-    "body": "Pintu gudang sering dibiarkan setengah terbuka karena kebiasaan atau kemalasan.",
+    "body": "Pintu gudang sering dibiarkan setengah terbuka karena kebiasaan atau kelalaian.",
     "choices": {
       "A": "Ganti kunci",
       "B": "Pasang pengawas",
@@ -2530,7 +2530,7 @@
   },
   "nw_282": {
     "title": "Bagal lelah",
-    "body": "Bagal gudang tak lagi bergerak kecuali dengan pujian.",
+    "body": "Bagal gudang hampir tidak bisa bergerak lagi.",
     "choices": {
       "A": "Ganti bagal",
       "B": "Kurangi bebannya",
@@ -2710,7 +2710,7 @@
   },
   "nw_302": {
     "title": "Hujan di buku catatan",
-    "body": "Kertas-kertas di kantor meminum hujan dengan terlalu antusias.",
+    "body": "Dokumen di kantor terkena hujan dan rusak.",
     "choices": {
       "A": "Salin di tempat kering",
       "B": "Pindahkan kantor",
@@ -2719,7 +2719,7 @@
   },
   "nw_303": {
     "title": "Teluk kecil tenang",
-    "body": "Sebuah teluk kecil yang tenang bisa berguna lebih baik daripada tidurnya.",
+    "body": "Sebuah teluk kecil yang tenang bisa dimanfaatkan dengan lebih baik.",
     "choices": {
       "A": "Buat dermaga kecil di sana",
       "B": "Cadangkan untuk militer",
@@ -2800,7 +2800,7 @@
   },
   "nw_312": {
     "title": "Batu berguna",
-    "body": "Sebuah batu besar di tepi pantai tampak ingin bekerja untuk kita.",
+    "body": "Sebuah batu besar di tepi air bisa diatur agar berguna.",
     "choices": {
       "A": "Pahatkan tangga di sana",
       "B": "Pasang pos di sana",
@@ -3115,7 +3115,7 @@
   },
   "nw_347": {
     "title": "Pasar beratap",
-    "body": "Pasar telah lama bermimpi punya atap sejak musim hujan.",
+    "body": "Pasar sudah lama membutuhkan atap.",
     "choices": {
       "A": "Bangun",
       "B": "Mulai kecil",
@@ -3295,7 +3295,7 @@
   },
   "nw_367": {
     "title": "Batu halus",
-    "body": "Batu poles sedikit licin dan jauh lebih murah daripada jatuh.",
+    "body": "Batu yang dipoles tidak terlalu licin dan biayanya lebih murah daripada cedera.",
     "choices": {
       "A": "Paving pintu masuk",
       "B": "Jual dalam balok",
@@ -3466,7 +3466,7 @@
   },
   "nw_386": {
     "title": "Tanah datar",
-    "body": "Tanah yang sangat datar membuat gudang dan pasar bermimpi.",
+    "body": "Tanah yang datar akan ideal untuk gudang atau pasar.",
     "choices": {
       "A": "Buat gudang di sana",
       "B": "Adakan pasar di sana",

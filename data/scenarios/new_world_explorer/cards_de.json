@@ -1,4 +1,4 @@
-{
+﻿{
   "nw_001": {
     "title": "Natürlicher Hafen",
     "body": "Eine perfekte Bucht kann unser Eingangstor oder nur ein einfacher Halt werden.",
@@ -28,7 +28,7 @@
   },
   "nw_004": {
     "title": "Versteckte Mine",
-    "body": "Ein Führer spricht von einer Mine fern der Küste und nah am Ärger.",
+    "body": "Ein Führer berichtet von einer Mine im Landesinneren, in einer gefährlichen Gegend.",
     "choices": {
       "A": "Soldaten schicken",
       "B": "Bergleute schicken",
@@ -46,7 +46,7 @@
   },
   "nw_006": {
     "title": "Hungrige Besatzung",
-    "body": "Die Seeleute wollen ein richtiges Festmahl und nicht schon wieder traurigen Fisch.",
+    "body": "Die Seeleute verlangen eine richtige Mahlzeit statt des Fisches, der jeden Tag serviert wird.",
     "choices": {
       "A": "Ein großes Essen bezahlen",
       "B": "Später etwas Besseres versprechen",
@@ -136,11 +136,11 @@
   },
   "nw_016": {
     "title": "Nutzloser Adliger",
-    "body": "Ein Adliger verlangt eine Eskorte, um einen leeren Strand mit Stil zu besuchen.",
+    "body": "Ein Adliger verlangt eine Eskorte, um einen abgelegenen Strand zu besuchen.",
     "choices": {
       "A": "Ihm eine Eskorte geben",
       "B": "Ihn warten lassen",
-      "C": "Ihn mit dem Koch schicken"
+      "C": "Ihn mit einer kleinen Eskorte schicken"
     }
   },
   "nw_017": {
@@ -172,7 +172,7 @@
   },
   "nw_020": {
     "title": "Diebischer Matrose",
-    "body": "Ein unauffälliger Matrose hat schwerere Taschen als sein Lohn.",
+    "body": "Ein Matrose wird verdächtigt, aus den Vorräten zu stehlen.",
     "choices": {
       "A": "Öffentlich bestrafen",
       "B": "Ihm eine Chance lassen",
@@ -181,7 +181,7 @@
   },
   "nw_021": {
     "title": "Tempel am Ufer",
-    "body": "Ein kleiner Tempel wacht über den Hafen und über die Blicke des Dorfes.",
+    "body": "Ein kleiner Tempel nahe dem Hafen ist für das Dorf wichtig.",
     "choices": {
       "A": "Ihn öffentlich respektieren",
       "B": "Ihn als Lager nutzen",
@@ -208,7 +208,7 @@
   },
   "nw_024": {
     "title": "Gerücht einer Revolte",
-    "body": "Gemurmel läuft in den Straßen des Hafens schneller als unsere Stiefel.",
+    "body": "Gerüchte über einen Aufstand verbreiten sich im Hafen.",
     "choices": {
       "A": "Die Wache schicken",
       "B": "Eine Steuer senken",
@@ -217,7 +217,7 @@
   },
   "nw_025": {
     "title": "Leere königliche Kasse",
-    "body": "Die Kasse des Forts macht ein sehr überzeugendes leeres Geräusch.",
+    "body": "Die Kasse des Forts ist fast leer.",
     "choices": {
       "A": "Eine neue Steuer erheben",
       "B": "Bestände verkaufen",
@@ -343,7 +343,7 @@
   },
   "nw_039": {
     "title": "Straße der Hügel",
-    "body": "Eine Straße in die Hügel öffnet den Handel und schließt den Schlaf.",
+    "body": "Eine Straße zu den Hügeln würde dem Handel helfen, aber das Angriffsrisiko erhöhen.",
     "choices": {
       "A": "Die Straße sichern",
       "B": "Die Straße besteuern",
@@ -352,7 +352,7 @@
   },
   "nw_040": {
     "title": "Schmuggelrum",
-    "body": "Ein Fass zieht schneller durch die Nacht als ein königliches Dokument.",
+    "body": "Ein Fass Schmuggelrum wird nachts heimlich transportiert.",
     "choices": {
       "A": "Den Rum beschlagnahmen",
       "B": "Den Rum selbst verkaufen",
@@ -424,7 +424,7 @@
   },
   "nw_048": {
     "title": "Regenzeit",
-    "body": "Der Regen kann die Straßen ruinieren oder unsere Fehler wegwaschen, je nach Laune.",
+    "body": "Die Regenzeit kann die Straßen blockieren und den ganzen Hafen verlangsamen.",
     "choices": {
       "A": "Die Straßen verstärken",
       "B": "Vorräte lagern und warten",
@@ -433,7 +433,7 @@
   },
   "nw_049": {
     "title": "Bunter Stoff",
-    "body": "Ein lokaler Stoff verdreht Köpfe und Gewinnideen.",
+    "body": "Ein sehr begehrter lokaler Stoff könnte viel Gewinn bringen.",
     "choices": {
       "A": "Den gesamten Bestand kaufen",
       "B": "Die Verkäufe besteuern",
@@ -442,7 +442,7 @@
   },
   "nw_050": {
     "title": "Defekte Bake",
-    "body": "Die Bake am Kap ist umgestürzt. Das Meer liebt solche Kleinigkeiten.",
+    "body": "Die Bake am Kap ist umgestürzt, wodurch die Einfahrt in die Bucht gefährlicher wird.",
     "choices": {
       "A": "Sie schnell wieder aufrichten",
       "B": "Die Schiffe zahlen lassen",
@@ -622,7 +622,7 @@
   },
   "nw_070": {
     "title": "Kreativer Buchhalter",
-    "body": "Der Buchhalter findet immer die richtige Zahl für das falsche Problem.",
+    "body": "Der Buchhalter manipuliert die Zahlen, um bestimmte Probleme zu verbergen.",
     "choices": {
       "A": "Ihn nützlich behalten",
       "B": "Ihn ersetzen",
@@ -721,7 +721,7 @@
   },
   "nw_081": {
     "title": "Hafenbüro",
-    "body": "Das Hafenbüro versinkt unter Papieren und kaum unter Effizienz.",
+    "body": "Das Hafenbüro ist von Papierkram überlastet und funktioniert schlecht.",
     "choices": {
       "A": "Mehr Schreiber bezahlen",
       "B": "Die Regeln vereinfachen",
@@ -739,7 +739,7 @@
   },
   "nw_083": {
     "title": "Rivalisierende Kompanie",
-    "body": "Eine andere europäische Kompanie bietet ein Abkommen an, das nach höflicher Falle riecht.",
+    "body": "Eine andere europäische Gesellschaft bietet ein Abkommen an, das riskant wirkt.",
     "choices": {
       "A": "Einen kurzen Pakt schließen",
       "B": "Ihnen einen Durchgang verkaufen",
@@ -829,7 +829,7 @@
   },
   "nw_093": {
     "title": "Verschwundene Truhe",
-    "body": "Eine Truhe ist zwischen Kai, Fort und sehr unschuldigen Blicken verschwunden.",
+    "body": "Eine Truhe ist zwischen dem Kai und dem Fort verschwunden, aber niemand will etwas zugeben.",
     "choices": {
       "A": "Alle durchsuchen",
       "B": "Eine Belohnung anbieten",
@@ -910,7 +910,7 @@
   },
   "nw_102": {
     "title": "Riesenfisch",
-    "body": "Ein riesiger Fisch blockiert die Hafeneinfahrt, als würde er Miete zahlen.",
+    "body": "Ein sehr großer Fisch blockiert die Einfahrt zum Hafen.",
     "choices": {
       "A": "Ihn in der Gruppe vertreiben",
       "B": "Ihn stückweise verkaufen",
@@ -1000,7 +1000,7 @@
   },
   "nw_112": {
     "title": "Duftendes Holz",
-    "body": "Ein seltenes Holz duftet so gut, dass sogar der Schatzmeister es bemerkt.",
+    "body": "Ein seltenes Holz ist viel wert und zieht bereits die Aufmerksamkeit der Schatzkammer auf sich.",
     "choices": {
       "A": "Es weit entfernt verkaufen",
       "B": "Es für Schiffe reservieren",
@@ -1045,7 +1045,7 @@
   },
   "nw_117": {
     "title": "Seilbrücke",
-    "body": "Eine Seilbrücke verkürzt den Weg und verlängert die Gebete.",
+    "body": "Eine Hängebrücke würde den Weg verkürzen, bliebe aber gefährlich.",
     "choices": {
       "A": "Sie verstärken",
       "B": "Den Übergang bezahlen lassen",
@@ -1153,7 +1153,7 @@
   },
   "nw_129": {
     "title": "Dach des Forts",
-    "body": "Das Dach des Forts tropft mit echtem Sinn für Dramatik.",
+    "body": "Das Dach des Forts leckt überall.",
     "choices": {
       "A": "Es mit neuem Holz erneuern",
       "B": "Nur das Schlimmste reparieren",
@@ -1189,7 +1189,7 @@
   },
   "nw_133": {
     "title": "Herberge am Kai",
-    "body": "Eine Herberge öffnet und verspricht Ruhe, Gerüchte und weiche Rechnungen.",
+    "body": "Im Hafen eröffnet ein Gasthaus, das Reisende, Gerüchte und Ausgaben anziehen dürfte.",
     "choices": {
       "A": "Sie besteuern",
       "B": "Unsere Besucher dort unterbringen",
@@ -1378,7 +1378,7 @@
   },
   "nw_154": {
     "title": "Unauffälliger Pfeffer",
-    "body": "Pfeffer geht unter dem Kai durch, als hätte er Beine.",
+    "body": "Geschmuggelter Pfeffer wird unauffällig unter dem Kai transportiert.",
     "choices": {
       "A": "Die Durchsuchungen verstärken",
       "B": "Weniger stark besteuern",
@@ -1540,7 +1540,7 @@
   },
   "nw_172": {
     "title": "Kaputte Körbe",
-    "body": "Die Körbe des Marktes machen die Ananas schneller als den Verkäufer.",
+    "body": "Die Körbe auf dem Markt sind zu beschädigt, um Ananas richtig zu transportieren.",
     "choices": {
       "A": "Neue Körbe kaufen",
       "B": "Vor Ort flechten lassen",
@@ -1621,7 +1621,7 @@
   },
   "nw_181": {
     "title": "Gefälschte Gewichte",
-    "body": "Manche Marktgewichte sind leichter als die Wahrheit.",
+    "body": "Einige Gewichte auf dem Markt sind manipuliert.",
     "choices": {
       "A": "Die falschen Gewichte beschlagnahmen",
       "B": "Eine öffentliche Waage schaffen",
@@ -1828,7 +1828,7 @@
   },
   "nw_204": {
     "title": "Kiste ohne Namen",
-    "body": "Eine Kiste kommt ohne Zeichen, ohne Papiere und mit viel Dreistigkeit an.",
+    "body": "Eine Kiste kommt ohne Kennzeichnung, ohne Papiere und ohne Erklärung an.",
     "choices": {
       "A": "Sie öffnen",
       "B": "Sie besteuern",
@@ -2305,7 +2305,7 @@
   },
   "nw_257": {
     "title": "Rollendes Fass",
-    "body": "Ein Fass rollt allein den Kai hinunter, und niemand hat sich bei ihm bedankt.",
+    "body": "Ein Fass rollt allein den Kai hinunter, weil es schlecht gesichert war.",
     "choices": {
       "A": "Die Hänge blockieren",
       "B": "Anders stapeln",
@@ -2467,7 +2467,7 @@
   },
   "nw_275": {
     "title": "Nacht ohne Runde",
-    "body": "Die Nachtwache vergisst sich manchmal ganz von allein.",
+    "body": "Die Nachtwache wird manchmal vergessen.",
     "choices": {
       "A": "Die Runde verdoppeln",
       "B": "Eine Nachtprämie zahlen",
@@ -2494,7 +2494,7 @@
   },
   "nw_278": {
     "title": "Halb offene Tür",
-    "body": "Die Tür des Lagers bleibt aus Gewohnheit oder Faulheit oft halb offen.",
+    "body": "Die Lagertür bleibt aus Gewohnheit oder Nachlässigkeit oft halb offen.",
     "choices": {
       "A": "Das Schloss wechseln",
       "B": "Einen Aufseher hinstellen",
@@ -2530,7 +2530,7 @@
   },
   "nw_282": {
     "title": "Müdes Maultier",
-    "body": "Das Maultier des Lagers bewegt sich nur noch durch Lob vorwärts.",
+    "body": "Das Maultier des Lagers kommt kaum noch voran.",
     "choices": {
       "A": "Es ersetzen",
       "B": "Es entlasten",
@@ -2710,7 +2710,7 @@
   },
   "nw_302": {
     "title": "Regen auf den Registern",
-    "body": "Die Papiere des Büros trinken den Regen mit zu viel Begeisterung.",
+    "body": "Die Unterlagen im Büro werden vom Regen durchnässt und beschädigt.",
     "choices": {
       "A": "Im Trockenen kopieren",
       "B": "Das Büro verlegen",
@@ -2719,7 +2719,7 @@
   },
   "nw_303": {
     "title": "Ruhige Bucht",
-    "body": "Eine ruhige Bucht könnte nützlicher sein, als sie schläft.",
+    "body": "Eine ruhige Bucht könnte besser genutzt werden.",
     "choices": {
       "A": "Dort einen kleinen Kai bauen",
       "B": "Sie militärisch behalten",
@@ -2800,7 +2800,7 @@
   },
   "nw_312": {
     "title": "Nützlicher Felsen",
-    "body": "Ein großer Felsen am Ufer scheint für uns arbeiten zu wollen.",
+    "body": "Ein großer Felsen am Wasser könnte nutzbar gemacht werden.",
     "choices": {
       "A": "Stufen hineinschlagen",
       "B": "Dort einen Posten aufstellen",
@@ -3115,7 +3115,7 @@
   },
   "nw_347": {
     "title": "Überdachter Markt",
-    "body": "Der Markt träumt seit vielen nassen Monden von einem Dach.",
+    "body": "Der Markt braucht schon seit Langem ein Dach.",
     "choices": {
       "A": "Es bauen",
       "B": "Klein anfangen",
@@ -3295,7 +3295,7 @@
   },
   "nw_367": {
     "title": "Glatter Stein",
-    "body": "Ein polierter Stein rutscht wenig und kostet noch weniger als ein Sturz.",
+    "body": "Ein glatter Stein rutscht wenig und kostet weniger als eine Verletzung.",
     "choices": {
       "A": "Den Eingang pflastern",
       "B": "Ihn in Blöcken verkaufen",
@@ -3466,7 +3466,7 @@
   },
   "nw_386": {
     "title": "Ebenes Gelände",
-    "body": "Ein schön flaches Gelände lässt von Lagerung und Märkten träumen.",
+    "body": "Ein ebenes Gelände wäre ideal für ein Lager oder einen Markt.",
     "choices": {
       "A": "Dort ein Lager anlegen",
       "B": "Dort Markt halten",

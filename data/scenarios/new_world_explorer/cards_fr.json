@@ -1,4 +1,4 @@
-{
+﻿{
   "nw_001": {
     "title": "Port naturel",
     "body": "Une baie parfaite peut devenir notre porte d’entrée ou un simple arrêt.",
@@ -28,7 +28,7 @@
   },
   "nw_004": {
     "title": "Mine cachée",
-    "body": "Un guide parle d’une mine loin du rivage et près des ennuis.",
+    "body": "Un guide parle d’une mine à l’intérieur des terres, dans une zone dangereuse.",
     "choices": {
       "A": "Envoyer des soldats",
       "B": "Envoyer une équipe d’extraction",
@@ -46,7 +46,7 @@
   },
   "nw_006": {
     "title": "Équipage gourmand",
-    "body": "Les marins veulent un vrai festin et pas encore du poisson triste.",
+    "body": "Les marins réclament un vrai repas au lieu du poisson servi tous les jours.",
     "choices": {
       "A": "Payer un grand repas",
       "B": "Promettre mieux plus tard",
@@ -103,7 +103,7 @@
     "body": "Le messager royal tombe de cheval avec nos ordres et notre prestige.",
     "choices": {
       "A": "Soigner le messager",
-      "B": "Lire les ordres nous mêmes",
+      "B": "Lire les ordres nous-mêmes",
       "C": "Écrire un autre rapport"
     }
   },
@@ -136,11 +136,11 @@
   },
   "nw_016": {
     "title": "Noble inutile",
-    "body": "Un noble exige une escorte pour visiter une plage vide avec style.",
+    "body": "Un noble exige une escorte pour visiter une plage isolée.",
     "choices": {
       "A": "Lui donner une escorte",
       "B": "Le faire attendre",
-      "C": "L’envoyer avec le cuisinier"
+      "C": "L’envoyer avec une petite escorte"
     }
   },
   "nw_017": {
@@ -172,7 +172,7 @@
   },
   "nw_020": {
     "title": "Marin voleur",
-    "body": "Un marin discret a des poches plus lourdes que son salaire.",
+    "body": "Un marin est soupçonné de voler dans les réserves.",
     "choices": {
       "A": "Punir en public",
       "B": "Lui laisser une chance",
@@ -181,7 +181,7 @@
   },
   "nw_021": {
     "title": "Temple du rivage",
-    "body": "Un petit temple veille sur le port et sur les regards du village.",
+    "body": "Un petit temple près du port est important pour le village.",
     "choices": {
       "A": "Le respecter publiquement",
       "B": "L’utiliser comme dépôt",
@@ -208,7 +208,7 @@
   },
   "nw_024": {
     "title": "Rumeur de révolte",
-    "body": "Des murmures courent plus vite que nos bottes dans les rues du port.",
+    "body": "Des rumeurs de révolte se répandent dans le port.",
     "choices": {
       "A": "Envoyer la garde",
       "B": "Baisser une taxe",
@@ -217,7 +217,7 @@
   },
   "nw_025": {
     "title": "Caisse royale vide",
-    "body": "La caisse du fort fait un bruit de vide très convaincant.",
+    "body": "La caisse du fort est presque vide.",
     "choices": {
       "A": "Lever un nouvel impôt",
       "B": "Vendre du stock",
@@ -343,7 +343,7 @@
   },
   "nw_039": {
     "title": "Route des collines",
-    "body": "Une route vers les collines ouvre le commerce et ferme le sommeil.",
+    "body": "Une route vers les collines aiderait le commerce, mais augmenterait les risques d’attaque.",
     "choices": {
       "A": "Sécuriser la route",
       "B": "Taxer la route",
@@ -352,10 +352,10 @@
   },
   "nw_040": {
     "title": "Rhum de contrebande",
-    "body": "Un tonneau passe la nuit plus vite qu’un document royal.",
+    "body": "Un tonneau de rhum de contrebande circule en secret pendant la nuit.",
     "choices": {
       "A": "Confisquer le rhum",
-      "B": "Vendre le rhum nous mêmes",
+      "B": "Vendre le rhum nous-mêmes",
       "C": "Laisser filer contre une faveur"
     }
   },
@@ -424,7 +424,7 @@
   },
   "nw_048": {
     "title": "Saison des pluies",
-    "body": "La pluie peut ruiner les routes ou laver nos erreurs, selon l’humeur.",
+    "body": "La saison des pluies peut bloquer les routes et ralentir tout le port.",
     "choices": {
       "A": "Renforcer les routes",
       "B": "Stocker et patienter",
@@ -433,7 +433,7 @@
   },
   "nw_049": {
     "title": "Tissu coloré",
-    "body": "Un tissu local fait tourner les têtes et les idées de marge.",
+    "body": "Un tissu local très recherché pourrait rapporter gros.",
     "choices": {
       "A": "Acheter tout le stock",
       "B": "Taxer les ventes",
@@ -442,7 +442,7 @@
   },
   "nw_050": {
     "title": "Balise cassée",
-    "body": "La balise du cap est tombée. La mer adore ce genre de détail.",
+    "body": "La balise du cap est tombée, ce qui rend l’entrée de la baie plus dangereuse.",
     "choices": {
       "A": "La relever vite",
       "B": "Faire payer les navires",
@@ -597,7 +597,7 @@
     "title": "Frontière floue",
     "body": "La frontière du nord dépend surtout de qui parle le plus fort.",
     "choices": {
-      "A": "Tracer la frontière nous mêmes",
+      "A": "Tracer la frontière nous-mêmes",
       "B": "Inviter les chefs à tracer",
       "C": "Laisser flou pour l’instant"
     }
@@ -622,7 +622,7 @@
   },
   "nw_070": {
     "title": "Comptable créatif",
-    "body": "Le comptable trouve toujours le bon chiffre pour le mauvais problème.",
+    "body": "Le comptable manipule les chiffres pour cacher certains problèmes.",
     "choices": {
       "A": "Le garder utile",
       "B": "Le remplacer",
@@ -721,7 +721,7 @@
   },
   "nw_081": {
     "title": "Bureau du port",
-    "body": "Le bureau du port croule sous les papiers et peu sous l’efficacité.",
+    "body": "Le bureau du port est débordé par les papiers et fonctionne mal.",
     "choices": {
       "A": "Payer plus de scribes",
       "B": "Simplifier les règles",
@@ -739,7 +739,7 @@
   },
   "nw_083": {
     "title": "Compagnie rivale",
-    "body": "Une autre compagnie européenne propose un accord qui sent le piège poli.",
+    "body": "Une autre compagnie européenne propose un accord qui semble risqué.",
     "choices": {
       "A": "Signer un pacte court",
       "B": "Leur vendre un passage",
@@ -829,7 +829,7 @@
   },
   "nw_093": {
     "title": "Coffre disparu",
-    "body": "Un coffre a disparu entre le quai, le fort et des regards très innocents.",
+    "body": "Un coffre a disparu entre le quai et le fort, mais personne ne veut avouer quoi que ce soit.",
     "choices": {
       "A": "Fouiller tout le monde",
       "B": "Offrir une récompense",
@@ -869,7 +869,7 @@
     "choices": {
       "A": "Monter les contrôles",
       "B": "Baisser la taxe",
-      "C": "Fermer un oeil contre un versement"
+      "C": "Fermer un œil contre un versement"
     }
   },
   "nw_098": {
@@ -910,7 +910,7 @@
   },
   "nw_102": {
     "title": "Poisson géant",
-    "body": "Un poisson énorme bloque l’entrée du port comme s’il payait le loyer.",
+    "body": "Un très gros poisson bloque l’entrée du port.",
     "choices": {
       "A": "Le chasser en groupe",
       "B": "Le vendre en morceaux",
@@ -1000,7 +1000,7 @@
   },
   "nw_112": {
     "title": "Bois parfumé",
-    "body": "Un bois rare sent si bon que même le trésor le remarque.",
+    "body": "Un bois rare vaut cher et attire déjà l’attention du trésor.",
     "choices": {
       "A": "Le vendre au loin",
       "B": "Le réserver aux navires",
@@ -1045,7 +1045,7 @@
   },
   "nw_117": {
     "title": "Pont de corde",
-    "body": "Un pont de corde raccourcit la route et rallonge les prières.",
+    "body": "Un pont de corde raccourcirait la route, mais il resterait dangereux.",
     "choices": {
       "A": "Le renforcer",
       "B": "Faire payer le passage",
@@ -1153,7 +1153,7 @@
   },
   "nw_129": {
     "title": "Toit du fort",
-    "body": "Le toit du fort fuit avec un vrai sens du spectacle.",
+    "body": "Le toit du fort fuit de partout.",
     "choices": {
       "A": "Le refaire en bois neuf",
       "B": "Réparer juste le pire",
@@ -1189,7 +1189,7 @@
   },
   "nw_133": {
     "title": "Auberge du quai",
-    "body": "Une auberge ouvre et promet repos, rumeurs et additions molles.",
+    "body": "Une auberge ouvre au port et promet d’attirer des voyageurs, des rumeurs et des dépenses.",
     "choices": {
       "A": "La taxer",
       "B": "Y loger nos visiteurs",
@@ -1378,7 +1378,7 @@
   },
   "nw_154": {
     "title": "Poivre discret",
-    "body": "Du poivre passe sous le quai comme s’il avait des jambes.",
+    "body": "Du poivre de contrebande circule discrètement sous le quai.",
     "choices": {
       "A": "Monter les fouilles",
       "B": "Taxer moins fort",
@@ -1540,7 +1540,7 @@
   },
   "nw_172": {
     "title": "Paniers cassés",
-    "body": "Les paniers du marché rendent l’ananas plus rapide que le vendeur.",
+    "body": "Les paniers du marché sont trop abîmés pour transporter correctement les ananas.",
     "choices": {
       "A": "Acheter des paniers neufs",
       "B": "Faire tisser sur place",
@@ -1621,7 +1621,7 @@
   },
   "nw_181": {
     "title": "Poids truqués",
-    "body": "Certains poids du marché sont plus légers que la vérité.",
+    "body": "Certains poids du marché sont truqués.",
     "choices": {
       "A": "Saisir les faux poids",
       "B": "Créer une balance publique",
@@ -1828,7 +1828,7 @@
   },
   "nw_204": {
     "title": "Caisse sans nom",
-    "body": "Une caisse arrive sans marque, sans papier et avec beaucoup d’aplomb.",
+    "body": "Une caisse arrive sans marque, sans papier et sans explication.",
     "choices": {
       "A": "L’ouvrir",
       "B": "La taxer",
@@ -2272,7 +2272,7 @@
     "body": "Une petite tour offrirait une belle vue et de longues dépenses.",
     "choices": {
       "A": "La bâtir",
-      "B": "Monter une plate forme simple",
+      "B": "Monter une plateforme simple",
       "C": "Utiliser la colline"
     }
   },
@@ -2304,8 +2304,8 @@
     }
   },
   "nw_257": {
-    "title": "Barril qui roule",
-    "body": "Un barril descend le quai seul et personne ne l’a remercié.",
+    "title": "Baril qui roule",
+    "body": "Un baril descend seul le quai parce qu’il est mal calé.",
     "choices": {
       "A": "Bloquer les pentes",
       "B": "Empiler autrement",
@@ -2467,7 +2467,7 @@
   },
   "nw_275": {
     "title": "Nuit sans ronde",
-    "body": "La ronde de nuit s’oublie parfois toute seule.",
+    "body": "La ronde de nuit est parfois oubliée.",
     "choices": {
       "A": "Doubler la ronde",
       "B": "Payer une prime de nuit",
@@ -2494,7 +2494,7 @@
   },
   "nw_278": {
     "title": "Porte entrouverte",
-    "body": "La porte du dépôt reste souvent entre ouverte par habitude ou paresse.",
+    "body": "La porte du dépôt reste souvent entrouverte par habitude ou par négligence.",
     "choices": {
       "A": "Changer la serrure",
       "B": "Mettre un surveillant",
@@ -2530,7 +2530,7 @@
   },
   "nw_282": {
     "title": "Mulet fatigué",
-    "body": "Le mulet du dépôt n’avance plus qu à l’éloge.",
+    "body": "Le mulet du dépôt n’avance presque plus.",
     "choices": {
       "A": "Le remplacer",
       "B": "L’alléger",
@@ -2710,7 +2710,7 @@
   },
   "nw_302": {
     "title": "Pluie sur les registres",
-    "body": "Les papiers du bureau boivent la pluie avec trop d’enthousiasme.",
+    "body": "Les papiers du bureau prennent la pluie et s’abîment.",
     "choices": {
       "A": "Copier au sec",
       "B": "Déplacer le bureau",
@@ -2719,7 +2719,7 @@
   },
   "nw_303": {
     "title": "Crique tranquille",
-    "body": "Une crique calme pourrait servir mieux qu’elle ne dort.",
+    "body": "Une crique calme pourrait être mieux utilisée.",
     "choices": {
       "A": "Y faire un petit quai",
       "B": "La garder militaire",
@@ -2800,7 +2800,7 @@
   },
   "nw_312": {
     "title": "Rocher utile",
-    "body": "Un gros rocher au rivage semble vouloir travailler pour nous.",
+    "body": "Un gros rocher au bord de l’eau pourrait être aménagé.",
     "choices": {
       "A": "Y tailler des marches",
       "B": "Y poser un poste",
@@ -3115,7 +3115,7 @@
   },
   "nw_347": {
     "title": "Marché couvert",
-    "body": "Le marché rêve d’un toit depuis des lunes humides.",
+    "body": "Le marché a besoin d’un toit depuis longtemps.",
     "choices": {
       "A": "Le bâtir",
       "B": "Commencer petit",
@@ -3295,7 +3295,7 @@
   },
   "nw_367": {
     "title": "Pierre lisse",
-    "body": "Une pierre polie glisse peu et coûte encore moins qu’une chute.",
+    "body": "Une pierre polie glisse peu et coûte moins cher qu’une blessure.",
     "choices": {
       "A": "Paver l’entrée",
       "B": "La vendre en blocs",
@@ -3466,7 +3466,7 @@
   },
   "nw_386": {
     "title": "Terrain plat",
-    "body": "Un terrain bien plat fait rêver le stockage et les marchés.",
+    "body": "Un terrain bien plat serait idéal pour un dépôt ou un marché.",
     "choices": {
       "A": "Y faire un dépôt",
       "B": "Y tenir marché",
@@ -3595,7 +3595,7 @@
     "body": "Une tour au bord de l’eau permettrait de tout voir, mais elle coûterait une fortune.",
     "choices": {
       "A": "La bâtir",
-      "B": "Monter une plate forme",
+      "B": "Monter une plateforme",
       "C": "Utiliser la colline"
     }
   }
