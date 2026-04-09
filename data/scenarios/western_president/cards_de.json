@@ -1144,7 +1144,7 @@
   },
   "wp_128": {
     "title": "Gastronomiefestival",
-    "body": "Ein großes Gastronomiefestival könnte den Tourismus ankurbeln. Aber es kostet ein Vermögen ... an Butter.",
+    "body": "Ein großes Gastronomiefestival könnte viele Touristen anziehen, aber das Budget ist enorm.",
     "choices": {
       "A": "Finanzieren: weltweite Visitenkarte.",
       "B": "Mäßige Unterstützung plus private Sponsoren.",
@@ -1359,10 +1359,10 @@
     }
   },
   "wp_152": {
-    "title": "Gipfel ... der Küche",
-    "body": "Ein internationaler Gipfel wird ... von einer Kochsendung organisiert. Die Köche wollen ein Foto mit dir.",
+    "title": "Fernseh-Kulinarikgipfel",
+    "body": "Eine Kochsendung organisiert einen internationalen Gipfel und will ein Foto von dir mit den Küchenchefs.",
     "choices": {
-      "A": "Hingehen und einen symbolischen 'Gastronomiepakt' unterzeichnen.",
+      "A": "Hingehen, die Veranstaltung unterstützen und eine symbolische Ankündigung zur nationalen Gastronomie machen.",
       "B": "Deinen Minister schicken: du arbeitest offiziell.",
       "C": "Ablehnen: 'Diplomatie macht man nicht mit der Suppenkelle'."
     }
@@ -1387,7 +1387,7 @@
   },
   "wp_155": {
     "title": "Ungeschickter Botschafter",
-    "body": "Ein Botschafter macht einen Witz, der völlig daneben geht. Wirklich völlig. Geopolitisches Niveau: Fliesenboden.",
+    "body": "Ein Botschafter macht einen Witz, der sehr schlecht ankommt. Der Vorfall ist allen peinlich und sorgt für diplomatische Spannungen.",
     "choices": {
       "A": "Offizielle Entschuldigungen plus diplomatische Geste.",
       "B": "Ihn sofort zurückrufen: null Toleranz.",
@@ -1423,7 +1423,7 @@
   },
   "wp_159": {
     "title": "Schokoladenmangel",
-    "body": "Eine Logistikkrise verursacht einen Schokoladenmangel. Bürger sprechen von einer 'moralischen roten Linie'.",
+    "body": "Eine Logistikkrise verursacht einen Schokoladenmangel. Für viele ist das die Knappheit zu viel.",
     "choices": {
       "A": "Die Versorgung durch schnelle Abkommen sichern.",
       "B": "Eine beschleunigte lokale Produktion starten, aber das ist teuer.",
@@ -1630,7 +1630,7 @@
   },
   "wp_182": {
     "title": "Hack des Ministeriums",
-    "body": "Die Website eines Ministeriums zeigt ein Banner: 'Hallo'. Kein offizielles 'Hallo'.",
+    "body": "Die Website eines Ministeriums wurde gehackt und zeigt nur noch ein schlichtes \"Hallo\" an.",
     "choices": {
       "A": "Komplette Prüfung plus Cyber-Schulung für die Mitarbeiter.",
       "B": "Cyber-Gegenschlag plus harte Kommunikation.",
@@ -1665,8 +1665,8 @@
     }
   },
   "wp_186": {
-    "title": "Fiktive Klimakonferenz",
-    "body": "Man schlägt dir vor, eine Konferenz über Luft und Wasser auszurichten. Sehr einvernehmlich ... bis zur Finanzierung.",
+    "title": "Konferenz zu Luft und Wasser",
+    "body": "Man schlägt dir vor, eine Konferenz über Luft- und Wasserqualität auszurichten. Mit dem Prinzip sind alle einverstanden, bis es ums Bezahlen geht.",
     "choices": {
       "A": "Ausrichten und investieren: internationales Image.",
       "B": "Ausrichten ohne öffentliche Ausgaben.",
@@ -1765,7 +1765,7 @@
   },
   "wp_197": {
     "title": "Zwischenfall in der VIP-Lounge",
-    "body": "Ein Zwischenfall in der VIP-Lounge geht im Netz herum. Selbst die Rollbänder haben eine Meinung.",
+    "body": "Ein Zwischenfall in der VIP-Lounge geht im Netz viral. Alle reden darüber.",
     "choices": {
       "A": "Entschuldigen plus Sicherheitsprüfung plus schnelle Verbesserungen.",
       "B": "Die Leitung öffentlich bestrafen.",
@@ -1818,8 +1818,8 @@
     }
   },
   "wp_203": {
-    "title": "Der Nachbar macht 'Boom'",
-    "body": "Ein Nachbarland testet eine neue Waffe. Die Bevölkerung erwartet eine klare Antwort, aber dein Minister ist der Lage nicht gewachsen.",
+    "title": "Waffentest bei einem Nachbarland",
+    "body": "Ein Nachbarland testet eine neue Waffe. Die Bevölkerung erwartet eine klare Antwort, aber deine Regierung wirkt unklar und unkoordiniert.",
     "choices": {
       "A": "Sanktionen plus diplomatische Koalition.",
       "B": "Die Verteidigung verstärken und Stärke zeigen.",
@@ -1890,8 +1890,8 @@
     }
   },
   "wp_211": {
-    "title": "Grenze und Boule-Turnier",
-    "body": "Ein Grenzgebiet heizt sich auf. Der Druck steigt.",
+    "title": "Boule-Turnier an der Grenze",
+    "body": "Um die Spannungen an der Grenze zu beruhigen, schlagen lokale Politiker ein Boule-Turnier zwischen beiden Seiten vor. Manche finden die Idee amüsant, andere schockierend.",
     "choices": {
       "A": "Die Initiative unterstützen plus offiziellen lokalen Dialog.",
       "B": "Ablehnen: Kontrollen und Militärpräsenz verstärken.",
@@ -1945,7 +1945,7 @@
   },
   "wp_217": {
     "title": "Kampf der Flaggen",
-    "body": "Ein Konflikt bricht um eine gemeinsame Flagge aus. Die Experten wollen schnell handeln.",
+    "body": "Um eine Flagge, die beide Seiten für sich beanspruchen, bricht ein Konflikt aus. Keine Seite will bei diesem Symbol nachgeben.",
     "choices": {
       "A": "Diplomatischen Kompromiss und gemeinsame Nutzung.",
       "B": "Deine Flagge durchsetzen: Autorität.",
@@ -2035,7 +2035,7 @@
   },
   "wp_227": {
     "title": "Diplomatenpass ... verloren",
-    "body": "Ein Diplomat verliert seinen Pass. In einem Flughafen. Vor Kameras. Es wirkt wie ein Sketch.",
+    "body": "Ein Diplomat verliert an einem Flughafen vor laufenden Kameras seinen Pass. Die Sache wirkt sofort lächerlich.",
     "choices": {
       "A": "Diplomatische Sicherheitsreform plus Schulung.",
       "B": "Öffentlich verharmlosen, hinter den Kulissen regeln.",
@@ -2314,7 +2314,7 @@
   },
   "wp_258": {
     "title": "General und strategischer Schnurrbart",
-    "body": "Dein General wird zur Zielscheibe der Netzwerke. Die Bilder sind überall.",
+    "body": "Dein General wird wegen eines viralen Fotos zur Zielscheibe in den sozialen Netzwerken. Sein Aussehen überdeckt die eigentliche Botschaft.",
     "choices": {
       "A": "Darüber lachen und wieder auf die Strategie fokussieren.",
       "B": "Ihn zurechtweisen: ernstes Image ist Pflicht.",
@@ -2539,7 +2539,7 @@
   },
   "wp_283": {
     "title": "Wasserkrieg",
-    "body": "Dein Nachbar verlegt Schiffe. Der Druck steigt.",
+    "body": "Dein Nachbar leitet einen Teil des Wassers um und verlegt Schiffe, um die Zone zu sichern. Der Druck steigt.",
     "choices": {
       "A": "Regionales Abkommen plus Wasserinvestitionen.",
       "B": "Nationale Priorität: Beschränkungen und Kontrolle.",
@@ -2863,7 +2863,7 @@
   },
   "wp_319": {
     "title": "Ernährungssicherheit",
-    "body": "Experten fordern einen Plan zur Ernährungssicherheit. Die Experten wollen schnell handeln.",
+    "body": "Experten fordern einen Plan zur Ernährungssicherheit. Sie wollen schnelle Entscheidungen, bevor sich die Lage verschlechtert.",
     "choices": {
       "A": "Einen nationalen Plan mit Zielen und Finanzierung starten.",
       "B": "Den Markt sich anpassen lassen, mit minimalem Sicherheitsnetz.",
@@ -3439,7 +3439,7 @@
   },
   "wp_383": {
     "title": "Mangel an Fahrern",
-    "body": "Dem Transport fehlen Fahrer und die Verzögerungen werden länger. Die Unternehmen wollen durchhalten.",
+    "body": "Im Transport fehlen Fahrer, und die Verzögerungen werden länger. Die Unternehmen wollen eine dauerhafte Lösung.",
     "choices": {
       "A": "Beschleunigte Ausbildung und bessere Arbeitsbedingungen.",
       "B": "Geregelte internationale Rekrutierung, um schnell zu schließen.",

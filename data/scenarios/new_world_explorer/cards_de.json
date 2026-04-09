@@ -50,7 +50,7 @@
     "choices": {
       "A": "Ein großes Essen bezahlen",
       "B": "Später etwas Besseres versprechen",
-      "C": "Vor Ort einkaufen und den Hafen einladen"
+      "C": "Vor Ort einkaufen und die Leute aus dem Hafen einladen"
     }
   },
   "nw_007": {
@@ -100,7 +100,7 @@
   },
   "nw_012": {
     "title": "Verletzter Bote",
-    "body": "Der königliche Bote stürzt vom Pferd mit unseren Befehlen und unserem Ansehen.",
+    "body": "Der königliche Bote stürzt mit unseren Befehlen bei sich vom Pferd. Unsere Glaubwürdigkeit steht auf dem Spiel.",
     "choices": {
       "A": "Den Boten versorgen",
       "B": "Die Befehle selbst lesen",
@@ -185,7 +185,7 @@
     "choices": {
       "A": "Ihn öffentlich respektieren",
       "B": "Ihn als Lager nutzen",
-      "C": "Dem Ort Öl schenken"
+      "C": "Dem Tempel Öl darbringen"
     }
   },
   "nw_022": {
@@ -226,7 +226,7 @@
   },
   "nw_026": {
     "title": "Geheime Bucht",
-    "body": "Eine versteckte Bucht wäre ideal für ein Lager oder eine Flucht.",
+    "body": "Eine versteckte Bucht wäre ideal für ein geheimes Lager oder einen Fluchtweg.",
     "choices": {
       "A": "Dort einen Schatz verstecken",
       "B": "Dort einen Posten bauen",
@@ -271,7 +271,7 @@
   },
   "nw_031": {
     "title": "Umherirrendes Vieh",
-    "body": "Tiere irren nahe unserer Felder und nahe den Gelüsten der Seeleute umher.",
+    "body": "Tiere streunen nahe unseren Feldern umher und wecken schon die Gier hungriger Seeleute.",
     "choices": {
       "A": "Die Herde kaufen",
       "B": "Sie beschlagnahmen",
@@ -415,7 +415,7 @@
   },
   "nw_047": {
     "title": "Kaputtes Küstenschiff",
-    "body": "Ein kleines Boot des Hafens sinkt langsam und sehr öffentlich.",
+    "body": "Ein kleines Boot aus dem Hafen schlägt vor aller Augen Wasser.",
     "choices": {
       "A": "Es reparieren",
       "B": "Es für fast nichts kaufen",
@@ -523,7 +523,7 @@
   },
   "nw_059": {
     "title": "Schwarzpulver",
-    "body": "Der Pulvervorrat sinkt und die Berichte steigen in Panik an.",
+    "body": "Der Pulvervorrat sinkt und die Berichte werden alarmierend.",
     "choices": {
       "A": "Teuer einkaufen",
       "B": "Die Schüsse reduzieren",
@@ -694,7 +694,7 @@
   },
   "nw_078": {
     "title": "Schmuggel-Salz",
-    "body": "Das Salz entweicht den Lagern schneller, als Wasser aus Fässern entweicht.",
+    "body": "Das Salz verschwindet sichtbar aus den Lagern.",
     "choices": {
       "A": "Hart bestrafen",
       "B": "Die Steuer senken",
@@ -793,7 +793,7 @@
   },
   "nw_089": {
     "title": "Indigofeld",
-    "body": "Der lokale Indigo ist wertvoll, frisst aber Land, das besser ernährt.",
+    "body": "Der lokale Indigo ist wertvoll, nimmt aber den Anbauflächen für nützlichere Nahrungspflanzen den Platz weg.",
     "choices": {
       "A": "Mehr Indigo pflanzen",
       "B": "Gemischte Kulturen behalten",
@@ -802,7 +802,7 @@
   },
   "nw_090": {
     "title": "Alter Turm",
-    "body": "Ein alter Turm am Ufer kann als Posten dienen oder uns auf die Stiefel fallen.",
+    "body": "Ein alter Turm am Ufer könnte als Posten dienen oder auf jemanden einstürzen.",
     "choices": {
       "A": "Ihn restaurieren",
       "B": "Ihn abbauen und den Stein verkaufen",
@@ -1279,7 +1279,7 @@
   },
   "nw_143": {
     "title": "Gerissener Deich",
-    "body": "Ein Deich knackt, und das Meer hat schon seine Meinung dazu.",
+    "body": "Ein Deich reißt und das Meer drückt bereits stark dagegen.",
     "choices": {
       "A": "Ihn schnell reparieren",
       "B": "Nur den Durchgang reparieren",
@@ -1369,7 +1369,7 @@
   },
   "nw_153": {
     "title": "Abwesende Ruderer",
-    "body": "Die Hälfte der Ruderer hat eine bessere Ausrede als das Meer gefunden.",
+    "body": "Die Hälfte der Ruderer hat eine Ausrede gefunden, um dem Meer zu entgehen.",
     "choices": {
       "A": "Einen Bonus zahlen",
       "B": "Im Dorf anwerben",
@@ -1468,7 +1468,7 @@
   },
   "nw_164": {
     "title": "Gebrochener Mast",
-    "body": "Ein Schiff verliert im Hafen seinen Mast mit einem sehr überzeugenden Geräusch.",
+    "body": "Ein Schiff verliert im Hafen seinen Mast in einem Krachen, das alle alarmiert.",
     "choices": {
       "A": "Beim Reparieren helfen",
       "B": "Das Schiff kaufen",
@@ -1522,7 +1522,7 @@
   },
   "nw_170": {
     "title": "Salzstraße",
-    "body": "Eine Salzstraße könnte die Bucht bereichern oder unsere Wachen leeren.",
+    "body": "Eine Salzroute könnte die Bucht bereichern oder unsere Wachen erschöpfen.",
     "choices": {
       "A": "Sie öffnen und besteuern",
       "B": "Sie militärisch halten",
@@ -1576,7 +1576,7 @@
   },
   "nw_176": {
     "title": "Zuckerrohr",
-    "body": "Das Zuckerrohr wächst gut und macht die Rechnungen sehr gierig.",
+    "body": "Das Zuckerrohr wächst gut und lässt die Buchhalter schon träumen.",
     "choices": {
       "A": "Ein großes Feld anlegen",
       "B": "Eine kleine Kultur behalten",
@@ -1585,7 +1585,7 @@
   },
   "nw_177": {
     "title": "Offizielle Hängematte",
-    "body": "Ein Offizier will Hängematten, um die Strategie des Schlafes zu verbessern.",
+    "body": "Ein Offizier will Hängematten, damit die Männer endlich ordentlich schlafen können.",
     "choices": {
       "A": "Welche kaufen",
       "B": "Sie den Verletzten vorbehalten",
@@ -1810,7 +1810,7 @@
   },
   "nw_202": {
     "title": "Zu reife Bananen",
-    "body": "Bananen bedrohen den Kai und die Nasen der Passanten.",
+    "body": "Überreife Bananen verstopfen den Kai und verpesten die Luft ringsum.",
     "choices": {
       "A": "Sie schnell verkaufen",
       "B": "Sie trocknen",
@@ -1918,7 +1918,7 @@
   },
   "nw_214": {
     "title": "Riesenkürbisse",
-    "body": "Riesige Kürbisse überwuchern den Gemüsegarten wie große orangefarbene Herren.",
+    "body": "Riesige Kürbisse überwuchern den Gemüsegarten und nehmen den ganzen Platz ein.",
     "choices": {
       "A": "Sie verkaufen",
       "B": "Sie verschenken",
@@ -1954,7 +1954,7 @@
   },
   "nw_218": {
     "title": "Nest auf dem Turm",
-    "body": "Vögel haben den Turm zu ihrem offiziellen Palast gemacht.",
+    "body": "Vögel haben ihren Nestplatz auf dem Turm eingerichtet und stören die Überwachung.",
     "choices": {
       "A": "Das Nest verlegen",
       "B": "Sie machen lassen",
@@ -1999,7 +1999,7 @@
   },
   "nw_223": {
     "title": "Barfüßige Soldaten",
-    "body": "Einige Stiefel sind verschwunden, und die Soldaten schauen den Boden vorwurfsvoll an.",
+    "body": "Stiefel sind verschwunden und die Soldaten schieben sich gegenseitig die Schuld zu.",
     "choices": {
       "A": "Stiefel bestellen",
       "B": "Vor Ort kaufen",
@@ -2080,7 +2080,7 @@
   },
   "nw_232": {
     "title": "Sperriges Geschenk",
-    "body": "Ein benachbarter Anführer schenkt eine große Trommel, die mehr Platz als Sinn einnimmt.",
+    "body": "Ein benachbarter Häuptling schenkt eine große Trommel, die viel Platz einnimmt und kaum nützlich ist.",
     "choices": {
       "A": "Sie annehmen",
       "B": "Sie weiterverkaufen",
@@ -2161,7 +2161,7 @@
   },
   "nw_241": {
     "title": "Affe im Speicher",
-    "body": "Ein Affe stiehlt das Korn mit der Präzision eines Steuereintreibers.",
+    "body": "Ein Affe stiehlt das Getreide mit beachtlicher Effizienz.",
     "choices": {
       "A": "Ihn vertreiben",
       "B": "Den Speicher besser schließen",
@@ -2233,7 +2233,7 @@
   },
   "nw_249": {
     "title": "Champion-Mücken",
-    "body": "Die Mücken des Sumpfes gewinnen jeden Abend alle Schlachten.",
+    "body": "Die Mücken aus dem Sumpf überfallen das Lager jeden Abend.",
     "choices": {
       "A": "Netze kaufen",
       "B": "Mehr Rauch machen",
@@ -2269,7 +2269,7 @@
   },
   "nw_253": {
     "title": "Beobachtungsturm",
-    "body": "Ein kleiner Turm würde eine schöne Aussicht und lange Ausgaben bringen.",
+    "body": "Ein kleiner Turm würde eine gute Aussicht bieten, wäre aber teuer im Bau und in der Bewachung.",
     "choices": {
       "A": "Ihn bauen",
       "B": "Eine einfache Plattform errichten",
@@ -2539,7 +2539,7 @@
   },
   "nw_283": {
     "title": "Eierndes Rad",
-    "body": "Ein schiefes Rad gibt dem Wagen den Stil eines traurigen Tänzers.",
+    "body": "Ein eierndes Rad bringt den ganzen Wagen ins Schwanken.",
     "choices": {
       "A": "Es wechseln",
       "B": "Es im Dorf reparieren lassen",
@@ -2719,7 +2719,7 @@
   },
   "nw_303": {
     "title": "Ruhige Bucht",
-    "body": "Eine ruhige Bucht könnte besser genutzt werden.",
+    "body": "Eine ruhige Bucht könnte als kleiner Anlegeplatz oder Schutzraum dienen.",
     "choices": {
       "A": "Dort einen kleinen Kai bauen",
       "B": "Sie militärisch behalten",
@@ -2764,7 +2764,7 @@
   },
   "nw_308": {
     "title": "Fenster des Büros",
-    "body": "Dem Büro fehlt Luft, und den Abrechnungen auch.",
+    "body": "Im Büro fehlt Luft, und die Schreiber arbeiten dort schlecht.",
     "choices": {
       "A": "Es vergrößern",
       "B": "Es morgens öffnen",
@@ -3025,7 +3025,7 @@
   },
   "nw_337": {
     "title": "Rotes Seil",
-    "body": "Ein rot gefärbtes Seil zieht mehr Blicke als Arme an.",
+    "body": "Ein rot gefärbtes Seil ist von Weitem gut zu sehen, aber nicht nützlicher.",
     "choices": {
       "A": "Es für den Kai behalten",
       "B": "Es verkaufen",
@@ -3187,7 +3187,7 @@
   },
   "nw_355": {
     "title": "Schmales Tor",
-    "body": "Die kleine Tür des Lagers hasst große Kisten.",
+    "body": "Die kleine Lagertür lässt große Kisten nur schwer durch.",
     "choices": {
       "A": "Sie breiter öffnen",
       "B": "Nach Reihenfolge durchlassen",
@@ -3241,7 +3241,7 @@
   },
   "nw_361": {
     "title": "Blaue Laterne",
-    "body": "Eine blaue Laterne leuchtet besser als all unser Ernst.",
+    "body": "Eine blaue Laterne leuchtet besser als unsere jetzigen Laternen.",
     "choices": {
       "A": "Sie am Kai übernehmen",
       "B": "Sie als Kuriosität verkaufen",
@@ -3358,7 +3358,7 @@
   },
   "nw_374": {
     "title": "Zerbrechliches Paket",
-    "body": "Das Paket zittert fast von allein, wenn man es ansieht.",
+    "body": "Das Paket wirkt so zerbrechlich, dass man es kaum zu bewegen wagt.",
     "choices": {
       "A": "Es von Hand tragen",
       "B": "Es im Fort lagern",
@@ -3394,7 +3394,7 @@
   },
   "nw_378": {
     "title": "Laken des Lagers",
-    "body": "Die Laken des Lagers haben die Farbe der Müdigkeit.",
+    "body": "Die Laken im Lager sind abgenutzt und schmutzig.",
     "choices": {
       "A": "Sie wechseln",
       "B": "Sie im Dorf waschen lassen",
@@ -3430,7 +3430,7 @@
   },
   "nw_382": {
     "title": "Schneller Schreiber",
-    "body": "Ein Schreiber kopiert so schnell, dass man ihm gut noch ein anderes Bündel geben könnte.",
+    "body": "Ein Schreiber arbeitet so schnell, dass man ihm mehr Arbeit geben könnte.",
     "choices": {
       "A": "Ihm mehr Arbeit geben",
       "B": "Ihm einen Helfer suchen",
@@ -3484,7 +3484,7 @@
   },
   "nw_388": {
     "title": "Nasser Wächter",
-    "body": "Der Wächter am Tor sieht aus wie ein bewaffneter Schwamm.",
+    "body": "Der Torwächter ist von Kopf bis Fuß durchnässt.",
     "choices": {
       "A": "Ihm einen Umhang geben",
       "B": "Den Posten wechseln",
@@ -3502,7 +3502,7 @@
   },
   "nw_390": {
     "title": "Markt am Morgen",
-    "body": "Der Markt will früher öffnen als die Sonne des Büros.",
+    "body": "Der Markt will früher öffnen als das Büro.",
     "choices": {
       "A": "Früher öffnen",
       "B": "Es einen Tag testen",
