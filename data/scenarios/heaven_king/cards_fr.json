@@ -223,7 +223,7 @@
     "choices": {
       "A": "Souffler de vraies inspirations spirituelles",
       "B": "Laisser l’art se développer librement",
-      "C": "Lier ces œuvres à un nouveau micro-culte"
+      "C": "Transformer ces œuvres en base d’un petit culte"
     },
     "body": "De jeunes artistes créent des œuvres sacrées en réalité virtuelle."
   },
@@ -258,7 +258,7 @@
     "description": "Un mouvement spirituel défend les animaux comme créatures sacrées.",
     "choices": {
       "A": "Aider leur cause par quelques signes discrets",
-      "B": "Laisser ce mouvement rester petit",
+      "B": "Laisser ce mouvement rester limité",
       "C": "Laisser ce mouvement devenir trop rigide"
     },
     "body": "Un mouvement spirituel défend les animaux comme créatures sacrées."
@@ -378,7 +378,7 @@
     "description": "Un ermite reçoit des visions, mais personne ne l’écoute vraiment.",
     "choices": {
       "A": "Donner plus de force à son message",
-      "B": "Le laisser dans sa solitude féconde",
+      "B": "Le laisser seul avec ses visions",
       "C": "Attirer autour de lui des disciples très zélés"
     },
     "body": "Un ermite reçoit des visions, mais personne ne l’écoute vraiment."
@@ -402,7 +402,7 @@
     "description": "Un culte se focalise entièrement sur les anges et t’oublie presque complètement.",
     "choices": {
       "A": "Laisser ce culte vivre sa dévotion aux anges",
-      "B": "Rappeler doucement ton existence au centre",
+      "B": "Rappeler doucement que tu dois rester au centre de leur foi",
       "C": "Utiliser ce culte pour canaliser toutes les prières"
     },
     "body": "Un culte se focalise entièrement sur les anges et t’oublie presque complètement."
@@ -1555,7 +1555,7 @@
     "choices": {
       "A": "Inspirer une candidate à dénoncer ce concept en direct",
       "B": "Laisser le show faire son buzz",
-      "C": "Faire qu’une malchance touche un gagnant pour appuyer les menaces"
+      "C": "Provoquer un malheur chez un gagnant pour renforcer la peur"
     },
     "body": "Un show de téléréalité pointe du doigt les comportements jugés immoraux en les liant à l’Enfer."
   },
@@ -4134,7 +4134,7 @@
     "description": "Un guide tente d’expliquer les différents chemins spirituels avec des mots très savants.",
     "choices": {
       "A": "Faire naître de vrais rapprochements intérieurs",
-      "B": "Laisser ces cercles rester expérimentaux et limités",
+      "B": "Laisser ce guide rester confidentiel et compliqué",
       "C": "Établir un protocole fixe autour de l’idée"
     },
     "body": "Un guide tente d’expliquer les différents chemins spirituels avec des mots trop compliqués."
@@ -4337,7 +4337,7 @@
     "title": "Réseaux sociaux apaisés",
     "description": "Un créateur lance une page dédiée uniquement à des messages encourageants.",
     "choices": {
-      "A": "Souffler des mots qui vraiment apaisent et relèvent ceux qui lisent",
+      "A": "Souffler des mots qui apaisent vraiment et redonnent du courage à ceux qui lisent",
       "B": "Laisser la page trouver son public ou non",
       "C": "Faire récupérer ce concept par une organisation"
     },
@@ -4422,7 +4422,7 @@
     "description": "Une entreprise veut améliorer le climat entre collègues.",
     "choices": {
       "A": "Souffler des gestes simples de reconnaissance au quotidien",
-      "B": "Laisser la démarche être un simple séminaire RH",
+      "B": "Laisser la démarche rester une simple formation d’entreprise",
       "C": "Encourager la direction à imposer un code de conduite très détaillé"
     },
     "body": "Une entreprise veut améliorer le climat entre collègues."
@@ -4434,7 +4434,7 @@
     "description": "Un bureau installe des plantes et un coin détente avec vue sur le ciel.",
     "choices": {
       "A": "Aider certains à utiliser ce coin pour se recentrer intérieurement",
-      "B": "Laisser l’espace être un simple coin café amélioré",
+      "B": "Laisser cet espace rester un simple coin pause plus agréable",
       "C": "Y organiser des temps de méditation guidés"
     },
     "body": "Un bureau installe des plantes et un coin détente avec vue sur le ciel."
@@ -4543,7 +4543,7 @@
     "choices": {
       "A": "Laisser certains sentir une vraie communion à travers les sons",
       "B": "Laisser le cercle rester une expérience musicale amusante",
-      "C": "Encourager l’animateur imposer une structure et des règles strictes"
+      "C": "Encourager l’animateur à imposer une structure et des règles strictes"
     },
     "body": "Un groupe se réunit pour improviser des sons ensemble sans jugement."
   },
@@ -4553,7 +4553,7 @@
     "title": "Coin lecture dans le métro",
     "description": "Un wagon de métro est redécoré avec des extraits de textes apaisants.",
     "choices": {
-      "A": "Faire lire ces mots comme un vrai apaisement",
+      "A": "Faire de ces textes une vraie source d’apaisement",
       "B": "Laisser ces textes passer inaperçus pour la plupart",
       "C": "Encourager la régie à réserver ce wagon à un usage très réglementé"
     },
@@ -4601,8 +4601,8 @@
     "title": "Atelier de sieste guidée",
     "description": "Un centre de bien-être propose une sieste guidée pour se reposer au milieu de la journée.",
     "choices": {
-      "A": "Laisser certains goûter un vrai lâcher-prise proche de la prière",
-      "B": "Laisser la sieste guidée rester un simple service bien-être",
+      "A": "Permettre à certains de vivre un vrai moment de calme intérieur",
+      "B": "Laisser la sieste guidée rester une simple activité de détente",
       "C": "Créer un programme complet avec étapes obligatoires"
     },
     "body": "Un centre de bien-être propose une sieste guidée pour se reposer au milieu de la journée."
@@ -4626,7 +4626,7 @@
     "description": "Un lycée met en place un coin où un adulte est là pour écouter les élèves.",
     "choices": {
       "A": "Laisser certains y trouver un vrai espace de parole et de réconfort",
-      "B": "Laisser ce coin parler surtout de cours et d’avenir",
+      "B": "Laisser cet espace servir surtout à parler des cours et de l’avenir",
       "C": "Entourer ce dispositif de règles très strictes"
     },
     "body": "Un lycée met en place un coin où un adulte est là pour écouter les élèves."
@@ -4675,7 +4675,7 @@
     "choices": {
       "A": "Faire émerger une vraie conscience de la chance qu’ils ont",
       "B": "Laisser le dessin rester un exercice d’arts plastiques",
-      "C": "Afficher ces dessins comme règle morale"
+      "C": "Afficher ces dessins comme modèle à suivre pour tous"
     },
     "body": "Des enfants dessinent ce pour quoi ils sont reconnaissants."
   },
@@ -4711,7 +4711,7 @@
     "choices": {
       "A": "Souffler des histoires qui rendent confiance",
       "B": "Laisser le podcast rester une bulle optimiste",
-      "C": "Encourager un réseau à en faire un outil de communication trop cadré"
+      "C": "Encourager un grand réseau à en faire un format trop contrôlé"
     },
     "body": "Un podcast partage chaque jour une vraie bonne nouvelle."
   },
@@ -4730,7 +4730,7 @@
   "heaven_395": {
     "id": "heaven_395",
     "universe": "heaven_king",
-    "title": "Cercle 'une petite victoire'",
+    "title": "Cercle des petites victoires",
     "description": "Un groupe se réunit pour partager chaque semaine une petite victoire personnelle.",
     "choices": {
       "A": "Aider ces partages à nourrir la confiance intérieure de chacun",
@@ -4754,14 +4754,14 @@
   "heaven_397": {
     "id": "heaven_397",
     "universe": "heaven_king",
-    "title": "Journée 'merci la vie'",
-    "description": "Une école organise une journée pour remercier pour les petites choses du quotidien.",
+    "title": "Journée de gratitude",
+    "description": "Une école organise une journée pour dire merci pour les petites choses du quotidien.",
     "choices": {
       "A": "Faire naître chez certains élèves une vraie habitude de gratitude",
       "B": "Laisser la journée être vécue comme un projet pédagogique",
       "C": "En faire un grand rituel annuel"
     },
-    "body": "Une école organise une journée pour remercier pour les petites choses du quotidien."
+    "body": "Une école organise une journée pour dire merci pour les petites choses du quotidien."
   },
   "heaven_398": {
     "id": "heaven_398",
@@ -4778,7 +4778,7 @@
   "heaven_399": {
     "id": "heaven_399",
     "universe": "heaven_king",
-    "title": "Atelier 'lettres au futur soi'",
+    "title": "Atelier lettres à son futur soi",
     "description": "Des participants écrivent une lettre à la personne qu’ils seront dans dix ans.",
     "choices": {
       "A": "Souffler des mots de bienveillance et d’espoir dans ces lettres",
@@ -4793,7 +4793,7 @@
     "title": "Quartier des lucioles",
     "description": "Un quartier décide d’éteindre l’éclairage superflu pour mieux voir les étoiles.",
     "choices": {
-      "A": "Faire ressentir une communion sous ce ciel sombre",
+      "A": "Faire de cette nuit un vrai moment de calme partagé",
       "B": "Laisser la mesure être vue comme un geste écologique pratique",
       "C": "Créer un grand événement autour de cette nuit"
     },
