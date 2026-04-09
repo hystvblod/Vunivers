@@ -185,7 +185,7 @@
     "choices": {
       "A": "Addestrare il novizio",
       "B": "Nasconderlo al clan",
-      "C": "Affidarlo a un anziano perché lo addestri."
+      "C": "Affidarlo a un anziano perché lo addestri"
     }
   },
   "vampire_022": {
@@ -572,7 +572,7 @@
     "choices": {
       "A": "Salvare le riserve",
       "B": "Cambiare rifugio",
-      "C": "Trasformare la cantina in una trappola per i curiosi."
+      "C": "Trasformare la cantina in una trappola per i curiosi"
     }
   },
   "vampire_065": {
@@ -2053,7 +2053,7 @@
   },
   "vampire_229": {
     "title": "Il patto delle strade",
-    "body": "Degli umani propongono un patto. Offrono silenzio in cambio di protezione. È commercio.",
+    "body": "Degli umani propongono un patto. Offrono il loro silenzio in cambio della tua protezione. È un accordo chiaro.",
     "choices": {
       "A": "Accettare e regolamentare",
       "B": "Rifiutare e imporre la paura",
@@ -2323,7 +2323,7 @@
   },
   "vampire_259": {
     "title": "La caccia al drone",
-    "body": "Dei droni volano di notte. Cercano il calore. I vampiri non scaldano, ma osservano.",
+    "body": "Dei droni volano di notte. Cercano fonti di calore. Anche se ti individuano male, possono sorvegliare gli accessi.",
     "choices": {
       "A": "Abbattere i droni",
       "B": "Deviare la loro rotta",
@@ -2539,7 +2539,7 @@
   },
   "vampire_283": {
     "title": "Il vicino senza tende",
-    "body": "Un vicino non dorme mai e guarda la strada. Colleziona dettagli.",
+    "body": "Un vicino non dorme mai e osserva la strada. Nota il minimo dettaglio.",
     "choices": {
       "A": "Distrarlo",
       "B": "Cambiare abitudini",
@@ -2668,7 +2668,7 @@
     "body": "Il clan organizza una lotteria per finanziare le tue notti. L’idea è orribile e redditizia.",
     "choices": {
       "A": "Inquadrare il gioco",
-      "B": "Vietare questa vergogna",
+      "B": "Mettere fine a questo circo",
       "C": "Prendere la cassa"
     }
   },
@@ -3315,7 +3315,7 @@
     "title": "Il debito del rivale",
     "body": "Un rivale ti confessa un enorme debito. Il clan vuole vederlo cadere.",
     "choices": {
-      "A": "Aiutarlo a caro prezzo",
+      "A": "Aiutarlo, ma a un prezzo molto alto",
       "B": "Schiacciarlo",
       "C": "Comprare la sua lealtà"
     }

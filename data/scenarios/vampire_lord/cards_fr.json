@@ -2053,7 +2053,7 @@
   },
   "vampire_229": {
     "title": "Le pacte des rues",
-    "body": "Des humains proposent un pacte. Ils donnent silence contre protection. C’est du commerce.",
+    "body": "Des humains proposent un pacte. Ils offrent leur silence en échange de ta protection. C’est un marché clair.",
     "choices": {
       "A": "Accepter et encadrer",
       "B": "Refuser et imposer la peur",
@@ -2323,7 +2323,7 @@
   },
   "vampire_259": {
     "title": "La chasse au drone",
-    "body": "Des drones volent la nuit. Ils cherchent la chaleur. Les vampires ne chauffent pas mais ils observent.",
+    "body": "Des drones volent la nuit. Ils cherchent les sources de chaleur. Même s’ils te repèrent mal, ils peuvent surveiller les accès.",
     "choices": {
       "A": "Abattre les drones",
       "B": "Les détourner",
@@ -2539,7 +2539,7 @@
   },
   "vampire_283": {
     "title": "Le voisin sans rideaux",
-    "body": "Un voisin dort jamais et regarde la rue. Il collectionne les détails.",
+    "body": "Un voisin ne dort jamais et observe la rue. Il remarque le moindre détail.",
     "choices": {
       "A": "Le distraire",
       "B": "Changer d’habitudes",
@@ -2668,7 +2668,7 @@
     "body": "Le clan organise un loto pour financer tes nuits. L’idée est affreuse et rentable.",
     "choices": {
       "A": "Encadrer le jeu",
-      "B": "Interdire la honte",
+      "B": "Interdire ce cirque",
       "C": "Prendre la caisse"
     }
   },
@@ -3315,7 +3315,7 @@
     "title": "La dette du rival",
     "body": "Un rival t’avoue une dette énorme. Le clan veut le voir tomber.",
     "choices": {
-      "A": "L’aider cher",
+      "A": "L’aider, mais à un prix élevé",
       "B": "L’écraser",
       "C": "Acheter sa loyauté"
     }
@@ -3442,7 +3442,7 @@
     "body": "Un bar sans fenêtres ouvre à deux rues d’ici. Le clan veut déjà y aller.",
     "choices": {
       "A": "Tester l’endroit",
-      "B": "Le garder sous œil",
+      "B": "Le garder à l’œil",
       "C": "Interdire le lieu"
     }
   },
