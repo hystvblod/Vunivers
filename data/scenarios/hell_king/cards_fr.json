@@ -140,7 +140,7 @@
     "choices": {
       "A": "Organise un spectacle grandiose, que tout l'Enfer s'en souvienne.",
       "B": "Fais une cérémonie sobre, l'ordre passe d'abord.",
-      "C": "Déplace le festival vers des zones proches de la surface."
+      "C": "Déplace le festival près de la frontière du monde des vivants."
     }
   },
   "hk_017": {
@@ -310,7 +310,7 @@
     "body": "Les damnés avouent leurs secrets dans une tour. Ces aveux peuvent t’être utiles.",
     "choices": {
       "A": "Utiliser ces aveux pour renforcer ton stock d'âmes.",
-      "B": "Exploiter certains secrets pour influencer la surface.",
+      "B": "Exploiter certains secrets pour influencer le monde des vivants.",
       "C": "Classer ces archives pour améliorer l'ordre infernal."
     }
   },
@@ -374,7 +374,7 @@
     "choices": {
       "A": "Mettre l'accent sur la force brute et la peur.",
       "B": "Valoriser la loyauté et la discipline avant tout.",
-      "C": "Y inclure des cours sur la manipulation de la surface."
+      "C": "Y inclure des cours sur la manipulation des mortels."
     }
   },
   "hk_043": {
@@ -417,7 +417,7 @@
     "title": "Tour des cris déformés",
     "body": "Une tour amplifie les cris des damnés. Désormais, leurs échos troublent même tes soldats.",
     "choices": {
-      "A": "Redirecter ces cris vers la surface pour la hanter.",
+      "A": "Rediriger ces cris vers le monde des vivants pour semer la peur.",
       "B": "Isoler la tour dans une zone très contrôlée.",
       "C": "Utiliser ces échos pour entraîner mentalement tes légions."
     }
@@ -446,7 +446,7 @@
     "choices": {
       "A": "Ignorer la prophétie et accélérer encore la damnation.",
       "B": "Renforcer l'ordre pour éviter un basculement brutal.",
-      "C": "Répartir le chaos entre surface, légions et âmes."
+      "C": "Répartir le chaos entre le monde des vivants, les légions et les âmes."
     }
   },
   "hk_051": {
@@ -590,7 +590,7 @@
     "choices": {
       "A": "Amplifier les châtiments pour récolter plus d'énergie.",
       "B": "Imposer un cadre strict, même dans l'horreur.",
-      "C": "Utiliser ces cas comme exemples pour effrayer la surface."
+      "C": "Utiliser ces cas comme exemples pour effrayer les vivants."
     }
   },
   "hk_067": {
@@ -608,7 +608,7 @@
     "choices": {
       "A": "L'utiliser pour attirer un flot d'âmes nostalgiques.",
       "B": "L'intégrer à ton ordre comme vassal très surveillé.",
-      "C": "L'envoyer jouer un rôle discret sur la surface."
+      "C": "L'envoyer agir discrètement dans le monde des vivants."
     }
   },
   "hk_069": {
@@ -626,7 +626,7 @@
     "choices": {
       "A": "Exploiter ce chœur pour sonder la masse des âmes.",
       "B": "Canaliser ces murmures dans une structure de conseil.",
-      "C": "Laisser ces voix gagner la surface et toucher les rêveurs."
+      "C": "Laisser ces voix atteindre le monde des vivants et troubler les rêveurs."
     }
   },
   "hk_071": {
@@ -680,7 +680,7 @@
     "choices": {
       "A": "Les pousser à enregistrer tout, même au prix du chaos.",
       "B": "Simplifier les catégories pour garder un ordre global.",
-      "C": "N'enregistrer en détail que les péchés clés sur la surface."
+      "C": "N'enregistrer en détail que les péchés clés commis chez les vivants."
     }
   },
   "hk_077": {
@@ -829,11 +829,11 @@
   },
   "hk_093": {
     "title": "Champs de statues de cendre",
-    "body": "Une institution apprend aux âmes à chuter de façon contrôlée.",
+    "body": "Dans ces champs, des âmes brisées sont figées en statues de cendre, alignées comme un avertissement.",
     "choices": {
       "A": "Les briser en masse pour nourrir ton royaume.",
       "B": "Les cataloguer et les surveiller selon des règles strictes.",
-      "C": "En envoyer quelques-unes hanter silencieusement la surface."
+      "C": "En faire apparaître quelques-unes en silence chez les vivants."
     }
   },
   "hk_094": {
@@ -874,7 +874,7 @@
   },
   "hk_098": {
     "title": "Nuit des miroirs inversés",
-    "body": "Les petits péchés d’aujourd’hui finissent par entraîner de grandes condamnations.",
+    "body": "Des miroirs montrent comment de petites fautes finissent par conduire à de grandes condamnations.",
     "choices": {
       "A": "Exploiter ces visions pour renforcer la douleur.",
       "B": "Ranger soigneusement ces miroirs dans des salles codifiées.",
@@ -1085,7 +1085,7 @@
     "choices": {
       "A": "Les absorber en masse dans ton système.",
       "B": "Les placer sous un régime strictement codifié.",
-      "C": "Les utiliser comme monnaie d’échange avec la surface."
+      "C": "Les utiliser comme monnaie d’échange dans tes affaires avec les vivants."
     }
   },
   "hk_122": {
@@ -1139,7 +1139,7 @@
     "choices": {
       "A": "Noircir la rumeur en punissant des innocents.",
       "B": "Lancer une enquête hiérarchisée et secrète.",
-      "C": "Utiliser la rumeur pour déclencher une purge ciblée sur la surface."
+      "C": "Utiliser la rumeur pour déclencher une purge ciblée dans tes propres rangs."
     }
   },
   "hk_128": {
@@ -1157,7 +1157,7 @@
     "choices": {
       "A": "Augmenter le nombre de cages pour obtenir plus d’aveux.",
       "B": "Réguler ce champ pour éviter les débordements.",
-      "C": "Exploiter ces dénonciations pour manipuler la surface."
+      "C": "Exploiter ces dénonciations pour manipuler les vivants."
     }
   },
   "hk_130": {
@@ -1202,7 +1202,7 @@
     "choices": {
       "A": "Y enterrer encore plus d’âmes brisées.",
       "B": "Indexer chaque promesse pour un ordre parfait.",
-      "C": "Réveiller certaines promesses sur la surface."
+      "C": "Faire resurgir certaines de ces promesses chez les vivants."
     }
   },
   "hk_135": {
@@ -1297,7 +1297,7 @@
   },
   "hk_145": {
     "title": "Serre des plantes d’âmes",
-    "body": "Un quartier est entièrement en ruine, et tout le monde l’accepte comme tel.",
+    "body": "Une serre fait pousser d’étranges plantes nourries par l’énergie des âmes.",
     "choices": {
       "A": "Augmenter leur nombre pour accélérer la récolte.",
       "B": "Organiser cette serre comme une institution modèle.",
@@ -1310,7 +1310,7 @@
     "choices": {
       "A": "Récompenser surtout la quantité d’âmes perdue.",
       "B": "Inscrire chaque mensonge dans un registre codifié.",
-      "C": "Tester ces mensonges sur des réseaux de la surface."
+      "C": "Tester ces mensonges sur les réseaux des vivants."
     }
   },
   "hk_147": {
@@ -1576,7 +1576,7 @@
   },
   "hk_176": {
     "title": "Accord secret de non-ingérence",
-    "body": "La peur circule partout comme une monnaie.",
+    "body": "Le Nord te propose un accord secret : chacun cesse de saboter directement les affaires de l’autre.",
     "choices": {
       "A": "Accepter pour stabiliser ton empire à court terme.",
       "B": "Refuser et consolider encore ton ordre interne.",
@@ -1607,7 +1607,7 @@
     "choices": {
       "A": "Tester le rituel pour booster la récolte d’âmes.",
       "B": "L’interdire tant qu’il n’est pas parfaitement encadré.",
-      "C": "Diriger une partie de cette fusion vers la surface."
+      "C": "Diriger une partie de cette fusion vers le monde des vivants."
     }
   },
   "hk_180": {
@@ -1711,7 +1711,7 @@
   },
   "hk_191": {
     "title": "Traité des catastrophes",
-    "body": "Un lieu où l’espoir disparaît peu à peu.",
+    "body": "Le Nord propose un traité pour se partager l’influence sur les grandes catastrophes du monde des vivants.",
     "choices": {
       "A": "Saisir l’opportunité pour récolter plus d’âmes.",
       "B": "Imposer des limites pour préserver l’équilibre de tes régions.",
@@ -1837,7 +1837,7 @@
   },
   "hk_205": {
     "title": "Guerre de désinformation",
-    "body": "Les supplices y sont organisés avec précision.",
+    "body": "Les mensonges se répandent si vite que les mortels ne savent plus quoi croire.",
     "choices": {
       "A": "Nourrir chaque camp en fausses révélations.",
       "B": "Promouvoir quelques voix « raisonnables » pour garder une structure.",
@@ -1990,7 +1990,7 @@
   },
   "hk_222": {
     "title": "Cruauté en spectacle",
-    "body": "Ils veulent organiser la souffrance de façon plus logique.",
+    "body": "La souffrance humaine devient un spectacle consommé pour divertir, choquer ou faire de l’audience.",
     "choices": {
       "A": "Pousser les mortels à se désensibiliser complètement.",
       "B": "Soutenir des règles strictes sur les images, peu appliquées.",
@@ -2188,7 +2188,7 @@
   },
   "hk_244": {
     "title": "Brouillard chimique",
-    "body": "Les regrets s’y accumulent sans fin.",
+    "body": "Un brouillard chimique venu d’usines et d’accidents empoisonne l’air, les corps et les esprits.",
     "choices": {
       "A": "Rendre cet usage banal pour éviter toute vraie réflexion.",
       "B": "Encadrer certains produits, en laissant prospérer les autres.",
@@ -2431,7 +2431,7 @@
   },
   "hk_271": {
     "title": "Procession céleste",
-    "body": "Certains cherchent à rendre les punitions plus maîtrisées.",
+    "body": "Une procession venue du Paradis traverse brièvement le ciel au-dessus de ton royaume.",
     "choices": {
       "A": "Tenter de capturer quelques âmes dans le passage.",
       "B": "Les laisser passer pour éviter un incident majeur.",
@@ -2575,7 +2575,7 @@
   },
   "hk_287": {
     "title": "Âmes repêchées",
-    "body": "La punition doit redevenir claire pour tous.",
+    "body": "Le Paradis parvient à repêcher certaines âmes au dernier moment, juste avant leur chute définitive chez toi.",
     "choices": {
       "A": "Refuser toute remise de peine.",
       "B": "Accepter un quota minuscule en échange de concessions officielles.",
@@ -2701,7 +2701,7 @@
   },
   "hk_301": {
     "title": "Révolte des scribes",
-    "body": "La souffrance ne fait plus assez d’effet.",
+    "body": "Tes scribes se révoltent : trop de dossiers, trop d’âmes, et plus personne ne suit.",
     "choices": {
       "A": "Exiger qu’ils écrivent jusqu’à ce que leurs plumes se brisent.",
       "B": "Réorganiser l’administration en créant de nouveaux bureaux.",
@@ -2732,7 +2732,7 @@
     "choices": {
       "A": "Valider : plus de douleur, plus d’âmes brisées.",
       "B": "Encadrer ça avec des règles strictes.",
-      "C": "Tester d’abord sur la surface, en secret."
+      "C": "Tester d’abord sur des mortels, en secret."
     }
   },
   "hk_305": {
@@ -2768,7 +2768,7 @@
     "choices": {
       "A": "Plonger dans le chaos pour augmenter ta récolte.",
       "B": "Suspendre tout jugement et tout trier à la main.",
-      "C": "Laisser la tempête souffler jusqu’aux frontières de la surface."
+      "C": "Laisser la tempête souffler jusqu’au monde des vivants."
     }
   },
   "hk_309": {
@@ -2876,7 +2876,7 @@
     "choices": {
       "A": "Y transférer de nouvelles âmes pour relancer l’activité.",
       "B": "Réaménager entièrement cette région pour un nouveau concept.",
-      "C": "Utiliser ce désert comme zone d’expérimentation pour la surface."
+      "C": "Utiliser cette région vide comme zone d’expérimentation avant d’agir chez les vivants."
     }
   },
   "hk_321": {
@@ -3308,7 +3308,7 @@
     "choices": {
       "A": "Forcer les âmes à revivre éternellement leurs choix manqués.",
       "B": "Indexer ces décisions pour affiner tes futures manipulations.",
-      "C": "Laisser cette salle hanter des dirigeants vivants."
+      "C": "Laisser les dirigeants vivants voir cette salle en cauchemar."
     }
   },
   "hk_369": {
@@ -3596,7 +3596,7 @@
     "choices": {
       "A": "Ignorer les chiffres et continuer dans l'excès.",
       "B": "Étudier chaque donnée pour optimiser ton ordre.",
-      "C": "Décider d'orienter davantage tes efforts vers la surface."
+      "C": "Décider d’orienter davantage tes efforts vers le monde des vivants."
     }
   }
 }
