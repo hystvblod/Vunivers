@@ -1,4 +1,4 @@
-{
+﻿{
   "vampire_001": {
     "title": "Der Beutel mit Bio-Blut",
     "body": "Ein Blutvorrat verschwindet. Jemand hat ohne Erlaubnis Reserven angelegt.",
@@ -635,7 +635,7 @@
     "choices": {
       "A": "Das Foto entfernen",
       "B": "Mit Humor leugnen",
-      "C": "Einen Filter beschuldigen"
+      "C": "Behaupten, das Foto sei manipuliert"
     }
   },
   "vampire_072": {
@@ -904,7 +904,7 @@
     "body": "Der Verkäufer behauptet, der Gegenstand stamme aus einem alten Keller, aber seine Geschichte wirkt erfunden.",
     "choices": {
       "A": "Es diskret kaufen",
-      "B": "Es heute Nacht stehlen",
+      "B": "Ihn heute Nacht stehlen",
       "C": "Dem Verkäufer eine Falle stellen"
     }
   },
@@ -1180,7 +1180,7 @@
   },
   "vampire_132": {
     "title": "Der saure Regen",
-    "body": "Es ist nicht die Sonne. Es ist etwas anderes. Und etwas anderes bedeutet oft eine Falle.",
+    "body": "Über dem Gebiet fällt saurer Regen. Es ist nicht die Sonne, aber hinauszugehen bleibt gefährlich.",
     "choices": {
       "A": "Im Versteck bleiben",
       "B": "Die Quelle suchen",
@@ -1292,7 +1292,7 @@
     "choices": {
       "A": "Zustimmen und schützen",
       "B": "Ablehnen und ihn überwachen",
-      "C": "Ihn ersetzen"
+      "C": "Ihn durch jemanden Zuverlässigeren ersetzen"
     }
   },
   "vampire_145": {
@@ -1396,7 +1396,7 @@
   },
   "vampire_156": {
     "title": "Das Geräusch unter dem Stein",
-    "body": "Kratzen, Atem, Stille. Die drei Phasen eines Problems, das größer wird.",
+    "body": "Unter dem Stein hört man ein Kratzen, dann einen Atemzug, dann nichts mehr. Hinter der Wand bewegt sich etwas.",
     "choices": {
       "A": "Öffnen und nachsehen",
       "B": "Versiegeln und vergessen",
@@ -1612,7 +1612,7 @@
   },
   "vampire_180": {
     "title": "Der Renovierungsplan",
-    "body": "Arbeiter, Lampen, Pläne und Zeitpläne. Alles, was du nicht beißen kannst.",
+    "body": "Arbeiter kommen mit Lampen, Plänen und Zeitplänen. Die Arbeiten bedrohen deine Zugänge direkt.",
     "choices": {
       "A": "Die Arbeiten absagen lassen",
       "B": "Die Zugänge verlegen",
@@ -2530,7 +2530,7 @@
   },
   "vampire_282": {
     "title": "Der feuchte Keller",
-    "body": "Der Keller des Verstecks tropft überall. Sogar die Särge beginnen zu murren.",
+    "body": "Im Keller des Unterschlupfs tropft es überall. Die Feuchtigkeit beginnt, die Särge zu beschädigen.",
     "choices": {
       "A": "Schnell reparieren",
       "B": "Den Vorrat verlegen",
@@ -2642,7 +2642,7 @@
     "choices": {
       "A": "Sie stehlen",
       "B": "Noch warten",
-      "C": "Menschen schicken"
+      "C": "Menschen schicken, um die Reliquie zu stehlen"
     }
   },
   "vampire_295": {
@@ -3187,7 +3187,7 @@
   },
   "vampire_355": {
     "title": "Der Kellernotar",
-    "body": "Ein geheimer Notar bietet an, deine Erbschaften zu waschen. Das riecht nach einer Falle.",
+    "body": "Ein zwielichtiger Notar bietet an, dein Vermögen zu waschen. Das riecht nach einer Falle.",
     "choices": {
       "A": "Es versuchen",
       "B": "Ihn überwachen",
@@ -3200,7 +3200,7 @@
     "choices": {
       "A": "Die Baustelle bestechen",
       "B": "Den Weg ändern",
-      "C": "Nachts arbeiten"
+      "C": "Erst nach dem départ der Arbeiter durchgehen"
     }
   },
   "vampire_357": {
@@ -3277,7 +3277,7 @@
   },
   "vampire_365": {
     "title": "Der Fahrer des Bürgermeisters",
-    "body": "Der Fahrer des Bürgermeisters erkennt dich auf einem alten Foto. Er erwartet einen Preis.",
+    "body": "Der Fahrer des Bürgermeisters erkennt dich auf einem alten Foto wieder. Er will etwas als Gegenleistung.",
     "choices": {
       "A": "Ihn bezahlen",
       "B": "Ihn zum Lügen bringen",
@@ -3497,7 +3497,7 @@
     "choices": {
       "A": "Ihn empfangen",
       "B": "Ihn auf Abstand halten",
-      "C": "Ihn zur Entscheidung drängen"
+      "C": "Ihn zwingen, Stellung zu beziehen"
     }
   },
   "vampire_390": {

@@ -1,4 +1,4 @@
-{
+﻿{
   "vampire_001": {
     "title": "A bolsa de sangue orgânico",
     "body": "Um estoque de sangue desaparece. Alguém fez reservas sem autorização.",
@@ -635,7 +635,7 @@
     "choices": {
       "A": "Remover a foto",
       "B": "Negar com humor",
-      "C": "Culpar um filtro"
+      "C": "Dizer que a foto foi manipulada"
     }
   },
   "vampire_072": {
@@ -1180,7 +1180,7 @@
   },
   "vampire_132": {
     "title": "A chuva ácida",
-    "body": "Não é o sol. É outra coisa. E outra coisa geralmente significa armadilha.",
+    "body": "Está caindo chuva ácida na área. Não é o sol, mas sair continua sendo perigoso.",
     "choices": {
       "A": "Ficar no esconderijo",
       "B": "Buscar a origem",
@@ -1292,7 +1292,7 @@
     "choices": {
       "A": "Aceitar e proteger",
       "B": "Recusar e vigiá-lo",
-      "C": "Substituí-lo"
+      "C": "Substituí-lo por alguém mais confiável"
     }
   },
   "vampire_145": {
@@ -1396,7 +1396,7 @@
   },
   "vampire_156": {
     "title": "O ruído sob a pedra",
-    "body": "Arranhão, respiração, silêncio. As três etapas de um problema que está crescendo.",
+    "body": "Ouve-se um arranhão sob a pedra, depois uma respiração, depois mais nada. Alguma coisa está se movendo atrás da parede.",
     "choices": {
       "A": "Abrir e ver",
       "B": "Selar e esquecer",
@@ -1612,7 +1612,7 @@
   },
   "vampire_180": {
     "title": "O plano de reforma",
-    "body": "Operários, lâmpadas, plantas e horários. Tudo aquilo que você não pode morder.",
+    "body": "Operários chegam com luzes, plantas e horários. A obra ameaça diretamente os seus acessos.",
     "choices": {
       "A": "Mandar cancelar as obras",
       "B": "Mover os acessos",
@@ -2530,7 +2530,7 @@
   },
   "vampire_282": {
     "title": "O porão úmido",
-    "body": "O porão do esconderijo pinga por toda parte. Até os caixões já estão reclamando.",
+    "body": "O porão do refúgio pinga por toda parte. A umidade está começando a estragar os caixões.",
     "choices": {
       "A": "Consertar rápido",
       "B": "Mover o estoque",
@@ -2642,7 +2642,7 @@
     "choices": {
       "A": "Roubá-la",
       "B": "Esperar mais",
-      "C": "Enviar humanos"
+      "C": "Enviar humanos para roubar a relíquia"
     }
   },
   "vampire_295": {
@@ -3187,7 +3187,7 @@
   },
   "vampire_355": {
     "title": "O tabelião clandestino",
-    "body": "Um tabelião clandestino se oferece para lavar tuas heranças. Isso fede a armadilha.",
+    "body": "Um notário clandestino propõe lavar o seu patrimônio. Isso cheira a armadilha.",
     "choices": {
       "A": "Tentar",
       "B": "Vigiá-lo",
@@ -3200,7 +3200,7 @@
     "choices": {
       "A": "Corromper a obra",
       "B": "Mudar de rota",
-      "C": "Trabalhar à noite"
+      "C": "Passar depois que os operários forem embora"
     }
   },
   "vampire_357": {
@@ -3277,7 +3277,7 @@
   },
   "vampire_365": {
     "title": "O motorista do prefeito",
-    "body": "O motorista do prefeito te reconhece numa foto antiga. Ele espera um preço.",
+    "body": "O motorista do prefeito reconhece você numa foto antiga. Ele quer algo em troca.",
     "choices": {
       "A": "Pagá-lo",
       "B": "Fazê-lo mentir",
@@ -3497,7 +3497,7 @@
     "choices": {
       "A": "Recebê-lo",
       "B": "Mantê-lo à distância",
-      "C": "Forçá-lo a escolher um lado"
+      "C": "Pressioná-lo a se posicionar"
     }
   },
   "vampire_390": {

@@ -1,4 +1,4 @@
-{
+﻿{
   "vampire_001": {
     "title": "A bolsa de sangue biológico",
     "body": "Uma reserva de sangue desaparece. Alguém fez stock sem autorização.",
@@ -635,7 +635,7 @@
     "choices": {
       "A": "Retirar a fotografia",
       "B": "Negar com humor",
-      "C": "Culpar um filtro"
+      "C": "Dizer que a foto foi manipulada"
     }
   },
   "vampire_072": {
@@ -1180,7 +1180,7 @@
   },
   "vampire_132": {
     "title": "A chuva ácida",
-    "body": "Não é o sol. É outra coisa. E outra coisa costuma significar armadilha.",
+    "body": "Cai chuva ácida na zona. Não é o sol, mas sair continua a ser perigoso.",
     "choices": {
       "A": "Ficar no esconderijo",
       "B": "Procurar a origem",
@@ -1292,7 +1292,7 @@
     "choices": {
       "A": "Aceitar e protegê-lo",
       "B": "Recusar e vigiá-lo",
-      "C": "Substituí-lo"
+      "C": "Substituí-lo por alguém mais fiável"
     }
   },
   "vampire_145": {
@@ -1396,7 +1396,7 @@
   },
   "vampire_156": {
     "title": "O ruído sob a pedra",
-    "body": "Arranhões, sopro, silêncio. As três fases de um problema que está a crescer.",
+    "body": "Ouve-se um arranhar debaixo da pedra, depois uma respiração, depois mais nada. Alguma coisa mexe-se atrás da parede.",
     "choices": {
       "A": "Abrir e ver",
       "B": "Selar e esquecer",
@@ -1612,7 +1612,7 @@
   },
   "vampire_180": {
     "title": "O plano de renovação",
-    "body": "Operários, lâmpadas, plantas e horários. Tudo aquilo que não podes morder.",
+    "body": "Chegam operários com luzes, plantas e horários. As obras ameaçam diretamente os teus acessos.",
     "choices": {
       "A": "Fazer cancelar as obras",
       "B": "Mudar os acessos",
@@ -2530,7 +2530,7 @@
   },
   "vampire_282": {
     "title": "A cave húmida",
-    "body": "A cave do esconderijo pinga por todo o lado. Até os caixões começam a queixar-se.",
+    "body": "A cave do refúgio pinga por todo o lado. A humidade começa a estragar os caixões.",
     "choices": {
       "A": "Reparar depressa",
       "B": "Mover o stock",
@@ -2642,7 +2642,7 @@
     "choices": {
       "A": "Roubá-la",
       "B": "Esperar mais um pouco",
-      "C": "Enviar humanos"
+      "C": "Enviar humanos para roubar a relíquia"
     }
   },
   "vampire_295": {
@@ -3187,7 +3187,7 @@
   },
   "vampire_355": {
     "title": "O notário da cave",
-    "body": "Um notário clandestino propõe branquear as tuas heranças. Cheira a armadilha.",
+    "body": "Um notário clandestino propõe branquear o teu património. Cheira a armadilha.",
     "choices": {
       "A": "Tentar a sorte",
       "B": "Vigiá-lo",
@@ -3200,7 +3200,7 @@
     "choices": {
       "A": "Corromper a obra",
       "B": "Mudar de caminho",
-      "C": "Trabalhar de noite"
+      "C": "Passar depois de os operários irem embora"
     }
   },
   "vampire_357": {
@@ -3277,7 +3277,7 @@
   },
   "vampire_365": {
     "title": "O motorista do presidente da câmara",
-    "body": "O motorista do presidente da câmara reconhece-te numa fotografia antiga. Está à espera de um preço.",
+    "body": "O motorista do presidente da câmara reconhece-te numa fotografia antiga. Ele quer algo em troca.",
     "choices": {
       "A": "Pagá-lo",
       "B": "Obrigá-lo a mentir",
@@ -3497,7 +3497,7 @@
     "choices": {
       "A": "Recebê-lo",
       "B": "Mantê-lo à distância",
-      "C": "Empurrá-lo a escolher"
+      "C": "Obrigá-lo a tomar posição"
     }
   },
   "vampire_390": {
