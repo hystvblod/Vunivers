@@ -50,7 +50,7 @@
     "choices": {
       "A": "Payer un grand repas",
       "B": "Promettre mieux plus tard",
-      "C": "Acheter local et inviter le port"
+      "C": "Acheter local et inviter les gens du port"
     }
   },
   "nw_007": {
@@ -100,7 +100,7 @@
   },
   "nw_012": {
     "title": "Messager blessé",
-    "body": "Le messager royal tombe de cheval avec nos ordres et notre prestige.",
+    "body": "Le messager royal tombe de cheval avec nos ordres sur lui. Notre crédibilité est en jeu.",
     "choices": {
       "A": "Soigner le messager",
       "B": "Lire les ordres nous-mêmes",
@@ -185,7 +185,7 @@
     "choices": {
       "A": "Le respecter publiquement",
       "B": "L’utiliser comme dépôt",
-      "C": "Offrir de l’huile au lieu"
+      "C": "Offrir de l’huile au temple"
     }
   },
   "nw_022": {
@@ -226,7 +226,7 @@
   },
   "nw_026": {
     "title": "Crique secrète",
-    "body": "Une crique cachée serait idéale pour un dépôt ou une fuite.",
+    "body": "Une crique cachée serait idéale pour un dépôt secret ou une voie de fuite.",
     "choices": {
       "A": "Y cacher un trésor",
       "B": "Y bâtir un poste",
@@ -271,7 +271,7 @@
   },
   "nw_031": {
     "title": "Bétail errant",
-    "body": "Des bêtes errent près de nos champs et près des envies des marins.",
+    "body": "Des bêtes errent près de nos champs et tentent déjà les marins affamés.",
     "choices": {
       "A": "Acheter le troupeau",
       "B": "Le saisir",
@@ -415,7 +415,7 @@
   },
   "nw_047": {
     "title": "Cabot cassé",
-    "body": "Un petit bateau du port coule doucement et très publiquement.",
+    "body": "Un petit bateau du port prend l’eau sous les yeux de tout le monde.",
     "choices": {
       "A": "Le réparer",
       "B": "Le racheter pour rien",
@@ -523,7 +523,7 @@
   },
   "nw_059": {
     "title": "Poudre noire",
-    "body": "Le stock de poudre baisse et les rapports montent en panique.",
+    "body": "Le stock de poudre baisse et les rapports deviennent alarmants.",
     "choices": {
       "A": "Acheter cher",
       "B": "Réduire les tirs",
@@ -694,7 +694,7 @@
   },
   "nw_078": {
     "title": "Sel de contrebande",
-    "body": "Le sel fuit les entrepôts plus vite que l’eau fuit les tonneaux.",
+    "body": "Le sel disparaît des entrepôts à vue d’œil.",
     "choices": {
       "A": "Punir sévèrement",
       "B": "Baisser la taxe",
@@ -793,7 +793,7 @@
   },
   "nw_089": {
     "title": "Champ d’indigo",
-    "body": "L’indigo local vaut cher mais mange des terres qui nourrissent mieux.",
+    "body": "L’indigo local vaut cher mais prend la place des cultures qui nourrissent mieux.",
     "choices": {
       "A": "Planter plus d’indigo",
       "B": "Garder des cultures mixtes",
@@ -802,7 +802,7 @@
   },
   "nw_090": {
     "title": "Vieille tour",
-    "body": "Une vieille tour du rivage peut servir de poste ou tomber sur nos bottes.",
+    "body": "Une vieille tour du rivage peut servir de poste ou s’effondrer sur quelqu’un.",
     "choices": {
       "A": "La restaurer",
       "B": "La démonter et vendre la pierre",
@@ -1279,7 +1279,7 @@
   },
   "nw_143": {
     "title": "Digue fendue",
-    "body": "Une digue craque et la mer a déjà son opinion.",
+    "body": "Une digue craque et la mer pousse déjà fort dessus.",
     "choices": {
       "A": "La réparer vite",
       "B": "Réparer juste le passage",
@@ -1369,7 +1369,7 @@
   },
   "nw_153": {
     "title": "Rameurs absents",
-    "body": "La moitié des rameurs ont trouvé une meilleure excuse que la mer.",
+    "body": "La moitié des rameurs ont trouvé une excuse pour éviter la mer.",
     "choices": {
       "A": "Payer un bonus",
       "B": "Recruter au village",
@@ -1468,7 +1468,7 @@
   },
   "nw_164": {
     "title": "Mât cassé",
-    "body": "Un navire perd son mât au port avec un bruit très convaincant.",
+    "body": "Un navire perd son mât au port dans un fracas qui alerte tout le monde.",
     "choices": {
       "A": "Aider à réparer",
       "B": "Racheter le navire",
@@ -1522,7 +1522,7 @@
   },
   "nw_170": {
     "title": "Route du sel",
-    "body": "Une route du sel pourrait enrichir la baie ou vider nos gardes.",
+    "body": "Une route du sel pourrait enrichir la baie ou épuiser nos gardes.",
     "choices": {
       "A": "L’ouvrir et la taxer",
       "B": "La garder militaire",
@@ -1576,7 +1576,7 @@
   },
   "nw_176": {
     "title": "Canne à sucre",
-    "body": "La canne à sucre pousse bien et rend les comptes très gourmands.",
+    "body": "La canne à sucre pousse bien et fait déjà rêver les comptables.",
     "choices": {
       "A": "Créer un grand champ",
       "B": "Garder une petite culture",
@@ -1585,7 +1585,7 @@
   },
   "nw_177": {
     "title": "Hamac officiel",
-    "body": "Un officier veut des hamacs pour améliorer la stratégie du sommeil.",
+    "body": "Un officier veut des hamacs pour que les hommes dorment enfin correctement.",
     "choices": {
       "A": "En acheter",
       "B": "Les réserver aux blessés",
@@ -1810,7 +1810,7 @@
   },
   "nw_202": {
     "title": "Bananes trop mûres",
-    "body": "Des bananes menacent le quai et le nez des passants.",
+    "body": "Des bananes trop mûres encombrent le quai et empestent l’air autour.",
     "choices": {
       "A": "Les vendre vite",
       "B": "Les sécher",
@@ -1918,7 +1918,7 @@
   },
   "nw_214": {
     "title": "Courges géantes",
-    "body": "Des courges géantes envahissent le potager comme de gros seigneurs orange.",
+    "body": "Des courges géantes envahissent le potager et prennent toute la place.",
     "choices": {
       "A": "Les vendre",
       "B": "Les offrir",
@@ -1954,7 +1954,7 @@
   },
   "nw_218": {
     "title": "Nid sur la tour",
-    "body": "Des oiseaux ont choisi la tour comme palace officiel.",
+    "body": "Des oiseaux ont installé leur nid sur la tour et gênent la surveillance.",
     "choices": {
       "A": "Déplacer le nid",
       "B": "Laisser faire",
@@ -1999,7 +1999,7 @@
   },
   "nw_223": {
     "title": "Soldats pieds nus",
-    "body": "Des bottes ont disparu et les soldats regardent le sol avec reproche.",
+    "body": "Des bottes ont disparu et les soldats se rejettent la faute.",
     "choices": {
       "A": "Commander des bottes",
       "B": "Acheter localement",
@@ -2080,7 +2080,7 @@
   },
   "nw_232": {
     "title": "Cadeau encombrant",
-    "body": "Un chef voisin offre un grand tambour qui prend plus de place que de sens.",
+    "body": "Un chef voisin offre un grand tambour qui prend beaucoup de place et ne sert pas à grand-chose.",
     "choices": {
       "A": "L’accepter",
       "B": "Le revendre",
@@ -2161,7 +2161,7 @@
   },
   "nw_241": {
     "title": "Singe du grenier",
-    "body": "Un singe vole le grain avec une précision de percepteur.",
+    "body": "Un singe vole le grain avec une efficacité redoutable.",
     "choices": {
       "A": "Le chasser",
       "B": "Mieux fermer le grenier",
@@ -2233,7 +2233,7 @@
   },
   "nw_249": {
     "title": "Moustiques champions",
-    "body": "Les moustiques du marais gagnent toutes les batailles du soir.",
+    "body": "Les moustiques du marais envahissent le camp chaque soir.",
     "choices": {
       "A": "Acheter des toiles",
       "B": "Allumer plus de fumée",
@@ -2269,7 +2269,7 @@
   },
   "nw_253": {
     "title": "Tour d’observation",
-    "body": "Une petite tour offrirait une belle vue et de longues dépenses.",
+    "body": "Une petite tour offrirait une belle vue, mais coûterait cher à construire et à garder.",
     "choices": {
       "A": "La bâtir",
       "B": "Monter une plateforme simple",
@@ -2539,7 +2539,7 @@
   },
   "nw_283": {
     "title": "Roue bancale",
-    "body": "Une roue bancale donne au chariot le style d’un danseur triste.",
+    "body": "Une roue bancale fait tanguer tout le chariot.",
     "choices": {
       "A": "La changer",
       "B": "La réparer au village",
@@ -2719,7 +2719,7 @@
   },
   "nw_303": {
     "title": "Crique tranquille",
-    "body": "Une crique calme pourrait être mieux utilisée.",
+    "body": "Une crique calme pourrait servir de petit quai ou d’abri.",
     "choices": {
       "A": "Y faire un petit quai",
       "B": "La garder militaire",
@@ -2764,7 +2764,7 @@
   },
   "nw_308": {
     "title": "Fenêtre du bureau",
-    "body": "Le bureau manque d’air et les comptes aussi.",
+    "body": "Le bureau manque d’air et les scribes y travaillent mal.",
     "choices": {
       "A": "L’agrandir",
       "B": "Ouvrir le matin",
@@ -3025,7 +3025,7 @@
   },
   "nw_337": {
     "title": "Corde rouge",
-    "body": "Une corde teinte en rouge attire plus les yeux que les bras.",
+    "body": "Une corde teinte en rouge se repère de loin mais n’est pas plus utile.",
     "choices": {
       "A": "La garder pour le quai",
       "B": "La vendre",
@@ -3187,7 +3187,7 @@
   },
   "nw_355": {
     "title": "Porte étroite",
-    "body": "La petite porte du dépôt déteste les grosses caisses.",
+    "body": "La petite porte du dépôt laisse mal passer les grosses caisses.",
     "choices": {
       "A": "L’ouvrir plus large",
       "B": "Faire passer par ordre",
@@ -3241,7 +3241,7 @@
   },
   "nw_361": {
     "title": "Lanterne bleue",
-    "body": "Une lanterne bleue éclaire mieux que tout notre sérieux.",
+    "body": "Une lanterne bleue éclaire mieux que nos lanternes actuelles.",
     "choices": {
       "A": "L’adopter au quai",
       "B": "La vendre comme curiosité",
@@ -3358,7 +3358,7 @@
   },
   "nw_374": {
     "title": "Colis fragile",
-    "body": "Le colis tremble presque tout seul quand on le regarde.",
+    "body": "Le colis semble si fragile qu’on ose à peine le bouger.",
     "choices": {
       "A": "Le porter à la main",
       "B": "Le stocker au fort",
@@ -3394,7 +3394,7 @@
   },
   "nw_378": {
     "title": "Draps du camp",
-    "body": "Les draps du camp ont la couleur de la fatigue.",
+    "body": "Les draps du camp sont usés et sales.",
     "choices": {
       "A": "En changer",
       "B": "Les laver au village",
@@ -3430,7 +3430,7 @@
   },
   "nw_382": {
     "title": "Scribe rapide",
-    "body": "Un scribe copie si vite qu’on lui trouverait bien un autre paquet.",
+    "body": "Un scribe copie si vite qu’on pourrait lui confier plus de travail.",
     "choices": {
       "A": "Lui donner plus de travail",
       "B": "Lui trouver un aide",
@@ -3484,7 +3484,7 @@
   },
   "nw_388": {
     "title": "Garde trempé",
-    "body": "Le garde de la porte ressemble à une éponge armée.",
+    "body": "Le garde de la porte est trempé de la tête aux pieds.",
     "choices": {
       "A": "Lui donner une cape",
       "B": "Changer le poste",
@@ -3502,7 +3502,7 @@
   },
   "nw_390": {
     "title": "Marché du matin",
-    "body": "Le marché veut ouvrir plus tôt que le soleil du bureau.",
+    "body": "Le marché veut ouvrir plus tôt que l’ouverture du bureau.",
     "choices": {
       "A": "Ouvrir plus tôt",
       "B": "Tester un jour",
