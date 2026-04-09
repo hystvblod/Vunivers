@@ -3,13 +3,13 @@
   "events": {
     "mega_corp_ceo_ev_001": {
       "title": "Note des analystes",
-      "body": "Une grande banque publie une note très positive. Les courbes montent et les fonds sourient.",
+      "body": "Une grande banque publie une note très positive. L’action monte et les investisseurs sont rassurés.",
       "effect": "Investisseurs : +5 par carte",
       "duration": "Durée : 5 cartes"
     },
     "mega_corp_ceo_ev_002": {
       "title": "Semaine des équipes",
-      "body": "Les managers remercient publiquement les équipes. L’ambiance gagne enfin un peu d’air.",
+      "body": "Les managers remercient publiquement les équipes. L’ambiance s’améliore enfin un peu.",
       "effect": "Employés : +5 par carte",
       "duration": "Durée : 6 cartes"
     },
@@ -57,13 +57,13 @@
     },
     "mega_corp_ceo_ev_010": {
       "title": "Bonus d’équipe",
-      "body": "Un geste concret tombe au bon moment. Les couloirs respirent un peu mieux.",
+      "body": "Une prime ou un avantage concret arrive au bon moment. L’ambiance s’améliore un peu.",
       "effect": "Employés : +5 par carte",
       "duration": "Durée : 6 cartes"
     },
     "mega_corp_ceo_ev_011": {
       "title": "Article cassant",
-      "body": "Un média publie un portrait froid de ton groupe. La formule fait mal, donc elle tourne partout.",
+      "body": "Un média publie un portrait très dur de ton groupe. La phrase la plus violente est reprise partout.",
       "effect": "Image de marque : -5 par carte",
       "duration": "Durée : 3 cartes"
     },

@@ -45,12 +45,12 @@
     }
   },
   "mcc_006": {
-    "title": "Kerja jarak jauh di ambang bentrok",
-    "body": "Para manajer ingin semua kembali ke kantor. Tim mengancam pergi jika kamu memaksakan terlalu jauh.",
+    "title": "Kerja jarak jauh: konflik di depan mata",
+    "body": "Para manajer ingin semua kembali ke kantor. Tim mengancam akan pergi jika kamu mewajibkan terlalu banyak hari kerja di kantor.",
     "choices": {
       "A": "Model hibrida yang fleksibel, per tim.",
       "B": "Wajib kembali 4 hari per minggu.",
-      "C": "Hampir full remote + kantor bersama."
+      "C": "Kerja jarak jauh hampir penuh dengan kantor bersama."
     }
   },
   "mcc_007": {
@@ -58,7 +58,7 @@
     "body": "Keluhan pelanggan meledak untuk produk andalan. Tim kualitas menuntut penghentian lini produksi.",
     "choices": {
       "A": "Hentikan produksi dan perbaiki sebelum diluncurkan lagi.",
-      "B": "Lanjutkan dan benahi sambil berjalan.",
+      "B": "Tetap lanjutkan produksi dan perbaiki masalah satu per satu saat muncul.",
       "C": "Luncurkan penukaran gratis dan perkuat kontrol tanpa berhenti."
     }
   },
@@ -73,11 +73,11 @@
   },
   "mcc_009": {
     "title": "Rumor upaya akuisisi",
-    "body": "Rumor akuisisi paksa membuat saham melonjak. Investor senang. Karyawan panik.",
+    "body": "Rumor soal pengambilalihan paksa membuat harga saham naik. Investor senang. Karyawan panik.",
     "choices": {
       "A": "Bertahan: beli kembali saham dan buat rencana anti-akuisisi.",
-      "B": "Negosiasikan merger ramah secara diam-diam.",
-      "C": "Abaikan secara publik dan lanjutkan seolah tak terjadi apa-apa."
+      "B": "Bernegosiasi diam-diam untuk mendekatkan diri dengan perusahaan lain.",
+      "C": "Jangan bicara apa pun di depan umum dan lanjutkan seperti biasa."
     }
   },
   "mcc_010": {
@@ -90,10 +90,10 @@
     }
   },
   "mcc_011": {
-    "title": "Hadiah beracun",
-    "body": "Seorang klien besar menawarkan kontrak raksasa… dengan penalti sangat besar jika kamu melewati tenggat.",
+    "title": "Kontrak berisiko",
+    "body": "Seorang klien besar menawarkan kontrak sangat besar, dengan denda sangat berat jika kamu melewati tenggat waktu.",
     "choices": {
-      "A": "Tanda tangan: target ambisius, semua turun tangan.",
+      "A": "Tanda tangani dan kerahkan semua tim.",
       "B": "Tolak: terlalu berbahaya.",
       "C": "Tanda tangan tapi negosiasikan klausul dan sebarkan jadwal."
     }
@@ -108,12 +108,12 @@
     }
   },
   "mcc_013": {
-    "title": "Tuduhan ekologi pencitraan",
-    "body": "Laporan berkelanjutan terakhirmu diserang: kata-kata indah, bukti sedikit.",
+    "title": "Tuduhan janji ramah lingkungan palsu",
+    "body": "Laporan lingkungan terakhirmu diserang: banyak janji, sedikit bukti.",
     "choices": {
       "A": "Publikasikan angka mentah dan terima kritik.",
-      "B": "Luncurkan kampanye iklan untuk mengalihkan perhatian.",
-      "C": "Minta audit independen dan perbarui laporan."
+      "B": "Meluncurkan kampanye iklan untuk mengalihkan perhatian.",
+      "C": "Meminta audit independen dan memperbarui laporan."
     }
   },
   "mcc_014": {
@@ -135,12 +135,12 @@
     }
   },
   "mcc_016": {
-    "title": "Kepergian talenta kunci",
+    "title": "Kepergian eksekutif penting",
     "body": "Pimpinan teknologi mengumumkan kepergiannya. Tim panik. Investor mengawasi.",
     "choices": {
       "A": "Tawarkan kontra tawaran yang sangat besar.",
       "B": "Hormati keputusannya dan promosikan talenta internal.",
-      "C": "Datangkan bintang eksternal yang mahal."
+      "C": "Mendatangkan nama besar dari luar, sangat mahal."
     }
   },
   "mcc_017": {
@@ -154,9 +154,9 @@
   },
   "mcc_018": {
     "title": "Program pelatihan",
-    "body": "HR meminta anggaran besar untuk melatih semua orang. Direktur keuangan meringis.",
+    "body": "HR meminta anggaran besar untuk melatih semua orang. Direktur keuangan belum yakin.",
     "choices": {
-      "A": "Setujui: peningkatan keterampilan secara umum.",
+      "A": "Setujui: latih tim secara luas.",
       "B": "Tolak: pelatihan terarah seminimal mungkin.",
       "C": "Biayai setengah, sisanya lewat belajar mandiri yang dibimbing."
     }
@@ -1081,11 +1081,11 @@
   },
   "mcc_121": {
     "title": "Magang jenius",
-    "body": "Seorang magang mengotomatiskan tugas yang sebelumnya dikerjakan 12 orang secara manual. Tepuk tangan… dan kekhawatiran.",
+    "body": "Seorang magang mengotomatiskan tugas yang sebelumnya dikerjakan 12 orang secara manual. Semua orang bertepuk tangan, lalu mulai khawatir.",
     "choices": {
-      "A": "Beri penghargaan dan alihkan tugas ke sesuatu yang lebih baik.",
+      "A": "Beri penghargaan pada magang itu dan alihkan tim ke tugas yang lebih berguna.",
       "B": "Sembunyikan proyek: terlalu sensitif.",
-      "C": "Terapkan bertahap dengan rencana peningkatan keterampilan."
+      "C": "Terapkan bertahap dengan rencana pelatihan."
     }
   },
   "mcc_122": {

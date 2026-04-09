@@ -45,12 +45,12 @@
     }
   },
   "mcc_006": {
-    "title": "Télétravail au bord du clash",
-    "body": "Les managers veulent le retour au bureau. Les équipes menacent de partir si tu imposes trop.",
+    "title": "Télétravail : conflit en vue",
+    "body": "Les managers veulent le retour au bureau. Les équipes menacent de partir si tu imposes trop de jours sur place.",
     "choices": {
       "A": "Modèle hybride flexible, par équipe.",
       "B": "Retour obligatoire 4 jours/semaine.",
-      "C": "Télétravail quasi total + bureaux partagés."
+      "C": "Télétravail presque total avec bureaux partagés."
     }
   },
   "mcc_007": {
@@ -58,7 +58,7 @@
     "body": "Les retours clients explosent sur un produit phare. L’équipe qualité réclame un arrêt de la chaîne.",
     "choices": {
       "A": "Stopper la production et corriger avant de relancer.",
-      "B": "Continuer et régler au fil de l’eau.",
+      "B": "Continuer la production et corriger les problèmes au fur et à mesure.",
       "C": "Lancer un échange gratuit et renforcer le contrôle sans arrêter."
     }
   },
@@ -73,11 +73,11 @@
   },
   "mcc_009": {
     "title": "Rumeur de tentative de rachat",
-    "body": "Une rumeur de rachat hostile fait grimper l’action. Les investisseurs adorent. Les employés paniquent.",
+    "body": "Une rumeur de rachat forcé fait grimper l’action. Les investisseurs adorent. Les employés paniquent.",
     "choices": {
       "A": "Te défendre: rachat d’actions et plan anti-tentative de rachat.",
-      "B": "Négocier en coulisses une fusion \"amicale\".",
-      "C": "Ignorer publiquement et continuer comme si de rien n’était."
+      "B": "Négocier discrètement un rapprochement avec l’autre entreprise.",
+      "C": "Ne rien dire publiquement et continuer normalement."
     }
   },
   "mcc_010": {
@@ -90,10 +90,10 @@
     }
   },
   "mcc_011": {
-    "title": "Cadeau empoisonné",
-    "body": "Un grand client propose un contrat énorme… avec une grosse pénalité monstrueuse si tu rates un délai.",
+    "title": "Contrat risqué",
+    "body": "Un grand client propose un contrat énorme, avec une très grosse pénalité si tu rates un délai.",
     "choices": {
-      "A": "Signer: objectif ambitieux, tout le monde au front.",
+      "A": "Signer et mobiliser toutes les équipes.",
       "B": "Refuser: trop dangereux.",
       "C": "Signer mais négocier la clause et étaler le calendrier."
     }
@@ -108,12 +108,12 @@
     }
   },
   "mcc_013": {
-    "title": "Accusation d’écologie de façade",
-    "body": "Ton dernier rapport \"durable\" est attaqué: \"beaux mots, peu de preuves\".",
+    "title": "Accusation de faux discours écologique",
+    "body": "Ton dernier rapport sur l’environnement est attaqué : beaucoup de promesses, peu de preuves.",
     "choices": {
       "A": "Publier les chiffres bruts et accepter les critiques.",
-      "B": "Lancer une campagne de pub pour noyer le poisson.",
-      "C": "Demander à un audit indépendant et mettre à jour le rapport."
+      "B": "Lancer une campagne de publicité pour détourner l’attention.",
+      "C": "Demander un audit indépendant et mettre à jour le rapport."
     }
   },
   "mcc_014": {
@@ -135,12 +135,12 @@
     }
   },
   "mcc_016": {
-    "title": "Départ d’un talent clé",
-    "body": "La direction tech annonce son départ. Les équipes paniquent. Les investisseurs surveillent.",
+    "title": "Départ d’un dirigeant clé",
+    "body": "La personne responsable de la technologie annonce son départ. Les équipes paniquent. Les investisseurs surveillent.",
     "choices": {
       "A": "Proposer une contre-offre énorme.",
       "B": "Respecter son choix et promouvoir un talent interne.",
-      "C": "Faire venir une star externe, chère."
+      "C": "Faire venir une grande figure externe, très chère."
     }
   },
   "mcc_017": {
@@ -154,9 +154,9 @@
   },
   "mcc_018": {
     "title": "Programme de formation",
-    "body": "Les RH demandent un gros budget pour former tout le monde. Le directeur financier grimace.",
+    "body": "Les RH demandent un gros budget pour former tout le monde. Le directeur financier n’est pas convaincu.",
     "choices": {
-      "A": "Valider: montée en compétences générale.",
+      "A": "Valider : former largement les équipes.",
       "B": "Refuser: formation ciblée au strict minimum.",
       "C": "Financer à moitié, le reste en auto-formation encadrée."
     }
@@ -1081,11 +1081,11 @@
   },
   "mcc_121": {
     "title": "Stagiaire prodige",
-    "body": "Un stagiaire automatise une tâche que 12 personnes faisaient à la main. Applaudissements… et inquiétude.",
+    "body": "Un stagiaire automatise une tâche que 12 personnes faisaient à la main. Tout le monde applaudit, puis s’inquiète.",
     "choices": {
-      "A": "Récompenser et requalifier les tâches vers du mieux.",
+      "A": "Récompenser le stagiaire et confier aux équipes des tâches plus utiles.",
       "B": "Cacher le projet: trop sensible.",
-      "C": "Déployer progressivement avec plan de montée en compétences."
+      "C": "Déployer progressivement avec un plan de formation."
     }
   },
   "mcc_122": {
