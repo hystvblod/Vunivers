@@ -18,10 +18,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses la brutalité et tu restabilises les prières à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses le vide s'installer. Les prières sont coupées en deux."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu installes la peur à la place de la foi. Les prières sont divisées par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses cette brutalité et les prières reviennent à 50."
     },
     "heaven_major_003": {
       "title": "Nouveau culte",
@@ -29,10 +29,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu recadres la foi sur quelque chose de stable. Le culte revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Le culte dérive dans tous les sens. Sa jauge chute de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu soutiens une dérive spectaculaire. Le culte chute de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu recadres la foi sur quelque chose de stable. Le culte revient à 50."
     },
     "heaven_major_004": {
       "title": "Libre arbitre réduit",
@@ -40,10 +40,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu corriges la dérive et le libre arbitre revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses la pression monter. Le libre arbitre est divisé par deux."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu donnes trop de contrôle. Le libre arbitre est divisé par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses cette dérive et le libre arbitre revient à 50."
     },
     "heaven_major_005": {
       "title": "Miracles en série",
@@ -62,10 +62,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu empêches l'abus et le culte revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Les prières s'éteignent au lieu de grandir. Elles chutent de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu fermes la foi au lieu de la faire grandir. Le culte est divisé par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses ce contrôle et le culte revient à 50."
     },
     "heaven_major_007": {
       "title": "Supprimer le choix",
@@ -73,10 +73,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses cette dérive. Le libre arbitre revient à 50.",
-      "outcome_no_title": "Catastrophe",
-      "outcome_no_body": "Le système bascule dans quelque chose d'inacceptable. Fin de partie."
+      "outcome_yes_title": "Catastrophe",
+      "outcome_yes_body": "Tu imposes une voie inacceptable. Fin de partie.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses cette dérive. Le libre arbitre revient à 50."
     },
     "heaven_major_008": {
       "title": "Culte trop visible",
@@ -84,10 +84,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu interviens trop tard et trop mal. Le culte perd la moitié de sa force.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu choisis une correction calme et le culte revient à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu freines cette dérive avant qu'elle ne déborde. Le culte revient à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu laisses ces cérémonies prendre trop de place. Le culte perd la moitié de sa force."
     },
     "heaven_major_009": {
       "title": "Écouter encore les hommes",
@@ -117,10 +117,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses le spectacle facile. Les interventions reviennent à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses le doute s'installer partout. Les interventions chutent de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu transformes la foi en spectacle. Les interventions sont divisées par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses ce grand coup d'éclat. Les interventions reviennent à 50."
     },
     "heaven_major_012": {
       "title": "Prier par habitude",
@@ -139,10 +139,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu coupes la dérive et le culte revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses le sens se perdre. Le culte chute de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu laisses la foi se vider de son sens. Le culte chute de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu coupes cette dérive et le culte revient à 50."
     },
     "heaven_major_014": {
       "title": "Mains invisibles",
@@ -150,10 +150,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses la manipulation et le libre arbitre revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses cette dérive avancer. Le libre arbitre est divisé par deux."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu autorises une manipulation dangereuse. Le libre arbitre est divisé par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses cette influence cachée et le libre arbitre revient à 50."
     },
     "heaven_major_015": {
       "title": "Trop de réponses",
@@ -161,10 +161,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu coupes trop brutalement. Les interventions tombent de moitié.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu rééquilibres sans casser le lien. Les interventions reviennent à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu remets une juste distance sans casser le lien. Les interventions reviennent à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu laisses le ciel répondre trop souvent. Les interventions tombent de moitié."
     },
     "heaven_major_016": {
       "title": "Apparition totale",
@@ -216,10 +216,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu restes sobre et vrai. Les prières reviennent à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "La foi se refroidit encore. Les prières sont divisées par deux."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Le rassemblement devient une façade et les prières sont divisées par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses ce faux élan et les prières reviennent à 50."
     },
     "heaven_major_021": {
       "title": "Freiner les excès",
@@ -227,10 +227,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu coupes trop fort. Le culte perd la moitié de sa vigueur.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu calmes sans casser. Le culte revient à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu limites ce courant avant qu'il ne se referme complètement. Le culte revient à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu le laisses se refermer sur lui-même. Le culte perd la moitié de sa vigueur."
     },
     "heaven_major_022": {
       "title": "Laisser douter",
@@ -249,10 +249,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu réduis l'excès d'aide et l'intervention revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Les prières se vident de leur sens. Elles chutent de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu crées une dépendance malsaine. Les interventions sont divisées par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses d'augmenter encore cette aide. Les interventions reviennent à 50."
     },
     "heaven_major_024": {
       "title": "Retrait discret",
@@ -260,10 +260,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Le retrait est trop brutal. Les interventions sont divisées par deux.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu choisis un recul juste. Les interventions reviennent à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu prends du recul sans disparaître. Les interventions reviennent à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu continues à répondre trop souvent. Les interventions sont divisées par deux."
     },
     "heaven_major_025": {
       "title": "Mots vidés de sens",
@@ -282,10 +282,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses l'uniformité forcée. Le culte revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses la dérive grossir. Le culte est divisé par deux."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu écrases les nuances et le culte est divisé par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses cette centralisation forcée. Le culte revient à 50."
     },
     "heaven_major_027": {
       "title": "Monde sans choix",
@@ -304,10 +304,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Le signe est trop faible pour être compris. Les interventions perdent la moitié de leur poids.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu choisis une action mieux calibrée. Les interventions reviennent à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu choisis une action juste et mesurée. Les interventions reviennent à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu retombes dans une action trop lourde. Les interventions perdent la moitié de leur poids."
     },
     "heaven_major_029": {
       "title": "Écouter les prières simples",
@@ -326,10 +326,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu casses trop fort. Le culte perd la moitié de sa force.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu réouvres sans détruire. Le culte revient à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu bloques ce courant fermé avant qu'il n'abîme le reste. Le culte revient à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu laisses ce culte se durcir. Le culte perd la moitié de sa force."
     },
     "heaven_major_031": {
       "title": "Choix moral ou obéissance",
@@ -359,10 +359,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu tailles trop d'un coup. Les prières tombent de moitié.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu réformes sans casser. Les prières reviennent à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu casses la routine sans casser la prière. Les prières reviennent à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu laisses la routine vider la prière de son sens. Les prières tombent de moitié."
     },
     "heaven_major_034": {
       "title": "Rite sans âme",
@@ -381,10 +381,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses la manipulation générale. Le libre arbitre revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu renonces à la liberté réelle. Les prières chutent de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu remplaces la liberté par l'influence. Le libre arbitre chute de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu laisses chacun choisir vraiment. Le libre arbitre revient à 50."
     },
     "heaven_major_036": {
       "title": "Réponse immédiate",
@@ -392,10 +392,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu coupes trop fort et trop vite. Les interventions perdent la moitié de leur valeur.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu réorganises sans casser. Les interventions reviennent à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu remets une limite saine. Les interventions reviennent à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu laisses le ciel répondre à tout automatiquement. Les interventions perdent la moitié de leur valeur."
     },
     "heaven_major_037": {
       "title": "Retour au cœur",

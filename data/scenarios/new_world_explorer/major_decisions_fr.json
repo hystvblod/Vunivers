@@ -40,10 +40,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses la brutalité et la population convertie revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "La méthode se retourne contre toi. La population convertie est divisée par deux."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu laisses la peur gouverner. La population convertie est divisée par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses cette brutalité et la population convertie revient à 50."
     },
     "explorer_major_005": {
       "title": "Exiger plus du roi",
@@ -51,10 +51,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu temporises et gardes sa confiance. L'appui royal revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu demandes trop trop tôt. L'appui royal chute de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu demandes trop tôt. L'appui royal chute de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu temporises et gardes la confiance du roi. L'appui royal revient à 50."
     },
     "explorer_major_006": {
       "title": "Partir au-delà des lignes",
@@ -73,10 +73,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses le mirage et les richesses reviennent à 50.",
-      "outcome_no_title": "Catastrophe",
-      "outcome_no_body": "Tu sacrifies trop d'hommes pour un leurre. Fin de partie."
+      "outcome_yes_title": "Catastrophe",
+      "outcome_yes_body": "Tu envoies trop d'hommes dans un piège. Fin de partie.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses ce mirage et les richesses reviennent à 50."
     },
     "explorer_major_008": {
       "title": "Baptêmes de façade",
@@ -107,9 +107,9 @@
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
       "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu évites le pillage idiot et l'appui royal revient à 50.",
+      "outcome_yes_body": "Tu évites le pillage et l'appui royal revient à 50.",
       "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "La prise brutale te coûte cher ensuite. L'appui royal chute de moitié."
+      "outcome_no_body": "Tu laisses faire et l'appui royal chute de moitié."
     },
     "explorer_major_011": {
       "title": "Fort trop isolé",
@@ -117,10 +117,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu renonces à l'orgueil et les territoires reviennent à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu gardes un symbole vide. Les territoires chutent de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu gardes un poste vide de sens. Les territoires chutent de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu renonces à ce symbole inutile et les territoires reviennent à 50."
     },
     "explorer_major_012": {
       "title": "Part du roi",
@@ -139,10 +139,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses la violence et la population convertie revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses monter le rejet. La population convertie est divisée par deux."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu soutiens une contrainte qui retourne la population contre toi. La population convertie est divisée par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses cette violence et la population convertie revient à 50."
     },
     "explorer_major_014": {
       "title": "Envoyer des excuses",
@@ -194,10 +194,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu réagis trop tard. La population convertie perd déjà la moitié de sa stabilité.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu stabilises avant d'annoncer. La population convertie revient à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu stabilises avant d'annoncer. La population convertie revient à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu annonces trop vite et la population convertie perd la moitié de sa stabilité."
     },
     "explorer_major_019": {
       "title": "Demande de renforts",
@@ -228,9 +228,9 @@
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
       "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu sauves l'essentiel. Les richesses reviennent à 50.",
+      "outcome_yes_body": "Tu interdis ce pillage et les richesses reviennent à 50.",
       "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Les réserves se vident. Les richesses sont divisées par deux."
+      "outcome_no_body": "Tu laisses les réserves se vider. Les richesses sont divisées par deux."
     },
     "explorer_major_022": {
       "title": "Peur ou patience",
@@ -260,10 +260,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu parais trop prudent et ton crédit baisse déjà. L'appui royal chute de moitié.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu gères mieux ton lien avec la cour. L'appui royal revient à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu gardes une marge politique utile et l'appui royal revient à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu demandes tout trop tôt et l'appui royal chute de moitié."
     },
     "explorer_major_025": {
       "title": "Carte trop optimiste",
@@ -359,10 +359,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu recules mal et trop tard. Les territoires perdent déjà la moitié de leur valeur.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu remets de l'ordre intelligemment. Les territoires reviennent à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu recules pour repartir proprement. Les territoires reviennent à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu fais semblant de tenir et les territoires perdent la moitié de leur valeur."
     },
     "explorer_major_034": {
       "title": "Réserves pillées",
@@ -392,10 +392,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu tardes trop à le faire et la confiance baisse déjà. L'appui royal chute de moitié.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu reprends la main sur le récit. L'appui royal revient à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu envoies un bilan modeste mais solide. L'appui royal revient à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu attends trop longtemps et l'appui royal chute de moitié."
     },
     "explorer_major_037": {
       "title": "Défendre l'existant",
@@ -425,10 +425,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses la façade et la population convertie revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu nourris du vide au lieu du fond. La population convertie chute de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu nourris une façade vide. La population convertie chute de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses ce discours creux et la population convertie revient à 50."
     },
     "explorer_major_040": {
       "title": "Dernière tromperie",

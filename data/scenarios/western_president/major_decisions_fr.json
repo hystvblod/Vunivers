@@ -1,4 +1,4 @@
-﻿{
+{
   "version": 1,
   "decisions": {
     "western_major_001": {
@@ -18,10 +18,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Ton discours remobilise le pays et l’opinion publique revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses le malaise s'installer. L'opinion est divisée par deux."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu choisis l'agressivité et l'opinion publique se divise par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses ce ton facile et l'opinion publique revient à 50."
     },
     "western_major_003": {
       "title": "Hausse brutale des taxes",
@@ -29,10 +29,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu bloques la panique fiscale et l'économie revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu laisses passer la mesure. L'économie chute de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu signes une hausse brutale et l'économie chute de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu bloques cette panique fiscale et l'économie revient à 50."
     },
     "western_major_004": {
       "title": "Armée surmenée",
@@ -51,10 +51,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses la provocation et la diplomatie revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Le climat se dégrade d'un coup. La diplomatie chute de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu laisses passer la provocation et la diplomatie chute de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses cette humiliation et la diplomatie revient à 50."
     },
     "western_major_006": {
       "title": "Promesse populaire",
@@ -73,10 +73,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu coupes court au fantasme et l'économie revient à 50.",
-      "outcome_no_title": "Catastrophe",
-      "outcome_no_body": "La guerre t'échappe dès le départ. Fin de partie."
+      "outcome_yes_title": "Catastrophe",
+      "outcome_yes_body": "Tu lances cette guerre éclair et tout t'échappe. Fin de partie.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses cette fuite en avant et l'économie revient à 50."
     },
     "western_major_008": {
       "title": "Vieilles armes",
@@ -95,10 +95,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu évites la réaction brutale et la diplomatie revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu déclenches un choc inutile. L'économie chute de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu déclenches un choc inutile et l'économie chute de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu évites ces sanctions lourdes et l'économie revient à 50."
     },
     "western_major_010": {
       "title": "Discours à l'étranger",
@@ -117,10 +117,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses l'incendie verbal et l'opinion revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "La colère te dépasse ensuite. La diplomatie chute de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu flattes la colère et l'opinion publique se dégrade. Elle chute de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu calmes le pays et l'opinion publique revient à 50."
     },
     "western_major_012": {
       "title": "Coupes budgétaires",
@@ -150,10 +150,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses le mauvais accord et la diplomatie revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu acceptes quelque chose qui te lie les mains. La diplomatie chute de moitié."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu signes un mauvais accord et la diplomatie chute de moitié.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses ce traité bancal et la diplomatie revient à 50."
     },
     "western_major_015": {
       "title": "Voyage présidentiel",
@@ -161,10 +161,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu refuses la mise en scène et l'opinion revient à 50.",
-      "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Tu t'exposes mal et l'opinion est divisée par deux."
+      "outcome_yes_title": "Mauvaise décision",
+      "outcome_yes_body": "Tu pars au mauvais moment et l'opinion publique est divisée par deux.",
+      "outcome_no_title": "Bonne décision",
+      "outcome_no_body": "Tu refuses cette tournée de façade et l'opinion publique revient à 50."
     },
     "western_major_016": {
       "title": "Alliance piégée",
@@ -195,10 +195,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu annules mal et trop tard. La défense perd déjà la moitié de sa marge.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu recentres les moyens utiles. La défense revient à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu annules cette démonstration inutile et la défense revient à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu laisses filer ce coût absurde et la défense perd la moitié de sa marge."
     },
     "western_major_019": {
       "id": "western_major_019",
@@ -231,10 +231,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu aides trop tard et mal ciblé. L'économie perd la moitié de sa marge.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu agis avec méthode. L'économie revient à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu aides tout de suite et l'économie revient à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu attends trop et l'économie perd la moitié de sa marge."
     },
     "western_major_022": {
       "id": "western_major_022",
@@ -304,7 +304,7 @@
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
       "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu gardes la tête froide. La défense revient à 50.",
+      "outcome_yes_body": "Tu refuses d'ouvrir ce front et la défense revient à 50.",
       "outcome_no_title": "Catastrophe",
       "outcome_no_body": "Tu disperses tout le pays en même temps. Fin de partie."
     },
@@ -315,10 +315,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "La rencontre est mal préparée. La diplomatie perd la moitié de sa marge.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu prépares mieux le terrain. La diplomatie revient à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu rencontres ce rival et la diplomatie revient à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu laisses la tension monter et la diplomatie perd la moitié de sa marge."
     },
     "western_major_029": {
       "id": "western_major_029",
@@ -411,10 +411,10 @@
       "yes_label": "Oui",
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
-      "outcome_yes_title": "Mauvaise décision",
-      "outcome_yes_body": "Tu hésites trop longtemps et la diplomatie s'use encore. Elle perd la moitié de sa marge.",
-      "outcome_no_title": "Bonne décision",
-      "outcome_no_body": "Tu reprends le tempo au lieu de subir. La diplomatie revient à 50."
+      "outcome_yes_title": "Bonne décision",
+      "outcome_yes_body": "Tu imposes ce recul et la diplomatie revient à 50.",
+      "outcome_no_title": "Mauvaise décision",
+      "outcome_no_body": "Tu réagis à chaud et la diplomatie perd la moitié de sa marge."
     },
     "western_major_037": {
       "id": "western_major_037",
@@ -436,9 +436,9 @@
       "no_label": "Non",
       "preview_hint": "Utiliser un jeton pour voir les effets",
       "outcome_yes_title": "Bonne décision",
-      "outcome_yes_body": "Tu protèges l'économie réelle. L'économie revient à 50.",
+      "outcome_yes_body": "Tu coupes net ce favoritisme et l'économie revient à 50.",
       "outcome_no_title": "Mauvaise décision",
-      "outcome_no_body": "Le favoritisme ronge tout. L'économie chute de moitié."
+      "outcome_no_body": "Tu laisses les proches profiter de la crise et l'économie chute de moitié."
     },
     "western_major_039": {
       "id": "western_major_039",
