@@ -721,7 +721,7 @@
   },
   "vampire_081": {
     "title": "The New Symbol",
-    "body": "An unknown symbol appears on your walls. Neither the clan's mark nor any known sign. Something else.",
+    "body": "An unknown symbol appears on your walls. It is neither a clan sign nor a known mark.",
     "choices": {
       "A": "Investigate",
       "B": "Erase everything",
@@ -1895,7 +1895,7 @@
     "choices": {
       "A": "Listen and decide",
       "B": "Delay it again",
-      "C": "Let a spokesperson handle it"
+      "C": "Let a spokesperson speak"
     }
   },
   "vampire_212": {
