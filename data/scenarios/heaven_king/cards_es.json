@@ -1495,7 +1495,7 @@
     "choices": {
       "A": "Inspirar a su alrededor palabras de apoyo matizadas",
       "B": "No intervenir en su historia",
-      "C": "Hacer confirmar que una separación sería una falta grave"
+      "C": "Hacer creer que abandonar este altar atrae un castigo"
     },
     "body": "Una pareja sigue junta sobre todo por miedo a cometer una grave falta moral."
   },
@@ -2191,7 +2191,7 @@
     "choices": {
       "A": "Conceder más bien una pequeña señal discreta a quienes más sufren",
       "B": "Dejar que el espectáculo continúe sin milagro evidente",
-      "C": "Hacer leer esa curación como castigo para los escépticos"
+      "C": "Hacer decir que los escépticos impidieron el milagro"
     },
     "body": "Una reunión promete un milagro espectacular a quienes tengan una fe perfecta."
   },
@@ -2537,9 +2537,9 @@
     "title": "Vendedor de perdones",
     "description": "Un hombre vende mensajes que prometen el perdón total a quienes pagan.",
     "choices": {
-      "A": "Ofrecer una dulzura íntima que reabra la fe",
-      "B": "Dejar que la desconfianza siga dominando",
-      "C": "Dejar que verdugos reclamen cero castigo"
+      "A": "Inspirar a algunos clientes a buscar un perdón sincero y gratuito",
+      "B": "Dejar que este comercio espiritual continúe",
+      "C": "Hacer creer que quienes no pagan nunca serán perdonados"
     },
     "body": "Un hombre vende mensajes que prometen el perdón total a quienes pagan."
   },
@@ -2551,7 +2551,7 @@
     "choices": {
       "A": "Inspirar obras que muestren la libertad de elegir la luz",
       "B": "Dejar que el festival se pierda en el sensacionalismo",
-      "C": "Dejar que se amenace en nombre del Cielo"
+      "C": "Dejar que algunos grupos amenacen a los artistas en nombre del Cielo"
     },
     "body": "Una ciudad quiere organizar un festival artístico que represente a la vez el Paraíso y el Infierno."
   },
@@ -2621,9 +2621,9 @@
     "title": "Atracción sobre el más allá",
     "description": "Un parque lanza una atracción espectacular sobre el juicio después de la muerte.",
     "choices": {
-      "A": "Permitir una compasión real por los más perdidos",
-      "B": "Dejar que esos relatos sigan siendo simbólicos e incomprendidos",
-      "C": "Hacer condenar a esos espirituales como aliados de los Infiernos"
+      "A": "Inspirar una atracción que haga reflexionar sin asustar",
+      "B": "Dejar que la atracción siga siendo un simple espectáculo",
+      "C": "Dejar que la atracción alimente una visión muy dura del juicio"
     },
     "body": "Un parque lanza una atracción espectacular sobre el juicio después de la muerte."
   },
@@ -2717,9 +2717,9 @@
     "title": "Llantos en el umbral del Cielo",
     "description": "Unos familiares imaginan ver a sus difuntos al borde de un lugar de paz y lloran de alivio.",
     "choices": {
-      "A": "Inspirarle un personaje que descubra una bondad inesperada",
-      "B": "Dejar que sus libros alimenten esa visión ansiosa",
-      "C": "Hacer vivir esos relatos en el miedo a los castigos"
+      "A": "Darles una profunda sensación de paz",
+      "B": "Dejar que esa visión siga siendo un consuelo íntimo",
+      "C": "Hacer decir que sus seres queridos siguen retenidos lejos de la paz"
     },
     "body": "Unos familiares imaginan ver a sus difuntos al borde de un lugar de paz y lloran de alivio."
   },
@@ -2933,9 +2933,9 @@
     "title": "Serie sobre los elegidos",
     "description": "Una serie cuenta que solo algunos humanos serían realmente elegidos.",
     "choices": {
-      "A": "Inspirar a algunos artesanos de paz capaces de escuchar a ambos lados",
-      "B": "Dejar que el odio religioso se transmita",
-      "C": "Dejar que se prometan castigos contra todo acuerdo de paz"
+      "A": "Inspirar escenas que recuerden que cada persona tiene valor",
+      "B": "Dejar que la serie siga alimentando esa idea de élite",
+      "C": "Hacer creer que los no elegidos están condenados desde el principio"
     },
     "body": "Una serie cuenta que solo algunos humanos serían realmente elegidos."
   },
@@ -3139,7 +3139,7 @@
     "choices": {
       "A": "Despertar a algunas personas ante esa manipulación",
       "B": "Dejar que ese culto siga siendo marginal",
-      "C": "Dejar que quieran quemarlo todo en nombre de un castigo celestial"
+      "C": "Dejar que algunos quieran quemarlo todo en nombre de un castigo celestial"
     },
     "body": "En una región apartada, un culto antiguo mezcla tu nombre con fuerzas más oscuras venidas de abajo."
   },
@@ -3257,9 +3257,9 @@
     "title": "Plaza de las ideas prohibidas",
     "description": "Una gran plaza se convierte en el lugar de debates sobre ideas religiosas consideradas prohibidas.",
     "choices": {
-      "A": "Permitir un amor desinteresado hacia los más perdidos",
-      "B": "Dejar que esos relatos parezcan metáforas extrañas",
-      "C": "Hacer que los denuncien como aliados del Infierno"
+      "A": "Dejar que estos debates abran preguntas sinceras",
+      "B": "Dejar que estos debates den vueltas sin avanzar",
+      "C": "Hacer que denuncien a los participantes como aliados del Infierno"
     },
     "body": "Una gran plaza se convierte en el lugar de debates sobre ideas religiosas consideradas prohibidas."
   },
@@ -3785,7 +3785,7 @@
     "title": "Arte callejero luminoso",
     "description": "Un artista pinta murales de luz y alas en las paredes de la ciudad.",
     "choices": {
-      "A": "Hacer que algunos transeúntes se sientan elevados por esos murales",
+      "A": "Levantar el ánimo de algunos transeúntes gracias a esos murales",
       "B": "Dejar que esos murales se conviertan solo en una moda visual",
       "C": "Añadir paneles religiosos"
     },
@@ -4049,7 +4049,7 @@
     "title": "Libro de imágenes",
     "description": "Un ilustrador crea un libro sin texto, solo con escenas de luz y de sombra.",
     "choices": {
-      "A": "Dejar que los lectores proyecten espontáneamente en él su búsqueda interior",
+      "A": "Dejar que los lectores proyecten en él lo que buscan en el fondo de sí mismos",
       "B": "Dejar que el libro sea percibido como un objeto de arte",
       "C": "Añadir un prólogo espiritual muy claro"
     },
@@ -4133,9 +4133,9 @@
     "title": "Guía de caminos espirituales",
     "description": "Una guía intenta explicar los distintos caminos espirituales con palabras muy eruditas.",
     "choices": {
-      "A": "Hacer nacer verdaderos acercamientos interiores",
-      "B": "Dejar que esta guía siga siendo reservada y difícil de entender",
-      "C": "Establecer un protocolo fijo en torno a la idea"
+      "A": "Inspirar una versión más simple y más clara de esta guía",
+      "B": "Dejar que esta guía siga siendo complicada y poco leída",
+      "C": "Convertir esta guía en un método rígido que haya que seguir"
     },
     "body": "Una guía intenta explicar los distintos caminos espirituales con palabras demasiado complicadas."
   },
@@ -4183,7 +4183,7 @@
     "choices": {
       "A": "Dejar que los oyentes encuentren en él una voz realmente reconfortante",
       "B": "Dejar que el podcast siga siendo confidencial",
-      "C": "Convertirlo en un programa estructurado de la red"
+      "C": "Convertirlo en un programa oficial llevado por una gran red"
     },
     "body": "Un pequeño podcast comparte cada día un pensamiento suave y reconfortante."
   },
@@ -4193,7 +4193,7 @@
     "title": "Mirada al cielo",
     "description": "Un niño levanta a menudo los ojos al cielo sin saber realmente por qué.",
     "choices": {
-      "A": "Dejar que ese gesto se convierta en un reflejo de confianza muda",
+      "A": "Dejar que ese gesto se convierta en un pequeño hábito de confianza y calma",
       "B": "Dejar que el niño crezca y olvide poco a poco ese gesto",
       "C": "Enseñarle algunas palabras para decir al cielo"
     },
