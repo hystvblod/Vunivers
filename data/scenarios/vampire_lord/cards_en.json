@@ -1,4 +1,4 @@
-﻿{
+{
   "vampire_001": {
     "title": "The Organic Blood Bag",
     "body": "A stock of blood has gone missing. Someone has been building reserves without permission.",
@@ -919,7 +919,7 @@
   },
   "vampire_103": {
     "title": "The Insomniac Cameraman",
-    "body": "He loves shadows, alleys, silhouettes. He is one step away from filming the wrong silhouette.",
+    "body": "He loves filming shadows and alleyways at night. He is one step away from filming you, or one of yours.",
     "choices": {
       "A": "Convince him to stop",
       "B": "Sabotage his equipment",
@@ -1522,7 +1522,7 @@
   },
   "vampire_170": {
     "title": "The Whisperer",
-    "body": "She does not run away. She whispers and seems to be calling something from the shadows. That is not normal.",
+    "body": "She does not run away. She whispers as if she is trying to draw someone, or something, out of the shadows.",
     "choices": {
       "A": "Approach her gently",
       "B": "Drive her away through fear",

@@ -1,4 +1,4 @@
-﻿{
+{
   "version": 1,
   "events": {
     "west_president_ev_001": {
@@ -27,7 +27,7 @@
     },
     "west_president_ev_005": {
       "title": "Opinion Fatigue",
-      "body": "The public is sighing faster than usual. Every announcement triggers a nationwide shrug. That is a bad sign.",
+      "body": "The public is getting tired faster than usual. Each announcement mostly triggers indifference. That is a bad sign.",
       "effect": "Public Opinion: -5 per card",
       "duration": "Duration: 6 cards"
     },

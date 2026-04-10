@@ -1,4 +1,4 @@
-﻿{
+{
   "version": 1,
   "events": {
     "west_president_ev_001": {
@@ -27,7 +27,7 @@
     },
     "west_president_ev_005": {
       "title": "Stanchezza dell’opinione pubblica",
-      "body": "Il pubblico sospira più in fretta del solito. Ogni annuncio provoca un’alzata di spalle nazionale. È un brutto segno.",
+      "body": "Il pubblico si stanca più in fretta del solito. Ogni annuncio provoca soprattutto indifferenza. È un brutto segnale.",
       "effect": "Opinione pubblica: -5 per carta",
       "duration": "Durata: 6 carte"
     },
