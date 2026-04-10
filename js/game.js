@@ -3351,7 +3351,8 @@ engine.applyChoice = function (cardLogic, choiceId) {
     payload.engine.majors = {
       cardsSinceRoll: asInt(this._cardsSinceMajorRoll, 0),
       seen: clone(this._seenMajors || []),
-      cooldowns: clone(this._majorCooldowns || {})
+      cooldowns: clone(this._majorCooldowns || {}),
+      demoShown: !!this._firstMajorDemoShown
     };
     return payload;
   };
@@ -3379,6 +3380,8 @@ engine.applyChoice = function (cardLogic, choiceId) {
     this._cardsSinceMajorRoll = 0;
     this._majorCooldowns = {};
     this._majorShowing = false;
+    this._firstMajorDemoShown = false;
+    this._forceFirstMajorNow = false;
     this._rebuildMajorIndex();
 
     try {
@@ -3389,6 +3392,8 @@ engine.applyChoice = function (cardLogic, choiceId) {
       if (majors.cooldowns && typeof majors.cooldowns === "object" && !Array.isArray(majors.cooldowns)) {
         this._majorCooldowns = clone(majors.cooldowns);
       }
+      this._firstMajorDemoShown = !!majors.demoShown;
+      this._forceFirstMajorNow = false;
     } catch (_) {}
 
     sanitizeMajorState(this);
@@ -3402,6 +3407,7 @@ engine.applyChoice = function (cardLogic, choiceId) {
     this._cardsSinceMajorRoll = 0;
     this._majorCooldowns = {};
     this._majorShowing = false;
+    this._forceFirstMajorNow = false;
     return originalStartNewReign.apply(this, arguments);
   };
 
@@ -3411,6 +3417,7 @@ engine.applyChoice = function (cardLogic, choiceId) {
     this._cardsSinceMajorRoll = 0;
     this._majorCooldowns = {};
     this._majorShowing = false;
+    this._forceFirstMajorNow = false;
     return originalRestartRun.apply(this, arguments);
   };
 
@@ -3420,6 +3427,7 @@ engine.applyChoice = function (cardLogic, choiceId) {
     this._cardsSinceMajorRoll = 0;
     this._majorCooldowns = {};
     this._majorShowing = false;
+    this._forceFirstMajorNow = false;
     return originalReviveSecondChance.apply(this, arguments);
   };
 
@@ -3439,6 +3447,7 @@ engine.applyChoice = function (cardLogic, choiceId) {
     }
 
     this._cardsSinceMajorRoll = 0;
+
     const eligible = (Array.isArray(this.majorsLogic?.decisions) ? this.majorsLogic.decisions : [])
       .filter((decision) => isMajorEligible(this, decision));
 
@@ -3447,6 +3456,14 @@ engine.applyChoice = function (cardLogic, choiceId) {
       return false;
     }
 
+    // Démo obligatoire : premier major montré une seule fois par univers
+    if (!this._firstMajorDemoShown) {
+      this._forceFirstMajorNow = true;
+      this._saveRunSoft();
+      return true;
+    }
+
+    this._forceFirstMajorNow = false;
     const hit = Math.random() < getMajorTriggerChance(this);
     this._saveRunSoft();
     return hit;
@@ -3498,14 +3515,25 @@ engine.applyChoice = function (cardLogic, choiceId) {
     if (!window.VRState?.isAlive?.()) return false;
 
     const id = this._pickRandomMajorId();
-    if (!id) return false;
+    if (!id) {
+      this._forceFirstMajorNow = false;
+      return false;
+    }
 
     const decision = this._majorById.get(id) || null;
     const texts = getMajorTexts(this, id) || {};
-    if (!decision) return false;
+    if (!decision) {
+      this._forceFirstMajorNow = false;
+      return false;
+    }
 
     this._majorShowing = true;
     this._seenMajors.push(id);
+
+    if (this._forceFirstMajorNow) {
+      this._firstMajorDemoShown = true;
+      this._forceFirstMajorNow = false;
+    }
 
     const globalCooldown = getMajorGlobalCooldownCards(this);
     if (globalCooldown > 0) {
