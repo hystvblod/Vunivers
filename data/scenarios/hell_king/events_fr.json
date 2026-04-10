@@ -1,4 +1,4 @@
-﻿{
+{
   "version": 1,
   "events": {
     "hell_king_ev_001": {
@@ -15,7 +15,7 @@
     },
     "hell_king_ev_003": {
       "title": "Marché des Âmes",
-      "body": "Les enchères montent. Les scribes notent chaque soupir.",
+      "body": "Les enchères montent. Les scribes notent chaque offre et chaque plainte.",
       "effect": "Ordre : -5 par carte",
       "duration": "Durée : 4 cartes"
     },

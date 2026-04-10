@@ -1,4 +1,4 @@
-﻿{
+{
   "version": 1,
   "events": {
     "west_president_ev_001": {
@@ -27,7 +27,7 @@
     },
     "west_president_ev_005": {
       "title": "Fadiga da opinião pública",
-      "body": "O público suspira mais depressa do que o habitual. Cada anúncio provoca um encolher de ombros nacional. É um mau sinal.",
+      "body": "O público se cansa mais rápido do que o normal. Cada anúncio provoca sobretudo indiferença. É um mau sinal.",
       "effect": "Opinião pública: -5 por carta",
       "duration": "Duração: 6 cartas"
     },

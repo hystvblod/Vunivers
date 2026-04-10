@@ -1,4 +1,4 @@
-﻿{
+{
   "version": 1,
   "events": {
     "hell_king_ev_001": {
@@ -15,7 +15,7 @@
     },
     "hell_king_ev_003": {
       "title": "Mercado de Almas",
-      "body": "Las pujas suben. Los escribas anotan cada suspiro.",
+      "body": "Las pujas siguen subiendo. Los escribas anotan cada oferta y cada queja.",
       "effect": "Orden: -5 por carta",
       "duration": "Duración: 4 cartas"
     },

@@ -1,4 +1,4 @@
-﻿{
+{
   "version": 1,
   "events": {
     "hell_king_ev_001": {
@@ -15,7 +15,7 @@
     },
     "hell_king_ev_003": {
       "title": "Mercato delle Anime",
-      "body": "Le offerte salgono. Gli scribi annotano ogni sospiro.",
+      "body": "Le offerte continuano a salire. Gli scribi annotano ogni offerta e ogni protesta.",
       "effect": "Ordine: -5 per carta",
       "duration": "Durata: 4 carte"
     },

@@ -1,4 +1,4 @@
-﻿{
+{
   "version": 1,
   "events": {
     "west_president_ev_001": {
@@ -27,7 +27,7 @@
     },
     "west_president_ev_005": {
       "title": "Fatigue de l’opinion",
-      "body": "Le public soupire plus vite que d’habitude. Chaque annonce provoque un haussement d’épaules national. C’est mauvais signe.",
+      "body": "Le public se lasse plus vite que d’habitude. Chaque annonce provoque surtout de l’indifférence. C’est mauvais signe.",
       "effect": "Opinion publique : -5 par carte",
       "duration": "Durée : 6 cartes"
     },
