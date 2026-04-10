@@ -1493,9 +1493,9 @@
     "title": "Couple retenu par la peur",
     "description": "Un couple reste ensemble surtout par peur d’une lourde faute morale.",
     "choices": {
-      "A": "Inspirer autour d’eux des paroles de soutien nuancées",
-      "B": "Ne pas intervenir dans leur histoire",
-      "C": "Faire confirmer qu’une séparation serait une faute grave"
+      "A": "Lui donner parfois un sentiment fort de présence",
+      "B": "Laisser l’autel se dégrader doucement",
+      "C": "Faire croire que laisser cet autel à l’abandon attire une punition"
     },
     "body": "Un couple reste ensemble surtout par peur d’une lourde faute morale."
   },
@@ -2191,7 +2191,7 @@
     "choices": {
       "A": "Accorder plutôt un petit signe discret à ceux qui souffrent le plus",
       "B": "Laisser le show se dérouler sans miracle évident",
-      "C": "Faire lire cette guérison comme une punition des sceptiques"
+      "C": "Faire dire que les sceptiques ont empêché le miracle"
     },
     "body": "Un rassemblement promet un miracle spectaculaire à ceux qui ont une foi parfaite."
   },
@@ -2537,9 +2537,9 @@
     "title": "Marchand de pardons",
     "description": "Un homme vend des messages promettant le pardon total à ceux qui paient.",
     "choices": {
-      "A": "Offrir une douceur intime qui rouvre la foi",
-      "B": "Laisser la méfiance rester dominante",
-      "C": "Laisser des bourreaux réclamer zéro punition"
+      "A": "Inspirer quelques clients à chercher un pardon sincère et gratuit",
+      "B": "Laisser ce commerce spirituel continuer",
+      "C": "Faire croire que ceux qui ne paient pas ne seront jamais pardonnés"
     },
     "body": "Un homme vend des messages promettant le pardon total à ceux qui paient."
   },
@@ -2551,7 +2551,7 @@
     "choices": {
       "A": "Inspirer des œuvres qui montrent la liberté de choisir la lumière",
       "B": "Laisser le festival se perdre dans le sensationnalisme",
-      "C": "Laisser menacer au nom du Ciel"
+      "C": "Laisser certains groupes menacer les artistes au nom du Ciel"
     },
     "body": "Une ville veut organiser un festival artistique qui représente à la fois le Paradis et l’Enfer."
   },
@@ -2621,9 +2621,9 @@
     "title": "Attraction sur l’au-delà",
     "description": "Un parc lance une attraction spectaculaire sur le jugement après la mort.",
     "choices": {
-      "A": "Permettre une compassion réelle pour les plus perdus",
-      "B": "Laisser ces récits rester symboliques et incompris",
-      "C": "Faire condamner ces spirituels comme alliés des Enfers"
+      "A": "Inspirer une attraction qui pousse à réfléchir sans faire peur",
+      "B": "Laisser l’attraction rester un simple spectacle",
+      "C": "Laisser l’attraction nourrir une vision très dure du jugement"
     },
     "body": "Un parc lance une attraction spectaculaire sur le jugement après la mort."
   },
@@ -2717,9 +2717,9 @@
     "title": "Pleurs au seuil du Ciel",
     "description": "Des proches imaginent voir leurs disparus au bord d’un lieu de paix et pleurent de soulagement.",
     "choices": {
-      "A": "Lui inspirer un personnage qui découvre une bonté inattendue",
-      "B": "Laisser ses livres nourrir cette vision anxieuse",
-      "C": "Faire vivre ces récits dans la peur des punitions"
+      "A": "Leur offrir un profond sentiment de paix",
+      "B": "Laisser cette vision rester un réconfort intime",
+      "C": "Faire dire que leurs proches sont encore retenus loin de la paix"
     },
     "body": "Des proches imaginent voir leurs disparus au bord d’un lieu de paix et pleurent de soulagement."
   },
@@ -2933,9 +2933,9 @@
     "title": "Série sur les élus",
     "description": "Une série raconte que seuls quelques humains seraient vraiment choisis.",
     "choices": {
-      "A": "Inspirer quelques artisans de paix capables d’écouter les deux côtés",
-      "B": "Laisser la haine religieuse se transmettre",
-      "C": "Laisser promettre des punitions contre tout accord de paix"
+      "A": "Inspirer des scènes qui rappellent que chacun a de la valeur",
+      "B": "Laisser la série entretenir cette idée d’élite",
+      "C": "Faire croire que les non-élus sont condamnés d’avance"
     },
     "body": "Une série raconte que seuls quelques humains seraient vraiment choisis."
   },
@@ -3139,7 +3139,7 @@
     "choices": {
       "A": "Éveiller quelques personnes à cette manipulation",
       "B": "Laisser ce culte rester marginal",
-      "C": "Laisser vouloir tout brûler au nom d’une punition céleste"
+      "C": "Laisser certains vouloir tout brûler au nom d’une punition céleste"
     },
     "body": "Dans une région reculée, un culte ancien mélange ton nom avec des forces plus sombres venues d’en bas."
   },
@@ -3257,9 +3257,9 @@
     "title": "Place des idées interdites",
     "description": "Une grande place devient le lieu de débats sur des idées religieuses jugées interdites.",
     "choices": {
-      "A": "Permettre un amour désintéressé envers les plus perdus",
-      "B": "Laisser ces récits passer pour des métaphores étranges",
-      "C": "Les faire dénoncer comme alliés de l’Enfer"
+      "A": "Laisser ces débats ouvrir des questions sincères",
+      "B": "Laisser ces débats tourner en rond sans avancer",
+      "C": "Faire accuser les participants d’être alliés de l’Enfer"
     },
     "body": "Une grande place devient le lieu de débats sur des idées religieuses jugées interdites."
   },
@@ -3785,7 +3785,7 @@
     "title": "Art de rue lumineux",
     "description": "Un artiste peint des fresques de lumière et d’ailes sur les murs de la ville.",
     "choices": {
-      "A": "Faire relever certains passants par ces fresques",
+      "A": "Redonner du courage à certains passants grâce à ces fresques",
       "B": "Laisser ces fresques devenir juste une mode visuelle",
       "C": "Ajouter des panneaux religieux"
     },
@@ -4049,7 +4049,7 @@
     "title": "Livre d’images",
     "description": "Un illustrateur crée un livre sans texte, seulement des scènes de lumière et d’ombre.",
     "choices": {
-      "A": "Laisser lecteurs y projeter spontanément leur quête intérieure",
+      "A": "Laisser les lecteurs y projeter ce qu’ils cherchent au fond d’eux",
       "B": "Laisser le livre être perçu comme un objet d’art",
       "C": "Ajouter une préface spirituelle très claire"
     },
@@ -4133,9 +4133,9 @@
     "title": "Guide des chemins spirituels",
     "description": "Un guide tente d’expliquer les différents chemins spirituels avec des mots très savants.",
     "choices": {
-      "A": "Faire naître de vrais rapprochements intérieurs",
-      "B": "Laisser ce guide rester confidentiel et compliqué",
-      "C": "Établir un protocole fixe autour de l’idée"
+      "A": "Inspirer une version plus simple et plus claire de ce guide",
+      "B": "Laisser ce guide rester compliqué et peu lu",
+      "C": "Transformer ce guide en méthode rigide à suivre"
     },
     "body": "Un guide tente d’expliquer les différents chemins spirituels avec des mots trop compliqués."
   },
@@ -4183,7 +4183,7 @@
     "choices": {
       "A": "Laisser les auditeurs y entendre une parole vraiment rassurante",
       "B": "Laisser le podcast rester confidentiel",
-      "C": "En faire un programme structuré du réseau"
+      "C": "Le transformer en émission officielle portée par un grand réseau"
     },
     "body": "Un petit podcast partage chaque jour une pensée douce et rassurante."
   },
@@ -4193,7 +4193,7 @@
     "title": "Regard vers le ciel",
     "description": "Un enfant lève souvent les yeux vers le ciel sans vraiment savoir pourquoi.",
     "choices": {
-      "A": "Laisser ce geste devenir un réflexe de confiance muette",
+      "A": "Laisser ce geste devenir une petite habitude de confiance et de calme",
       "B": "Laisser l’enfant grandir et oublier peu à peu ce geste",
       "C": "Lui apprendre quelques mots à dire au ciel"
     },
