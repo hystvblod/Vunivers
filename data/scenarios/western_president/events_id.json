@@ -1,4 +1,4 @@
-﻿{
+{
   "version": 1,
   "events": {
     "west_president_ev_001": {
@@ -27,7 +27,7 @@
     },
     "west_president_ev_005": {
       "title": "Kelelahan opini publik",
-      "body": "Publik mengeluh lebih cepat dari biasanya. Setiap pengumuman memicu angkat bahu secara nasional. Itu pertanda buruk.",
+      "body": "Publik lebih cepat lelah dari biasanya. Setiap pengumuman terutama menimbulkan sikap acuh tak acuh. Ini pertanda buruk.",
       "effect": "Opini publik: -5 per kartu",
       "duration": "Durasi: 6 kartu"
     },

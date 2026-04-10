@@ -1,4 +1,4 @@
-﻿{
+{
   "version": 1,
   "events": {
     "west_president_ev_001": {
@@ -27,7 +27,7 @@
     },
     "west_president_ev_005": {
       "title": "Müdigkeit der Öffentlichkeit",
-      "body": "Die Öffentlichkeit seufzt schneller als sonst. Jede Ankündigung löst ein landesweites Schulterzucken aus. Das ist ein schlechtes Zeichen.",
+      "body": "Die Öffentlichkeit wird schneller müde als sonst. Jede Ankündigung löst vor allem Gleichgültigkeit aus. Das ist ein schlechtes Zeichen.",
       "effect": "Öffentliche Meinung: -5 pro Karte",
       "duration": "Dauer: 6 Karten"
     },

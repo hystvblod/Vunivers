@@ -1,4 +1,4 @@
-﻿{
+{
   "version": 1,
   "events": {
     "west_president_ev_001": {
@@ -27,7 +27,7 @@
     },
     "west_president_ev_005": {
       "title": "Cansancio de la opinión pública",
-      "body": "El público suspira más rápido de lo habitual. Cada anuncio provoca un encogimiento de hombros nacional. Es una mala señal.",
+      "body": "El público se cansa más rápido de lo habitual. Cada anuncio provoca sobre todo indiferencia. Es una mala señal.",
       "effect": "Opinión pública: -5 por carta",
       "duration": "Duración: 6 cartas"
     },
