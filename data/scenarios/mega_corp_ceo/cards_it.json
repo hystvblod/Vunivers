@@ -1,4 +1,4 @@
-{
+﻿{
   "mcc_001": {
     "title": "Sciopero lampo",
     "body": "I dipendenti dei centri logistici annunciano uno sciopero a sorpresa. Le consegne sono in ritardo.",
@@ -2219,7 +2219,7 @@
     "choices": {
       "A": "Mostrare i tuoi contributi, occupazione, innovazione, prezzi.",
       "B": "Ignorare e continuare.",
-      "C": "Annunciare o proporre impegni concreti per lasciare più spazio alla concorrenza."
+      "C": "Annunciare impegni concreti per lasciare più spazio alla concorrenza."
     }
   },
   "mcc_248": {
@@ -2340,7 +2340,7 @@
     }
   },
   "mcc_261": {
-    "title": "Dibattito sulla pubblicità invasiva.",
+    "title": "Dibattito sulla pubblicità invasiva",
     "body": "Un progetto di legge prende di mira le pubblicità troppo intrusive. Il team pubblicità chiede se un pop-up che urla conta.",
     "choices": {
       "A": "Passare a una pubblicità più morbida e più chiara.",
@@ -2514,7 +2514,7 @@
     "title": "Dibattito sulle mega-aziende",
     "body": "Un politico lancia: bisogna smantellare i giganti.",
     "choices": {
-      "A": "Annunciare o proporre impegni concreti per lasciare più spazio alla concorrenza.",
+      "A": "Proporre impegni concreti per lasciare più spazio alla concorrenza.",
       "B": "Ignorare: rumore politico.",
       "C": "Scindere volontariamente un'attività, in modo simbolico."
     }
@@ -2997,7 +2997,7 @@
     }
   },
   "mcc_334": {
-    "title": "Dibattito sulla sobrietà visiva.",
+    "title": "Dibattito sulla sobrietà visiva",
     "body": "Lo stand del tuo marchio è troppo carico: troppe luci, troppi slogan, troppi effetti. Dà un’immagine eccessiva invece di un’immagine seria.",
     "choices": {
       "A": "Alleggerire davvero lo stand e tenere solo l’essenziale.",
@@ -3164,7 +3164,7 @@
     "choices": {
       "A": "Collaborare seriamente nonostante l’assurdità",
       "B": "Prenderla in giro e ignorare, cattiva idea.",
-      "C": "Inviare un dossier serio e chiedere un cadre scritto chiaro."
+      "C": "Inviare un dossier serio e chiedere indicazioni scritte precise."
     }
   },
   "mcc_353": {
@@ -3375,7 +3375,7 @@
     }
   },
   "mcc_376": {
-    "title": "Giornata senza aria condizionata in piena ondata di caldo.",
+    "title": "Giornata senza aria condizionata in piena ondata di caldo",
     "body": "Ti chiedono di spegnere l’aria condizionata per dare l’esempio. Ci sono 38°C e i dipendenti la vivono molto male.",
     "choices": {
       "A": "Sobrietà intelligente: soglie, ventilazione, orari adattati.",
@@ -3524,7 +3524,7 @@
     "choices": {
       "A": "Organizzare una degustazione e calmare tutti.",
       "B": "Vietare l'argomento al lavoro.",
-      "C": "Lasciar fare: unisce, no."
+      "C": "Lasciar fare: può divertire per un momento, ma può dividere molto in fretta."
     }
   },
   "mcc_393": {
@@ -3771,7 +3771,7 @@
     }
   },
   "mcc_420": {
-    "title": "Settimana dei complimenti alle autorità di controllo.",
+    "title": "Settimana dei complimenti alle autorità di controllo",
     "body": "Ti suggeriscono di inviare un messaggio troppo lusinghiero alle autorità di controllo. Il tuo legale si oppone subito.",
     "choices": {
       "A": "Restare neutrale, solo collaborare correttamente.",
@@ -3843,7 +3843,7 @@
     }
   },
   "mcc_428": {
-    "title": "Il deputato vuole un pulsante benessere.",
+    "title": "Il deputato vuole un pulsante benessere",
     "body": "Un deputato propone di aggiungere un pulsante benessere nelle app per aiutare gli utenti a fare una pausa. Il tuo team prodotto dice che si può fare.",
     "choices": {
       "A": "Aggiungere un pulsante benessere opzionale.",
@@ -3888,7 +3888,7 @@
     }
   },
   "mcc_433": {
-    "title": "Piano di sensori anti-rumore.",
+    "title": "Piano di sensori anti-rumore",
     "body": "Un ministro vuole installare sensori per misurare il rumore in città. Ti propongono il contratto, ma questi sensori possono preoccupare se sembrano microfoni.",
     "choices": {
       "A": "Rifiutare: troppo sensibile per la privacy.",
@@ -3983,7 +3983,7 @@
     "choices": {
       "A": "Fare un tutorial semplice, utile, inclusivo.",
       "B": "Rifiutare: non è il tuo ruolo.",
-      "C": "Fare un tutorial pieno di gergo, no."
+      "C": "Fare un tutorial complicato e pieno di gergo."
     }
   },
   "mcc_444": {
