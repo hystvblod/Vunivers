@@ -480,7 +480,7 @@
     "title": "Reform of the Sacred Chains",
     "body": "There is a plan to replace the old chains with bonds based on promises and regrets.",
     "choices": {
-      "A": "Focus the reform on the number of bound souls.",
+      "A": "Focus the reform on the number of chained souls.",
       "B": "Prioritize solidity and control of the flow.",
       "C": "Test these chains mainly on certain mortal leaders."
     }
@@ -576,8 +576,8 @@
     }
   },
   "hk_065": {
-    "title": "Crisis with Another Plane",
-    "body": "A neighboring plane, neither fully heavenly nor fully infernal, is protesting your incursions.",
+    "title": "Crisis with another realm",
+    "body": "A neighboring realm, neither fully heavenly nor fully infernal, protests against your incursions.",
     "choices": {
       "A": "Answer with a brutal show of force.",
       "B": "Negotiate borders and precise rules.",
@@ -660,7 +660,7 @@
     "title": "Court of Refined Torments",
     "body": "A court of torment artisans offers highly elaborate punishments.",
     "choices": {
-      "A": "Push as hard as possible on the number of souls processed.",
+      "A": "Push the number of processed souls to the maximum.",
       "B": "Establish a rigid protocol for each torment.",
       "C": "Reserve these refinements for influential targets on Earth."
     }
@@ -679,7 +679,7 @@
     "body": "The scribes complain: every day, new sins pile up faster than the records.",
     "choices": {
       "A": "Push them to record everything, even at the cost of chaos.",
-      "B": "Simplify the categories to preserve overall order.",
+      "B": "Simplify the categories to keep the whole system under control.",
       "C": "Record in detail only the key sins committed among the living."
     }
   },
@@ -1039,7 +1039,7 @@
     "body": "A river carries the darkest memories of the damned.",
     "choices": {
       "A": "Throw even more souls into it.",
-      "B": "Index these memories in archives of order.",
+      "B": "Sort these memories into archives to maintain order more effectively.",
       "C": "Use these memories to guide the corruption of the living."
     }
   },
@@ -1201,7 +1201,7 @@
     "body": "Each grave bears the name of a betrayed promise.",
     "choices": {
       "A": "Bury even more broken souls there.",
-      "B": "Index every promise for perfect order.",
+      "B": "Sort each promise to control the whole system more effectively.",
       "C": "Bring some of these promises back among the living."
     }
   },
@@ -1308,7 +1308,7 @@
     "title": "Tournament of Perfect Lies",
     "body": "A tournament rewards the most destructive lie.",
     "choices": {
-      "A": "Reward above all the number of souls lost.",
+      "A": "Reward above all the lies that bring down the most souls.",
       "B": "Record every lie in a codified register.",
       "C": "Test these lies across the networks of the living."
     }
