@@ -1364,7 +1364,7 @@
     "choices": {
       "A": "Hingehen, die Veranstaltung unterstützen und eine symbolische Ankündigung zur nationalen Gastronomie machen.",
       "B": "Deinen Minister schicken: du arbeitest offiziell.",
-      "C": "Ablehnen: 'Diplomatie macht man nicht mit der Suppenkelle'."
+      "C": "Ablehnen: Diplomatie macht man nicht in einer Kochsendung."
     }
   },
   "wp_153": {
@@ -1387,7 +1387,7 @@
   },
   "wp_155": {
     "title": "Ungeschickter Botschafter",
-    "body": "Ein Botschafter macht einen Witz, der sehr schlecht ankommt. Der Vorfall ist allen peinlich und sorgt für diplomatische Spannungen.",
+    "body": "Ein Botschafter macht einen Witz, der sehr schlecht ankommt. Die Szene ist allen peinlich und sorgt für diplomatische Spannungen.",
     "choices": {
       "A": "Offizielle Entschuldigungen plus diplomatische Geste.",
       "B": "Ihn sofort zurückrufen: null Toleranz.",
@@ -1423,7 +1423,7 @@
   },
   "wp_159": {
     "title": "Schokoladenmangel",
-    "body": "Eine Logistikkrise verursacht einen Schokoladenmangel. Für viele ist das die Knappheit zu viel.",
+    "body": "Eine Logistikkrise verursacht einen Schokoladenmangel. Für viele Bürger ist das die Knappheit zu viel.",
     "choices": {
       "A": "Die Versorgung durch schnelle Abkommen sichern.",
       "B": "Eine beschleunigte lokale Produktion starten, aber das ist teuer.",
@@ -1630,7 +1630,7 @@
   },
   "wp_182": {
     "title": "Hack des Ministeriums",
-    "body": "Die Website eines Ministeriums wurde gehackt und zeigt nur noch ein schlichtes \"Hallo\" an.",
+    "body": "Die Website eines Ministeriums wurde gehackt und zeigt nur noch ein einfaches „Hallo“ an.",
     "choices": {
       "A": "Komplette Prüfung plus Cyber-Schulung für die Mitarbeiter.",
       "B": "Cyber-Gegenschlag plus harte Kommunikation.",
@@ -1666,7 +1666,7 @@
   },
   "wp_186": {
     "title": "Konferenz zu Luft und Wasser",
-    "body": "Man schlägt dir vor, eine Konferenz über Luft- und Wasserqualität auszurichten. Mit dem Prinzip sind alle einverstanden, bis es ums Bezahlen geht.",
+    "body": "Man schlägt dir vor, eine Konferenz über Luft- und Wasserqualität auszurichten. Alle sind einverstanden, bis es ums Bezahlen geht.",
     "choices": {
       "A": "Ausrichten und investieren: internationales Image.",
       "B": "Ausrichten ohne öffentliche Ausgaben.",
@@ -1890,7 +1890,7 @@
     }
   },
   "wp_211": {
-    "title": "Boule-Turnier an der Grenze",
+    "title": "Pétanque-Turnier an der Grenze",
     "body": "Um die Spannungen an der Grenze zu beruhigen, schlagen lokale Politiker ein Boule-Turnier zwischen beiden Seiten vor. Manche finden die Idee amüsant, andere schockierend.",
     "choices": {
       "A": "Die Initiative unterstützen plus offiziellen lokalen Dialog.",
@@ -2313,8 +2313,8 @@
     }
   },
   "wp_258": {
-    "title": "General und strategischer Schnurrbart",
-    "body": "Dein General wird wegen eines viralen Fotos zur Zielscheibe in den sozialen Netzwerken. Sein Aussehen überdeckt die eigentliche Botschaft.",
+    "title": "General im Netz verspottet",
+    "body": "Dein General wird wegen eines viralen Fotos zur Zielscheibe in den sozialen Netzwerken. Sein Aussehen überdeckt am Ende die eigentliche Botschaft.",
     "choices": {
       "A": "Darüber lachen und wieder auf die Strategie fokussieren.",
       "B": "Ihn zurechtweisen: ernstes Image ist Pflicht.",

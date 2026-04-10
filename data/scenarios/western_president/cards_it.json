@@ -1364,7 +1364,7 @@
     "choices": {
       "A": "Andarci, sostenere l’evento e fare un annuncio simbolico sulla gastronomia nazionale.",
       "B": "Inviare il tuo ministro: tu lavori ufficialmente.",
-      "C": "Rifiutare: \"la diplomazia non si fa col mestolo\"."
+      "C": "Rifiutare: la diplomazia non si fa in un programma di cucina."
     }
   },
   "wp_153": {
@@ -1387,7 +1387,7 @@
   },
   "wp_155": {
     "title": "Ambasciatore maldestro",
-    "body": "Un ambasciatore fa una battuta che viene accolta molto male. L’incidente mette tutti in imbarazzo e crea un disagio diplomatico.",
+    "body": "Un ambasciatore fa una battuta che viene accolta molto male. La scena mette tutti a disagio e crea tensione diplomatica.",
     "choices": {
       "A": "Scuse ufficiali + gesto diplomatico.",
       "B": "Richiamarlo immediatamente: tolleranza zero.",
@@ -1423,7 +1423,7 @@
   },
   "wp_159": {
     "title": "Carenza di cioccolato",
-    "body": "Una crisi logistica provoca una carenza di cioccolato. Per molti è la carenza di troppo.",
+    "body": "Una crisi logistica provoca una carenza di cioccolato. Per molti cittadini è la carenza di troppo.",
     "choices": {
       "A": "Mettere in sicurezza l'approvvigionamento con accordi rapidi.",
       "B": "Lanciare una produzione locale accelerata, ma è costosa.",
@@ -1630,7 +1630,7 @@
   },
   "wp_182": {
     "title": "Hack del ministero",
-    "body": "Il sito di un ministero è stato hackerato e ora mostra soltanto un semplice \"ciao\".",
+    "body": "Il sito di un ministero è stato hackerato e ora mostra soltanto un semplice “ciao”.",
     "choices": {
       "A": "Audit totale + formazione cyber degli agenti.",
       "B": "Controffensiva cyber + comunicazione ferma.",
@@ -1666,7 +1666,7 @@
   },
   "wp_186": {
     "title": "Conferenza su aria e acqua",
-    "body": "Ti viene proposto di ospitare una conferenza sulla qualità dell’aria e dell’acqua. Tutti sono d’accordo sul principio, finché non arriva il momento di pagare.",
+    "body": "Ti propongono di ospitare una conferenza sulla qualità dell’aria e dell’acqua. Tutti sono d’accordo finché non arriva il momento di pagare.",
     "choices": {
       "A": "Ospitare e investire: immagine internazionale.",
       "B": "Ospitare senza spese pubbliche.",
@@ -2313,8 +2313,8 @@
     }
   },
   "wp_258": {
-    "title": "Generale e baffi strategici",
-    "body": "Il tuo generale diventa il bersaglio dei social a causa di una foto virale. Il suo aspetto prende il sopravvento sul messaggio.",
+    "title": "Generale deriso online",
+    "body": "Il tuo generale diventa il bersaglio dei social a causa di una foto virale. Il suo aspetto finisce per prendere il sopravvento sul messaggio.",
     "choices": {
       "A": "Ridere e riportare il focus sulla strategia.",
       "B": "Richiamarlo: immagine seria obbligatoria.",

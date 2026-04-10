@@ -1364,7 +1364,7 @@
     "choices": {
       "A": "Datang, mendukung acara, dan membuat pengumuman simbolis tentang gastronomi nasional.",
       "B": "Mengirim menterimu: kamu resmi tetap bekerja.",
-      "C": "Menolak: 'diplomasi tidak dilakukan dengan sendok sayur'."
+      "C": "Tolak: diplomasi tidak dijalankan dalam acara memasak."
     }
   },
   "wp_153": {
@@ -1387,7 +1387,7 @@
   },
   "wp_155": {
     "title": "Duta besar canggung",
-    "body": "Seorang duta besar melontarkan lelucon yang diterima dengan sangat buruk. Insiden itu mempermalukan semua orang dan menimbulkan ketegangan diplomatik.",
+    "body": "Seorang duta besar melontarkan lelucon yang diterima dengan sangat buruk. Situasi itu membuat semua orang tidak nyaman dan menimbulkan ketegangan diplomatik.",
     "choices": {
       "A": "Permintaan maaf resmi dan isyarat diplomatik.",
       "B": "Memanggil pulang segera: nol toleransi.",
@@ -1423,7 +1423,7 @@
   },
   "wp_159": {
     "title": "Kelangkaan cokelat",
-    "body": "Krisis logistik menyebabkan kelangkaan cokelat. Bagi banyak orang, ini adalah kelangkaan yang sudah kelewatan.",
+    "body": "Krisis logistik menyebabkan kelangkaan cokelat. Bagi banyak warga, ini sudah kelangkaan yang kelewatan.",
     "choices": {
       "A": "Mengamankan pasokan lewat perjanjian cepat.",
       "B": "Meluncurkan produksi lokal dipercepat, tetapi mahal.",
@@ -1630,7 +1630,7 @@
   },
   "wp_182": {
     "title": "Peretasan kementerian",
-    "body": "Situs sebuah kementerian diretas dan sekarang hanya menampilkan kata sederhana: \"halo\".",
+    "body": "Situs sebuah kementerian diretas dan sekarang hanya menampilkan kata sederhana: “halo”.",
     "choices": {
       "A": "Audit total dan pelatihan siber bagi pegawai.",
       "B": "Serangan balasan siber dan komunikasi tegas.",
@@ -1666,7 +1666,7 @@
   },
   "wp_186": {
     "title": "Konferensi tentang udara dan air",
-    "body": "Kamu diminta menjadi tuan rumah konferensi tentang kualitas udara dan air. Semua setuju dengan idenya sampai saatnya membayar.",
+    "body": "Kamu diminta menjadi tuan rumah konferensi tentang kualitas udara dan air. Semua setuju sampai saatnya membayar.",
     "choices": {
       "A": "Menjadi tuan rumah dan berinvestasi: citra internasional.",
       "B": "Menjadi tuan rumah tanpa pengeluaran publik.",
@@ -2313,8 +2313,8 @@
     }
   },
   "wp_258": {
-    "title": "Jenderal dan kumis strategis",
-    "body": "Jenderalmu menjadi sasaran di media sosial gara-gara sebuah foto viral. Penampilannya menutupi pesan yang ingin disampaikan.",
+    "title": "Jenderal jadi bahan olok-olok di media sosial",
+    "body": "Jenderalmu menjadi sasaran di media sosial gara-gara sebuah foto viral. Penampilannya akhirnya menutupi pesan yang ingin disampaikan.",
     "choices": {
       "A": "Menertawakannya dan memusatkan kembali pada strategi.",
       "B": "Menegurnya: citra serius wajib.",

@@ -1364,7 +1364,7 @@
     "choices": {
       "A": "Y aller, soutenir l’événement et faire une annonce symbolique sur la gastronomie nationale.",
       "B": "Envoyer ton ministre : toi, tu bosses officiellement.",
-      "C": "Refuser : 'la diplomatie ne se fait pas à la louche'."
+      "C": "Refuser : la diplomatie ne se fait pas dans une émission de cuisine."
     }
   },
   "wp_153": {
@@ -1387,7 +1387,7 @@
   },
   "wp_155": {
     "title": "Ambassadeur maladroit",
-    "body": "Un ambassadeur fait une blague qui tombe très mal. L’incident embarrasse tout le monde et crée un malaise diplomatique.",
+    "body": "Un ambassadeur fait une blague qui passe très mal. La scène gêne tout le monde et crée une tension diplomatique.",
     "choices": {
       "A": "Excuses officielles + geste diplomatique.",
       "B": "Le rappeler immédiatement : tolérance zéro.",
@@ -1423,7 +1423,7 @@
   },
   "wp_159": {
     "title": "Pénurie de chocolat",
-    "body": "Une crise logistique provoque une pénurie de chocolat. Pour beaucoup, c’est une pénurie de trop.",
+    "body": "Une crise logistique provoque une pénurie de chocolat. Pour beaucoup de citoyens, c’est une pénurie de trop.",
     "choices": {
       "A": "Sécuriser l’approvisionnement par des accords rapides.",
       "B": "Lancer une production locale accélérée, mais c’est coûteux.",
@@ -1630,7 +1630,7 @@
   },
   "wp_182": {
     "title": "Hack du ministère",
-    "body": "Le site d’un ministère a été piraté et n’affiche plus qu’un simple \"bonjour\".",
+    "body": "Le site d’un ministère a été piraté et n’affiche plus qu’un simple 'bonjour'.",
     "choices": {
       "A": "Audit total + formation cyber des agents.",
       "B": "Riposte cyber + communication ferme.",
@@ -1666,7 +1666,7 @@
   },
   "wp_186": {
     "title": "Conférence sur l’air et l’eau",
-    "body": "On te propose d’accueillir une conférence sur la qualité de l’air et de l’eau. Tout le monde est d’accord sur le principe, jusqu’au moment de payer.",
+    "body": "On te propose d’accueillir une conférence sur la qualité de l’air et de l’eau. Tout le monde est d’accord jusqu’au moment de payer.",
     "choices": {
       "A": "Accueillir et investir : image internationale.",
       "B": "Accueillir sans dépenses publiques.",
@@ -1945,7 +1945,7 @@
   },
   "wp_217": {
     "title": "Bataille des drapeaux",
-    "body": "Un conflit éclate autour d’un drapeau que deux camps veulent revendiquer. Chacun refuse de céder sur le symbole.",
+    "body": "Un conflit éclate autour d’un drapeau que deux camps veulent revendiquer. Aucun des deux ne veut céder sur ce symbole.",
     "choices": {
       "A": "Compromis diplomatique et partage.",
       "B": "Imposer ton drapeau : autorité.",
@@ -2035,7 +2035,7 @@
   },
   "wp_227": {
     "title": "Passeport diplomatique… perdu",
-    "body": "Un diplomate perd son passeport dans un aéroport, devant les caméras. L’affaire devient immédiatement ridicule.",
+    "body": "Un diplomate perd son passeport dans un aéroport, devant des caméras. L’affaire devient immédiatement ridicule.",
     "choices": {
       "A": "Réforme sécurité diplomatique + formation.",
       "B": "Minimiser publiquement, régler en coulisses.",
@@ -2313,8 +2313,8 @@
     }
   },
   "wp_258": {
-    "title": "Général et moustache stratégique",
-    "body": "Ton général devient la cible des réseaux à cause d’une photo virale. Son apparence prend le dessus sur le message.",
+    "title": "Général moqué en ligne",
+    "body": "Ton général devient la cible des réseaux à cause d’une photo virale. Son apparence finit par prendre le dessus sur le message.",
     "choices": {
       "A": "Rire et recentrer sur la stratégie.",
       "B": "Le recadrer : image sérieuse obligatoire.",
