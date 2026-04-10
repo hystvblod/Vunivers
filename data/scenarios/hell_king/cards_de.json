@@ -354,7 +354,7 @@
     "title": "Höllischer Strategierat",
     "body": "Deine Berater wollen, dass du Seelen, Armeen, Ordnung oder die Welt der Menschen bevorzugst.",
     "choices": {
-      "A": "Jedem ein wenig mehr geben, auch wenn das die Ordnung schwächt.",
+      "A": "Jedem ein wenig mehr geben, auch wenn das die Ordnung fragilise.",
       "B": "Setze Ordnung als Priorität durch, auch wenn du Seelen verlierst.",
       "C": "In die Welt der Menschen investieren, dein zukünftiges Spielfeld."
     }
@@ -480,7 +480,7 @@
     "title": "Reform der heiligen Ketten",
     "body": "Man will die alten Ketten durch Bindungen ersetzen, die auf Versprechen und Reue beruhen.",
     "choices": {
-      "A": "Richte die Reform auf die Menge gebundener Seelen aus.",
+      "A": "Die Reform auf die Zahl der angeketteten Seelen ausrichten.",
       "B": "Bevorzuge Stabilität und Beherrschung der Ströme.",
       "C": "Teste diese Ketten vor allem an bestimmten sterblichen Anführern."
     }
@@ -576,8 +576,8 @@
     }
   },
   "hk_065": {
-    "title": "Krise mit einer anderen Ebene",
-    "body": "Eine benachbarte Ebene, weder ganz himmlisch noch ganz höllisch, protestiert gegen deine Vorstöße.",
+    "title": "Krise mit einem anderen Reich",
+    "body": "Ein benachbartes Reich, weder ganz himmlisch noch ganz infernalisch, protestiert gegen deine Übergriffe.",
     "choices": {
       "A": "Antworte mit einer brutalen Machtdemonstration.",
       "B": "Verhandle über Grenzen und genaue Regeln.",
@@ -660,7 +660,7 @@
     "title": "Hof der raffinierten Qualen",
     "body": "Ein Hof von Folterhandwerkern bietet sehr ausgearbeitete Qualen an.",
     "choices": {
-      "A": "Presse das Maximum an bearbeiteten Seelen heraus.",
+      "A": "Die Zahl der behandelten Seelen auf das Maximum treiben.",
       "B": "Führe für jede Qual ein starres Protokoll ein.",
       "C": "Reserviere diese Raffinessen für einflussreiche Ziele auf der Erde."
     }
@@ -679,7 +679,7 @@
     "body": "Die Schreiber klagen: Jeden Tag häufen sich neue Sünden schneller an als die Register.",
     "choices": {
       "A": "Dränge sie, alles zu erfassen, selbst um den Preis des Chaos.",
-      "B": "Vereinfache die Kategorien, um eine grobe Ordnung zu bewahren.",
+      "B": "Die Kategorien vereinfachen, um das Ganze unter Kontrolle zu halten.",
       "C": "Erfasse nur die wichtigsten Sünden, die bei den Lebenden begangen wurden, im Detail."
     }
   },
@@ -1039,7 +1039,7 @@
     "body": "Ein Fluss trägt die dunkelsten Erinnerungen der Verdammten mit sich.",
     "choices": {
       "A": "Stoße noch mehr Seelen hinein.",
-      "B": "Ordne diese Erinnerungen in Archive der Ordnung ein.",
+      "B": "Diese Erinnerungen in Archiven ordnen, um die Ordnung besser zu préserver.",
       "C": "Nutze diese Erinnerungen, um die Verderbnis der Lebenden zu lenken."
     }
   },
@@ -1201,7 +1201,7 @@
     "body": "Jedes Grab trägt den Namen eines verratenen Versprechens.",
     "choices": {
       "A": "Begrabe dort noch mehr gebrochene Seelen.",
-      "B": "Indexiere jedes Versprechen für perfekte Ordnung.",
+      "B": "Jedes Versprechen ordnen, um das Ganze besser zu kontrollieren.",
       "C": "Lass einige dieser Versprechen unter den Lebenden wieder auftauchen."
     }
   },
@@ -1308,7 +1308,7 @@
     "title": "Turnier der perfekten Lügen",
     "body": "Ein Turnier belohnt die zerstörerischste Lüge.",
     "choices": {
-      "A": "Belohne vor allem die Menge der verlorenen Seelen.",
+      "A": "Vor allem die Lügen belohnen, die die meisten Seelen zu Fall bringen.",
       "B": "Trage jede Lüge in ein kodifiziertes Register ein.",
       "C": "Teste diese Lügen in den Netzwerken der Lebenden."
     }

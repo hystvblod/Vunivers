@@ -480,7 +480,7 @@
     "title": "Réforme des chaînes sacrées",
     "body": "On veut remplacer les vieilles chaînes par des liens fondés sur les promesses et les regrets.",
     "choices": {
-      "A": "Axer la réforme sur la quantité d'âmes liées.",
+      "A": "Axer la réforme sur le nombre d'âmes enchaînées.",
       "B": "Privilégier la solidité et la maîtrise des flux.",
       "C": "Tester surtout ces chaînes sur certains leaders mortels."
     }
@@ -576,8 +576,8 @@
     }
   },
   "hk_065": {
-    "title": "Crise avec un autre plan",
-    "body": "Un plan voisin, ni totalement céleste ni totalement infernal, proteste contre tes incursions.",
+    "title": "Crise avec un autre royaume",
+    "body": "Un royaume voisin, ni totalement céleste ni totalement infernal, proteste contre tes incursions.",
     "choices": {
       "A": "Répondre par une démonstration brutale de force.",
       "B": "Négocier des frontières et des règles précises.",
@@ -660,7 +660,7 @@
     "title": "Cour des supplices raffinés",
     "body": "Une cour d'artisans du tourment propose des supplices très élaborés.",
     "choices": {
-      "A": "Tirer au maximum sur la quantité d'âmes traitées.",
+      "A": "Pousser au maximum le nombre d'âmes traitées.",
       "B": "Instaurer un protocole rigide pour chaque supplice.",
       "C": "Réserver ces raffinements à des cibles influentes sur Terre."
     }
@@ -679,7 +679,7 @@
     "body": "Les scribes se plaignent : chaque jour, les péchés nouveaux s'accumulent plus vite que les registres.",
     "choices": {
       "A": "Les pousser à enregistrer tout, même au prix du chaos.",
-      "B": "Simplifier les catégories pour garder un ordre global.",
+      "B": "Simplifier les catégories pour garder l'ensemble sous contrôle.",
       "C": "N'enregistrer en détail que les péchés clés commis chez les vivants."
     }
   },
@@ -1039,7 +1039,7 @@
     "body": "Une rivière charrie les souvenirs les plus noirs des damnés.",
     "choices": {
       "A": "Y précipiter encore plus d’âmes.",
-      "B": "Indexer ces souvenirs dans des archives d’ordre.",
+      "B": "Classer ces souvenirs dans des archives pour mieux garder l'ordre.",
       "C": "Utiliser ces souvenirs pour orienter la corruption des vivants."
     }
   },
@@ -1201,7 +1201,7 @@
     "body": "Chaque tombe porte le nom d’une promesse trahie.",
     "choices": {
       "A": "Y enterrer encore plus d’âmes brisées.",
-      "B": "Indexer chaque promesse pour un ordre parfait.",
+      "B": "Classer chaque promesse pour mieux contrôler l'ensemble.",
       "C": "Faire resurgir certaines de ces promesses chez les vivants."
     }
   },
@@ -1308,7 +1308,7 @@
     "title": "Tournoi des mensonges parfaits",
     "body": "Un tournoi récompense le mensonge le plus destructeur.",
     "choices": {
-      "A": "Récompenser surtout la quantité d’âmes perdue.",
+      "A": "Récompenser surtout les mensonges qui font tomber le plus d'âmes.",
       "B": "Inscrire chaque mensonge dans un registre codifié.",
       "C": "Tester ces mensonges sur les réseaux des vivants."
     }
