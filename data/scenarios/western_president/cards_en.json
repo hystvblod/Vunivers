@@ -1364,7 +1364,7 @@
     "choices": {
       "A": "Go there, support the event, and make a symbolic announcement about national gastronomy.",
       "B": "Send your minister: you are officially working.",
-      "C": "Refuse: 'diplomacy is not done with a ladle.'"
+      "C": "Refuse: diplomacy is not done on a cooking show."
     }
   },
   "wp_153": {
@@ -1387,7 +1387,7 @@
   },
   "wp_155": {
     "title": "Awkward Ambassador",
-    "body": "An ambassador makes a joke that lands very badly. The incident embarrasses everyone and creates diplomatic discomfort.",
+    "body": "An ambassador makes a joke that goes over very badly. The scene embarrasses everyone and creates diplomatic tension.",
     "choices": {
       "A": "Official apologies + diplomatic gesture.",
       "B": "Recall them immediately: zero tolerance.",
@@ -1423,7 +1423,7 @@
   },
   "wp_159": {
     "title": "Chocolate Shortage",
-    "body": "A logistics crisis causes a chocolate shortage. For many people, this is one shortage too many.",
+    "body": "A logistics crisis causes a chocolate shortage. For many citizens, it is one shortage too many.",
     "choices": {
       "A": "Secure supply through fast agreements.",
       "B": "Launch accelerated local production, but it is costly.",
@@ -1630,7 +1630,7 @@
   },
   "wp_182": {
     "title": "Ministry Hack",
-    "body": "A ministry website has been hacked and now shows nothing but a simple \"hello.\"",
+    "body": "A ministry website has been hacked and now shows nothing but a simple “hello”.",
     "choices": {
       "A": "Full audit + cyber training for government staff.",
       "B": "Cyber retaliation + firm communication.",
@@ -1666,7 +1666,7 @@
   },
   "wp_186": {
     "title": "Conference on Air and Water",
-    "body": "You are being asked to host a conference on air and water quality. Everyone agrees with the idea until it is time to pay.",
+    "body": "You are being asked to host a conference on air and water quality. Everyone agrees until it is time to pay.",
     "choices": {
       "A": "Host it and invest: international image.",
       "B": "Host it without public spending.",
@@ -1890,7 +1890,7 @@
     }
   },
   "wp_211": {
-    "title": "Bocce Tournament at the Border",
+    "title": "Petanque Tournament at the Border",
     "body": "To calm tensions at the border, local officials propose a bocce tournament between the two sides. Some find the idea amusing, others find it shocking.",
     "choices": {
       "A": "Support the initiative + official local dialogue.",
@@ -1945,7 +1945,7 @@
   },
   "wp_217": {
     "title": "Battle of the Flags",
-    "body": "A conflict breaks out over a flag that two sides both claim. Neither side is willing to give up the symbol.",
+    "body": "A conflict breaks out over a flag that both sides claim. Neither side wants to give up that symbol.",
     "choices": {
       "A": "Diplomatic compromise and shared use.",
       "B": "Impose your flag: authority.",
@@ -2035,7 +2035,7 @@
   },
   "wp_227": {
     "title": "Diplomatic Passport… Lost",
-    "body": "A diplomat loses their passport in an airport, in front of cameras. The situation immediately becomes ridiculous.",
+    "body": "A diplomat loses their passport at an airport, in front of cameras. The situation immediately becomes ridiculous.",
     "choices": {
       "A": "Reform diplomatic security + training.",
       "B": "Minimize it publicly, fix it behind the scenes.",
@@ -2313,8 +2313,8 @@
     }
   },
   "wp_258": {
-    "title": "General and Strategic Mustache",
-    "body": "Your general becomes a target on social media because of a viral photo. His appearance overshadows the message.",
+    "title": "General Mocked Online",
+    "body": "Your general becomes a target on social media because of a viral photo. Their appearance ends up overshadowing the message.",
     "choices": {
       "A": "Laugh and refocus on strategy.",
       "B": "Reel him in: serious image required.",

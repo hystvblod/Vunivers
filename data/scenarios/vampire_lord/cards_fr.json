@@ -721,7 +721,7 @@
   },
   "vampire_081": {
     "title": "Le nouveau symbole",
-    "body": "Un symbole inconnu apparaît sur tes murs. Ni symbole du clan ni marque connue. Autre chose.",
+    "body": "Un symbole inconnu apparaît sur tes murs. Ce n’est ni un signe du clan ni une marque connue.",
     "choices": {
       "A": "Enquêter",
       "B": "Effacer tout",
@@ -1895,7 +1895,7 @@
     "choices": {
       "A": "Écouter et trancher",
       "B": "Reporter encore",
-      "C": "Laisser parler un porte parole"
+      "C": "Laisser parler un porte-parole"
     }
   },
   "vampire_212": {
