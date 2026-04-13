@@ -4430,7 +4430,8 @@ engine.applyChoice = function (cardLogic, choiceId) {
   const INTRO_REWARD_VCOINS = 200;
   const INTRO_REWARD_TOKENS = 1;
   const INTRO_LOW_GAUGE_VALUE = 8;
-  const INTRO_HAND_SRC = "assets/img/ui/hand2.webp";
+  const INTRO_HAND_SRC_JETON = "assets/img/ui/hand.webp";
+  const INTRO_HAND_SRC_CHOICE = "assets/img/ui/hand2.webp";
 
   let enabled = false;
   let currentCardId = "";
@@ -5041,7 +5042,7 @@ function resetUIState() {
 
     hand = document.createElement("img");
     hand.id = "vr-intro-hand";
-    hand.src = INTRO_HAND_SRC;
+    hand.src = INTRO_HAND_SRC_JETON;
     hand.alt = "";
     hand.draggable = false;
     hand.dataset.bound = "0";
@@ -5222,6 +5223,7 @@ function resetUIState() {
     if (!btn) return;
 
     const hand = ensureIntroHand();
+    hand.src = INTRO_HAND_SRC_JETON;
 
     if (hand.dataset.bound !== "1") {
       window.addEventListener("resize", syncVisibleIntroHand, { passive: true });
@@ -5256,6 +5258,7 @@ function resetUIState() {
     if (!btn) return;
 
     const hand = ensureIntroHand();
+    hand.src = INTRO_HAND_SRC_CHOICE;
 
     if (hand.dataset.bound !== "1") {
       window.addEventListener("resize", syncVisibleIntroHand, { passive: true });
