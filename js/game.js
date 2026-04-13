@@ -743,7 +743,7 @@ body.vr-peek-mode .vr-gauge-preview{
     inset 0 0 50px rgba(255, 0, 0, 0.18),
     inset 0 0 120px rgba(255, 0, 0, 0.22),
     inset 0 0 220px rgba(120, 0, 0, 0.30);
-  animation: vrCriticalAlarmPulseMedium 1s ease-in-out infinite;
+  animation: vrCriticalAlarmPulseMedium 1.2s ease-in-out infinite;
 }
 
 #view-game.vr-critical-alarm::after {
@@ -761,7 +761,7 @@ body.vr-peek-mode .vr-gauge-preview{
       rgba(255, 40, 40, 0.06) 80%,
       rgba(255, 0, 0, 0.00) 100%
     );
-  animation: vrCriticalAlarmFlashMedium 1s ease-in-out infinite;
+  animation: vrCriticalAlarmFlashMedium 1.2s ease-in-out infinite;
 }
 `;
         (document.head || document.documentElement).appendChild(style);
