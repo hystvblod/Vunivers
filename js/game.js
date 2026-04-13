@@ -4430,7 +4430,7 @@ engine.applyChoice = function (cardLogic, choiceId) {
   const INTRO_REWARD_VCOINS = 200;
   const INTRO_REWARD_TOKENS = 1;
   const INTRO_LOW_GAUGE_VALUE = 8;
-  const INTRO_HAND_SRC = "assets/img/ui/hand.webp";
+  const INTRO_HAND_SRC = "assets/img/ui/hand2.webp";
 
   let enabled = false;
   let currentCardId = "";
