@@ -15,7 +15,7 @@
     },
     "new_world_explorer_ev_003": {
       "title": "Misión mal recibida",
-      "body": "Unos predicadores hablan demasiado rápido y escuchan muy poco. El pueblo se cierra.",
+      "body": "Unos predicadores hablan demasiado rápido y escuchan demasiado poco. El pueblo se cierra.",
       "effect": "Población convertida: -5 por carta",
       "duration": "Duración: 4 cartas"
     },
@@ -27,7 +27,7 @@
     },
     "new_world_explorer_ev_005": {
       "title": "Frontera disputada",
-      "body": "Un jefe vecino cuestiona nuestros límites. De pronto, nuestras tierras parecen mucho menos seguras.",
+      "body": "Un jefe vecino pone en duda nuestros límites. Nuestras tierras parecen de pronto mucho menos seguras.",
       "effect": "Territorios: -5 por carta",
       "duration": "Duración: 6 cartas"
     },
@@ -39,31 +39,31 @@
     },
     "new_world_explorer_ev_007": {
       "title": "Convoy saqueado",
-      "body": "Parte del stock desaparece en la ruta interior. El comercio odia este tipo de sorpresas.",
+      "body": "Parte del stock desaparece en la ruta interior. Al comercio no le gustan este tipo de sorpresas.",
       "effect": "Riquezas: -5 por carta",
       "duration": "Duración: 7 cartas"
     },
     "new_world_explorer_ev_008": {
       "title": "Corte descontenta",
-      "body": "Un informe llega tarde y con demasiadas excusas. Al palacio le gustan aún menos los retrasos que la verdad.",
+      "body": "Un informe llega tarde y con demasiadas excusas. Al palacio le gusta todavía menos el retraso que la verdad.",
       "effect": "Apoyo real: -5 por carta",
       "duration": "Duración: 5 cartas"
     },
     "new_world_explorer_ev_009": {
       "title": "Predicador aplaudido",
-      "body": "Un predicador sabe hablar de forma simple. Las multitudes se quedan hasta el final y vuelven al día siguiente.",
+      "body": "Un predicador sabe hablar de forma sencilla. Las multitudes se quedan hasta el final y vuelven al día siguiente.",
       "effect": "Población convertida: +5 por carta",
       "duration": "Duración: 4 cartas"
     },
     "new_world_explorer_ev_010": {
-      "title": "Veta rentable",
-      "body": "Una veta discreta empieza a rendir más de lo esperado. Hasta los escribas parecen contentos.",
+      "title": "Yacimiento rentable",
+      "body": "Un yacimiento discreto empieza a rendir más de lo esperado. Hasta los escribanos parecen contentos.",
       "effect": "Riquezas: +5 por carta",
       "duration": "Duración: 6 cartas"
     },
     "new_world_explorer_ev_011": {
       "title": "Órdenes contradictorias",
-      "body": "Dos mensajes reales dicen dos cosas opuestas. Pierdes tiempo, y la corte pierde la paciencia.",
+      "body": "Dos mensajes reales dicen dos cosas opuestas. Pierdes tiempo, y la corte pierde paciencia.",
       "effect": "Apoyo real: -5 por carta",
       "duration": "Duración: 3 cartas"
     },
@@ -75,49 +75,49 @@
     },
     "new_world_explorer_ev_013": {
       "title": "Puesto abandonado",
-      "body": "Un pequeño puesto avanzado es abandonado tras varias noches agitadas. El mapa se repliega de golpe.",
+      "body": "Un pequeño puesto avanzado es abandonado después de varias noches agitadas. El mapa se repliega de golpe.",
       "effect": "Territorios: -5 por carta",
       "duration": "Duración: 4 cartas"
     },
     "new_world_explorer_ev_014": {
       "title": "Mercado de las islas",
-      "body": "Comerciantes llegados de las islas llenan el puerto de bienes raros y de nuevas ocasiones de beneficio.",
+      "body": "Mercaderes llegados de las islas llenan el puerto de bienes raros y nuevas oportunidades de ganancia.",
       "effect": "Riquezas: +5 por carta",
       "duration": "Duración: 6 cartas"
     },
     "new_world_explorer_ev_015": {
       "title": "Fuerte avanzado",
-      "body": "Se levanta un pequeño fuerte en un lugar bien elegido. La costa se vuelve más fácil de defender.",
+      "body": "Un pequeño fuerte surge en un lugar bien elegido. La costa se vuelve más fácil de defender.",
       "effect": "Territorios: +5 por carta",
       "duration": "Duración: 3 cartas"
     },
     "new_world_explorer_ev_016": {
       "title": "Celo torpe",
-      "body": "Hombres demasiado apresurados quieren convencer por la fuerza del tono. Consiguen sobre todo desconfianza.",
+      "body": "Hombres demasiado apurados quieren convencer por la fuerza del tono. Lo que consiguen, sobre todo, es desconfianza.",
       "effect": "Población convertida: -5 por carta",
       "duration": "Duración: 5 cartas"
     },
     "new_world_explorer_ev_017": {
       "title": "Cofre del reino",
-      "body": "Un cofre llega del continente con material, órdenes y un poco de confianza.",
+      "body": "Un cofre llega del continente con materiales, órdenes y un poco de confianza.",
       "effect": "Apoyo real: +5 por carta",
       "duration": "Duración: 4 cartas"
     },
     "new_world_explorer_ev_018": {
       "title": "Tormenta sobre las bodegas",
-      "body": "Una serie de lluvias daña las reservas. Parte de las mercancías se pierde.",
+      "body": "Una serie de lluvias daña los stocks. Parte de las mercancías se pierde.",
       "effect": "Riquezas: -5 por carta",
       "duration": "Duración: 7 cartas"
     },
     "new_world_explorer_ev_019": {
-      "title": "Escuela de la orilla",
-      "body": "Una escuela abre cerca del puerto. Los niños vienen por las palabras y regresan por las costumbres.",
+      "title": "Escuela de la costa",
+      "body": "Una escuela abre cerca del puerto. Los niños llegan por las palabras y vuelven por las costumbres.",
       "effect": "Población convertida: +5 por carta",
       "duration": "Duración: 3 cartas"
     },
     "new_world_explorer_ev_020": {
       "title": "Mapa demasiado optimista",
-      "body": "Un viejo mapa promete tierras ya disputadas. El error cuesta tiempo y presencia.",
+      "body": "Un viejo mapa promete tierras que ya están disputadas. El error cuesta tiempo y presencia.",
       "effect": "Territorios: -5 por carta",
       "duration": "Duración: 6 cartas"
     },
@@ -129,13 +129,13 @@
     },
     "new_world_explorer_ev_022": {
       "title": "Ruta de las especias",
-      "body": "Una ruta comercial se vuelve por fin segura. Los barcos parten llenos y regresan aún más motivados.",
+      "body": "Una ruta comercial por fin se vuelve segura. Los barcos parten llenos y regresan todavía más motivados.",
       "effect": "Riquezas: +5 por carta",
       "duration": "Duración: 7 cartas"
     },
     "new_world_explorer_ev_023": {
       "title": "Bahía asegurada",
-      "body": "La bahía está mejor defendida, mejor vigilada y es mucho más fácil de reclamar.",
+      "body": "La bahía está mejor controlada, mejor vigilada y mucho más fácil de reclamar.",
       "effect": "Territorios: +5 por carta",
       "duration": "Duración: 4 cartas"
     },
@@ -146,26 +146,26 @@
       "duration": "Duración: 6 cartas"
     },
     "new_world_explorer_ev_025": {
-      "title": "Almacén húmedo",
-      "body": "La humedad invade las reservas. Parte del stock pierde valor incluso antes de ser vendido.",
+      "title": "Depósito húmedo",
+      "body": "La humedad invade las reservas. Parte del stock pierde su valor antes siquiera de ser vendido.",
       "effect": "Riquezas: -5 por carta",
       "duration": "Duración: 3 cartas"
     },
     "new_world_explorer_ev_026": {
       "title": "Fiesta de la misión",
-      "body": "Una gran fiesta religiosa reúne al puerto y a varios pueblos. El momento está bien elegido y bien llevado.",
+      "body": "Una gran fiesta religiosa reúne al puerto y a varios pueblos. El momento está bien elegido y bien manejado.",
       "effect": "Población convertida: +5 por carta",
       "duration": "Duración: 5 cartas"
     },
     "new_world_explorer_ev_027": {
-      "title": "Tratado de la orilla",
-      "body": "Un acuerdo simple fija por fin quién guarda qué en la costa. Es menos glorioso que una bandera, pero mucho más sólido.",
+      "title": "Tratado de la ribera",
+      "body": "Un acuerdo sencillo fija por fin quién conserva qué en la costa. Es menos glorioso que una bandera, pero mucho más sólido.",
       "effect": "Territorios: +5 por carta",
       "duration": "Duración: 4 cartas"
     },
     "new_world_explorer_ev_028": {
       "title": "Enviado descontento",
-      "body": "Un enviado real se marcha con el rostro cerrado y un cuaderno bien lleno. Su informe puede perjudicarnos en la corte.",
+      "body": "Un enviado real se va con el rostro cerrado y un cuaderno bien lleno. Su informe puede perjudicarnos en la corte.",
       "effect": "Apoyo real: -5 por carta",
       "duration": "Duración: 6 cartas"
     },
@@ -176,8 +176,8 @@
       "duration": "Duración: 3 cartas"
     },
     "new_world_explorer_ev_030": {
-      "title": "Semana de bautismos",
-      "body": "La misión vive una semana muy seguida. Incluso los más prudentes vienen a mirar más de cerca.",
+      "title": "Semana de bautizos",
+      "body": "La misión vive una semana muy concurrida. Hasta los más prudentes se acercan a mirar con más atención.",
       "effect": "Población convertida: +5 por carta",
       "duration": "Duración: 7 cartas"
     }

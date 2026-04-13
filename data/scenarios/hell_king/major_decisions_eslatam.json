@@ -3,40 +3,40 @@
   "decisions": {
     "hell_major_001": {
       "title": "Portal hacia la Tierra",
-      "body": "Un portal inmenso hacia la Tierra está listo. Tus ministros quieren abrirlo de inmediato para mostrar el poder del infierno. ¿Les dejas hacerlo?",
+      "body": "Un portal inmenso hacia la Tierra está listo. Tus ministros quieren abrirlo de inmediato para mostrar el poder del infierno. ¿Los dejas hacerlo?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Catástrofe",
-      "outcome_yes_body": "El portal se descontrola. El infierno pierde el control. Fin de la partida.",
+      "outcome_yes_body": "El portal se sale de control. El infierno pierde el control. Fin de la partida.",
       "outcome_no_title": "Buena decisión",
-      "outcome_no_body": "Bloqueas esta locura. La influencia sobre la Tierra vuelve a un nivel estable."
+      "outcome_no_body": "Bloqueas esa locura. La influencia sobre la Tierra vuelve a un nivel estable."
     },
     "hell_major_002": {
       "title": "Asalto demasiado pronto",
-      "body": "Tus legiones quieren atacar antes de estar preparadas. Dicen que esperar sería una señal de debilidad. ¿Das la orden?",
+      "body": "Tus legiones quieren atacar antes de estar listas. Dicen que esperar sería una admisión de debilidad. ¿Das la orden?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Mala decisión",
-      "outcome_yes_body": "Lanzas el asalto demasiado pronto. Las legiones se reducen a la mitad.",
+      "outcome_yes_body": "Lanzas el asalto demasiado pronto. Las legiones quedan reducidas a la mitad.",
       "outcome_no_title": "Buena decisión",
-      "outcome_no_body": "Impones una preparación real. Las legiones vuelven a 50."
+      "outcome_no_body": "Impones una preparación de verdad. Las legiones vuelven a 50."
     },
     "hell_major_003": {
       "title": "Gran limpieza en la administración",
-      "body": "Ya nadie entiende quién manda qué en el infierno. ¿Bloqueas toda la administración para poner orden?",
+      "body": "Ya nadie entiende quién manda sobre qué en el infierno. ¿Bloqueas toda la administración para volver a poner orden?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Buena decisión",
       "outcome_yes_body": "Restableces reglas simples. El orden infernal vuelve a 50.",
       "outcome_no_title": "Mala decisión",
-      "outcome_no_body": "El caos continúa. El orden infernal se reduce a la mitad."
+      "outcome_no_body": "El caos continúa. El orden infernal queda reducido a la mitad."
     },
     "hell_major_004": {
       "title": "Clasificación de las almas",
-      "body": "Miles de almas han sido clasificadas en la zona equivocada. ¿Lo detienes todo para volver a clasificarlas?",
+      "body": "Miles de almas fueron clasificadas en la zona equivocada. ¿Detienes todo para volver a hacer la clasificación?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
@@ -58,51 +58,51 @@
     },
     "hell_major_006": {
       "title": "Corte de aduladores",
-      "body": "A tu alrededor, todos dicen sí incluso antes de haber entendido. ¿Despides a la mitad de tu corte para recuperar gente útil?",
+      "body": "A tu alrededor, todos dicen que sí incluso antes de entender. ¿Despides a la mitad de tu corte para recuperar gente útil?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Mala decisión",
-      "outcome_yes_body": "Golpeas demasiado fuerte y el orden infernal se derrumba a la mitad.",
+      "outcome_yes_body": "Golpeas demasiado amplio y el orden infernal se derrumba a la mitad.",
       "outcome_no_title": "Buena decisión",
-      "outcome_no_body": "Retomas el control de la corte sin romperlo todo. El orden infernal vuelve a 50."
+      "outcome_no_body": "Retomas el control de la corte sin destruirlo todo. El orden infernal vuelve a 50."
     },
     "hell_major_007": {
       "title": "Legiones agotadas",
-      "body": "Tus tropas no pueden más, pero sus jefes quieren seguir para salvar las apariencias. ¿Impones un descanso real?",
+      "body": "Tus tropas ya no pueden más, pero sus jefes quieren seguir para salvar las apariencias. ¿Impones un verdadero descanso?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Buena decisión",
       "outcome_yes_body": "Evitas el colapso. Las legiones vuelven a 50.",
       "outcome_no_title": "Catástrofe",
-      "outcome_no_body": "Tus ejércitos se quiebran por completo. Fin de la partida."
+      "outcome_no_body": "Tus ejércitos se rompen por completo. Fin de la partida."
     },
     "hell_major_008": {
       "title": "Nuevo sistema de condenación",
-      "body": "Un demonio promete un tratamiento más rápido de las almas con un método brutal e inestable. ¿Lo apruebas?",
+      "body": "Un demonio promete un procesamiento más rápido de las almas con un método brutal e inestable. ¿Lo apruebas?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Mala decisión",
       "outcome_yes_body": "El sistema destruye más de lo que aporta. Las almas condenadas caen a la mitad.",
       "outcome_no_title": "Buena decisión",
-      "outcome_no_body": "Rechazas este atajo. Las almas condenadas vuelven a 50."
+      "outcome_no_body": "Rechazas ese atajo. Las almas condenadas vuelven a 50."
     },
     "hell_major_009": {
       "title": "Castigar a un gran demonio",
-      "body": "Un alto responsable ha robado recursos y todo el mundo lo sabe. ¿Lo haces caer públicamente?",
+      "body": "Un alto responsable robó recursos y todos lo saben. ¿Lo haces caer públicamente?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Buena decisión",
       "outcome_yes_body": "Recuerdas que nadie está por encima del trono. El orden infernal vuelve a 50.",
       "outcome_no_title": "Mala decisión",
-      "outcome_no_body": "Los demás entienden que también pueden hacerlo. Las legiones pierden la mitad de su cohesión."
+      "outcome_no_body": "Los demás entienden que pueden hacer lo mismo. Las legiones pierden la mitad de su cohesión."
     },
     "hell_major_010": {
       "title": "Incursión de demostración",
-      "body": "Tus jefes quieren lanzar un pequeño ataque sobre la Tierra solo para enviar un mensaje. ¿Les dejas ir?",
+      "body": "Tus jefes quieren lanzar un pequeño ataque sobre la Tierra solo para enviar un mensaje. ¿Los dejas ir?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
@@ -129,7 +129,7 @@
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Mala decisión",
-      "outcome_yes_body": "El desfile acaba en ridículo. Las legiones pierden la mitad de su valor.",
+      "outcome_yes_body": "El desfile termina en ridículo. Las legiones pierden la mitad de su valor.",
       "outcome_no_title": "Buena decisión",
       "outcome_no_body": "Cortas el espectáculo de raíz. Las legiones vuelven a 50."
     },
@@ -151,35 +151,35 @@
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Mala decisión",
-      "outcome_yes_body": "Impones una regla única con demasiada brutalidad. El orden infernal se divide entre dos.",
+      "outcome_yes_body": "Impones una regla única de forma demasiado brutal. El orden infernal queda reducido a la mitad.",
       "outcome_no_title": "Buena decisión",
       "outcome_no_body": "Pones orden sin bloquear todo el sistema. El orden infernal vuelve a 50."
     },
     "hell_major_015": {
       "title": "Racionamiento de las tropas",
-      "body": "Puedes racionar duramente a las legiones para reconstruir las reservas de almas, o mantener su nivel de vida. ¿Las racionas?",
+      "body": "Puedes racionar duramente a las legiones para reconstruir las reservas de almas, o mantener su nivel de vida. ¿Racionas?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Buena decisión",
-      "outcome_yes_body": "Evitas una agitación general. Las legiones vuelven a un nivel estable.",
+      "outcome_yes_body": "Evitas el malestar general. Las legiones vuelven a un nivel estable.",
       "outcome_no_title": "Mala decisión",
-      "outcome_no_body": "Las reservas de almas se derriten. Su medidor se reduce a la mitad."
+      "outcome_no_body": "Las reservas de almas se derriten. Su medidor queda reducido a la mitad."
     },
     "hell_major_016": {
       "title": "Puerta prohibida",
-      "body": "Una vieja puerta sellada conduce a un antiguo paso hacia el mundo de los hombres. Nadie sabe realmente qué hay detrás. ¿La abres?",
+      "body": "Una vieja puerta sellada lleva a un antiguo pasaje hacia el mundo de los hombres. Nadie sabe realmente qué hay detrás. ¿La abres?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Catástrofe",
       "outcome_yes_body": "Despiertas algo que no controlas. Fin de la partida.",
       "outcome_no_title": "Buena decisión",
-      "outcome_no_body": "Dejas ese peligro sellado. La influencia sobre la Tierra vuelve a 50."
+      "outcome_no_body": "Dejas sellado ese peligro. La influencia sobre la Tierra vuelve a 50."
     },
     "hell_major_017": {
       "title": "Humillación pública",
-      "body": "Dos demonios importantes se burlan abiertamente de tu autoridad. ¿Los destruyes delante de todo el mundo?",
+      "body": "Dos demonios importantes se burlan abiertamente de tu autoridad. ¿Los destruyes delante de todos?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
@@ -190,7 +190,7 @@
     },
     "hell_major_018": {
       "title": "Fábrica de pactos",
-      "body": "Te proponen convertir los pactos en un procedimiento automático para ir más rápido. ¿Pones la máquina en marcha?",
+      "body": "Te proponen convertir los pactos en un procedimiento automático para ir más rápido. ¿Pones en marcha la máquina?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
@@ -201,40 +201,40 @@
     },
     "hell_major_019": {
       "title": "Prima de guerra",
-      "body": "Tus legiones exigen una prima inmediata antes de la próxima campaña. ¿Pagas para calmar a todo el mundo?",
+      "body": "Tus legiones exigen una prima inmediata antes de la próxima campaña. ¿Pagas para calmar a todos?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Buena decisión",
-      "outcome_yes_body": "Cortas de raíz el motín. Las legiones vuelven a 50.",
+      "outcome_yes_body": "Frenas la rebelión a tiempo. Las legiones vuelven a 50.",
       "outcome_no_title": "Mala decisión",
-      "outcome_no_body": "Los soldados toman por su cuenta lo que quieren. Las legiones se reducen a la mitad."
+      "outcome_no_body": "Los soldados toman lo que quieren por su cuenta. Las legiones quedan reducidas a la mitad."
     },
     "hell_major_020": {
       "title": "Visibilidad en la Tierra",
-      "body": "Algunos demonios quieren mostrarse en público entre los humanos para asustarlos más rápido. ¿Autorizas esta demostración?",
+      "body": "Algunos demonios quieren mostrarse en público entre los humanos para asustar más rápido. ¿Autorizas esa demostración?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Mala decisión",
-      "outcome_yes_body": "Todo el mundo ve demasiado bien lo que ocurre. Tu influencia sobre la Tierra se derrumba a la mitad.",
+      "outcome_yes_body": "Todos ven demasiado bien lo que está pasando. Tu influencia sobre la Tierra se derrumba a la mitad.",
       "outcome_no_title": "Buena decisión",
       "outcome_no_body": "Te mantienes discreto y eficaz. La influencia sobre la Tierra vuelve a 50."
     },
     "hell_major_021": {
       "title": "Reforma brutal",
-      "body": "Puedes destituir de golpe a todos los responsables inútiles del infierno, o avanzar más lentamente. ¿Golpeas de inmediato?",
+      "body": "Puedes despedir de golpe a todos los responsables inútiles del infierno, o avanzar más lentamente. ¿Golpeas de inmediato?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Buena decisión",
-      "outcome_yes_body": "Por fin haces sitio para gente competente. El orden infernal vuelve a 50.",
+      "outcome_yes_body": "Por fin haces espacio para gente competente. El orden infernal vuelve a 50.",
       "outcome_no_title": "Mala decisión",
-      "outcome_no_body": "Los inútiles siguen mandando. El orden infernal se reduce a la mitad."
+      "outcome_no_body": "Los incapaces conservan el mando. El orden infernal queda reducido a la mitad."
     },
     "hell_major_022": {
-      "title": "Inventario de las reservas",
-      "body": "Las cifras de las reservas de almas ya no cuadran en absoluto. ¿Bloqueas toda distribución para volver a contarlas?",
+      "title": "Inventario de reservas",
+      "body": "Las cifras de las reservas de almas ya no coinciden en absoluto. ¿Bloqueas toda distribución para volver a contarlas?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
@@ -250,13 +250,13 @@
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Mala decisión",
-      "outcome_yes_body": "Fracasa y arrastra a tus soldados con él. Las legiones se reducen a la mitad.",
+      "outcome_yes_body": "Fracasa y se lleva a tus soldados con él. Las legiones quedan reducidas a la mitad.",
       "outcome_no_title": "Buena decisión",
-      "outcome_no_body": "Rechazas esa apuesta absurda. Las legiones vuelven a 50."
+      "outcome_no_body": "Rechazas esa apuesta idiota. Las legiones vuelven a 50."
     },
     "hell_major_024": {
       "title": "Mensaje para los humanos",
-      "body": "Un consejero quiere enviar una señal enorme a los humanos para impresionarlos. ¿Apruebas esta puesta en escena?",
+      "body": "Un consejero quiere enviar una señal enorme a los humanos para dejar huella. ¿Apruebas esa puesta en escena?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
@@ -272,20 +272,20 @@
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Buena decisión",
-      "outcome_yes_body": "Las responsabilidades por fin quedan claras. El orden infernal vuelve a 50.",
+      "outcome_yes_body": "Las responsabilidades por fin se vuelven claras. El orden infernal vuelve a 50.",
       "outcome_no_title": "Mala decisión",
-      "outcome_no_body": "Las disputas se comen todo el sistema. El orden infernal pierde la mitad de su fuerza."
+      "outcome_no_body": "Las disputas se tragan todo el sistema. El orden infernal pierde la mitad de su fuerza."
     },
     "hell_major_026": {
       "title": "Explotación de las almas",
-      "body": "Un ministro quiere sacar aún más de almas ya agotadas. Es rentable a corto plazo. ¿Lo autorizas?",
+      "body": "Un ministro quiere extraer todavía más de las almas ya agotadas. Es rentable a corto plazo. ¿Lo autorizas?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Mala decisión",
       "outcome_yes_body": "Aprietas demasiado. Las almas condenadas se derrumban a la mitad.",
       "outcome_no_title": "Buena decisión",
-      "outcome_no_body": "Evitas el abuso. Las almas condenadas vuelven a 50."
+      "outcome_no_body": "Impides el abuso. Las almas condenadas vuelven a 50."
     },
     "hell_major_027": {
       "title": "Regreso de las patrullas",
@@ -300,7 +300,7 @@
     },
     "hell_major_028": {
       "title": "Sectarismo entre los humanos",
-      "body": "Tus agentes en la Tierra quieren empujar a los humanos a destrozarse entre sí todavía más. ¿Les das luz verde?",
+      "body": "Tus agentes en la Tierra quieren empujar a los humanos a despedazarse todavía más entre ellos. ¿Les das luz verde?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
@@ -311,18 +311,18 @@
     },
     "hell_major_029": {
       "title": "Cadena de sanciones",
-      "body": "Puedes sancionar a todos los responsables que han dejado que el infierno se desvíe, o seguir ganando tiempo. ¿Golpeas?",
+      "body": "Puedes sancionar a todos los responsables que dejaron que el infierno se desviara, o seguir aplazándolo. ¿Golpeas?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Buena decisión",
       "outcome_yes_body": "Restableces un miedo útil. El orden infernal vuelve a 50.",
       "outcome_no_title": "Mala decisión",
-      "outcome_no_body": "Tu vacilación sale cara. El orden infernal se divide entre dos."
+      "outcome_no_body": "Tu vacilación sale cara. El orden infernal queda reducido a la mitad."
     },
     "hell_major_030": {
       "title": "Reserva estratégica",
-      "body": "Puedes conservar una parte de las almas para el futuro, o usarlo todo ahora. ¿Guardas una reserva?",
+      "body": "Puedes guardar una parte de las almas para el futuro, o usarlo todo ahora. ¿Mantienes una reserva?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
@@ -333,18 +333,18 @@
     },
     "hell_major_031": {
       "title": "Marcha suicida",
-      "body": "Un jefe te jura que un ataque frontal basta para cambiar la situación. ¿Lo sigues hasta el final?",
+      "body": "Un jefe te jura que un ataque frontal basta para revertir la situación. ¿Lo sigues hasta el final?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Catástrofe",
-      "outcome_yes_body": "Envías a todos al matadero. Fin de la partida.",
+      "outcome_yes_body": "Envías a todos a la masacre. Fin de la partida.",
       "outcome_no_title": "Buena decisión",
       "outcome_no_body": "Rechazas la locura. Las legiones vuelven a 50."
     },
     "hell_major_032": {
       "title": "Presencia discreta",
-      "body": "Puedes reducir las apariciones demoníacas visibles entre los humanos para recuperar el control. ¿Eliges la discreción?",
+      "body": "Puedes reducir las apariciones demoníacas visibles entre los humanos para retomar el control. ¿Eliges la discreción?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
@@ -355,36 +355,36 @@
     },
     "hell_major_033": {
       "title": "Decretos contradictorios",
-      "body": "Tres series de reglas se anulan entre sí. ¿Lo eliminas todo y vuelves a empezar desde cero?",
+      "body": "Tres series de reglas se anulan entre sí. ¿Las eliminas todas y vuelves a empezar desde cero?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Mala decisión",
-      "outcome_yes_body": "Empiezas de cero con demasiada brutalidad. El orden infernal se reduce a la mitad.",
+      "outcome_yes_body": "Empiezas de cero de forma demasiado brutal. El orden infernal queda reducido a la mitad.",
       "outcome_no_title": "Buena decisión",
       "outcome_no_body": "Reconstruyes sin destruirlo todo de golpe. El orden infernal vuelve a 50."
     },
     "hell_major_034": {
       "title": "Almas olvidadas",
-      "body": "Una zona entera contiene almas olvidadas desde hace años. ¿La reabres para recuperarlas?",
+      "body": "Toda una zona contiene almas olvidadas desde hace años. ¿La reabres para recuperarlas?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Buena decisión",
       "outcome_yes_body": "Recuperas una reserva valiosa. Las almas condenadas vuelven a 50.",
       "outcome_no_title": "Mala decisión",
-      "outcome_no_body": "Abandonas un recurso vital. Las almas condenadas se reducen a la mitad."
+      "outcome_no_body": "Abandonas un recurso vital. Las almas condenadas quedan reducidas a la mitad."
     },
     "hell_major_035": {
       "title": "Reorganización de las tropas",
-      "body": "Puedes dispersar varias unidades desgastadas para reconstruir un ejército sano, o mantener las estructuras actuales. ¿Las dispersas?",
+      "body": "Puedes dispersar varias unidades desgastadas para reconstruir un ejército sano, o conservar las estructuras actuales. ¿Las dispersas?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Buena decisión",
       "outcome_yes_body": "Vuelves a empezar sobre una base más sólida. Las legiones vuelven a 50.",
       "outcome_no_title": "Mala decisión",
-      "outcome_no_body": "Mantienes unidades ya rotas. Las legiones caen a la mitad."
+      "outcome_no_body": "Conservas unidades que ya estaban rotas. Las legiones caen a la mitad."
     },
     "hell_major_036": {
       "title": "Intervención directa en la Tierra",
@@ -395,18 +395,18 @@
       "outcome_yes_title": "Mala decisión",
       "outcome_yes_body": "Te expones demasiado. La influencia sobre la Tierra se derrumba a la mitad.",
       "outcome_no_title": "Buena decisión",
-      "outcome_no_body": "Mantienes la distancia y tu margen de maniobra. La influencia sobre la Tierra vuelve a 50."
+      "outcome_no_body": "Mantienes tu distancia y tu margen de maniobra. La influencia sobre la Tierra vuelve a 50."
     },
     "hell_major_037": {
       "title": "Comité de crisis",
-      "body": "Puedes crear un verdadero comité de crisis con poderes claros, o seguir resolviéndolo todo solo y con urgencia. ¿Delegas?",
+      "body": "Puedes crear un verdadero comité de crisis con poderes claros, o seguir resolviéndolo todo tú solo en la urgencia. ¿Delegas?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Buena decisión",
       "outcome_yes_body": "Por fin estructuras la respuesta. El orden infernal vuelve a 50.",
       "outcome_no_title": "Mala decisión",
-      "outcome_no_body": "Te agotas y arrastras al sistema contigo. El orden infernal cae a la mitad."
+      "outcome_no_body": "Te agotas tú y con eso el sistema. El orden infernal cae a la mitad."
     },
     "hell_major_038": {
       "title": "Pactos demasiado fáciles",
@@ -415,24 +415,24 @@
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Buena decisión",
-      "outcome_yes_body": "Devuelves valor a cada alma. Las almas condenadas vuelven a 50.",
+      "outcome_yes_body": "Le devuelves valor a cada alma. Las almas condenadas vuelven a 50.",
       "outcome_no_title": "Mala decisión",
       "outcome_no_body": "Dejas que el mercado se vacíe. Las almas condenadas pierden la mitad de su valor."
     },
     "hell_major_039": {
       "title": "Rotación de los jefes militares",
-      "body": "Los mismos jefes llevan demasiado tiempo en el poder y protegen sus intereses. ¿Los reemplazas?",
+      "body": "Los mismos jefes llevan demasiado tiempo en sus puestos y protegen sus intereses. ¿Los reemplazas?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
       "outcome_yes_title": "Mala decisión",
-      "outcome_yes_body": "Lo reemplazas todo demasiado rápido. Las legiones se reducen a la mitad.",
+      "outcome_yes_body": "Reemplazas todo demasiado rápido. Las legiones quedan reducidas a la mitad.",
       "outcome_no_title": "Buena decisión",
       "outcome_no_body": "Preparas la transición sin romper el ejército. Las legiones vuelven a 50."
     },
     "hell_major_040": {
       "title": "Último sello",
-      "body": "Un antiguo sello protege el corazón del infierno. Algunos dicen que, si lo rompes, ganarías un poder inmenso. ¿Lo rompes?",
+      "body": "Un viejo sello protege el corazón del infierno. Algunos dicen que si lo rompes ganarías un poder enorme. ¿Lo rompes?",
       "yes_label": "Sí",
       "no_label": "No",
       "preview_hint": "Usar una ficha para ver los efectos",
