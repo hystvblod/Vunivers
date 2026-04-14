@@ -136,50 +136,50 @@
     "hell_king_ev_023": {
       "title": "Offre Tentante",
       "body": "Une offre brillante. Tu sais que ça cache un truc. Tu prends quand même.",
-      "effect": "Âmes : +5 par carte",
-      "duration": "Durée : 4 cartes"
+      "effect": "Effet : le message de la carte s'affiche sans voyelles",
+      "duration": "Durée : 5 cartes"
     },
     "hell_king_ev_024": {
       "title": "Négociation Express",
       "body": "Une poignée de main, trois signatures, et on passe à autre chose.",
-      "effect": "Ordre : -5 par carte",
-      "duration": "Durée : 6 cartes"
+      "effect": "Effet : le message de la carte s'affiche sans voyelles",
+      "duration": "Durée : 5 cartes"
     },
     "hell_king_ev_025": {
       "title": "Mutation Surprise",
       "body": "On déplace des unités. Ça réorganise tout, y compris les humeurs.",
-      "effect": "Légions : -5 par carte",
-      "duration": "Durée : 3 cartes"
+      "effect": "Effet : les choix s'affichent sans voyelles",
+      "duration": "Durée : 5 cartes"
     },
     "hell_king_ev_026": {
       "title": "Procès-Verbal",
       "body": "Un PV tombe. Ça ne fait rire personne.",
-      "effect": "Ordre : +5 par carte",
+      "effect": "Effet : les choix s'affichent sans voyelles",
       "duration": "Durée : 5 cartes"
     },
     "hell_king_ev_027": {
       "title": "Récompense Rituelle",
       "body": "On récompense les loyaux. Les autres regardent de travers.",
-      "effect": "Âmes : +5 par carte",
-      "duration": "Durée : 4 cartes"
+      "effect": "Effet : le message de la carte s'affiche à l'envers",
+      "duration": "Durée : 5 cartes"
     },
     "hell_king_ev_028": {
       "title": "Panique dans le monde des hommes",
       "body": "Là-haut, ça s’affole. En bas, tu encaisses.",
-      "effect": "Monde des hommes : -5 par carte",
-      "duration": "Durée : 6 cartes"
+      "effect": "Effet : le message de la carte s'affiche à l'envers",
+      "duration": "Durée : 5 cartes"
     },
     "hell_king_ev_029": {
       "title": "Test de Force",
       "body": "Petit test. Gros ego. Résultat… mitigé.",
-      "effect": "Légions : -5 par carte",
-      "duration": "Durée : 3 cartes"
+      "effect": "Effet : les choix s'affichent à l'envers",
+      "duration": "Durée : 5 cartes"
     },
     "hell_king_ev_030": {
       "title": "Note Interne",
       "body": "Une note claire circule enfin dans les bons bureaux et remet un peu d’ordre.",
-      "effect": "Ordre : +5 par carte",
-      "duration": "Durée : 7 cartes"
+      "effect": "Effet : les choix s'affichent à l'envers",
+      "duration": "Durée : 5 cartes"
     }
   }
 }
