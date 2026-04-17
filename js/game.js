@@ -2672,7 +2672,7 @@ body.vr-peek-mode .vr-gauge-preview{
         if (rewardValueEl) rewardValueEl.textContent = `+${safeAmount}`;
       };
 
-      const endingReferralReward = Number(window.REFERRAL_INVITE_VCOINS || 200);
+      const endingReferralReward = Number(window.REFERRAL_INVITE_VCOINS || 300);
       const endingReferralMilestone = vrReferralPickEndingMilestone(Number(this.session?.reignLength || 0));
       if (endingReferralMilestone) {
         vrReferralMarkEndingMilestoneShown(endingReferralMilestone.threshold, endingReferralMilestone.state);
