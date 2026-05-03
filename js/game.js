@@ -1783,7 +1783,12 @@ body.vr-peek-mode .vr-gauge-preview{
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:6px;
+    gap:10px;
+    margin-top:8px;
+  }
+
+  #vr-ending-overlay #ending-return-btn{
+    margin-top:6px !important;
   }
 
   @keyframes vrEndingPulse{
@@ -1792,6 +1797,7 @@ body.vr-peek-mode .vr-gauge-preview{
 }
 
   #vr-ending-overlay #ending-revive-btn,
+  #vr-ending-overlay #ending-revive-ad-btn,
   #vr-ending-overlay #ending-restart-btn,
   #vr-ending-overlay #ending-return-btn{
     width:100% !important;
@@ -1822,8 +1828,17 @@ body.vr-peek-mode .vr-gauge-preview{
       const textEl = document.getElementById("ending-text");
       const restartBtn = document.getElementById("ending-restart-btn");
       const reviveBtn = document.getElementById("ending-revive-btn");
+      let reviveAdBtn = document.getElementById("ending-revive-ad-btn");
       const returnBtn = document.getElementById("ending-return-btn");
-      if (!card || !textEl || !restartBtn || !reviveBtn || !returnBtn) return;
+
+      if (!reviveAdBtn && reviveBtn) {
+        reviveAdBtn = document.createElement("button");
+        reviveAdBtn.id = "ending-revive-ad-btn";
+        reviveAdBtn.className = "vr-choice-button";
+        reviveAdBtn.type = "button";
+      }
+
+      if (!card || !textEl || !restartBtn || !reviveBtn || !reviveAdBtn || !returnBtn) return;
 
       let reward = document.getElementById("ending-reward-row");
       if (!reward) {
@@ -1859,6 +1874,7 @@ body.vr-peek-mode .vr-gauge-preview{
         actions.className = "vr-ending-actions";
         doubleBtn.insertAdjacentElement("afterend", actions);
         actions.appendChild(reviveBtn);
+        actions.appendChild(reviveAdBtn);
 
         const bottom = document.createElement("div");
         bottom.className = "vr-ending-actions-bottom";
@@ -2655,6 +2671,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
       const restartBtn = document.getElementById("ending-restart-btn");
       const reviveBtn = document.getElementById("ending-revive-btn");
+      const reviveAdBtn = document.getElementById("ending-revive-ad-btn");
       const returnBtn = document.getElementById("ending-return-btn");
       const doubleBtn = document.getElementById("ending-double-btn");
       const rewardValueEl = document.getElementById("ending-reward-value");
@@ -2771,11 +2788,15 @@ body.vr-peek-mode .vr-gauge-preview{
         }
 
         if (reviveBtn) {
-          reviveBtn.textContent = hasTokenForRevive
-            ? t("game.ending.revive_token", "")
-            : t("game.ending.revive_ad", "");
-          reviveBtn.disabled = !!this._reviveUsed;
+          reviveBtn.textContent = t("game.ending.revive_token", "");
+          reviveBtn.disabled = !!this._reviveUsed || !hasTokenForRevive;
           reviveBtn.style.display = this._pendingEndClaimed ? "none" : "";
+        }
+
+        if (reviveAdBtn) {
+          reviveAdBtn.textContent = t("game.ending.revive_ad", "");
+          reviveAdBtn.disabled = !!this._reviveUsed;
+          reviveAdBtn.style.display = this._pendingEndClaimed ? "none" : "";
         }
 
         if (restartBtn) restartBtn.textContent = t("game.restart", "");
@@ -2832,39 +2853,54 @@ body.vr-peek-mode .vr-gauge-preview{
         };
       }
 
+      const finishRevive = async (method) => {
+        this._clearPendingEndState();
+        window.VREndings.hideEnding();
+
+        const did = this.reviveSecondChance();
+
+        if (did) {
+          try {
+            await window.VRAnalytics?.log?.("game_revive_used", {
+              universe_id: String(this.universeId || "unknown"),
+              method: String(method || "unknown")
+            });
+          } catch (_) {}
+        }
+
+        if (!did) this.restartRun();
+      };
+
       if (reviveBtn) {
         reviveBtn.onclick = async () => {
           if (this._reviveUsed || this._pendingEndClaimed) return;
 
+          const hasTokenNow = getLiveTokenCount() > 0;
+          if (!hasTokenNow) {
+            try { window.showToast?.(t("token.toast.not_enough", "")); } catch (_) {}
+            syncEndingButtons();
+            return;
+          }
+
           try { reviveBtn.disabled = true; } catch (_) {}
 
-          const finishRevive = async () => {
-            this._clearPendingEndState();
-            window.VREndings.hideEnding();
+          const ok = await (window.VUserData?.spendJetons?.(1) || Promise.resolve(false));
 
-            const did = this.reviveSecondChance();
-
-            if (did) {
-              try {
-                await window.VRAnalytics?.log?.("game_revive_used", {
-                  universe_id: String(this.universeId || "unknown"),
-                  method: getLiveTokenCount() > 0 ? "token_or_fallback" : "rewarded_ad"
-                });
-              } catch (_) {}
-            }
-
-            if (!did) this.restartRun();
-          };
-
-          const hadTokenBeforeClick = getLiveTokenCount() > 0;
-
-          if (hadTokenBeforeClick) {
-            const ok = await (window.VUserData?.spendJetons?.(1) || Promise.resolve(false));
-            if (ok) {
-              await finishRevive();
-              return;
-            }
+          if (ok) {
+            await finishRevive("token");
+            return;
           }
+
+          try { window.showToast?.(t("common.error_generic", "")); } catch (_) {}
+          syncEndingButtons();
+        };
+      }
+
+      if (reviveAdBtn) {
+        reviveAdBtn.onclick = async () => {
+          if (this._reviveUsed || this._pendingEndClaimed) return;
+
+          try { reviveAdBtn.disabled = true; } catch (_) {}
 
           const okAd = await (window.VRAds?.showRewardedAd?.({
             placement: "revive"
@@ -2872,7 +2908,7 @@ body.vr-peek-mode .vr-gauge-preview{
 
           if (okAd) {
             try { window.VRAds?.markGameRewardSeen?.(); } catch (_) {}
-            await finishRevive();
+            await finishRevive("rewarded_ad");
             return;
           }
 
@@ -6474,12 +6510,16 @@ function onGaugeSet(gaugeId) {
   #vr-ending-overlay .vr-ending-actions-bottom{
     display:flex !important;
     flex-direction:column !important;
-    gap:6px !important;
+    gap:10px !important;
     width:100% !important;
     max-width:none !important;
     align-self:stretch !important;
     align-items:stretch !important;
-    margin:0 !important;
+    margin:8px 0 0 !important;
+  }
+
+  #vr-ending-overlay #ending-return-btn{
+    margin-top:6px !important;
   }
 
   #vr-ending-overlay .vr-ending-actions-bottom .vr-choice-button{
@@ -6490,6 +6530,7 @@ function onGaugeSet(gaugeId) {
   }
 
   #vr-ending-overlay #ending-revive-btn,
+  #vr-ending-overlay #ending-revive-ad-btn,
   #vr-ending-overlay #ending-restart-btn,
   #vr-ending-overlay #ending-return-btn{
     width:100% !important;
