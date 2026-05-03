@@ -63,9 +63,9 @@
   }
 
   // ✅ Règles pubs globales
-  var INTERSTITIEL_EVERY_X_ACTIONS = 12;
-  var INTERSTITIAL_MIN_WEIGHTED_MS = 3 * 60 * 1000; // 3 min
-  var INTER_RETURN_EVERY_X_ENDS = 3;
+  var INTERSTITIEL_EVERY_X_ACTIONS = 10;
+  var INTERSTITIAL_MIN_WEIGHTED_MS = 2 * 60 * 1000; // 2 min
+  var INTER_RETURN_EVERY_X_ENDS = 2;
   var INTER_RETURN_COOLDOWN_MS = 2 * 60 * 1000; // 2 min réelles
 
   var WEIGHTED_TIME_KEY = "vr_ads_weighted_time_ms_v1";
