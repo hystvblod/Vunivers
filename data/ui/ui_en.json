@@ -93,7 +93,7 @@
     "faq_q3": "What are tokens used for?",
     "faq_a3": "Tokens are used for in-game help. They let you revive, preview the effect of the next 15 choices on the gauges, go back 3 choices, or set a gauge back to 50%.",
     "faq_q4": "How do I increase my final reward?",
-    "faq_a4": "When a run ends, a button lets you watch a rewarded ad. If your base reward is below 100, it becomes 100 VCoins. Otherwise, it is doubled. If the ad is not completed or unavailable, the reward stays normal.",
+    "faq_a4": "When a run ends, a button lets you watch a rewarded video. If your base reward is below 100, it becomes 100 VCoins. Otherwise, it is doubled. If the video is not completed or unavailable, the reward stays normal.",
     "faq_q5": "How do profile badges work?",
     "faq_a5": "Badges are separated by universe. They unlock during a run if you are still alive at the right moment: wood at 20 choices, bronze at 40 choices, silver at 60 choices, gold at 100 choices, and crystal at 150 choices.",
     "faq_q6": "How do I change my username?",
@@ -107,7 +107,7 @@
     "faq_q10": "How much does a universe cost?",
     "faq_a10": "At the moment, a universe costs 600 VCoins when it is not already unlocked.",
     "faq_q11": "What does the No Ads offer do?",
-    "faq_a11": "No Ads removes interstitial ads. Rewarded ads remain available when you want to get an optional reward.",
+    "faq_a11": "No Ads removes interstitial ads. Rewarded videos remain available when you want to get an optional reward.",
     "faq_q12": "What does Diamond include?",
     "faq_a12": "Diamond enables No Ads and unlocks all current universes in the game.",
     "faq_q13": "How do friend invites and cross-promo work?",
@@ -183,7 +183,7 @@
     "popup": {
       "title": "Token",
       "ad": {
-        "title": "Watch an ad",
+        "title": "Watch a video",
         "text": "Earn 1 token"
       },
       "gauge50": {
@@ -213,13 +213,13 @@
     "toast": {
       "select_gauge": "Choose a gauge to set to 50%",
       "reward_ok": "+1 token added",
-      "reward_fail": "Ad unavailable",
+      "reward_fail": "Video unavailable",
       "no_tokens": "You do not have any token",
       "undo_fail": "Unable to go back",
       "undo_done": "Back -3 completed",
       "gauge_set_50": "Gauge set to 50%",
       "peek_on": "Peek enabled: next 15 decisions",
-      "no_tokens_offer": "You have no tokens left. Watch an ad to earn 1 token or open the shop.",
+      "no_tokens_offer": "You have no tokens left. Watch a video to earn 1 token or open the shop.",
       "gauge_warning": "Warning, a gauge is close to the limit. Use a token if needed."
     },
     "undo": {
@@ -237,7 +237,7 @@
     "popup": {
       "title": "Coins",
       "ad": {
-        "title": "Watch an ad",
+        "title": "Watch a video",
         "text": "Earn 100 coins"
       },
       "shop": {
@@ -250,7 +250,7 @@
     },
     "toast": {
       "reward_ok": "+100 coins added",
-      "reward_fail": "Ad unavailable"
+      "reward_fail": "Video unavailable"
     }
   },
   "crosspromo": {
@@ -313,15 +313,15 @@
         "text": "Consume 1 token to revive now."
       },
       "use_ad": {
-        "title": "Watch an ad",
-        "text": "Watch a rewarded ad to revive."
+        "title": "Watch a video",
+        "text": "Watch a rewarded video to revive."
       },
       "cancel": {
         "text": "Return to the ending screen"
       }
     },
     "toast": {
-      "ad_fail": "Ad unavailable"
+      "ad_fail": "Video unavailable"
     }
   },
   "game": {
@@ -339,7 +339,7 @@
       "title": "End of the reign",
       "body": "Your reign ends here.",
       "double_gain": "Double your reward",
-      "double_gain_sub": "Watch a rewarded ad",
+      "double_gain_sub": "Watch a rewarded video",
       "reward_claimed": "Doubled reward credited",
       "reward_claimed_sub": "You can now restart or return",
       "revive_token": "Revive with 1 token",
@@ -421,15 +421,15 @@
     "pack_no_ads": "No Ads",
     "pack_diamond": "Diamond",
     "rewarded_title": "Rewards",
-    "rewarded_desc": "Watch an ad to get a small reward.",
+    "rewarded_desc": "Watch a video to get a small reward.",
     "reward_title": "Rewards",
-    "reward_desc": "Watch an ad to get a small reward.",
+    "reward_desc": "Watch a video to get a small reward.",
     "get_jeton": "Get +1 token",
     "get_1_jeton": "Get +1 token",
     "get_200_coins": "Get 200 coins",
     "get_300_coins": "Get +300 coins",
     "noads_title": "No Ads",
-    "noads_desc": "Disables interstitial ads. Rewarded ads remain available.",
+    "noads_desc": "Disables interstitial ads. Rewarded videos remain available.",
     "noads_buy": "Activate No Ads",
     "coins_title": "Coins",
     "coins_desc": "Buy coins to unlock faster.",
@@ -551,10 +551,10 @@
       "pending": "…",
       "purchase_credited": "✅ Purchase credited",
       "purchase_not_credited": "❌ Purchase not credited",
-      "ad_not_ready": "Ad system not ready",
-      "reward_not_validated": "❌ Ad not validated",
+      "ad_not_ready": "Video system not ready",
+      "reward_not_validated": "❌ Video not validated",
       "reward_validated": "✅ Reward validated",
-      "reward_error": "❌ Rewarded ad error",
+      "reward_error": "❌ Rewarded video error",
       "iap_unavailable_web": "⚠️ IAP unavailable on web.",
       "product_not_found_prefix": "⚠️ Product not found: "
     }

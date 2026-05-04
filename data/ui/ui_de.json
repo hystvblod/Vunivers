@@ -93,7 +93,7 @@
     "faq_q3": "Wofür sind Token da?",
     "faq_a3": "Token sind Hilfen während der Partie. Damit kannst du wiederbelebt werden, die Auswirkungen der nächsten 15 Entscheidungen auf die Anzeigen ansehen, 3 Entscheidungen zurückgehen oder eine Anzeige auf 50% setzen.",
     "faq_q4": "Wie kann ich meine Endbelohnung erhöhen?",
-    "faq_a4": "Wenn eine Partie endet, kannst du dir über einen Button eine belohnte Werbung ansehen. Liegt deine Grundbelohnung unter 100, wird sie auf 100 VCoins gesetzt. Andernfalls wird sie verdoppelt. Wenn die Werbung nicht bestätigt wird oder nicht verfügbar ist, bleibt die normale Belohnung bestehen.",
+    "faq_a4": "Wenn eine Partie endet, kannst du dir über einen Button ein belohntes Video ansehen. Liegt deine Grundbelohnung unter 100, wird sie auf 100 VCoins gesetzt. Andernfalls wird sie verdoppelt. Wenn das Video nicht bestätigt wird oder nicht verfügbar ist, bleibt die normale Belohnung bestehen.",
     "faq_q5": "Wie funktionieren die Profil-Abzeichen?",
     "faq_a5": "Die Abzeichen sind nach Universen getrennt. Sie werden während einer Partie freigeschaltet, wenn du im richtigen Moment noch am Leben bist: Holz bei 20 Entscheidungen, Bronze bei 40, Silber bei 60, Gold bei 100 und Kristall bei 150.",
     "faq_q6": "Wie ändere ich meinen Benutzernamen?",
@@ -107,7 +107,7 @@
     "faq_q10": "Wie viel kostet ein Universum?",
     "faq_a10": "Aktuell kostet ein Universum 600 VCoins, wenn es noch nicht freigeschaltet ist.",
     "faq_q11": "Was bewirkt das Angebot No Ads?",
-    "faq_a11": "No Ads entfernt Interstitial-Werbung. Belohnte Werbungen bleiben verfügbar, wenn du eine optionale Belohnung erhalten möchtest.",
+    "faq_a11": "No Ads entfernt Interstitial-Werbung. Belohnte Videos bleiben verfügbar, wenn du eine optionale Belohnung erhalten möchtest.",
     "faq_q12": "Was ist in Diamond enthalten?",
     "faq_a12": "Diamond aktiviert No Ads und schaltet alle aktuellen Universen im Spiel frei.",
     "faq_q13": "Wie funktionieren Einladungen und Cross-Promo?",
@@ -183,7 +183,7 @@
     "popup": {
       "title": "Token",
       "ad": {
-        "title": "Werbung ansehen",
+        "title": "Video ansehen",
         "text": "1 Token verdienen"
       },
       "gauge50": {
@@ -213,13 +213,13 @@
     "toast": {
       "select_gauge": "Wähle eine Anzeige, die auf 50 % gesetzt werden soll",
       "reward_ok": "+1 Token hinzugefügt",
-      "reward_fail": "Werbung nicht verfügbar",
+      "reward_fail": "Video nicht verfügbar",
       "no_tokens": "Du hast keinen Token",
       "undo_fail": "Zurückgehen nicht möglich",
       "undo_done": "Zurück -3 ausgeführt",
       "gauge_set_50": "Anzeige auf 50 % gesetzt",
       "peek_on": "Peek aktiviert: nächste 15 Entscheidungen",
-      "no_tokens_offer": "Du hast keine Jetons mehr. Sieh dir eine Werbung an, um 1 Jeton zu erhalten, oder öffne den Shop.",
+      "no_tokens_offer": "Du hast keine Jetons mehr. Sieh dir ein Video an, um 1 Jeton zu erhalten, oder öffne den Shop.",
       "gauge_warning": "Achtung, eine Leiste ist fast am Limit. Nutze bei Bedarf einen Jeton."
     },
     "undo": {
@@ -237,7 +237,7 @@
     "popup": {
       "title": "Münzen",
       "ad": {
-        "title": "Werbung ansehen",
+        "title": "Video ansehen",
         "text": "100 Münzen verdienen"
       },
       "shop": {
@@ -250,7 +250,7 @@
     },
     "toast": {
       "reward_ok": "+100 Münzen hinzugefügt",
-      "reward_fail": "Werbung nicht verfügbar"
+      "reward_fail": "Video nicht verfügbar"
     }
   },
   "crosspromo": {
@@ -313,15 +313,15 @@
         "text": "Verbrauche 1 Token, um jetzt wiederzubeleben."
       },
       "use_ad": {
-        "title": "Werbung ansehen",
-        "text": "Sieh dir eine belohnte Werbung an, um wiederzubeleben."
+        "title": "Video ansehen",
+        "text": "Sieh dir ein belohntes Video an, um wiederzubeleben."
       },
       "cancel": {
         "text": "Zum Endbildschirm zurück"
       }
     },
     "toast": {
-      "ad_fail": "Werbung nicht verfügbar"
+      "ad_fail": "Video nicht verfügbar"
     }
   },
   "game": {
@@ -339,7 +339,7 @@
       "title": "Ende der Herrschaft",
       "body": "Deine Herrschaft endet hier.",
       "double_gain": "Belohnung verdoppeln",
-      "double_gain_sub": "Belohnte Werbung ansehen",
+      "double_gain_sub": "Belohntes Video ansehen",
       "reward_claimed": "Verdoppelte Belohnung gutgeschrieben",
       "reward_claimed_sub": "Du kannst jetzt neu starten oder zurückgehen",
       "revive_token": "Mit 1 Token wiederbeleben",
@@ -421,15 +421,15 @@
     "pack_no_ads": "Keine Werbung",
     "pack_diamond": "Diamond",
     "rewarded_title": "Belohnungen",
-    "rewarded_desc": "Sieh dir Werbung an, um eine kleine Belohnung zu erhalten.",
+    "rewarded_desc": "Sieh dir ein Video an, um eine kleine Belohnung zu erhalten.",
     "reward_title": "Belohnungen",
-    "reward_desc": "Sieh dir Werbung an, um eine kleine Belohnung zu erhalten.",
+    "reward_desc": "Sieh dir ein Video an, um eine kleine Belohnung zu erhalten.",
     "get_jeton": "Erhalte +1 Token",
     "get_1_jeton": "Erhalte +1 Token",
     "get_200_coins": "Erhalte 200 Münzen",
     "get_300_coins": "Erhalte +300 Münzen",
     "noads_title": "Keine Werbung",
-    "noads_desc": "Deaktiviert Interstitial-Werbung. Belohnte Werbung bleibt verfügbar.",
+    "noads_desc": "Deaktiviert Interstitial-Werbung. Belohnte Videos bleiben verfügbar.",
     "noads_buy": "Keine Werbung aktivieren",
     "coins_title": "Münzen",
     "coins_desc": "Kaufe Münzen, um schneller freizuschalten.",
@@ -551,10 +551,10 @@
       "pending": "…",
       "purchase_credited": "✅ Kauf gutgeschrieben",
       "purchase_not_credited": "❌ Kauf nicht gutgeschrieben",
-      "ad_not_ready": "Werbesystem nicht bereit",
-      "reward_not_validated": "❌ Werbung nicht validiert",
+      "ad_not_ready": "Videosystem nicht bereit",
+      "reward_not_validated": "❌ Video nicht validiert",
       "reward_validated": "✅ Belohnung validiert",
-      "reward_error": "❌ Fehler bei Rewarded Ad",
+      "reward_error": "❌ Fehler bei belohntem Video",
       "iap_unavailable_web": "⚠️ IAP im Web nicht verfügbar.",
       "product_not_found_prefix": "⚠️ Produkt nicht gefunden: "
     }

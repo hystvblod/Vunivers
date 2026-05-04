@@ -93,7 +93,7 @@
     "faq_q3": "A cosa servono i token?",
     "faq_a3": "I token servono come aiuti durante la partita. Ti permettono di rivivere, vedere l'effetto delle prossime 15 scelte sulle barre, tornare indietro di 3 scelte oppure riportare una barra al 50%.",
     "faq_q4": "Come aumento la mia ricompensa finale?",
-    "faq_a4": "Quando una partita termina, un pulsante ti permette di guardare una pubblicità con ricompensa. Se la tua ricompensa base è inferiore a 100, passa a 100 VCoins. Altrimenti viene raddoppiata. Se la pubblicità non viene convalidata o non è disponibile, la ricompensa resta normale.",
+    "faq_a4": "Quando una partita termina, un pulsante ti permette di guardare un video con ricompensa. Se la tua ricompensa base è inferiore a 100, passa a 100 VCoins. Altrimenti viene raddoppiata. Se il video non viene convalidato o non è disponibile, la ricompensa resta normale.",
     "faq_q5": "Come funzionano i badge del profilo?",
     "faq_a5": "I badge sono separati per universo. Si sbloccano durante una partita se sei ancora vivo al momento giusto: legno a 20 scelte, bronzo a 40, argento a 60, oro a 100 e cristallo a 150.",
     "faq_q6": "Come cambio il mio nome utente?",
@@ -107,7 +107,7 @@
     "faq_q10": "Quanto costa un universo?",
     "faq_a10": "Attualmente, un universo costa 600 VCoins quando non è ancora sbloccato.",
     "faq_q11": "Cosa fa l'offerta No Ads?",
-    "faq_a11": "No Ads rimuove le pubblicità interstitial. Le pubblicità con ricompensa restano disponibili quando vuoi ottenere una ricompensa opzionale.",
+    "faq_a11": "No Ads rimuove le pubblicità interstitial. I video con ricompensa restano disponibili quando vuoi ottenere una ricompensa opzionale.",
     "faq_q12": "Cosa include Diamond?",
     "faq_a12": "Diamond attiva No Ads e sblocca tutti gli universi attuali del gioco.",
     "faq_q13": "Come funzionano gli inviti e la cross-promo?",
@@ -182,7 +182,7 @@
     "popup": {
       "title": "Gettone",
       "ad": {
-        "title": "Guarda una pubblicità",
+        "title": "Guarda un video",
         "text": "Ottieni 1 gettone"
       },
       "gauge50": {
@@ -212,13 +212,13 @@
     "toast": {
       "select_gauge": "Scegli una barra da riportare al 50%",
       "reward_ok": "+1 gettone aggiunto",
-      "reward_fail": "Pubblicità non disponibile",
+      "reward_fail": "Video non disponibile",
       "no_tokens": "Non hai gettoni",
       "undo_fail": "Impossibile tornare indietro",
       "undo_done": "Ritorno -3 effettuato",
       "gauge_set_50": "Barra riportata al 50%",
       "peek_on": "Peek attivato: prossime 15 decisioni",
-      "no_tokens_offer": "Non hai più gettoni. Guarda una pubblicità per ottenere 1 gettone oppure apri il negozio.",
+      "no_tokens_offer": "Non hai più gettoni. Guarda un video per ottenere 1 gettone oppure apri il negozio.",
       "gauge_warning": "Attenzione, una barra è quasi al limite. Usa un gettone se necessario."
     },
     "undo": {
@@ -236,7 +236,7 @@
     "popup": {
       "title": "Monete",
       "ad": {
-        "title": "Guarda una pubblicità",
+        "title": "Guarda un video",
         "text": "Ottieni 100 monete"
       },
       "shop": {
@@ -249,7 +249,7 @@
     },
     "toast": {
       "reward_ok": "+100 monete aggiunte",
-      "reward_fail": "Pubblicità non disponibile"
+      "reward_fail": "Video non disponibile"
     }
   },
   "crosspromo": {
@@ -312,15 +312,15 @@
         "text": "Consuma 1 gettone per rivivere ora."
       },
       "use_ad": {
-        "title": "Guarda una pubblicità",
-        "text": "Guarda una pubblicità con premio per rivivere."
+        "title": "Guarda un video",
+        "text": "Guarda un video con premio per rivivere."
       },
       "cancel": {
         "text": "Torna alla schermata finale"
       }
     },
     "toast": {
-      "ad_fail": "Pubblicità non disponibile"
+      "ad_fail": "Video non disponibile"
     }
   },
   "game": {
@@ -338,7 +338,7 @@
       "title": "Fine del regno",
       "body": "Il tuo regno finisce qui.",
       "double_gain": "Raddoppia il tuo guadagno",
-      "double_gain_sub": "Guarda una pubblicità con premio",
+      "double_gain_sub": "Guarda un video con premio",
       "reward_claimed": "Guadagno raddoppiato accreditato",
       "reward_claimed_sub": "Ora puoi ricominciare o tornare",
       "revive_token": "Rivivi con 1 gettone",
@@ -420,15 +420,15 @@
     "pack_no_ads": "No Ads",
     "pack_diamond": "Diamond",
     "rewarded_title": "Ricompense",
-    "rewarded_desc": "Guarda una pubblicità per ottenere una piccola ricompensa.",
+    "rewarded_desc": "Guarda un video per ottenere una piccola ricompensa.",
     "reward_title": "Ricompense",
-    "reward_desc": "Guarda una pubblicità per ottenere una piccola ricompensa.",
+    "reward_desc": "Guarda un video per ottenere una piccola ricompensa.",
     "get_jeton": "Ottieni +1 gettone",
     "get_1_jeton": "Ottieni +1 gettone",
     "get_200_coins": "Ottieni 200 monete",
     "get_300_coins": "Ottieni +300 monete",
     "noads_title": "No Ads",
-    "noads_desc": "Disattiva gli interstitial. Le pubblicità con premio restano disponibili.",
+    "noads_desc": "Disattiva gli interstitial. I video con premio restano disponibili.",
     "noads_buy": "Attiva No Ads",
     "coins_title": "Monete",
     "coins_desc": "Acquista monete per sbloccare più in fretta.",
@@ -550,10 +550,10 @@
       "pending": "…",
       "purchase_credited": "✅ Acquisto accreditato",
       "purchase_not_credited": "❌ Acquisto non accreditato",
-      "ad_not_ready": "Sistema pubblicitario non pronto",
-      "reward_not_validated": "❌ Pubblicità non convalidata",
+      "ad_not_ready": "Sistema video non pronto",
+      "reward_not_validated": "❌ Video non convalidato",
       "reward_validated": "✅ Ricompensa convalidata",
-      "reward_error": "❌ Errore annuncio con ricompensa",
+      "reward_error": "❌ Errore video con ricompensa",
       "iap_unavailable_web": "⚠️ IAP non disponibile sul web.",
       "product_not_found_prefix": "⚠️ Prodotto non trovato: "
     }
