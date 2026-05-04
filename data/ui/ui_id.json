@@ -93,7 +93,7 @@
     "faq_q3": "Untuk apa token digunakan?",
     "faq_a3": "Token digunakan sebagai bantuan selama permainan. Token bisa dipakai untuk hidup kembali, melihat efek dari 15 pilihan berikutnya pada bar, mundur 3 pilihan, atau mengembalikan satu bar ke 50%.",
     "faq_q4": "Bagaimana cara meningkatkan hadiah akhir?",
-    "faq_a4": "Saat permainan berakhir, ada tombol untuk menonton iklan berhadiah. Jika hadiah dasarmu di bawah 100, hadiah itu menjadi 100 VCoins. Jika tidak, hadiah akan digandakan. Jika iklan tidak selesai ditonton atau tidak tersedia, hadiah tetap normal.",
+    "faq_a4": "Saat permainan berakhir, ada tombol untuk menonton video berhadiah. Jika hadiah dasarmu di bawah 100, hadiah itu menjadi 100 VCoins. Jika tidak, hadiah akan digandakan. Jika video tidak selesai ditonton atau tidak tersedia, hadiah tetap normal.",
     "faq_q5": "Bagaimana cara kerja badge profil?",
     "faq_a5": "Lencana dipisahkan per semesta. Lencana terbuka selama permainan jika kamu masih hidup pada saat yang tepat: kayu pada 20 pilihan, perunggu pada 40, perak pada 60, emas pada 100, dan kristal pada 150.",
     "faq_q6": "Bagaimana cara mengubah nama pengguna saya?",
@@ -107,7 +107,7 @@
     "faq_q10": "Berapa harga satu universe?",
     "faq_a10": "Saat ini, satu universe berharga 600 VCoins jika belum dibuka.",
     "faq_q11": "Apa fungsi penawaran No Ads?",
-    "faq_a11": "No Ads menghapus iklan interstisial. Iklan berhadiah tetap tersedia saat kamu ingin mendapatkan hadiah opsional.",
+    "faq_a11": "No Ads menghapus iklan interstisial. Video berhadiah tetap tersedia saat kamu ingin mendapatkan hadiah opsional.",
     "faq_q12": "Apa isi Diamond?",
     "faq_a12": "Diamond mengaktifkan No Ads dan membuka semua universe yang ada saat ini di dalam game.",
     "faq_q13": "Bagaimana cara kerja undangan teman dan cross-promo?",
@@ -182,7 +182,7 @@
     "popup": {
       "title": "Token",
       "ad": {
-        "title": "Tonton iklan",
+        "title": "Tonton video",
         "text": "Dapatkan 1 token"
       },
       "gauge50": {
@@ -212,13 +212,13 @@
     "toast": {
       "select_gauge": "Pilih satu meter untuk diatur ke 50%",
       "reward_ok": "+1 token ditambahkan",
-      "reward_fail": "Iklan tidak tersedia",
+      "reward_fail": "Video tidak tersedia",
       "no_tokens": "Kamu tidak punya token",
       "undo_fail": "Tidak dapat kembali",
       "undo_done": "Kembali -3 berhasil",
       "gauge_set_50": "Meter diatur ke 50%",
       "peek_on": "Pratinjau aktif: 15 keputusan berikutnya",
-      "no_tokens_offer": "Tokenmu habis. Tonton iklan untuk mendapatkan 1 token atau buka toko.",
+      "no_tokens_offer": "Tokenmu habis. Tonton video untuk mendapatkan 1 token atau buka toko.",
       "gauge_warning": "Perhatian, satu bar hampir menyentuh batas. Gunakan token jika perlu."
     },
     "undo": {
@@ -236,7 +236,7 @@
     "popup": {
       "title": "Koin",
       "ad": {
-        "title": "Tonton iklan",
+        "title": "Tonton video",
         "text": "Dapatkan 100 koin"
       },
       "shop": {
@@ -249,7 +249,7 @@
     },
     "toast": {
       "reward_ok": "+100 koin ditambahkan",
-      "reward_fail": "Iklan tidak tersedia"
+      "reward_fail": "Video tidak tersedia"
     }
   },
   "crosspromo": {
@@ -312,15 +312,15 @@
         "text": "Gunakan 1 token untuk hidup kembali sekarang."
       },
       "use_ad": {
-        "title": "Tonton iklan",
-        "text": "Tonton iklan berhadiah untuk hidup kembali."
+        "title": "Tonton video",
+        "text": "Tonton video berhadiah untuk hidup kembali."
       },
       "cancel": {
         "text": "Kembali ke layar akhir"
       }
     },
     "toast": {
-      "ad_fail": "Iklan tidak tersedia"
+      "ad_fail": "Video tidak tersedia"
     }
   },
   "game": {
@@ -338,11 +338,11 @@
       "title": "Akhir pemerintahan",
       "body": "Pemerintahanmu berakhir di sini.",
       "double_gain": "Gandakan hadiahmu",
-      "double_gain_sub": "Tonton iklan berhadiah",
+      "double_gain_sub": "Tonton video berhadiah",
       "reward_claimed": "Hadiah ganda dikreditkan",
       "reward_claimed_sub": "Sekarang kamu bisa mulai lagi atau kembali",
       "revive_token": "Hidup kembali dengan 1 token",
-      "revive_ad": "Hidup lagi dengan iklan"
+      "revive_ad": "Hidup lagi dengan video"
     },
     "year_label": "Tahun"
   },
@@ -420,15 +420,15 @@
     "pack_no_ads": "Tanpa Iklan",
     "pack_diamond": "Diamond",
     "rewarded_title": "Hadiah",
-    "rewarded_desc": "Tonton iklan untuk mendapatkan hadiah kecil.",
+    "rewarded_desc": "Tonton video untuk mendapatkan hadiah kecil.",
     "reward_title": "Hadiah",
-    "reward_desc": "Tonton iklan untuk mendapatkan hadiah kecil.",
+    "reward_desc": "Tonton video untuk mendapatkan hadiah kecil.",
     "get_jeton": "Dapatkan +1 token",
     "get_1_jeton": "Dapatkan +1 token",
     "get_200_coins": "Dapatkan 200 koin",
     "get_300_coins": "Dapatkan +300 koin",
     "noads_title": "Tanpa Iklan",
-    "noads_desc": "Menonaktifkan iklan interstisial. Iklan berhadiah tetap tersedia.",
+    "noads_desc": "Menonaktifkan iklan interstisial. Video berhadiah tetap tersedia.",
     "noads_buy": "Aktifkan Tanpa Iklan",
     "coins_title": "Koin",
     "coins_desc": "Beli koin untuk membuka lebih cepat.",
@@ -550,10 +550,10 @@
       "pending": "…",
       "purchase_credited": "✅ Pembelian dikreditkan",
       "purchase_not_credited": "❌ Pembelian tidak dikreditkan",
-      "ad_not_ready": "Sistem iklan belum siap",
-      "reward_not_validated": "❌ Iklan tidak tervalidasi",
+      "ad_not_ready": "Sistem video belum siap",
+      "reward_not_validated": "❌ Video tidak tervalidasi",
       "reward_validated": "✅ Hadiah tervalidasi",
-      "reward_error": "❌ Kesalahan iklan berhadiah",
+      "reward_error": "❌ Kesalahan video berhadiah",
       "iap_unavailable_web": "⚠️ IAP tidak tersedia di web.",
       "product_not_found_prefix": "⚠️ Produk tidak ditemukan: "
     }

@@ -93,7 +93,7 @@
     "faq_q3": "À quoi servent les jetons ?",
     "faq_a3": "Les jetons servent aux aides pendant la partie. Ils permettent de revivre, d’apercevoir l’effet des 15 prochains choix sur les jauges, de revenir de 3 choix en arrière, ou de remettre une jauge à 50%.",
     "faq_q4": "Comment augmenter mon gain de fin ?",
-    "faq_a4": "Quand une partie se termine, un bouton permet de regarder une pub récompensée. Si ton gain de base est inférieur à 100, il passe à 100 VCoins. Sinon, il est doublé. Si la pub n’est pas validée ou indisponible, le gain reste normal.",
+    "faq_a4": "Quand une partie se termine, un bouton permet de regarder une vidéo récompensée. Si ton gain de base est inférieur à 100, il passe à 100 VCoins. Sinon, il est doublé. Si la vidéo n’est pas validée ou indisponible, le gain reste normal.",
     "faq_q5": "Comment fonctionnent les badges du profil ?",
     "faq_a5": "Les badges sont séparés par univers. Ils se débloquent pendant une partie si tu es encore en vie au bon moment : bois à 20 choix, bronze à 40 choix, argent à 60 choix, or à 100 choix et cristal à 150 choix.",
     "faq_q6": "Comment changer mon pseudo ?",
@@ -107,7 +107,7 @@
     "faq_q10": "Combien coûte un univers ?",
     "faq_a10": "Actuellement, un univers coûte 600 VCoins lorsqu’il n’est pas déjà débloqué.",
     "faq_q11": "Que fait l’offre No Pub ?",
-    "faq_a11": "No Pub retire les publicités interstitielles. Les pubs récompensées restent disponibles lorsque tu veux obtenir une récompense optionnelle.",
+    "faq_a11": "No Pub retire les publicités interstitielles. Les vidéos récompensées restent disponibles lorsque tu veux obtenir une récompense optionnelle.",
     "faq_q12": "Que contient Diamond ?",
     "faq_a12": "Diamond active No Pub et débloque tous les univers actuels du jeu.",
     "faq_q13": "Comment fonctionnent l’invitation et la cross-promo ?",
@@ -182,7 +182,7 @@
     "popup": {
       "title": "Jeton",
       "ad": {
-        "title": "Regarder une pub",
+        "title": "Regarder une vidéo",
         "text": "Gagne 1 jeton"
       },
       "gauge50": {
@@ -212,13 +212,13 @@
     "toast": {
       "select_gauge": "Choisis une jauge à remettre à 50%",
       "reward_ok": "+1 jeton ajouté",
-      "reward_fail": "Pub indisponible",
+      "reward_fail": "Vidéo indisponible",
       "no_tokens": "Tu n’as pas de jeton",
       "undo_fail": "Impossible de revenir en arrière",
       "undo_done": "Retour -3 effectué",
       "gauge_set_50": "Jauge remise à 50%",
       "peek_on": "Peek activé : 15 prochaines décisions",
-      "no_tokens_offer": "Tu n'as plus de jeton. Regarde une pub pour en gagner 1 ou ouvre la boutique.",
+      "no_tokens_offer": "Tu n'as plus de jeton. Regarde une vidéo pour en gagner 1 ou ouvre la boutique.",
       "gauge_warning": "Attention, une jauge est presque au seuil. Utilise un jeton si besoin."
     },
     "undo": {
@@ -236,7 +236,7 @@
     "popup": {
       "title": "Pièces",
       "ad": {
-        "title": "Regarder une pub",
+        "title": "Regarder une vidéo",
         "text": "Gagne 100 pièces"
       },
       "shop": {
@@ -249,7 +249,7 @@
     },
     "toast": {
       "reward_ok": "+100 pièces ajoutées",
-      "reward_fail": "Pub indisponible"
+      "reward_fail": "Vidéo indisponible"
     }
   },
   "crosspromo": {
@@ -312,15 +312,15 @@
         "text": "Consomme 1 jeton pour revivre maintenant."
       },
       "use_ad": {
-        "title": "Regarder une pub",
-        "text": "Regarde une pub récompensée pour revivre."
+        "title": "Regarder une vidéo",
+        "text": "Regarde une vidéo récompensée pour revivre."
       },
       "cancel": {
         "text": "Revenir à l’écran de fin"
       }
     },
     "toast": {
-      "ad_fail": "Pub indisponible"
+      "ad_fail": "Vidéo indisponible"
     }
   },
   "game": {
@@ -339,11 +339,11 @@
       "body": "Votre règne s'achève ici.",
       "double_gain": "Doubler ton gain",
       "triple_gain": "Tripler ton gain",
-      "double_gain_sub": "Regarder une pub récompensée",
+      "double_gain_sub": "Regarder une vidéo récompensée",
       "reward_claimed": "Gain crédité",
       "reward_claimed_sub": "Tu peux maintenant recommencer ou revenir",
       "revive_token": "Revivre avec 1 jeton",
-      "revive_ad": "Revivre avec une pub"
+      "revive_ad": "Revivre avec une vidéo"
     },
     "year_label": "Année"
   },
@@ -421,15 +421,15 @@
     "pack_no_ads": "No Ads",
     "pack_diamond": "Diamond",
     "rewarded_title": "Récompenses",
-    "rewarded_desc": "Regarde une pub pour obtenir une petite récompense.",
+    "rewarded_desc": "Regarde une vidéo pour obtenir une petite récompense.",
     "reward_title": "Récompenses",
-    "reward_desc": "Regarde une pub pour obtenir une petite récompense.",
+    "reward_desc": "Regarde une vidéo pour obtenir une petite récompense.",
     "get_jeton": "Obtenir +1 jeton",
     "get_1_jeton": "Obtenir +1 jeton",
     "get_200_coins": "Obtenir 200 pièces",
     "get_300_coins": "Obtenir +300 pièces",
     "noads_title": "No Pub",
-    "noads_desc": "Désactive les interstitiels. Les pubs récompensées restent disponibles.",
+    "noads_desc": "Désactive les interstitiels. Les vidéos récompensées restent disponibles.",
     "noads_buy": "Activer No Pub",
     "coins_title": "Pièces",
     "coins_desc": "Achète des pièces pour débloquer plus vite.",
@@ -551,10 +551,10 @@
       "pending": "…",
       "purchase_credited": "✅ Achat crédité",
       "purchase_not_credited": "❌ Achat non crédité",
-      "ad_not_ready": "Système de pub indisponible",
-      "reward_not_validated": "❌ Pub non validée",
+      "ad_not_ready": "Système vidéo indisponible",
+      "reward_not_validated": "❌ Vidéo non validée",
       "reward_validated": "✅ Récompense validée",
-      "reward_error": "❌ Erreur pub récompensée",
+      "reward_error": "❌ Erreur vidéo récompensée",
       "iap_unavailable_web": "⚠️ IAP indisponible sur le web.",
       "product_not_found_prefix": "⚠️ Produit introuvable : "
     }

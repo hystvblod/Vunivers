@@ -93,7 +93,7 @@
     "faq_q3": "Para que servem os tokens?",
     "faq_a3": "Os tokens servem como recursos de ajuda durante a partida. Eles permitem reviver, ver o efeito das próximas 15 escolhas nas barras, voltar 3 escolhas ou colocar uma barra em 50%.",
     "faq_q4": "Como aumento minha recompensa final?",
-    "faq_a4": "Quando uma partida termina, um botão permite assistir a um anúncio recompensado. Se sua recompensa base for menor que 100, ela passa para 100 VCoins. Caso contrário, ela é duplicada. Se o anúncio não for validado ou não estiver disponível, a recompensa continua normal.",
+    "faq_a4": "Quando uma partida termina, um botão permite assistir a um vídeo recompensado. Se sua recompensa base for menor que 100, ela passa para 100 VCoins. Caso contrário, ela é duplicada. Se o vídeo não for validado ou não estiver disponível, a recompensa continua normal.",
     "faq_q5": "Como funcionam os emblemas do perfil?",
     "faq_a5": "Os distintivos são separados por universo. Eles são desbloqueados durante uma partida se você ainda estiver vivo no momento certo: madeira com 20 escolhas, bronze com 40, prata com 60, ouro com 100 e cristal com 150.",
     "faq_q6": "Como altero meu nome de usuário?",
@@ -107,7 +107,7 @@
     "faq_q10": "Quanto custa um universo?",
     "faq_a10": "Atualmente, um universo custa 600 VCoins quando ainda não está desbloqueado.",
     "faq_q11": "O que a oferta No Ads faz?",
-    "faq_a11": "No Ads remove os anúncios intersticiais. Os anúncios recompensados continuam disponíveis quando você quer obter uma recompensa opcional.",
+    "faq_a11": "No Ads remove os anúncios intersticiais. Os vídeos recompensados continuam disponíveis quando você quer obter uma recompensa opcional.",
     "faq_q12": "O que o Diamond inclui?",
     "faq_a12": "Diamond ativa o No Ads e desbloqueia todos os universos atuais do jogo.",
     "faq_q13": "Como funcionam os convites e a cross-promo?",
@@ -182,7 +182,7 @@
     "popup": {
       "title": "Ficha",
       "ad": {
-        "title": "Assistir a um anúncio",
+        "title": "Assistir a um vídeo",
         "text": "Ganhe 1 ficha"
       },
       "gauge50": {
@@ -212,13 +212,13 @@
     "toast": {
       "select_gauge": "Escolha um medidor para definir em 50%",
       "reward_ok": "+1 ficha adicionada",
-      "reward_fail": "Anúncio indisponível",
+      "reward_fail": "Vídeo indisponível",
       "no_tokens": "Você não tem fichas",
       "undo_fail": "Não foi possível voltar atrás",
       "undo_done": "Retorno -3 realizado",
       "gauge_set_50": "Medidor definido em 50%",
       "peek_on": "Peek ativado: próximas 15 decisões",
-      "no_tokens_offer": "Você ficou sem fichas. Assista a um anúncio para ganhar 1 ficha ou abra a loja.",
+      "no_tokens_offer": "Você ficou sem fichas. Assista a um vídeo para ganhar 1 ficha ou abra a loja.",
       "gauge_warning": "Atenção, uma barra está quase no limite. Use uma ficha se precisar."
     },
     "undo": {
@@ -236,7 +236,7 @@
     "popup": {
       "title": "Moedas",
       "ad": {
-        "title": "Assistir a um anúncio",
+        "title": "Assistir a um vídeo",
         "text": "Ganhe 100 moedas"
       },
       "shop": {
@@ -249,7 +249,7 @@
     },
     "toast": {
       "reward_ok": "+100 moedas adicionadas",
-      "reward_fail": "Anúncio indisponível"
+      "reward_fail": "Vídeo indisponível"
     }
   },
   "crosspromo": {
@@ -312,15 +312,15 @@
         "text": "Consome 1 ficha para reviver agora."
       },
       "use_ad": {
-        "title": "Assistir a um anúncio",
-        "text": "Assista a um anúncio recompensado para reviver."
+        "title": "Assistir a um vídeo",
+        "text": "Assista a um vídeo recompensado para reviver."
       },
       "cancel": {
         "text": "Voltar para a tela final"
       }
     },
     "toast": {
-      "ad_fail": "Anúncio indisponível"
+      "ad_fail": "Vídeo indisponível"
     }
   },
   "game": {
@@ -338,11 +338,11 @@
       "title": "Fim do reinado",
       "body": "Seu reinado termina aqui.",
       "double_gain": "Dobrar seu ganho",
-      "double_gain_sub": "Assistir a um anúncio recompensado",
+      "double_gain_sub": "Assistir a um vídeo recompensado",
       "reward_claimed": "Ganho dobrado creditado",
       "reward_claimed_sub": "Agora você pode recomeçar ou voltar",
       "revive_token": "Reviver com 1 ficha",
-      "revive_ad": "Reviver com anúncio"
+      "revive_ad": "Reviver com vídeo"
     },
     "year_label": "Ano"
   },
@@ -420,15 +420,15 @@
     "pack_no_ads": "Sem anúncios",
     "pack_diamond": "Diamond",
     "rewarded_title": "Recompensas",
-    "rewarded_desc": "Assista a um anúncio para receber uma pequena recompensa.",
+    "rewarded_desc": "Assista a um vídeo para receber uma pequena recompensa.",
     "reward_title": "Recompensas",
-    "reward_desc": "Assista a um anúncio para receber uma pequena recompensa.",
+    "reward_desc": "Assista a um vídeo para receber uma pequena recompensa.",
     "get_jeton": "Obter +1 ficha",
     "get_1_jeton": "Obter +1 ficha",
     "get_200_coins": "Obter 200 moedas",
     "get_300_coins": "Obter +300 moedas",
     "noads_title": "Sem anúncios",
-    "noads_desc": "Desativa os intersticiais. Os anúncios recompensados continuam disponíveis.",
+    "noads_desc": "Desativa os intersticiais. Os vídeos recompensados continuam disponíveis.",
     "noads_buy": "Ativar sem anúncios",
     "coins_title": "Moedas",
     "coins_desc": "Compre moedas para desbloquear mais rápido.",
@@ -550,10 +550,10 @@
       "pending": "…",
       "purchase_credited": "✅ Compra creditada",
       "purchase_not_credited": "❌ Compra não creditada",
-      "ad_not_ready": "Sistema de anúncios não está pronto",
-      "reward_not_validated": "❌ Anúncio não validado",
+      "ad_not_ready": "Sistema de vídeo não está pronto",
+      "reward_not_validated": "❌ Vídeo não validado",
       "reward_validated": "✅ Recompensa validada",
-      "reward_error": "❌ Erro no anúncio recompensado",
+      "reward_error": "❌ Erro no vídeo recompensado",
       "iap_unavailable_web": "⚠️ IAP indisponível na web.",
       "product_not_found_prefix": "⚠️ Produto não encontrado: "
     }

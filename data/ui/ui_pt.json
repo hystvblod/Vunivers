@@ -93,7 +93,7 @@
     "faq_q3": "Para que servem os tokens?",
     "faq_a3": "Os tokens servem como ajudas durante a partida. Permitem reviver, ver o efeito das próximas 15 escolhas nas barras, voltar 3 escolhas atrás ou colocar uma barra nos 50%.",
     "faq_q4": "Como posso aumentar a recompensa final?",
-    "faq_a4": "Quando uma partida termina, um botão permite ver um anúncio recompensado. Se a tua recompensa base for inferior a 100, passa para 100 VCoins. Caso contrário, é duplicada. Se o anúncio não for validado ou não estiver disponível, a recompensa mantém-se normal.",
+    "faq_a4": "Quando uma partida termina, um botão permite ver um vídeo recompensado. Se a tua recompensa base for inferior a 100, passa para 100 VCoins. Caso contrário, é duplicada. Se o vídeo não for validado ou não estiver disponível, a recompensa mantém-se normal.",
     "faq_q5": "Como funcionam os emblemas do perfil?",
     "faq_a5": "Os emblemas são separados por universo. São desbloqueados durante uma partida se ainda estiveres vivo no momento certo: madeira a 20 escolhas, bronze a 40, prata a 60, ouro a 100 e cristal a 150.",
     "faq_q6": "Como altero o meu nome de utilizador?",
@@ -107,7 +107,7 @@
     "faq_q10": "Quanto custa um universo?",
     "faq_a10": "Neste momento, um universo custa 600 VCoins quando ainda não está desbloqueado.",
     "faq_q11": "O que faz a oferta No Ads?",
-    "faq_a11": "No Ads remove os anúncios intersticiais. Os anúncios recompensados continuam disponíveis quando queres obter uma recompensa opcional.",
+    "faq_a11": "No Ads remove os anúncios intersticiais. Os vídeos recompensados continuam disponíveis quando queres obter uma recompensa opcional.",
     "faq_q12": "O que inclui o Diamond?",
     "faq_a12": "O Diamond ativa o No Ads e desbloqueia todos os universos atuais do jogo.",
     "faq_q13": "Como funcionam os convites e a cross-promo?",
@@ -182,7 +182,7 @@
     "popup": {
       "title": "Ficha",
       "ad": {
-        "title": "Ver um anúncio",
+        "title": "Ver um vídeo",
         "text": "Ganha 1 ficha"
       },
       "gauge50": {
@@ -212,13 +212,13 @@
     "toast": {
       "select_gauge": "Escolhe um medidor para repor a 50%",
       "reward_ok": "+1 ficha adicionada",
-      "reward_fail": "Anúncio indisponível",
+      "reward_fail": "Vídeo indisponível",
       "no_tokens": "Não tens fichas",
       "undo_fail": "Impossível voltar atrás",
       "undo_done": "Retrocesso -3 efetuado",
       "gauge_set_50": "Medidor reposto a 50%",
       "peek_on": "Peek ativado: próximas 15 decisões",
-      "no_tokens_offer": "Já não tens fichas. Vê um anúncio para ganhar 1 ficha ou abre a loja.",
+      "no_tokens_offer": "Já não tens fichas. Vê um vídeo para ganhar 1 ficha ou abre a loja.",
       "gauge_warning": "Atenção, uma barra está quase no limite. Usa uma ficha se precisares."
     },
     "undo": {
@@ -236,7 +236,7 @@
     "popup": {
       "title": "Moedas",
       "ad": {
-        "title": "Ver um anúncio",
+        "title": "Ver um vídeo",
         "text": "Ganha 100 moedas"
       },
       "shop": {
@@ -249,7 +249,7 @@
     },
     "toast": {
       "reward_ok": "+100 moedas adicionadas",
-      "reward_fail": "Anúncio indisponível"
+      "reward_fail": "Vídeo indisponível"
     }
   },
   "crosspromo": {
@@ -312,15 +312,15 @@
         "text": "Consome 1 ficha para reviver agora."
       },
       "use_ad": {
-        "title": "Ver um anúncio",
-        "text": "Vê um anúncio recompensado para reviver."
+        "title": "Ver um vídeo",
+        "text": "Vê um vídeo recompensado para reviver."
       },
       "cancel": {
         "text": "Voltar ao ecrã final"
       }
     },
     "toast": {
-      "ad_fail": "Anúncio indisponível"
+      "ad_fail": "Vídeo indisponível"
     }
   },
   "game": {
@@ -338,11 +338,11 @@
       "title": "Fim do reinado",
       "body": "O teu reinado termina aqui.",
       "double_gain": "Duplicar o teu ganho",
-      "double_gain_sub": "Ver um anúncio recompensado",
+      "double_gain_sub": "Ver um vídeo recompensado",
       "reward_claimed": "Ganho duplicado creditado",
       "reward_claimed_sub": "Agora podes recomeçar ou voltar",
       "revive_token": "Reviver com 1 ficha",
-      "revive_ad": "Reviver com anúncio"
+      "revive_ad": "Reviver com vídeo"
     },
     "year_label": "Ano"
   },
@@ -420,15 +420,15 @@
     "pack_no_ads": "Sem anúncios",
     "pack_diamond": "Diamond",
     "rewarded_title": "Recompensas",
-    "rewarded_desc": "Vê um anúncio para obter uma pequena recompensa.",
+    "rewarded_desc": "Vê um vídeo para obter uma pequena recompensa.",
     "reward_title": "Recompensas",
-    "reward_desc": "Vê um anúncio para obter uma pequena recompensa.",
+    "reward_desc": "Vê um vídeo para obter uma pequena recompensa.",
     "get_jeton": "Obter +1 ficha",
     "get_1_jeton": "Obter +1 ficha",
     "get_200_coins": "Obter 200 moedas",
     "get_300_coins": "Obter +300 moedas",
     "noads_title": "Sem anúncios",
-    "noads_desc": "Desativa os intersticiais. Os anúncios recompensados continuam disponíveis.",
+    "noads_desc": "Desativa os intersticiais. Os vídeos recompensados continuam disponíveis.",
     "noads_buy": "Ativar sem anúncios",
     "coins_title": "Moedas",
     "coins_desc": "Compra moedas para desbloquear mais depressa.",
@@ -550,10 +550,10 @@
       "pending": "…",
       "purchase_credited": "✅ Compra creditada",
       "purchase_not_credited": "❌ Compra não creditada",
-      "ad_not_ready": "Sistema de anúncios não está pronto",
-      "reward_not_validated": "❌ Anúncio não validado",
+      "ad_not_ready": "Sistema de vídeo não está pronto",
+      "reward_not_validated": "❌ Vídeo não validado",
       "reward_validated": "✅ Recompensa validada",
-      "reward_error": "❌ Erro no anúncio recompensado",
+      "reward_error": "❌ Erro no vídeo recompensado",
       "iap_unavailable_web": "⚠️ IAP indisponível na web.",
       "product_not_found_prefix": "⚠️ Produto não encontrado: "
     }
