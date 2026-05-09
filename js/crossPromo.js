@@ -113,6 +113,7 @@
       permanentlyBlocked: false,
       rewardClaimed: false,
       rewardClaiming: false,
+      rewardClaimingStartedAt: 0,
       installedDetected: false,
       clickedStore: false,
       pendingInstallCheck: false
@@ -144,13 +145,23 @@
 
   function normalizeAppState(src) {
     const s = src && typeof src === "object" ? src : {};
+
+    const startedAt = Math.max(0, Number(s.rewardClaimingStartedAt || 0) || 0);
+    const age = startedAt > 0 ? nowTs() - startedAt : 999999999;
+
+    const stillClaiming =
+      !!s.rewardClaiming &&
+      startedAt > 0 &&
+      age < 2 * 60 * 1000;
+
     return {
       wave: Number(s.wave || 1) === 2 ? 2 : 1,
       dismissInWave: Math.max(0, Number(s.dismissInWave || 0) || 0),
       cooldownUntilTs: Math.max(0, Number(s.cooldownUntilTs || 0) || 0),
       permanentlyBlocked: !!s.permanentlyBlocked,
       rewardClaimed: !!s.rewardClaimed,
-      rewardClaiming: !!s.rewardClaiming,
+      rewardClaiming: stillClaiming,
+      rewardClaimingStartedAt: stillClaiming ? startedAt : 0,
       installedDetected: !!s.installedDetected,
       clickedStore: !!s.clickedStore,
       pendingInstallCheck: !!s.pendingInstallCheck
@@ -308,11 +319,13 @@
     if (!freshRow.installedDetected) return false;
 
     freshRow.rewardClaiming = true;
+    freshRow.rewardClaimingStartedAt = nowTs();
     writeState(freshState);
 
     try {
       if (!window.VUserData || typeof window.VUserData.addVcoinsAsync !== "function") {
         freshRow.rewardClaiming = false;
+        freshRow.rewardClaimingStartedAt = 0;
         writeState(freshState);
         return false;
       }
@@ -328,12 +341,14 @@
       const afterCoins = Number(window.VUserData.getVcoins?.() || beforeCoins);
       if (afterCoins < beforeCoins + REWARD_AMOUNT) {
         freshRow.rewardClaiming = false;
+        freshRow.rewardClaimingStartedAt = 0;
         writeState(freshState);
         return false;
       }
 
       freshRow.rewardClaimed = true;
       freshRow.rewardClaiming = false;
+      freshRow.rewardClaimingStartedAt = 0;
       freshRow.pendingInstallCheck = false;
       freshRow.clickedStore = false;
       writeState(freshState);
@@ -350,6 +365,7 @@
       return true;
     } catch (_) {
       freshRow.rewardClaiming = false;
+      freshRow.rewardClaimingStartedAt = 0;
       writeState(freshState);
       return false;
     }
