@@ -2592,7 +2592,6 @@ body.vr-peek-mode .vr-gauge-preview{
       window.VRUIBinding.updateGauges();
 
       try { window.VRUIBinding?._consumePeekDecision?.(); } catch (_) {}
-      try { window.VRGame?.maybeShowInterstitial?.(); } catch (_) {}
 
       this._saveRunSoft();
 
@@ -3310,7 +3309,8 @@ body.vr-peek-mode .vr-gauge-preview{
     return id;
   };
 
-  engine._triggerRandomEvent = async function () {
+  engine._triggerRandomEvent = async function (opts) {
+    opts = opts || {};
     ensureEventState(this);
     if (this._eventShowing) return false;
     if (!window.VRState.isAlive()) return false;
@@ -3411,6 +3411,11 @@ body.vr-peek-mode .vr-gauge-preview{
     }
 
     this._saveRunSoft();
+
+    try {
+      await window.VRAds?.showInterstitialAfterSpecial?.();
+    } catch (_) {}
+
     this._nextCard();
     return true;
   };
@@ -3448,7 +3453,6 @@ engine.applyChoice = function (cardLogic, choiceId) {
     window.VRUIBinding.updateGauges();
   
     try { window.VRUIBinding?._consumePeekDecision?.(); } catch (_) {}
-    try { window.VRGame?.maybeShowInterstitial?.(); } catch (_) {}
   
     sanitizeEventState(this);
     try { this._sanitizeMajorState?.(); } catch (_) {}
@@ -3463,6 +3467,13 @@ engine.applyChoice = function (cardLogic, choiceId) {
       return;
     }
   
+    const interReady = !!window.VRAds?.canShowInterstitialAfterSpecial?.();
+
+    if (interReady) {
+      this._triggerRandomEvent({ forcedForInterstitial: true });
+      return;
+    }
+
     const shouldMajor = this._maybeRollMajorAfterCardResolved?.();
     if (shouldMajor) {
       this._triggerRandomMajor?.();

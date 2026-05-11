@@ -63,8 +63,8 @@
   }
 
   // ✅ Règles pubs globales
-  var INTERSTITIEL_EVERY_X_ACTIONS = 10;
-  var INTERSTITIAL_MIN_WEIGHTED_MS = 2 * 60 * 1000; // 2 min
+  var INTERSTITIEL_EVERY_X_ACTIONS = 12;
+  var INTERSTITIAL_MIN_WEIGHTED_MS = 135000; // 2 min 15
   var INTER_RETURN_EVERY_X_ENDS = 2;
   var INTER_RETURN_COOLDOWN_MS = 2 * 60 * 1000; // 2 min réelles
 
@@ -1062,7 +1062,12 @@
   }
 
   async function incrementActionsCount() {
-    return markActionAndMaybeShowInterstitial();
+    syncWeightedTime();
+
+    actionsCount = (actionsCount || 0) + 1;
+    _writeLSNumber(ACTIONS_KEY, actionsCount);
+
+    return actionsCount;
   }
 
   function canAutoShowInterstitial() {
@@ -1078,6 +1083,38 @@
       (actionsCount || 0) >= INTERSTITIEL_EVERY_X_ACTIONS &&
       weightedMs >= INTERSTITIAL_MIN_WEIGHTED_MS
     );
+  }
+
+  function canShowInterstitialAfterSpecial() {
+    syncWeightedTime();
+
+    if (isNoAds()) return false;
+    if (window.__ads_active) return false;
+    if (__showLock) return false;
+
+    var weightedMs = getWeightedAccumulatedMs();
+    var universeId = _getUniverseIdForWeight();
+
+    return (
+      universeId !== "intro" &&
+      INTERSTITIEL_EVERY_X_ACTIONS > 0 &&
+      (actionsCount || 0) >= INTERSTITIEL_EVERY_X_ACTIONS &&
+      weightedMs >= INTERSTITIAL_MIN_WEIGHTED_MS
+    );
+  }
+
+  async function showInterstitialAfterSpecial() {
+    if (!canShowInterstitialAfterSpecial()) return false;
+
+    var ok = await showInterstitialAd();
+
+    if (ok) {
+      await resetInterstitialProgress();
+      resetGameRewardSeen();
+      syncWeightedTime();
+    }
+
+    return ok;
   }
 
   function getAdsStats() {
@@ -1105,6 +1142,8 @@
   window.VRAds.getActionsCount = getActionsCount;
   window.VRAds.resetActionsCount = resetActionsCount;
   window.VRAds.canAutoShowInterstitial = canAutoShowInterstitial;
+  window.VRAds.canShowInterstitialAfterSpecial = canShowInterstitialAfterSpecial;
+  window.VRAds.showInterstitialAfterSpecial = showInterstitialAfterSpecial;
   window.VRAds.maybeShowInterstitialOnReturnToIndex = maybeShowInterstitialOnReturnToIndex;
   window.VRAds.markGameRewardSeen = markGameRewardSeen;
   window.VRAds.resetGameRewardSeen = resetGameRewardSeen;
