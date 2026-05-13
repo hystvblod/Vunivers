@@ -10,8 +10,10 @@
   const POSTGAME_OFFERS = [
     { appId: "vblocks", popupIndex: 2 },
     { appId: "vchronicles", popupIndex: 2 },
+    { appId: "vmonster", popupIndex: 2 },
     { appId: "vblocks", popupIndex: 3 },
-    { appId: "vchronicles", popupIndex: 3 }
+    { appId: "vchronicles", popupIndex: 3 },
+    { appId: "vmonster", popupIndex: 3 }
   ];
 
   const APPS = {
@@ -56,6 +58,27 @@
       popup2BodyKey: "crosspromo.apps.vchronicles.popup2.body",
       popup3TitleKey: "crosspromo.apps.vchronicles.popup3.title",
       popup3BodyKey: "crosspromo.apps.vchronicles.popup3.body"
+    },
+    vmonster: {
+      id: "vmonster",
+      packageName: "com.vboldstudio.vmonster",
+      iosScheme: "vmonster://",
+      storeUrlAndroid: "https://play.google.com/store/apps/details?id=com.vboldstudio.vmonster",
+      storeUrlIOS: "https://apps.apple.com/app/idZZZZZZZZZZ",
+      cover: "assets/img/crosspromo/vmonster_cover.webp",
+      shots: [
+        "assets/img/crosspromo/vmonster_01.webp",
+        "assets/img/crosspromo/vmonster_02.webp",
+        "assets/img/crosspromo/vmonster_03.webp"
+      ],
+      titleKey: "crosspromo.apps.vmonster.name",
+      descKey: "crosspromo.apps.vmonster.store_desc",
+      popup1TitleKey: "crosspromo.apps.vmonster.popup1.title",
+      popup1BodyKey: "crosspromo.apps.vmonster.popup1.body",
+      popup2TitleKey: "crosspromo.apps.vmonster.popup2.title",
+      popup2BodyKey: "crosspromo.apps.vmonster.popup2.body",
+      popup3TitleKey: "crosspromo.apps.vmonster.popup3.title",
+      popup3BodyKey: "crosspromo.apps.vmonster.popup3.body"
     }
   };
 
@@ -130,7 +153,8 @@
       postGameRunsRequired: POSTGAME_FIRST_COMPLETED_RUNS,
       apps: {
         vblocks: defaultAppState(),
-        vchronicles: defaultAppState()
+        vchronicles: defaultAppState(),
+        vmonster: defaultAppState()
       }
     };
   }
@@ -185,7 +209,9 @@
       }
 
       const state = {
-        lowVcoinsNextApp: parsed.lowVcoinsNextApp === "vchronicles" ? "vchronicles" : "vblocks",
+        lowVcoinsNextApp: ["vblocks", "vchronicles", "vmonster"].includes(parsed.lowVcoinsNextApp)
+          ? parsed.lowVcoinsNextApp
+          : "vblocks",
         nextPostGameOfferIndex: Math.max(0, Number(parsed.nextPostGameOfferIndex || 0) || 0) % POSTGAME_OFFERS.length,
         stateCreatedAt: Math.max(0, Number(parsed.stateCreatedAt || 0) || Date.now()),
         lastCrossPromoAt: Math.max(0, Number(parsed.lastCrossPromoAt || 0) || 0),
@@ -199,7 +225,8 @@
             : POSTGAME_FIRST_COMPLETED_RUNS,
         apps: {
           vblocks: normalizeAppState(parsed.apps && parsed.apps.vblocks),
-          vchronicles: normalizeAppState(parsed.apps && parsed.apps.vchronicles)
+          vchronicles: normalizeAppState(parsed.apps && parsed.apps.vchronicles),
+          vmonster: normalizeAppState(parsed.apps && parsed.apps.vmonster)
         }
       };
 
@@ -372,11 +399,8 @@
   }
 
   function showRewardToast(appId) {
-    const appKey = appId === "vblocks"
-      ? "crosspromo.apps.vblocks.name"
-      : "crosspromo.apps.vchronicles.name";
-
-    const appName = t(appKey);
+    const app = APPS[appId];
+    const appName = t(app && app.titleKey ? app.titleKey : "crosspromo.apps.vblocks.name");
     const msg = t("crosspromo.reward_granted", { app: appName, amount: REWARD_AMOUNT });
 
     const el = document.createElement("div");
@@ -460,28 +484,26 @@
     return true;
   }
 
-  function getOtherAppId(appId) {
-    return appId === "vblocks" ? "vchronicles" : "vblocks";
+  function getNextLowVcoinsAppId(appId) {
+    const options = ["vblocks", "vchronicles", "vmonster"];
+    const index = options.indexOf(appId);
+    return options[(index + 1 + options.length) % options.length] || "vblocks";
   }
 
   function chooseLowVcoinsOffer() {
     const state = readState();
-    const firstChoice = state.lowVcoinsNextApp === "vchronicles" ? "vchronicles" : "vblocks";
-    const secondChoice = getOtherAppId(firstChoice);
+    const options = ["vblocks", "vchronicles", "vmonster"];
+    const start = Math.max(0, options.indexOf(state.lowVcoinsNextApp));
 
-    const firstRow = state.apps[firstChoice];
-    const secondRow = state.apps[secondChoice];
+    for (let i = 0; i < options.length; i += 1) {
+      const appId = options[(start + i) % options.length];
+      const row = state.apps[appId];
 
-    if (canShowForApp(firstRow)) {
-      state.lowVcoinsNextApp = secondChoice;
-      writeState(state);
-      return { appId: firstChoice, popupIndex: 1 };
-    }
-
-    if (canShowForApp(secondRow)) {
-      state.lowVcoinsNextApp = firstChoice;
-      writeState(state);
-      return { appId: secondChoice, popupIndex: 1 };
+      if (canShowForApp(row)) {
+        state.lowVcoinsNextApp = getNextLowVcoinsAppId(appId);
+        writeState(state);
+        return { appId: appId, popupIndex: 1 };
+      }
     }
 
     return null;
@@ -768,9 +790,11 @@
   async function bootRewardChecks() {
     await refreshInstalledStatus("vblocks");
     await refreshInstalledStatus("vchronicles");
+    await refreshInstalledStatus("vmonster");
 
     await claimRewardIfEligible("vblocks");
     await claimRewardIfEligible("vchronicles");
+    await claimRewardIfEligible("vmonster");
   }
 
   async function getStoreActionState(appId) {
@@ -908,7 +932,7 @@
     const host = document.getElementById("vr-crosspromo-grid");
     if (!host) return;
 
-    const ids = ["vchronicles", "vblocks"];
+    const ids = ["vchronicles", "vblocks", "vmonster"];
     const rows = [];
 
     for (const id of ids) {

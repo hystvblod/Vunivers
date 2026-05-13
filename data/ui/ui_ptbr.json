@@ -300,6 +300,22 @@
           "title": "Você vai conseguir sair dessa?",
           "body": "VChronicles espera por você."
         }
+      },
+      "vmonster": {
+        "name": "VMonster",
+        "store_desc": "Funda monstros, desbloqueie novos mundos e avance em um jogo divertido e estratégico.",
+        "popup1": {
+          "title": "Ficou sem moedas?",
+          "body": "Baixe VMonster e receba uma recompensa."
+        },
+        "popup2": {
+          "title": "Conheça VMonster",
+          "body": "Funda monstros, desbloqueie mundos e volte para resgatar sua recompensa."
+        },
+        "popup3": {
+          "title": "Quer outro desafio?",
+          "body": "Teste VMonster e ganhe VCoins no VUniverse."
+        }
       }
     }
   },

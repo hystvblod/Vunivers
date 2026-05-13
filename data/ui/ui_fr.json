@@ -300,6 +300,22 @@
           "title": "Saura-tu t’en sortir ?",
           "body": "VChronicles t’attend."
         }
+      },
+      "vmonster": {
+        "name": "VMonster",
+        "store_desc": "Fusionne des monstres, débloque de nouveaux univers et progresse dans un jeu fun et stratégique.",
+        "popup1": {
+          "title": "À court de pièces ?",
+          "body": "Télécharge VMonster et reçois une récompense."
+        },
+        "popup2": {
+          "title": "Découvre VMonster",
+          "body": "Fusionne des monstres, débloque des univers et reviens récupérer ta récompense."
+        },
+        "popup3": {
+          "title": "Envie d’un autre défi ?",
+          "body": "Essaie VMonster et gagne des VCoins dans VUniverse."
+        }
       }
     }
   },

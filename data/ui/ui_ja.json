@@ -300,6 +300,22 @@
           "title": "君は切り抜けられるか？",
           "body": "VChroniclesが君を待っている。"
         }
+      },
+      "vmonster": {
+        "name": "VMonster",
+        "store_desc": "モンスターを合体させ、新しいワールドを解放しながら楽しく戦略的に進めるゲームです。",
+        "popup1": {
+          "title": "コインが足りませんか？",
+          "body": "VMonsterをダウンロードして報酬を受け取りましょう。"
+        },
+        "popup2": {
+          "title": "VMonsterを発見",
+          "body": "モンスターを合体させ、ワールドを解放してから戻ると報酬を受け取れます。"
+        },
+        "popup3": {
+          "title": "別のチャレンジを試しますか？",
+          "body": "VMonsterを試して、VUniverseでVCoinsを獲得しましょう。"
+        }
       }
     }
   },
