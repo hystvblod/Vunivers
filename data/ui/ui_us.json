@@ -301,6 +301,22 @@
           "title": "Will you make it out?",
           "body": "VChronicles is waiting for you."
         }
+      },
+      "vmonster": {
+        "name": "VMonster",
+        "store_desc": "Merge monsters, unlock new worlds and progress through a fun strategic game.",
+        "popup1": {
+          "title": "Running out of coins?",
+          "body": "Download VMonster and receive a reward."
+        },
+        "popup2": {
+          "title": "Discover VMonster",
+          "body": "Merge monsters, unlock worlds and come back to claim your reward."
+        },
+        "popup3": {
+          "title": "Want another challenge?",
+          "body": "Try VMonster and earn VCoins in VUniverse."
+        }
       }
     }
   },
