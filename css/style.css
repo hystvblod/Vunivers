@@ -5899,6 +5899,35 @@ body.vr-body-game[data-universe] .vr-gauge-label{
   }
 }
 
+@media (max-width: 390px){
+  .vr-guide-overlay.is-major-choice .vr-guide-popup{
+    top: 22%;
+    width: calc(100% - 40px);
+    max-width: none;
+  }
+
+  .vr-guide-overlay.is-major-choice .vr-guide-bubble-text{
+    min-height: clamp(122px, 16vh, 170px);
+    padding: 11px 12px 11px;
+    gap: 7px;
+  }
+
+  .vr-guide-overlay.is-major-choice .vr-guide-figure{
+    width: min(76%, 320px);
+    min-width: 230px;
+    max-width: 320px;
+  }
+
+  .vr-guide-overlay.is-major-choice .vr-guide-line--title{
+    max-width: 96%;
+  }
+
+  .vr-guide-overlay.is-major-choice .vr-guide-line--lead,
+  .vr-guide-overlay.is-major-choice .vr-guide-line--body{
+    max-width: 94%;
+  }
+}
+
 @media (orientation: portrait) and (min-width: 601px) and (max-width: 1100px){
   .vr-guide-popup{
     top: 29%;
